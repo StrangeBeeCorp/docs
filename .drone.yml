@@ -1,0 +1,18 @@
+---
+kind: pipeline
+type: docker
+name: build
+steps:
+- name: build
+  image: squidfunk/mkdocs-material:latest
+  volumes:
+  - name: site
+    path: /site
+  commands:
+  - pip install -U -r ./requirements.txt
+  - mkdocs build
+  # - cp -r site/ /site
+  # - chmod -R 777 /site
+
+# references
+# https://blog.ktz.me/deploying-mkdocs-using-droneci/
