@@ -1,0 +1,13 @@
+Title: Platform Management
+nav:
+  - 'index.md'
+  - 'about-platform-management.md'
+  - 'license'
+  - 'status'
+  - 'branding'
+  - 'cortex'
+  - 'misp'
+  - 'authentication'
+  - 'smtp'
+  - 'global-endpoints'
+  - 'ldap-servers'
