@@ -1,3 +1,61 @@
 site_name: TheHive 5 Documentation
 theme:
   name: material
+  logo: 'images/thehive.png'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    # - navigation.expand
+    - navigation.indexes
+  palette:
+    primary: 'blue'
+    accent: blue
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+  - awesome-pages
+
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: false
+      # watch:
+      #   - thehive4py
+
+repo_name: "StrangeBeeCorp/thehive-docs"
+repo_url: "https://github.com/StrangeBeeCorp/thehive-docs"
+
+extra:
+  social:
+    - icon: fontawesome/solid/home
+      link: "https://www.strangebee.com"
+    - icon: fontawesome/brands/wordpress
+      link: "https://blog.strangebee.com"
+    - icon: fontawesome/brands/twitter
+      link: "https://twitter.com/StrangeBee"
+    - icon: fontawesome/brands/github
+      link: "https://github.com/StrangeBeeCorp"
+    - icon: fontawesome/brands/discord
+      link: "https://chat.thehive-project.org"
+
+markdown_extensions:
+    - toc:
+        permalink: "#"
+    - attr_list
+    - codehilite
+    - admonition
+    - pymdownx.critic
+    - pymdownx.superfences
+    - pymdownx.tabbed
+    - pymdownx.details
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
