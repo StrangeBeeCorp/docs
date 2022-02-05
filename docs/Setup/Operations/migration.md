@@ -45,7 +45,7 @@ This tools **must** also have access to Elasticsearch database (http://ES:9200) 
 
 ## Run the migration
 
-Prepare, install and configure your new instance of TheHive 4.x by following [the associated guides](../installation-and-configuration/index.md).
+Prepare, install and configure your new instance of TheHive 4.x by following [the associated guides](../index.md).
 
 Once TheHive4 configuration file (`/etc/thehive/application.conf`) is correctly filled the `migrate` command ca be executed.
 

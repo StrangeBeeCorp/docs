@@ -2,6 +2,7 @@ copyright: Copyright 2022 StrangeBee. All rights reserved.
 site_name: TheHive 5 Documentation
 theme:
   name: material
+  custom_dir: overrides
   logo: 'images/thehive.png'
   features:
     - navigation.instant

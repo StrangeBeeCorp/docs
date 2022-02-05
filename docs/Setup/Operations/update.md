@@ -6,7 +6,7 @@ TheHive 4.1.0 comes with an updated application stack, with new components dedic
 
 As a result, the minimum configuration required has been updated:
 
-- If you are a new user of TheHive, follow the [installation and configuration guide](../installation-and-configuration/index.md).
+- If you are a new user of TheHive, follow the [installation and configuration guide](../index.md).
 - If you are an existing user of TheHive 4.0.x, an index engine should be configured alongside the database. And wether you are using a standalone server or a cluster, the solution to implement and the configuration to update are different.
 
 According to the setup, the instance can use:
@@ -121,4 +121,4 @@ Restart all nodes of the cluster.
 
 ### More information
 
-More information about the configuration of database and indexes can be found in the [dedicated configuration guide](../installation-and-configuration/architecture/configuration/../../configuration/database.md)
+More information about the configuration of database and indexes can be found in the [dedicated configuration guide](../Configuration/database.md)

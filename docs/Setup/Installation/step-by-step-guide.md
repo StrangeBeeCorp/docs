@@ -162,11 +162,11 @@ For additional configuration options, refer to:
 
 #### Security
 
-To add security measures in Cassandra , refer the the [related administration guide](../../operations/cassandra-security.md).
+To add security measures in Cassandra , refer the the [related administration guide](../Operations/cassandra-security.md).
 
 #### Add nodes
 
-To add Cassandra nodes, refer the the [related administration guide](../architecture/3_nodes_cluster.md).
+To add Cassandra nodes, refer the the [related administration guide](../Architecture/3_nodes_cluster.md).
 
 ## Indexing engine
 
@@ -208,7 +208,7 @@ Starting from TheHive 4.1.0, a solution to store data indexes is required. These
 
 Files uploaded in TheHive (in *task logs* or in *observables*) can be stores in localsystem, in a Hadoop filesystem (recommended) or in the graph database.
 
-For standalone production and test servers , we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using Hadoop or S3 services ; see the [related guide](../architecture/3_nodes_cluster.md) for more details and an example with MinIO servers.  
+For standalone production and test servers , we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using Hadoop or S3 services ; see the [related guide](../Architecture/3_nodes_cluster.md) for more details and an example with MinIO servers.  
 
 !!! Example ""
     === "Local Filesystem"
@@ -235,7 +235,7 @@ For standalone production and test servers , we recommends using local filesyste
 
     === "S3 with Min.io"
 
-        An example of installing, configuring and use Min.IO is detailed in [this documentation](../architecture/3_nodes_cluster.md).
+        An example of installing, configuring and use Min.IO is detailed in [this documentation](../Architecture/3_nodes_cluster.md).
 
     === "HDFS with Hadoop"
 

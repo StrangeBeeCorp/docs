@@ -58,10 +58,10 @@ In the case of a cluster, all nodes have to connect to the same index: an instan
 
 ## Installation Guide
 
-The [following Guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages. 
+The [following Guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages. 
 
 
-If you want to build TheHive from sources, you can follow [this guide](installation/build-sources.md).
+If you want to build TheHive from sources, you can follow [this guide](Installation/build-sources.md).
 
 
 ## Configuration Guides
@@ -78,31 +78,31 @@ The configuration of TheHive is in files stored in the `/etc/thehive` folder:
 └── secret.conf
 ```
 
-A separate [secret.conf](configuration/secret.md) file is automatically created by Debian or RPM packages. This file should contain a secret that should be used by one instance.
+A separate [secret.conf](Configuration/secret.md) file is automatically created by Debian or RPM packages. This file should contain a secret that should be used by one instance.
 
 Various aspects can configured in the `application.conf` file:
 
 
-- [database and indexing](./configuration/database.md)
-- [File storage](./configuration/file-storage.md)
-- [Akka](./configuration/akka.md)
-- [Authentication](./configuration/authentication.md)
+- [database and indexing](./Configuration/database.md)
+- [File storage](./Configuration/file-storage.md)
+- [Akka](./Configuration/akka.md)
+- [Authentication](./Configuration/authentication.md)
 - Connectors
-    - [Cortex: connecting to one or more organisation](./configuration/connectors-cortex.md)
-    - [MISP: connecting to one or more organisation](./configuration/connectors-misp.md)
-- [Webhooks](./configuration/webhooks.md)
-- [Other service parameters](./configuration/service.md)
+    - [Cortex: connecting to one or more organisation](./Configuration/connectors-cortex.md)
+    - [MISP: connecting to one or more organisation](./Configuration/connectors-misp.md)
+- [Webhooks](./Configuration/webhooks.md)
+- [Other service parameters](./Configuration/service.md)
 
 
 ## Uses Cases
 
 ### Basic stand alone server
 
-Follow the [installation guides](./installation/step-by-step-guide.md) for you prefered operating system.
+Follow the [installation guides](./Installation/step-by-step-guide.md) for you prefered operating system.
 
 ### Cluster with 3 TheHive nodes
 
-The folling [guide](./architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. The cluster is composed of:  
+The folling [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. The cluster is composed of:  
   
   - 3 TheHive servers  
   - 3 Cassandra servers 
