@@ -1,6 +1,6 @@
 nav:
     - Overview: index.md
-    - Architecture
     - Installation
     - Configuration
     - Operations
+    - Architecture
