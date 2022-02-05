@@ -12,8 +12,6 @@ steps:
     commands:
     - pip install -U -r ./requirements.txt
     - mkdocs build
-    # - cp -r site/ /site
-    # - chmod -R 777 /site
 
   # Publish packages to lab web server
   - name: publish docs in lab
