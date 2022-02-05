@@ -1,3 +1,4 @@
+copyright: Copyright 2022 StrangeBee. All rights reserved.
 site_name: TheHive 5 Documentation
 theme:
   name: material
@@ -9,9 +10,16 @@ theme:
     - navigation.sections
     # - navigation.expand
     - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
   palette:
     primary: 'blue'
     accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 plugins:
   - search
@@ -45,17 +53,24 @@ extra:
       link: "https://chat.thehive-project.org"
 
 markdown_extensions:
-    - toc:
-        permalink: "#"
-    - attr_list
-    - codehilite
-    - admonition
-    - pymdownx.critic
-    - pymdownx.superfences
-    - pymdownx.tabbed
-    - pymdownx.details
-    - pymdownx.tasklist:
-        custom_checkbox: true
-    - pymdownx.emoji:
-        emoji_index: !!python/name:materialx.emoji.twemoji
-        emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      permalink: "#"
+  - attr_list
+  - codehilite
+  - admonition
+  - pymdownx.critic
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# nav:
+#   - Home: index.md
+#   - Operations: 'Setup'
+#   # - 'Admin Guides': Administration
+#   # - 'User Guides': Organization
+

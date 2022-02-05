@@ -1,0 +1,5 @@
+nav:
+    - Home: index.md
+    - 'Setup Guides': Setup
+    - 'Admin Guides': Administration
+    - 'User Guides': Organization
