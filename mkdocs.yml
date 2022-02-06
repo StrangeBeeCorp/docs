@@ -1,9 +1,10 @@
 copyright: Copyright 2022 StrangeBee. All rights reserved.
 site_name: TheHive 5 Documentation
+site_url: https://docs.strangebee.com
 theme:
   name: material
   custom_dir: overrides
-  logo: 'images/thehive.png'
+  logo: 'assets/images/strangebee-logo.svg'
   features:
     - navigation.instant
     - navigation.tabs
@@ -21,26 +22,29 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  favicon: assets/images/strangebee-logo.svg
+
+extra_css:
+  - assets/stylesheets/extra.css
 
 plugins:
   - search
   - git-revision-date-localized:
       type: datetime
   - awesome-pages
-
-  - mkdocstrings:
-      default_handler: python
-      handlers:
-        python:
-          rendering:
-            show_source: false
-      # watch:
-      #   - thehive4py
+  # - mkdocstrings:
+  #     default_handler: python
+  #     handlers:
+  #       python:
+  #         rendering:
+  #           show_source: false
+  
 
 repo_name: "StrangeBeeCorp/thehive-docs"
 repo_url: "https://github.com/StrangeBeeCorp/thehive-docs"
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/solid/home
       link: "https://www.strangebee.com"

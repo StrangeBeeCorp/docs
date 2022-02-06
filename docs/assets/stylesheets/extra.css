@@ -1,0 +1,9 @@
+.md-banner a,
+.md-banner a:hover,
+.md-banner a:focus {
+  color: currentColor;
+}
+
+.md-banner .twitter {
+  color: #00acee;
+}
