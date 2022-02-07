@@ -1,8 +1,8 @@
 Title: Account Settings
 nav:
-  - 'infos.md'
-  - 'password.md'
-  - 'api-key.md'
+  - 'infos'
+  - 'password'
+  - 'api-key'
   - 'configure-mfa.md'
   - 'options.md'
   - 'switch-workspace.md'
