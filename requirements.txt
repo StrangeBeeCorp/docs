@@ -1,1 +1,9 @@
+mkdocs
+mkdocs-awesome-pages-plugin
+mkdocs-git-revision-date-localized-plugin
 mkdocs-material
+mkdocs-material-extensions
+mkdocs-pymdownx-material-extras
+mkdocstrings
+pygments>=2.10
+pymdown-extensions>=9.0

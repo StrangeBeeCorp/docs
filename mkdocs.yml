@@ -1,3 +1,71 @@
+copyright: Copyright 2022 StrangeBee. All rights reserved.
 site_name: TheHive 5 Documentation
+site_url: https://docs.strangebee.com
 theme:
   name: material
+  custom_dir: overrides
+  logo: 'assets/images/thehive-horizontal-light.svg'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    # - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+  scheme: default
+  palette:
+    primary: blue grey
+    # accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/thehive-favicon.svg
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+  - awesome-pages
+
+repo_name: "Github"
+repo_url: "https://github.com/StrangeBeeCorp/thehive-docs"
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: "https://www.linkedin.com/company/strangebee"
+    - icon: fontawesome/brands/twitter
+      link: "https://twitter.com/StrangeBee"
+    - icon: fontawesome/brands/youtube
+      link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+  - attr_list
+  - codehilite
+  - admonition
+  - pymdownx.critic
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+# nav:
+#   - Home: index.md
+#   - Operations: 'Setup'
+#   # - 'Admin Guides': Administration
+#   # - 'User Guides': Organization
+

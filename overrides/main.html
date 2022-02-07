@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<!-- Add announcement here, including arbitrary HTML -->
+    <a href="https://twitter.com/StrangeBee" target="_blank">
+        For updates follow <strong>@StrangeBee</strong> on
+        <span class="twemoji twitter">
+            {% include ".icons/fontawesome/brands/twitter.svg" %}
+        </span>
+        <strong>Twitter</strong>
+    </a>
+{% endblock %}
