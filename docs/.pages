@@ -3,5 +3,5 @@ nav:
     - 'Setup Guides': Setup
     - 'Admin Guides': Administration
     - 'User Guides': Organization
-    - 'API Docs': api-docs" target="_blank
+    - 'API Docs': api-docs/" target="_blank
     - 'Blog': https://blog.strangebee.com" target="_blank
