@@ -28,5 +28,20 @@ steps:
       source: site/*
       strip_components: 1
 
+  - name: upload to s3
+    image: plugins/s3
+    settings:
+        bucket: www2.aws.strangebee.com
+        region: us-east-1
+        access_key:
+            from_secret: aws_access_key_id
+        secret_key:
+            from_secret: aws_secret_access_key
+        source: site/**/*
+        strip_prefix: site/
+        target: /thehive-docs-${DRONE_BUILD_NUMBER}
+    when:
+        event: [tag, cron, custom, promote]
+
 # references
 # https://blog.ktz.me/deploying-mkdocs-using-droneci/
