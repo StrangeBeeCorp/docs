@@ -31,7 +31,7 @@ steps:
   - name: upload to s3
     image: plugins/s3
     settings:
-        bucket: www2.aws.strangebee.com
+        bucket: strangebee-websites
         region: us-east-1
         access_key:
             from_secret: aws_access_key_id
