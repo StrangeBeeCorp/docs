@@ -4,7 +4,7 @@ In this section you can find information about how to save and manage the curren
 
 To save the current organization list view:
 
-1. On the home page, click the **default** button.
+1. On the organization list page, click the **default** button.
 
     A menu is displayed.
 
@@ -25,7 +25,7 @@ To save the current organization list view:
     
 To delete a view:
 
-1. On the home page, click the **default** button
+1. On the organization list page, click the **default** button
 
     Menu is displayed.
 

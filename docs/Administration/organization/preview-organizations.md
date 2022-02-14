@@ -1,12 +1,12 @@
 # Preview Organizations
 
-After you login to TheHive application, you can see the list of all organizations on the home page.
+After you login to TheHive application, you can see  all organizations on the Organization List page.
 
-You can preview the details of a specific organization.
+You can see the details of a specific organization.
 
 To preview the organization details:
 
-1. On the home page, click the **Preview** button corresponding to the specific organization name.
+1. On the Organization List page, click the **Preview** button corresponding to the specific organization name.
 
     <img src="../images/preview-organization-button.png" alt="Preview organization button" width="1000" height="1000"/>
 
