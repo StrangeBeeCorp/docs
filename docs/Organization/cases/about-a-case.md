@@ -1,17 +1,8 @@
 # About a case
 
-In this section you can find information about creating cases. 
+In this section you can find information about cases. 
 
-1. Click **Create Case +** on the header.
+A case provides information on suspicious activity in the environment. It provides information on the security incidents, observables, alerts, and affected users.  Security analysts can conduct specific analysis based on cases to assess the possibilities of threats. 
 
-<img src="../images/create_case_header.png" alt="create case on header" width="500" height="200"/>
-
-A user can create cases by selecting any one of the following options: 
-
-1. Empty Case.
-1. Template.
-1. Archive.
-1. MISP.
-
-<img src="../images/create_case.png" alt="create case" width="500" height="500"/>
+Cases can be created from various sources. Each security case consists of a title, tags, task rules, obsevable rules a description of case details, and all the details related to the case that help in building an argument for identifying and dealing with particular threats.
 

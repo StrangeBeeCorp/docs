@@ -4,6 +4,8 @@
 
 A user can create a notification. 
 
+To Add a notification:
+
 1. Type notfification **Name**.
 1. Send notification to every user in the organization. 
 1. Select **Trigger** from the list. (Refer to [`Trigger events`](../manage-notifications/triggering-events.md))
