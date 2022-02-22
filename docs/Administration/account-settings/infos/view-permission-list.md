@@ -12,6 +12,8 @@ To view the permissions:
 
 1. Click the **Settings** button.
 
-    The infos tab in the Account settings window opens. You can view the permissions list in the infos tab.
+    The infos tab in the Account settings window opens. 
+    
+    You can view the permissions list in the infos tab.
 
-    <img src="../images/account-settinhs-view-permissions.png" alt="View Permissions" width="400" height="200"/>
+    <img src="../images/account-settings-view-permissions.png" alt="View Permissions" width="1000" height="1000"/>

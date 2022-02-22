@@ -46,3 +46,12 @@ To delete a User:
 1. Click the **Delete user** button.
 
     <img src="../images/delete-user.png" alt="Delete User" width="500" height="500"/>
+
+    A delete confirmation dialog box appears.
+
+1. Click **OK**.
+
+    <img src="../images/delete-user-confirm.png" alt="Delete User Confirm" width="400" height="200"/>
+
+
+

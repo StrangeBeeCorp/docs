@@ -22,7 +22,7 @@ To add a new organization:
 
 To edit an organization:
 
-1. On the home page, click the **Preview** button corresponding to the organization you want to edit.
+1. On the Organization List page, click the **Preview** button corresponding to the organization you want to edit.
 
     <img src="../images/preview-organization-button.png" alt="Preview organization button" width="1000" height="1000"/>
 

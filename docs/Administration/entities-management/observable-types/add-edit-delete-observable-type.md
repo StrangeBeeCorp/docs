@@ -16,11 +16,11 @@ To add a new observable type:
 1. Switch on the **Attachment** toggle button to attach a file.
 1. Click the **Confirm observable type creation** button.
 
-<img src="../images/observable-type-details.png" alt="Create a New Observable Type" width="1000" height="1000"/>
+    <img src="../images/observable-type-details.png" alt="Create a New Observable Type" width="500" height="500"/>
 
-  A observable type created successfully message apperars.
+    A observable type created successfully message apperars.
 
-<img src="../images/observable-type-created-message.png" alt="Observable Type created message" width="400" height="200"/>
+    <img src="../images/observable-type-created-message.png" alt="Observable Type created message" width="400" height="200"/>
 
 ## Delete Observable Type
 
@@ -32,6 +32,13 @@ To delete an observable type:
 
     <img src="../images/observable-type-delete-button.png" alt="Observable Type Delete button" width="1000" height="1000"/>
 
+ A delete confirmation dialog box appears.
+
+1. Click **OK**.
+
+    <img src="../images/observable-type-delete-confirm.png" alt="Delete Confirm" width="200" height="200"/>
+
+    
     Observable Type deleted succesfully message appears.
 
-    <img src="../images/observable-type-delete-message.png" alt="Observable Type Delete Message" width="500" height="500"/>
+    <img src="../images/observable-type-delete-message.png" alt="Observable Type Delete Message" width="400" height="200"/>
