@@ -1,0 +1,16 @@
+# Lock User
+
+If a user is on contract in the organization and the contract ends, in such cases a user profile may be locked. 
+
+To lock the user details:
+
+1. Click on the **...**.
+1. Click the **Lock** option.
+
+<img src="../images/lock_user_option.png" alt="lock user option" width="1000" height="1000"/>
+
+A new pop up message opens.
+
+1. Click the **OK** button.
+
+<img src="../images/lock_user.png" alt="lock user" width="300" height="300"/>
