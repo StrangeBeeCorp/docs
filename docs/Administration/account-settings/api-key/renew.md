@@ -15,7 +15,10 @@ To renew an API key:
     The infos tab in the Account settings window opens.
 
 1. Select the **API Key** tab.
-1. Click the **Renew** button to create a new API key.
+1. Click the **Renew** button to renew API key.
 
-<img src="../images/api-key-renew-button.png" alt="API Key Renew" width="400" height="200"/>
+    <img src="../images/api-key-renew-button.png" alt="API Key Renew" width="1000" height="1000"/>
 
+    API key created message appears. 
+
+    <img src="../images/api-key-created-message.png" alt="API Key Created" width="400" height="200"/>

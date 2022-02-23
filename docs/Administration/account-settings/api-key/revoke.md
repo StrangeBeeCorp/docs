@@ -15,10 +15,10 @@ To revoke an API key:
     The infos tab in the Account settings window opens.
 
 1. Select the **API Key** tab.
-1. Click the **Revoke** button to create a new API key.
+1. Click the **Revoke** button to revoke the API key.
 
-    <img src="../images/api-key-revoke-button.png" alt="API Key Revoke" width="400" height="200"/>
+    <img src="../images/api-key-revoke-button.png" alt="API Key Revoke" width="1000" height="1000"/>
 
-    A API key revoked message is displayed.
+    API key revoked message appears.
 
     <img src="../images/api-key-revoke-message.png" alt="API Key Revoked Message" width="400" height="200"/>

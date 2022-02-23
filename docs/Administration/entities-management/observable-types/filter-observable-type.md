@@ -4,7 +4,7 @@ In this section, you can find information about applying filters to an observabl
 
 To apply filter to an observable type:
 
-1. On the Entities Management page, in the Observable Typetab, switch on the **Filters** toggle button.
+1. On the Entities Management page, in the Observable Type tab, switch on the **Filters** toggle button.
 
 1. Click **Add filters**.
 

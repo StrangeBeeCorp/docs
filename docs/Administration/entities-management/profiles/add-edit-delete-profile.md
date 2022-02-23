@@ -8,9 +8,9 @@ To add a new profile:
 
 1. On the Entities Management page, in the Profiles tab, click the **+** button.
 
-<img src="../images/create-new-profile-button.png" alt="Create New Profile" width="1000" height="1000"/>
+    <img src="../images/create-new-profile-button.png" alt="Create New Profile" width="1000" height="1000"/>
 
-Adding a Profile window opens.
+    Adding a Profile window opens.
 
 1. Enter a **Name** for the new profile.
 1. Choose **Profile type**.
@@ -19,7 +19,7 @@ Adding a Profile window opens.
 
     <img src="../images/add-profile-details.png" alt="Profile Details" width="400" height="200"/>
 
-    A profile created successfully message apperars.
+    A profile created successfully message appears.
 
     <img src="../images/profile-created-message.png" alt="Profile Created Message" width="400" height="200"/>
 
@@ -50,6 +50,12 @@ To delete a profile:
 
     <img src="../images/delete-profile-menu.png" alt="Delete Profile" width="1000" height="1000"/>
 
+    A delete confirmation dialog box appears.
+
+1. Click **OK**.
+
+    <img src="../images/delete-profile-confirm.png" alt="Delete Confirm" width="200" height="200"/>
+
     Profile deleted succesfully message appears.
 
-    <img src="../images/profile-delete-message.png" alt="Profile Delete Message" width="500" height="500"/>
+    <img src="../images/profile-delete-message.png" alt="Profile Delete Message" width="400" height="200"/>

@@ -17,6 +17,9 @@ To change the password:
  1. Select the **Password** tab.
  1. Enter the **Current password**.
  1. Enter the **New Password** and **Confirm new password**.
+
+    <img src="../images/account-settings-change-password.png" alt="Account Settings Change Password" width="1000" height="1000"/>
+
  1. Click the **Save** button.
  
 

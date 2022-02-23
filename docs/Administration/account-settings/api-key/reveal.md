@@ -15,6 +15,6 @@ To reveal the API key:
     The infos tab in the Account settings window opens.
 
 1. Select the **API Key** tab.
-1. Click the **Reveal** button to create a new API key.
+1. Click the **Reveal** button to reveal the API key.
 
-<img src="../images/api-key-reveal-button.png" alt="API Key Renew" width="400" height="200"/>
+<img src="../images/api-key-reveal-button.png" alt="API Key Renew" width="1000" height="1000"/>

@@ -18,7 +18,7 @@ To add a new custom field:
 1. Select the **Group** from the list.
 1. Select a **Type** from the list.
 
-    <img src="../images/type-of-custom-field.png" alt="Type of Custom Field" width="400" height="200"/>
+    <img src="../images/type-of-custom-field.png" alt="Type of Custom Field" width="200" height="200"/>
 
 1. Switch on the **Mandatory** toggle button.
 
@@ -28,7 +28,7 @@ To add a new custom field:
 
     <img src="../images/custom-field-details.png" alt="Custom Field Details" width="400" height="200"/>
 
-    A custom field created successfully message apperars.
+    A custom field created successfully message appears.
 
     <img src="../images/custom-field-create-message.png" alt="Custom Field Created Message" width="400" height="200"/>
 
@@ -51,7 +51,7 @@ To edit a custom field:
 
     Custom field edited successfully message appears.
 
-    <img src="../images/custom-field-edit-message.png" alt="Custom Field Edit Message" width="500" height="500"/>
+    <img src="../images/custom-field-edit-message.png" alt="Custom Field Edit Message" width="400" height="200"/>
    
 ## Delete Custom Field
 
@@ -63,6 +63,12 @@ To delete a custom field:
 
     <img src="../images/custom-field-delete-menu.png" alt="Delete Custom Field" width="1000" height="1000"/>
 
-    Custom Field deleted succesfully message appears.
+    A delete confirmation dialog box appears.
 
-    <img src="../images/custom-field-delete-message.png" alt="Custom Field Delete Message" width="500" height="500"/>
+1. Click **OK**.
+
+    <img src="../images/custom-field-delete-confirm.png" alt="Custom Field Delete Confirm" width="200" height="200"/>
+
+    Custom Field deleted successfully message appears.
+
+    <img src="../images/custom-field-delete-message.png" alt="Custom Field Delete Message" width="400" height="200"/>
