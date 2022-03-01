@@ -1,0 +1,14 @@
+
+Title: Manage Administration
+
+nav:
+   - 'Contacting Support' : contacting-support.md
+   - 'Getting Started' : getting-started.md
+   - 'Introduction' : introduction.md
+   - 'Admin Sign In' : sign-in-as-an-admin.md
+   - 'Account Settings' : account-settings
+   - 'Entities Management' : entities-management
+   - 'Organization Management' : organization
+   - 'Platform Management' : platform-management
+   - 'User Management' : users
+  

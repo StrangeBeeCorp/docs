@@ -8,7 +8,7 @@ To apply filter to a profile:
 
 1. Click **Add filters**.
 
-<img src="../images/apply-filter-to-profile.png" alt="Apply Filter to Profile" width="1500" height="1500"/>
+<img src="../images/apply-filters-to-profile.png" alt="Apply Filter to Profile" width="1500" height="1500"/>
 
 1. Select the filters from the list.
 

@@ -8,7 +8,7 @@ To add a new custom field:
 
 1. On the Entities Management page, in the Custom Fields tab, click the **+** button.
 
-    <img src="../images/add-custom-field-button.png" alt="Create New Custom Field" width="1000" height="1000"/>
+    <img src="../images/add-custom-field-button.png" alt="Create New Custom Field" width="700" height="700"/>
 
     Adding a Custom Field window opens.
 
