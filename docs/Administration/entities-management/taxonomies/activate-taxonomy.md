@@ -8,7 +8,7 @@ To activate a taxonomy:
 
 1. Click **Activate**.
 
-    <img src="../images/activate-taxonomy-button.png" alt="Activate Taxonomy" width="500" height="500"/>
+    <img src="../images/activate-taxonomy-button.png" alt="Activate Taxonomy" width="1000" height="1000"/>
 
     Taxonomy eanbled message appears.
 
@@ -22,7 +22,7 @@ To deactivate a taxonomy:
 
 1. Click **Deactivate**.
 
-    <img src="../images/deactivate-taxonomy-button.png" alt="Activate Taxonomy" width="500" height="500"/>
+    <img src="../images/deactivate-taxonomy-button.png" alt="Activate Taxonomy" width="1000" height="1000"/>
 
     Taxonomy disabled message appears.
 

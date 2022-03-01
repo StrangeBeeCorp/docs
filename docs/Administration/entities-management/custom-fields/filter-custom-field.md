@@ -1,5 +1,3 @@
-# Filter Custom Field
-
 # Apply Filters to Custom Field
 
 In this section, you can find information about applying filters to a custom field.
@@ -14,7 +12,7 @@ To apply filter to a custom field:
 
 1. Select the filters from the list.
 
-    <img src="../images/custom-field-filter-list.png" alt="Custom Field Filter Types" width="1000" height="1000"/>
+    <img src="../images/custom-field-filter-list.png" alt="Custom Field Filter Types" width="400" height="200"/>
 
 1. Click **Apply filters**.
 1. (Optional) Click **Clear filters** to clear all applied filters.

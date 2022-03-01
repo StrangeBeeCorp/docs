@@ -1,1 +1,0 @@
-# Import Mtire Attack Patterns
