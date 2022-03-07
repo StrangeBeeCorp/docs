@@ -18,10 +18,10 @@ To configure the LDAP server:
 
     The LDAP Configuration window opens.
 
-    1. Enter the information in General settings.
-    1. Enter data for Map of LDAP Attributes. 
-    1. Add a Map Group field in Group Mappings.
-    1. Click the **Confirm** button.
+1. Enter the information in General settings.
+1. Enter data for Map of LDAP Attributes. 
+1. Add a Map Group field in Group Mappings.
+1. Click the **Confirm** button.
 
 
     <img src="../images/configure-ldap-server-details.png" alt="Configure LDAP Server" width="1000" height="1000"/>

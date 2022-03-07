@@ -8,19 +8,19 @@ To add a new custom field:
 
 1. On the Entities Management page, in the Custom Fields tab, click the **+** button.
 
-    <img src="../images/add-custom-field-button.png" alt="Create New Custom Field" width="700" height="700"/>
+    <img src="../images/add-custom-field-button.png" alt="Create New Custom Field" width="500" height="500"/>
 
     Adding a Custom Field window opens.
 
 1. Enter a **Display name** for the custom field.
 1. Enter a **Technical name**.
-1. Enter a **Description**..
+1. Enter a **Description**.
 1. Select the **Group** from the list.
 1. Select a **Type** from the list.
 
     <img src="../images/type-of-custom-field.png" alt="Type of Custom Field" width="200" height="200"/>
 
-1. Switch on the **Mandatory** toggle button.
+1. Switch on the **Mandatory** button.
 
     When you make a custom field as a mandatory, you won't be able to resolve a case without populating the mandatory custom field.
 

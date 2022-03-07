@@ -10,7 +10,7 @@ To reveal the API key:
 
     <img src="../images/account-settings-menu.png" alt="Account Settings Menu" width="400" height="200"/>
 
-1. Click the **Settings** button.
+1. Click **Settings**.
 
     The infos tab in the Account settings window opens.
 

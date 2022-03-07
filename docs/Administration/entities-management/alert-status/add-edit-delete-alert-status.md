@@ -6,11 +6,11 @@ In this section, you can find information about managing the alert status. You c
 
 To add a custom alert:
 
-1. On the Entities Management page, in the Alert Status tab, click the **+** button.
+1. On the Entities Management page, in the Alert status tab, click the **+** button.
 
     <img src="../images/add-a-custom-status-button.png" alt="Create a new Custom Alert" width="1000" height="1000"/>
 
-    Add a Custom Status window opens.
+    Add a custom status window opens.
 
     <img src="../images/add-custom-status-details.png" alt="Add Custom Alert Details" width="500" height="500"/>
 
@@ -34,13 +34,13 @@ To add a custom alert:
 
 To edit a custom status:
 
-1. On the Entities Management page, in the alert status tab, click the ellipsis(...) corresponding to the value you want to edit.
+1. On the Entities Management page, in the Alert status tab, click the ellipsis(...) corresponding to the value you want to edit.
 
 1. Click **Edit**.
 
     <img src="../images/edit-alert-status-menu.png" alt="Edit Alert Status" width="1000" height="1000">
 
-    Edit a Custom Status window opens.  
+    Edit a custom status window opens.  
 
     <img src="../images/edit-custom-status-details.png" alt="Edit Custom Alert details" width="500" height="500"/>
 
@@ -55,7 +55,7 @@ To edit a custom status:
 
 To delete a custom Alert:
 
-1. On the Entities Management page, in the alert status tab, click the ellipsis(...) corresponding to the value you want to delete.
+1. On the Entities Management page, in the Alert status tab, click the ellipsis(...) corresponding to the value you want to delete.
 
 1. Click **Delete**.
 

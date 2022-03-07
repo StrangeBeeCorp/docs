@@ -8,4 +8,4 @@ For example:
 * “admin” in “organisationB”
 * “read-only” in “organisationC”
 
-> NOTE: A single user can belong to many organizations and in each organization it has a   dedicated user profile.
+> **NOTE**: A single user can belong to many organizations and in each organization it has a   dedicated user profile.

@@ -2,7 +2,7 @@
 
 In this section, you can find information about applying filters to the users.
 
-1. On the users page, switch on the **Filters** toggle button.
+1. On the users page, switch on the **Filters** button.
 
 1. Click **Add filters**.
 

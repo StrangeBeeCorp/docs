@@ -6,7 +6,7 @@ To view the platform status:
 
 1. On the left side of the window, click the **Platform Management** tab.
 
-By default, the License page opens. 
+    By default, the License page opens. 
 
 1. Select the **Status** tab.
 
