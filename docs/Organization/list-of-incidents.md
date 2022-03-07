@@ -81,7 +81,7 @@ To perform Auto refresh:
 
 To view Stats: 
 
-1. On the cases list page, switch on the Stats toggle button, the stats will be displayed. 
+1. On the cases list page, switch on the **Stats** button, the stats will be displayed. 
 
 <img src="../images/Stats.png" alt="stats" width="1000" height="1000"/>
 
@@ -90,7 +90,7 @@ To view Stats:
 
 To apply filter:
 
-1. On the cases list page, switch on the Filters toggle button.
+1. On the cases list page, switch on the **Filters** button.
 
 1. Click **Add filters**.
 

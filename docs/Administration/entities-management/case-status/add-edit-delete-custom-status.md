@@ -1,6 +1,6 @@
 # Manage Custom Status
 
-In this section, you can find information about managing the custom status. You can add, delete, and edit the case status.
+In this section, you can find information about managing the case status. You can add, delete, and edit the case status.
 
 ## Add Custom Status
 
@@ -8,7 +8,7 @@ To add a custom status:
 
 1. On the Entities Management page, in the Case Status tab, click the **+** button.
 
-    <img src="../images/add-a-custom-status-button.png" alt="Create a new Custom Status" width="1000" height="1000"/>
+    <img src="../images/add-case-status-button.png" alt="Create a new Custom Status" width="500" height="500"/>
 
     Add a Custom Status window opens.
 

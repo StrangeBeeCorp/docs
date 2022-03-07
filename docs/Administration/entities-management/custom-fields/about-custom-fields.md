@@ -7,3 +7,5 @@ By default, in the TheHive platform, cases and alerts have pre-defined fields. I
 You can view the custom fields list in the Custom Fields tab of the Entities Management page.
 
 <img src="../images/view-custom-fields.png" alt="View Custom Fields" width="1000" height="1000"/>
+
+> **NOTE**: Custom fields are global to all the organizations.

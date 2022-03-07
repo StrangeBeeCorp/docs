@@ -10,13 +10,15 @@ To create an API key:
 
     <img src="../images/account-settings-menu.png" alt="Account Settings Menu" width="400" height="200"/>
 
-1. Click the **Settings** button.
+1. Click **Settings**.
 
     The infos tab in the Account settings window opens.
 
 1. Select the **API Key** tab.
 1. Click the **Create** button to create a new API key.
 
-A new API key is generated and a message is displayed.
+    <img src="../images/api-key-create-button.png" alt="Api Key Create Menu" width="1000" height="1000"/>
 
-<img src="../images/api-key-created-message1.png" alt="API Key Created" width="400" height="200"/>
+    A new API key is generated and a message is displayed.
+
+    <img src="../images/api-key-created-message.png" alt="API Key Created" width="400" height="200"/>

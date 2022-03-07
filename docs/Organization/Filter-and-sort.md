@@ -4,7 +4,7 @@ In this section, you can find information about applying filters.
 
 To apply filter:
 
-1. On the page, in the tab, switch on the Filters toggle button.
+1. On the page, in the tab, switch on the **Filters** button.
 
 1. Click Add filters.
 

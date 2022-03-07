@@ -4,7 +4,7 @@ In this section, you can find information about applying filters to the profile.
 
 To apply filter to a profile:
 
-1. On the Entities Management page, in the Profile tab, switch on the **Filters** toggle button.
+1. On the Entities Management page, in the Profile tab, switch on the **Filters** button.
 
 1. Click **Add filters**.
 

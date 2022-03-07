@@ -14,4 +14,4 @@ To import templates archive:
 
 1. Click the **Import** button.
 
-    <img src="../images/import-templates-archive.png" alt="Import Templates Archive" width="700" height="700"/>
+    <img src="../images/import-templates-archive.png" alt="Import Templates Archive" width="500" height="500"/>

@@ -13,6 +13,6 @@ There are two Profile Types; Administration and Organization. Each Profile Type 
 
 * Organization profile is for users like the security analysts who wno't manage the platform but they will be a part of the organization that make incident response and make a case management.
 
-    The types of permissions for Administration profile are:
+    The types of permissions for Organization profile are:
 
     <img src="../images/org-profile-permissions.png" alt="set of Permisions" width="400" height="200"/>

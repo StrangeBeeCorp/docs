@@ -21,7 +21,7 @@ Configure Security and Authentication settings:
     <img src="../images/configure-smtp.png" alt="Configure SMTP" width="1000" height="1000"/>
 
 
-Do you want to save the modifications message appears.
+    Do you want to save the modifications message appears.
 
 1. Click **confirm**.
 

@@ -4,7 +4,7 @@ In this section, you can find information about importing Mitre Attck Patterns.
 
 To import the Mitre Attack Patterns:
 
-1. On the Entities Management page, in the attack patterns tab, click the **Import MITRE ATT&CK patterns** button.
+1. On the Entities Management page, in the Attack Patterns tab, click the **Import MITRE ATT&CK patterns** button.
 
     <img src="../images/import-attack-patterns-button.png" alt="Attack Patterns Button" width="1000" height="1000"/>
 

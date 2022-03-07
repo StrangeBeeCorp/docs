@@ -4,7 +4,7 @@ In this section you will find information about reindexing your database.
 
 To reindex data:
 
-1. On the Platform Management page, in the status tab, click **Reindex the data**. 
+1. On the Platform Management page, in the Status tab, click **Reindex the data**. 
 
     <img src="../images/data-index-status-reindex-data.png" alt="Reindex Data" width="1000" height="1000"/>
 

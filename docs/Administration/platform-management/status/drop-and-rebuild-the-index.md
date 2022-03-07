@@ -4,7 +4,7 @@ In this section you will find information about dropping and rebuilding your dat
 
 To drop and rebuild the database index:
 
-1. On the Platform Management page, in the status tab, click **Drop and rebuild the index**. 
+1. On the Platform Management page, in the Status tab, click **Drop and rebuild the index**. 
 
     <img src="../images/data-index-status-drop-rebuild.png" alt="Drop and Rebuild Index" width="1000" height="1000"/>
 

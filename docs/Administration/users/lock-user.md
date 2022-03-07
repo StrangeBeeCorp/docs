@@ -6,6 +6,7 @@ If a user is no longer working on the TheHive platform, you can lock the user. T
 To lock the user:
 
 Go to the preview Users window.
-1. Switch on the **Locked**  toggle button.
+
+1. Switch on the **Locked** button.
 
     <img src="../images/lock-user.png" alt="Lock an Organization" width="600" height="400"/>

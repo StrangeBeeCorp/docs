@@ -4,7 +4,7 @@ In this section, you can find information about applying filters to a custom fie
 
 To apply filter to a custom field:
 
-1. On the Entities Management page, in the Custom Field tab, switch on the **Filters** toggle button.
+1. On the Entities Management page, in the Custom Field tab, switch on the **Filters** button.
 
 1. Click **Add filters**.
 
