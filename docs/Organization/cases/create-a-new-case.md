@@ -1,4 +1,4 @@
-# Create cases using templates
+# Create new cases using templates
 
 A User can create new cases using templates.
 
@@ -7,6 +7,8 @@ A User can create new cases using templates.
 <img src="../images/create_case_header.png" alt="create case on header" width="500" height="200"/>
 
 A new screen opens. A user can create cases by selecting any one of the following options: 
+
+Click the below links to create each type of new case. 
 
 1. [`Empty Case`](../cases/create-empty-case.md)
 1. [`EDR / Phishing Template`](../cases/create-case-from-template.md)

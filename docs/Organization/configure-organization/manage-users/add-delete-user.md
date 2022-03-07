@@ -12,18 +12,18 @@ On the first tab, you can find information about Users. You can add and delete u
 
 To Add the user details:
 
-1. Click on the **+** to Add user. 
+1. Click the **+** to Add user. 
 
 <img src="../images/add_user_option.png" alt="add user option" width="500" height="500"/>
 
 
 A new window opens.
 
-1. Type **Login** credentials.
-1. Type the **Name**.
+1. Enter **Login** credentials.
+1. Enter the **Name**.
 1. Select a **Profile** from the list. 
-1. Click on the **Save and add another** button to add more users. 
-1. Click on the **Save** button to add a user. 
+1. Click the **Save and add another** button to add more users. 
+1. Click the **Save** button to add a user. 
 
 <img src="../images/add_a_user.png" alt="add a user" width="1000" height="1000"/>
 
@@ -34,7 +34,7 @@ If a user has left the organization in such cases a user profile may be deleted.
 
 To Delete the user details:
 
-1. Click on the **...** for the required user.
+1. Click the ellipsis **(...)** corresponding to the required user.
 1. Click the **Delete** option.
 
 <img src="../images/delete_user_option.png" alt="delete user option" width="1000" height="1000"/>

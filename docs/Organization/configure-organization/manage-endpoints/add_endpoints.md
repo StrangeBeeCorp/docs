@@ -4,7 +4,7 @@ A user can create an endpoint.
 
 To Add an Endpoint:
 
-1. Click on the **+** button or Click on the Add a new endpoint link.
+1. Click the **+** button or Click the Add a new endpoint link.
 
 <img src="../images/add_new_endpoint.png" alt="end points" width="1000" height="1000"/>
 

@@ -1,12 +1,21 @@
 # General 
 
-The information on this page comes from templates and is populated. On the left hand side of the window, details are displayed, such as created by, created date, TLP, PAP, and severity details. The status of the alert, start date and task completion details can be seen. 
+The information on the general page comes from templates and is auto-populated. 
+In the left pane of the window, you can see details such as created by, created date, TLP, PAP, severity details, status of the alert, start date, and task completion details. 
 
-1. On the right hand side bottom of the window, type **Comments** if any for the team. 
+In the left pane of the window you can configure the PAP,TLP and Severity. 
+Refer to [`Configure Alert Details`](../cases-list/configure-pap-tlp-severity.md) for more details. 
+
+
+1. In the right pane of the window, enter **Comments** if any. 
+1. Click the **Comment** button. 
 1. Add Tags. (Refer to [`Add tags`](../cases/adding_to_a_case.md#add-tags)).
-1. Type the **Description**. 
-1. Add **Custom fields**. (Refer to [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
-1. Type the **Company name**. 
-1. Click **Comment** button. 
+1. Enter the **Description**. 
+1. Add **Custom fields**. (Refer to [`Add custom fields`](../cases-list/add-custom-fields.md))
+1. Click **Add** to enter the respective business unit and location details. 
+
+    <img src="../images/alerts-new-business-location-details.png" alt="add location and business details" width="500" height="500"/>
+
 
 <img src="../images/alerts-general-tab.png" alt="general tab alerts" width="700" height="700"/>
+

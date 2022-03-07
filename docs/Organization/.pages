@@ -2,16 +2,15 @@ Title: Manage Organization
 
 nav:
   - 'Introduction' : introduction.md
-  - 'Admin Sign In' : sign-in-as-an-admin.md
-  - 'Getting Started' : getting-started.md
+  - 'Admin sign In' : sign-in-as-an-admin.md
+  - 'Getting started' : getting-started.md
   - 'Organization' : organizations.md
-  - 'List of-incidents' : list-of-incidents.md
-  - 'Filter' : Filter-and-sort.md
+  - 'List of incidents' : list-of-incidents.md
   - 'Contacting support' : contacting-support.md
   - 'Alerts' : alerts
   - 'Cases' : cases
-  - 'List of Cases' : cases-list
-  - 'Configure Organization' : configure-organization
+  - 'List of cases' : cases-list
+  - 'Configure organization' : configure-organization
   - 'Dashboard' : dashboard
   - 'Search' : search
   - 'Task' : task

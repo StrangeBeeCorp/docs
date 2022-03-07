@@ -4,19 +4,19 @@ In this section you can find more information about updating Attachments .
 
 To copy an attachment:
 
-1. On the attachments tab, Click the **...** to view more options for attachments.
+1. On the attachments tab, Click the ellipsis **(...)** corresponding to the attachment to view more options.
 
 <img src="../images/attachment_functions.png" alt="attachment functions" width="700" height="700"/>
 
 
 ## Copy
 
-The **copy URL** option lets the user copy the url of the attachment. 
+The **copy URL** option lets you copy the url of the attachment. 
 
 ## Download
 
-The **download** option lets the user download the attachment. 
+The **download** option lets you download the attachment. 
 
 ## Remove
 
-The **Remove** option lets the user remove/delete the attachment. 
+The **Remove** option lets you remove/delete the attachment. 

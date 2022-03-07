@@ -1,4 +1,4 @@
-# Pages
+# View pages
 
 In this section you will find information regarding the lessons learnt. 
 
@@ -8,7 +8,7 @@ In this section you will find information regarding the lessons learnt.
 
 A user can add a new page.
 
-1. On the right hand side of the window, Click **+** 
+1. In the right pane of the window, Click **+** 
 
 A new window opens. 
 

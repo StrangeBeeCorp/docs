@@ -12,8 +12,8 @@ A new window opens.
 
 <img src="../images/add_attachments.png" alt="new attachment" width="500" height="500"/>
 
-1. Click on the **Drop file or Click** option in attachment. 
-2. Click on the **Confirm** button. 
+1. Click the **Drop file or Click** option in attachment. 
+2. Click the **Confirm** button. 
 
 > NOTE: A user can add one or more files simultaneously. 
 
