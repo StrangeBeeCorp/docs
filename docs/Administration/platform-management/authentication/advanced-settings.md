@@ -6,7 +6,7 @@ In this section you will find information about configuring the advanced authent
 
 To configure the advanced authentication settings:
 
-1. On the Platform Management page, in the Authentication tab, switch on the following toggle buttons as per your requirement:
+1. On the Platform Management page, in the Authentication tab, switch on the following buttons as per your requirement:
 
     1. **Enable Basic Authentication**: Authenticates HTTP requests using the login and password provided.
     1. **Enable API Key authentication**: Authenticates HTTP requests using an API key provided.

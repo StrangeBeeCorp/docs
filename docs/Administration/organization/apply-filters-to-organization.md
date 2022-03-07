@@ -4,7 +4,7 @@ In this section, you can find information about applying filters to the organiza
 
 To apply filter to an organization:
 
-1. On the Organization List page, switch on the **Filters** toggle button.
+1. On the Organization List page, switch on the **Filters** button.
 
 1. Click **Add filters**.
 

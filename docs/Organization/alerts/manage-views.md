@@ -58,7 +58,6 @@ To view stats:
 To apply filter:
 
 1. On the alerts page, switch on the Filters toggle button.
-
 1. Click **Add filters**.
 
 Apply Filter to the required field.

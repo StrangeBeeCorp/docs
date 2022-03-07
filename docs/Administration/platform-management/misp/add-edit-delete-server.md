@@ -2,7 +2,9 @@
 
 In this section, you can find information about configuring the MISP integration.
 MISP and TheHive can interact between each other in both ways:
+
 * TheHive is able to import events from a MISP instance as alerts and create cases from them.
+
 * TheHive is able to export a case into MISP as an event and update it with the artifacts flagged as IOC as MISP attributes.
 
 ## Add a new server
@@ -29,7 +31,7 @@ To set up a new server:
     
 1. Enter the **Address**.
 
-1. Switch on the toggle butoons for **Athentification**, **Do not check certificate authority**, and **Disable hostname verification** if required.
+1. Switch on the buttons for **Athentification**, **Do not check certificate authority**, and **Disable hostname verification** if required.
 
 1. In the Advanced settings section, select the filter for the TheHive organizations from the list.
 
@@ -39,7 +41,7 @@ To set up a new server:
 
 1. Click the **Update** button.
 
-   Do you want to save the modifications message appears.
+    Do you want to save the modifications message appears.
 
     <img src="../images/save-modifications-confirm.png" alt="Save Modifications" width="700" height="700"/>
 
@@ -73,7 +75,7 @@ To set up a new server:
     <img src="../images/misp-configuration-saved-message.png" alt="MISP Configuration Saved" width="400" height="200"/>
 
 
-## Edit MISP Server Details
+## Edit MISP Server
 
 1. On the Platform Management page, in the MISP tab, click the server name you want to edit.
 
@@ -81,7 +83,7 @@ To set up a new server:
 
     Set up the server for that particular server window opens.
 
-    <img src="../images/update-misp-server-details.png" alt="Edit MISP Server Details" width="1000" height="1000"/>
+    <img src="../images/update-misp-details.png" alt="Edit MISP Server Details" width="1000" height="1000"/>
 
 1. Edit the required details.
 

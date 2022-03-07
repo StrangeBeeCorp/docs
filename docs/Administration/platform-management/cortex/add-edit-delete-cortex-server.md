@@ -24,7 +24,7 @@ To set up a new server:
 
     1. Enter the **Address**.
 
-    1. witch on the toggle butoons for **Athentification**, **Do not check certificate authority**, and **Disable hostname verification** if required.
+    1. witch on the buttons for **Athentification**, **Do not check certificate authority**, and **Disable hostname verification** if required.
 
 1. In the Advanced settings section, select the filter for the TheHive organizations from the list.
 
@@ -34,7 +34,7 @@ To set up a new server:
 
 1. Click the **Add** button.
 
-   Do you want to save the modifications message appears.
+    Do you want to save the modifications message appears.
 
     <img src="../images/save-modifications-confirm.png" alt="Save Modifications" width="700" height="700"/>
 
@@ -68,7 +68,7 @@ To set up a new server:
     <img src="../images/new-cortex-server-saved-message.png" alt="New Cortex Server Configuration Saved" width="400" height="200"/>
 
 
-## Edit Cortex Server Details
+## Edit Cortex Server
 
 1. On the Platform Management page, in the Cortex tab, click the cortex server name you want to edit.
 

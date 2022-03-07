@@ -47,7 +47,7 @@ To perform Auto refresh:
 
 To view tasks as groups: 
 
-1. On the tasks list page, switch on the **tasks as groups** toggle button, the task groups will be displayed. 
+1. On the tasks list page, switch on the **tasks as groups** button, the task groups will be displayed. 
 
 <img src="../images/show-tasks-as-group.png" alt="task as group" width="1000" height="1000"/>
 
@@ -57,7 +57,6 @@ To view tasks as groups:
 To apply filter:
 
 1. On the tasks list page, switch on the Filters toggle button.
-
 1. Click **Add filters**.
 
 Apply Filter to the required field.

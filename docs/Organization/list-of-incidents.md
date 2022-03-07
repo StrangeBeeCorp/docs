@@ -97,7 +97,7 @@ The stats are displayed.
 
 To apply filter:
 
-1. On the cases list page, switch on the Filters toggle button.
+1. On the cases list page, switch on the **Filters** button.
 
 1. Click **Add filters**.
 

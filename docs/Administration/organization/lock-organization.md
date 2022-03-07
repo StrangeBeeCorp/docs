@@ -7,6 +7,6 @@ You can disable the organization by locking it.
 To lock an organization:
 
 1. Go to the preview Organization window.
-1. Switch on the **Locked**  toggle button.
+1. Switch on the **Locked** button.
 
     <img src="../images/lock-organization.png" alt="Lock an Organization" width="600" height="400"/>

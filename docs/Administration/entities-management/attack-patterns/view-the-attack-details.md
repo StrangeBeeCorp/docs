@@ -4,7 +4,7 @@ In this section, you can find information about viewing the attack pattern detai
 
 To view the details of an attack pattern:
 
-1. On the Entities Management page, in the attack patterns tab, click the link of the attack pattern whose details you want to see.
+1. On the Entities Management page, in the Attack Patterns tab, click the link of the attack pattern whose details you want to see.
 
     <img src="../images/view-attack-pattern-details1.png" alt="Attack Patterns Details link" width="1000" height="1000"/>
 

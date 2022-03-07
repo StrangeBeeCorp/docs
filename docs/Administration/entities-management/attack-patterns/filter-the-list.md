@@ -4,9 +4,9 @@ In this section, you can find information about applying filters to attack patte
 
 To apply filter to a attack pattern:
 
-1. On the Entities Management page, in the attack patterns tab, click the link of the attack pattern.
+1. On the Entities Management page, in the Attack Patterns tab, click the link of the attack pattern.
 
-1. Switch on the **Filters** toggle button.
+1. Switch on the **Filters** button.
 
 1. Click **Add filters**.
 

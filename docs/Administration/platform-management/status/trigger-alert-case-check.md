@@ -4,7 +4,7 @@ In this section you will find information about database integrity check. You ca
 
 To trigger an alert data:
 
-1. On the Platform Management page, in the status tab, click **Trigger** corresponding to the alert. 
+1. On the Platform Management page, in the Status tab, click **Trigger** corresponding to the alert. 
 
     <img src="../images/database-integrity-check-alert.png" alt="Trigger Alert Health Check" width="1000" height="1000"/>
 
@@ -26,7 +26,7 @@ To trigger a case data:
 
     <img src="../images/database-integrity-check-case.png" alt="Trigger Case Health Check" width="1000" height="1000"/>
 
-   A trigger case health check confirmation dialog box appears.
+    A trigger case health check confirmation dialog box appears.
 
 1. Click **OK**.
 

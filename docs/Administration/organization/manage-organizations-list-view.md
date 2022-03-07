@@ -2,6 +2,8 @@
 
 In this section you can find information about how to save and manage the current organization list view. 
 
+## Save Organization List View
+
 To save the current organization list view:
 
 1. On the organization list page, click the **default** button.
@@ -23,6 +25,8 @@ To save the current organization list view:
 
     <img src="../images/view-saved-message.png" alt="View Saved" width="400" height="200"/>
     
+## Delete Organization List View
+
 To delete a view:
 
 1. On the organization list page, click the **default** button

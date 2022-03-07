@@ -5,7 +5,6 @@ In this section, you can find information about applying filters.
 To apply filter:
 
 1. On the list of incidents page, switch on the Filters toggle button.
-
 1. Click **Add filters**.
 
 Apply Filter to the required field.
