@@ -4,7 +4,7 @@ If a user is on contract in the organization and the contract ends, in such case
 
 To lock the user details:
 
-1. Click on the **...**.
+1. Click the ellipsis **(...)** corresponding to the user details that you want to lock.
 1. Click the **Lock** option.
 
 <img src="../images/lock_user_option.png" alt="lock user option" width="1000" height="1000"/>

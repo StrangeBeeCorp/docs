@@ -6,12 +6,13 @@ A case provides information on suspicious activity in the environment. It provid
 
 Cases can be created from various sources. Each security case consists of a title, tags, task rules, obsevable rules a description of case details, and all the details related to the case that help in building an argument for identifying and dealing with particular threats.
 
-## To view case details
+## View case details
 
-The user can click on any of the cases in the list to view more details. The case list page displays various tabs that have more details about each case such general tab, tasks, observables, TTPs, attachments, timeline, pages tab. 
+To view case details: 
 
-On the Left hand side of the window the user can configure the PAP,TLP and Severity of the case. 
-Refer to ['Configure Case Details'](../cases-list/configure-pap-tlp-severity.md) for more details. 
+1. Click on any of the cases displayed in the list to view more details. 
+
+    The case list page displays various tabs that have more details about each case such general tab, tasks, observables, TTPs, attachments, timeline, pages tab. 
 
 <img src="../images/cases-list-go-to-details-page.png" alt="cases list menu list" width="700" height="700"/>
 

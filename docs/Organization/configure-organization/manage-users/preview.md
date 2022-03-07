@@ -6,7 +6,7 @@ To preview the user details:
 
 On the list of users page, there is a Preview button corresponding to the specific user name.
 
-1. Click on the **Preview** option. 
+1. Click the **Preview** option. 
 
 <img src="../images/preview_button.png" alt="preview users" width="1000" height="1000"/>
 

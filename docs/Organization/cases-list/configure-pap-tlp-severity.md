@@ -1,5 +1,7 @@
 # Configure Case details
 
+In this section you can find information about configuring case details. 
+
 Every case has three important elements the TLP, PAP and Severity. 
 TLP defines the confidentiality of information. PAP is the level of exposure of information to the outsde world and Severity implies the severity of information. 
 
@@ -9,7 +11,8 @@ TLP defines the confidentiality of information. PAP is the level of exposure of 
 
 <img src="../images/configure-tlp.png" alt="TLP" width="500" height="500"/>
 
-## Configure PAP (level of exposure of information)
+
+## Configure PAP (Level of exposure of information)
 
 1. Select **PAP**, (White/Green/Amber/Red) from the list.
 

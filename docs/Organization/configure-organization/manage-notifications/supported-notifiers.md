@@ -2,11 +2,11 @@
 
 1. Click EmailerToAddr.
 
-    1. Type **Subject**.
-    1. Type the email address of the sender in **From**.
-    1. Type the email address of the receiver in **To**.
+    1. Enter **Subject**.
+    1. Enter the email address of the sender in **From**.
+    1. Enter the email address of the receiver in **To**.
     1. Click **Add variable** to add in the **Template** field.
-    1. Click **Save** button.
+    1. Click the **Save** button.
 
     <img src="../images/EmailerToAddr.png" alt="Emailer To Addr" width="1000" height="1000"/>
 
@@ -14,7 +14,7 @@
 
     1. Select **Endpoint**. (Refer to [`Add endpoints`](../manage-endpoints/add_endpoints.md))
     1. Select the HTTP **Method**.
-    1. Either type the **URL**. 
+    1. Either enter the **URL**. 
     1. Or select the option **Use endpoint url as prefix**. 
     1. Click **Add variable** to add in the **Template** field.
     1. Select option to **Log errors**. 
@@ -26,17 +26,17 @@
     1. Select the option **Proxy**. 
     1. Select the option **Do not check certificate Authority**. (Not recommended)
     1. Select the option **Disable hostname verification**.
-    1. Click **Save** button.
+    1. Click the **Save** button.
 
     <img src="../images/HttpRequest.png" alt="Http Request" width="1000" height="1000"/>
 
 1. Click MatterMost.
 
     1. Select **Endpoint**.(Refer to [`Add endpoints`](../manage-endpoints/add_endpoints.md))
-    1. Type the **Username**.
-    1. Type the **Channel**.
+    1. Enter the **Username**.
+    1. Enter the **Channel**.
     1. Click **Add variable** to add in the **Template** field.
-    1. Click **Save** button.
+    1. Click the **Save** button.
 
     <img src="../images/MatterMost.png" alt="Matter Most" width="1000" height="1000"/>
 
@@ -44,8 +44,8 @@
 
     1. Select **Endpoint**. (Refer to [`Add endpoints`](../manage-endpoints/add_endpoints.md))
     1. Click **Add variable** to add in the **Text Template** field.
-    1. Type the **Username**.
-    1. Type the **Channel**.
+    1. Enter the **Username**.
+    1. Enter the **Channel**.
     1. Check the box for **Advanced Settings** 
     > If you need help filling the Advance Settings fields, check the Slack documentation link 
     1. Enter a **Blocks template**.
@@ -58,14 +58,14 @@
     1. Enter a valid **Parse string**.
     1. Select **Unfirl Links**.
     1. Select **Unfirl Media**. 
-    1. Click **Save** button.
+    1. Click the **Save** button.
 
     <img src="../images/Slack.png" alt="Slack" width="1000" height="1000"/>
 
 
 1. Click Kafka.
 
-    1. Type a **Topic**.
-    1. Type type the list of servers in **Bootstrap servers**. 
+    1. Enter a **Topic**.
+    1. Enter type the list of servers in **Bootstrap servers**. 
 
     <img src="../images/Kafka.png" alt="Kafka" width="1000" height="1000"/>

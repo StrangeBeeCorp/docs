@@ -1,4 +1,5 @@
 Title: Cases
 nav:
-  - 'about-a-case.md'
-  - 'create-a-new-case.md'
+
+  - About cases : 'about-a-case.md'
+  - Create a new case : 'create-a-new-case.md'

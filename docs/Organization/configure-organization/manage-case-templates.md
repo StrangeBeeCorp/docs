@@ -17,23 +17,23 @@ The case templates tab, shows a list of cases and corresponding case details suc
 
 To Add a case template: 
 
-1. Click on the **+** , to **Add** a case template. 
+1. Click the **+** , to **Add** a case template. 
 
 <img src="../images/add-a-case-template.png" alt=" add case templates" width="700" height="700"/>
 
 A new window opens. 
 
-1. Type the case title prefix in the **Prefix**.
-1. Type the case template **Name**. 
-1. Type the case template **Display Name**. 
+1. Enter the case title prefix in the **Prefix**.
+1. Enter the case template **Name**. 
+1. Enter the case template **Display Name**. 
 1. Select **TLP**, (White/Green/Amber/Red).
 1. Select **PAP**, (White/Green/Amber/Red).
 1. Select **Severity**, (Low/Medium/High/Critical).
-1. Click **+** to add **Tags**. (*Refer to*[`Add tags`](../cases/adding_to_a_case.md#add-tags)).
-1. Type the case description in the **Description**. 
-1. Click **+** to Add Tasks. (*Refer to* [`Add tasks`](../cases/adding_to_a_case.md#add-tasks)).
-1. Click **+** to Add Custom Fields. (*Refer to* [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
-1. Click **Confirm case template creation** button. 
+1. Click **+** to add **Tags**. (Refer to [`Add tags`](../cases/adding_to_a_case.md#add-tags)).
+1. Enter the case description in the **Description**. 
+1. Click **+** to Add Tasks. (Refer to [`Add tasks`](../cases/adding_to_a_case.md#add-tasks)).
+1. Click **+** to Add Custom Fields. (Refer to [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
+1. Click the **Confirm case template creation** button. 
 
 <img src="../images/adding-a-case-template.png" alt="adding a case templates" width="1000" height="1000"/>
 
@@ -49,7 +49,7 @@ To Edit a case template:
 A new window opens. 
 
 1. Edit the required fields.    
-1. Click **Confirm case template edition** button. 
+1. Click the **Confirm case template edition** button. 
 
 <img src="../images/edit-a-case-template.png" alt=" edit case templates" width="700" height="700"/>
 
@@ -77,12 +77,12 @@ To Import a case template:
 
 <img src="../images/import-case-templates.png" alt=" import case templates" width="700" height="700"/>
 
-1. Click on the **Import Case Template** option. 
+1. Click the **Import Case Template** option. 
 
 A new window opens. 
 
-1. Click on the **Drop file or Click** option in attachment. 
-2. Click on the **Confirm** button. 
+1. Click the **Drop file or Click** option in attachment. 
+2. Click the **Confirm** button. 
 
 > NOTE: The file must be a valid JSON file. You can use the exported case template directly from theHive platform. 
 
@@ -94,7 +94,7 @@ A new window opens.
 
 To Export a case template: 
 
-1. Click on the **Export Case Template** option.
+1. Click the **Export Case Template** option.
 1. A file is downloaded, that can be exported/sent.
 
 <img src="../images/export-case-templates.png" alt=" export case templates" width="700" height="700"/>
