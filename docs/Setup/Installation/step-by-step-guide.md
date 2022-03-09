@@ -1,83 +1,84 @@
 # Step-by-Step guide
 
-This page is a step by step installation and configuration guide to get an TheHive 4 instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
+This page is a step by step installation and configuration guide to get an TheHive 5 instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
 
 
 ## Java Virtual Machine
 
-!!! Example ""
-
+!!! Example
+    
     === "Debian"
 
         ```bash
-        apt-get install -y openjdk-8-jre-headless
-        echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+        apt-get install -y openjdk-11-jre-headless
+        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
         ```
-
-    === "RPM"
     
+    === "RPM"
+
         ```bash
-        yum install -y java-1.8.0-openjdk-headless.x86_64
-        echo JAVA_HOME="/usr/lib/jvm/jre-1.8.0" >> /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+        sudo yum install -y java-11-openjdk-headless.x86_64
+        echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" | sudo tee -a /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/jre-11-openjdk"
         ```
 
     === "Other"
+        The installation requires Java 11, so refer to your system documentation to install it.
 
-        The installation requires Java 8, so refer to your system documentation to install it.
-
-
-!!! Note
-    TheHive can be loaded by Java 11, but not the stable version of Cassandra, which still requires Java 8. 
-    If you set up a cluster for the database distinct from TheHive servers:
-
-      - Cassandra nodes can be loaded by Java 8
-      - TheHive nodes can be loaded by Java 11 
-    
-    For standalone servers, with TheHive and Cassandra on the same OS, we recommend having only Java 8 installed for both applications.
 
 ## Cassandra database
 
-Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version  **3.11.x** of Cassandra.
+Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version  **4.0.x** of Cassandra.
+
+!!! Warning
+    If you are upgrading from Cassandra 3.x, please follow the dedicated guide. This part is relevant for fresh installation only.
 
 ### Install from repository
 
 !!! Example ""
+
     === "Debian"
         
         1. Add Apache repository references
 
             ```bash
-            curl -fsSL https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
-            echo "deb http://www.apache.org/dist/cassandra/debian 311x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+            curl https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /etc/apt/trusted.gpg.d/cassandra-archive.gpg
+            echo "deb https://downloads.apache.org/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
             ```
 
         2. Install the package
 
             ```bash
             sudo apt update
-            sudo apt install cassandra
+            sudo apt install -y cassandra
             ```
-
 
     === "RPM"
 
-        1. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
+        1. Add Cassandra repository keys
 
             ```bash
+            rpm --import https://downloads.apache.org/cassandra/KEYS
+            ```
+
+        2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
+
+            ```bash
+            cat <<EOF | sudo tee  -a /etc/yum.repos.d/cassandra.repo
             [cassandra]
             name=Apache Cassandra
-            baseurl=https://downloads.apache.org/cassandra/redhat/311x/
+            baseurl=https://downloads.apache.org/cassandra/redhat/40x/
             gpgcheck=1
             repo_gpgcheck=1
             gpgkey=https://downloads.apache.org/cassandra/KEYS
+            EOF
             ```
 
         2. Install the package
 
             ```bash
-            yum install -y cassandra
+            sudo yum install -y cassandra
             ```
 
     === "Other"
@@ -89,22 +90,6 @@ By default, data is stored in `/var/lib/cassandra`.
 
 
 ### Configuration
-
-Start by changing the `cluster_name` with `thp`. Run the command `cqlsh`: 
-
-```bash
-cqlsh localhost 9042
-```
-
-```sql
-cqlsh> UPDATE system.local SET cluster_name = 'thp' where key='local';
-```
-
-Exit and then run:
-
-```bash
-nodetool flush
-```
 
 Configure Cassandra by editing `/etc/cassandra/cassandra.yaml` file.
 
@@ -134,7 +119,7 @@ Then restart the service:
     === "Debian"
 
         ```bash
-        service cassandra restart
+        sudo service cassandra start
         ```
 
     === "RPM"
@@ -142,13 +127,10 @@ Then restart the service:
         Run the service and ensure it restart after a reboot:
 
         ```bash
-        systemctl daemon-reload
-        service cassandra start
-        chkconfig cassandra on
+        sudo systemctl daemon-reload
+        sudo service cassandra start
+        sudo systemctl enable cassandra
         ```
-
-        !!! Warning
-            Cassandra service does not start well with the new systemd version. There is an existing issue and a fix on Apache website: [https://issues.apache.org/jira/browse/CASSANDRA-15273]()
 
 By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
@@ -168,22 +150,79 @@ To add security measures in Cassandra , refer the the [related administration gu
 
 To add Cassandra nodes, refer the the [related administration guide](../Architecture/3_nodes_cluster.md).
 
-## Indexing engine
+## Indexing engine: Elasticsearch
 
-Starting from TheHive 4.1.0, a solution to store data indexes is required. These indexes should be unique and the same for all nodes of TheHive cluster. 
+TheHive requires Elasticsearch to manage data indices. 
 
-- TheHive embed a Lucene engine you can use for standalone server
-- For clusters setups, an instance of Elasticsearch is required 
+### Installation
 
 !!! Example ""
-    === "Local lucene engine"
+    === "Debian"
+        
+        1. Add Elasticsearch repository keys
 
-        Create a folder dedicated to host indexes for TheHive: 
+            ```bash
+                wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+                sudo apt-get install apt-transport-https
+            ```
 
-        ```bash
-        mkdir /opt/thp/thehive/index
-        chown thehive:thehive -R /opt/thp/thehive/index
-        ```
+        2. Add the DEB repository of Elasticsearch 
+
+            ```bash
+            echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+
+
+            ```
+
+        3. Install the package
+
+            ```bash
+            sudo apt update && sudo apt install -y elasticsearch
+            ```
+
+
+    === "RPM"
+
+        1. Add Elasticsearch repository references
+
+            ```bash
+                rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+            ```
+
+        2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
+
+            ```bash
+            cat <<EOF | sudo tee  -a /etc/yum.repos.d/elasticsearch.repo
+            [elasticsearch]
+            name=Elasticsearch repository for 7.x packages
+            baseurl=https://artifacts.elastic.co/packages/7.x/yum
+            gpgcheck=1
+            gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+            enabled=0
+            autorefresh=1
+            type=rpm-md
+            EOF
+            ```
+
+        3. Install the package
+
+            ```bash
+            sudo yum install --enablerepo=elasticsearch elasticsearch
+            ```
+        
+        !!! Note "References"
+            - [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html ](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+
+    === "Other"
+
+        Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+
+
+### Configuration 
+
+#### `/etc/elasticsearch/elasticsearch.yml`
+
+!!! Example ""
 
     === "Elasticsearch"
 
@@ -192,9 +231,19 @@ Starting from TheHive 4.1.0, a solution to store data indexes is required. These
         !!! Warning
             Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line: 
 
-            ```yaml
-            script.allowed_types: inline,stored
+            ```bash
+            cat << EOF | sudo tee /etc/elasticsearch/elasticsearch.yml
+            http.host: 127.0.0.1
+            transport.host: 127.0.0.1
+            cluster.name: hive
+            thread_pool.search.queue_size: 100000
+            path.logs: "/var/log/elasticsearch"
+            path.data: "/var/lib/elasticsearch"
+            xpack.security.enabled: false
+            script.allowed_types: "inline,stored"
+            EOF
             ```
+
 
 
 !!! Note
@@ -202,7 +251,15 @@ Starting from TheHive 4.1.0, a solution to store data indexes is required. These
     - Like data and files, indexes should be part of the backup policy
     - Indexes can removed and created again
 
+#### `/etc/elasticsearch/jvm.options.d/jvm.options`
 
+```bash
+cat << EOF | sudo tee -a /etc/elasticsearch/jvm.options.d/jvm.options
+-Dlog4j2.formatMsgNoLookups=true
+-Xms4g
+-Xmx4g
+EOF
+```
 
 ## File storage
 
@@ -222,7 +279,7 @@ For standalone production and test servers , we recommends using local filesyste
         To store files on the local filesystem, start by choosing the dedicated folder:
 
         ```bash
-        mkdir -p /opt/thp/thehive/files
+        sudo mkdir -p /opt/thp/thehive/files
         ```
 
         This path will be used in the configuration of TheHive.
@@ -236,10 +293,6 @@ For standalone production and test servers , we recommends using local filesyste
     === "S3 with Min.io"
 
         An example of installing, configuring and use Min.IO is detailed in [this documentation](../Architecture/3_nodes_cluster.md).
-
-    === "HDFS with Hadoop"
-
-        An example of installing, configuring and use Apache Hadoop is detailed in [this documentation](./hadoop.md).
 
 
 
@@ -259,13 +312,14 @@ All packages are published on our packages repository. We support Debian and RPM
     === "Debian"
  
         ```bash
-        curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
+        wget -O- https://download.thehive-project.org/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+        
         ```
  
     === "RPM"
 
         ```bash
-        sudo rpm --import https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY
+        sudo rpm --import https://download.thehive-project.org/strangebee.gpg 
         ```
 
 We also release stable and beta version of the applications.
@@ -279,27 +333,30 @@ Install TheHive 4.x package of the stable version by using the following command
     === "Debian"
 
         ```bash
-        echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
+        echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.staging.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
-        sudo apt-get install thehive4
+        sudo apt-get install -y thehive
         ```
 
     === "RPM"
         1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/thehive-project.repo`:
 
             ```bash
-            [thehive-project]
+            cat <<EOF | sudo tee -a /etc/yum.repos.d/strangebee.repo
+            [thehive]
             enabled=1
             priority=1
-            name=TheHive-Project RPM repository
-            baseurl=https://rpm.thehive-project.org/release/noarch
+            name=StrangeBee RPM repository
+            baseurl=https://rpm.staging.strangebee.com/thehive-5.x/noarch
+            gpgkey=https://download.thehive-project.org/strangebee.gpg
             gpgcheck=1
+            EOF
             ```
 
         2. Then install the package using `yum`:
 
             ```bash
-            yum install thehive4
+            yum install -y thehive
             ```
     
     === "Other"
@@ -313,7 +370,7 @@ Install TheHive 4.x package of the stable version by using the following command
         ln -s thehive4-x.x.x thehive
         ```
 
-        2. Prepare the system
+        1. Prepare the system
 
             It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
 
