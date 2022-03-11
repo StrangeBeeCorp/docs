@@ -16,6 +16,12 @@
 # - 16 GB of RAM
 # 
 # maintained by: ©StrangeBee - https://www.strangebee.com
+#
+#
+# Usage:
+# 
+# Run: sudo -v && bash install-DEB.sh
+
 
 set -o errexit
 
