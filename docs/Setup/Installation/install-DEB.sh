@@ -59,7 +59,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 LOGFILE="/tmp/install-thehive.log"
 
-[[ -f ${LOGFILE} ]] && rm /tmp/install-thehive.log
+[[ -f ${LOGFILE} ]] && rm ${LOGFILE}
 exec 3>$(tty)
 exec &> ${LOGFILE}
 
