@@ -4,10 +4,11 @@ This page will guide you on how to use the docker image of TheHive
 
 ```
 // TODO change with strangebee image
-docker run --rm -p 9000:9000 <thehive-image>
+docker run --rm -p 9000:9000 <thehive-image>:<version>
 ```
 This will start an instance of thehive using a local database and index. Note that the data will be deleted when the container is deleted. So this should only be used for evaluation and tests.
 
+We recommend to always set the version of your docker image in production scenarios and not to use `latest`. 
 ### Recommended setup
 
 ```
@@ -151,20 +152,20 @@ akka.discovery {
 
 ### Pod probes
 
-You can use the following probes to make sure the application is started and running correctly
+You can use the following probes to make sure the application is started and running correctly. The first startup can be a bit slow so you may enable those probes after validating the correct start of the application.
 
 **Note**: when applying a big migration, it's recommended to deactivate those probes as the http server will not start until the migration is done
 
 ```yaml
 startupProbe:
     httpGet:
-        path: /api/v1/status
+        path: /api/v1/status/public
         port: 9000
     failureThreshold: 30
     periodSeconds: 10
 livenessProbe:
     httpGet:
-        path: /api/v1/status
+        path: /api/v1/status/public
         port: 9000
     periodSeconds: 10
 ```

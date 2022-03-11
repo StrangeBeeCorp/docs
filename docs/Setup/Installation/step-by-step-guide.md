@@ -154,6 +154,7 @@ To add Cassandra nodes, refer the the [related administration guide](../Architec
 
 TheHive requires Elasticsearch to manage data indices. 
 
+** With TheHive 5.0, the version 8.x of Elasticsearch cannot be used with TheHive **, you need to use a version <= 7
 ### Installation
 
 !!! Example ""
