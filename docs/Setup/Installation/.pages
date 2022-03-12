@@ -1,3 +1,6 @@
 nav:
-  - Step by step guide: 'step-by-step-guide.md'
+  - New installation: 'step-by-step-guide.md'
+  - Upgrade from thehive 4.1.x: 'upgrade-from-4.1.x.md'
+  - Upgrade a cluster: 'upgrade-cluster.md'
   - Using Docker: 'docker.md'
+  
