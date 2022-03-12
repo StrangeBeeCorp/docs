@@ -297,7 +297,7 @@ For standalone production and test servers ,we recommends using local filesystem
 
 
 
-## TheHive
+## :material-beehive-outline: TheHive
 
 This part contains instructions to install TheHive and then configure it.
 

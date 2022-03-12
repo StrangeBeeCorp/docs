@@ -3,7 +3,7 @@
 ## Overview
 TheHive can be deployed on a standalone server or as a cluster. The application relies on:
 
-:fontawesome-solid-database:  [Apache Cassandra](https://cassandra.apache.org/_/index.html) to store data (Supported version: 4.x).
+:fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) to store data (Supported version: 4.x).
 
 :fontawesome-solid-list:  [Elasticsearch](https://www.elastic.co) as indexing engine (Supported version: 7.x).
 
@@ -16,19 +16,19 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 ## Resources
 Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds:
 
-| Number of users | CPU  | RAM   |
-| --------------- | ---- | ----- |
-| < 20            | 4    | 16    |
-| < 50            | 8    | 32    |
+| Number of users                                | CPU :fontawesome-solid-microchip: | RAM :fontawesome-solid-memory: |
+| -----------------------------------------------|: --------------------------------- :|: -------------------------- :|
+| :fontawesome-solid-user-group: < 20            | 4                                 | 16 GB                      |
+| :fontawesome-solid-user-group: < 50            | 8                                 | 32 GB                      |
 
 
 ## Operating systems
 TheHive has been tested and is supported on following operating systems: 
 
-- :fontawesome-brands-ubuntu: Ubuntu 20.04 LTS
-- :fontawesome-brands-linux: Debian 11
-- :fontawesome-brands-redhat: RHEL 8
-- :fontawesome-brands-fedora: Fedora 35
+- :material-ubuntu: Ubuntu 20.04 LTS
+- :material-debian: Debian 11 
+- :material-redhat: RHEL 8
+- :material-fedora: Fedora 35
 
 StrangeBee also provides an [official Docker image](https://hub.docker.com/r/thehiveproject/thehive). 
 
@@ -59,10 +59,10 @@ TheHive can be used on virtual or physical servers.
 
 Our [step-by-step guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
-### Using Docker 
+### Using Docker :material-docker:
 An Official Docker image publicly available. Follow our [installation guide for Docker](Installation/docker.md) tu use it in production.
 
-### Using Kubernetes
+### Using Kubernetes :material-kubernetes:
 
 XXX
 
