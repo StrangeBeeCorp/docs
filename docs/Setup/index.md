@@ -54,7 +54,7 @@ StrangeBee also provides an [official Docker image](https://hub.docker.com/r/the
 For each release, DEB, RPM and ZIP binary packages are built and provided.
 Discover how to install TheHive quicky by following our installation guides:
 
-### Using a dedicated server
+### New installation on a dedicated server
 Our [step-by-step guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
 ### Using Docker 
@@ -91,12 +91,21 @@ The configuration should only contain the necessary information to start the app
 All other settings are available in the UI of the application. 
 
 
-## SPecific uses Cases
+## Secific uses cases
 
-### Cluster with 3 TheHive nodes
-If you require the installation of a cluster (fault tolerant, H.A., ...), the folling [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
+### Install a cluster with 3 nodes
+If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
 
   - 3 TheHive nodes
   - 3 Cassandra nodes
-  - 3 Elasticsearch nodes, 
-  - 3 Min.IO nodes.
+  - 3 Elasticsearch nodes
+  - 3 Min.IO nodes
+
+### Update from TheHive 4.1.x
+
+XXX
+
+### Update from TheHive 3.x
+TheHive 3.x is not supported any more since 31st of December, 2021. 
+
+Contact [StrangeBee](https://www.strangebee.com) for further assistance at [contact@strangebee.com](contact@strangebee.com). 
