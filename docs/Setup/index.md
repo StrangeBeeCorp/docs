@@ -25,10 +25,10 @@ Hardware requirements depends on the number of concurrent users (including integ
 ## Operating systems
 TheHive has been tested and is supported on following operating systems: 
 
-- Ubuntu 20.04 LTS
-- Debian 11
-- RHEL 8
-- Fedora 35
+- :fontawesome-brands-ubuntu: Ubuntu 20.04 LTS
+- :fontawesome-brands-linux: Debian 11
+- :fontawesome-brands-redhat: RHEL 8
+- :fontawesome-brands-fedora: Fedora 35
 
 StrangeBee also provides an [official Docker image](https://hub.docker.com/r/thehiveproject/thehive). 
 
@@ -54,7 +54,9 @@ StrangeBee also provides an [official Docker image](https://hub.docker.com/r/the
 For each release, DEB, RPM and ZIP binary packages are built and provided.
 Discover how to install TheHive quicky by following our installation guides:
 
-### New installation on a dedicated server
+### Use a dedicated server
+TheHive can be used on virtual or physical servers.
+
 Our [step-by-step guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
 ### Using Docker 
