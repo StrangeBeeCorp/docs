@@ -6,7 +6,7 @@ This page is a step by step installation and configuration guide to get an insta
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
-=== "Debian"
+=== "DEB"
 
     ```bash
     sudo apt install openjdk-11-jre-headless
@@ -18,8 +18,8 @@ This page is a step by step installation and configuration guide to get an insta
 === "RPM"
 
     ```bash
-    sudo yum install -y java-11-openjdk-headless.x86_64
-    echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" | sudo tee -a /etc/environment
+    sudo yum install java-11-openjdk-headless.x86_64
+    echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" |sudo tee -a /etc/environment
     export JAVA_HOME="/usr/lib/jvm/jre-11-openjdk"
     ```
 
@@ -36,7 +36,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
 
 ### Installation
 
-=== "Debian"
+=== "DEB"
     
     1. Add Apache repository references
 
@@ -62,21 +62,19 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
 
     2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
 
-        ```bash
-        cat <<EOF | sudo tee  -a /etc/yum.repos.d/cassandra.repo
+        ```bash title="/etc/yum.repos.d/cassandra.repo"
         [cassandra]
         name=Apache Cassandra
         baseurl=https://downloads.apache.org/cassandra/redhat/40x/
         gpgcheck=1
         repo_gpgcheck=1
         gpgkey=https://downloads.apache.org/cassandra/KEYS
-        EOF
         ```
 
-    2. Install the package
+    3. Install the package
 
         ```bash
-        sudo yum install -y cassandra
+        sudo yum install cassandra
         ```
 
 === "Other"
@@ -92,9 +90,9 @@ By default, data is stored in `/var/lib/cassandra`.
 Configure Cassandra by editing `/etc/cassandra/cassandra.yaml` file.
 
 
-```yaml
+```yaml title="/etc/cassandra/cassandra.yaml"
 # content from /etc/cassandra/cassandra.yaml
-
+[..]
 cluster_name: 'thp'
 listen_address: 'xx.xx.xx.xx' # address for nodes
 rpc_address: 'xx.xx.xx.xx' # address for clients
@@ -109,11 +107,12 @@ commitlog_directory: '/var/lib/cassandra/commitlog'
 saved_caches_directory: '/var/lib/cassandra/saved_caches'
 hints_directory: 
   - '/var/lib/cassandra/hints'
+[..]
 ```
 
 ### Start the service 
 
-=== "Debian"
+=== "DEB"
 
     ```bash
     sudo systemctl start cassandra
@@ -147,7 +146,7 @@ For additional configuration options, refer to:
 - [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html)
 
 
-##  Elasticsearch
+## :fontawesome-solid-list: Elasticsearch
 
 TheHive requires Elasticsearch to manage data indices. 
 
@@ -155,7 +154,7 @@ TheHive requires Elasticsearch to manage data indices.
 
 ### Installation
 
-=== "Debian"
+=== "DEB"
     
     1. Add Elasticsearch repository keys
 
@@ -188,8 +187,7 @@ TheHive requires Elasticsearch to manage data indices.
 
     2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
 
-        ```bash
-        cat <<EOF | sudo tee  -a /etc/yum.repos.d/elasticsearch.repo
+        ```bash title="/etc/yum.repos.d/elasticsearch.repo"
         [elasticsearch]
         name=Elasticsearch repository for 7.x packages
         baseurl=https://artifacts.elastic.co/packages/7.x/yum
@@ -198,7 +196,6 @@ TheHive requires Elasticsearch to manage data indices.
         enabled=0
         autorefresh=1
         type=rpm-md
-        EOF
         ```
 
     3. Install the package
@@ -221,7 +218,7 @@ TheHive requires Elasticsearch to manage data indices.
 
 Elasticsearch configuration should contain the following lines: 
 
-```yaml
+```yaml title="/etc/elasticsearch/elasticsearch.yml"
 http.host: 127.0.0.1
 transport.host: 127.0.0.1
 cluster.name: hive
@@ -251,7 +248,7 @@ add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines
 
 ### Sart the service
 
-=== "Debian"
+=== "DEB"
 
     ```bash
     sudo systemctl start elasticsearch
@@ -311,170 +308,97 @@ This part contains instructions to install TheHive and then configure it.
 
 All packages are published on our packages repository. We support Debian and RPM packages as well as binary packages (zip archive). All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY). Its fingerprint is `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`.
 
-!!! Example ""
+=== "DEB"
+    ```bash
+    wget -O- https://download.thehive-project.org/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+    ```
 
-    === "Debian"
- 
-        ```bash
-        wget -O- https://download.thehive-project.org/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-        
+=== "RPM"
+    ```bash
+    sudo rpm --import https://download.thehive-project.org/strangebee.gpg 
+    ```
+
+
+Install TheHive package by using the following commands:
+
+
+=== "DEB"
+
+    ```bash
+    echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.staging.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+    sudo apt-get update
+    sudo apt-get install -y thehive
+    ```
+
+=== "RPM"
+    1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/thehive-project.repo`:
+
+        ```bash title="/etc/yum.repos.d/strangebee.repo"
+        [thehive]
+        enabled=1
+        priority=1
+        name=StrangeBee RPM repository
+        baseurl=https://rpm.staging.strangebee.com/thehive-5.x/noarch
+        gpgkey=https://download.thehive-project.org/strangebee.gpg
+        gpgcheck=1
         ```
- 
-    === "RPM"
+
+    2. Then install the package using `yum`:
 
         ```bash
-        sudo rpm --import https://download.thehive-project.org/strangebee.gpg 
+        sudo yum install thehive
         ```
 
-We also release stable and beta version of the applications.
-
-#### Stable versions
-
-Install TheHive 4.x package of the stable version by using the following commands:
-
-!!! Example ""
-
-    === "Debian"
-
-        ```bash
-        echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.staging.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-        sudo apt-get update
-        sudo apt-get install -y thehive
-        ```
-
-    === "RPM"
-        1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/thehive-project.repo`:
-
-            ```bash
-            cat <<EOF | sudo tee -a /etc/yum.repos.d/strangebee.repo
-            [thehive]
-            enabled=1
-            priority=1
-            name=StrangeBee RPM repository
-            baseurl=https://rpm.staging.strangebee.com/thehive-5.x/noarch
-            gpgkey=https://download.thehive-project.org/strangebee.gpg
-            gpgcheck=1
-            EOF
-            ```
-
-        2. Then install the package using `yum`:
-
-            ```bash
-            yum install -y thehive
-            ```
-    
-    === "Other"
-
-        1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
+=== "Other"
+    1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
 
         ```bash
         cd /opt
-        wget https://download.thehive-project.org/thehive4-latest.zip
-        unzip thehive4-latest.zip
-        ln -s thehive4-x.x.x thehive
+        wget https://download.thehive-project.org/thehive-latest.zip
+        unzip thehive-latest.zip
+        sudo ln -s thehive-x.x.x thehive
         ```
 
-        1. Prepare the system
-
-            It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
-
-            If you'd rather start the application as a service, use the following commands:
-
-            ```bash
-            addgroup thehive
-            adduser --system thehive
-            chown -R thehive:thehive /opt/thehive
-            mkdir /etc/thehive
-            touch /etc/thehive/application.conf
-            chown root:thehive /etc/thehive
-            chgrp thehive /etc/thehive/application.conf
-            chmod 640 /etc/thehive/application.conf
-            ```
-
-            Copy the systemd script in `/etc/systemd/system/thehive.service`.
-
-            ```bash
-            cd /tmp
-            wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
-            cp thehive.service /etc/systemd/system/thehive.service
-            ```
-
-
-#### Beta versions
-
-To install beta versions of TheHive4, use the following setup:
-
-!!! Example ""
-
-    === "Debian"
+    2. Prepare the system. It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
 
         ```bash
-        echo 'deb https://deb.thehive-project.org beta main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-        sudo apt-get update
-        sudo apt-get install thehive4
+        sudo addgroup thehive
+        sudo adduser --system thehive
+        sudo chown -R thehive:thehive /opt/thehive
+        sudo mkdir /etc/thehive
+        sudo touch /etc/thehive/application.conf
+        sudo chown root:thehive /etc/thehive
+        sudo chgrp thehive /etc/thehive/application.conf
+        sudo chmod 640 /etc/thehive/application.conf
         ```
 
-    === "RPM"
+    3. Copy the systemd script in `/etc/systemd/system/thehive.service`.
 
-        1. setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/thehive-project.repo`:
+        ```bash
+        cd /tmp
+        wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
+        sudo cp thehive.service /etc/systemd/system/thehive.service
+        ```
 
-            ```bash
-            [thehive-project]
-            enabled=1
-            priority=1
-            name=TheHive-Project RPM repository
-            baseurl=https://rpm.thehive-project.org/beta/noarch
-            gpgcheck=1
-            ```
-
-        2. Then install the package using `yum`:
-
-            ```bash
-            yum install thehive4
-            ```
-
-    === "Other"
-
-        1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
-
-            ```bash
-            cd /opt
-            wget https://download.thehive-project.org/thehive4-beta-latest.zip
-            unzip thehive4-beta-latest.zip
-            ln -s thehive4-x.x.x thehive
-            ```
-        
-        2. Prepare the system
-
-            It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
-
-            If you'd rather start the application as a service, use the following commands:
-
-            ```bash
-            addgroup thehive
-            adduser --system thehive
-            chown -R thehive:thehive /opt/thehive
-            mkdir /etc/thehive
-            touch /etc/thehive/application.conf
-            chown root:thehive /etc/thehive
-            chgrp thehive /etc/thehive/application.conf
-            chmod 640 /etc/thehive/application.conf
-            ```
-
-            Copy the systemd script in `/etc/systemd/system/thehive.service`.
-
-            ```bash
-            cd /tmp
-            wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
-            cp thehive.service /etc/systemd/system/thehive.service
-            ```
-
-!!! Warning
-
-    We recommend using or playing with Beta version **for testing purpose only**.
 
 
 ### Configuration
+
+The configuration coming with binary packages is pre-configured for standalone installation, everything on the same server. 
+
+In this situation, at this stage, you might need to adjust following parameters accordingly:
+
+```yaml title="/etc/thehive/application.conf"
+[..]
+# Service configuration
+application.baseUrl = "http://localhost:9000" # (1)
+play.http.context = "/"                       # (2)
+[..]
+```
+
+1. :fontawesome-solid-laptop: specify the scheme, hostname and port used to join the application
+2. :fontawesome-brands-safari: specify if you use a custom path (`/` by default)
+
 
 Following configurations are required to start TheHive successfully:
 
@@ -484,165 +408,106 @@ Following configurations are required to start TheHive successfully:
 
 #### Secret key configuration
 
-!!! Example ""
+=== "Debian"
+    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
 
-    === "Debian"
-        The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
+=== "RPM"
+    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
 
-    === "RPM"
-        The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
+=== "Other"
+    Setup a secret key in the `/etc/thehive/secret.conf` file by running the following command:
 
-    === "Other"
-        Setup a secret key in the `/etc/thehive/secret.conf` file by running the following command:
+    ```bash
+    cat > /etc/thehive/secret.conf << _EOF_
+    play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+    _EOF_
+    ```
 
-        ```bash
-        cat > /etc/thehive/secret.conf << _EOF_
-        play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
-        _EOF_
-        ```
+#### Database & index
+By default, TheHive is configured to connect to Cassandra and Elasticsearch databases installed locally.
 
-#### Database
 
-To use Cassandra database, TheHive configuration file (`/etc/thehive/application.conf`) has to be edited and updated with following lines:
-
-```yaml
-db {
-  provider: janusgraph
-  janusgraph {
-    storage {
-      backend: cql
-      hostname: ["127.0.0.1"] # seed node ip addresses
-      #username: "<cassandra_username>"       # login to connect to database (if configured in Cassandra)
-      #password: "<cassandra_passowrd"
-      cql {
-        cluster-name: thp       # cluster name
-        keyspace: thehive           # name of the keyspace
-        local-datacenter: datacenter1   # name of the datacenter where TheHive runs (relevant only on multi datacenter setup)
-        # replication-factor: 2 # number of replica
-        read-consistency-level: ONE
-        write-consistency-level: ONE
-      }
+```yaml title="/etc/thehive/application.conf"
+# Database and index configuration
+# By default, TheHive is configured to connect to local Cassandra 4.x and a
+# local Elasticsearch services without authentication.
+db.janusgraph {
+  storage {
+    backend = cql
+    hostname = ["127.0.0.1"]
+    # Cassandra authentication (if configured)
+    # username = "thehive"
+    # password = "password"
+    cql {
+      cluster-name = thp
+      keyspace = thehive
     }
+  }
+  index.search {
+    backend = elasticsearch
+    hostname = ["127.0.0.1"]
+    index-name = thehive
   }
 }
 ```
 
-#### Indexes
+#### File storage
 
-Update `db.storage` configuration part in `/etc/thehive/application.conf` accordingly to your setup. 
+By default, TheHive is configured to store files locally in `/opt/thp/thehive/files`.
 
-!!! Example "" 
-    === "Lucene"
+=== "Local filesystem"
 
-        If your setup is a standalone server or you are using a common NFS share, configure TheHive like this:  
+    If you chose to store files on the local filesystem:
 
-        ```yaml
-        db {
-          provider: janusgraph
-          janusgraph {
-            storage {
-              [..]
-            }
-            ## Index configuration
-            index.search {
-              backend : lucene
-              directory:  /opt/thp/thehive/index
-            }
-          }
-        }
+    1. Ensure permission of the folder
+
+        ```bash
+        chown -R thehive:thehive /opt/thp/thehive/files
         ```
 
-    === "Elasticsearch" 
+    2. Default values in the configuration file 
 
-        If you decided to have access to a centralised index with Elasticsearch, configure TheHive like this:  
-
-        ```yaml
-        db {
-          provider: janusgraph
-          janusgraph {
-            storage {
-              [..]
-            }
-            ## Index configuration
-            index.search {
-              backend : elasticsearch
-              hostname : ["10.1.2.20"]
-              index-name : thehive
-            }
-          }
-        }
-        ```
-
-
-#### Filesystem
-
-
-!!! Example ""
-
-    === "Local filesystem"
-
-        If you chose to store files on the local filesystem:
-
-        1. Ensure permission of the folder
-
-            ```bash
-            chown -R thehive:thehive /opt/thp/thehive/files
-            ```
-
-        2. add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
-
-            ```yml
-            ## Storage configuration
-            storage {
-            provider = localfs
-            localfs.location = /opt/thp/thehive/files
-            }
-            ```
-
-    === "S3"
-        If you chose MinIO and a S3 object storage system to store files in a  filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
-
-        ```yaml
-        ## Storage configuration
+        ```yaml title="/etc/thehive/application.conf"
+        # Attachment storage configuration
+        # By default, TheHive is configured to store files locally in the folder.
+        # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
         storage {
-          provider: s3
-          s3 {
-            bucket = "thehive"
-            readTimeout = 1 minute
-            writeTimeout = 1 minute
-            chunkSize = 1 MB
-            endpoint = "http://<IP_ADDRESS>:9100"
-            accessKey = "<MINIO ACCESS KEY>"
-            secretKey = "<MINIO SECRET KEY>"
-          }
+        provider = localfs
+        localfs.location = /opt/thp/thehive/files
         }
         ```
 
-    === "HDFS"
-        If you chose Apache Hadoop and a HDFS filesystem to store files in a distrubuted filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
+=== "S3"
+    If you chose MinIO and a S3 object storage system to store files in a  filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
 
-        ```yaml
-        ## Storage configuration
-        storage {
-          provider: hdfs
-          hdfs {
-            root: "hdfs://thehive1:10000" # namenode server
-            location: "/thehive"
-            username: thehive
-          }
+    ```yaml title="/etc/thehive/application.conf"
+    ## Storage configuration
+    storage {
+        provider: s3
+        s3 {
+        bucket = "thehive"
+        readTimeout = 1 minute
+        writeTimeout = 1 minute
+        chunkSize = 1 MB
+        endpoint = "http://<IP_ADDRESS>:9100"
+        accessKey = "<MINIO ACCESS KEY>"
+        secretKey = "<MINIO SECRET KEY>"
+        region = "us-east-1"
         }
-        ```
+    }
+    alpakka.s3.path-style-access = force
+    ```
 
 ### Run
 
-Save configuration file and run the service:
-
-
 ```bash
-service thehive start
+sudo systemctl start thehive
+sudo systemctl enable thehive
 ```
 
-Please note that the service may take some time to start. Once it is started, you may launch your browser and connect to `http://YOUR_SERVER_ADDRESS:9000/`.
+!!! Info "Please note that the service may take a while at the first start"
+
+Once it is started, open your browser and connect to `http://YOUR_SERVER_ADDRESS:9000/`.
 
 The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
