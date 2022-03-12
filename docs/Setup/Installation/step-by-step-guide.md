@@ -1,90 +1,88 @@
 # Step-by-Step guide
 
-This page is a step by step installation and configuration guide to get an TheHive 5 instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
+This page is a step by step installation and configuration guide to get an instance of TheHive up and running. This guide is illustrated with examples for DEB and RPM packages based systems and for installation from binary packages.
+
+!!! Warning "This guide describes the installation of a new instance of TheHive **only**"
+
+## :fontawesome-brands-java: Java Virtual Machine
+ 
+=== "Debian"
+
+    ```bash
+    sudo apt install openjdk-11-jre-headless
+    echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" | sudo tee -a /etc/environment 
+    export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+    sudo update-java-alternatives --jre-headless -s java-1.11.0-openjdk-amd64
+    ```
+
+=== "RPM"
+
+    ```bash
+    sudo yum install -y java-11-openjdk-headless.x86_64
+    echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" | sudo tee -a /etc/environment
+    export JAVA_HOME="/usr/lib/jvm/jre-11-openjdk"
+    ```
+
+=== "Other"
+    The installation requires Java 11, so refer to your system documentation to install it.
 
 
-## Java Virtual Machine
+## :fontawesome-solid-database:  Apache Cassandra
 
-!!! Example
-    
-    === "Debian"
+Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version **4.0.x** of Cassandra.
 
-        ```bash
-        apt-get install -y openjdk-11-jre-headless
-        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-        ```
-    
-    === "RPM"
-
-        ```bash
-        sudo yum install -y java-11-openjdk-headless.x86_64
-        echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" | sudo tee -a /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/jre-11-openjdk"
-        ```
-
-    === "Other"
-        The installation requires Java 11, so refer to your system documentation to install it.
-
-
-## Cassandra database
-
-Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version  **4.0.x** of Cassandra.
-
-!!! Warning
+!!! Info "Upgrading from Cassandra 3.x"
     If you are upgrading from Cassandra 3.x, please follow the dedicated guide. This part is relevant for fresh installation only.
 
-### Install from repository
+### Installation
 
-!!! Example ""
-
-    === "Debian"
-        
-        1. Add Apache repository references
-
-            ```bash
-            curl https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /etc/apt/trusted.gpg.d/cassandra-archive.gpg
-            echo "deb https://downloads.apache.org/cassandra/debian 40x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-            ```
-
-        2. Install the package
-
-            ```bash
-            sudo apt update
-            sudo apt install -y cassandra
-            ```
-
-    === "RPM"
-
-        1. Add Cassandra repository keys
-
-            ```bash
-            rpm --import https://downloads.apache.org/cassandra/KEYS
-            ```
-
-        2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
-
-            ```bash
-            cat <<EOF | sudo tee  -a /etc/yum.repos.d/cassandra.repo
-            [cassandra]
-            name=Apache Cassandra
-            baseurl=https://downloads.apache.org/cassandra/redhat/40x/
-            gpgcheck=1
-            repo_gpgcheck=1
-            gpgkey=https://downloads.apache.org/cassandra/KEYS
-            EOF
-            ```
-
-        2. Install the package
-
-            ```bash
-            sudo yum install -y cassandra
-            ```
-
-    === "Other"
-
-        Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+=== "Debian"
     
+    1. Add Apache repository references
+
+        ```bash
+        wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
+        echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
+        ```
+
+    2. Install the package
+
+        ```bash
+        sudo apt update
+        sudo apt install cassandra
+        ```
+
+=== "RPM"
+
+    1. Add Cassandra repository keys
+
+        ```bash
+        rpm --import https://downloads.apache.org/cassandra/KEYS
+        ```
+
+    2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
+
+        ```bash
+        cat <<EOF | sudo tee  -a /etc/yum.repos.d/cassandra.repo
+        [cassandra]
+        name=Apache Cassandra
+        baseurl=https://downloads.apache.org/cassandra/redhat/40x/
+        gpgcheck=1
+        repo_gpgcheck=1
+        gpgkey=https://downloads.apache.org/cassandra/KEYS
+        EOF
+        ```
+
+    2. Install the package
+
+        ```bash
+        sudo yum install -y cassandra
+        ```
+
+=== "Other"
+
+    Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+
 
 By default, data is stored in `/var/lib/cassandra`.
 
@@ -94,7 +92,7 @@ By default, data is stored in `/var/lib/cassandra`.
 Configure Cassandra by editing `/etc/cassandra/cassandra.yaml` file.
 
 
-```yml
+```yaml
 # content from /etc/cassandra/cassandra.yaml
 
 cluster_name: 'thp'
@@ -113,24 +111,31 @@ hints_directory:
   - '/var/lib/cassandra/hints'
 ```
 
-Then restart the service:
+### Start the service 
 
-!!! Example ""
-    === "Debian"
+=== "Debian"
 
+    ```bash
+    sudo systemctl start cassandra
+    ```
+
+    !!! Tip "Remove existing data before starting"
+        With the DEB packages, Cassandra service could start automatically before configuring it: 
+        Stop it, remove the data and restart once the configuration is updated: 
         ```bash
-        sudo service cassandra start
+        sudo systemctl stop cassandra
+        sudo rm -rf /var/lib/cassandra/*
         ```
 
-    === "RPM"
+=== "RPM"
 
-        Run the service and ensure it restart after a reboot:
+    Run the service and ensure it restart after a reboot:
 
-        ```bash
-        sudo systemctl daemon-reload
-        sudo service cassandra start
-        sudo systemctl enable cassandra
-        ```
+    ```bash
+    sudo systemctl daemon-reload
+    sudo service cassandra start
+    sudo systemctl enable cassandra
+    ```
 
 By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
@@ -142,158 +147,156 @@ For additional configuration options, refer to:
 - [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html)
 
 
-#### Security
-
-To add security measures in Cassandra , refer the the [related administration guide](../Operations/cassandra-security.md).
-
-#### Add nodes
-
-To add Cassandra nodes, refer the the [related administration guide](../Architecture/3_nodes_cluster.md).
-
-## Indexing engine: Elasticsearch
+##  Elasticsearch
 
 TheHive requires Elasticsearch to manage data indices. 
 
-** With TheHive 5.0, the version 8.x of Elasticsearch cannot be used with TheHive **, you need to use a version <= 7
+!!! Info "Elasticsearch 7.x only is supported"
+
 ### Installation
 
-!!! Example ""
-    === "Debian"
-        
-        1. Add Elasticsearch repository keys
+=== "Debian"
+    
+    1. Add Elasticsearch repository keys
 
-            ```bash
-                wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-                sudo apt-get install apt-transport-https
-            ```
+        ```bash
+            wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+            sudo apt-get install apt-transport-https
+        ```
 
-        2. Add the DEB repository of Elasticsearch 
+    2. Add the DEB repository of Elasticsearch 
 
-            ```bash
-            echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+        ```bash
+        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list 
+        ```
 
+    3. Install the package
 
-            ```
-
-        3. Install the package
-
-            ```bash
-            sudo apt update && sudo apt install -y elasticsearch
-            ```
+        ```bash
+        sudo apt update
+        sudo apt install elasticsearch
+        ```
 
 
-    === "RPM"
+=== "RPM"
 
-        1. Add Elasticsearch repository references
+    1. Add Elasticsearch repository references
 
-            ```bash
-                rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-            ```
+        ```bash
+            rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        ```
 
-        2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
+    2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
 
-            ```bash
-            cat <<EOF | sudo tee  -a /etc/yum.repos.d/elasticsearch.repo
-            [elasticsearch]
-            name=Elasticsearch repository for 7.x packages
-            baseurl=https://artifacts.elastic.co/packages/7.x/yum
-            gpgcheck=1
-            gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-            enabled=0
-            autorefresh=1
-            type=rpm-md
-            EOF
-            ```
+        ```bash
+        cat <<EOF | sudo tee  -a /etc/yum.repos.d/elasticsearch.repo
+        [elasticsearch]
+        name=Elasticsearch repository for 7.x packages
+        baseurl=https://artifacts.elastic.co/packages/7.x/yum
+        gpgcheck=1
+        gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        enabled=0
+        autorefresh=1
+        type=rpm-md
+        EOF
+        ```
 
-        3. Install the package
+    3. Install the package
 
-            ```bash
-            sudo yum install --enablerepo=elasticsearch elasticsearch
-            ```
-        
-        !!! Note "References"
-            - [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html ](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+        ```bash
+        sudo yum install --enablerepo=elasticsearch elasticsearch
+        ```
+    
+    !!! Note "References"
+        - [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html ](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
-    === "Other"
+=== "Other"
 
-        Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+    Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
 
 
 ### Configuration 
 
-#### `/etc/elasticsearch/elasticsearch.yml`
+- `/etc/elasticsearch/elasticsearch.yml`
 
-!!! Example ""
+Elasticsearch configuration should contain the following lines: 
 
-    === "Elasticsearch"
-
-        Use an existing Elasticsearch instance or install a new one. This instance should be reachable by all nodes of a cluster.
-
-        !!! Warning
-            Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line: 
-
-            ```bash
-            cat << EOF | sudo tee /etc/elasticsearch/elasticsearch.yml
-            http.host: 127.0.0.1
-            transport.host: 127.0.0.1
-            cluster.name: hive
-            thread_pool.search.queue_size: 100000
-            path.logs: "/var/log/elasticsearch"
-            path.data: "/var/lib/elasticsearch"
-            xpack.security.enabled: false
-            script.allowed_types: "inline,stored"
-            EOF
-            ```
-
-
+```yaml
+http.host: 127.0.0.1
+transport.host: 127.0.0.1
+cluster.name: hive
+thread_pool.search.queue_size: 100000
+path.logs: "/var/log/elasticsearch"
+path.data: "/var/lib/elasticsearch"
+xpack.security.enabled: false
+script.allowed_types: "inline,stored"
+```
 
 !!! Note
-    - Indexes will be created at the first start of TheHive. It can take a certain amount of time, depending the size of the database
+    - Indexes will be created at the first start of TheHive. It can take few time
     - Like data and files, indexes should be part of the backup policy
     - Indexes can removed and created again
 
-#### `/etc/elasticsearch/jvm.options.d/jvm.options`
 
-```bash
-cat << EOF | sudo tee -a /etc/elasticsearch/jvm.options.d/jvm.options
+- Custom JVM options
+add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines:
+
+```
 -Dlog4j2.formatMsgNoLookups=true
 -Xms4g
 -Xmx4g
-EOF
 ```
 
-## File storage
+!!! Note "This can be updated according the amount of memory available"
 
-Files uploaded in TheHive (in *task logs* or in *observables*) can be stores in localsystem, in a Hadoop filesystem (recommended) or in the graph database.
+### Sart the service
 
-For standalone production and test servers , we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using Hadoop or S3 services ; see the [related guide](../Architecture/3_nodes_cluster.md) for more details and an example with MinIO servers.  
+=== "Debian"
 
-!!! Example ""
-    === "Local Filesystem"
+    ```bash
+    sudo systemctl start elasticsearch
+    ```
 
-        !!! Warning
-            This option is perfect **for standalone servers**. If you intend to build a cluster for your instance of TheHive 4 we recommend:
-            
-            - using a NFS share, common to all nodes
-            - having a look at storage solutions implementing S3 or HDFS.
-
-        To store files on the local filesystem, start by choosing the dedicated folder:
-
+    !!! Tip "Remove existing data before starting"
+        With the DEB packages, Elastic service could start automatically before configuring it: 
+        Stop it, remove the data and restart once the configuration is updated: 
         ```bash
-        sudo mkdir -p /opt/thp/thehive/files
+        sudo systemctl stop elasticsearch
+        sudo rm -rf /var/lib/elasticsearch/*
         ```
 
-        This path will be used in the configuration of TheHive.
+=== "RPM"
 
-        Later, after having installed TheHive, ensure the user `thehive` owns the path chosen for storing files:
+    Run the service and ensure it restart after a reboot:
 
-        ```
-        chown -R thehive:thehive /opt/thp/thehive/files
-        ```
+    ```bash
+    sudo systemctl daemon-reload
+    sudo service elasticsearch start
+    sudo systemctl enable elasticsearch
+    ```
 
-    === "S3 with Min.io"
 
-        An example of installing, configuring and use Min.IO is detailed in [this documentation](../Architecture/3_nodes_cluster.md).
+## :fontawesome-solid-folder-tree: File storage
+For standalone production and test servers ,we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using NFS or S3 services ; see the [related guide](../Architecture/3_nodes_cluster.md) for more details and an example with MinIO servers.  
+
+=== "Local Filesystem"
+    To store files on the local filesystem, start by choosing the dedicated folder (by default `/opt/thp/thehive/files`):
+
+    ```bash
+    sudo mkdir -p /opt/thp/thehive/files
+    ```
+
+    This path will be used in the configuration of TheHive.
+
+    Later, after having installed TheHive, ensure the user `thehive` owns the path chosen for storing files:
+
+    ```bash
+    chown -R thehive:thehive /opt/thp/thehive/files
+    ```
+
+=== "S3 with Min.io"
+
+    An example of installing, configuring and use Min.IO is detailed in [this documentation](../Architecture/3_nodes_cluster.md).
 
 
 
