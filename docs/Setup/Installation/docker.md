@@ -1,6 +1,6 @@
-This page will guide you on how to use the docker image of TheHive
+# :fontawesome-brands-docker: Running with docker
 
-## Running with docker
+This page will guide you on how to use the docker image of TheHive
 
 ```
 // TODO change with strangebee image
