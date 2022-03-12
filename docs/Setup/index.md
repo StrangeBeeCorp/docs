@@ -59,10 +59,10 @@ TheHive can be used on virtual or physical servers.
 
 Our [step-by-step guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
-### Using Docker :material-docker:
+### Use Docker :material-docker:
 An Official Docker image publicly available. Follow our [installation guide for Docker](Installation/docker.md) tu use it in production.
 
-### Using Kubernetes :material-kubernetes:
+### Use Kubernetes :material-kubernetes:
 
 XXX
 
@@ -93,7 +93,7 @@ The configuration should only contain the necessary information to start the app
 All other settings are available in the UI of the application. 
 
 
-## Secific uses cases
+## Advanced uses cases
 
 ### Install a cluster with 3 nodes
 If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
