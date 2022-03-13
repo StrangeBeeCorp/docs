@@ -103,7 +103,7 @@ All other settings are available in the UI of the application.
 ### TheHive as a cluster
 
 ####  Install a cluster with 3 nodes
-If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
+If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Installation/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
 
   - 3 TheHive nodes
   - 3 Cassandra nodes
