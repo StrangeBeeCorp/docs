@@ -310,12 +310,12 @@ All packages are published on our packages repository. We support Debian and RPM
 
 === "DEB"
     ```bash
-    wget -O- https://download.thehive-project.org/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+    wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
     ```
 
 === "RPM"
     ```bash
-    sudo rpm --import https://download.thehive-project.org/strangebee.gpg 
+    sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
     ```
 
 
@@ -325,7 +325,7 @@ Install TheHive package by using the following commands:
 === "DEB"
 
     ```bash
-    echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.staging.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+    echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
     sudo apt-get update
     sudo apt-get install -y thehive
     ```
@@ -338,8 +338,8 @@ Install TheHive package by using the following commands:
         enabled=1
         priority=1
         name=StrangeBee RPM repository
-        baseurl=https://rpm.staging.strangebee.com/thehive-5.x/noarch
-        gpgkey=https://download.thehive-project.org/strangebee.gpg
+        baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
+        gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
         gpgcheck=1
         ```
 
@@ -354,7 +354,7 @@ Install TheHive package by using the following commands:
 
         ```bash
         cd /opt
-        wget https://download.thehive-project.org/thehive-latest.zip
+        wget https://archives.strangebee.com/keys/thehive-latest.zip
         unzip thehive-latest.zip
         sudo ln -s thehive-x.x.x thehive
         ```
