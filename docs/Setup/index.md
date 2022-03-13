@@ -95,7 +95,14 @@ All other settings are available in the UI of the application.
 
 ## Advanced uses cases
 
-### Install a cluster with 3 nodes
+### Update from TheHive 4.1.x (standalone server)
+
+XXX
+
+### TheHive as a cluster
+
+
+####  Install a cluster with 3 nodes
 If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Architecture/3_nodes_cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
 
   - 3 TheHive nodes
@@ -103,7 +110,7 @@ If you require the installation of a cluster (fault tolerant, H.A., ...), the fo
   - 3 Elasticsearch nodes
   - 3 Min.IO nodes
 
-### Update from TheHive 4.1.x
+#### Upgrade a cluster 
 
 XXX
 
