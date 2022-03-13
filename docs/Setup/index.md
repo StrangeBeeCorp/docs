@@ -95,7 +95,7 @@ All other settings are available in the UI of the application.
 
 ## Advanced uses cases
 
-### Update from TheHive 4.1.x (standalone server)
+### Update from TheHive 4.x (standalone server)
 
 XXX
 
