@@ -7,46 +7,21 @@ info:
     altText: TheHive Logo
 tags:
 - name: Case
-  description: |2
-
-    A case is ...
-
-    #### Queries
-    - Initial Queries:
-      - `listCase`: list all the cases visible by the user
-      - `getCase`: get a case by id or name - additional field `idOrName`
-      - `countCase`: count the cases visible by the user, returns a number
-    - Queries available on Cases:
-      - `observables`
-      - `tasks`
-      - `assignableUsers`
-      - `organisations`
-      - `alerts`
-      - `shares`
-      - `procedures`
-      - `linkedCases`
-      - `attachments`
-      - `similarAlerts`
-      - `pages`
-      - `comments`
-    - Extra data:
-      - `observableStats`
-      - `taskStats`
-      - `alerts`
-      - `isOwner`
-      - `shareCount`
-      - `permissions`
-      - `actionRequired`
-      - `procedureCount`
-      - `attachmentCount`
-      - `similarAlerts`
-      - `contributors`
-      - `computed.handlingDuration`
-      - `computed.handlingDurationInSeconds`
-      - `computed.handlingDurationInMinutes`
-      - `computed.handlingDurationInHours`
-      - `computed.handlingDurationInDays`
-      - `status`
+  description: "\nA case is the main entity manipulated by TheHive. \nIt will centralize\
+    \ all the information during the investigation of security incidents.\n\n**Note**:\
+    \ For api calls, to refer to a case you can either use the `_id` or use the case\
+    \ `number`\n\n#### Queries\n- Initial Queries:\n  - `listCase`: list all the cases\
+    \ visible by the user\n  - `getCase`: get a case by id or name - additional field\
+    \ `idOrName`\n  - `countCase`: count the cases visible by the user, returns a\
+    \ number\n- Queries available on Cases:\n  - `observables`\n  - `tasks`\n  - `assignableUsers`\n\
+    \  - `organisations`\n  - `alerts`\n  - `shares`\n  - `procedures`\n  - `linkedCases`\n\
+    \  - `attachments`\n  - `similarAlerts`\n  - `pages`\n  - `comments`\n- Extra\
+    \ data:\n  - `observableStats`\n  - `taskStats`\n  - `alerts`\n  - `isOwner`\n\
+    \  - `shareCount`\n  - `permissions`\n  - `actionRequired`\n  - `procedureCount`\n\
+    \  - `attachmentCount`\n  - `similarAlerts`\n  - `contributors`\n  - `computed.handlingDuration`\n\
+    \  - `computed.handlingDurationInSeconds`\n  - `computed.handlingDurationInMinutes`\n\
+    \  - `computed.handlingDurationInHours`\n  - `computed.handlingDurationInDays`\n\
+    \  - `status`\n"
 - name: Alert
   description: |2
 
@@ -687,7 +662,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InputUpdateCase'
+              $ref: '#/components/schemas/InputUpdateCaseWithIds'
         required: true
       responses:
         '204':
@@ -1257,7 +1232,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OutputCase'
+                $ref: '#/components/schemas/OutputImportCase'
         '400':
           description: BadRequest
           content:
@@ -1825,7 +1800,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InputUpdateAlert'
+              $ref: '#/components/schemas/InputUpdateAlertWithIds'
         required: true
       responses:
         '204':
@@ -2381,6 +2356,8 @@ paths:
         content:
           application/json:
             schema:
+              required:
+              - ids
               type: object
               properties:
                 ids:
@@ -2483,6 +2460,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputCreateObservable'
+          multipart/form-data:
+            schema:
+              required:
+              - _json
+              type: object
+              properties:
+                _json:
+                  $ref: '#/components/schemas/InputCreateObservable'
+                attachment:
+                  type: string
+                  format: binary
         required: true
       responses:
         '200':
@@ -2584,6 +2572,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputCreateObservable'
+          multipart/form-data:
+            schema:
+              required:
+              - _json
+              type: object
+              properties:
+                _json:
+                  $ref: '#/components/schemas/InputCreateObservable'
+                attachment:
+                  type: string
+                  format: binary
         required: true
       responses:
         '200':
@@ -2952,7 +2951,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InputUpdateObservable'
+              $ref: '#/components/schemas/InputUpdateObservableWithIds'
         required: true
       responses:
         '204':
@@ -3414,7 +3413,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InputUpdateTask'
+              $ref: '#/components/schemas/InputUpdateTaskWithIds'
         required: true
       responses:
         '204':
@@ -3793,6 +3792,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputCreateLog'
+          multipart/form-data:
+            schema:
+              required:
+              - _json
+              type: object
+              properties:
+                _json:
+                  $ref: '#/components/schemas/InputCreateLog'
+                attachments:
+                  type: string
+                  format: binary
         required: true
       responses:
         '200':
@@ -5941,16 +5951,23 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
-  /api/v1/procedure:
+  /api/v1/case/{caseId}/procedure:
     post:
       tags:
       - TTP
       operationId: Create Procedure for Case
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/InputProcedureWithCase'
+              $ref: '#/components/schemas/InputProcedure'
         required: true
       responses:
         '201':
@@ -6804,10 +6821,7 @@ paths:
           description: ''
           headers:
             Content-Type:
-              required: true
-              schema:
-                type: string
-            Content-Disposition:
+              description: the content-type of the file
               required: true
               schema:
                 type: string
@@ -6816,6 +6830,11 @@ paths:
               schema:
                 type: integer
                 format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
             Content-Transfer-Encoding:
               required: true
               schema:
@@ -6917,6 +6936,11 @@ paths:
         schema:
           type: string
           example: ~354
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
       responses:
         '200':
           description: ''
@@ -6930,11 +6954,17 @@ paths:
               schema:
                 type: integer
                 format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
           content:
             application/octet-stream:
               schema:
                 type: string
                 format: binary
+        '304':
+          description: ''
         '400':
           description: BadRequest
           content:
@@ -7103,6 +7133,126 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/log/{logId}/attachment/{attachmentId}/download:
+    get:
+      tags:
+      - Log
+      operationId: Download Attachment from log
+      parameters:
+      - name: logId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/log/{caseId}/attachment/{attachmentId}:
     get:
       tags:
@@ -7121,6 +7271,11 @@ paths:
         schema:
           type: string
           example: ~354
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
       responses:
         '200':
           description: ''
@@ -7134,11 +7289,312 @@ paths:
               schema:
                 type: integer
                 format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
           content:
             application/octet-stream:
               schema:
                 type: string
                 format: binary
+        '304':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/attachment:
+    post:
+      tags:
+      - Organisation
+      operationId: Add Attachment to Organisation
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InputAttachmentsFile'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputAttachments'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/attachment/{attachmentId}:
+    get:
+      tags:
+      - Organisation
+      operationId: Get Attachment
+      parameters:
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    delete:
+      tags:
+      - Organisation
+      operationId: Delete Attachment
+      parameters:
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '204':
+          description: ''
         '400':
           description: BadRequest
           content:
@@ -9356,100 +9812,6 @@ paths:
       - Basic: []
       - Session: []
   /api/v1/organisation/{orgId}/link/{otherOrgId}:
-    get:
-      tags:
-      - Organisation
-      operationId: Unlink Organisations
-      parameters:
-      - name: orgId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      - name: otherOrgId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      responses:
-        '204':
-          description: ''
-        '400':
-          description: BadRequest
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '401':
-          description: AuthenticationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '403':
-          description: AuthorizationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '404':
-          description: NotFoundError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '500':
-          description: GenericError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-      security:
-      - Api Key: []
-      - Basic: []
-      - Session: []
     put:
       tags:
       - Organisation
@@ -9550,6 +9912,100 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+    delete:
+      tags:
+      - Organisation
+      operationId: Unlink Organisations
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: otherOrgId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/organisation/{orgId}/links:
     get:
       tags:
@@ -9570,7 +10026,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/OutputOrganisation'
+                  $ref: '#/components/schemas/OutputOrganisationLink'
         '400':
           description: BadRequest
           content:
@@ -11752,9 +12208,117 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+    put:
+      tags:
+      - Case
+      description: "Set the share for a case with other organisations. \nFor each\
+        \ organisation, you can define a profile (level of access) that the org will\
+        \ receive\n\nContrary to the POST, this request can delete and update already\
+        \ existing shares"
+      operationId: Set shares for Case
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCreateShares'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputShare'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
     post:
       tags:
       - Case
+      description: "Share the case with other organisations. \nFor each organisation,\
+        \ you can define a profile (level of access) that the org will receive\n\n\
+        This request will only create new shares and will not update or delete existing\
+        \ shares"
       operationId: Share a Case
       parameters:
       - name: caseId
@@ -11946,10 +12510,107 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
-  /api/v1/case/task/{taskId}/shares:
+  /api/v1/task/{taskId}/shares:
+    get:
+      tags:
+      - Task
+      operationId: List Shares of Task
+      parameters:
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputShare'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
     post:
       tags:
       - Task
+      description: |
+        Share a task with an organisation.
+        The case must already be shared with the target organisations. See 'Share a Case'
       operationId: Share a Task
       parameters:
       - name: taskId
@@ -12041,10 +12702,201 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+    delete:
+      tags:
+      - Task
+      operationId: Unshare a Task
+      parameters:
+      - name: taskId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputRemoveShares'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/observable/{observableId}/shares:
+    get:
+      tags:
+      - Observable
+      operationId: List Shares of Observable
+      parameters:
+      - name: observableId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputShare'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
     post:
       tags:
       - Observable
+      description: |
+        Share an observable with an organisation.
+        The case must already be shared with the target organisations. See 'Share a Case'
       operationId: Share an Observable
       parameters:
       - name: observableId
@@ -12156,208 +13008,6 @@ paths:
       responses:
         '204':
           description: ''
-        '400':
-          description: BadRequest
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '401':
-          description: AuthenticationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '403':
-          description: AuthorizationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '404':
-          description: NotFoundError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '500':
-          description: GenericError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-      security:
-      - Api Key: []
-      - Basic: []
-      - Session: []
-  /api/v1/case/{caseId}/task/{taskId}/shares:
-    get:
-      tags:
-      - Task
-      operationId: List Shares of Task
-      parameters:
-      - name: caseId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      - name: taskId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/OutputShare'
-        '400':
-          description: BadRequest
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '401':
-          description: AuthenticationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '403':
-          description: AuthorizationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '404':
-          description: NotFoundError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '500':
-          description: GenericError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-      security:
-      - Api Key: []
-      - Basic: []
-      - Session: []
-  /api/v1/case/{caseId}/observable/{observableId}/shares:
-    get:
-      tags:
-      - Observable
-      operationId: List Shares of Observable
-      parameters:
-      - name: caseId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      - name: observableId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      responses:
-        '200':
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/OutputShare'
         '400':
           description: BadRequest
           content:
@@ -12624,6 +13274,8 @@ paths:
         content:
           application/json:
             schema:
+              required:
+              - ids
               type: object
               properties:
                 ids:
@@ -12631,101 +13283,6 @@ paths:
                   items:
                     type: string
                     example: ~354
-        required: true
-      responses:
-        '204':
-          description: ''
-        '400':
-          description: BadRequest
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '401':
-          description: AuthenticationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '403':
-          description: AuthorizationError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '404':
-          description: NotFoundError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-        '500':
-          description: GenericError
-          content:
-            application/json:
-              schema:
-                required:
-                - type
-                - message
-                type: object
-                properties:
-                  type:
-                    type: string
-                  message:
-                    type: string
-      security:
-      - Api Key: []
-      - Basic: []
-      - Session: []
-  /api/v1/task/{taskId}/shares:
-    delete:
-      tags:
-      - Task
-      operationId: Unshare a Task
-      parameters:
-      - name: taskId
-        in: path
-        required: true
-        schema:
-          type: string
-          example: ~354
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/InputRemoveShares'
         required: true
       responses:
         '204':
@@ -12908,6 +13465,264 @@ paths:
         required: true
         schema:
           type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/admin/check/{name}/global/trigger:
+    post:
+      tags:
+      - Admin
+      operationId: Trigger integrity check
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/admin/check/{name}/dedup/trigger:
+    post:
+      tags:
+      - Admin
+      operationId: Trigger integrity check
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/admin/check/cancel:
+    post:
+      tags:
+      - Admin
+      operationId: Trigger integrity check
       responses:
         '204':
           description: ''
@@ -14946,6 +15761,288 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/stream:
+    post:
+      tags:
+      - Audit
+      operationId: Create a stream of audits
+      responses:
+        '200':
+          description: The id of the created stream
+          content:
+            text/plain:
+              schema:
+                type: string
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/stream/{streamId}:
+    get:
+      tags:
+      - Audit
+      operationId: Get a stream of audits
+      parameters:
+      - name: streamId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputStreamAudit'
+        '220':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputStreamAudit'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/flow:
+    get:
+      tags:
+      - Audit
+      operationId: Get flow of audit
+      parameters:
+      - name: rootId
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputAudit'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
 components:
   schemas:
     DashboardStatus:
@@ -14964,6 +16061,7 @@ components:
             format: binary
     InputAlertStage:
       type: string
+      description: Tell which alert stage (~=category) this status will belong to
       enum:
       - New
       - InProgress
@@ -14976,12 +16074,14 @@ components:
       properties:
         caseId:
           type: string
+          description: Case id or number
           example: ~354
         alertIds:
           type: array
           items:
             type: string
             example: ~354
+          description: List of alert ids
     InputAttachmentsFile:
       type: object
       properties:
@@ -14992,6 +16092,7 @@ components:
             format: binary
     InputCaseStage:
       type: string
+      description: Tell which case stage (~=category) this status will belong to
       enum:
       - New
       - InProgress
@@ -15051,9 +16152,11 @@ components:
           maxLength: 1048576
         severity:
           type: integer
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         date:
           type: integer
           format: datetime_ms
@@ -15066,12 +16169,18 @@ components:
           type: boolean
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         customFieldValue:
           type: array
           items:
@@ -15091,15 +16200,18 @@ components:
       properties:
         value:
           type: string
+          description: Name of the status
         stage:
           $ref: '#/components/schemas/InputAlertStage'
         order:
           type: integer
+          description: Used to order the values in the ui
         description:
           type: string
           maxLength: 1048576
         colour:
           type: string
+          description: Optional color to use in the ui
           pattern: ^#[0-9a-fA-F]{6,6}|$
     InputCreateCase:
       required:
@@ -15116,9 +16228,11 @@ components:
         severity:
           type: integer
           default: 2
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         startDate:
           type: integer
           format: datetime_ms
@@ -15138,13 +16252,19 @@ components:
         tlp:
           type: integer
           default: 2
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
           default: 2
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         status:
           type: string
           default: New
@@ -15195,14 +16315,18 @@ components:
       properties:
         value:
           type: string
+          description: Name of the status
         stage:
           $ref: '#/components/schemas/InputCaseStage'
         order:
           type: integer
+          description: Used to order the values in the ui
         description:
           type: string
+          maxLength: 1048576
         colour:
           type: string
+          description: Optional color to use in the ui
           pattern: ^#[0-9a-fA-F]{6,6}|$
     InputCreateCaseTemplate:
       required:
@@ -15220,9 +16344,11 @@ components:
           maxLength: 1048576
         severity:
           type: integer
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         tags:
           type: array
           items:
@@ -15231,12 +16357,18 @@ components:
           type: boolean
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         summary:
           type: string
           maxLength: 1048576
@@ -15304,12 +16436,18 @@ components:
           example: 1640000000000
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         tags:
           type: array
           items:
@@ -15380,6 +16518,7 @@ components:
           items:
             type: string
             example: ~354
+          description: Names or ids of the organisations
     InputCreateShares:
       type: object
       properties:
@@ -15432,18 +16571,24 @@ components:
       properties:
         login:
           type: string
+          description: Login the user will need to enter, this will be the main identifier
+            for the user
         name:
           type: string
+          description: Name of the user
         email:
           type: string
         password:
           type: string
         profile:
           type: string
+          description: Profile to assign the user in the organisation
         organisation:
           type: string
         type:
           type: string
+          description: Normal or Service. A service user cannot use the ui and needs
+            to provide an api key for authentication
     InputCustomEvent:
       required:
       - date
@@ -15495,7 +16640,10 @@ components:
       properties:
         name:
           type: string
-        value: {}
+          description: Name of a CustomField
+        value:
+          description: Either a string, number or boolean depending on the CustomField
+            type
         order:
           type: integer
     InputDeleteCustomField:
@@ -15615,27 +16763,6 @@ components:
           type: string
         patternId:
           type: string
-    InputProcedureWithCase:
-      required:
-      - occurDate
-      - tactic
-      - caseId
-      - patternId
-      type: object
-      properties:
-        description:
-          type: string
-          maxLength: 1048576
-        occurDate:
-          type: integer
-          format: datetime_ms
-          example: 1640000000000
-        tactic:
-          type: string
-        caseId:
-          type: string
-        patternId:
-          type: string
     InputQuery:
       type: object
       properties:
@@ -15693,6 +16820,7 @@ components:
           items:
             type: string
             example: ~354
+          description: Names or ids of the organisations
     InputSearch:
       required:
       - query
@@ -15727,14 +16855,27 @@ components:
       properties:
         organisation:
           type: string
+          description: Name or id of the organisation
+          example: ~354
         share:
           type: boolean
+          description: If true, new observables and tasks will also be shared to the
+            organisation
+          default: true
         profile:
           type: string
+          description: Profile used to define the permissions of the organisation
+            members
+          default: analyst
         taskRule:
           type: string
+          description: Sharing rule to apply to the tasks, can be manual or autoShare
+          default: Sharing rule applied on the case
         observableRule:
           type: string
+          description: Sharing rule to apply to the observables, can be manual or
+            autoShare
+          default: Sharing rule applied on the case
     InputTOTPCode:
       required:
       - code
@@ -15795,9 +16936,11 @@ components:
           maxLength: 1048576
         severity:
           type: integer
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         date:
           type: integer
           format: datetime_ms
@@ -15812,12 +16955,18 @@ components:
             type: string
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         follow:
           type: boolean
         customFields:
@@ -15840,6 +16989,73 @@ components:
         colour:
           type: string
           pattern: ^#[0-9a-fA-F]{6,6}|$
+    InputUpdateAlertWithIds:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+            example: ~354
+        type:
+          type: string
+        source:
+          type: string
+        sourceRef:
+          type: string
+        externalLink:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        severity:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+        date:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        lastSyncDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        tags:
+          type: array
+          items:
+            type: string
+        tlp:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        pap:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        follow:
+          type: boolean
+        customFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCustomFieldValue'
+        status:
+          type: string
+        summary:
+          type: string
+          maxLength: 1048576
     InputUpdateCase:
       type: object
       properties:
@@ -15850,9 +17066,11 @@ components:
           maxLength: 1048576
         severity:
           type: integer
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         startDate:
           type: integer
           format: datetime_ms
@@ -15869,12 +17087,18 @@ components:
           type: boolean
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         status:
           type: string
         summary:
@@ -15917,9 +17141,11 @@ components:
           maxLength: 1048576
         severity:
           type: integer
-          minimum: 0
-          exclusiveMinimum: true
-          maximum: 4
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
         tags:
           type: array
           items:
@@ -15928,12 +17154,18 @@ components:
           type: boolean
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         summary:
           type: string
           maxLength: 1048576
@@ -15945,6 +17177,73 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
+    InputUpdateCaseWithIds:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+            example: ~354
+        title:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        severity:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+        startDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        endDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        tags:
+          type: array
+          items:
+            type: string
+        flag:
+          type: boolean
+        tlp:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        pap:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        status:
+          type: string
+        summary:
+          type: string
+          maxLength: 1048576
+        assignee:
+          type: string
+        impactStatus:
+          type: string
+        customFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCustomFieldValue'
+        taskRule:
+          type: string
+        observableRule:
+          type: string
     InputUpdateCatalogOfPattern:
       type: object
       properties:
@@ -16022,12 +17321,61 @@ components:
           maxLength: 1048576
         tlp:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         pap:
           type: integer
-          minimum: 0
-          maximum: 3
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        tags:
+          type: array
+          items:
+            type: string
+        ioc:
+          type: boolean
+        sighted:
+          type: boolean
+        sightedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        ignoreSimilarity:
+          type: boolean
+    InputUpdateObservableWithIds:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+            example: ~354
+        dataType:
+          type: string
+        message:
+          type: string
+          maxLength: 1048576
+        tlp:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        pap:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
         tags:
           type: array
           items:
@@ -16099,6 +17447,43 @@ components:
     InputUpdateTask:
       type: object
       properties:
+        title:
+          type: string
+        group:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        status:
+          type: string
+        flag:
+          type: boolean
+        startDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        endDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        order:
+          type: integer
+        dueDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        assignee:
+          type: string
+    InputUpdateTaskWithIds:
+      required:
+      - ids
+      type: object
+      properties:
+        ids:
+          type: array
+          items:
+            type: string
+            example: ~354
         title:
           type: string
         group:
@@ -16202,6 +17587,8 @@ components:
           type: string
         organisation:
           type: string
+          description: Organisation id or name to logged into
+          default: Uses user default organisation or first joined organisation
         code:
           type: string
     Map_Boolean:
@@ -16216,6 +17603,15 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/JsObject'
+    Map_Long:
+      type: object
+      additionalProperties:
+        type: integer
+        format: int64
+    Map_Map_String_Long:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Map_Long'
     Map_OutputEntityDescription:
       type: object
       additionalProperties:
@@ -16260,6 +17656,8 @@ components:
       - status
       - stage
       - extraData
+      - newDate
+      - timeToDetect
       type: object
       properties:
         _id:
@@ -16325,6 +17723,34 @@ components:
           type: string
         extraData:
           $ref: '#/components/schemas/JsObject'
+        newDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        inProgressDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        closedDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        importedDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        timeToDetect:
+          type: integer
+          format: int64
+        timeToTriage:
+          type: integer
+          format: int64
+        timeToQualify:
+          type: integer
+          format: int64
+        timeToAcknowledge:
+          type: integer
+          format: int64
     OutputAlertStatus:
       required:
       - _id
@@ -16412,6 +17838,50 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OutputAttachment'
+    OutputAudit:
+      required:
+      - _id
+      - _type
+      - _createdBy
+      - _createdAt
+      - action
+      - requestId
+      - rootId
+      - details
+      type: object
+      properties:
+        _id:
+          type: string
+        _type:
+          type: string
+        _createdBy:
+          type: string
+        _updatedBy:
+          type: string
+        _createdAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _updatedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        action:
+          type: string
+        requestId:
+          type: string
+        rootId:
+          type: string
+        details:
+          $ref: '#/components/schemas/JsObject'
+        objectId:
+          type: string
+        objectType:
+          type: string
+        object:
+          $ref: '#/components/schemas/JsObject'
+        context:
+          $ref: '#/components/schemas/JsObject'
     OutputCase:
       required:
       - _id
@@ -16429,6 +17899,8 @@ components:
       - status
       - stage
       - extraData
+      - newDate
+      - timeToDetect
       type: object
       properties:
         _id:
@@ -16449,7 +17921,8 @@ components:
           example: 1640000000000
         number:
           type: integer
-          description: An incremental number to reference the case
+          description: An incremental number to reference the case. This field can
+            be used in the apis in place of the _id
         title:
           type: string
         description:
@@ -16498,6 +17971,52 @@ components:
             This depends on the profile of the user and the sharing of the Case
         extraData:
           $ref: '#/components/schemas/JsObject'
+        newDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        inProgressDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        closedDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        alertDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        alertNewDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        alertInProgressDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        alertImportedDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        timeToDetect:
+          type: integer
+          format: int64
+        timeToTriage:
+          type: integer
+          format: int64
+        timeToQualify:
+          type: integer
+          format: int64
+        timeToAcknowledge:
+          type: integer
+          format: int64
+        timeToResolve:
+          type: integer
+          format: int64
+        handlingDuration:
+          type: integer
+          format: int64
     OutputCaseStatus:
       required:
       - _id
@@ -16817,6 +18336,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OutputPropertyDescription'
+    OutputImportCase:
+      required:
+      - case
+      type: object
+      properties:
+        case:
+          $ref: '#/components/schemas/OutputCase'
+        observables:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputObservable'
+        procedures:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputProcedure'
+        errors:
+          type: array
+          items: {}
+          description: Field is present if there were some errors during import
     OutputLicense:
       required:
       - _id
@@ -16870,6 +18408,7 @@ components:
     OutputLicenseCurrent:
       oneOf:
       - $ref: '#/components/schemas/OutputLicenseCurrentError'
+      - $ref: '#/components/schemas/OutputLicenseCurrentNotFound'
       - $ref: '#/components/schemas/OutputLicenseCurrentOk'
     OutputLicenseCurrentError:
       required:
@@ -16881,6 +18420,16 @@ components:
           type: string
         fallback:
           $ref: '#/components/schemas/OutputLicense'
+    OutputLicenseCurrentNotFound:
+      required:
+      - fallback
+      - notFound
+      type: object
+      properties:
+        fallback:
+          $ref: '#/components/schemas/OutputLicense'
+        notFound:
+          type: boolean
     OutputLicenseCurrentOk:
       required:
       - license
@@ -17099,6 +18648,8 @@ components:
           example: 1640000000000
         name:
           type: string
+          description: This field can be used to reference an organisation instead
+            of its _id
         description:
           type: string
         taskRule:
@@ -17115,6 +18666,19 @@ components:
           type: boolean
         extraData:
           $ref: '#/components/schemas/JsObject'
+    OutputOrganisationLink:
+      required:
+      - linkType
+      - otherLinkType
+      - organisation
+      type: object
+      properties:
+        linkType:
+          type: string
+        otherLinkType:
+          type: string
+        organisation:
+          $ref: '#/components/schemas/OutputOrganisation'
     OutputOrganisationProfile:
       required:
       - organisationId
@@ -17339,6 +18903,7 @@ components:
       required:
       - name
       - type
+      - aggregable
       - indexType
       type: object
       properties:
@@ -17353,6 +18918,8 @@ components:
           type: array
           items:
             type: string
+        aggregable:
+          type: boolean
         indexType:
           type: string
     OutputPublicStatus:
@@ -17462,6 +19029,16 @@ components:
           items:
             $ref: '#/components/schemas/JsObject'
           description: Filled when verbose
+    OutputStreamAudit:
+      required:
+      - base
+      - summary
+      type: object
+      properties:
+        base:
+          $ref: '#/components/schemas/OutputAudit'
+        summary:
+          $ref: '#/components/schemas/Map_Map_String_Long'
     OutputTOTPSecret:
       required:
       - secret
@@ -17784,7 +19361,6 @@ x-tagGroups:
 - name: Other
   tags:
   - Authenticated
-  - Admin
   - License
   - Page
   - Login
@@ -17793,5 +19369,7 @@ x-tagGroups:
   - Search
   - Describe
   - Status
+  - Audit
+  - Admin
   - TOTP
   - Dashboard
