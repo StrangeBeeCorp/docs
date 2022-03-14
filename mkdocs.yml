@@ -4,7 +4,7 @@ site_url: https://docs.strangebee.com
 theme:
   name: material
   custom_dir: ./overrides/
-  logo: 'assets/images/thehive-horizontal-light.svg'
+  logo: 'assets/images/strangebee.svg'
   features:
     - content.code.annotate
     # - content.tabs.link
@@ -79,17 +79,3 @@ nav:
         - thehive/setup/installation/upgrade-cluster.md
   - 'API Docs': thehive/api-docs" target="_blank
   - 'Blog': https://blog.strangebee.com" target="_blank
-        
-
-  # - 'API Docs':
-  # - 'Blog': https://blog.strangebee.com" target="_blank
-  # - Home: 'index.md'
-  # - TheHive: 
-  #   - Overview: index.md
-  #   - 'Download': download/index.md
-  #   - Installation: installation/index.md
-  #   - Configuration: configuration/index.md
-  #   - Operations: 'operations'
-  # - 'API Docs':
-  #     thehive/api-docs" target="_blank
-  # - 'Blog': https://blog.strangebee.com" target="_blank
