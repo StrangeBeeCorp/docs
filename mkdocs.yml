@@ -76,6 +76,7 @@ nav:
       - 'Running with Docker': thehive/setup/installation/docker.md
       - thehive/setup/installation/3-node-cluster.md
       - thehive/setup/installation/upgrade-from-4.x.md
+      - thehive/setup/operations/migration.md
       - thehive/setup/installation/upgrade-cluster.md
     - Configuration:
       - 'Database & index': thehive/setup/configuration/database.md
@@ -91,7 +92,6 @@ nav:
       - thehive/setup/operations/cassandra-security.md
       - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
-      - thehive/setup/operations/migration.md
       - thehive/setup/operations/troubleshooting.md
   - 'API Docs': thehive/api-docs" target="_blank
   # - 'Blog': https://blog.strangebee.com" target="_blank

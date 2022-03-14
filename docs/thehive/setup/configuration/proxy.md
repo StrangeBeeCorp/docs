@@ -1,9 +1,5 @@
 # Proxy settings
 
-## Proxy for connectors
-
-Refer to [Cortex](./connectors-cortex.md) or [MISP](./connectors-misp.md) configuration to setup specific proxy configuration for these remote services. 
-
 ## Proxy for global application
 
 Proxy can be used. By default, the proxy configured in JVM is used but one can configured specific configurations for each HTTP client.
