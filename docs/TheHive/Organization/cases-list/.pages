@@ -1,0 +1,12 @@
+Title: Caseslist
+nav:
+  - 'about-a-case-list.md'
+  - 'general.md'
+  - View tasks : 'tasks.md'
+  - View observable : 'observables.md'
+  - View TTPS : 'ttps.md'
+  - View attachment : 'attachments.md'
+  - View timeline : 'timeline.md'
+  - View pages : 'pages.md'
+  - Preview cases: 'preview-cases.md'
+  - Manage views : 'manage-views.md'

@@ -1,0 +1,6 @@
+Title: TheHive
+nav:
+  - Overview: 'index.md'
+  - Setup
+  - Administration: Administration/introduction.md
+  - Organization
