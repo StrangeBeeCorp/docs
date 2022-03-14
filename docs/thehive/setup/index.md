@@ -42,13 +42,13 @@ StrangeBee also provides an [official Docker image](https://hub.docker.com/r/the
     - Using Ubuntu or Debian
 
     ``` bash
-    sudo -v && wget -O- https://docs.thehive-project.org/install-DEB.sh | bash
+    sudo -v && wget -O- https://docs.strangebee.com/thehive/setup/installation/assets/install-deb.sh | bash
     ```
 
     - Using RHEL or Fedora
 
     ``` bash
-    sudo -v && wget -O- https://docs.thehive-project.org/install-RPM.sh | bash
+    sudo -v && wget -O- https://docs.strangebee.com/thehive/setup/installation/assets/install-rpm.sh | bash
     ```
 
 For each release, DEB, RPM and ZIP binary packages are built and provided.
