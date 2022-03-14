@@ -60,7 +60,7 @@ TheHive can be used on virtual or physical servers.
 Our [step-by-step guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
 ### Use Docker :material-docker:
-An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) tu use it in production.
+An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) to use it in production.
 
 ### Use Kubernetes :material-kubernetes:
 
