@@ -10,7 +10,7 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.expand
-    # - navigation.indexes
+    - navigation.indexes
     - navigation.top
     - search.highlight
     - search.share
@@ -48,6 +48,9 @@ markdown_extensions:
   - attr_list
   - codehilite
   - admonition
+  - markdown.extensions.toc:
+      baselevel: 1
+      permalink: true
   - pymdownx.critic
   - pymdownx.tabbed:
       alternate_style: true
@@ -62,4 +65,3 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
