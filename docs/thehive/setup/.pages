@@ -1,7 +1,7 @@
 Title: Installation & configuration guides
 nav:
   - Overview: index.md
-  - Download
-  - Installation
-  - Configuration
-  - Operations
+  - 'Download': 'download'
+  - Installation: 'Installation'
+  - Configuration: 'configuration'
+  - Operations: 'operations'
