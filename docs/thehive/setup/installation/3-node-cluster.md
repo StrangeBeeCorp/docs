@@ -8,7 +8,7 @@ This guide provides configuration examples for TheHive, Cassandra and MinIO to b
 
 ## TheHive 
 
-In this guide, we are considering the node 1 to be the master node. Start by configuring `akka` component by editing the `/etc/thehive/application.conf` file of each node like this:
+In this guide, we are considering the node 1 to be the master node. Start by configuring `akka` component by editing the `/etc/thehive/application.conf` file of each node like the following:
 
 ```
 akka {
@@ -36,7 +36,7 @@ cluster.seed-nodes = [
 We are considering setting up a cluster of 3 active nodes of Cassandra with a replication factor of 3. That means that all nodes are active and the data is present on each node. 
 This setup is tolerant to a 1 node failure.
 
-For the rest of this part, we are considering that all nodes sit on the same network.
+For the rest of this section, we consider that all nodes sit on the same network.
 
 ### Configuration 
 
@@ -170,7 +170,7 @@ db.janusgraph {
 
 MinIO distributed mode requires fresh directories. Here is an example of implementation of MinIO with TheHive.
 
-The following procedure should be performed on all servers belonging the the cluster. We are considering the setup where the cluster is composed of 3 servers named minio1, minio2 & minio3.
+The following procedure should be applied on all servers belonging the the cluster. We are considering the setup where the cluster is composed of 3 servers named minio1, minio2 & minio3.
 
 
 ### Create a dedicated system account

@@ -10,7 +10,7 @@ Akka is used to make several nodes of TheHive work together and offer a smooth u
 
 ## Basic configuration
 
-A good cluster setup requires at least 3 nodes of THeHive applications. For each node, Akka must be configured like this: 
+A good cluster setup requires at least 3 nodes of TheHive applications. For each node, Akka must be configured like this: 
 
 ```yaml
 ## Akka server

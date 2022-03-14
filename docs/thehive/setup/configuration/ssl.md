@@ -80,7 +80,7 @@ If you want to define a different default protocol, you can set it specifically 
 ```
 wsConfig.ssl.protocol = "TLSv1.2"
 ```
-If you want to define the list of enabled protocols, you can do so explicitly:
+If you want to define the list of enabled protocols, you can do so by providing a list explicitly:
 ```
 wsConfig.ssl.enabledProtocols = ["TLSv1.2", "TLSv1.1", "TLSv1"]
 ```

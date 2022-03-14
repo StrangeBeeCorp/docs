@@ -12,4 +12,4 @@ scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
 
 1. MISP connector is disabled
 
-!!! Warning "Updating this configuration file required the service being restarted"
+!!! Warning "Updating this configuration file requires TheHive service to be restarted"

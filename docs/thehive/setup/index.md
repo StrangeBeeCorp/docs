@@ -52,7 +52,7 @@ StrangeBee also provides an [official Docker image](https://hub.docker.com/r/the
     ```
 
 For each release, DEB, RPM and ZIP binary packages are built and provided.
-Discover how to install TheHive quicky by following our installation guides:
+Discover how to install TheHive quickly by following our installation guides:
 
 ### Use a dedicated server
 TheHive can be used on virtual or physical servers.
@@ -69,7 +69,7 @@ XXX
 
 
 ## Configuration Guides
-The configuration is stored in files stored in the `/etc/thehive` folder:
+The configuration files are stored in the `/etc/thehive` folder:
 
   - `application.conf` contains all parameters and options
   - `logback.xml` is dedicated to log management
@@ -81,7 +81,7 @@ The configuration is stored in files stored in the `/etc/thehive` folder:
 └── secret.conf
 ```
 
-A separate [secret.conf](configuration/secret.md) file is automatically created by DEB or RPM packages. This file should contain a secret that should be used by one instance.
+A separate [secret.conf](configuration/secret.md) file is automatically created by DEB or RPM packages. This file contains a secret that should be used by one instance.
 
 The configuration should only contain the necessary information to start the application: 
 
@@ -90,7 +90,7 @@ The configuration should only contain the necessary information to start the app
 - Connectors enabled
 - [Other service parameters](./configuration/service.md)
   
-All other settings are available in the UI of the application. 
+All other settings are available in the application WebUI. 
 
 ## Advanced uses cases
 
@@ -102,7 +102,7 @@ All other settings are available in the UI of the application.
 ### TheHive as a cluster
 
 ####  Install a cluster with 3 nodes
-If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](installation/3-node-cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
+If you are looking to install a cluster (fault tolerant, H.A., ...), the following [guide](installation/3-node-cluster.md) details all the installation and configuration steps to make a cluster with 3 nodes working. In this example, the cluster is composed of:
 
   - 3 TheHive nodes
   - 3 Cassandra nodes

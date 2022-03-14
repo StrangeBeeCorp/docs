@@ -274,7 +274,7 @@ add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines
 
 
 ## :fontawesome-solid-folder-tree: File storage
-For standalone production and test servers ,we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using NFS or S3 services ; see the [related guide](./3-node-cluster.md) for more details and an example with MinIO servers.  
+For standalone production and test servers, we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using NFS or S3 services; see the [related guide](./3-node-cluster.md) for more details and an example with MinIO servers.  
 
 === "Local Filesystem"
     To store files on the local filesystem, start by choosing the dedicated folder (by default `/opt/thp/thehive/files`):
@@ -384,9 +384,9 @@ Install TheHive package by using the following commands:
 
 ### Configuration
 
-The configuration coming with binary packages is pre-configured for standalone installation, everything on the same server. 
+The configuration that comes with binary packages is ready for a standalone installation, everything on the same server. 
 
-In this situation, at this stage, you might need to adjust following parameters accordingly:
+In this context, and at this stage, you might need to set the following parameters accordingly:
 
 ```yaml title="/etc/thehive/application.conf"
 [..]
@@ -459,7 +459,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
 
     If you chose to store files on the local filesystem:
 
-    1. Ensure permission of the folder
+    1. Ensure thehive user has permissions on the destination folder
 
         ```bash
         chown -R thehive:thehive /opt/thp/thehive/files
@@ -478,7 +478,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
         ```
 
 === "S3"
-    If you chose MinIO and a S3 object storage system to store files in a  filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
+    If you chose MinIO and a S3 object storage system to store files in a filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
 
     ```yaml title="/etc/thehive/application.conf"
     ## Storage configuration
@@ -505,9 +505,9 @@ sudo systemctl start thehive
 sudo systemctl enable thehive
 ```
 
-!!! Info "Please note that the service may take a while at the first start"
+!!! Info "Please consider the service may take a while at the first start"
 
-Once it is started, open your browser and connect to `http://YOUR_SERVER_ADDRESS:9000/`.
+Once it has started, open your browser and connect to `http://YOUR_SERVER_ADDRESS:9000/`.
 
 The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 

@@ -1,6 +1,6 @@
 # Database and index configuration
 
-TheHive used [Cassandra](https://cassandra.apache.org/) and Elasticsearch databases to manage data and index. 
+TheHive use [Cassandra](https://cassandra.apache.org/) and Elasticsearch databases to manage data and index. 
 According to the setup, the instance can use:
  
 
