@@ -57,10 +57,10 @@ Discover how to install TheHive quicky by following our installation guides:
 ### Use a dedicated server
 TheHive can be used on virtual or physical servers.
 
-Our [step-by-step guide](Installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
+Our [step-by-step guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
 
 ### Use Docker :material-docker:
-An Official Docker image publicly available. Follow our [installation guide for Docker](Installation/docker.md) tu use it in production.
+An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) tu use it in production.
 
 ### Use Kubernetes :material-kubernetes:
 
@@ -81,14 +81,14 @@ The configuration is stored in files stored in the `/etc/thehive` folder:
 └── secret.conf
 ```
 
-A separate [secret.conf](Configuration/secret.md) file is automatically created by DEB or RPM packages. This file should contain a secret that should be used by one instance.
+A separate [secret.conf](configuration/secret.md) file is automatically created by DEB or RPM packages. This file should contain a secret that should be used by one instance.
 
 The configuration should only contain the necessary information to start the application: 
 
-- [database and indexing](./Configuration/database.md)
-- [File storage](./Configuration/file-storage.md)
+- [database and indexing](./configuration/database.md)
+- [File storage](./configuration/file-storage.md)
 - Connectors enabled
-- [Other service parameters](./Configuration/service.md)
+- [Other service parameters](./configuration/service.md)
   
 All other settings are available in the UI of the application. 
 
@@ -96,13 +96,13 @@ All other settings are available in the UI of the application.
 
 ### Upgrade from TheHive 4.x (standalone server)
 
-[Upgrade from THeHive 4.x](./Installation/upgrade-from-4.x.md)
+[Upgrade from THeHive 4.x](./installation/upgrade-from-4.x.md)
 
 
 ### TheHive as a cluster
 
 ####  Install a cluster with 3 nodes
-If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](./Installation/3-node-cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
+If you require the installation of a cluster (fault tolerant, H.A., ...), the following [guide](installation/3-node-cluster.md) details all the installation and configuration steps to get a cluster with 3 nodes working. In this example, the cluster is composed of:
 
   - 3 TheHive nodes
   - 3 Cassandra nodes
@@ -111,7 +111,7 @@ If you require the installation of a cluster (fault tolerant, H.A., ...), the fo
 
 #### Upgrade a cluster 
 
-[Upgrade a cluster](./Installation/upgrade-cluster.md)
+[Upgrade a cluster](./installation/upgrade-cluster.md)
 
 ### Update from TheHive 3.x
 TheHive 3.x is not supported any more since 31st of December, 2021. 

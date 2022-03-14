@@ -121,4 +121,4 @@ Restart all nodes of the cluster.
 
 ### More information
 
-More information about the configuration of database and indexes can be found in the [dedicated configuration guide](../Configuration/database.md)
+More information about the configuration of database and indexes can be found in the [dedicated configuration guide](../configuration/database.md)
