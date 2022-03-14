@@ -1,43 +1,32 @@
 # Database and index configuration
 
-TheHive can be configured to connect to local Berkeley database or [Cassandra](https://cassandra.apache.org/) database. 
-
-!!! Tip
-    Using Cassandra is strongly recommended for production use while Berkeley DB can be prefered for testing and training purpose.
-
-
-Starting with TheHive 4.1.0, indexes are managed by a dedicated engine. 
-
+TheHive used [Cassandra](https://cassandra.apache.org/) and Elasticsearch databases to manage data and index. 
 According to the setup, the instance can use:
+ 
 
--  A local engine, **Lucene** driven by TheHive
--  A centralised engine, **Elasticsearch**.
-
-
-## Configuation 
+## Basic Configuation 
 
 A typical database configuration for TheHive looks like this:
 
 ```
 ## Database configuration
 db {
-  provider: janusgraph
+  provider = janusgraph
   janusgraph {
     ## Storage configuration
     storage {
-      backend: cql
-      hostname: ["IP_ADDRESS"]
+      backend = cql
+      hostname = ["IP_ADDRESS"]
       cql {
-        cluster-name: thp
-        keyspace: thehive
+        cluster-name = thp
+        keyspace = thehive
       }
     }
     ## Index configuration
-    index {
-      search {
-        backend : lucene
-        directory:  /path/to/index/folder
-      }
+    index.search {
+      backend = elasticsearch
+      hostname = ["127.0.0.1"]
+      index-name = thehive
     }
   }
 }
@@ -83,10 +72,7 @@ db {
 | `index.search.elasticsearch.ssl.disable-hostname-verification`  | boolean        | Disable SSL verification `true/false` |
 | `index.search.elasticsearch.ssl.allow-self-signed-certificates` | boolean        | Allow self signe certificates `true/false` |
 
-!!! Warning
-
-    - Using Elasticsearch to manage indexes is required if you are setting up TheHive as a cluster.
-    - The **initial start**, or first start after configuring indexes **might take some time** if the database contains a large amount of data. This time is due to the indexes creation
+!!! Warning "The **initial start**, or first start after configuring indexes **might take some time** if the database contains a large amount of data. This time is due to the indexes creation"
 
 
 More information on configuration for Elasticsearch connection: [https://docs.janusgraph.org/index-backend/elasticsearch/](https://docs.janusgraph.org/index-backend/elasticsearch/).
@@ -99,79 +85,36 @@ Database and index engine can be different, depending on the use case and target
 
 !!! Example
 
-    === "Testing server"
-
-        For such use cases, local database and indexes are adequate:
-
-        1. Create a dedicated folder for data and for indexes. These folders should belong to the user `thehive:thehive`.
-
-            ```bash
-            mkdir /opt/thp/thehive/{data, index}
-            chown -R thehive:thehive /opt/thp/thehive/{data, index}
-            ```
-        
-        2. Configure TheHive accordingly: 
-
-            ```
-            ## Database Configuration
-            db {
-              provider: janusgraph
-              janusgraph {
-                ## Storage configuration
-                storage {
-                  backend: berkeleyje
-                  directory: /opt/thp/thehive/database
-                }
-                ## Index configuration
-                index {
-                  search {
-                    backend: lucene
-                    directory: /opt/thp/thehive/index
-                  }
-                }
-              }
-            }
-            ```
-
-
-    === "Standalone server with Cassandra" 
+    === "Standalone server with Cassandra & Elasticsearch" 
 
         1. Install a Cassandra server locally
-        2. Create a dedicated folder for indexes. This folder should belong to the user `thehive:thehive`
-
-          ```bash
-            mkdir /opt/thp/thehive/index
-            chown -R thehive:thehive /opt/thp/thehive/index
-          ```
-
+        2. Install Elasticsearch
         3. Configure TheHive accordingly 
 
             ```
             ## Database Configuration
             db {
-              provider: janusgraph
+              provider = janusgraph
               janusgraph {
                 ## Storage configuration
                 storage {
-                  backend: cql
-                  hostname: ["127.0.0.1"]
+                  backend = cql
+                  hostname = ["127.0.0.1"]
                   ## Cassandra authentication (if configured)
-                  username: "thehive_account"
-                  password: "cassandra_password"
+                  username = "thehive_account"
+                  password = "cassandra_password"
                   cql {
-                    cluster-name: thp
-                    keyspace: thehive
+                    cluster-name = thp
+                    keyspace = thehive
                   }
                 }
                 ## Index configuration
-                index {
-                  search {
-                    backend: lucene
-                    directory: /opt/thp/thehive/index
-                  }
+                index.search {
+                  backend = elasticsearch
+                  hostname = ["127.0.0.1"]
+                  index-name = thehive
                 }
               }
-            }
             ```
 
     === "Cluster with Cassandra & Elasticsearch " 
@@ -184,41 +127,41 @@ Database and index engine can be different, depending on the use case and target
             ```
             ## Database Configuration
             db {
-              provider: janusgraph
+              provider = janusgraph
               janusgraph {
                 ## Storage configuration
                 storage {
-                  backend: cql
-                  hostname: ["10.1.2.1", "10.1.2.2", "10.1.2.3"]
+                  backend = cql
+                  hostname = ["10.1.2.1", "10.1.2.2", "10.1.2.3"]
                   ## Cassandra authentication (if configured)
-                  username: "thehive_account"
-                  password: "cassandra_password"
+                  username = "thehive_account"
+                  password = "cassandra_password"
                   cql {
-                    cluster-name: thp
-                    keyspace: thehive
+                    cluster-name = thp
+                    keyspace = thehive
                   }
                 }
                 ## Index configuration
                 index {
                   search {
-                    backend : elasticsearch
-                    hostname : ["10.1.2.5"]
-                    index-name : thehive
+                    backend  = elasticsearch
+                    hostname  = ["10.1.2.5"]
+                    index-name  = thehive
                     elasticsearch {
                       http {
                         auth {
-                          type: basic
+                          type = basic
                           basic {
-                            username: httpuser
-                            password: httppassword
+                            username = httpuser
+                            password = httppassword
                           }
                         }
                       }
                       ssl {
-                        enabled: true
+                        enabled = true
                         truststore {
-                          location: /path/to/your/truststore.jks
-                          password: truststorepwd
+                          location = /path/to/your/truststore.jks
+                          password = truststorepwd
                         }
                       }
                     }
@@ -231,7 +174,7 @@ Database and index engine can be different, depending on the use case and target
         !!! Warning
             In this configuration, all TheHive nodes should have the same configuration.
             
-            Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line: 
+            Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line = 
 
             ```yaml
             script.allowed_types: inline,stored
