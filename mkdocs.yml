@@ -3,7 +3,7 @@ site_name: TheHive 5 Documentation
 site_url: https://docs.strangebee.com
 theme:
   name: material
-  custom_dir: ./overrides/
+  # custom_dir: ./overrides/
   logo: 'assets/images/thehive-horizontal-light.svg'
   features:
     - navigation.instant
@@ -48,9 +48,6 @@ markdown_extensions:
   - attr_list
   - codehilite
   - admonition
-  - markdown.extensions.toc:
-      baselevel: 1
-      permalink: true
   - pymdownx.critic
   - pymdownx.tabbed:
       alternate_style: true
