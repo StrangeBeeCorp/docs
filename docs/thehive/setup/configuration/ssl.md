@@ -6,8 +6,6 @@ We recommend using a reverse proxy to manage SSL layer.
 
 ## Connectors 
 
-Refer to [Cortex](./connectors-cortex.md) or [MISP](./connectors-misp.md) configuration to setup specific SSL configuration of these remote services. 
-
 
 ## Client configuration
 
@@ -33,29 +31,30 @@ Certificate manager is used to store client certificates and certificate authori
 
 If setting up a custom Certificate Authority (to connect web proxies, remote services ...) is required globally in the application, the better solution consists of installing it on the OS and restarting TheHive. 
 
-!!! Example ""
 
-    === "Debian"
 
-        ```bash
-        apt-get install -y ca-certificates-java
-        mkdir /usr/share/ca-certificates/extra
-        cp mysctomcert.crt /usr/share/ca-certificates/extra
-        dpkg-reconfigure ca-certificates
-        service thehive restart
-        ```
+=== "Debian"
+
+    ```bash
+    apt-get install -y ca-certificates-java
+    mkdir /usr/share/ca-certificates/extra
+    cp mysctomcert.crt /usr/share/ca-certificates/extra
+    dpkg-reconfigure ca-certificates
+    service thehive restart
+    ```
 
 
 ##### Use dedicated trust stores 
 
 the other way, is to use the `trustManager` key in TheHive configuration. It is used to establish a secure connection with remote host. Server certificate must be signed by a trusted certificate authority.
+
 ```
   wsConfig.ssl.trustManager {
     stores = [
       {
-        type: "JKS" // JKS or PEM
-        path: "keystore.jks"
-        password: "password1"
+        type = "JKS" // JKS or PEM
+        path = "keystore.jks"
+        password = "password1"
       }
     ]
   }
@@ -68,9 +67,9 @@ the other way, is to use the `trustManager` key in TheHive configuration. It is 
   wsConfig.ssl.keyManager {
     stores = [
       {
-        type: "pkcs12" // JKS or PEM
-        path: "mycert.p12"
-        password: "password1"
+        type = "pkcs12" // JKS or PEM
+        path = "mycert.p12"
+        password = "password1"
       }
     ]
   }

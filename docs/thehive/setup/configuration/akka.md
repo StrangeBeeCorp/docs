@@ -1,11 +1,14 @@
-# Cluster
+# Akka
 
-!!! Quote
+!!! Quote ""
     Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala
 
     -- [https://akka.io/](https://akka.io/)
 
 Akka is used to make several nodes of TheHive work together and offer a smooth user experience. 
+
+
+## Basic configuration
 
 A good cluster setup requires at least 3 nodes of THeHive applications. For each node, Akka must be configured like this: 
 
@@ -100,7 +103,7 @@ with:
         ```
 
 
-## SSL/TLS
+## SSL/TLS support
 
 Akka supports SSL/TLS to encrypt communications between nodes. A typical configuration with SSL support : 
 

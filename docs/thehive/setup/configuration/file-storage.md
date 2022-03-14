@@ -53,21 +53,3 @@ TheHive can be configured to use local or distributed filesystems.
             ```
 
             `us-east-1` is the default region if none has been specified in MinIO configuration. In this case, this parameter is optional.
-
-    === "Apache Hadoop" 
-
-        1. Install an Apache Hadoop server
-
-        2. Configure each node of TheHive accordingly (`/etc/thehive/application.conf`): 
-
-            ```yaml
-            ## Attachment storage configuration
-            ## Hadoop filesystem (HDFS)
-            provider: hdfs
-            hdfs {
-              root: "hdfs://10.1.2.4:10000" # namenode server hostname
-              location: "/thehive"           # location inside HDFS
-              username: thehive              # file owner
-              }
-            }   
-            ```

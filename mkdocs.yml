@@ -80,6 +80,7 @@ nav:
     - Configuration:
       - 'Database & index': thehive/setup/configuration/database.md
       - 'File storage': thehive/setup/configuration/file-storage.md
+      - thehive/setup/configuration/connectors.md
       - thehive/setup/configuration/akka.md
       - thehive/setup/configuration/logs.md
       - thehive/setup/configuration/proxy.md
