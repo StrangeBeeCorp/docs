@@ -24,7 +24,7 @@
 # maintained by: ©StrangeBee - https://www.strangebee.com
 
 HEADER="---
-THeHive installation script for Linux using DEB packages
+THeHive installation script for Linux using RPM packages
 
 Following softwares will be installed:
  - Cassandra 4.0.x
