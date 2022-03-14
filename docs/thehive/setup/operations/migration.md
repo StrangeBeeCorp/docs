@@ -1,40 +1,40 @@
-# Migration to TheHive 4
+# Migration to TheHive 5
 
-TheHive 4.x is delivered with a tool to migrate your data from TheHive 3.x. stored in Elasticsearch. 
+TheHive 5.x is delivered with a tool to migrate your data from TheHive 3.x. stored in Elasticsearch. 
 
 ## Supported versions
 
-Starting with TheHive 4.1.17, the migration tool supports migrating data from both TheHive 3.4.x and 3.5.x. 
+The migration tool supports migrating data from both TheHive 3.4.x and 3.5.x. 
 
-| Migrating from                     | Possible target version |
-| ---------------------------------- | ----------------------- | 
-| TheHive 3.4.x + Elasticsearch 6.x  | TheHive 4.1.17+         |
-| TheHive 3.5.x + Elasticsearch 7.x  | TheHive 4.1.17+         |
+| Migrating from  | Elasticsearch version   |
+| --------------- | ----------------------- | 
+| TheHive 3.4.x   | v6.x                    |
+| TheHive 3.5.x   | v7.x                    |
 
 
 ## How it works
 
-All packages of TheHive4 distributed come with the migration program which can be used to import data from TheHive 3.4.0+. By default, it is installed in `/opt/thehive/bin/migrate`. 
+All packages of TheHive v5.x distributed come with the migration program which can be used to import data from TheHive 3.4.0+. By default, it is installed in `/opt/thehive/bin/migrate`. 
 
 ## Pre-requisite
 
 In order to migrate the data: 
 
-- TheHive 4 **must** be installed on the system running the migration tool; 
+- TheHive v5.x **must** be installed on the system running the migration tool; 
 
-- TheHive4 **must** be configured ; in particular **database**, **index**, and **file storage** ;  
+- TheHive **must** be configured ; in particular **database**, **index**, and **file storage** ;  
 - The service `thehive` **must be stopped** (`service thehive stop`) on the target server. 
 
 This tools **must** also have access to Elasticsearch database (http://ES:9200) used by TheHive 3, and the configuration file of TheHive 3.x instance. 
 
-## Configuration of TheHive 4
+## Configuration of TheHive 
 
 !!! Warning
-    In TheHive4, users are identified by their email addresses. Thus, a domain will be appended to usernames in order to migrate users from TheHive 3. 
+    In TheHive, users are identified by their email addresses. Thus, a domain will be appended to usernames in order to migrate users from TheHive 3. 
     
-    TheHive 4.x comes with a default domain named `thehive.local`. Starting the migration without explicitely specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
+    TheHive v5.x comes with a default domain named `thehive.local`. Starting the migration without explicitely specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
 
-    Change the default domain name used to import existing users in the configuration file of TheHive4 (`/etc/thehive/application.conf`) ;  add or update the setting named  `auth.defaultUserDomain`: 
+    Change the default domain name used to import existing users in the configuration file of TheHive (`/etc/thehive/application.conf`) ;  add or update the setting named  `auth.defaultUserDomain`: 
 
     ```yaml
     auth.defaultUserDomain: "mydomain.com"
@@ -45,7 +45,7 @@ This tools **must** also have access to Elasticsearch database (http://ES:9200) 
 
 ## Run the migration
 
-Prepare, install and configure your new instance of TheHive 4.x by following [the associated guides](../index.md).
+Prepare, install and configure your new instance of TheHive v5.x by following [the associated guides](../index.md).
 
 Once TheHive4 configuration file (`/etc/thehive/application.conf`) is correctly filled the `migrate` command ca be executed.
 
@@ -200,9 +200,8 @@ Numbers of Observables, Cases and others are estimations and not a definite valu
     ```
 
 
-## Starting TheHive 4
-
-Once the migration process is sucessfully completed, TheHive4 can be started. 
+## Starting TheHive
+Once the migration process is sucessfully completed, TheHive can be started. 
 
 !!! Warning
     During the first start data are indexed and service is not available ; this can take some time. Do not stop or restart the service at this time. 
