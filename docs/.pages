@@ -1,7 +1,6 @@
+Title: Home
 nav:
-    - 'Home': index.md
-    - 'Setup Guides': Setup
-    - 'Admin Guides': Administration
-    - 'User Guides': Organization
-    - 'API Docs': api-docs/" target="_blank
-    - 'Blog': https://blog.strangebee.com" target="_blank
+  - Home: 'index.md'
+  - TheHive: TheHive/Setup/
+  - 'API Docs': TheHive/api-docs" target="_blank
+  - 'Blog': https://blog.strangebee.com" target="_blank

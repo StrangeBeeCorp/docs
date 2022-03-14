@@ -1,7 +1,0 @@
-nav:
-  - New installation: 'step-by-step-guide.md'
-  - Install a 3-node cluster: '3-node-cluster.md'
-  - Use Docker: 'docker.md'
-  - Upgrade from thehive 4.1.x: 'upgrade-from-4.x.md'
-  - Upgrade a cluster: 'upgrade-cluster.md'
-  

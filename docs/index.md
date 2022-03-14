@@ -2,6 +2,9 @@
 hide:
   - navigation
   - toc
+template: home.html
+---
+
 ---
 
 # Welcome to TheHive 5 documentation website
