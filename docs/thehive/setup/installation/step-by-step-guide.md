@@ -495,7 +495,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
         region = "us-east-1"
         }
     }
-    alpakka.s3.access-style = path
+    alpakka.s3.path-style-access = force
     ```
 
 ### Run
@@ -511,8 +511,16 @@ Once it has started, open your browser and connect to `http://YOUR_SERVER_ADDRES
 
 The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
 
-
 ## Advanced configuration
 For additional configuration options, please refer to the [Configuration Guides](../index.md#configuration-guides).
 
 
+## Usage & Licenses
+
+By default, TheHive comes with no license token and let everyone use the application with 2 users and 1 organisation: this is the community version.
+
+To unlock advanced features, contact StrangeBee to get a license - [https://wwww.strangebee.com](https://wwww.strangebee.com) / [contact@strangebee.com](mailto:contact@strangebee.com)
+
+## Enable a license
+
+Follow this guide: [](license.md). 
