@@ -23,7 +23,7 @@ steps:
       target: {from_secret: catalog_path}
       source:
         - docs/thehive/setup/installation/assets/install-deb.sh
-        - docs/thehive/setup/installation/assets/install-deb.sh
+        - docs/thehive/setup/installation/assets/install-rpm.sh
       strip_components: 5
     when:
       event: [tag, cron, custom, promote]
