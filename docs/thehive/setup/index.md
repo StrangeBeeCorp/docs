@@ -30,7 +30,7 @@ TheHive has been tested and is supported on following operating systems:
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
-StrangeBee also provides an [official Docker image](https://hub.docker.com/r/thehiveproject/thehive). 
+StrangeBee also provides an [official Docker image](https://hub.docker.com/repository/docker/strangebee/thehive/general). 
 
 ## Installation guides
 
@@ -96,7 +96,14 @@ All other settings are available in the application WebUI.
 
 ### Upgrade from TheHive 4.x (standalone server)
 
-[Upgrade from THeHive 4.x](./installation/upgrade-from-4.x.md)
+!!! Info "F.A.Q"
+    ### Can I upgrade from TheHive 4.0.x ?
+    _Yes, all TheHive 4.x can be updated to TheHive 5; the documentation is coming soon!_
+
+    ### I use TheHive 3.x, can I upgrade my data to TheHive 5 ? 
+    _TheHive 3 is out of support since 31st december, 2021. Please contact [StrangeBee](mailto:contact@strangebee.com) for further assistance._
+    __
+
 
 
 ### TheHive as a cluster
