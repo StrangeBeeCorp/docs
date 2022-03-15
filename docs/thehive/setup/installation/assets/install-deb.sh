@@ -18,7 +18,7 @@
 #
 # Usage:
 # 
-#   $ sudo -v && bash install-DEB.sh
+#   $ sudo -v ; wget -q -O /tmp/install-thehive.sh https://archives.strangebee.com/scripts/install-deb.sh ; bash /tmp/install-thehive.sh
 # 
 # 
 # Maintained by: ©StrangeBee - https://www.strangebee.com

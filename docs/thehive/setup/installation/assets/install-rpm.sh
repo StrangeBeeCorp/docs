@@ -18,7 +18,7 @@
 #
 # Usage:
 # 
-#   $ sudo -v && bash install-RPM.sh
+#   $ sudo -v ; wget -q -O /tmp/install-thehive.sh https://archives.strangebee.com/scripts/install-rpm.sh ; bash /tmp/install-thehive.sh
 # 
 # 
 # maintained by: ©StrangeBee - https://www.strangebee.com
@@ -41,7 +41,7 @@ Requirements:
  
 Usage:
  
-   $ sudo -v && bash install-rpm.sh 
+   $ sudo -v ; wget -q -O /tmp/install-thehive.sh https://archives.strangebee.com/scripts/install-rpm.sh ; bash /tmp/install-thehive.sh
  
 
 Maintained by: ©StrangeBee - https://www.strangebee.com
