@@ -1,5 +1,10 @@
 {% extends "main.html" %} {% block tabs %} {{ super() }}
 <style>
+	:root {
+		--cl-dark: hsla(232, 42%, 10%, 100%);
+		--cl-font: hsla(229, 20%, 51%, 100%);
+		--cl-green: hsla(180, 44%, 50%, 100%);
+	}
 	.md-main {
 		flex-grow: 0;
 	}
@@ -102,6 +107,58 @@
 		color: #111;
 		margin: 0 0 10px;
 		display: block;
+	}
+
+	.th-container {
+		max-width: 61rem;
+		width: 100%;
+		padding-inline: 16px;
+		margin-inline: auto;
+	}
+	.featuresSection {
+	}
+
+	.section__title {
+		font-size: 25px;
+		font-weight: bolder;
+		color: var(--cl-green);
+	}
+
+	.feature__grid {
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 16px;
+	}
+
+	.feature__card {
+		border: 1px solid rgba(0, 0, 0, 0.1);
+		padding: 16px;
+		border-radius: 4px;
+		list-style: none;
+	}
+
+	.feature__title {
+		font-size: 18px;
+		font-weight: bold;
+		color: var(--cl-dark);
+	}
+
+	.feature__content {
+		font-size: 14px;
+		color: var(--cl-font);
+	}
+
+	@media screen and (max-width: 60rem) {
+		.feature__grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media screen and (max-width: 35.625rem) {
+		.feature__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	@media screen and (max-width: 30em) {
@@ -238,6 +295,79 @@
 			</div>
 		</div>
 	</div>
+</section>
+
+<section class="th-container featuresSection">
+	<h2 class="section__title">Features</h2>
+
+	<ul class="feature__grid">
+		<li class="feature__card">
+			<p class="feature__title">Alert management</p>
+
+			<p class="feature__content">
+				Go through your dedicated and detailed Alert page, make comments, identify similar
+				Alerts, define custom statuses and fields. Then decide whether or not they should be
+				escalated to investigations or to incident response.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">Case management</p>
+
+			<p class="feature__content">
+				Create cases and associated tasks and observables. Identify similar cases and
+				alerts, define the PAP (Permissible Actions Protocol) level on each Observable, or
+				improve your Incident Response process using a simple yet powerful template engine.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">Multi Tenant Environments</p>
+
+			<p class="feature__content">
+				Define the different organizations and teams and get them to work in a dedicated or
+				collaborative mode: tenants' cases can be isolated or investigated by users from
+				different organizations based on customizable roles and permissions.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">Advanced User management</p>
+
+			<p class="feature__content">
+				Define and customize user profiles, assign them to users within their organizations
+				and synchronise them via LDAP or AD.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">Metrics and dashboards</p>
+
+			<p class="feature__content">
+				Compile and correlate statistics on cases, tasks, observables, metrics and more to
+				generate useful KPIs and MBOs with our dynamic dashboard engine.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">MISP Integration</p>
+
+			<p class="feature__content">
+				Get shared Indicators of compromise quickly imported and ready to use or share yours
+				easily with your communities by connecting TheHive with MISP.
+			</p>
+		</li>
+
+		<li class="feature__card">
+			<p class="feature__title">MITRE ATT&CK Integration</p>
+
+			<p class="feature__content">
+				Import all of the MITRE ATT&CK Framework TTPs to TheHive Alert management. Import
+				Tactics and Techniques of a particular Case or Alert or simply export them to a MISP
+				event.
+			</p>
+		</li>
+	</ul>
 </section>
 
 {% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock %}
