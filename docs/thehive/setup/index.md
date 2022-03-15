@@ -30,7 +30,7 @@ TheHive has been tested and is supported on following operating systems:
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
-StrangeBee also provides an [official Docker image](https://hub.docker.com/repository/docker/strangebee/thehive/general). 
+StrangeBee also provides an [official Docker image](https://hub.docker.com/r/strangebee/thehive/tags). 
 
 ## Installation guides
 
