@@ -287,7 +287,7 @@ storage {
   }
 }
 
-alpakka.s3.path-style-access = force
+alpakka.s3.access-style = path
 ```
 
 `us-east-1` is the default region if none has been specified in MinIO configuration. In this case, this parameter is optional.
