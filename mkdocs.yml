@@ -35,6 +35,9 @@ extra_css:
 plugins:
   - search
   - awesome-pages
+  - redirects:
+        redirect_maps:
+            'thehive/index.md': 'thehive/setup/index.md'
 
 extra:
   social:
@@ -75,8 +78,8 @@ nav:
       - thehive/setup/installation/step-by-step-guide.md
       - 'Running with Docker': thehive/setup/installation/docker.md
       - thehive/setup/installation/3-node-cluster.md
-      - thehive/setup/installation/upgrade-from-4.x.md
-      - thehive/setup/operations/migration.md
+      # - thehive/setup/installation/upgrade-from-4.x.md
+      - thehive/setup/installation/migration.md
       - thehive/setup/installation/upgrade-cluster.md
     - Configuration:
       - 'Database & index': thehive/setup/configuration/database.md

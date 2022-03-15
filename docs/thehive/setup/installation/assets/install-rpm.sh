@@ -188,6 +188,9 @@ autorefresh=1
 type=rpm-md
 EOF
 
+yum-install python3-pip
+sudo pip install -q cqlsh
+
 sudo yum install -y -q --enablerepo=elasticsearch elasticsearch
 
 
