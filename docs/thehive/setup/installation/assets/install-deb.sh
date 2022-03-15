@@ -233,6 +233,6 @@ for TABLE in edgestore edgestore_lock_ graphindex graphindex_lock_ janusgraph_id
       cqlsh -u cassandra -p cassandra -e "ALTER TABLE thehive.${TABLE} WITH gc_grace_seconds = 0;"
     done
 
-display_success
+[[ $? -eq 0 ]] && display_success
 
 exec 3>&-
