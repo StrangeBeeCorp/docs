@@ -1,4 +1,4 @@
-# Migration to TheHive 5
+# Migration from thehive 3.x
 
 TheHive 5.x is delivered with a tool to migrate your data from TheHive 3.x. stored in Elasticsearch. 
 
@@ -57,7 +57,7 @@ The program comes with a large set of options:
 
 ```
 # /opt/thehive/bin/migrate --help
-TheHive migration tool 4.1.17-1
+TheHive migration tool 
 Usage: migrate [options]
 
   -v, --version
@@ -72,7 +72,7 @@ Usage: migrate [options]
   -m, --main-organisation <organisation>
   -u, --es-uri http://ip1:port,ip2:port
                            TheHive3 ElasticSearch URI
-  -e, --es-index <index>   TheHive3 ElasticSearch index name
+  -x, --es-index <index>   TheHive3 ElasticSearch index name
   -x, --es-index-version <index>
                            TheHive3 ElasticSearch index name version number (default: autodetect)
   -a, --es-keepalive <duration>
@@ -85,6 +85,7 @@ Usage: migrate [options]
                            page size for each transaction
   -t, --thread-count <value>
                            number of threads
+  -k, --integrity-checks   run integrity checks after the migration
   --max-case-age <duration>
                            migrate only cases whose age is less than <duration>
   --min-case-age <duration>

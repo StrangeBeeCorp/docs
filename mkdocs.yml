@@ -77,6 +77,7 @@ nav:
     - Installation:
       - thehive/setup/installation/step-by-step-guide.md
       - 'Running with Docker': thehive/setup/installation/docker.md
+      - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/3-node-cluster.md
       # - thehive/setup/installation/upgrade-from-4.x.md
       - thehive/setup/installation/migration.md
