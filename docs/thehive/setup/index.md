@@ -64,7 +64,7 @@ An Official Docker image publicly available. Follow our [installation guide for 
 
 ### Use Kubernetes :material-kubernetes:
 
-TheHive is now compatible with Kubernetes - follow the related guide here : [https://docs.strangebee.com/thehive/setup/installation/docker/#usage-in-kubernetes](https://docs.strangebee.com/thehive/setup/installation/docker/#usage-in-kubernetes).
+TheHive is now compatible with Kubernetes - follow the related guide [here](https://docs.strangebee.com/thehive/setup/installation/docker/#usage-in-kubernetes).
 
 
 
