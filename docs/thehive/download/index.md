@@ -24,7 +24,7 @@ gpgcheck=1
 Download it at: [https://archives.strangebee.com/zip/thehive-latest.zip](https://archives.strangebee.com/zip/thehive-latest.zip)
 
 ## :material-docker: Docker
-Docker images are published on Dockerhub here: [https://hub.docker.com/r/thehiveproject/thehive](https://hub.docker.com/r/thehiveproject/thehive)
+Docker images are published on Dockerhub here: [https://hub.docker.com/r/strangebee/thehive](https://hub.docker.com/r/strangebee/thehive)
 
 
 ## Archives
