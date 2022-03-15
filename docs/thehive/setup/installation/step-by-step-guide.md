@@ -301,8 +301,6 @@ For standalone production and test servers, we recommends using local filesystem
 
 This part contains instructions to install TheHive and then configure it.
 
-!!! Warning
-    TheHive can't be installed on the same server than older versions. We recommend installing it on a new server, especially if a migration is foreseen.
 
 ### Installation
 
