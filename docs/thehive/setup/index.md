@@ -14,7 +14,7 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
     TheHive 4.1.x embbeded **Lucene** to handle the data index ; this is still the case with the latest version with which we suggest to use it only for testing purpose.
 
 ## Resources
-Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds:
+Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
 
 | Number of users                                | CPU :fontawesome-solid-microchip: | RAM :fontawesome-solid-memory: |
 | -----------------------------------------------|: --------------------------------- :|: -------------------------- :|

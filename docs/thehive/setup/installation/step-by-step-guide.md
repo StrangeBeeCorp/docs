@@ -495,7 +495,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
         region = "us-east-1"
         }
     }
-    alpakka.s3.path-style-access = force
+    alpakka.s3.access-style = path
     ```
 
 ### Run
