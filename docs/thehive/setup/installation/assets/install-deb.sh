@@ -41,7 +41,7 @@ Requirements:
  
 Usage:
  
-   $ sudo -v && bash install-DEB.sh 
+   $ sudo -v && bash install-deb.sh 
  
 
 Maintained by: ©StrangeBee - https://www.strangebee.com
@@ -226,6 +226,12 @@ start-service elasticsearch 9200
 
 ## START THEHIVE
 start-service thehive 9000 
+
+## Remove tombstones (for standalone server ONLY)
+for TABLE in edgestore edgestore_lock_ graphindex graphindex_lock_ janusgraph_ids system_properties system_properties_lock_ systemlog txlog
+    do
+      cqlsh -u cassandra -p cassandra -e "ALTER TABLE thehive.${TABLE} WITH gc_grace_seconds = 0;"
+    done
 
 display_success
 

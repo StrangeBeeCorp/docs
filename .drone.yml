@@ -13,6 +13,18 @@ steps:
     - pip install -U -r ./requirements.txt
     - mkdocs build
 
+  - name: upload scripts to archives.strangebee.com
+    image: appleboy/drone-scp
+    settings:
+      host: {from_secret: package_host}
+      username: {from_secret: package_user}
+      key: {from_secret: package_key}
+      target: {from_secret: catalog_path}
+      source:
+        - docs/thehive/setup/installation/assets/install-deb.sh
+        - docs/thehive/setup/installation/assets/install-deb.sh
+      strip_components: 1
+      
   # Publish packages to lab web server
   - name: publish docs in lab
     image: appleboy/drone-scp

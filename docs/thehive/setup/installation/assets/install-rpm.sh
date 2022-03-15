@@ -41,7 +41,7 @@ Requirements:
  
 Usage:
  
-   $ sudo -v && bash install-RPM.sh 
+   $ sudo -v && bash install-rpm.sh 
  
 
 Maintained by: ©StrangeBee - https://www.strangebee.com
