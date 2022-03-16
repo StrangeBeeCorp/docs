@@ -13,7 +13,7 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
     Starting with TheHive 5.x we strongly recommend using Elasticsearch for production servers. 
     TheHive 4.1.x embbeded **Lucene** to handle the data index ; this is still the case with the latest version with which we suggest to use it only for testing purpose.
 
-## Resources
+## Requirements
 Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
 
 | Number of users                                | CPU :fontawesome-solid-microchip: | RAM :fontawesome-solid-memory: |
