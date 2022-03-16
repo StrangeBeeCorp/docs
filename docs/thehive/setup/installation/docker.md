@@ -2,6 +2,8 @@
 
 This page will guide you on how to use the docker image of TheHive
 
+!!! Tip Default admin credentials are admin@thehive.local / secret
+
 ```bash
 docker run --rm -p 9000:9000 strangebee/thehive:<version>
 ```
