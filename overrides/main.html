@@ -1,10 +1,45 @@
-{% extends "base.html" %} {% block announce %}
+{% extends "base.html" %} {% block extrahead %}
+
+<!-- Open graph  -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TheHive 5 Documentation" />
+<meta
+  property="og:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta property="og:site_name" content="StrangeBee Docs" />
+<meta
+  property="og:image"
+  content="https://docs.strangebee.com/images/share/meta-open-graph.png"
+/>
+<meta property="og:url" content="https://docs.strangebee.com" />
+<meta property="og:locale" content="en_US" />
+<meta
+  property="og:video"
+  content="https://www.youtube.com/watch?v=fBzaVhABGMY"
+/>
+
+<!-- Twitter card  -->
+<meta name="twitter:title" content="TheHive 5 Documentation" />
+<meta
+  name="twitter:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta
+  name="twitter:image"
+  content="https://docs.strangebee.com/images/share/meta-twitter-card.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StrangeBee" />
+<meta name="twitter:creator" content="@StrangeBee" />
+
+{% endblock %} {% block announce %}
 <!-- Add announcement here, including arbitrary HTML -->
 <a href="https://twitter.com/StrangeBee" target="_blank">
-        For updates follow <strong>@StrangeBee</strong> on
-        <span class="twemoji twitter">
-            {% include ".icons/fontawesome/brands/twitter.svg" %}
-        </span>
-        <strong>Twitter</strong>
-    </a>
+  For updates follow <strong>@StrangeBee</strong> on
+  <span class="twemoji twitter">
+    {% include ".icons/fontawesome/brands/twitter.svg" %}
+  </span>
+  <strong>Twitter</strong>
+</a>
 {% endblock %}
