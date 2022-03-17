@@ -1,6 +1,6 @@
 # Docs
 
-[![Build Status](https://drone.strangebee.com/api/badges/StrangeBeeCorp/thehive-docs/status.svg?ref=refs/heads/develop)](https://drone.strangebee.com/StrangeBeeCorp/docs)
+[![Build Status](https://drone.strangebee.com/api/badges/StrangeBeeCorp/docs/status.svg?ref=refs/heads/develop)](https://drone.strangebee.com/StrangeBeeCorp/docs)
 
 The documentation uses mkdocs to render the content.
 
