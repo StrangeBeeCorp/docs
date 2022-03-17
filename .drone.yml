@@ -27,35 +27,3 @@ steps:
       strip_components: 5
     when:
       event: [tag, cron, custom, promote]
-  # Publish packages to lab web server
-  - name: publish docs in lab
-    image: appleboy/drone-scp
-    settings:      
-      host: 
-        from_secret: lab_ssh_host
-      port: 22
-      username: 
-        from_secret: lab_ssh_username
-      password: 
-        from_secret: lab_ssh_password
-      target: /var/www/docs
-      source: site/*
-      strip_components: 1
-
-  - name: upload to s3
-    image: plugins/s3
-    settings:
-        bucket: strangebee-websites
-        region: us-east-1
-        access_key:
-            from_secret: aws_access_key_id
-        secret_key:
-            from_secret: aws_secret_access_key
-        source: site/**/*
-        strip_prefix: site/
-        target: /thehive-docs-${DRONE_BUILD_NUMBER}
-    when:
-        event: [tag, cron, custom, promote]
-
-# references
-# https://blog.ktz.me/deploying-mkdocs-using-droneci/
