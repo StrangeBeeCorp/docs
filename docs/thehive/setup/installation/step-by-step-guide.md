@@ -159,8 +159,8 @@ TheHive requires Elasticsearch to manage data indices.
     1. Add Elasticsearch repository keys
 
         ```bash
-            wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-            sudo apt-get install apt-transport-https
+        wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+        sudo apt-get install apt-transport-https
         ```
 
     2. Add the DEB repository of Elasticsearch 
@@ -182,7 +182,7 @@ TheHive requires Elasticsearch to manage data indices.
     1. Add Elasticsearch repository references
 
         ```bash
-            rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
         ```
 
     2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
