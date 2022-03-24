@@ -8,7 +8,6 @@
     - The application is running on a [supported Linux operating system](../index.md#operating-systems)
     - The server meets [prerequisites](../index.md#requirements) regaring CPU & RAM.
 
-    
 !!! Warning "Switch to Elasticsearch as indexing engine"
     If using Lucene as indexing engine with TheHive 4.1.x,  reindexing the data is mandatory. It might take some time ragarding the size of your database. 
 
@@ -92,7 +91,7 @@ num_tokens: 256
 ### Start the service
 
 ```
-sudo systemctl start thehive
+sudo systemctl start cassandra
 ```
 
 ## Install thehive
@@ -199,16 +198,23 @@ sudo systemctl start thehive
 ### Specific configuration required (for update only)
 
 
-db.janusgraph.index.search.elasticsearch.bulk-refresh = true
+```
+db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+```
 
+Default value:
+
+```
+db.janusgraph.index.search.elasticsearch.bulk-refresh = wait_for
+```
 
 ### Install TheHive
 
 - Update the repository address
 
   ```
-  wget -O- <https://archives.strangebee.com/keys/strangebee.gpg> | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-  sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] <https://deb.strangebee.com> thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+  wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+  sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
   ```
 
 - Proceed to installation 
@@ -235,6 +241,10 @@ db.janusgraph.index.search.elasticsearch.bulk-refresh = true
 
 ### Start services
 
+```bash
+sudo systemctl daemon-reload
+```
+
 - Start Cassandra
 
 ```bash
@@ -256,4 +266,94 @@ sudo systemctl start thehive
 
 !!! Warning "The first start of TheHive 5.0.x can take some time"
     When starting, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
-    Progression can be followed in log file `/etc/thehive/application.log`
+    Progression can be followed in log file `/etc/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
+
+### Restart the service
+Once the service is started successfully, update the configuration file and remove the following line:
+
+```yaml title="/etc/thehive/application.conf"
+db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+```
+
+Then restart TheHive:
+
+```
+sudo systemctl restart TheHive
+```
+
+
+## Troubleshooting
+
+During the update, few logs can be seen in TheHive `application.log` file. 
+
+!!! Example "Example of logs and their signification"
+
+    ```
+    2022-03-24 11:48:20,743 [INFO] from org.janusgraph.graphdb.database.management.GraphIndexStatusWatcher in application-akka.actor.default-dispatcher-11 [|] Some key(s) on index global2 do not currently have status(es) [REGISTERED, ENABLED]: dateValue=INSTALLED,externalLink=INSTALLED,origin=INSTALLED,patternId=INSTALLED,revoked=INSTALLED,mandatory=INSTALLED,content=INSTALLED,isAttachment=INSTALLED,writable=INSTALLED,tactic=INSTALLED,stringValue=INSTALLED,owningOrganisation=INSTALLED,permissions=INSTALLED,actionRequired=INSTALLED,integerValue=INSTALLED,details=INSTALLED,locked=INSTALLED,slug=INSTALLED,cortexId=INSTALLED,owner=INSTALLED,workerId=INSTALLED,apikey=INSTALLED,level=INSTALLED,floatValue=INSTALLED,version=INSTALLED,occurDate=INSTALLED,url=INSTALLED,report=INSTALLED,tactics=INSTALLED,booleanValue=INSTALLED,cortexJobId=INSTALLED,category=INSTALLED,workerName=INSTALLED
+    ```
+    _TheHive install indexes of the new schema in the database_ 
+
+    ---
+
+    ```
+    2022-03-24 11:48:42,806 [INFO] from org.janusgraph.graphdb.olap.job.IndexRepairJob in Thread-97 [|] Index global2 metrics: success-tx: 1 doc-updates: 100 succeeded: 100
+    ```
+    _TheHive reindexes all data_
+
+    ---
+
+    ```
+    * UPDATE SCHEMA OF thehive-enterprise (1): Create initial values
+    2022-03-24 11:55:12,239 [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [d471d8b643d17b6d|d88fe62679b77ab1] Adding initial values for GDPRDummy
+    [..]
+    2022-03-24 11:55:32,533 [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [|] Update graph in progress (100): Add pap and ignoreSimilarity to observables
+    ```
+    _Migrating data from v4. to v5._
+
+    ---
+
+    ```
+    2022-03-24 12:01:45,385 [WARN] from org.thp.thehive.enterprise.services.LicenseSrv in main [ef39c95eaa6de532|0ccf187e40a4cd34] No license found
+    ```
+    _No license found. This is a normal behaviour during the upgrade from version 4 to 5.
+
+    ---
+
+    ```
+    2022-03-24 12:01:58,525 [INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+    ```
+    _The service is available. Users/Administrators can log in_
+
+    ---
+
+    ```
+    2022-03-24 12:01:58,351 [INFO] from org.thp.thehive.connector.cortex.services.CortexDataImportActor in application-akka.actor.default-dispatcher-16 [|] Analyzer templates already present (found 203), skipping
+    [..]
+    2022-03-24 12:02:14,659 [INFO] from org.thp.thehive.services.ttp.PatternImportActor in application-akka.actor.default-dispatcher-14 [|] Import finished, 707 patterns imported
+    ```
+    _Few operations are processed after making the service available, like installing MITRE Enterprise ATT&CK patterns catalog or Analyzers templates._
+
+    ---
+
+    ```
+    2022-03-24 16:50:41,884 [ERROR] from org.janusgraph.diskstorage.log.util.ProcessMessageJob in pool-22-thread-1 [|] Encountered exception when processing message [Message@2022-03-24T16:50:40.655134Z:7f0001017672-ubuntu2=0x809F9F0568850528850550850558850570850600850610850618850650850668850710850738850758850760850808850900850910850A60850A70850A78850B00850B08853520853B3885150E8941608541688541788542088542688542708581] by reader [org.janusgraph.graphdb.database.management.ManagementLogger@3e1a6eae]:java.lang.IllegalStateException: Cannot access element because its enclosing transaction is closed and unbound
+    at org.janusgraph.graphdb.transaction.StandardJanusGraphTx.getNextTx(StandardJanusGraphTx.java:380)
+    at org.janusgraph.graphdb.vertices.AbstractVertex.it(AbstractVertex.java:61)
+    at org.janusgraph.graphdb.relations.CacheVertexProperty.<init>(CacheVertexProperty.java:38)
+    at org.janusgraph.graphdb.transaction.RelationConstructor.readRelation(RelationConstructor.java:88)
+    at org.janusgraph.graphdb.transaction.RelationConstructor.readRelation(RelationConstructor.java:71)
+    at org.janusgraph.graphdb.transaction.RelationConstructor$1.next(RelationConstructor.java:57)
+    at org.janusgraph.graphdb.transaction.RelationConstructor$1.next(RelationConstructor.java:45)
+    at org.janusgraph.graphdb.types.vertices.JanusGraphSchemaVertex.getDefinition(JanusGraphSchemaVertex.java:94)
+    at org.janusgraph.graphdb.transaction.StandardJanusGraphTx.expireSchemaElement(StandardJanusGraphTx.java:1599)
+    at org.janusgraph.graphdb.database.management.ManagementLogger.read(ManagementLogger.java:97)
+    at org.janusgraph.diskstorage.log.util.ProcessMessageJob.run(ProcessMessageJob.java:46)
+    at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+    at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+    at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+    at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+    at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+    at java.base/java.lang.Thread.run(Thread.java:829)
+    ```
+
+    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899), don't mind it as the indexing will continue normally. This will have no impact on TheHive_
