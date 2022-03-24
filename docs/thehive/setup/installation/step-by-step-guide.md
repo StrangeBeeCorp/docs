@@ -60,7 +60,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
         rpm --import https://downloads.apache.org/cassandra/KEYS
         ```
 
-    2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
+    2. Add the Apache repository for Cassandra to `/etc/yum.repos.d/cassandra.repo`
 
         ```bash title="/etc/yum.repos.d/cassandra.repo"
         [cassandra]
