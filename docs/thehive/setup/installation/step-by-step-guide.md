@@ -521,4 +521,4 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 
 ## Enable a license
 
-Follow this guide: [](license.md). 
+Follow this guide: [Enable a license](./license.md).
