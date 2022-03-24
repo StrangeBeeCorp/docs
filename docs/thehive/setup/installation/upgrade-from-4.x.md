@@ -9,12 +9,12 @@
     - The server meets [prerequisites](../index.md#requirements) regaring CPU & RAM.
 
 !!! Warning "Switch to Elasticsearch as indexing engine"
-    If using Lucene as indexing engine with TheHive 4.1.x,  reindexing the data is mandatory. It might take some time ragarding the size of your database. 
+    TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.
 
 
 ## Preparation
 
-The Database application will be upgraded during the upgrade. We highly recommend making backups of the database, index and files before running the operation.
+The database application will be upgraded during the upgrade. We highly recommend making backups of the database, index and files before running the operation.
 
 !!! Note "FAQ"
     **Q:** **How to make backups ?**
@@ -30,7 +30,7 @@ The Database application will be upgraded during the upgrade. We highly recommen
     sudo systemctl stop thehive
     ```
 
-2. Once TheHive is sucessfully stopped, stop database service
+2. Once TheHive is successfully stopped, stop database service
 
     ```bash title="stop cassandra service"
     sudo systemctl stop cassandra
@@ -78,7 +78,7 @@ Configuration file '/etc/cassandra/cassandra.yaml'
 
 ### Configuration
 
-Update the new configuration file, and ensure following parameters are correctly set with this values:
+Update the new configuration file, and ensure the following parameters are correctly set with these values:
 
 ```
 cluster_name: 'thp'
@@ -86,7 +86,7 @@ num_tokens: 256
 ```
 
 !!! Info
-    If you had a more customised configuration file for Cassandra 3.x, review all the file and ensure to adapt it accordingly.
+    If you had a more customized configuration file for Cassandra 3.x, review all the file and ensure to adapt it accordingly.
 
 ### Start the service
 
@@ -99,7 +99,7 @@ sudo systemctl start cassandra
 ### Prepare for the new installation
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
-    Starting with TheHive 5.0.0, configuration has been simplified; most of all administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) contains **only** the necessary information to start the application sucessfully; that means: 
+    Starting with TheHive 5.0.0, configuration has been simplified; most of all administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) contains **only** the necessary information to start the application successfully; that means 
 
     - Secret
     - Database
@@ -116,7 +116,7 @@ sudo systemctl start cassandra
     sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
     ```
 
-2. For the current use case, i.e. a standalone server, the final configuration file should look like this:
+2. For the current use case, i.e., a standalone server, the final configuration file should look like this:
 
     ```yaml title="sample of /etc/thehive/application.conf"
     # TheHive configuration - application.conf
@@ -193,7 +193,7 @@ sudo systemctl start cassandra
     !!! Note
         By default, Cortex and MISP modules are enabled. If not using one of them, the corresponding line can be commented.
 
-        **Our recommendation**: use the default configuration sample, update it with your custom parameters values, and keep the old file to configure services in the web UI. 
+        **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
 
 ### Specific configuration required (for the upgrade only)
 
@@ -309,14 +309,14 @@ During the update, few logs can be seen in TheHive `application.log` file.
 !!! Example "Example of logs and what they mean"
 
     ```
-    2022-03-24 11:48:20,743 [INFO] from org.janusgraph.graphdb.database.management.GraphIndexStatusWatcher in application-akka.actor.default-dispatcher-11 [|] Some key(s) on index global2 do not currently have status(es) [REGISTERED, ENABLED]: dateValue=INSTALLED,externalLink=INSTALLED,origin=INSTALLED,patternId=INSTALLED,revoked=INSTALLED,mandatory=INSTALLED,content=INSTALLED,isAttachment=INSTALLED,writable=INSTALLED,tactic=INSTALLED,stringValue=INSTALLED,owningOrganisation=INSTALLED,permissions=INSTALLED,actionRequired=INSTALLED,integerValue=INSTALLED,details=INSTALLED,locked=INSTALLED,slug=INSTALLED,cortexId=INSTALLED,owner=INSTALLED,workerId=INSTALLED,apikey=INSTALLED,level=INSTALLED,floatValue=INSTALLED,version=INSTALLED,occurDate=INSTALLED,url=INSTALLED,report=INSTALLED,tactics=INSTALLED,booleanValue=INSTALLED,cortexJobId=INSTALLED,category=INSTALLED,workerName=INSTALLED
+    [INFO] from org.janusgraph.graphdb.database.management.GraphIndexStatusWatcher in application-akka.actor.default-dispatcher-11 [|] Some key(s) on index global2 do not currently have status(es) [REGISTERED, ENABLED]: dateValue=INSTALLED,externalLink=INSTALLED,origin=INSTALLED,patternId=INSTALLED,revoked=INSTALLED,mandatory=INSTALLED,content=INSTALLED,isAttachment=INSTALLED,writable=INSTALLED,tactic=INSTALLED,stringValue=INSTALLED,owningOrganisation=INSTALLED,permissions=INSTALLED,actionRequired=INSTALLED,integerValue=INSTALLED,details=INSTALLED,locked=INSTALLED,slug=INSTALLED,cortexId=INSTALLED,owner=INSTALLED,workerId=INSTALLED,apikey=INSTALLED,level=INSTALLED,floatValue=INSTALLED,version=INSTALLED,occurDate=INSTALLED,url=INSTALLED,report=INSTALLED,tactics=INSTALLED,booleanValue=INSTALLED,cortexJobId=INSTALLED,category=INSTALLED,workerName=INSTALLED
     ```
     _TheHive install indexes of the new schema in the database_ 
 
     ---
 
     ```
-    2022-03-24 11:48:42,806 [INFO] from org.janusgraph.graphdb.olap.job.IndexRepairJob in Thread-97 [|] Index global2 metrics: success-tx: 1 doc-updates: 100 succeeded: 100
+    [INFO] from org.janusgraph.graphdb.olap.job.IndexRepairJob in Thread-97 [|] Index global2 metrics: success-tx: 1 doc-updates: 100 succeeded: 100
     ```
     _TheHive reindexes all data_
 
@@ -324,39 +324,39 @@ During the update, few logs can be seen in TheHive `application.log` file.
 
     ```
     * UPDATE SCHEMA OF thehive-enterprise (1): Create initial values
-    2022-03-24 11:55:12,239 [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [d471d8b643d17b6d|d88fe62679b77ab1] Adding initial values for GDPRDummy
+    [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [d471d8b643d17b6d|d88fe62679b77ab1] Adding initial values for GDPRDummy
     [..]
-    2022-03-24 11:55:32,533 [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [|] Update graph in progress (100): Add pap and ignoreSimilarity to observables
+    [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [|] Update graph in progress (100): Add pap and ignoreSimilarity to observables
     ```
     _Migrating data from v4. to v5._
 
     ---
 
     ```
-    2022-03-24 12:01:45,385 [WARN] from org.thp.thehive.enterprise.services.LicenseSrv in main [ef39c95eaa6de532|0ccf187e40a4cd34] No license found
+    [WARN] from org.thp.thehive.enterprise.services.LicenseSrv in main [ef39c95eaa6de532|0ccf187e40a4cd34] No license found
     ```
-    _No license found. This is a normal behaviour during the upgrade from version 4 to 5.
+    _No license found. This is a normal behavior during the upgrade from versions 4 to 5.
 
     ---
 
     ```
-    2022-03-24 12:01:58,525 [INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+    INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
     ```
     _The service is available. Users/Administrators can log in_
 
     ---
 
     ```
-    2022-03-24 12:01:58,351 [INFO] from org.thp.thehive.connector.cortex.services.CortexDataImportActor in application-akka.actor.default-dispatcher-16 [|] Analyzer templates already present (found 203), skipping
+    [INFO] from org.thp.thehive.connector.cortex.services.CortexDataImportActor in application-akka.actor.default-dispatcher-16 [|] Analyzer templates already present (found 203), skipping
     [..]
-    2022-03-24 12:02:14,659 [INFO] from org.thp.thehive.services.ttp.PatternImportActor in application-akka.actor.default-dispatcher-14 [|] Import finished, 707 patterns imported
+    [INFO] from org.thp.thehive.services.ttp.PatternImportActor in application-akka.actor.default-dispatcher-14 [|] Import finished, 707 patterns imported
     ```
     _Few operations are processed after making the service available, like installing MITRE Enterprise ATT&CK patterns catalog or Analyzers templates._
 
     ---
 
     ```
-    2022-03-24 16:50:41,884 [ERROR] from org.janusgraph.diskstorage.log.util.ProcessMessageJob in pool-22-thread-1 [|] Encountered exception when processing message [Message@2022-03-24T16:50:40.655134Z:7f0001017672-ubuntu2=0x809F9F0568850528850550850558850570850600850610850618850650850668850710850738850758850760850808850900850910850A60850A70850A78850B00850B08853520853B3885150E8941608541688541788542088542688542708581] by reader [org.janusgraph.graphdb.database.management.ManagementLogger@3e1a6eae]:java.lang.IllegalStateException: Cannot access element because its enclosing transaction is closed and unbound
+    [ERROR] from org.janusgraph.diskstorage.log.util.ProcessMessageJob in pool-22-thread-1 [|] Encountered exception when processing message [Message@2022-03-24T16:50:40.655134Z:7f0001017672-ubuntu2=0x809F9F0568850528850550850558850570850600850610850618850650850668850710850738850758850760850808850900850910850A60850A70850A78850B00850B08853520853B3885150E8941608541688541788542088542688542708581] by reader [org.janusgraph.graphdb.database.management.ManagementLogger@3e1a6eae]:java.lang.IllegalStateException: Cannot access element because its enclosing transaction is closed and unbound
     at org.janusgraph.graphdb.transaction.StandardJanusGraphTx.getNextTx(StandardJanusGraphTx.java:380)
     at org.janusgraph.graphdb.vertices.AbstractVertex.it(AbstractVertex.java:61)
     at org.janusgraph.graphdb.relations.CacheVertexProperty.<init>(CacheVertexProperty.java:38)
