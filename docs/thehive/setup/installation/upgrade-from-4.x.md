@@ -195,36 +195,56 @@ sudo systemctl start cassandra
 
         **Our recommendation**: use the default configuration sample, update it with your custom parameters values, and keep the old file to configure services in the web UI. 
 
-### Specific configuration required (for update only)
-
+### Specific configuration required (for the upgrade only)
 
 ```
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 ```
 
-Default value:
-
-```
-db.janusgraph.index.search.elasticsearch.bulk-refresh = wait_for
-```
-
 ### Install TheHive
 
-- Update the repository address
+=== "DEB"
 
-  ```
-  wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-  sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-  ```
+    - Update the repository address
 
-- Proceed to installation 
+    ```bash
+    wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+    sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+    ```
 
-  ```
-  sudo apt update
-  sudo apt install thehive
-  ```
+    - Install new package - old package of `thehive4` will be removed
+  
+    ```bash
+    sudo apt update
+    sudo apt install thehive
+    ```
 
-- During the installation, if you already prepared your configuration file, continue **without** updating it with the maintainer's version.
+=== "RPM"
+
+    - Add Cassandra repository keys
+
+    ```bash
+    rpm --import https://downloads.apache.org/cassandra/KEYS
+    ```
+
+    - Update the Apache repository for Cassandra to `/etc/yum.repos.d/cassandra.repo`
+      
+    ```bash title="/etc/yum.repos.d/cassandra.repo"
+    [cassandra]
+    name=Apache Cassandra
+    baseurl=https://downloads.apache.org/cassandra/redhat/40x/
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://downloads.apache.org/cassandra/KEYS
+    ```
+
+    - Install the package
+
+    ```bash
+    sudo yum install cassandra
+    ```
+
+During the installation, if you already prepared your configuration file, continue **without** updating it with the maintainer's version.
 
   ```
   Configuration file '/etc/thehive/application.conf'
@@ -278,7 +298,7 @@ db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 Then restart TheHive:
 
 ```
-sudo systemctl restart TheHive
+sudo systemctl restart thehive
 ```
 
 
