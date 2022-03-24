@@ -100,7 +100,7 @@ sudo systemctl start thehive
 ### Prepare for the new installation
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
-    Starting with TheHive 5.0.0, configuration is simplified; most of all administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) contains **only** the necessary information to start the application sucessfully; that means: 
+    Starting with TheHive 5.0.0, configuration has been simplified; most of all administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) contains **only** the necessary information to start the application sucessfully; that means: 
 
     - Secret
     - Database
@@ -119,7 +119,7 @@ sudo systemctl start thehive
 
 2. For the current use case, i.e. a standalone server, the final configuration file should look like this:
 
-    ```conf title="sample of /etc/thehive/application.conf"
+    ```yaml title="sample of /etc/thehive/application.conf"
     # TheHive configuration - application.conf
     #
     #
@@ -191,4 +191,69 @@ sudo systemctl start thehive
     scalligraph.modules += org.thp.thehive.connector.misp.MispModule
     ```
 
-3. Update the configuration file with your custom configuration if required
+    !!! Note
+        By default, Cortex and MISP modules are enabled. If not using one of them, the corresponding line can be commented.
+
+        **Our recommendation**: use the default configuration sample, update it with your custom parameters values, and keep the old file to configure services in the web UI. 
+
+### Specific configuration required (for update only)
+
+
+db.janusgraph.index.search.elasticsearch.bulk-refresh = true
+
+
+### Install TheHive
+
+- Update the repository address
+
+  ```
+  wget -O- <https://archives.strangebee.com/keys/strangebee.gpg> | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+  sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] <https://deb.strangebee.com> thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+  ```
+
+- Proceed to installation 
+
+  ```
+  sudo apt update
+  sudo apt install thehive
+  ```
+
+- During the installation, if you already prepared your configuration file, continue **without** updating it with the maintainer's version.
+
+  ```
+  Configuration file '/etc/thehive/application.conf'
+  ==> Modified (by you or by a script) since installation.
+  ==> Package distributor has shipped an updated version.
+    What would you like to do about it ?  Your options are:
+      Y or I  : install the package maintainer's version
+      N or O  : keep your currently-installed version
+        D     : show the differences between the versions
+        Z     : start a shell to examine the situation
+  The default action is to keep your current version.
+  *** application.conf (Y/I/N/O/D/Z) [default=N] ? N
+  ```
+
+### Start services
+
+- Start Cassandra
+
+```bash
+sudo systemctl start cassandra
+```
+
+- Start Elasticsearch
+
+```bash
+sudo systemctl start elasticsearch
+```
+
+- Once both database services are started successfully, start TheHive
+
+```bash
+sudo systemctl start thehive
+```
+
+
+!!! Warning "The first start of TheHive 5.0.x can take some time"
+    When starting, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
+    Progression can be followed in log file `/etc/thehive/application.log`
