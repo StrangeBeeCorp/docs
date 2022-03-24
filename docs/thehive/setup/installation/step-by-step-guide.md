@@ -32,7 +32,7 @@ This page is a step by step installation and configuration guide to get an insta
 Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version **4.0.x** of Cassandra.
 
 !!! Info "Upgrading from Cassandra 3.x"
-    If you are upgrading from Cassandra 3.x, please follow the dedicated guide. This part is relevant for fresh installation only.
+    If you are upgrading from Cassandra 3.x, please follow the [dedicated guide](./upgrade-from-4.x.md). This part is relevant for fresh installation only.
 
 ### Installation
 
