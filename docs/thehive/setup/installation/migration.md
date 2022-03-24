@@ -1,4 +1,4 @@
-# Migration from thehive 3.x
+# Migration from TheHive 3.x
 
 TheHive 5.x is delivered with a tool to migrate your data from TheHive 3.x. stored in Elasticsearch. 
 
@@ -32,7 +32,7 @@ This tools **must** also have access to Elasticsearch database (http://ES:9200) 
 !!! Warning
     In TheHive, users are identified by their email addresses. Thus, a domain will be appended to usernames in order to migrate users from TheHive 3. 
     
-    TheHive v5.x comes with a default domain named `thehive.local`. Starting the migration without explicitely specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
+    TheHive v5.x comes with a default domain named `thehive.local`. Starting the migration without explicitly specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
 
     Change the default domain name used to import existing users in the configuration file of TheHive (`/etc/thehive/application.conf`) ;  add or update the setting named  `auth.defaultUserDomain`: 
 
@@ -169,7 +169,7 @@ with:
 
 
 !!! Info
-    The migration process can be very long, from several hours to several days, depending on the volume of data to migrate. We **highly** recommand to not start the application during the migration.
+    The migration process can be very long, from several hours to several days, depending on the volume of data to migrate. We **highly** recommend to not start the application during the migration.
 
 
 ## Using authentication on Cassandra
@@ -189,10 +189,10 @@ The migration tool generates some logs during the process. By default, every 10 
 [info] o.t.t.m.Migrate - [Migrate cases and alerts] CaseTemplate/Task:32 Organisation:1/1 Case/Task:160/201 Case:31/52 Job:103/138 ObservableType:3/17 Alert:25/235 Audit:3207/2986 CaseTemplate:6/6 Alert/Observable:700(52ms) Case/Observable:1325/1665 User:9/9 CustomField:13/13 Case/Task/Log:20/27
 ```
 
-Numbers of Observables, Cases and others are estimations and not a definite value as computing these number can be very tedious. 
+Numbers of Observables, Cases and others are estimations and not a definite value as computing these numbers can be very tedious. 
 
 !!! Info "Files from MISP imported with TheHive 2.13 and earlier"
-    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older, will cause observable files not being imported in TheHive 4. 
+    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 4. 
     
     Indeed, until this version, TheHive referenced the file to the `AttributeId` in MISP and was not automatically downloaded. It then could generate a log like this: 
 
@@ -202,7 +202,7 @@ Numbers of Observables, Cases and others are estimations and not a definite valu
 
 
 ## Starting TheHive
-Once the migration process is sucessfully completed, TheHive can be started. 
+Once the migration process is successfully completed, TheHive can be started. 
 
 !!! Warning
     During the first start data are indexed and service is not available ; this can take some time. Do not stop or restart the service at this time. 

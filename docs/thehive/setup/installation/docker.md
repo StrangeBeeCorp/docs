@@ -29,17 +29,17 @@ The container exposes TheHive on the port `9000`.
 
 ### Passing a configuration file
 
-The entrypoint arguments are used to create an `application.conf` file in the container. A user can also provide its own configuration file:
+The entry point arguments are used to create a `application.conf` file in the container. A user can also provide its own configuration file:
 
 ```bash
 docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files -v <host_conf_folder>:/data/conf <thehive-image> --config-file /data/conf/application.conf 
 ```
 
-The folder `<host_conf_folder>` needs to contain an `application.conf` file
+The folder `<host_conf_folder>` needs to contain a `application.conf` file
 
 ### All options
 
-You can get a list of all options supported by the docker entrypoint with `-h`:
+You can get a list of all options supported by the docker entry point with `-h`:
 ```bash
 docker run --rm strangebee/thehive:<version> -h
 ```
@@ -228,9 +228,9 @@ spec:
 
 ### Configuration
 
-#### Using docker entrypoint
+#### Using docker entry point
 
-If you use the docker entrypoint, add the flag `--kubernetes`.
+If you use the docker entry point, add the flag `--kubernetes`.
 
 You can also use the following options:
 ```
@@ -267,18 +267,19 @@ akka.discovery {
 
 You can use the following probes to make sure the application is started and running correctly. The first startup can be a bit slow so you may enable those probes after validating the correct start of the application.
 
-**Note**: when applying a big migration, it's recommended to deactivate those probes as the http server will not start until the migration is done
-
-```yaml
-startupProbe:
-    httpGet:
-        path: /api/v1/status/public
-        port: 9000
-    failureThreshold: 30
-    periodSeconds: 10
-livenessProbe:
-    httpGet:
-        path: /api/v1/status/public
-        port: 9000
-    periodSeconds: 10
-```
+!!! Tip
+    When applying a big migration, it's recommended to deactivate those probes as the HTTP server will not start until the migration is done.
+    
+    ```yaml
+    startupProbe:
+        httpGet:
+            path: /api/v1/status/public
+            port: 9000
+        failureThreshold: 30
+        periodSeconds: 10
+    livenessProbe:
+        httpGet:
+            path: /api/v1/status/public
+            port: 9000
+        periodSeconds: 10
+    ```
