@@ -32,7 +32,7 @@ This page is a step by step installation and configuration guide to get an insta
 Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version **4.0.x** of Cassandra.
 
 !!! Info "Upgrading from Cassandra 3.x"
-    If you are upgrading from Cassandra 3.x, please follow the dedicated guide. This part is relevant for fresh installation only.
+    If you are upgrading from Cassandra 3.x, please follow the [dedicated guide](./upgrade-from-4.x.md). This part is relevant for fresh installation only.
 
 ### Installation
 
@@ -60,7 +60,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
         rpm --import https://downloads.apache.org/cassandra/KEYS
         ```
 
-    2. Add the Apache repository of Cassandra to `/etc/yum.repos.d/cassandra.repo`
+    2. Add the Apache repository for Cassandra to `/etc/yum.repos.d/cassandra.repo`
 
         ```bash title="/etc/yum.repos.d/cassandra.repo"
         [cassandra]
@@ -159,8 +159,8 @@ TheHive requires Elasticsearch to manage data indices.
     1. Add Elasticsearch repository keys
 
         ```bash
-            wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-            sudo apt-get install apt-transport-https
+        wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+        sudo apt-get install apt-transport-https
         ```
 
     2. Add the DEB repository of Elasticsearch 
@@ -182,7 +182,7 @@ TheHive requires Elasticsearch to manage data indices.
     1. Add Elasticsearch repository references
 
         ```bash
-            rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
         ```
 
     2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
