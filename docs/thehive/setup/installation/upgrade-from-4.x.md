@@ -6,7 +6,7 @@
     This guide is **for standalone servers only**, and considers: 
 
     - The application is running on a [supported Linux operating system](../index.md#operating-systems)
-    - The server meets [prerequisites](../index.md#requirements) regaring CPU & RAM.
+    - The server meets [prerequisites](../index.md#requirements) regarding CPU & RAM.
 
 !!! Warning "Switch to Elasticsearch as indexing engine"
     TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.
@@ -14,7 +14,7 @@
 
 ## Preparation
 
-The database application will be upgraded during the upgrade. We highly recommend making backups of the database, index and files before running the operation.
+The database application will be upgraded during the migration. We highly recommend making backups of the database, index and files before running the operation.
 
 !!! Note "FAQ"
     **Q:** **How to make backups ?**
@@ -61,7 +61,7 @@ sudo cp /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra3.yaml.bak
 ### Install Cassandra 
 Follow the [installation process](step-by-step-guide.md#cassandra) to install the required version.
 
-During the installation process, replace existing configuration files (*as the old configuration is saved"): 
+During the installation process, replace existing configuration files (*as the old configuration is saved*): 
 
 ```
 Configuration file '/etc/cassandra/cassandra.yaml'
@@ -99,7 +99,7 @@ sudo systemctl start cassandra
 ### Prepare for the new installation
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
-    Starting with TheHive 5.0.0, configuration has been simplified; most of all administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) contains **only** the necessary information to start the application successfully; that means 
+    Starting with TheHive 5.0.0, configuration has been simplified; most of the administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) may  **only** contain the necessary information to start the application successfully; which are: 
 
     - Secret
     - Database
@@ -108,7 +108,7 @@ sudo systemctl start cassandra
     - Enabled connectors 
     - (Akka in the case of a cluster)
 
-    Authentication, Webhooks, Cortex and MISP configuration can be done in the UI. 
+    Authentication, Webhooks, Cortex and MISP configurations can be set in the UI. 
 
 1. Save your current configuration file: 
 
@@ -191,11 +191,13 @@ sudo systemctl start cassandra
     ```
 
     !!! Note
-        By default, Cortex and MISP modules are enabled. If not using one of them, the corresponding line can be commented.
+        By default, Cortex and MISP modules are enabled. If you won't use them or one of them, the corresponding line can be commented.
 
         **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
 
 ### Specific configuration required (for the upgrade only)
+
+This line should be added to the configuration file only while upgrading to version 5, and removed later on. 
 
 ```
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
@@ -244,7 +246,7 @@ db.janusgraph.index.search.elasticsearch.bulk-refresh = false
     sudo yum install cassandra
     ```
 
-During the installation, if you already prepared your configuration file, continue **without** updating it with the maintainer's version.
+During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
 
   ```
   Configuration file '/etc/thehive/application.conf'
