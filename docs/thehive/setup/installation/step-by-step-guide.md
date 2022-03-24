@@ -519,6 +519,6 @@ By default, TheHive comes with no license token and let everyone use the applica
 
 To unlock advanced features, contact StrangeBee to get a license - [https://wwww.strangebee.com](https://wwww.strangebee.com) / [contact@strangebee.com](mailto:contact@strangebee.com)
 
-## Enable a license
+## Activate a license
 
-Follow this guide: [Enable a license](./license.md).
+Follow this guide: [Activate a license](./license.md).
