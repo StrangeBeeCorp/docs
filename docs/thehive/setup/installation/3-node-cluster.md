@@ -215,8 +215,8 @@ Create or edit file `/opt/minio/etc/minio.conf
 
 ```
 MINIO_OPTS="server --address :9100 http://minio{1...3}/srv/minio/{1...2}"
-MINIO_ACCESS_KEY="<ACCESS_KEY>"
-MINIO_SECRET_KEY="<SECRET_KEY>"
+MINIO_ROOT_USER="<ACCESS_KEY>"
+MINIO_ROOT_PASSWORD="<SECRET_KEY>"
 ```
 
 Create a service file named `/usr/lib/systemd/system/minio.service` 
