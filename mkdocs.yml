@@ -90,6 +90,7 @@ nav:
       - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
       - thehive/setup/operations/backup-restore.md
       - thehive/setup/operations/cassandra-security.md
+      - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
       - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
