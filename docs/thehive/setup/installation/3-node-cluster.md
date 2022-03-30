@@ -1,6 +1,6 @@
 # Use TheHive as a cluster
 
-This guide provides configuration examples for TheHive, Cassandra and MinIO to build a fault-tolerant cluster of 3 active nodes. 
+This guide provides configuration examples for TheHive, Cassandra and MinIO to build a fault-tolerant cluster of 3 active nodes.
 
 ## Prerequisite
 
@@ -10,7 +10,7 @@ This guide provides configuration examples for TheHive, Cassandra and MinIO to b
 
 In this guide, we are considering the node 1 to be the master node. Start by configuring `akka` component by editing the `/etc/thehive/application.conf` file of each node like the following:
 
-```
+```yaml title="/etc/thehive/application.conf"
 akka {
   cluster.enable = on 
   actor {
@@ -46,7 +46,7 @@ For each node, update configuration files with the following parameters:
 
 - `/etc/cassandra/cassandra.yml` 
 
-```
+```yaml title="/etc/cassandra/cassandra.yml"
 cluster_name: 'thp'
 num_tokens: 256
 authenticator: PasswordAuthenticator
@@ -67,7 +67,7 @@ endpoint_snitch: SimpleSnitch
 
 Ensure to setup the right interface name.
 
-- delete file `/etc/cassandra/cassandra-topology.properties` 
+- delete file `/etc/cassandra/cassandra-topology.properties`
 
 ```
 rm /etc/cassandra/cassandra-topology.properties
@@ -75,15 +75,15 @@ rm /etc/cassandra/cassandra-topology.properties
 
 ### Start nodes
 
-On each node, start the service: 
+On each node, start the service:
 
 ```bash
 service cassandra start
 ```
 
-Ensure that all nodes are up and running: 
+Ensure that all nodes are up and running:
 
-```
+```bash
 root@cassandra:/# nodetool status
 Datacenter: dc1
 ===============
@@ -98,9 +98,9 @@ UN  <ip node 3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9
 
 ### Initialise the database
 
-On one node run (default password for `cassandra` account is `cassandra`): 
+On one node run (default password for `cassandra` account is `cassandra`):
 
-```
+```bash
 cqlsh <ip node X> -u cassandra
 ```
 
@@ -110,7 +110,7 @@ cqlsh <ip node X> -u cassandra
 ALTER USER cassandra WITH PASSWORD 'NEWPASSWORD';
 ```
 
-    exit and reconnect.
+exit and reconnect.
 
 
 - Ensure user accounts are duplicated on all nodes 
@@ -125,8 +125,7 @@ ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'repli
 CREATE KEYSPACE thehive WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
 ```
 
-
-- Create role `thehive` and grant permissions on `thehive` keyspace (choose a password) 
+- Create role `thehive` and grant permissions on `thehive` keyspace (choose a password)
 
 ```sql
 CREATE ROLE thehive WITH LOGIN = true AND PASSWORD = 'PASSWORD';
@@ -135,36 +134,48 @@ GRANT ALL PERMISSIONS ON KEYSPACE thehive TO 'thehive';
 
 ### TheHive associated configuration
 
-Update the configuration of thehive accordingly in `/etc/thehive/application.conf` : 
-```
+Update the configuration of thehive accordingly in `/etc/thehive/application.conf` :
+
+```yaml title="/etc/thehive/application.conf"
 ## Database configuration
 db.janusgraph {
   storage {
     ## Cassandra configuration
     # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
-    backend: cql
-    hostname: ["<ip node 1>", "<ip node 2>", "<ip node 3>"]
+    backend = cql
+    hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"]
     # Cassandra authentication (if configured)
-    username: "thehive"
-    password: "PASSWORD"
+    username = "thehive"
+    password = "PASSWORD"
     cql {
-      cluster-name: thp
-      keyspace: thehive
+      cluster-name = thp
+      keyspace = thehive
     }
   }
 ```
 
 ### Troubleshooting
 
-- > `InvalidRequest: code=2200 [Invalid query] message=”org.apache.cassandra.auth.CassandraRoleManager doesn’t support PASSWORD”.`
+!!! Example "Example of error message in /var/log/cassandra/ log files"
 
-  set the value `authenticator: PasswordAuthenticator` in `cassandra.yaml`
+    ```text
+    InvalidRequest: code=2200 [Invalid query] message=”org.apache.cassandra.auth.CassandraRoleManager doesn’t support PASSWORD”.`
+    ```
 
-- > `Caused by: java.util.concurrent.ExecutionException: com.datastax.driver.core.exceptions.UnauthorizedException: Unable to perform authorization of permissions: Unable to perform authorization of super-user permission: Cannot achieve consistency level LOCAL_ONE` 
+    set the value `authenticator: PasswordAuthenticator` in `cassandra.yaml`
 
-    ```sql
+    ---
+
+    ```
+    Caused by: java.util.concurrent.ExecutionException: com.datastax.driver.core.exceptions.UnauthorizedException: Unable to perform authorization of permissions: Unable to perform authorization of super-user permission: Cannot achieve consistency level LOCAL_ONE
+    ```
+
+    Fix it by running following CQL command: 
+
+    ``` sql
     ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
     ```
+
 
 ## MinIO
 
@@ -177,15 +188,15 @@ The following procedure should be applied on all servers belonging the the clust
 
 Create a dedicated user with `/opt/minio` as homedir. 
 
-```
+```bash
 adduser minio
 ```
 
 ### Create at least 2 data volumes on each server
 
-Create 2 folders on each server: 
+Create 2 folders on each server:
 
-```
+```bash
 mkdir -p /srv/minio/{1,2}
 chown -R minio:minio /srv/minio
 ```
