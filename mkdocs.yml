@@ -93,10 +93,12 @@ nav:
       - thehive/setup/configuration/secret.md
       - thehive/setup/configuration/ssl.md
     - Operations: 
+      - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
       - thehive/setup/operations/backup-restore.md
       - thehive/setup/operations/cassandra-security.md
       - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
+      
   - 'API Docs': thehive/api-docs/" target="_blank
   # - 'Blog': https://blog.strangebee.com" target="_blank

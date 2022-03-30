@@ -6,7 +6,7 @@ This guide provides configuration examples for TheHive, Cassandra and MinIO to b
 
 3 servers with TheHive and Cassandra installed. 
 
-## TheHive 
+## TheHive
 
 In this guide, we are considering the node 1 to be the master node. Start by configuring `akka` component by editing the `/etc/thehive/application.conf` file of each node like the following:
 
