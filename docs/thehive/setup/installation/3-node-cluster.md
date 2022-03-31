@@ -176,6 +176,11 @@ db.janusgraph {
     ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
     ```
 
+    and with the following command: 
+
+    ```bash
+    nodetool repair -full
+    ```
 
 ## MinIO
 

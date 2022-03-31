@@ -19,3 +19,6 @@ MinIO strongly recommends restarting all nodes simultaneously. Do not perform "r
 
 ## Remove a node from cluster
 Removing a node from a cluster follows the same requirements than adding a node: update the configuration file and restart all the cluster.
+
+## MINIO and high availability
+Only one S3 endpoint can be configured in TheHive. To setup high availability on all nodes, we recommend using load lalancers a virtual IP to connect to MINIO nodes.
