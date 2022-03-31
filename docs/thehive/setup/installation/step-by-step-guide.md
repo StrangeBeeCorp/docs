@@ -329,7 +329,7 @@ Install TheHive package by using the following commands:
     ```
 
 === "RPM"
-    1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/thehive-project.repo`:
+    1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
 
         ```bash title="/etc/yum.repos.d/strangebee.repo"
         [thehive]

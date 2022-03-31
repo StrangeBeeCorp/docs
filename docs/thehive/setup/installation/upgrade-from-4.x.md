@@ -3,20 +3,24 @@
 !!! Info
     This guide describes how to upgrade TheHive from version **4.1.x** to **5.0.x**.
 
-    This guide is **for standalone servers only**, and considers: 
+    This guide considers: 
 
     - The application is running on a [supported Linux operating system](../index.md#operating-systems)
     - The server meets [prerequisites](../index.md#requirements) regarding CPU & RAM.
 
+    This guide works very well to upgrade standalone servers. if you are using a cluster, specific notes are highlighted to guide you.
+
 !!! Warning "Switch to Elasticsearch as indexing engine"
     TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.
 
-
 ## Preparation
+
+??? Abstract "I'm using a cluster"
+    Follow these instructions for all nodes of the cluster.
 
 The database application will be upgraded during the migration. We highly recommend making backups of the database, index and files before running the operation.
 
-!!! Note "FAQ"
+!!! Question "FAQ"
     **Q:** **How to make backups ?**
 
     **A:** _Read our [backup and restore guide](../operations/backup-restore.md)_
@@ -43,13 +47,25 @@ The database application will be upgraded during the migration. We highly recomm
 
 
 ## Upgrade Java
+
+??? Abstract "I'm using a cluster"
+    Follow these instructions for all nodes of the cluster.
+
 Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to install the required version. 
 
 
 ## Upgrade or install Elasticsearch
+
+??? Abstract "I'm using a cluster"
+    Elasticsearch was mandatory for cluster of TheHive 4.x. Unless an update might is necessary, you can go to [Upgrade Cassandra](#upgrade-cassandra).
+
 Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
 
 ## Upgrade Cassandra
+
+??? Abstract "I'm using a cluster"
+    Follow this part for all nodes of the Cassandra cluster, and ensure to restart sucessfully all nodes of the cluster before upgrading all nodes of TheHive cluster to version 5.
+
 
 ### Backup configuration file
 Save the existing configuration file for Cassandra 3.x. It will be used later to configure Cassandra 4:
@@ -96,6 +112,24 @@ sudo systemctl start cassandra
 
 ## Install thehive
 
+??? Abstract "I'm using a cluster"
+    Before starting this part of the guide, ensure your Cassandra cluster is fully operational, by running the command `nodetool status`
+
+    ```text title="nodetool status"
+    # nodetool status
+
+    Datacenter: datacenter1
+    =======================
+
+    Status=Up/Down
+    |/ State=Normal/Leaving/Joining/Moving
+    --  Address      Load      Tokens  Owns (effective)  Host ID                               Rack
+    UN  10.1.1.2  1.41 GiB  256     100.0%            ba6daa4e-6d14-4b21-a06c-d01b3bdd659d  rack1
+    UN  10.1.1.3  1.39 GiB  256     100.0%            201ab99c-8e16-49b1-9b66-5444043eb1cd  rack1
+    UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252aeb86  rack1
+    ```
+
+
 ### Prepare for the new installation
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
@@ -106,98 +140,207 @@ sudo systemctl start cassandra
     - Indexing engine
     - File storage
     - Enabled connectors 
-    - (Akka in the case of a cluster)
+    - Akka configuration in the case of a cluster
 
     Authentication, Webhooks, Cortex and MISP configurations can be set in the UI. 
 
-1. Save your current configuration file: 
+=== "Standalone server"
 
-    ```bash
-    sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
-    ```
+    - Save your current configuration file:
 
-2. For the current use case, i.e., a standalone server, the final configuration file should look like this:
+      ```bash
+      sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
+      ```
+      
+    - For the current use case, i.e., a standalone server, the final configuration file should look like this:
 
-    ```yaml title="sample of /etc/thehive/application.conf"
-    # TheHive configuration - application.conf
-    #
-    #
-    # This is the default configuration file.
-    # This is prepared to run with all services locally:
-    # - Cassandra for the database
-    # - Elasticsearch for index engine
-    # - File storage is local in /opt/thp/thehive/files
-    #
-    # If this is not your setup, please refer to the documentation at:
-    # https://docs.thehive-project.org/thehive/
-    #
-    #
-    # Secret key - used by Play Framework
-    # If TheHive is installed with DEB/RPM package, this is automatically generated
-    # If TheHive is not installed from DEB or RPM packages run the following
-    # command before starting thehive:
-    #   cat > /etc/thehive/secret.conf << _EOF_
-    #   play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 |#   head -n 1)"
-    #   _EOF_
-    include "/etc/thehive/secret.conf"
+      ```yaml title="sample of /etc/thehive/application.conf"
+      # TheHive configuration - application.conf
+      #
+      #
+      # This is the default configuration file.
+      # This is prepared to run with all services locally:
+      # - Cassandra for the database
+      # - Elasticsearch for index engine
+      # - File storage is local in /opt/thp/thehive/files
+      #
+      # If this is not your setup, please refer to the documentation at:
+      # https://docs.thehive-project.org/thehive/
+      #
+      #
+      # Secret key - used by Play Framework
+      # If TheHive is installed with DEB/RPM package, this is automatically generated
+      # If TheHive is not installed from DEB or RPM packages run the following
+      # command before starting thehive:
+      #   cat > /etc/thehive/secret.conf << _EOF_
+      #   play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 |#   head -n 1)"
+      #   _EOF_
+      include "/etc/thehive/secret.conf"
 
 
-    # Database and index configuration
-    # By default, TheHive is configured to connect to local Cassandra 4.x and a
-    # local Elasticsearch services without authentication.
-    db.janusgraph {
-      storage {
-        backend = cql
-        hostname = ["127.0.0.1"]
-        # Cassandra authentication (if configured)
-        # username = "thehive"
-        # password = "password"
-        cql {
-          cluster-name = thp
-          keyspace = thehive
+      # Database and index configuration
+      # By default, TheHive is configured to connect to local Cassandra 4.x and a
+      # local Elasticsearch services without authentication.
+      db.janusgraph {
+        storage {
+          backend = cql
+          hostname = ["127.0.0.1"]
+          # Cassandra authentication (if configured)
+          # username = "thehive"
+          # password = "password"
+          cql {
+            cluster-name = thp
+            keyspace = thehive
+          }
+        }
+        index.search {
+          backend = elasticsearch
+          hostname = ["127.0.0.1"]
+          index-name = thehive
         }
       }
-      index.search {
-        backend = elasticsearch
-        hostname = ["127.0.0.1"]
-        index-name = thehive
+
+      # Attachment storage configuration
+      # By default, TheHive is configured to store files locally in the folder.
+      # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
+      storage {
+        provider = localfs
+        localfs.location = /opt/thp/thehive/files
       }
-    }
 
-    # Attachment storage configuration
-    # By default, TheHive is configured to store files locally in the folder.
-    # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
-    storage {
-      provider = localfs
-      localfs.location = /opt/thp/thehive/files
-    }
+      # Define the maximum size for an attachment accepted by TheHive
+      play.http.parser.maxDiskBuffer = 1GB
+      # Define maximum size of http request (except attachment)
+      play.http.parser.maxMemoryBuffer = 10M
 
-    # Define the maximum size for an attachment accepted by TheHive
-    play.http.parser.maxDiskBuffer = 1GB
-    # Define maximum size of http request (except attachment)
-    play.http.parser.maxMemoryBuffer = 10M
+      # Service configuration
+      application.baseUrl = "http://localhost:9000"
+      play.http.context = "/"
 
-    # Service configuration
-    application.baseUrl = "http://localhost:9000"
-    play.http.context = "/"
+      # Additional modules
+      #
+      # TheHive is strongly integrated with Cortex and MISP.
+      # Both modules are enabled by default. If not used, each one can be disabled by
+      # commenting the configuration line.
+      scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
+      scalligraph.modules += org.thp.thehive.connector.misp.MispModule
+      ```
 
-    # Additional modules
-    #
-    # TheHive is strongly integrated with Cortex and MISP.
-    # Both modules are enabled by default. If not used, each one can be disabled by
-    # commenting the configuration line.
-    scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
-    scalligraph.modules += org.thp.thehive.connector.misp.MispModule
-    ```
+=== "Cluster"
 
-    !!! Note
-        By default, Cortex and MISP modules are enabled. If you won't use them or one of them, the corresponding line can be commented.
+    - Save your current configuration file:
 
-        **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
+      ```bash
+      sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
+      ```
+
+    - For the current use case, i.e., a standalone server, the final configuration file should look like this:
+
+      ```yaml title="sample of /etc/thehive/application.conf"
+      # TheHive configuration - application.conf
+      #
+      #
+      # This is the default configuration file.
+      # This is prepared to run with all services locally:
+      # - Cassandra for the database
+      # - Elasticsearch for index engine
+      # - File storage is local in /opt/thp/thehive/files
+      #
+      # If this is not your setup, please refer to the documentation at:
+      # https://docs.thehive-project.org/thehive/
+      #
+      #
+      # Secret key - used by Play Framework
+      # If TheHive is installed with DEB/RPM package, this is automatically generated
+      # If TheHive is not installed from DEB or RPM packages run the following
+      # command before starting thehive:
+      #   cat > /etc/thehive/secret.conf << _EOF_
+      #   play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 |#   head -n 1)"
+      #   _EOF_
+      include "/etc/thehive/secret.conf"
+
+
+      # Database and index configuration
+      # By default, TheHive is configured to connect to local Cassandra 4.x and a
+      # local Elasticsearch services without authentication.
+      db.janusgraph {
+        storage {
+          backend = cql
+          hostname = ["127.0.0.1"]
+          # Cassandra authentication (if configured)
+          # username = "thehive"
+          # password = "password"
+          cql {
+            cluster-name = thp
+            keyspace = thehive
+          }
+        }
+        index.search {
+          backend = elasticsearch
+          hostname = ["127.0.0.1"]
+          index-name = thehive
+        }
+      }
+
+      # Attachment storage configuration
+      # By default, TheHive is configured to store files locally in the folder.
+      # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
+      storage {
+        provider = localfs
+        localfs.location = /opt/thp/thehive/files
+      }
+
+      # Define the maximum size for an attachment accepted by TheHive
+      play.http.parser.maxDiskBuffer = 1GB
+      # Define maximum size of http request (except attachment)
+      play.http.parser.maxMemoryBuffer = 10M
+
+      # Service configuration
+      application.baseUrl = "http://localhost:9000"
+      play.http.context = "/"
+
+      # Additional modules
+      #
+      # TheHive is strongly integrated with Cortex and MISP.
+      # Both modules are enabled by default. If not used, each one can be disabled by
+      # commenting the configuration line.
+      scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
+      scalligraph.modules += org.thp.thehive.connector.misp.MispModule
+
+      # Cluster configuration
+      akka {
+        cluster.enable = on
+        actor {
+          provider = cluster
+        }
+      remote.artery {
+        canonical {
+          hostname = "<My IP address>"
+          port = 2551
+        }
+      }
+      ## seed node list contains at least one active node
+      cluster.seed-nodes = [
+                            "akka://application@<Node 1 IP address>:2551",
+                            "akka://application@<Node 2 IP address>:2551",
+                            "akka://application@<Node 3 IP address>:2551"
+                          ]
+      }
+      ```
+
+!!! Note
+    By default, Cortex and MISP modules are enabled. If you won't use them or one of them, the corresponding line can be commented.
+
+    **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
+
+
 
 ### Specific configuration required (for the upgrade only)
 
-This line should be added to the configuration file only while upgrading to version 5, and removed later on. 
+??? Abstract "I'm using a cluster"
+    This part only concerns **the first node**, the one that will be started to perform the database and index upgrade.
+
+This line should be added to the configuration file only while upgrading to version 5, and removed later on.
 
 ```
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
@@ -205,7 +348,14 @@ db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 
 ### Install TheHive
 
-=== "DEB"
+??? Abstract "I'm using a cluster"
+    Follow these instructions for the first node of TheHive.
+
+    When starting TheHive 5.0.x for the first time, ensure all nodes of database clusters are up and running correctly.
+    
+    Once the upgrade is successful with the first node, install and start TheHive on other nodes.
+
+=== "I'm using DEB packages"
 
     - Update the repository address
 
@@ -221,30 +371,31 @@ db.janusgraph.index.search.elasticsearch.bulk-refresh = false
     sudo apt install thehive
     ```
 
-=== "RPM"
+=== "I'm using RPM packages"
 
     - Add Cassandra repository keys
 
-    ```bash
-    rpm --import https://downloads.apache.org/cassandra/KEYS
-    ```
+      ```bash
+      sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+      ```
 
-    - Update the Apache repository for Cassandra to `/etc/yum.repos.d/cassandra.repo`
-      
-    ```bash title="/etc/yum.repos.d/cassandra.repo"
-    [cassandra]
-    name=Apache Cassandra
-    baseurl=https://downloads.apache.org/cassandra/redhat/40x/
-    gpgcheck=1
-    repo_gpgcheck=1
-    gpgkey=https://downloads.apache.org/cassandra/KEYS
-    ```
+    - Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
 
-    - Install the package
+      ```bash title="/etc/yum.repos.d/strangebee.repo"
+      [thehive]
+      enabled=1
+      priority=1
+      name=StrangeBee RPM repository
+      baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
+      gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+      gpgcheck=1
+      ```
 
-    ```bash
-    sudo yum install cassandra
-    ```
+    - Then install the package using `yum`:
+
+      ```bash
+      sudo yum install thehive
+      ```
 
 During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
 
@@ -261,19 +412,19 @@ During the installation, if you already prepared your configuration file during 
   *** application.conf (Y/I/N/O/D/Z) [default=N] ? N
   ```
 
-### Start services
+### Start services 
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
-- Start Cassandra
+- Start Cassandra (if not already started)
 
 ```bash
 sudo systemctl start cassandra
 ```
 
-- Start Elasticsearch
+- Start Elasticsearch (if not already started)
 
 ```bash
 sudo systemctl start elasticsearch
@@ -281,17 +432,19 @@ sudo systemctl start elasticsearch
 
 - Once both database services are started successfully, start TheHive
 
+
+
 ```bash
 sudo systemctl start thehive
 ```
 
 
 !!! Warning "The first start of TheHive 5.0.x can take some time"
-    When starting, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
+    When starting for the first time, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
     Progression can be followed in log file `/etc/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
 
 ### Restart the service
-Once the service is started successfully, update the configuration file and remove the following line:
+Once the service is started successfully, update the configuration file and **remove** the following line:
 
 ```yaml title="/etc/thehive/application.conf"
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
@@ -303,6 +456,8 @@ Then restart TheHive:
 sudo systemctl restart thehive
 ```
 
+??? Abstract "I'm using a cluster"
+    You can install and start TheHive on all other nodes.
 
 ## Troubleshooting
 
@@ -313,16 +468,12 @@ During the update, few logs can be seen in TheHive `application.log` file.
     ```
     [INFO] from org.janusgraph.graphdb.database.management.GraphIndexStatusWatcher in application-akka.actor.default-dispatcher-11 [|] Some key(s) on index global2 do not currently have status(es) [REGISTERED, ENABLED]: dateValue=INSTALLED,externalLink=INSTALLED,origin=INSTALLED,patternId=INSTALLED,revoked=INSTALLED,mandatory=INSTALLED,content=INSTALLED,isAttachment=INSTALLED,writable=INSTALLED,tactic=INSTALLED,stringValue=INSTALLED,owningOrganisation=INSTALLED,permissions=INSTALLED,actionRequired=INSTALLED,integerValue=INSTALLED,details=INSTALLED,locked=INSTALLED,slug=INSTALLED,cortexId=INSTALLED,owner=INSTALLED,workerId=INSTALLED,apikey=INSTALLED,level=INSTALLED,floatValue=INSTALLED,version=INSTALLED,occurDate=INSTALLED,url=INSTALLED,report=INSTALLED,tactics=INSTALLED,booleanValue=INSTALLED,cortexJobId=INSTALLED,category=INSTALLED,workerName=INSTALLED
     ```
-    _TheHive install indexes of the new schema in the database_ 
-
-    ---
+    :    _TheHive install indexes of the new schema in the database_
 
     ```
     [INFO] from org.janusgraph.graphdb.olap.job.IndexRepairJob in Thread-97 [|] Index global2 metrics: success-tx: 1 doc-updates: 100 succeeded: 100
     ```
-    _TheHive reindexes all data_
-
-    ---
+    :    _TheHive reindexes all data_
 
     ```
     * UPDATE SCHEMA OF thehive-enterprise (1): Create initial values
@@ -330,32 +481,24 @@ During the update, few logs can be seen in TheHive `application.log` file.
     [..]
     [INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [|] Update graph in progress (100): Add pap and ignoreSimilarity to observables
     ```
-    _Migrating data from v4. to v5._
-
-    ---
+    :   _Migrating data from v4. to v5_
 
     ```
     [WARN] from org.thp.thehive.enterprise.services.LicenseSrv in main [ef39c95eaa6de532|0ccf187e40a4cd34] No license found
     ```
-    _No license found. This is a normal behavior during the upgrade from versions 4 to 5.
-
-    ---
+    :    _No license found. This is a normal behavior during the upgrade from versions 4 to 5_
 
     ```
     INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
     ```
-    _The service is available. Users/Administrators can log in_
-
-    ---
+    :    _The service is available. Users/Administrators can log in_
 
     ```
     [INFO] from org.thp.thehive.connector.cortex.services.CortexDataImportActor in application-akka.actor.default-dispatcher-16 [|] Analyzer templates already present (found 203), skipping
     [..]
     [INFO] from org.thp.thehive.services.ttp.PatternImportActor in application-akka.actor.default-dispatcher-14 [|] Import finished, 707 patterns imported
     ```
-    _Few operations are processed after making the service available, like installing MITRE Enterprise ATT&CK patterns catalog or Analyzers templates._
-
-    ---
+    :    _Few operations are processed after making the service available, like installing MITRE Enterprise ATT&CK patterns catalog or Analyzers templates._
 
     ```
     [ERROR] from org.janusgraph.diskstorage.log.util.ProcessMessageJob in pool-22-thread-1 [|] Encountered exception when processing message [Message@2022-03-24T16:50:40.655134Z:7f0001017672-ubuntu2=0x809F9F0568850528850550850558850570850600850610850618850650850668850710850738850758850760850808850900850910850A60850A70850A78850B00850B08853520853B3885150E8941608541688541788542088542688542708581] by reader [org.janusgraph.graphdb.database.management.ManagementLogger@3e1a6eae]:java.lang.IllegalStateException: Cannot access element because its enclosing transaction is closed and unbound
@@ -377,5 +520,4 @@ During the update, few logs can be seen in TheHive `application.log` file.
     at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
     at java.base/java.lang.Thread.run(Thread.java:829)
     ```
-
-    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899), don't mind it as the indexing will continue normally. This will have no impact on TheHive_
+    :    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899), don't mind it as the indexing will continue normally. This will have no impact on TheHive_
