@@ -1428,12 +1428,63 @@ paths:
     post:
       tags:
       - Alert
+      description: "Endpoints allows the creation of alerts in TheHive\nIt supports\
+        \ both json input of multipart. **To create observables with files, you need\
+        \ to use a multipart body**.\n\nTo use the multipart, you need to send several\
+        \ parts:\n- a data part with the name `json` containing a json of the alert\
+        \ to create\n   - in the `observables`, if you want to use a simple data,\
+        \ use the `data` field of the observable\n   - if you want to use a file,\
+        \ in the `attachment` field use a string. This string should refers to a part\
+        \ of the multipart body containing your file\n   - if you want to use an existing\
+        \ attachment in TheHive, set an object containing the name, content-type and\
+        \ id of the attachment\n\nYou can always add observables to your alert later\
+        \ using the endpoint `POST /api/v1/alert/<alertId>/observable`\n\n### With\
+        \ curl\n\nCreate an alert with observables of type strings using json\n```\n\
+        curl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer <api_key>'\
+        \ -X POST -H 'Content-Type: application/json' --data '\n{\n  \"type\": \"\
+        alertType\",\n  \"source\": \"test\",\n  \"sourceRef\": \"1\",\n  \"title\"\
+        : \"alert title\",\n  \"description\": \"alert description\",\n  \"observables\"\
+        : [\n     { \"dataType\": \"url\", \"data\": \"http://example.org\" },\n \
+        \    { \"dataType\": \"mail\", \"data\": \"foo@example.org\" }\n  ]\n}\n```\n\
+        \nCreate an alert with 2 observables, an url and a file, using multipart\n\
+        ```\ncurl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer\
+        \ <api_key>' -X POST -F _json='\n{\n  \"type\": \"alertType\",\n  \"source\"\
+        : \"test\",\n  \"sourceRef\": \"1\",\n  \"title\": \"alert title\",\n  \"\
+        description\": \"alert description\",\n  \"observables\": [\n     { \"dataType\"\
+        : \"url\", \"data\": \"http://example.org\" },\n     { \"dataType\": \"file\"\
+        , \"attachment\": \"attachment0\" }\n  ]\n}\n' -F attachment0=@<file>\n```\n\
+        \n### With python (requests)\n\nCreate an alert with two files as observables\n\
+        ```python\nimport json\nimport requests \n\n# 'fileA' and 'fileB' are arbitrary\
+        \ names. You can choose your own.\n# the name must be used as a key in the\
+        \ dictionary 'files'\nobservables = [\n    {'dataType': 'file', 'attachment':\
+        \ 'fileA'}, \n    {'dataType': 'file', 'attachment': 'fileB'}, \n]\nfiles\
+        \ = {\n    'fileA': open(path_to_fileA, 'rb'),\n    'fileB': open(path_to_fileB,\
+        \ 'rb')\n}\nalert = {\n    'title': 'my title',\n    'type': 'test',\n   \
+        \ 'source': 'python',\n    'sourceRef': '1',\n    'description': 'description\
+        \ ...',\n    'observables': observables\n}\n\n# Send the request\nresponse\
+        \ = requests.post(\n    f'{thehive_url}/api/v1/alert',\n    # send the files\
+        \ and the alert with the special part '_json'\n    files={\n        '_json':\
+        \ json.dumps(alert), \n        **files\n    },\n    headers={ 'Authorization':\
+        \ f'Bearer {thehive_api_key}' }\n)\n\n# check response code\nresponse.raise_for_status()\n\
+        ```\n\n"
       operationId: Create Alert
       requestBody:
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/InputCreateAlert'
+          multipart/form-data:
+            schema:
+              required:
+              - _json
+              - <attachment_name>
+              type: object
+              properties:
+                _json:
+                  $ref: '#/components/schemas/InputCreateAlert'
+                <attachment_name>:
+                  type: string
+                  format: binary
         required: true
       responses:
         '201':
@@ -11310,9 +11361,13 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/JsObject'
+                $ref: '#/components/schemas/Ok'
+        '207':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OkWithErrors'
         '400':
           description: BadRequest
           content:
@@ -17264,6 +17319,369 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/connector/misp/status:
+    get:
+      tags:
+      - MISP
+      operationId: Get MISP status
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsObject'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/connector/misp/_syncAlerts:
+    get:
+      tags:
+      - MISP
+      operationId: Sync with MISP servers
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/connector/misp/export/{caseId}/{mispName}:
+    post:
+      tags:
+      - MISP
+      operationId: Export Case to MISP
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: mispName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/connector/misp/case/import:
+    post:
+      tags:
+      - MISP
+      operationId: Import Case from MISP
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+              - _json
+              - file
+              type: object
+              properties:
+                _json:
+                  $ref: '#/components/schemas/InputImportCase1'
+                file:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCase'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
 components:
   schemas:
     DashboardStatus:
@@ -17272,6 +17690,32 @@ components:
       - Private
       - Shared
       - Deleted
+    Error:
+      required:
+      - file
+      - error
+      - status
+      type: object
+      properties:
+        file:
+          type: string
+        error:
+          type: string
+        status:
+          type: string
+    Imported:
+      required:
+      - namespace
+      - numberOfTags
+      - status
+      type: object
+      properties:
+        namespace:
+          type: string
+        numberOfTags:
+          type: integer
+        status:
+          type: string
     InputAction:
       required:
       - responderId
@@ -17345,6 +17789,19 @@ components:
       properties:
         content:
           type: string
+    InputAttachment:
+      required:
+      - name
+      - contentType
+      - id
+      type: object
+      properties:
+        name:
+          type: string
+        contentType:
+          type: string
+        id:
+          type: string
     InputAttachmentsFile:
       type: object
       properties:
@@ -17398,6 +17855,7 @@ components:
       - title
       - description
       - date
+      - customFields
       type: object
       properties:
         type:
@@ -17444,10 +17902,12 @@ components:
           - 1
           - 2
           - 3
-        customFieldValue:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+        customFields:
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         summary:
           type: string
           maxLength: 1048576
@@ -17455,6 +17915,10 @@ components:
           type: string
         caseTemplate:
           type: string
+        observables:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreateObservable'
     InputCreateAlertStatus:
       required:
       - value
@@ -17480,6 +17944,7 @@ components:
       required:
       - title
       - description
+      - customFields
       type: object
       properties:
         title:
@@ -17534,13 +17999,15 @@ components:
         summary:
           type: string
           maxLength: 1048576
-        user:
+        assignee:
           type: string
           description: User to assign the case to
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         caseTemplate:
           type: string
           description: Name or id of the Case Template to use
@@ -17594,6 +18061,7 @@ components:
     InputCreateCaseTemplate:
       required:
       - name
+      - customFields
       type: object
       properties:
         name:
@@ -17640,9 +18108,11 @@ components:
           items:
             $ref: '#/components/schemas/InputCreateTask'
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
     InputCreateDashboard:
       required:
       - title
@@ -17681,15 +18151,14 @@ components:
     InputCreateObservable:
       required:
       - dataType
+      - data
+      - attachment
       type: object
       properties:
         dataType:
           type: string
         data:
-          type: string
-          description: Data for the observable when dataType is not of type file
-          minLength: 1
-          maxLength: 2048
+          $ref: '#/components/schemas/InputObservableData'
         message:
           type: string
           maxLength: 1048576
@@ -17697,6 +18166,16 @@ components:
           type: integer
           format: datetime_ms
           example: 1640000000000
+        attachment:
+          oneOf:
+          - $ref: '#/components/schemas/InputAttachment'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputAttachment'
+          - type: array
+            items:
+              type: string
+          - type: string
         tlp:
           type: integer
           enum:
@@ -17948,6 +18427,33 @@ components:
           type: string
         observableRule:
           type: string
+    InputImportCase1:
+      required:
+      - customFields
+      type: object
+      properties:
+        caseTemplate:
+          type: string
+        assignee:
+          type: string
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreateTask'
+        customFields:
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
+        sharingParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputShare'
+        taskRule:
+          type: string
+        observableRule:
+          type: string
     InputJob:
       required:
       - analyzerId
@@ -17981,6 +18487,15 @@ components:
       - WARN
       - ERROR
       - 'OFF'
+    InputObservableData:
+      description: Data for the observable when dataType is not of type file
+      oneOf:
+      - type: array
+        items:
+          type: string
+          minLength: 1
+          maxLength: 2048
+      - type: string
     InputOrganisationBulkLink:
       type: object
       properties:
@@ -18249,9 +18764,11 @@ components:
         follow:
           type: boolean
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         status:
           type: string
         summary:
@@ -18327,9 +18844,11 @@ components:
         follow:
           type: boolean
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         status:
           type: string
         summary:
@@ -18388,9 +18907,11 @@ components:
         impactStatus:
           type: string
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         taskRule:
           type: string
         observableRule:
@@ -18449,9 +18970,11 @@ components:
           type: string
           maxLength: 1048576
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         tasks:
           type: array
           items:
@@ -18516,9 +19039,11 @@ components:
         impactStatus:
           type: string
         customFields:
-          type: array
-          items:
-            $ref: '#/components/schemas/InputCustomFieldValue'
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         taskRule:
           type: string
         observableRule:
@@ -18836,6 +19361,13 @@ components:
             $ref: '#/components/schemas/InputEntry'
     JsObject:
       type: object
+    Ko:
+      required:
+      - errors
+      type: object
+      properties:
+        errors:
+          $ref: '#/components/schemas/Map_String'
     List_JsObject:
       oneOf:
       - $ref: '#/components/schemas/Nil'
@@ -18899,8 +19431,30 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/OutputLicenseQuota'
+    Map_String:
+      type: object
+      additionalProperties:
+        type: string
     Nil:
       type: object
+    Ok:
+      type: object
+      properties:
+        imported:
+          type: array
+          items:
+            $ref: '#/components/schemas/Imported'
+    OkWithErrors:
+      type: object
+      properties:
+        imported:
+          type: array
+          items:
+            $ref: '#/components/schemas/Imported'
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Error'
     OrganisationLink:
       required:
       - toOrganisation
@@ -20691,6 +21245,9 @@ components:
           type: array
           items:
             type: string
+    customFieldsAsObject:
+      type: object
+      additionalProperties: {}
   securitySchemes:
     Api Key:
       type: http
@@ -20754,6 +21311,7 @@ x-tagGroups:
 - name: Connectors
   tags:
   - Cortex
+  - MISP
 - name: Other
   tags:
   - Authenticated
