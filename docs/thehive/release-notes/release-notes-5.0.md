@@ -12,7 +12,7 @@ We recommend all 5.0.0 users to update to this version.
 
 - fix description display on search page
 - display org admin tabs only with required permissions
-- fix permission for knowledge base
+- fix permissions checks in the application
 - improve case sharing user experience
 - notifications - fix urls of http endpoints
 - notifications - improve editor when using template variables
