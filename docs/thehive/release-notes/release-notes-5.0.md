@@ -1,5 +1,15 @@
 # Release Notes of 5.0 series
 
+## 5.0.2 - 8 April 2022
+
+We found a bug that prevents a user from using the reset pasword flow (present in 5.0.0).
+We recommend all 5.0.x users to update to this version.
+
+Fixes:
+- Fix 404 page during the reset password flow
+- Dashboard: include end date in time interval
+- Fix detached live feed when using an http context 
+
 ## 5.0.1 - 7 April 2022
 
 TheHive 5.0.1 is the first patch release in the 5.0 series. It contains fixes and improvements for the UI and some small changes for the API compared to 5.0.0. 
