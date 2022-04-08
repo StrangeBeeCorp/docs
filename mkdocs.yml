@@ -95,4 +95,6 @@ nav:
       - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
+    - Release Notes:
+      - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
   - 'API Docs': thehive/api-docs/" target="_blank
