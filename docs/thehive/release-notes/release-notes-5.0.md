@@ -5,7 +5,8 @@
 We found a bug that prevents a user from using the reset pasword flow (present in 5.0.0).
 We recommend all 5.0.x users to update to this version.
 
-Fixes:
+**Fixes:**
+
 - Fix 404 page during the reset password flow
 - Dashboard: include end date in time interval
 - Fix detached live feed when using an http context 
