@@ -7,8 +7,8 @@ theme:
   logo: 'assets/images/strangebee.svg'
   features:
     - content.code.annotate
+    - navigation.instant
     - navigation.indexes
-    - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
@@ -68,9 +68,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - TheHive:
-    - Overview: thehive/setup/index.md
-    - Download: thehive/download/index.md
-    - Installation:
+    - 'Overview': thehive/setup/index.md
+    - 'Download': thehive/download/index.md
+    - 'Installation':
       - thehive/setup/installation/step-by-step-guide.md
       - 'Running with Docker': thehive/setup/installation/docker.md
       - 'Activate a license': thehive/setup/installation/license.md
@@ -78,7 +78,7 @@ nav:
       - thehive/setup/installation/upgrade-from-4.x.md
       - thehive/setup/installation/migration.md
       - thehive/setup/installation/upgrade-cluster.md
-    - Configuration:
+    - 'Configuration':
       - 'Database & index': thehive/setup/configuration/database.md
       - 'File storage': thehive/setup/configuration/file-storage.md
       - thehive/setup/configuration/connectors.md
@@ -87,7 +87,7 @@ nav:
       - thehive/setup/configuration/proxy.md
       - thehive/setup/configuration/secret.md
       - thehive/setup/configuration/ssl.md
-    - Operations: 
+    - 'Operations': 
       - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
       - thehive/setup/operations/backup-restore.md
       - thehive/setup/operations/cassandra-security.md
@@ -95,6 +95,6 @@ nav:
       - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
-    - Release Notes:
+    - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
   - 'API Docs': thehive/api-docs/" target="_blank
