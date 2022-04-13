@@ -4,14 +4,15 @@ type: docker
 name: build
 
 steps:
-  - name: build
-    image: squidfunk/mkdocs-material:latest
-    volumes:
-    - name: site
-      path: /site
-    commands:
-    - pip install -U -r ./requirements.txt
-    - mkdocs build
+  # publish done by gh-actions
+  # - name: build
+  #   image: squidfunk/mkdocs-material:latest
+  #   volumes:
+  #   - name: site
+  #     path: /site
+  #   commands:
+  #   - pip install -U -r ./requirements.txt
+  #   - mkdocs build
 
   # Publish install scripts on archives.strangebee.com
   - name: upload scripts to archives.strangebee.com
