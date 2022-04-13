@@ -20,3 +20,7 @@ Alternatively you can use a docker container:
 docker build . -t docs
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
 ```
+
+## Deployment
+
+The `main` branch is automatically deployed to [docs.strangebee.com](https://docs.strangebee.com)
