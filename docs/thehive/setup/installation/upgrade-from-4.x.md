@@ -340,10 +340,11 @@ sudo systemctl start cassandra
 ??? Abstract "I'm using a cluster"
     This part only concerns **the first node**, the one that will be started to perform the database and index upgrade.
 
-This line should be added to the configuration file only while upgrading to version 5, and removed later on.
+These lines should be added to the configuration file only while upgrading to version 5, and removed later on.
 
 ```
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+db.janusgraph.forceDropAndRebuildIndex = true
 ```
 
 ### Install TheHive
@@ -444,10 +445,11 @@ sudo systemctl start thehive
     Progression can be followed in log file `/etc/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
 
 ### Restart the service
-Once the service is started successfully, update the configuration file and **remove** the following line:
+Once the service is started successfully, update the configuration file and **remove** the following lines:
 
 ```yaml title="/etc/thehive/application.conf"
 db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+db.janusgraph.forceDropAndRebuildIndex = true
 ```
 
 Then restart TheHive:
