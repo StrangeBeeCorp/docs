@@ -1,5 +1,25 @@
 # Release Notes of 5.0 series
 
+## 5.0.3 - 15 April 2022
+
+### New Features
+
+**API:**
+
+- Add support to procedures (TTPs) when creating alerts in TheHive
+
+### Fixes
+
+**UI:**
+
+- When importing a case from misp: additional parameters (custom fields, shares) are correctly sent
+- When converting an alert to case, custom fields are no longer lost during the process
+- Update moment.js library
+
+**Migration tool:**
+
+- Fix typo in migration tool configuration
+
 ## 5.0.2 - 8 April 2022
 
 We found a bug that prevents a user from using the reset pasword flow (present in 5.0.0).
