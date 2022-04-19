@@ -136,7 +136,7 @@ services:
       - xpack.security.enabled=false
     volumes:
       - elasticsearchdata:/usr/share/elasticsearch/data
-  
+
   minio:
     image: quay.io/minio/minio
     command: ["minio", "server", "/data", "--console-address", ":9001"]
@@ -211,24 +211,24 @@ Also make sure to add a label and a `POD_IP` environment variable.
 
 ```yaml
 metadata:
-    labels:
-        app: thehive
+  labels:
+    app: thehive
 spec:
-    serviceAccountName: thehive
-    containers:
-      - name: thehive
-        image: ...
-        env:
-        # Make sure that the container can know its own IP
-        - name: POD_IP
-            valueFrom:
-            fieldRef:
-                fieldPath: status.podIP
+  serviceAccountName: thehive
+  containers:
+  - name: thehive
+    image: ...
+    env:
+      # Make sure that the container can know its own IP
+      - name: POD_IP
+        valueFrom:
+          fieldRef:
+            fieldPath: status.podIP
 ```
 
 ### Configuration
 
-#### Using docker entry point
+#### Using docker entrypoint
 
 If you use the docker entry point, add the flag `--kubernetes`.
 
