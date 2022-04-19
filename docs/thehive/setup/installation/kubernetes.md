@@ -1,25 +1,25 @@
 # Deploy on Kubernetes
 
-The deployment on kubernetes uses the docker image, so refer to the [docker image documentation](docker.md) for reference. 
+The deployment on kubernetes uses the docker image, so refer to the [docker image documentation](docker.md) for more information about its usage. 
 
 ## Sample
 
-Get [this file](kubernetes.yml) to find a kubernetes configuration file that will deploy on kubernetes: 
+Download [this file](kubernetes.yml) to find a kubernetes configuration that will deploy on kubernetes: 
 
 - 1 instance of TheHive
 - 1 instance of Cassandra
 - 1 instance of Elasticsearch
 - 1 instance Minio
 
-This setup is good for a quick try out of TheHive but you should adapt the data stores to be more robust. We invite you to check their documentation on how to deploy on kubernetes for production uses.
+This setup is good for a try out of TheHive but you should adapt the data stores to be more robust (setup clustering and storage volumes). We invite you to check their documentation on how to deploy on kubernetes for production use.
+
+!!! warning
+
+    The volumes used here are `emptyDir`s, so the data will be lost when a pod is restarted. You should update the volume description if you want to persist your data.
 
 To deploy more than one node, you will need to update your license. Only one node is included in the Community License.
 
 Start with `kubectl apply -f kubernetes.yml`. This will create a namespace `thehive` and deploy the instances in it. 
-
-!!! warning
-
-    The volumes used here are `emptyDir`s, so the data will be lost when a pod is restarted. You should update the volume description if you want to use persistend data.
 
 ### Cleanup
 
@@ -28,7 +28,6 @@ Delete all the resources belonging to the `thehive` namespace:
 ```
 kubectl delete namespace thehive
 ```
-
 
 ## Kubernetes configuration
 
