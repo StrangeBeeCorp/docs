@@ -17581,7 +17581,7 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
-  /api/connector/misp/case/import:
+  /api/v1/connector/misp/case/import:
     post:
       tags:
       - MISP
@@ -17919,6 +17919,11 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateObservable'
+        procedures:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputProcedure'
+          description: List of procedures (TTPs) to link the alert to
     InputCreateAlertStatus:
       required:
       - value
@@ -18541,22 +18546,24 @@ components:
           pattern: ^#[0-9a-fA-F]{6,6}|$
     InputProcedure:
       required:
-      - occurDate
-      - tactic
       - patternId
+      - occurDate
       type: object
       properties:
-        description:
+        patternId:
           type: string
-          maxLength: 1048576
+          description: Id of the technique in the catalog
         occurDate:
           type: integer
           format: datetime_ms
           example: 1640000000000
         tactic:
           type: string
-        patternId:
+          description: Name of the tactic, useful if the technique belongs to several
+            tactics
+        description:
           type: string
+          maxLength: 1048576
     InputQuery:
       type: object
       properties:
