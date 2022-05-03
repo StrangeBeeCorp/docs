@@ -496,6 +496,20 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
     alpakka.s3.path-style-access = force
     ```
 
+#### Cortex & MISP
+
+By default the configuration file coming with packages contains following lines, enabling Cortex and MISP modules. If you are not using one them, you can comment the related line and restart the service.
+
+```yaml title="/etc/thehive/application.conf"
+# Additional modules
+#
+# TheHive is strongly integrated with Cortex and MISP.
+# Both modules are enabled by default. If not used, each one can be disabled by
+# ommenting the configuration line.
+scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
+scalligraph.modules += org.thp.thehive.connector.misp.MispModule
+```
+
 ### Run
 
 ```bash
