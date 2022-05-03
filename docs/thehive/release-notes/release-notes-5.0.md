@@ -1,5 +1,23 @@
 # Release Notes of 5.0 series
 
+## 5.0.4 - 3 May 2022
+
+### Fixes
+
+**UI:**
+
+- Tasks are now displayed by their order
+- Changed color of field for search by case id
+- Fixed an issue where custom fields were deleted when editing a case template
+- Fix download link of attachments when http context is set
+- Update of vulnerable libraries
+- When using bulk edit, "Add tags" and "Remove tags" now work
+
+**API:**
+
+- Fixed bug introduced in 5.0.3 where TTPs were not linked to their tactics and reported `<unknown>`
+- It's now possible to delete the title prefix in a case template
+
 ## 5.0.3 - 15 April 2022
 
 ### New Features
