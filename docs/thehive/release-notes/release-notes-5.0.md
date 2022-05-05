@@ -1,5 +1,21 @@
 # Release Notes of 5.0 series
 
+## 5.0.5 - 5 May 2022
+
+### Fixes
+
+**UI:**
+
+- Analyzer templates: optimize rendering time 
+- Fixed SSO login when using an http context
+
+**API:**
+
+- Dashboard: increase number of retrieved values for aggregations (eg. chart on custom field values)
+- Fix for permission `manageConfig`
+- Improve support for AWS Keyspace: add retries on some failed queries
+- Fix endpoint for deletion of catalog of ttp 
+
 ## 5.0.4 - 3 May 2022
 
 ### Fixes
