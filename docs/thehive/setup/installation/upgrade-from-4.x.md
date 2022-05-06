@@ -110,6 +110,18 @@ num_tokens: 256
 sudo systemctl start cassandra
 ```
 
+### Upgrade sstables
+
+On each Cassandra nodes, upgrade the sstables:
+```
+nodetool upgradesstables
+```
+
+Then repair the keyspaces:
+```
+nodetool repair --full
+```
+
 ## Install thehive
 
 ??? Abstract "I'm using a cluster"
