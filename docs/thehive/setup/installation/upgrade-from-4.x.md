@@ -442,7 +442,7 @@ sudo systemctl start thehive
 
 !!! Warning "The first start of TheHive 5.0.x can take some time"
     When starting for the first time, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
-    Progression can be followed in log file `/etc/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
+    Progression can be followed in log file `/var/log/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
 
 ### Restart the service
 Once the service is started successfully, update the configuration file and **remove** the following lines:
