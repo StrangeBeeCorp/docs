@@ -216,7 +216,7 @@ Following data is required to restore TheHive database successfully:
     sed -i "s/${SOURCE_KEYSPACE}/${TARGET_KEYSPACE}/g" schema_${SNAPSHOT}_${SNAPSHOT_INDEX}.cql
 
     ## Restore keyspace
-    cqlsh -u cassandra -p ${CASSANDRA_PASSWORD} cassandra --file schema_${SNAPSHOT}_${SNAPSHOT_INDEX}.cql
+    cqlsh -u cassandra -p ${CASSANDRA_PASSWORD} ${IP} --file schema_${SNAPSHOT}_${SNAPSHOT_INDEX}.cql
 
     ## Restore data
     for TABLE in `cqlsh -u cassandra -p ${CASSANDRA_PASSWORD} ${IP} -e "use ${TARGET_KEYSPACE}; DESC tables ;"`
