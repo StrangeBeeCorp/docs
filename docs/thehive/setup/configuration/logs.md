@@ -26,12 +26,29 @@ The log level can also be updated individually by changing the level of a specif
     <logger name="org.thp" level="DEBUG"/>
 ```
 
+## Logs in docker
+
+In the docker container the logger is configured with the file `/etc/thehive/logback.xml` and the application by default will log to `stdout` and to `/var/log/thehive/application.log`.
+
+If you want to change the default configuration, you can mount your own logback file to `/etc/thehive/logback.xml`.
+
+## Debug your logback configuration
+
+If you have issues with it set the debug flag to true in `logback.xml`:
+```xml title="logback.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true">
+
+```
+
+This will log your logback configuration in the console when the app starts
+
 ## How to create an access log
 
 By changing the logback configuration, you can redirect certain logs from the application.
 Below is an example where access logs are redirected to the file `access.log` and uses a rolling file strategy.
 
-To apply this in your configuration, copy the `appender`s and modify the `root` definition.
+To apply this in your configuration, copy the `appender`s and `logger`s definitions.
 
 ```xml title="logback.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -40,14 +57,6 @@ To apply this in your configuration, copy the `appender`s and modify the `root` 
     <!-- ... other appenders and settings -->
 
     <appender name="ACCESSFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
-            <evaluator>
-                <expression>return logger.contains("org.thp.scalligraph.AccessLogFilter") || logger.contains("org.thp.scalligraph.controllers.Entrypoint");</expression>
-            </evaluator>
-            <OnMismatch>DENY</OnMismatch>
-            <OnMatch>NEUTRAL</OnMatch>
-        </filter>
-
         <file>/var/log/thehive/access.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <fileNamePattern>/var/log/thehive/access.%i.log.zip</fileNamePattern>
@@ -67,8 +76,14 @@ To apply this in your configuration, copy the `appender`s and modify the `root` 
         <appender-ref ref="ACCESSFILE"/>
     </appender>
 
+    <logger name="org.thp.scalligraph.AccessLogFilter">
+        <appender-ref ref="ASYNCACCESSFILE" />
+    </logger>
+    <logger name="org.thp.scalligraph.controllers.Entrypoint">
+        <appender-ref ref="ASYNCACCESSFILE" />
+    </logger>
+
     <root level="INFO">
-        <appender-ref ref="ASYNCACCESSFILE"/>
         <!-- other appender-refs ... -->
     </root>
 
@@ -76,16 +91,30 @@ To apply this in your configuration, copy the `appender`s and modify the `root` 
 
 ```
 
-!!! attention
+## How to send logs to syslog
 
-    Logback's `evaluator` requires the library janino to be included in the classpath of TheHive ([see docs](https://logback.qos.ch/setup.html#janino)).
-    This library is **not included** in TheHive < 5.1 but is included in superior versions starting from version 5.1
+You will need to add a `SyslogAppender`.
 
-    If the library is not included and the evaluator is used, you will get the error ` java.lang.NoClassDefFoundError: org/codehaus/janino/ScriptEvaluator`
+```xml title="logback.xml"
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
 
+    <!-- ... other appenders and settings -->
 
-## Logs in docker
+    <appender name="SYSLOG" class="ch.qos.logback.classic.net.SyslogAppender">
+        <syslogHost>remote_host</syslogHost>
+        <facility>AUTH</facility>
+        <suffixPattern>[%thread] %logger %msg</suffixPattern>
+    </appender>
 
-In the docker container the logger is configured with the file `/etc/thehive/logback.xml` and the application by default will log to `stdout` and to `/var/log/thehive/application.log`.
+    <root level="INFO">
+        <appender-ref ref="SYSLOG" />
+        <!-- other appender-refs ... -->
+    </root>
 
-If you want to change the default configuration, you can mount your own logback file to `/etc/thehive/logback.xml`.
+```
+
+See the [official docs](https://logback.qos.ch/manual/appenders.html#SyslogAppender) for more information.
+
+**Limitations:**
+The official syslog appender can only send logs via UDP to a server. It cannot use TCP and TLS
