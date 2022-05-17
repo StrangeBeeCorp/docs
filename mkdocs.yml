@@ -78,7 +78,6 @@ nav:
       - thehive/setup/installation/kubernetes.md
       - thehive/setup/installation/upgrade-from-4.x.md
       - thehive/setup/installation/migration.md
-      - thehive/setup/installation/upgrade-cluster.md
     - 'Configuration':
       - 'Database & index': thehive/setup/configuration/database.md
       - 'File storage': thehive/setup/configuration/file-storage.md
