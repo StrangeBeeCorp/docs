@@ -8,7 +8,7 @@
     - The application is running on a [supported Linux operating system](../index.md#operating-systems)
     - The server meets [prerequisites](../index.md#requirements) regarding CPU & RAM.
 
-    This guide works very well to upgrade standalone servers. if you are using a cluster, specific notes are highlighted to guide you.
+    If you are using a cluster, specific notes are highlighted to guide you. 
 
 !!! Warning "Switch to Elasticsearch as indexing engine"
     TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.
@@ -141,6 +141,7 @@ nodetool repair --full
     UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252aeb86  rack1
     ```
 
+    Then, we recommend stopping all existing nodes of TheHive (4.x) and then, upgrading and starting only one node to TheHive 5. When everything works fine with this node, Other nodes can be updated and started.
 
 ### Prepare for the new installation
 
