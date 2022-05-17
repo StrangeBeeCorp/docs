@@ -1,5 +1,30 @@
 # Release Notes of 5.0 series
 
+## 5.0.6 - 17 May 2022
+
+### Fixes
+
+**UI:**
+
+- List of analyzers did not refresh correctly for alert observables
+- Fix error when trying to download a task log attachment with the char `{` in the name
+- logout popin remained open after a reconnection
+- API docs did not appear when setting an http context
+- Fix an issue where breadcrumps were not displayed correctly
+### Improvements
+
+**UI:**
+
+- Faster render of big markdown section: use `marked-react` library instead of `react-markdown`
+- Adjust fanged message
+- Improve sorting of tasks when in group mode
+- Update observable count when an observable is added or removed
+- Improvements for "Required Action" on tasks
+
+**Migration 4 to 5:**
+
+- Improve migration for custom fields where previous script could overload the application
+
 ## 5.0.5 - 5 May 2022
 
 ### Fixes
