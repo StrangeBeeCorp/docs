@@ -155,3 +155,27 @@ You can use the following probes to make sure the application is started and run
             port: 9000
         periodSeconds: 10
     ```
+
+### Troubleshooting
+
+#### Error on database init
+
+If your logs contain the lines:
+
+```
+[error] o.t.s.m.Database [|] ***********************************************************************
+[error] o.t.s.m.Database [|] * Database initialisation has failed. Restart application to retry it *
+[error] o.t.s.m.Database [|] ***********************************************************************
+```
+
+This means that an error occured when trying to create the database schema. Below those lines, you should get more details on the cause of the error.
+
+Possible root causes:
+
+- Cassandra / Elasticsearch is unavailable: check that both database are correctly started and that TheHive can connect to them.
+    - You may try to first start both database in the kubernetes cluster before starting TheHive: set TheHive deployment to `replicas: 0` to do so.
+- Cassandra / ES contains invalid data. Elasticsearch has a role of index for Cassandra and the data between the two may not be in sync, causing errors when accessing the data.
+    - If it is the first time you are setting up the cluster, delete both database volumes/data and restart the databases and TheHive
+
+
+
