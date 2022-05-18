@@ -45,9 +45,12 @@ This tools **must** also have access to Elasticsearch database (http://ES:9200) 
 
 ## Run the migration
 
-Prepare, install and configure your new instance of TheHive v5.x by following [the associated guides](../index.md).
+Prepare, install and configure your new instance of TheHive v5.x by following [the associated guides](../index.md). In order to obtain the best migration performance, it is recommended to not start TheHive 5 before running the migration tool. Thus, the migration will be done without index. At the end of the migration, the index will be added.
 
-Once TheHive4 configuration file (`/etc/thehive/application.conf`) is correctly filled the `migrate` command ca be executed.
+Once TheHive 5 configuration file (`/etc/thehive/application.conf`) is correctly filled the `migrate` command ca be executed.
+
+!!! Warning
+    The configuration file must not contain cluster configuration (`akka.cluster`). The migration tool works on single node only.
 
 !!! Info
     This recommended to run this program as the user in charge of running TheHive service ( `thehive` if you are installing the application with DEB or RPM package)
@@ -65,9 +68,9 @@ Usage: migrate [options]
   -l, --logger-config <file>
                            logback configuration file
   -c, --config <file>      global configuration file
-  -i, --input <file>       TheHive3 configuration file
-  -o, --output <file>      TheHive4 configuration file
-  -d, --drop-database      Drop TheHive4 database before migration
+  -i, --input <file>       TheHive 3 configuration file
+  -o, --output <file>      TheHive 5 configuration file
+  -d, --drop-database      Drop TheHive 5 database before migration
   -r, --resume             Resume migration (or migrate on existing database)
   -m, --main-organisation <organisation>
   -u, --es-uri http://ip1:port,ip2:port
@@ -162,7 +165,7 @@ with:
 
 | Option                    | Description       |
 | :------------------------ | ----------------- |
-| `--output`                | specifies the configuration file of TheHive 4.0 (the one that has previously been configured with at least, the **database** and **file storage**) |
+| `--output`                | specifies the configuration file of TheHive 5 (the one that has previously been configured with at least, the **database** and **file storage**) |
 | `--main-organisation`     | specifies the *Organisation* named *myOrganisation* to create during the migration. The tool will then create Users, Cases and Alerts from TheHive3 under that organisation; |
 | `--es-uri`                | specifies the URL of the Elasticsearch server. If using authentication on Elasticsearch, `--input` option with a configuration file for TheHive3 is required |
 | `--es-index`              | specifies the index used in Elasticsearch. |
@@ -171,6 +174,11 @@ with:
 !!! Info
     The migration process can be very long, from several hours to several days, depending on the volume of data to migrate. We **highly** recommend to not start the application during the migration.
 
+## Continue an incomplete migration
+If the migration has been stopped, or only part of the data has been migrated, it is possible to continue the migration by running the tool again with the parameter `--resume`. This parameter prevents creating data if it already exists.
+
+## Merge several TheHive 3 data into one TheHive 5
+The migration tool can be run several times to migrate different TheHive 3 data into one TheHive 5 instance. The name of the target organisation can be changed for each execution. In order to prevent case number collision (if a case with the same number already exists, the new case won't be created), you can shift the case number with the parameter `--case-number-shift`.
 
 ## Using authentication on Cassandra
 
@@ -192,7 +200,7 @@ The migration tool generates some logs during the process. By default, every 10 
 Numbers of Observables, Cases and others are estimations and not a definite value as computing these numbers can be very tedious. 
 
 !!! Info "Files from MISP imported with TheHive 2.13 and earlier"
-    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 4. 
+    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 5. 
     
     Indeed, until this version, TheHive referenced the file to the `AttributeId` in MISP and was not automatically downloaded. It then could generate a log like this: 
 

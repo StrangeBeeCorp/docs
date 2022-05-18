@@ -61,7 +61,7 @@ cp /var/log/thehive/application.log /root
 
 ## Share it with us
 
-Create an issue on [Github](https://github.com/TheHive-Project/TheHive/issues/new?assignees=&labels=bug%2C+TheHive4&template=thehive4_bug_report.md&title=%5BBug%5D) and please share context and symptoms with the log file. Please add information regarding:
+Create an issue on [Github](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D) and please share context and symptoms with the log file. Please add information regarding:
 
 - Context:  
   - instance (single node/cluster, backend type, index engine)

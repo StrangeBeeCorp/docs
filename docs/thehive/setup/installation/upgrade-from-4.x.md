@@ -57,7 +57,7 @@ Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to
 ## Upgrade or install Elasticsearch
 
 ??? Abstract "I'm using a cluster"
-    Elasticsearch was mandatory for cluster of TheHive 4.x. Unless an update might is necessary, you can go to [Upgrade Cassandra](#upgrade-cassandra).
+    Elasticsearch was mandatory for cluster of TheHive 5.x. Unless an update might is necessary, you can go to [Upgrade Cassandra](#upgrade-cassandra).
 
 Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
 
