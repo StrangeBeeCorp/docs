@@ -16,10 +16,11 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 ## Requirements
 Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
 
-| Number of users                                | CPU :fontawesome-solid-microchip: | RAM :fontawesome-solid-memory: |
-| -----------------------------------------------|: --------------------------------- :|: -------------------------- :|
-| :fontawesome-solid-user-group: < 20            | 4                                 | 16 GB                      |
-| :fontawesome-solid-user-group: < 50            | 8                                 | 32 GB                      |
+| Number of users                                | TheHive                                                             | Cassandra                                                           | ElasticSearch                                                       |
+| -----------------------------------------------|: ----------------------------------------------------------------- :|: ----------------------------------------------------------------- :|: ----------------------------------------------------------------- :|
+| :fontawesome-solid-user-group: < 10            | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   |
+| :fontawesome-solid-user-group: < 20            | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: |
+| :fontawesome-solid-user-group: < 50            | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: |
 
 
 ## Operating systems
