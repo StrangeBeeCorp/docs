@@ -352,7 +352,7 @@ Install TheHive package by using the following commands:
 
         ```bash
         cd /opt
-        wget https://archives.strangebee.com/keys/thehive-latest.zip
+        wget https://archives.strangebee.com/zip/thehive-latest.zip
         unzip thehive-latest.zip
         sudo ln -s thehive-x.x.x thehive
         ```
