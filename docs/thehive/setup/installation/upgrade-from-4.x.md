@@ -25,6 +25,8 @@ The database application will be upgraded during the migration. We highly recomm
 
     **A:** _Read our [backup and restore guide](../operations/backup-restore.md)_
 
+!!! Attention
+    Make sure that you can login as an admin user with a password in TheHive database (the `local` auth provider should be enabled, by default it is enabled).
 
 ### Stop all running applications
  
@@ -365,7 +367,7 @@ db.janusgraph.forceDropAndRebuildIndex = true
 ??? Abstract "I'm using a cluster"
     Follow these instructions for the first node of TheHive.
 
-    When starting TheHive 5.0.x for the first time, ensure all nodes of database clusters are up and running correctly.
+    When starting TheHive 5.x for the first time, ensure all nodes of database clusters are up and running correctly.
     
     Once the upgrade is successful with the first node, install and start TheHive on other nodes.
 
