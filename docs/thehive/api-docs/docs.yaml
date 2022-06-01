@@ -7425,6 +7425,254 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/observable/{observableId}/attachment/{attachmentId}/download:
+    get:
+      tags:
+      - Observable
+      description: If parameter `asZip=true` is set, the attachment will be sent as
+        a zip file with a password. Default password is 'malware'
+      operationId: Download Attachment from observable
+      parameters:
+      - name: observableId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: asZip
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/observable/{observableId}/attachment/{attachmentId}:
+    get:
+      tags:
+      - Log
+      operationId: Get Attachment from observable
+      parameters:
+      - name: observableId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/attachment:
     post:
       tags:
@@ -15300,7 +15548,7 @@ paths:
       - Basic: []
       - Session: []
   /api/v1/catalog/{catalogId}:
-    patch:
+    delete:
       tags:
       - Att&ck
       operationId: Delete a Catalog of TTP
@@ -15311,6 +15559,100 @@ paths:
         schema:
           type: string
           example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    patch:
+      tags:
+      - Att&ck
+      operationId: Update Catalog of TTP
+      parameters:
+      - name: catalogId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputUpdateCatalogOfPattern'
+        required: true
       responses:
         '204':
           description: ''
@@ -20150,6 +20492,7 @@ components:
       required:
       - _id
       - name
+      - displayName
       - description
       - type
       - value
@@ -20159,6 +20502,8 @@ components:
         _id:
           type: string
         name:
+          type: string
+        displayName:
           type: string
         description:
           type: string
@@ -20800,7 +21145,8 @@ components:
       - _createdAt
       - name
       - editable
-      - isAdmin
+      - forAdmin
+      - forOrg
       type: object
       properties:
         _id:
@@ -20827,7 +21173,9 @@ components:
             type: string
         editable:
           type: boolean
-        isAdmin:
+        forAdmin:
+          type: boolean
+        forOrg:
           type: boolean
     OutputPropertyDescription:
       required:
