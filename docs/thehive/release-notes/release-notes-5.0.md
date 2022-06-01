@@ -1,5 +1,49 @@
 # Release Notes of 5.0 series
 
+## 5.0.7 - 31 May 2022
+
+### Fixes
+
+**UI:**
+
+- When creating a case from an alert, the correct case template is selected if the field was set in the alert
+- Dashboard: fix an issue when converting a v4 dashboard
+- Case count was not refreshed when adding a case
+- Refresh comment section
+- Misp configuration: Fix organisation selection
+- Analyzer reports:
+    - in an alert, display the extractable observables
+    - can now import an observable of type file
+- Custom Fields:
+    - Limit the size of custom fields in list views
+    - use the display name in list views
+- When closing a case, custom fields are no longer deleted
+
+**API:**
+
+- Fix breaking change in api V0: don't limit the size of observable data in json. This prevented the creation of files in observables. Note: with v1 the prefered way is to use a multipart request.
+
+**Migration 3 to 5**
+
+- Fix migration of custom fields of type number
+
+### Improvements
+
+**UI:**
+
+- Add ability to manually refresh a list when auto-refresh is disabled
+- Notifications: Add a json validator when creating a custom filter 
+- Prevent automatic scroll when an entity is updated
+- Fix flickering of updated data fields when updating an entity
+- Other UI improvements
+
+**API:**
+
+- Check for duplicated files (by filename) when attaching a file to a case or to a log
+- Add field `stage` to alert and case in api v0
+- Users can manage their own api key without the permission `manageUsers`
+- Add new auth mecanism based on htpasswd file
+
 ## 5.0.6 - 17 May 2022
 
 ### Fixes
