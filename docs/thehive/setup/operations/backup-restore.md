@@ -47,10 +47,16 @@ To backup or export database from Cassandra, following information are required:
 
 Following actions should be performed to backup the data successfully: 
 
-- Save the database schema
-- Create a snapshot
-- Save the data and the schema
+1. stop TheHive service
+2. Save the database schema
+3. Create a snapshot
+4. Save the data and the schema
 
+#### Stop TheHive service
+
+```bash
+systemctl stop thehive
+```
 
 #### Save the database schema
 
@@ -236,6 +242,26 @@ Following data is required to restore TheHive database successfully:
 
     ```
 
+## Index
+
+Several solutions exist regarding the index:
+
+1. Save the Elasticsearch index and restore it ; follow Elasticsearch guides to perform this action
+2. Rebuild the index on the new server, when TheHive start for the first time.
+
+### Rebuild the index
+
+Once Cassandra database is restored, update the configuration of TheHive to rebuild the index.
+
+These lines should be added to the configuration file only for the first start of TheHive application, and removed later on.
+
+```yaml title="extract from /etc/thehive/application.conf"
+db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+db.janusgraph.forceDropAndRebuildIndex = true
+```
+
+!!! Warning "Once started, both lines should be removed or commented from the configuration file of TheHive"
+
 ## Files
 
 ### Backup
@@ -245,3 +271,9 @@ Wether you use local or distributed files system storage, copy the content of th
 ### Restore
 
 Restore the saved files into the destination folder/bucket that will be used by TheHive.
+
+
+## Troubleshooting
+
+The first start can take some time, especially it the application has to rebuild the index.
+Refer to this [troubleshooting section](/thehive/setup/installation/upgrade-from-4.x/#troubleshooting) to ensure everything goes well with reindexation.
