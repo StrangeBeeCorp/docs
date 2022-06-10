@@ -191,10 +191,11 @@ The following procedure should be applied on all servers belonging the the clust
 
 ### Create a dedicated system account
 
-Create a dedicated user with `/opt/minio` as homedir. 
+Create a dedicated user and group for MinIO. 
 
 ```bash
-adduser minio
+adduser minio-user
+addgroup minio-user
 ```
 
 ### Create at least 2 data volumes on each server
@@ -203,12 +204,12 @@ Create 2 folders on each server:
 
 ```bash
 mkdir -p /srv/minio/{1,2}
-chown -R minio:minio /srv/minio
+chown -R minio-user:minio-user /srv/minio
 ```
 
 ### Setup hosts files 
 
-Edit `/etc/hosts` of all servers 
+Edit `/etc/hosts` of all servers
 
 ```
 ip-minio-1     minio1
@@ -218,46 +219,28 @@ ip-minio-3     minio3
 
 ### installation
 
-```
-cd /opt/minio
-mkdir /opt/minio/{bin,etc}
-wget -O /opt/minio/bin https://dl.minio.io/server/minio/release/linux-amd64/minio
-chown -R minio:minio /opt/minio
-```
+!!! Example "Example for DEB packages"
+
+    ```bash
+    wget https://dl.min.io/server/minio/release/linux-amd64/minio_20220607003341.0.0_amd64.deb
+    wget https://dl.min.io/client/mc/release/linux-amd64/mcli_20220509040826.0.0_amd64.deb
+    dpkg -i minio_20220607003341.0.0_amd64.deb
+    dpkg -i mcli_20220509040826.0.0_amd64.deb
+    ```
+
+Visit [https://dl.min.io/]() to find last version of required packages.
+
 
 ### Configuration
 
-Create or edit file `/opt/minio/etc/minio.conf
+Create or edit file `/etc/default/minio`
 
-```
-MINIO_OPTS="server --address :9100 http://minio{1...3}/srv/minio/{1...2}"
-MINIO_ROOT_USER="<ACCESS_KEY>"
-MINIO_ROOT_PASSWORD="<SECRET_KEY>"
-```
-
-Create a service file named `/usr/lib/systemd/system/minio.service` 
-
-```
-[Unit]
-Description=minio
-Documentation=https://docs.min.io
-Wants=network-online.target
-After=network-online.target
-AssertFileIsExecutable=/opt/minio/bin/minio
-
-[Service]
-WorkingDirectory=/opt/minio
-User=minio
-Group=minio
-EnvironmentFile=/opt/minio/etc/minio.conf
-ExecStart=/opt/minio/bin/minio $MINIO_OPTS
-Restart=always
-LimitNOFILE=65536
-TimeoutStopSec=0
-SendSIGKILL=no
-
-[Install]
-WantedBy=multi-user.target
+```conf title="/etc/default/minio"
+MINIO_OPTS="--address :9100 --console-address :9001"
+MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
+MINIO_ROOT_USER=thehive
+MINIO_ROOT_PASSWORD=password
+MINIO_SITE_REGION="us-east-1"
 ```
 
 ### Enable and start the service
@@ -273,12 +256,12 @@ systemctl start minio.service
 Following operations should be performed once all servers are up and running. A new server CAN NOT be added afterward.  
 Connect using the _access key_ and _secret key_  to one server with your browser on port 9100: `http://minio:9100`
 
-![](images/minio_login.png)
+![](images/minio-login.png)
 
 
 Create a bucket named `thehive`
 
-![](images/minio_create_bucket.png)
+![](images/minio-list-buckets.png)
 
 
 The bucket should be created and available on all your servers. 
@@ -286,27 +269,48 @@ The bucket should be created and available on all your servers.
 
 ### TheHive associated configuration
 
-For each TheHive node of the cluster, add the relevant storage configuration. Example for the first node thehive1: 
+For each TheHive node of the cluster, add the relevant storage configuration. Example for the first node: 
 
-```
-storage {
-  provider: s3
-  s3 {
-    bucket = "thehive"
-    readTimeout = 1 minute
-    writeTimeout = 1 minute
-    chunkSize = 1 MB
-    endpoint = "http://<IP_MINIO_1>:9100"
-    accessKey = "<MINIO ACCESS KEY>"
-    secretKey = "<MINIO SECRET KEY>"
-    region = "us-east-1"
-  }
-}
+=== "With TheHive 5.0.x"
 
-alpakka.s3.access-style = path
-```
+    ```yaml title="/etc/thehive/application.conf"
+    storage {
+      provider: s3
+      s3 {
+        bucket = "thehive"
+        readTimeout = 1 minute
+        writeTimeout = 1 minute
+        chunkSize = 1 MB
+        endpoint = "http://<IP_MINIO_1>:9100"
+        accessKey = "thehive"
+        secretKey = "password"
+        region = "us-east-1"
+      }
+    }
+    alpakka.s3.access-style = path
+    ```
 
-`us-east-1` is the default region if none has been specified in MinIO configuration. In this case, this parameter is optional.
+=== "With TheHive 5.1.0 or higher"
 
+    ```yaml title="/etc/thehive/application.conf"
+    storage {
+      provider: s3
+      s3 {
+        bucket = "thehive"
+        readTimeout = 1 minute
+        writeTimeout = 1 minute
+        chunkSize = 1 MB
+        endpoint = "http://<IP_MINIO_1>:9100"
+        accessKey = "thehive"
+        aws.credentials.provider = "static"
+        aws.credentials.secret-access-key = "password"
+        access-style = path
+        aws.region.provider = "static"
+        aws.region.default-region = "us-east-1"
+      }
+    }
+    ```
+
+!!! Note "The configuration is backward compatible"
 
 Each TheHive server can connect to one MinIO server.
