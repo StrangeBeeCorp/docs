@@ -1,6 +1,6 @@
 # Release Notes of 5.0 series
 
-## 5.0.8 - 14 June 2022
+## 5.0.8 - 15 June 2022
 
 ### Fixes
 
