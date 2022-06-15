@@ -1,5 +1,34 @@
 # Release Notes of 5.0 series
 
+## 5.0.8 - 14 June 2022
+
+### Fixes
+
+**UI:**
+
+- Fixes issues around importing observables from an analyzer report
+- Analyzer template list was not be exhaustive in certain cases
+- Fix pagination and sorting when listing similar cases
+- In related cases list, show several matching observables instead of only one
+
+**API:**
+
+- Removed full text search on tags: that caused slow queries as the index cannot be used here
+- Fixed regression from TH4: when merging alerts into a case, observables could be duplicated if they appeared in several alerts
+- Add ability to filter and sort by case/alert status/stage on api v0
+
+**Docker:**
+
+- Fix entrypoint for s3 configuration
+
+### Improvements
+
+**API:**
+
+- Log login success and failures: those logs are useful for auditing purpose, to detect password guessing attacks via large unsuccessful logon attempts
+- Prevent duplication of custom fields values
+- Improve queries when filtering on a custom field with a high number of matches
+
 ## 5.0.7 - 31 May 2022
 
 ### Fixes
