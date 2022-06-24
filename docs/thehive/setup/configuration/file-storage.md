@@ -40,13 +40,13 @@ TheHive can be configured to use local or distributed filesystems.
             readTimeout = 1 minute
             writeTimeout = 1 minute
             chunkSize = 1 MB
-            endpoint = "http://10.1.2.4:9100"
+            endpoint = "http://<IP_MINIO_1>:9100"
             accessKey = "thehive"
-            secretKey = "minio_password"
-            access-style = path
+            secretKey = "password"
             region = "us-east-1"
           }
-        } 
+        }
+        alpakka.s3.access-style = path
         ```
 
         ```yaml title="/etc/thehive/application.conf with TheHive 5.1.x"
