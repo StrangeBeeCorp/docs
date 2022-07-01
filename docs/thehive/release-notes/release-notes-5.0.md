@@ -1,6 +1,46 @@
 # Release Notes of 5.0 series
 
+## 5.0.9 - 1st July 2022
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+  - Fix radar when aggregating on custom fields
+  - Radar widget now uses a more efficient query
+  - Clicks on donut and counter widgets correctly sets the filters on the search page
+- Reset scroll when page is changed
+- In alert observable list, remove the share column
+- Fix french translation in quick views
+- Fix links in search results for observables
+
+**API:**
+
+- When merging an alert in a case, merge the tag reports for the observable
+
+### Improvements
+
+**UI:**
+
+- In analyzer reports, add the tags on the observables
+- Sort case template by name when creating a case
+- Add support for cortex entities in charts and dashboard
+- Related case view: sort cases by matching percentage
+
+**API:**
+
+- Limit the duration of count queries not using the index to 5 seconds
+- Add support for cortex entities for charts api
+- Add TheHive version in logs
+
 ## 5.0.8 - 15 June 2022
+
+### Security
+
+Fix issue related to AD/LDAP module.
+
+If you are using the ad/ldap authentification, you should update to TheHive 5.0.8 or later
 
 ### Fixes
 
@@ -41,11 +81,11 @@
 - Refresh comment section
 - Misp configuration: Fix organisation selection
 - Analyzer reports:
-    - in an alert, display the extractable observables
-    - can now import an observable of type file
+  - in an alert, display the extractable observables
+  - can now import an observable of type file
 - Custom Fields:
-    - Limit the size of custom fields in list views
-    - use the display name in list views
+  - Limit the size of custom fields in list views
+  - use the display name in list views
 - When closing a case, custom fields are no longer deleted
 
 **API:**
@@ -61,7 +101,7 @@
 **UI:**
 
 - Add ability to manually refresh a list when auto-refresh is disabled
-- Notifications: Add a json validator when creating a custom filter 
+- Notifications: Add a json validator when creating a custom filter
 - Prevent automatic scroll when an entity is updated
 - Fix flickering of updated data fields when updating an entity
 - Other UI improvements
@@ -84,6 +124,7 @@
 - logout popin remained open after a reconnection
 - API docs did not appear when setting an http context
 - Fix an issue where breadcrumps were not displayed correctly
+
 ### Improvements
 
 **UI:**
@@ -104,7 +145,7 @@
 
 **UI:**
 
-- Analyzer templates: optimize rendering time 
+- Analyzer templates: optimize rendering time
 - Fixed SSO login when using an http context
 
 **API:**
@@ -112,7 +153,7 @@
 - Dashboard: increase number of retrieved values for aggregations (eg. chart on custom field values)
 - Fix for permission `manageConfig`
 - Improve support for AWS Keyspace: add retries on some failed queries
-- Fix endpoint for deletion of catalog of ttp 
+- Fix endpoint for deletion of catalog of ttp
 
 ## 5.0.4 - 3 May 2022
 
@@ -161,11 +202,11 @@ We recommend all 5.0.x users to update to this version.
 
 - Fix 404 page during the reset password flow
 - Dashboard: include end date in time interval
-- Fix detached live feed when using an http context 
+- Fix detached live feed when using an http context
 
 ## 5.0.1 - 7 April 2022
 
-TheHive 5.0.1 is the first patch release in the 5.0 series. It contains fixes and improvements for the UI and some small changes for the API compared to 5.0.0. 
+TheHive 5.0.1 is the first patch release in the 5.0 series. It contains fixes and improvements for the UI and some small changes for the API compared to 5.0.0.
 
 We recommend all 5.0.0 users to update to this version.
 
@@ -181,7 +222,7 @@ We recommend all 5.0.0 users to update to this version.
 - notifications - improve editor when using template variables
 - be able to download a file attachment for an alert
 - forms and drawers don't lose user data when the entity is refreshed by the feed
-- improve live feed for cortex jobs on observables 
+- improve live feed for cortex jobs on observables
 
 **API:**
 
@@ -203,4 +244,3 @@ We recommend all 5.0.0 users to update to this version.
 
 - fix url to website
 - add documentation for MISP endpoints
-
