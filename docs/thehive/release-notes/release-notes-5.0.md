@@ -7,9 +7,9 @@
 **UI:**
 
 - Dashboard:
-  - Fix radar when aggregating on custom fields
-  - Radar widget now uses a more efficient query
-  - Clicks on donut and counter widgets correctly sets the filters on the search page
+    - Fix radar when aggregating on custom fields
+    - Radar widget now uses a more efficient query
+    - Clicks on donut and counter widgets correctly sets the filters on the search page
 - Reset scroll when page is changed
 - In alert observable list, remove the share column
 - Fix french translation in quick views
