@@ -22,6 +22,8 @@ Hardware requirements depends on the number of concurrent users (including integ
 | :fontawesome-solid-user-group: < 20            | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: |
 | :fontawesome-solid-user-group: < 50            | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: |
 
+!!! Tip
+    If you are installing everything on the same server, we recommend at least 4 cores and 16 GB of RAM. And don't forget to set up `jvm.options` at least for Elasticsearch.
 
 ## Operating systems
 TheHive has been tested and is supported on the following operating systems: 
