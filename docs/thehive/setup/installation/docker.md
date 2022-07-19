@@ -2,17 +2,35 @@
 
 This page will guide you on how to use the docker image of TheHive
 
-!!! Info "Default credentials"
-    Default admin credentials are admin@thehive.local / secret
+## Quick start
 
 ```bash
 docker run --rm -p 9000:9000 strangebee/thehive:<version>
 ```
 This will start an instance of thehive using a local database and index. Note that the **data will be deleted when the container is deleted**. So this should only be used for evaluation and tests.
 
+Connect on http://localhost:9000 to see the login page. 
+
+!!! Info "Default credentials"
+    Default admin credentials are `admin@thehive.local` / `secret`
+
 We recommend to always set the version of your docker image in production scenarios and not to use `latest`. 
 
-### Recommended setup
+### Using your own configuration file
+
+The entry point arguments are used to create a `application.conf` file in the container. A custom configuration file can also be provided:
+
+```bash
+docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files -v <host_conf_folder>:/data/conf <thehive-image> --no-config --config-file /data/conf/application.conf 
+```
+
+The folder `<host_conf_folder>` needs to contain a `application.conf` file.
+
+`--no-config` is used to tell the entrypoint to not generate any configuration. Otherwise the entry point will generate a default configuration that will be merged with your file. 
+
+### Using command line arguments
+
+We recommend running TheHive with Cassandra and Elasticsearch for data storage and minio for file storage. You can pass the hostnames of your instances via the arguments:
 
 ```bash
 docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files strangebee/thehive:<version> \
@@ -22,20 +40,14 @@ docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files strangebee/thehiv
     --cql-password <cqlusername>
     --index-backend elasticsearch
     --es-hostnames <eshost1>,<eshost2>,...
+    --s3-endpoint <minio_endpoint>
+    --s3-access-key <minio_access_key>
+    --s3-secret-key <minio_secret_key>
 ```
 
-This will connect your docker container to external cassandra and elasticsearch nodes. The data files will be stored on the host file system.
+This will connect your docker container to external cassandra and elasticsearch nodes. The data files will be stored on minio.
 The container exposes TheHive on the port `9000`.
 
-### Passing a configuration file
-
-The entry point arguments are used to create a `application.conf` file in the container. A user can also provide its own configuration file:
-
-```bash
-docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files -v <host_conf_folder>:/data/conf <thehive-image> --config-file /data/conf/application.conf 
-```
-
-The folder `<host_conf_folder>` needs to contain a `application.conf` file
 
 ### All options
 
