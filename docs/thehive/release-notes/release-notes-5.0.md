@@ -1,5 +1,52 @@
 # Release Notes of 5.0 series
 
+## 5.0.10 - 21st July 2022
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+  - fix style issue when loading the knowledge base at the same time
+  - update api used by bar widget to fix issues with custom fields query
+- Markdown preview in full screen mode now uses the full height of the screen
+- Fix a filter when using enumeration (severity, pap)
+- MISP: add settings in the UI to be able to export tags on Case and Observable from TheHive to MISP
+- Cortex: 
+  - UI is notified when an analyzer has finished adding all the observables to a report
+  - Fix report view for Spamhaus analyzer
+
+**API:**
+
+- Fix issue that caused the user `system@thehive.local` to be deleted by the user integrity check: this could cause issues with MISP or Cortex synchronization (Cortex jobs triggered by notifiers were left in "Waiting" state). If the user was missing from your instance, it will be recreated after an update of TheHive. 
+- Increase the timeout for count requests to 10s and add a config to increase this value (`db.limitedCountTimeout`). If a count takes longer that this duration, a truncated result is returned.
+- Dashboard queries: Filter on custom fields was not applied on the name of the custom field (only on the value)
+- Fix an issue that prevented TheHive from starting when misp or cortex were not configured correctly (missing `http` scheme in url for instance)
+
+**Docker:**
+
+- Fix issue with argument `--no-cql-wait` that caused the next argument to be ignored
+
+### Improvements
+
+**UI:**
+
+- Responder jobs list are now sorted by start date 
+- Users in Assignee field are now sorted by alphabetical order
+- When showing an observable, prevent from loading all the reports details when loading the job list. Report details are now loaded only when opening the report drawer.
+
+**API:**
+
+- Add new parameters to the endpoint "create a case from an alert".
+- When creating a case from an alert, the events `CaseCreated` and `AlertImported` are triggered once all the alert observables are imported inside the case.
+- When merging alerts inside a case, triggger the event `AlertImported` once all observables for an alert are imported inside the case.
+- Emailer will now send html emails instead of text emails. This means that you use advanced formatting and styles in your emails.
+- Cortex job reports are not included in the list anymore. An extra data needs to be used to retrieve them.
+
+**Docker:**
+
+- Misp and Cortex modules are enabled by default when using the entrypoint. (They are not enabled if you use `--no-config`)
+
 ## 5.0.9 - 1st July 2022
 
 ### Fixes
