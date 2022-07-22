@@ -1,0 +1,1846 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.strangebee.com/thehive/release-notes/release-notes-5.0/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Release Notes for TheHive 5.0 - TheHive 5 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+
+<meta name="robots" content="index" />
+
+<!-- Open graph  -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TheHive 5 Documentation" />
+<meta
+  property="og:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta property="og:site_name" content="StrangeBee Docs" />
+<meta
+  property="og:image"
+  content="https://docs.strangebee.com/images/share/meta-open-graph.png"
+/>
+<meta property="og:url" content="https://docs.strangebee.com" />
+<meta property="og:locale" content="en_US" />
+<meta
+  property="og:video"
+  content="https://www.youtube.com/watch?v=fBzaVhABGMY"
+/>
+
+<!-- Twitter card  -->
+<meta name="twitter:title" content="TheHive 5 Documentation" />
+<meta
+  name="twitter:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta
+  name="twitter:image"
+  content="https://docs.strangebee.com/images/share/meta-twitter-card.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StrangeBee" />
+<meta name="twitter:creator" content="@StrangeBee" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StrangeBee - Docs",
+    "alternateName": "StrangeBee",
+    "url": "https://docs.strangebee.com/",
+    "logo": "https://docs.strangebee.com/assets/images/strangebee.svg",
+    "sameAs": "https://twitter.com/StrangeBee"
+  }
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "StrangeBee - Docs",
+    "url": "https://docs.strangebee.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://docs.strangebee.com/thehive/setup/configuration/ssl/?h={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#release-notes-of-50-series" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+<!-- Add announcement here, including arbitrary HTML -->
+<a href="https://twitter.com/StrangeBee" target="_blank">
+  For updates follow <strong>@StrangeBee</strong> on
+  <span class="twemoji twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+  </span>
+  <strong>Twitter</strong>
+</a>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/strangebee.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TheHive 5 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Release Notes for TheHive 5.0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../setup/" class="md-tabs__link md-tabs__link--active">
+        TheHive
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../api-docs/" target="_blank" class="md-tabs__link">
+      API Docs
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/images/strangebee.svg" alt="logo">
+
+    </a>
+    TheHive 5 Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../setup/">TheHive</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="TheHive" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          TheHive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/step-by-step-guide/" class="md-nav__link">
+        Step-by-Step guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/docker/" class="md-nav__link">
+        Running with Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/license/" class="md-nav__link">
+        Activate a license
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/3-node-cluster/" class="md-nav__link">
+        Use TheHive as a cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/upgrade-from-4.x/" class="md-nav__link">
+        Upgrade from TheHive 4.x
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/installation/migration/" class="md-nav__link">
+        Migration from TheHive 3.x
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/database/" class="md-nav__link">
+        Database & index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/file-storage/" class="md-nav__link">
+        File storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/connectors/" class="md-nav__link">
+        TheHive connectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/akka/" class="md-nav__link">
+        Akka
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/logs/" class="md-nav__link">
+        Logs Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/proxy/" class="md-nav__link">
+        Proxy settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/secret/" class="md-nav__link">
+        `secret.conf` file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/configuration/ssl/" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Operations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/cassandra-cluster/" class="md-nav__link">
+        Operations on a Cassandra Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/backup-restore/" class="md-nav__link">
+        Backup and restore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/cassandra-security/" class="md-nav__link">
+        Security in Apache Cassandra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/minio-cluster/" class="md-nav__link">
+        Operations on a MINIO cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/https/" class="md-nav__link">
+        Https
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/fail2ban/" class="md-nav__link">
+        Fail2ban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../setup/operations/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Release Notes for TheHive 5.0
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Release Notes for TheHive 5.0
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#5010-21st-july-2022" class="md-nav__link">
+    5.0.10 - 21st July 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.10 - 21st July 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#509-1st-july-2022" class="md-nav__link">
+    5.0.9 - 1st July 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.9 - 1st July 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_1" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_1" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#508-15-june-2022" class="md-nav__link">
+    5.0.8 - 15 June 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.8 - 15 June 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes_2" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_2" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#507-31-may-2022" class="md-nav__link">
+    5.0.7 - 31 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.7 - 31 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_3" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_3" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#506-17-may-2022" class="md-nav__link">
+    5.0.6 - 17 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.6 - 17 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_4" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_4" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#505-5-may-2022" class="md-nav__link">
+    5.0.5 - 5 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.5 - 5 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_5" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#504-3-may-2022" class="md-nav__link">
+    5.0.4 - 3 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.4 - 3 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_6" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#503-15-april-2022" class="md-nav__link">
+    5.0.3 - 15 April 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.3 - 15 April 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes_7" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#502-8-april-2022" class="md-nav__link">
+    5.0.2 - 8 April 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#501-7-april-2022" class="md-nav__link">
+    5.0.1 - 7 April 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.1 - 7 April 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notables-changes" class="md-nav__link">
+    Notables changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-docs/" target="_blank" class="md-nav__link">
+        API Docs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#5010-21st-july-2022" class="md-nav__link">
+    5.0.10 - 21st July 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.10 - 21st July 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#509-1st-july-2022" class="md-nav__link">
+    5.0.9 - 1st July 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.9 - 1st July 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_1" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_1" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#508-15-june-2022" class="md-nav__link">
+    5.0.8 - 15 June 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.8 - 15 June 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes_2" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_2" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#507-31-may-2022" class="md-nav__link">
+    5.0.7 - 31 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.7 - 31 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_3" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_3" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#506-17-may-2022" class="md-nav__link">
+    5.0.6 - 17 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.6 - 17 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_4" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_4" class="md-nav__link">
+    Improvements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#505-5-may-2022" class="md-nav__link">
+    5.0.5 - 5 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.5 - 5 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_5" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#504-3-may-2022" class="md-nav__link">
+    5.0.4 - 3 May 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.4 - 3 May 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes_6" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#503-15-april-2022" class="md-nav__link">
+    5.0.3 - 15 April 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.3 - 15 April 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    New Features
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixes_7" class="md-nav__link">
+    Fixes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#502-8-april-2022" class="md-nav__link">
+    5.0.2 - 8 April 2022
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#501-7-april-2022" class="md-nav__link">
+    5.0.1 - 7 April 2022
+  </a>
+  
+    <nav class="md-nav" aria-label="5.0.1 - 7 April 2022">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notables-changes" class="md-nav__link">
+    Notables changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="release-notes-of-50-series">Release Notes of 5.0 series<a class="headerlink" href="#release-notes-of-50-series" title="Permanent link">#</a></h1>
+<h2 id="5010-21st-july-2022">5.0.10 - 21st July 2022<a class="headerlink" href="#5010-21st-july-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Dashboard:<ul>
+<li>fix style issue when loading the knowledge base at the same time</li>
+<li>update api used by bar widget to fix issues with custom fields query</li>
+</ul>
+</li>
+<li>Markdown preview in full screen mode now uses the full height of the screen</li>
+<li>Fix a filter when using enumeration (severity, pap)</li>
+<li>MISP: add settings in the UI to be able to export tags on Case and Observable from TheHive to MISP</li>
+<li>Cortex: <ul>
+<li>UI is notified when an analyzer has finished adding all the observables to a report</li>
+<li>Fix report view for Spamhaus analyzer</li>
+</ul>
+</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Fix issue that caused the user <code>system@thehive.local</code> to be deleted by the user integrity check: this could cause issues with MISP or Cortex synchronization (Cortex jobs triggered by notifiers were left in "Waiting" state). If the user was missing from your instance, it will be recreated after an update of TheHive. </li>
+<li>Increase the timeout for count requests to 10s and add a config to increase this value (<code>db.limitedCountTimeout</code>). If a count takes longer that this duration, a truncated result is returned.</li>
+<li>Dashboard queries: Filter on custom fields was not applied on the name of the custom field (only on the value)</li>
+<li>Fix an issue that prevented TheHive from starting when misp or cortex were not configured correctly (missing <code>http</code> scheme in url for instance)</li>
+</ul>
+<p><strong>Docker:</strong></p>
+<ul>
+<li>Fix issue with argument <code>--no-cql-wait</code> that caused the next argument to be ignored</li>
+</ul>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Responder jobs list are now sorted by start date </li>
+<li>Users in Assignee field are now sorted by alphabetical order</li>
+<li>When showing an observable, prevent from loading all the reports details when loading the job list. Report details are now loaded only when opening the report drawer.</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Add new parameters to the endpoint "create a case from an alert".</li>
+<li>When creating a case from an alert, the events <code>CaseCreated</code> and <code>AlertImported</code> are triggered once all the alert observables are imported inside the case.</li>
+<li>When merging alerts inside a case, triggger the event <code>AlertImported</code> once all observables for an alert are imported inside the case.</li>
+<li>Emailer will now send html emails instead of text emails. This means that you use advanced formatting and styles in your emails.</li>
+<li>Cortex job reports are not included in the list anymore. An extra data needs to be used to retrieve them.</li>
+</ul>
+<p><strong>Docker:</strong></p>
+<ul>
+<li>Misp and Cortex modules are enabled by default when using the entrypoint. (They are not enabled if you use <code>--no-config</code>)</li>
+</ul>
+<h2 id="509-1st-july-2022">5.0.9 - 1st July 2022<a class="headerlink" href="#509-1st-july-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Dashboard:<ul>
+<li>Fix radar when aggregating on custom fields</li>
+<li>Radar widget now uses a more efficient query</li>
+<li>Clicks on donut and counter widgets correctly sets the filters on the search page</li>
+</ul>
+</li>
+<li>Reset scroll when page is changed</li>
+<li>In alert observable list, remove the share column</li>
+<li>Fix french translation in quick views</li>
+<li>Fix links in search results for observables</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>When merging an alert in a case, merge the tag reports for the observable</li>
+</ul>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>In analyzer reports, add the tags on the observables</li>
+<li>Sort case template by name when creating a case</li>
+<li>Add support for cortex entities in charts and dashboard</li>
+<li>Related case view: sort cases by matching percentage</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Limit the duration of count queries not using the index to 5 seconds</li>
+<li>Add support for cortex entities for charts api</li>
+<li>Add TheHive version in logs</li>
+</ul>
+<h2 id="508-15-june-2022">5.0.8 - 15 June 2022<a class="headerlink" href="#508-15-june-2022" title="Permanent link">#</a></h2>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<p>Fix issue related to AD/LDAP module.</p>
+<p>If you are using the ad/ldap authentification, you should update to TheHive 5.0.8 or later</p>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Fixes issues around importing observables from an analyzer report</li>
+<li>Analyzer template list was not be exhaustive in certain cases</li>
+<li>Fix pagination and sorting when listing similar cases</li>
+<li>In related cases list, show several matching observables instead of only one</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Removed full text search on tags: that caused slow queries as the index cannot be used here</li>
+<li>Fixed regression from TH4: when merging alerts into a case, observables could be duplicated if they appeared in several alerts</li>
+<li>Add ability to filter and sort by case/alert status/stage on api v0</li>
+</ul>
+<p><strong>Docker:</strong></p>
+<ul>
+<li>Fix entrypoint for s3 configuration</li>
+</ul>
+<h3 id="improvements_2">Improvements<a class="headerlink" href="#improvements_2" title="Permanent link">#</a></h3>
+<p><strong>API:</strong></p>
+<ul>
+<li>Log login success and failures: those logs are useful for auditing purpose, to detect password guessing attacks via large unsuccessful logon attempts</li>
+<li>Prevent duplication of custom fields values</li>
+<li>Improve queries when filtering on a custom field with a high number of matches</li>
+</ul>
+<h2 id="507-31-may-2022">5.0.7 - 31 May 2022<a class="headerlink" href="#507-31-may-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>When creating a case from an alert, the correct case template is selected if the field was set in the alert</li>
+<li>Dashboard: fix an issue when converting a v4 dashboard</li>
+<li>Case count was not refreshed when adding a case</li>
+<li>Refresh comment section</li>
+<li>Misp configuration: Fix organisation selection</li>
+<li>Analyzer reports:</li>
+<li>in an alert, display the extractable observables</li>
+<li>can now import an observable of type file</li>
+<li>Custom Fields:</li>
+<li>Limit the size of custom fields in list views</li>
+<li>use the display name in list views</li>
+<li>When closing a case, custom fields are no longer deleted</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Fix breaking change in api V0: don't limit the size of observable data in json. This prevented the creation of files in observables. Note: with v1 the prefered way is to use a multipart request.</li>
+</ul>
+<p><strong>Migration 3 to 5</strong></p>
+<ul>
+<li>Fix migration of custom fields of type number</li>
+</ul>
+<h3 id="improvements_3">Improvements<a class="headerlink" href="#improvements_3" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Add ability to manually refresh a list when auto-refresh is disabled</li>
+<li>Notifications: Add a json validator when creating a custom filter</li>
+<li>Prevent automatic scroll when an entity is updated</li>
+<li>Fix flickering of updated data fields when updating an entity</li>
+<li>Other UI improvements</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Check for duplicated files (by filename) when attaching a file to a case or to a log</li>
+<li>Add field <code>stage</code> to alert and case in api v0</li>
+<li>Users can manage their own api key without the permission <code>manageUsers</code></li>
+<li>Add new auth mecanism based on htpasswd file</li>
+</ul>
+<h2 id="506-17-may-2022">5.0.6 - 17 May 2022<a class="headerlink" href="#506-17-may-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>List of analyzers did not refresh correctly for alert observables</li>
+<li>Fix error when trying to download a task log attachment with the char <code>{</code> in the name</li>
+<li>logout popin remained open after a reconnection</li>
+<li>API docs did not appear when setting an http context</li>
+<li>Fix an issue where breadcrumps were not displayed correctly</li>
+</ul>
+<h3 id="improvements_4">Improvements<a class="headerlink" href="#improvements_4" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Faster render of big markdown section: use <code>marked-react</code> library instead of <code>react-markdown</code></li>
+<li>Adjust fanged message</li>
+<li>Improve sorting of tasks when in group mode</li>
+<li>Update observable count when an observable is added or removed</li>
+<li>Improvements for "Required Action" on tasks</li>
+</ul>
+<p><strong>Migration 4 to 5:</strong></p>
+<ul>
+<li>Improve migration for custom fields where previous script could overload the application</li>
+</ul>
+<h2 id="505-5-may-2022">5.0.5 - 5 May 2022<a class="headerlink" href="#505-5-may-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Analyzer templates: optimize rendering time</li>
+<li>Fixed SSO login when using an http context</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Dashboard: increase number of retrieved values for aggregations (eg. chart on custom field values)</li>
+<li>Fix for permission <code>manageConfig</code></li>
+<li>Improve support for AWS Keyspace: add retries on some failed queries</li>
+<li>Fix endpoint for deletion of catalog of ttp</li>
+</ul>
+<h2 id="504-3-may-2022">5.0.4 - 3 May 2022<a class="headerlink" href="#504-3-may-2022" title="Permanent link">#</a></h2>
+<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>Tasks are now displayed by their order</li>
+<li>Changed color of field for search by case id</li>
+<li>Fixed an issue where custom fields were deleted when editing a case template</li>
+<li>Fix download link of attachments when http context is set</li>
+<li>Update of vulnerable libraries</li>
+<li>When using bulk edit, "Add tags" and "Remove tags" now work</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>Fixed bug introduced in 5.0.3 where TTPs were not linked to their tactics and reported <code>&lt;unknown&gt;</code></li>
+<li>It's now possible to delete the title prefix in a case template</li>
+</ul>
+<h2 id="503-15-april-2022">5.0.3 - 15 April 2022<a class="headerlink" href="#503-15-april-2022" title="Permanent link">#</a></h2>
+<h3 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
+<p><strong>API:</strong></p>
+<ul>
+<li>Add support to procedures (TTPs) when creating alerts in TheHive</li>
+</ul>
+<h3 id="fixes_7">Fixes<a class="headerlink" href="#fixes_7" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>When importing a case from misp: additional parameters (custom fields, shares) are correctly sent</li>
+<li>When converting an alert to case, custom fields are no longer lost during the process</li>
+<li>Update moment.js library</li>
+</ul>
+<p><strong>Migration tool:</strong></p>
+<ul>
+<li>Fix typo in migration tool configuration</li>
+</ul>
+<h2 id="502-8-april-2022">5.0.2 - 8 April 2022<a class="headerlink" href="#502-8-april-2022" title="Permanent link">#</a></h2>
+<p>We found a bug that prevents a user from using the reset pasword flow (present in 5.0.0).
+We recommend all 5.0.x users to update to this version.</p>
+<p><strong>Fixes:</strong></p>
+<ul>
+<li>Fix 404 page during the reset password flow</li>
+<li>Dashboard: include end date in time interval</li>
+<li>Fix detached live feed when using an http context</li>
+</ul>
+<h2 id="501-7-april-2022">5.0.1 - 7 April 2022<a class="headerlink" href="#501-7-april-2022" title="Permanent link">#</a></h2>
+<p>TheHive 5.0.1 is the first patch release in the 5.0 series. It contains fixes and improvements for the UI and some small changes for the API compared to 5.0.0.</p>
+<p>We recommend all 5.0.0 users to update to this version.</p>
+<h3 id="notables-changes">Notables changes<a class="headerlink" href="#notables-changes" title="Permanent link">#</a></h3>
+<p><strong>UI:</strong></p>
+<ul>
+<li>fix description display on search page</li>
+<li>display org admin tabs only with required permissions</li>
+<li>fix permissions checks in the application</li>
+<li>improve case sharing user experience</li>
+<li>notifications - fix urls of http endpoints</li>
+<li>notifications - improve editor when using template variables</li>
+<li>be able to download a file attachment for an alert</li>
+<li>forms and drawers don't lose user data when the entity is refreshed by the feed</li>
+<li>improve live feed for cortex jobs on observables</li>
+</ul>
+<p><strong>API:</strong></p>
+<ul>
+<li>add ability to create alert with observables (of type string and files), see. API docs for more information</li>
+<li>rename field user to assignee in case creation</li>
+<li>rename field customFieldValues to customFields in alert creation</li>
+</ul>
+<p><strong>Backend:</strong></p>
+<ul>
+<li>fix tag edition</li>
+<li>fix permissions check for observables in case of sharing</li>
+<li>fix user deletion (user could be left without org)</li>
+<li>fix license reload on cluster nodes</li>
+<li>add more check to ensure uniqueness of data</li>
+<li>increase quotas for service users (set to unlimited) and cluster nodes (unlimited for platinum plan)</li>
+<li>update of dependencies</li>
+</ul>
+<p><strong>Docs:</strong></p>
+<ul>
+<li>fix url to website</li>
+<li>add documentation for MISP endpoints</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../setup/operations/troubleshooting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Troubleshooting" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Troubleshooting
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2022 StrangeBee. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/strangebee" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/StrangeBee" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1872 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.strangebee.com/thehive/setup/installation/upgrade-from-4.x/">
+      
+      <link rel="icon" href="../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Upgrade from TheHive 4.x - TheHive 5 Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+
+<meta name="robots" content="index" />
+
+<!-- Open graph  -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="TheHive 5 Documentation" />
+<meta
+  property="og:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta property="og:site_name" content="StrangeBee Docs" />
+<meta
+  property="og:image"
+  content="https://docs.strangebee.com/images/share/meta-open-graph.png"
+/>
+<meta property="og:url" content="https://docs.strangebee.com" />
+<meta property="og:locale" content="en_US" />
+<meta
+  property="og:video"
+  content="https://www.youtube.com/watch?v=fBzaVhABGMY"
+/>
+
+<!-- Twitter card  -->
+<meta name="twitter:title" content="TheHive 5 Documentation" />
+<meta
+  name="twitter:description"
+  content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT & CSIRT teams."
+/>
+<meta
+  name="twitter:image"
+  content="https://docs.strangebee.com/images/share/meta-twitter-card.png"
+/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@StrangeBee" />
+<meta name="twitter:creator" content="@StrangeBee" />
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StrangeBee - Docs",
+    "alternateName": "StrangeBee",
+    "url": "https://docs.strangebee.com/",
+    "logo": "https://docs.strangebee.com/assets/images/strangebee.svg",
+    "sameAs": "https://twitter.com/StrangeBee"
+  }
+</script>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "WebSite",
+    "name": "StrangeBee - Docs",
+    "url": "https://docs.strangebee.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://docs.strangebee.com/thehive/setup/configuration/ssl/?h={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+</script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#upgrade-from-thehive-4x" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+<!-- Add announcement here, including arbitrary HTML -->
+<a href="https://twitter.com/StrangeBee" target="_blank">
+  For updates follow <strong>@StrangeBee</strong> on
+  <span class="twemoji twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+  </span>
+  <strong>Twitter</strong>
+</a>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/images/strangebee.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TheHive 5 Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Upgrade from TheHive 4.x
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        TheHive
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../api-docs/" target="_blank" class="md-tabs__link">
+      API Docs
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/images/strangebee.svg" alt="logo">
+
+    </a>
+    TheHive 5 Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../">TheHive</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="TheHive" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          TheHive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/" class="md-nav__link">
+        Download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Installation" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-by-step-guide/" class="md-nav__link">
+        Step-by-Step guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        Running with Docker
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../license/" class="md-nav__link">
+        Activate a license
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3-node-cluster/" class="md-nav__link">
+        Use TheHive as a cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Upgrade from TheHive 4.x
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Upgrade from TheHive 4.x
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-all-running-applications" class="md-nav__link">
+    Stop all running applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-java" class="md-nav__link">
+    Upgrade Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-or-install-elasticsearch" class="md-nav__link">
+    Upgrade or install Elasticsearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-cassandra" class="md-nav__link">
+    Upgrade Cassandra
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Cassandra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-configuration-file" class="md-nav__link">
+    Backup configuration file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-cassandra" class="md-nav__link">
+    Install Cassandra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-service" class="md-nav__link">
+    Start the service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-sstables" class="md-nav__link">
+    Upgrade sstables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-thehive" class="md-nav__link">
+    Install thehive
+  </a>
+  
+    <nav class="md-nav" aria-label="Install thehive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-for-the-new-installation" class="md-nav__link">
+    Prepare for the new installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-configuration-required-for-the-upgrade-only" class="md-nav__link">
+    Specific configuration required (for the upgrade only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-thehive_1" class="md-nav__link">
+    Install TheHive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-services" class="md-nav__link">
+    Start services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-the-service" class="md-nav__link">
+    Restart the service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../migration/" class="md-nav__link">
+        Migration from TheHive 3.x
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Configuration" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/database/" class="md-nav__link">
+        Database & index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/file-storage/" class="md-nav__link">
+        File storage
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/connectors/" class="md-nav__link">
+        TheHive connectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/akka/" class="md-nav__link">
+        Akka
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/logs/" class="md-nav__link">
+        Logs Configuration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/proxy/" class="md-nav__link">
+        Proxy settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/secret/" class="md-nav__link">
+        `secret.conf` file
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/ssl/" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          Operations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Operations" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Operations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cassandra-cluster/" class="md-nav__link">
+        Operations on a Cassandra Cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/backup-restore/" class="md-nav__link">
+        Backup and restore
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/cassandra-security/" class="md-nav__link">
+        Security in Apache Cassandra
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/minio-cluster/" class="md-nav__link">
+        Operations on a MINIO cluster
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/https/" class="md-nav__link">
+        Https
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/fail2ban/" class="md-nav__link">
+        Fail2ban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Release Notes" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../release-notes/release-notes-5.0/" class="md-nav__link">
+        Release Notes for TheHive 5.0
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../api-docs/" target="_blank" class="md-nav__link">
+        API Docs
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparation" class="md-nav__link">
+    Preparation
+  </a>
+  
+    <nav class="md-nav" aria-label="Preparation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stop-all-running-applications" class="md-nav__link">
+    Stop all running applications
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-java" class="md-nav__link">
+    Upgrade Java
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-or-install-elasticsearch" class="md-nav__link">
+    Upgrade or install Elasticsearch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-cassandra" class="md-nav__link">
+    Upgrade Cassandra
+  </a>
+  
+    <nav class="md-nav" aria-label="Upgrade Cassandra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backup-configuration-file" class="md-nav__link">
+    Backup configuration file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-cassandra" class="md-nav__link">
+    Install Cassandra
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-the-service" class="md-nav__link">
+    Start the service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-sstables" class="md-nav__link">
+    Upgrade sstables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-thehive" class="md-nav__link">
+    Install thehive
+  </a>
+  
+    <nav class="md-nav" aria-label="Install thehive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-for-the-new-installation" class="md-nav__link">
+    Prepare for the new installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-configuration-required-for-the-upgrade-only" class="md-nav__link">
+    Specific configuration required (for the upgrade only)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-thehive_1" class="md-nav__link">
+    Install TheHive
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#start-services" class="md-nav__link">
+    Start services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-the-service" class="md-nav__link">
+    Restart the service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="upgrade-from-thehive-4x">Upgrade from TheHive 4.x<a class="headerlink" href="#upgrade-from-thehive-4x" title="Permanent link">#</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This guide describes how to upgrade TheHive from version <strong>4.1.x</strong> to <strong>5.0.x</strong>.</p>
+<p>This guide considers: </p>
+<ul>
+<li>The application is running on a <a href="../../#operating-systems">supported Linux operating system</a></li>
+<li>The server meets <a href="../../#requirements">prerequisites</a> regarding CPU &amp; RAM.</li>
+</ul>
+<p>If you are using a cluster, specific notes are highlighted to guide you. </p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Switch to Elasticsearch as indexing engine</p>
+<p>TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.</p>
+</div>
+<h2 id="preparation">Preparation<a class="headerlink" href="#preparation" title="Permanent link">#</a></h2>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Follow these instructions for all nodes of the cluster.</p>
+</details>
+<p>The database application will be upgraded during the migration. We highly recommend making backups of the database, index and files before running the operation.</p>
+<div class="admonition question">
+<p class="admonition-title">FAQ</p>
+<p><strong>Q:</strong> <strong>How to make backups ?</strong></p>
+<p><strong>A:</strong> <em>Read our <a href="../../operations/backup-restore/">backup and restore guide</a></em></p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Make sure that you can login as an admin user with a password in TheHive database (the <code>local</code> auth provider should be enabled, by default it is enabled).</p>
+</div>
+<h3 id="stop-all-running-applications">Stop all running applications<a class="headerlink" href="#stop-all-running-applications" title="Permanent link">#</a></h3>
+<ol>
+<li>
+<p>Start by stopping TheHive:</p>
+<div class="highlight"><span class="filename">stop thehive service</span><pre><span></span><code>sudo systemctl stop thehive
+</code></pre></div>
+</li>
+<li>
+<p>Once TheHive is successfully stopped, stop database service</p>
+<div class="highlight"><span class="filename">stop cassandra service</span><pre><span></span><code>sudo systemctl stop cassandra
+</code></pre></div>
+</li>
+<li>
+<p>Only if already using Elasticsearch as indexing engine
+    <div class="highlight"><span class="filename">stop elasticsearch service</span><pre><span></span><code>sudo systemctl stop elasticsearch
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="upgrade-java">Upgrade Java<a class="headerlink" href="#upgrade-java" title="Permanent link">#</a></h2>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Follow these instructions for all nodes of the cluster.</p>
+</details>
+<p>Follow the <a href="../step-by-step-guide/#java-virtual-machine">installation process</a> to install the required version. </p>
+<h2 id="upgrade-or-install-elasticsearch">Upgrade or install Elasticsearch<a class="headerlink" href="#upgrade-or-install-elasticsearch" title="Permanent link">#</a></h2>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Elasticsearch was mandatory for cluster of TheHive 5.x. Unless an update might is necessary, you can go to <a href="#upgrade-cassandra">Upgrade Cassandra</a>.</p>
+</details>
+<p>Follow the <a href="../step-by-step-guide/#elasticsearch">installation process</a> to install and configure the required version.</p>
+<h2 id="upgrade-cassandra">Upgrade Cassandra<a class="headerlink" href="#upgrade-cassandra" title="Permanent link">#</a></h2>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Follow this part for all nodes of the Cassandra cluster, and ensure to restart sucessfully all nodes of the cluster before upgrading all nodes of TheHive cluster to version 5.</p>
+</details>
+<h3 id="backup-configuration-file">Backup configuration file<a class="headerlink" href="#backup-configuration-file" title="Permanent link">#</a></h3>
+<p>Save the existing configuration file for Cassandra 3.x. It will be used later to configure Cassandra 4:</p>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra3.yaml.bak
+</code></pre></div>
+<h3 id="install-cassandra">Install Cassandra<a class="headerlink" href="#install-cassandra" title="Permanent link">#</a></h3>
+<p>Follow the <a href="../step-by-step-guide/#cassandra">installation process</a> to install the required version.</p>
+<p>During the installation process, replace existing configuration files (<em>as the old configuration is saved</em>): </p>
+<div class="highlight"><pre><span></span><code>Configuration file &#39;/etc/cassandra/cassandra.yaml&#39;
+ ==&gt; Modified (by you or by a script) since installation.
+ ==&gt; Package distributor has shipped an updated version.
+   What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer&#39;s version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+ The default action is to keep your current version.
+*** cassandra.yaml (Y/I/N/O/D/Z) [default=N] ? Y
+</code></pre></div>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
+<p>Update the new configuration file, and ensure the following parameters are correctly set with these values:</p>
+<div class="highlight"><pre><span></span><code>cluster_name: &#39;thp&#39;
+num_tokens: 256
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If you had a more customized configuration file for Cassandra 3.x, review all the file and ensure to adapt it accordingly.</p>
+</div>
+<h3 id="start-the-service">Start the service<a class="headerlink" href="#start-the-service" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>sudo systemctl start cassandra
+</code></pre></div>
+<h3 id="upgrade-sstables">Upgrade sstables<a class="headerlink" href="#upgrade-sstables" title="Permanent link">#</a></h3>
+<p>On each Cassandra nodes, upgrade the sstables:
+<div class="highlight"><pre><span></span><code>nodetool upgradesstables
+</code></pre></div></p>
+<p>Then repair the keyspaces:
+<div class="highlight"><pre><span></span><code>nodetool repair --full
+</code></pre></div></p>
+<h2 id="install-thehive">Install thehive<a class="headerlink" href="#install-thehive" title="Permanent link">#</a></h2>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Before starting this part of the guide, ensure your Cassandra cluster is fully operational, by running the command <code>nodetool status</code></p>
+<div class="highlight"><span class="filename">nodetool status</span><pre><span></span><code># nodetool status
+
+Datacenter: datacenter1
+=======================
+
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address      Load      Tokens  Owns (effective)  Host ID                               Rack
+UN  10.1.1.2  1.41 GiB  256     100.0%            ba6daa4e-6d14-4b21-a06c-d01b3bdd659d  rack1
+UN  10.1.1.3  1.39 GiB  256     100.0%            201ab99c-8e16-49b1-9b66-5444043eb1cd  rack1
+UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252aeb86  rack1
+</code></pre></div>
+<p>Then, we recommend stopping all existing nodes of TheHive (4.x) and then, upgrading and starting only one node to TheHive 5. When everything works fine with this node, Other nodes can be updated and started.</p>
+</details>
+<h3 id="prepare-for-the-new-installation">Prepare for the new installation<a class="headerlink" href="#prepare-for-the-new-installation" title="Permanent link">#</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">TheHive configuration file: /etc/thehive/application.conf</p>
+<p>Starting with TheHive 5.0.0, configuration has been simplified; most of the administration parameters can be configured directly in the UI. The configuration file (<code>/etc/thehive/application.conf</code>) may  <strong>only</strong> contain the necessary information to start the application successfully; which are: </p>
+<ul>
+<li>Secret</li>
+<li>Database</li>
+<li>Indexing engine</li>
+<li>File storage</li>
+<li>Enabled connectors </li>
+<li>Akka configuration in the case of a cluster</li>
+</ul>
+<p>Authentication, Webhooks, Cortex and MISP configurations can be set in the UI. </p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Standalone server</label><label for="__tabbed_1_2">Cluster</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Save your current configuration file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
+</code></pre></div>
+<ul>
+<li>For the current use case, i.e., a standalone server, the final configuration file should look like this:</li>
+</ul>
+<div class="highlight"><span class="filename">sample of /etc/thehive/application.conf</span><pre><span></span><code><span class="c1"># TheHive configuration - application.conf</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># This is the default configuration file.</span><span class="w"></span>
+<span class="c1"># This is prepared to run with all services locally:</span><span class="w"></span>
+<span class="c1"># - Cassandra for the database</span><span class="w"></span>
+<span class="c1"># - Elasticsearch for index engine</span><span class="w"></span>
+<span class="c1"># - File storage is local in /opt/thp/thehive/files</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># If this is not your setup, please refer to the documentation at:</span><span class="w"></span>
+<span class="c1"># https://docs.thehive-project.org/thehive/</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># Secret key - used by Play Framework</span><span class="w"></span>
+<span class="c1"># If TheHive is installed with DEB/RPM package, this is automatically generated</span><span class="w"></span>
+<span class="c1"># If TheHive is not installed from DEB or RPM packages run the following</span><span class="w"></span>
+<span class="c1"># command before starting thehive:</span><span class="w"></span>
+<span class="c1">#   cat &gt; /etc/thehive/secret.conf &lt;&lt; _EOF_</span><span class="w"></span>
+<span class="c1">#   play.http.secret.key=&quot;$(cat /dev/urandom | tr -dc &#39;a-zA-Z0-9&#39; | fold -w 64 |#   head -n 1)&quot;</span><span class="w"></span>
+<span class="c1">#   _EOF_</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">include &quot;/etc/thehive/secret.conf&quot;</span><span class="w"></span>
+
+
+<span class="l l-Scalar l-Scalar-Plain"># Database and index configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># By default, TheHive is configured to connect to local Cassandra 4.x and a</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># local Elasticsearch services without authentication.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">storage {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">backend = cql</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = [&quot;127.0.0.1&quot;]</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Cassandra authentication (if configured)</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># username = &quot;thehive&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># password = &quot;password&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cql {</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = thp</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">keyspace = thehive</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">index.search {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">backend = elasticsearch</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = [&quot;127.0.0.1&quot;]</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index-name = thehive</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+
+<span class="l l-Scalar l-Scalar-Plain"># Attachment storage configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># By default, TheHive is configured to store files locally in the folder.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># The path can be updated and should belong to the user/group running thehive service. (by default</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive:thehive)</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">storage {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">provider = localfs</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">localfs.location = /opt/thp/thehive/files</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="c1"># Define the maximum size for an attachment accepted by TheHive</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxDiskBuffer = 1GB</span><span class="w"></span>
+<span class="c1"># Define maximum size of http request (except attachment)</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxMemoryBuffer = 10M</span><span class="w"></span>
+
+<span class="c1"># Service configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">application.baseUrl = &quot;http://localhost:9000&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = &quot;/&quot;</span><span class="w"></span>
+
+<span class="c1"># Additional modules</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># TheHive is strongly integrated with Cortex and MISP.</span><span class="w"></span>
+<span class="c1"># Both modules are enabled by default. If not used, each one can be disabled by</span><span class="w"></span>
+<span class="c1"># commenting the configuration line.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">scalligraph.modules += org.thp.thehive.connector.misp.MispModule</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Save your current configuration file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
+</code></pre></div>
+<ul>
+<li>For the current use case, i.e., a standalone server, the final configuration file should look like this:</li>
+</ul>
+<div class="highlight"><span class="filename">sample of /etc/thehive/application.conf</span><pre><span></span><code><span class="c1"># TheHive configuration - application.conf</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># This is the default configuration file.</span><span class="w"></span>
+<span class="c1"># This is prepared to run with all services locally:</span><span class="w"></span>
+<span class="c1"># - Cassandra for the database</span><span class="w"></span>
+<span class="c1"># - Elasticsearch for index engine</span><span class="w"></span>
+<span class="c1"># - File storage is local in /opt/thp/thehive/files</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># If this is not your setup, please refer to the documentation at:</span><span class="w"></span>
+<span class="c1"># https://docs.thehive-project.org/thehive/</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># Secret key - used by Play Framework</span><span class="w"></span>
+<span class="c1"># If TheHive is installed with DEB/RPM package, this is automatically generated</span><span class="w"></span>
+<span class="c1"># If TheHive is not installed from DEB or RPM packages run the following</span><span class="w"></span>
+<span class="c1"># command before starting thehive:</span><span class="w"></span>
+<span class="c1">#   cat &gt; /etc/thehive/secret.conf &lt;&lt; _EOF_</span><span class="w"></span>
+<span class="c1">#   play.http.secret.key=&quot;$(cat /dev/urandom | tr -dc &#39;a-zA-Z0-9&#39; | fold -w 64 |#   head -n 1)&quot;</span><span class="w"></span>
+<span class="c1">#   _EOF_</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">include &quot;/etc/thehive/secret.conf&quot;</span><span class="w"></span>
+
+
+<span class="l l-Scalar l-Scalar-Plain"># Database and index configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># By default, TheHive is configured to connect to local Cassandra 4.x and a</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># local Elasticsearch services without authentication.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">storage {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">backend = cql</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = [&quot;127.0.0.1&quot;]</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Cassandra authentication (if configured)</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># username = &quot;thehive&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># password = &quot;password&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cql {</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = thp</span><span class="w"></span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">keyspace = thehive</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">index.search {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">backend = elasticsearch</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = [&quot;127.0.0.1&quot;]</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index-name = thehive</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+
+<span class="l l-Scalar l-Scalar-Plain"># Attachment storage configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># By default, TheHive is configured to store files locally in the folder.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain"># The path can be updated and should belong to the user/group running thehive service. (by default</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive:thehive)</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">storage {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">provider = localfs</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">localfs.location = /opt/thp/thehive/files</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+
+<span class="c1"># Define the maximum size for an attachment accepted by TheHive</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxDiskBuffer = 1GB</span><span class="w"></span>
+<span class="c1"># Define maximum size of http request (except attachment)</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxMemoryBuffer = 10M</span><span class="w"></span>
+
+<span class="c1"># Service configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">application.baseUrl = &quot;http://localhost:9000&quot;</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = &quot;/&quot;</span><span class="w"></span>
+
+<span class="c1"># Additional modules</span><span class="w"></span>
+<span class="c1">#</span><span class="w"></span>
+<span class="c1"># TheHive is strongly integrated with Cortex and MISP.</span><span class="w"></span>
+<span class="c1"># Both modules are enabled by default. If not used, each one can be disabled by</span><span class="w"></span>
+<span class="c1"># commenting the configuration line.</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">scalligraph.modules += org.thp.thehive.connector.misp.MispModule</span><span class="w"></span>
+
+<span class="c1"># Cluster configuration</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">akka {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">actor {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">provider = cluster</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">remote.artery {</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">canonical {</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = &quot;&lt;My IP address&gt;&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">port = 2551</span><span class="w"></span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+<span class="c1">## seed node list contains at least one active node</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">cluster.seed-nodes = [</span><span class="w"></span>
+<span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">&quot;akka://application@&lt;Node 1 IP address&gt;:2551&quot;,</span><span class="w"></span>
+<span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">&quot;akka://application@&lt;Node 2 IP address&gt;:2551&quot;,</span><span class="w"></span>
+<span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">&quot;akka://application@&lt;Node 3 IP address&gt;:2551&quot;</span><span class="w"></span>
+<span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">]</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, Cortex and MISP modules are enabled. If you won't use them or one of them, the corresponding line can be commented.</p>
+<p><strong>Our recommendation</strong>: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. </p>
+</div>
+<h3 id="specific-configuration-required-for-the-upgrade-only">Specific configuration required (for the upgrade only)<a class="headerlink" href="#specific-configuration-required-for-the-upgrade-only" title="Permanent link">#</a></h3>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>This part only concerns <strong>the first node</strong>, the one that will be started to perform the database and index upgrade.</p>
+</details>
+<p>These lines should be added to the configuration file only while upgrading to version 5, and removed later on.</p>
+<div class="highlight"><pre><span></span><code>db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+db.janusgraph.forceDropAndRebuildIndex = true
+</code></pre></div>
+<h3 id="install-thehive_1">Install TheHive<a class="headerlink" href="#install-thehive_1" title="Permanent link">#</a></h3>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>Follow these instructions for the first node of TheHive.</p>
+<p>When starting TheHive 5.x for the first time, ensure all nodes of database clusters are up and running correctly.</p>
+<p>Once the upgrade is successful with the first node, install and start TheHive on other nodes.</p>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">I'm using DEB packages</label><label for="__tabbed_2_2">I'm using RPM packages</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>Update the repository address</li>
+</ul>
+<div class="highlight"><pre><span></span><code>wget -O- https://archives.strangebee.com/keys/strangebee.gpg <span class="p">|</span> sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+sudo rm /etc/apt/sources.list.d/thehive-project.list <span class="p">;</span> <span class="nb">echo</span> <span class="s1">&#39;deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main&#39;</span> <span class="p">|</span> sudo tee -a /etc/apt/sources.list.d/strangebee.list
+</code></pre></div>
+<ul>
+<li>Install new package - old package of <code>thehive4</code> will be removed</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install thehive
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>Add Cassandra repository keys</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+</code></pre></div>
+<ul>
+<li>Setup your system to connect the RPM repository. Create and edit the file <code>/etc/yum.repos.d/strangebee.repo</code>:</li>
+</ul>
+<div class="highlight"><span class="filename">/etc/yum.repos.d/strangebee.repo</span><pre><span></span><code><span class="o">[</span>thehive<span class="o">]</span>
+<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">name</span><span class="o">=</span>StrangeBee RPM repository
+<span class="nv">baseurl</span><span class="o">=</span>https://rpm.strangebee.com/thehive-5.x/noarch
+<span class="nv">gpgkey</span><span class="o">=</span>https://archives.strangebee.com/keys/strangebee.gpg
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<ul>
+<li>Then install the package using <code>yum</code>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo yum install thehive
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>During the installation, if you already prepared your configuration file during <a href="#prepare-for-the-new-installation">Prepare for the new installation</a> chapter, continue <strong>without</strong> updating it with the maintainer's version.</p>
+<div class="highlight"><pre><span></span><code>Configuration file &#39;/etc/thehive/application.conf&#39;
+==&gt; Modified (by you or by a script) since installation.
+==&gt; Package distributor has shipped an updated version.
+  What would you like to do about it ?  Your options are:
+    Y or I  : install the package maintainer&#39;s version
+    N or O  : keep your currently-installed version
+      D     : show the differences between the versions
+      Z     : start a shell to examine the situation
+The default action is to keep your current version.
+*** application.conf (Y/I/N/O/D/Z) [default=N] ? N
+</code></pre></div>
+<h3 id="start-services">Start services<a class="headerlink" href="#start-services" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>sudo systemctl daemon-reload
+</code></pre></div>
+<ul>
+<li>Start Cassandra (if not already started)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo systemctl start cassandra
+</code></pre></div>
+<ul>
+<li>Start Elasticsearch (if not already started)</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo systemctl start elasticsearch
+</code></pre></div>
+<ul>
+<li>Once both database services are started successfully, start TheHive</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo systemctl start thehive
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">The first start of TheHive 5.0.x can take some time</p>
+<p>When starting for the first time, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
+Progression can be followed in log file <code>/var/log/thehive/application.log</code>. See <a href="#troubleshooting">Troubleshooting</a> for more information.</p>
+</div>
+<h3 id="restart-the-service">Restart the service<a class="headerlink" href="#restart-the-service" title="Permanent link">#</a></h3>
+<p>Once the service is started successfully, update the configuration file and <strong>remove</strong> the following lines:</p>
+<div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">db.janusgraph.index.search.elasticsearch.bulk-refresh = false</span><span class="w"></span>
+<span class="l l-Scalar l-Scalar-Plain">db.janusgraph.forceDropAndRebuildIndex = true</span><span class="w"></span>
+</code></pre></div>
+<p>Then restart TheHive:</p>
+<div class="highlight"><pre><span></span><code>sudo systemctl restart thehive
+</code></pre></div>
+<details class="abstract">
+<summary>I'm using a cluster</summary>
+<p>You can install and start TheHive on all other nodes.</p>
+</details>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<p>During the update, few logs can be seen in TheHive <code>application.log</code> file. </p>
+<div class="admonition example">
+<p class="admonition-title">Example of logs and what they mean</p>
+<dl>
+<dt><div class="highlight"><pre><span></span><code>[INFO] from org.janusgraph.graphdb.database.management.GraphIndexStatusWatcher in application-akka.actor.default-dispatcher-11 [|] Some key(s) on index global2 do not currently have status(es) [REGISTERED, ENABLED]: dateValue=INSTALLED,externalLink=INSTALLED,origin=INSTALLED,patternId=INSTALLED,revoked=INSTALLED,mandatory=INSTALLED,content=INSTALLED,isAttachment=INSTALLED,writable=INSTALLED,tactic=INSTALLED,stringValue=INSTALLED,owningOrganisation=INSTALLED,permissions=INSTALLED,actionRequired=INSTALLED,integerValue=INSTALLED,details=INSTALLED,locked=INSTALLED,slug=INSTALLED,cortexId=INSTALLED,owner=INSTALLED,workerId=INSTALLED,apikey=INSTALLED,level=INSTALLED,floatValue=INSTALLED,version=INSTALLED,occurDate=INSTALLED,url=INSTALLED,report=INSTALLED,tactics=INSTALLED,booleanValue=INSTALLED,cortexJobId=INSTALLED,category=INSTALLED,workerName=INSTALLED
+</code></pre></div></dt>
+<dd><em>TheHive install indexes of the new schema in the database</em></dd>
+<dt><div class="highlight"><pre><span></span><code>[INFO] from org.janusgraph.graphdb.olap.job.IndexRepairJob in Thread-97 [|] Index global2 metrics: success-tx: 1 doc-updates: 100 succeeded: 100
+</code></pre></div></dt>
+<dd><em>TheHive reindexes all data</em></dd>
+<dt><div class="highlight"><pre><span></span><code>* UPDATE SCHEMA OF thehive-enterprise (1): Create initial values
+[INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [d471d8b643d17b6d|d88fe62679b77ab1] Adding initial values for GDPRDummy
+[..]
+[INFO] from org.thp.scalligraph.models.Operations in application-akka.actor.default-dispatcher-11 [|] Update graph in progress (100): Add pap and ignoreSimilarity to observables
+</code></pre></div></dt>
+<dd><em>Migrating data from v4. to v5</em></dd>
+<dt><div class="highlight"><pre><span></span><code>[WARN] from org.thp.thehive.enterprise.services.LicenseSrv in main [ef39c95eaa6de532|0ccf187e40a4cd34] No license found
+</code></pre></div></dt>
+<dd><em>No license found. This is a normal behavior during the upgrade from versions 4 to 5</em></dd>
+<dt><div class="highlight"><pre><span></span><code>INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+</code></pre></div></dt>
+<dd><em>The service is available. Users/Administrators can log in</em></dd>
+<dt><div class="highlight"><pre><span></span><code>[INFO] from org.thp.thehive.connector.cortex.services.CortexDataImportActor in application-akka.actor.default-dispatcher-16 [|] Analyzer templates already present (found 203), skipping
+[..]
+[INFO] from org.thp.thehive.services.ttp.PatternImportActor in application-akka.actor.default-dispatcher-14 [|] Import finished, 707 patterns imported
+</code></pre></div></dt>
+<dd><em>Few operations are processed after making the service available, like installing MITRE Enterprise ATT&amp;CK patterns catalog or Analyzers templates.</em></dd>
+<dt><div class="highlight"><pre><span></span><code>[ERROR] from org.janusgraph.diskstorage.log.util.ProcessMessageJob in pool-22-thread-1 [|] Encountered exception when processing message [Message@2022-03-24T16:50:40.655134Z:7f0001017672-ubuntu2=0x809F9F0568850528850550850558850570850600850610850618850650850668850710850738850758850760850808850900850910850A60850A70850A78850B00850B08853520853B3885150E8941608541688541788542088542688542708581] by reader [org.janusgraph.graphdb.database.management.ManagementLogger@3e1a6eae]:java.lang.IllegalStateException: Cannot access element because its enclosing transaction is closed and unbound
+at org.janusgraph.graphdb.transaction.StandardJanusGraphTx.getNextTx(StandardJanusGraphTx.java:380)
+at org.janusgraph.graphdb.vertices.AbstractVertex.it(AbstractVertex.java:61)
+at org.janusgraph.graphdb.relations.CacheVertexProperty.&lt;init&gt;(CacheVertexProperty.java:38)
+at org.janusgraph.graphdb.transaction.RelationConstructor.readRelation(RelationConstructor.java:88)
+at org.janusgraph.graphdb.transaction.RelationConstructor.readRelation(RelationConstructor.java:71)
+at org.janusgraph.graphdb.transaction.RelationConstructor$1.next(RelationConstructor.java:57)
+at org.janusgraph.graphdb.transaction.RelationConstructor$1.next(RelationConstructor.java:45)
+at org.janusgraph.graphdb.types.vertices.JanusGraphSchemaVertex.getDefinition(JanusGraphSchemaVertex.java:94)
+at org.janusgraph.graphdb.transaction.StandardJanusGraphTx.expireSchemaElement(StandardJanusGraphTx.java:1599)
+at org.janusgraph.graphdb.database.management.ManagementLogger.read(ManagementLogger.java:97)
+at org.janusgraph.diskstorage.log.util.ProcessMessageJob.run(ProcessMessageJob.java:46)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:829)
+</code></pre></div></dt>
+<dd><em>During indexing, Janusgraph may display this message, this error is coming from a <a href="https://github.com/JanusGraph/janusgraph/pull/2899">bug in janusgraph</a>, don't mind it as the indexing will continue normally. This will have no impact on TheHive</em></dd>
+</dl>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../kubernetes/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploy on Kubernetes" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Deploy on Kubernetes
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../migration/" class="md-footer__link md-footer__link--next" aria-label="Next: Migration from TheHive 3.x" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Migration from TheHive 3.x
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2022 StrangeBee. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/strangebee" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/StrangeBee" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
