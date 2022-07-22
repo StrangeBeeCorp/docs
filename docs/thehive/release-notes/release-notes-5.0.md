@@ -7,14 +7,14 @@
 **UI:**
 
 - Dashboard:
-  - fix style issue when loading the knowledge base at the same time
-  - update api used by bar widget to fix issues with custom fields query
+    - fix style issue when loading the knowledge base at the same time
+    - update api used by bar widget to fix issues with custom fields query
 - Markdown preview in full screen mode now uses the full height of the screen
 - Fix a filter when using enumeration (severity, pap)
 - MISP: add settings in the UI to be able to export tags on Case and Observable from TheHive to MISP
 - Cortex: 
-  - UI is notified when an analyzer has finished adding all the observables to a report
-  - Fix report view for Spamhaus analyzer
+    - UI is notified when an analyzer has finished adding all the observables to a report
+    - Fix report view for Spamhaus analyzer
 
 **API:**
 
