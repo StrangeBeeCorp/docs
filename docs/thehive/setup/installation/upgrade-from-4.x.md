@@ -350,18 +350,6 @@ nodetool repair --full
 
 
 
-### Specific configuration required (for the upgrade only)
-
-??? Abstract "I'm using a cluster"
-    This part only concerns **the first node**, the one that will be started to perform the database and index upgrade.
-
-These lines should be added to the configuration file only while upgrading to version 5, and removed later on.
-
-```
-db.janusgraph.index.search.elasticsearch.bulk-refresh = false
-db.janusgraph.forceDropAndRebuildIndex = true
-```
-
 ### Install TheHive
 
 ??? Abstract "I'm using a cluster"
@@ -463,7 +451,6 @@ sudo systemctl start thehive
 Once the service is started successfully, update the configuration file and **remove** the following lines:
 
 ```yaml title="/etc/thehive/application.conf"
-db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
 
