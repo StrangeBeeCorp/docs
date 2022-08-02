@@ -159,6 +159,9 @@ nodetool repair --full
 
     Authentication, Webhooks, Cortex and MISP configurations can be set in the UI. 
 
+!!! Note
+    Cortex and Misp connector module keys were renamed from `play.modules.enabled` to `scalligraph.modules`
+
 === "Standalone server"
 
     - Save your current configuration file:
@@ -358,9 +361,18 @@ nodetool repair --full
 These lines should be added to the configuration file only while upgrading to version 5, and removed later on.
 
 ```
-db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
+
+??? Abstract "I'm migrating a huge database (thousands of cases) from Lucene to Elasticsearch"
+    To change the indexing database, TheHive will have to reindex your data in the new index. This operation can be made faster with Elasticsearch by adding this property:
+
+    ```
+    db.janusgraph.index.search.elasticsearch.bulk-refresh = false
+    ```
+
+    While this setting can make re-indexing faster, it can cause issues while using TheHive as a regular user (as Cassandra and Elasticsearch could be out of sync).
+    That's why starting from 5.0.11, TheHive will tell you that it won't continue the init process with this parameter. You will need to update the configuration, remove the property and restart the service.
 
 ### Install TheHive
 
@@ -459,11 +471,11 @@ sudo systemctl start thehive
     When starting for the first time, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
     Progression can be followed in log file `/var/log/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
 
+
 ### Restart the service
 Once the service is started successfully, update the configuration file and **remove** the following lines:
 
 ```yaml title="/etc/thehive/application.conf"
-db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
 
