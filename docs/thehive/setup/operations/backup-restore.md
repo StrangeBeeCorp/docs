@@ -256,7 +256,6 @@ Once Cassandra database is restored, update the configuration of TheHive to rebu
 These lines should be added to the configuration file only for the first start of TheHive application, and removed later on.
 
 ```yaml title="extract from /etc/thehive/application.conf"
-db.janusgraph.index.search.elasticsearch.bulk-refresh = false
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
 

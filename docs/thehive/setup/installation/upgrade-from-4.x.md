@@ -351,8 +351,6 @@ nodetool repair --full
 
     **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
 
-
-
 ### Specific configuration required (for the upgrade only)
 
 ??? Abstract "I'm using a cluster"
@@ -363,16 +361,6 @@ These lines should be added to the configuration file only while upgrading to ve
 ```
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
-
-??? Abstract "I'm migrating a huge database (thousands of cases) from Lucene to Elasticsearch"
-    To change the indexing database, TheHive will have to reindex your data in the new index. This operation can be made faster with Elasticsearch by adding this property:
-
-    ```
-    db.janusgraph.index.search.elasticsearch.bulk-refresh = false
-    ```
-
-    While this setting can make re-indexing faster, it can cause issues while using TheHive as a regular user (as Cassandra and Elasticsearch could be out of sync).
-    That's why starting from 5.0.11, TheHive will tell you that it won't continue the init process with this parameter. You will need to update the configuration, remove the property and restart the service.
 
 ### Install TheHive
 
