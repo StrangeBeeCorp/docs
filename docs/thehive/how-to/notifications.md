@@ -5,7 +5,7 @@ hide:
 
 # Notifications
 
-TheHive Notifications allows you to automatically react on specific events occurring in TheHive and send notification to defined Endpoints that can be:
+TheHive Notifications allow you to automatically react on specific events occurring in TheHive and send notification to defined Endpoints that can be:
 
 - Cortex
 
@@ -26,7 +26,7 @@ Notifications are unique to each organisation. With an org admin account open th
 
 To create a notification, clic on the "+" button (3)
 
-![Notifications management page](images/notifications_management.png)
+![Notifications management page](images/notifications/notifications_management.png)
 
 ## Configure a Notification
 
@@ -78,7 +78,7 @@ But you can also chose to use a custom filter to react on specific events.
 Custom filters are JSON format written and can use common operators.
 Example with a filter for cases which Severity is updated to High or Critical:
 
-![Notifications management page](images/notifications_filteredevent.png)
+![Notifications management page](images/notifications/notifications_filteredevent.png)
 
 ### Use variables in notifications
 
@@ -86,7 +86,7 @@ You can include variables in your Email & HTTP notification.
 
 Use the "add variable" bouton to see the list of available variables. Example with an email notification:
 
-![Notifications management page](images/notifications_mail_example.png)
+![Notifications management page](images/notifications/notifications_mail_example.png)
 
 
 See our [Leveraging TheHive 5 notifications capabilities](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-1-2/) blog articles to know more about Notifications
