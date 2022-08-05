@@ -1,5 +1,41 @@
 # Release Notes of 5.0 series
 
+## 5.0.11 - 5th August 2022
+
+### Fixes
+
+**UI:**
+
+- Fix import of .thar files
+- When switching of organisation, the user is redirected to her homepage.
+- Filters on number types showed `-1` in the preview
+- In endpoints configuration, the setting "Do not check Certificate Authority" was not sent correctly
+- Fix filters when using between dates with an hour or minute precision
+
+**API:**
+
+- Cases created from an alert with a case template could have duplicated custom fields
+- Cases created from an alert with a case template had duplicated tasks and prefix (from 5.0.10)
+- Prevent failures during migration from v4 to v5: 
+    - TheHive will automatically reindex its data when a change in the index is detected (change from lucene to elasticsearch)
+    - TheHive will no longer try to run migrations when the setting `db.janusgraph.index.search.elasticsearch.bulk-refresh = false` is present
+- Fix issue where uploaded files like observable attachments were deleted from the server before being processed, resulting in "File Not Found" errors
+
+### Improvements
+
+**UI:**
+
+- Improve the search experience when merging a case 
+- Ctrl+click on a case title in the list view will open the case in a new tab
+
+**API:**
+
+- TheHive will try to fix ghost vertices when encountering one (a vertex that is present in the index but not in the database)
+- a new field `extendedStatus` is passed to Cortex responders which represents the status of the Case which can be customized. The field `status` is still a fixed enumeration.
+- Add integrity checks for `Share`s and `Role`s entities
+- Some cortex jobs could be stuck in "Waiting" status: now when TheHive starts it will try to fix those jobs.
+
+
 ## 5.0.10 - 21st July 2022
 
 ### Fixes
