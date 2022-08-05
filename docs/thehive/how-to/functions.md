@@ -61,6 +61,7 @@ function handle(input, context) {
 ![Create function](./images/functions/functions_create.png)
 
 A function can be in one of three modes:
+
 - `Enabled`: The function will be executed when called
 - `Disabled`: The function will not be executed when called
 - `Dry-Run`: The function will be executed but no entity will be created or modified in TheHive. Entity creations will return `null` instead. This can be useful to test your integration before setting it live.
