@@ -6,6 +6,7 @@ hide:
 # Alert Management
 
 ## Alert list
+
 Alerts received by your organization can be viewed in TheHive:
 
 ![Alert List](./images/alert-management/alert_list.png)
@@ -16,8 +17,7 @@ A user can use predefined filter or custom filters to view only selected alerts:
 
 ![Alert List with filters](./images/alert-management/alert_list_filters.png)
 
-
-## Alert details 
+## Alert details
 
 From the alert list, an alert can be opened for more investigation. Details are filled, comments by analysts can be made on the alert too:
 
