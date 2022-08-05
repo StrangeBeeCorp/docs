@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # User Management
 
 In TheHive users can be created once an added to different organistions. User lists are available to `admin` and `org-admin` users:
