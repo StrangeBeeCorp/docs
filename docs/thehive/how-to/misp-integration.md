@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # MISP Integration
 
 TheHive in strongly integrated with MISP (Malware Information Sharing Platform). 
