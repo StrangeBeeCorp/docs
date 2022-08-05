@@ -8,7 +8,7 @@ Every user has read access to the dashboards defined in the organisation (s)he b
 
 ### Create a dashboard
 
-![Create dashboard](./images/dashboards/dashboard-created.png)
+![Create dashboard](./images/dashboards/dashboard-create.png)
 
 ### List dashboards
 
