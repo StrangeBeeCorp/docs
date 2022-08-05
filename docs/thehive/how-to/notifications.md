@@ -87,3 +87,6 @@ You can include variables in your Email & HTTP notification.
 Use the "add variable" bouton to see the list of available variables. Example with an email notification:
 
 ![Notifications management page](images/notifications_mail_example.png)
+
+
+See our [Leveraging TheHive 5 notifications capabilities](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-1-2/) blog articles to know more about Notifications
