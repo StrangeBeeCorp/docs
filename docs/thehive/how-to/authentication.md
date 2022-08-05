@@ -1,11 +1,18 @@
+---
+hide:
+  - navigation
+---
+
 # Authentication
 
 TheHive supports several authentication providers:
- - local (credential are securely stored in TheHive database)
- - directory (LDAP and Active Directory)
- - OAuth2/OpenID-Connect
- - SAML
- - based on HTTP header to delegate authentication to reverse proxy
+
+- local (credential are securely stored in TheHive database)
+- directory (LDAP and Active Directory)
+- OAuth2/OpenID-Connect
+- SAML
+- based on HTTP header to delegate authentication to reverse proxy
+
 ![Authentication main page](images/authentication/auth_main_page.png)
 
 Multi-factor authentication can be enabled to enforce security on user authentication.
