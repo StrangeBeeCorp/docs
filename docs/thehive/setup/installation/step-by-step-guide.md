@@ -138,7 +138,66 @@ hints_directory:
 
 By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
+
 #### Additional configuration
+
+!!! Tip "Standalone server ONLY: disable tombstones"
+    
+    If you are installing a standalone server, tombstones can be disabled. 
+    
+    1. Check `gc_grace_seconds` value
+        ```bash
+        cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
+        ```
+
+        Results should look like this: 
+
+        ```
+                    table_name       | gc_grace_seconds
+            -------------------------+------------------
+                        edgestore    |           864000
+                    edgestore_lock_  |           864000
+                        graphindex   |           864000
+                    graphindex_lock_ |           864000
+                    janusgraph_ids   |           864000
+                system_properties    |           864000
+            system_properties_lock_  |           864000
+                        systemlog    |           864000
+                            txlog    |           864000
+        ```
+
+    
+    2. Disable by setting `gc_grace_seconds` to 0. Use this command line: 
+        ```bash
+        for TABLE in edgestore edgestore_lock_ graphindex graphindex_lock_ janusgraph_ids system_properties system_properties_lock_ systemlog txlog
+            do
+            cqlsh -u cassandra -e "ALTER TABLE thehive.${TABLE} WITH gc_grace_seconds = 0;"
+            done
+            ```
+
+    3. Check changes has been taken into account, by running this command again: 
+        ```bash
+        cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
+        ```
+
+        Results should look like this: 
+
+        Results should look like this: 
+
+        ```
+                    table_name       | gc_grace_seconds
+            -------------------------+------------------
+                        edgestore    |           0
+                    edgestore_lock_  |           0
+                        graphindex   |           0
+                    graphindex_lock_ |           0
+                    janusgraph_ids   |           0
+                system_properties    |           0
+            system_properties_lock_  |           0
+                        systemlog    |           0
+                            txlog    |           0
+        ```
+
 
 For additional configuration options, refer to:
 
