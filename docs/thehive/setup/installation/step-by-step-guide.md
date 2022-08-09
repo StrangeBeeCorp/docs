@@ -146,6 +146,7 @@ By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
     If you are installing a standalone server, tombstones can be disabled. 
     
     1. Check `gc_grace_seconds` value
+        
         ```bash
         cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
         ```
@@ -168,19 +169,19 @@ By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
     
     2. Disable by setting `gc_grace_seconds` to 0. Use this command line: 
+        
         ```bash
         for TABLE in edgestore edgestore_lock_ graphindex graphindex_lock_ janusgraph_ids system_properties system_properties_lock_ systemlog txlog
             do
             cqlsh -u cassandra -e "ALTER TABLE thehive.${TABLE} WITH gc_grace_seconds = 0;"
             done
-            ```
-
-    3. Check changes has been taken into account, by running this command again: 
-        ```bash
-        cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
         ```
 
-        Results should look like this: 
+    3. Check changes has been taken into account, by running this command again: 
+        
+        ```bash
+        cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
+        ``` 
 
         Results should look like this: 
 
