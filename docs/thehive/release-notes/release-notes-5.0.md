@@ -1,5 +1,37 @@
 # Release Notes of 5.0 series
 
+## 5.0.12 - 16th August 2022
+
+### Fixes
+
+**UI:**
+
+- Fix issue where case assignee was not displayed (because user was in an other organisation)
+- Fix org switch not working when using http context (bug introduced in 5.0.11)
+
+**API:**
+
+- Don't fail integrityChecks if field `_createdAt` is missing
+- Sync cortex jobs with status `Deleted`
+- Don't fail queries if a phamtom vertex is encountered
+
+**Migration:**
+
+- Fix issue where users could be duplicated by the migration 3->5 process
+
+### Improvements
+
+**UI:**
+
+- Add field to set the expiration token duration for reset password links
+- In Proxy forms, add input field to set the port of the proxy
+
+**API:**
+
+- Alert can be created even if they contain duplicated observables of type files. Before it triggered an "AlreadyExits" error.
+- Remove orphan cortex jobs (when observable was deleted)
+
+
 ## 5.0.11 - 5th August 2022
 
 ### Fixes
