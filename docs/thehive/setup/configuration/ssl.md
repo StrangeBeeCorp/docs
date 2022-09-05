@@ -4,8 +4,6 @@
 
 We recommend using a reverse proxy to manage SSL layer; for Example, Nginx. 
 
-
-
 !!! Example ""
 
     === "Nginx"
