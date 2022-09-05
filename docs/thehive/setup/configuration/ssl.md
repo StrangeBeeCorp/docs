@@ -2,11 +2,15 @@
 
 ## Connect TheHive using HTTPS
 
-We recommend using a reverse proxy to manage SSL layer; for Example, [Nginx](https://www.nginx.com). 
+We recommend using a reverse proxy to manage SSL layer; for Example, Nginx. 
+
+
 
 !!! Example ""
 
     === "Nginx"
+
+        **Reference**: [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html) on [nginx.org](https://nginx.org)
 
         ```title="/etc/nginx/sites-available/thehive.conf"
         server {
@@ -14,7 +18,7 @@ We recommend using a reverse proxy to manage SSL layer; for Example, [Nginx](htt
           server_name thehive;
 
           ssl on;
-          ssl_certificate       path-to/thehive-server-cert.pem;
+          ssl_certificate       path-to/thehive-server-chained-cert.pem;
           ssl_certificate_key   path-to/thehive-server-key.pem;
 
           proxy_connect_timeout   600;
@@ -66,7 +70,7 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
         ```bash
         apt-get install -y ca-certificates-java
         mkdir /usr/share/ca-certificates/extra
-        cp mysctomcert.crt /usr/share/ca-certificates/extra
+        cp mycustomcert.crt /usr/share/ca-certificates/extra
         dpkg-reconfigure ca-certificates
         service thehive restart
         ```
@@ -76,7 +80,7 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
         No additionnal packages is required on Fedora or RHEL. Copy the CA certificate in the right folder, run `update-ca-trust` and restart TheHive service.
 
           ```bash
-          cp mysctomcert.crt /etc/pki/ca-trust/source/anchors
+          cp mycustomcert.crt /etc/pki/ca-trust/source/anchors
           sudo update-ca-trust 
           service thehive restart
           ```
