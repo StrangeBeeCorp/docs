@@ -35,7 +35,7 @@ We recommend using a reverse proxy to manage SSL layer; for Example, [Nginx](htt
 
 ## Client configuration
 
-SSL configuration might be requis required to connect remote services. Following parameters can be defined: 
+SSL configuration might be required to connect remote services. Following parameters can be defined: 
 
 | Parameter                                | Type           | Description                          |
 | -----------------------------------------| -------------- | ------------------------------------ |
