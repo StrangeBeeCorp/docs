@@ -41,18 +41,21 @@ StrangeBee also provides an [official Docker image](https://hub.docker.com/r/str
 
     If you are using [one of the supported](#operating-systems) operating systems, use our all-in-one **installation script**: 
 
-
-    - Using Ubuntu or Debian
-
     ``` bash
-    sudo -v ; wget -q -O /tmp/install-thehive.sh https://archives.strangebee.com/scripts/install-deb.sh ; bash /tmp/install-thehive.sh
+    wget -q -O /tmp/install.sh https://archives.strangebee.com/scripts/install.sh ; sudo -v ; bash /tmp/install.sh
     ```
 
-    - Using RHEL or Fedora
+    This script helps with the installation process on a fresh and [supported OS](#operating-systems) ; the program also run successfully if the conditions in terms of hardware requirements are met.
 
-    ``` bash
-    sudo -v ; wget -q -O /tmp/install-thehive.sh https://archives.strangebee.com/scripts/install-rpm.sh ; bash /tmp/install-thehive.sh
-    ```
+    ![](images/install-sh.png)
+    
+    Once executed, several options are available: 
+
+    1. Setup proxy settings ; will configure everything on the host to work with a HTTP proxy, and custom CA certificate.
+    2. Install TheHive ; use this option to install TheHive 5 and its dependencies
+    3. Install Cortex and all its dependencies to run Analyzers & Responders as Docker Iiages
+    4. Install Cortex and all its dependencies to run Analyzers & Responders on the host (Debian and Ubuntu **ONLY**)
+
 
 For each release, DEB, RPM and ZIP binary packages are built and provided.
 Discover how to install TheHive quickly by following our installation guides:
