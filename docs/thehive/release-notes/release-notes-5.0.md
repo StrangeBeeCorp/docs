@@ -1,5 +1,57 @@
 # Release Notes of 5.0 series
 
+## 5.0.13 - 8th September 2022
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+  - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+  - Clicking on a counter or donut now correctly sets the filters in the search page
+  - conversion of v4 dashboards failed with `not` operator
+- Improvement around time filters (custom and periods)
+- Assignees from other organisations are visible and searchable in case assignment
+- Fix bad date format when using am/pm
+- Case sharing displayed an empty list of organisation
+- Quote in the markdown editor only worked for the first line
+- On small screen preview button was not visible when using Firefox
+- Fix bug in list of TTP tactics
+
+**API:**
+
+- Fix issue with integrity check of Observable
+- Fix issues around Case Number Actor (responsible to give a sequential number for cases)
+- Avoid locks when trying to fix inconsistencies in index
+- Fix an issue that could happend during schema evolution
+- Fix parsing of Cortex information (analyzers without dataType)
+- Notifications: Email will now be sent in the format set by the text template (html or plain text)
+- Prevent user ldap synchronisation if license is incompatible
+
+### Improvements
+
+**UI:**
+
+- Notify user when an update in Cortex is available
+- Dashboard:
+  - Default period is now 3 months instead of "All"
+  - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+  - An org admin can disallow the "All" period in the dasboards (organisation settings > UI Configuration)
+  - Widgets legends now show fully
+- Add an indicator on the number of open requests made by the browser
+- Admin can now configure the default user domain from the admin settings
+- Admin can change the type of a user (Service or Normal users)
+- Improvements around the Proxy and SSL forms (used in misp, cortex or endpoints definition)
+
+**API:**
+
+- Add the ability to log the content of query request
+- Admin can now write in the knowledge base (the permission `manageKnowledgeBase` was added to the `admin` profile)
+- Improve templating capabilites in notifiers:
+  - Add `dateFormat` helper (`{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}` => `jeudi 01 septembre 2022`)
+  - Helper `eq` now supports numbers: `{{#if (eq object.severity 2) }}MEDIUM {{else}}Other {{/if}}`
+  - Add helpers `tlpLabel`, `papLabel`, `severityLabel`: `{{tlpLabel object.tlp}}` => `Amber`
+
 ## 5.0.12 - 16th August 2022
 
 ### Fixes
