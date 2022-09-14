@@ -247,16 +247,17 @@ TheHive requires Elasticsearch to manage data indices.
 
     2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
 
-        ```bash title="/etc/yum.repos.d/elasticsearch.repo"
-        [elasticsearch]
-        name=Elasticsearch repository for 7.x packages
-        baseurl=https://artifacts.elastic.co/packages/7.x/yum
-        gpgcheck=1
-        gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-        enabled=0
-        autorefresh=1
-        type=rpm-md
-        ```
+        !!! Example ""
+            ```bash title="/etc/yum.repos.d/elasticsearch.repo"
+            [elasticsearch]
+            name=Elasticsearch repository for 7.x packages
+            baseurl=https://artifacts.elastic.co/packages/7.x/yum
+            gpgcheck=1
+            gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+            enabled=0
+            autorefresh=1
+            type=rpm-md
+            ```
 
     3. Install the package
 
@@ -298,11 +299,12 @@ script.allowed_types: "inline,stored"
 - Custom JVM options
 add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines:
 
-```
--Dlog4j2.formatMsgNoLookups=true
--Xms4g
--Xmx4g
-```
+!!! Example ""
+    ```
+    -Dlog4j2.formatMsgNoLookups=true
+    -Xms4g
+    -Xmx4g
+    ```
 
 !!! Note "This can be updated according the amount of memory available"
 
@@ -586,6 +588,7 @@ The default admin user is `admin@thehive.local` with password `secret`. It is re
 ## Advanced configuration
 For additional configuration options, please refer to the [Configuration Guides](../index.md#configuration-guides).
 
+To setup HTTPS, refer to the [dedicated page](../configuration/ssl.md).
 
 ## Usage & Licenses
 

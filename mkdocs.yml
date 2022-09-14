@@ -30,6 +30,7 @@ extra_css:
 plugins:
   - search
   - awesome-pages
+  - glightbox
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
@@ -47,6 +48,7 @@ markdown_extensions:
   - toc:
       permalink: "#"
   - attr_list
+  - md_in_html
   - def_list
   - codehilite
   - admonition
@@ -70,6 +72,7 @@ nav:
   - TheHive:
     - 'Overview': thehive/setup/index.md
     - 'Download': thehive/download/index.md
+    - 'Architecture': thehive/architecture.md
     - 'Installation':
       - thehive/setup/installation/step-by-step-guide.md
       - 'Running with Docker': thehive/setup/installation/docker.md
@@ -92,7 +95,6 @@ nav:
       - thehive/setup/operations/backup-restore.md
       - thehive/setup/operations/cassandra-security.md
       - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
-      - thehive/setup/operations/https.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
     - 'API Docs':  thehive/api-docs/" target="_blank
