@@ -135,7 +135,7 @@ Exit and reconnect.
 
 ### Installation
 We are considering setting up a cluster of 3 active nodes of Elasticsearch.
-Follow this part to install Elasticsearch on your system: [](./step-by-step-guide.md#elasticsearch)
+Follow [this page](./step-by-step-guide.md#elasticsearch) to install Elasticsearch on each node.
 
 ### Configuration
 For each node, update configuration files  `/etc/cassandra/elasticsearch.yml` with the following parameters, and update `network.host` accordingly. 
