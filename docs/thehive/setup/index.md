@@ -30,7 +30,7 @@ Each layer, **TheHive** application, the **Database & index** engine, and **file
     <br /> 
     <br /> 
 
-    Instructions included in the [step-by-step installation guide](/installation/step-by-step-guide.md) ends up to install a standalone server.
+    Instructions included in the [step-by-step installation guide](installation/step-by-step-guide.md) ends up to install a standalone server.
 
 
 === "Cluster or hybrid architecture" 

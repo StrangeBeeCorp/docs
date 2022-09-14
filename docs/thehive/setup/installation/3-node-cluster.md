@@ -318,15 +318,17 @@ remote.artery {
 }
 # seed node list contains at least one active node
 cluster.seed-nodes = [
-                      "akka://application@<Node 1 IP address>:2551",
+                      "akka://application@<Node 1 IP address>:2551",  # (2)
                       "akka://application@<Node 2 IP address>:2551",
                       "akka://application@<Node 3 IP address>:2551"
                      ]
+cluster.min-nr-of-members = 2    # (3)
 }
 ```
 
-1.  Set the IP address of the node
-
+1.    Set the IP address of the node
+2.    The value of this parameter should be similar on all nodes
+3.    Choose the value corresponding the half number of nodes +1 (for 3 nodes --> 2) 
 
 #### Database and index engine
 
