@@ -43,7 +43,7 @@ Each layer, **TheHive** application, the **Database & index** engine, and **file
     - on a dedicated operating system 
     - with another application (for example: 1 node of Cassandra with 1 not of Elasticseach)
 
-    The [installation guide for a 3 nodes cluster](installation/3-node-cluster.md) give all details for a more complex setup.
+    The [installation guide for a 3 nodes cluster](installation/3-node-cluster.md) gives all details for a more complex setup.
 
 ## Requirements
 Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
