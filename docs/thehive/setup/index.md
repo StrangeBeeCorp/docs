@@ -1,6 +1,7 @@
 # Installation & configuration guides
 
 ## Overview
+![Application Stack](images/thetive-application-stack.png){ width="450" align=right }
 TheHive can be deployed on a standalone server or as a cluster. The application relies on:
 
 :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) to store data (Supported version: 4.x).
@@ -12,6 +13,37 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 !!! Warning "Using Lucene"
     Starting with TheHive 5.x we strongly recommend using Elasticsearch for production servers. 
     TheHive 4.1.x embbeded **Lucene** to handle the data index ; this is still the case with the latest version with which we suggest to use it only for testing purpose.
+
+## Architecture
+Each layer, **TheHive** application, the **Database & index** engine, and **file storage**, is independant and can be set up as a standalone node or cluster. As a result, TheHive could be setup and work in a complex clustered archicteture, using virtual IP addresses and load balancers. 
+
+=== "Standalone server" 
+    ![Standalone server](images/thehive-standalone.png){ align=left width=150 }
+
+    All applications are installed on the same server. 
+
+    - Cassandra
+    - Elasticsearch
+    - Files are store on the filesystem (or MinIO if desired)
+    - TheHive
+    - NGINX (optional): to manage HTTPS communications
+    <br /> 
+    <br /> 
+
+    Instructions included in the [step-by-step installation guide](/installation/step-by-step-guide.md) ends up to install a standalone server.
+
+
+=== "Cluster or hybrid architecture" 
+    TheHive and all applications of the stack are flexible enough to choose the right setup according with the needs. 
+    
+    ![](images/thehive-architecture-full-cluster.png){ align=center }
+
+    Each layer and node can be installed: 
+    
+    - on a dedicated operating system 
+    - with another application (for example: 1 node of Cassandra with 1 not of Elasticseach)
+
+    The [installation guide for a 3 nodes cluster](installation/3-node-cluster.md) give all details for a more complex setup.
 
 ## Requirements
 Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
@@ -34,6 +66,7 @@ TheHive has been tested and is supported on the following operating systems:
 - :material-fedora: Fedora 35
 
 StrangeBee also provides an [official Docker image](https://hub.docker.com/r/strangebee/thehive/tags). 
+
 
 ## Installation guides
 
