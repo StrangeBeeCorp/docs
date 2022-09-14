@@ -72,7 +72,6 @@ nav:
   - TheHive:
     - 'Overview': thehive/setup/index.md
     - 'Download': thehive/download/index.md
-    - 'Architecture': thehive/architecture.md
     - 'Installation':
       - thehive/setup/installation/step-by-step-guide.md
       - 'Running with Docker': thehive/setup/installation/docker.md
