@@ -96,6 +96,64 @@ nav:
       - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
+    - 'Administration Guides': 
+    #   - 'First start': thehive/administration/first-start.md
+    #   - 'Profiles': thehive/administration/profiles.md
+    #   - 'Manage accounts': thehive/administration/account-settings.md
+    #   - 'Manage organisations': thehive/administration/organisations.md
+    #   - 'Alerts & Cases  status': thehive/administration/alert-cases.md
+    #   - 'Analyzers templates': thehive/administration/analyzers-templates.md
+    #   - 'Att&ck patterns': thehive/administration/attack-patterns.md
+    #   - 'Custom fields': thehive/administration/custom-fields.md
+    #   - 'Observable types': thehive/administration/observables-types.md
+    #   - 'Taxonomies': thehive/administration/taxonomies.md
+      - 'Platform Management':
+    #     - 'Branding': thehive/administration/branding.md
+    #     - 'License': thehive/administration/license.md
+    #     - 'Cortex': thehive/administration/cortex.md
+    #     - 'MISP': thehive/administration/misp.md
+        - 'Authentication':
+          - 'General settings': thehive/administration/authentication/general.md
+      #     - 'Local': thehive/administration/authentication/local.md
+          - 'LDAP': thehive/administration/authentication/ldap.md
+      #     - 'AD': thehive/administration/authentication /ad.md
+      #     - 'SAML': thehive/administration/authentication/saml.md
+      #     - 'OAUTH2': thehive/administration/authentication/oauth2.md
+    # - 'User Interface':
+    #   - 'Navigation': thehive/user-interface/navigation.md
+    #   - 'Lists & views': thehive/user-interface/lists.md
+    # - 'User Guides':
+    #   - 'First login': thehive/user-guides/getting-started.md
+    #   - 'User settings': thehive/user-guides/user-settings.md
+    #   - 'Cases':
+    #     - 'Create a Case': thehive/user-guides/cases/create.md
+    #     > Add new Case action here
+    #   - 'Alerts':
+    #     - 'Create an Alert': thehive/user-guides/alerts/create.md
+    #     > Add new Alert action here
+    #   - 'Dashboards':
+    #     - 'Create a Dashboard': thehive/user-guides/dashboards/create.md
+    #     > Add new Dashboard action here
+    #   - 'Search':
+    #     - 'Search Cases': thehive/user-guides/search/cases.md
+    #     > Add new Search action here
+    #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
+    #   - 'Organisation administration': 
+    #     - 'Manage Users': thehive/user-guides/organisation/users.md
+    #     - 'Case templates': thehive/user-guides/organisation/case-templates.md
+    #     - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
+    #     - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
+    #   - 'Notifications & endpoints':
+    #     - 'Manage endpoints': thehive/user-guides/notifications/endpoints.md
+    #     - 'Email to users': thehive/user-guides/notifications/email-to-users.md
+    #     - 'Email to specific address': thehive/user-guides/notifications/email-to-addr.md
+    #     - 'HTTP request endpoint': thehive/user-guides/notifications/http-request.md
+    #     - 'Webhook endpoint': thehive/user-guides/notifications/webhook.md
+    #     - 'Mattermost': thehive/user-guides/notifications/mattermost.md
+    #     - 'Slack': thehive/user-guides/notifications/slack.md
+    #     - 'Kafka': thehive/user-guides/notifications/kafka.md
+    #     - 'Run Analyzers': thehive/user-guides/notifications/analyzers.md
+    #     - 'Run Responders': thehive/user-guides/notifications/responders.md
     - 'API Docs':  thehive/api-docs/" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
