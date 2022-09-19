@@ -1,5 +1,26 @@
 # Release Notes of 5.0 series
 
+## 5.0.14 - 19th September 2022
+
+### Fixes
+
+**API:**
+
+- Fix an issue where case template prefix was duplicated in case title
+- Observables with files were not linked correctly to their attachments which impacted the merge of observables
+
+### Improvements
+
+**UI:**
+
+- Notifications: display the name of the webhook
+- Ability to filter users by profile when listing the users of an organisation
+- In search page, add link to observable parent (case or alert)
+- In live stream, display full date instead of 'x seconds ago'
+- Dashboard:
+  - Display users name instead of login
+  - Make time intervals aware of user timezone and locale, so that months and weeks aggregation behave correctly
+
 ## 5.0.13 - 8th September 2022
 
 ### Fixes
