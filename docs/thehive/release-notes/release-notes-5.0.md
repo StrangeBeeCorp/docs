@@ -18,8 +18,8 @@
 - In search page, add link to observable parent (case or alert)
 - In live stream, display full date instead of 'x seconds ago'
 - Dashboard:
-  - Display users name instead of login
-  - Make time intervals aware of user timezone and locale, so that months and weeks aggregation behave correctly
+    - Display users name instead of login
+    - Make time intervals aware of user timezone and locale, so that months and weeks aggregation behave correctly
 
 ## 5.0.13 - 8th September 2022
 
@@ -28,9 +28,9 @@
 **UI:**
 
 - Dashboard:
-  - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
-  - Clicking on a counter or donut now correctly sets the filters in the search page
-  - conversion of v4 dashboards failed with `not` operator
+    - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+    - Clicking on a counter or donut now correctly sets the filters in the search page
+    - conversion of v4 dashboards failed with `not` operator
 - Improvement around time filters (custom and periods)
 - Assignees from other organisations are visible and searchable in case assignment
 - Fix bad date format when using am/pm
@@ -55,10 +55,10 @@
 
 - Notify user when an update in Cortex is available
 - Dashboard:
-  - Default period is now 3 months instead of "All"
-  - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
-  - An org admin can disallow the "All" period in the dasboards (organisation settings > UI Configuration)
-  - Widgets legends now show fully
+    - Default period is now 3 months instead of "All"
+    - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+    - An org admin can disallow the "All" period in the dasboards (organisation settings > UI Configuration)
+    - Widgets legends now show fully
 - Add an indicator on the number of open requests made by the browser
 - Admin can now configure the default user domain from the admin settings
 - Admin can change the type of a user (Service or Normal users)
@@ -69,9 +69,9 @@
 - Add the ability to log the content of query request
 - Admin can now write in the knowledge base (the permission `manageKnowledgeBase` was added to the `admin` profile)
 - Improve templating capabilites in notifiers:
-  - Add `dateFormat` helper (`{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}` => `jeudi 01 septembre 2022`)
-  - Helper `eq` now supports numbers: `{{#if (eq object.severity 2) }}MEDIUM {{else}}Other {{/if}}`
-  - Add helpers `tlpLabel`, `papLabel`, `severityLabel`: `{{tlpLabel object.tlp}}` => `Amber`
+    - Add `dateFormat` helper (`{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}` => `jeudi 01 septembre 2022`)
+    - Helper `eq` now supports numbers: `{{#if (eq object.severity 2) }}MEDIUM {{else}}Other {{/if}}`
+    - Add helpers `tlpLabel`, `papLabel`, `severityLabel`: `{{tlpLabel object.tlp}}` => `Amber`
 
 ## 5.0.12 - 16th August 2022
 
@@ -269,11 +269,11 @@ If you are using the ad/ldap authentification, you should update to TheHive 5.0.
 - Refresh comment section
 - Misp configuration: Fix organisation selection
 - Analyzer reports:
-  - in an alert, display the extractable observables
-  - can now import an observable of type file
+    - in an alert, display the extractable observables
+    - can now import an observable of type file
 - Custom Fields:
-  - Limit the size of custom fields in list views
-  - use the display name in list views
+    - Limit the size of custom fields in list views
+    - use the display name in list views
 - When closing a case, custom fields are no longer deleted
 
 **API:**
