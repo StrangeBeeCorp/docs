@@ -15,5 +15,4 @@ This VM is prepared and updated by StrangeBee and is powered by the latest versi
 
 
 !!! Note
-    - SHA-256 checksum of the OVA file: [https://archives.strangebee.com/vm/SHA256SUM.txt](https://archives.strangebee.com/vm/SHA256SUM.txt)
-    - Full documentation of this Virtual machine can be found [here](howto-vm-demo.md)
+    Full documentation of this Virtual machine can be found [here](howto-vm-demo.md)
