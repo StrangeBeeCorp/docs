@@ -1,5 +1,42 @@
 # Release Notes of 5.0 series
 
+## 5.0.15 - 30th Septembre 2022
+
+### Fixes
+
+**API:**
+
+- Fix "none of" filter which could return wrong result when using in dashboards
+- Fix result of dashboard based on custom fields
+
+**UI:**
+
+- Case count now takes filters into account
+- Array and title panel in markdown edition was disappearing
+- Deleting a filter had a weird behavior before (going back to the previous applied state), it now only deletes the selected filter
+- Border for cortex/misp logo fixed for Safari 14
+- Task completion bar is now refreshed when a task status is updated
+- Fixed empty page sometimes when login
+- Webhook endpoint version is now editable
+
+## Improvements
+
+**API:**
+
+- Add "alertsCount" extraData in case list
+
+**UI:**
+
+- Dashboard duplication feature has been added
+- Count and link for similar cases/alert has been added to alert preview
+
+Description:
+
+- textarea for edition is now resizable
+- linebreak in text renders with a newline in markdown
+- we can now click on the description to edit it
+- font size when editing is now monospace
+
 ## 5.0.14 - 19th September 2022
 
 ### Fixes
