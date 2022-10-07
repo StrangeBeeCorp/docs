@@ -1,5 +1,28 @@
 # Release Notes of 5.0 series
 
+## 5.0.16 - 7th October 2022
+
+### Fixes
+
+**UI:**
+
+- Removed clickable description
+- Fixed crash on alert merge in a new case
+- Fixed rule to enable/disable button for the case export (MISP and archive capability)
+
+**API:**
+
+- startDate in task set even if we go from Waiting to Completed
+- Notify user when Cortex requires admin actions to update analyzers
+
+### Improvements
+
+**UI:**
+
+- Dashboard:
+    - Added time selection in custom period picker
+    - Improved performances of Text and Counter widgets
+
 ## 5.0.15 - 30th Septembre 2022
 
 ### Fixes
@@ -19,7 +42,7 @@
 - Fixed empty page sometimes when login
 - Webhook endpoint version is now editable
 
-## Improvements
+### Improvements
 
 **API:**
 
