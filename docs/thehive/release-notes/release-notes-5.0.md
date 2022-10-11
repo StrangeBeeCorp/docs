@@ -1,5 +1,25 @@
 # Release Notes of 5.0 series
 
+## 5.0.17 - 11th October 2022
+
+### Fixes
+
+**UI:**
+
+- Fix the search field in alert and case merging drawer
+- Add missing validation button on the UI settings when choosing a date format
+- Fix case export button when MISP is available
+
+- Dashboard:
+    - Fix filters during the import of dashboards, they was ignored
+    - Fix text and counter widget serie filters. They was ignored in 5.0.16
+
+## Improvements
+
+**Backend:**
+
+- Use index to count the number of waiting tasks
+
 ## 5.0.16 - 7th October 2022
 
 ### Fixes
