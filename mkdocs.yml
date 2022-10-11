@@ -102,7 +102,7 @@ nav:
     #   - 'Manage accounts': thehive/administration/account-settings.md
     #   - 'Manage organisations': thehive/administration/organisations.md
     #   - 'Alerts & Cases  status': thehive/administration/alert-cases.md
-    #   - 'Analyzers templates': thehive/administration/analyzers-templates.md
+      - 'Analyzers templates': thehive/administration/analyzers-templates.md
     #   - 'Att&ck patterns': thehive/administration/attack-patterns.md
     #   - 'Custom fields': thehive/administration/custom-fields.md
     #   - 'Observable types': thehive/administration/observables-types.md
