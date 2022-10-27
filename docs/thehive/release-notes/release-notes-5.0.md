@@ -1,6 +1,6 @@
 # Release Notes of 5.0 series
 
-## 5.0.18 - 25th October 2022
+## 5.0.18 - 27th October 2022
 
 ### Updates
 
