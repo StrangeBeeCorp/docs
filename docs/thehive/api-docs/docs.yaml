@@ -12,16 +12,16 @@ tags:
     \ For api calls, to refer to a case you can either use the `_id` or use the case\
     \ `number`\n\n#### Queries\n- Initial Queries:\n  - `listCase`: list all the cases\
     \ visible by the user\n  - `getCase`: get a case by id or name - additional field\
-    \ `idOrName`\n  - `countCase`: count the cases visible by the user, returns a\
-    \ number\n- Queries available on Cases:\n  - `observables`\n  - `tasks`\n  - `assignableUsers`\n\
-    \  - `organisations`\n  - `alerts`\n  - `shares`\n  - `procedures`\n  - `linkedCases`\n\
-    \  - `attachments`\n  - `similarAlerts`\n  - `pages`\n  - `comments`\n- Extra\
-    \ data:\n  - `observableStats`\n  - `taskStats`\n  - `alerts`\n  - `isOwner`\n\
-    \  - `shareCount`\n  - `permissions`\n  - `actionRequired`\n  - `procedureCount`\n\
-    \  - `attachmentCount`\n  - `similarAlerts`\n  - `contributors`\n  - `computed.handlingDuration`\n\
-    \  - `computed.handlingDurationInSeconds`\n  - `computed.handlingDurationInMinutes`\n\
-    \  - `computed.handlingDurationInHours`\n  - `computed.handlingDurationInDays`\n\
-    \  - `status`\n"
+    \ `idOrName`\n  - ~~`countCase`~~: count the cases visible by the user, returns\
+    \ a number **(deprecated)**\n- Queries available on Cases:\n  - `observables`\n\
+    \  - `tasks`\n  - `assignableUsers`\n  - `organisations`\n  - `alerts`\n  - `shares`\n\
+    \  - `procedures`\n  - `linkedCases`\n  - `attachments`\n  - `similarAlerts`\n\
+    \  - `pages`\n  - `comments`\n- Extra data:\n  - `observableStats`\n  - `taskStats`\n\
+    \  - `alerts`\n  - `alertCount`\n  - `isOwner`\n  - `shareCount`\n  - `permissions`\n\
+    \  - `actionRequired`\n  - `procedureCount`\n  - `attachmentCount`\n  - `similarAlerts`\n\
+    \  - `contributors`\n  - `computed.handlingDuration`\n  - `computed.handlingDurationInSeconds`\n\
+    \  - `computed.handlingDurationInMinutes`\n  - `computed.handlingDurationInHours`\n\
+    \  - `computed.handlingDurationInDays`\n  - `status`\n"
 - name: Alert
   description: |2
 
@@ -30,9 +30,9 @@ tags:
     - Initial Queries:
       - `listAlert`: list alerts visible by the user in the org
       - `getAlert` : get an alert by id
-      - `countAlert`: count all alerts
-      - `countUnreadAlert`: count alerts with status new
-      - `countImportedAlert`: count alerts imported into cases
+      - ~~`countAlert`~~: count all alerts **(deprecated)**
+      - ~~`countUnreadAlert`~~: count alerts with status new **(deprecated)**
+      - ~~`countImportedAlert`~~: count alerts imported into cases **(deprecated)**
     - Queries available on Alerts:
       - `observables`
       - `case`
@@ -130,6 +130,12 @@ tags:
       - `tasks`
       - `organisation`
 
+- name: Observable Type
+  description: |2
+
+    ### Queries for ObservableType
+    - Initial Queries:
+      - `listObservableType`
 servers:
 - url: /
 paths:
@@ -1947,7 +1953,7 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputCreateCaseFromAlert'
-        required: true
+        required: false
       responses:
         '201':
           description: ''
@@ -13757,6 +13763,88 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/admin/check/_all/trigger:
+    get:
+      tags:
+      - Admin
+      operationId: Trigger all checks
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/admin/check/{name}/trigger:
     get:
       tags:
@@ -15937,6 +16025,279 @@ paths:
       responses:
         '204':
           description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/observable/type/{typeId}:
+    get:
+      tags:
+      - Observable Type
+      operationId: Get Observable Type
+      parameters:
+      - name: typeId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputObservableType'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    delete:
+      tags:
+      - Observable Type
+      operationId: Delete Observable Type
+      parameters:
+      - name: typeId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/observable/type:
+    post:
+      tags:
+      - Observable Type
+      operationId: Create Observable Type
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputObservableType'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputObservableType'
         '400':
           description: BadRequest
           content:
@@ -18196,7 +18557,6 @@ components:
       - sourceRef
       - title
       - description
-      - date
       - customFields
       type: object
       properties:
@@ -18223,6 +18583,7 @@ components:
         date:
           type: integer
           format: datetime_ms
+          default: now()
           example: 1640000000000
         tags:
           type: array
@@ -18362,7 +18723,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
-          description: Additional tasks to create
+          description: Tasks to create. If null, tasks from the Case Template will
+            be used
         sharingParameters:
           type: array
           items:
@@ -18374,8 +18736,68 @@ components:
     InputCreateCaseFromAlert:
       type: object
       properties:
+        title:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        severity:
+          type: integer
+          enum:
+          - 1
+          - 2
+          - 3
+          - 4
+        startDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        endDate:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        tags:
+          type: array
+          items:
+            type: string
+        flag:
+          type: boolean
+        tlp:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        pap:
+          type: integer
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        status:
+          type: string
+        summary:
+          type: string
+          maxLength: 1048576
+        assignee:
+          type: string
+          description: User to assign the case to
+        customFields:
+          oneOf:
+          - $ref: '#/components/schemas/customFieldsAsObject'
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputCustomFieldValue'
         caseTemplate:
           type: string
+          description: Name or id of the Case Template to use
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreateTask'
+          description: Additional tasks to create
         sharingParameters:
           type: array
           items:
@@ -18413,12 +18835,19 @@ components:
       properties:
         name:
           type: string
+          description: Name of the CaseTemplate, must be unique in your organisation.
+            This name can be used in your integrations, for instance when creating
+            a case
         displayName:
           type: string
+          description: A friendly name displayed in the UI for the CaseTemplate
         titlePrefix:
           type: string
+          description: Prefix used when creating a case
         description:
           type: string
+          description: Description for the case. All other fields below concern the
+            case that will be created from this template
           maxLength: 1048576
         severity:
           type: integer
@@ -18675,9 +19104,7 @@ components:
         organisation:
           type: string
         type:
-          type: string
-          description: Normal or Service. A service user cannot use the ui and needs
-            to provide an api key for authentication
+          $ref: '#/components/schemas/InputUserType'
     InputCustomEvent:
       required:
       - date
@@ -18843,6 +19270,15 @@ components:
           minLength: 1
           maxLength: 2048
       - type: string
+    InputObservableType:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        isAttachment:
+          type: boolean
     InputOrganisationBulkLink:
       type: object
       properties:
@@ -19685,6 +20121,8 @@ components:
           type: string
         defaultOrganisation:
           type: string
+        type:
+          $ref: '#/components/schemas/InputUserType'
     InputUserOrganisation:
       required:
       - organisation
@@ -19697,6 +20135,13 @@ components:
           type: string
         default:
           type: boolean
+    InputUserType:
+      type: string
+      description: Normal or Service. A service user cannot use the ui and needs to
+        provide an api key for authentication
+      enum:
+      - Service
+      - Normal
     InputValue:
       required:
       - predicate
@@ -20891,6 +21336,36 @@ components:
           $ref: '#/components/schemas/JsObject'
         ignoreSimilarity:
           type: boolean
+    OutputObservableType:
+      required:
+      - _id
+      - _type
+      - _createdAt
+      - _createdBy
+      - name
+      - isAttachment
+      type: object
+      properties:
+        _id:
+          type: string
+        _type:
+          type: string
+        _updatedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _updatedBy:
+          type: string
+        _createdAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _createdBy:
+          type: string
+        name:
+          type: string
+        isAttachment:
+          type: boolean
     OutputOrganisation:
       required:
       - _id
@@ -21663,6 +22138,7 @@ x-tagGroups:
   - CaseStatus
   - Taxonomy
   - CaseTemplate
+  - Observable Type
 - name: Connectors
   tags:
   - Cortex

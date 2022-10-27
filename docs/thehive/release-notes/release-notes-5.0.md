@@ -1,5 +1,48 @@
 # Release Notes of 5.0 series
 
+## 5.0.18 - 25th October 2022
+
+### Updates
+
+- Update Cortex analyzer templates
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+    - Fix counter widget not working with observables
+    - Fix entity change not updating form changes
+    - Fix legends in dashboard that may be truncated
+- Custom fields options are shown even if the field is not empty
+- Fix icons in analyser reports when serving TheHive on a non root path
+- Fix issue when creating a case template with an already existing name
+- Fix bad autocompletion on non tag fields
+- Markdown tables now respect the alignment
+- Fix drawer title when editing a dashboard
+- Fix rare issue where the observable counter was not refreshed when an observable was added
+
+**API docs**
+
+- Field `date` in Alert is now corectly marked as optional
+- Add api docs for observable types
+
+### Improvements
+
+**UI:**
+
+- Faster load of analyzer templates when viewing an analyzer report
+- Sort search results by `_createdAt` date
+- Sort analyzer list
+- Dashboard:
+    - color can now be customized for the field status
+
+**Backend:**
+
+- Make alert merging faster
+- Fix chart time interval when empty series
+- Set size limit on custom field values (8191 chars)
+
 ## 5.0.17 - 11th October 2022
 
 ### Fixes
@@ -14,7 +57,7 @@
     - Fix filters during the import of dashboards, they was ignored
     - Fix text and counter widget serie filters. They was ignored in 5.0.16
 
-## Improvements
+### Improvements
 
 **Backend:**
 
