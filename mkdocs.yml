@@ -154,6 +154,8 @@ nav:
     #     - 'Kafka': thehive/user-guides/notifications/kafka.md
     #     - 'Run Analyzers': thehive/user-guides/notifications/analyzers.md
     #     - 'Run Responders': thehive/user-guides/notifications/responders.md
+    - 'Compliance':
+      - 'GDPR': thehive/compliance/gdpr.md
     - 'API Docs':  thehive/api-docs/" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
