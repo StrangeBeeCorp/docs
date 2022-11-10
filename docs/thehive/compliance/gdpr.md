@@ -1,13 +1,17 @@
 # GDPR 
 
+!!! Info
+    This feature is available only with the Platinum plan of THeHive 5.x.
+
 TheHive has a feature dedicated to manage data retention policy in the database, which is not enabled by default.
 
 ## Strategies
 
-Two strategies are possibile: 
+Two strategies are available: 
 
-* Delete the data
-* Replace sensitive values with `<redacted>`
+* [Replace sensitive values with `<redacted>`](#replace-values-with-redacted)
+* [Delete the data](#delete-data)
+
 
 ### Replace values with `<redacted>`
 
@@ -74,10 +78,10 @@ To enable it, the configuration file `/etc/thehive/application.conf` should be u
     
         ## Advanced parameters (should not be modified)
         
-        jobTimeout = 24 jours ## maximum time the job is executed
-        batchSizeCase = 5     ## how many cases if processed per transaction
-        batchSizeAlert = 10   ## how many cases if processed per transaction
-        batchSizeAudit = 100  ## how many cases if processed per transaction
+        jobTimeout = 24 days ## maximum time the job is executed
+        batchSizeCase = 5     ## how many cases is processed per transaction
+        batchSizeAlert = 10   ## how many cases is processed per transaction
+        batchSizeAudit = 100  ## how many cases is processed per transaction
     }
     ```
 
