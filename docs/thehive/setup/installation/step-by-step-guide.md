@@ -10,23 +10,28 @@ This page is a step by step installation and configuration guide to get an insta
 
     !!! Example ""
         ```bash
-        sudo apt install openjdk-11-jre-headless
-        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" | sudo tee -a /etc/environment 
-        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-        sudo update-java-alternatives --jre-headless -s java-1.11.0-openjdk-amd64
+        wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
+        echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+        sudo apt update
+        sudo apt install java-common java-11-amazon-corretto-jdk
+        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment 
+        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
         ```
 
 === "RPM"
 
     !!! Example ""
         ```bash
-        sudo yum install java-11-openjdk-headless.x86_64
-        echo JAVA_HOME="/usr/lib/jvm/jre-11-openjdk" |sudo tee -a /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/jre-11-openjdk"
+        sudo rpm --import https://yum.corretto.aws/corretto.key  &> /dev/null
+        wget -qO-  https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
+        yum install java-1.11.0-amazon-corretto-devel &> /dev/null
+        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" |sudo tee -a /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
         ```
 
 === "Other"
     The installation requires Java 11, so refer to your system documentation to install it.
+
 
 
 ## :fontawesome-solid-database:  Apache Cassandra
