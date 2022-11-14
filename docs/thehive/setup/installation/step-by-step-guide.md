@@ -6,6 +6,9 @@ This page is a step by step installation and configuration guide to get an insta
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
+!!! Info
+    For security and long-term support reasons, we recommend using OpenJDK builds [distributed by Amazon](https://aws.amazon.com/corretto/). 
+
 === "DEB"
 
     !!! Example ""
