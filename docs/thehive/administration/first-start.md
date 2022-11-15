@@ -41,16 +41,16 @@ The Administrators space is where all the platform is configured.
 
 * Integrate TheHive with a [SMTP server](./smtp.md), authentication directory servers, Cortex and MISP servers: Go to the **Platform Management page**
 
-![](./images/first-start-platform-management.png)
+    ![](./images/first-start-platform-management.png)
 
 * Create Organisations
 
-![](./images/first-start-organisations.png)
+    ![](./images/first-start-organisations.png)
 
 * Create users
 
-![](./images/first-start-users.png)
+    ![](./images/first-start-users.png)
 
 * Customise the application behaviour for users in the **Entity Management page**
 
-![](./images/first-start-entities-management.png)
+    ![](./images/first-start-entities-management.png)
