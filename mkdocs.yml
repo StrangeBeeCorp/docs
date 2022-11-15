@@ -47,6 +47,7 @@ extra:
 markdown_extensions:
   - toc:
       permalink: "#"
+  - footnotes
   - attr_list
   - md_in_html
   - def_list
@@ -97,19 +98,10 @@ nav:
       - thehive/setup/operations/fail2ban.md
       - thehive/setup/operations/troubleshooting.md
     - 'Administration Guides': 
-    #   - 'First start': thehive/administration/first-start.md
-    #   - 'Profiles': thehive/administration/profiles.md
-    #   - 'Manage accounts': thehive/administration/account-settings.md
-    #   - 'Manage organisations': thehive/administration/organisations.md
-    #   - 'Alerts & Cases  status': thehive/administration/alert-cases.md
-      - 'Analyzers templates': thehive/administration/analyzers-templates.md
-    #   - 'Att&ck patterns': thehive/administration/attack-patterns.md
-    #   - 'Custom fields': thehive/administration/custom-fields.md
-    #   - 'Observable types': thehive/administration/observables-types.md
-    #   - 'Taxonomies': thehive/administration/taxonomies.md
+      - 'First start': thehive/administration/first-start.md
       - 'Platform Management':
-    #     - 'Branding': thehive/administration/branding.md
-    #     - 'License': thehive/administration/license.md
+        - 'Branding': thehive/administration/branding.md
+        - 'License': thehive/administration/license.md
     #     - 'Cortex': thehive/administration/cortex.md
     #     - 'MISP': thehive/administration/misp.md
         - 'Authentication':
@@ -119,11 +111,23 @@ nav:
       #     - 'AD': thehive/administration/authentication /ad.md
       #     - 'SAML': thehive/administration/authentication/saml.md
       #     - 'OAUTH2': thehive/administration/authentication/oauth2.md
+        - 'SMTP': thehive/administration/smtp.md
+      - 'Entities management':
+    #     - 'Profiles': thehive/administration/profiles.md
+    #     - 'Manage accounts': thehive/administration/account-settings.md
+    #     - 'Manage organisations': thehive/administration/organisations.md
+    #     - 'Alerts & Cases  status': thehive/administration/alert-cases.md
+        - 'Analyzers templates': thehive/administration/analyzers-templates.md
+    #     - 'Att&ck patterns': thehive/administration/attack-patterns.md
+    #     - 'Custom fields': thehive/administration/custom-fields.md
+    #     - 'Observable types': thehive/administration/observables-types.md
+    #     - 'Taxonomies': thehive/administration/taxonomies.md    
     # - 'User Interface':
     #   - 'Navigation': thehive/user-interface/navigation.md
     #   - 'Lists & views': thehive/user-interface/lists.md
-    # - 'User Guides':
+    - 'User Guides':
     #   - 'First login': thehive/user-guides/getting-started.md
+      - "I forgot my password": thehive/user-guides/forgot-password.md
     #   - 'User settings': thehive/user-guides/user-settings.md
     #   - 'Cases':
     #     - 'Create a Case': thehive/user-guides/cases/create.md
