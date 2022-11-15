@@ -9,7 +9,9 @@ On the Platform Management page, select the SMTP tab.
 ![](./images/platform-management-smtp.png)
 
 ### Configure Server Settings
+
 Define: 
+
 1. **Server name or IP address**
 2. **Port**
 3. The email address you want to use as the *Sender* in **Send emails from**
@@ -26,5 +28,5 @@ Define additional security parameters, if required:
 ## Create user account and send a notification
 
 
-## Forgot my Password
-Lean how to request a magic link with the [I forgot my password](./../user-guides/forgot-password.md) button.
+## I forgot my password
+Learn how to request a magic link with the [I forgot my password](./../user-guides/forgot-password.md) button.
