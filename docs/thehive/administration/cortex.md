@@ -6,7 +6,7 @@ Connect TheHive to Cortex and get benefits from Analyzers to gather information 
 
 
 ## Introduction
-!!! Tip ""
+!!! Info
     An account and an API key are required on a Cortex server to define a connection.
 
 *  Analyzers can be launched against *Observables* to get more details, contextual information, intelligence
