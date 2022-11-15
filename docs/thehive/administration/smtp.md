@@ -26,6 +26,5 @@ Define additional security parameters, if required:
 ## Create user account and send a notification
 
 
-
 ## Forgot my Password
 Lean how to request a magic link with the [I forgot my password](./../user-guides/forgot-password.md) button.
