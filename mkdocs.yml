@@ -7,6 +7,7 @@ theme:
   logo: 'assets/images/strangebee.svg'
   features:
     - content.code.annotate
+    - navigation.sections
     - navigation.instant
     - navigation.indexes
     - navigation.tabs
@@ -75,53 +76,61 @@ nav:
     - 'Download': thehive/download/index.md
     - 'Installation':
       - thehive/setup/installation/step-by-step-guide.md
+      - 'Deploy a cluster': thehive/setup/installation/3-node-cluster.md
       - 'Running with Docker': thehive/setup/installation/docker.md
-      - 'Activate a license': thehive/setup/installation/license.md
-      - thehive/setup/installation/3-node-cluster.md
+      # - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/kubernetes.md
-      - thehive/setup/installation/upgrade-from-4.x.md
-      - thehive/setup/installation/migration.md
-    - 'Configuration':
-      - 'Database & index': thehive/setup/configuration/database.md
-      - 'File storage': thehive/setup/configuration/file-storage.md
-      - thehive/setup/configuration/connectors.md
-      - thehive/setup/configuration/akka.md
-      - thehive/setup/configuration/logs.md
-      - thehive/setup/configuration/proxy.md
-      - thehive/setup/configuration/secret.md
-      - thehive/setup/configuration/ssl.md
-    - 'Operations': 
-      - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
-      - thehive/setup/operations/backup-restore.md
-      - thehive/setup/operations/cassandra-security.md
-      - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
-      - thehive/setup/operations/fail2ban.md
-      - thehive/setup/operations/troubleshooting.md
+      - 'Upgrade or migrate from older versions':
+        - thehive/setup/installation/upgrade-from-4.x.md
+        - thehive/setup/installation/migration.md
+    - 'Configuration & Operations':
+      - 'Configuration':
+        - 'Database & index': thehive/setup/configuration/database.md
+        - 'File storage': thehive/setup/configuration/file-storage.md
+        - thehive/setup/configuration/connectors.md
+        - thehive/setup/configuration/akka.md
+        - thehive/setup/configuration/logs.md
+        - thehive/setup/configuration/proxy.md
+        - thehive/setup/configuration/secret.md
+        - thehive/setup/configuration/ssl.md
+        - 'Compliance':
+          - 'GDPR': thehive/compliance/gdpr.md
+      - 'Operations': 
+        - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
+        - thehive/setup/operations/backup-restore.md
+        - thehive/setup/operations/cassandra-security.md
+        - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
+        - thehive/setup/operations/fail2ban.md
+        - thehive/setup/operations/troubleshooting.md
     - 'Administration Guides': 
       - 'First start': thehive/administration/first-start.md
+      - 'Manage organisations': 
+        - 'Create/Update an Organisation': thehive/administration/organisations.md
+        - 'Link Organisations': thehive/administration/organisation-links.md
+      - 'Manage accounts': 
+        - 'Create/update an account': thehive/administration/accounts.md
       - 'Platform Management':
         - 'Branding': thehive/administration/branding.md
         - 'License': thehive/administration/license.md
-    #     - 'Cortex': thehive/administration/cortex.md
-    #     - 'MISP': thehive/administration/misp.md
+        - 'Cortex': thehive/administration/cortex.md
+        - 'MISP': thehive/administration/misp.md
         - 'Authentication':
           - 'General settings': thehive/administration/authentication/general.md
-      #     - 'Local': thehive/administration/authentication/local.md
+          - 'Local': thehive/administration/authentication/local.md
           - 'LDAP': thehive/administration/authentication/ldap.md
-      #     - 'AD': thehive/administration/authentication /ad.md
+          - 'AD': thehive/administration/authentication/ad.md
       #     - 'SAML': thehive/administration/authentication/saml.md
-      #     - 'OAUTH2': thehive/administration/authentication/oauth2.md
+          - 'OAUTH2': thehive/administration/authentication/oauth2.md
         - 'SMTP': thehive/administration/smtp.md
       - 'Entities management':
-    #     - 'Profiles': thehive/administration/profiles.md
-    #     - 'Manage accounts': thehive/administration/account-settings.md
-    #     - 'Manage organisations': thehive/administration/organisations.md
-    #     - 'Alerts & Cases  status': thehive/administration/alert-cases.md
+        - 'Profiles': thehive/administration/profiles.md
+        - 'Custom fields': thehive/administration/custom-fields.md
+        - 'Observable types': thehive/administration/observables-types.md
+        - 'Case status': thehive/administration/case-status.md
+        - 'Alert status': thehive/administration/alert-status.md
         - 'Analyzers templates': thehive/administration/analyzers-templates.md
-    #     - 'Att&ck patterns': thehive/administration/attack-patterns.md
-    #     - 'Custom fields': thehive/administration/custom-fields.md
-    #     - 'Observable types': thehive/administration/observables-types.md
-    #     - 'Taxonomies': thehive/administration/taxonomies.md    
+        - 'Taxonomies': thehive/administration/taxonomies.md    
+        - 'Att&ck patterns': thehive/administration/attack-patterns.md
     # - 'User Interface':
     #   - 'Navigation': thehive/user-interface/navigation.md
     #   - 'Lists & views': thehive/user-interface/lists.md
@@ -158,9 +167,9 @@ nav:
     #     - 'Kafka': thehive/user-guides/notifications/kafka.md
     #     - 'Run Analyzers': thehive/user-guides/notifications/analyzers.md
     #     - 'Run Responders': thehive/user-guides/notifications/responders.md
-    - 'Compliance':
-      - 'GDPR': thehive/compliance/gdpr.md
-    - 'API Docs':  thehive/api-docs/" target="_blank
+    - 'API':
+      - 'API Documentation': thehive/api-docs/" target="_blank
+      - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
