@@ -27,7 +27,7 @@ Except the *admin* profile, all profiles can be customised and deleted.
 
 ### Add a profile
 
-* Add a new profile by clicking the **+** button on the Entities Management page, in the Profiles tab
+* Add a new profile by clicking the :fontawesome-regular-square-plus: button on the Entities Management page, in the Profiles tab
 * Then select the type of profile to create, and associated permissions  
 
 Adding a Profile window opens.

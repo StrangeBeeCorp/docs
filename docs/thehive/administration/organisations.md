@@ -6,7 +6,7 @@ As Administrator, go to the *Organisations* page.
 
 ## Add an Organisation
 
-Click on the **+** button and edit the required fields in the drawer: 
+Click on the :fontawesome-regular-square-plus: button and edit the required fields in the drawer: 
 
 * A placeholder exists and a logo of the Organisation can be added
 * *Name*: Name of the new Organisation 
@@ -24,8 +24,9 @@ Click **Confirm** to create the organisation.
 ![](./images/organisations-3.png)
 
 Once your organisation is created:
-- [users](./accounts.md) can be added
-- [links](./organisation-links.md) with other existing Organisations created for the purpose of sharing Cases.
+
+* [users](./accounts.md) can be added
+* [links](./organisation-links.md) with other existing Organisations created for the purpose of sharing Cases.
 
 
 ## Lock an organisation
