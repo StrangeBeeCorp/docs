@@ -48,6 +48,7 @@ If the strategy `delete` is selected:
  
 The parameter `retentionPeriod` defines the mininum age of the data that will be deleted or redacted. The GDPR process will be applied on data older than this setting. The age is based on the last update date (or the creation date if it has never been updated).
 The format is a number and a time unit. The supported units are:
+
   * day:         `d`, `day`
   * hour:        `h`, `hr`, `hour`
   * minute:      `m`, `min`, `minute`
