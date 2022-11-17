@@ -42,6 +42,10 @@ extra:
       link: "https://www.linkedin.com/company/strangebee"
     - icon: fontawesome/brands/twitter
       link: "https://twitter.com/StrangeBee"
+    - icon: fontawesome/brands/mastodon
+      link: "https://infosec.exchange/@Strangebee"
+    - icon: fontawesome/brands/discord
+      link: "https://chat.thehive-project.org"
     - icon: fontawesome/brands/youtube
       link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
 
