@@ -1,5 +1,32 @@
 # Release Notes of 5.0 series
 
+## 5.0.19 - 16th November 2022
+
+### Fixes
+
+**UI:**
+
+- Fix urls in mardown that contain `&` character
+- Platform configuration: 
+    - Webhook version was always set to 1
+    - Global endpoints can now be edited
+- Dashboards:
+    - Fix issue with dashboards using relative times (like "last 3 months")
+    - Fix crash when deleting a widget in certain conditions
+    - Improve conversion of TheHive 4 dashboards
+- Display sightedAt date when an observable is set as sighted
+
+**Backend:**
+
+- Fix permission issue for user edition
+- Fix issue when trying to repair the index with a vertex containing non indexed fields
+- Refresh license quotas faster after an organisation is locked
+
+### Security Updates
+
+- Update dependency on org.apache.commons:commons-text to 1.10.0
+- Remove dependency on org.apache.ivy:ivy
+
 ## 5.0.18 - 27th October 2022
 
 ### Updates
