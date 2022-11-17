@@ -44,6 +44,16 @@ If the strategy `delete` is selected:
   * The audit is deleted
 
 
+## Retention
+ 
+The parameter `retentionPeriod` defines the mininum age of the data that will be deleted or redacted. The GDPR process will be applied on data older than this setting. The age is based on the last update date (or the creation date if it has never been updated).
+The format is a number and a time unit. The supported units are:
+  * day:         `d`, `day`
+  * hour:        `h`, `hr`, `hour`
+  * minute:      `m`, `min`, `minute`
+  * second:      `s`, `sec`, `second`
+  * millisecond: `ms`, `milli`, `millisecond`
+
 ## Configuration 
 
 To enable it, the configuration file `/etc/thehive/application.conf` should be updated. Add the following configuration to the file: 
@@ -73,8 +83,8 @@ To enable it, the configuration file `/etc/thehive/application.conf` should be u
         # dataTypesToDelete = [] ## ["ip", "domain"]
     
         ## only documents older than the "retentionPeriod" will be processed
-        
-        retentionPeriod = 2 years
+
+        retentionPeriod = 730 days # 2 years
     
         ## Advanced parameters (should not be modified)
         
