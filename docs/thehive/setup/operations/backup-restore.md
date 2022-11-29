@@ -8,11 +8,11 @@
 
 ## Overview
 
-To be restored successfully, TheHive requires following data beeing saved: 
+To be restored successfully, TheHive requires following data beeing saved:
 
 - The database
 - Files
-- optionnally, the index. 
+- optionnally, the index.
 
 ## Back up index?
 
@@ -23,10 +23,12 @@ You can use Cassandra snapshots to backup the data of a Cassandra node. This can
 If the index doesn't exist, it is built when TheHive starts.
 
 Pros:
+
  - no downtime during backup
  - backups take less space
 
 Cons:
+
  - the restoration can be long (needs a full reindexation of the data)
 
 #### Option 2: back up the data and the index
@@ -34,9 +36,11 @@ Cons:
 In order to ensure the data and the index are not out of sync, TheHive must be stopped. Then Cassandra and Elasticsearch can be backed up.
 
 Pros:
+
  - TheHive quickly can be up and running from a backup
 
 Cons:
+
  - downtime of TheHive during the backup
  - backups take more space
 
@@ -108,7 +112,6 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
 #### Example
 
 !!! Example "Example of script to generate backups of TheHive keyspace"
-
 
     ```bash
     #!/bin/bash
