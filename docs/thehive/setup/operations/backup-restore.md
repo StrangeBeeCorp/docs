@@ -14,11 +14,11 @@ To be restored successfully, TheHive requires following data beeing saved:
 - Files
 - optionnally, the index. 
 
-## Backup index?
+## Back up index?
 
-#### Option 1: backup only the data
+#### Option 1: back up only the data
 
-You can use Cassandra snapshots to backup the data of a Cassandra node. This can be done while the application is running. There is no downtime. With this option, the index is not backuped, it will be rebuild from the data during the restoration.
+You can use Cassandra snapshots to backup the data of a Cassandra node. This can be done while the application is running. There is no downtime. With this option, the index is not backed up, it will be rebuild from the data during the restoration.
 
 If the index doesn't exist, it is built when TheHive starts.
 
@@ -27,11 +27,11 @@ Pros:
  - backups take less space
 
 Cons:
- - the restoration can be long (need a full reindexation of the data)
+ - the restoration can be long (needs a full reindexation of the data)
 
-#### Option 2: backup the data and the index
+#### Option 2: back up the data and the index
 
-In order to ensure the data and the index are not out of sync, TheHive must be stopped. Then Cassandra and Elasticsearch can be backuped.
+In order to ensure the data and the index are not out of sync, TheHive must be stopped. Then Cassandra and Elasticsearch can be backed up.
 
 Pros:
  - TheHive quickly can be up and running from a backup
@@ -113,7 +113,7 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
     ```bash
     #!/bin/bash
 
-    ## Create an tbz archive containing the snapshot
+    ## Create a tbz archive containing the snapshot
 
     ## Complete variables before running:
     ## KEYSPACE: Identify the right keyspace to save in cassandra
@@ -135,7 +135,7 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
 
 #### Data and index
 
-Before starting TheHive, if there is an index, ensure the index in Elasticsearch match the data in Cassandra otherwise this would imply unpredictive behavior. You can force resync (reindex all data) by adding `db.janusgraph.forceDropAndRebuildIndex = true` in application.conf.
+Before starting TheHive, if there is an index, ensure the index in Elasticsearch matches the data in Cassandra otherwise this would imply unpredictive behavior. You can force resync (reindex all data) by adding `db.janusgraph.forceDropAndRebuildIndex = true` in application.conf.
 
 !!! Warning "Remove this line once TheHive is started"
 
@@ -166,9 +166,9 @@ Following data is required to restore TheHive database successfully:
     tar jxf ${SNAPSHOT}_${SNAPSHOT_DATE}.tbz -C ${RESTORE_PATH}
     ```
 
-3. Create tables from archives
+3. Create tables from archive
 
-    The archive contains the table schema. They must be executed in the new keyspace. The schema file are in `${RESTORE_PATH}/var/lib/cassandra/data/${SOURCE_KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/schema.cql`
+    The archive contains the table schemas. They must be executed in the new keyspace. The schema files are in `${RESTORE_PATH}/var/lib/cassandra/data/${SOURCE_KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/schema.cql`
 
     ```bash
     for CQL in $(find ${RESTORE_PATH} -name schema.cql)
@@ -188,7 +188,7 @@ Following data is required to restore TheHive database successfully:
 
 4. Reorganize snapshot files:
 
-    The files in a snapshot follows the structure: `var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}/`. In order to import files, the structure must be: `.../${KEYSPACE}/${TABLE}/`. The following command line move files to match the expected file organization.
+    The files in a snapshot follow the structure: `var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}/`. In order to import files, the structure must be: `.../${KEYSPACE}/${TABLE}/`. The following command lines move files to match the expected file organization.
 
     ```bash
     mkdir -p ${RESTORE_PATH}/${TARGET_KEYSPACE}
