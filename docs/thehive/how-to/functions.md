@@ -31,7 +31,7 @@ Let's imagine that when an event occurs in your system, you want to create an al
 
 This format is not the same as TheHive, so you need to transform the data to match TheHive alert format.
 
-As an `org-admin`, you can create new functions for your organization that can take this input, transform it into TheHive format and create an alert from it.
+As an `org-admin`, you can create new functions for your organisation that can take this input, transform it into TheHive format and create an alert from it.
 
 The code of the function would be something like this:
 ```javascript
@@ -94,7 +94,7 @@ curl -X POST -H 'Authorization: Bearer $API_KEY' https://<thehive_url>/api/v1/fu
 ```
 
 TheHive will take your input (the body of the http call), the definition of your function and execute the function with the input.
-It will the respond to the http call with the data returned by the function.
+It will respond to the http call with the data returned by the function.
 
 ## Example: Create an alert from a Splunk alert
 
@@ -150,7 +150,7 @@ function handle(input, context) {
         "observables": [
             {"dataType": "hostname", "data": input.result.host},
             {"dataType": "other", "data": input.result.action, "message": "action"},
-            {"dataType": "other", "data": input.result._raw_, "message": "raw"}
+            {"dataType": "other", "data": input.result._raw, "message": "raw"}
         ]
     };
     return context.alert.create(theHiveAlert);
