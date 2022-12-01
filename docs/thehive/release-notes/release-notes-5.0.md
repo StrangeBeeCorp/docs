@@ -1,5 +1,37 @@
 # Release Notes of 5.0 series
 
+## 5.0.20 - 1st December 2022
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+    - Fix broken export as CSV for bar chart widget
+    - Remove some entities (patterns) that are not useful in dashboard view
+    - add live feed for dashboard
+    - re-enable aggregation on some fields and display a warning if the query is slow
+    - In widgets mark mandatory fields
+    - Some filter queries on string field (like title) were not correctly built
+- Admin: be less restrictive for urls (cortex and misp)
+- Case sharing:
+    - Fix request timing issue when sharing a case that prevented from sharing the tasks
+    - Update wording when sharing a case
+- When a customfield has options, prevent the user from selecting an other value
+- Fix issue when updating custom fields in case templates
+- Fix count of similar alerts 
+- When creating an observable the option "one observable per line" is now the default
+- Fix duplicated refetch when updating an entity
+- Fix live feed when updating a case
+
+**Backend:**
+
+- Oauth2 connector will read the value for its proxy from `application.conf` > `wsConfig.proxy`
+- Create audit logs when tasks are cancelled when closing a case
+- In API allow status length of 64 chars for case and alerts (was wrongly 32 chars previously)
+- Fix GDPR service that did not include all the tasks, task logs and observables
+- Fix permission issue where analysts could no longer generate their Api Key (regression introduced in 5.0.19)
+
 ## 5.0.19 - 16th November 2022
 
 ### Fixes
