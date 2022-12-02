@@ -1,5 +1,13 @@
 # Release Notes of 5.0 series
 
+## 5.0.21 - 2nd December 2022
+
+### Fixes
+
+**UI:**
+
+- Fix JavaScript error
+
 ## 5.0.20 - 1st December 2022
 
 ### Fixes
