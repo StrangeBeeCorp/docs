@@ -156,9 +156,9 @@ nav:
     #     > Add new Search action here
     #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
       - 'Org. administration': 
-        - 'Manage Users': thehive/user-guides/organisation/users.md
+        - 'Manage Users': thehive/user-guides/organisation/accounts.md
         - 'Case templates': thehive/user-guides/organisation/case-templates.md
-    #     - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
+        - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
     #   - 'Notifications & endpoints':
     #     - 'Manage endpoints': thehive/user-guides/notifications/endpoints.md
