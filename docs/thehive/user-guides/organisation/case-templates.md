@@ -6,16 +6,24 @@ This section contains the Case templates you prepare for your organisation.
 
 Access to the list by opening the *Organisation* menu, and the *Case templates* tab.
 
-![](./images/organisation-case-templates.png)
+
+<figure markdown>
+  ![List of Case templates](./images/organisation-case-templates.png){ width="450" }
+  <figcaption>List of Case templates</figcaption>
+</figure>
 
 Click the :fontawesome-regular-square-plus: button to create a new *Case template*.
 
 
 ## New Case template
 
-![](./images/organisation-case-templates-2.png)
 
-### Configuration parameters 
+<figure markdown>
+  ![Create a Case template](./images/organisation-case-templates-2.png){ width="450" }
+  <figcaption>Create a Case template</figcaption>
+</figure>
+
+### Configuration parameters
 
 Prefix
   : String that will be prepended to the title of a Case when created with this template
