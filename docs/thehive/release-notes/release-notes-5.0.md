@@ -1,5 +1,38 @@
 # Release Notes of 5.0 series
 
+
+## 5.0.22 - 19th December 2022
+
+### Fixes
+
+**UI:**
+
+- Fix: "Add share" window is empty when no target org
+- Search: Observables search result direct link not working
+- Search: results for Task Logs do not show a link to the case
+- Markdown table issue with vertical bar: add support for `&vert;` in cell tables
+- Dashboard:
+    - Bar Chart with tasks by status all have same colors
+    - Bar chart: add an option to display or not empty values
+- Long alert titles cut off other UI fields
+- Bad cache when listing similar alerts
+- Wrong drawer title when editing a case template
+
+**Backend:**
+
+- Update dependencies
+- API Query filter _startsWith don't work on customFields
+- Pages in knowledge base incorrectly display pages from cases too
+- Search on absent field does not use index
+- Changing auth configuration does not work for v1 routes
+
+### Improvements
+
+- LDAP/AD: add option to ignore the realm/domain of the login
+- Cortex: Send observable attribute `sightedAt` to Cortex
+- UI: in a task preview, add the possibility to edit or delete a task log
+- UI: standardize disposition of TLP, PAP and SEV across forms and elements.
+
 ## 5.0.21 - 2nd December 2022
 
 ### Fixes
