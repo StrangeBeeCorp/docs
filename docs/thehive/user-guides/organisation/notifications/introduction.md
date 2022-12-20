@@ -1,5 +1,8 @@
 # Notifications
 
+
+## Definition
+
 A notification, is a described by:
 
 1. A *Trigger*
@@ -7,11 +10,10 @@ A notification, is a described by:
 
 <figure markdown>
   ![Notification](./images/organisation-notifications-introduction.png){ width="450" }
-  <figcaption>Notification</figcaption>
 </figure>
 
 
-## Triggers
+### Triggers
 
 Each notification is associated to *only* one trigger. TheHive comes with several predefined triggers on *Cases*, *Alerts*, *Tasks*, *Observables* and *Jobs*. Custom triggers can also be defined with *FilteredEvent*.
 
@@ -60,7 +62,7 @@ When selecting *FilteredEvent*, TheHive lets you write a structured JSON filter.
 Learn how to write filtered events and find more example in the [dedicated page](./filteredevents.md).
 
 
-## Notifiers
+### Notifiers
 
 Several types of *Notifiers* are available in TheHive:
 
@@ -76,3 +78,51 @@ Two others, are more dedicated to run *Actions*:
 
 * **RunAnalyzer**: run [selected Analyzers](./analyzers.md)
 * **RunResponder**: run [selected Responders](./responders.md)
+
+!!! Tip
+    Some *Notifiers* require at least one *endpoint* to be defined. Refer to the page dedicated to each *Notifier* to learn how to create related endpoints.
+
+
+## Create a *Notification*
+
+<figure markdown>
+  ![Notifications list](./images/organisation-notifications.png){ width="500" }
+</figure>
+
+Click the :fontawesome-regular-square-plus: button to add a notification.
+
+<figure markdown>
+  ![Create a notification](./images/organisation-notifications-create.png){ width="500" }
+</figure>
+
+
+1. Give a unique name to the notification
+2. Select a trigger
+3. Select a notifier and configure it
+
+Then click **confirm** to register the notification.
+
+
+## Operations on *Notifications*
+
+### Delete a *Notification*
+
+In the list of notification, click on the **delete** option:
+
+<figure markdown>
+  ![Delete a notification](./images/organisation-notifications-delete.png){ width="500" }
+</figure>
+
+### Disable a *Notificaiton*
+
+* In the list of *Notifications*, edit the one to disable: 
+
+<figure markdown>
+  ![Disable a notification](./images/organisation-notifications-delete.png){ width="500" }
+</figure>
+
+* Verify the result in the list of *Notifications*
+
+<figure markdown>
+  ![Disabled notification](./images/organisation-notifications-disabled.png){ width="500" }
+</figure>
