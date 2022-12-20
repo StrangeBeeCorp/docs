@@ -1,5 +1,10 @@
 # Release Notes of 5.0 series
 
+## 5.0.23 - 20th December 2022
+
+### Fixes
+
+- Downgrade logback library to version 1.3.5 which still supports Java 8
 
 ## 5.0.22 - 19th December 2022
 
