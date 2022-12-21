@@ -57,3 +57,17 @@ Custom Fields
   : Add Custom fields to the template. 
 
 ## Import/Export
+
+#### Export a *Case template* 
+*Case templates* can be exported and stored as JSON files by clicking on the option icon :fontawesome-solid-ellipsis: and selecting :fontawesome-solid-file-export: *Export case template*
+
+<figure markdown>
+![](./images/organisation-case-templates-3.png){ width#### ="500" }
+</figure>
+
+#### Import a *Case template*
+Click on the button *Import Case Template* and select the JSON formatted file to import.
+
+<figure markdown>
+![](./images/organisastion-case-templates-4.png){ width="500" }
+</figure>
