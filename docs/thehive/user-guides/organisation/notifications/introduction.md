@@ -79,7 +79,7 @@ Two others, are more dedicated to run *Actions*:
 * **RunAnalyzer**: run [selected Analyzers](./analyzers.md)
 * **RunResponder**: run [selected Responders](./responders.md)
 
-!!! Tip
+!!! Info "Some *Notifiers* require configuring *Endpoints*"
     Some *Notifiers* require at least one *endpoint* to be defined. Refer to the page dedicated to each *Notifier* to learn how to create related endpoints.
 
 
