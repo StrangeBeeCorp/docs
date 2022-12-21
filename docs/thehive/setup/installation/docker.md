@@ -125,6 +125,8 @@ services:
       - "minioadmin"
       - "--s3-secret-key"
       - "minioadmin"
+      - "--s3-bucket"
+      - "thehive"
       - "--s3-use-path-access-style"
       - "--no-config-cortex"
 
@@ -167,7 +169,9 @@ volumes:
 
 ```
 
-It's highly recommended to change the default credentials and secrets.
+!!! Info
+    * Do not forget to create the bucket "thehive" in MinIO
+    * It's highly recommended to change the default credentials and secrets.
 
 ## Usage in kubernetes
 

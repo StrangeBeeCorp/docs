@@ -2,12 +2,13 @@
 
 This page is a step by step installation and configuration guide to get an instance of TheHive up and running. This guide is illustrated with examples for DEB and RPM packages based systems and for installation from binary packages.
 
-!!! Warning "This guide describes the installation of a new instance of TheHive **only**"
+!!! Info "This guide describes the installation of a new instance of TheHive **only**"
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
-!!! Info
-    For security and long-term support reasons, we recommend using OpenJDK builds [distributed by Amazon](https://aws.amazon.com/corretto/). 
+!!! Danger "Read first"
+    * For security and long-term support reasons, we require  **using [Amazon Corretto](https://aws.amazon.com/corretto/) builds** (this is OpenJDK built and packaged by Amazon)
+    * Java version 8 is no longer supported
 
 === "DEB"
 

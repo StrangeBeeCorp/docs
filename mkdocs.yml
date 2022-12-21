@@ -155,22 +155,26 @@ nav:
     #     - 'Search Cases': thehive/user-guides/search/cases.md
     #     > Add new Search action here
     #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
-    #   - 'Organisation administration': 
-    #     - 'Manage Users': thehive/user-guides/organisation/users.md
-    #     - 'Case templates': thehive/user-guides/organisation/case-templates.md
-    #     - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
-    #     - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
-    #   - 'Notifications & endpoints':
-    #     - 'Manage endpoints': thehive/user-guides/notifications/endpoints.md
-    #     - 'Email to users': thehive/user-guides/notifications/email-to-users.md
-    #     - 'Email to specific address': thehive/user-guides/notifications/email-to-addr.md
-    #     - 'HTTP request endpoint': thehive/user-guides/notifications/http-request.md
-    #     - 'Webhook endpoint': thehive/user-guides/notifications/webhook.md
-    #     - 'Mattermost': thehive/user-guides/notifications/mattermost.md
-    #     - 'Slack': thehive/user-guides/notifications/slack.md
-    #     - 'Kafka': thehive/user-guides/notifications/kafka.md
-    #     - 'Run Analyzers': thehive/user-guides/notifications/analyzers.md
-    #     - 'Run Responders': thehive/user-guides/notifications/responders.md
+      - 'Org. administration': 
+        - 'Manage Users': thehive/user-guides/organisation/accounts.md
+        - 'Case templates': thehive/user-guides/organisation/case-templates.md
+        - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
+        - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
+
+        - 'Notifications & endpoints':
+          - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
+    #     - 'Manage endpoints': thehive/user-guides/organisation/notifications/endpoints.md
+          # - 'Email to users': thehive/user-guides/organisation/notifications/email-to-users.md
+          # - 'Email to specific address': thehive/user-guides/organisation/notifications/email-to-addr.md
+          # - 'HTTP request endpoint': thehive/user-guides/organisation/notifications/http-request.md
+          # - 'Webhook endpoint': thehive/user-guides/organisation/notifications/webhook.md
+          - 'Mattermost': thehive/user-guides/organisation/notifications/mattermost.md
+          - 'Slack': thehive/user-guides/organisation/notifications/slack.md
+          - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
+          # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
+          # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
+        # - 'Functions': thehive/user-guides/organisation/functions.md
+        - 'Attachments': thehive/user-guides/organisation/attachments.md
     - 'API':
       - 'API Documentation': thehive/api-docs/" target="_blank
       - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
