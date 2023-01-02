@@ -48,13 +48,13 @@ Tags
   : List of tags that will be added to the Cases created with this template
 
 Description
-  : Default description of the Case template. Default description of Cases created with this template if not modified. 
+  : Default description of Cases created with this template if not modified.
 
 Tasks
-  : Add tasks to the templates. They will will automatically added to the Case when created with this template
+  : Add tasks to the templates. They will be automatically added to the Case when created with this template
 
 Custom Fields
-  : Add Custom fields to the template. 
+  : Add Custom fields to the template. Default value can be set for Custom fields as well.
 
 ## Import/Export
 

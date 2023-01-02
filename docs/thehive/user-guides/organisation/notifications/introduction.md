@@ -3,7 +3,7 @@
 
 ## Definition
 
-A notification, is a described by:
+A notification is a described by:
 
 1. A *Trigger*
 2. One or more *Notifiers*
@@ -74,7 +74,7 @@ Several types of *Notifiers* are available in TheHive:
 * **Webhook**: send data to a chosen [webhook endpoint](./webhook.md)
 * **Kafka**: send data to a chosen [Kafka queue](./kafka.md)
 
-Two others, are more dedicated to run *Actions*:
+Two of them are dedicated to run Cortex Analyzers and Responders:
 
 * **RunAnalyzer**: run [selected Analyzers](./analyzers.md)
 * **RunResponder**: run [selected Responders](./responders.md)
@@ -84,6 +84,7 @@ Two others, are more dedicated to run *Actions*:
 
 
 ## Create a *Notification*
+Access to the Notifications list by opening the *Organisation* menu, and the *Notifications* tab.
 
 <figure markdown>
   ![Notifications list](./images/organisation-notifications.png){ width="500" }

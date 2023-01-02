@@ -12,7 +12,7 @@ Access to the list by opening the *Organisation* menu, and the *UI Configuration
 ### Configuration parameters
 
 **Hide Empty Case button**
-  : *disabled* by default. When enabled, users from the current Organisation cannot create **empty** cases
+  : *disabled* by default. When enabled, users from the current Organisation cannot create **empty** *Cases* and will have to chose between create a *Case* using a template or from an archive
 
 <figure markdown>
   ![Disable Empty Case](./images/organisation-ui-configuration-2.png){ width="450" }
@@ -24,7 +24,7 @@ Access to the list by opening the *Organisation* menu, and the *UI Configuration
 
 
 **Disallow refresh option in dashboards**
-  : *disabled* by default. When enabled, users from the current organisation cannot refresh dashboards
+  : *disabled* by default. When enabled, users from the current organisation cannot refresh dashboards. This could be useful if performance issues are encountered with the UI with a certain number of users
 
 <figure markdown>
   ![Don't refresh dashboards](./images/organisation-ui-configuration-3.png){ width="450" }
@@ -33,7 +33,7 @@ Access to the list by opening the *Organisation* menu, and the *UI Configuration
 
 
 **Disallow "All" period option in dashboards**
-  : *disabled* by default. When enabled, users from the current Organisation cannot use the *All* period in dashboards
+  : *disabled* by default. When enabled, users from the current Organisation cannot use the *All* period in dashboards. This could be useful if performance issues are encountered with the UI
 
 <figure markdown>
   ![Don't select period on dashboards](./images/organisation-ui-configuration-4.png){ width="450" }
@@ -54,4 +54,4 @@ Access to the list by opening the *Organisation* menu, and the *UI Configuration
 </figure>
 
 **Define the default date format used to display dates**
-  : Select how you want all dates in the application are displayed to users of the current Organisaiton
+  : Select which format you want the dates to be displayed within the current organisation

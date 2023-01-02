@@ -31,7 +31,7 @@ Login
   : User login
 
 Email
-  : email address of the user. _Login_ is used if no email is filled there
+  : email address for the account. This is used to send notifications or reset password links to users. _Login_ is used if no email is filled there
 
 Type
   : Type of the account. _Normal_ or _Service_. A _Service_ account cannot open interactive session
@@ -52,10 +52,10 @@ Permissions
   : List of permissions included in the profile
 
 Password
-  : Create of update the password of the user
+  : Create or update the password of the user
 
 Reset Password
-  : If the application is configured with a [SMTP server](../../administration/smtp.md), send an email with a magic link to the user
+  : If the application is configured with a [SMTP server](../../administration/smtp.md), send an email with a magic link to the user. link is active for a short time period.
 
 Sessions
   : List of opened interactive sessions. Click delete to close a session

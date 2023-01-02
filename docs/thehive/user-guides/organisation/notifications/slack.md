@@ -32,11 +32,11 @@ When creating a *Notification* select *Slack* as *Notifier* and complete the for
   ![Choose Slack](./images/organisation-notifications-slack-1.png){ width="500" }
 </figure>
 
-TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:
+TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most form fields:
 
 * **Endpoint**: choose the endpoint to use
 * **Username**: choose a username. Click on *add variable* if you want to use an information from the input data. This will override the default username configured in the endpoint
-* **Channel**: choose the target channel on Mattermost to send data to. Click on *add variable* if you want to use an information from the input data. This will override the default channel configured in the endpoint
+* **Channel**: choose the target channel on Slack to send data to. Click on *add variable* if you want to use an information from the input data. This will override the default channel configured in the endpoint
 * **Template**: * Available format are: *JSON*, *Markdown* and *Plain text* 
     * Click *Add variable* to select a variable to insert in the template
 

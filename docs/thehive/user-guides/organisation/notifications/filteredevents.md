@@ -2,7 +2,7 @@
 
 <figure markdown>
   ![Filtered Event](./images/organisation-notifications-filteredevent.png){ width="500" }
-  <figcaption>Filtered event example: "Case severity has been updated to Hight or Critical</figcaption>
+  <figcaption>Filtered event example: "Case severity has been updated to High or Critical"</figcaption>
 </figure>
 
 Selecting “FilteredEvent” opens an empty field where we set our custom filter. The filters will apply to the audit of every actions that are happening in your organization. When there is a match, a notification is sent. 
