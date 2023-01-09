@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1
+  version: v1-5.0.24-1
   x-logo:
     url: /static/logo-thehive-doc.svg
     altText: TheHive Logo
@@ -136,6 +136,9 @@ tags:
     ### Queries for ObservableType
     - Initial Queries:
       - `listObservableType`
+- name: User
+  description: "\nYou can use `_id` or `login` to refer to a user (in userId fields)\
+    \ \n"
 servers:
 - url: /
 paths:
@@ -395,6 +398,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -487,6 +491,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -575,6 +580,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -852,12 +858,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: alertId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -947,6 +955,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -1040,6 +1049,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -1133,6 +1143,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -1326,6 +1337,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: password
         in: query
@@ -1584,6 +1596,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -1676,6 +1689,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -1764,6 +1778,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -1947,6 +1962,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -2046,6 +2062,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -2135,6 +2152,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -2224,12 +2242,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: caseId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -2421,6 +2441,8 @@ paths:
                   type: array
                   items:
                     type: string
+                    description: The _id of the entity or its 'name' (depends of the
+                      entity)
                     example: ~354
         required: true
       responses:
@@ -2504,6 +2526,38 @@ paths:
     post:
       tags:
       - Observable
+      description: |2+
+
+        Add an observable to an existing case
+
+        *Note*: With TheHive 5.0, you can only upload one file at a time
+
+        ### With python (requests)
+
+        Adding a file observable to a case using python:
+
+        ```python
+        import json
+        import requests
+
+        # Define path to your file to create observable object
+        attachment = {'attachment': open('/path/to/file.txt', 'rb')}
+        observable = {'dataType': 'file','message': 'Files from infected server', 'tlp': 3}
+
+        # Send the request
+        response = requests.post(
+            f'{thehive_url}/api/v1/case/{case_id}/observable',
+            data={
+                '_json': json.dumps(observable),
+            },
+            files = attachment,
+            headers={ 'Authorization': f'Bearer {thehive_api_key}' }
+        )
+
+        # Check response code
+        response.raise_for_status()
+        ```
+
       operationId: Create Observable in Case
       parameters:
       - name: caseId
@@ -2511,6 +2565,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -2616,6 +2671,37 @@ paths:
     post:
       tags:
       - Observable
+      description: |2+
+
+        Add an observable to an existing alert
+
+        *Note*: With TheHive 5.0, you can only upload one file at a time
+
+        ### With python (requests)
+
+        ```python
+
+        import json
+        import requests
+
+        # Define path to your file to create observable object
+        attachment = {'attachment': open('/path/to/file.txt', 'rb')}
+        observable = {'dataType': 'file','message': 'Files from infected server', 'tlp': 3}
+
+        # Send the request
+        response = requests.post(
+            f'{thehive_url}/api/v1/alert/{alert_id}/observable',
+            data={
+                '_json': json.dumps(observable),
+            },
+            files = attachment,
+            headers={ 'Authorization': f'Bearer {thehive_api_key}' }
+        )
+
+        # Check response code
+        response.raise_for_status()
+        ```
+
       operationId: Create Observable in Alert
       parameters:
       - name: alertId
@@ -2623,6 +2709,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -2735,6 +2822,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -2827,6 +2915,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -2915,6 +3004,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -3098,6 +3188,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -3197,6 +3288,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -3289,6 +3381,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -3377,6 +3470,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -3560,6 +3654,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -3653,12 +3748,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: orgId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -3748,12 +3845,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: orgId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -3843,6 +3942,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -3953,6 +4053,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -4041,6 +4142,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4136,6 +4238,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4231,12 +4334,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -4418,6 +4523,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -4506,6 +4612,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4601,6 +4708,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4700,12 +4808,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: pageId or slug
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -4794,12 +4904,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: pageId or slug
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4895,6 +5007,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4994,6 +5107,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -5093,6 +5207,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5181,6 +5296,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -5277,6 +5393,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -5370,6 +5487,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -5469,6 +5587,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5557,6 +5676,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -5744,6 +5864,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -5836,6 +5957,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5924,6 +6046,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6019,6 +6142,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6118,6 +6242,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6217,6 +6342,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -6305,6 +6431,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6492,6 +6619,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -6584,6 +6712,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -6672,6 +6801,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6767,6 +6897,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6866,6 +6997,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -6986,6 +7118,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -7106,6 +7239,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -7201,6 +7335,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -7321,6 +7456,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -7444,6 +7580,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -7569,6 +7706,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: attachmentId
         in: path
@@ -8727,6 +8865,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -8819,6 +8958,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -8907,6 +9047,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -9002,12 +9143,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: organisation
         in: query
         required: false
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -9097,6 +9240,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -9196,6 +9340,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -9291,6 +9436,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -9386,6 +9532,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -9394,6 +9541,7 @@ paths:
             text/plain:
               schema:
                 type: string
+              example: GbxDw3j3qXi5MMCJmLEetMn5ilIjjWtZ
         '400':
           description: BadRequest
           content:
@@ -9478,6 +9626,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -9567,6 +9716,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -9575,6 +9725,7 @@ paths:
             text/plain:
               schema:
                 type: string
+              example: GbxDw3j3qXi5MMCJmLEetMn5ilIjjWtZ
         '400':
           description: BadRequest
           content:
@@ -9660,6 +9811,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -9846,6 +9998,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -9938,6 +10091,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -10033,6 +10187,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -10127,12 +10282,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: otherOrgId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -10227,12 +10384,14 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: otherOrgId
         in: path
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -10322,6 +10481,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -10416,6 +10576,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -10778,6 +10939,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -10872,6 +11034,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -11059,6 +11222,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -11147,6 +11311,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -11334,6 +11499,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -11422,6 +11588,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -11707,6 +11874,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -11796,6 +11964,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -11885,6 +12054,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -11977,6 +12147,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -12158,6 +12329,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -12250,6 +12422,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -12338,6 +12511,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -12433,6 +12607,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -12531,6 +12706,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -12635,6 +12811,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -12735,6 +12912,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -12830,6 +13008,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -12927,6 +13106,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -13021,6 +13201,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -13116,6 +13297,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -13213,6 +13395,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -13307,6 +13490,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -13402,6 +13586,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -13490,6 +13675,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -13591,6 +13777,8 @@ paths:
                   type: array
                   items:
                     type: string
+                    description: The _id of the entity or its 'name' (depends of the
+                      entity)
                     example: ~354
         required: true
       responses:
@@ -15113,6 +15301,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -15379,6 +15568,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -15646,6 +15836,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -15734,6 +15925,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -15929,6 +16121,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -16021,6 +16214,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -16110,6 +16304,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -16202,6 +16397,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -16909,6 +17105,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -17376,6 +17573,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -17469,6 +17667,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -17746,6 +17945,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -17834,6 +18034,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -17938,6 +18139,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -18201,6 +18403,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: mispName
         in: path
@@ -18467,6 +18670,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
           description: List of alert ids
     InputAnalyzerTemplate:
@@ -18557,7 +18761,6 @@ components:
       - sourceRef
       - title
       - description
-      - customFields
       type: object
       properties:
         type:
@@ -18652,7 +18855,6 @@ components:
       required:
       - title
       - description
-      - customFields
       type: object
       properties:
         title:
@@ -18830,7 +19032,6 @@ components:
     InputCreateCaseTemplate:
       required:
       - name
-      - customFields
       type: object
       properties:
         name:
@@ -18928,7 +19129,6 @@ components:
       required:
       - dataType
       - data
-      - attachment
       type: object
       properties:
         dataType:
@@ -18943,6 +19143,7 @@ components:
           format: datetime_ms
           example: 1640000000000
         attachment:
+          description: Attachment must be set if the observable `dataType` has `isAttachment=true`
           oneOf:
           - $ref: '#/components/schemas/InputAttachment'
           - type: array
@@ -19035,6 +19236,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
           description: Names or ids of the organisations
     InputCreateShares:
@@ -19202,8 +19404,6 @@ components:
         observableRule:
           type: string
     InputImportCase1:
-      required:
-      - customFields
       type: object
       properties:
         caseTemplate:
@@ -19262,7 +19462,7 @@ components:
       - ERROR
       - 'OFF'
     InputObservableData:
-      description: Data for the observable when dataType is not of type file
+      description: Either `data` or `attachment` must be set depending on the dataType
       oneOf:
       - type: array
         items:
@@ -19398,6 +19598,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
           description: Names or ids of the organisations
     InputSearch:
@@ -19579,6 +19780,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
         type:
           type: string
@@ -19773,6 +19975,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
         title:
           type: string
@@ -19945,6 +20148,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
         dataType:
           type: string
@@ -20072,6 +20276,7 @@ components:
           type: array
           items:
             type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
         title:
           type: string
@@ -20258,6 +20463,7 @@ components:
       properties:
         toOrganisation:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
         linkType:
           type: string
