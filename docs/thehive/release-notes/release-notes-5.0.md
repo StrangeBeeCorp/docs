@@ -1,5 +1,22 @@
 # Release Notes of 5.0 series
 
+## 5.0.24 - 9th January 2023
+
+### Fixes
+
+**UI:**
+
+- Fix issue in slack notifier form
+- Fix colored tags in several parts of the UI: tags should now be more colorful
+
+**Backend:**
+
+- When changing a tag name, the name is also changed in the cases and alerts
+- When an alert or case changes of stage, the stage is added to the audit details
+- Slack notifier now correctly sends the username
+- Update analyzer reports
+- Improve api docs
+
 ## 5.0.23 - 20th December 2022
 
 ### Fixes
