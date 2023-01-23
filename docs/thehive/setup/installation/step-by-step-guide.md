@@ -54,7 +54,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
         !!! Example ""
             ```bash
             wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
-            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
+            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
             ```
 
     2. Install the package
@@ -80,7 +80,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
             ```bash title="/etc/yum.repos.d/cassandra.repo"
             [cassandra]
             name=Apache Cassandra
-            baseurl=https://downloads.apache.org/cassandra/redhat/40x/
+            baseurl=https://redhat.cassandra.apache.org/40x/
             gpgcheck=1
             repo_gpgcheck=1
             gpgkey=https://downloads.apache.org/cassandra/KEYS
