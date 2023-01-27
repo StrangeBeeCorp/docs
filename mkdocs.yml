@@ -124,7 +124,7 @@ nav:
           - 'Local': thehive/administration/authentication/local.md
           - 'LDAP': thehive/administration/authentication/ldap.md
           - 'AD': thehive/administration/authentication/ad.md
-      #     - 'SAML': thehive/administration/authentication/saml.md
+          - 'SAML': thehive/administration/authentication/saml.md
           - 'OAUTH2': thehive/administration/authentication/oauth2.md
         - 'SMTP': thehive/administration/smtp.md
       - 'Entities management':
