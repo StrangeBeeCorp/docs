@@ -1,5 +1,25 @@
 # Release Notes of 5.0 series
 
+## 5.0.25 - 2nd February 2023
+
+### Fixes
+
+**Backend:**
+
+ - Fix TLP and PAP of MISP events
+ - Fix download of attachment when content type is malformed
+ - TheHive 3 migration: Fix parsing of old format of Cortex jobs
+ - Fix serialisation of configuration that contains a pipe character
+
+**UI:**
+
+ - Remove the limit on the number of techniques when selecting a TTP tactic
+
+**Docker:**
+
+ - Add parameter for Elasticsearch authentication
+
+
 ## 5.0.24 - 9th January 2023
 
 ### Fixes
