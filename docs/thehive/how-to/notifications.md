@@ -88,5 +88,20 @@ Use the "add variable" bouton to see the list of available variables. Example wi
 
 ![Notifications management page](images/notifications/notifications_mail_example.png)
 
+The templating engine is based on [mustache](https://mustache.github.io) so you can add some logic to your template. Example:
+
+```
+{{#if (eq object.severity 2) }}MEDIUM {{else}}Other {{/if}}
+```
+
+Some helpers are available to format your data:
+
+| Helper | Description | Usage | Output |
+|---     |---          |---    |---     |
+| `tlpLabel` | Format the `tlp` field of the object | `{{ tlpLabel object.tlp }} ` | `Amber` |
+| `papLabel` | Format the `pap` field of the object | `{{ papLabel object.pap }} ` | `Amber` |
+| `severityLabel` | Format the `severity` field of the object | `{{ severityLabel object.severity }} ` | `Critical` |
+| `dateFormat` | Format a date field of the object, uses [java date time patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html) | `{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}` | `jeudi 01 septembre 2022` |
+
 
 See our [Leveraging TheHive 5 notifications capabilities](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-1-2/) blog articles to know more about Notifications
