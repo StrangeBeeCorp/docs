@@ -4,9 +4,9 @@
 !!! Danger "*READ FIRST*"
     
     
-    1. We strongly recommend you perform a full database backup before updating. Please follow the [backup instructions](../operations/backup-restore.md).
-    2. Once updated to TheHive 5.1, your TheHive instance cannot be _downgraded_, meaning you cannot go back to TheHive 5.0.x, unless you restore your data from your TheHive 5.0.x backup.
-    3. When updating an existing TheHive 5.0.x instance, the first start will apply a database evolution (schema and data). This operation might take some time depending on your database size.
+    1. We strongly recommend you perform a full database backup before upgrading. Please follow the [backup instructions](../operations/backup-restore.md).
+    2. Once upgraded to TheHive 5.1, your TheHive instance cannot be _downgraded_, meaning you cannot go back to TheHive 5.0.x, unless you restore your data from your TheHive 5.0.x backup.
+    3. When upgrading an existing TheHive 5.0.x instance, the first application launch will apply a database evolution (schema and data). This operation might take some time depending on your database size.
 
 
 ## Overview
@@ -16,7 +16,7 @@ This guide provides instructions to upgrade an existing TheHive 5.0.x instance t
 
 ## Upgrade instructions
 
-TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to upgrade to version 5.1.x, you need to update your repository configuration as described below. Docker images have specific version 5.1 tags.
+TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to upgrade to version 5.1.x, you need to edit your repository configuration as described below. Docker images have specific version 5.1 tags.
 
 
 === "DEB"
@@ -27,7 +27,7 @@ TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to
         wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
         ```
 
-        2. Update the file `/etc/apt/sources.list.d/strangebee.list` and adjust the repository address as follows
+        2. Edit the file `/etc/apt/sources.list.d/strangebee.list` and adjust the repository address as follows
         ```
         deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.1 main
         ```
@@ -46,7 +46,7 @@ TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to
         sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
         ```
 
-        2. Update the file `/etc/apt/sources.list.d/strangebee.list` and adjust the repository address to obtain the follow configuration:
+        2. Edit the file `/etc/yum.repos.d/strangebee.repo` and adjust the repository address to obtain the follow configuration:
 
             !!! Example ""
                 ```title="/etc/yum.repos.d/strangebee.repo"
@@ -75,16 +75,5 @@ TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to
 
         !!! Warning "*Docker tags*"
         
-            1. The `strangebee/thehive:latest` tag remains associated to TheHive 5.0.x
+            1. The `strangebee/thehive:latest` tag remains associated with TheHive 5.0.x versions
             2. A new `strangebee/thehive:5.1` tag is now available and associated with the latest `5.1.x` version
-
-        
-                
-
-<!-- ## Install using Docker
-
-Use the image named `strangebee/thehive:5.1` to run thive version. For example: 
-
-```bash
-docker run --rm -p 9000:9000 strangebee/thehive:5.1 
-``` -->
