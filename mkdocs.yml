@@ -85,9 +85,10 @@ nav:
       - 'Running with Docker': thehive/setup/installation/docker.md
       # - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/kubernetes.md
-      - 'Upgrade or migrate from older versions':
-        - thehive/setup/installation/upgrade-from-4.x.md
-        - thehive/setup/installation/migration.md
+    - 'Version Upgrades':
+      - thehive/setup/installation/upgrade-from-5.0.x.md
+      - thehive/setup/installation/upgrade-from-4.x.md
+      - thehive/setup/installation/migration.md
     - 'Configuration & Operations':
       - 'Configuration':
         - 'Database & index': thehive/setup/configuration/database.md
