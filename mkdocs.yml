@@ -163,6 +163,7 @@ nav:
         - 'Case templates': thehive/user-guides/organisation/case-templates.md
         - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
+        - 'Functions': thehive/user-guides/organisation/functions.md
 
         - 'Notifications & endpoints':
           - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
@@ -183,6 +184,7 @@ nav:
       - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
+      - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
   - 'Resources': 
       - resources/demo.md
