@@ -102,7 +102,7 @@ Connect on [http://localhost:9000] to see the login page.
 !!! Info "Default credentials"
     Default admin credentials are `admin@thehive.local` / `secret`
 
-We recommend to always set the version of your docker image in production scenario. `latest` tag will refer to 5.0 version.
+We recommend to always set the version of your docker image in production scenario. `latest` tag will refer to the latest 5.0.x version.
 
 !!! Info
     * Do not forget to create the bucket "thehive" in MinIO
