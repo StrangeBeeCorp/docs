@@ -137,11 +137,10 @@ All other settings are available in the application WebUI.
 
 !!! Info "F.A.Q"
     ### Can I upgrade from TheHive 4.0.x ?
-    _Yes, all TheHive 4.x can be updated to TheHive 5; the documentation is coming soon!_
+    _Yes, all TheHive 4.x can be updated to TheHive 5; Find how to update in [this dedicated guide](./installation/upgrade-from-4.x.md)._
 
     ### I use TheHive 3.x, can I upgrade my data to TheHive 5 ? 
     _TheHive 3 is out of support since 31 December 2021. Please contact [StrangeBee](mailto:contact@strangebee.com) for further assistance._
-    __
 
 
 
