@@ -177,7 +177,7 @@ nav:
           - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
           # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
           # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
-        # - 'Functions': thehive/user-guides/organisation/functions.md
+        - 'Functions': thehive/user-guides/organisation/functions.md
         - 'Attachments': thehive/user-guides/organisation/attachments.md
     - 'API':
       - 'API Documentation': thehive/api-docs/" target="_blank
