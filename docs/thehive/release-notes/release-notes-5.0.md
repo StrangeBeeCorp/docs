@@ -1,5 +1,26 @@
 # Release Notes of 5.0 series
 
+## 5.0.26 - 27th February 2023
+
+### Fixes
+
+**UI:**
+
+- Fix issue that prevented closing a case when a custom field was not set
+- Fix indentation issue in TTP list
+- Fix overflow in pages with long content
+- Fix loading of multiple comments
+- Allow importing observables from analyzers when running on an alert
+- Improve error message when closing a case with mandatory custom field
+- Fix style for custom field input
+- Typo fixes
+
+**Backend:**
+
+- Fix v1 api for page which used the former v0 style: new fields were added and some fields are now marked as deprecated and will be removed in the future
+- Add caseId in analyer input: field `message` should now contain the observable's parent id (alert or case)
+- Fix a message serialization error when running in cluster
+
 ## 5.0.25 - 2nd February 2023
 
 ### Fixes

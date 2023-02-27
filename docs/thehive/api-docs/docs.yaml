@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1-5.0.24-1
+  version: v1-5.0.26
   x-logo:
     url: /static/logo-thehive-doc.svg
     altText: TheHive Logo
@@ -14640,6 +14640,94 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/admin/index/vertex/{vertexId}:
+    post:
+      tags:
+      - Admin
+      operationId: Reindex vertex
+      parameters:
+      - name: vertexId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/admin/index/{name}/rebuild:
     post:
       tags:
@@ -21657,12 +21745,14 @@ components:
     OutputPage:
       required:
       - _id
+      - _type
+      - _createdBy
+      - _createdAt
       - id
       - createdBy
       - createdAt
       - title
       - content
-      - _type
       - slug
       - order
       - category
@@ -21670,25 +21760,42 @@ components:
       properties:
         _id:
           type: string
+        _type:
+          type: string
+        _createdBy:
+          type: string
+        _updatedBy:
+          type: string
+        _createdAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _updatedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
         id:
           type: string
+          deprecated: true
         createdBy:
           type: string
+          deprecated: true
         updatedBy:
           type: string
+          deprecated: true
         createdAt:
           type: integer
           format: datetime_ms
           example: 1640000000000
+          deprecated: true
         updatedAt:
           type: integer
           format: datetime_ms
           example: 1640000000000
+          deprecated: true
         title:
           type: string
         content:
-          type: string
-        _type:
           type: string
         slug:
           type: string
