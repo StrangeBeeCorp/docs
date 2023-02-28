@@ -141,7 +141,6 @@ Follow [this page](./step-by-step-guide.md#elasticsearch) to install Elasticsear
 For each node, update configuration files  `/etc/cassandra/elasticsearch.yml` with the following parameters, and update `network.host` accordingly. 
 
 !!! Example ""
-
     ```yaml hl_lines="8"
     http.host:  0.0.0.0
     network.bind_host:  0.0.0.0
@@ -212,29 +211,34 @@ The following procedure should be applied **to all servers** belonging the the c
 
 Create a dedicated user and group for MinIO. 
 
-```bash
-adduser minio-user
-addgroup minio-user
-```
+!!! Example ""
+    ```bash
+    adduser minio-user
+    addgroup minio-user
+    ```
 
 ### Create at least 2 data volumes on each server
 
 Create 2 folders on each server:
 
-```bash
-mkdir -p /srv/minio/{1,2}
-chown -R minio-user:minio-user /srv/minio
-```
+!!! Example ""
+
+    ```bash
+    mkdir -p /srv/minio/{1,2}
+    chown -R minio-user:minio-user /srv/minio
+    ```
 
 ### Setup hosts files 
 
 Edit `/etc/hosts` of all servers
 
-```
-ip-minio-1     minio1
-ip-minio-2     minio2
-ip-minio-3     minio3
-```
+!!! Example ""
+
+    ``` title="/etc/hosts"
+    ip-minio-1     minio1
+    ip-minio-2     minio2
+    ip-minio-3     minio3
+    ```
 
 ### installation
 
@@ -254,21 +258,25 @@ Visit [https://dl.min.io/]() to find last version of required packages.
 
 Create or edit file `/etc/default/minio`
 
-```conf title="/etc/default/minio"
-MINIO_OPTS="--address :9100 --console-address :9001"
-MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
-MINIO_ROOT_USER=thehive
-MINIO_ROOT_PASSWORD=password
-MINIO_SITE_REGION="us-east-1"
-```
+!!! Example ""
+
+    ```conf title="/etc/default/minio"
+    MINIO_OPTS="--address :9100 --console-address :9001"
+    MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
+    MINIO_ROOT_USER=thehive
+    MINIO_ROOT_PASSWORD=password
+    MINIO_SITE_REGION="us-east-1"
+    ```
 
 ### Enable and start the service
 
-```bash
-systemctl daemon-reload
-systemctl enable minio
-systemctl start minio.service
-```
+!!! Example ""
+
+    ```bash
+    systemctl daemon-reload
+    systemctl enable minio
+    systemctl start minio.service
+    ```
 
 ### Prepare the service for TheHive
 
@@ -304,27 +312,28 @@ Unlike the single node configuration, the first thing to configure is _Akka_ to 
 
 In this guide, we are considering the node 1 to be the master node. Start by configuring `akka` component by editing the `/etc/thehive/application.conf` file **of each node** like the following:
 
-```yaml title="/etc/thehive/application.conf"  hl_lines="8 14 15 16"
-akka {
-  cluster.enable = on 
-  actor {
-    provider = cluster
-  }
-remote.artery {
-  canonical {
-    hostname = "<My IP address>" # (1)
-    port = 2551
-  }
-}
-# seed node list contains at least one active node
-cluster.seed-nodes = [
-                      "akka://application@<Node 1 IP address>:2551",  # (2)
-                      "akka://application@<Node 2 IP address>:2551",
-                      "akka://application@<Node 3 IP address>:2551"
-                     ]
-cluster.min-nr-of-members = 2    # (3)
-}
-```
+!!! Example ""
+    ```yaml title="/etc/thehive/application.conf"  hl_lines="8 14 15 16"
+    akka {
+      cluster.enable = on 
+      actor {
+        provider = cluster
+      }
+    remote.artery {
+      canonical {
+        hostname = "<My IP address>" # (1)
+        port = 2551
+      }
+    }
+    # seed node list contains at least one active node
+    cluster.seed-nodes = [
+                          "akka://application@<Node 1 IP address>:2551",  # (2)
+                          "akka://application@<Node 2 IP address>:2551",
+                          "akka://application@<Node 3 IP address>:2551"
+                        ]
+    cluster.min-nr-of-members = 2    # (3)
+    }
+    ```
 
 1.    Set the IP address of the node
 2.    The value of this parameter should be similar on all nodes
@@ -334,50 +343,31 @@ cluster.min-nr-of-members = 2    # (3)
 
 Update the configuration of thehive accordingly in `/etc/thehive/application.conf` :
 
-```yaml title="/etc/thehive/application.conf" hl_lines="7"
-## Database configuration
-db.janusgraph {
-  storage {
-    ## Cassandra configuration
-    # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
-    backend = cql
-    hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"] #(1)
-    # Cassandra authentication (if configured)
-    username = "thehive"
-    password = "PASSWORD"
-    cql {
-      cluster-name = thp
-      keyspace = thehive
-    }
-  }
-```
+!!! Example ""
+    ```yaml title="/etc/thehive/application.conf" hl_lines="7"
+    ## Database configuration
+    db.janusgraph {
+      storage {
+        ## Cassandra configuration
+        # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
+        backend = cql
+        hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"] #(1)
+        # Cassandra authentication (if configured)
+        username = "thehive"
+        password = "PASSWORD"
+        cql {
+          cluster-name = thp
+          keyspace = thehive
+        }
+      }
+    ```
 
 1.  Set IP addresses of Cassandra nodes
 
 #### MinIO S3 file storage
-For each TheHive node of the cluster, add the relevant storage configuration. Example for the first node: 
+For each TheHive node of the cluster, add the relevant storage configuration. Example for the first node:
 
-=== "With TheHive 5.0.x"
-
-    ```yaml title="/etc/thehive/application.conf"
-    storage {
-      provider: s3
-      s3 {
-        bucket = "thehive"
-        readTimeout = 1 minute
-        writeTimeout = 1 minute
-        chunkSize = 1 MB
-        endpoint = "http://<IP_MINIO_1>:9100"
-        accessKey = "thehive"
-        secretKey = "password"
-        region = "us-east-1"
-      }
-    }
-    alpakka.s3.access-style = path
-    ```
-
-=== "With TheHive 5.1.0 or higher"
-
+!!! Example ""
     ```yaml title="/etc/thehive/application.conf"
     storage {
       provider: s3
@@ -397,14 +387,15 @@ For each TheHive node of the cluster, add the relevant storage configuration. Ex
     }
     ```
 
-!!! Info 
     - The configuration is backward compatible
     - Either each TheHive server connects to one MinIO server, or **use a load balancer** to distribute connections to all nodes of the cluster (see [the example for TheHive](#load-balancers-with-haproxy)).
 
-### Start the service 
-```bash
-systemctl start thehive
-```
+### Start the service
+
+!!! Example ""
+    ```bash
+    systemctl start thehive
+    ```
 
 ## Load balancers with HAProxy
 ![](images/load-balancers-thehive.png){ width=400 }
@@ -415,7 +406,8 @@ Below is an non-optimized example of what should be added in haproxy configurati
 In this example, the service is bound on TCP port 80. Bind the service on the virtual IP address that will be set up by _keepalived_ service ([see next part](#virtual-ip-with-keypalived)):
 
 !!! Example ""
-    ```text
+    
+    ```yaml
     # Listen on all interfaces, on port 80/tcp
     frontend thehive-in
             bind <VIRTUAL_IP>:80                # (1)
@@ -428,8 +420,8 @@ In this example, the service is bound on TCP port 80. Bind the service on the vi
                 server node3 THEHIVE-NODE3-IP:9000 check
     ```
 
-    1.  Configure the virtual IP address dedicated to the cluster
-    2.  Configure all nodes IP addresses and port of TheHive
+    1.   Configure the virtual IP address dedicated to the cluster
+    2.   Configure all nodes IP addresses and port of TheHive
 
 
 ## Virtual IP with Keypalived
@@ -440,6 +432,7 @@ If you decide to use _keepalived_ to setup a virtual IP address for load balance
 This service checks if the load balancers (for example [HAProxy](#load-balancers-with-haproxy)), installed on the same system, is running or not. In our case, LB1 is master so the virtual IP address is on LB1 server. if haproxy service is not running any more, keepalived on server LB2 is setting up the virtual ip address until haproxy service on LB1 server is running again.
 
 !!! Example "" 
+    
     ```yaml hl_lines="12"
     vrrp_script chk_haproxy {     # (1)
           script "/usr/bin/killall -0 haproxy"  # cheaper than pidof
@@ -463,8 +456,6 @@ This service checks if the load balancers (for example [HAProxy](#load-balancers
     1.   Requires keepalived version > 1.1.13
     2.   Use `priority 100` for a secondary node
     3.   :fontawesome-solid-triangle-exclamation: This is an example. Update with your IP address and broadcast address
-
-
 
 
 ## Troubleshooting

@@ -557,9 +557,9 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
     1. Ensure thehive user has permissions on the destination folder
 
         !!! Example ""
-        ```bash
-        chown -R thehive:thehive /opt/thp/thehive/files
-        ```
+            ```bash
+            chown -R thehive:thehive /opt/thp/thehive/files
+            ```
 
     2. Default values in the configuration file 
 
