@@ -158,6 +158,7 @@ nav:
     #     - 'Search Cases': thehive/user-guides/search/cases.md
     #     > Add new Search action here
     #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
+      - 'Indicators & KPIs': thehive/user-guides/indicators.md
       - 'Org. administration': 
         - 'Manage Users': thehive/user-guides/organisation/accounts.md
         - 'Case templates': thehive/user-guides/organisation/case-templates.md
