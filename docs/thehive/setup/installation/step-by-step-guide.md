@@ -4,6 +4,27 @@ This page is a step by step installation and configuration guide to get an insta
 
 !!! Info "This guide describes the installation of a new instance of TheHive **only**"
 
+## Dependencies
+
+This process requires few programs beeing already installed on the system.
+
+=== "DEB"
+
+    !!! Example ""
+
+        ```bash
+        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
+        ``` 
+
+=== "RPM"
+
+    !!! Example ""
+
+        ```bash
+        yum install pkg-install gnupg chkconfig python3-pip git 
+        ```
+
+
 ## :fontawesome-brands-java: Java Virtual Machine
  
 !!! Danger "Read first"
