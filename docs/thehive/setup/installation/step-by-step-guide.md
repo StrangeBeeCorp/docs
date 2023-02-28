@@ -157,7 +157,9 @@ By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
 
 #### Additional configuration : disable tombstones  (for standalone server **ONLY**)
-    
+
+!!! Warning "This action should be performed after the installation and the first start of TheHive"
+
 If you are installing a standalone server, tombstones can be disabled. 
 
 1. Check `gc_grace_seconds` value
@@ -167,9 +169,11 @@ If you are installing a standalone server, tombstones can be disabled.
         cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
         ```
 
+        **Note**: default credentials for Cassandra database: _cassandra/cassandra_ 
+
     Results should look like this: 
 
-    ```
+    ```output
                 table_name       | gc_grace_seconds
         -------------------------+------------------
                     edgestore    |           864000
@@ -203,7 +207,7 @@ If you are installing a standalone server, tombstones can be disabled.
 
     Results should look like this: 
 
-    ```
+    ```output
                 table_name       | gc_grace_seconds
         -------------------------+------------------
                     edgestore    |           0
@@ -226,7 +230,7 @@ For additional configuration options, refer to:
 
 ## :fontawesome-solid-list: Elasticsearch
 
-TheHive requires Elasticsearch to manage data indices. 
+TheHive requires Elasticsearch to manage data indices.
 
 !!! Info "Elasticsearch 7.x only is supported"
 
@@ -337,6 +341,7 @@ add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines
 
     ```bash
     sudo systemctl start elasticsearch
+    sudo systemctl enable elasticsearch
     ```
 
     !!! Tip "Remove existing data before starting"
