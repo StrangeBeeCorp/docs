@@ -9,7 +9,7 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
-## 5.1.0
+## 5.1.0 - 1st March 2023
 
 ### Breaking changes
 
