@@ -5,7 +5,7 @@ TheHive is published and available as many binary packages formats:
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
 ```text title="/etc/apt/source.list.d/strangebee.list"
-deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main
+deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.1 main
 ```
 
 ## :material-redhat: Red Hat Enterprise Linux / :material-fedora: Fedora
@@ -15,7 +15,7 @@ deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.s
 enabled=1
 priority=1
 name=StrangeBee RPM repository
-baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
+baseurl=https://rpm.strangebee.com/thehive-5.1/noarch
 gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
 gpgcheck=1
 ```

@@ -32,7 +32,8 @@ Several options exist to authenticate users:
 - [local accounts](local.md): manage a local user database where you can configure the password policy
 - [Using LDAP directory](ldap.md): configure TheHive to use a LDAP server 
 - [Using Active directory](ad.md): configure TheHive to use a LDAP server
-- [Oauth2](oauth2.md): Use single signon through external Oauth2 server to authenticate users
+- [SAML](saml.md): Use single sign-on through on or more SAML providers to authenticate users
+- [Oauth2](oauth2.md): Use single sign-on through external Oauth2 server to authenticate users
 
 !!! Info "Use several providers"
     ![](images/authentication-proviers-order.png)

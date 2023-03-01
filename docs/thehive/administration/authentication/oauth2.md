@@ -10,7 +10,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
 | Parameter                                           | Description                                                  |
 |-----------------------------------------------------|--------------------------------------------------------------|
 | Client ID                                           | client ID in the OAuth2 server                               |
-| Client decret                                       | client secret in the OAuth2 server                           |
+| Client secret                                       | client secret in the OAuth2 server                           |
 | TheHive redirect URL                                | the url of TheHive AOuth2 page ( `https://xxx/api/ssoLogin`) |
 | Authorization URL                                   | the url of the OAuth2 server                                 |
 | Token URL                                           | the token url of the OAuth2 server                           |
@@ -29,7 +29,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         |-----------------------------------------------------|---------------------------------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                                         |
         | Client decret                                       | `CLIENT_SECRET`                                                     |
-        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                     |
+        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                    |
         | Authorization URL                                   | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth     |
         | Token URL                                           | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token    |
         | User information URL                                | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo |

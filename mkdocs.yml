@@ -7,6 +7,7 @@ theme:
   logo: 'assets/images/strangebee.svg'
   features:
     - content.code.annotate
+    - content.tabs.link
     - navigation.sections
     - navigation.instant
     - navigation.indexes
@@ -84,9 +85,10 @@ nav:
       - 'Running with Docker': thehive/setup/installation/docker.md
       # - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/kubernetes.md
-      - 'Upgrade or migrate from older versions':
-        - thehive/setup/installation/upgrade-from-4.x.md
-        - thehive/setup/installation/migration.md
+    - 'Version Upgrades':
+      - thehive/setup/installation/upgrade-from-5.0.x.md
+      - thehive/setup/installation/upgrade-from-4.x.md
+      - thehive/setup/installation/migration.md
     - 'Configuration & Operations':
       - 'Configuration':
         - 'Database & index': thehive/setup/configuration/database.md
@@ -105,6 +107,7 @@ nav:
         - thehive/setup/operations/cassandra-security.md
         - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
         - thehive/setup/operations/fail2ban.md
+        - thehive/setup/operations/change-index.md
         - thehive/setup/operations/troubleshooting.md
     - 'Administration Guides': 
       - 'First start': thehive/administration/first-start.md
@@ -123,7 +126,7 @@ nav:
           - 'Local': thehive/administration/authentication/local.md
           - 'LDAP': thehive/administration/authentication/ldap.md
           - 'AD': thehive/administration/authentication/ad.md
-      #     - 'SAML': thehive/administration/authentication/saml.md
+          - 'SAML': thehive/administration/authentication/saml.md
           - 'OAUTH2': thehive/administration/authentication/oauth2.md
         - 'SMTP': thehive/administration/smtp.md
       - 'Entities management':
@@ -155,11 +158,13 @@ nav:
     #     - 'Search Cases': thehive/user-guides/search/cases.md
     #     > Add new Search action here
     #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
+      - 'Indicators & KPIs': thehive/user-guides/indicators.md
       - 'Org. administration': 
         - 'Manage Users': thehive/user-guides/organisation/accounts.md
         - 'Case templates': thehive/user-guides/organisation/case-templates.md
         - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
+        - 'Functions': thehive/user-guides/organisation/functions.md
 
         - 'Notifications & endpoints':
           - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
@@ -173,13 +178,14 @@ nav:
           - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
           # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
           # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
-        # - 'Functions': thehive/user-guides/organisation/functions.md
+        - 'Functions': thehive/user-guides/organisation/functions.md
         - 'Attachments': thehive/user-guides/organisation/attachments.md
     - 'API':
       - 'API Documentation': thehive/api-docs/" target="_blank
       - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
+      - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
   - 'Resources': 
       - resources/demo.md
