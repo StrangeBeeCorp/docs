@@ -9,6 +9,18 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.1 - 3rd March 2023
+
+### Fixes
+
+**API:**
+
+- Fix a change in the observable creation API (regression from 5.0)
+
+**UI:**
+
+- Date fields can be set using keyboard input
+
 ## 5.1.0 - 1st March 2023
 
 ### Breaking changes
@@ -76,6 +88,7 @@
 - Auto import observables from Cortex: when an analyzer extract observables into its report, it can flag some observable to be automatically imported into the case/alert
 - Experimental support for Elasticsearch 8
 - Rework UX to add TTP
+- Move interface date format to user settings (and localstorage) instead of org settings
 
 ### Fixes
 
