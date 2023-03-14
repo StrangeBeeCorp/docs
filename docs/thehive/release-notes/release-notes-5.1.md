@@ -9,6 +9,41 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.2 - 14th March 2023
+
+### Fixes
+
+**Backend:**
+
+- Fix SSO user autocreate
+- Improve the application behavior when Janusgraph configuration gets updated while another connection exists
+- Fix permission checks for case template creation
+- Fix permission checks on pages
+- Improve the observable type length check
+
+**Cortex connector:**
+
+- Send the submit message to Cortex job actor when the transaction is committed
+- Improve Cortex pending jobs recovery
+- Fix: Recover only 100 jobs at startup. When the queue is empty, recover 100 more jobs.
+- Updates of job with status “Deleted” are retried
+- Improve logs
+
+**MISP connector:**
+
+- MISP synchronisation misses some events in case of timeouts during synchronization
+
+**UI:**
+
+- Refresh the task list when after bulk editing of assignee
+- Fix tooltip overlap in some dashboard widgets
+- Dashboard labels for cases/alerts are mixed
+- Remove owner field from dashboard import drawer
+- Fix the UI refresh when launching an analyzer job
+- Fix incorrect search when click on donut due to persisting keyword "domain"
+- Fix Customfield selector in case template editor
+- Improve notifier name and suffix with using an existing endpoint
+
 ## 5.1.1 - 3rd March 2023
 
 ### Fixes
