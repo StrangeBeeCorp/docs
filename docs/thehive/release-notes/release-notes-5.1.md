@@ -9,6 +9,30 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.3 - 29th March 2023
+
+### Fixes
+
+**UI:**
+
+- Fix filtering of case templates when creating a case
+- When importing a case template that already exists, ask for a new name
+- In dashboard list, be able to filter on group name
+- Fix task list not refreshed when applying a case template on a case
+- Fix url of popup livefeed when the application uses an http context
+- Avoid tags deletion when editing a case template
+
+**Backend:**
+
+- Improve error message when merging case
+- Fix sharing not applied after merging cases
+
+**Docker:**
+
+- Fixes `--storage-directory` option
+- Don't show cassandra password
+- Correctly escape Elasticsearch password
+
 ## 5.1.2 - 14th March 2023
 
 ### Fixes
