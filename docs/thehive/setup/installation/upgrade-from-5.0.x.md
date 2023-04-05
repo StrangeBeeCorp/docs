@@ -77,3 +77,8 @@ TheHive 5.0.x and 5.1.x are hosted in distinct package repositories. In order to
         
             1. The `strangebee/thehive:latest` tag remains associated with TheHive 5.0.x versions
             2. A new `strangebee/thehive:5.1` tag is now available and associated with the latest `5.1.x` version
+
+
+### Health checks
+
+If you have health checks on the application http interface, they should be disabled during the upgrade process. Otherwise the orchestrator will kill TheHive during the update process.
