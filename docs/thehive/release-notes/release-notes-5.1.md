@@ -9,6 +9,32 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.4 - 13th April 2023
+
+### Fixes
+
+**UI:**
+
+- Fix crash when live feed is opened and a case is deleted
+- Pages: several images with the same name can now be added (also fixes an issue with pasted images)
+- Hide locked users in task assignee
+- Custom fields of type boolean now display a set of options
+- You can now press `Enter` to save a comment
+- Fix report template download link
+
+**Backend:**
+
+- Fix potential memory leak that could lead to a crash (from 5.1, issue not present in 5.0)
+- Return error 413 when http input payload is too large
+- Report error when email sending fails during password reset
+- Fix api documentation for operator `_between` in queries
+- Add field `_updatedBy` in comments
+- Don't ignore cortex jobs when the report contains an unknown operation
+- Deprecate page slugs (in api docs only)
+
+!!! warning
+    In our next major release 5.2, the field `slug` for object `Page` will be removed. We are starting to deprecate it starting from this release
+
 ## 5.1.3 - 29th March 2023
 
 ### Fixes
