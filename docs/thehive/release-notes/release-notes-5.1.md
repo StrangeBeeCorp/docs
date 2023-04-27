@@ -9,6 +9,46 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.5 - 27th April 2023
+
+### Fixes
+
+**UI:**
+
+- Case template: fix issue where prefix was deleted when editing a template
+- Sharing: Fix display of share options on small display
+- Responder reports should now appear in the observable preview when triggered
+
+**Backend:**
+
+- Fix Case dates when creating a case with status "Closed"
+- Fix issue that created phamtom tags on alerts or case
+- Fix issue that removed field `_id` from audits sent via notifiers (like webhook)
+- Fix empty response when using the extraData `similarAlerts` on case queries
+
+### Improvments
+
+**UI:**
+
+- Better user selector
+- Tasks: redirect to task list after deleting a task
+- Change wording in search bar
+- Alert list: add capability to filter by assignee when clicking on an assignee
+- Filters: assignee field will filter the dropdown list when typing
+- Functions: several improvments
+- Comments: use "Enter" to save a comment
+- Responders: Sort responder reports by startDate
+
+**API:**
+
+- Better error codes when making queries or when sending an http entity too large
+- Allow attachment download using its `id` or `_id`
+- Fix some errors in the documentation
+
+**Backend:**
+
+- Improve tag creation performances
+
 ## 5.1.4 - 13th April 2023
 
 ### Fixes
