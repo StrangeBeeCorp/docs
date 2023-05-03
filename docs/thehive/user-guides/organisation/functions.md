@@ -409,7 +409,6 @@ When called, this function will:
 ### Function
 
 - `function.create(function: InputCreateFunction): OutputFunction`
-- `function.invoke(functionIdOrName: string, dryRun: boolean, input: any): any`
 - `function.update(functionIdOrName: string, update: InputUpdateFunction): void`
 - `function.delete(functionIdOrName: string): void`
 - `function.find(query: any[]): OutputFunction`
