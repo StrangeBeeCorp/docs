@@ -9,6 +9,30 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
 
+## 5.1.6 - 15th May 2023
+
+### Fixes
+
+**UI:**
+
+- Fix edition of property "includeInTimeline" for task activities
+- Fix case template search when creating a new case
+- Admin: show username and organisation name as required in forms
+- other small fixes
+
+### Improvements
+
+**API:**
+
+- Improve performances in some areas
+- Replace org default dashboard "jobs" with TTP
+- Improve performance when running notifiers
+- It's now possible to upload two attachments with the same name in a case (the second attachment will be renamed automatically)
+
+### Security
+
+- Update libraries and remove unused dependencies
+
 ## 5.1.5 - 27th April 2023
 
 ### Fixes
@@ -26,7 +50,7 @@
 - Fix issue that removed field `_id` from audits sent via notifiers (like webhook)
 - Fix empty response when using the extraData `similarAlerts` on case queries
 
-### Improvments
+### Improvements
 
 **UI:**
 
