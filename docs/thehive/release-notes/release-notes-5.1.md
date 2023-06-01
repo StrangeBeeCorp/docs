@@ -8,6 +8,44 @@
 !!! info
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
+## 5.1.7 - 1st June 2023
+
+### Fixes
+
+**UI:**
+
+- Fixes on long names
+
+**Backend:**
+
+- Link correctly task and assignee when updating a task
+- Limit the size of cortex response
+- Cortex: Fix sync issue when multiple jobs are submitted at the same time
+- Fix full text filter for custom fields
+
+### Improvements
+
+**UI:**
+
+- Allow search for task assignee input
+
+**Backend:**
+
+- Optimize resource usage when reading cortex jobs 
+- Replace default "Job" dashboard with a better TTP dashboard
+- Cortex:
+    - Add timeout for jobs (3 hours by default)
+- Deduplicate custom field values on case merge
+- Increase observable data length in api v1 to 4096 chars
+
+**Migration tool:**
+
+- Improve mapping of TheHive 3 Alert status 
+
+### Security
+
+- Update libraries
+
 
 ## 5.1.6 - 15th May 2023
 
