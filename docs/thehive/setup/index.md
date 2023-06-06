@@ -11,7 +11,7 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 :fontawesome-solid-folder-tree:  A file storage solution is also required ; the local filesystem of the server hosting the application is adequate in the standalone server scenario ; [S3 MINIO](https://min.io/) otherwise.
 
 !!! Danger "Using Lucene"
-    TheHive 5.1 does **NOT** support Lucene backend as index engine any more.
+    Since version 5.1, TheHive does **NOT** support Lucene backend as index engine any more.
     
     **Lucene** was an option to handle the data index with TheHive 4.1.x  ; to migrate your index to Elasticsearch, follow [this guide](./operations/change-index.md).
 

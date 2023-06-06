@@ -402,7 +402,7 @@ db.janusgraph.forceDropAndRebuildIndex = true
       enabled=1
       priority=1
       name=StrangeBee RPM repository
-      baseurl=https://rpm.strangebee.com/thehive-5.1/noarch
+      baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
       gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
       gpgcheck=1
       ```

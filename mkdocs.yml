@@ -186,6 +186,7 @@ nav:
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
       - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
+      - 'Release Notes for TheHive 5.2': thehive/release-notes/release-notes-5.2.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
   - 'Resources': 
       - resources/demo.md
