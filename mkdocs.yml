@@ -188,6 +188,19 @@ nav:
       - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
       - 'Release Notes for TheHive 5.2': thehive/release-notes/release-notes-5.2.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
+  - 'IaaS': 
+      - iaas/README.md
+      - 'AWS':
+          - "AWS sample code": iaas/aws/README.md
+          - "Create and manage the SecOps VPC": iaas/aws/ug-secops-vpc/README.md
+          - "TheHive v5 and Cortex within a SecOps VPC": iaas/aws/ug-secops-instances/README.md
+      - 'Azure':
+          - iaas/azure/README.md
+          - "Creating a new SecOps Virtual Network": iaas/azure/ug-secops-vnet/README.md
+          - "Deploying TheHive v5 and Cortex with Terraform": iaas/azure/ug-secops-instances/README.md
+          - "Upgrading your Azure instances": iaas/azure/ug-secops-instances/docs/upgrade.md
+      - "Outscale":
+          - iaas/outscale/README.md
   - 'Resources': 
       - resources/demo.md
       - resources/howto-vm-demo.md
