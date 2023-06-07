@@ -8,9 +8,35 @@ The sample Terraform code in this repository allows the creation of a complete S
 
 The code defaults to this new VPC but can easily be adapted to fit your existing VPC by customising a few variables. Unless your architecture significantly differs from our reference VPC, you should not be required to modify the Terraform code itself.
 
+## Files
+
+!!! Example "Files"
+
+    **Main files**:
+
+    * [main.tf](./main.tf)
+    * [providers.tf](./providers.tf)
+    * [variables.tf](./variables.tf)
+    * [tarreform.tfvars](./tarreform.tfvars)
+
+
+    **Config files**:
+
+    * [files/bastion-cloud-config-new.yaml](files/bastion-cloud-config-new.yaml)
+    * [files/cortex-cloud-config-new.yaml](files/cortex-cloud-config-new.yaml)
+    * [files/cortex-cloud-config-restore.yaml](files/cortex-cloud-config-restore.yaml)
+    * [files/thehive-cloud-config-new.yaml](files/thehive-cloud-config-new.yaml)
+    * [files/thehive-cloud-config-restore.yaml](files/thehive-cloud-config-restore.yaml)
+
+    ** Use cases**: 
+
+    * [_use-cases/instances-init-thehive-cortex.tf](_use-cases/instances-init-thehive-cortex.tf)
+    * [_use-cases/instances-restore-thehive-cortex.tf](_use-cases/instances-restore-thehive-cortex.tf)
+
+
 ## Creating a new SecOps VPC
 
-If you do not already have a VPC at hand to deploy TheHive and Cortex into, using our sample code will allow you to build a "production-like" VPC very easily. 
+If you do not already have a VPC at hand to deploy TheHive and Cortex into, using our sample code will allow you to build a "production-like" VPC very easily.
 
 Note that in a secured production environment, you might want to:
 
@@ -143,37 +169,43 @@ The easiest way to do that is to create (or update) the `~/.ssh/config` file. Us
 
 The default username for all instances (bastion, TheHive and Cortex) is `outscale`.
 
-```
-Host bastion
-				HostName w.x.y.z (public ip address)
-				User outscale
-				Port 22
-				IdentityFile ~/.ssh/id_rsa_private_key_for_bastion
+!!! Example ""
 
-Host thehive
-				HostName w.x.y.z (private ip address)
-				User outscale
-				Port 22
-				ProxyJump bastion
-				IdentityFile ~/.ssh/id_rsa_private_key_for_thehive
+		Host bastion
+						HostName w.x.y.z (public ip address)
+						User outscale
+						Port 22
+						IdentityFile ~/.ssh/id_rsa_private_key_for_bastion
 
-Host cortex
-				HostName w.x.y.z (private ip address)
-				User outscale
-				Port 22
-				ProxyJump bastion
-				IdentityFile ~/.ssh/id_rsa_private_key_for_cortex
-```
+		Host thehive
+						HostName w.x.y.z (private ip address)
+						User outscale
+						Port 22
+						ProxyJump bastion
+						IdentityFile ~/.ssh/id_rsa_private_key_for_thehive
+
+		Host cortex
+						HostName w.x.y.z (private ip address)
+						User outscale
+						Port 22
+						ProxyJump bastion
+						IdentityFile ~/.ssh/id_rsa_private_key_for_cortex
+
 
 You will now be able to SSH into the TheHive or Cortex instance directly using the bastion host as a proxy:
 
-`ssh thehive`
+!!! Example ""
+		ssh thehive
 
 or 
 
-`ssh cortex`
+!!! Example ""
+		ssh cortex
 
-**Note**: Remember to whitelist your local public IP address in the bastion security group.
+
+
+!!! Note
+		Remember to whitelist your local public IP address in the bastion security group.
 
 
 ---
