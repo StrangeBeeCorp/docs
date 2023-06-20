@@ -8,6 +8,29 @@
 !!! info
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
+## 5.1.8 - 20th June 2023
+
+### Fixes
+
+**UI:**
+- Fix the order of Cortex job reports in observable page
+- Add events related to case templates in live feed
+- Change rules of user quota
+- Display the callback URL in SAML configuration
+- Fix icon in timeline
+- Fix format of some old generated dashboard widgets
+
+**Backend:**
+
+- Change format of the date custom field values Ids
+- Fix between filter on custom fields
+- Ldap sync: add support of several mapping for the same group
+- Ldap sync: fix conflict when several configurations exist with the same suffix
+- Cortex job endDate is not set if the job is not finished
+- Fix filter value when it contains only wilcards
+- Make readonly profile not editable
+- Add properties for alert KPIs
+
 ## 5.1.7 - 1st June 2023
 
 ### Fixes
