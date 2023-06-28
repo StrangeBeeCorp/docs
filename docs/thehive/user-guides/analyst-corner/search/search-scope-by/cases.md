@@ -1,4 +1,4 @@
-# Cases
+# Search by Cases
 
 To search by Cases:
 

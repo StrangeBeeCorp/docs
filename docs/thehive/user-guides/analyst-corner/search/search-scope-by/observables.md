@@ -1,10 +1,10 @@
-# Tasks
+# Search by Observables
 
-To search by Tasks:
+To search by Observables:
 
-if you want to search based on **Tasks**
+if you want to search based on **Observables**
 
-1. In the left pane, Click on **Tasks**.  
+1. In the left pane, Click on **Observables**.  
 
     You can specify search criterias, by using **Add new filters**. You can use **clear all** to remove any of the applied filters. 
 
@@ -14,4 +14,4 @@ if you want to search based on **Tasks**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../images/search-by-tasks.png" alt="search by tasks" width="1000" height="1000"/>
+<img src="../images/search-by-observables.png" alt="search by Observables" width="1000" height="1000"/>

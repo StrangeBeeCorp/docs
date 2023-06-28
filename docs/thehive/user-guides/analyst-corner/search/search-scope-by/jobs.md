@@ -1,10 +1,10 @@
-# Tasks logs
+# Search by Jobs
 
-To search by Task logs:
+To search by Jobs:
 
-if you want to search based on **Tasks Logs**
+if you want to search based on **Jobs**
 
-1. In the left pane, Click on **Tasks Logs**.  
+1. In the left pane, Click on **Jobs**.  
 
     You can specify search criterias, by using **Add new filters**. You can use **clear all** to remove any of the applied filters. 
 
@@ -14,4 +14,4 @@ if you want to search based on **Tasks Logs**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../images/search-by-tasklogs.png" alt="search by task logs" width="1000" height="1000"/>
+<img src="../images/search-by-jobs.png" alt="search by Jobs" width="1000" height="1000"/>

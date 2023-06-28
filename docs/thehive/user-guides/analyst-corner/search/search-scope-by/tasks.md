@@ -1,10 +1,10 @@
-# Logs
+# Search by Tasks
 
-To search by Logs:
+To search by Tasks:
 
-if you want to search based on **Logs**
+if you want to search based on **Tasks**
 
-1. In the left pane, Click on **Logs**.  
+1. In the left pane, Click on **Tasks**.  
 
     You can specify search criterias, by using **Add new filters**. You can use **clear all** to remove any of the applied filters. 
 
@@ -14,4 +14,4 @@ if you want to search based on **Logs**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../images/search-by-logs.png" alt="search by Logs" width="1000" height="1000"/>
+<img src="../images/search-by-tasks.png" alt="search by tasks" width="1000" height="1000"/>

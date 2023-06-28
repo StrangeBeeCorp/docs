@@ -1,4 +1,4 @@
-# Audit logs
+# Search by Audit logs
 
 To search by Audit Logs:
 
