@@ -5,10 +5,6 @@
 
     This release also comes with some breaking changes, please review them below
 
-!!! info
-    An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
-
-
 ## 5.1.2 - 14th March 2023
 
 ### Fixes
