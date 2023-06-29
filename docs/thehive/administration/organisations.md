@@ -1,4 +1,4 @@
-# Manaage Organisations
+# Manage Organisations
 
 As Administrator, go to the *Organisations* page.
 

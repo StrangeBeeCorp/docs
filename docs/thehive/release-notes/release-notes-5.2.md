@@ -12,123 +12,83 @@
 
 !!! Warning "UNDER CONSTRUCTION"
 
-## 5.1.2 - 14th March 2023
-
-### Fixes
-
-**Backend:**
-
-- Fix SSO user autocreate
-- Improve the application behavior when Janusgraph configuration gets updated while another connection exists
-- Fix permission checks for case template creation
-- Fix permission checks on pages
-- Improve the observable type length check
-
-**Cortex connector:**
-
-- Send the submit message to Cortex job actor when the transaction is committed
-- Improve Cortex pending jobs recovery
-- Fix: Recover only 100 jobs at startup. When the queue is empty, recover 100 more jobs.
-- Updates of job with status “Deleted” are retried
-- Improve logs
-
-**MISP connector:**
-
-- MISP synchronisation misses some events in case of timeouts during synchronization
-
-**UI:**
-
-- Refresh the task list when after bulk editing of assignee
-- Fix tooltip overlap in some dashboard widgets
-- Dashboard labels for cases/alerts are mixed
-- Remove owner field from dashboard import drawer
-- Fix the UI refresh when launching an analyzer job
-- Fix incorrect search when click on donut due to persisting keyword "domain"
-- Fix Customfield selector in case template editor
-- Improve notifier name and suffix with using an existing endpoint
-
-## 5.1.1 - 3rd March 2023
-
-### Fixes
-
-**API:**
-
-- Fix a change in the observable creation API (regression from 5.0)
-
-**UI:**
-
-- Date fields can be set using keyboard input
-
-## 5.1.0 - 1st March 2023
+## 5.2.0 - 1st July 2023
 
 ### Breaking changes
 
-- Remove support for Hadoop for filestorage
-
-    From this new release, Hadoop can no longer be used a file storage (it was removed from 5.0 documentation but could still be used)
-
-- Drop support for java 8
-
-    Java 8 version is no longer supported by TheHive. Please update to java 11 at least
-    Our [setup guide](../setup/installation/step-by-step-guide.md) can help you on how to install a jvm
-
-- Drop support for Lucene as index backend
-
-    Former versions of TheHive supported lucene and elasticsearch as indexing engines for the data. We then encountered limitations while using the Lucene index (especially when making queries based on Custom Fields). With TheHive 5.0, we pushed users to install and migrate to Elasticsearch. Finally with TheHive 5.1, the support of Lucene index is removed: the application will start but queries involving Custom Fields will return wrong results.
-    To migrate your index to Elasticsearch, follow [this guide](../setup/operations/change-index.md).
+!!! Warning
+    - The transition to TLP 2.0 involves changing the ID of the TLP:RED value and adding TLP:AMBER+STRICT. The updated assignments are: 
+        - TLP:CLEAR = 0
+        - TLP:GREEN = 1
+        - TLP:AMBER = 2
+        - **New:** TLP:AMBER+STRICT = 3
+        - **Change:** TLP:RED = 4
+    - Please make sure to update your dashboard and any integrations that rely on these values.
 
 ### Main features
 
-- Apply case template on existing case: enrich a case with tasks, custom fields, tags from other case templates
+- **What's new in templates**
+    - **Report template:** Boost your reporting with Case Reporting
 
-    This will allow your organisation to create more reusable case templates and apply them during the lifecycle of a case
+        Create customized, high-impact reports with Case Reporting. Use a variety of dynamic widgets such as text, images, tables and lists. Relevant case data (tasks, observables, etc.) are automatically integrated. Export your reports in HTML and Markdown.
+        
+        See [dedicated page](../user-guides/organisation/templates/report-templates.md) for more information (requires platinum license)
 
-- KPIs
+    - **Page template:** Customize and organize your cases pages
 
-    Get more indicators about your organisation response: Time to Respond, Time to Acknowledge ...
+        Guide your collaborators in writing the documentation for a case by importing pages directly from the template to provide all the necessary elements and improve processes.
 
-- Global search
+    <figure markdown>
+    ![Case reporting](./images/release52-case-reporting.png){ width="450"}
+    </figure>
 
-    You can now search on all elements of the database instead of choosing a scope
+- **What's new in alerts:** 
+    - **Alert assignment**
 
-- Custom Field db model update
+        Assign alerts to members of the organization. Filter to find alerts assigned to a user.
 
-    Database model was updated to be able to better support dashboard and queries based on custom fields. Now dashboard using filters or aggregation on custom fields should be way faster
+    - **Triggers for alerts in notifications**
 
-- New permissions
+        Benefit from new alert triggers to trigger your notifications.
+    
+    <figure markdown>
+    ![Assign alerts](./images/release52-alerts.png){ width="450"}
+    </figure>
 
-    Split some permissions to make them more granular. For instance `manageAlert` was split into 4 permissions: `manageAlert/create`, `manageAlert/delete`, `manageAlert/update`, `manageAlert/import`. Case permissions were also split
+- **Transition to TLP 2.0**
 
-- History list for object
+    Our compatibility with the new TLP 2.0 standard is a key advantage for your business. Use the new TLP 2.0 terminologies to strengthen your cases, dashboards and reports.
 
-    Added a new tab in the UI to list the changes made on an Alert or Case.
+    <figure markdown>
+    ![TLP 2.0](./images/release52-TLP.png){ width="150"}
+    </figure>
 
-- Mandatory Tasks
+- **Notifiers Redis and Microsoft Teams**
 
-    Some tasks can be defined as mandatory. To close a case, those tasks need to be closed and contain at least one activity.
+    With the new Redis Notifiers and Microsoft Teams, strengthen your communication. Keep your teams informed in real time about the progress of your processes.
 
-- SAML Support
+    <figure markdown>
+    ![Notifiers MS and Redis](./images/release52-notifiers.png){ width="450"}
+    </figure>
 
-    You can now use SAML as an SSO source for your users (requires platinum license)
+- **List Export**
 
-- Functions (Beta)
+    Export your list information as you wish in JSON or CSV format. Apply filters and/or select items for export to keep only what you need. Exploit exported data according to your specific needs.
 
-    See [dedicated page](../user-guides/organisation/functions.md) for more information (requires platinum license)
+    <figure markdown>
+    ![List export](./images/release52-list-export.png){ width="450"}
+    </figure>
+
+- **Two-factor authentication activation indicator**
+
+    Identify users with two-factor authentication enabled. Enhance access security and promote two-factor authentication adoption.
+
+- **Add your own certificate authority on your servers**
+
+    Use your own CA for enhanced server security. Manage your own CA for complete control over certificate issuance, revocation, and management.
 
 ### Other features
 
-- New type of custom fields: url
-- Change case ownership
-- Similarity between observable now works with observable of kind attachment
-- Improve Cortex connector resources usage
-- Dashboards on org creation: default dashboards are now provided to new orgs
-- Add cache for dashboard
-- Auto import observables from Cortex: when an analyzer extract observables into its report, it can flag some observable to be automatically imported into the case/alert
-- Experimental support for Elasticsearch 8
-- Rework UX to add TTP
-- Move interface date format to user settings (and localstorage) instead of org settings
+- PAP:WHITE changes to PAP:CLEAR
 
 ### Fixes
-
-- Notifications improvement: notifications are now triggered for each observable when creating an alert with multiple observables
-- Several other fixes in the application and UI

@@ -161,11 +161,12 @@ nav:
       - 'Indicators & KPIs': thehive/user-guides/indicators.md
       - 'Org. administration': 
         - 'Manage Users': thehive/user-guides/organisation/accounts.md
-        - 'Case templates': thehive/user-guides/organisation/case-templates.md
+        - 'Templates' :  
+          - 'Cases templates': thehive/user-guides/organisation/templates/case-templates.md
+          - 'Pages templates': thehive/user-guides/organisation/templates/page-templates.md
+          - 'Reports templates': thehive/user-guides/organisation/templates/report-templates.md
         - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
-        - 'Functions': thehive/user-guides/organisation/functions.md
-
         - 'Notifications & endpoints':
           - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
     #     - 'Manage endpoints': thehive/user-guides/organisation/notifications/endpoints.md
@@ -180,8 +181,66 @@ nav:
           - 'Redis': thehive/user-guides/organisation/notifications/redis.md
           # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
           # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
+        - 'Endpoints': 
+          - 'About endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
+          - 'Add endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
         - 'Functions': thehive/user-guides/organisation/functions.md
         - 'Attachments': thehive/user-guides/organisation/attachments.md
+      - 'Analyst''s Corner':
+        - 'Alerts' : 
+          - 'About alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md          
+          - 'Manage views': thehive/user-guides/analyst-corner/alerts/manage-views.md
+          - 'Preview alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
+          - 'Actions on alerts': thehive/user-guides/analyst-corner/alerts/actions.md
+          - 'Merge alerts': thehive/user-guides/analyst-corner/alerts/merge-alerts.md
+          - 'Create a case from one or more alerts': thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md
+          - 'View an alert': thehive/user-guides/analyst-corner/alerts/general.md 
+          - 'Run responders on alert': thehive/user-guides/analyst-corner/alerts/run-responders.md
+          - 'View Responders': thehive/user-guides/analyst-corner/alerts/view-responders.md
+          - 'View similar alerts': thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md
+          - 'View similar cases': thehive/user-guides/analyst-corner/alerts/view-similar-cases.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/alerts/view-ttps.md
+          - 'View observables': thehive/user-guides/analyst-corner/alerts/view-observables.md
+        - 'Cases' :                    
+          - 'About cases': thehive/user-guides/analyst-corner/cases/about-a-case.md
+          - 'Manage views': thehive/user-guides/analyst-corner/cases-list/manage-views.md
+          - 'Preview cases': thehive/user-guides/analyst-corner/cases-list/preview-cases.md
+          - 'Actions on cases': thehive/user-guides/analyst-corner/cases-list/actions.md
+          - 'Create a case': 
+            - 'Create a new case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
+            - 'Create a empty case': thehive/user-guides/analyst-corner/cases/create-empty-case.md
+            - 'Create case from archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
+            - 'Create case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
+            - 'Create case from template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
+          - 'View an case': thehive/user-guides/analyst-corner/cases-list/general.md
+          - 'Adding to a case (Tags/Tasks/Custom field values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'View tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
+          - 'View observables': thehive/user-guides/analyst-corner/cases-list/observables.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/cases-list/ttps.md
+          - 'View attachments': thehive/user-guides/analyst-corner/cases-list/attachments.md
+          - 'View timeline': thehive/user-guides/analyst-corner/cases-list/timeline.md
+          - 'View pages': thehive/user-guides/analyst-corner/cases-list/pages.md
+          - 'Run responders on case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
+          - 'Run analyzers on case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md          
+        - 'Tasks' : 
+          - 'About tasks': thehive/user-guides/analyst-corner/task/about-tasks.md
+          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Preview tasks': thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md
+          - 'Actions on tasks': thehive/user-guides/analyst-corner/task/preview-task-details/actions.md
+          - 'Run responders from task': thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md
+        - 'Dashboard' : 
+          - 'About dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
+          - 'Manage dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
+          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Filter and sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+        - 'Search' : 
+          - 'Search by cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
+          - 'Search by alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
+          - 'Search by observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
+          - 'Search by jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
+          - 'Search by tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
+          - 'Search by task logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
+          
     - 'API':
       - 'API Documentation': thehive/api-docs/" target="_blank
       - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank

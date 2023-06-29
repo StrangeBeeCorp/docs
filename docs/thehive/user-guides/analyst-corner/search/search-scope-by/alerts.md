@@ -1,4 +1,4 @@
-# Alerts
+# Search by Alerts
 
 To search by Alerts:
 

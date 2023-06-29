@@ -4,7 +4,7 @@ This section contains the Case templates you prepare for your organisation.
 
 ## List of Case Templates
 
-Access to the list by opening the *Organisation* menu, and the *Case templates* tab.
+Access to the list by opening the *Organisation* menu, then the *Templates* tab, and the *Cases* tab.
 
 
 <figure markdown>
@@ -20,7 +20,7 @@ Click the :fontawesome-regular-square-plus: button to create a new *Case templat
 
 <figure markdown>
   ![Create a Case template](./images/organisation-case-templates-2.png){ width="450" }
-  <figcaption>Create a Case template</figcaption>
+  <figcaption>Create a case template</figcaption>
 </figure>
 
 ### Configuration parameters
@@ -56,6 +56,9 @@ Tasks
 Custom Fields
   : Add Custom fields to the template. Default value can be set for Custom fields as well.
 
+Pages
+  : Add pages template to the template. They will be automatically added to the Case when created with this template
+
 ## Import/Export
 
 #### Export a *Case template* 
@@ -63,6 +66,7 @@ Custom Fields
 
 <figure markdown>
 ![](./images/organisation-case-templates-3.png){ width="500" }
+<figcaption>Export a case template</figcaption>
 </figure>
 
 #### Import a *Case template*
@@ -70,4 +74,5 @@ Click on the button *Import Case Template* and select the JSON formatted file to
 
 <figure markdown>
 ![](./images/organisastion-case-templates-4.png){ width="500" }
+<figcaption>Import a case template</figcaption>
 </figure>
