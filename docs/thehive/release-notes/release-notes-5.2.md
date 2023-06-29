@@ -90,5 +90,13 @@
 ### Other features
 
 - PAP:WHITE changes to PAP:CLEAR
+- Add new observable to alert
+- CF mandatory (UI)
+- Improve markdown editor and library change
+- Improve validation errors in api
+- Improve performance of NotificationActor
+- Add button to test MISP/Cortex configuration
+- API could understand "last x days" filters
 
 ### Fixes
+- Fixed some display problems on custom fields
