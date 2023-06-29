@@ -8,11 +8,37 @@
 !!! info
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.0
 
+## 5.1.9 - 29th June 2023
+
+### Fixes
+
+**UI:**
+
+- Fix display of task attachments in attachment listing
+- Improve error message when merging cases
+
+**Backend:**
+
+- Fix error "Tag not Found" which could occur when creating alerts and cases
+- Fix link duplication when importing several times a TTP catalog
+
+### Improvements
+
+**UI:**
+
+- Improve form for SAML authentication
+
+**Backend:**
+
+- Add MISP event UUID to alert description in imported alerts
+- Add validation for SAML configuration
+
 ## 5.1.8 - 20th June 2023
 
 ### Fixes
 
 **UI:**
+
 - Fix the order of Cortex job reports in observable page
 - Add events related to case templates in live feed
 - Change rules of user quota
