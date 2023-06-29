@@ -91,7 +91,7 @@
 
 - PAP:WHITE changes to PAP:CLEAR
 - Add new observable to alert
-- CF mandatory (UI)
+- Custom field mandotory indicator added
 - Improve markdown editor and library change
 - Improve validation errors in api
 - Improve performance of NotificationActor
