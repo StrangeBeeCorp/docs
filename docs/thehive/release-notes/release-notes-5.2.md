@@ -68,7 +68,7 @@
     With the new Redis Notifiers and Microsoft Teams, strengthen your communication. Keep your teams informed in real time about the progress of your processes.
 
     <figure markdown>
-    ![Notifiers MS and Redis](./images/release52-notifiers.png){ width="150"}
+    ![Notifiers MS and Redis](./images/release52-notifiers.png){ width="450"}
     </figure>
 
 - **List Export**
@@ -76,7 +76,7 @@
     Export your list information as you wish in JSON or CSV format. Apply filters and/or select items for export to keep only what you need. Exploit exported data according to your specific needs.
 
     <figure markdown>
-    ![List export](./images/release52-list-export.png){ width="150"}
+    ![List export](./images/release52-list-export.png){ width="450"}
     </figure>
 
 - **Two-factor authentication activation indicator**
