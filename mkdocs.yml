@@ -190,30 +190,26 @@ nav:
       - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
       - 'Release Notes for TheHive 5.2': thehive/release-notes/release-notes-5.2.md
   - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
-  # - 'IaaS': 
-  #     - iaas/README.md
-  #     - 'AWS':
-  #         - "AWS sample code": iaas/aws/README.md
-  #         - "Create and manage the SecOps VPC": iaas/aws/ug-secops-vpc/README.md
-  #         - "TheHive v5 and Cortex within a SecOps VPC": iaas/aws/ug-secops-instances/README.md
-  #     - 'Azure':
-  #         - iaas/azure/README.md
-  #         - "Creating a new SecOps Virtual Network": iaas/azure/ug-secops-vnet/README.md
-  #         - "Deploying TheHive v5 and Cortex with Terraform": iaas/azure/ug-secops-instances/README.md
-  #         - "Upgrading your Azure instances": iaas/azure/ug-secops-instances/docs/upgrade.md
-  #     - "Outscale":
-  #         - iaas/outscale/README.md
   - 'Resources': 
+    - resources/index.md
     - resources/demo.md
     - resources/howto-vm-demo.md
-  - 'IaaS deployment': 
-    - resources/iaas/index.md
-    - 'Amazon AWS': resources/iaas/aws/README.md
-      - 'Using console': resources/iaas/aws/console/index.md
-      - 'Infra as Code': resources/iaas/aws/infra-as-code/index.md
-    - 'Microsoft Azure': resources/iaas/azure/README.md
-      - 'Using console': resources/iaas/azure/console/index.md
-      - 'Infra as Code': resources/iaas/azure/infra-as-code/index.md
+    - 'IaaS deployment': 
+      - 'Amazon AWS': 
+        - 'Main Features': resources/iaas/aws/index.md
+        - 'Deploy TheHive AMI': resources/iaas/aws/thehive.md
+        - 'Deploy Cortex AMI': resources/iaas/aws/cortex.md
+        - 'AWS sample code': resources/iaas/aws/infra-as-code/README.md
+        - 'Create and manage the SecOps VPC': resources/iaas/aws/infra-as-code/ug-secops-vpc/README.md
+        - 'TheHive v5 and Cortex within a SecOps VPC': resources/iaas/aws/infra-as-code/ug-secops-instances/README.md
+      - 'Microsoft Azure': 
+        - 'Main Features': resources/iaas/azure/index.md
+        - 'Deploy TheHive Azure image': resources/iaas/azure/thehive.md
+        - 'Deploy Cortex Azure image': resources/iaas/azure/cortex.md
+        - 'Azure sample code': resources/iaas/azure/infra-as-code/README.md
+        - 'Creating a new SecOps Virtual Network': resources/iaas/azure/infra-as-code/ug-secops-vnet/README.md
+        - 'Deploying TheHive v5 and Cortex with Terraform': resources/iaas/azure/infra-as-code/ug-secops-instances/README.md
+        - 'Upgrading your Azure instances': resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade.md
       # - 'Using console': 
       #   - resources/iaas/README.md
       # - 'Infra as Code':

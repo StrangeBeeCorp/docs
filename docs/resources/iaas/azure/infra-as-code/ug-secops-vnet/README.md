@@ -5,23 +5,24 @@ If you do not already have a virtual network (vnet) at hand to deploy TheHive an
 ## Files 
  
 !!! Example "Files"
-
-    * [000-provider.tf](./000-provider.tf)
-    * [010-vnet.tf](./010-vnet.tf)
-    * [030-certificate-identity.tf](./030-certificate-identity.tf)
-    * [050-bastion.tf](./050-bastion.tf)
-    * [060-nva.tf](./060-nva.tf)
-    * [070-appgw-securitygroup.tf](./070-appgw-securitygroup.tf)
-    * [075-public-securitygroup.tf](./075-public-securitygroup.tf)
-    * [080-nva-nic-securitygroup.tf](./080-nva-nic-securitygroup.tf)
-    * [085-routes.tf](./085-routes.tf)
-    * [085-routes.tf](./085-routes.tf)
-    * [090-instance-disks.tf](./090-instance-disks.tf)
-    * [200-appgw.tf](./200-appgw.tf)
-    * [output.tf](./output.tf)
-    * [variables.tf](./variables.tf)
-    * [tarreform.tfvars](./tarreform.tfvars)
-    * [files/nva-nat-cloud-config.yaml](files/nva-nat-cloud-config.yaml)
+    Terraform files are available on [Github](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/): 
+    
+    * [000-provider.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/000-provider.tf)
+    * [010-vnet.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/010-vnet.tf)
+    * [030-certificate-identity.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/030-certificate-identity.tf)
+    * [050-bastion.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/050-bastion.tf)
+    * [060-nva.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/060-nva.tf)
+    * [070-appgw-securitygroup.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/070-appgw-securitygroup.tf)
+    * [075-public-securitygroup.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/075-public-securitygroup.tf)
+    * [080-nva-nic-securitygroup.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/080-nva-nic-securitygroup.tf)
+    * [085-routes.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/085-routes.tf)
+    * [085-routes.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/085-routes.tf)
+    * [090-instance-disks.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/090-instance-disks.tf)
+    * [200-appgw.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/200-appgw.tf)
+    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/output.tf)
+    * [variables.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/variables.tf)
+    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/tarreform.tfvars)
+    * [files/nva-nat-cloud-config.yaml](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/files/nva-nat-cloud-config.yaml)
 
 
 

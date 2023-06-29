@@ -13,12 +13,12 @@ Our sample code can handle two use-cases:
 
 !!! Example "Files"
 
-    * [main.cf](./main.cf)
-    * [providers.cf](./providers.cf)
-    * [outputs.cf](./outputs.cf)
-    * [variables.cf](./variables.cf)
-    * [samples.tfvars](./samples.tfvars)
-    * [files/bastion-cloud-config-new.tpl](./files/bastion-cloud-config-new.tpl)
+    * [main.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/main.tf)
+    * [providers.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/providers.cf)
+    * [outputs.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/outputs.cf)
+    * [variables.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/variables.cf)
+    * [samples.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/samples.tfvars)
+    * [files/bastion-cloud-config-new.tpl](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/files/bastion-cloud-config-new.tpl)
 
 
 ## TL;DR;

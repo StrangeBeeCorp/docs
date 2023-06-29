@@ -15,17 +15,17 @@ Our sample code can handle two use-cases:
 ## Files 
  
 !!! Example "Files"
-
-    * [000-provider.tf](./000-provider.tf)
-    * [005-runcontext.tf](./005-runcontext.tf)
-    * [040-securitygroup-th.tf](./040-securitygroup-th.tf)
-    * [040-securitygroup-th.tf](./040-securitygroup-th.tf)
-    * [090-instance-cortex.tf](./090-instance-cortex.tf)
-    * [090-instance-th.tf](./090-instance-th.tf)
-    * [output.tf](./output.tf)
-    * [variables.tf](./variables.tf)
-    * [tarreform.tfvars](./tarreform.tfvars)
-    * [files/cloud-config.tpl](files/cloud-config.tpl)
+		Terraform files are available on [Github](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/):
+    * [000-provider.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/000-provider.tf)
+    * [005-runcontext.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/005-runcontext.tf)
+    * [040-securitygroup-th.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/040-securitygroup-th.tf)
+    * [040-securitygroup-th.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/040-securitygroup-th.tf)
+    * [090-instance-cortex.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/090-instance-cortex.tf)
+    * [090-instance-th.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/090-instance-th.tf)
+    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/output.tf)
+    * [variables.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/variables.tf)
+    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/tarreform.tfvars)
+    * [files/cloud-config.tpl](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/files/cloud-config.tpl)
 
 
 ## TL;DR;
