@@ -1,11 +1,11 @@
-# Upgrade from TheHive 5.0.x and 5.1.x
+# Upgrade to TheHive 5.2
 
 
 !!! Danger "*READ FIRST*"
     
     
     1. We strongly recommend you perform a full database backup before upgrading. Please follow the [backup instructions](../operations/backup-restore.md).
-    2. Once upgraded to TheHive 5.2, your TheHive instance cannot be _downgraded_, meaning you cannot go back to TheHive 5.0.x, unless you restore your data from your TheHive 5.0.x backup.
+    2. Once upgraded to TheHive 5.2, your TheHive instance cannot be _downgraded_, meaning you cannot go back to the previous TheHive 5 version you used, unless you restore your data from your TheHive 5.x backup.
     3. When upgrading an existing TheHive 5.x instance, the first application launch will apply a database evolution (schema and data). This operation might take some time depending on your database size.
 
 
