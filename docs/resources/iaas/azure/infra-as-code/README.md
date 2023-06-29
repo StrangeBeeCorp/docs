@@ -4,7 +4,7 @@
 
 The sample Terraform code in this repository allows the creation of a complete SecOps virtual network (vnet) to host your TheHive and Cortex instances and expose them using an Application Gateway.
 
-![SecOps virtual network overview](assets/overview.png)
+![SecOps virtual network overview](./assets/overview.png)
 
 The sample code is organised in two Terraform projects:
 
