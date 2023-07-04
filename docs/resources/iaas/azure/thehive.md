@@ -1,6 +1,6 @@
 # Usage instructions for the official Azure distribution of TheHive v5
 
-[Official Azure image](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/strangebee1595948424730.thehive-5?tab=Overview){ .md-button target=_blank }
+[:simple-microsoftazure: Official Azure image](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/strangebee1595948424730.thehive-5?tab=Overview){ .md-button target=_blank }
 
 The image can be used to set up a shiny-new TheHive v5 install or to launch an instance with existing data and configuration (for update / migration / restore purposes). The same image can also be used to launch Cortex on the same instance or on a separate, dedicated instance.
 

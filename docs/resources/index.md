@@ -8,10 +8,10 @@ Learn how to [download](./demo.md) and [use](./howto-vm-demo.md) our demo virtua
 ## IaaS environment
 Your have your own cloud infrastruture and wish to manage and include TheHive and Cortex ; learn how to deploy our dedicated images by reading our usage instructions:
 
-* Amazon AWS environment:
+* :fontawesome-brands-aws: Amazon AWS environment:
     * for [TheHive](./iaas/aws/thehive.md) and [Cortex](./iaas/aws/cortex.md)
     *  or [Infra as Code](./iaas/aws/infra-as-code/README.md) deployment
-* Microsoft Azure environment:
+* :simple-microsoftazure: Microsoft Azure environment:
     *  for [TheHive](./iaas/azure/thehive.md) and [Cortex](./iaas/azure/cortex.md)
     *  or [Infra as Code](./iaas/azure/infra-as-code/README.md) deployment
 
