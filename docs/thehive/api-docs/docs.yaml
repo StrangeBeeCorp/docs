@@ -1,13 +1,19 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1 (5.1.0)
+  version: v1-5.2.0-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
     \ calls. \n \nSome features (and endpoints) are only enabled with a higher license\
     \ and define a list of required `capabilities` detailed below as `TheHive-capabilities`.\n\
-    To see which capabilities your license include, see the `/api/v1/status` endpoint.\n"
+    To see which capabilities your license include, see the `/api/v1/status` endpoint.\n\
+    \n### Organisation\n\nBy default, the context of the API calls will be the default\
+    \ organisation of the user. If you want to target another organisation you can\
+    \ use the header `X-Organisation`.\n\nWith curl:\n```\ncurl -u <user>:<password>\
+    \ -H 'X-Organisation: myOrg' http://localhost:9000/api/v1/alert ...\n```\n\nWith\
+    \ python requests:\n```python\nheaders = {'X-Organisation': 'myOrg'}\nrequests.post('http://localhost:9000/api/v1/alert',\
+    \ headers=headers, json=...)\n```\n"
   x-logo:
     url: /static/logo-thehive-doc.svg
     altText: TheHive Logo
@@ -159,13 +165,49 @@ tags:
 - name: User
   description: "\nYou can use `_id` or `login` to refer to a user (in userId fields)\
     \ \n"
+- name: Page
+  description: |2
+
+    ### Queries
+    - Initial Queries:
+      - `listPage`: list pages visible by the user in the org (knowledge base pages and case pages)
+      - `listOrganisationPage`: list knowledge base pages of the org
+      - `getPage`: get a page by id
+    - Queries available on Pages
+      - `headerPage` *experimental, breaking changes could happen in future releases*: only return page header info, i.e. without the content.
+        NB: this is pagination query that takes `from` and `to` parameters
+- name: PageTemplate
+  description: |2
+
+    ### Queries
+    - Initial Queries:
+      - `listPageTemplate`: list page templates visible by the user in the org
+      - `getPageTemplate`: get a page template by id
+    - Queries available on Page Templates
+      - `caseTemplates`
+      - `headerPage` *experimental, breaking changes could happen in future releases*: only return page template header info, i.e. without the content.
+        NB: this is a pagination query that takes `from`, `to` and `extraData` parameters
+    - Extra data:
+      - `caseTemplateCount`
+- name: CaseTemplate
+  description: |2
+
+    ### Queries
+    - Initial Queries:
+      - `listCaseTemplate`: list case templates visible by the user in the org
+      - `getCaseTemplate`: get a case template by id
+    - Queries available on Case Templates
+      - `tasks`
+      - `pageTemplates`
+    - Extra data:
+      - `pageTemplateHeaders`
 servers:
 - url: /
 paths:
   /api/v1/query:
     post:
       tags:
-      - Query
+      - Query and Export
       description: "\n### Overview\n\nThe Query API is the API used to search for\
         \ objects with filtering and sorting capabilities. It's an API introduced\
         \ by TheHive 4 and is optimized for the the new data model.\n\nTheHive comes\
@@ -196,26 +238,31 @@ paths:
         \        {\n            \"_name\": \"page\",\n            \"from\": 0,\n \
         \           \"to\": 15\n        }\n    ]\n}\n```\n\n### Filters\n\nAvailable\
         \ filters:\n\n- `_and`: `{\"_and\": [...other filters] }` \n- `_or`: `{\"\
-        _or\": [...other filters] }` \n- `_not`: `` \n- `_any`: `` \n- `_lt`: `{\"\
-        _lt\": {\"_field\": \"<field>\", \"_value\": <value>}` \n- `_gt`: `{\"_gt\"\
-        : {\"_field\": \"<field>\", \"_value\": <value>}` \n- `_lte`: `{\"_lte\":\
-        \ {\"_field\": \"<field>\", \"_value\": <value>}`\n- `_gte`: `{\"_gte\": {\"\
-        _field\": \"<field>\", \"_value\": <value>}`\n- `_ne`: `{\"_ne\": {\"_field\"\
-        : \"<field>\", \"_value\": <value>}` \n- `_eq`: `{\"_eq\": {\"_field\": \"\
-        <field>\", \"_value\": <value>}` \n- `_is`: `{\"_is\": {\"_field\": \"<field>\"\
-        , \"_value\": <value>}` - same as `_eq`\n- `_startsWith`: `{\"_startsWith\"\
-        : {\"_field\": \"<field>\", \"_value\": \"<value>\"}` \n- `_endsWith`: `{\"\
-        _endsWith\": {\"_field\": \"<field>\", \"_value\": \"<value>\"}`\n- `_id`:\
-        \ `{\"_id\": \"~123\"}` \n- `_between`: `{\"_between\": {\"_field\": \"<field>\"\
-        , \"from\": <from>, \"to\": <to>}}` \n- `_in`: `{\"_in\": {\"_field\": \"\
-        <field>\", \"_values\": [<value1>, ...] }}` \n- `_contains`: `{\"_contains\"\
-        : \"<field>\"}` if an object contains this field \n- `_like`: `{\"_like\"\
-        : {\"_field\": \"<field>\", \"_value\": \"<value>\"}`\n- `_match`: `{\"_match\"\
-        : {\"_field\": \"<field>\", \"_value\": \"<value>\"}`\n\n### Sorting\n\nUse\
-        \ `{\"_name\": \"sort\", \"fields\": [ {\"<field>\": \"<direction>\" }, ...\
-        \ ]}`\n\nWith `direction` being one of `asc` or `desc`\n\n### Pagination and\
-        \ extraData\n\n- Simple pagination: `{\"_name\": \"page\", \"from\": 0, \"\
-        to\": 30}`\n- Ask for extra data with the object:\n  `{\"_name\": \"page\"\
+        _or\": [...other filters] }` \n- `_not`: `{\"_not\": { other filter } }`\n\
+        - `_any`: `{\"_any\": null}` match any entities\n- `_lt`: `{\"_lt\": {\"_field\"\
+        : \"<field>\", \"_value\": <value>}` less than\n- `_gt`: `{\"_gt\": {\"_field\"\
+        : \"<field>\", \"_value\": <value>}` greater than\n- `_lte`: `{\"_lte\": {\"\
+        _field\": \"<field>\", \"_value\": <value>}` less than or equal\n- `_gte`:\
+        \ `{\"_gte\": {\"_field\": \"<field>\", \"_value\": <value>}` greater than\
+        \ or equal\n- `_ne`: `{\"_ne\": {\"_field\": \"<field>\", \"_value\": <value>}`\
+        \ not equal\n- `_eq`: `{\"_eq\": {\"_field\": \"<field>\", \"_value\": <value>}`\
+        \ equal\n- `_is`: `{\"_is\": {\"_field\": \"<field>\", \"_value\": <value>}`\
+        \ same as `_eq`\n- `_startsWith`: `{\"_startsWith\": {\"_field\": \"<field>\"\
+        , \"_value\": \"<value>\"}` string starts with\n- `_endsWith`: `{\"_endsWith\"\
+        : {\"_field\": \"<field>\", \"_value\": \"<value>\"}` string ends with\n-\
+        \ `_id`: `{\"_id\": \"~123\"}` filter by ID\n- `_between`: `{\"_between\"\
+        : {\"_field\": \"<field>\", \"_from\": <from>, \"_to\": <to>}}` range filter,\
+        \ from is inclusive, to is exclusive, they are both mandatory\n- `_in`: `{\"\
+        _in\": {\"_field\": \"<field>\", \"_values\": [<value1>, ...] }}` the field\
+        \ is one of these values\n- `_contains`: `{\"_contains\": \"<field>\"}` if\
+        \ an object contains this field \n- `_like`: `{\"_like\": {\"_field\": \"\
+        <field>\", \"_value\": \"<value>\"}` the field (or a word, depending on the\
+        \ index type) contains the substring\n- `_match`: `{\"_match\": {\"_field\"\
+        : \"<field>\", \"_value\": \"<value>\"}` the field contains the word\n\n###\
+        \ Sorting\n\nUse `{\"_name\": \"sort\", \"fields\": [ {\"<field>\": \"<direction>\"\
+        \ }, ... ]}`\n\nWith `direction` being one of `asc` or `desc`\n\n### Pagination\
+        \ and extraData\n\n- Simple pagination: `{\"_name\": \"page\", \"from\": 0,\
+        \ \"to\": 30}`\n- Ask for extra data with the object:\n  `{\"_name\": \"page\"\
         , \"from\": 0, \"to\": 30, \"extraData\": [\"shareCount\", \"contributors\"\
         ] }`\n  \n  The `extraData` field of the object will contain a json object\
         \ with the selected fields.\n  The available `extraData` depends on the entity\
@@ -236,9 +283,158 @@ paths:
       responses:
         '200':
           description: ''
+          headers:
+            X-Total:
+              description: Total size of the results when `page > extraData` contains
+                `"total"`
+              required: false
+              schema:
+                type: integer
+                format: int64
           content:
             application/json:
               schema: {}
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/export:
+    get:
+      tags:
+      - Query and Export
+      description: |2
+
+        **WARNING**: this is an unstable route. Breaking changes could happen in future releases.
+
+        Exports the results of a query as a downloadable file in the specified format.
+
+        The `query` query param is stringified json value that conforms to the format
+        described in the `Query` documentation.
+
+        The `options` query param is a stringified json value that can have one of the following format:
+
+        - For CSV export:
+          - `format`: `(string)` Must have the `"csv"` value
+          - `fileName`: `(optional, string)` The file name, without extension
+          - At least one of the two following fields must be provided:
+            - `model`: `(optional, string)` Accepted values are `"Case"`, `"Alert"`, `"User"`, `"Organisation"`, `"Procedure"` and `"Task"`
+            - `fields`: `(optional, array of strings)` Extra fields to add to the exported data
+          - `delimiter`: `(optional, character)`
+          - `quoteChar`: `(optional, character)`
+          - `escapeChar`: `(optional, character)`
+        - For JSON export:
+          - `format`: `(string)` Must have the `"json"` value
+          - `fileName`: `(optional, string)` The file name, without extension
+      operationId: Export API (unstable route)
+      parameters:
+      - name: query
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: options
+        in: query
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            X-Total:
+              description: the total number of elements
+              required: false
+              schema:
+                type: string
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
         '400':
           description: BadRequest
           content:
@@ -1663,7 +1859,7 @@ paths:
       description: "Endpoints allows the creation of alerts in TheHive\nIt supports\
         \ both json input of multipart. **To create observables with files, you need\
         \ to use a multipart body**.\n\nTo use the multipart, you need to send several\
-        \ parts:\n- a data part with the name `json` containing a json of the alert\
+        \ parts:\n- a data part with the name `_json` containing a json of the alert\
         \ to create\n   - in the `observables`, if you want to use a simple data,\
         \ use the `data` field of the observable\n   - if you want to use a file,\
         \ in the `attachment` field use a string. This string should refers to a part\
@@ -2753,6 +2949,12 @@ paths:
           type: string
           description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
+      - name: dataType
+        in: query
+        description: allow to set the dataType from the query parameters
+        required: false
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -2871,20 +3073,23 @@ paths:
         \ with `isZip` for the same effect)\n```bash\ncurl http://<thehive_endpoint>/api/v1/alert/<alertId>/observable\
         \ -H 'Authorization: Bearer <api_key>' -X POST -F _json='\n{ \"dataType\"\
         : \"file\", \"tlp\": 3 }\n' -F attachment=@<file1> -F attachment=@<file2>\n\
-        ```\n\n\n### With python (requests)\n\nCreate a simple observable of type\
-        \ `url`:\n\n```python\nimport requests\n\nobservable = {'dataType': 'url',\
-        \ 'data': 'example.org'}\nresponse = requests.post(\n    f'{thehive_url}/api/v1/alert/{alert_id}/observable',\n\
-        \    json=observable,\n    headers={ 'Authorization': f'Bearer {thehive_api_key}'\
-        \ }\n)\n\n# check response code\nresponse.raise_for_status()\n```\n\n\nSending\
-        \ two files with a custom message and tlp:\n```python\nimport json\nimport\
-        \ requests \n\nobservable = {'dataType': 'file', 'message': 'Files from infected\
-        \ server', 'tlp': 3}\n\n# Send the request\nresponse = requests.post(\n  \
-        \  f'{thehive_url}/api/v1/alert/{alert_id}/observable',\n    # send the files\
-        \ and the observable with the special part '_json'\n    files=[\n        ('_json',\
-        \ json.dumps(observable)),\n        ('attachment', open(path_to_fileA, 'rb')),\n\
-        \        ('attachment', open(path_to_fileB, 'rb'))\n    ],\n    headers={\
-        \ 'Authorization': f'Bearer {thehive_api_key}' }\n)\n\n# check response code\n\
-        response.raise_for_status()\n\n```\n"
+        ```\n\nWhen uploading a file, the dataType attachment is guessed, so you could\
+        \ just send the file if you don't need to set any property on the observable\n\
+        curl http://<thehive_endpoint>/api/v1/alert/<alertId>/observable -H 'Authorization:\
+        \ Bearer <api_key>' -X POST -F attachment=@<file>\n\n### With python (requests)\n\
+        \nCreate a simple observable of type `url`:\n\n```python\nimport requests\n\
+        \nobservable = {'dataType': 'url', 'data': 'example.org'}\nresponse = requests.post(\n\
+        \    f'{thehive_url}/api/v1/alert/{alert_id}/observable',\n    json=observable,\n\
+        \    headers={ 'Authorization': f'Bearer {thehive_api_key}' }\n)\n\n# check\
+        \ response code\nresponse.raise_for_status()\n```\n\n\nSending two files with\
+        \ a custom message and tlp:\n```python\nimport json\nimport requests \n\n\
+        observable = {'dataType': 'file', 'message': 'Files from infected server',\
+        \ 'tlp': 3}\n\n# Send the request\nresponse = requests.post(\n    f'{thehive_url}/api/v1/alert/{alert_id}/observable',\n\
+        \    # send the files and the observable with the special part '_json'\n \
+        \   files=[\n        ('_json', json.dumps(observable)),\n        ('attachment',\
+        \ open(path_to_fileA, 'rb')),\n        ('attachment', open(path_to_fileB,\
+        \ 'rb'))\n    ],\n    headers={ 'Authorization': f'Bearer {thehive_api_key}'\
+        \ }\n)\n\n# check response code\nresponse.raise_for_status()\n\n```\n"
       operationId: Create Observable in Alert
       parameters:
       - name: alertId
@@ -2894,6 +3099,12 @@ paths:
           type: string
           description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
+      - name: dataType
+        in: query
+        description: allow to set the dataType from the query parameters
+        required: false
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -4697,18 +4908,17 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
-  /api/v1/page/{pageId or slug}:
+  /api/v1/page/{pageId}:
     delete:
       tags:
       - Page
       operationId: Delete a Page
       parameters:
-      - name: pageId or slug
+      - name: pageId
         in: path
         required: true
         schema:
           type: string
-          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -4792,12 +5002,11 @@ paths:
       - Page
       operationId: Update a Page
       parameters:
-      - name: pageId or slug
+      - name: pageId
         in: path
         required: true
         schema:
           type: string
-          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -4982,7 +5191,7 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
-  /api/v1/case/{caseId}/page/{pageId or slug}:
+  /api/v1/case/{caseId}/page/{pageId}:
     delete:
       tags:
       - Page
@@ -4995,12 +5204,11 @@ paths:
           type: string
           description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
-      - name: pageId or slug
+      - name: pageId
         in: path
         required: true
         schema:
           type: string
-          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5091,12 +5299,11 @@ paths:
           type: string
           description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
-      - name: pageId or slug
+      - name: pageId
         in: path
         required: true
         schema:
           type: string
-          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6240,6 +6447,377 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputUpdateCaseTemplate'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/caseTemplate/{caseTemplateNameOrId}/pageTemplate/link:
+    put:
+      tags:
+      - CaseTemplate
+      operationId: Link PageTemplates to a CaseTemplate
+      parameters:
+      - name: caseTemplateNameOrId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputLinkPageTemplatesToCaseTemplate'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/pageTemplate:
+    post:
+      tags:
+      - PageTemplate
+      operationId: Create a Page Template
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCreatePage'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputPage'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/pageTemplate/{pageTemplateId}:
+    delete:
+      tags:
+      - PageTemplate
+      operationId: Delete a Page Template
+      parameters:
+      - name: pageTemplateId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    patch:
+      tags:
+      - PageTemplate
+      operationId: Update a Page Template
+      parameters:
+      - name: pageTemplateId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputUpdatePage'
         required: true
       responses:
         '204':
@@ -7491,6 +8069,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -7612,6 +8191,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: If-None-Match
         in: header
@@ -7733,6 +8313,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -7829,6 +8410,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '200':
@@ -7950,6 +8532,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: If-None-Match
         in: header
@@ -8074,6 +8657,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: asZip
         in: query
@@ -8202,6 +8786,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: If-None-Match
         in: header
@@ -8409,6 +8994,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       - name: If-None-Match
         in: header
@@ -8523,6 +9109,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -19846,8 +20433,1856 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/caseReportTemplate:
+    post:
+      tags:
+      - Case Report Template
+      description: Create a new case report template
+      operationId: Create case report template
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputCreateCaseReportTemplate'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReportTemplate'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReportTemplate/{templateId}:
+    get:
+      tags:
+      - Case Report Template
+      operationId: Get case report template
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReportTemplate'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReportTemplate/{idOrName}:
+    delete:
+      tags:
+      - Case Report Template
+      operationId: Delete case report template
+      parameters:
+      - name: idOrName
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+    patch:
+      tags:
+      - Case Report Template
+      operationId: Update case report template
+      parameters:
+      - name: idOrName
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputUpdateCaseReportTemplate'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReportTemplate/_info:
+    get:
+      tags:
+      - Case Report Template
+      operationId: Get case report template options
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReportTemplateObjects'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/caseReportTemplate/{templateId}/attachment:
+    post:
+      tags:
+      - Case Report Template
+      operationId: Create Attachment to Case Report Template
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InputAttachmentsFile'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputAttachments'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/caseReportTemplate/{templateId}/attachment/{attachmentId}:
+    get:
+      tags:
+      - Case Report Template
+      operationId: Get Attachment for Case Report Template
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    delete:
+      tags:
+      - Case Report Template
+      operationId: Delete Attachment for Case Report Template
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/caseReportTemplate/{templateId}/attachment/{attachmentId}/download:
+    get:
+      tags:
+      - Case Report Template
+      operationId: Download Attachment for Case Report Template
+      parameters:
+      - name: templateId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/caseReport/render:
+    get:
+      tags:
+      - Case Report
+      description: Same as render but uses a GET http and cannot take a description
+        as input
+      operationId: Render Case Report Template (GET)
+      parameters:
+      - name: format
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: caseReportTemplateId
+        in: query
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: caseId
+        in: query
+        required: false
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: maxElements
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the renderer
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+    post:
+      tags:
+      - Case Report
+      description: |
+        Make a render for a case report template. This will output the rendering of the template but the rendering will not be saved.
+
+        `caseId` is optional. If not provided, fake data will be used.
+
+        You can either provide a full report definition or use an existing case report template
+      operationId: Render Case Report Template
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputRenderCaseReport'
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the renderer
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/case/{caseId}/report:
+    post:
+      tags:
+      - Case Report
+      description: Create a report from a case and a report template
+      operationId: Generate Case Report
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputGenerateCaseReport'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReport'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/case/{caseId}/report/upload:
+    post:
+      tags:
+      - Case Report
+      description: Upload a report from an existing file
+      operationId: Upload Case Report
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InputUploadCaseReport'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReport'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReport/{reportId}/download:
+    get:
+      tags:
+      - Case Report
+      description: Download content of the case report
+      operationId: Download Case Report
+      parameters:
+      - name: reportId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReport/{reportId}:
+    delete:
+      tags:
+      - Case Report
+      operationId: Delete Case Report
+      parameters:
+      - name: reportId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+    patch:
+      tags:
+      - Case Report
+      description: Update and replace the content of the case report
+      operationId: Update Case Report
+      parameters:
+      - name: reportId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InputUpdateCaseReport'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReport/formats:
+    get:
+      tags:
+      - Case Report
+      operationId: List supported formats
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReportFormats'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - case.reporting
 components:
   schemas:
+    AlertField:
+      type: string
+      enum:
+      - _id
+      - type
+      - source
+      - sourceRef
+      - externalLink
+      - title
+      - description
+      - severity
+      - date
+      - tags
+      - tlp
+      - pap
+      - status
+      - stage
+      - assignee
+      - summary
+      - inProgressDate
+      - closedDate
+      - importedDate
+      - timeToDetect
+      - timeToTriage
+      - timeToQualify
+      - timeToAcknowledge
+      - _createdAt
+      - _createdBy
+      - _updatedAt
+      - _updatedBy
+    AlertList:
+      required:
+      - _kind
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    AlertTable:
+      required:
+      - _kind
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    CaseReportTemplateDefinition:
+      required:
+      - i18n
+      type: object
+      properties:
+        widgets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Widget'
+        header:
+          $ref: '#/components/schemas/HeaderWidget'
+        footer:
+          $ref: '#/components/schemas/FooterWidget'
+        dateFormat:
+          type: string
+          default: yyyy-MM-dd
+        i18n:
+          $ref: '#/components/schemas/I18n'
     CustomFieldType:
       type: string
       enum:
@@ -19857,12 +22292,37 @@ components:
       - boolean
       - date
       - url
+    CustomFields:
+      required:
+      - _id
+      - _kind
+      type: object
+      properties:
+        _id:
+          type: string
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    CustomFieldsList:
+      required:
+      - _id
+      - _kind
+      type: object
+      properties:
+        _id:
+          type: string
+        _kind:
+          $ref: '#/components/schemas/Kind'
     DashboardStatus:
       type: string
       enum:
       - Private
       - Shared
       - Deleted
+    Direction:
+      type: string
+      enum:
+      - asc
+      - desc
     Error:
       required:
       - file
@@ -19876,6 +22336,112 @@ components:
           type: string
         status:
           type: string
+    FieldDirection:
+      required:
+      - field
+      - direction
+      type: object
+      properties:
+        field:
+          type: string
+        direction:
+          $ref: '#/components/schemas/Direction'
+    FieldFromTo:
+      required:
+      - _field
+      - _from
+      - _to
+      type: object
+      properties:
+        _field:
+          type: string
+        _from: {}
+        _to: {}
+    FieldValue:
+      required:
+      - _field
+      - _value
+      type: object
+      properties:
+        _field:
+          type: string
+        _value: {}
+    FieldValues:
+      required:
+      - _field
+      type: object
+      properties:
+        _field:
+          type: string
+        _values:
+          type: array
+          items: {}
+    Filter:
+      oneOf:
+      - $ref: '#/components/schemas/_and'
+      - $ref: '#/components/schemas/_any'
+      - $ref: '#/components/schemas/_between'
+      - $ref: '#/components/schemas/_contains'
+      - $ref: '#/components/schemas/_endsWith'
+      - $ref: '#/components/schemas/_eq'
+      - $ref: '#/components/schemas/_gt'
+      - $ref: '#/components/schemas/_gte'
+      - $ref: '#/components/schemas/_id'
+      - $ref: '#/components/schemas/_in'
+      - $ref: '#/components/schemas/_like'
+      - $ref: '#/components/schemas/_lt'
+      - $ref: '#/components/schemas/_lte'
+      - $ref: '#/components/schemas/_match'
+      - $ref: '#/components/schemas/_ne'
+      - $ref: '#/components/schemas/_not'
+      - $ref: '#/components/schemas/_or'
+      - $ref: '#/components/schemas/_startsWith'
+    FooterWidget:
+      required:
+      - template
+      type: object
+      properties:
+        template:
+          type: string
+    HeaderWidget:
+      required:
+      - template
+      type: object
+      properties:
+        template:
+          type: string
+    I18n:
+      required:
+      - observable
+      - task
+      - log
+      - ttp
+      - alert
+      type: object
+      properties:
+        lang:
+          type: string
+        observable:
+          $ref: '#/components/schemas/Map_String'
+        task:
+          $ref: '#/components/schemas/Map_String'
+        log:
+          $ref: '#/components/schemas/Map_String'
+        ttp:
+          $ref: '#/components/schemas/Map_String'
+        alert:
+          $ref: '#/components/schemas/Map_String'
+    Image:
+      required:
+      - attachmentId
+      - _kind
+      type: object
+      properties:
+        attachmentId:
+          type: string
+          example: ~354
+        _kind:
+          $ref: '#/components/schemas/Kind'
     Imported:
       required:
       - namespace
@@ -20012,6 +22578,12 @@ components:
             description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
           description: Define which tasks to import in the case
+        importPages:
+          type: array
+          items:
+            type: string
+            example: ~354
+          description: Define which pages to import in the case
     InputAttachment:
       required:
       - name
@@ -20021,10 +22593,16 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 128
         contentType:
           type: string
+          minLength: 1
+          maxLength: 128
         id:
           type: string
+          minLength: 1
+          maxLength: 128
       description: existing attachment in TheHive
     InputAttachmentsFile:
       type: object
@@ -20034,6 +22612,10 @@ components:
           items:
             type: string
             format: binary
+        canRename:
+          type: boolean
+          description: If set to `true`, the files can be renamed if they already
+            exist with the same name
     InputBulkProcedure:
       type: object
       properties:
@@ -20055,11 +22637,15 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 128
         description:
           type: string
           maxLength: 1048576
         variant:
           type: string
+          minLength: 1
+          maxLength: 128
     InputChangeCaseOwnership:
       required:
       - organisation
@@ -20076,8 +22662,12 @@ components:
           example: ~354
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
     InputChangeDashboardOwnership:
       required:
       - user
@@ -20095,8 +22685,12 @@ components:
       properties:
         password:
           type: string
+          minLength: 1
+          maxLength: 128
         currentPassword:
           type: string
+          minLength: 1
+          maxLength: 128
     InputComment:
       required:
       - message
@@ -20116,14 +22710,24 @@ components:
       properties:
         type:
           type: string
+          minLength: 1
+          maxLength: 32
         source:
           type: string
+          minLength: 1
+          maxLength: 32
         sourceRef:
           type: string
+          minLength: 1
+          maxLength: 128
         externalLink:
           type: string
+          minLength: 1
+          maxLength: 512
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -20144,6 +22748,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         flag:
           type: boolean
         tlp:
@@ -20154,6 +22760,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -20173,8 +22780,17 @@ components:
           maxLength: 1048576
         status:
           type: string
+          minLength: 1
+          maxLength: 64
+        assignee:
+          type: string
+          description: User to assign the alert to
+          minLength: 1
+          maxLength: 128
         caseTemplate:
           type: string
+          minLength: 1
+          maxLength: 128
         observables:
           type: array
           items:
@@ -20193,6 +22809,8 @@ components:
         value:
           type: string
           description: Name of the status
+          minLength: 1
+          maxLength: 64
         stage:
           $ref: '#/components/schemas/InputAlertStage'
         order:
@@ -20214,6 +22832,8 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           description: Description of the case, supports markdown
@@ -20240,6 +22860,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         flag:
           type: boolean
           default: false
@@ -20252,6 +22874,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -20264,12 +22887,16 @@ components:
         status:
           type: string
           default: New
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           maxLength: 1048576
         assignee:
           type: string
           description: User to assign the case to
+          minLength: 1
+          maxLength: 128
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -20279,25 +22906,37 @@ components:
         caseTemplate:
           type: string
           description: Name or id of the Case Template to use
+          minLength: 1
+          maxLength: 128
         tasks:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
           description: Tasks to create. If null, tasks from the Case Template will
             be used
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreatePage'
         sharingParameters:
           type: array
           items:
             $ref: '#/components/schemas/InputShare'
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
     InputCreateCaseFromAlert:
       type: object
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -20321,6 +22960,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         flag:
           type: boolean
         tlp:
@@ -20331,6 +22972,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -20341,12 +22983,16 @@ components:
           - 3
         status:
           type: string
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           maxLength: 1048576
         assignee:
           type: string
           description: User to assign the case to
+          minLength: 1
+          maxLength: 128
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -20356,19 +23002,47 @@ components:
         caseTemplate:
           type: string
           description: Name or id of the Case Template to use
+          minLength: 1
+          maxLength: 128
         tasks:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
           description: Additional tasks to create
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreatePage'
         sharingParameters:
           type: array
           items:
             $ref: '#/components/schemas/InputShare'
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
+    InputCreateCaseReportTemplate:
+      required:
+      - title
+      - definition
+      type: object
+      properties:
+        title:
+          type: string
+        group:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        definition:
+          $ref: '#/components/schemas/CaseReportTemplateDefinition'
+        version:
+          type: integer
+          format: int32
     InputCreateCaseStatus:
       required:
       - value
@@ -20378,6 +23052,8 @@ components:
         value:
           type: string
           description: Name of the status
+          minLength: 1
+          maxLength: 64
         stage:
           $ref: '#/components/schemas/InputCaseStage'
         order:
@@ -20401,12 +23077,18 @@ components:
           description: Name of the CaseTemplate, must be unique in your organisation.
             This name can be used in your integrations, for instance when creating
             a case
+          minLength: 1
+          maxLength: 128
         displayName:
           type: string
           description: A friendly name displayed in the UI for the CaseTemplate
+          minLength: 1
+          maxLength: 128
         titlePrefix:
           type: string
           description: Prefix used when creating a case
+          minLength: 1
+          maxLength: 64
         description:
           type: string
           description: Description for the case. All other fields below concern the
@@ -20424,6 +23106,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         flag:
           type: boolean
         tlp:
@@ -20434,6 +23118,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -20449,6 +23134,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
+        pageTemplateIds:
+          type: array
+          items:
+            type: string
+            description: The _id of the entity or its 'name' (depends of the entity)
+            example: ~354
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -20465,8 +23156,12 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         group:
           type: string
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           maxLength: 1048576
@@ -20507,6 +23202,8 @@ components:
       properties:
         dataType:
           type: string
+          minLength: 1
+          maxLength: 64
         data:
           $ref: '#/components/schemas/InputObservableData'
         message:
@@ -20538,6 +23235,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -20551,6 +23249,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         ioc:
           type: boolean
           default: false
@@ -20570,6 +23270,8 @@ components:
             and each file in the zip is treated as an observable
         zipPassword:
           type: string
+          minLength: 1
+          maxLength: 512
     InputCreateOrganisation:
       required:
       - name
@@ -20578,13 +23280,19 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         description:
           type: string
           maxLength: 1048576
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 64
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 64
         locked:
           type: boolean
     InputCreatePage:
@@ -20596,6 +23304,8 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         content:
           type: string
           maxLength: 1048576
@@ -20604,6 +23314,8 @@ components:
           format: int32
         category:
           type: string
+          minLength: 1
+          maxLength: 128
     InputCreateProfile:
       required:
       - name
@@ -20611,10 +23323,14 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         permissions:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 32
     InputCreateShare:
       type: object
       properties:
@@ -20639,13 +23355,19 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 128
         group:
           type: string
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           maxLength: 1048576
         status:
           type: string
+          minLength: 1
+          maxLength: 16
         flag:
           type: boolean
         startDate:
@@ -20665,6 +23387,8 @@ components:
           example: 1640000000000
         assignee:
           type: string
+          minLength: 1
+          maxLength: 128
         mandatory:
           type: boolean
     InputCreateUser:
@@ -20678,18 +23402,30 @@ components:
           type: string
           description: Login the user will need to enter, this will be the main identifier
             for the user
+          minLength: 1
+          maxLength: 128
         name:
           type: string
           description: Name of the user
+          minLength: 1
+          maxLength: 128
         email:
           type: string
+          minLength: 1
+          maxLength: 128
         password:
           type: string
+          minLength: 1
+          maxLength: 128
         profile:
           type: string
           description: Profile to assign the user in the organisation
+          minLength: 1
+          maxLength: 64
         organisation:
           type: string
+          minLength: 1
+          maxLength: 128
         type:
           $ref: '#/components/schemas/InputUserType'
     InputCustomEvent:
@@ -20708,6 +23444,8 @@ components:
           example: 1640000000000
         title:
           type: string
+          minLength: 1
+          maxLength: 128
         description:
           type: string
           maxLength: 1048576
@@ -20721,10 +23459,16 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         displayName:
           type: string
+          minLength: 1
+          maxLength: 64
         group:
           type: string
+          minLength: 1
+          maxLength: 64
         description:
           type: string
           maxLength: 1048576
@@ -20744,6 +23488,8 @@ components:
         name:
           type: string
           description: Name of a CustomField
+          minLength: 1
+          maxLength: 64
         value:
           description: Either a string, number or boolean depending on the CustomField
             type
@@ -20757,6 +23503,8 @@ components:
       properties:
         value:
           type: string
+          minLength: 1
+          maxLength: 512
         expanded:
           type: string
           maxLength: 1048576
@@ -20778,6 +23526,8 @@ components:
         name:
           type: string
           description: Name of the function, should be unique in an organisation
+          minLength: 1
+          maxLength: 128
         mode:
           $ref: '#/components/schemas/InputFunctionMode'
         definition:
@@ -20795,6 +23545,18 @@ components:
       - Enabled
       - Disabled
       - DryRun
+    InputGenerateCaseReport:
+      required:
+      - caseReportTemplateId
+      - format
+      type: object
+      properties:
+        caseReportTemplateId:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+        format:
+          type: string
     InputImportCase:
       required:
       - password
@@ -20803,14 +23565,20 @@ components:
         password:
           type: string
           description: Password to read the archive
+          minLength: 1
+          maxLength: 512
         sharingParameters:
           type: array
           items:
             $ref: '#/components/schemas/InputShare'
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
     InputImportCase1:
       type: object
       properties:
@@ -20822,6 +23590,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputCreateTask'
+        pages:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreatePage'
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -20859,6 +23631,14 @@ components:
       properties:
         license:
           type: string
+    InputLinkPageTemplatesToCaseTemplate:
+      type: object
+      properties:
+        pageTemplateIds:
+          type: array
+          items:
+            type: string
+            example: ~354
     InputLogLevel:
       type: string
       enum:
@@ -20876,7 +23656,7 @@ components:
         items:
           type: string
           minLength: 1
-          maxLength: 2048
+          maxLength: 4096
       - type: string
     InputObservableType:
       required:
@@ -20885,6 +23665,8 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         isAttachment:
           type: boolean
     InputOrganisationBulkLink:
@@ -20899,8 +23681,12 @@ components:
       properties:
         linkType:
           type: string
+          minLength: 1
+          maxLength: 64
         otherLinkType:
           type: string
+          minLength: 1
+          maxLength: 64
     InputPatternImportMitre:
       required:
       - catalog
@@ -20908,12 +23694,18 @@ components:
       properties:
         url:
           type: string
+          minLength: 1
+          maxLength: 512
         catalog:
           type: string
           description: Either a name or id of an existing catalog in TheHive or if
             a catalog with this name does not exists, one will be created
+          minLength: 1
+          maxLength: 128
         variant:
           type: string
+          minLength: 1
+          maxLength: 128
     InputPredicate:
       required:
       - value
@@ -20921,6 +23713,8 @@ components:
       properties:
         value:
           type: string
+          minLength: 1
+          maxLength: 512
         expanded:
           type: string
           maxLength: 1048576
@@ -20941,6 +23735,8 @@ components:
         patternId:
           type: string
           description: Id of the technique in the catalog
+          minLength: 1
+          maxLength: 128
         occurDate:
           type: integer
           format: datetime_ms
@@ -20949,6 +23745,8 @@ components:
           type: string
           description: Name of the tactic, useful if the technique belongs to several
             tactics
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           maxLength: 1048576
@@ -21024,6 +23822,30 @@ components:
             description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
           description: Names or ids of the organisations
+    InputRenderCaseReport:
+      required:
+      - format
+      type: object
+      properties:
+        format:
+          type: string
+        definition:
+          $ref: '#/components/schemas/CaseReportTemplateDefinition'
+        caseReportTemplateId:
+          type: string
+          description: Either provide `definition` or `caseReportTemplateId`
+          example: ~354
+        caseId:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+        maxElements:
+          type: integer
+          description: Limit the number of elements in tables and lists, useful for
+            a preview
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
     InputSetUserOrganisations:
       type: object
       properties:
@@ -21038,6 +23860,8 @@ components:
       properties:
         password:
           type: string
+          minLength: 1
+          maxLength: 128
     InputShare:
       required:
       - organisation
@@ -21057,15 +23881,21 @@ components:
           description: Profile used to define the permissions of the organisation
             members
           default: analyst
+          minLength: 1
+          maxLength: 64
         taskRule:
           type: string
           description: Sharing rule to apply to the tasks, can be manual or autoShare
           default: Sharing rule applied on the case
+          minLength: 1
+          maxLength: 64
         observableRule:
           type: string
           description: Sharing rule to apply to the observables, can be manual or
             autoShare
           default: Sharing rule applied on the case
+          minLength: 1
+          maxLength: 64
     InputTOTPCode:
       required:
       - code
@@ -21086,6 +23916,8 @@ components:
       properties:
         namespace:
           type: string
+          minLength: 1
+          maxLength: 128
         description:
           type: string
           maxLength: 1048576
@@ -21118,6 +23950,8 @@ components:
         name:
           type: string
           description: Name of the function
+          minLength: 1
+          maxLength: 128
         definition:
           type: string
           description: Code of the function
@@ -21130,15 +23964,25 @@ components:
       properties:
         type:
           type: string
+          minLength: 1
+          maxLength: 32
         source:
           type: string
+          minLength: 1
+          maxLength: 32
         sourceRef:
           type: string
+          minLength: 1
+          maxLength: 128
         externalLink:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 512
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -21162,6 +24006,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         tlp:
           type: integer
           format: int32
@@ -21170,6 +24016,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21188,19 +24035,30 @@ components:
               $ref: '#/components/schemas/InputCustomFieldValue'
         status:
           type: string
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           format: nullable
           maxLength: 1048576
+        assignee:
+          type: string
+          format: nullable
+          minLength: 1
+          maxLength: 128
         addTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current alert
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current alert
     InputUpdateAlertStatus:
       type: object
@@ -21229,15 +24087,25 @@ components:
             example: ~354
         type:
           type: string
+          minLength: 1
+          maxLength: 32
         source:
           type: string
+          minLength: 1
+          maxLength: 32
         sourceRef:
           type: string
+          minLength: 1
+          maxLength: 128
         externalLink:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 512
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -21261,6 +24129,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         tlp:
           type: integer
           format: int32
@@ -21269,6 +24139,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21287,25 +24158,38 @@ components:
               $ref: '#/components/schemas/InputCustomFieldValue'
         status:
           type: string
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           format: nullable
           maxLength: 1048576
+        assignee:
+          type: string
+          format: nullable
+          minLength: 1
+          maxLength: 128
         addTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current alert
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current alert
     InputUpdateCase:
       type: object
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -21329,6 +24213,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Set the case tags to this array
         flag:
           type: boolean
@@ -21340,6 +24226,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21350,6 +24237,8 @@ components:
           - 3
         status:
           type: string
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           format: nullable
@@ -21357,9 +24246,13 @@ components:
         assignee:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         impactStatus:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -21368,18 +24261,49 @@ components:
               $ref: '#/components/schemas/InputCustomFieldValue'
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
         addTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current case
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current case
+    InputUpdateCaseReport:
+      required:
+      - file
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
+    InputUpdateCaseReportTemplate:
+      type: object
+      properties:
+        title:
+          type: string
+        group:
+          type: string
+        description:
+          type: string
+          maxLength: 1048576
+        definition:
+          $ref: '#/components/schemas/CaseReportTemplateDefinition'
+        version:
+          type: integer
+          format: int32
     InputUpdateCaseStatus:
       type: object
       properties:
@@ -21399,8 +24323,12 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 128
         displayName:
           type: string
+          minLength: 1
+          maxLength: 64
         titlePrefix:
           type: string
           format: nullable
@@ -21420,6 +24348,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         flag:
           type: boolean
         tlp:
@@ -21430,6 +24360,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32 or null
@@ -21465,6 +24396,8 @@ components:
             example: ~354
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         description:
           type: string
           maxLength: 1048576
@@ -21488,6 +24421,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Set the case tags to this array
         flag:
           type: boolean
@@ -21499,6 +24434,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21509,6 +24445,8 @@ components:
           - 3
         status:
           type: string
+          minLength: 1
+          maxLength: 64
         summary:
           type: string
           format: nullable
@@ -21516,9 +24454,13 @@ components:
         assignee:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         impactStatus:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
@@ -21527,23 +24469,33 @@ components:
               $ref: '#/components/schemas/InputCustomFieldValue'
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 128
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 128
         addTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current case
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current case
     InputUpdateCatalogOfPattern:
       type: object
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 128
         description:
           type: string
           format: nullable
@@ -21551,6 +24503,8 @@ components:
         variant:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
     InputUpdateCustomEvent:
       type: object
       properties:
@@ -21564,6 +24518,8 @@ components:
           example: 1640000000000
         title:
           type: string
+          minLength: 1
+          maxLength: 128
         description:
           type: string
           format: nullable
@@ -21573,8 +24529,12 @@ components:
       properties:
         displayName:
           type: string
+          minLength: 1
+          maxLength: 64
         group:
           type: string
+          minLength: 1
+          maxLength: 64
         description:
           type: string
           maxLength: 1048576
@@ -21590,8 +24550,12 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         group:
           type: string
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           maxLength: 1048576
@@ -21630,6 +24594,8 @@ components:
       properties:
         dataType:
           type: string
+          minLength: 1
+          maxLength: 64
         message:
           type: string
           format: nullable
@@ -21642,6 +24608,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21654,6 +24621,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         ioc:
           type: boolean
         sighted:
@@ -21668,11 +24637,15 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current observable
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current observable
     InputUpdateObservableWithIds:
       required:
@@ -21687,6 +24660,8 @@ components:
             example: ~354
         dataType:
           type: string
+          minLength: 1
+          maxLength: 64
         message:
           type: string
           format: nullable
@@ -21699,6 +24674,7 @@ components:
           - 1
           - 2
           - 3
+          - 4
         pap:
           type: integer
           format: int32
@@ -21711,6 +24687,8 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
         ioc:
           type: boolean
         sighted:
@@ -21725,24 +24703,34 @@ components:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be added to the current observable
         removeTags:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 128
           description: Those tags will be removed from the current observable
     InputUpdateOrganisation:
       type: object
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         description:
           type: string
           maxLength: 1048576
         taskRule:
           type: string
+          minLength: 1
+          maxLength: 64
         observableRule:
           type: string
+          minLength: 1
+          maxLength: 64
         locked:
           type: boolean
         avatar:
@@ -21752,6 +24740,8 @@ components:
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 512
         content:
           type: string
           maxLength: 1048576
@@ -21760,6 +24750,8 @@ components:
           format: int32
         category:
           type: string
+          minLength: 1
+          maxLength: 128
     InputUpdateProcedure:
       type: object
       properties:
@@ -21775,10 +24767,14 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 64
         permissions:
           type: array
           items:
             type: string
+            minLength: 1
+            maxLength: 32
     InputUpdateShare:
       required:
       - profile
@@ -21786,19 +24782,27 @@ components:
       properties:
         profile:
           type: string
+          minLength: 1
+          maxLength: 64
     InputUpdateTask:
       type: object
       properties:
         title:
           type: string
+          minLength: 1
+          maxLength: 128
         group:
           type: string
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           format: nullable
           maxLength: 1048576
         status:
           type: string
+          minLength: 1
+          maxLength: 16
         flag:
           type: boolean
         startDate:
@@ -21819,6 +24823,8 @@ components:
         assignee:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         mandatory:
           type: boolean
     InputUpdateTaskWithIds:
@@ -21834,14 +24840,20 @@ components:
             example: ~354
         title:
           type: string
+          minLength: 1
+          maxLength: 128
         group:
           type: string
+          minLength: 1
+          maxLength: 32
         description:
           type: string
           format: nullable
           maxLength: 1048576
         status:
           type: string
+          minLength: 1
+          maxLength: 16
         flag:
           type: boolean
         startDate:
@@ -21862,6 +24874,8 @@ components:
         assignee:
           type: string
           format: nullable
+          minLength: 1
+          maxLength: 128
         mandatory:
           type: boolean
     InputUpdateUser:
@@ -21869,13 +24883,19 @@ components:
       properties:
         name:
           type: string
+          minLength: 1
+          maxLength: 128
         organisation:
           type: string
           description: When updating the profile, use this field to determine the
             organisation to update
+          minLength: 1
+          maxLength: 128
         profile:
           type: string
           description: Requires admin permission to update this field
+          minLength: 1
+          maxLength: 64
         locked:
           type: boolean
           description: Requires admin permission to update this field
@@ -21883,10 +24903,22 @@ components:
           type: string
         email:
           type: string
+          minLength: 1
+          maxLength: 128
         defaultOrganisation:
           type: string
+          minLength: 1
+          maxLength: 128
         type:
           $ref: '#/components/schemas/InputUserType'
+    InputUploadCaseReport:
+      required:
+      - file
+      type: object
+      properties:
+        file:
+          type: string
+          format: binary
     InputUserOrganisation:
       required:
       - organisation
@@ -21895,8 +24927,12 @@ components:
       properties:
         organisation:
           type: string
+          minLength: 1
+          maxLength: 128
         profile:
           type: string
+          minLength: 1
+          maxLength: 64
         default:
           type: boolean
     InputUserType:
@@ -21913,12 +24949,29 @@ components:
       properties:
         predicate:
           type: string
+          minLength: 1
+          maxLength: 512
         entry:
           type: array
           items:
             $ref: '#/components/schemas/InputEntry'
     JsObject:
       type: object
+    Kind:
+      type: string
+      enum:
+      - Text
+      - Image
+      - CustomFields
+      - CustomFieldsList
+      - AlertTable
+      - AlertList
+      - ObservableTable
+      - ObservableList
+      - TaskTable
+      - TaskList
+      - TTPTable
+      - TTPList
     Ko:
       required:
       - errors
@@ -21932,6 +24985,16 @@ components:
       - type: array
         items:
           $ref: '#/components/schemas/OutputLicense'
+    LogField:
+      type: string
+      enum:
+      - message
+      - date
+      - includeInTimeline
+      - _createdAt
+      - _createdBy
+      - _updatedAt
+      - _updatedBy
     LoginInput:
       required:
       - user
@@ -21952,6 +25015,10 @@ components:
       type: object
       additionalProperties:
         type: boolean
+    Map_Direction:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Direction'
     Map_Int:
       type: object
       additionalProperties:
@@ -21984,6 +25051,82 @@ components:
         type: string
     Nil:
       type: object
+    ObservableField:
+      type: string
+      enum:
+      - dataType
+      - data
+      - startDate
+      - tlp
+      - pap
+      - tags
+      - ioc
+      - sighted
+      - sightedAt
+      - reports
+      - message
+      - _createdAt
+      - _createdBy
+      - _updatedAt
+      - _updatedBy
+    ObservableList:
+      required:
+      - protectData
+      - _kind
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObservableField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        protectData:
+          type: boolean
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    ObservableTable:
+      required:
+      - protectData
+      - _kind
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObservableField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        protectData:
+          type: boolean
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
     Ok:
       type: object
       properties:
@@ -22017,8 +25160,12 @@ components:
           type: string
         linkType:
           type: string
+          minLength: 1
+          maxLength: 64
         otherLinkType:
           type: string
+          minLength: 1
+          maxLength: 64
     OutputAction:
       required:
       - responderId
@@ -22068,9 +25215,12 @@ components:
       - title
       - description
       - severity
+      - severityLabel
       - date
       - tlp
+      - tlpLabel
       - pap
+      - papLabel
       - follow
       - observableCount
       - status
@@ -22111,6 +25261,8 @@ components:
         severity:
           type: integer
           format: int32
+        severityLabel:
+          type: string
         date:
           type: integer
           format: datetime_ms
@@ -22122,9 +25274,13 @@ components:
         tlp:
           type: integer
           format: int32
+        tlpLabel:
+          type: string
         pap:
           type: integer
           format: int32
+        papLabel:
+          type: string
         follow:
           type: boolean
         customFields:
@@ -22141,6 +25297,8 @@ components:
         status:
           type: string
         stage:
+          type: string
+        assignee:
           type: string
         summary:
           type: string
@@ -22329,10 +25487,13 @@ components:
       - title
       - description
       - severity
+      - severityLabel
       - startDate
       - flag
       - tlp
+      - tlpLabel
       - pap
+      - papLabel
       - status
       - stage
       - extraData
@@ -22368,6 +25529,8 @@ components:
         severity:
           type: integer
           format: int32
+        severityLabel:
+          type: string
         startDate:
           type: integer
           format: datetime_ms
@@ -22385,9 +25548,13 @@ components:
         tlp:
           type: integer
           format: int32
+        tlpLabel:
+          type: string
         pap:
           type: integer
           format: int32
+        papLabel:
+          type: string
         status:
           type: string
         stage:
@@ -22458,6 +25625,114 @@ components:
         handlingDuration:
           type: integer
           format: int64
+    OutputCaseReport:
+      required:
+      - _id
+      - _type
+      - _createdBy
+      - _createdAt
+      - contentType
+      - size
+      - filename
+      type: object
+      properties:
+        _id:
+          type: string
+        _type:
+          type: string
+        _createdBy:
+          type: string
+        _updatedBy:
+          type: string
+        _createdAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _updatedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        contentType:
+          type: string
+        size:
+          type: integer
+          format: int64
+        filename:
+          type: string
+    OutputCaseReportFormats:
+      type: object
+      properties:
+        formats:
+          type: array
+          items:
+            type: string
+    OutputCaseReportTemplate:
+      required:
+      - _id
+      - _type
+      - _createdBy
+      - _createdAt
+      - title
+      - group
+      - description
+      - version
+      - definition
+      type: object
+      properties:
+        _id:
+          type: string
+        _type:
+          type: string
+        _createdBy:
+          type: string
+        _updatedBy:
+          type: string
+        _createdAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        _updatedAt:
+          type: integer
+          format: datetime_ms
+          example: 1640000000000
+        title:
+          type: string
+        group:
+          type: string
+        description:
+          type: string
+        version:
+          type: integer
+          format: int32
+        definition:
+          $ref: '#/components/schemas/CaseReportTemplateDefinition'
+    OutputCaseReportTemplateObjects:
+      type: object
+      properties:
+        widgets:
+          type: array
+          items:
+            $ref: '#/components/schemas/Kind'
+        alertFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlertField'
+        observableFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/ObservableField'
+        taskFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskField'
+        ttpFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TTPField'
+        logFields:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogField'
     OutputCaseStatus:
       required:
       - _id
@@ -22507,6 +25782,7 @@ components:
       - name
       - displayName
       - flag
+      - extraData
       type: object
       properties:
         _id:
@@ -22536,6 +25812,8 @@ components:
         severity:
           type: integer
           format: int32
+        severityLabel:
+          type: string
         tags:
           type: array
           items:
@@ -22545,9 +25823,13 @@ components:
         tlp:
           type: integer
           format: int32
+        tlpLabel:
+          type: string
         pap:
           type: integer
           format: int32
+        papLabel:
+          type: string
         summary:
           type: string
         customFields:
@@ -22558,6 +25840,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OutputTask'
+        extraData:
+          $ref: '#/components/schemas/JsObject'
     OutputCaseWithLinks:
       required:
       - _id
@@ -22568,10 +25852,13 @@ components:
       - title
       - description
       - severity
+      - severityLabel
       - startDate
       - flag
       - tlp
+      - tlpLabel
       - pap
+      - papLabel
       - status
       - stage
       - extraData
@@ -22608,6 +25895,8 @@ components:
         severity:
           type: integer
           format: int32
+        severityLabel:
+          type: string
         startDate:
           type: integer
           format: datetime_ms
@@ -22625,9 +25914,13 @@ components:
         tlp:
           type: integer
           format: int32
+        tlpLabel:
+          type: string
         pap:
           type: integer
           format: int32
+        papLabel:
+          type: string
         status:
           type: string
         stage:
@@ -22761,6 +26054,8 @@ components:
           type: integer
           format: datetime_ms
           example: 1640000000000
+        updatedBy:
+          type: string
         message:
           type: string
         isEdited:
@@ -23076,7 +26371,6 @@ components:
       - analyzerDefinition
       - status
       - startDate
-      - endDate
       - cortexId
       - cortexJobId
       - id
@@ -23319,7 +26613,9 @@ components:
       - dataType
       - startDate
       - tlp
+      - tlpLabel
       - pap
+      - papLabel
       - ioc
       - sighted
       - reports
@@ -23356,9 +26652,13 @@ components:
         tlp:
           type: integer
           format: int32
+        tlpLabel:
+          type: string
         pap:
           type: integer
           format: int32
+        papLabel:
+          type: string
         tags:
           type: array
           items:
@@ -23497,14 +26797,11 @@ components:
       - _type
       - _createdBy
       - _createdAt
-      - id
-      - createdBy
-      - createdAt
       - title
       - content
-      - slug
       - order
       - category
+      - extraData
       type: object
       properties:
         _id:
@@ -23523,36 +26820,17 @@ components:
           type: integer
           format: datetime_ms
           example: 1640000000000
-        id:
-          type: string
-          deprecated: true
-        createdBy:
-          type: string
-          deprecated: true
-        updatedBy:
-          type: string
-          deprecated: true
-        createdAt:
-          type: integer
-          format: datetime_ms
-          example: 1640000000000
-          deprecated: true
-        updatedAt:
-          type: integer
-          format: datetime_ms
-          example: 1640000000000
-          deprecated: true
         title:
           type: string
         content:
-          type: string
-        slug:
           type: string
         order:
           type: integer
           format: int32
         category:
           type: string
+        extraData:
+          $ref: '#/components/schemas/JsObject'
     OutputPattern:
       required:
       - _id
@@ -23863,6 +27141,10 @@ components:
           items:
             $ref: '#/components/schemas/JsObject'
           description: Filled when verbose
+        features:
+          type: array
+          items:
+            type: string
     OutputStreamAudit:
       required:
       - base
@@ -24161,6 +27443,310 @@ components:
           type: array
           items:
             type: string
+    TTPField:
+      type: string
+      enum:
+      - tactic
+      - patternId
+      - description
+      - occurDate
+      - _createdAt
+      - _createdBy
+      - _updatedAt
+      - _updatedBy
+    TTPList:
+      required:
+      - _kind
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TTPField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    TTPTable:
+      required:
+      - _kind
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/TTPField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    TaskField:
+      type: string
+      enum:
+      - group
+      - title
+      - description
+      - status
+      - flag
+      - startDate
+      - endDate
+      - assignee
+      - dueDate
+      - mandatory
+      - _createdAt
+      - _createdBy
+      - _updatedAt
+      - _updatedBy
+    TaskList:
+      required:
+      - _kind
+      type: object
+      properties:
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskField'
+        logColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogField'
+        withTaskLogs:
+          type: boolean
+          default: true
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    TaskTable:
+      required:
+      - _kind
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/TaskField'
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          minimum: 0
+          exclusiveMinimum: true
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    Text:
+      required:
+      - template
+      - _kind
+      type: object
+      properties:
+        template:
+          type: string
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    Widget:
+      oneOf:
+      - $ref: '#/components/schemas/AlertList'
+      - $ref: '#/components/schemas/AlertTable'
+      - $ref: '#/components/schemas/CustomFields'
+      - $ref: '#/components/schemas/CustomFieldsList'
+      - $ref: '#/components/schemas/Image'
+      - $ref: '#/components/schemas/ObservableList'
+      - $ref: '#/components/schemas/ObservableTable'
+      - $ref: '#/components/schemas/TTPList'
+      - $ref: '#/components/schemas/TTPTable'
+      - $ref: '#/components/schemas/TaskList'
+      - $ref: '#/components/schemas/TaskTable'
+      - $ref: '#/components/schemas/Text'
+      discriminator:
+        propertyName: _kind
+        mapping:
+          AlertList: '#/components/schemas/AlertList'
+          AlertTable: '#/components/schemas/AlertTable'
+          CustomFields: '#/components/schemas/CustomFields'
+          CustomFieldsList: '#/components/schemas/CustomFieldsList'
+          Image: '#/components/schemas/Image'
+          ObservableList: '#/components/schemas/ObservableList'
+          ObservableTable: '#/components/schemas/ObservableTable'
+          TTPList: '#/components/schemas/TTPList'
+          TTPTable: '#/components/schemas/TTPTable'
+          TaskList: '#/components/schemas/TaskList'
+          TaskTable: '#/components/schemas/TaskTable'
+          Text: '#/components/schemas/Text'
+    _and:
+      type: object
+      properties:
+        _and:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filter'
+    _any:
+      required:
+      - _any
+      type: object
+      properties:
+        _any: {}
+    _between:
+      required:
+      - _between
+      type: object
+      properties:
+        _between:
+          $ref: '#/components/schemas/FieldFromTo'
+    _contains:
+      required:
+      - _contains
+      type: object
+      properties:
+        _contains:
+          type: string
+    _endsWith:
+      required:
+      - _endsWith
+      type: object
+      properties:
+        _endsWith:
+          $ref: '#/components/schemas/FieldValue'
+    _eq:
+      required:
+      - _eq
+      type: object
+      properties:
+        _eq:
+          $ref: '#/components/schemas/FieldValue'
+    _gt:
+      required:
+      - _gt
+      type: object
+      properties:
+        _gt:
+          $ref: '#/components/schemas/FieldValue'
+    _gte:
+      required:
+      - _gte
+      type: object
+      properties:
+        _gte:
+          $ref: '#/components/schemas/FieldValue'
+    _id:
+      required:
+      - _id
+      type: object
+      properties:
+        _id:
+          type: string
+          example: ~354
+    _in:
+      required:
+      - _in
+      type: object
+      properties:
+        _in:
+          $ref: '#/components/schemas/FieldValues'
+    _like:
+      required:
+      - _like
+      type: object
+      properties:
+        _like:
+          $ref: '#/components/schemas/FieldValue'
+    _lt:
+      required:
+      - _lt
+      type: object
+      properties:
+        _lt:
+          $ref: '#/components/schemas/FieldValue'
+    _lte:
+      required:
+      - _lte
+      type: object
+      properties:
+        _lte:
+          $ref: '#/components/schemas/FieldValue'
+    _match:
+      required:
+      - _match
+      type: object
+      properties:
+        _match:
+          $ref: '#/components/schemas/FieldValue'
+    _ne:
+      required:
+      - _ne
+      type: object
+      properties:
+        _ne:
+          $ref: '#/components/schemas/FieldValue'
+    _not:
+      required:
+      - _not
+      type: object
+      properties:
+        _not:
+          $ref: '#/components/schemas/Filter'
+    _or:
+      type: object
+      properties:
+        _or:
+          type: array
+          items:
+            $ref: '#/components/schemas/Filter'
+    _startsWith:
+      required:
+      - _startsWith
+      type: object
+      properties:
+        _startsWith:
+          $ref: '#/components/schemas/FieldValue'
     customFieldsAsObject:
       type: object
       additionalProperties: {}
@@ -24200,7 +27786,7 @@ components:
 x-tagGroups:
 - name: Standard Features
   tags:
-  - Query
+  - Query and Export
 - name: Case Management
   tags:
   - Case
@@ -24212,6 +27798,7 @@ x-tagGroups:
   - TTP
   - Task Log
   - Share
+  - Case Report
 - name: User Management
   tags:
   - Organisation
@@ -24224,7 +27811,9 @@ x-tagGroups:
   - CaseStatus
   - Taxonomy
   - CaseTemplate
+  - PageTemplate
   - Observable Type
+  - Case Report Template
 - name: Connectors
   tags:
   - Cortex
