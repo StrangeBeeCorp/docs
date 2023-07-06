@@ -10,7 +10,7 @@ Run TheHive and Cortex using this docker compose file:
 version: "3"
 services:
   thehive:
-    image: strangebee/thehive:5.1
+    image: strangebee/thehive:5.2
     depends_on:
       - cassandra
       - elasticsearch
@@ -109,7 +109,7 @@ We recommend to always set the version of your docker image in production scenar
     * It's highly recommended to change the default credentials and secrets.
 
 !!! Warning "Lucene index"
-    Starting from version 5.1, the lucene index is no longer supported and will cause issues when using queries on custom fields. That's why we strongly recommend you to use Elasticsearch instead.
+    Since version 5.1, the lucene index is no longer supported and will cause issues when using queries on custom fields. That's why we strongly recommend you to use Elasticsearch instead.
 
     Please refer to [this page](../operations/change-index.md) on how to update.
 

@@ -11,7 +11,7 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 :fontawesome-solid-folder-tree:  A file storage solution is also required ; the local filesystem of the server hosting the application is adequate in the standalone server scenario ; [S3 MINIO](https://min.io/) otherwise.
 
 !!! Danger "Using Lucene"
-    TheHive 5.1 does **NOT** support Lucene backend as index engine any more.
+    Since version 5.1, TheHive does **NOT** support Lucene backend as index engine any more.
     
     **Lucene** was an option to handle the data index with TheHive 4.1.x  ; to migrate your index to Elasticsearch, follow [this guide](./operations/change-index.md).
 
@@ -98,6 +98,12 @@ Discover how to install TheHive quickly by following our installation guides:
 TheHive can be used on virtual or physical servers.
 
 Our [step-by-step guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
+
+TheHive supports beeing installed in virtualized environments: 
+
+* Using VMware :fontawesome-solid-server:
+* Using Proxmox :simple-proxmox: virtual machines or containers (lxc)
+
 
 ### Use Docker :material-docker:
 An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) to use it in production.

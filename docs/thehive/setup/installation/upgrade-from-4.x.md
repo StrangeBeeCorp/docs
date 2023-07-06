@@ -377,7 +377,7 @@ db.janusgraph.forceDropAndRebuildIndex = true
 
     ```bash
     wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-    sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.1 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+    sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
     ```
 
     - Install new package - old package of `thehive4` will be removed
@@ -402,7 +402,7 @@ db.janusgraph.forceDropAndRebuildIndex = true
       enabled=1
       priority=1
       name=StrangeBee RPM repository
-      baseurl=https://rpm.strangebee.com/thehive-5.1/noarch
+      baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
       gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
       gpgcheck=1
       ```

@@ -20,6 +20,7 @@ Choose *Slack* and complete required information.
 * **Token**: specify the token to use to connect to the service
 * **Auth Type**: Use *Basic authentication* to connect to this endpoint, or use *Key* or *Bearer* method
 * **Proxy settings**: choose to use a web proxy to connect to this endpoint
+* **Certificate authorities**: add custom Certificate Authorities if required (PEM format)
 * **SSL settings**: disable Certificate Authority checking and/or checks on hostnames
 
 Then, click **confirm** to create the endpoint.

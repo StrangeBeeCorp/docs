@@ -3,7 +3,7 @@
 Using Mattermost as *Notifier* requires to create at least one endpoint. This endpoint defines how TheHive will connect to Mattermost.
 
 ## Create an enpoint
-In the *Organsation* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
+In the *Organisation* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
 
 <figure markdown>
   ![Enpoints list](./images/organisation-endpoints.png){ width="500" }
@@ -22,6 +22,7 @@ Choose *Mattermost* and complete required information.
 * **Channel**: default channel used to send data
 * **Auth Type**: Use *Basic authentication* to connect to this endpoint, or use *Key* or *Bearer* method
 * **Proxy settings**: choose to use a web proxy to connect to this endpoint
+* **Certificate authorities**: add custom Certificate Authorities if required (PEM format)
 * **SSL settings**: disable Certificate Authority checking and/or checks on hostnames
 
 Then, click **confirm** to create the endpoint.

@@ -71,8 +71,10 @@ Several types of *Notifiers* are available in TheHive:
 * **HTTP Request**: send data to a chosen [HTTP endpoint](./http-request.md)
 * **Mattermost**: send data to a chosen [Mattermost endoint](./mattermost.md)
 * **Slack**: send data to a chosen [Slack endpoint](./slack.md)
+* **MS Teams**: send data to a chosen [Microsoft Teams endpoint](./teams.md)
 * **Webhook**: send data to a chosen [webhook endpoint](./webhook.md)
 * **Kafka**: send data to a chosen [Kafka queue](./kafka.md)
+* **Redis**: send data to a chosen [Redis endpoint](./redis.md)
 
 Two of them are dedicated to run Cortex Analyzers and Responders:
 
