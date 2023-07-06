@@ -98,4 +98,5 @@
 - API could understand "last x days" filters
 
 ### Fixes
+
 - Fixed some display problems on custom fields

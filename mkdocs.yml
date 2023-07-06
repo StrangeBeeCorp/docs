@@ -36,6 +36,7 @@ plugins:
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
+            'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
 
 extra:
   social:
@@ -86,7 +87,7 @@ nav:
       # - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/kubernetes.md
     - 'Version Upgrades':
-      - thehive/setup/installation/upgrade-from-5.0.x.md
+      - thehive/setup/installation/upgrade-from-5.x.md
       - thehive/setup/installation/upgrade-from-4.x.md
       - thehive/setup/installation/migration.md
     - 'Configuration & Operations':
