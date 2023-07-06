@@ -9,10 +9,7 @@
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.x
 
 
-
-!!! Warning "UNDER CONSTRUCTION"
-
-## 5.2.0 - 1st July 2023
+## 5.2.0 - 6st July 2023
 
 ### Breaking changes
 
@@ -22,7 +19,7 @@
         - TLP:GREEN = 1
         - TLP:AMBER = 2
         - **New:** TLP:AMBER+STRICT = 3
-        - **Change:** TLP:RED = 4
+        - **Change:** TLP:RED = 4 (previously = 3)
     - Please make sure to update your dashboard and any integrations that rely on these values.
 
 ### Main features
@@ -37,6 +34,8 @@
     - **Page template:** Customize and organize your cases pages
 
         Guide your collaborators in writing the documentation for a case by importing pages directly from the template to provide all the necessary elements and improve processes.
+
+        See [dedicated page](../user-guides/organisation/templates/page-templates.md) for more information (requires platinum license)
 
     <figure markdown>
     ![Case reporting](./images/release52-case-reporting.png){ width="450"}
