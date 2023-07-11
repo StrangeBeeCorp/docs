@@ -9,7 +9,23 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
-## 5.2.0 - 6st July 2023
+## 5.2.1 - 11th July 2023
+
+### Fixes
+
+**UI:**
+
+- Fix slow autocomplete of custom tags
+
+**Docker:**
+
+- Fixed a behavior where cassandra hostnames were discarded when not resolvable by the entrypoint. This caused the application to use the local file database instead of the provided cassandra hosts when no host could be resolved. This issue appeared in environments like docker swarm.
+
+!!! warning
+    The docker will no longer try to connect to a cassandra host called `cassandra` by default. If you use docker-compose with a cassandra database, make sure that you use the option `--cql-hostnames`
+
+
+## 5.2.0 - 6th July 2023
 
 ### Breaking changes
 
