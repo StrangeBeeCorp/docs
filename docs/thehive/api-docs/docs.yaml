@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1
+  version: v1-5.2.2-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -28,11 +28,12 @@ tags:
     \ a number **(deprecated)**\n- Queries available on Cases:\n  - `observables`\n\
     \  - `tasks`\n  - `assignableUsers`\n  - `organisations`\n  - `alerts`\n  - `shares`\n\
     \  - `procedures`\n  - `linkedCases`\n  - `attachments`\n  - `similarAlerts`\n\
-    \  - `pages`\n  - `comments`\n- Extra data:\n  - `observableStats`\n  - `taskStats`\n\
-    \  - `alerts`\n  - `alertCount`\n  - `isOwner`\n  - `shareCount`\n  - `permissions`\n\
-    \  - `actionRequired`\n  - `procedureCount`\n  - `attachmentCount`\n  - `similarAlerts`\n\
-    \  - `contributors`\n  - `computed.handlingDuration`\n  - `computed.handlingDurationInSeconds`\n\
-    \  - `computed.handlingDurationInMinutes`\n  - `computed.handlingDurationInHours`\n\
+    \  - `pages`\n  - `comments`\n  - `allComments`: also gets comments from visible\
+    \ related alerts\n- Extra data:\n  - `observableStats`\n  - `taskStats`\n  - `alerts`\n\
+    \  - `alertCount`\n  - `isOwner`\n  - `shareCount`\n  - `permissions`\n  - `actionRequired`\n\
+    \  - `procedureCount`\n  - `attachmentCount`\n  - `similarAlerts`\n  - `contributors`\n\
+    \  - `computed.handlingDuration`\n  - `computed.handlingDurationInSeconds`\n \
+    \ - `computed.handlingDurationInMinutes`\n  - `computed.handlingDurationInHours`\n\
     \  - `computed.handlingDurationInDays`\n  - `status`\n"
 - name: Alert
   description: |2
@@ -100,12 +101,13 @@ tags:
       - `alert`
       - `shares`
     - Extra Data
-      - `seen`
+      - `seenSummary`
       - `shares`
       - `links`
       - `permissions`
       - `isOwner`
       - `shareCount`
+      - ~~`seen`~~: deprecated in favor of `seenSummary` that is more efficient when there are a lot of similar observables
 - name: CustomField
   description: "\nCustom fields are additional fields that can enrich your Cases,\
     \ Alerts and Observables.\n\nFirst a custom field needs to be created by an admin\
@@ -127,6 +129,8 @@ tags:
     - Initial Queries:
       - `listComment`
       - `getComment`
+    - Extra Data:
+      - `links`
 - name: Task Log
   description: "\n### Queries\n- Initial Queries: \n  - `listLog`\n  - `getLog`\n\
     - Extra Data:\n  - `case`\n  - `task`\n  - `taskId`\n  - `actionCount`\n"
@@ -213,42 +217,46 @@ paths:
         \ by TheHive 4 and is optimized for the the new data model.\n\nTheHive comes\
         \ with a list of predefined search *Queries* like:\n\n- `listOrganisation`\n\
         - `listUser`\n- `listAlert`\n- `listCase`\n\nThe Query API request body should\
-        \ be an array of *operations* of different types:\n\n- Selection: *Required*\n\
-        \    - list of objects\n    - object by identifier\n- Filtering: *optional*\n\
-        - Sorting: *optional*\n- Pagination: *optional*\n\n### Examples\n\nSimple\
-        \ List:\n```json\n{\n    \"query\": [\n        {\n            \"_name\": \"\
-        listOrganisation\"\n        }\n    ]\n}\n```\n\nList with filters:\n```json\n\
+        \ be an object with the following fields:\n - `query` *required*: an array\
+        \ of *operations* of different types:\n    - Selection: *required*\n     \
+        \ - list of objects\n      - object by identifier\n    - Filtering: *optional*\n\
+        \    - Sorting: *optional*\n    - Pagination: *optional*\n - `excludeFields`\
+        \ *optional*: an array of field names\n\n### Examples\n\nSimple List:\n```json\n\
         {\n    \"query\": [\n        {\n            \"_name\": \"listOrganisation\"\
-        \n        },\n        {\n            \"_name\": \"filter\",\n            \"\
-        _eq\": {\n                \"_field\": \"name\",\n                \"_value\"\
-        : \"admin\"\n            }\n        }\n    ]\n}\n```\n\nList with pagination:\n\
-        \nList organisations called *admin*, sorted by ascendant `_updatedAt` value,\
-        \ paginated to display the first 15 items\n```json\n{\n    \"query\": [\n\
-        \        {\n            \"_name\": \"listOrganisation\"\n        },\n    \
-        \    {\n            \"_name\": \"filter\",\n            \"_eq\": {\n     \
-        \           \"_field\": \"name\",\n                \"_value\": \"admin\"\n\
-        \            }\n        },\n        {\n            \"_name\": \"sort\",\n\
-        \            \"_fields\": [\n                {\n                    \"_updatedAt\"\
-        : \"asc\"\n                }\n            ]\n        },\n        {\n     \
-        \       \"_name\": \"page\",\n            \"from\": 0,\n            \"to\"\
-        : 15\n        }\n    ]\n}\n```\n\nChaining queries:\n\nList the observables\
-        \ for the case with id `~1234`\n```json\n{\n    \"query\": [\n        {\n\
-        \            \"_name\": \"getCase\",\n            \"idOrName\": \"~1234\"\n\
-        \        },\n        {\n            \"_name\": \"observables\"\n        },\n\
-        \        {\n            \"_name\": \"page\",\n            \"from\": 0,\n \
-        \           \"to\": 15\n        }\n    ]\n}\n```\n\n### Filters\n\nAvailable\
-        \ filters:\n\n- `_and`: `{\"_and\": [...other filters] }` \n- `_or`: `{\"\
-        _or\": [...other filters] }` \n- `_not`: `{\"_not\": { other filter } }`\n\
-        - `_any`: `{\"_any\": null}` match any entities\n- `_lt`: `{\"_lt\": {\"_field\"\
-        : \"<field>\", \"_value\": <value>}` less than\n- `_gt`: `{\"_gt\": {\"_field\"\
-        : \"<field>\", \"_value\": <value>}` greater than\n- `_lte`: `{\"_lte\": {\"\
-        _field\": \"<field>\", \"_value\": <value>}` less than or equal\n- `_gte`:\
-        \ `{\"_gte\": {\"_field\": \"<field>\", \"_value\": <value>}` greater than\
-        \ or equal\n- `_ne`: `{\"_ne\": {\"_field\": \"<field>\", \"_value\": <value>}`\
-        \ not equal\n- `_eq`: `{\"_eq\": {\"_field\": \"<field>\", \"_value\": <value>}`\
-        \ equal\n- `_is`: `{\"_is\": {\"_field\": \"<field>\", \"_value\": <value>}`\
-        \ same as `_eq`\n- `_startsWith`: `{\"_startsWith\": {\"_field\": \"<field>\"\
-        , \"_value\": \"<value>\"}` string starts with\n- `_endsWith`: `{\"_endsWith\"\
+        \n        }\n    ]\n}\n```\n\nList with filters:\n```json\n{\n    \"query\"\
+        : [\n        {\n            \"_name\": \"listOrganisation\"\n        },\n\
+        \        {\n            \"_name\": \"filter\",\n            \"_eq\": {\n \
+        \               \"_field\": \"name\",\n                \"_value\": \"admin\"\
+        \n            }\n        }\n    ]\n}\n```\n\nList with pagination:\n\nList\
+        \ organisations called *admin*, sorted by ascendant `_updatedAt` value, paginated\
+        \ to display the first 15 items\n```json\n{\n    \"query\": [\n        {\n\
+        \            \"_name\": \"listOrganisation\"\n        },\n        {\n    \
+        \        \"_name\": \"filter\",\n            \"_eq\": {\n                \"\
+        _field\": \"name\",\n                \"_value\": \"admin\"\n            }\n\
+        \        },\n        {\n            \"_name\": \"sort\",\n            \"_fields\"\
+        : [\n                {\n                    \"_updatedAt\": \"asc\"\n    \
+        \            }\n            ]\n        },\n        {\n            \"_name\"\
+        : \"page\",\n            \"from\": 0,\n            \"to\": 15\n        }\n\
+        \    ]\n}\n```\n\nChaining queries:\n\nList the observables for the case with\
+        \ id `~1234`\n```json\n{\n    \"query\": [\n        {\n            \"_name\"\
+        : \"getCase\",\n            \"idOrName\": \"~1234\"\n        },\n        {\n\
+        \            \"_name\": \"observables\"\n        },\n        {\n         \
+        \   \"_name\": \"page\",\n            \"from\": 0,\n            \"to\": 15\n\
+        \        }\n    ]\n}\n```\n\nExclude fields:\n\n```\n{\n    \"query\": [\n\
+        \      {\n        \"_name\": \"listCase\"\n      }\n    ],\n    \"excludeFields\"\
+        : [\"description\", \"summary\"]\n}\n```\n\n### Filters\n\nAvailable filters:\n\
+        \n- `_and`: `{\"_and\": [...other filters] }` \n- `_or`: `{\"_or\": [...other\
+        \ filters] }` \n- `_not`: `{\"_not\": { other filter } }`\n- `_any`: `{\"\
+        _any\": null}` match any entities\n- `_lt`: `{\"_lt\": {\"_field\": \"<field>\"\
+        , \"_value\": <value>}` less than\n- `_gt`: `{\"_gt\": {\"_field\": \"<field>\"\
+        , \"_value\": <value>}` greater than\n- `_lte`: `{\"_lte\": {\"_field\": \"\
+        <field>\", \"_value\": <value>}` less than or equal\n- `_gte`: `{\"_gte\"\
+        : {\"_field\": \"<field>\", \"_value\": <value>}` greater than or equal\n\
+        - `_ne`: `{\"_ne\": {\"_field\": \"<field>\", \"_value\": <value>}` not equal\n\
+        - `_eq`: `{\"_eq\": {\"_field\": \"<field>\", \"_value\": <value>}` equal\n\
+        - `_is`: `{\"_is\": {\"_field\": \"<field>\", \"_value\": <value>}` same as\
+        \ `_eq`\n- `_startsWith`: `{\"_startsWith\": {\"_field\": \"<field>\", \"\
+        _value\": \"<value>\"}` string starts with\n- `_endsWith`: `{\"_endsWith\"\
         : {\"_field\": \"<field>\", \"_value\": \"<value>\"}` string ends with\n-\
         \ `_id`: `{\"_id\": \"~123\"}` filter by ID\n- `_between`: `{\"_between\"\
         : {\"_field\": \"<field>\", \"_from\": <from>, \"_to\": <to>}}` range filter,\
@@ -279,6 +287,9 @@ paths:
               - from: 0
                 to: 10
                 _name: page
+              excludeFields:
+              - description
+              - summary
         required: true
       responses:
         '200':
@@ -4919,6 +4930,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5007,6 +5019,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -5209,6 +5222,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -5304,6 +5318,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -6724,6 +6739,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       responses:
         '204':
@@ -6812,6 +6828,7 @@ paths:
         required: true
         schema:
           type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
           example: ~354
       requestBody:
         content:
@@ -7407,6 +7424,104 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/InputUpdateProcedure'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/procedure/delete/_bulk:
+    post:
+      tags:
+      - TTP
+      operationId: Delete Procedures in bulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - ids
+              type: object
+              properties:
+                ids:
+                  type: array
+                  items:
+                    type: string
+                    description: The _id of the entity or its 'name' (depends of the
+                      entity)
+                    example: ~354
         required: true
       responses:
         '204':
@@ -22218,6 +22333,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         fields:
           type: array
           items:
@@ -22244,6 +22361,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         columns:
           type: array
           items:
@@ -22298,6 +22417,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         _id:
           type: string
         _kind:
@@ -22308,6 +22429,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         _id:
           type: string
         _kind:
@@ -22437,6 +22560,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         attachmentId:
           type: string
           example: ~354
@@ -23757,6 +23882,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputQueryNamedOperation'
+        excludeFields:
+          type: array
+          items:
+            type: string
     InputQueryFilterOperation:
       required:
       - _name
@@ -25075,6 +25204,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         fields:
           type: array
           items:
@@ -25104,6 +25235,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         columns:
           type: array
           items:
@@ -26038,6 +26171,7 @@ components:
       - createdAt
       - message
       - isEdited
+      - extraData
       type: object
       properties:
         _id:
@@ -26060,6 +26194,8 @@ components:
           type: string
         isEdited:
           type: boolean
+        extraData:
+          $ref: '#/components/schemas/JsObject'
     OutputContextDocumentation:
       type: object
       properties:
@@ -27459,6 +27595,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         fields:
           type: array
           items:
@@ -27485,6 +27623,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         columns:
           type: array
           items:
@@ -27528,6 +27668,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         fields:
           type: array
           items:
@@ -27561,6 +27703,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         columns:
           type: array
           items:
@@ -27588,6 +27732,8 @@ components:
       - _kind
       type: object
       properties:
+        title:
+          type: string
         template:
           type: string
         _kind:
