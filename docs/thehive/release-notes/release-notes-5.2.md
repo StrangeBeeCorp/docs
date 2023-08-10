@@ -8,6 +8,59 @@
 !!! info
     An [upgrade guide](../setup/installation/upgrade-from-5.0.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.2.2 - 9rd August 2023
+
+### Fixes
+
+- **Infrastructure:**
+    - Fix to create attachment directory if it doesn't exist when TheHive starts up
+    - A change in authentication configuration is now applied immediately, without the need to restart the platform.
+    - The http context is only present once when you configure a SAML authentication server like Okta
+
+- **API:**
+    - Improve performances of notifications making http requests and limit the number of open processes
+
+- **UI:**
+    - The name field is indicated as required in the endpoint configuration.
+    - Improved loading time for the list of observables
+
+
+### Main features
+- **Alerts, Cases and tasks**
+    - Cancelled tasks are now displayed in a case's task list and in the task menu. It will also be possible to see them in progress, and a quick filter on canceled tasks has been added.
+    - The severity component of a case and the case number have been split. A new severity component has been created and standardized in the application
+        <figure markdown>
+        ![Severity component](./images/release52-severity.png){ width="450"}
+        </figure>
+    - Alert comments are visible in case they have been imported
+    - Added the ability to copy case number, case title and alert title to the clipboard
+    - Add an icon to display alerts, cases and unassigned tasks, and trigger a quick filter on lists
+    - Added ability to perform bulk actions on TTPs
+    - It is possible to obtain the URL of a case page so that it can be shared
+
+
+**Administration** 
+
+- Improved case report templates
+    - Added the ability to add a title to a case report widget
+    - It is possible to duplicate a case report template
+    - It is possible to duplicate a case report template widget
+- Notifications can now be triggered when an alert closes
+- We have uniformized the labels for PAP, TLP and Severity, in making so, the template helpers severityLabel, tlpLabel and papLabel available in notifications now return the label in upper case
+- The application will notify users by email when their account is modified by them or an admin in the following cases:
+    - Modification of email address
+    - Modification of password
+    - Password reset
+
+
+
+## 5.2.1 - 11rd Jully 2023
+
+### Fixes
+
+**UI:**
+
+- Fix slowness problem on custom tag autocompletion
 
 ## 5.2.0 - 6st July 2023
 
