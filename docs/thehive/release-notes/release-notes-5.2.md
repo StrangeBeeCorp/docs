@@ -12,35 +12,36 @@
 
 ### Fixes
 
-- **Infrastructure:**
+**Infrastructure:**
 
-    - Fix to create attachment directory if it doesn't exist when TheHive starts up
-    - A change in authentication configuration is now applied immediately, without the need to restart the platform.
-    - The http context is only present once when you configure a SAML authentication server like Okta
+- Fix to create attachment directory if it doesn't exist when TheHive starts up
+- A change in authentication configuration is now applied immediately, without the need to restart the platform.
+- The http context is only present once when you configure a SAML authentication server like Okta
 
-- **API:**
+**API:**
 
-    - Improve performances of notifications making http requests and limit the number of open processes
+- Improve performances of notifications making http requests and limit the number of open processes
 
-- **UI:**
+**UI:**
 
-    - The name field is indicated as required in the endpoint configuration.
-    - Improved loading time for the list of observables
+- The name field is indicated as required in the endpoint configuration.
+- Improved loading time for the list of observables
 
 
 ### Main features
 
-- **Alerts, Cases and tasks**
-    - Cancelled tasks are now displayed in a case's task list and in the task menu. It will also be possible to see them in progress, and a quick filter on canceled tasks has been added.
-    - The severity component of a case and the case number have been split. A new severity component has been created and standardized in the application
-        <figure markdown>
-        ![Severity component](./images/release52-severity.png){ width="450"}
-        </figure>
-    - Alert comments are visible in case they have been imported
-    - Added the ability to copy case number, case title and alert title to the clipboard
-    - Add an icon to display alerts, cases and unassigned tasks, and trigger a quick filter on lists
-    - Added ability to perform bulk actions on TTPs
-    - It is possible to obtain the URL of a case page so that it can be shared
+**Alerts, Cases and tasks**
+
+- Cancelled tasks are now displayed in a case's task list and in the task menu. It will also be possible to see them in progress, and a quick filter on canceled tasks has been added.
+- The severity component of a case and the case number have been split. A new severity component has been created and standardized in the application
+    <figure markdown>
+    ![Severity component](./images/release52-severity.png){ width="450"}
+    </figure>
+- Alert comments are visible in case they have been imported
+- Added the ability to copy case number, case title and alert title to the clipboard
+- Add an icon to display alerts, cases and unassigned tasks, and trigger a quick filter on lists
+- Added ability to perform bulk actions on TTPs
+- It is possible to obtain the URL of a case page so that it can be shared
 
 
 **Administration** 
