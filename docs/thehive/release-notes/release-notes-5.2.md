@@ -30,7 +30,7 @@
 
 ### Main features
 
-**Alerts, Cases and tasks**
+**Alerts, Cases and tasks:**
 
 - Cancelled tasks are now displayed in a case's task list and in the task menu. It will also be possible to see them in progress, and a quick filter on canceled tasks has been added.
 - The severity component of a case and the case number have been split. A new severity component has been created and standardized in the application
@@ -44,7 +44,7 @@
 - It is possible to obtain the URL of a case page so that it can be shared
 
 
-**Administration** 
+**Administration:** 
 
 - Improved case report templates
     - Added the ability to add a title to a case report widget
