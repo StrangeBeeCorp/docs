@@ -223,6 +223,4 @@ Sample text here...
 
 ![Alt text][id]
 
-With a reference later in the document defining the URL location:
-
 [id]: https://www.strangebee.com/images/logos/theHiveCloudPlatformBlock.svg  "TheHive Cloud Platform"
