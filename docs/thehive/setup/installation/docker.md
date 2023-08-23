@@ -47,17 +47,20 @@ services:
 
   cassandra:
     image: 'cassandra:4'
-    mem_limit: 1000m
+    mem_limit: 1600m
     ports:
       - "9042:9042"
     environment:
+      - MAX_HEAP_SIZE=1024M
+      - HEAP_NEWSIZE=1024M
       - CASSANDRA_CLUSTER_NAME=TheHive
     volumes:
       - cassandradata:/var/lib/cassandra
+    restart: on-failure
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
-    mem_limit: 512m
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.12
+    mem_limit: 1500m
     ports:
       - "9200:9200"
     environment:
@@ -80,13 +83,13 @@ services:
 
   cortex:
     image: thehiveproject/cortex:3.1.7
+    depends_on:
+      - elasticsearch
     environment:
       - job_directory=/tmp/cortex-jobs
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /tmp/cortex-jobs:/tmp/cortex-jobs
-    depends_on:
-      - elasticsearch
     ports:
       - "9001:9001"
 
@@ -215,3 +218,11 @@ Available options:
 ## Usage in kubernetes
 
 Refer to the [dedicated page](kubernetes.md) for instuctions on how to deploy on kubernetes.
+
+
+## Troubleshooting
+
+### Container exited with code 137
+
+One of your container is using too much memory compared to what docker allows. You can increase the parameter `mem_limit` to allow more memory for the container. For JVM based applications (TheHive, Cassandra, Elasticsearch) you can also tune the JVM parameters to set the maximum heap size to use.
+For TheHive, you can use the environment variable `JVM_OPTS`: `JVM_OPTS="-Xms1024M -Xmx1024M"`
