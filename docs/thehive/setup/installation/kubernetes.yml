@@ -288,6 +288,8 @@ spec:
   selector:
     matchLabels:
       app: thehive
+  strategy:
+    type: Recreate
   template:
     metadata:
       labels:
