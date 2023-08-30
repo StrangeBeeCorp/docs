@@ -139,6 +139,10 @@ nav:
         - 'Analyzers templates': thehive/administration/analyzers-templates.md
         - 'Taxonomies': thehive/administration/taxonomies.md    
         - 'Att&ck patterns': thehive/administration/attack-patterns.md
+      - 'How to':
+        - 'Notification': thehive/how-to/notifications.md
+        - 'Splunk integration': thehive/how-to/splunk-integration.md
+        - 'Markdown': thehive/how-to/markdown.md
     # - 'User Interface':
     #   - 'Navigation': thehive/user-interface/navigation.md
     #   - 'Lists & views': thehive/user-interface/lists.md
