@@ -29,3 +29,7 @@ Explore advanced techniques to enrich your search results with additional tags, 
 For comprehensive details and examples, we encourage you to explore the [original documentation](https://github.com/LetMeR00t/TA-thehive-cortex/blob/main/docs/alert_actions_and_adaptive_response.md) to set up your connector effectively.
 
 To integrate this connector into your workflow, please refer to the [original documentation](https://github.com/LetMeR00t/TA-thehive-cortex/blob/main/docs/alert_actions_and_adaptive_response.md). Your success starts there!
+
+# Support
+
+Should you have any inquiries or feedback, feel free to reach out to the author on GitHub, or seek assistance from TheHive support through the portal.
