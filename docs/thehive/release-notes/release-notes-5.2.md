@@ -11,7 +11,7 @@
 
 ## 5.2.3 - 5th September 2023
 
-## Fixes
+### Fixes
 
 **API:**
 
@@ -24,7 +24,7 @@
 - **Real-time Updates:** The observables and tasks counter now updates in real-time after an item is deleted from the list.
 - **Sorting Fix:** A sorting issue on the related alerts list has been addressed.
 
-## New Features
+### New Features
 
 - **Enhanced Case Merging:** When merging cases, identical unmodified tasks are now intelligently merged, streamlining case management.
 - **Attachment Previews:** Enjoy the convenience of previewing image, text, and PDF attachments for cases and task logs.
