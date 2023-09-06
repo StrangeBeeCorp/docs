@@ -8,6 +8,35 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
+
+## 5.2.3 - 5th September 2023
+
+## Fixes
+
+**API:**
+
+- **Case Closure Enhancement:** The case closing API has been enhanced to ensure that mandatory custom fields are filled in before a case can be closed.
+
+**User Interface:**
+
+- **Taxonomy Import:** The message returned by the taxonomy import in the event of an error or duplication is clearer
+- **Task Creation:** Newly created tasks are now added to the bottom of the task list to maintain task order consistency.
+- **Real-time Updates:** The observables and tasks counter now updates in real-time after an item is deleted from the list.
+- **Sorting Fix:** A sorting issue on the related alerts list has been addressed.
+
+## New Features
+
+- **Enhanced Case Merging:** When merging cases, identical unmodified tasks are now intelligently merged, streamlining case management.
+- **Attachment Previews:** Enjoy the convenience of previewing image, text, and PDF attachments for cases and task logs.
+- **Task Date Handling:** Task end dates now auto-populate when a task is cancelled, with added checks to ensure start-end date consistency.
+- **Redesigned Task Log Display:** The task log display has undergone a redesign, optimizing readability for improved usability.
+- **Streamlined Comment Display:** Comments are now displayed in a revamped layout, enhancing readability for easier comprehension.
+- **Self-Assignment Capability:** It's now possible to assign cases and tasks to yourself
+- **Expanded Custom Field Usage:** Custom fields can now be completed when closing an alert, offering more complete alert closure information.
+- **Markdown Support in Case Reports:** Markdown formatting in task log displays within case reports is now correctly interpreted, maintaining rich text formatting.
+- **SMTP configuration testing:** Easily validate your SMTP configuration directly from the platform, to ensure the smooth operation of e-mail evoies through the application.
+
+
 ## 5.2.2 - 9th August 2023
 
 ### Fixes
@@ -22,13 +51,13 @@
 
 - Improve performances of notifications making http requests and limit the number of open processes
 
-**UI:**
+**User Interface:**
 
 - The name field is indicated as required in the endpoint configuration.
 - Improved loading time for the list of observables
 
 
-### Main features
+### New Features
 
 **Alerts, Cases and tasks:**
 
