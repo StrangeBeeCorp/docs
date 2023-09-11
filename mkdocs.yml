@@ -179,13 +179,15 @@ nav:
           # - 'Email to specific address': thehive/user-guides/organisation/notifications/email-to-addr.md
           # - 'HTTP request endpoint': thehive/user-guides/organisation/notifications/http-request.md
           # - 'Webhook endpoint': thehive/user-guides/organisation/notifications/webhook.md
-          - 'Mattermost': thehive/user-guides/organisation/notifications/mattermost.md
-          - 'MS Teams': thehive/user-guides/organisation/notifications/teams.md
-          - 'Slack': thehive/user-guides/organisation/notifications/slack.md
-          - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
-          - 'Redis': thehive/user-guides/organisation/notifications/redis.md
+          - 'Notifiers':
+            - 'Mattermost': thehive/user-guides/organisation/notifications/mattermost.md
+            - 'MS Teams': thehive/user-guides/organisation/notifications/teams.md
+            - 'Slack': thehive/user-guides/organisation/notifications/slack.md
+            - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
+            - 'Redis': thehive/user-guides/organisation/notifications/redis.md
           # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
           # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
+          - 'Filtered Events': thehive/user-guides/organisation/notifications/filteredevents.md
         - 'Endpoints': 
           - 'About endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
           - 'Add endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
