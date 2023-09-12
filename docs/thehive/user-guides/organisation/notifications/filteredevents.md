@@ -335,7 +335,7 @@ It will return false if the field is not defined. For this use case, use `{"_not
         },
         {
             "_is": {
-                "details.stage": "closed"
+                "details.stage": "Closed"
             }
         },
         {
@@ -407,7 +407,7 @@ It will return false if the field is not defined. For this use case, use `{"_not
 }
 ```
 
-- Case is updated with a status `TruePositive` or `FalsePositive` and the custom field `threat-category` is either `Spam, Phishing, Scam, Malware, Legitimate, Recon`
+- Case is updated with a status `TruePositive` or `FalsePositive` and the custom field `business-unit` is either `Sales` or `Marketing`
 
 ```json
 {
@@ -440,32 +440,12 @@ It will return false if the field is not defined. For this use case, use `{"_not
             "_or": [
                 {
                     "_is": {
-                        "object.customFieldValues.threat-category": "Spam"
+                        "object.customFieldValues.business-unit": "Sales"
                     }
                 },
                 {
                     "_is": {
-                        "object.customFieldValues.threat-category": "Phishing"
-                    }
-                },
-                {
-                    "_is": {
-                        "object.customFieldValues.threat-category": "Scam"
-                    }
-                },
-                {
-                    "_is": {
-                        "object.customFieldValues.threat-category": "Malware"
-                    }
-                },
-                {
-                    "_is": {
-                        "object.customFieldValues.threat-category": "Legitimate"
-                    }
-                },
-                {
-                    "_is": {
-                        "object.customFieldValues.threat-category": "Recon"
+                        "object.customFieldValues.business-unit": "Marketing"
                     }
                 }
             ]
@@ -478,6 +458,11 @@ It will return false if the field is not defined. For this use case, use `{"_not
 ```json
 {
     "_and": [
+        {
+            "_is": {
+                "objectType": "Job"
+            }
+        },
         {
             "_is": {
                 "object.analyzerName": "EmlParser_2_1"
