@@ -207,13 +207,13 @@ Returns true when field `foo` is strictly lower than `42`
 `_eq` is an alias for `_is`
 
 ```json
-{ "_eq_": { "foo": 42 } }
+{ "_eq": { "foo": 42 } }
 ```
 
 Returns true when field `foo` is equal to `42`.
 
 ```json
-{ "_eq_": { "foo": "LOW" } }
+{ "_eq": { "foo": "LOW" } }
 ```
 
 Returns true when field `foo` is equal to `"LOW"`.
@@ -221,7 +221,7 @@ Returns true when field `foo` is equal to `"LOW"`.
 Also works with arrays:
 
 ```json
-{ "_eq_": { "tags": ["foo", "bar"] } }
+{ "_eq": { "tags": ["foo", "bar"] } }
 ```
 
 Returns true when field `tags` will be equal to `["foo", "bar"]`
