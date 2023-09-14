@@ -65,34 +65,17 @@ Cortex is an open source and free software released under the [AGPL](https://git
 ## Updates and community discussions
 Information, news and updates are regularly posted on several communication channels:
 
-:fontawesome-brands-twitter: [TheHive Project Twitter account](https://twitter.com/thehive_project)
+:fontawesome-brands-twitter: [StrangeBee Twitter account](https://twitter.com/StrangeBee) / [TheHive Project Twitter account](https://twitter.com/thehive_project)
 
-:fontawesome-brands-wordpress: [TheHive Project blog](https://blog.thehive-project.org/)
+:fontawesome-brands-mastodon:  [TheHive Project Mastodon account](https://infosec.exchange/@TheHive_Project) / [StrangeBee Mastodon account](https://infosec.exchange/@StrangeBee)
 
-:fontawesome-brands-discord: [TheHive Project Discord](https://chat.thehive-project.org)
+:fontawesome-brands-wordpress: [blog at StrangeBee](https://blog.strangebee.com)
 
-:fontawesome-brands-google: Users forum on [Google Groups](https://groups.google.com/a/thehive-project.org/d/forum/users). Request an access:
+:fontawesome-brands-discord: [Join users community on Discord](https://chat.thehive-project.org)
 
-- [using a Gmail address](https://accounts.google.com/SignUp?hl=en)
--  or [without it](https://accounts.google.com/SignUpWithoutGmail?hl=en).
-
-## Contributing
-We welcome your contributions. Please feel free to fork the code, play with it, make some patches and send us pull requests using [issues](https://github.com/TheHive-Project/Cortex/issues).
-
-We do have a [Code of conduct](code-of-conduct.md). Make sure to check it out before contributing.
-
-## Community support
-Please [open an issue on GitHub](https://github.com/TheHive-Project/Cortex/issues) if you'd like to report a bug or request a feature. We are also available on [Discord](https://chat.thehive-project.org) to help you out.
-
-If you need to contact the Project's team, send an email to <support@thehive-project.org>.
-
-!!! Note
-      - If you have problems with [Cortex4py](https://github.com/TheHive-Project/Cortex4py), please [open an issue on its dedicated repository](https://github.com/TheHive-Project/Cortex4py/issues/new).
-      - If you encounter an issue with Cortex or would like to request a Cortex-related feature, please [open an issue on its dedicated GitHub repository](https://github.com/TheHive-Project/Cortex/issues/new).
-      - If you have troubles with a Cortex analyzer or would like to request a new one or an improvement to an existing analyzer, please open an issue on the [analyzers' dedicated GitHub repository](https://github.com/TheHive-Project/cortex-analyzers/issues/new).
 
 ## Professional support
 
 ![StrangeBee](./images/strangebee.png){: align=left width=120 }
-Since 2018, Cortex is fully developped and maintained by [StrangeBee](https://www.strangebee.com). Should you need specific assistance, be aware that StrangeBee also provides professional services and support. 
+Since 2018, Cortex is fully developped and maintained by [StrangeBee](https://www.strangebee.com). Should you need specific assistance, be aware that StrangeBee also provides professional services and support.
 

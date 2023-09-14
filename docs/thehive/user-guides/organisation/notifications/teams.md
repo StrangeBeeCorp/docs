@@ -131,7 +131,7 @@ TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates w
         {
         "type": "Action.OpenUrl",
         "title": "Open Case in TheHive",
-        "iconUrl": "https://docs.thehive-project.org/images/thehive.png",
+        "iconUrl": "https://docs.strangebee.com/images/thehive.png",
         "url": "{{url}}",
         "style": "positive"
         }
