@@ -14,9 +14,11 @@
 ### Fixes
 
 **API:**
+
 - **Notification:** The "JobFinished" trigger will no longer be triggered when the job is updated, but only when the responders have finished.
 
 **User Interface:**
+
 - **User Management:** Administrators will now receive a warning message when attempting to create a new user with an existing login.
 - **Case Template:** 
     - It is now possible to apply a case template to a closed case.
