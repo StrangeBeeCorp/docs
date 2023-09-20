@@ -9,6 +9,24 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
+## 5.2.4 - 19th September 2023
+
+### Fixes
+
+**API:**
+
+- **Notification:** The "JobFinished" trigger will no longer be triggered when the job is updated, but only when the responders have finished.
+
+**User Interface:**
+
+- **User Management:** Administrators will now receive a warning message when attempting to create a new user with an existing login.
+- **Case Template:** When applying a case template with tasks to an existing case with tasks, the template's tasks will be placed at the end.
+
+### New Features
+
+- **Notification:** You can now trigger a notification when an analyzer has finished using the "ActionFinished" trigger.
+
+
 ## 5.2.3 - 5th September 2023
 
 ### Fixes
