@@ -20,9 +20,7 @@
 **User Interface:**
 
 - **User Management:** Administrators will now receive a warning message when attempting to create a new user with an existing login.
-- **Case Template:** 
-    - It is now possible to apply a case template to a closed case.
-    - When applying a case template with tasks to an existing case with tasks, the template's tasks will be placed at the end.
+- **Case Template:** When applying a case template with tasks to an existing case with tasks, the template's tasks will be placed at the end.
 
 ### New Features
 
