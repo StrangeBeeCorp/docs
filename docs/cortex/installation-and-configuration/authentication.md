@@ -151,7 +151,7 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
     - responseType (string) type of the response. Currently only "code" is accepted.
     - grantType (string) type of the grant. Currently only "authorization_code" is accepted.
     - authorizationUrl (string) the url of the OAuth2 server.
-    - authorizationHeader (string) prefix of the authorization header to get user info: Bearer, token, ...
+    - authorizationHeader (string) prefix of the authorization header to get user info: 'Bearer' by default
     - tokenUrl (string) the token url of the OAuth2 server.
     - userUrl (string) the url to get user information in OAuth2 server.
     - scope (list of string) list of scope.
@@ -186,7 +186,6 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
         responseType: code
         grantType: "authorization_code"
         authorizationUrl: "https://github.com/login/oauth/authorize"
-        authorizationHeader: "token"
         tokenUrl: "https://github.com/login/oauth/access_token"
         userUrl: "https://api.github.com/user"
         scope: ["user"]
