@@ -24,7 +24,7 @@
 
 ### New Features
 
-- **Notification:** You can now trigger a notification when an analyzer has finished using the "ActionFinished" trigger.
+- **Notification:** As with responders with the "JobFinished" trigger, you can now trigger a notification when an analyzer is finished using the "ActionFinished" trigger.
 
 
 ## 5.2.3 - 5th September 2023
