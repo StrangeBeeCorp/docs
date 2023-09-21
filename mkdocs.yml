@@ -7,6 +7,7 @@ theme:
   logo: 'assets/images/strangebee.svg'
   features:
     - content.code.annotate
+    - content.tabs.link
     - navigation.sections
     - navigation.instant
     - navigation.indexes
@@ -35,6 +36,7 @@ plugins:
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
+            'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
 
 extra:
   social:
@@ -84,9 +86,10 @@ nav:
       - 'Running with Docker': thehive/setup/installation/docker.md
       # - 'Activate a license': thehive/setup/installation/license.md
       - thehive/setup/installation/kubernetes.md
-      - 'Upgrade or migrate from older versions':
-        - thehive/setup/installation/upgrade-from-4.x.md
-        - thehive/setup/installation/migration.md
+    - 'Version Upgrades':
+      - thehive/setup/installation/upgrade-from-5.x.md
+      - thehive/setup/installation/upgrade-from-4.x.md
+      - thehive/setup/installation/migration.md
     - 'Configuration & Operations':
       - 'Configuration':
         - 'Database & index': thehive/setup/configuration/database.md
@@ -105,6 +108,7 @@ nav:
         - thehive/setup/operations/cassandra-security.md
         - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
         - thehive/setup/operations/fail2ban.md
+        - thehive/setup/operations/change-index.md
         - thehive/setup/operations/troubleshooting.md
     - 'Administration Guides': 
       - 'First start': thehive/administration/first-start.md
@@ -123,7 +127,7 @@ nav:
           - 'Local': thehive/administration/authentication/local.md
           - 'LDAP': thehive/administration/authentication/ldap.md
           - 'AD': thehive/administration/authentication/ad.md
-      #     - 'SAML': thehive/administration/authentication/saml.md
+          - 'SAML': thehive/administration/authentication/saml.md
           - 'OAUTH2': thehive/administration/authentication/oauth2.md
         - 'SMTP': thehive/administration/smtp.md
       - 'Entities management':
@@ -135,6 +139,10 @@ nav:
         - 'Analyzers templates': thehive/administration/analyzers-templates.md
         - 'Taxonomies': thehive/administration/taxonomies.md    
         - 'Att&ck patterns': thehive/administration/attack-patterns.md
+      - 'How to':
+        - 'Notification': thehive/how-to/notifications.md
+        - 'Splunk integration': thehive/how-to/splunk-integration.md
+        - 'Markdown': thehive/how-to/markdown.md
     # - 'User Interface':
     #   - 'Navigation': thehive/user-interface/navigation.md
     #   - 'Lists & views': thehive/user-interface/lists.md
@@ -155,28 +163,152 @@ nav:
     #     - 'Search Cases': thehive/user-guides/search/cases.md
     #     > Add new Search action here
     #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
-    #   - 'Organisation administration': 
-    #     - 'Manage Users': thehive/user-guides/organisation/users.md
-    #     - 'Case templates': thehive/user-guides/organisation/case-templates.md
-    #     - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
-    #     - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
-    #   - 'Notifications & endpoints':
-    #     - 'Manage endpoints': thehive/user-guides/notifications/endpoints.md
-    #     - 'Email to users': thehive/user-guides/notifications/email-to-users.md
-    #     - 'Email to specific address': thehive/user-guides/notifications/email-to-addr.md
-    #     - 'HTTP request endpoint': thehive/user-guides/notifications/http-request.md
-    #     - 'Webhook endpoint': thehive/user-guides/notifications/webhook.md
-    #     - 'Mattermost': thehive/user-guides/notifications/mattermost.md
-    #     - 'Slack': thehive/user-guides/notifications/slack.md
-    #     - 'Kafka': thehive/user-guides/notifications/kafka.md
-    #     - 'Run Analyzers': thehive/user-guides/notifications/analyzers.md
-    #     - 'Run Responders': thehive/user-guides/notifications/responders.md
+      - 'Indicators & KPIs': thehive/user-guides/indicators.md
+      - 'Org. administration': 
+        - 'Manage Users': thehive/user-guides/organisation/accounts.md
+        - 'Templates' :  
+          - 'Cases templates': thehive/user-guides/organisation/templates/case-templates.md
+          - 'Pages templates': thehive/user-guides/organisation/templates/page-templates.md
+          - 'Reports templates': thehive/user-guides/organisation/templates/report-templates.md
+        - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
+        - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
+        - 'Notifications & endpoints':
+          - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
+    #     - 'Manage endpoints': thehive/user-guides/organisation/notifications/endpoints.md
+          # - 'Email to users': thehive/user-guides/organisation/notifications/email-to-users.md
+          # - 'Email to specific address': thehive/user-guides/organisation/notifications/email-to-addr.md
+          # - 'HTTP request endpoint': thehive/user-guides/organisation/notifications/http-request.md
+          # - 'Webhook endpoint': thehive/user-guides/organisation/notifications/webhook.md
+          - 'Notifiers':
+            - 'Mattermost': thehive/user-guides/organisation/notifications/mattermost.md
+            - 'MS Teams': thehive/user-guides/organisation/notifications/teams.md
+            - 'Slack': thehive/user-guides/organisation/notifications/slack.md
+            - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
+            - 'Redis': thehive/user-guides/organisation/notifications/redis.md
+          # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
+          # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
+          - 'Filtered Events': thehive/user-guides/organisation/notifications/filteredevents.md
+        - 'Endpoints': 
+          - 'About endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
+          - 'Add endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
+        - 'Functions': thehive/user-guides/organisation/functions.md
+        - 'Attachments': thehive/user-guides/organisation/attachments.md
+      - 'Analyst''s Corner':
+        - 'Alerts' : 
+          - 'About alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md          
+          - 'Manage views': thehive/user-guides/analyst-corner/alerts/manage-views.md
+          - 'Preview alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
+          - 'Actions on alerts': thehive/user-guides/analyst-corner/alerts/actions.md
+          - 'Merge alerts': thehive/user-guides/analyst-corner/alerts/merge-alerts.md
+          - 'Create a case from one or more alerts': thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md
+          - 'View an alert': thehive/user-guides/analyst-corner/alerts/general.md 
+          - 'Run responders on alert': thehive/user-guides/analyst-corner/alerts/run-responders.md
+          - 'View Responders': thehive/user-guides/analyst-corner/alerts/view-responders.md
+          - 'View similar alerts': thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md
+          - 'View similar cases': thehive/user-guides/analyst-corner/alerts/view-similar-cases.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/alerts/view-ttps.md
+          - 'View observables': thehive/user-guides/analyst-corner/alerts/view-observables.md
+        - 'Cases' :                    
+          - 'About cases': thehive/user-guides/analyst-corner/cases/about-a-case.md
+          - 'Manage views': thehive/user-guides/analyst-corner/cases-list/manage-views.md
+          - 'Preview cases': thehive/user-guides/analyst-corner/cases-list/preview-cases.md
+          - 'Actions on cases': thehive/user-guides/analyst-corner/cases-list/actions.md
+          - 'Create a case': 
+            - 'Create a new case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
+            - 'Create a empty case': thehive/user-guides/analyst-corner/cases/create-empty-case.md
+            - 'Create case from archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
+            - 'Create case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
+            - 'Create case from template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
+          - 'View an case': thehive/user-guides/analyst-corner/cases-list/general.md
+          - 'Adding to a case (Tags/Tasks/Custom field values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'View tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
+          - 'View observables': thehive/user-guides/analyst-corner/cases-list/observables.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/cases-list/ttps.md
+          - 'View attachments': thehive/user-guides/analyst-corner/cases-list/attachments.md
+          - 'View timeline': thehive/user-guides/analyst-corner/cases-list/timeline.md
+          - 'View pages': thehive/user-guides/analyst-corner/cases-list/pages.md
+          - 'Run responders on case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
+          - 'Run analyzers on case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md          
+        - 'Tasks' : 
+          - 'About tasks': thehive/user-guides/analyst-corner/task/about-tasks.md
+          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Preview tasks': thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md
+          - 'Actions on tasks': thehive/user-guides/analyst-corner/task/preview-task-details/actions.md
+          - 'Run responders from task': thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md
+        - 'Dashboard' : 
+          - 'About dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
+          - 'Manage dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
+          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Filter and sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+        - 'Search' : 
+          - 'Search by cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
+          - 'Search by alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
+          - 'Search by observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
+          - 'Search by jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
+          - 'Search by tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
+          - 'Search by task logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
+          
     - 'API':
       - 'API Documentation': thehive/api-docs/" target="_blank
       - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
     - 'Release Notes':
       - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
-  - 'Cortex': https://docs.thehive-project.org/cortex/" target="_blank
+      - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
+      - 'Release Notes for TheHive 5.2': thehive/release-notes/release-notes-5.2.md
+  - Cortex: 
+    - cortex/index.md
+    - 'Download':
+      - 'cortex/download/index.md'
+    - 'Installation & configuration':
+      -  ./cortex/installation-and-configuration/authentication.md
+      -  ./cortex/installation-and-configuration/secret.md
+      -  ./cortex/installation-and-configuration/advanced-configuration.md
+      -  ./cortex/installation-and-configuration/ssl.md
+      -  ./cortex/installation-and-configuration/step-by-step-guide.md
+      -  ./cortex/installation-and-configuration/index.md
+      -  ./cortex/installation-and-configuration/analyzers-responders.md
+      -  ./cortex/installation-and-configuration/run-cortex-with-docker.md
+      -  ./cortex/installation-and-configuration/proxy-settings.md
+      -  ./cortex/installation-and-configuration/docker.md
+      -  ./cortex/installation-and-configuration/database.md
+    - 'User Guides':  
+      - 'First start' : 'cortex/user-guides/first-start.md'
+      - 'User roles' : 'cortex/user-guides/roles.md'
+    - 'Operations': 
+      - 'cortex/operations/index.md'
+      -  'Backup & Restore': 'cortex/operations/backup-restore.md'
+      -  'Analyzers/Responders input and output': 'cortex/operations/input-output.md'
+      -  'Upgrade to Cortex 3.1': 'cortex/operations/upgrade_to_cortex_3_1_and_es7_x.md'
+    - 'API':
+      - 'API Guide': './cortex/api/api-guide.md'
+      - 'How to create an Analyzer' : './cortex/api/how-to-create-an-analyzer.md'
+      - 'How to create a Responder': './cortex/api/how-to-create-a-responder.md'
+  - 'Cortex Neurons': https://thehive-project.github.io/Cortex-Analyzers/" target="_blank
   - 'Resources': 
-      - resources/demo.md
+    - resources/index.md
+    - resources/templates.md
+    - 'Demo Virtual Machine':
+      - 'How to download the VM': resources/demo.md
       - resources/howto-vm-demo.md
+    - 'IaaS deployment': 
+      - 'Amazon AWS': 
+        - 'Main Features': resources/iaas/aws/index.md
+        - 'Deploy TheHive AMI': resources/iaas/aws/thehive.md
+        - 'Deploy Cortex AMI': resources/iaas/aws/cortex.md
+        - 'AWS sample code': resources/iaas/aws/infra-as-code/README.md
+        - 'Create and manage the SecOps VPC': resources/iaas/aws/infra-as-code/ug-secops-vpc/README.md
+        - 'TheHive v5 and Cortex within a SecOps VPC': resources/iaas/aws/infra-as-code/ug-secops-instances/README.md
+      - 'Microsoft Azure': 
+        - 'Main Features': resources/iaas/azure/index.md
+        - 'Deploy TheHive Azure image': resources/iaas/azure/thehive.md
+        - 'Deploy Cortex Azure image': resources/iaas/azure/cortex.md
+        - 'Azure sample code': resources/iaas/azure/infra-as-code/README.md
+        - 'Creating a new SecOps Virtual Network': resources/iaas/azure/infra-as-code/ug-secops-vnet/README.md
+        - 'Deploying TheHive v5 and Cortex with Terraform': resources/iaas/azure/infra-as-code/ug-secops-instances/README.md
+        - 'Upgrading your Azure instances': resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade.md
+    - 'Open source projects': 
+        - 'SDK':
+          - "TheHive4py": resources/thehive4py.md
+          - "Cortex4py": resources/cortex4py.md
+          - "Cortexutils": resources/cortexutils.md
+    - 'Security': resources/security.md

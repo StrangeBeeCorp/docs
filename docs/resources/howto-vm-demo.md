@@ -1,6 +1,9 @@
 # Use the Demo Virtual Machine
 
 
+!!! Warning
+    Ensure good performance by allocating a minimum of 6 GB of RAM to run this Virtual Machine flawlessly. Adjusting the allocation below this threshold may lead to potential complications.
+
 ## Start the VM
 
 ![](images/vm-start.png)
@@ -11,13 +14,14 @@
     2. Open the indicated url in your browser: http://IP-ADDRESS
 
 === "Using VirtualBox"
-    1. Once imported, update the network settings of the VM before starting it.
+    1. When importing, ensure to set Guest OS type information.
+    ![](images/virtualbox-port-forwarding-3.png)
+    2. Once imported, update the network settings of the VM before starting it.
     ![](images/virtualbox-port-forwarding-1.png)
-    2. Add required port forwarding (update according to your needs) and save.
+    3. Add required port forwarding (update according to your needs) and save.
     ![](images/virtualbox-port-forwarding-2.png)
-    3. Start the VM and open the follwing url in your browser: http://127.0.0.1:8888
-
-
+    4. Start the VM and open the follwing url in your browser: http://127.0.0.1:8888
+    5. You might have to also adjust *Display* graphical controller and set it to `VMSVGA` before starting the VM. 
 
 
 ## Quick connect
@@ -37,7 +41,7 @@
     - Password: `secret`
 
 
-    A user named `thehive` has been created and is `org-admin` of the organisation named `testing`: 
+    A user named `thehive` has been created and is `org-admin` of the organisation named `demo`: 
 
     - Login: `thehive@thehive.local`
     - Password: `thehive1234`
@@ -85,6 +89,7 @@ Applications launched with Docker-compose, as docker containers with attached vo
 !!! Example ""
     ```
     .
+    ├── cassandra
     ├── cortex
     ├── docker-compose.yml
     ├── elasticsearch
@@ -93,21 +98,17 @@ Applications launched with Docker-compose, as docker containers with attached vo
     ```
 
 #### TheHive
-TheHive is configured to use *Berkeley DB* as database and *Lucene* to index data. Files are stored in a local path. 
+TheHive is configured to use *Cassandra* as database and *Elasticsearch* to index data. Files are stored in a local path. 
 
 !!! Example ""
     ```
     thehive
     ├── config
-    ├── data
     ├── files
-    ├── index
     └── log
     ```
 
 - `config`: all configuration files for TheHive
-- `data`: the database used by TheHive. For the VM, Berkeley DB has been chosen
-- `index`: data indexes
 - `files`: files storage 
 - `log`: TheHive application logs 
 
@@ -145,7 +146,7 @@ After each modification of TheHive configuration service should be restart.
 !!! Example ""
     ```bash
     cd /opt/thp
-    docker-compose restart thehive
+    docker compose restart thehive
     ```
 
 ### Cortex
@@ -158,7 +159,7 @@ After each modification of Cortex configuration service should be restart.
 !!! Example ""
     ```bash
     cd /opt/thp
-    docker-compose restart cortex
+    docker compose restart cortex
     ```
 
 ### Check for update
@@ -173,7 +174,6 @@ Check for update for TheHive and Cortex by running following commands (this will
 ### Documentation
 
 - Documentation for TheHive 5 can be found there:  [https://docs.strangebee.com](https://docs.strangebee.com). 
-- Documentation for previous versions of TheHive and Cortex can be found there: [https://docs.thehive-project.org](https://docs.thehive-project.org).
 
 
 ## Troubleshooting

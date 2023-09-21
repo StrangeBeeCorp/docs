@@ -11,7 +11,7 @@ Download [this file](kubernetes.yml) to find a kubernetes configuration that wil
 - 1 instance of Elasticsearch
 - 1 instance Minio
 
-This setup is good for a try out of TheHive but you should adapt the data stores to be more robust (setup clustering and storage volumes). We invite you to check their documentation on how to deploy on kubernetes for production use.
+This setup is good for a try out of TheHive but you should adapt the data stores (elasticsearch, cassandra and minio) to be more robust (setup clustering and storage volumes). We invite you to check their documentation on how to deploy on kubernetes for production use.
 
 !!! warning
 

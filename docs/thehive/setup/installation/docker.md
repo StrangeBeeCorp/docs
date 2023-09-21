@@ -4,24 +4,147 @@ This page will guide you on how to use the docker image of TheHive
 
 ## Quick start
 
-```bash
-docker run --rm -p 9000:9000 strangebee/thehive:<version>
-```
-This will start an instance of thehive using a local database and index. Note that the **data will be deleted when the container is deleted**. So this should only be used for evaluation and tests.
+Run TheHive and Cortex using this docker compose file:
 
-Connect on http://localhost:9000 to see the login page. 
+```yaml
+version: "3"
+services:
+  thehive:
+    image: strangebee/thehive:5.2
+    depends_on:
+      - cassandra
+      - elasticsearch
+      - minio
+      - cortex
+    mem_limit: 1500m
+    ports:
+      - "9000:9000"
+    environment:
+      - JVM_OPTS="-Xms1024M -Xmx1024M"
+    command:
+      - --secret
+      - "mySecretForTheHive"
+      - "--cql-hostnames"
+      - "cassandra"
+      - "--index-backend"
+      - "elasticsearch"
+      - "--es-hostnames"
+      - "elasticsearch"
+      - "--s3-endpoint"
+      - "http://minio:9000"
+      - "--s3-access-key"
+      - "minioadmin"
+      - "--s3-secret-key"
+      - "minioadmin"
+      - "--s3-bucket"
+      - "thehive"
+      - "--s3-use-path-access-style"
+      - "--cortex-hostnames"
+      - "cortex"
+      - "--cortex-keys"
+      # put cortex api key once cortex is bootstraped
+      - "<cortex_api_key>"
+
+  cassandra:
+    image: 'cassandra:4'
+    mem_limit: 1600m
+    ports:
+      - "9042:9042"
+    environment:
+      - MAX_HEAP_SIZE=1024M
+      - HEAP_NEWSIZE=1024M
+      - CASSANDRA_CLUSTER_NAME=TheHive
+    volumes:
+      - cassandradata:/var/lib/cassandra
+    restart: on-failure
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.12
+    mem_limit: 1500m
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    volumes:
+      - elasticsearchdata:/usr/share/elasticsearch/data
+
+  minio:
+    image: quay.io/minio/minio
+    mem_limit: 512m
+    command: ["minio", "server", "/data", "--console-address", ":9090"]
+    environment:
+      - MINIO_ROOT_USER=minioadmin
+      - MINIO_ROOT_PASSWORD=minioadmin
+    ports:
+      - "9090:9090"
+    volumes:
+      - "miniodata:/data"
+
+  cortex:
+    image: thehiveproject/cortex:3.1.7
+    depends_on:
+      - elasticsearch
+    environment:
+      - job_directory=/tmp/cortex-jobs
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/cortex-jobs:/tmp/cortex-jobs
+    ports:
+      - "9001:9001"
+
+volumes:
+  miniodata:
+  cassandradata:
+  elasticsearchdata:
+
+```
+
+Connect on [http://localhost:9000] to see the login page. 
 
 !!! Info "Default credentials"
     Default admin credentials are `admin@thehive.local` / `secret`
 
-We recommend to always set the version of your docker image in production scenarios and not to use `latest`. 
+We recommend to always set the version of your docker image in production scenario. `latest` tag will refer to the latest 5.0.x version.
+
+!!! Info
+    * Do not forget to create the bucket "thehive" in MinIO
+    * It's highly recommended to change the default credentials and secrets.
+
+!!! Warning "Lucene index"
+    Since version 5.1, the lucene index is no longer supported and will cause issues when using queries on custom fields. That's why we strongly recommend you to use Elasticsearch instead.
+
+    Please refer to [this page](../operations/change-index.md) on how to update.
 
 ### Using your own configuration file
 
 The entry point arguments are used to create a `application.conf` file in the container. A custom configuration file can also be provided:
 
+```yaml
+  thehive:
+    image: strangebee/thehive:<version>
+    depends_on:
+      - cassandra
+      - elasticsearch
+      - minio
+      - cortex
+    mem_limit: 1500m
+    ports:
+      - "9000:9000"
+    environment:
+      - JVM_OPTS="-Xms1024M -Xmx1024M"
+    volumes:
+      - <host_conf_folder>:/data/conf
+    command:
+      - --no-config
+      - --config-file
+      - /data/conf/application.conf
+
+  ...
+```
+
 ```bash
-docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files -v <host_conf_folder>:/data/conf <thehive-image> --no-config --config-file /data/conf/application.conf 
+docker run --rm -p 9000:9000 -v <host_conf_folder>:/data/conf strangebee/thehive:<version> --no-config --config-file /data/conf/application.conf 
 ```
 
 The folder `<host_conf_folder>` needs to contain a `application.conf` file.
@@ -33,7 +156,7 @@ The folder `<host_conf_folder>` needs to contain a `application.conf` file.
 We recommend running TheHive with Cassandra and Elasticsearch for data storage and minio for file storage. You can pass the hostnames of your instances via the arguments:
 
 ```bash
-docker run --rm -p 9000:9000 -v <host_data_folder>:/data/files strangebee/thehive:<version> \
+docker run --rm -p 9000:9000 strangebee/thehive:<version> \
     --secret <secret>
     --cql-hostnames <cqlhost1>,<cqlhost2>,...
     --cql-username <cqlusername>
@@ -92,83 +215,14 @@ Available options:
     cloner <param> <param> ...                  | run cloner tool
 ```
 
-## Using docker compose
-
-Below is an example of a docker-compose file. It's composed of several services: cassandra, elasticsearch, minio and TheHive.
-
-```yaml
-version: "3"
-services:
-  thehive:
-    image: strangebee/thehive:<version>
-    depends_on:
-      - cassandra
-      - elasticsearch
-      - minio
-    mem_limit: 1500m
-    ports:
-      - "9000:9000"
-    environment:
-      - JVM_OPTS="-Xms1024M -Xmx1024M"
-    command:
-      - --secret
-      - "mySecretForTheHive"
-      - "--cql-hostnames"
-      - "cassandra"
-      - "--index-backend"
-      - "elasticsearch"
-      - "--es-hostnames"
-      - "elasticsearch"
-      - "--s3-endpoint"
-      - "http://minio:9000"
-      - "--s3-access-key"
-      - "minioadmin"
-      - "--s3-secret-key"
-      - "minioadmin"
-      - "--s3-use-path-access-style"
-      - "--no-config-cortex"
-
-  cassandra:
-    image: 'cassandra:4'
-    mem_limit: 1000m
-    ports:
-      - "9042:9042"
-    environment:
-      - CASSANDRA_CLUSTER_NAME=TheHive
-    volumes:
-      - cassandradata:/var/lib/cassandra
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.2
-    mem_limit: 512m
-    ports:
-      - "9200:9200"
-    environment:
-      - discovery.type=single-node
-      - xpack.security.enabled=false
-    volumes:
-      - elasticsearchdata:/usr/share/elasticsearch/data
-
-  minio:
-    image: quay.io/minio/minio
-    command: ["minio", "server", "/data", "--console-address", ":9001"]
-    environment:
-      - MINIO_ROOT_USER=minioadmin
-      - MINIO_ROOT_PASSWORD=minioadmin
-    ports:
-      - "9001:9001"
-    volumes:
-      - "miniodata:/data"
-
-volumes:
-  miniodata:
-  cassandradata:
-  elasticsearchdata:
-
-```
-
-It's highly recommended to change the default credentials and secrets.
-
 ## Usage in kubernetes
 
 Refer to the [dedicated page](kubernetes.md) for instuctions on how to deploy on kubernetes.
+
+
+## Troubleshooting
+
+### Container exited with code 137
+
+One of your container is using too much memory compared to what docker allows. You can increase the parameter `mem_limit` to allow more memory for the container. For JVM based applications (TheHive, Cassandra, Elasticsearch) you can also tune the JVM parameters to set the maximum heap size to use.
+For TheHive, you can use the environment variable `JVM_OPTS`: `JVM_OPTS="-Xms1024M -Xmx1024M"`

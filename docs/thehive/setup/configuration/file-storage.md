@@ -49,7 +49,7 @@ TheHive can be configured to use local or distributed filesystems.
         alpakka.s3.access-style = path
         ```
 
-        ```yaml title="/etc/thehive/application.conf with TheHive 5.1.x"
+        ```yaml title="/etc/thehive/application.conf with TheHive > 5.0"
         storage {
           provider: s3
           s3 {

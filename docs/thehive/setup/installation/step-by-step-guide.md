@@ -2,12 +2,34 @@
 
 This page is a step by step installation and configuration guide to get an instance of TheHive up and running. This guide is illustrated with examples for DEB and RPM packages based systems and for installation from binary packages.
 
-!!! Warning "This guide describes the installation of a new instance of TheHive **only**"
+!!! Info "This guide describes the installation of a new instance of TheHive **only**"
+
+## Dependencies
+
+This process requires few programs beeing already installed on the system.
+
+=== "DEB"
+
+    !!! Example ""
+
+        ```bash
+        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
+        ``` 
+
+=== "RPM"
+
+    !!! Example ""
+
+        ```bash
+        yum install pkg-install gnupg chkconfig python3-pip git 
+        ```
+
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
-!!! Info
-    For security and long-term support reasons, we recommend using OpenJDK builds [distributed by Amazon](https://aws.amazon.com/corretto/). 
+!!! Danger "Read first"
+    * For security and long-term support reasons, we require  **using [Amazon Corretto](https://aws.amazon.com/corretto/) builds** (this is OpenJDK built and packaged by Amazon)
+    * Java version 8 is no longer supported
 
 === "DEB"
 
@@ -53,7 +75,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
         !!! Example ""
             ```bash
             wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
-            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
+            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
             ```
 
     2. Install the package
@@ -79,7 +101,7 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
             ```bash title="/etc/yum.repos.d/cassandra.repo"
             [cassandra]
             name=Apache Cassandra
-            baseurl=https://downloads.apache.org/cassandra/redhat/40x/
+            baseurl=https://redhat.cassandra.apache.org/40x/
             gpgcheck=1
             repo_gpgcheck=1
             gpgkey=https://downloads.apache.org/cassandra/KEYS
@@ -156,7 +178,9 @@ By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
 
 
 #### Additional configuration : disable tombstones  (for standalone server **ONLY**)
-    
+
+!!! Warning "This action should be performed after the installation and the first start of TheHive"
+
 If you are installing a standalone server, tombstones can be disabled. 
 
 1. Check `gc_grace_seconds` value
@@ -166,9 +190,11 @@ If you are installing a standalone server, tombstones can be disabled.
         cqlsh -u cassandra <IP ADDRESS> -e "SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"
         ```
 
+        **Note**: default credentials for Cassandra database: _cassandra/cassandra_ 
+
     Results should look like this: 
 
-    ```
+    ```output
                 table_name       | gc_grace_seconds
         -------------------------+------------------
                     edgestore    |           864000
@@ -202,7 +228,7 @@ If you are installing a standalone server, tombstones can be disabled.
 
     Results should look like this: 
 
-    ```
+    ```output
                 table_name       | gc_grace_seconds
         -------------------------+------------------
                     edgestore    |           0
@@ -225,7 +251,7 @@ For additional configuration options, refer to:
 
 ## :fontawesome-solid-list: Elasticsearch
 
-TheHive requires Elasticsearch to manage data indices. 
+TheHive requires Elasticsearch to manage data indices.
 
 !!! Info "Elasticsearch 7.x only is supported"
 
@@ -336,6 +362,7 @@ add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines
 
     ```bash
     sudo systemctl start elasticsearch
+    sudo systemctl enable elasticsearch
     ```
 
     !!! Tip "Remove existing data before starting"
@@ -412,7 +439,7 @@ Install TheHive package by using the following commands:
 === "DEB"
     !!! Example ""
         ```bash
-        echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+        echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
         sudo apt-get install -y thehive
         ```
@@ -426,7 +453,7 @@ Install TheHive package by using the following commands:
             enabled=1
             priority=1
             name=StrangeBee RPM repository
-            baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
+            baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
             gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
             gpgcheck=1
             ```
@@ -468,7 +495,7 @@ Install TheHive package by using the following commands:
         !!! Example ""
             ```bash
             cd /tmp
-            wget https://github.com/TheHive-Project/TheHive/blob/master/package/thehive.service
+            wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
             sudo cp thehive.service /etc/systemd/system/thehive.service
             ```
 
@@ -556,9 +583,9 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
     1. Ensure thehive user has permissions on the destination folder
 
         !!! Example ""
-        ```bash
-        chown -R thehive:thehive /opt/thp/thehive/files
-        ```
+            ```bash
+            chown -R thehive:thehive /opt/thp/thehive/files
+            ```
 
     2. Default values in the configuration file 
 

@@ -1,5 +1,141 @@
 # Release Notes of 5.0 series
 
+## 5.0.26 - 27th February 2023
+
+### Fixes
+
+**UI:**
+
+- Fix issue that prevented closing a case when a custom field was not set
+- Fix indentation issue in TTP list
+- Fix overflow in pages with long content
+- Fix loading of multiple comments
+- Allow importing observables from analyzers when running on an alert
+- Improve error message when closing a case with mandatory custom field
+- Fix style for custom field input
+- Typo fixes
+
+**Backend:**
+
+- Fix v1 api for page which used the former v0 style: new fields were added and some fields are now marked as deprecated and will be removed in the future
+- Add caseId in analyer input: field `message` should now contain the observable's parent id (alert or case)
+- Fix a message serialization error when running in cluster
+
+## 5.0.25 - 2nd February 2023
+
+### Fixes
+
+**Backend:**
+
+ - Fix TLP and PAP of MISP events
+ - Fix download of attachment when content type is malformed
+ - TheHive 3 migration: Fix parsing of old format of Cortex jobs
+ - Fix serialisation of configuration that contains a pipe character
+
+**UI:**
+
+ - Remove the limit on the number of techniques when selecting a TTP tactic
+
+**Docker:**
+
+ - Add parameter for Elasticsearch authentication
+
+
+## 5.0.24 - 9th January 2023
+
+### Fixes
+
+**UI:**
+
+- Fix issue in slack notifier form
+- Fix colored tags in several parts of the UI: tags should now be more colorful
+
+**Backend:**
+
+- When changing a tag name, the name is also changed in the cases and alerts
+- When an alert or case changes of stage, the stage is added to the audit details
+- Slack notifier now correctly sends the username
+- Update analyzer reports
+- Improve api docs
+
+## 5.0.23 - 20th December 2022
+
+### Fixes
+
+- Downgrade logback library to version 1.3.5 which still supports Java 8
+
+## 5.0.22 - 19th December 2022
+
+### Fixes
+
+**UI:**
+
+- Fix: "Add share" window is empty when no target org
+- Search: Observables search result direct link not working
+- Search: results for Task Logs do not show a link to the case
+- Markdown table issue with vertical bar: add support for `&vert;` in cell tables
+- Dashboard:
+    - Bar Chart with tasks by status all have same colors
+    - Bar chart: add an option to display or not empty values
+- Long alert titles cut off other UI fields
+- Bad cache when listing similar alerts
+- Wrong drawer title when editing a case template
+
+**Backend:**
+
+- Update dependencies
+- API Query filter _startsWith don't work on customFields
+- Pages in knowledge base incorrectly display pages from cases too
+- Search on absent field does not use index
+- Changing auth configuration does not work for v1 routes
+
+### Improvements
+
+- LDAP/AD: add option to ignore the realm/domain of the login
+- Cortex: Send observable attribute `sightedAt` to Cortex
+- UI: in a task preview, add the possibility to edit or delete a task log
+- UI: standardize disposition of TLP, PAP and SEV across forms and elements.
+
+## 5.0.21 - 2nd December 2022
+
+### Fixes
+
+**UI:**
+
+- Fix JavaScript error
+
+## 5.0.20 - 1st December 2022
+
+### Fixes
+
+**UI:**
+
+- Dashboard:
+    - Fix broken export as CSV for bar chart widget
+    - Remove some entities (patterns) that are not useful in dashboard view
+    - add live feed for dashboard
+    - re-enable aggregation on some fields and display a warning if the query is slow
+    - In widgets mark mandatory fields
+    - Some filter queries on string field (like title) were not correctly built
+- Admin: be less restrictive for urls (cortex and misp)
+- Case sharing:
+    - Fix request timing issue when sharing a case that prevented from sharing the tasks
+    - Update wording when sharing a case
+- When a customfield has options, prevent the user from selecting an other value
+- Fix issue when updating custom fields in case templates
+- Fix count of similar alerts 
+- When creating an observable the option "one observable per line" is now the default
+- Fix duplicated refetch when updating an entity
+- Fix live feed when updating a case
+
+**Backend:**
+
+- Oauth2 connector will read the value for its proxy from `application.conf` > `wsConfig.proxy`
+- Create audit logs when tasks are cancelled when closing a case
+- In API allow status length of 64 chars for case and alerts (was wrongly 32 chars previously)
+- Fix GDPR service that did not include all the tasks, task logs and observables
+- Fix permission issue where analysts could no longer generate their Api Key (regression introduced in 5.0.19)
+
 ## 5.0.19 - 16th November 2022
 
 ### Fixes

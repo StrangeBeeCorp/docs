@@ -10,7 +10,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
 | Parameter                                           | Description                                                  |
 |-----------------------------------------------------|--------------------------------------------------------------|
 | Client ID                                           | client ID in the OAuth2 server                               |
-| Client decret                                       | client secret in the OAuth2 server                           |
+| Client secret                                       | client secret in the OAuth2 server                           |
 | TheHive redirect URL                                | the url of TheHive AOuth2 page ( `https://xxx/api/ssoLogin`) |
 | Authorization URL                                   | the url of the OAuth2 server                                 |
 | Token URL                                           | the token url of the OAuth2 server                           |
@@ -28,8 +28,8 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         | Parameter                                           | Value                                                               |
         |-----------------------------------------------------|---------------------------------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                                         |
-        | Client decret                                       | `CLIENT_SECRET`                                                     |
-        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                     |
+        | Client secret                                       | `CLIENT_SECRET`                                                     |
+        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                    |
         | Authorization URL                                   | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth     |
         | Token URL                                           | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token    |
         | User information URL                                | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo |
@@ -41,7 +41,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         | Parameter                                           | Value                            |
         |-----------------------------------------------------|----------------------------------|
         | Client ID                                           | `CLIENT_ID`                      |
-        | Client decret                                       | `CLIENT_SECRET`                  |
+        | Client secret                                       | `CLIENT_SECRET`                  |
         | TheHive redirect URL                                | http://THEHIVE_URL/api/ssoLogin  |
         | Authorization URL                                   | https://OKTA/oauth2/v1/authorize |
         | Token URL                                           | http://OKTA/oauth2/v1/token      |
@@ -54,7 +54,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         | Parameter                                           | Value                                       |
         |-----------------------------------------------------|---------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                 |
-        | Client decret                                       | `CLIENT_SECRET`                             |
+        | Client secret                                       | `CLIENT_SECRET`                             |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin            |
         | Authorization URL                                   | https://github.com/login/oauth/authorize    |
         | Token URL                                           | https://github.com/login/oauth/access_token |
@@ -71,7 +71,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         | Parameter                                           | Value                                                          |
         |-----------------------------------------------------|----------------------------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                                    |
-        | Client decret                                       | `CLIENT_SECRET`                                                |
+        | Client secret                                       | `CLIENT_SECRET`                                                |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                               |
         | Authorization URL                                   | https://login.microsoftonline.com/TENANT/oauth2/v2.0/authorize |
         | Token URL                                           | https://login.microsoftonline.com/TENANT/oauth2/v2.0/token     |
@@ -88,7 +88,7 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
         | Parameter                                           | Value                                            |
         |-----------------------------------------------------|--------------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                      |
-        | Client decret                                       | `CLIENT_SECRET`                                  |
+        | Client secret                                       | `CLIENT_SECRET`                                  |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                 |
         | Authorization URL                                   | https://accounts.google.com/o/oauth2/v2/auth     |
         | Token URL                                           | https://oauth2.googleapis.com/token              |

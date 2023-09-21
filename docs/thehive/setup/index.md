@@ -10,9 +10,10 @@ TheHive can be deployed on a standalone server or as a cluster. The application 
 
 :fontawesome-solid-folder-tree:  A file storage solution is also required ; the local filesystem of the server hosting the application is adequate in the standalone server scenario ; [S3 MINIO](https://min.io/) otherwise.
 
-!!! Warning "Using Lucene"
-    Starting with TheHive 5.x we strongly recommend using Elasticsearch for production servers. 
-    TheHive 4.1.x embbeded **Lucene** to handle the data index ; this is still the case with the latest version with which we suggest to use it only for testing purpose.
+!!! Danger "Using Lucene"
+    Since version 5.1, TheHive does **NOT** support Lucene backend as index engine any more.
+    
+    **Lucene** was an option to handle the data index with TheHive 4.1.x  ; to migrate your index to Elasticsearch, follow [this guide](./operations/change-index.md).
 
 ## Architecture
 Each layer, **TheHive** application, the **Database & index** engine, and **file storage**, is independant and can be set up as a standalone node or cluster. As a result, TheHive could be setup and work in a complex clustered archicteture, using virtual IP addresses and load balancers. 
@@ -33,7 +34,7 @@ Each layer, **TheHive** application, the **Database & index** engine, and **file
     Instructions included in the [step-by-step installation guide](installation/step-by-step-guide.md) ends up to install a standalone server.
 
 
-=== "Cluster or hybrid architecture" 
+=== "Cluster or hybrid architecture"
     TheHive and all applications of the stack are flexible enough to choose the right setup according with the needs. 
     
     ![](images/thehive-architecture-full-cluster.png){ align=center }
@@ -60,10 +61,10 @@ Hardware requirements depends on the number of concurrent users (including integ
 ## Operating systems
 TheHive has been tested and is supported on the following operating systems: 
 
-- :material-ubuntu: Ubuntu 20.04 LTS
-- :material-debian: Debian 11 
+- :material-ubuntu: Ubuntu 20.04 LTS & 22.04 LTS
+- :material-debian: Debian 11
 - :material-redhat: RHEL 8
-- :material-fedora: Fedora 35
+- :material-fedora: Fedora 35 & 37
 
 StrangeBee also provides an [official Docker image](https://hub.docker.com/r/strangebee/thehive/tags). 
 
@@ -97,6 +98,12 @@ Discover how to install TheHive quickly by following our installation guides:
 TheHive can be used on virtual or physical servers.
 
 Our [step-by-step guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
+
+TheHive supports beeing installed in virtualized environments: 
+
+* Using VMware :fontawesome-solid-server:
+* Using Proxmox :simple-proxmox: virtual machines or containers (lxc)
+
 
 ### Use Docker :material-docker:
 An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) to use it in production.
@@ -137,11 +144,10 @@ All other settings are available in the application WebUI.
 
 !!! Info "F.A.Q"
     ### Can I upgrade from TheHive 4.0.x ?
-    _Yes, all TheHive 4.x can be updated to TheHive 5; the documentation is coming soon!_
+    _Yes, all TheHive 4.x can be updated to TheHive 5; Find how to update in [this dedicated guide](./installation/upgrade-from-4.x.md)._
 
     ### I use TheHive 3.x, can I upgrade my data to TheHive 5 ? 
     _TheHive 3 is out of support since 31 December 2021. Please contact [StrangeBee](mailto:contact@strangebee.com) for further assistance._
-    __
 
 
 
