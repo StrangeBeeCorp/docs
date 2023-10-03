@@ -35,7 +35,6 @@
 - **Quick Assign to Me:** A new action allows for quick assignment of cases or alerts directly from their details, streamlining task management.
 - **Cases:** 
     - **Display number of alerts:** The number of alerts imported into a case is now visibly displayed in the case list information, providing valuable information at a glance.
-    - **Case Reopening Rights:** A new user right has been introduced, enabling or prohibiting the reopening of cases. All profiles with case management rights have this right by default.
     - **Attachment Previews:** Now, you can conveniently preview HTML and Markdown attachments directly from the attachments list. Additionally, case reports are previewable from the report tab's attachments list.
 
 
