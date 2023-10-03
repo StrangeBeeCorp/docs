@@ -22,20 +22,20 @@
 - **Cases:** 
     - **Improved Sorting:** Now you can sort the list of related cases by title, date, and observables, providing better case management flexibility.
     - **Multi-Case Closure Fix:** Fixed a problem that previously interchanged values when closing multiple cases simultaneously, ensuring accurate data handling.
-    - **Merged Case Closure Fix:** Addressed an issue that prevented the successful closure of a merged case.
+    - **Merged Case Closure Fix:** Fixed a problem that prevented a merged folder from being closed due to a new mechanism for deduplicating similar tasks during merging.
 
 - **Analyzers:** Resolved a problem related to the selection of analyzers to launch on an observable after a previous analyzer had finished.
 - **Global Search:** The task log search results now correctly display the link to the task within the originating case.
-- **Date Display Format:** Fixed a problem that did not take into account the date display format defined in user preferences.
+- **Date Display Format:** Fixed a problem where the date format defined in the user profile was not being taken into.
 
 ## New Features
 
-- **MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
+- **Case URL in MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
 - **Session Duration Management:** Introduced enhanced session termination and inactivity timeout management. Now, you can define session end and inactivity timeout times effectively, and even include a user warning message before session termination.
 - **Quick Assign to Me:** A new action allows for quick assignment of cases or alerts directly from their details, streamlining task management.
 - **Cases:** 
-    - **Display number of alerts:** The number of alerts imported into a case is now visibly displayed in the case list information, providing valuable information at a glance.
-    - **Attachment Previews:** Now, you can conveniently preview HTML and Markdown attachments directly from the attachments list. Additionally, case reports are previewable from the report tab's attachments list.
+    - **Display number of alerts:** The number of alerts imported into a case is now displayed in the case list information, providing valuable information at a glance.
+    - **Attachment Previews:** Preview HTML and Markdown attachments directly from the attachments list. Additionally, case reports are previewable from the report tab's attachments list.
 
 
 ## 5.2.4 - 19th September 2023
