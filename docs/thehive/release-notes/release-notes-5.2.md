@@ -30,7 +30,7 @@
 
 ## New Features
 
-- **Case URL in MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
+- **Case URL option in MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
 - **Session Duration Management:** Introduced enhanced session termination and inactivity timeout management. Now, you can define session end and inactivity timeout times effectively, and even include a user warning message before session termination.
 - **Quick Assign to Me:** A new action allows for quick assignment of cases or alerts directly from their details, streamlining task management.
 - **Cases:** 
