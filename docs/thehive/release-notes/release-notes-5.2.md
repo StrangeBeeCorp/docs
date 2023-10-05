@@ -9,7 +9,7 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
-## 5.2.5 - 4th October 2023
+## 5.2.5 - 5th October 2023
 
 ### Fixes
 
