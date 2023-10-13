@@ -562,6 +562,7 @@ By default, TheHive is configured to connect to Cassandra and Elasticsearch data
         cql {
         cluster-name = thp
         keyspace = thehive
+        local-databacenter = datacenter1
         }
     }
     index.search {
