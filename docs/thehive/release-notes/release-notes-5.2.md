@@ -9,6 +9,36 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
+## 5.2.6 - 19th October 2023
+
+### Fixes
+
+**User Interface:**
+
+- **SAML Configuration**: We've enhanced security by checking the format of the 'name' SAML configuration field before creating the 'callback' URL. Special characters and uppercase letters are now automatically replaced for improved compatibility.
+- **Alert Similar Cases Query**: We've resolved an issue where the similar cases query was not fetching results due to the length of default filters.
+- **Duplicate Observables**: Multiple alert imports no longer lead to duplicate observables, as we now deduplicate them automatically.
+- **MISP Integration**:
+    - MISP Attribute Handling: When exporting a case, MISP attributes of observables are now set correctly, ensuring seamless integration with MISP.
+    - Event Editing Strategy: We've implemented a comprehensive event edit strategy to enhance your MISP experience.
+- **Comments**: Text comments without spaces now wrap correctly within the component, ensuring a neat and organized display.
+- **Authentication**: Fixed a bug that did not correctly remove the link between two organisations, which could lead to connection problems.
+
+**API:**
+
+- **Cortex Responders**: Cortex responders now show up for Tasks and Task Logs
+- **Duplicate Observables**: When merging multiple alerts into a case, observables are now better duplicated
+
+### New Features / Improvements
+
+- **Date fields**: All date fields in the application can now be set to hours and minutes.
+- **Menu Label Updates**: We've made menu label changes for clarity and consistency. "Related Alerts" is now "Linked Alerts," and "Related Cases" has become "Similar Cases." URL updates accompany these changes for a seamless transition.
+- **Alerts Attachment**: You can now add attachments to alerts using a dedicated tab. Attachments can be merged and imported into cases for better incident tracking.
+- **Sorting and Filtering**: Within the attachment tab for cases and alerts, you have the ability to sort attachments by ascending or descending order and apply filters for efficient management.
+- **New Permissions**: We've introduced two new permissions, "Manage Reopen Case" and "Manage Restart Alert." This feature allows specific profiles to block access to reopening cases or restarting alerts. By default, these permissions are enabled for all profiles with "Manage Update" enabled.
+- **TTPs** : It is now possible to create TTPs via the API without specifying tactics. If only one tactic matches the technique, it will be automatically defined by the system. Otherwise, a message will indicate that the tactic is missing, leaving the user free to specify it via the interface. Editing is now possible on TTPs.
+- **Detailed Browser Tab Content**: Identify page content at a glance with improved browser tab titling
+
 ## 5.2.5 - 5th October 2023
 
 ### Fixes
@@ -28,7 +58,7 @@
 - **Global Search:** The task log search results now correctly display the link to the task within the originating case.
 - **Date Display Format:** Fixed a problem where the date format defined in the user profile was not being taken into.
 
-## New Features
+### New Features
 
 - **Case URL option in MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
 - **Session Duration Management:** Introduced enhanced session termination and inactivity timeout management. Now, you can define session end and inactivity timeout times effectively, and even include a user warning message before session termination.
