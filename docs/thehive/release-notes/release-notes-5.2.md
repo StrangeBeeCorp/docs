@@ -62,6 +62,7 @@
 
 - **Case URL option in MISP Connector:** When exporting to MISP, TheHive could includes the case URL as an internal reference, enhancing traceability and information management.
 - **Session Duration Management:** Introduced enhanced session termination and inactivity timeout management. Now, you can define session end and inactivity timeout times effectively, and even include a user warning message before session termination.
+    - Read-only profiles will not be disconnected due to inactivity if they are connected to a dashboard and only to a dashboard. They will, however, be disconnected due to the end of a classic session.
 - **Quick Assign to Me:** A new action allows for quick assignment of cases or alerts directly from their details, streamlining task management.
 - **Cases:** 
     - **Display number of alerts:** The number of alerts imported into a case is now displayed in the case list information, providing valuable information at a glance.
