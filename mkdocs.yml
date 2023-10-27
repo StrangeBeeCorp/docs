@@ -111,6 +111,7 @@ nav:
         - thehive/setup/operations/fail2ban.md
         - thehive/setup/operations/change-index.md
         - thehive/setup/operations/troubleshooting.md
+        - thehive/setup/operations/monitoring/monitoring.md
     - 'Administration Guides': 
       - 'First start': thehive/administration/first-start.md
       - 'Manage organisations': 
