@@ -9,6 +9,34 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
+## 5.2.7 - 2nd November 2023
+
+### Fixes
+
+**API:**
+
+- **LDAP Sync Enhancement**: We've fine-tuned our LDAP sync functionality to ensure that it doesn't overwrite critical user fields like API key and TotpSecret.
+- **Attachment Upload**: Fixed an issue where the empty files was discarded by default. TheHive now accept empty files by default.
+
+**User Interface:**
+
+- **Case Reporting CSS Fix**: We've corrected a CSS tag name for high severity cases, which fix a display issue in the reports.
+- **Alert Responders Tab Enhancement**: Fixing issues on the responder reports list display.
+- **Filter Preview Improvement**: Lengthy filters do not break the display in the UI anymore
+- **Report Template Enhancement**: We've added a more intuitive format for Custom Fields variables in report templates, introducing the format case.customFieldValues.name
+- **SAML Information Display**: Fixed a bug where the session lifetime parameter wasn't displaying the actual value.
+
+**New Features / Improvements:**
+
+- **Alert Assignee**:
+    - Alert auto assignment at start/closure: If the alert is yet unassigned, TheHive now automatically set the assignee to the user that is performing the action of starting/closing the alert.
+- **MISP Integration**:
+    - Improved MISP Status and Sync: We've revamped MISP status and synchronization reports to provide real-time insights into ongoing synchronizations. Stay informed about the status of your data exchanges.
+- **Task Management**:
+    - Extended Task Group Name: Increasing task groups with names size up to 64 characters in length (instead of 32), allowing more flexibility when organizing incident response tasks and playbooks.
+- **Case Reporting**:
+    - Docx Case Report Generation: Generate case reports in the popular .docx format, making it easier to customise post generation and share your cases reports with stakeholders. NB: No report preview available for this format.
+
 ## 5.2.6 - 19th October 2023
 
 ### Fixes
