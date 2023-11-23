@@ -9,6 +9,16 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
+
+## 5.2.8 - 23rd November 2023
+
+### Fixes
+
+**API:**
+
+- **MISP Sync**: Fixed a bug introduced in the latest version which causes TheHive to crash when parsing MISP events with the fields `first_seen` or `last_seen`. This bug does not happen in earlier versions (<= 5.2.6) or if those fields are not present in the MISP event
+
+
 ## 5.2.7 - 2nd November 2023
 
 ### Fixes
