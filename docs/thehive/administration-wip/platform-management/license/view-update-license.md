@@ -31,3 +31,7 @@ To activate the license:
     1. The license is based on the number of users and the number of organizations.
     1. It has a validation and an expiration date.
     1. It allows unlimited number of Readonly users and Service users. Service users are those who do not have access to the TheHive interface but they use an API key to call all the APIs.
+
+    <video width="600" controls>
+        <source id=mp4 src="../images/activate-license.mp4" type="video/mp4">
+    </video>
