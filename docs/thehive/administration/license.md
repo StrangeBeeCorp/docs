@@ -32,9 +32,14 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
     3. It has a validation and an expiration date
     4. It allows unlimited number of *ReadOnly* users and *Service* accounts. Service accounts are those who do not have access to the TheHive interface but can use an API key to call all the APIs
 
+<video width="600" controls>
+  <source id=mp4 src="../images/activate-license.mp4" type="video/mp4">
+</video>
+
 
 [^1]:
     Capabilities included in the license: clustering, branding, Active directory, SAML and OAUTH2 authentication, Case timelines.
 
 [^2]:
     Quotas concern Organisations and Users.
+
