@@ -8,6 +8,16 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.0
 
+
+## 5.1.10 - 21st December 2023
+
+### Fixes
+
+**Security:**
+
+- Fix security vulnerabilities. Detailed advisories will be available in coming weeks.
+
+
 ## 5.1.9 - 29th June 2023
 
 ### Fixes
