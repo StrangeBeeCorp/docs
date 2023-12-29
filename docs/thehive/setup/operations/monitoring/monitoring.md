@@ -78,3 +78,4 @@ In a dynamic environment like kubernetes, the TheHive service can be automatical
     - [Kamon 2.x - System metrics dashboard](https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/): see info about CPU or memory usage, JVM metrics like Heap usage or GC
     - [Kamon 2.x - Akka](https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/): info about Akka system, actors, processing time
 
+    To make these dashboards work, you may need to edit the dashboard variables 
