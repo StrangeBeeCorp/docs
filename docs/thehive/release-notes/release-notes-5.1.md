@@ -15,7 +15,7 @@
 
 **Security:**
 
-- Fix security vulnerabilities. Detailed advisories will be available in coming weeks.
+- Fix security vulnerabilities. Please read the [detailed advisories](https://github.com/StrangeBeeCorp/Security).
 
 
 ## 5.1.9 - 29th June 2023
