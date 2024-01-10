@@ -9,6 +9,43 @@
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
 
+## 5.2.10 - 10th January 2024
+
+### Fixes
+
+**API:**
+
+- **Performance Enhancement:** Improved performance when loading case pages with similar/related cases or alerts. Displays "99+" and seamlessly loads without blocking the page.
+- **TheHive Alert Creation:** Fixing an observable deduplication issue while creating alerts. Merged description tags unless identical.
+- **Similar Cases Matching:** Fixed a bug where in specific scenario, a case could match itself as similar.
+
+**MISP:**
+
+- **Optimized MISP Synchronization**: Resolved abnormal CPU consumption during MISP synchronization when an event contains many observables.
+
+**UI:**
+
+- **Search of Knowledge Base Fix:** Resolved the issue causing a "white screen" when searching in the Knowledge Base.
+- **Log Code Formatting:** Fixed the code display in logs to correctly return to the line when exceeding a specified size component.
+- **Dashboard Memory Leak:** Addressed a memory leak in the dashboard, ensuring that memory consumption does not increase.
+- **Cortex Analyzer/Responder Report Fix:** Rectified the error message "id undefined" in Cortex Analyzer/Responder reports.
+- **Organization Name Trimming:** Trimmed organization names when creating a new organization to prevent unnecessary spaces.
+
+**Docker:**
+
+- **Docker User Fix:** Docker containers are now using “thehive” user instead of root. sudo is used when necessary to address file permission issues.
+
+**Packages:**
+
+- **Dependency Updates for RPM/DEB Packages:** Updated dependencies for RPM/DEB packages, ensuring compatibility with java11-runtime-headless provided by both packages.
+
+### New Features / Improvements
+
+- **Case Status Modification:** Users can now change the status of a case from "Closed" to any other status without reopening the case.
+- **SAML Authentication Enhancement:** Improved SAML authentication by allowing minutes to be used in the Maximum Authentication Lifetime.
+- **Observable Management from UI:** Introduced the ability to add/edit observables directly into an alert from the user interface for enhanced flexibility.
+
+
 ## 5.2.9 - 21st December 2023
 
 ### Fixes
