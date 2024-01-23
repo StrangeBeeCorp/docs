@@ -31,6 +31,9 @@
 - **Cortex Analyzer/Responder Report Fix:** Rectified the error message "id undefined" in Cortex Analyzer/Responder reports.
 - **Organization Name Trimming:** Trimmed organization names when creating a new organization to prevent unnecessary spaces.
 
+**Dashboard:**
+- **Customizable Fragment Display:** Take control of your visualizations by choosing the number of fragments to display on the Donut. Tailor the dashboard to your preferences for a personalized and efficient user experience.
+
 **Docker:**
 
 - **Docker User Fix:** Docker containers are now using “thehive” user instead of root. sudo is used when necessary to address file permission issues.
