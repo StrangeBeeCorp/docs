@@ -8,6 +8,28 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
+## 5.2.11 - 8th January 2024
+
+### Fixes
+
+**User Interface:**
+
+- **Dashboard Revitalization:** The Donut widget shows again the total.
+- **Streamlined Dashboard Filtering:** We've refined dashboard filtering to utilize associated field text instead of custom label text, enhancing usability and clarity in data presentation.
+- **Observables Management:** only protect http(s) string if it is part of a url.
+- **Improved Linked Alert:** In the Linked Alerts tab, all types of alerts, whether with or without observables, are now seamlessly displayed for enhanced visibility and swift action.
+- **Efficient Alert Assignment:** Fix bulk assignment issues for alerts, ensuring smooth and efficient workflow management.
+
+**API:**
+
+- **Seamless Integration with MISP:** Experience effortless file upload to MISP with identical files from TheHive, streamlining your incident response workflow and ensuring data consistency across platforms.
+- **Custom tags:** fix tags global integrity check to delete orphan custom tags
+
+### Improvements
+
+**SAML Authentication Enhancement:**
+
+- **Custom Attribute Support:** Introducing a new custom attribute - the Login Name field - in SAML forms, providing greater flexibility and customization options for user authentication.
 
 ## 5.2.10 - 10th January 2024
 
