@@ -8,7 +8,7 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
-## 5.2.11 - 8th January 2024
+## 5.2.11 - 8th February 2024
 
 ### Fixes
 
