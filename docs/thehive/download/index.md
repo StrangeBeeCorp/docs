@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Download TheHive
 
 TheHive is published and available as many binary packages formats: 

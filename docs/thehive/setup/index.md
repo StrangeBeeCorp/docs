@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Installation & configuration guides
 
 ## Overview
