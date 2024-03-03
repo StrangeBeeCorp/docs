@@ -23,8 +23,8 @@ theme:
     primary: blue
     accent: blue
   font:
-    text: Nunito
-    code: Roboto Mono
+    text: Nunito Sans
+    code: Source Code Pro
   favicon: assets/images/favicon.ico
 
 extra_css:
@@ -82,6 +82,8 @@ nav:
     - 'Overview': thehive/setup/index.md
     - 'Download': thehive/download/index.md
     - 'Installation':
+      - 'System Requirements': thehive/setup/installation/system-requirements.md
+      - 'Automated Installation Script': thehive/setup/installation/automated-installation-script.md
       - 'Step-by-Step Installation Guide': thehive/setup/installation/step-by-step-guide.md
       - 'Deploying a Cluster': thehive/setup/installation/3-node-cluster.md
       - 'Running with Docker': thehive/setup/installation/docker.md
