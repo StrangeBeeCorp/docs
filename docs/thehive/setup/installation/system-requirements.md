@@ -26,4 +26,4 @@ TheHive has been tested and is officially supported on the following operating s
 - RHEL 8
 - Fedora 35 & 37
 
-Additionally, an [official Docker image](https://hub.docker.com/r/baba/TheHive/tags) is available for users who prefer containerized deployments.
+Additionally, an [official Docker image](https://hub.docker.com/r/strangebee/TheHive/tags) is available for users who prefer containerized deployments.
