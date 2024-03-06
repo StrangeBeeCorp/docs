@@ -1,0 +1,11 @@
+name: Build and deploy
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build:
+    uses: ./.github/workflows/build-image.yml
+
+  deploy:
+    uses: ./.github/workflows/deploy.yml
