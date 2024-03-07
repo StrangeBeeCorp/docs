@@ -5,12 +5,15 @@ theme:
   name: material
   custom_dir: ./overrides/
   logo: 'assets/images/strangebee.svg'
+  palette:
+    primary: custom
+    accent: custom
   features:
     - content.code.annotate
     - content.tabs.link
     - navigation.sections
     - navigation.instant
-    - navigation.indexes
+    # - navigation.indexes
     - navigation.tabs
     - navigation.top
     - navigation.tracking
@@ -18,10 +21,11 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+    - toc.integrate
     - navigation.path
-  palette:
-    primary: blue
-    accent: blue
+  # palette:
+  #   primary: blue
+  #   accent: blue
   font:
     text: Nunito Sans
     code: Source Code Pro
@@ -55,6 +59,7 @@ extra:
 markdown_extensions:
   - toc:
       permalink: "#"
+      title: On this page
   - footnotes
   - attr_list
   - md_in_html
