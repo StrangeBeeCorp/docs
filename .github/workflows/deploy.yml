@@ -82,5 +82,5 @@ jobs:
         env:
           NOMAD_ADDR: http://10.30.4.180:4646
         with:
-          args: deploy docs.hcl
+          args: deploy -force docs.hcl
         continue-on-error: true
