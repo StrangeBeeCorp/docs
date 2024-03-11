@@ -3,7 +3,7 @@ hide:
   - toc
 ---
 
-## Automated Installation Script
+## Using the Installation Script
 
 TheHive provides users with a streamlined installation process through the **automated installation script**. This script is designed to simplify the setup process across supported operating systems, ensuring efficiency and ease of deployment.
 
