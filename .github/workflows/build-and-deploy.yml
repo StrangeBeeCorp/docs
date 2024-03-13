@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - develop
+      - feature/expand-page
 jobs:
   build:
     uses: ./.github/workflows/build-image.yml
