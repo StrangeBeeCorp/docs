@@ -5,7 +5,7 @@ TheHive is published and available as many binary packages formats:
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
 ```text title="/etc/apt/source.list.d/strangebee.list"
-deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main
+deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main
 ```
 
 ## :material-redhat: Red Hat Enterprise Linux / :material-fedora: Fedora
