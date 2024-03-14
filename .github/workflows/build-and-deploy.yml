@@ -9,4 +9,7 @@ jobs:
     uses: ./.github/workflows/build-image.yml
 
   deploy:
+    needs: build
     uses: ./.github/workflows/deploy.yml
+    with:
+      version: ${{ needs.build.outputs.image_digest }}
