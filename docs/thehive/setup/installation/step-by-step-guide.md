@@ -10,21 +10,21 @@ Before proceeding with the installation, ensure that the following programs are 
 
 === "DEB"
 
-1. Open a terminal window.
-2. Run the following command to install the necessary dependencies:
+    1. Open a terminal window.
+    2. Run the following command to install the necessary dependencies:
 
-    ```bash
-    apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb_release
-    ```
+        ```bash
+        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb_release
+        ```
 
 === "RPM"
 
-1. Open a terminal window.
-2. Execute the following command to install the required dependencies:
+    1. Open a terminal window.
+    2. Execute the following command to install the required dependencies:
 
-    ```bash
-    yum install pkg-install gnupg chkconfig python3-pip git
-    ```
+        ```bash
+        yum install pkg-install gnupg chkconfig python3-pip git
+        ```
 
 Ensure that all dependencies are successfully installed before proceeding with the TheHive installation process.
 
@@ -648,41 +648,39 @@ Install TheHive package by using the following commands:
 
     !!! Example ""
         ```bash
-        echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
         sudo apt-get install -y thehive
         ```
 
 === "RPM"
 
-    For RPM-based systems, follow these steps:
+    1. Import the RPM repository key:
 
-        1. Import the RPM repository key:
+        !!! Example ""
+            ```bash
+            sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+            ```
 
-            !!! Example ""
-                ```bash
-                sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
-                ```
+    2. Create and edit the file /etc/yum.repos.d/strangebee.repo:
 
-        2. Create and edit the file /etc/yum.repos.d/strangebee.repo:
+        !!! Example ""
+            ```bash title="/etc/yum.repos.d/strangebee.repo"
+            [thehive]
+            enabled=1
+            priority=1
+            name=StrangeBee RPM repository
+            baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
+            gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+            gpgcheck=1
+            ```
 
-            !!! Example ""
-                ```bash title="/etc/yum.repos.d/strangebee.repo"
-                [thehive]
-                enabled=1
-                priority=1
-                name=StrangeBee RPM repository
-                baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
-                gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
-                gpgcheck=1
-                ```
+    3. Then install the package using `yum`:
 
-        3. Then install the package using `yum`:
-
-            !!! Example ""
-                ```bash
-                sudo yum install thehive
-                ```
+        !!! Example ""
+            ```bash
+            sudo yum install thehive
+            ```
 
 === "Other Installation Methods"
 
@@ -749,7 +747,7 @@ The following configurations are necessary for successful initiation of TheHive:
 
 #### Secret key configuration
 
-=== "Debian"
+=== "DEB"
     The secret key is automatically generated and stored in `/etc/thehive/secret.conf` during package installation.
 
 === "RPM"
