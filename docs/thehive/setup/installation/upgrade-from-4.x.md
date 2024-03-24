@@ -1,102 +1,97 @@
 # Upgrade from TheHive 4.x
 
-!!! Info
-    This guide describes how to upgrade TheHive from version **4.1.x** to **5.0.x**.
+This guide provides comprehensive instructions for upgrading TheHive from version 4.1.x to 5.0.x. Please ensure that your system meets the following requirements:
 
-    This guide considers: 
+- The application is running on a supported Linux operating system.
+- The server meets prerequisites regarding CPU & RAM.
 
-    - The application is running on a [supported Linux operating system](../index.md#operating-systems)
-    - The server meets [prerequisites](../index.md#requirements) regarding CPU & RAM.
+If you are using a cluster setup, specific notes are provided to guide you through the process.
 
-    If you are using a cluster, specific notes are highlighted to guide you. 
+---
 
-!!! Warning "Switch to Elasticsearch as indexing engine"
-    TheHive 5.x uses Elasticsearch as indexing engine. If you used Lucene as indexing engine with TheHive 4.1.x, reindexing the data is mandatory. It might take some time regarding the size of your database.
+## Important Considerations
+
+**Switch to Elasticsearch as indexing engine**: TheHive 5.x utilizes Elasticsearch as the indexing engine. If you were using Lucene as the indexing engine with TheHive 4.1.x, reindexing the data is mandatory. Please note that this process may take some time depending on the size of your database.
+
+---
 
 ## Preparation
 
-??? Abstract "I'm using a cluster"
-    Follow these instructions for all nodes of the cluster.
+!!! Note
+    If you're operating a cluster of the Hive, these instructions should be followed for each node in the cluster.
 
-The database application will be upgraded during the migration. We highly recommend making backups of the database, index and files before running the operation.
+&nbsp;
 
-!!! Question "FAQ"
-    **Q:** **How to make backups ?**
+### Database Backup
 
-    **A:** _Read our [backup and restore guide](../operations/backup-restore.md)_
+Before proceeding with the upgrade, ensure to back up the following components:
 
-!!! Attention
-    Make sure that you can login as an admin user with a password in TheHive database (the `local` auth provider should be enabled, by default it is enabled).
+- Database
+- Index
+- Files
 
-### Stop all running applications
+For detailed instructions on how to perform backups, refer to our [**backup and restore guide**](../operations/backup-restore.md).
+
+&nbsp;
+
+### Ensure Admin User Access
+
+Ensure that you can log in as an admin user with a password in TheHive database. By default, the local auth provider should be enabled.
+
+&nbsp;
+
+### Stop all Running Applications
  
 1. Start by stopping TheHive:
 
-    ```bash title="stop thehive service"
+    ```bash
     sudo systemctl stop thehive
     ```
 
-2. Once TheHive is successfully stopped, stop database service
+2. Once TheHive is successfully stopped, stop the database service:
 
-    ```bash title="stop cassandra service"
+    ```bash
     sudo systemctl stop cassandra
     ```
 
-3. Only if already using Elasticsearch as indexing engine
-    ```bash title="stop elasticsearch service"
+3. If already using Elasticsearch as the indexing engine, stop the Elasticsearch service:
+
+    ```bash
     sudo systemctl stop elasticsearch
     ```
 
+---
 
 ## Upgrade Java
 
-??? Abstract "I'm using a cluster"
-    Follow these instructions for all nodes of the cluster.
+Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to install the required version of Java.
 
-Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to install the required version. 
+---
 
+## Upgrade or Install Elasticsearch
 
-## Upgrade or install Elasticsearch
+Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
 
-??? Abstract "I'm using a cluster"
-    Elasticsearch was mandatory for cluster of TheHive 5.x. Unless an update might is necessary, you can go to [Upgrade Cassandra](#upgrade-cassandra).
-
-Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
+---
 
 ## Upgrade Cassandra
 
-??? Abstract "I'm using a cluster"
-    Follow this part for all nodes of the Cassandra cluster, and ensure to restart sucessfully all nodes of the cluster before upgrading all nodes of TheHive cluster to version 5.
+### Backup Configuration File
 
-
-### Backup configuration file
 Save the existing configuration file for Cassandra 3.x. It will be used later to configure Cassandra 4:
 
 ```bash
-sudo cp /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra3.yaml.bak
+  sudo cp /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra3.yaml.bak
 ```
 
-### Install Cassandra 
-Follow the [installation process](step-by-step-guide.md#cassandra) to install the required version.
+### Install Cassandra
 
-During the installation process, replace existing configuration files (*as the old configuration is saved*): 
+Follow the [installation process](step-by-step-guide.md#cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
 
-```
-Configuration file '/etc/cassandra/cassandra.yaml'
- ==> Modified (by you or by a script) since installation.
- ==> Package distributor has shipped an updated version.
-   What would you like to do about it ?  Your options are:
-    Y or I  : install the package maintainer's version
-    N or O  : keep your currently-installed version
-      D     : show the differences between the versions
-      Z     : start a shell to examine the situation
- The default action is to keep your current version.
-*** cassandra.yaml (Y/I/N/O/D/Z) [default=N] ? Y
-```
 
 ### Configuration
 
-Update the new configuration file, and ensure the following parameters are correctly set with these values:
+Update the new configuration file and ensure the following parameters are correctly set with these values:
 
 ```
 cluster_name: 'thp'
@@ -104,27 +99,38 @@ num_tokens: 256
 ```
 
 !!! Info
-    If you had a more customized configuration file for Cassandra 3.x, review all the file and ensure to adapt it accordingly.
+    If you have a customized configuration file for Cassandra 3.x, it is advisable to carefully review the entire file and make any necessary adjustments to ensure compatibility and proper functioning.
 
-### Start the service
+
+### Start the Service
+
+Use the following command to start the Cassandra service:
 
 ```
 sudo systemctl start cassandra
 ```
 
-### Upgrade sstables
+### Upgrade SSTables
 
-On each Cassandra nodes, upgrade the sstables:
+On each Cassandra node, upgrade the SSTables:
+
 ```
 nodetool upgradesstables
 ```
 
 Then repair the keyspaces:
+
 ```
 nodetool repair --full
 ```
 
-## Install thehive
+## Install TheHive
+
+### Prepare for the New Installation
+
+Before starting the installation process, ensure your Cassandra cluster is fully operational
+
+
 
 ??? Abstract "I'm using a cluster"
     Before starting this part of the guide, ensure your Cassandra cluster is fully operational, by running the command `nodetool status`
