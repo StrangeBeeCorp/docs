@@ -48,3 +48,9 @@
   background-color: #fff;
   color: initial;
 } */
+
+:root {
+  --md-primary-fg-color:        #1B1B34;
+  --md-primary-fg-color--light: #E9CF42;
+  --md-primary-fg-color--dark:  #1B1B34;
+}

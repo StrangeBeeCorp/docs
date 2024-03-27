@@ -4,6 +4,9 @@
     --cl-dark: hsla(232, 42%, 10%, 100%);
     --cl-font: hsla(229, 20%, 51%, 100%);
     --cl-green: hsla(180, 44%, 50%, 100%);
+    --md-primary-fg-color:        #1B1B34;
+    --md-primary-fg-color--light: #E9CF42;
+    --md-primary-fg-color--dark:  #32325E;
   }
 
   .md-main {
@@ -22,6 +25,13 @@
       var(--md-primary-fg-color),
       rgb(60, 171, 169) 99%,
       #fff 99%
+    );
+  }
+
+  .tx-container {
+    padding-top: 0rem;
+    background: 
+      var(--md-primary-fg-color);
     );
   }
 
@@ -62,15 +72,15 @@
 
   .tx-hero .md-button--primary {
     background-color: var(--md-primary-bg-color);
-    color: rgb(95, 189, 188);
+    color: var(--md-primary-fg-color--dark);
     border-color: var(--md-primary-bg-color);
   }
 
   .tx-hero .md-button:focus,
   .tx-hero .md-button:hover {
-    background-color: var(--md-accent-fg-color);
+    background-color: var(--md-primary-fg-color--light);
     color: var(--md-default-bg-color);
-    border-color: var(--md-accent-fg-color);
+    border-color: var(--md-primary-fg-color--light);
   }
 
   .feature-item h2 svg {
@@ -129,7 +139,7 @@
   .section__title {
     font-size: 25px;
     font-weight: bolder;
-    color: var(--cl-green);
+    color: var(--md-primary-fg-color);
   }
 
   .feature__grid {
@@ -149,12 +159,12 @@
   .feature__title {
     font-size: 18px;
     font-weight: bold;
-    color: var(--cl-dark);
+    color: var(--md-primary-fg-color);
   }
 
   .feature__content {
     font-size: 14px;
-    color: var(--cl-font);
+    color: var(--md-primary-fg-color);
   }
 
   @media screen and (max-width: 76.1875rem) {
