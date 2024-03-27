@@ -17,8 +17,8 @@ If you are using a cluster setup, specific notes are provided to guide you throu
 
 ## Preparation
 
-!!! Note
-    If you're operating a cluster of the Hive, these instructions should be followed for each node in the cluster.
+??? Abstract "I'm Using a Cluster"
+    Please ensure that the instructions under this section are followed on all nodes of the cluster.
 
 &nbsp;
 
@@ -64,17 +64,27 @@ Ensure that you can log in as an admin user with a password in TheHive database.
 
 ## Upgrade Java
 
+??? Abstract "I'm Using a Cluster"
+    Please ensure that the instructions under this section are followed on all nodes of the cluster.
+
+
 Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to install the required version of Java.
 
 ---
 
 ## Upgrade or Install Elasticsearch
 
+??? Abstract "I'm Using a Cluster"
+    Elasticsearch is crucial for TheHive 5.x clusters. However, if an update isn't urgently required, focus on upgrading Cassandra first.
+
 Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
 
 ---
 
 ## Upgrade Cassandra
+
+??? Abstract "I'm Using a Cluster"
+    For each node within the Cassandra cluster, it is essential to follow this procedure. Ensure that all nodes in the Cassandra cluster are successfully restarted before proceeding with the upgrade of all nodes in TheHive cluster to version 5.
 
 ### Backup Configuration File
 
@@ -84,10 +94,13 @@ Save the existing configuration file for Cassandra 3.x. It will be used later to
   sudo cp /etc/cassandra/cassandra.yaml /etc/cassandra/cassandra3.yaml.bak
 ```
 
+&nbsp;
+
 ### Install Cassandra
 
 Follow the [installation process](step-by-step-guide.md#cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
 
+&nbsp;
 
 ### Configuration
 
@@ -101,6 +114,7 @@ num_tokens: 256
 !!! Info
     If you have a customized configuration file for Cassandra 3.x, it is advisable to carefully review the entire file and make any necessary adjustments to ensure compatibility and proper functioning.
 
+&nbsp;
 
 ### Start the Service
 
@@ -109,6 +123,8 @@ Use the following command to start the Cassandra service:
 ```
 sudo systemctl start cassandra
 ```
+
+&nbsp;
 
 ### Upgrade SSTables
 
@@ -124,49 +140,63 @@ Then repair the keyspaces:
 nodetool repair --full
 ```
 
+---
+
 ## Install TheHive
 
-### Prepare for the New Installation
-
-Before starting the installation process, ensure your Cassandra cluster is fully operational
-
-
+### Preparing for the New Installation
 
 ??? Abstract "I'm using a cluster"
-    Before starting this part of the guide, ensure your Cassandra cluster is fully operational, by running the command `nodetool status`
+    Before initiating the installation process, it is crucial to ensure that your Cassandra cluster is fully operational. Follow these steps:
 
-    ```text title="nodetool status"
-    # nodetool status
+    - Run the command ``nodetool status`` to check the status of your Cassandra cluster.
 
-    Datacenter: datacenter1
-    =======================
+      ```bash
+        nodetool status
+      ```
 
-    Status=Up/Down
-    |/ State=Normal/Leaving/Joining/Moving
-    --  Address      Load      Tokens  Owns (effective)  Host ID                               Rack
-    UN  10.1.1.2  1.41 GiB  256     100.0%            ba6daa4e-6d14-4b21-a06c-d01b3bdd659d  rack1
-    UN  10.1.1.3  1.39 GiB  256     100.0%            201ab99c-8e16-49b1-9b66-5444043eb1cd  rack1
-    UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252aeb86  rack1
-    ```
+    The output should display information about the nodes in your cluster, including their status, load, tokens, and other relevant details.
 
-    Then, we recommend stopping all existing nodes of TheHive (4.x) and then, upgrading and starting only one node to TheHive 5. When everything works fine with this node, Other nodes can be updated and started.
+      ```text title="Example output"
+      # nodetool status
 
-### Prepare for the new installation
+      Datacenter: datacenter1
+      =======================
+
+      Status=Up/Down
+      |/ State=Normal/Leaving/Joining/Moving
+      --  Address      Load      Tokens  Owns (effective)  Host ID                               Rack
+      UN  10.1.1.2  1.41 GiB  256     100.0%            ba6daa4e-6d14-4b21-a06c-d01b3bdd659d  rack1
+      UN  10.1.1.3  1.39 GiB  256     100.0%            201ab99c-8e16-49b1-9b66-5444043eb1cd  rack1
+      UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252aeb86  rack1
+      ```
+
+    - Ensure that all nodes in the cluster are in an operational state (UN), indicating that they are up and running normally.
+
+    - Before proceeding with the installation, it's recommended to perform the following steps:
+
+        **Stop Existing Nodes**: Stop all existing nodes of TheHive (4.x).
+
+        **Upgrade and Start a Single Node**: Begin by upgrading and starting only one node to TheHive 5.0.0. Verify that everything functions correctly with this node before proceeding further.
+
+        **Update and Start Other Nodes**: Once the initial node is successfully upgraded and operational, proceed to update and start the remaining nodes.
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
-    Starting with TheHive 5.0.0, configuration has been simplified; most of the administration parameters can be configured directly in the UI. The configuration file (`/etc/thehive/application.conf`) may  **only** contain the necessary information to start the application successfully; which are: 
+    Starting from TheHive 5.0.0, the configuration process has been simplified, with most administration parameters configurable directly within the user interface (UI). The configuration file (/etc/thehive/application.conf) should only contain essential information required for the successful startup of the application, including:
 
     - Secret
     - Database
-    - Indexing engine
-    - File storage
-    - Enabled connectors 
-    - Akka configuration in the case of a cluster
+    - Indexing Engine
+    - File Storage
+    - Enabled Connectors 
+    - Akka Configuration (for clusters)
 
-    Authentication, Webhooks, Cortex and MISP configurations can be set in the UI. 
+    Authentication, Webhooks, Cortex, and MISP configurations can now be conveniently set within the UI. 
 
-!!! Note
-    Cortex and Misp connector module keys were renamed from `play.modules.enabled` to `scalligraph.modules`
+!!! "Note on Configuration Changes"
+    Please note the following changes in configuration keys:
+    
+    - The configuration keys for Cortex and MISP connector modules have been renamed from play.modules.enabled to scalligraph.modules. Update your configuration files accordingly to reflect these changes.
 
 === "Standalone server"
 
@@ -176,7 +206,7 @@ Before starting the installation process, ensure your Cassandra cluster is fully
       sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
       ```
       
-    - For the current use case, i.e., a standalone server, the final configuration file should look like this:
+    - For the current scenario, which involves a standalone server, the ultimate configuration file should resemble the following:
 
       ```yaml title="sample of /etc/thehive/application.conf"
       # TheHive configuration - application.conf
@@ -258,7 +288,7 @@ Before starting the installation process, ensure your Cassandra cluster is fully
       sudo cp /etc/thehive/application.conf /etc/thehive/application.conf.bak
       ```
 
-    - For the current use case, i.e., a standalone server, the final configuration file should look like this:
+    - The second configuration includes settings for setting up TheHive in a clustered environment. It extends upon the first one with additional settings for cluster configuration using Akka:
 
       ```yaml title="sample of /etc/thehive/application.conf"
       # TheHive configuration - application.conf
@@ -353,73 +383,72 @@ Before starting the installation process, ensure your Cassandra cluster is fully
       ```
 
 !!! Note
-    By default, Cortex and MISP modules are enabled. If you won't use them or one of them, the corresponding line can be commented.
+    By default, both Cortex and MISP modules are enabled in TheHive. If you do not intend to use one or both of these modules, you can comment out the corresponding lines in the configuration file.
 
-    **Our recommendation**: use the default configuration sample, update it with your custom-parameter values, and keep the old file to configure services in the web UI. 
+    **Recommendation**: It's advisable to utilize the default configuration sample provided, customize it with your specific parameter values, and retain the original file for configuring services through the web UI.
 
-### Specific configuration required (for the upgrade only)
+&nbsp;
+
+### Specific Configuration for Upgrade Only
 
 ??? Abstract "I'm using a cluster"
-    This part only concerns **the first node**, the one that will be started to perform the database and index upgrade.
+    This section pertains solely to the initial node, which will initiate the database and index upgrade process.
 
-These lines should be added to the configuration file only while upgrading to version 5, and removed later on.
+These lines are to be included in the configuration file exclusively during the upgrade to version 5 and should be subsequently removed thereafter.
 
 ```
 db.janusgraph.forceDropAndRebuildIndex = true
 ```
 
-### Install TheHive
+&nbsp;
 
-??? Abstract "I'm using a cluster"
-    Follow these instructions for the first node of TheHive.
+### Installing TheHive
 
-    When starting TheHive 5.x for the first time, ensure all nodes of database clusters are up and running correctly.
-    
-    Once the upgrade is successful with the first node, install and start TheHive on other nodes.
+If you're utilizing DEB packages for TheHive installation, follow these steps:
 
-=== "I'm using DEB packages"
+=== "DEB"
 
-    - Update the repository address
+    1. **Update Repository Address**: Run the following commands to update the repository address:
 
-    ```bash
-    wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-    sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-    ```
+      ```bash
+      wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+      sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+      ```
 
-    - Install new package - old package of `thehive4` will be removed
+    2. **Install the New Package**: Execute the following commands to update and install the new package. This will automatically remove the old package of thehive4:
   
-    ```bash
-    sudo apt update
-    sudo apt install thehive
-    ```
-
-=== "I'm using RPM packages"
-
-    - Add Cassandra repository keys
-
       ```bash
-      sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+      sudo apt update
+      sudo apt install thehive
       ```
 
-    - Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
+=== "RPM"
 
-      ```bash title="/etc/yum.repos.d/strangebee.repo"
-      [thehive]
-      enabled=1
-      priority=1
-      name=StrangeBee RPM repository
-      baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
-      gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
-      gpgcheck=1
-      ```
+    1. **Add Cassandra Repository Keys**: Import the Cassandra repository keys with the following command:
 
-    - Then install the package using `yum`:
+        ```bash
+        sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+        ```
 
-      ```bash
-      sudo yum install thehive
-      ```
+    2. **Configure RPM Repository**: Create and edit the file /etc/yum.repos.d/strangebee.repo with the following content:
 
-During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
+        ```bash title="/etc/yum.repos.d/strangebee.repo"
+        [thehive]
+        enabled=1
+        priority=1
+        name=StrangeBee RPM repository
+        baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
+        gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+        gpgcheck=1
+        ```
+
+    3. **Install TheHive Package**: Install the package using yum:
+
+        ```bash
+        sudo yum install thehive
+        ```
+
+<!-- During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
 
   ```
   Configuration file '/etc/thehive/application.conf'
@@ -432,55 +461,63 @@ During the installation, if you already prepared your configuration file during 
         Z     : start a shell to examine the situation
   The default action is to keep your current version.
   *** application.conf (Y/I/N/O/D/Z) [default=N] ? N
+  ``` -->
+
+&nbsp;
+
+### Starting Services
+
+Ensure that the required services are started for TheHive to function properly. Follow these steps:
+
+1. **Reload Systemd Daemon** - Execute the following command to reload the systemd daemon:
+
+  ```bash
+  sudo systemctl daemon-reload
   ```
 
-### Start services 
+2. **Start Cassandra (if not already started)** - If Cassandra is not already running, start it with:
 
-```bash
-sudo systemctl daemon-reload
-```
+  ```bash
+  sudo systemctl start cassandra
+  ```
 
-- Start Cassandra (if not already started)
+3. **Start Elasticsearch (if not already started)** - If Elasticsearch is not running, start it using:
 
-```bash
-sudo systemctl start cassandra
-```
+  ```bash
+  sudo systemctl start elasticsearch
+  ```
 
-- Start Elasticsearch (if not already started)
+4. **Start TheHive** -  Once both database services are running, start TheHive by executing:
 
-```bash
-sudo systemctl start elasticsearch
-```
+  ```bash
+  sudo systemctl start thehive
+  ```
 
-- Once both database services are started successfully, start TheHive
+!!! Note
+    The first start of TheHive 5.x may take some time as it updates the database schema and proceeds with reindexing. Progress can be monitored in the log file ``/var/log/thehive/application.log``. Refer to the troubleshooting section for further assistance.
 
+&nbsp;
 
+### Restarting the Service
 
-```bash
-sudo systemctl start thehive
-```
+After successfully starting the service, follow these steps to update the configuration file and restart TheHive:
 
+1. **Update Configuration File** - Remove the following lines from the configuration file ``/etc/thehive/application.conf``:
 
-!!! Warning "The first start of TheHive 5.x can take some time"
-    When starting for the first time, TheHive is updating first the database schema, and proceed to reindexation. Both processes can take a certain time depending on the size of the database and the amount of data.
-    Progression can be followed in log file `/var/log/thehive/application.log`. See [Troubleshooting](#troubleshooting) for more information.
+  ```bash
+  db.janusgraph.forceDropAndRebuildIndex = true
+  ```
 
+2. **Restart TheHive** - Restart TheHive using the following command:
 
-### Restart the service
-Once the service is started successfully, update the configuration file and **remove** the following lines:
-
-```yaml title="/etc/thehive/application.conf"
-db.janusgraph.forceDropAndRebuildIndex = true
-```
-
-Then restart TheHive:
-
-```
-sudo systemctl restart thehive
-```
+  ```bash
+  sudo systemctl restart thehive
+  ```
 
 ??? Abstract "I'm using a cluster"
-    You can install and start TheHive on all other nodes.
+    If you're deploying TheHive in a cluster, you can proceed to install and start TheHive on all other nodes following similar steps.
+
+---
 
 ## Troubleshooting
 
