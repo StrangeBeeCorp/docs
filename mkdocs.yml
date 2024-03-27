@@ -100,7 +100,7 @@ nav:
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/setup/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/setup/installation/upgrade-from-4.x.md
-        - 'Migration Guide': thehive/setup/installation/migration.md
+        - 'Migration from TheHive 3.x': thehive/setup/installation/migration.md
     - 'Configuration & Operations':
       - 'Configuration':
         - 'Database & Index Configuration': thehive/setup/configuration/database.md

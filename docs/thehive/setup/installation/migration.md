@@ -1,157 +1,138 @@
 # Migration from TheHive 3.x
 
-TheHive 5.x is delivered with a tool to migrate your data from TheHive 3.x. stored in Elasticsearch. 
+This documentation outlines the supported versions, prerequisites, configuration steps, and the migration process.
 
-## Supported versions
+The migration from TheHive 3.x to TheHive 5.x involves transferring data stored in Elasticsearch. TheHive 5.x is provided with a tool to help you migrate your data.
 
-The migration tool supports migrating data from both TheHive 3.4.x and 3.5.x. 
+The migration tool is located in `/opt/thehive/bin/migrate`. 
 
-| Migrating from  | Elasticsearch version   |
+---
+
+## Supported Versions
+
+The migration tool facilitates the transition from both TheHive 3.4.x and 3.5.x versions. Below is the compatibility matrix:
+
+| Migrating from  | Elasticsearch Version   |
 | --------------- | ----------------------- | 
 | TheHive 3.4.x   | v6.x                    |
 | TheHive 3.5.x   | v7.x                    |
 
+---
 
-## How it works
+## Pre-requisites
 
-All packages of TheHive v5.x distributed come with the migration program which can be used to import data from TheHive 3.4.0+. By default, it is installed in `/opt/thehive/bin/migrate`. 
+Before initiating the migration, ensure the following:
 
-## Pre-requisite
+- TheHive v5.x must be installed on the system where the migration tool will run.
 
-In order to migrate the data: 
+- TheHive must be properly configured, including database, index, and file storage settings.
 
-- TheHive v5.x **must** be installed on the system running the migration tool; 
+- Stop the `thehive` service on the target server using the command: service thehive stop.
 
-- TheHive **must** be configured ; in particular **database**, **index**, and **file storage** ;  
-- The service `thehive` **must be stopped** (`service thehive stop`) on the target server. 
+- Ensure the migration tool has access to the Elasticsearch database used by TheHive 3.x and the configuration file of TheHive 3.x instance.
 
-This tools **must** also have access to Elasticsearch database (http://ES:9200) used by TheHive 3, and the configuration file of TheHive 3.x instance. 
+---
 
-## Configuration of TheHive 
+## Configuration of TheHive
 
-!!! Warning
-    In TheHive, users are identified by their email addresses. Thus, a domain will be appended to usernames in order to migrate users from TheHive 3. 
-    
-    TheHive v5.x comes with a default domain named `thehive.local`. Starting the migration without explicitly specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
+### User Domain Configuration
 
-    Change the default domain name used to import existing users in the configuration file of TheHive (`/etc/thehive/application.conf`) ;  add or update the setting named  `auth.defaultUserDomain`: 
+Users in TheHive are identified by their email addresses. To migrate users from TheHive 3, a domain must be appended to usernames. By default, TheHive v5.x includes a domain named ``thehive.local``. Starting the migration without explicitly specifying a domain name will result in migrating all users with a username formatted like  `user@thehive.local`. 
 
-    ```yaml
+To specify a custom domain, update the ``auth.defaultUserDomain`` setting in the configuration file (`/etc/thehive/application.conf`):
+
+```yaml
     auth.defaultUserDomain: "mydomain.com"
-    ```
+```
 
-    This way, the domain `mydomain.com` will be appended to user accounts imported from TheHive 3.4+ (`user@mydomain.com`).
+This ensures that imported users from TheHive 3.x are formatted as `user@mydomain.com`.
 
+---
 
-## Run the migration
+## Running the Migration
 
-Prepare, install and configure your new instance of TheHive v5.x by following [the associated guides](../index.md). In order to obtain the best migration performance, it is recommended to not start TheHive 5 before running the migration tool. Thus, the migration will be done without index. At the end of the migration, the index will be added.
+Follow the steps below to execute the migration:
 
-Once TheHive 5 configuration file (`/etc/thehive/application.conf`) is correctly filled the `migrate` command ca be executed.
+1. Prepare, install, and configure TheHive v5.x as per [the associated guides](../index.md)
+
+2. Ensure TheHive 5 is not running before initiating the migration for optimal performance.
+
+3. Execute the `migrate` command:
+
+```bash
+  /opt/thehive/bin/migrate
+```
+
 
 !!! Warning
-    The configuration file must not contain cluster configuration (`akka.cluster`). The migration tool works on single node only.
+    The migration tool works on a single node only, thus the configuration file must not contain cluster configuration (`akka.cluster`).
+
 
 !!! Info
-    This recommended to run this program as the user in charge of running TheHive service ( `thehive` if you are installing the application with DEB or RPM package)
+    It is recommended to execute this program under the user responsible for running TheHive service (thehive if you are installing the application using DEB or RPM packages).
 
+&nbsp;
 
-The program comes with a large set of options: 
+### TheHive Migration Tool Options
 
-```
-# /opt/thehive/bin/migrate --help
-TheHive migration tool 
-Usage: migrate [options]
+The migration tool for TheHive offers a comprehensive set of options to facilitate the migration process. Below is a detailed list of available options:
 
-  -v, --version
-  -h, --help
-  -l, --logger-config <file>
-                           logback configuration file
-  -c, --config <file>      global configuration file
-  -i, --input <file>       TheHive 3 configuration file
-  -o, --output <file>      TheHive 5 configuration file
-  -d, --drop-database      Drop TheHive 5 database before migration
-  -r, --resume             Resume migration (or migrate on existing database)
-  -m, --main-organisation <organisation>
-  -u, --es-uri http://ip1:port,ip2:port
-                           TheHive3 ElasticSearch URI
-  -x, --es-index <index>   TheHive3 ElasticSearch index name
-  -x, --es-index-version <index>
-                           TheHive3 ElasticSearch index name version number (default: autodetect)
-  -a, --es-keepalive <duration>
-                           TheHive3 ElasticSearch keepalive
-  -p, --es-pagesize <value>
-                           TheHive3 ElasticSearch page size
-  -s, --es-single-type <bool>
-                           Elasticsearch single type
-  -y, --transaction-pagesize <value>
-                           page size for each transaction
-  -t, --thread-count <value>
-                           number of threads
-  -k, --integrity-checks   run integrity checks after the migration
-  --max-case-age <duration>
-                           migrate only cases whose age is less than <duration>
-  --min-case-age <duration>
-                           migrate only cases whose age is greater than <duration>
-  --case-from-date <date>  migrate only cases created from <date>
-  --case-until-date <date>
-                           migrate only cases created until <date>
-  --case-from-number <number>
-                           migrate only cases from this case number
-  --case-until-number <number>
-                           migrate only cases until this case number
-  --max-alert-age <duration>
-                           migrate only alerts whose age is less than <duration>
-  --min-alert-age <duration>
-                           migrate only alerts whose age is greater than <duration>
-  --alert-from-date <date>
-                           migrate only alerts created from <date>
-  --alert-until-date <date>
-                           migrate only alerts created until <date>
-  --include-alert-types <type>,<type>...
-                           migrate only alerts with this types
-  --exclude-alert-types <type>,<type>...
-                           don't migrate alerts with this types
-  --include-alert-sources <source>,<source>...
-                           migrate only alerts with this sources
-  --exclude-alert-sources <source>,<source>...
-                           don't migrate alerts with this sources
-  --max-audit-age <duration>
-                           migrate only audits whose age is less than <duration>
-  --min-audit-age <duration>
-                           migrate only audits whose age is greater than <duration>
-  --audit-from-date <date>
-                           migrate only audits created from <date>
-  --audit-until-date <date>
-                           migrate only audits created until <date>
-  --include-audit-actions <value>
-                           migration only audits with this action (Update, Creation, Delete)
-  --exclude-audit-actions <value>
-                           don't migration audits with this action (Update, Creation, Delete)
-  --include-audit-objectTypes <value>
-                           migration only audits with this objectType (case, case_artifact, case_task, ...)
-  --exclude-audit-objectTypes <value>
-                           don't migration audits with this objectType (case, case_artifact, case_task, ...)
-  --case-number-shift <value>
-                           transpose case number by adding this value
-Accepted date formats are "yyyyMMdd[HH[mm[ss]]]" and "MMdd"
-The Format for duration is: <length> <unit>.
-Accepted units are:
-  DAY:         d, day
-  HOUR:        h, hr, hour
-  MINUTE:      m, min, minute
-  SECOND:      s, sec, second
-  MILLISECOND: ms, milli, millisecond
-```
+- `-v, --version`: Displays the version of the migration tool.
+- `-h, --help`: Displays the help message detailing the usage of the migration tool.
+- `-l, --logger-config <file>`: Specifies the path to the logback configuration file.
+- `-c, --config <file>`: Specifies the global configuration file for TheHive.
+- `-i, --input <file>`: Specifies the path to the configuration file of TheHive 3.
+- `-o, --output <file>`: Specifies the path to the configuration file for TheHive 5.
+- `-d, --drop-database`: Drops TheHive 5 database before migration.
+- `-r, --resume`: Resumes migration or migrates on an existing database.
+- `-m, --main-organisation <organisation>`: Specifies the main organization for migration.
+- `-u, --es-uri http://ip1:port,ip2:port`: Specifies the Elasticsearch URIs for TheHive 3.
+- `-x, --es-index <index>`: Specifies the Elasticsearch index name for TheHive 3.
+- `-x, --es-index-version <index>`: Specifies the version number for the Elasticsearch index name (default: autodetect).
+- `-a, --es-keepalive <duration>`: Specifies the Elasticsearch keepalive duration.
+- `-p, --es-pagesize <value>`: Specifies the page size for Elasticsearch queries.
+- `-s, --es-single-type <bool>`: Specifies whether Elasticsearch uses a single type.
+- `-y, --transaction-pagesize <value>`: Specifies the page size for each transaction.
+- `-t, --thread-count <value>`: Specifies the number of threads for migration.
+- `-k, --integrity-checks`: Runs integrity checks after migration.
+- `--max-case-age <duration>`: Migrates cases younger than the specified duration.
+- `--min-case-age <duration>`: Migrates cases older than the specified duration.
+- `--case-from-date <date>`: Migrates cases created from the specified date.
+- `--case-until-date <date>`: Migrates cases created until the specified date.
+- `--case-from-number <number>`: Migrates cases starting from the specified case number.
+- `--case-until-number <number>`: Migrates cases up to the specified case number.
+- `--max-alert-age <duration>`: Migrates alerts younger than the specified duration.
+- `--min-alert-age <duration>`: Migrates alerts older than the specified duration.
+- `--alert-from-date <date>`: Migrates alerts created from the specified date.
+- `--alert-until-date <date>`: Migrates alerts created until the specified date.
+- `--include-alert-types <type>,<type>...`: Migrates only alerts with the specified types.
+- `--exclude-alert-types <type>,<type>...`: Excludes alerts with the specified types from migration.
+- `--include-alert-sources <source>,<source>...`: Migrates only alerts with the specified sources.
+- `--exclude-alert-sources <source>,<source>...`: Excludes alerts with the specified sources from migration.
+- `--max-audit-age <duration>`: Migrates audits younger than the specified duration.
+- `--min-audit-age <duration>`: Migrates audits older than the specified duration.
+- `--audit-from-date <date>`: Migrates audits created from the specified date.
+- `--audit-until-date <date>`: Migrates audits created until the specified date.
+- `--include-audit-actions <value>`: Migrates only audits with the specified actions (Update, Creation, Delete).
+- `--exclude-audit-actions <value>`: Excludes audits with the specified actions from migration.
+- `--include-audit-objectTypes <value>`: Migrates only audits with the specified object types (case, case_artifact, case_task, etc.).
+- `--exclude-audit-objectTypes <value>`: Excludes audits with the specified object types from migration.
+- `--case-number-shift <value>`: Transposes case numbers by adding the specified value.
 
-Most of these options are filters you can apply to the program. For example, you could decide to import only some of the Cases/Alerts from your old instance: 
+&nbsp;
 
-- Import Cases/Alerts not older than X days/hours,
-- Import Cases/Alerts with the ID number,
-- Import part of Audit trail
+#### Usage Examples
+
+- Import Cases/Alerts not older than X days/hours.
+- Import Cases/Alerts with specific ID numbers.
+- Import a portion of the Audit trail.
 - ...
 
-Taking the assumption that you are migrating a database hosted in a remote server, with TheHive 3, a basic command line to migrate data to a new instance will be like: 
+&nbsp;
+
+### Basic Migration Command
+
+To migrate data to a new instance of TheHive, use the following command:
 
 ```bash
 /opt/thehive/bin/migrate \
@@ -161,43 +142,56 @@ Taking the assumption that you are migrating a database hosted in a remote serve
   --es-index the_hive
 ```
 
-with: 
+Options Description:
+
+- --output: Specifies the configuration file path for TheHive 5, which must include database and file storage configurations.
+- --main-organisation: Specifies the organization to create during migration.
+- --es-uri: Specifies the URL of the Elasticsearch server. If Elasticsearch authentication is enabled, a configuration file for TheHive3 (--input) is required.
+- --es-index: Specifies the Elasticsearch index used for migration.
 
 | Option                    | Description       |
 | :------------------------ | ----------------- |
-| `--output`                | specifies the configuration file of TheHive 5 (the one that has previously been configured with at least, the **database** and **file storage**) |
-| `--main-organisation`     | specifies the *Organisation* named *myOrganisation* to create during the migration. The tool will then create Users, Cases and Alerts from TheHive3 under that organisation; |
-| `--es-uri`                | specifies the URL of the Elasticsearch server. If using authentication on Elasticsearch, `--input` option with a configuration file for TheHive3 is required |
-| `--es-index`              | specifies the index used in Elasticsearch. |
+| `--output`                | Specifies the configuration file path for TheHive 5, which must include database and file storage configurations; |
+| `--main-organisation`     | Specifies the organization to create during migration; |
+| `--es-uri`                | Specifies the URL of the Elasticsearch server. If Elasticsearch authentication is enabled, a configuration file for TheHive3 (--input) is required; |
+| `--es-index`              | Specifies the Elasticsearch index used for migration; |
 
 
 !!! Info
-    The migration process can be very long, from several hours to several days, depending on the volume of data to migrate. We **highly** recommend to not start the application during the migration.
+    The migration process duration varies significantly based on data volume, ranging from several hours to days. It is strongly advised not to start TheHive application during migration to ensure data integrity.
 
-## Continue an incomplete migration
-If the migration has been stopped, or only part of the data has been migrated, it is possible to continue the migration by running the tool again with the parameter `--resume`. This parameter prevents creating data if it already exists.
+---
 
-## Merge several TheHive 3 data into one TheHive 5
-The migration tool can be run several times to migrate different TheHive 3 data into one TheHive 5 instance. The name of the target organisation can be changed for each execution. In order to prevent case number collision (if a case with the same number already exists, the new case won't be created), you can shift the case number with the parameter `--case-number-shift`.
+## Resuming an Incomplete Migration
+If your migration process has been interrupted or only a portion of the data has been migrated, you can resume the migration using the tool with the `--resume` parameter. This parameter ensures that data is not duplicated if it already exists in the destination system.
 
-## Using authentication on Cassandra
+---
 
-if you are using a dedicated account on Cassandra to access TheHive 4 data, this user must have permissions to create keyspaces on the database: 
+## Merging Multiple TheHive 3 Data into One TheHive 5 Instance
+
+The migration tool supports multiple executions to merge different TheHive 3 datasets into a single TheHive 5 instance. Each migration execution can specify a different target organization. To avoid conflicts in case numbers, where a case with the same number already exists, you can use the `--case-number-shift` parameter to adjust the case numbers accordingly.
+
+---
+
+## Using Authentication on Cassandra
+
+If you're utilizing a dedicated account on Cassandra to access TheHive 4 data, ensure that the user has permissions to create keyspaces in the database.
 
 ```sql
 GRANT CREATE on ALL KEYSPACES to username;
 ```
 
+---
 
-## Migration logs
+## Migration Logs
 
-The migration tool generates some logs during the process. By default, every 10 sec. a log is generated with information regarding the situation of the migration: 
+During the migration process, the tool generates logs to provide insights into the progress. By default, a log is generated approximately every 10 seconds, detailing various aspects of the migration, including the status of cases, alerts, and other entities.
 
 ```
 [info] o.t.t.m.Migrate - [Migrate cases and alerts] CaseTemplate/Task:32 Organisation:1/1 Case/Task:160/201 Case:31/52 Job:103/138 ObservableType:3/17 Alert:25/235 Audit:3207/2986 CaseTemplate:6/6 Alert/Observable:700(52ms) Case/Observable:1325/1665 User:9/9 CustomField:13/13 Case/Task/Log:20/27
 ```
 
-Numbers of Observables, Cases and others are estimations and not a definite value as computing these numbers can be very tedious. 
+Please note that the numbers of observables, cases, and other entities are estimations and may not represent exact values due to the complexity of computation involved.
 
 !!! Info "Files from MISP imported with TheHive 2.13 and earlier"
     It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 5. 
@@ -208,12 +202,12 @@ Numbers of Observables, Cases and others are estimations and not a definite valu
     [warn] o.t.t.m.t.Input - Pre 2.13 file observables are ignored in MISP alert ffa3a8503ab0cd4f99fc6937a8e9b827
     ```
 
+---
 
 ## Starting TheHive
-Once the migration process is successfully completed, TheHive can be started. 
+Once the migration process has successfully completed, you can start TheHive. However, during the initial startup, data indexing occurs, and the service may not be immediately available. This indexing process may take some time.
 
 !!! Warning
-    During the first start data are indexed and service is not available ; this can take some time. Do not stop or restart the service at this time. 
- 
+    During the initial startup, refrain from stopping or restarting TheHive service until the indexing process is complete to ensure data integrity and service availability.
 
-
+&nbsp;
