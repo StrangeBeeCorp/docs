@@ -39,7 +39,7 @@ jobs:
                 task "docs" {
                   driver = "docker"
                   config {
-                    image      = "docker.strangebee.com/strangebee/docs${{ endsWith(inputs.version, 'sha256') && '@' || ':' }}${{ inputs.version }}"
+                    image      = "docker.strangebee.com/strangebee/docs${{ startsWith(inputs.version, 'sha256') && '@' || ':' }}${{ inputs.version }}"
                     force_pull = true
                     ports      = [ "http" ]
                   }
@@ -82,5 +82,5 @@ jobs:
         env:
           NOMAD_ADDR: http://10.30.4.180:4646
         with:
-          args: deploy docs.hcl
+          args: deploy -force docs.hcl
         continue-on-error: true

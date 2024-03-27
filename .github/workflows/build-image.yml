@@ -2,6 +2,16 @@ name: Build image
 on:
   workflow_dispatch:
   workflow_call:
+    outputs:
+      image_id:
+        description: "ImageId of the docker image"
+        value: ${{ jobs.build.outputs.image_id }}
+      image_digest:
+        description: "Digest of the image (sha256:xxx)"
+        value: ${{ jobs.build.outputs.image_digest }}
+      image_metadata:
+        description: "Metadata as json"
+        value: ${{ jobs.build.outputs.image_metadata }}
 jobs:
   build:
     runs-on: [ self-hosted, linux, domain=sb ]
