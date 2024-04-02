@@ -112,7 +112,6 @@ nav:
         - 'Secrets Configuration': thehive/setup/configuration/secret.md
         - 'SSL Configuration': thehive/setup/configuration/ssl.md
         - 'Service Configuration': thehive/setup/configuration/service.md
-        - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
         - 'Compliance':
           - 'General Data Protection Regulation (GDPR)': thehive/compliance/gdpr.md
       - 'Operations':
@@ -137,6 +136,7 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
         - 'MISP Integration': thehive/administration/misp.md
+        - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
         - 'Authentication Settings':
           - 'General Settings': thehive/administration/authentication/general.md
           - 'Local Authentication': thehive/administration/authentication/local.md
