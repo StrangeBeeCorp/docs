@@ -68,7 +68,7 @@ The essential components of TheHive's setup include:
 === "Cluster or Hybrid Architecture"
     TheHive and its associated applications offer flexibility in choosing the right setup based on specific requirements. This includes the ability to mix and match different nodes and applications within a cluster.
 
-    ![](images/TheHive-architecture-full-cluster.png){ align=center }
+    ![](images/thehive-architecture-full-cluster.png){ align=center }
 
     Each layer and node within the architecture can be installed on dedicated operating systems, allowing for tailored configurations. The [installation guide for a 3-node cluster](installation/3-node-cluster.md) provides comprehensive instructions for setting up a more complex clustered environment.
 
