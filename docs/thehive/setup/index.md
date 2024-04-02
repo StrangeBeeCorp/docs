@@ -53,7 +53,7 @@ The essential components of TheHive's setup include:
 
 
 === "Standalone Server" 
-    ![Standalone Server](images/TheHive-standalone.png){ align=left width=150 }
+    ![Standalone Server](images/thehive-standalone.png){ align=left width=150 }
 
     A standalone server setup involves installing all necessary components on a single server:
 
