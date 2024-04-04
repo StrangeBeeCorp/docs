@@ -1,0 +1,16 @@
+:root {
+	--color-black: #1b1b34;
+	--color-white: #ffffff;
+	--color-blue--primary: hsla(180, 44%, 50%, 100%);
+	--color-orange-amber: #ffa940;
+	--color-orange-amber--strict: #d77e15;
+
+	--color-yellow--light: #e9cf42;
+
+	--color-social--twitter: #00acee;
+
+	// theme overides
+	--md-primary-fg-color: var(--color-black);
+	--md-primary-fg-color--light: var(--color-yellow--light);
+	--md-primary-fg-color--dark: var(--color-black);
+}

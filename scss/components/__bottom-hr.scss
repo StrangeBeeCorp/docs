@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+
+.bottom-hr {
+	@include respond-min($breakpoint-laptop) {
+		margin-top: 10px;
+		width: 100%;
+		display: flex;
+		max-width: 61rem;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 0 0.2rem;
+	}
+}

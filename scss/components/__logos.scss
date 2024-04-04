@@ -1,0 +1,14 @@
+.logos {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-flow: row wrap;
+	margin: 0 auto;
+
+	img {
+		flex: 1 1 auto;
+		padding: 25px;
+		max-height: 130px;
+		vertical-align: middle;
+	}
+}

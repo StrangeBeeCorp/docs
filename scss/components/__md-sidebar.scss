@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+
+.md-sidebar {
+	width: 15rem;
+
+	&--primary {
+		padding-right: 3%;
+
+		// @include respond-min($breakpoint-laptop) {
+		// 	display: none;
+		// }
+	}
+}

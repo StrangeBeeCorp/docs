@@ -1,0 +1,8 @@
+.md-main {
+	flex-grow: 0;
+
+	&__inner {
+		display: flex;
+		height: 100%;
+	}
+}
