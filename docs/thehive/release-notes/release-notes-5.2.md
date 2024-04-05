@@ -8,6 +8,18 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
+## 5.2.13 - 5th April 2024
+
+### Security
+
+- Fix security vulnerability. An advisory will be published in the coming weeks.
+
+### Fix
+
+**Filter/Search**
+
+ - Fixed the search when using a "not" operator on full-text data.
+
 ## 5.2.12 - 12th March 2024
 
 ### Fixes
