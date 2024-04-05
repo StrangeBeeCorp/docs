@@ -1,13 +1,17 @@
 @use "../abstracts/" as *;
 
-.md-sidebar {
-	width: 15rem;
+[dir="ltr"] {
+	.md-sidebar {
+		width: 15rem;
 
-	&--primary {
-		padding-right: 3%;
+		&--primary {
+			padding-right: 3%;
 
-		// @include respond-min($breakpoint-laptop) {
-		// 	display: none;
-		// }
+			left: -15.1rem;
+		}
+	}
+
+	[data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+		transform: translateX(15.1rem);
 	}
 }

@@ -1,16 +1,24 @@
 :root {
 	--color-black: #1b1b34;
 	--color-white: #ffffff;
-	--color-blue--primary: hsla(180, 44%, 50%, 100%);
+
+	--color-blue-primary: #54c1c2;
+	--color-blue-primary--dark: #459b9c;
+	--color-blue-primary--light: rgba(84, 193, 194, 0.1);
+	--color-blue-primary--hover: #5cd0d1;
+
 	--color-orange-amber: #ffa940;
 	--color-orange-amber--strict: #d77e15;
 
-	--color-yellow--light: #e9cf42;
+	--color-yellow: #e9cf42;
+	--color-yellow--light: rgba(233, 207, 66, 0.1);
 
 	--color-social--twitter: #00acee;
 
 	// theme overides
 	--md-primary-fg-color: var(--color-black);
-	--md-primary-fg-color--light: var(--color-yellow--light);
+	--md-primary-fg-color--light: var(--color-yellow);
 	--md-primary-fg-color--dark: var(--color-black);
+
+	--md-accent-fg-color: var(--color-blue-primary--dark);
 }

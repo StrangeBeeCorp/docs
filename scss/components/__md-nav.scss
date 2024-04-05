@@ -1,9 +1,16 @@
 [dir="ltr"] {
 	.md-nav--integrated > .md-nav__list > .md-nav__item--active .md-nav--secondary {
-		border-left-color: var(--color-orange-amber);
+		border-left-color: var(--color-yellow);
 	}
 
+	.md-nav__link {
+		&:hover,
+		&:focus {
+			color: var(--color-blue-primary--dark);
+		}
+	}
 	.md-nav__item .md-nav__link--active {
-		color: var(--md-accent-fg-color);
+		color: var(--color-blue-primary--dark);
+		font-weight: var(--fontWeight-bold);
 	}
 }
