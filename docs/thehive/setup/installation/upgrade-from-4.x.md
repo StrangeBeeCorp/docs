@@ -68,7 +68,7 @@ Ensure that you can log in as an admin user with a password in TheHive database.
     Please ensure that the instructions under this section are followed on all nodes of the cluster.
 
 
-Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to install the required version of Java.
+Follow the [**installation process**](step-by-step-guide.md#java-virtual-machine) to install the required version of Java.
 
 ---
 
@@ -77,7 +77,7 @@ Follow the [installation process](step-by-step-guide.md#java-virtual-machine) to
 ??? Abstract "I'm Using a Cluster"
     Elasticsearch is crucial for TheHive 5.x clusters. However, if an update isn't urgently required, focus on upgrading Cassandra first.
 
-Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [installation process](step-by-step-guide.md#elasticsearch) to install and configure the required version.
+Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [**installation process**](step-by-step-guide.md#elasticsearch) to install and configure the required version.
 
 ---
 
@@ -98,7 +98,7 @@ Save the existing configuration file for Cassandra 3.x. It will be used later to
 
 ### Install Cassandra
 
-Follow the [installation process](step-by-step-guide.md#cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
+Follow the [**installation process**](step-by-step-guide.md#cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
 
 &nbsp;
 
@@ -581,3 +581,5 @@ During the update, few logs can be seen in TheHive `application.log` file.
     at java.base/java.lang.Thread.run(Thread.java:829)
     ```
     :    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899), don't mind it as the indexing will continue normally. This will have no impact on TheHive_
+
+    &nbsp;

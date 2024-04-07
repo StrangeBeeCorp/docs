@@ -11,6 +11,8 @@ hide:
 
 TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, serving as a vital tool for Security Operations Centers (SOCs), Computer Security Incident Response Teams (CSIRTs), Computer Emergency Response Teams (CERTs), and all information security professionals involved in swift and effective handling of security incidents. It composes of a robust suite of features designed to streamline incident response workflows, enhance collaboration, and empower information security practitioners to effectively investigate and mitigate security threats. With its seamless integration with MISP and advanced capabilities for task management, evidence handling, and threat intelligence integration, TheHive is an indispensable tool for modern SOC, CSIRT, and CERT teams.
 
+---
+
 ## Key Features
 
 **Integration with MISP:** 
@@ -34,6 +36,7 @@ TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, servi
 **Threat Intelligence Integration:** 
 - Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.
 
+---
 
 ## Architecture
 

@@ -3,6 +3,8 @@ hide:
   - toc
 ---
 
+---
+
 # Hardware Requirements
 
 The hardware requirements for TheHive depend on factors such as the number of concurrent users (including integrations) and their usage patterns. Below are recommended hardware thresholds for hosting all services on the same machine:
@@ -16,7 +18,8 @@ The hardware requirements for TheHive depend on factors such as the number of co
 !!! Note
     When deploying all services on the same server, it's recommended to have at least 4 cores and 16 GB of RAM. Additionally, ensure that `jvm.options` is configured appropriately for Elasticsearch.
 
-</br>
+---
+
 # Operating System
 
 TheHive has been tested and is officially supported on the following operating systems:
@@ -26,4 +29,6 @@ TheHive has been tested and is officially supported on the following operating s
 - RHEL 8
 - Fedora 35 & 37
 
-Additionally, an [official Docker image](https://hub.docker.com/r/strangebee/TheHive/tags) is available for users who prefer containerized deployments.
+Additionally, an [**official Docker image**](https://hub.docker.com/r/strangebee/TheHive/tags) is available for users who prefer containerized deployments.
+
+&nbsp;

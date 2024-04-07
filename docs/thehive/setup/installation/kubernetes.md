@@ -35,7 +35,7 @@ This command will create a namespace named ``thehive`` and deploy the instances 
 
 ## Kubernetes Configuration
 
-In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the akka discovery method with the [Kubernetes API](https://doc.akka.io/docs/akka-management/current/discovery/kubernetes.html).
+In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the akka discovery method with the [**Kubernetes API**](https://doc.akka.io/docs/akka-management/current/discovery/kubernetes.html).
 
 To enable this functionality, you need:
 

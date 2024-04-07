@@ -300,7 +300,7 @@ To implement MinIO with TheHive, follow the procedure outlined below on all serv
         dpkg -i mcli_20220509040826.0.0_amd64.deb
         ```
 
-!!! Info "You can find the latest versions of the required packages on the [MinIO download page](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
+!!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
 
 &nbsp;
 
@@ -364,7 +364,7 @@ TheHive utilizes the Akka toolkit to effectively manage clusters and enhance sca
     <br/>
     Incorporating Akka into TheHive's configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
     <br/>
-    Source: [https://akka.io](https://akka.io)
+    Source: [**https://akka.io**](https://akka.io)
 
 &nbsp;
 
@@ -506,7 +506,7 @@ This configuration ensures that incoming HTTP requests are efficiently distribut
 <br/>
 If you choose to use Keepalived to set up a virtual IP address for your load balancers, this section provides a basic example of configuration.
 
-Keepalived is a service that monitors the status of load balancers (such as [HAProxy](#load-balancers-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
+Keepalived is a service that monitors the status of load balancers (such as [**HAProxy**](#load-balancers-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
 
 !!! Example "" 
     
