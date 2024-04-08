@@ -4,6 +4,8 @@ This article provides a comprehensive installation and configuration guide to se
 
 !!! Info "Note: Installation for a new instance of TheHive only is covered in this guide."
 
+---
+
 ## Dependencies
 
 Before proceeding with the installation, ensure that the following programs are already installed on your system:
@@ -28,12 +30,12 @@ Before proceeding with the installation, ensure that the following programs are 
 
 Ensure that all dependencies are successfully installed before proceeding with the TheHive installation process.
 
-<br/><br/>
+---
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
 !!! Danger "Important Note:"
-    - For security and long-term support, it is mandatory to use **[Amazon Corretto](https://aws.amazon.com/corretto/) builds**, which are OpenJDK builds provided and maintained by Amazon.
+    - For security and long-term support, it is mandatory to use [**Amazon Corretto**](https://aws.amazon.com/corretto/) builds, which are OpenJDK builds provided and maintained by Amazon.
     - Java version 8 is no longer supported.
 
 === "DEB"
@@ -102,15 +104,16 @@ Ensure that all dependencies are successfully installed before proceeding with t
 === "Other"
     If you are using a system other than DEB or RPM, please consult your system documentation for instructions on installing Java 11.
 
-<br/><br/>
+---
 
 ## :fontawesome-solid-database: Apache Cassandra
 
 Apache Cassandra is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release version **4.0.x**.
 
 !!! Info "Upgrading from Cassandra 3.x"
-    The information provided in this guide pertains specifically to fresh installations. If you are currently using Cassandra 3.x and considering an upgrade, we recommend referring to the [dedicated guide](./upgrade-from-4.x.md). 
+    The information provided in this guide pertains specifically to fresh installations. If you are currently using Cassandra 3.x and considering an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md). 
 
+&nbsp;
 
 ### Installation
 
@@ -182,12 +185,12 @@ Apache Cassandra is a highly scalable and robust database system. TheHive is ful
 === "Other Installation Methods"
 
 
-    Download the tar.gz archive from **[Apache Cassandra Downloads](http://cassandra.apache.org/download/)** and extract it into the folder of your choice. You can use utilities like `wget` to download the archive.
+    Download the tar.gz archive from [**Apache Cassandra Downloads**](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like `wget` to download the archive.
 
 
 By default, data is stored in `/var/lib/cassandra`. Ensure appropriate permissions are set for this directory to avoid any issues with data storage and access.
 
-
+&nbsp;
 
 ### Configuration
 
@@ -247,6 +250,8 @@ You can configure Cassandra by modifying settings within the `/etc/cassandra/cas
     - '/var/lib/cassandra/hints'
     [..]
     ```
+
+&nbsp;
 
 ### Start the service 
 
@@ -376,13 +381,19 @@ For additional configuration options, refer to:
 - [Cassandra documentation page](https://cassandra.apache.org/doc/latest/getting_started/configuring.html)
 - [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html) -->
 
-<br/><br/>
+---
 
 ## :fontawesome-solid-list: Elasticsearch
 
 Elasticsearch is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
 
-!!! Note "Compatibility Notice: Only Elasticsearch 7.x is supported."
+!!! Note 
+    From Version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Previous TheHive versions only support Elasticsearch 7.x.
+
+!!! Note 
+    Starting from TheHive 5.3, for advanced use-cases, OpenSearch is also supported.
+
+&nbsp;
 
 ### Installation
 
@@ -452,12 +463,13 @@ Elasticsearch is a robust data indexing and search engine. It is used by TheHive
             sudo yum install --enablerepo=elasticsearch elasticsearch
             ```
     
-    _Please refer to the official Elasticsearch documentation website for the most up-to-date instructions_: [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html ](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+    _Please refer to the official Elasticsearch documentation website for the most up-to-date instructions_: [**https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html**](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
 === "Other Installation Methods"
 
-    Download the tar.gz archive from http://cassandra.apache.org/download/ and extract it into the folder of your choice. You can use utilities like wget to download the archive.
+    Download the tar.gz archive from **http://cassandra.apache.org/download/** and extract it into the folder of your choice. You can use utilities like wget to download the archive.
 
+&nbsp;
 
 ### Configuration 
 
@@ -534,6 +546,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
     - Similar to data and files, indexes should be included in the backup policy to ensure their preservation.
     - Indexes can be removed and re-created as needed.
 
+&nbsp;
 
 ### Sart the service
 
@@ -588,10 +601,10 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
             sudo systemctl enable elasticsearch
             ```
 
-<br/><br/>
+---
 
 ## :fontawesome-solid-folder-tree: File Storage
-For standalone production and test servers, we recommend using the local filesystem. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to the [related guide](./3-node-cluster.md).
+For standalone production and test servers, we recommend using the local filesystem. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to the [**related guide**](./3-node-cluster.md).
 
 === "Local Filesystem"
     To utilize the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
@@ -612,15 +625,17 @@ For standalone production and test servers, we recommend using the local filesys
 
     Detailed documentation on the installation, configuration, and usage of Min.IO can be found in [this documentation](./3-node-cluster.md).
 
-<br/><br/>
+---
 
 ## :material-beehive-outline: TheHive Installation and Configuration
 
 This section provides detailed instructions for installing and configuring TheHive.
 
+&nbsp;
+
 ### Installation
 
-All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in zip format. All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
+All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in zip format. All packages are signed using our GPG key [**562CBC1C**](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
 
 === "DEB"
 
@@ -720,7 +735,7 @@ Install TheHive package by using the following commands:
             sudo cp thehive.service /etc/systemd/system/thehive.service
             ```
 
-
+&nbsp;
 
 ### Configuration
 
@@ -744,6 +759,8 @@ The following configurations are necessary for successful initiation of TheHive:
 - Secret key configuration
 - Database configuration
 - File storage configuration
+
+&nbsp;
 
 #### Secret key configuration
 
@@ -856,6 +873,8 @@ The initial configuration file packaged with the software contains the following
     scalligraph.modules += org.thp.thehive.connector.misp.MispModule
     ```
 
+&nbsp;
+
 ### Run
 
 To start TheHive service and enable it to run on system boot, execute the following commands in your terminal:
@@ -880,13 +899,13 @@ The default admin user credentials are as follows:
 
 For security reasons, it is strongly advised to change the default password after logging in.
 
-<br/><br/>
+---
 
 ## Advanced Configuration
 
-For further customization options, please consult the [configuration guides](../index.md#configuration-guides).
+For further customization options, please consult the **Configuration & Operations** section.
 
-To configure HTTPS, follow the instructions on the [dedicated page](../configuration/ssl.md).
+To configure HTTPS, follow the instructions on the [**dedicated page**](../configuration/ssl.md).
 
 <!-- ## Usage & Licenses
 
@@ -897,3 +916,5 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 ## First steps & license activation
 
 Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md). -->
+
+&nbsp;

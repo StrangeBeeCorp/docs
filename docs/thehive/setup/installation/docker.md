@@ -240,7 +240,7 @@ Available Options:
 
 ## Usage in Kubernetes
 
-For instructions on how to deploy TheHive on Kubernetes, please refer to the [dedicated page](kubernetes.md).
+For instructions on how to deploy TheHive on Kubernetes, please refer to the [**dedicated page**](kubernetes.md).
 
 ---
 

@@ -10,7 +10,7 @@ Before proceeding with the upgrade, please keep the following points in mind:
 
 3. When upgrading an existing TheHive 5.x instance, the first application launch will trigger a database evolution, including schema and data updates. This operation may take some time depending on your database size.
 
-4. Since version 5.1, TheHive no longer supports the Lucene backend as the index engine. Lucene was an option for handling data indexing with TheHive 4.1.x. To migrate your index to Elasticsearch, please follow the [provided guide](./operations/change-index.md).
+4. Since version 5.1, TheHive no longer supports the Lucene backend as the index engine. Lucene was an option for handling data indexing with TheHive 4.1.x. To migrate your index to Elasticsearch, please follow the [**provided guide**](./operations/change-index.md).
 
 ---
 
@@ -77,7 +77,8 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
 
     Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named ``strangebee/thehive:5.2``
 
-    Note: Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.2 tag is now available and associated with the latest 5.2.x version.
+    !!! Note "Important note"
+        Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.2 tag is now available and associated with the latest 5.2.x version.
 
 ---
 
@@ -85,3 +86,4 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
 
 If you have health checks on the application HTTP interface, they should be disabled during the upgrade process. Otherwise, the orchestrator may kill TheHive during the update process.
 
+&nbsp;
