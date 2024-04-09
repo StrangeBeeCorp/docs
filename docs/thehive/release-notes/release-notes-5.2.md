@@ -8,6 +8,12 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
+## 5.2.14 - 9th April 2024
+
+### Fix
+
+- Fix a regression following a security fix that made the MFA authentication impossible.
+
 ## 5.2.13 - 5th April 2024
 
 ### Security
