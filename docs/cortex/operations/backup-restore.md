@@ -133,9 +133,9 @@ _Note_: be sure to restore data from the same version of Elasticsearch.
 ## 5. Moving data from one server to another
 
 If you want to move your data from one server from another:
-- Create your backup on the origin server (steps [1](1__create_a_backup_repository), [2](2__register_a_snapshot_repository), [3](3__backup_your_data))
+- Create your backup on the origin server (steps [1](#1-create-a-backup-repository), [2](#2-register-a-snapshot-repository), [3](#3-backup-your-data))
 - copy your backup directory from the origin server to the destination server
 - On the destination server :
-    - Register your backup repository in the Elasticsearch configuration (step [1](1__create_a_backup_repository))
-    - Register your snapshot repository with the same snapshot name (step [2](2__register_a_snapshot_repository))
-    - Restore your data (step [4](4__restore_data))
+    - Register your backup repository in the Elasticsearch configuration (step [1](#1-create-a-backup-repository))
+    - Register your snapshot repository with the same snapshot name (step [2](#2-register-a-snapshot-repository))
+    - Restore your data (step [4](#4-restore-data))

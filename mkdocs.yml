@@ -82,8 +82,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md
@@ -136,7 +136,7 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
         - 'MISP Integration': thehive/administration/misp.md
-        - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
+        # - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
         - 'Authentication Settings':
           - 'General Settings': thehive/administration/authentication/general.md
           - 'Local Authentication': thehive/administration/authentication/local.md

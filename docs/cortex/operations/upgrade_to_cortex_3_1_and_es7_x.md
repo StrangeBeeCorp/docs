@@ -298,8 +298,6 @@ It is recommended to use docker version of analyzers : this can be done by bindi
 
 Connect to TheHive (and Cortex), the maintenance page should ask to update. 
 
-![](/images/thehive-first-access_screenshot.png)
-
 Once updated, ensure a new index named `cortex_5` has been created.
 
 

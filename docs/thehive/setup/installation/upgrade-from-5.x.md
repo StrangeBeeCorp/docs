@@ -10,7 +10,7 @@ Before proceeding with the upgrade, please keep the following points in mind:
 
 3. When upgrading an existing TheHive 5.x instance, the first application launch will trigger a database evolution, including schema and data updates. This operation may take some time depending on your database size.
 
-4. Since version 5.1, TheHive no longer supports the Lucene backend as the index engine. Lucene was an option for handling data indexing with TheHive 4.1.x. To migrate your index to Elasticsearch, please follow the [**provided guide**](./operations/change-index.md).
+4. Since version 5.1, TheHive no longer supports the Lucene backend as the index engine. Lucene was an option for handling data indexing with TheHive 4.1.x. To migrate your index to Elasticsearch, please follow the [**provided guide**](../operations/change-index.md).
 
 ---
 
