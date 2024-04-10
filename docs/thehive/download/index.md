@@ -21,8 +21,8 @@ For users using Debian or Ubuntu operating systems, TheHive can be easily instal
     ```
 
 3. Copy and paste the following line into the file:
-    ```text
-    deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com TheHive-5.2 main
+    ```text title="/etc/apt/source.list.d/strangebee.list"
+    deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com TheHive-5.2 main
     ```
 
 4. Save the file and exit the text editor.

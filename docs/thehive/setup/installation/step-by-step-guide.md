@@ -663,7 +663,7 @@ Install TheHive package by using the following commands:
 
     !!! Example ""
         ```bash
-        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
         sudo apt-get install -y thehive
         ```

@@ -36,7 +36,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
     2. Edit the file ``/etc/apt/sources.list.d/strangebee.list`` and adjust the repository address as follows:
 
         ```bash
-        deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main
+        deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main
         ``` 
 
     3. Install TheHive package:

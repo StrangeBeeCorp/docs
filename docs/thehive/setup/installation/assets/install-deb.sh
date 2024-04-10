@@ -202,7 +202,7 @@ EOF
 
 ## INSTALL THEHIVE
 wget -qO- https://archives.strangebee.com/keys/strangebee.gpg |  sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-echo 'deb [signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' |  sudo tee -a /etc/apt/sources.list.d/strangebee.list  
+echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' |  sudo tee -a /etc/apt/sources.list.d/strangebee.list
 
 apt-install thehive
 

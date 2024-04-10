@@ -8,6 +8,90 @@
 !!! info
     An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
 
+## 5.2.14 - 9th April 2024
+
+### Fix
+
+- Fix a regression following a security fix that made the MFA authentication impossible.
+
+## 5.2.13 - 5th April 2024
+
+### Security
+
+- Fix security vulnerability. An advisory will be published in the coming weeks.
+
+### Fix
+
+**Filter/Search**
+
+ - Fixed the search when using a "not" operator on full-text data.
+
+## 5.2.12 - 12th March 2024
+
+### Fixes
+
+**Cortex connector fixes:**
+
+- **Enhanced Stability**: Fixed an issue with the Cortex connector that had issues after updating it's configuration. Additionally, the "Test connection" button is no more preventing to cancel the configuration defined in the drawer.
+
+**Notification fixes and enhancements:**
+
+- **Slack notifier**: Slack notifications are now sending the accurate case titles. Also, we fixed an issue with the "Advanced settings" that was sent to the backend, even if the box wasn't checked.
+- **HTTP notifications**: Fixed interpretation of backslashes, ensuring correct rendering and transmission of notifications without unexpected behavior.
+
+**Performances improvements:**
+
+- **Similar Cases/Alerts pages**: Optimized the Similar Cases/Alerts pages by limiting the correlation count, improving performances and preventing the application ressource exhaustion.
+
+**MISP Connector:**
+
+- **Observables export enhancement**: Mapping between TheHive observables dataTypes and MISP attributes types has been reworked.
+
+**User Experience Enhancements:**
+
+- **Quick filters**: Resolved issues with open case quick filter functionality.
+- **Shared tasks**: Fixed display of User ID on task logs.
+- **OAuth2 authentication**: We improved the drawer by renaming some fields to be more explicit. Additionally, fixing a bug that was preventing to disable the OAuth2 authentication provider.
+- **Dashboard donut widget**: Fixed an issue with the category filter in the donut widget in dashboards.
+
+### Security updates
+
+The library dependencies has been updated. The following vulnerabilities has been removed:
+- CVE-2020-8908
+- CVE-2023-2976
+- CVE-2023-46749
+- CVE-2023-34454
+- CVE-2023-34455
+- CVE-2023-43642
+- CVE-2023-5072
+- CVE-2022-45688
+- CVE-2023-44483
+- CVE-2023-34462
+- CVE-2023-3635
+- CVE-2023-46120
+
+## 5.2.11 - 8th February 2024
+
+### Fixes
+
+**User Interface:**
+
+- **Dashboard Revitalization:** The Donut widget shows again the total.
+- **Streamlined Dashboard Filtering:** We've refined dashboard filtering to utilize associated field text instead of custom label text, enhancing usability and clarity in data presentation.
+- **Observables Management:** only protect http(s) string if it is part of a url.
+- **Improved Linked Alert:** In the Linked Alerts tab, all types of alerts, whether with or without observables, are now seamlessly displayed for enhanced visibility and swift action.
+- **Efficient Alert Assignment:** Fix bulk assignment issues for alerts, ensuring smooth and efficient workflow management.
+
+**API:**
+
+- **Seamless Integration with MISP:** Experience effortless file upload to MISP with identical files from TheHive, streamlining your incident response workflow and ensuring data consistency across platforms.
+- **Custom tags:** fix tags global integrity check to delete orphan custom tags
+
+### Improvements
+
+**SAML Authentication Enhancement:**
+
+- **Custom Attribute Support:** Introducing a new custom attribute - the Login Name field - in SAML forms, providing greater flexibility and customization options for user authentication.
 
 ## 5.2.10 - 10th January 2024
 
