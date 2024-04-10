@@ -310,4 +310,4 @@ Restore the saved files into the destination folder/bucket that will be used by 
 ## Troubleshooting
 
 The first start can take some time, especially it the application has to rebuild the index.
-Refer to this [troubleshooting section](/thehive/setup/installation/upgrade-from-4.x/#troubleshooting) to ensure everything goes well with reindexation.
+Refer to this [troubleshooting section](../installation/upgrade-from-4.x.md/#troubleshooting) to ensure everything goes well with reindexation.
