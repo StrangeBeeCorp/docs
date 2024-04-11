@@ -6,7 +6,7 @@
     This release also comes with some breaking changes, please review them below
 
 !!! info
-    An [upgrade guide](../../setup/installation/upgrade-from-5.x) is available to help you migrate from TheHive 5.x
+    An [upgrade guide](../setup/installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
 ## 5.2.14 - 9th April 2024
 

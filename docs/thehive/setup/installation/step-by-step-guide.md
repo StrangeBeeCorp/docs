@@ -1,84 +1,143 @@
-# Step-by-Step guide
+# Step-by-Step Guide
 
-This page is a step by step installation and configuration guide to get an instance of TheHive up and running. This guide is illustrated with examples for DEB and RPM packages based systems and for installation from binary packages.
+This article provides a comprehensive installation and configuration guide to set up an instance of TheHive. The guide offers detailed instructions accompanied by examples for systems based on DEB and RPM packages, as well as for installation from binary packages.
 
-!!! Info "This guide describes the installation of a new instance of TheHive **only**"
+!!! Info "Note: Installation for a new instance of TheHive only is covered in this guide."
+
+---
 
 ## Dependencies
 
-This process requires few programs beeing already installed on the system.
+Before proceeding with the installation, ensure that the following programs are already installed on your system:
 
 === "DEB"
 
-    !!! Example ""
+    1. Open a terminal window.
+    2. Run the following command to install the necessary dependencies:
 
         ```bash
-        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
-        ``` 
+        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb_release
+        ```
 
 === "RPM"
 
-    !!! Example ""
+    1. Open a terminal window.
+    2. Execute the following command to install the required dependencies:
 
         ```bash
-        yum install pkg-install gnupg chkconfig python3-pip git 
+        yum install pkg-install gnupg chkconfig python3-pip git
         ```
 
+Ensure that all dependencies are successfully installed before proceeding with the TheHive installation process.
+
+---
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
-!!! Danger "Read first"
-    * For security and long-term support reasons, we require  **using [Amazon Corretto](https://aws.amazon.com/corretto/) builds** (this is OpenJDK built and packaged by Amazon)
-    * Java version 8 is no longer supported
+!!! Danger "Important Note:"
+    - For security and long-term support, it is mandatory to use [**Amazon Corretto**](https://aws.amazon.com/corretto/) builds, which are OpenJDK builds provided and maintained by Amazon.
+    - Java version 8 is no longer supported.
 
 === "DEB"
 
-    !!! Example ""
-        ```bash
-        wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor  -o /usr/share/keyrings/corretto.gpg
-        echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" |  sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
-        sudo apt update
-        sudo apt install java-common java-11-amazon-corretto-jdk
-        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment 
-        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
-        ```
+    1. Open a terminal window.
+    2. Execute the following commands:
+
+        !!! Example ""
+            ```bash
+            wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto.gpg
+            echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" | sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+            sudo apt update
+            sudo apt install java-common java-11-amazon-corretto-jdk
+            echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+            export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+            ```
+
+    3. Verify the installation by running:
+
+        !!! Example ""
+            ```bash
+            java -version
+            ```
+
+    4. You should see output similar to the following:
+
+        !!! Example ""
+            ```bash
+            openjdk version "11.0.12" 2022-07-19
+            OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
+            OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
+            ```
+
 
 === "RPM"
 
-    !!! Example ""
-        ```bash
-        sudo rpm --import https://yum.corretto.aws/corretto.key  &> /dev/null
-        wget -qO-  https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
-        yum install java-1.11.0-amazon-corretto-devel &> /dev/null
-        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" |sudo tee -a /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
-        ```
+    1. Open a terminal window.
+    2. Execute the following commands:
+
+        !!! Example ""
+            ```bash
+            sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
+            wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
+            yum install java-1.11.0-amazon-corretto-devel &> /dev/null
+            echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+            export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+            ```
+
+    3. Verify the installation by running:
+
+        !!! Example ""
+            ```bash
+            java -version
+            ```
+
+    4. You should see output similar to the following:
+
+        !!! Example ""
+            ```bash
+            openjdk version "11.0.12" 2022-07-19
+            OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
+            OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
+            ```
+
 
 === "Other"
-    The installation requires Java 11, so refer to your system documentation to install it.
+    If you are using a system other than DEB or RPM, please consult your system documentation for instructions on installing Java 11.
 
+---
 
+## :fontawesome-solid-database: Apache Cassandra
 
-## :fontawesome-solid-database:  Apache Cassandra
-
-Apache Cassandra is a scalable and high available database. TheHive supports the latest stable version **4.0.x** of Cassandra.
+Apache Cassandra is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release version **4.0.x**.
 
 !!! Info "Upgrading from Cassandra 3.x"
-    If you are upgrading from Cassandra 3.x, please follow the [dedicated guide](./upgrade-from-4.x.md). This part is relevant for fresh installation only.
+    The information provided in this guide pertains specifically to fresh installations. If you are currently using Cassandra 3.x and considering an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md). 
+
+&nbsp;
 
 ### Installation
 
 === "DEB"
     
-    1. Add Apache repository references
+    1. Add Apache Cassandra repository references
+
+        - *Download Apache Cassandra repository keys using the following command:*
         
         !!! Example ""
             ```bash
             wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
+            ```
+
+        - *Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/cassandra.sources.list` file. This file may not exist, and you may need to create it.*
+        
+        !!! Example ""
+            ```bash
             echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
             ```
 
     2. Install the package
+
+        - *Once the repository references are added, update your package index and install Cassandra using the following commands:*
 
         !!! Example ""
             ```bash
@@ -90,15 +149,19 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
 
     1. Add Cassandra repository keys
 
+        - *To add Cassandra repository keys, execute the following command:*
+        
         !!! Example ""
             ```bash
             rpm --import https://downloads.apache.org/cassandra/KEYS
             ```
+    
+    2. Add the Apache repository for Cassandra to **/etc/yum.repos.d/cassandra.repo**
 
-    2. Add the Apache repository for Cassandra to `/etc/yum.repos.d/cassandra.repo`
-
+        - *To add the Apache repository configuration for Cassandra, you need to create a new file named `/etc/yum.repos.d/cassandra.repo` and add the following content to it:*
+        
         !!! Example ""
-            ```bash title="/etc/yum.repos.d/cassandra.repo"
+            ```bash
             [cassandra]
             name=Apache Cassandra
             baseurl=https://redhat.cassandra.apache.org/40x/
@@ -106,25 +169,66 @@ Apache Cassandra is a scalable and high available database. TheHive supports the
             repo_gpgcheck=1
             gpgkey=https://downloads.apache.org/cassandra/KEYS
             ```
+        
+        !!! Note "Note"
+            You can create the file and add the content using a text editor like **nano** or **vim**. 
 
     3. Install the package
 
+        - *After adding the repository configuration, install Cassandra using the following command:*
+        
         !!! Example ""
             ```bash
             sudo yum install cassandra
             ```
 
-=== "Other"
-
-    Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+=== "Other Installation Methods"
 
 
-By default, data is stored in `/var/lib/cassandra`.
+    Download the tar.gz archive from [**Apache Cassandra Downloads**](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like `wget` to download the archive.
 
+
+By default, data is stored in `/var/lib/cassandra`. Ensure appropriate permissions are set for this directory to avoid any issues with data storage and access.
+
+&nbsp;
 
 ### Configuration
 
-Configure Cassandra by editing `/etc/cassandra/cassandra.yaml` file.
+You can configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.yaml` file.
+
+
+**1.Locate the Cassandra Configuration File:**
+   
+   Navigate to the directory containing the Cassandra configuration file `/etc/cassandra/`.
+
+**2.Edit the `cassandra.yaml` File:**
+   
+   Open the `cassandra.yaml` file in a text editor with appropriate permissions.
+
+**3.Configure Cluster Name:**
+   
+   Set the `cluster_name` parameter to the desired name. This name helps identify the Cassandra cluster.
+
+**4.Configure Listen Address:**
+   
+   Set the `listen_address` parameter to the IP address of the node within the cluster. This address is used by other nodes within the cluster to communicate.
+
+**5.Configure RPC Address:**
+   
+   Set the `rpc_address` parameter to the IP address of the node to enable clients to connect to the Cassandra cluster.
+
+**6.Configure Seed Provider:**
+   
+   Ensure the `seed_provider` section is properly configured. The `seeds` parameter should contain the IP address(es) of the seed node(s) in the cluster.
+
+**7.Configure Directories:**
+   
+   Set the directories for data storage, commit logs, saved caches, and hints as per your requirements. Ensure that the specified directories exist and have appropriate permissions.
+
+**8.Save the Changes:**
+   
+   After making the necessary configurations, save the changes to the `cassandra.yaml` file.
+
 
 !!! Example ""
     ```yaml title="/etc/cassandra/cassandra.yaml"
@@ -147,37 +251,66 @@ Configure Cassandra by editing `/etc/cassandra/cassandra.yaml` file.
     [..]
     ```
 
+&nbsp;
+
 ### Start the service 
 
 === "DEB"
-    !!! Example ""
-        ```bash
-        sudo systemctl start cassandra
-        ```
+    
+    1. Start the Service
 
-    !!! Tip "Remove existing data before starting"
-        With the DEB packages, Cassandra service could start automatically before configuring it: 
-        Stop it, remove the data and restart once the configuration is updated: 
+        - *Execute the following command to start the Cassandra service:*
+        
+        !!! Example ""
+            ```bash
+            sudo systemctl start cassandra
+            ```
 
-        ```bash
-        sudo systemctl stop cassandra
-        sudo rm -rf /var/lib/cassandra/*
-        ```
+    2. Ensure Service Restarts After Reboot:
+
+        - *Enable the Cassandra service to restart automatically after a system reboot:*
+
+        !!! Example ""
+            ```bash
+            sudo systemctl enable cassandra
+            ```
+
+    3. (Optional) Remove Existing Data Before Starting
+
+        - *If the Cassandra service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. Execute the following commands:*
+
+        !!! Example ""
+            ```bash
+            sudo systemctl stop cassandra
+            sudo rm -rf /var/lib/cassandra/*
+            ```
 
 === "RPM"
 
-    Run the service and ensure it restart after a reboot:
-    !!! Example ""
-        ```bash
-        sudo systemctl daemon-reload
-        sudo service cassandra start
-        sudo systemctl enable cassandra
-        ```
+    1. Start the Service
 
-By default Cassandra listens on `7000/tcp` (inter-node), `9042/tcp` (client).
+        - *Start the Cassandra service by running:*
+        
+        !!! Example ""
+            ```bash
+            sudo systemctl daemon-reload
+            sudo service cassandra start
+            ```
+
+    2. Ensure Service Restarts After Reboot
+
+        - *Enable the Cassandra service to restart automatically after a system reboot:*
+
+        !!! Example ""
+            ```bash
+            sudo systemctl enable cassandra
+            ```
+
+!!! Note "Note"
+    Cassandra defaults to listening on port 7000/tcp for inter-node communication and port 9042/tcp for client communication.
 
 
-#### Additional configuration : disable tombstones  (for standalone server **ONLY**)
+<!-- #### Additional configuration : disable tombstones  (for standalone server **ONLY**)
 
 !!! Warning "This action should be performed after the installation and the first start of TheHive"
 
@@ -246,20 +379,29 @@ If you are installing a standalone server, tombstones can be disabled.
 For additional configuration options, refer to:
 
 - [Cassandra documentation page](https://cassandra.apache.org/doc/latest/getting_started/configuring.html)
-- [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html)
+- [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html) -->
 
+---
 
 ## :fontawesome-solid-list: Elasticsearch
 
-TheHive requires Elasticsearch to manage data indices.
+Elasticsearch is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
 
-!!! Info "Elasticsearch 7.x only is supported"
+!!! Note 
+    From Version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Previous TheHive versions only support Elasticsearch 7.x.
+
+!!! Note 
+    Starting from TheHive 5.3, for advanced use-cases, OpenSearch is also supported.
+
+&nbsp;
 
 ### Installation
 
 === "DEB"
     
-    1. Add Elasticsearch repository keys
+    1. Add Elasticsearch repository references
+
+        - *To add Elasticsearch repository keys, execute the following command:*
 
         !!! Example ""
             ```bash
@@ -267,14 +409,16 @@ TheHive requires Elasticsearch to manage data indices.
             sudo apt-get install apt-transport-https
             ```
 
-    2. Add the DEB repository of Elasticsearch 
+        - *Add the repository to your system by appending the following line to the /etc/apt/sources.list.d/elastic-7.x.list file. This file may not exist, and you may need to create it*
 
         !!! Example ""
             ```bash
             echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list 
             ```
 
-    3. Install the package
+    2. Install the package
+
+        - *Once the repository references are added, update your package index and install Elasticsearch using the following commands:*
 
         !!! Example ""
             ```bash
@@ -287,12 +431,16 @@ TheHive requires Elasticsearch to manage data indices.
 
     1. Add Elasticsearch repository references
 
+        - *To add Elasticsearch repository keys, execute the following command:*
+
         !!! Example ""
             ```bash
             rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
             ```
 
     2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
+
+        - *To add the repository configuration for Elasticsearcg, you need to create a new file named `/etc/yum.repos.d/elasticsearch.repo` and add the following content to it:*
 
         !!! Example ""
             ```bash title="/etc/yum.repos.d/elasticsearch.repo"
@@ -308,23 +456,78 @@ TheHive requires Elasticsearch to manage data indices.
 
     3. Install the package
 
+        - *After adding the repository configuration, install Elasticsearch using the following command:*
+
         !!! Example ""
             ```bash
             sudo yum install --enablerepo=elasticsearch elasticsearch
             ```
     
-    _References_: [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html ](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+    _Please refer to the official Elasticsearch documentation website for the most up-to-date instructions_: [**https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html**](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
-=== "Other"
+=== "Other Installation Methods"
 
-    Download and untgz archive from http://cassandra.apache.org/download/ in the folder of your choice.
+    Download the tar.gz archive from **http://cassandra.apache.org/download/** and extract it into the folder of your choice. You can use utilities like wget to download the archive.
 
+&nbsp;
 
 ### Configuration 
 
-- `/etc/elasticsearch/elasticsearch.yml`
+You can configure Elasticsearch by modifying settings within the `/etc/elasticsearch/elasticsearch.yml` file.
 
-Elasticsearch configuration should contain the following lines: 
+**1. Locate the Elasticsearch Configuration File:**
+   
+   - Navigate to the directory containing the Elasticsearch configuration file `/etc/elasticsearch/`.
+
+**2. Edit the elasticsearch.yml File:**
+   
+   - Open the `elasticsearch.yml` file in a text editor with appropriate permissions.
+
+**3. Configure HTTP and Transport Hosts:**
+   
+   - Set the `http.host` and `transport.host` parameters to `127.0.0.1` or the desired IP address.
+
+**4. Configure Cluster Name:**
+   
+   - Set the `cluster.name` parameter to the desired name. This name helps identify the Elasticsearch cluster.
+
+**5. Configure Thread Pool Search Queue Size:**
+   
+   - Set the `thread_pool.search.queue_size` parameter to the desired value, such as `100000`.
+
+**6. Configure Paths for Logs and Data:**
+   
+   - Set the `path.logs` and `path.data` parameters to the desired directories, such as `"/var/log/elasticsearch"` and `"/var/lib/elasticsearch"`, respectively.
+
+**7. Configure X-Pack Security (Optional):**
+   
+   - If you're not using X-Pack security, ensure that `xpack.security.enabled` is set to `false`.
+
+**8. Configure Script Allowed Types (Optional):**
+   
+   - If needed, set the `script.allowed_types` parameter to specify allowed script types.
+
+**9. Save the Changes:**
+   
+   - After making the necessary configurations, save the changes to the `elasticsearch.yml` file.
+
+**10. Custom JVM Options:**
+   
+   - Create the file `/etc/elasticsearch/jvm.options.d/jvm.options` if it doesn't exist.
+
+**11. Custom JVM Options:**
+   
+   - Inside `jvm.options`, add the desired JVM options, such as:
+
+    !!! Example ""
+        ```
+        -Dlog4j2.formatMsgNoLookups=true
+        -Xms4g
+        -Xmx4g
+        ```
+
+    !!! Note "Adjust the memory settings (`-Xms` and `-Xmx`) according to the available memory."
+
 
 !!! Example ""
     ```yaml title="/etc/elasticsearch/elasticsearch.yml"
@@ -339,66 +542,79 @@ Elasticsearch configuration should contain the following lines:
     ```
 
 !!! Info
-    - Indexes will be created at the first start of TheHive. It can take few time
-    - Like data and files, indexes should be part of the backup policy
-    - Indexes can removed and created again
+    - Index creation occurs during TheHive's initial startup, which may take some time to complete.
+    - Similar to data and files, indexes should be included in the backup policy to ensure their preservation.
+    - Indexes can be removed and re-created as needed.
 
-
-- Custom JVM options
-add the file `/etc/elasticsearch/jvm.options.d/jvm.options` with following lines:
-
-!!! Example ""
-    ```
-    -Dlog4j2.formatMsgNoLookups=true
-    -Xms4g
-    -Xmx4g
-    ```
-
-!!! Note "This can be updated according the amount of memory available"
+&nbsp;
 
 ### Sart the service
 
 === "DEB"
+    
+    1. Start the Service
 
-    ```bash
-    sudo systemctl start elasticsearch
-    sudo systemctl enable elasticsearch
-    ```
+        - *Execute the following command to start the Elasticsearch service:*
+        
+        !!! Example ""
+            ```bash
+            sudo systemctl start elasticsearch
+            ```
 
-    !!! Tip "Remove existing data before starting"
-        With the DEB packages, Elastic service could start automatically before configuring it: 
-        Stop it, remove the data and restart once the configuration is updated: 
-        ```bash
-        sudo systemctl stop elasticsearch
-        sudo rm -rf /var/lib/elasticsearch/*
-        ```
+    2. Ensure Service Restarts After Reboot:
+
+        - *Enable the Elasticsearch service to restart automatically after a system reboot:*
+
+        !!! Example ""
+            ```bash
+            sudo systemctl enable elasticsearch
+            ```
+
+    3. (Optional) Remove Existing Data Before Starting
+
+        - *If the Elasticsearch service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. Execute the following commands:*
+ 
+        !!! Example ""
+            ```bash
+            sudo systemctl stop elasticsearch
+            sudo rm -rf /var/lib/elasticsearch/*
+            ```
 
 === "RPM"
 
-    Run the service and ensure it restart after a reboot:
+    1. Start the Service
 
-    !!! Example ""
-        ```bash
-        sudo systemctl daemon-reload
-        sudo service elasticsearch start
-        sudo systemctl enable elasticsearch
-        ```
+        - *Start the Elasticsearch service by running:*
+        
+        !!! Example ""
+            ```bash
+            sudo systemctl daemon-reload
+            sudo service elasticsearch start
+            ```
 
+    2. Ensure Service Restarts After Reboot
 
-## :fontawesome-solid-folder-tree: File storage
-For standalone production and test servers, we recommends using local filesystem. If you think about building a cluster with TheHive, you have several possible solutions: using NFS or S3 services; see the [related guide](./3-node-cluster.md) for more details and an example with MinIO servers.  
+        - *Enable the Elasticsearch service to restart automatically after a system reboot:*
+
+        !!! Example ""
+            ```bash
+            sudo systemctl enable elasticsearch
+            ```
+
+---
+
+## :fontawesome-solid-folder-tree: File Storage
+For standalone production and test servers, we recommend using the local filesystem. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to the [**related guide**](./3-node-cluster.md).
 
 === "Local Filesystem"
-    To store files on the local filesystem, start by choosing the dedicated folder (by default `/opt/thp/thehive/files`):
+    To utilize the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
 
     !!! Example ""
         ```bash
         sudo mkdir -p /opt/thp/thehive/files
         ```
 
-    This path will be used in the configuration of TheHive.
-
-    Later, after having installed TheHive, ensure the user `thehive` owns the path chosen for storing files:
+    This path will be utilized in the configuration of TheHive. After installing TheHive, it's important to ensure that the user thehive owns the chosen path for storing files:
 
     !!! Example ""
         ```bash
@@ -407,26 +623,33 @@ For standalone production and test servers, we recommends using local filesystem
 
 === "S3 with Min.io"
 
-    An example of installing, configuring and use Min.IO is detailed in [this documentation](./3-node-cluster.md).
+    Detailed documentation on the installation, configuration, and usage of Min.IO can be found in [this documentation](./3-node-cluster.md).
 
+---
 
+## :material-beehive-outline: TheHive Installation and Configuration
 
-## :material-beehive-outline: TheHive
+This section provides detailed instructions for installing and configuring TheHive.
 
-This part contains instructions to install TheHive and then configure it.
-
+&nbsp;
 
 ### Installation
 
-All packages are published on our packages repository. We support Debian and RPM packages as well as binary packages (zip archive). All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY). Its fingerprint is `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`.
+All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in zip format. All packages are signed using our GPG key [**562CBC1C**](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
 
 === "DEB"
+
+    For Debian systems, use the following commands:
+
     !!! Example ""
         ```bash
         wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
         ```
-
+    
 === "RPM"
+
+    For RPM-based systems, follow these steps:
+
     !!! Example ""
         ```bash
         sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
@@ -437,6 +660,7 @@ Install TheHive package by using the following commands:
 
 
 === "DEB"
+
     !!! Example ""
         ```bash
         echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
@@ -445,7 +669,15 @@ Install TheHive package by using the following commands:
         ```
 
 === "RPM"
-    1. Setup your system to connect the RPM repository. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
+
+    1. Import the RPM repository key:
+
+        !!! Example ""
+            ```bash
+            sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+            ```
+
+    2. Create and edit the file /etc/yum.repos.d/strangebee.repo:
 
         !!! Example ""
             ```bash title="/etc/yum.repos.d/strangebee.repo"
@@ -458,14 +690,18 @@ Install TheHive package by using the following commands:
             gpgcheck=1
             ```
 
-    2. Then install the package using `yum`:
+    3. Then install the package using `yum`:
 
         !!! Example ""
             ```bash
             sudo yum install thehive
             ```
 
-=== "Other"
+=== "Other Installation Methods"
+
+    If you prefer a binary package, follow these steps:
+
+
     1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
 
         !!! Example ""
@@ -499,13 +735,11 @@ Install TheHive package by using the following commands:
             sudo cp thehive.service /etc/systemd/system/thehive.service
             ```
 
-
+&nbsp;
 
 ### Configuration
 
-The configuration that comes with binary packages is ready for a standalone installation, everything on the same server. 
-
-In this context, and at this stage, you might need to set the following parameters accordingly:
+The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
 
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
@@ -516,26 +750,28 @@ In this context, and at this stage, you might need to set the following paramete
     [..]
     ```
 
-    1. :fontawesome-solid-laptop: specify the scheme, hostname and port used to join the application
-    2. :fontawesome-brands-safari: specify if you use a custom path (`/` by default)
+    1. :fontawesome-solid-laptop: Define the scheme, hostname, and port for accessing the application
+    2. :fontawesome-brands-safari: Indicate if a custom path is being used (default is /)
 
 
-Following configurations are required to start TheHive successfully:
+The following configurations are necessary for successful initiation of TheHive:
 
 - Secret key configuration
 - Database configuration
 - File storage configuration
 
+&nbsp;
+
 #### Secret key configuration
 
-=== "Debian"
-    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
+=== "DEB"
+    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` during package installation.
 
 === "RPM"
-    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` by package installation script.
+    The secret key is automatically generated and stored in `/etc/thehive/secret.conf` during package installation.
 
 === "Other"
-    Setup a secret key in the `/etc/thehive/secret.conf` file by running the following command:
+    To set up a secret key, execute the following command:
 
     !!! Example ""
         ```bash
@@ -545,7 +781,7 @@ Following configurations are required to start TheHive successfully:
         ```
 
 #### Database & index
-By default, TheHive is configured to connect to Cassandra and Elasticsearch databases installed locally.
+By default, TheHive is configured to connect to local Cassandra and Elasticsearch databases.
 
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
@@ -574,13 +810,13 @@ By default, TheHive is configured to connect to Cassandra and Elasticsearch data
 
 #### File storage
 
-By default, TheHive is configured to store files locally in `/opt/thp/thehive/files`.
+The default file storage location of TheHive is `/opt/thp/thehive/files`.
 
 === "Local filesystem"
 
-    If you chose to store files on the local filesystem:
+    If you decide to store files on the local filesystem:
 
-    1. Ensure thehive user has permissions on the destination folder
+    1. Ensure thehive user has permissions on the destination folder:
 
         !!! Example ""
             ```bash
@@ -601,7 +837,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
             ```
 
 === "S3"
-    If you chose MinIO and a S3 object storage system to store files in a filesystem, add following lines to TheHive configuration file (`/etc/thehive/application.conf`)
+    If you opt for MinIO and an S3 object storage system to store files in a filesystem, append the following lines to TheHive configuration file (/etc/thehive/application.conf):
 
     !!! Example ""
         ```yaml title="/etc/thehive/application.conf"
@@ -624,7 +860,7 @@ By default, TheHive is configured to store files locally in `/opt/thp/thehive/fi
 
 #### Cortex & MISP
 
-By default the configuration file coming with packages contains following lines, enabling Cortex and MISP modules. If you are not using one them, you can comment the related line and restart the service.
+The initial configuration file packaged with the software contains the following lines, which enable the Cortex and MISP modules by default. If you're not utilizing either of these modules, you can simply comment out the corresponding line and restart the service.
 
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
@@ -637,7 +873,11 @@ By default the configuration file coming with packages contains following lines,
     scalligraph.modules += org.thp.thehive.connector.misp.MispModule
     ```
 
+&nbsp;
+
 ### Run
+
+To start TheHive service and enable it to run on system boot, execute the following commands in your terminal:
 
 !!! Example ""
     ```bash
@@ -645,18 +885,29 @@ By default the configuration file coming with packages contains following lines,
     sudo systemctl enable thehive
     ```
 
-!!! Info "Please consider the service may take a while at the first start"
+!!! Info "Please be aware that the service may take some time to start initially."
 
-Once it has started, open your browser and connect to `http://YOUR_SERVER_ADDRESS:9000/`.
+After the service has successfully started, launch your web browser and navigate to `http://YOUR_SERVER_ADDRESS:9000/`
 
-The default admin user is `admin@thehive.local` with password `secret`. It is recommended to change the default password.
+The default admin user credentials are as follows:
 
-## Advanced configuration
-For additional configuration options, please refer to the [Configuration Guides](../index.md#configuration-guides).
+!!! Note ""
+    ```bash
+    Username: admin@thehive.local
+    Password: secret
+    ```
 
-To setup HTTPS, refer to the [dedicated page](../configuration/ssl.md).
+For security reasons, it is strongly advised to change the default password after logging in.
 
-## Usage & Licenses
+---
+
+## Advanced Configuration
+
+For further customization options, please consult the **Configuration & Operations** section.
+
+To configure HTTPS, follow the instructions on the [**dedicated page**](../configuration/ssl.md).
+
+<!-- ## Usage & Licenses
 
 By default, TheHive comes with no license token and let everyone use the application with 2 users and 1 organisation: this is the community version.
 
@@ -664,4 +915,6 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 
 ## First steps & license activation
 
-Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md).
+Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md). -->
+
+&nbsp;

@@ -5,25 +5,33 @@ theme:
   name: material
   custom_dir: ./overrides/
   logo: 'assets/images/strangebee.svg'
+  palette:
+    # primary: custom
+    # accent: custom
   features:
     - content.code.annotate
     - content.tabs.link
-    - navigation.sections
+    # - navigation.sections
     - navigation.instant
-    - navigation.indexes
+    - navigation.instant.progress
+    # - navigation.indexes
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
     - toc.follow
-  palette:
-    primary: blue
-    accent: blue
+    - toc.integrate
+    - navigation.path
+    - announce.dismiss
+  # palette:
+  #   primary: blue
+  #   accent: blue
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Nunito Sans
+    code: Source Code Pro
   favicon: assets/images/favicon.ico
 
 extra_css:
@@ -39,6 +47,7 @@ plugins:
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
 
 extra:
+  generator: false
   social:
     - icon: fontawesome/brands/linkedin
       link: "https://www.linkedin.com/company/strangebee"
@@ -54,6 +63,7 @@ extra:
 markdown_extensions:
   - toc:
       permalink: "#"
+      title: On this page
   - footnotes
   - attr_list
   - md_in_html
@@ -72,8 +82,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md
@@ -81,182 +91,160 @@ nav:
     - 'Overview': thehive/setup/index.md
     - 'Download': thehive/download/index.md
     - 'Installation':
-      - thehive/setup/installation/step-by-step-guide.md
-      - 'Deploy a cluster': thehive/setup/installation/3-node-cluster.md
+      - 'System Requirements': thehive/setup/installation/system-requirements.md
+      - 'Automated Installation Script': thehive/setup/installation/automated-installation-script.md
+      - 'Step-by-Step Installation Guide': thehive/setup/installation/step-by-step-guide.md
+      - 'Deploying a Cluster': thehive/setup/installation/3-node-cluster.md
       - 'Running with Docker': thehive/setup/installation/docker.md
-      # - 'Activate a license': thehive/setup/installation/license.md
-      - thehive/setup/installation/kubernetes.md
-    - 'Version Upgrades':
-      - thehive/setup/installation/upgrade-from-5.x.md
-      - thehive/setup/installation/upgrade-from-4.x.md
-      - thehive/setup/installation/migration.md
+      - 'Kubernetes Deployment': thehive/setup/installation/kubernetes.md
+      - 'Version Upgrades':
+        - 'Upgrade from Version 5.x': thehive/setup/installation/upgrade-from-5.x.md
+        - 'Upgrade from Version 4.x': thehive/setup/installation/upgrade-from-4.x.md
+        - 'Migration from TheHive 3.x': thehive/setup/installation/migration.md
     - 'Configuration & Operations':
       - 'Configuration':
-        - 'Database & index': thehive/setup/configuration/database.md
-        - 'File storage': thehive/setup/configuration/file-storage.md
-        - thehive/setup/configuration/connectors.md
-        - thehive/setup/configuration/akka.md
-        - thehive/setup/configuration/logs.md
-        - thehive/setup/configuration/proxy.md
-        - thehive/setup/configuration/secret.md
-        - thehive/setup/configuration/ssl.md
-        - thehive/setup/configuration/service.md
+        - 'Database & Index Configuration': thehive/setup/configuration/database.md
+        - 'File Storage Configuration': thehive/setup/configuration/file-storage.md
+        - 'Connectors Configuration': thehive/setup/configuration/connectors.md
+        - 'Akka Configuration': thehive/setup/configuration/akka.md
+        - 'Logs Configuration': thehive/setup/configuration/logs.md
+        - 'Proxy Configuration': thehive/setup/configuration/proxy.md
+        - 'Secrets Configuration': thehive/setup/configuration/secret.md
+        - 'SSL Configuration': thehive/setup/configuration/ssl.md
+        - 'Service Configuration': thehive/setup/configuration/service.md
         - 'Compliance':
-          - 'GDPR': thehive/compliance/gdpr.md
-      - 'Operations': 
-        - 'Operations on a Cassandra Cluster': thehive/setup/operations/cassandra-cluster.md
-        - thehive/setup/operations/backup-restore.md
-        - thehive/setup/operations/cassandra-security.md
-        - 'Operations on a MINIO cluster': thehive/setup/operations/minio-cluster.md
-        - thehive/setup/operations/fail2ban.md
-        - thehive/setup/operations/change-index.md
-        - thehive/setup/operations/troubleshooting.md
-        - thehive/setup/operations/monitoring/monitoring.md
-    - 'Administration Guides': 
-      - 'First start': thehive/administration/first-start.md
-      - 'Manage organisations': 
-        - 'Create/Update an Organisation': thehive/administration/organisations.md
-        - 'Link Organisations': thehive/administration/organisation-links.md
-      - 'Manage accounts': 
-        - 'Create/update an account': thehive/administration/accounts.md
+          - 'General Data Protection Regulation (GDPR)': thehive/compliance/gdpr.md
+      - 'Operations':
+        - 'Cassandra Cluster Operations': thehive/setup/operations/cassandra-cluster.md
+        - 'Backup & Restore Operations': thehive/setup/operations/backup-restore.md
+        - 'Cassandra Security Operations': thehive/setup/operations/cassandra-security.md
+        - 'MINIO Cluster Operations': thehive/setup/operations/minio-cluster.md
+        - 'Fail2ban Configuration': thehive/setup/operations/fail2ban.md
+        - 'Index Management': thehive/setup/operations/change-index.md
+        - 'Troubleshooting Guide': thehive/setup/operations/troubleshooting.md
+        - 'Monitoring Setup': thehive/setup/operations/monitoring/monitoring.md
+    - 'Administration Guides':
+      - 'First Start Guide': thehive/administration/first-start.md
+      - 'Manage Organizations':
+        - 'Creating an Organization': thehive/administration/organisations.md
+        - 'Updating an Organization': thehive/administration/organisations.md
+        - 'Linking Organizations': thehive/administration/organisation-links.md
+      - 'Manage Accounts':
+        - 'Account Creation/Update Guide': thehive/administration/accounts.md
       - 'Platform Management':
-        - 'Branding': thehive/administration/branding.md
-        - 'License': thehive/administration/license.md
-        - 'Cortex': thehive/administration/cortex.md
-        - 'MISP': thehive/administration/misp.md
-        - 'Authentication':
-          - 'General settings': thehive/administration/authentication/general.md
-          - 'Local': thehive/administration/authentication/local.md
-          - 'LDAP': thehive/administration/authentication/ldap.md
-          - 'AD': thehive/administration/authentication/ad.md
-          - 'SAML': thehive/administration/authentication/saml.md
-          - 'OAUTH2': thehive/administration/authentication/oauth2.md
-        - 'SMTP': thehive/administration/smtp.md
-      - 'Entities management':
-        - 'Profiles': thehive/administration/profiles.md
-        - 'Custom fields': thehive/administration/custom-fields.md
-        - 'Observable types': thehive/administration/observables-types.md
-        - 'Case status': thehive/administration/case-status.md
-        - 'Alert status': thehive/administration/alert-status.md
-        - 'Analyzers templates': thehive/administration/analyzers-templates.md
-        - 'Taxonomies': thehive/administration/taxonomies.md    
-        - 'Att&ck patterns': thehive/administration/attack-patterns.md
-      - 'How to':
-        - 'Notification': thehive/how-to/notifications.md
-        - 'Splunk integration': thehive/how-to/splunk-integration.md
-        - 'Markdown': thehive/how-to/markdown.md
-    # - 'User Interface':
-    #   - 'Navigation': thehive/user-interface/navigation.md
-    #   - 'Lists & views': thehive/user-interface/lists.md
+        - 'Branding Guide': thehive/administration/branding.md
+        - 'License Management': thehive/administration/license.md
+        - 'Cortex Integration': thehive/administration/cortex.md
+        - 'MISP Integration': thehive/administration/misp.md
+        # - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
+        - 'Authentication Settings':
+          - 'General Settings': thehive/administration/authentication/general.md
+          - 'Local Authentication': thehive/administration/authentication/local.md
+          - 'LDAP Authentication': thehive/administration/authentication/ldap.md
+          - 'Active Directory (AD) Authentication': thehive/administration/authentication/ad.md
+          - 'SAML Authentication': thehive/administration/authentication/saml.md
+          - 'OAUTH2 Authentication': thehive/administration/authentication/oauth2.md
+        - 'SMTP Configuration': thehive/administration/smtp.md
+      - 'Entities Management':
+        - 'Profiles Management': thehive/administration/profiles.md
+        - 'Custom Fields Management': thehive/administration/custom-fields.md
+        - 'Observable Types Management': thehive/administration/observables-types.md
+        - 'Case Status Management': thehive/administration/case-status.md
+        - 'Alert Status Management': thehive/administration/alert-status.md
+        - 'Analyzers Templates Management': thehive/administration/analyzers-templates.md
+        - 'Taxonomies Management': thehive/administration/taxonomies.md
+        - 'Att&ck Patterns Management': thehive/administration/attack-patterns.md
+      - 'How To':
+        - 'Notification Configuration': thehive/how-to/notifications.md
+        - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
+        #- 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
-    #   - 'First login': thehive/user-guides/getting-started.md
-      - "I forgot my password": thehive/user-guides/forgot-password.md
-    #   - 'User settings': thehive/user-guides/user-settings.md
-    #   - 'Cases':
-    #     - 'Create a Case': thehive/user-guides/cases/create.md
-    #     > Add new Case action here
-    #   - 'Alerts':
-    #     - 'Create an Alert': thehive/user-guides/alerts/create.md
-    #     > Add new Alert action here
-    #   - 'Dashboards':
-    #     - 'Create a Dashboard': thehive/user-guides/dashboards/create.md
-    #     > Add new Dashboard action here
-    #   - 'Search':
-    #     - 'Search Cases': thehive/user-guides/search/cases.md
-    #     > Add new Search action here
-    #   - 'Knowledge Base': thehive/user-guides/knowledge-base.md
-      - 'Indicators & KPIs': thehive/user-guides/indicators.md
-      - 'Org. administration': 
-        - 'Manage Users': thehive/user-guides/organisation/accounts.md
-        - 'Templates' :  
-          - 'Cases templates': thehive/user-guides/organisation/templates/case-templates.md
-          - 'Pages templates': thehive/user-guides/organisation/templates/page-templates.md
-          - 'Reports templates': thehive/user-guides/organisation/templates/report-templates.md
-        - 'Custom tags': thehive/user-guides/organisation/custom-tags.md
-        - 'UI Configuration': thehive/user-guides/organisation/ui-configuration.md
-        - 'Notifications & endpoints':
-          - 'Introduction': thehive/user-guides/organisation/notifications/introduction.md
-    #     - 'Manage endpoints': thehive/user-guides/organisation/notifications/endpoints.md
-          # - 'Email to users': thehive/user-guides/organisation/notifications/email-to-users.md
-          # - 'Email to specific address': thehive/user-guides/organisation/notifications/email-to-addr.md
-          # - 'HTTP request endpoint': thehive/user-guides/organisation/notifications/http-request.md
-          # - 'Webhook endpoint': thehive/user-guides/organisation/notifications/webhook.md
-          - 'Notifiers':
-            - 'Mattermost': thehive/user-guides/organisation/notifications/mattermost.md
-            - 'MS Teams': thehive/user-guides/organisation/notifications/teams.md
-            - 'Slack': thehive/user-guides/organisation/notifications/slack.md
-            - 'Kafka': thehive/user-guides/organisation/notifications/kafka.md
-            - 'Redis': thehive/user-guides/organisation/notifications/redis.md
-          # - 'Run Analyzers': thehive/user-guides/organisation/notifications/analyzers.md
-          # - 'Run Responders': thehive/user-guides/organisation/notifications/responders.md
-          - 'Filtered Events': thehive/user-guides/organisation/notifications/filteredevents.md
-        - 'Endpoints': 
-          - 'About endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
-          - 'Add endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
-        - 'Functions': thehive/user-guides/organisation/functions.md
-        - 'Attachments': thehive/user-guides/organisation/attachments.md
+      - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
+      - 'Indicators & KPIs Overview': thehive/user-guides/indicators.md
+      - 'Organization Administration':
+        - 'User Management': thehive/user-guides/organisation/accounts.md
+        - 'Templates Management':
+          - 'Cases Templates Management': thehive/user-guides/organisation/templates/case-templates.md
+          - 'Pages Templates Management': thehive/user-guides/organisation/templates/page-templates.md
+          - 'Reports Templates Management': thehive/user-guides/organisation/templates/report-templates.md
+        - 'Custom Tags Management': thehive/user-guides/organisation/custom-tags.md
+        - 'UI Configuration Guide': thehive/user-guides/organisation/ui-configuration.md
+        - 'Notifications & Endpoints Setup':
+          - 'Introduction to Notifications & Endpoints': thehive/user-guides/organisation/notifications/introduction.md
+          - 'Notifier Configuration':
+            - 'Mattermost Configuration': thehive/user-guides/organisation/notifications/mattermost.md
+            - 'MS Teams Configuration': thehive/user-guides/organisation/notifications/teams.md
+            - 'Slack Configuration': thehive/user-guides/organisation/notifications/slack.md
+            - 'Kafka Configuration': thehive/user-guides/organisation/notifications/kafka.md
+            - 'Redis Configuration': thehive/user-guides/organisation/notifications/redis.md
+          - 'Filtered Events Setup': thehive/user-guides/organisation/notifications/filteredevents.md
+        - 'Endpoints Management':
+          - 'About Endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
+          - 'Add Endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
+        - 'Functions Configuration': thehive/user-guides/organisation/functions.md
+        - 'Attachments Usage Guide': thehive/user-guides/organisation/attachments.md
       - 'Analyst''s Corner':
-        - 'Alerts' : 
-          - 'About alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md          
-          - 'Manage views': thehive/user-guides/analyst-corner/alerts/manage-views.md
-          - 'Preview alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
-          - 'Actions on alerts': thehive/user-guides/analyst-corner/alerts/actions.md
-          - 'Merge alerts': thehive/user-guides/analyst-corner/alerts/merge-alerts.md
-          - 'Create a case from one or more alerts': thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md
-          - 'View an alert': thehive/user-guides/analyst-corner/alerts/general.md 
-          - 'Run responders on alert': thehive/user-guides/analyst-corner/alerts/run-responders.md
+        - 'Alerts Management':
+          - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
+          - 'Manage Views': thehive/user-guides/analyst-corner/alerts/manage-views.md
+          - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
+          - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/actions.md
+          - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/merge-alerts.md
+          - 'Create a Case from Alerts': thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md
+          - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/general.md 
+          - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/run-responders.md
           - 'View Responders': thehive/user-guides/analyst-corner/alerts/view-responders.md
-          - 'View similar alerts': thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md
-          - 'View similar cases': thehive/user-guides/analyst-corner/alerts/view-similar-cases.md
+          - 'View Similar Alerts': thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md
+          - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/view-similar-cases.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/view-ttps.md
-          - 'View observables': thehive/user-guides/analyst-corner/alerts/view-observables.md
-        - 'Cases' :                    
-          - 'About cases': thehive/user-guides/analyst-corner/cases/about-a-case.md
-          - 'Manage views': thehive/user-guides/analyst-corner/cases-list/manage-views.md
-          - 'Preview cases': thehive/user-guides/analyst-corner/cases-list/preview-cases.md
-          - 'Actions on cases': thehive/user-guides/analyst-corner/cases-list/actions.md
-          - 'Create a case': 
-            - 'Create a new case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
-            - 'Create a empty case': thehive/user-guides/analyst-corner/cases/create-empty-case.md
-            - 'Create case from archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
-            - 'Create case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
-            - 'Create case from template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
-          - 'View an case': thehive/user-guides/analyst-corner/cases-list/general.md
-          - 'Adding to a case (Tags/Tasks/Custom field values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
-          - 'View tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
-          - 'View observables': thehive/user-guides/analyst-corner/cases-list/observables.md
+          - 'View Observables': thehive/user-guides/analyst-corner/alerts/view-observables.md
+        - 'Cases Management':
+          - 'About Cases': thehive/user-guides/analyst-corner/cases/about-a-case.md
+          - 'Manage Views': thehive/user-guides/analyst-corner/cases-list/manage-views.md
+          - 'Preview Cases': thehive/user-guides/analyst-corner/cases-list/preview-cases.md
+          - 'Actions on Cases': thehive/user-guides/analyst-corner/cases-list/actions.md
+          - 'Create a Case':
+            - 'Create a New Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
+            - 'Create an Empty Case': thehive/user-guides/analyst-corner/cases/create-empty-case.md
+            - 'Create a Case from Archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
+            - 'Create a Case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
+            - 'Create a Case from Template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
+          - 'View a Case': thehive/user-guides/analyst-corner/cases-list/general.md
+          - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'View Tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
+          - 'View Observables': thehive/user-guides/analyst-corner/cases-list/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases-list/ttps.md
-          - 'View attachments': thehive/user-guides/analyst-corner/cases-list/attachments.md
-          - 'View timeline': thehive/user-guides/analyst-corner/cases-list/timeline.md
-          - 'View pages': thehive/user-guides/analyst-corner/cases-list/pages.md
-          - 'Run responders on case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
-          - 'Run analyzers on case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md          
-        - 'Tasks' : 
-          - 'About tasks': thehive/user-guides/analyst-corner/task/about-tasks.md
-          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Preview tasks': thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md
-          - 'Actions on tasks': thehive/user-guides/analyst-corner/task/preview-task-details/actions.md
-          - 'Run responders from task': thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md
-        - 'Dashboard' : 
-          - 'About dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
-          - 'Manage dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
-          - 'Manage view': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Filter and sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
-        - 'Search' : 
-          - 'Search by cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
-          - 'Search by alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
-          - 'Search by observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
-          - 'Search by jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
-          - 'Search by tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
-          - 'Search by task logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
-          
+          - 'View Attachments': thehive/user-guides/analyst-corner/cases-list/attachments.md
+          - 'View Timeline': thehive/user-guides/analyst-corner/cases-list/timeline.md
+          - 'View Pages': thehive/user-guides/analyst-corner/cases-list/pages.md
+          - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
+          - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md
+        - 'Tasks Management':
+          - 'About Tasks': thehive/user-guides/analyst-corner/task/about-tasks.md
+          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Preview Tasks': thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md
+          - 'Actions on Tasks': thehive/user-guides/analyst-corner/task/preview-task-details/actions.md
+          - 'Run Responders from Task': thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md
+        - 'Dashboard Usage':
+          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
+          - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
+          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+        - 'Search':
+          - 'Search by Cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
+          - 'Search by Alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
+          - 'Search by Observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
+          - 'Search by Jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
+          - 'Search by Tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
+          - 'Search by Task Logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
     - 'API':
-      - 'API Documentation': thehive/api-docs/" target="_blank
-      - 'Python client': https://github.com/thehive-project/thehive4py" target="_blank
+      - 'API Documentation': thehive/api-docs/
+      - 'Python Client': https://github.com/thehive-project/thehive4py
+
     - 'Release Notes':
-      - 'Release Notes for TheHive 5.0': thehive/release-notes/release-notes-5.0.md
-      - 'Release Notes for TheHive 5.1': thehive/release-notes/release-notes-5.1.md
-      - 'Release Notes for TheHive 5.2': thehive/release-notes/release-notes-5.2.md
+      - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
+      - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
+      - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
   - Cortex: 
     - cortex/index.md
     - 'Download':

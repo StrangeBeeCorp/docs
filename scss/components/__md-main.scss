@@ -1,0 +1,12 @@
+.md-main {
+	flex-grow: 0;
+
+	&__inner {
+		display: flex;
+		height: 100%;
+	}
+}
+
+.md-container:not(:has(.tx-container)) .md-main__inner {
+	min-height: calc(100vh - 215px);
+}

@@ -8,8 +8,8 @@ The sample Terraform code in this repository allows the creation of a complete S
 
 The sample code is organised in two Terraform projects:
 
-* [ug-secops-vnet](ug-secops-vnet/) --> to create and manage the SecOps virtual network and TheHive / Cortex data disks
-* [ug-secops-instances](ug-secops-instances/) --> to launch and manage TheHive v5 and Cortex instances within a SecOps vnet
+* [ug-secops-vnet](./ug-secops-vnet/README.md) --> to create and manage the SecOps virtual network and TheHive / Cortex data disks
+* [ug-secops-instances](./ug-secops-instances/README.md) --> to launch and manage TheHive v5 and Cortex instances within a SecOps vnet
 
 This code organisation allows the creation of all required vnet resources if you do not already operate a vnet (or if you want to create a new one for your SecOps needs), independently from TheHive and Cortex deployments.
 

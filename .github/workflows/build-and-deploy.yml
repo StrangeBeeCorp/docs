@@ -1,0 +1,16 @@
+name: Build and deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+      - feature/expand-page
+jobs:
+  build:
+    uses: ./.github/workflows/build-image.yml
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy.yml
+    with:
+      version: ${{ needs.build.outputs.image_digest }}

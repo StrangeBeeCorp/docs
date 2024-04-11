@@ -1,171 +1,87 @@
-# Installation & configuration guides
+---
+hide:
+  - toc
+---
+
+# TheHive Documentation
 
 ## Overview
-![Application Stack](images/thetive-application-stack.png){ width="450" align=right }
-TheHive can be deployed on a standalone server or as a cluster. The application relies on:
 
-:fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) to store data (Supported version: 4.x).
+![Application Stack](images/thehive.svg){ width="300" align=right }
 
-:fontawesome-solid-list:  [Elasticsearch](https://www.elastic.co) as indexing engine (Supported version: 7.x).
+TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, serving as a vital tool for Security Operations Centers (SOCs), Computer Security Incident Response Teams (CSIRTs), Computer Emergency Response Teams (CERTs), and all information security professionals involved in swift and effective handling of security incidents. It composes of a robust suite of features designed to streamline incident response workflows, enhance collaboration, and empower information security practitioners to effectively investigate and mitigate security threats. With its seamless integration with MISP and advanced capabilities for task management, evidence handling, and threat intelligence integration, TheHive is an indispensable tool for modern SOC, CSIRT, and CERT teams.
 
-:fontawesome-solid-folder-tree:  A file storage solution is also required ; the local filesystem of the server hosting the application is adequate in the standalone server scenario ; [S3 MINIO](https://min.io/) otherwise.
+---
 
-!!! Danger "Using Lucene"
-    Since version 5.1, TheHive does **NOT** support Lucene backend as index engine any more.
-    
-    **Lucene** was an option to handle the data index with TheHive 4.1.x  ; to migrate your index to Elasticsearch, follow [this guide](./operations/change-index.md).
+## Key Features
+
+**Integration with MISP:** 
+- Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.
+
+**Real-Time Collaboration:** 
+- Multiple analysts can collaborate simultaneously with live stream updates on cases, tasks, observables, and Indicators of Compromise (IOCs).
+
+**Efficient Task Management:** 
+- Special notifications enable efficient task handling and assignment, with previews and imports from various sources such as email reports, CTI providers, and SIEMs.
+
+**Customizable Templates:** 
+- Create cases and tasks using a flexible template engine, allowing customization with metrics and custom fields to drive team activity and identify areas for automation.
+
+**Evidence Management:** 
+- Analysts can record progress, attach evidence or files, add tags, and import password-protected ZIP archives containing suspicious data securely.
+
+**Observables Management:** 
+- Easily add and manage observables, either individually or in bulk, with options to import directly from MISP events or alerts. Triaging and filtering capabilities streamline the process.
+
+**Threat Intelligence Integration:** 
+- Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.
+
+---
 
 ## Architecture
-Each layer, **TheHive** application, the **Database & index** engine, and **file storage**, is independant and can be set up as a standalone node or cluster. As a result, TheHive could be setup and work in a complex clustered archicteture, using virtual IP addresses and load balancers. 
 
-=== "Standalone server" 
-    ![Standalone server](images/thehive-standalone.png){ align=left width=150 }
+TheHive can be set up on either a single server or as a cluster (a group of servers) to accommodate different levels of growth requirements.  TheHive's architecture is highly modular, allowing each layer (TheHive application, database & indexing engine, and file storage) to be deployed independently as standalone nodes or as part of a clustered setup. This flexibility enables complex clustered architectures with virtual IP addresses and load balancers for optimal performance and scalability. 
 
-    All applications are installed on the same server. 
+The essential components of TheHive's setup include:
+
+- :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) for robust data storage, with support for version 4.x.
+- :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co), serving as a powerful indexing engine, with support for version 7.x.
+- :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups or [S3 MINIO](https://min.io/) for clustered environments.
+
+![Application Stack](images/thehive-application-stack.png)
+
+!!! Danger "Using Lucene"
+    Starting from version 5.1, TheHive no longer supports the Lucene backend for indexing. Users who were previously utilizing Lucene with TheHive 4.1.x are advised to migrate their index to Elasticsearch using [this comprehensive guide](./operations/change-index.md).
+
+
+
+=== "Standalone Server" 
+    ![Standalone Server](images/thehive-standalone.png){ align=left width=150 }
+
+    A standalone server setup involves installing all necessary components on a single server:
 
     - Cassandra
     - Elasticsearch
-    - Files are store on the filesystem (or MinIO if desired)
+    - File storage on the local filesystem (or MinIO if desired)
     - TheHive
-    - NGINX (optional): to manage HTTPS communications
-    <br /> 
-    <br /> 
+    - Optional NGINX for managing HTTPS communications
 
-    Instructions included in the [step-by-step installation guide](installation/step-by-step-guide.md) ends up to install a standalone server.
+    For detailed installation instructions, refer to the [step-by-step installation guide](installation/step-by-step-guide.md).
 
+=== "Cluster or Hybrid Architecture"
+    TheHive and its associated applications offer flexibility in choosing the right setup based on specific requirements. This includes the ability to mix and match different nodes and applications within a cluster.
 
-=== "Cluster or hybrid architecture"
-    TheHive and all applications of the stack are flexible enough to choose the right setup according with the needs. 
-    
     ![](images/thehive-architecture-full-cluster.png){ align=center }
 
-    Each layer and node can be installed: 
-    
-    - on a dedicated operating system 
-    - with another application (for example: 1 node of Cassandra with 1 not of Elasticseach)
+    Each layer and node within the architecture can be installed on dedicated operating systems, allowing for tailored configurations. The [installation guide for a 3-node cluster](installation/3-node-cluster.md) provides comprehensive instructions for setting up a more complex clustered environment.
 
-    The [installation guide for a 3 nodes cluster](installation/3-node-cluster.md) gives all details for a more complex setup.
-
-## Requirements
-Hardware requirements depends on the number of concurrent users (including integrations) and how they use the system. The following table diplays safe thresholds when hosting all services on the same machine:
-
-| Number of users                                | TheHive                                                             | Cassandra                                                           | ElasticSearch                                                       |
-| -----------------------------------------------|: ----------------------------------------------------------------- :|: ----------------------------------------------------------------- :|: ----------------------------------------------------------------- :|
-| :fontawesome-solid-user-group: < 10            | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   | 2 :fontawesome-solid-microchip: / 2 GB :fontawesome-solid-memory:   |
-| :fontawesome-solid-user-group: < 20            | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: | 2-4 :fontawesome-solid-microchip: / 4 GB :fontawesome-solid-memory: |
-| :fontawesome-solid-user-group: < 50            | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: | 4-6 :fontawesome-solid-microchip: / 8 GB :fontawesome-solid-memory: |
-
-!!! Tip
-    If you are installing everything on the same server, we recommend at least 4 cores and 16 GB of RAM. And don't forget to set up `jvm.options` at least for Elasticsearch.
-
-## Operating systems
-TheHive has been tested and is supported on the following operating systems: 
-
-- :material-ubuntu: Ubuntu 20.04 LTS & 22.04 LTS
-- :material-debian: Debian 11
-- :material-redhat: RHEL 8
-- :material-fedora: Fedora 35 & 37
-
-StrangeBee also provides an [official Docker image](https://hub.docker.com/r/strangebee/thehive/tags). 
-
-
-## Installation guides
-
-!!! Tip "Too much in a hurry to read ? "
-
-    If you are using [one of the supported](#operating-systems) operating systems, use our all-in-one **installation script**: 
-
-    ``` bash
-    wget -q -O /tmp/install.sh https://archives.strangebee.com/scripts/install.sh ; sudo -v ; bash /tmp/install.sh
-    ```
-
-    This script helps with the installation process on a fresh and [supported OS](#operating-systems) ; the program also run successfully if the conditions in terms of hardware requirements are met.
-
-    ![](images/install-sh.png)
-    
-    Once executed, several options are available: 
-
-    1. Setup proxy settings ; will configure everything on the host to work with a HTTP proxy, and custom CA certificate.
-    2. Install TheHive ; use this option to install TheHive 5 and its dependencies
-    3. Install Cortex and all its dependencies to run Analyzers & Responders as Docker Iiages
-    4. Install Cortex and all its dependencies to run Analyzers & Responders on the host (Debian and Ubuntu **ONLY**)
-
-
-For each release, DEB, RPM and ZIP binary packages are built and provided.
-Discover how to install TheHive quickly by following our installation guides:
-
-### Use a dedicated server
-TheHive can be used on virtual or physical servers.
-
-Our [step-by-step guide](installation/step-by-step-guide.md) let you **prepare**, **install** and **configure** TheHive and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages.
-
-TheHive supports beeing installed in virtualized environments: 
-
-* Using VMware :fontawesome-solid-server:
-* Using Proxmox :simple-proxmox: virtual machines or containers (lxc)
-
-
-### Use Docker :material-docker:
-An Official Docker image publicly available. Follow our [installation guide for Docker](installation/docker.md) to use it in production.
-
-### Use Kubernetes :material-kubernetes:
-
-TheHive is now compatible with Kubernetes - follow the related guide [here](https://docs.strangebee.com/thehive/setup/installation/docker/#usage-in-kubernetes).
-
-
-
-## Configuration Guides
-The configuration files are stored in the `/etc/thehive` folder:
-
-  - `application.conf` contains all parameters and options
-  - `logback.xml` is dedicated to log management
-
-```
-/etc/thehive
-├── application.conf
-├── logback.xml
-└── secret.conf
-```
-
-A separate [secret.conf](configuration/secret.md) file is automatically created by DEB or RPM packages. This file contains a secret that should be used by one instance.
-
-The configuration should only contain the necessary information to start the application: 
-
-- [database and indexing](./configuration/database.md)
-- [File storage](./configuration/file-storage.md)
-- Connectors enabled
-- [Other service parameters](./configuration/service.md)
-  
-All other settings are available in the application WebUI. 
-
-## Advanced uses cases
-
-### Upgrade from TheHive 4.x (standalone server)
-
-!!! Info "F.A.Q"
-    ### Can I upgrade from TheHive 4.0.x ?
-    _Yes, all TheHive 4.x can be updated to TheHive 5; Find how to update in [this dedicated guide](./installation/upgrade-from-4.x.md)._
-
-    ### I use TheHive 3.x, can I upgrade my data to TheHive 5 ? 
-    _TheHive 3 is out of support since 31 December 2021. Please contact [StrangeBee](mailto:contact@strangebee.com) for further assistance._
-
-
-
-### TheHive as a cluster
-
-####  Install a cluster with 3 nodes
-If you are looking to install a cluster (fault tolerant, H.A., ...), the following [guide](installation/3-node-cluster.md) details all the installation and configuration steps to make a cluster with 3 nodes working. In this example, the cluster is composed of:
-
-  - 3 TheHive nodes
-  - 3 Cassandra nodes
-  - 3 Elasticsearch nodes
-  - 3 Min.IO nodes
-
-#### Upgrade a cluster 
-
-[Upgrade a cluster](./installation/upgrade-cluster.md)
-
-### Update from TheHive 3.x
-TheHive 3.x is not supported any more since 31st of December, 2021. 
-
-Contact [StrangeBee](https://www.strangebee.com) for further assistance at [contact@strangebee.com](mailto:contact@strangebee.com). 
+<!-- - [Requirements](./requirements.md)
+- [Operating Systems](./operating_systems.md)
+- [Installation Guides](./installation_guides.md)
+- Configuration Guides
+- Advanced Use Cases
+  - Upgrade from TheHive 4.x (Standalone Server)
+  - TheHive as a Cluster
+    - Install a Cluster with 3 Nodes
+    - Upgrade a Cluster
+  - Update from TheHive 3.x -->

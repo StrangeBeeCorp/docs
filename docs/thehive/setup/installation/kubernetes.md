@@ -1,46 +1,52 @@
 # Deploy on Kubernetes
 
-The deployment on kubernetes uses the docker image, so refer to the [docker image documentation](docker.md) for more information about its usage. 
+To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed instructions on how to use the Docker image, please refer to the [**docker image documentation**](docker.md)
 
-## Sample
+---
 
-Download [this file](kubernetes.yml) to find a kubernetes configuration that will deploy on kubernetes: 
+## Important Considerations
+
+- While this setup is suitable for testing TheHive, it's recommended to enhance the data stores (Elasticsearch, Cassandra, and Minio) for production use by setting up clustering and storage volumes. Refer to the respective documentation for instructions on deploying on Kubernetes for production use.
+
+- The volumes used in this configuration are `emptyDir`s, which means the data will be lost when a pod is restarted. If you want to persist your data, update the volume description accordingly.
+
+- To deploy multiple nodes, you will need to update your license as only one node is included in the Community License.
+
+---
+
+## Deploying TheHive
+
+You can download the Kubernetes configuration file [**here**](kubernetes.yml). This configuration will deploy the following components:
 
 - 1 instance of TheHive
 - 1 instance of Cassandra
 - 1 instance of Elasticsearch
-- 1 instance Minio
+- 1 instance of Minio
 
-This setup is good for a try out of TheHive but you should adapt the data stores (elasticsearch, cassandra and minio) to be more robust (setup clustering and storage volumes). We invite you to check their documentation on how to deploy on kubernetes for production use.
+You can initiate the deployment by executing the following command:
 
-!!! warning
-
-    The volumes used here are `emptyDir`s, so the data will be lost when a pod is restarted. You should update the volume description if you want to persist your data.
-
-To deploy more than one node, you will need to update your license. Only one node is included in the Community License.
-
-Start with `kubectl apply -f kubernetes.yml`. This will create a namespace `thehive` and deploy the instances in it. 
-
-### Cleanup
-
-Delete all the resources belonging to the `thehive` namespace:
-
-```
-kubectl delete namespace thehive
+```bash
+kubectl apply -f kubernetes.yml
 ```
 
-## Kubernetes configuration
+This command will create a namespace named ``thehive`` and deploy the instances within it.
 
-In kubernetes with several TheHive pods, the application needs to form a cluster between its nodes. For this, it will use the akka discovery method using the [kubernetes API](https://doc.akka.io/docs/akka-management/current/discovery/kubernetes.html).
+---
 
-To enable this you need:
+## Kubernetes Configuration
 
-- A service account that can connect to the kubernetes API
-- Tell TheHive to use kubernetes API to discover the other nodes
+In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the akka discovery method with the [**Kubernetes API**](https://doc.akka.io/docs/akka-management/current/discovery/kubernetes.html).
 
-### RBAC
+To enable this functionality, you need:
 
-Create a ServiceAccount named `thehive` that can get the running pods
+- A service account with permissions to connect to the Kubernetes API
+- Configuration to instruct TheHive to use the Kubernetes API for discovering other nodes
+
+&nbsp;
+
+### Role-Based Access Control (RBAC)
+
+Create a ServiceAccount named thehive with the necessary permissions to access the running pods:
 
 ```yaml
 ---
@@ -76,10 +82,11 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+&nbsp;
+
 ### Deployment
 
-In your pod / deployment specification, you need to specify the created service account.
-Also make sure to add a label and a `POD_IP` environment variable.
+In your pod/deployment specification, specify the created service account. Also, ensure to add a label and a ``POD_IP`` environment variable.
 
 ```yaml
 metadata:
@@ -98,21 +105,25 @@ spec:
             fieldPath: status.podIP
 ```
 
+&nbsp;
+
 ### Configuration
 
-#### Using docker entrypoint
+#### Using Docker Entrypoint
 
-If you use the docker entry point, add the flag `--kubernetes`.
+If you use the Docker entry point, include the ``--kubernetes`` flag. Additionally, you can use the following options:
 
-You can also use the following options:
 ```
---kubernetes-pod-label-selector <selector>  | selector to use to select other pods running the app (default app=thehive)
---cluster-min-nodes-count <count>           | minimum number of nodes to form a cluster (default to 1)
+--kubernetes-pod-label-selector <selector>  | Selector to use to select other pods running the app (default app=thehive)
+--cluster-min-nodes-count <count>           | Minimum number of nodes to form a cluster (default to 1)
 ```
 
-#### Using custom application.conf
+&nbsp;
 
-If you use your own `application.conf` file, add the following:
+#### Using Custom application.conf
+
+If you use your own application.conf file, add the following configurations:
+
 ```hocon
 akka.remote.artery.canonical.hostname = ${?POD_IP}
 singleInstance = false
@@ -135,12 +146,14 @@ akka.discovery {
 }
 ```
 
-### Pod probes
+&nbsp;
 
-You can use the following probes to make sure the application is started and running correctly. The first startup can be a bit slow so you may enable those probes after validating the correct start of the application.
+#### Pod Probes
+
+You can use the following probes to ensure the application starts and runs correctly. It's recommended to enable these probes after validating the correct start of the application.
 
 !!! Tip
-    When applying a big migration, it's recommended to deactivate those probes as the HTTP server will not start until the migration is done.
+    When applying a large migration, deactivate these probes as the HTTP server will not start until the migration is complete.
     
     ```yaml
     startupProbe:
@@ -156,26 +169,45 @@ You can use the following probes to make sure the application is started and run
         periodSeconds: 10
     ```
 
-### Troubleshooting
+---
 
-#### Error on database init
+## Cleanup
 
-If your logs contain the lines:
+To delete all resources belonging to the ``thehive`` namespace, use the following command:
 
 ```
-[error] o.t.s.m.Database [|] ***********************************************************************
-[error] o.t.s.m.Database [|] * Database initialisation has failed. Restart application to retry it *
-[error] o.t.s.m.Database [|] ***********************************************************************
+kubectl delete namespace thehive
 ```
 
-This means that an error occured when trying to create the database schema. Below those lines, you should get more details on the cause of the error.
+---
 
-Possible root causes:
+## Troubleshooting
 
-- Cassandra / Elasticsearch is unavailable: check that both database are correctly started and that TheHive can connect to them.
-    - You may try to first start both database in the kubernetes cluster before starting TheHive: set TheHive deployment to `replicas: 0` to do so.
-- Cassandra / ES contains invalid data. Elasticsearch has a role of index for Cassandra and the data between the two may not be in sync, causing errors when accessing the data.
-    - If it is the first time you are setting up the cluster, delete both database volumes/data and restart the databases and TheHive
+Below are some common issues that may arise when running TheHive with Docker:
 
+- **Example 1**: Error during Database Initialization
 
+    If your logs contain the following lines:
+
+    !!! Example ""
+
+        ```yaml
+        [error] o.t.s.m.Database [|] ***********************************************************************
+        [error] o.t.s.m.Database [|] * Database initialization has failed. Restart application to retry it *
+        [error] o.t.s.m.Database [|] ***********************************************************************
+        ```
+
+    This indicates that an error occurred when attempting to create the database schema. Beneath these lines, you should find additional details regarding the cause of the error.
+
+    **Resolution**:
+
+    1. Cassandra / Elasticsearch Unavailability: Ensure that both databases are running correctly and that TheHive can establish connections to them.
+
+        You can try starting both databases in the Kubernetes cluster before initiating TheHive by setting TheHive deployment to ``replicas: 0``.
+
+    2. Invalid Data in Cassandra / Elasticsearch: Elasticsearch acts as an index for Cassandra, and if the data between the two becomes unsynchronized, errors may occur when accessing the data.
+
+        If this is the first setup of the cluster, consider deleting both database volumes/data and restarting both the databases and TheHive.
+
+&nbsp;
 

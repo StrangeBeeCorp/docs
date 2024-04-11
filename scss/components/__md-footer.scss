@@ -1,0 +1,12 @@
+.md-footer {
+	&-meta__inner {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: var(--size-normal);
+	}
+
+	&-social {
+		padding-top: 20px;
+	}
+}
