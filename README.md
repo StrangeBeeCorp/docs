@@ -1,6 +1,6 @@
 # Docs
 
-[![Build Status](https://drone.strangebee.com/api/badges/StrangeBeeCorp/docs/status.svg?ref=refs/heads/develop)](https://drone.strangebee.com/StrangeBeeCorp/docs)
+[![Build Status](https://github.com/StrangeBeeCorp/docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/StrangeBeeCorp/docs/actions/workflows/pages/pages-build-deployment)
 
 The documentation uses mkdocs to render the content.
 
