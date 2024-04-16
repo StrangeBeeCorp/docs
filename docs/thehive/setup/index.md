@@ -16,25 +16,25 @@ TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, servi
 ## Key Features
 
 **Integration with MISP:** 
-- Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.
+Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.
 
 **Real-Time Collaboration:** 
-- Multiple analysts can collaborate simultaneously with live stream updates on cases, tasks, observables, and Indicators of Compromise (IOCs).
+Multiple analysts can collaborate simultaneously with live stream updates on cases, tasks, observables, and Indicators of Compromise (IOCs).
 
 **Efficient Task Management:** 
-- Special notifications enable efficient task handling and assignment, with previews and imports from various sources such as email reports, CTI providers, and SIEMs.
+Special notifications enable efficient task handling and assignment, with previews and imports from various sources such as email reports, CTI providers, and SIEMs.
 
 **Customizable Templates:** 
-- Create cases and tasks using a flexible template engine, allowing customization with metrics and custom fields to drive team activity and identify areas for automation.
+Create cases and tasks using a flexible template engine, allowing customization with metrics and custom fields to drive team activity and identify areas for automation.
 
 **Evidence Management:** 
-- Analysts can record progress, attach evidence or files, add tags, and import password-protected ZIP archives containing suspicious data securely.
+Analysts can record progress, attach evidence or files, add tags, and import password-protected ZIP archives containing suspicious data securely.
 
 **Observables Management:** 
-- Easily add and manage observables, either individually or in bulk, with options to import directly from MISP events or alerts. Triaging and filtering capabilities streamline the process.
+Easily add and manage observables, either individually or in bulk, with options to import directly from MISP events or alerts. Triaging and filtering capabilities streamline the process.
 
 **Threat Intelligence Integration:** 
-- Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.
+Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.
 
 ---
 
