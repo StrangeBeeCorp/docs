@@ -3,8 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - develop
-      - feature/expand-page
+      - main
 jobs:
   build:
     uses: ./.github/workflows/build-image.yml
