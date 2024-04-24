@@ -6,7 +6,7 @@ Before proceeding with the upgrade, please keep the following points in mind:
 
 1. **Database Backup**: We strongly recommend performing a full database backup before upgrading. For detailed instructions on how to perform a backup, please refer to the backup instructions.
 
-2. **Downgrade Limitation**: Once upgraded to TheHive 5.2, your instance cannot be downgraded. This means reverting to a previous version of TheHive 5 will require restoring your data from the backup.
+2. **Downgrade Limitation**: Once upgraded to TheHive 5.3, your instance cannot be downgraded. This means reverting to a previous version of TheHive 5 will require restoring your data from the backup.
 
 3. When upgrading an existing TheHive 5.x instance, the first application launch will trigger a database evolution, including schema and data updates. This operation may take some time depending on your database size.
 
@@ -16,7 +16,7 @@ Before proceeding with the upgrade, please keep the following points in mind:
 
 ## Overview
 
-This guide provides step-by-step instructions for upgrading an existing TheHive 5.0.x or 5.1.x instance to TheHive 5.2.x.
+This guide provides step-by-step instructions for upgrading an existing TheHive 5.x instance to TheHive 5.3.x.
 
 ---
 
@@ -36,7 +36,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
     2. Edit the file ``/etc/apt/sources.list.d/strangebee.list`` and adjust the repository address as follows:
 
         ```bash
-        deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main
+        deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.3 main
         ``` 
 
     3. Install TheHive package:
@@ -61,7 +61,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
         enabled=1
         priority=1
         name=StrangeBee RPM repository
-        baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
+        baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
         gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
         gpgcheck=1
         ``` 
@@ -75,10 +75,10 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
 
 === "Docker"
 
-    Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named ``strangebee/thehive:5.2``
+    Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named ``strangebee/thehive:5.3``
 
     !!! Note "Important note"
-        Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.2 tag is now available and associated with the latest 5.2.x version.
+        Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.3 tag is now available and associated with the latest 5.3.x version.
 
 ---
 

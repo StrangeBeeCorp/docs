@@ -45,7 +45,7 @@ plugins:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
-            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.2.md'
+            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
 
 
 extra:
@@ -138,7 +138,7 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
         - 'MISP Integration': thehive/administration/misp.md
-        # - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
+        - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
         - 'Authentication Settings':
           - 'General Settings': thehive/administration/authentication/general.md
           - 'Local Authentication': thehive/administration/authentication/local.md
@@ -247,6 +247,7 @@ nav:
       - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
       - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
       - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
+      - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
   - Cortex: 
     - cortex/index.md
     - 'Download':

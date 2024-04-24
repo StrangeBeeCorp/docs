@@ -412,7 +412,7 @@ If you're utilizing DEB packages for TheHive installation, follow these steps:
 
       ```bash
       wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-      sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.2 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
+      sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.3 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
       ```
 
     2. **Install the New Package**: Execute the following commands to update and install the new package. This will automatically remove the old package of thehive4:
@@ -437,7 +437,7 @@ If you're utilizing DEB packages for TheHive installation, follow these steps:
         enabled=1
         priority=1
         name=StrangeBee RPM repository
-        baseurl=https://rpm.strangebee.com/thehive-5.2/noarch
+        baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
         gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
         gpgcheck=1
         ```
