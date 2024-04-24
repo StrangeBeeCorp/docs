@@ -4,6 +4,8 @@ This documentation outlines the utilization of the Email Intake Connector for au
 
 The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
 
+![](../images/eic-4.png)
+
 ---
 
 ## Configuration
@@ -12,11 +14,19 @@ The Email Intake Connector facilitates the connection of mailboxes used to recei
 
 The only parameter that requires adjustment is the ``refresh interval``.
 
+ ![](../images/eic-1.png)
+
 &nbsp;
 
 ### Adding a Mailbox
 
 Configuration options are available for Microsoft 365 (OAuth2) and Google Workspace (OAuth2). If you use another email provider service, configuration through IMAP is necessary.
+
+![](../images/eic-2.png)
+
+&nbsp;
+
+![](../images/eic-3.png)
 
 &nbsp;
 
@@ -100,3 +110,5 @@ The email itself is included as a .eml file, along with its sender and all attac
 - `observable.dataType`: "file" if it's an attachment; otherwise, "mail" for the .eml file
 - `observable.tags`: {alert.tags}
 - `observable.attachmentId`: {attachment.id}
+
+&nbsp;
