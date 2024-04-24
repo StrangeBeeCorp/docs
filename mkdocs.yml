@@ -45,7 +45,7 @@ plugins:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
-            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.2.md'
+            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
 
 
 extra:
