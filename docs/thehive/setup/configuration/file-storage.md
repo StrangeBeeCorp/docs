@@ -1,17 +1,19 @@
-# File storage configuration
+# File Storage Configuration
 
-TheHive can be configured to use local or distributed filesystems. 
+TheHive offers flexible configurations for file storage, accommodating both local and distributed filesystem setups.
 
 === "Local or NFS"
 
-    1. Create dedicated folder ; it should belong to user and group `thehive:thehive`.
+To configure TheHive to use a local or NFS (Network File System) storage:
+
+    1. Create a dedicated folder named files, ensuring it is owned by the user and group thehive:thehive.
     
         ```bash
         mkdir /opt/thp/thehive/files
         chown thehive:thehive /opt/thp/thehive/files
         ```
 
-    2. Configure TheHive accordingly:
+    2. Configure TheHive accordingly in the YAML configuration file:
 
         ```yaml
         ## Attachment storage configuration
@@ -27,9 +29,10 @@ TheHive can be configured to use local or distributed filesystems.
 
 === "Min.IO" 
 
-    1. Install a Min.IO cluster
+For Min.IO integration with TheHive, follow these steps:
 
-    2. Configure each node of TheHive accordingly: 
+    1. Install a Min.IO cluster. Follow [**these step-by-step**](../installation/3-node-cluster.md#minio-setup) instructions.
+    2. Configure each node of TheHive accordingly:
 
         ```yaml title="/etc/thehive/application.conf with TheHive 5.0.x"
         ## Attachment storage configuration
@@ -69,5 +72,5 @@ TheHive can be configured to use local or distributed filesystems.
         ```
 
         !!! Note ""
-            - The configuration is backward compatible
-            - `us-east-1` is the default region if none has been specified in MinIO configuration. In this case, this parameter is optional.
+            - The configuration remains backward compatible.
+            - The default region is us-east-1, but it's optional if not specified in the MinIO configuration.

@@ -1,16 +1,16 @@
 # Akka
 
 !!! Quote ""
-    Akka is a toolkit for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala
+    Akka is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala. 
 
-    -- [https://akka.io/](https://akka.io/)
+    [https://akka.io/](https://akka.io/)
 
-Akka is used to make several nodes of TheHive work together and offer a smooth user experience. 
+Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience. 
 
 
-## Basic configuration
+## Basic Configuration
 
-A good cluster setup requires at least 3 nodes of TheHive applications. For each node, Akka must be configured like this: 
+For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Each node should be configured with Akka as outlined below: 
 
 ```yaml
 ## Akka server
@@ -30,13 +30,13 @@ akka {
 }
 ```
 
-with:
+In this configuration:
 
-- `remote.artery.hostname` containing the hostname or IP address of the node,
-- `cluster.seed-nodes` containing the list of akka nodes and **beeing the same on all nodes** 
+- `remote.artery.hostname` should be set to the hostname or IP address of the node.
+- `cluster.seed-nodes` should contain the same list of Akka nodes, ensuring consistency across all nodes.
 
 
-!!! Example "Configuration of a Cluster with 3 nodes"
+!!! Example "Configuration of a Cluster with 3 Nodes"
 
     === "Node 1"
 
@@ -103,9 +103,9 @@ with:
         ```
 
 
-## SSL/TLS support
+## SSL/TLS Support
 
-Akka supports SSL/TLS to encrypt communications between nodes. A typical configuration with SSL support : 
+Akka offers robust support for SSL/TLS encryption, guaranteeing secure communication between nodes. Below, you'll find a standard configuration to enable SSL/TLS support:
 
 ```yaml
 ## Akka server
@@ -140,14 +140,15 @@ akka {
 !!! Note
     Note that `akka.remote.artery.transport` has changed and `akka.ssl.config-ssl-engine` needs to be configured.
     
-    **Reference**: [https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security)
+    **For more details, refer to**: [Akka Remoting with Artery - Remote Security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security)
 
-!!! Warning "About Certificates"
-    Use your own internal PKI, or `keytool` commands to generate your certificates.
+
+!!! Warning "Certificate Considerations"
+    Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.
     
-    **Reference**: [https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool)
+    **For detailed instructions, see**: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool)
 
-    Your server certificates should contain various _KeyUsage_ and _ExtendedkeyUsage_ extensions to make everything work properly:
+    Your server certificates should include the following _KeyUsage_ and _ExtendedkeyUsage_ extensions for proper functioning:
         
     - _KeyUsage_ extensions
         - `nonRepudiation`
@@ -161,7 +162,8 @@ akka {
 
 
 
-!!! Example "Akka configuration with SSL for Node 1"
+
+!!! Example "Akka Configuration with SSL/TLS for Node 1"
 
     ```yaml
     ## Akka server
@@ -193,4 +195,4 @@ akka {
     }
     ```
 
-    Apply the same principle for the other nodes, and restart all services.
+    Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.

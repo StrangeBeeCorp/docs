@@ -1,15 +1,15 @@
 # Logs Configuration
 
-TheHive uses [logback](https://logback.qos.ch/) to log information about the running process. The loggers are configured in the file `/etc/thehive/logback.xml`. Edit this file and reload the service to apply your changes.
+TheHive utilizes [logback](https://logback.qos.ch/) for logging purposes, allowing users to monitor the running process effectively. The logging settings are managed through the configuration file located at `/etc/thehive/logback.xml`. Changes made to this file require a service reload to take effect.
 
-By default, logs are stored in `/var/log/thehive/`. The last log file is called `application.log` and older filed are stored in a compressed format in `application.%i.log.zip`. 
+By default, logs are stored in `/var/log/thehive/`, with the most recent log file named application.log, while older files are compressed and stored as `application.%i.log.zip`.
 
 
-## How to increase/decrease the log level
+## Adjusting Log Levels
 
-Logback supports several log levels. 
+Logback offers various log levels to control the amount of information logged. To increase or decrease the log level: 
 
-To log more things you can update the root level to `DEBUG` (or `TRACE`):
+Update the root level to DEBUG or TRACE to log more information:
 
 ```xml title="logback.xml"
     <!-- ... -->
@@ -18,37 +18,37 @@ To log more things you can update the root level to `DEBUG` (or `TRACE`):
     </root>
 ```
 
-To log less things you can use `WARN`, `ERROR` or `OFF` levels.
-
-The log level can also be updated individually by changing the level of a specific logger:
+Alternatively, adjust the log level for specific loggers:
 
 ```xml title="logback.xml"
     <logger name="org.thp" level="DEBUG"/>
 ```
 
-## Logs in docker
+You have the option to select from the following additional log levels: WARN, ERROR, or OFF.
 
-In the docker container the logger is configured with the file `/etc/thehive/logback.xml` and the application by default will log to `stdout` and to `/var/log/thehive/application.log`.
 
-If you want to change the default configuration, you can mount your own logback file to `/etc/thehive/logback.xml`.
+## Docker Logs Configuration
 
-## Debug your logback configuration
+In a Docker container, TheHive logs to stdout and `/var/log/thehive/application.log` by default. To customize this behavior, mount your own logback file to `/etc/thehive/logback.xml`.
 
-If you have issues with it set the debug flag to true in `logback.xml`:
+## Debugging Logback Configuration
+
+To troubleshoot logback configuration issues, set the debug flag to true in logback.xml:
+
 ```xml title="logback.xml"
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
 
 ```
 
-This will log your logback configuration in the console when the app starts
+This will log the logback configuration in the console during application startup.
 
-## How to create an access log
 
-By changing the logback configuration, you can redirect certain logs from the application.
-Below is an example where access logs are redirected to the file `access.log` and uses a rolling file strategy.
+## Creating an Access Log
 
-To apply this in your configuration, copy the `appender`s and `logger`s definitions.
+To redirect certain logs from the application, such as access logs, modify the logback configuration. Here's an example configuration for redirecting access logs to a file named access.log using a rolling file strategy:
+
+To add this into your configuration, duplicate the definitions of `appender` and `logger` as demonstrated below.
 
 ```xml title="logback.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -91,9 +91,9 @@ To apply this in your configuration, copy the `appender`s and `logger`s definiti
 
 ```
 
-## How to send logs to syslog
+## Sending Logs to Syslog
 
-You will need to add a `SyslogAppender`.
+To send logs to syslog, add a `SyslogAppender` to the logback configuration:
 
 ```xml title="logback.xml"
 <?xml version="1.0" encoding="UTF-8"?>
@@ -114,7 +114,7 @@ You will need to add a `SyslogAppender`.
 
 ```
 
-See the [official docs](https://logback.qos.ch/manual/appenders.html#SyslogAppender) for more information.
+Refer to the [**official documentation**](https://logback.qos.ch/manual/appenders.html#SyslogAppender) for more details.
 
 **Limitations:**
-The official syslog appender can only send logs via UDP to a server. It cannot use TCP and TLS
+The official syslog appender only supports sending logs via UDP to a server and does not support TCP and TLS.
