@@ -21,7 +21,7 @@
 ## 5.3.0 - 24th April 2024
 
 !!! info
-    The licensing model for the community version has been updated. Users are now required to [register on our licensing portal](https://portal.apps.strangebee.com/account/register) and request a community license to use TheHive in the community version. Additionally, TheHive will now include a default 14-day free Platinum trial license, allowing users to explore the full range of features offered by the platform.
+    The licensing model for the community version has been updated. Users are now required to <a href="https://portal.apps.strangebee.com/account/register" target"_blank">register on our licensing portal</a> and request a community license to use TheHive in the community version. Additionally, TheHive will now include a default 14-day free Platinum trial license, allowing users to explore the full range of features offered by the platform.
 
 ### New features
 
