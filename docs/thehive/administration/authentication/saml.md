@@ -11,13 +11,12 @@ An SAML authentication provider accepts the following configuration parameters:
 | Name      | Give a name to the provider in TheHive |
 | Identity Provider metadata type | Select how TheHive gathers configuration information: `xml` or `url       |
 | Identity Provider metadata value | Give the URL or the XML content with service information  |
+| Login Name | Indicate the name of the custom attribute containing the user login information | 
 | Maximum authentication life time | This value must match the value from the identity provider    |
 
 
-<figure markdown>
-![](./images/authentication-saml-2.png){ width ="400" }
-<figcaption>Configuration gathered using the URL</figcaption>
-</figure>
+
+![](./images/authentication-saml-2.png)
 
 <figure markdown>
 ![](./images/authentication-saml-3.png){ width ="400" }
