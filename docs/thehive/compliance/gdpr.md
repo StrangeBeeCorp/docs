@@ -1,53 +1,66 @@
-# GDPR 
+# GDPR Compliance in TheHive 5.x
+
+TheHive includes a specialized feature for managing data retention policies within the database. By default, this feature is not enabled and must be configured based on your organization's GDPR compliance needs.
 
 !!! Info
-    This feature is available only with the Platinum plan of THeHive 5.x.
+    This feature is exclusively available with TheHive 5.x Platinum plan.
 
-TheHive has a feature dedicated to manage data retention policy in the database, which is not enabled by default.
+
+---
 
 ## Strategies
 
-Two strategies are available: 
+There are two primary strategies available:
 
-* [Replace sensitive values with `<redacted>`](#replace-values-with-redacted)
-* [Delete the data](#delete-data)
+* [Replace Sensitive Values with `<redacted>`](#replace-values-with-redacted)
+* [Delete Data](#delete-data)
 
+&nbsp;
 
-### Replace values with `<redacted>`
+### Replace Sensitive Values with `<redacted>`
+
+Under this strategy, sensitive information is redacted from specific fields within TheHive, including:
+
+&nbsp;
 
 For cases, the following fields are redacted:
 
 * `summary` and `message` of the case
 * `message` of comments
 * `message` in task logs
-* `message` of observables, for datatypes selected and filled in  the `gdpr.dataTypesToDelete` configuration property
+* `message` of observables, for datatypes selected and filled in the `gdpr.dataTypesToDelete` configuration property
 * `content` of pages
 * `description` of procedures in TTPs
 
- 
+&nbsp;
+
 For alerts, the following fields are redacted:
 
 *  `message` of the alert
-*  `message` of observables (cf. `gdpr.dataTypesToDelete` configuration property)
-*  `description` of procedures (ttp)
+*  `message` of observables (`gdpr.dataTypesToDelete` configuration property)
+*  `description` of procedures (TTP)
+
+&nbsp;
 
 For audits:
 
 *  the field `details` is redacted
 
-### Delete data
+&nbsp;
 
-If the strategy `delete` is selected:
+### Delete Data
 
-  * The case and its components - _tasks, task logs, procedures, comments, pages, custom events in timelines, values of custom field and observables_ -  are deleted
-  * The alert and its components - _procedures, comments, values of custom field and observables_ -  are deleted.
-  * The audit is deleted
+Selecting the `delete` strategy will permanently remove the following components:
 
+* Cases and associated components (tasks, task logs, procedures, comments, pages, custom events in timelines, custom field values, and observables)
+* Alerts and associated components (procedures, comments, custom field values, and observables)
+* Audits
+
+---
 
 ## Retention
- 
-The parameter `retentionPeriod` defines the mininum age of the data that will be deleted or redacted. The GDPR process will be applied on data older than this setting. The age is based on the last update date (or the creation date if it has never been updated).
-The format is a number and a time unit. The supported units are:
+
+The `retentionPeriod` parameter specifies the minimum age of data subject to deletion or redaction. The GDPR process is applied to data older than this specified period, calculated based on the last update date (or creation date if never updated). The format for `retentionPeriod` supports various time units:
 
   * day:         `d`, `day`
   * hour:        `h`, `hr`, `hour`
@@ -55,9 +68,15 @@ The format is a number and a time unit. The supported units are:
   * second:      `s`, `sec`, `second`
   * millisecond: `ms`, `milli`, `millisecond`
 
+For example, 365 days denotes a retention period of 1 year.
+
+---
+
 ## Configuration 
 
-To enable it, the configuration file `/etc/thehive/application.conf` should be updated. Add the following configuration to the file: 
+To enable GDPR compliance, follow these steps:
+
+1. Update the configuration file /etc/thehive/application.conf with the following settings:
 
 !!! Example ""
 
@@ -96,4 +115,10 @@ To enable it, the configuration file `/etc/thehive/application.conf` should be u
     }
     ```
 
-Then restart the application.
+2. Save the changes to the configuration file.
+
+3. Restart TheHive application to apply the new settings.
+
+By following these steps, you can effectively implement GDPR-compliant data retention policies within TheHive 5.x. Adjust the configuration parameters as per your organization's specific requirements and compliance standards.
+
+&nbsp;

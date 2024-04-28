@@ -1,14 +1,16 @@
-# Configure SSL
+# SSL Configuration
+
+---
 
 ## Connect TheHive using HTTPS
 
-We recommend using a reverse proxy to manage SSL layer; for Example, Nginx. 
+It is recommended to set up a reverse proxy, such as Nginx, to manage the SSL layer for TheHive.
 
 !!! Example ""
 
     === "Nginx"
 
-        **Reference**: [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html) on [nginx.org](https://nginx.org)
+        For detailed instructions on configuring HTTPS servers with Nginx, refer to the [**Nginx documentation**](https://nginx.org/en/docs/http/configuring_https_servers.html)
 
         ```title="/etc/nginx/sites-available/thehive.conf"
         server {
@@ -16,8 +18,8 @@ We recommend using a reverse proxy to manage SSL layer; for Example, Nginx.
           server_name thehive;
 
           ssl on;
-          ssl_certificate       path-to/thehive-server-chained-cert.pem;
-          ssl_certificate_key   path-to/thehive-server-key.pem;
+          ssl_certificate       /path-to/thehive-server-chained-cert.pem;
+          ssl_certificate_key   /path-to/thehive-server-key.pem;
 
           proxy_connect_timeout   600;
           proxy_send_timeout      600;
@@ -35,35 +37,40 @@ We recommend using a reverse proxy to manage SSL layer; for Example, Nginx.
         }
         ```
 
-## Client configuration
+---
 
-SSL configuration might be required to connect remote services. Following parameters can be defined: 
+## Client Configuration
+
+SSL configuration settings may be necessary to connect remote services. Below are the parameters that can be defined:
 
 | Parameter                                | Type           | Description                          |
 | -----------------------------------------| -------------- | ------------------------------------ |
 | `wsConfig.ssl.keyManager.stores`         | list           | Stores client certificates (see [#certificate-manager](#certificate-manager) )    |
-| `wsConfig.ssl.trustManager.stores`       | list           | Stored custom Certificate Authorities (see [#certificate-manager](#certificate-manager) |
+| `wsConfig.ssl.trustManager.stores`       | list           | Stores custom Certificate Authorities (see [#certificate-manager](#certificate-manager) |
 | `wsConfig.ssl.protocol`                  | string         | Defines a different default protocol (see [#protocols](#protocols)) |
 | `wsConfig.ssl.enabledProtocols`          | list           | List of enabled protocols (see [#protocols](#protocols)) |
 | `wsConfig.ssl.enabledCipherSuites`       | list           | List of enabled cipher suites (see [#ciphers](#ciphers)) |
 | `wsConfig.ssl.loose.acceptAnyCertificate`| boolean        | Accept any certificates *true / false* |
 
+&nbsp;
 
+### Certificate Manager
 
-### Certificate manager
-Certificate manager is used to store client certificates and certificate authorities.
+The certificate manager is used to store client certificates and certificate authorities.
 
-#### Use custom Certificate Authorities
+&nbsp;
 
-The prefered way to use custom Certificate Authorities is to use the system configuration. 
+#### Using Custom Certificate Authorities
 
-If setting up a custom Certificate Authority (to connect web proxies, remote services like LPAPS server ...) is required globally in the application, the better solution consists of installing it on the OS and restarting TheHive. 
+The preferred method for using custom Certificate Authorities is to use the system configuration.
+
+<!-- If setting up a custom Certificate Authority (to connect web proxies, remote services like LPAPS server ...) is required globally in the application, the better solution consists of installing it on the OS and restarting TheHive.  -->
 
 !!! Example ""
 
     === "Debian"
 
-        Ensure the package `ca-certificates-java` is installed , and copy the CA certificate in the right folder. Then run `dpkg-reconfigure ca-certificates` and restart TheHive service. 
+        Ensure the `ca-certificates-java` package is installed, copy the CA certificate to the appropriate folder, then reconfigure certificates and restart TheHive service.
 
         ```bash
         apt-get install -y ca-certificates-java
@@ -75,7 +82,7 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
 
     === "RPM"
 
-        No additionnal packages is required on Fedora or RHEL. Copy the CA certificate in the right folder, run `update-ca-trust` and restart TheHive service.
+        Copy the CA certificate to the correct folder, update CA trust, and restart TheHive service.
 
           ```bash
           cp mycustomcert.crt /etc/pki/ca-trust/source/anchors
@@ -84,7 +91,7 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
           ```
 
 
-*An alternative way* is to use a dedicated trust stores ; but **this is NOT the prefered option**. Use the `trustManager` key in TheHive configuration. It is used to establish a secure connection with remote host. Server certificate must be signed by a trusted certificate authority.
+An alternative approach is to use dedicated trust stores, although this is not the recommended option. Use the `trustManager` key in TheHive configuration to establish secure connections with remote hosts. Ensure that server certificates are signed by trusted certificate authorities.
 
 !!! Example ""
     ```
@@ -99,10 +106,11 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
       }
     ```
 
+&nbsp;
 
-#### Client certificates
+#### Client Certificates
 
-`keyManager` indicates which certificate HTTP client can use to authenticate itself on remote host (when certificate based authentication is used)
+The `keyManager` parameter specifies which certificate the HTTP client can use for authentication on remote hosts when certificate-based authentication is required.
 
 !!! Example ""
 
@@ -118,26 +126,33 @@ If setting up a custom Certificate Authority (to connect web proxies, remote ser
       }
     ```
 
+&nbsp;
+
 ### Protocols
-If you want to define a different default protocol, you can set it specifically in the client:
+
+To define a different default protocol use the following configuration:
 
 !!! Example ""
     ```
     wsConfig.ssl.protocol = "TLSv1.2"
     ```
 
-
-If you want to define the list of enabled protocols, you can do so by providing a list explicitly:
+To define a list of enabled protocols, use the following configuration:
 
 !!! Example ""
     ```
     wsConfig.ssl.enabledProtocols = ["TLSv1.2", "TLSv1.1", "TLSv1"]
     ```
 
-### Advanced options
+&nbsp;
+
+### Advanced Options
+
+&nbsp;
 
 ####  Ciphers
-Cipher suites can be configured using `wsConfig.ssl.enabledCipherSuites`:
+
+Configure cipher suites using `wsConfig.ssl.enabledCipherSuites`:
 
 !!! Example ""
 
@@ -150,8 +165,11 @@ Cipher suites can be configured using `wsConfig.ssl.enabledCipherSuites`:
     ]
     ```
 
+&nbsp;
+
 #### Debugging
-To debug the key manager / trust manager, set the following flags:
+
+Enable debugging flags to troubleshoot key managers and trust managers:
 
 !!! Example ""
 
@@ -167,3 +185,5 @@ To debug the key manager / trust manager, set the following flags:
         certpath = true
       }
     ```
+
+&nbsp;
