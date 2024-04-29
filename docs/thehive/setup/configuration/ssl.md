@@ -148,8 +148,6 @@ To define a list of enabled protocols, use the following configuration:
 
 ### Advanced Options
 
-&nbsp;
-
 ####  Ciphers
 
 Configure cipher suites using `wsConfig.ssl.enabledCipherSuites`:
