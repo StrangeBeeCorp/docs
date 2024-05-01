@@ -18,7 +18,7 @@
 
 ### Security
 
-- Fix security vulnerability. An advisory will be published in the coming weeks.
+- Fix [Username Enumeration vulnerability](https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2024-001.md).
 
 ### Fix
 
