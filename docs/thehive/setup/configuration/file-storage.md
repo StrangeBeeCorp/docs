@@ -71,6 +71,10 @@ For Min.IO integration with TheHive, follow these steps:
         }
         ```
 
-        !!! Note ""
-            - The configuration remains backward compatible.
-            - The default region is us-east-1, but it's optional if not specified in the MinIO configuration.
+      Note:
+      
+      - The configuration remains backward compatible.
+      
+      - The default region is us-east-1, but it's optional if not specified in the MinIO configuration.
+
+&nbsp;

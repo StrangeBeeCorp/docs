@@ -7,6 +7,7 @@
 
 Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience. 
 
+---
 
 ## Basic Configuration
 
@@ -102,6 +103,7 @@ In this configuration:
         }
         ```
 
+---
 
 ## SSL/TLS Support
 
@@ -196,3 +198,5 @@ akka {
     ```
 
     Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.
+
+&nbsp;

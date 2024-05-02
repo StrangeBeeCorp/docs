@@ -4,6 +4,8 @@
 
 Proxy settings can be configured for the application. By default, the JVM's proxy settings are used, but it's possible to define specific configurations for individual HTTP clients.
 
+&nbsp;
+
 ### Configuration Parameters
 
 | Parameter                           | Type    | Description                                                 |

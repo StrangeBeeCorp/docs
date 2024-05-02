@@ -2,6 +2,8 @@
 
 TheHive utilizes [Cassandra](https://cassandra.apache.org/) and [Elasticsearch](https://www.elastic.co/elasticsearch/) databases for data management and indexing purposes. Below outlines the configuration options available:
 
+---
+
 ## Basic Configuation 
 
 A typical database configuration for TheHive is structured as follows:
@@ -32,9 +34,12 @@ db {
 
 This configuration specifies the following components:
 
-**Database Provider**: The database provider is set to JanusGraph, a distributed graph database.
+**Database Provider**: 
+
+  - The database provider is set to JanusGraph, a distributed graph database.
 
 **Storage Configuration**:
+
   - Backend: Cassandra is specified as the backend storage system.
 
   - Hostname: The IP address of the Cassandra cluster is provided.
@@ -44,12 +49,14 @@ This configuration specifies the following components:
   - Keyspace: The keyspace within Cassandra where TheHive data will be stored is named 'thehive'.
 
 **Index Configuration**:
+
   - Backend: Elasticsearch is designated as the backend for indexing.
 
   - Hostname: The IP address of the Elasticsearch instance is set to '127.0.0.1'.
 
   - Index Name: The index name within Elasticsearch for TheHive is specified as 'thehive'.
 
+---
 
 ## List of Parameters
 
@@ -94,6 +101,7 @@ This configuration specifies the following components:
 
 For more detailed information on configuring Elasticsearch connection, refer to the [**official JanusGraph documentation.**](https://docs.janusgraph.org/index-backend/elasticsearch/)
 
+---
 
 ## Use Cases
 
@@ -196,3 +204,5 @@ The database and index engine configurations can vary depending on the use case 
         ```yaml
         script.allowed_types: inline,stored
         ```
+
+&nbsp;
