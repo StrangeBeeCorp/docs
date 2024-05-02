@@ -4,6 +4,7 @@ TheHive utilizes [logback](https://logback.qos.ch/) for logging purposes, allowi
 
 By default, logs are stored in `/var/log/thehive/`, with the most recent log file named application.log, while older files are compressed and stored as `application.%i.log.zip`.
 
+---
 
 ## Adjusting Log Levels
 
@@ -26,10 +27,13 @@ Alternatively, adjust the log level for specific loggers:
 
 You have the option to select from the following additional log levels: WARN, ERROR, or OFF.
 
+---
 
 ## Docker Logs Configuration
 
 In a Docker container, TheHive logs to stdout and `/var/log/thehive/application.log` by default. To customize this behavior, mount your own logback file to `/etc/thehive/logback.xml`.
+
+---
 
 ## Debugging Logback Configuration
 
@@ -43,6 +47,7 @@ To troubleshoot logback configuration issues, set the debug flag to true in logb
 
 This will log the logback configuration in the console during application startup.
 
+---
 
 ## Creating an Access Log
 
@@ -91,6 +96,8 @@ To add this into your configuration, duplicate the definitions of `appender` and
 
 ```
 
+---
+
 ## Sending Logs to Syslog
 
 To send logs to syslog, add a `SyslogAppender` to the logback configuration:
@@ -118,3 +125,5 @@ Refer to the [**official documentation**](https://logback.qos.ch/manual/appender
 
 **Limitations:**
 The official syslog appender only supports sending logs via UDP to a server and does not support TCP and TLS.
+
+&nbsp;

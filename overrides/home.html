@@ -6,23 +6,23 @@
 				<img src="assets/images/hero-thehive.png" draggable="false" />
 			</div>
 			<div class="tx-hero__content">
-				<h1>TheHive technical documentation</h1>
-				<p><b>Install, configure & maintain</b> TheHive up and running for analysts!</p>
+				<h1>TheHive Technical Documentation</h1>
+				<p><b>Learn how to install, configure, and maintain</b> TheHive for analysts.</p>
 				<a href="thehive/setup/" title="Setup Guides" class="md-button md-button--primary">
-					Getting started
+					Getting Started
 				</a>
 				<a
 					href="thehive/download"
 					title="{{ lang.t('source.link.title') }}"
 					class="md-button">
-					Download TheHive!
+					Download TheHive
 				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
-<section class="th-container featuresSection">
+<!-- <section class="th-container featuresSection">
 	<h2 class="section__title">Features</h2>
 
 	<ul class="feature__grid">
@@ -143,6 +143,97 @@
 			</p>
 		</li>
 	</ul>
+</section> -->
+
+<section class="th-container featuresSection">
+    <h2 class="section__title">Features</h2>
+
+    <ul class="feature__grid">
+        <li class="feature__card">
+            <p class="feature__title">Alert Management</p>
+            <p class="feature__content">
+                Efficiently manage alerts with a dedicated and detailed Alert page. Make comments, identify similar alerts, define custom statuses and fields, and decide on escalation to investigations or incident response.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Case Management</p>
+            <p class="feature__content">
+                Streamline case creation with associated tasks and observables. Identify related cases and alerts, set PAP (Permissible Actions Protocol) levels on each Observable, and enhance Incident Response using a flexible template engine.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Multi-Tenant Environments</p>
+            <p class="feature__content">
+                Define organizations and teams for collaborative work. Customize permissions and roles to isolate or share cases between organizations.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Advanced User Management</p>
+            <p class="feature__content">
+                Customize user profiles and assignments within organizations. Synchronize users via LDAP or AD for streamlined management.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Notifications Framework</p>
+            <p class="feature__content">
+                Set up notification rules to trigger webhooks, emails, Slack/Mattermost messages, or custom HTTP requests based on specified events.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Metrics and Dashboards</p>
+            <p class="feature__content">
+                Utilize dynamic dashboarding to compile and correlate case statistics, tasks, observables, and metrics for generating KPIs and MBOs.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Comprehensive APIs</p>
+            <p class="feature__content">
+                Access fully documented APIs for implementing workflows and developing automated scripts using TheHive data.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">MISP Integration</p>
+            <p class="feature__content">
+                Seamlessly import and share Indicators of Compromise with MISP. Collaborate by connecting TheHive with MISP to enhance threat intelligence sharing.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">MITRE ATT&CK Integration</p>
+            <p class="feature__content">
+                Incorporate MITRE ATT&CK Framework TTPs into alert management. Import tactics and techniques into cases or alerts, or export to MISP events for broader threat analysis.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Case Reporting</p>
+            <p class="feature__content">
+                Generate detailed incident reports in markdown, DOCX or PDF format. Customize report templates based on content requirements and target audience.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Knowledge Base</p>
+            <p class="feature__content">
+                Centralize policies, procedures, best practices, and guidance within the in-app 'wiki' for quick access and support during incident response.
+            </p>
+        </li>
+
+        <li class="feature__card">
+            <p class="feature__title">Timeline</p>
+            <p class="feature__content">
+                Track incident progression with a comprehensive timeline view. Capture events from detection to resolution, providing insights into the incident response process.
+            </p>
+        </li>
+    </ul>
 </section>
+
 
 {% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock %}
