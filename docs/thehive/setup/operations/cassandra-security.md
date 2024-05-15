@@ -1,20 +1,6 @@
 # Security in Apache Cassandra
 
-Apache Cassandra provides robust security features to protect data and communication within a cluster. This document outlines key authentication and encryption practices.
-
-!!! Note "References"
-    Internal authentication
-      
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html)
-    
-    Node to node encryption
-    
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html)
-    
-    Client to node encryption
-    
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html)
-    - [https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl](https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl)
+---
 
 ## Authentication with Cassandra
 
@@ -55,6 +41,7 @@ To authenticate with Cassandra and manage permissions, follow these steps:
 
     Ensure to replace xxx.xxx.xxx.xxx with the appropriate Cassandra hostname or IP address.
 
+---
 
 ## Configuring Node-to-Node Encryption for Cassandra
 
@@ -83,6 +70,8 @@ SA_WITH_AES_256_CBC_SHA]
     require_client_auth: false
 ```
 
+&nbsp;
+
 ### Setting Up Cassandra Dedicated SSL Port (Optional)
 
 Optionally, you can configure a dedicated port for SSL communication in Cassandra. Setting up a dedicated SSL port provides enhanced security for communication with your Cassandra cluster. Follow these steps to update the `/etc/cassandra/cassandra.yml` configuration file on each node:
@@ -99,9 +88,19 @@ Optionally, you can configure a dedicated port for SSL communication in Cassandr
 
 By specifying a dedicated `native_transport_port_ssl`, all SSL communications will utilize this port instead of the default port configured for non-SSL traffic (`native_transport_port`). 
 
+---
+
 ## Client to Node Encryption
 
+!!! Note "References"
+    Client to Node Encryption
+    
+    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html)
+    - [https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl](https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl)
+
 This guide explains how to establish a secure connection between Cassandra clients (specifically TheHive) and the Cassandra server.
+
+&nbsp;
 
 ### Requirements
 
@@ -125,6 +124,8 @@ To set up secure encryption, you'll need the following:
      You will be prompted to set a password for file integrity checking.
 
    **Note:** The `keytool` command is available as part of any JDK distribution.
+
+&nbsp;
 
 ### Steps to Set Up Encryption
 
@@ -152,27 +153,26 @@ Follow these steps to enable encryption between Cassandra clients (TheHive) and 
 
     - Locate the section `client_encryption_options` and set the following options:
 
-      !!! Example ""
 
-      ```yaml
-      client_encryption_options:
-          enabled: true
-          # If enabled and optional is set to true encrypted and unencrypted connections are handled.
-          optional: false
-          keystore: /pat/to/keystore.jks
-          keystore_password: keystorepassword
-          require_client_auth: false
-          # Set trustore and truststore_password if require_client_auth is true
-          # truststore: conf/.truststore
-          # truststore_password: cassandra
-          # More advanced defaults below:
-          protocol: TLS
-          algorithm: SunX509
-          store_type: JKS
-          cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_
-      AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_R
-      SA_WITH_AES_256_CBC_SHA]
-      ```
+    ```yaml
+    client_encryption_options:
+        enabled: true
+        # If enabled and optional is set to true encrypted and unencrypted connections are handled.
+        optional: false
+        keystore: /pat/to/keystore.jks
+        keystore_password: keystorepassword
+        require_client_auth: false
+        # Set trustore and truststore_password if require_client_auth is true
+        # truststore: conf/.truststore
+        # truststore_password: cassandra
+        # More advanced defaults below:
+        protocol: TLS
+        algorithm: SunX509
+        store_type: JKS
+        cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_
+    AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_R
+    SA_WITH_AES_256_CBC_SHA]
+    ```
 
     - After making these changes, restart the Cassandra service.
 
@@ -180,31 +180,31 @@ Follow these steps to enable encryption between Cassandra clients (TheHive) and 
 
     - Update TheHive's Cassandra client configuration to specify the location of the truststore (`ca.jks`) and provide any additional connection properties required for SSL/TLS encryption.
 
-      !!! Example ""
-
-        ```
-        db.janusgraph {
-          storage {
-            ## Cassandra configuration
-            # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
-            backend: cql
-            hostname: ["ip_node_1", "ip_node_2", "ip_node_3"]
-            # Cassandra authentication (if configured)
-            username: "thehive"
-            password: "thehive1234"
-            {==port: 9142 # if alternative port has been set in Cassandra configuration==}
-            cql {
-              cluster-name: thp
-              keyspace: thehive
-              {==ssl {==}
-                {==enabled: true==}
-                {==truststore {==}
-                  {==location: "/path/to/truststore.jks"==}
-                  {==password: "truststorepassword"==}
-                {==}==}
-              }
-            }
+    ```
+    db.janusgraph {
+      storage {
+        ## Cassandra configuration
+        # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
+        backend: cql
+        hostname: ["ip_node_1", "ip_node_2", "ip_node_3"]
+        # Cassandra authentication (if configured)
+        username: "thehive"
+        password: "thehive1234"
+        {==port: 9142 # if alternative port has been set in Cassandra configuration==}
+        cql {
+          cluster-name: thp
+          keyspace: thehive
+          {==ssl {==}
+            {==enabled: true==}
+            {==truststore {==}
+              {==location: "/path/to/truststore.jks"==}
+              {==password: "truststorepassword"==}
+            {==}==}
           }
-        ```
-      
-      - After making these changes, restart TheHive to apply the new configuration settings.
+        }
+      }
+    ```
+    
+    - After making these changes, restart TheHive to apply the new configuration settings.
+
+&nbsp;

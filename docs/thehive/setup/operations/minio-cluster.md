@@ -1,5 +1,7 @@
 # MinIO Cluster Operations
 
+---
+
 ## Replace a Disk
 
 If a disk in your MinIO cluster is faulty and needs to be replaced, you can perform this operation without downtime thanks to MinIO's support for hot-swapping disks:
@@ -27,10 +29,13 @@ If a disk in your MinIO cluster is faulty and needs to be replaced, you can perf
      mc admin heal <myminio>
      ```
 
+---
 
 ## Replace a Node
 
 In the event that a server within your MinIO cluster has crashed and cannot be recovered, you can install a new server to replace it. Ensure that the new node is configured with the same IP address or hostname as the old node. Once the new server is operational and has joined the cluster, initiate a disk heal by running `mc admin heal`.
+
+&nbsp;
 
 ### Step-by-Step Guide: Replace a Node in MinIO Cluster
 
@@ -71,12 +76,15 @@ In the event that a server within your MinIO cluster has crashed and cannot be r
 
 By following these steps, you can safely replace a node in your MinIO cluster while maintaining data integrity and cluster stability. Ensure that all operations are performed during a maintenance window to minimize impact on production services.
 
+---
 
 ## Add a Node to the Cluster
 
 Adding a new server to an existing MinIO cluster involves restarting all MinIO nodes and updating their configuration to account for the new node. It's crucial to synchronize the configuration across all nodes. After the cluster is successfully started with the new node, perform a disk heal operation using `mc admin heal`.
 
 Note: MinIO strongly recommends restarting all nodes simultaneously when adding or removing nodes from a cluster. Avoid "rolling" restarts (i.e., restarting one node at a time).
+
+&nbsp;
 
 ### Step-by-Step Guide: Adding a Node to MinIO Cluster
 
@@ -124,11 +132,16 @@ Note: MinIO strongly recommends restarting all nodes simultaneously when adding 
      mc admin heal <myminio>
      ```
 
+---
 
 ## Remove a node from cluster
 When removing a node from your MinIO cluster, follow the same procedure as adding a node: update the cluster's configuration file to reflect the removal and restart all nodes in the cluster to apply the changes.
+
+---
 
 ## MINIO and High Availability
 MinIO supports high availability by configuring a single S3 endpoint in applications like TheHive. To achieve high availability across MinIO nodes, it's recommended to use load balancers and virtual IP addresses to distribute connections evenly among the cluster nodes.
 
 Follow the guide under [**deploying a cluster**](../installation/3-node-cluster.md) to configure MinIO with load balancer and virtual IP.
+
+&nbsp;

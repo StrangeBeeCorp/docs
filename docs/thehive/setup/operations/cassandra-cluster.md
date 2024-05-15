@@ -2,6 +2,7 @@
 
 This guide provides comprehensive instructions for performing key operations on a Cassandra cluster, including adding nodes to an existing cluster and managing node removal.
 
+---
 
 ## Adding a Node to a Cassandra Cluster
 
@@ -50,6 +51,7 @@ The updated status will indicate the UN (Up/Normal) state for the new node, show
 !!! Tip "Creating a Cluster from a Standalone Server"
     If you are transitioning from a standalone server to a multi-node cluster by adding a new node, ensure that you update  the confiuration of the existing standalone server by modifying the `cassandra.yaml` file to replace the `localhost` in `listen_address` and `rpc_address` with the server's actual IP address. 
 
+---
 
 ## Removing an Alive Node from a Cassandra Cluster
 To safely remove an alive node from your Cassandra cluster, follow these steps:
@@ -69,6 +71,8 @@ nodetool decommission
 This command initiates the decommissioning process for the node, allowing it to transfer its data to other nodes in the cluster before removal.
 
 Monitor the decommissioning progress using `nodetool status` on other nodes in the cluster. Verify that the decommissioned node transitions to a `Leaving state` and completes data transfer successfully.
+
+---
 
 ## Removing a Dead Node from a Cassandra Cluster
 
@@ -95,6 +99,7 @@ Steps to Remove a Dead Node:
 4. Verify Cluster Status:
    - After executing the `nodetool removenode` command, check the cluster status again using `nodetool status` to ensure that the dead node has been successfully removed and that the remaining nodes are in a `Normal` state.
 
+---
 
 ## Increasing Replication Factor in Cassandra
 
@@ -138,3 +143,5 @@ To view the current replication settings for all keyspaces in your cluster, use 
 ```
 
 This query displays detailed information about each keyspace, including its name and replication strategy with the associated replication factor.
+
+&nbsp;
