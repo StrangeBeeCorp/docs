@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1-5.2.11-1
+  version: v1-5.3.1-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -32,10 +32,12 @@ tags:
     \ `comments`\n  - `allComments`: also gets comments from visible related alerts\n\
     - Extra data:\n  - `observableStats`\n  - `taskStats`\n  - `alerts`\n  - `alertCount`\n\
     \  - `isOwner`\n  - `shareCount`\n  - `permissions`\n  - `actionRequired`\n  -\
-    \ `procedureCount`\n  - `attachmentCount`\n  - `similarAlerts`\n  - `contributors`\n\
-    \  - `computed.handlingDuration`\n  - `computed.handlingDurationInSeconds`\n \
-    \ - `computed.handlingDurationInMinutes`\n  - `computed.handlingDurationInHours`\n\
-    \  - `computed.handlingDurationInDays`\n  - `status`\n"
+    \ `procedureCount`\n  - `attachmentCount`\n  - ~~`similarAlerts`~~ decommissioned\
+    \ in favor of `similarAlerts` query that is more efficient when there are a lot\
+    \ of similar observables\n  - `contributors`\n  - `computed.handlingDuration`\n\
+    \  - `computed.handlingDurationInSeconds`\n  - `computed.handlingDurationInMinutes`\n\
+    \  - `computed.handlingDurationInHours`\n  - `computed.handlingDurationInDays`\n\
+    \  - `status`\n"
 - name: Alert
   description: |2
 
@@ -50,13 +52,14 @@ tags:
     - Queries available on Alerts:
       - `observables`
       - `case`
+      - `assignableUsers`
       - `similarCases`
       - `similarAlerts`
       - `procedures`
       - `comments`
     - Extra data:
-      - `similarCases`
-      - `similarAlerts`
+      - ~~`similarCases`~~ decommissioned in favor of `similarCases` query that is more efficient when there are a lot of similar observables
+      - ~~`similarAlerts`~~ decommissioned in favor of `similarAlerts` query that is more efficient when there are a lot of similar observables
       - `importDate`
       - `caseNumber`
       - `status`
@@ -395,18 +398,23 @@ paths:
 
         The `options` query param is a stringified json value that can have one of the following format:
 
-        - For CSV export:
-          - `format`: `(string)` Must have the `"csv"` value
+        - Common fields:
+          - `format`: `(string)` Accepted values are `"csv"`, `"json"`, `"txt"`, `"misp"`
           - `fileName`: `(optional, string)` The file name, without extension
-          - At least one of the two following fields must be provided:
-            - `model`: `(optional, string)` Accepted values are `"Case"`, `"Alert"`, `"User"`, `"Organisation"`, `"Procedure"` and `"Task"`
-            - `fields`: `(optional, array of strings)` Extra fields to add to the exported data
+          - `model`: `(string)` Accepted values are `"Case"`, `"Alert"`, `"User"`, `"Organisation"`, `"Procedure"`, `"Task"` and `"Observable"`
+          - `protectData`: `(optional, boolean)` Protect observable `data` field, `true` by default
+          - NB: `"txt"` and `"misp"` formats are only available for the "`Observable`" model
+        - For CSV export:
+          - `fields`: `(optional, array of strings)` A list of fields that replaces the default exported fields
           - `delimiter`: `(optional, character)`
           - `quoteChar`: `(optional, character)`
           - `escapeChar`: `(optional, character)`
-        - For JSON export:
-          - `format`: `(string)` Must have the `"json"` value
-          - `fileName`: `(optional, string)` The file name, without extension
+        - No specific fields for JSON, TXT and MISP exports
+
+        **Breaking changes in TheHive 5.3**:
+          - Observable `data` field is protected by default
+          - The `model` field is now mandatory for all formats
+          - When the `fields` field is present (for `csv` format), these fields will **replace** the default exported fields
       operationId: Export API (unstable route)
       parameters:
       - name: query
@@ -447,6 +455,97 @@ paths:
               schema:
                 type: string
                 format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/export/_fields:
+    get:
+      tags:
+      - Query and Export
+      description: |2
+
+        **WARNING**: this is an unstable route. Breaking changes could happen in future releases.
+
+        Get exportable fields by model.
+      operationId: Get export fields (unstable route)
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputExportFieldsMapping'
         '400':
           description: BadRequest
           content:
@@ -23215,6 +23314,930 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+  /api/v1/connector/email-intake/config:
+    post:
+      tags:
+      - Email Intake
+      operationId: Add new config
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputEmailIntakeConfig'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputEmailIntakeConfig'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/config/{configId}:
+    get:
+      tags:
+      - Email Intake
+      operationId: Get config
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputEmailIntakeConfig'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+    put:
+      tags:
+      - Email Intake
+      operationId: Update config
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputEmailIntakeConfig'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+    delete:
+      tags:
+      - Email Intake
+      operationId: Delete config
+      parameters:
+      - name: configId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/configs:
+    get:
+      tags:
+      - Email Intake
+      description: Get the whole configuration of the module.
+      operationId: Get configs
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputRichEmailIntake'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+    put:
+      tags:
+      - Email Intake
+      description: Update the global configuration.
+      operationId: Update configs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputEmailIntake'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/folders:
+    post:
+      tags:
+      - Email Intake
+      description: Get all folders of the mailbox.
+      operationId: Get mailbox folders
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputEmailIntakeConfig'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/config/authorizationCode:
+    post:
+      tags:
+      - Email Intake
+      description: |
+        Set the authorization code for a new 'Google Workspace' config before creating it.
+
+        Return the new config id in the payload.
+      operationId: 'GW: Set authorization code'
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema: {}
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/config/test:
+    post:
+      tags:
+      - Email Intake
+      description: Test the connexion to the mailbox.
+      operationId: Test config
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputEmailIntakeConfig'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
+  /api/v1/connector/email-intake/sync:
+    post:
+      tags:
+      - Email Intake
+      description: |2
+
+        Run immediately a new sync of all mailboxes,
+
+        it can be used only one-by-one by adding `~/sync?{configId}` in the query.
+      operationId: Sync
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - admin.setConfiguration
 components:
   schemas:
     AlertField:
@@ -23319,6 +24342,9 @@ components:
         dateFormat:
           type: string
           default: yyyy-MM-dd
+        dateTimeFormat:
+          type: string
+          default: yyyy-MM-dd HH:mm
         i18n:
           $ref: '#/components/schemas/I18n'
     CustomFieldType:
@@ -23373,6 +24399,19 @@ components:
         details: {}
         status:
           type: string
+    ExportFieldDescription:
+      required:
+      - fieldPath
+      - fieldType
+      - selectedByDefault
+      type: object
+      properties:
+        fieldPath:
+          type: string
+        fieldType:
+          type: string
+        selectedByDefault:
+          type: boolean
     FieldDirection:
       required:
       - field
@@ -23448,26 +24487,10 @@ components:
         template:
           type: string
     I18n:
-      required:
-      - observable
-      - task
-      - log
-      - ttp
-      - alert
       type: object
       properties:
         lang:
           type: string
-        observable:
-          $ref: '#/components/schemas/Map_String'
-        task:
-          $ref: '#/components/schemas/Map_String'
-        log:
-          $ref: '#/components/schemas/Map_String'
-        ttp:
-          $ref: '#/components/schemas/Map_String'
-        alert:
-          $ref: '#/components/schemas/Map_String'
     Image:
       required:
       - attachmentId
@@ -24545,6 +25568,145 @@ components:
         order:
           type: integer
           format: int32
+    InputEmailBasicAuthConfig:
+      required:
+      - password
+      type: object
+      properties:
+        password:
+          type: string
+      description: Basic authentication (e-mail, password)
+    InputEmailIntake:
+      required:
+      - interval
+      type: object
+      properties:
+        enabled:
+          type: boolean
+          description: To disable the whole module
+          default: true
+        interval:
+          type: string
+    InputEmailIntakeConfig:
+      required:
+      - name
+      - mailbox
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        mailbox:
+          $ref: '#/components/schemas/InputEmailIntakeMailbox'
+        organisations:
+          type: array
+          items:
+            type: string
+          description: At least one organisation
+        enabled:
+          type: boolean
+          default: true
+        createdAt:
+          type: string
+          format: date-time
+    InputEmailIntakeCredential:
+      required:
+      - email
+      type: object
+      properties:
+        email:
+          type: string
+          description: The e-mail of the user account
+        basicAuth:
+          $ref: '#/components/schemas/InputEmailBasicAuthConfig'
+        oAuth2:
+          $ref: '#/components/schemas/InputEmailIntakeOAuth2'
+    InputEmailIntakeMailbox:
+      required:
+      - provider
+      - credential
+      type: object
+      properties:
+        provider:
+          $ref: '#/components/schemas/InputEmailIntakeProvider'
+        credential:
+          $ref: '#/components/schemas/InputEmailIntakeCredential'
+        inbox:
+          type: string
+          description: The folder where the emails are fetched
+          default: INBOX
+        archive:
+          type: string
+          description: The folder where the email should be moved
+        markAsRead:
+          type: boolean
+          default: false
+    InputEmailIntakeOAuth2:
+      required:
+      - clientId
+      - secret
+      type: object
+      properties:
+        clientId:
+          type: string
+        tenantId:
+          type: string
+        secret:
+          type: string
+        authority:
+          type: string
+        scopes:
+          type: array
+          items:
+            type: string
+        redirectUri:
+          type: string
+        authorizationCode:
+          type: string
+      description: The OAuth2.0 (clientId, secret)
+    InputEmailIntakeProvider:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: Select an existing provider or define a custom one
+        host:
+          type: string
+          description: The name of the 'imap' server
+          example: outlook.office365.com
+        protocol:
+          type: string
+          default: imap
+        port:
+          type: integer
+          format: int32
+          default: 993
+        ssl:
+          type: boolean
+          default: true
+        startTLS:
+          type: boolean
+          default: false
+        checkServerIdentity:
+          type: boolean
+          default: true
+        certificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputEmailIntakeSSLCert'
+          description: '*.pem files'
+    InputEmailIntakeSSLCert:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: string
+        type:
+          type: string
     InputEntry:
       required:
       - value
@@ -26034,6 +27196,7 @@ components:
       - TaskList
       - TTPTable
       - TTPList
+      - Timeline
     Ko:
       required:
       - errors
@@ -26107,6 +27270,12 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/OutputLicenseQuota'
+    Map_Seq_ExportFieldDescription:
+      type: object
+      additionalProperties:
+        type: array
+        items:
+          $ref: '#/components/schemas/ExportFieldDescription'
     Map_String:
       type: object
       additionalProperties:
@@ -26817,6 +27986,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/LogField'
+        timelineEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimelineEvents'
     OutputCaseStatus:
       required:
       - _id
@@ -27337,6 +28510,133 @@ components:
         version:
           type: integer
           format: int32
+    OutputEmailIntake:
+      required:
+      - enabled
+      - interval
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        interval:
+          type: string
+        configs:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputEmailIntakeConfig'
+    OutputEmailIntakeBasicAuth:
+      required:
+      - password
+      type: object
+      properties:
+        password:
+          type: string
+    OutputEmailIntakeConfig:
+      required:
+      - id
+      - name
+      - mailbox
+      - enabled
+      - createdAt
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        mailbox:
+          $ref: '#/components/schemas/OutputEmailIntakeMailbox'
+        organisations:
+          type: array
+          items:
+            type: string
+        enabled:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+    OutputEmailIntakeCredential:
+      required:
+      - email
+      type: object
+      properties:
+        email:
+          type: string
+        basicAuth:
+          $ref: '#/components/schemas/OutputEmailIntakeBasicAuth'
+        oAuth2:
+          $ref: '#/components/schemas/OutputEmailIntakeOAuth2'
+    OutputEmailIntakeMailbox:
+      required:
+      - provider
+      - credential
+      - inbox
+      - markAsRead
+      type: object
+      properties:
+        provider:
+          $ref: '#/components/schemas/OutputEmailIntakeProvider'
+        credential:
+          $ref: '#/components/schemas/OutputEmailIntakeCredential'
+        inbox:
+          type: string
+        archive:
+          type: string
+        markAsRead:
+          type: boolean
+    OutputEmailIntakeOAuth2:
+      required:
+      - clientId
+      - secret
+      type: object
+      properties:
+        clientId:
+          type: string
+        tenantId:
+          type: string
+        secret:
+          type: string
+        authority:
+          type: string
+        scopes:
+          type: array
+          items:
+            type: string
+        authorizationCode:
+          type: string
+    OutputEmailIntakeProvider:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        host:
+          type: string
+        protocol:
+          type: string
+        port:
+          type: integer
+          format: int32
+        ssl:
+          type: boolean
+        startTLS:
+          type: boolean
+        checkServerIdentity:
+          type: boolean
+        certificates:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputEmailIntakeSSLCert'
+    OutputEmailIntakeSSLCert:
+      required:
+      - data
+      type: object
+      properties:
+        data:
+          type: string
+        type:
+          type: string
     OutputEntityDescription:
       required:
       - label
@@ -27354,6 +28654,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OutputPropertyDescription'
+    OutputExportFieldsMapping:
+      required:
+      - fieldsByModel
+      type: object
+      properties:
+        fieldsByModel:
+          $ref: '#/components/schemas/Map_Seq_ExportFieldDescription'
     OutputFunction:
       required:
       - _id
@@ -28139,6 +29446,19 @@ components:
             $ref: '#/components/schemas/OutputSsoProvider'
         version:
           type: string
+    OutputRichEmailIntake:
+      required:
+      - outputEmailIntake
+      type: object
+      properties:
+        outputEmailIntake:
+          $ref: '#/components/schemas/OutputEmailIntake'
+        providers:
+          type: array
+          items:
+            type: string
+          description: Providers managed by 'TheHive' ('imap server', 'office365',
+            'google-workspace')
     OutputSetUserOrganisations:
       type: object
       properties:
@@ -28713,6 +30033,16 @@ components:
           type: string
         _kind:
           $ref: '#/components/schemas/Kind'
+    TimelineEvents:
+      type: string
+      enum:
+      - Alert
+      - Case
+      - Task
+      - Log
+      - Observable
+      - Procedure
+      - Custom
     Widget:
       oneOf:
       - $ref: '#/components/schemas/AlertList'
@@ -28939,6 +30269,7 @@ x-tagGroups:
   tags:
   - Cortex
   - MISP
+  - Email Intake
 - name: Other
   tags:
   - Authenticated
