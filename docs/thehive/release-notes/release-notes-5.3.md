@@ -18,6 +18,63 @@
 !!! info
     An [upgrade guide](../setup/installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.3.1 - 16th May 2024
+
+### Improvements
+
+#### Email Intake
+
+- Added the possibility to specify the Microsoft Office365/Google Workspace host instead of the one provided by default.
+
+### Fixes
+
+#### Custom Fields
+
+- Fixed a bug where merging of alerts and cases could generate duplicated customfields values in the index (invisible in the UI).
+
+#### MISP Connector
+
+- Resolved a problem that prevented alert deletion.
+
+#### Alerts & Cases
+
+- Fixed a bug related to assignable users.
+
+#### Similar Alerts
+
+- Fixed the counter in the pagination.
+- Fixed the display of the pending status.
+
+#### Dashboard
+
+- Fixed an issue with the properties of the donut widget.
+- Changed the list to display more than 30 dashboards.
+- Improved the behavior of the diagram widget.
+
+#### Notifications
+
+- Fixed a problem with the recipent field of the email notifier.
+- Solved an issue with the `{{ url }}` variable when it concerns a task.
+- Fixed an issue that made it impossible to delete a webhook endpoint.
+- An Event is now triggered when a Case is created from an Alert.
+
+#### Responders
+
+- Resolved a problem with the display of a responder report in the task preview. 
+
+#### API
+
+- Fixed an API error return code in the post `/case` route when the `status` value is `unknown`.
+
+#### UI
+
+- Renamed a field name in the SAML authentication configuration page for better understanding.
+- Reviewed the breadcrumb to better manage long alert names.
+
+### Security Fixes
+
+- Embedded patches for the following vulnerability: CVE-2024-25710
+
 ## 5.3.0 - 24th April 2024
 
 !!! info
