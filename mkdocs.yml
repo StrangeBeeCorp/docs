@@ -41,6 +41,11 @@ plugins:
   - search
   - awesome-pages
   - glightbox
+  - mkdocs-video:
+      is_video: True
+      video_controls: True
+      css_style:
+        width: "100%"
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/setup/index.md'
@@ -96,7 +101,7 @@ nav:
       - 'System Requirements': thehive/installation/system-requirements.md
       - 'Automated Installation Script': thehive/installation/automated-installation-script.md
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
-      - 'Activating the License': thehive/installation/license.md
+      - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
