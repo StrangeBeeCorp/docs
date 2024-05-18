@@ -91,7 +91,7 @@ nav:
   - Home: index.md
   - TheHive:
     - 'Overview': thehive/setup/index.md
-    - 'Download': thehive/download/index.md
+    # - 'Download': thehive/download/index.md
     - 'Installation':
       - 'System Requirements': thehive/setup/installation/system-requirements.md
       - 'Automated Installation Script': thehive/setup/installation/automated-installation-script.md
@@ -99,6 +99,7 @@ nav:
       - 'Deploying a Cluster': thehive/setup/installation/3-node-cluster.md
       - 'Running with Docker': thehive/setup/installation/docker.md
       - 'Kubernetes Deployment': thehive/setup/installation/kubernetes.md
+      - 'Archives': thehive/download/archives.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/setup/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/setup/installation/upgrade-from-4.x.md
