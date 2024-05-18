@@ -91,11 +91,12 @@ nav:
   - Home: index.md
   - TheHive:
     - 'Overview': thehive/overview/index.md
-    - 'Download': thehive/download/index.md
+    #- 'Download': thehive/download/index.md
     - 'Installation':
       - 'System Requirements': thehive/installation/system-requirements.md
       - 'Automated Installation Script': thehive/installation/automated-installation-script.md
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
+      - 'Activating the License': thehive/installation/license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
@@ -103,7 +104,7 @@ nav:
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
-      - 'Activating the License': thehive/installation/license.md
+      - 'Archives': thehive/download/archives.md
     - 'Configuration':
       - 'Database & Index Configuration': thehive/configuration/database.md
       - 'File Storage Configuration': thehive/configuration/file-storage.md
