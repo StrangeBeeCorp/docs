@@ -3,8 +3,6 @@ hide:
   - toc
 ---
 
-## Archives
-
 In addition to the download methods explained on the [**Step-by-Step Installation Guide**](../setup/installation/step-by-step-guide.md), users can also download TheHive as a ZIP archive for manual installation or deployment scenarios. Follow these steps:
 
 1. Visit the following URL to download the latest ZIP archive: [**thehive-latest.zip**](https://archives.strangebee.com/zip/thehive-latest.zip)
