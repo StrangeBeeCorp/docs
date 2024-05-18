@@ -50,12 +50,14 @@ To configure `client_max_body_size`, follow these steps:
 2. Locate the `http` block in the NGINX configuration file.
 
 3. Add or modify the `client_max_body_size` directive within the `http` block to specify the maximum allowable size for incoming requests. For example:
+   
    ```nginx
    http {
        ...
        client_max_body_size 100M;  # Adjust to your desired value
        ...
    }
+   ```
 
 For more detailed information, please refer to the article [Limit File Upload Size in NGINX](https://docs.rackspace.com/docs/limit-file-upload-size-in-nginx).
 
