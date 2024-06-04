@@ -96,7 +96,7 @@ nav:
   - Home: index.md
   - TheHive:
     - 'Overview': thehive/overview/index.md
-    #- 'Download': thehive/download/index.md
+    - 'Download': thehive/download/index.md
     - 'Installation':
       - 'System Requirements': thehive/installation/system-requirements.md
       - 'Automated Installation Script': thehive/installation/automated-installation-script.md
