@@ -5,7 +5,7 @@ This documentation outlines the utilization of the Email Intake Connector for au
 The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
 
 
-![](../images/administration/administration/eic-1.png)
+![](../images/administration/eic-1.png)
 
 ---
 

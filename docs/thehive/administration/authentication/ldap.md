@@ -12,7 +12,7 @@ To setup LDAP authentication:
 5. move the _Directories Authentication_ line to be the first provider to use in the list of authentication providers
 
 !!! Tip "Using SSL with LDAP"
-    To setup a custom Certificate Authority in TheHive, please refer to [this guide](../../setup/configuration/ssl.md#use-custom-certificate-authorities).
+    To setup a custom Certificate Authority in TheHive, please refer to [this guide](../../configuration/ssl.md#use-custom-certificate-authorities).
 
 
 ## Authenticating with LDAP

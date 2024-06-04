@@ -6,7 +6,7 @@
     This release also comes with some breaking changes, please review them below
 
 !!! info
-    An [upgrade guide](../setup/installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.0
+    An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.0
 
 ## 5.1.12 - 9th April 2024
 
@@ -285,12 +285,12 @@
 - Drop support for java 8
 
     Java 8 version is no longer supported by TheHive. Please update to java 11 at least
-    Our [setup guide](../setup/installation/step-by-step-guide.md) can help you on how to install a jvm
+    Our [setup guide](../installation/step-by-step-installation-guide.md) can help you on how to install a jvm
 
 - Drop support for Lucene as index backend
 
     Former versions of TheHive supported lucene and elasticsearch as indexing engines for the data. We then encountered limitations while using the Lucene index (especially when making queries based on Custom Fields). With TheHive 5.0, we pushed users to install and migrate to Elasticsearch. Finally with TheHive 5.1, the support of Lucene index is removed: the application will start but queries involving Custom Fields will return wrong results.
-    To migrate your index to Elasticsearch, follow [this guide](../setup/operations/change-index.md).
+    To migrate your index to Elasticsearch, follow [this guide](../operations/change-index.md).
 
 ### Main features
 

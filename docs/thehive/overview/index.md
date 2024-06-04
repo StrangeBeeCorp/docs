@@ -46,12 +46,12 @@ The essential components of TheHive's setup include:
 
 - :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) for robust data storage, with support for version 4.x.
 - :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co), serving as a powerful indexing engine, with support for version 7.x.
-- :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups or [S3 MINIO](https://min.io/) for clustered environments.
+- :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups or, NFS or [S3 MINIO](https://min.io/) for clustered environments.
 
 ![Application Stack](../images/general/thehive-application-stack.png)
 
 !!! Danger "Using Lucene"
-    Starting from version 5.1, TheHive no longer supports the Lucene backend for indexing. Users who were previously utilizing Lucene with TheHive 4.1.x are advised to migrate their index to Elasticsearch using [this comprehensive guide](./operations/change-index.md).
+    Starting from version 5.1, TheHive no longer supports the Lucene backend for indexing. Users who were previously utilizing Lucene with TheHive 4.1.x are advised to migrate their index to Elasticsearch using [this comprehensive guide](../operations/change-index.md).
 
 
 
@@ -66,14 +66,14 @@ The essential components of TheHive's setup include:
     - TheHive
     - Optional NGINX for managing HTTPS communications
 
-    For detailed installation instructions, refer to the [step-by-step installation guide](installation/step-by-step-guide.md).
+    For detailed installation instructions, refer to the [step-by-step installation guide](../installation/step-by-step-installation-guide.md).
 
 === "Cluster or Hybrid Architecture"
     TheHive and its associated applications offer flexibility in choosing the right setup based on specific requirements. This includes the ability to mix and match different nodes and applications within a cluster.
 
     ![](../images/general/thehive-architecture-full-cluster.png){ align=center }
 
-    Each layer and node within the architecture can be installed on dedicated operating systems, allowing for tailored configurations. The [installation guide for a 3-node cluster](installation/3-node-cluster.md) provides comprehensive instructions for setting up a more complex clustered environment.
+    Each layer and node within the architecture can be installed on dedicated operating systems, allowing for tailored configurations. The [installation guide for a 3-node cluster](../installation/deploying-a-cluster.md) provides comprehensive instructions for setting up a more complex clustered environment.
 
 
 &nbsp;

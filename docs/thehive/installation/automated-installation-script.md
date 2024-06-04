@@ -28,7 +28,7 @@ Upon execution, users are presented with several customizable options tailored t
 !!! Note
     For users requiring more detailed guidance, comprehensive installation guides are available for various deployment scenarios on the following links:
 
-    - [Linux/Unix Based Systems Installation Guide](step-by-step-guide.md)
-    - [TheHive Cluster Deployment](3-node-cluster.md)
-    - [Running with Docker](docker.md)
-    - [Kubernetes Deployment](kubernetes.md)
+    - [Linux/Unix Based Systems Installation Guide](./step-by-step-installation-guide.md)
+    - [TheHive Cluster Deployment](./deploying-a-cluster.md)
+    - [Running with Docker](./docker.md)
+    - [Kubernetes Deployment](./kubernetes.md)

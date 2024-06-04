@@ -16,7 +16,7 @@
     API v0 endpoints refer to APIs beginning with `/api/` or `/api/v0/` (but not with `/api/v1/`).
 
 !!! info
-    An [upgrade guide](../setup/installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
+    An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
 ## 5.3.1 - 16th May 2024
 

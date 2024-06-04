@@ -48,8 +48,8 @@ plugins:
         width: "100%"
   - redirects:
         redirect_maps:
-            'thehive/index.md': 'thehive/setup/index.md'
-            'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
+            'thehive/index.md': 'thehive/overview/index.md'
+            'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
 
 
@@ -274,7 +274,7 @@ nav:
       - 'First start' : 'cortex/user-guides/first-start.md'
       - 'User roles' : 'cortex/user-guides/roles.md'
     - 'Operations': 
-      - 'cortex/operations/index.md'
+      # - 'cortex/operations/index.md'
       -  'Backup & Restore': 'cortex/operations/backup-restore.md'
       -  'Analyzers/Responders input and output': 'cortex/operations/input-output.md'
       -  'Upgrade to Cortex 3.1': 'cortex/operations/upgrade_to_cortex_3_1_and_es7_x.md'
