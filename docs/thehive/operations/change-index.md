@@ -5,7 +5,7 @@ This procedure can be used with any 5.x version.
 
 ## Setup your Elasticsearch server
 
-Please refer to our [installation manual](../installation/step-by-step-guide.md) or use your own server. Make sure that elasticsearch is started.
+Please refer to our [installation manual](../installation/step-by-step-installation-guide.md) or use your own server. Make sure that elasticsearch is started.
 
 ## Update TheHive configuration
 

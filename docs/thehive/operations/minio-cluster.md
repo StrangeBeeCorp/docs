@@ -142,6 +142,6 @@ When removing a node from your MinIO cluster, follow the same procedure as addin
 ## MINIO and High Availability
 MinIO supports high availability by configuring a single S3 endpoint in applications like TheHive. To achieve high availability across MinIO nodes, it's recommended to use load balancers and virtual IP addresses to distribute connections evenly among the cluster nodes.
 
-Follow the guide under [**deploying a cluster**](../installation/3-node-cluster.md) to configure MinIO with load balancer and virtual IP.
+Follow the guide under [**deploying a cluster**](../installation/deploying-a-cluster.md) to configure MinIO with load balancer and virtual IP.
 
 &nbsp;

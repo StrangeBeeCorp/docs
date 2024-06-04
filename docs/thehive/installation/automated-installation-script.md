@@ -15,7 +15,7 @@ wget -q -O /tmp/install.sh https://archives.strangebee.com/scripts/install.sh ; 
 
 This script streamlines the installation procedure, ensuring a successful setup provided that hardware requirements are met. It automates the process of fetching necessary components and configuring the system for optimal performance.
 
-![Installation Script](../images/install-sh.png)
+![Installation Script](../images/installation/install-sh.png)
 
 Upon execution, users are presented with several customizable options tailored to their specific requirements:
 
@@ -28,7 +28,7 @@ Upon execution, users are presented with several customizable options tailored t
 !!! Note
     For users requiring more detailed guidance, comprehensive installation guides are available for various deployment scenarios on the following links:
 
-    - [Linux/Unix Based Systems Installation Guide](step-by-step-guide.md)
-    - [TheHive Cluster Deployment](3-node-cluster.md)
-    - [Running with Docker](docker.md)
-    - [Kubernetes Deployment](kubernetes.md)
+    - [Linux/Unix Based Systems Installation Guide](./step-by-step-installation-guide.md)
+    - [TheHive Cluster Deployment](./deploying-a-cluster.md)
+    - [Running with Docker](./docker.md)
+    - [Kubernetes Deployment](./kubernetes.md)

@@ -16,7 +16,7 @@ To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed 
 
 ## Deploying TheHive
 
-You can download the Kubernetes configuration file [**here**](kubernetes.yml). This configuration will deploy the following components:
+You can download the Kubernetes configuration file [**here**](./assets/kubernetes.yml). This configuration will deploy the following components:
 
 - 1 instance of TheHive
 - 1 instance of Cassandra

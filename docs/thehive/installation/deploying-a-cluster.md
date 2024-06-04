@@ -16,7 +16,7 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 ## Architecture Diagram
 
-![](images/thehive-architecture-full-cluster.png)
+![](../images/general/thehive-architecture-full-cluster.png)
 
 The diagram above illustrates the key components and their interactions within the cluster architecture.
 
@@ -34,7 +34,7 @@ The subsequent sections will provide detailed configuration examples and step-by
 ---
 
 ## Cassandra Setup
-![](images/cassandra-cluster.png){ align=center}
+![](../images/installation/cassandra-cluster.png){ align=center}
 
 When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of 3. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node, meaning that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cyber threats without downtime or data loss.
 
@@ -43,7 +43,7 @@ When configuring a Cassandra cluster, we aim to establish a setup comprising thr
 &nbsp;
 
 ### Installation Instructions
-To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [**provided guide**](step-by-step-guide.md#apache-cassandra).
+To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [**provided guide**](step-by-step-installation-guide.md#apache-cassandra).
 
 !!! Info "A ``node`` in this context refers to each server or machine designated to participate in the Cassandra cluster."
 
@@ -87,7 +87,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
     - **Network Interfaces**: Set up the appropriate network interfaces (Ensure to setup the right interface name).
     - **Endpoint Snitch**: Specify the snitch for determining network topology.
 
-    !!! Info "For detailed explanations of each parameter in the YAML file, refer to our article on Cassandra configuration which can be found [**in the following page**](step-by-step-guide.md#configuration)."
+    !!! Info "For detailed explanations of each parameter in the YAML file, refer to our article on Cassandra configuration which can be found [**in the following page**](step-by-step-installation-guide.md#configuration)."
 
 2. **Delete Cassandra Topology Properties File**: Remove the ``cassandra-topology.properties`` file to prevent any conflicts.
 
@@ -172,10 +172,10 @@ To initialize the database, perform the following steps:
 ---
 
 ## Elasticsearch Setup
-![](images/elasticsearch-cluster.png){ align=center }
+![](../images/installation/elasticsearch-cluster.png){ align=center }
 
 ### Installation Instructions
-To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./step-by-step-guide.md#elasticsearch) for each node.
+To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./step-by-step-installation-guide.md#elasticsearch) for each node.
 
 &nbsp;
 
@@ -249,7 +249,7 @@ This command initiates the Elasticsearch service, allowing the node to join the 
 ---
 
 ## MinIO Setup
-![](images/minio-cluster.png){ align=center }
+![](../images/installation/minio-cluster.png){ align=center }
 <br/>
 MinIO is a scalable, cloud-native object storage system designed to efficiently manage data storage and retrieval in cloud-native environments. Its primary purpose is to provide seamless scalability and reliability for storing and accessing large volumes of data across distributed systems. Within TheHive, MinIO efficiently handles vast amounts of data distributed across multiple nodes, ensuring robustness and optimal performance.
 
@@ -344,18 +344,18 @@ Before proceeding, ensure that all servers are up and running. The following ope
 
 1. Connect to one of the MinIO servers using your browser at port 9100: ``http://minio:9100``. You will need to use the access key and secret key provided during the MinIO setup process.
 
-    ![](images/minio-login.png)
+    ![](../images/installation/minio-login.png)
 
 2. Create a bucket named thehive.
 
-    ![](images/minio-list-buckets.png)
+    ![](../images/installation/minio-list-buckets.png)
 
 Ensure that the bucket is successfully created and available on all your MinIO servers. This ensures uniformity and accessibility across your MinIO cluster.
 
 ---
 
 ## TheHive Setup
-![](images/thehive-cluster.png){ align=left width=100 }
+![](../images/installation/thehive-cluster.png){ align=left width=100 }
 
 TheHive utilizes the Akka toolkit to effectively manage clusters and enhance scalability. Akka facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
 
@@ -473,7 +473,7 @@ This command initiates TheHive service, enabling S3 file storage functionality a
 ---
 
 ## Load Balancing with HAProxy
-![](images/load-balancers-thehive.png){ align=center }
+![](../images/installation/load-balancers-thehive.png){ align=center }
 <br/>
 To enhance the availability and distribution of HTTP requests across TheHive cluster, you can integrate a load balancer. The load balancer efficiently distributes incoming requests among the cluster nodes, ensuring optimal resource utilization. Notably, client affinity is not required, meaning that a client does not need to consistently connect to the same node.
 
@@ -502,7 +502,7 @@ This configuration ensures that incoming HTTP requests are efficiently distribut
 ---
 
 ## Virtual IP with Keepalived
-![](images/keepalived-load-balancers.png){ align=center }
+![](../images/installation/keepalived-load-balancers.png){ align=center }
 <br/>
 If you choose to use Keepalived to set up a virtual IP address for your load balancers, this section provides a basic example of configuration.
 

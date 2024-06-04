@@ -9,3 +9,4 @@ pygments>=2.10
 pymdown-extensions>=9.0
 mkdocs-redirects
 mkdocs-glightbox
+mkdocs-video

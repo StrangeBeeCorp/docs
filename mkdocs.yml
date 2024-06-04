@@ -41,10 +41,15 @@ plugins:
   - search
   - awesome-pages
   - glightbox
+  - mkdocs-video:
+      is_video: True
+      video_controls: True
+      css_style:
+        width: "100%"
   - redirects:
         redirect_maps:
-            'thehive/index.md': 'thehive/setup/index.md'
-            'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/setup/installation/upgrade-from-5.x.md'
+            'thehive/index.md': 'thehive/overview/index.md'
+            'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
 
 
@@ -90,42 +95,42 @@ markdown_extensions:
 nav:
   - Home: index.md
   - TheHive:
-    - 'Overview': thehive/setup/index.md
-    # - 'Download': thehive/download/index.md
+    - 'Overview': thehive/overview/index.md
+    #- 'Download': thehive/download/index.md
     - 'Installation':
-      - 'System Requirements': thehive/setup/installation/system-requirements.md
-      - 'Automated Installation Script': thehive/setup/installation/automated-installation-script.md
-      - 'Step-by-Step Installation Guide': thehive/setup/installation/step-by-step-guide.md
-      - 'Deploying a Cluster': thehive/setup/installation/3-node-cluster.md
-      - 'Running with Docker': thehive/setup/installation/docker.md
-      - 'Kubernetes Deployment': thehive/setup/installation/kubernetes.md
-      - 'Archives': thehive/download/archives.md
+      - 'System Requirements': thehive/installation/system-requirements.md
+      - 'Automated Installation Script': thehive/installation/automated-installation-script.md
+      - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
+      - 'Activating the License': thehive/installation/activate-license.md
+      - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
+      - 'Running with Docker': thehive/installation/docker.md
+      - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
-        - 'Upgrade from Version 5.x': thehive/setup/installation/upgrade-from-5.x.md
-        - 'Upgrade from Version 4.x': thehive/setup/installation/upgrade-from-4.x.md
-        - 'Migration from TheHive 3.x': thehive/setup/installation/migration.md
-    - 'Configuration & Operations':
-      - 'Configuration':
-        - 'Database & Index Configuration': thehive/setup/configuration/database.md
-        - 'File Storage Configuration': thehive/setup/configuration/file-storage.md
-        - 'Connectors Configuration': thehive/setup/configuration/connectors.md
-        - 'Akka Configuration': thehive/setup/configuration/akka.md
-        - 'Logs Configuration': thehive/setup/configuration/logs.md
-        - 'Proxy Configuration': thehive/setup/configuration/proxy.md
-        - 'Secrets Configuration': thehive/setup/configuration/secret.md
-        - 'SSL Configuration': thehive/setup/configuration/ssl.md
-        - 'Service Configuration': thehive/setup/configuration/service.md
-        - 'Compliance':
-          - 'General Data Protection Regulation (GDPR)': thehive/compliance/gdpr.md
-      - 'Operations':
-        - 'Cassandra Cluster Operations': thehive/setup/operations/cassandra-cluster.md
-        - 'Backup & Restore Operations': thehive/setup/operations/backup-restore.md
-        - 'Cassandra Security Operations': thehive/setup/operations/cassandra-security.md
-        - 'MINIO Cluster Operations': thehive/setup/operations/minio-cluster.md
-        - 'Fail2ban Configuration': thehive/setup/operations/fail2ban.md
-        - 'Index Management': thehive/setup/operations/change-index.md
-        - 'Troubleshooting Guide': thehive/setup/operations/troubleshooting.md
-        - 'Monitoring Setup': thehive/setup/operations/monitoring/monitoring.md
+        - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
+        - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
+        - 'Migration from TheHive 3.x': thehive/installation/migration.md
+      - 'Archives': thehive/download/archives.md
+    - 'Configuration':
+      - 'Database & Index Configuration': thehive/configuration/database.md
+      - 'File Storage Configuration': thehive/configuration/file-storage.md
+      - 'Connectors Configuration': thehive/configuration/connectors.md
+      - 'Akka Configuration': thehive/configuration/akka.md
+      - 'Logs Configuration': thehive/configuration/logs.md
+      - 'Proxy Configuration': thehive/configuration/proxy.md
+      - 'Secrets Configuration': thehive/configuration/secret.md
+      - 'SSL Configuration': thehive/configuration/ssl.md
+      - 'Service Configuration': thehive/configuration/service.md
+      - 'Fail2ban Configuration': thehive/configuration/fail2ban.md
+      - 'Compliance':
+        - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
+    - 'Operations':
+      - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
+      - 'Backup & Restore Operations': thehive/operations/backup-restore.md
+      - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
+      - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
+      - 'Index Management': thehive/operations/change-index.md
+      - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
+      - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
     - 'Administration Guides':
       - 'First Start Guide': thehive/administration/first-start.md
       - 'Manage Organizations':
@@ -139,7 +144,7 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
         - 'MISP Integration': thehive/administration/misp.md
-        - 'Email Intake Connector': thehive/setup/configuration/email-intake-connector.md
+        - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
           - 'General Settings': thehive/administration/authentication/general.md
           - 'Local Authentication': thehive/administration/authentication/local.md
@@ -269,7 +274,7 @@ nav:
       - 'First start' : 'cortex/user-guides/first-start.md'
       - 'User roles' : 'cortex/user-guides/roles.md'
     - 'Operations': 
-      - 'cortex/operations/index.md'
+      # - 'cortex/operations/index.md'
       -  'Backup & Restore': 'cortex/operations/backup-restore.md'
       -  'Analyzers/Responders input and output': 'cortex/operations/input-output.md'
       -  'Upgrade to Cortex 3.1': 'cortex/operations/upgrade_to_cortex_3_1_and_es7_x.md'

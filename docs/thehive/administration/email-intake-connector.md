@@ -5,7 +5,7 @@ This documentation outlines the utilization of the Email Intake Connector for au
 The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
 
 
-![](../images/eic-1.png)
+![](../images/administration/eic-1.png)
 
 ---
 
@@ -15,7 +15,7 @@ The Email Intake Connector facilitates the connection of mailboxes used to recei
 
 The only parameter that requires adjustment is the ``refresh interval``.
 
-![](../images/eic-2.png)
+![](../images/administration/eic-2.png)
 
 
 &nbsp;
@@ -24,7 +24,7 @@ The only parameter that requires adjustment is the ``refresh interval``.
 
 Configuration options are available for Microsoft 365 (OAuth2) and Google Workspace (OAuth2). If you use another email provider service, configuration through IMAP is necessary.
 
-![](../images/eic-3.png)
+![](../images/administration/eic-3.png)
 
 &nbsp;
 
@@ -39,7 +39,7 @@ To configure Microsoft settings, the following values need completion:
 
 Refer to Microsoft documentation for instructions on obtaining these values.
 
-![](../images/eic-4.png)
+![](../images/administration/eic-4.png)
 
 &nbsp;
 
@@ -53,7 +53,7 @@ For Google Workspace accounts, an authorization request is essential during the 
 
 Refer to Google documentation for instructions on obtaining these values.
 
-![](../images/eic-5.png)
+![](../images/administration/eic-5.png)
 
 &nbsp;
 
@@ -66,14 +66,14 @@ For IMAP configuration, you'll need to input the following information:
 
 Additionally, provide your mailbox credentials. We recommend enabling SSL Check Certificate Authority.
 
-![](../images/eic-6.png)
+![](../images/administration/eic-6.png)
 &nbsp;
 
 ### Settings
 
 After testing your mailbox configuration, select the organization to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
 
-![](../images/eic-7.png)
+![](../images/administration/eic-7.png)
 ---
 
 ## Generated Alerts and Observables

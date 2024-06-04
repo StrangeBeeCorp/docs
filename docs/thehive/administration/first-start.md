@@ -13,7 +13,7 @@ Once TheHive is up and running, with your web browser, connect to *http://IP_ADD
 
 ## Install license
 
-To unlock capabilities and quotas, connect to your account at StrangeBee's customer portal, and follow [this guide](../setup/installation/license.md) to setup the licence.
+To unlock capabilities and quotas, connect to your account at StrangeBee's customer portal, and follow [this guide](../installation/activate-license.md) to setup the licence.
 
 !!! Tip
     This action is particularly required if you are setting up TheHive as a cluster: 
