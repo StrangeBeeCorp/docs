@@ -27,16 +27,16 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         ``` bash
         apt install -y openjdk-11-jre-headless
-        echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
         ```
 
     === "RPM"
 
         ``` bash
         sudo yum install -y java-11-openjdk-headless.x86_64
-        echo JAVA_HOME="/usr/lib/jvm/jre-1.8.0" | sudo tee -a /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/jre-1.8.0"
+        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk" | sudo tee -a /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
         ```
 
     === "Other"

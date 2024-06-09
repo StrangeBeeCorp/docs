@@ -7,27 +7,34 @@
 If a disk in your MinIO cluster is faulty and needs to be replaced, you can perform this operation without downtime thanks to MinIO's support for hot-swapping disks:
 
 1. **Unmount the Faulty Disk**
-   - Safely unmount the faulty disk from the server where it is installed.
-   - Ensure that any data on the disk is backed up or transferred to another location if possible.
+   
+      - Safely unmount the faulty disk from the server where it is installed.
+
+      - Ensure that any data on the disk is backed up or transferred to another location if possible.
 
 2. **Install the Replacement Disk**
-   - Install the healthy replacement disk in the same location as the faulty disk.
-   - Connect the replacement disk to the server and ensure it is properly recognized by the operating system.
+   
+      - Install the healthy replacement disk in the same location as the faulty disk.
+      
+      - Connect the replacement disk to the server and ensure it is properly recognized by the operating system.
 
 3. **Mount the Replacement Disk**
-   - Mount the replacement disk to the same mount point previously used by the faulty disk.
+   
+      - Mount the replacement disk to the same mount point previously used by the faulty disk.
 
 4. **Check MinIO Logs**
-   - Check the MinIO logs to ensure that the new disk has been recognized by the system:
-     ```bash
-     mc admin service logs <myminio>
-     ```
+   
+      - Check the MinIO logs to ensure that the new disk has been recognized by the system:
+      ```bash
+      mc admin service logs <myminio>
+      ```
 
 5. **Initiate Disk Heal**
-   - Run a disk heal operation to synchronize data and ensure data integrity across the cluster with the new disk:
-     ```bash
-     mc admin heal <myminio>
-     ```
+   
+      - Run a disk heal operation to synchronize data and ensure data integrity across the cluster with the new disk:
+      ```bash
+      mc admin heal <myminio>
+      ```
 
 ---
 
@@ -40,39 +47,49 @@ In the event that a server within your MinIO cluster has crashed and cannot be r
 ### Step-by-Step Guide: Replace a Node in MinIO Cluster
 
 1. **Prepare the Replacement Server**
-   - Set up a new server that meets the hardware and network requirements for running MinIO.
-   - Ensure the new server has the same MinIO version as the existing cluster nodes.
-   - Assign the same IP address or hostname as the node being replaced.
+
+      - Set up a new server that meets the hardware and network requirements for running MinIO.
+
+      - Ensure the new server has the same MinIO version as the existing cluster nodes.
+
+      - Assign the same IP address or hostname as the node being replaced.
 
 2. **Prepare the Existing Cluster**
-   - Identify the node that needs to be replaced and ensure it is no longer part of the active cluster. Stop the MinIO service on this node.
+
+      - Identify the node that needs to be replaced and ensure it is no longer part of the active cluster. Stop the MinIO service on this node.
 
 3. **Transfer Data**
-   - If possible, transfer any data stored on the node being replaced to other nodes in the cluster to avoid data loss.
+
+      - If possible, transfer any data stored on the node being replaced to other nodes in the cluster to avoid data loss.
 
 4. **Distribute the Configuration**
-   - Copy the modified `config.json` file to the new replacement node's MinIO configuration directory.
+
+      - Copy the modified `config.json` file to the new replacement node's MinIO configuration directory.
 
 5. **Start MinIO Service on Replacement Node**
-   - Start the MinIO service on the new replacement node and ensure it joins the cluster successfully:
-     ```bash
-     systemctl start minio
-     ```
+
+      - Start the MinIO service on the new replacement node and ensure it joins the cluster successfully:
+      ```bash
+      systemctl start minio
+      ```
 
 6. **Verify Node Replacement**
-   - Check the cluster status to ensure that the new replacement node has been successfully added and is part of the cluster:
-     ```bash
-     mc admin info myminio
-     ```
+
+      - Check the cluster status to ensure that the new replacement node has been successfully added and is part of the cluster:
+      ```bash
+      mc admin info myminio
+      ```
 
 7. **Initiate Disk Heal**
-   - Run a disk heal operation to synchronize data and ensure data integrity across the cluster with the new replacement node:
-     ```bash
-     mc admin heal myminio
-     ```
+
+      - Run a disk heal operation to synchronize data and ensure data integrity across the cluster with the new replacement node:
+      ```bash
+      mc admin heal myminio
+      ```
 
 8. **Monitor Cluster Health**
-   - Use MinIO's monitoring tools (`mc admin top` or web-based console) to monitor the health and performance of the cluster with the new replacement node.
+
+      - Use MinIO's monitoring tools (`mc admin top` or web-based console) to monitor the health and performance of the cluster with the new replacement node.
 
 By following these steps, you can safely replace a node in your MinIO cluster while maintaining data integrity and cluster stability. Ensure that all operations are performed during a maintenance window to minimize impact on production services.
 
@@ -89,48 +106,58 @@ Note: MinIO strongly recommends restarting all nodes simultaneously when adding 
 ### Step-by-Step Guide: Adding a Node to MinIO Cluster
 
 1. **Prepare the New Server**
-   - Set up a new server (physical or virtual) that meets the hardware and network requirements for running MinIO.
-   - Ensure the new server has the same MinIO version as the existing cluster nodes.
-   - Assign a static IP address or configure a hostname for the new node that matches the existing cluster nodes.
+
+      - Set up a new server (physical or virtual) that meets the hardware and network requirements for running MinIO.
+
+      - Ensure the new server has the same MinIO version as the existing cluster nodes.
+      
+      - Assign a static IP address or configure a hostname for the new node that matches the existing cluster nodes.
 
 2. **Update MinIO Configuration**
-   - Access the configuration file (`config.json`) of each existing MinIO node in the cluster.
-   - Add the details of the new node (IP address or hostname) to the `config.json` file of each node under the `cluster` section:
-     ```json
-     {
-       "version": "minio",
-       "cluster": {
-         "nodes": [
-           {"endpoint": "existing-node1:9000"},
-           {"endpoint": "existing-node2:9000"},
-           {"endpoint": "existing-node3:9000"},
-           {"endpoint": "new-node:9000"}
-         ]
-       }
-     }
-     ```
-   - Save the updated configuration file.
+
+      - Access the configuration file (`config.json`) of each existing MinIO node in the cluster.
+
+      - Add the details of the new node (IP address or hostname) to the `config.json` file of each node under the `cluster` section:
+      ```json
+      {
+         "version": "minio",
+         "cluster": {
+            "nodes": [
+            {"endpoint": "existing-node1:9000"},
+            {"endpoint": "existing-node2:9000"},
+            {"endpoint": "existing-node3:9000"},
+            {"endpoint": "new-node:9000"}
+            ]
+         }
+      }
+      ```
+      
+      - Save the updated configuration file.
 
 3. **Distribute the Updated Configuration**
-   - Copy the modified `config.json` file to the new node's MinIO configuration directory.
+
+      - Copy the modified `config.json` file to the new node's MinIO configuration directory.
 
 4. **Restart MinIO Service**
-   - On each existing MinIO node, restart the MinIO service to apply the updated configuration:
-     ```bash
-     systemctl restart minio
-     ```
+      
+      - On each existing MinIO node, restart the MinIO service to apply the updated configuration:
+      ```bash
+      systemctl restart minio
+      ```
 
 5. **Verify Node Addition**
-   - Once all nodes have been restarted, check the cluster status to ensure the new node has been successfully added:
-     ```bash
-     mc admin info <myminio>
-     ```
+      
+      - Once all nodes have been restarted, check the cluster status to ensure the new node has been successfully added:
+      ```bash
+      mc admin info <myminio>
+      ```
 
 6. **Initiate Disk Heal**
-   - Run a disk heal operation to ensure data consistency across the cluster with the new node:
-     ```bash
-     mc admin heal <myminio>
-     ```
+      
+      - Run a disk heal operation to ensure data consistency across the cluster with the new node:
+      ```bash
+      mc admin heal <myminio>
+      ```
 
 ---
 

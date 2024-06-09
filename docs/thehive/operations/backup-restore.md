@@ -1,76 +1,80 @@
-# Backup and restore
+# Backup and Restore Guide
 
-!!! Warning "**This guide has only been tested on single node Cassandra server**"
+!!! Warning
+    **This guide has only been tested on a single node Cassandra server.**
 
-!!! Note References
-    - [Backing up and restoring data](https://docs.datastax.com/en/cassandra-oss/3.x/cassandra/operations/opsBackupRestore.html)
 
 
 ## Overview
 
-To be restored successfully, TheHive requires following data beeing saved:
+To successfully restore TheHive, the following data needs to be saved:
 
 - The database
 - Files
-- optionnally, the index.
+- Optionally, the index
 
-## Back up index?
+---
 
-#### Option 1: back up only the data
+## Backing Up the Index
 
-You can use Cassandra snapshots to backup the data of a Cassandra node. This can be done while the application is running. There is no downtime. With this option, the index is not backed up, it will be rebuild from the data during the restoration.
+### Option 1: Backup Only the Data
+
+You can use Cassandra snapshots to back up the data of a Cassandra node. This can be done while the application is running, meaning there is no downtime. With this option, the index is not backed up and will be rebuilt from the data during restoration.
 
 If the index doesn't exist, it is built when TheHive starts.
 
-Pros:
+**Pros:**
 
- - no downtime during backup
- - backups take less space
+- No downtime during backup
+- Backups take less space
 
-Cons:
+**Cons:**
 
- - the restoration can be long (needs a full reindexation of the data)
+- Restoration can be lengthy (requires a full reindexation of the data)
 
-#### Option 2: back up the data and the index
+&nbsp;
 
-In order to ensure the data and the index are not out of sync, TheHive must be stopped. Then Cassandra and Elasticsearch can be backed up.
+### Option 2: Backup the Data and the Index
 
-Pros:
+To ensure the data and the index are synchronized, TheHive must be stopped before backing up Cassandra and Elasticsearch.
 
- - TheHive quickly can be up and running from a backup
+**Pros:**
 
-Cons:
+- TheHive can be quickly restored from a backup
 
- - downtime of TheHive during the backup
- - backups take more space
+**Cons:**
+
+- Downtime of TheHive during the backup
+- Backups take more space
+
+---
 
 ## Cassandra
 
-### Pre requisites
+### Prerequisites
 
-To backup or export database from Cassandra, following information are required: 
+To back up or export the database from Cassandra, the following information is required:
 
 - Cassandra admin password
-- keyspace used by thehive (default = `thehive`). This can be checked in the `application.conf`configuration file, in the database configuration in *storage*, *cql* and `keyspace` attribute. 
+- Keyspace used by TheHive (default = `thehive`). This can be checked in the `application.conf` configuration file, in the database configuration under *storage*, *cql*, and `keyspace` attribute.
 
 !!! Tip
-    This information can be found in TheHive configuration: 
+    This information can be found in TheHive configuration:
 
-    ```
-    [..]
+    ```yaml
     db.janusgraph {
         storage {
-        backend: cql
-        hostname: ["127.0.0.1"]
-
-        cql {
-            cluster-name: thp
-            {==keyspace: thehive==} 
+            backend: cql
+            hostname: ["127.0.0.1"]
+            cql {
+                cluster-name: thp
+                keyspace: thehive
+            }
         }
-        }
-    [..]
+    }
     ```
 
+&nbsp;
 
 ### Backup
 
@@ -78,6 +82,8 @@ Following actions should be performed to backup the data successfully:
 
 1. Create a snapshot
 2. Save the data
+
+&nbsp;
 
 #### Create a snapshot and an archive
 
@@ -108,6 +114,7 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
     nodetool -h localhost -p 7199 clearsnapshot -t ${BACKUP}
     ```
 
+&nbsp;
 
 #### Example
 
@@ -134,6 +141,8 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
     tar cjf ${SNAPSHOT}_${SNAPSHOT_DATE}.tbz /var/lib/cassandra/data/${SOURCE_KEYSPACE}/*/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/
     ```
 
+&nbsp;
+
 ### Restore data
 
 #### Data and index
@@ -142,12 +151,16 @@ Before starting TheHive, if there is an index, ensure the index in Elasticsearch
 
 !!! Warning "Remove this line once TheHive is started"
 
+&nbsp;
+
 #### Pre requisites
 
 Following data is required to restore TheHive database successfully: 
 
 - A backup of the database (`${SNAPSHOT}_${SNAPSHOT_DATE}.tbz`)
 - Keyspace to restore does not exist in the database (or it will be overwritten)
+
+&nbsp;
 
 #### Restore 
 
@@ -277,12 +290,16 @@ Following data is required to restore TheHive database successfully:
     done
     ```
 
+---
+
 ## Index
 
 Several solutions exist regarding the index:
 
 1. Save the Elasticsearch index and restore it ; follow Elasticsearch guides to perform this action
 2. Rebuild the index on the new server, when TheHive start for the first time.
+
+&nbsp;
 
 ### Rebuild the index
 
@@ -296,18 +313,30 @@ db.janusgraph.forceDropAndRebuildIndex = true
 
 !!! Warning "Once started, both lines should be removed or commented from the configuration file of TheHive"
 
+---
+
 ## Files
 
 ### Backup
 
 Wether you use local or distributed files system storage, copy the content of the folder/bucket.
 
+&nbsp;
+
 ### Restore
 
 Restore the saved files into the destination folder/bucket that will be used by TheHive.
 
+---
 
 ## Troubleshooting
 
-The first start can take some time, especially it the application has to rebuild the index.
+The first start can take some time, especially if the application has to rebuild the index.
 Refer to this [troubleshooting section](../installation/upgrade-from-4.x.md/#troubleshooting) to ensure everything goes well with reindexation.
+
+
+!!! Note
+    References:
+    - [Backing up and restoring data](https://docs.datastax.com/en/cassandra-oss/3.x/cassandra/operations/opsBackupRestore.html)
+
+&nbsp;
