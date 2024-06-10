@@ -21,7 +21,7 @@ If you are running an operating system based on Debian/Ubuntu, TheHive can be in
 
 If you are running an operating system based on RedHat or Fedora, TheHive can be installed by following the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
 
-> **Note:** Make sure to select the correct RPM tab when following the step-by-step instructions to ensure the proper commands are used.
+!!! Info "Note: Make sure to select the correct RPM tab when following the step-by-step instructions to ensure the proper commands are used."
 
 &nbsp;
 

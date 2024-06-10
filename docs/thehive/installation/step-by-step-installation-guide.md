@@ -16,7 +16,7 @@ Before proceeding with the installation, ensure that the following programs are 
     2. Run the following command to install the necessary dependencies:
 
         ```bash
-        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb_release
+        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl software-properties-common python3-pip lsb-release
         ```
 
 === "RPM"
