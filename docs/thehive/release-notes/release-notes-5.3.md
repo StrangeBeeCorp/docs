@@ -18,6 +18,44 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.3.2 - 14th June 2024
+
+### Improvements
+
+#### Similar Cases/Alerts
+
+- Improved the queries to get and display the similar Cases & similar Alerts lists. Only useful information is now loaded, significantly speeding up the list display. A new query is performed when accessing the observable list drawer of a similar Case/Alert.
+
+`To ensure performance, the observable list preview drawer can display up to 100 observables only.`
+
+### Fixes
+
+#### DirectQuery
+
+- Fixed an issue that could cause platform instability due to the handling of empty array requests when DirectQuery is activated.
+
+#### Arrow / end / home keys
+
+- Resolved a regression that prevented the use of arrow, end, and home keys in the edit mode of various components: Tasklog, Dashboard, Endpoints, Custom fields, Report template, and Case template.
+
+#### Notifications
+
+- Corrected an issue in the httpRequest Notifier where the JSON mode was not properly applied when activated.
+
+#### MISP Connector
+
+- Fixed an issue that prevented the MISP connector from capturing all events during synchronization.
+
+#### Case Creation
+
+- Corrected a problem that prevented the selection of a custom Start Date when creating a case from an alert. Users can now select a custom Start Date for their cases.
+
+- When multiple alerts are selected, the action button associated with a given alert now provides clearer information about the possible actions, like the creation of a case.
+
+#### Tasks
+
+- Locked users no longer appear in the assignable user list.
+
 ## 5.3.1 - 16th May 2024
 
 ### Improvements

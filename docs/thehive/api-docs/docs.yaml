@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: TheHive
-  version: v1-5.3.1-1
+  version: v1-5.3.2-5
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -27,8 +27,16 @@ tags:
     \ `idOrName`\n  - ~~`countCase`~~: count the cases visible by the user, returns\
     \ a number **(deprecated)**\n- Queries available on Cases:\n  - `observables`\n\
     \  - `tasks`\n  - `assignableUsers`\n  - `organisations`\n  - `alerts`\n  - `shares`\n\
-    \  - `procedures`\n  - `similarCases`\n  - ~~`linkedCases`~~: deprecated, renamed\
-    \ to `similarCases`\n  - `attachments`\n  - `similarAlerts`\n  - `pages`\n  -\
+    \  - `procedures`\n  - ~~`linkedCases`~~: deprecated, renamed to `similarCases`\n\
+    \  - ~~`similarCases`~~ deprecated in favor of `similarCasesLight` for improved\
+    \ performance\n  - ~~`similarAlerts`~~ deprecated in favor of `similarAlertsLight`\
+    \ for improved performance\n  - `similarCasesLight`: get similar cases - case\
+    \ and its data observable (limit {{query.observableLimitToDisplay}}) by dataType\n\
+    \  - `similarCaseLightCount`: return the count of the similar cases (limit to\
+    \ {{query.similarCountLimit}})\n  - `similarAlertsLight`: get similar alerts -\
+    \ alert and its data observable (limit {{query.observableLimitToDisplay}}) by\
+    \ dataType\n  - `similarAlertLightCount`: return the count of the similar alerts\
+    \ (limit to {{query.similarCountLimit}})\n  - `attachments`\n  - `pages`\n  -\
     \ `comments`\n  - `allComments`: also gets comments from visible related alerts\n\
     - Extra data:\n  - `observableStats`\n  - `taskStats`\n  - `alerts`\n  - `alertCount`\n\
     \  - `isOwner`\n  - `shareCount`\n  - `permissions`\n  - `actionRequired`\n  -\
@@ -53,8 +61,12 @@ tags:
       - `observables`
       - `case`
       - `assignableUsers`
-      - `similarCases`
-      - `similarAlerts`
+      - ~~`similarCases`~~ deprecated in favor of `similarCasesLight` for improved performance
+      - ~~`similarAlerts`~~ deprecated in favor of `similarAlertsLight` for improved performance
+      - `similarAlertsLight`: get similar alerts - alert and its data observable (limit {{query.observableLimitToDisplay}}) by dataType
+      - `similarAlertLightCount`: return the count of the similar alerts (limit to {{query.similarCountLimit}})
+      - `similarCasesLight`: get similar cases - case and its data observable (limit {{query.observableLimitToDisplay}}) by dataType
+      - `similarCaseLightCount`: return the count of the similar cases (limit to {{query.similarCountLimit}})
       - `procedures`
       - `comments`
     - Extra data:
@@ -1963,6 +1975,108 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+  /api/v1/case/{caseId}/similar/{alertOrCaseId}/observables:
+    get:
+      tags:
+      - Case
+      operationId: Get similar observables between a case and another case or alert
+      parameters:
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: alertOrCaseId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputObservable'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/alert:
     post:
       tags:
@@ -2969,6 +3083,108 @@ paths:
       responses:
         '204':
           description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+  /api/v1/alert/{alertId}/similar/{alertOrCaseId}/observables:
+    get:
+      tags:
+      - Alert
+      operationId: Get similar observables between alert and another alert or case
+      parameters:
+      - name: alertId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: alertOrCaseId
+        in: path
+        required: true
+        schema:
+          type: string
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputObservable'
         '400':
           description: BadRequest
           content:
