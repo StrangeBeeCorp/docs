@@ -1,4 +1,4 @@
-# View and Update License
+# Activating TheHive License
 
 This section provides information about updating your license for TheHive. By default, TheHive is installed with the community edition license.
 

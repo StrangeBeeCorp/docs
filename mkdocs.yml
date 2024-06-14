@@ -103,7 +103,7 @@ nav:
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
       - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
-      - 'Running with Docker': thehive/installation/docker.md
+      - 'Running with Docker': thehive/installation/docker/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
@@ -120,14 +120,13 @@ nav:
       - 'Secrets Configuration': thehive/configuration/secret.md
       - 'SSL Configuration': thehive/configuration/ssl.md
       - 'Service Configuration': thehive/configuration/service.md
-      - 'Fail2ban Configuration': thehive/configuration/fail2ban.md
       - 'Compliance':
         - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
     - 'Operations':
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
-      - 'Backup & Restore Operations': thehive/operations/backup-restore.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
+      - 'Backup & Restore Operations': thehive/operations/backup-restore.md 
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
@@ -163,6 +162,7 @@ nav:
         - 'Taxonomies Management': thehive/administration/taxonomies.md
         - 'Att&ck Patterns Management': thehive/administration/attack-patterns.md
       - 'How To':
+        - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Notification Configuration': thehive/how-to/notifications.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
         #- 'Markdown Usage Guide': thehive/how-to/markdown.md

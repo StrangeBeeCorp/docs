@@ -50,13 +50,13 @@ To ensure the successful deployment of Cassandra within your cluster, it's essen
 &nbsp;
 
 ### Configuration Instructions
-For each node in the Cassandra cluster, it's crucial to update the configuration files located at ``/etc/cassandra/cassandra.yml`` with specific parameters to ensure proper functionality. Follow the steps below to modify the configuration:
+For each node in the Cassandra cluster, it's crucial to update the configuration files located at ``/etc/cassandra/cassandra.yaml`` with specific parameters to ensure proper functionality. Follow the steps below to modify the configuration:
 
-1. **Update Cassandra Configuration File**: Open the ``/etc/cassandra/cassandra.yml`` file on each node using a text editor.
+1. **Update Cassandra Configuration File**: Open the ``/etc/cassandra/cassandra.yaml`` file on each node using a text editor.
 
     !!! Example ""
 
-        ```yaml title="/etc/cassandra/cassandra.yml" hl_lines="13"
+        ```yaml title="/etc/cassandra/cassandra.yaml" hl_lines="13"
         cluster_name: 'thp'
         num_tokens: 256
         authenticator: PasswordAuthenticator

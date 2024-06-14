@@ -74,9 +74,9 @@ SA_WITH_AES_256_CBC_SHA]
 
 ### Setting Up Cassandra Dedicated SSL Port (Optional)
 
-Optionally, you can configure a dedicated port for SSL communication in Cassandra. Setting up a dedicated SSL port provides enhanced security for communication with your Cassandra cluster. Follow these steps to update the `/etc/cassandra/cassandra.yml` configuration file on each node:
+Optionally, you can configure a dedicated port for SSL communication in Cassandra. Setting up a dedicated SSL port provides enhanced security for communication with your Cassandra cluster. Follow these steps to update the `/etc/cassandra/cassandra.yaml` configuration file on each node:
 
-1. Open the cassandra.yml configuration file on each node.
+1. Open the cassandra.yaml configuration file on each node.
 
 2. Locate the native_transport_port_ssl parameter within the file.
 

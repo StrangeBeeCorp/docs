@@ -1,76 +1,101 @@
-# Troubleshooting 
 
-For some issues, we need extra information in logs to troubleshoot and understand to root causes. To gather and share this, please read carefully and follow these steps.  
+# Troubleshooting
 
-!!! Warning 
-    **ENABLING TRACE LOGS HAS SIGNIFICANT IMPACT ON PERFORMANCES. DO NOT ENABLE IT ON PRODUCTION SERVERS. **
+For some issues, additional information in logs is needed to troubleshoot and understand the root causes. To gather and share this information, please carefully read and follow these steps.
 
+!!! Warning
+    **ENABLING TRACE LOGS HAS A SIGNIFICANT IMPACT ON PERFORMANCE. DO NOT ENABLE IT ON PRODUCTION SERVERS.**
 
-## Stop TheHive service and ensure it is stopped 
+--- 
+
+## Step 1: Stop TheHive Service
+
+First, stop TheHive service:
 
 ```bash
 service thehive stop
 ```
 
-Ensure the service is stopped with the following command: 
+Ensure the service is stopped with the following command:
 
 ```bash
 service thehive status
 ```
 
+---
 
+## Step 2: Renew `application.log` File
 
-## Renew `application.log` file
-
-- in `/var/log/thehive` move the file `application.log` to `application.log.bak`
+Move the existing `application.log` file to a backup location:
 
 ```bash
 mv /var/log/thehive/application.log /var/log/thehive/application.log.bak
 ```
 
-## Update log configuration 
+---
 
-- Edit the file `/etc/thehive/logback.xml`. Look for the line containing `<logger name="org.thp" level="INFO"/>` and update it to have following lines:
+## Step 3: Update Log Configuration
 
+Edit the log configuration file `/etc/thehive/logback.xml`. Locate the line containing `<logger name="org.thp" level="INFO"/>` and update it to the following:
 
 ```xml
-    [..]
     <logger name="org.thp" level="TRACE"/>
-    [..]
 ```
 
-- Save the file.
+Save the file after making the changes.
 
-## Restart the service
+---
+
+## Step 4: Restart TheHive Service
+
+Restart TheHive service:
 
 ```bash
 service thehive start
 ```
 
-A new log file `/var/log/thehive/application.log` should be created and filed with a huge amount of logs. 
+A new log file `/var/log/thehive/application.log` will be created and will contain extensive logging information.
 
-Wait for the issue to appear and/or the application stop.
+---
 
-## Save the logs
+## Step 5: Monitor and Save Logs
 
-Copy the log file in a safe place. 
+Wait for the issue to occur or for the application to stop. Then, copy the log file to a safe location:
 
-```
+```bash
 cp /var/log/thehive/application.log /root
 ```
 
-## Share it with us
+---
 
-Create an issue on [Github](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D) and please share context and symptoms with the log file. Please add information regarding:
+## Step 6: Share the Logs
 
-- Context:  
-  - instance (single node/cluster, backend type, index engine)
-  - System: Operating System, amount of RAM, #CPU for each server/node
-- Symptoms: 
-  - what you did, how you you come to this situation,  what happened
-- The log file with traces
+Create an issue on [GitHub](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D) and include the following information:
 
+- **Context:**
+  - Instance type (single node/cluster, backend type, index engine)
+  - System details (Operating System, amount of RAM, number of CPUs for each server/node)
 
-## Revert
+- **Symptoms:**
+  - Actions taken, how the situation occurred, and what happened
 
-To get back a to normal log configuration, stop thehive, update `logback.xml` file with the previous configuration, and restart the application.
+- **Log File:**
+  - Attach the log file with trace information
+
+---
+
+## Step 7: Revert Log Configuration
+
+To revert to the normal log configuration:
+
+1. Stop TheHive service.
+2. Edit the `logback.xml` file to restore the previous log level configuration.
+3. Restart TheHive service.
+
+```bash
+service thehive stop
+# Restore the logback.xml file to previous state
+service thehive start
+```
+
+&nbsp;
