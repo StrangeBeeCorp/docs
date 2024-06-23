@@ -1,1 +1,1 @@
-#docker
+# TheHive Setup for Production with Docker Compose
