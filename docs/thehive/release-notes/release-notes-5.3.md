@@ -18,6 +18,32 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.3.3 - 9th July 2024
+
+### Improvements
+
+#### UI Enhancements
+- **List Display Improvements**: Various components within list displays have been updated to enhance the overall aesthetic and functional experience. These improvements include modifications to the design of status and other minor visual adjustments aimed at enhancing usability.
+
+### Fixes
+#### Sorting on Similar Cases/Alerts
+- **Sorting Logic Correction**: Fixed an issue in the sorting logic of the similarities column to ensure that cases or alerts are first prioritized by the highest number of similar observables, and in cases where two or more entries have the same number, they are then ordered by the highest ratio of common to total observables.
+
+#### DataType Filtering in Similar Cases/Alerts
+- **Filtering Functionality Restoration**: Restored the ability to define and apply specific data types in the matches column that filter similar alerts and cases. This update ensures that only observables of the selected types are considered when displaying similar cases and alerts, thereby improving the relevance and accuracy of similarity matches.
+
+#### User Count in Administration Section
+- The user count is now immediately updated when an account is removed or locked.
+
+#### API Case List
+- Fixed a bug in the `query` API route that caused cases to be unobtainable when using the `caseid` filter.
+
+#### Custom Tags
+- Corrected an issue that generated an error when removing and re-adding a custom tag.
+
+#### Dropdown Selectors
+- Fixed a bug in dropdown menus that prevented the menu action from launching if the click was not on the text item.
+
 ## 5.3.2 - 14th June 2024
 
 ### Improvements
