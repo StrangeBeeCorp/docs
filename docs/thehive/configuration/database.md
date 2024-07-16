@@ -75,23 +75,23 @@ This configuration specifies the following components:
 | `storage.cql.keyspace`                                          | string         | Keyspace name used to store TheHive data in Apache Cassandra. |
 | `storage.cql.ssl.enabled`                                       | boolean        | false by default. Set it to true if SSL is used with Cassandra.  |
 | `storage.cql.ssl.truststore.location`                           | string         | Path to the truststore. Specify it when using SSL with Cassandra.  |
-| `storage.cql.ssl.password`                                      | string        | Password to access the truststore.  |
-| `storage.cql.ssl.client-authentication-enabled`                 | boolean       | Enables the use of a client key to authenticate with Cassandra.  |
-| `storage.cql.ssl.keystore.location`                             | string         | Path to the keystore. Specify it when using SSL and client authentication with Cassandra.  |
+| `storage.cql.ssl.password`                                      | string         | Password to access the truststore.  |
+| `storage.cql.ssl.client-authentication-enabled`                 | boolean        | Enables the use of a client key to authenticate with Cassandra.  |
+| `storage.cql.ssl.keystore.location`                             | string         | Path to the keystore. Specify it when using SSL and client authentication with Cassandra. |
 | `storage.cql.ssl.keystore.keypassword`                          | string         | Password to access the key in the keystore.  |
 | `storage.cql.ssl.truststore.storepassword`                      | string         | Password to access the keystore.  |
 | `index.search`                                                  | dict           | Configuration for indexes.               |
-| `index.search.backend`                                          | string         | Index engine. Default: lucene provided with TheHive. Can also be elasticsearch.  |
-| `index.search.directory`                                        | string         | Path to the folder where indexes should be stored when using the lucene engine.           |
-| `index.search.hostname`                                         | list of string | List of IP addresses or hostnames when using the elasticsearch engine.          |
-| `index.search.index-name`                                       | string         | Name of index when using the elasticsearch engine.           |
+| `index.search.backend`                                          | string         | Index engine. Default: elasticsearch |
+| `index.search.directory`                                        | string         | Path to the folder where indexes should be stored when using the elasticsearch engine. |
+| `index.search.hostname`                                         | list of string | List of IP addresses or hostnames when using the elasticsearch engine. |
+| `index.search.index-name`                                       | string         | Name of index when using the elasticsearch engine. |
 | `index.search.elasticsearch.http.auth.type: basic`              | string         | basic is the only possible value. |
 | `index.search.elasticsearch.http.auth.basic.username`           | string         | Username account on Elasticsearch. |
 | `index.search.elasticsearch.http.auth.basic.password`           | string         | Password of the account on Elasticsearch. |
 | `index.search.elasticsearch.ssl.enabled`                        | boolean        | Enable SSL (true/false). |
 | `index.search.elasticsearch.ssl.truststore.location`            | string         | Location of the truststore. |
 | `index.search.elasticsearch.ssl.truststore.password`            | string         | Password of the truststore. |
-| `index.search.elasticsearch.ssl.keystore.location`              | string         | 	Location of the keystore for client authentication.  |
+| `index.search.elasticsearch.ssl.keystore.location`              | string         | Location of the keystore for client authentication.  |
 | `index.search.elasticsearch.ssl.keystore.storepassword`         | string         | Password of the keystore. |
 | `index.search.elasticsearch.ssl.keystore.keypassword`           | string         | Password of the client certificate. |
 | `index.search.elasticsearch.ssl.disable-hostname-verification`  | boolean        | Disable SSL verification (true/false). |

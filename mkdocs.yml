@@ -107,7 +107,6 @@ nav:
       - 'Running with Docker':
         - 'Overview': thehive/installation/docker/docker-compose-overview.md
         - 'TheHive Setup for Testing with Docker': thehive/installation/docker/docker-compose-test.md
-        - 'TheHive Setup for Production with Docker': thehive/installation/docker/docker-compose-prod.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
@@ -135,7 +134,7 @@ nav:
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
     - 'Administration Guides':
-      - 'First Start Guide': thehive/administration/first-start.md
+      - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Manage Organizations':
         - 'Creating an Organization': thehive/administration/organisations.md
         - 'Updating an Organization': thehive/administration/organisations.md
