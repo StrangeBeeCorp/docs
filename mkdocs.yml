@@ -51,6 +51,7 @@ plugins:
             'thehive/index.md': 'thehive/overview/index.md'
             'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
+            'thehive/setup/index.md': 'thehive/overview/index.md'
 
 
 extra:
@@ -103,7 +104,9 @@ nav:
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
       - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
-      - 'Running with Docker': thehive/installation/docker/docker.md
+      - 'Running with Docker':
+        - 'Overview': thehive/installation/docker/docker-compose-overview.md
+        #- 'TheHive Setup for Testing with Docker': thehive/installation/docker/docker-compose-test.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
@@ -131,7 +134,7 @@ nav:
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
     - 'Administration Guides':
-      - 'First Start Guide': thehive/administration/first-start.md
+      - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Manage Organizations':
         - 'Creating an Organization': thehive/administration/organisations.md
         - 'Updating an Organization': thehive/administration/organisations.md

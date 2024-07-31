@@ -1,44 +1,40 @@
 # Monitoring TheHive
 
-The monitoring will allow you to get metrics about the behavior of your TheHive instance: request time, cpu and memory usage ...
+Monitoring your TheHive instance enables you to gather essential metrics regarding its performance, including request times, CPU usage, and memory utilization.
 
-TheHive uses the library [kamon.io](https://kamon.io/) and by default the monitoring is **disabled**
+TheHive leverages the [Kamon](https://kamon.io/) library for monitoring purposes, which is **disabled** by default.
 
-TheHive ships with the integration for Prometheus reporter. <br> Other reporters are **not** included by TheHive. If you would like to see a reporter included by default in TheHive, contact us.
+TheHive includes integration with the Prometheus reporter out-of-the-box. Other reporters are **not** included. If you wish to have a specific reporter included by default in TheHive, please contact us.
 
+---
 
+## Configuring Metrics with Prometheus and Grafana
 
 ![Grafana Dashboard](grafana-dashboard.jpg)
 
-## Metrics setup with Prometheus and Grafana
-
-Here we will setup metrics reporting with [Prometheus](https://prometheus.io/) and [Grafana](https://grafana.com/)
-
-### TheHive configuration
-
-In your `application.conf`, add this section to the configuration:
+To configure TheHive for metrics reporting, add the following section to your `application.conf` file:
 
 ```
 kamon {
-    # Activate kamon module - disabled by default
+    # Activate Kamon module - disabled by default
     enabled = true
 
-    # Activate the prometheus reporter
+    # Enable the Prometheus reporter
     modules {
       prometheus-reporter.enabled = yes
     }
 
     environment.tags {
-        # Setup additional tags that will be sent to prometheus 
+        # Configure additional tags to be sent to Prometheus 
         # See https://kamon.io/docs/latest/reporters/prometheus/#sending-environment-tags-to-prometheus
-        # ex: env = prod
+        # Example: env = prod
     }
 
     # Reference: https://kamon.io/docs/latest/reporters/prometheus/#configuration
     prometheus {
       include-environment-tags = true
-      # Start and embedded-server on the provided port. 
-      # If using docker, make sure that this port is accessbile
+      # Start an embedded server on the specified port. 
+      # If using Docker, ensure this port is accessible
       embedded-server {
         hostname = 0.0.0.0
         port = 9095
@@ -47,11 +43,11 @@ kamon {
 }
 ```
 
-You will need to restart TheHive for the configuration to take effect
+You will need to restart TheHive for the configuration changes to take effect.
 
-To check that the prometheus reporter is working, connect to <http://THEHIVE:9095/metrics>
-You should see a list of metrics that are reported by TheHive.
+To verify that the Prometheus reporter is functioning correctly, navigate to <http://THEHIVE:9095/metrics>. You should see a list of metrics reported by TheHive.
 
+&nbsp;
 
 ### Prometheus configuration
 
@@ -69,6 +65,7 @@ scrape_configs:
 
 In a dynamic environment like kubernetes, the TheHive service can be automatically discovered by prometheus. You can enable this with labels on your pod or by adding a `PodMonitor` resource. See the adaquate documentation: Prometheus [configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config) or Prometheus [operator](https://prometheus-operator.dev/docs/user-guides/getting-started/)
 
+&nbsp;
 
 ### Grafana configuration
 
