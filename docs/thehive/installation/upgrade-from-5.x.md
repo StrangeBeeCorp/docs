@@ -30,7 +30,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
     1. (Optional) Install the package repository signature key, if not already installed:
 
         ```bash
-        wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+        wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
         ```
 
     2. Edit the file ``/etc/apt/sources.list.d/strangebee.list`` and adjust the repository address as follows:
@@ -51,7 +51,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
     1. (Optional) Install the package repository signature key, if not already installed:
 
         ```bash
-        sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
         ```
 
     2. Edit the file ``/etc/yum.repos.d/strangebee.repo`` and adjust the repository address as follows:
@@ -62,7 +62,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
         priority=1
         name=StrangeBee RPM repository
         baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
-        gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+        gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
         gpgcheck=1
         ``` 
 

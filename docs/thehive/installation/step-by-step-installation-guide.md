@@ -643,7 +643,7 @@ All required packages are available on our package repository. We support Debian
 
     !!! Example ""
         ```bash
-        wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+        wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
         ```
     
 === "RPM"
@@ -652,7 +652,7 @@ All required packages are available on our package repository. We support Debian
 
     !!! Example ""
         ```bash
-        sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
         ```
 
 
@@ -674,7 +674,7 @@ Install TheHive package by using the following commands:
 
         !!! Example ""
             ```bash
-            sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+            sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             ```
 
     2. Create and edit the file /etc/yum.repos.d/strangebee.repo:
@@ -686,7 +686,7 @@ Install TheHive package by using the following commands:
             priority=1
             name=StrangeBee RPM repository
             baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
-            gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+            gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             gpgcheck=1
             ```
 

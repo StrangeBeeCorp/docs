@@ -428,19 +428,19 @@ install-thehive() {
   log message "Installing TheHive"
   if [ ${INSTALLTYPE} == "RPM" ]
   then
-      sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+      sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
       cat <<EOF | sudo  tee -a  /etc/yum.repos.d/strangebee.repo
 [thehive]
 enabled=1
 priority=1
 name=StrangeBee RPM repository
 baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
-gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
 gpgcheck=1
 EOF
   elif [ ${INSTALLTYPE} == "DEB" ]
   then
-    wget -qO- https://archives.strangebee.com/keys/strangebee.gpg |  sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+    wget -qO- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key |  sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
     echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.x main' |  sudo tee -a /etc/apt/sources.list.d/strangebee.list
   fi
   if [ $? -ne 0 ]

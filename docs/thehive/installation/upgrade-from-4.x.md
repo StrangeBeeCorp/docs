@@ -411,7 +411,7 @@ If you're utilizing DEB packages for TheHive installation, follow these steps:
     1. **Update Repository Address**: Run the following commands to update the repository address:
 
       ```bash
-      wget -O- https://archives.strangebee.com/keys/strangebee.gpg | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+      wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
       sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.3 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
       ```
 
@@ -427,7 +427,7 @@ If you're utilizing DEB packages for TheHive installation, follow these steps:
     1. **Add Cassandra Repository Keys**: Import the Cassandra repository keys with the following command:
 
         ```bash
-        sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg
+        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
         ```
 
     2. **Configure RPM Repository**: Create and edit the file /etc/yum.repos.d/strangebee.repo with the following content:
@@ -438,7 +438,7 @@ If you're utilizing DEB packages for TheHive installation, follow these steps:
         priority=1
         name=StrangeBee RPM repository
         baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
-        gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+        gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
         gpgcheck=1
         ```
 
