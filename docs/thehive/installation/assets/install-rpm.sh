@@ -215,7 +215,7 @@ EOF
 
 
 ## INSTALL THEHIVE 
-sudo rpm --import https://archives.strangebee.com/keys/strangebee.gpg 
+sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
 
 cat <<EOF | sudo  tee -a  /etc/yum.repos.d/strangebee.repo
 [thehive]
@@ -223,7 +223,7 @@ enabled=1
 priority=1
 name=StrangeBee RPM repository
 baseurl=https://rpm.strangebee.com/thehive-5.x/noarch
-gpgkey=https://archives.strangebee.com/keys/strangebee.gpg
+gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
 gpgcheck=1
 EOF
 
