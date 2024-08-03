@@ -10,7 +10,7 @@ nav:
   - 'Alerts' : alerts
   - 'Cases' : cases
   - 'List of cases' : cases-list
-  - 'Configure organization' : configure-organization
+  - 'Configure organisation' : configure-organisation
   - 'Dashboard' : dashboard
   - 'Search' : search
   - 'Task' : task

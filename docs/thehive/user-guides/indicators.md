@@ -34,7 +34,7 @@ Each _Case_ and _Alert_ is defined by several time & date information. From this
 
     --- 
 
-    _According to one Palo Alto research report, the average security operations team received over 11,000 alerts per day. However, not all risks and alerts are created equally. Your team needs to be able to rapidly prioritize the alerts that indicate the highest risk to your organization’s data. During this stage, the security team is looking for high, medium, and low-risk alerts. The faster they can triage and prioritize the alerts, the sooner the incident response team can acknowledge the alert. All of this ultimately leads to a faster process, reduced risk, and more resilient program._
+    _According to one Palo Alto research report, the average security operations team received over 11,000 alerts per day. However, not all risks and alerts are created equally. Your team needs to be able to rapidly prioritize the alerts that indicate the highest risk to your organisation’s data. During this stage, the security team is looking for high, medium, and low-risk alerts. The faster they can triage and prioritize the alerts, the sooner the incident response team can acknowledge the alert. All of this ultimately leads to a faster process, reduced risk, and more resilient program._
 
     (source: _[https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/)_)
 

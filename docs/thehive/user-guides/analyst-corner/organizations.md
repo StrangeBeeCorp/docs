@@ -6,4 +6,4 @@ TheHive comes with a default organisation named "admin" and is dedicated to user
 
 By default, organisations can’t see each other and can't share data. 
 
-On the home page, you can see the organization List.
+On the home page, you can see the organisation List.

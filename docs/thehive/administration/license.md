@@ -28,7 +28,7 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
     The license is defined by the following capabilities:
 
     1. It defines how many users you can create in your platform
-    2. The license is based on the number of users and the number of organizations
+    2. The license is based on the number of users and the number of organisations
     3. It has a validation and an expiration date
     4. It allows unlimited number of *ReadOnly* users and *Service* accounts. Service accounts are those who do not have access to the TheHive interface but can use an API key to call all the APIs
 

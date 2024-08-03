@@ -28,7 +28,7 @@ To activate the license:
     The license is defined by the following capabilities:
 
     1. It defines how many users you can create in your platform. 
-    1. The license is based on the number of users and the number of organizations.
+    1. The license is based on the number of users and the number of organisations.
     1. It has a validation and an expiration date.
     1. It allows unlimited number of Readonly users and Service users. Service users are those who do not have access to the TheHive interface but they use an API key to call all the APIs.
 
