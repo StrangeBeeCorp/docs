@@ -4,7 +4,18 @@ This documentation outlines the supported versions, prerequisites, configuration
 
 The migration from TheHive 3.x to TheHive 5.x involves transferring data stored in Elasticsearch. TheHive 5.x is provided with a tool to help you migrate your data.
 
-The migration tool is located in `/opt/thehive/bin/migrate`. It facilitates the transition from both TheHive 3.4.x and 3.5.x versions.
+The migration tool is located in `/opt/thehive/bin/migrate`. 
+
+---
+
+## Supported Versions
+
+The migration tool facilitates the transition from both TheHive 3.4.x and 3.5.x versions. Below is the compatibility matrix:
+
+| Migrating from  | Elasticsearch Version   |
+| --------------- | ----------------------- | 
+| TheHive 3.4.x   | v6.x                    |
+| TheHive 3.5.x   | v7.x                    |
 
 ---
 
@@ -74,7 +85,7 @@ The migration tool for TheHive offers a comprehensive set of options to facilita
 - `-o, --output <file>`: Specifies the path to the configuration file for TheHive 5.
 - `-d, --drop-database`: Drops TheHive 5 database before migration.
 - `-r, --resume`: Resumes migration or migrates on an existing database.
-- `-m, --main-organisation <organisation>`: Specifies the main organisation for migration.
+- `-m, --main-organisation <organisation>`: Specifies the main organization for migration.
 - `-u, --es-uri http://ip1:port,ip2:port`: Specifies the Elasticsearch URIs for TheHive 3.
 - `-x, --es-index <index>`: Specifies the Elasticsearch index name for TheHive 3.
 - `-x, --es-index-version <index>`: Specifies the version number for the Elasticsearch index name (default: autodetect).
@@ -134,14 +145,14 @@ To migrate data to a new instance of TheHive, use the following command:
 Options Description:
 
 - --output: Specifies the configuration file path for TheHive 5, which must include database and file storage configurations.
-- --main-organisation: Specifies the organisation to create during migration.
+- --main-organisation: Specifies the organization to create during migration.
 - --es-uri: Specifies the URL of the Elasticsearch server. If Elasticsearch authentication is enabled, a configuration file for TheHive3 (--input) is required.
 - --es-index: Specifies the Elasticsearch index used for migration.
 
 | Option                    | Description       |
 | :------------------------ | ----------------- |
 | `--output`                | Specifies the configuration file path for TheHive 5, which must include database and file storage configurations; |
-| `--main-organisation`     | Specifies the organisation to create during migration; |
+| `--main-organisation`     | Specifies the organization to create during migration; |
 | `--es-uri`                | Specifies the URL of the Elasticsearch server. If Elasticsearch authentication is enabled, a configuration file for TheHive3 (--input) is required; |
 | `--es-index`              | Specifies the Elasticsearch index used for migration; |
 
@@ -158,7 +169,7 @@ If your migration process has been interrupted or only a portion of the data has
 
 ## Merging Multiple TheHive 3 Data into One TheHive 5 Instance
 
-The migration tool supports multiple executions to merge different TheHive 3 datasets into a single TheHive 5 instance. Each migration execution can specify a different target organisation. To avoid conflicts in case numbers, where a case with the same number already exists, you can use the `--case-number-shift` parameter to adjust the case numbers accordingly.
+The migration tool supports multiple executions to merge different TheHive 3 datasets into a single TheHive 5 instance. Each migration execution can specify a different target organization. To avoid conflicts in case numbers, where a case with the same number already exists, you can use the `--case-number-shift` parameter to adjust the case numbers accordingly.
 
 ---
 
