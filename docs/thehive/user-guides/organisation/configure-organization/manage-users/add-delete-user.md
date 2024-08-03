@@ -1,6 +1,6 @@
 # Users (Add/Delete)
 
-After you login to TheHive application, you can see the organization icon on the page. 
+After you login to TheHive application, you can see the organisation icon on the page. 
 
 1. Click the **Organization** icon. 
 
@@ -30,7 +30,7 @@ A new window opens.
 
 ## Delete User
 
-If a user has left the organization in such cases a user profile may be deleted. 
+If a user has left the organisation in such cases a user profile may be deleted. 
 
 To Delete the user details:
 

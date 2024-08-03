@@ -135,10 +135,10 @@ nav:
       - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
-      - 'Manage Organizations':
-        - 'Creating an Organization': thehive/administration/organisations.md
-        - 'Updating an Organization': thehive/administration/organisations.md
-        - 'Linking Organizations': thehive/administration/organisation-links.md
+      - 'Manage Organisations':
+        - 'Creating an Organisation': thehive/administration/organisations-create.md
+        - 'Managing an Organisation': thehive/administration/organisations-manage.md
+        - 'Linking Organisations': thehive/administration/organisation-links.md
       - 'Manage Accounts':
         - 'Account Creation/Update Guide': thehive/administration/accounts.md
       - 'Platform Management':
@@ -172,7 +172,7 @@ nav:
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Indicators & KPIs Overview': thehive/user-guides/indicators.md
-      - 'Organization Administration':
+      - 'Organisation Administration':
         - 'User Management': thehive/user-guides/organisation/accounts.md
         - 'Templates Management':
           - 'Cases Templates Management': thehive/user-guides/organisation/templates/case-templates.md

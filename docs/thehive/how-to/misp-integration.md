@@ -53,7 +53,7 @@ Proxy settings should be set only if a proxy is required to reach the MISP serve
 
 ### Server Advanced Settings
 
-- Chose the filter on TheHive organizations: For each server, you can define which TheHive organisation(s) to include or exclude of the synchronization (excluded or not included organisations will not receive the MISP events as `Alerts`)
+- Chose the filter on TheHive organisations: For each server, you can define which TheHive organisation(s) to include or exclude of the synchronization (excluded or not included organisations will not receive the MISP events as `Alerts`)
 - Tags: Append one or several tags to each MISP event ingested as `Alert` 
 - Export case tags: If enabled, the export will include the `Case` tags. 
 - Export observables tags: If enabled, the exported `Observables` will include the `Observables` tags.

@@ -204,7 +204,7 @@ Following data is required to restore TheHive database successfully:
 
 4. Reorganize snapshot files:
 
-    The files in a snapshot follow the structure: `var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}/`. In order to import files, the structure must be: `.../${KEYSPACE}/${TABLE}/`. The following command lines move files to match the expected file organization.
+    The files in a snapshot follow the structure: `var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}/`. In order to import files, the structure must be: `.../${KEYSPACE}/${TABLE}/`. The following command lines move files to match the expected file organisation.
 
     ```bash
     mkdir -p ${RESTORE_PATH}/${TARGET_KEYSPACE}

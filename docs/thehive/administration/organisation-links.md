@@ -2,7 +2,7 @@
 
 By default, organisations are not linked each other: each one does not know about the others on the instance.
 
-## Manage links with other organisation
+## Manage Links with Other Organisations
 
 Start managing links by opening the detailed view of an Organisation:
 
