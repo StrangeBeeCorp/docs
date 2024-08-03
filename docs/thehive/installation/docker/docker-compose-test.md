@@ -1,8 +1,8 @@
-# TheHive Setup for Testing Environment
+# TheHive Docker Baseline Configuration
 
 ## Introduction
 
-This guide will assist you in setting up TheHive using Docker Compose on an Ubuntu system. By following the steps outlined in this documentation, you will be able to install and configure TheHive along with its dependencies, specifically for testing purposes in your test environment.
+This guide provides a baseline configuration for setting up TheHive using Docker Compose on an Ubuntu system. It outlines the steps necessary to install and configure TheHive and its dependencies. This configuration serves as a starting point that users can customize and enhance based on their specific requirements.
 
 ---
 
