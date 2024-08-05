@@ -5,7 +5,7 @@
   <figcaption>Filtered event example: "Case severity has been updated to High or Critical"</figcaption>
 </figure>
 
-Selecting “FilteredEvent” opens an empty field where we set our custom filter. The filters will apply to the audit of every actions that are happening in your organization. When there is a match, a notification is sent. 
+Selecting “FilteredEvent” opens an empty field where we set our custom filter. The filters will apply to the audit of every actions that are happening in your organisation. When there is a match, a notification is sent. 
 
 !!! info
     We recommend reading this [blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) that introduces the capabilities of filtered events.

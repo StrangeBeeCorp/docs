@@ -71,14 +71,14 @@ Additionally, provide your mailbox credentials. We recommend enabling SSL Check 
 
 ### Settings
 
-After testing your mailbox configuration, select the organization to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
+After testing your mailbox configuration, select the organisation to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
 
 ![](../images/administration/eic-7.png)
 ---
 
 ## Generated Alerts and Observables
 
-Following configuration, alerts and observables are generated in the selected organization.
+Following configuration, alerts and observables are generated in the selected organisation.
 
 ### Alerts
 

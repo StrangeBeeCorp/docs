@@ -33,7 +33,7 @@ To create a notification, clic on the "+" button (3)
 While clicking on add or edit a notifier, a drawer will appear where you can define the following settings:
 
 - Name: Notification name to display within TheHive
-- Send notification to every user in the organisation: Check this box to notify by email every users of the organization this Notifier has triggered
+- Send notification to every user in the organisation: Check this box to notify by email every users of the organisation this Notifier has triggered
 - Trigger: Chose in a list of triggers on which event you want to react. You can also select "FilteredEvent" to create your own event filter.
 - Enable notification: Check this box to enable the notifier. Uncheck the box to disable the notifier.
 

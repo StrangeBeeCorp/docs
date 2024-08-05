@@ -30,5 +30,5 @@ Upon execution, users are presented with several customizable options tailored t
 
     - [Linux/Unix Based Systems Installation Guide](./step-by-step-installation-guide.md)
     - [TheHive Cluster Deployment](./deploying-a-cluster.md)
-    - [Running with Docker](./docker.md)
+    - [Running with Docker](./docker/docker-compose-overview.md)
     - [Kubernetes Deployment](./kubernetes.md)

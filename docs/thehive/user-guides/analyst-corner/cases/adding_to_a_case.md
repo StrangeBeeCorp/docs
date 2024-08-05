@@ -19,6 +19,8 @@ The task **Group** is default.
 
 <img src="../images/adding_a_task.png" alt="add tasks" width="500" height="500"/>
 
+!!! Note
+    Task Group names are limited to a maximum of 64 characters. Exceeding this limit will result in a generic “Invalid JSON” error message. Please ensure your Task Group names do not exceed 64 characters to avoid this issue.
 
 ## Add custom field values 
 

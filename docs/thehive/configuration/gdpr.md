@@ -1,6 +1,6 @@
 # GDPR Compliance in TheHive 5.x
 
-TheHive includes a specialized feature for managing data retention policies within the database. By default, this feature is not enabled and must be configured based on your organization's GDPR compliance needs.
+TheHive includes a specialized feature for managing data retention policies within the database. By default, this feature is not enabled and must be configured based on your organisation's GDPR compliance needs.
 
 !!! Info
     This feature is exclusively available with TheHive 5.x Platinum plan.
@@ -119,6 +119,6 @@ To enable GDPR compliance, follow these steps:
 
 3. Restart TheHive application to apply the new settings.
 
-By following these steps, you can effectively implement GDPR-compliant data retention policies within TheHive 5.x. Adjust the configuration parameters as per your organization's specific requirements and compliance standards.
+By following these steps, you can effectively implement GDPR-compliant data retention policies within TheHive 5.x. Adjust the configuration parameters as per your organisation's specific requirements and compliance standards.
 
 &nbsp;

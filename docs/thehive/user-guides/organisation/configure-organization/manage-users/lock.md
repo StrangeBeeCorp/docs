@@ -1,6 +1,6 @@
 # Lock User
 
-If a user is on contract in the organization and the contract ends, in such cases a user profile may be locked. 
+If a user is on contract in the organisation and the contract ends, in such cases a user profile may be locked. 
 
 To lock the user details:
 

@@ -7,11 +7,11 @@ hide:
 
 ## Alert list
 
-Alerts received by your organization can be viewed in TheHive:
+Alerts received by your organisation can be viewed in TheHive:
 
 ![Alert List](./images/alert-management/alert_list.png)
 
-Every user inside the organization can view the alerts. But you will need the permission `manageAlert` to be able to edit alerts.
+Every user inside the organisation can view the alerts. But you will need the permission `manageAlert` to be able to edit alerts.
 
 A user can use predefined filter or custom filters to view only selected alerts:
 
