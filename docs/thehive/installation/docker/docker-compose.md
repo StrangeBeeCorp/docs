@@ -20,34 +20,23 @@ Ensure the following are installed on your Ubuntu system:
 1. **Create a dedicated directory for TheHive setup:**
 
     ```bash
-    mkdir -p /opt/thehive
-    cd /opt/thehive
+    mkdir -p ~/thehive
+    cd ~/thehive
     ```
 
-2. **Create a `.env` file to define environment variables:**
+2. **Create a configuration directory for TheHive:**
 
-    In the `/opt/thehive` directory, create a `.env` file with the following content:
-
-    ```env
-    CASSANDRA_USER=cassandra
-    CASSANDRA_PASSWORD=YourCassandraPassword
-    ```
-
-    Replace `YourCassandraPassword` with a strong password for the Cassandra database.
-
-3. **Create a configuration directory for TheHive:**
-
-    Create a directory to hold TheHive configuration files:
+    Create a directory inside ``~/thehive`` folder:
 
     ```bash
-    mkdir -p /opt/thehive/thehive/config
+    mkdir -p ~/thehive/thehive/config
     ```
 
     This directory will be used to store TheHive configuration files, ensuring they are properly organized and easily accessible.
 
 4. **Create the configuration files:**
 
-    **`application.conf`**: Create this file in `/opt/thehive/thehive/config` with the following content:
+    **`application.conf`**: Create this file in `~/thehive/thehive/config` with the following content:
 
     ```conf
     include "/etc/thehive/secret.conf"
@@ -58,7 +47,7 @@ Ensure the following are installed on your Ubuntu system:
           backend = cql
           hostname = ["cassandra"]
           cql {
-          cluster-name = thp
+          cluster-name = thehive
           keyspace = thehive
           }
       }
@@ -103,7 +92,7 @@ Ensure the following are installed on your Ubuntu system:
 
     &nbsp;
 
-    **`logback.xml`**: Create this file in `/opt/thehive/thehive/config` with the following content:
+    **`logback.xml`**: Create this file in `~/thehive/thehive/config` with the following content:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -147,7 +136,7 @@ Ensure the following are installed on your Ubuntu system:
 
         <!-- do not set the following logger to TRACE -->
         <logger name="org.thp.scalligraph.traversal" level="INFO"/>
-        <logger name="org.reflections8.Reflections" level="ERROR"/>
+        <logger name="org.reflections.Reflections" level="ERROR"/>
         <logger name="org.janusgraph.graphdb.database.management.ManagementLogger" level="OFF"/>
         <logger name="org.janusgraph.graphdb.database.IndexSerializer" level="ERROR"/>
         <logger name="org.apache.kafka" level="WARN"/>
@@ -165,34 +154,23 @@ Ensure the following are installed on your Ubuntu system:
 
     </configuration>
     ```
-    
+
     &nbsp;
 
-    **`secret.conf`**: Create this file in `/opt/thehive/thehive/config` with the following content:
+    **`secret.conf`**: Use the following commands to create the file:
 
-    ```conf
-    play.http.secret.key="supersecretkeyhere"
+    ```bash
+    key=$(dd if=/dev/urandom bs=1024 count=1 | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)
+    echo "play.http.secret.key=\"$key\"" | sudo tee -a ~/thehive/thehive/config/secret.conf
     ```
+
+&nbsp;
 
 ### Installing Docker and Docker Compose
 
-1. **Update your package lists:**
+To install Docker Engine (which includes Docker Compose), follow the steps outlined in the Docker documentation: [Docker Engine Installation on Ubuntu](https://docs.docker.com/engine/install/ubuntu/).
 
-    ```bash
-    sudo apt update
-    ```
-
-2. **Install Docker:**
-
-    ```bash
-    sudo apt install docker.io
-    ```
-
-3. **Install Docker Compose:**
-
-    ```bash
-    sudo apt install docker-compose
-    ```
+&nbsp;
 
 ### Start and Enable Docker Service
 
@@ -217,14 +195,15 @@ Ensure the following are installed on your Ubuntu system:
     # Log out and log back in for the group change to take effect
     ```
 
+&nbsp;
+
 ### Docker Compose Setup
 
-1. **Create a Docker Compose file:**
+Create a `docker-compose.yml` file in `~/thehive` with the following content:
 
-    Create a `docker-compose.yml` file in `/opt/thehive` with the following content:
+=== "For Testing Environment"
 
     ```yaml
-    version: '3.8'
     services:
       cassandra:
         image: 'cassandra:4.1'
@@ -235,26 +214,25 @@ Ensure the following are installed on your Ubuntu system:
           - cassandra-data:/var/lib/cassandra
           - cassandra-logs:/var/log/cassandra
         environment:
-          - CASSANDRA_CLUSTER_NAME=TheHive
+          - CASSANDRA_CLUSTER_NAME=thehive
           - CASSANDRA_AUTHENTICATOR=PasswordAuthenticator
-          - CASSANDRA_USER=${CASSANDRA_USER}
           - CASSANDRA_PASSWORD_SEEDER=yes
-          - CASSANDRA_PASSWORD=${CASSANDRA_PASSWORD}
-          - HEAP_NEWSIZE=1280M
-          - MAX_HEAP_SIZE=1280M
+          - HEAP_NEWSIZE=200M
+          - MAX_HEAP_SIZE=200M
         deploy:
           resources:
             limits:
-              memory: 4G
+              memory: 2G
+        memswap_limit: 2G
         networks:
           - thehive-test-network
-        healthcheck:
-          test: cqlsh -u ${CASSANDRA_USER} -p ${CASSANDRA_PASSWORD} cassandra -e 'show host' > /dev/null 2>&1 || exit 1
-          interval: 2s
-          timeout: 1s
-          retries: 3
+        healthcheck: 
+          test: cqlsh -u cassandra -p cassandra cassandra -e 'show host' > /dev/null 2>&1 || exit 1
+          interval: 10s
+          timeout: 5s
+          retries: 5
           start_period: 60s
-
+      
       elasticsearch:
         image: 'elasticsearch:7.17.19'
         container_name: elasticsearch
@@ -263,12 +241,12 @@ Ensure the following are installed on your Ubuntu system:
         environment:
           - http.host=0.0.0.0
           - discovery.type=single-node
-          - cluster.name=hive
+          - cluster.name=thehive
           - thread_pool.search.queue_size=100000
           - thread_pool.write.queue_size=100000
           - bootstrap.memory_lock=true
           - xpack.security.enabled=false
-          - ES_JAVA_OPTS=-Xms256m -Xmx256m
+          - ES_JAVA_OPTS=-Xms1G -Xmx1G
         ulimits:
           nofile:
             soft: 65536
@@ -276,25 +254,32 @@ Ensure the following are installed on your Ubuntu system:
         volumes:
           - elasticsearch-data:/usr/share/elasticsearch/data
           - elasticsearch-logs:/usr/share/elasticsearch/logs
+        deploy:
+          resources:
+            limits:
+              memory: 2G
+        memswap_limit: 2G
         networks:
           - thehive-test-network
         healthcheck:
-          test: curl -s -f elasticsearch:9200/_cat/health > /dev/null || exit 1
-          interval: 2s
-          timeout: 1s
-          retries: 3
+          test: curl -s -f http://elasticsearch:9200/_cat/health > /dev/null || exit 1
+          interval: 10s
+          timeout: 5s
+          retries: 5
           start_period: 60s
-
+      
       thehive:
         image: 'strangebee/thehive:5.3'
         container_name: thehive
         hostname: thehive
-        mem_limit: 1664m
-        environment:
-          - MAX_HEAP_SIZE=1280M
-          - HEAP_NEWSIZE=1280M
-          - JVM_OPTS="-XX:MaxMetaspaceSize=256m"
         restart: always
+        environment:
+          - |
+            JAVA_OPTS=
+              -Xms1000m
+              -Xmx1000m
+              -XX:MaxMetaspaceSize=450m
+              -XX:ReservedCodeCacheSize=250m
         ports:
           - '0.0.0.0:9000:9000'
         volumes:
@@ -302,6 +287,11 @@ Ensure the following are installed on your Ubuntu system:
           - ./thehive/log:/var/log/thehive
           - ./thehive/data/files:/opt/thp/thehive/files
         command: '--no-config --no-config-secret'
+        deploy:
+          resources:
+            limits:
+              memory: 2G
+        memswap_limit: 2G
         networks:
           - thehive-test-network
         depends_on:
@@ -320,27 +310,145 @@ Ensure the following are installed on your Ubuntu system:
       thehive-test-network:
     ```
 
-2. **Run Docker Compose:**
+=== "For Production Environment"
 
-    Execute the following command in the `/opt/thehive` directory to start TheHive:
+    ```yaml
+    services:
+      cassandra:
+        image: 'cassandra:4.1'
+        container_name: cassandra
+        hostname: cassandra
+        restart: always
+        volumes:
+          - cassandra-data:/var/lib/cassandra
+          - cassandra-logs:/var/log/cassandra
+        environment:
+          - CASSANDRA_CLUSTER_NAME=thehive
+          - CASSANDRA_AUTHENTICATOR=PasswordAuthenticator
+          - CASSANDRA_PASSWORD_SEEDER=yes
+          - HEAP_NEWSIZE=1G
+          - MAX_HEAP_SIZE=4G
+        deploy:
+          resources:
+            limits:
+              memory: 6G
+        memswap_limit: 6G
+        networks:
+          - thehive-production-network
+        healthcheck: 
+          test: cqlsh -u cassandra -p cassandra cassandra -e 'show host' > /dev/null 2>&1 || exit 1
+          interval: 10s
+          timeout: 5s
+          retries: 5
+          start_period: 60s
+      
+      elasticsearch:
+        image: 'elasticsearch:7.17.19'
+        container_name: elasticsearch
+        hostname: elasticsearch
+        restart: always
+        environment:
+          - http.host=0.0.0.0
+          - discovery.type=single-node
+          - cluster.name=thehive
+          - thread_pool.search.queue_size=100000
+          - thread_pool.write.queue_size=100000
+          - bootstrap.memory_lock=true
+          - xpack.security.enabled=false
+          - ES_JAVA_OPTS=-Xms1G -Xmx1G
+        ulimits:
+          nofile:
+            soft: 65536
+            hard: 65536
+        volumes:
+          - elasticsearch-data:/usr/share/elasticsearch/data
+          - elasticsearch-logs:/usr/share/elasticsearch/logs
+        deploy:
+          resources:
+            limits:
+              memory: 6G
+        memswap_limit: 6G
+        networks:
+          - thehive-production-network
+        healthcheck:
+          test: curl -s -f http://elasticsearch:9200/_cat/health > /dev/null || exit 1
+          interval: 10s
+          timeout: 5s
+          retries: 5
+          start_period: 60s
+      
+      thehive:
+        image: 'strangebee/thehive:5.3'
+        container_name: thehive
+        hostname: thehive
+        restart: always
+        environment:
+          - |
+            JAVA_OPTS=
+              -Xms1000m
+              -Xmx1000m
+              -XX:MaxMetaspaceSize=450m
+              -XX:ReservedCodeCacheSize=250m
+        ports:
+          - '0.0.0.0:9000:9000'
+        volumes:
+          - ./thehive/config:/etc/thehive
+          - ./thehive/log:/var/log/thehive
+          - ./thehive/data/files:/opt/thp/thehive/files
+        command: '--no-config --no-config-secret'
+        deploy:
+          resources:
+            limits:
+              memory: 3G
+        memswap_limit: 3G
+        networks:
+          - thehive-production-network
+        depends_on:
+          elasticsearch:
+            condition: service_healthy
+          cassandra:
+            condition: service_healthy
 
-    ```bash
-    sudo docker-compose up -d
+    volumes:
+      cassandra-data:
+      cassandra-logs:
+      elasticsearch-data:
+      elasticsearch-logs:
+
+    networks:
+      thehive-production-network:
     ```
+
+&nbsp;
+
+Execute the following command in the `~/thehive` directory to start TheHive:
+
+```bash
+sudo docker compose up -d
+```
+
+&nbsp;
+
+!!! Danger "Important Note:"
+    The provided `docker-compose.yml` for production environment is a baseline configuration designed for a system with 16GB of RAM. Depending on your infrastructure, such as available memory, CPU capacity, and workload requirements, you may need to adjust the memory allocations, heap sizes, and other resource settings. It is essential to monitor the performance of your services and fine-tune these settings to ensure optimal operation within your environment. This configuration is meant as a starting point and should be customized based on the specific needs of your deployment.
+
+&nbsp;
 
 ### Verifying the Setup
 
 1. **Check the status of the containers:**
 
     ```bash
-    sudo docker-compose ps
+    sudo docker compose ps
     ```
 
 2. **View logs for troubleshooting:**
 
     ```bash
-    sudo docker-compose logs
+    sudo docker compose logs
     ```
+
+&nbsp;
 
 ### Accessing TheHive Application
 
@@ -366,7 +474,7 @@ Ensure the following are installed on your Ubuntu system:
 1. **Stop the containers:**
 
     ```bash
-    sudo docker-compose down
+    sudo docker compose down
     ```
 
 2. **Remove all stopped containers, unused networks, and dangling images:**
