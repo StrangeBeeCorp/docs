@@ -24,7 +24,7 @@
 
 - **Login Page:** The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
 
-### Fixes
+### Fixes
 
 - **Activity Timestamp in Timeline:** Fixed an issue that occurred when editing activity dates in the timeline.
 
