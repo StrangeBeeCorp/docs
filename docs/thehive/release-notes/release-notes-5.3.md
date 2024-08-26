@@ -20,11 +20,11 @@
 
 ## 5.3.4 - 26th August 2024
 
-### Improvements
+#### Improvements
 
 - **Login Page:** The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
 
-### Fixes
+#### Fixes
 
 - **Activity Timestamp in Timeline:** Fixed an issue that occurred when editing activity dates in the timeline.
 
@@ -46,7 +46,7 @@
 
 -   **Case Reports:** Users from locked organizations are no longer visible in the user list.
 
-### Security fix
+#### Security fix
 
 - [CVE-2023-52428](https://www.cve.org/CVERecord?id=CVE-2023-52428 "https://www.cve.org/CVERecord?id=CVE-2023-52428") : This vulnerability has been resolved.
 
