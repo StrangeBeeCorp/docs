@@ -20,34 +20,37 @@
 
 ## 5.3.4 - 26th August 2024
 
-#### Improvements
+### Improvements
 
-- **Login Page:** The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
+#### Login Page:
+- The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
 
-#### Fixes
+### Fixes
 
-- **Activity Timestamp in Timeline:** Fixed an issue that occurred when editing activity dates in the timeline.
+#### Activity Timestamp in Timeline:
+- Fixed an issue that occurred when editing activity dates in the timeline.
 
-- **Index Engine Configuration:** TheHive now prevents starting with an index engine that differs from the one specified in the configuration file.
+#### Index Engine Configuration:
+- TheHive now prevents starting with an index engine that differs from the one specified in the configuration file.
 
-- **Similar Alerts Display (Safari Only):** Resolved a display issue in the search input field within the drawer on Safari.
+#### Similar Alerts Display (Safari Only):
+- Resolved a display issue in the search input field within the drawer on Safari.
 
-- **Navigation Menu:** Fixed a regression that prevented navigation menu links from opening in a new browser tab when using the mouse scroll button.
+#### Navigation Menu:
+- Fixed a regression that prevented navigation menu links from opening in a new browser tab when using the mouse scroll button.
 
-- **List Component Fixes:**
+#### List Component Fixes:
+- Corrected duration display in alert lists.
+- Fixed status display in task lists.
+- Resolved an issue where the "hide custom field" option was not functioning in case lists.
+- Fixed the cropping of long custom field values to prevent display errors.
 
-    - Corrected duration display in alert lists.
+#### Case Reports:
+- Users from locked organizations are no longer visible in the user list.
 
-    - Fixed status display in task lists.
+### Security fix
 
-    - Resolved an issue where the "hide custom field" option was not functioning in case lists.
-
-    - Fixed the cropping of long custom field values to prevent display errors.
-
--   **Case Reports:** Users from locked organizations are no longer visible in the user list.
-
-#### Security fix
-
+#### CVE vulnerability
 - [CVE-2023-52428](https://www.cve.org/CVERecord?id=CVE-2023-52428 "https://www.cve.org/CVERecord?id=CVE-2023-52428") : This vulnerability has been resolved.
 
 ## 5.3.3 - 9th July 2024
