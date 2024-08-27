@@ -22,7 +22,7 @@
 
 ### Improvements
 
-#### Login Page:
+#### Login Page
 - The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
 
 ### Fixes
@@ -36,16 +36,16 @@
 #### Similar Alerts Display (Safari Only):
 - Resolved a display issue in the search input field within the drawer on Safari.
 
-#### Navigation Menu:
+#### Navigation Menu
 - Fixed a regression that prevented navigation menu links from opening in a new browser tab when using the mouse scroll button.
 
-#### List Component Fixes:
+#### List Component Fixes
 - Corrected duration display in alert lists.
 - Fixed status display in task lists.
 - Resolved an issue where the "hide custom field" option was not functioning in case lists.
 - Fixed the cropping of long custom field values to prevent display errors.
 
-#### Case Reports:
+#### Case Reports
 - Users from locked organizations are no longer visible in the user list.
 
 ### Security fix
