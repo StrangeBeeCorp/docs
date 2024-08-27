@@ -27,13 +27,13 @@
 
 ### Fixes
 
-#### Activity Timestamp in Timeline:
+#### Activity Timestamp in Timeline
 - Fixed an issue that occurred when editing activity dates in the timeline.
 
-#### Index Engine Configuration:
+#### Index Engine Configuration
 - TheHive now prevents starting with an index engine that differs from the one specified in the configuration file.
 
-#### Similar Alerts Display (Safari Only):
+#### Similar Alerts Display (Safari Only)
 - Resolved a display issue in the search input field within the drawer on Safari.
 
 #### Navigation Menu
