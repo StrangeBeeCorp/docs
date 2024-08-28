@@ -18,7 +18,14 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
-## 5.3.4 - 26th August 2024
+## 5.3.5 - 28th of August 2024 - hotfix
+
+### Fixes
+
+#### Analyzer reports
+- we fixed a regression that prevented the analyzer reports to be displayed when the observable is attached to an alert.
+
+## 5.3.4 - 26th of August 2024
 
 ### Improvements
 
@@ -53,7 +60,7 @@
 #### CVE vulnerability
 - [CVE-2023-52428](https://www.cve.org/CVERecord?id=CVE-2023-52428 "https://www.cve.org/CVERecord?id=CVE-2023-52428") : This vulnerability has been resolved.
 
-## 5.3.3 - 9th July 2024
+## 5.3.3 - 9th of July 2024
 
 ### Improvements
 
@@ -79,7 +86,7 @@
 #### Dropdown Selectors
 - Fixed a bug in dropdown menus that prevented the menu action from launching if the click was not on the text item.
 
-## 5.3.2 - 14th June 2024
+## 5.3.2 - 14th of June 2024
 
 ### Improvements
 
@@ -117,7 +124,7 @@
 
 - Locked users no longer appear in the assignable user list.
 
-## 5.3.1 - 16th May 2024
+## 5.3.1 - 16th of May 2024
 
 ### Improvements
 
@@ -174,7 +181,7 @@
 
 - Embedded patches for the following vulnerability: CVE-2024-25710
 
-## 5.3.0 - 24th April 2024
+## 5.3.0 - 24th of April 2024
 
 !!! info
     The licensing model for the community version has been updated. Users are now required to <a href="https://portal.apps.strangebee.com/account/register" target"_blank">register on our licensing portal</a> and request a community license to use TheHive in the community version. Additionally, TheHive will now include a default 14-day free Platinum trial license, allowing users to explore the full range of features offered by the platform.
