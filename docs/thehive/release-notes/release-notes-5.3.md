@@ -34,6 +34,9 @@
 
 ### Fixes
 
+#### Analyzer Jobs Report Display
+- We improved the loading speed of analyzer reports in TheHive, reducing the time it takes for them to display (This change required a fix in 5.3.5 version).
+
 #### Activity Timestamp in Timeline
 - Fixed an issue that occurred when editing activity dates in the timeline.
 
