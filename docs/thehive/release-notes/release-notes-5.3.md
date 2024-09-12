@@ -18,6 +18,39 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.3.6 - 12th of September 2024
+
+### Fixes
+
+#### Case Closure with Mandatory Tasks
+- It is no longer possible to close a case if there are mandatory tasks that remain incomplete. This prevents backend errors by ensuring that all required tasks are finished before allowing case closure.
+
+#### Alert Status Display
+- Fixed a display issue that incorrectly allowed closed alerts to be re-closed and already-started alerts to be started again.
+
+#### Case Closure Custom Fields
+- Fixed a problem where required custom fields with blank values were not properly flagged as required during case closure.
+
+#### Case Closure Tab Refresh
+- Fixed an issue where the case closure tab would refresh unexpectedly while a user was filling out the form, due to actions taken by other users on the platform. This issue caused users to lose the values they had entered. The tab now remains stable during form completion, preventing data loss.
+
+#### Markdown Formatting in Case Reports
+- Fixed an issue with markdown formatting in case reports, specifically addressing problems with underlining and striking text.
+
+#### Session Timeout Configuration
+- Fixed an issue that prevented users from editing fields related to session timeout due to inactivity.
+
+### Improvements
+
+#### Login Page
+- Users can now tab through the fields to focus on the MFA code input when multi-factor authentication is enabled, making the login process smoother.
+
+### Security Fixes
+
+- CVE-2024-20952
+- CVE-2024-20932
+- CVE-2024-20918
+
 ## 5.3.5 - 28th of August 2024 - hotfix
 
 ### Fixes
