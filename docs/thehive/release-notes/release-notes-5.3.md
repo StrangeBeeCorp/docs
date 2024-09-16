@@ -18,7 +18,85 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
-## 5.3.3 - 9th July 2024
+## 5.3.6 - 12th of September 2024
+
+### Fixes
+
+#### Case Closure with Mandatory Tasks
+- It is no longer possible to close a case if there are mandatory tasks that remain incomplete. This prevents backend errors by ensuring that all required tasks are finished before allowing case closure.
+
+#### Alert Status Display
+- Fixed a display issue that incorrectly allowed closed alerts to be re-closed and already-started alerts to be started again.
+
+#### Case Closure Custom Fields
+- Fixed a problem where required custom fields with blank values were not properly flagged as required during case closure.
+
+#### Case Closure Tab Refresh
+- Fixed an issue where the case closure tab would refresh unexpectedly while a user was filling out the form, due to actions taken by other users on the platform. This issue caused users to lose the values they had entered. The tab now remains stable during form completion, preventing data loss.
+
+#### Markdown Formatting in Case Reports
+- Fixed an issue with markdown formatting in case reports, specifically addressing problems with underlining and striking text.
+
+#### Session Timeout Configuration
+- Fixed an issue that prevented users from editing fields related to session timeout due to inactivity.
+
+### Improvements
+
+#### Login Page
+- Users can now tab through the fields to focus on the MFA code input when multi-factor authentication is enabled, making the login process smoother.
+
+### Security Fixes
+
+- CVE-2024-20952
+- CVE-2024-20932
+- CVE-2024-20918
+
+## 5.3.5 - 28th of August 2024 - hotfix
+
+### Fixes
+
+#### Analyzer reports
+- we fixed a regression that prevented the analyzer reports to be displayed when the observable is attached to an alert.
+
+## 5.3.4 - 26th of August 2024
+
+### Improvements
+
+#### Login Page
+- The text box now automatically gains focus when the page loads, allowing users to immediately begin typing their information.
+
+### Fixes
+
+#### Analyzer Jobs Report Display
+- We improved the loading speed of analyzer reports in TheHive, reducing the time it takes for them to display (This change required a fix in 5.3.5 version).
+
+#### Activity Timestamp in Timeline
+- Fixed an issue that occurred when editing activity dates in the timeline.
+
+#### Index Engine Configuration
+- TheHive now prevents starting with an index engine that differs from the one specified in the configuration file.
+
+#### Similar Alerts Display (Safari Only)
+- Resolved a display issue in the search input field within the drawer on Safari.
+
+#### Navigation Menu
+- Fixed a regression that prevented navigation menu links from opening in a new browser tab when using the mouse scroll button.
+
+#### List Component Fixes
+- Corrected duration display in alert lists.
+- Fixed status display in task lists.
+- Resolved an issue where the "hide custom field" option was not functioning in case lists.
+- Fixed the cropping of long custom field values to prevent display errors.
+
+#### Case Reports
+- Users from locked organizations are no longer visible in the user list.
+
+### Security fix
+
+#### CVE vulnerability
+- [CVE-2023-52428](https://www.cve.org/CVERecord?id=CVE-2023-52428 "https://www.cve.org/CVERecord?id=CVE-2023-52428") : This vulnerability has been resolved.
+
+## 5.3.3 - 9th of July 2024
 
 ### Improvements
 
@@ -44,7 +122,7 @@
 #### Dropdown Selectors
 - Fixed a bug in dropdown menus that prevented the menu action from launching if the click was not on the text item.
 
-## 5.3.2 - 14th June 2024
+## 5.3.2 - 14th of June 2024
 
 ### Improvements
 
@@ -82,7 +160,7 @@
 
 - Locked users no longer appear in the assignable user list.
 
-## 5.3.1 - 16th May 2024
+## 5.3.1 - 16th of May 2024
 
 ### Improvements
 
@@ -139,7 +217,7 @@
 
 - Embedded patches for the following vulnerability: CVE-2024-25710
 
-## 5.3.0 - 24th April 2024
+## 5.3.0 - 24th of April 2024
 
 !!! info
     The licensing model for the community version has been updated. Users are now required to <a href="https://portal.apps.strangebee.com/account/register" target"_blank">register on our licensing portal</a> and request a community license to use TheHive in the community version. Additionally, TheHive will now include a default 14-day free Platinum trial license, allowing users to explore the full range of features offered by the platform.
