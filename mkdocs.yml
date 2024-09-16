@@ -106,7 +106,6 @@ nav:
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker':
         - 'Overview': thehive/installation/docker/docker-compose-overview.md
-        - 'TheHive Setup for Testing with Docker': thehive/installation/docker/docker-compose-test.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
