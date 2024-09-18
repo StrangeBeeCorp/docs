@@ -248,6 +248,8 @@ nav:
           - 'Search by Jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
           - 'Search by Tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
           - 'Search by Task Logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
+        - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
+          
     - 'API':
       - 'API Documentation': thehive/api-docs/
       - 'Python Client': https://github.com/thehive-project/thehive4py
