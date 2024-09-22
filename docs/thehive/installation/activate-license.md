@@ -1,58 +1,75 @@
 # Activating TheHive License
 
-This section provides information about updating your license for TheHive. By default, TheHive is installed with the community edition license.
-
-To activate a different license, you need to purchase one from StrangeBee. Upon purchasing, StrangeBee will create an account for you on their customer portal, allowing you to activate your license.
+Starting with version 5.3, community users are required to generate a free **Community License** to run TheHive Community edition. To obtain this license, you need to create an account on the StrangeBee License Portal.
 
 ---
 
-## Activating Your License
+## How to Request a Free Community License
 
-Follow these steps to activate your license:
+### 1. Create an Account on the StrangeBee License Portal
 
-1. **Access the Platform Management Page**:
-    - Navigate to the Platform Management page.
-    - Go to the **License** tab.
-    - Click the **Update the current license** button.
-    
-    ![Update License Button](../images/installation/update-license-button.png)
+Visit the [StrangeBee License Portal registration page](https://portal.apps.strangebee.com/account/register), and register using your professional email address.
 
-2. **Copy the Challenge**:
-    - A window will open displaying the challenge.
-    - Click **Copy this challenge**.
+![](../images/installation/license1.png)
 
-    ![Copy Challenge](../images/installation/copy-challenge.png)
+&nbsp;
 
-    You will see a message confirming that the challenge has been copied. 
+### 2. Confirm Your Email Address
 
-3. **Activate the License on the Customer Portal**:
-    - Log in to your account on the StrangeBee customer portal.
-    - Use the copied challenge to activate the license.
-    - The portal will provide you with an activation license key.
+Check your email inbox for a confirmation message, click the confirmation link to verify your email address, and wait for your account to be validated by the StrangeBee team.
 
-4. **Enter the Activation Key**:
-    - Return to the Platform Management page.
-    - Enter the activation key in the **License** field.
-    - Click the **Activate the license key** button.
+![](../images/installation/license3.png)
 
-    This will activate your license and update your instance with all the features included in your license.
+&nbsp;
+
+### 3. Set Up Your Password
+
+Once your account is validated, you will receive a notification. Follow the instructions to configure your password.
+
+&nbsp;
+
+### 4. Log In to the StrangeBee License Portal
+
+Log in to the portal using your credentials.
+
+&nbsp;
+
+### 5. Request a Community License
+
+Click on **"Request a Community License"** to proceed to the license generation page.
+
+&nbsp;
+
+### 6. Retrieve the Challenge from Your TheHive Instance
+
+Open your TheHive instance in a new browser tab, navigate to **Admin > Platform Management > License Management**, and click **"Update the current license"** to display the challenge.
+
+![](../images/installation/update-license-button.png)
+
+&nbsp;
+
+### 7. Generate Your License Key
+
+Copy the **Challenge** from TheHive, return to the StrangeBee License Portal, and paste it into the corresponding field on the license request page. Submit the form to generate your license key.
+
+![](../images/installation/copy-challenge.png)
+
+&nbsp;
+
+### 8. Activate Your License in TheHive
+
+Copy the generated license key, go back to your TheHive instance, paste the license key into the appropriate field, and confirm to activate your Community License.
+
+![](../images/installation/license4.png)
+
+&nbsp;
+
+### 9. Enjoy TheHive Community Version
+
+Your TheHive Community edition is now fully activated. You can now explore and use all the features available to you.
 
 ---
 
-## License Capabilities
-
-The license includes the following capabilities:
-- Defines the number of users you can create on your platform.
-- Based on the number of users and the number of organizations.
-- Includes a validation and an expiration date.
-- Allows an unlimited number of Readonly users and Service users. Service users can use an API key to call all APIs but do not have access to TheHive interface.
-
----
-
-## How-to Guide
-
-Below is a video guide that walks you through the process of activating your license in detail.
-
-![type:video](../images/installation/activate-license.mp4)
+> **Note:** If you are already using TheHive 5.x Community version, please create your account on the License Portal before upgrading to version 5.3. Without this Community License, your interface will be limited to read-only mode.
 
 &nbsp;
