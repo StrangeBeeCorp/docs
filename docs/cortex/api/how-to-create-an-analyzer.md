@@ -212,6 +212,7 @@ accepts the following datatypes:
 - filename
 - fqdn
 - hash
+- hostname
 - ip
 - mail
 - mail_subject
