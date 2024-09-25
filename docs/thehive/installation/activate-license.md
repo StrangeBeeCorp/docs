@@ -1,6 +1,8 @@
 # Activating TheHive License
 
-Starting with version 5.3, community users are required to generate a free **Community License** to run TheHive Community edition. To obtain this license, you need to create an account on the StrangeBee License Portal.
+Starting with TheHive version 5.3, all users are required to generate a valid license to use the platform. Community users can obtain a **free Community License**, while paid licenses (Gold or Platinum) are available for enhanced functionality.
+
+In the absence of a valid license, TheHive provides a 14-day **Platinum trial**, which supports up to 2 organizations and 5 users. After the trial expires, TheHive transitions to read-only mode, requiring a valid license for continued full functionality.
 
 ---
 
@@ -26,17 +28,27 @@ Check your email inbox for a confirmation message, click the confirmation link t
 
 Once your account is validated, you will receive a notification. Follow the instructions to configure your password.
 
+![](../images/installation/license5.png)
+
 &nbsp;
 
 ### 4. Log In to the StrangeBee License Portal
 
 Log in to the portal using your credentials.
 
+![](../images/installation/license6.png)
+
 &nbsp;
 
 ### 5. Request a Community License
 
 Click on **"Request a Community License"** to proceed to the license generation page.
+
+![](../images/installation/license7.png)
+
+&nbsp;
+
+![](../images/installation/license8.png)
 
 &nbsp;
 
@@ -53,6 +65,10 @@ Open your TheHive instance in a new browser tab, navigate to **Admin > Platform 
 Copy the **Challenge** from TheHive, return to the StrangeBee License Portal, and paste it into the corresponding field on the license request page. Submit the form to generate your license key.
 
 ![](../images/installation/copy-challenge.png)
+
+&nbsp;
+
+![](../images/installation/license9.png)
 
 &nbsp;
 
