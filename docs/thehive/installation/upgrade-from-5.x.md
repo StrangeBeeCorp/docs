@@ -1,5 +1,9 @@
 # Upgrade from TheHive 5.x
 
+> **Important:** Starting with version 5.4, our web framework has been upgraded to Play3/Pekko. Depending on your TheHive installation and configuration, certain updates may be required in your configuration files. Refer to the [configuration guide](../configuration/pekko.md) for details.
+
+---
+
 ## Important Considerations
 
 Before proceeding with the upgrade, please keep the following points in mind:
