@@ -118,6 +118,7 @@ nav:
       - 'File Storage Configuration': thehive/configuration/file-storage.md
       - 'Connectors Configuration': thehive/configuration/connectors.md
       - 'Akka Configuration': thehive/configuration/akka.md
+      - 'Pekko Configuration (TheHive 5.4+)': thehive/configuration/pekko.md
       - 'Logs Configuration': thehive/configuration/logs.md
       - 'Proxy Configuration': thehive/configuration/proxy.md
       - 'Secrets Configuration': thehive/configuration/secret.md
