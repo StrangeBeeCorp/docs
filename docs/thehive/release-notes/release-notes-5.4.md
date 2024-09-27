@@ -5,6 +5,8 @@
 
     We upgraded our backend framework from Play 2 (also known as Akka) to Play 3 (also known as Pekko). **While there are no functional changes**, if you use TheHive in cluster mode, your configuration file will need to be modified when upgrading to TheHive 5.4. [Please refer to this guide for the necessary changes](https://docs.strangebee.com/thehive/configuration/pekko/).
 
+    Please also note that the `play.http.secret.key` parameter requires now at least a 32 character value. [See more details](https://docs.strangebee.com/thehive/configuration/secret/) about secret configuration.
+
 !!! info
     The following API endpoints will no longer be accessible via GET requests. You will now need to use POST requests to access them:
 
