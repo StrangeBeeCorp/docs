@@ -39,7 +39,6 @@ In this configuration:
 - `remote.artery.canonical.hostname` should be set to the hostname or IP address of the node.
 - `cluster.seed-nodes` should contain the same list of Pekko nodes, ensuring consistency across all nodes.
 
-
 !!! Example "Configuration of a Cluster with 3 Nodes"
 
     === "Node 1"
@@ -150,7 +149,6 @@ pekko {
 }
 ```
 
-
 !!! Warning "Certificate Considerations"
     Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.
     
@@ -166,7 +164,6 @@ pekko {
     - _ExtendedkeyUsage_ extensions
         - `serverAuth`
         - `clientAuth`
-
 
 !!! Example "Pekko Configuration with SSL/TLS for Node 1"
 
@@ -201,5 +198,10 @@ pekko {
     ```
 
     Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.
+
+---
+
+!!! Note
+    From version 5.4 onwards, the `secret.conf` file must include a secret key of at least 32 characters for session security, as required by Play Framework 3. For clustered setups, all nodes must share the same key, ensuring consistency across the deployment.
 
 &nbsp;
