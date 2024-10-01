@@ -31,7 +31,7 @@ If you are running an operating system based on RedHat or Fedora, TheHive can be
 
 If you prefer using Docker, you can leverage pre-built Docker images available on Docker Hub for convenient deployment and containerization of TheHive. 
 
-The Docker image can be found on [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive), and [**instructions to run it can be found here**](../installation/docker/docker.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
+The Docker image can be found on [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive), and [**instructions to run it can be found here**](../installation/docker/docker-compose-overview.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
 
 &nbsp;
 
