@@ -5,11 +5,14 @@
 
     We upgraded our backend framework from Play 2 (also known as Akka) to Play 3 (also known as Pekko). **While there are no functional changes**, if you use TheHive in cluster mode, your configuration file will need to be modified when upgrading to TheHive 5.4. [Please refer to this guide for the necessary changes](https://docs.strangebee.com/thehive/configuration/pekko/).
 
+    Please also note that the `play.http.secret.key` parameter requires now at least a 32 character value. [See more details](https://docs.strangebee.com/thehive/configuration/secret/) about secret configuration.
+
 !!! info
     The following API endpoints will no longer be accessible via GET requests. You will now need to use POST requests to access them:
- - api/v1/admin/log/set/
- - api/v1/admin/check/_all/trigger
- - api/v1/admin/check/{name}/trigger
+
+      - api/v1/admin/log/set/
+      - api/v1/admin/check/_all/trigger
+      - api/v1/admin/check/{name}/trigger
 
     For more details, please refer to the [public API documentation](https://docs.strangebee.com/thehive/api-docs/).
 
@@ -56,7 +59,7 @@ We changed the display format of time metrics in Alert & Case pages, and made it
 
 #### Backend framework upgraded to Pekko/Play3
 
-We upgraded our backend framework to Play 2 (also named Akka) to Play 3 (also named Pekko). While there is no functional changes,  if you use TheHive in a cluster mode, your configuration will need to be changed when upgrading to TheHive 5.4. Please refer to this guide for further details.
+We upgraded our backend framework to Play 2 (also named Akka) to Play 3 (also named Pekko). While there is no functional changes,  if you use TheHive in a cluster mode, your configuration will need to be changed when upgrading to TheHive 5.4. Please refer to [this guide](https://docs.strangebee.com/thehive/configuration/pekko/) for further details.
 
 #### Elasticsearch query optimisations: DirectQuery & ESChart
 
