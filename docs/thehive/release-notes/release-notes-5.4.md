@@ -16,6 +16,9 @@
 
     For more details, please refer to the [public API documentation](https://docs.strangebee.com/thehive/api-docs/).
 
+!!! info
+    An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
+
 ## 5.4.0 - 26th of September 2024
 ### New Features
 
