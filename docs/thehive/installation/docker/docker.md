@@ -18,7 +18,7 @@ To deploy TheHive (and Cortex) using Docker, follow these steps:
         version: "3"
         services:
           thehive:
-            image: strangebee/thehive:5.2
+            image: strangebee/thehive:5.4
             depends_on:
               - cassandra
               - elasticsearch
