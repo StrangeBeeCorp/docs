@@ -548,7 +548,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 &nbsp;
 
-### Sart the service
+### Start the service
 
 === "DEB"
     
