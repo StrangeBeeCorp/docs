@@ -67,6 +67,4 @@ services:
       POSTGRES_PASSWORD: example
 ```
 
-## Conclusion
-
-This guide provides a brief overview of Docker and Docker Compose. These tools are powerful and can greatly simplify the process of developing, shipping, and running applications. In the next sections, we will focus on how to use these tools specifically with TheHive.
+&nbsp;
