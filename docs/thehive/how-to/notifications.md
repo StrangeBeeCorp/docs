@@ -22,7 +22,7 @@ You can also send an Email as notification.
 
 ## Notifications management
 
-Notifications are unique to each organisation. With an org admin account open the Organization menu (1), and navigate to the Notifications tab (2).
+Notifications are unique to each organisation. With an org admin account open the Organisation menu (1), and navigate to the Notifications tab (2).
 
 To create a notification, clic on the "+" button (3)
 

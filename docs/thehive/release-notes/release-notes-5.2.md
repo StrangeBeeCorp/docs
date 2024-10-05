@@ -113,7 +113,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 - **Log Code Formatting:** Fixed the code display in logs to correctly return to the line when exceeding a specified size component.
 - **Dashboard Memory Leak:** Addressed a memory leak in the dashboard, ensuring that memory consumption does not increase.
 - **Cortex Analyzer/Responder Report Fix:** Rectified the error message "id undefined" in Cortex Analyzer/Responder reports.
-- **Organization Name Trimming:** Trimmed organisation names when creating a new organisation to prevent unnecessary spaces.
+- **Organisation Name Trimming:** Trimmed organisation names when creating a new organisation to prevent unnecessary spaces.
 
 **Dashboard:**
 - **Customizable Fragment Display:** Take control of your visualizations by choosing the number of fragments to display on the Donut. Tailor the dashboard to your preferences for a personalized and efficient user experience.

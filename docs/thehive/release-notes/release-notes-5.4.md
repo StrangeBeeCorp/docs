@@ -28,7 +28,7 @@ We have introduced a Dark Mode option to enhance user comfort during low-light o
 
 #### Report Tab in case details
 
-A new "Report" tab has been added to the case detail screen, allowing users to access and generate case reports directly from a case. This feature utilizes the existing Case Report Templates, enabling customization and configuration of reports based on the templates set by organization administrators. The Report Tab supports multiple formats (HTML, Markdown, Word) and offers dynamic previews for quick and informed decision-making.
+A new "Report" tab has been added to the case detail screen, allowing users to access and generate case reports directly from a case. This feature utilizes the existing Case Report Templates, enabling customization and configuration of reports based on the templates set by organisation administrators. The Report Tab supports multiple formats (HTML, Markdown, Word) and offers dynamic previews for quick and informed decision-making.
 
 #### Comment and Page Widgets in Case Report Templates
 

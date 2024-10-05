@@ -1,10 +1,10 @@
-Title: Manage Organization
+Title: Manage Organisation
 
 nav:
   - 'Introduction' : introduction.md
   - 'Admin sign In' : sign-in-as-an-admin.md
   - 'Getting started' : getting-started.md
-  - 'Organization' : organizations.md
+  - 'Organisation' : organizations.md
   - 'List of incidents' : list-of-incidents.md
   - 'Contacting support' : contacting-support.md
   - 'Alerts' : alerts

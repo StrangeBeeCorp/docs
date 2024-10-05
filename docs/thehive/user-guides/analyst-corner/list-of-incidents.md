@@ -12,7 +12,7 @@ In the left pane, you can see the main Menu.
  - Tasks
  - Dashboards
  - Search 
- - Organization
+ - Organisation
 
  Clicking on the arrow will switch you back to the image view. 
 

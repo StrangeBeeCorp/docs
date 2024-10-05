@@ -17,7 +17,7 @@ Each profile is defined by a set of permissions.
 There are two profile types:
 
 * Administration, used by users in the Admin organisation, to manage the platform
-* Organization used in business organisations
+* Organisation used in business organisations
 
 Permissions are named `manageEntity` with `Entity`, an entity in the application. For example: `manageCase`. A permission `manageEntity` means having rights to write, update,delete an entity. 
 

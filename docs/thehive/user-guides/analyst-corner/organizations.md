@@ -1,4 +1,4 @@
-# About Organization
+# About Organisation
 
 Organizations are the customers or tenants who are using the TheHive application.
 

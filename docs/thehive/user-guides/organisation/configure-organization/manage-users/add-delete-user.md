@@ -2,9 +2,9 @@
 
 After you login to TheHive application, you can see the organisation icon on the page. 
 
-1. Click the **Organization** icon. 
+1. Click the **Organisation** icon. 
 
-<img src="../images/strangebee_organization.png" alt="strangebee organization" width="300" height="300"/>
+<img src="../images/strangebee_organization.png" alt="strangebee organisation" width="300" height="300"/>
 
 On the first tab, you can find information about Users. You can add and delete user details.
 
