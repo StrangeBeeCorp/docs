@@ -15,3 +15,4 @@ To add a new case from selection:
 A new window opens.
 
 <img src="../images/alerts-newcase-from-selection.png" alt="new case selection" width="500" height="500"/>
+
