@@ -214,7 +214,7 @@ Available Options:
 - `--cql-password <password>`: Specifies the password for the Cassandra database.
 - `--no-cql-wait`: Skips waiting for Cassandra to become available.
 - `--bdb-directory <path>`: Defines the location of the local database if Cassandra is not used (default: /data/db).
-- `--index-backend`: Specifies the backend to use for index, either 'lucene' or 'elasticsearch' (default: lucene).
+- `--index-backend`: Specifies the backend to use for index (default: elasticsearch).
 - `--es-hostnames`: Specifies the Elasticsearch instances used for index.
 - `--es-index`: Specifies the Elasticsearch index name to be used (default: thehive).
 - `--no-config-storage`: Disables automatic configuration of storage.
