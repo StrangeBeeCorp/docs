@@ -15,72 +15,50 @@
             justify-content: center;
             flex-direction: column;
             font-family: Arial, sans-serif;
-            background-color: #1b1b34;
-            color: #ffffff;
+            background-color: #ececec; /* Make the background much lighter to ensure the logo is visible */
+            color: #1b1b34;
+            overflow: hidden;
         }
         .container {
             text-align: center;
-            animation: fadeIn 2s ease-in-out;
         }
         .logo img {
-            width: 150px; /* Increase the size of the logo */
+            width: 15vw; /* Improve responsiveness by using relative units */
+            max-width: 200px; /* Prevent the logo from becoming too large on very wide screens */
             margin-bottom: 40px; /* Increase spacing */
-            animation: slideIn 1s ease-in-out;
         }
         .error-code {
-            font-size: 100px; /* Size of the 404 number */
+            font-size: 6rem; /* Size of the 404 number, using rem for scalability */
             margin-bottom: 20px;
-            animation: dropIn 1.5s ease-in-out;
         }
         .error-message {
-            font-size: 32px; /* Increase the size of the text */
+            font-size: 2rem; /* Increase the size of the text using rem for scalability */
             margin-bottom: 40px; /* Increase spacing */
-            animation: fadeIn 1.5s ease-in-out;
         }
         .home-button {
             background-color: #007BFF;
             color: white;
             border: none;
             padding: 15px 30px; /* Increase the size of the button */
-            font-size: 20px; /* Increase the font size */
+            font-size: 1.25rem; /* Increase the font size using rem for scalability */
             cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
-            animation: bounce 2s infinite;
         }
         .home-button:hover {
             background-color: #0056b3;
         }
         .copyright {
             margin-top: 40px;
-            font-size: 14px;
-            color: #cccccc;
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes dropIn {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
+            font-size: 0.875rem; /* Use rem for better scalability */
+            color: #333333;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="logo">
-            <!-- Place for the logo -->
-            <img src="/assets/images/strangebee-logo.svg" alt="Logo">
+            <img src="/assets/images/strangebee-logo.svg" alt="StrangeBee Company Logo">
         </div>
         <div class="error-code">
             404
@@ -88,7 +66,7 @@
         <div class="error-message">
             Oops! Page not found.
         </div>
-        <a href="/" class="home-button">Return to Homepage</a>
+        <a href="/" class="home-button" aria-label="Return to the homepage" role="button">Return to Homepage</a>
     </div>
 </body>
 </html>
