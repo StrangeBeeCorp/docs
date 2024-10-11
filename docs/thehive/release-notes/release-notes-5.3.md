@@ -18,7 +18,7 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
-## 5.3.7 - 10th of October 2024
+## 5.3.7 - 11th of October 2024
 
 ### Fix
 - We fixed an issue with the method used to filter entity Ids. In certain very specific situations, the filter could return incorrect results.
