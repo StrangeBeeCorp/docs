@@ -90,3 +90,22 @@ As part of our recent brand visual identity update, TheHive logo has been update
 
 #### Time metrics
 We resolved an issue with the "Time to Detect" metric during alert creation.
+
+
+### Known issues
+Last update: 17th of October 2024
+
+#### Public API - Query boolean parameters case sensitive
+
+TheHive 5.4.0 introduced a non expected breaking change related to the query boolean parameters.
+The values passed in the query URL, with upper case (ex: `True` or `False`) are not accepted anymore. It does not concern the parameters passed in the body/payload.
+It impacts the endpoints listed below, and the tools that use those endpoints (like TH4Py 2.0). A fix version will be delivered soon.
+
+The following endpoints are impacted:
+
+- Download Attachment from observable: GET /api/v1/observable/$id/attachment/id/download with the asZip param
+- Delete CustomField: `DELETE /api/v1/customField/$id` with `force` flag
+- Invoke Function: `POST /api/v1/function/$id` with `dryRun` flag
+- Invoke Function on an object: `POST /api/v1/function/$id/$objectType/$objectId` with `dryRun` and `sync` params
+- Test Function: `POST /api/v1/function/_test` with `dryRun` param
+- Get platform status: `GET /api/v1/status` with `verbose` param
