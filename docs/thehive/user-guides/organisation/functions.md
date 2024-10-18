@@ -1,69 +1,88 @@
 # *Functions*
 
-## Overview
+!!! Info
+    This feature is available with TheHive versions 5.1 and higher.
 
-A Function in TheHive is a custom JavaScript code block that runs within the platform, accepting inputs from external sources, processing data, and interacting directly with TheHive's APIs to seamlessly integrate external applications into its workflow.
+Functions enable you to integrate external applications directly into TheHive processing.
 
-For example, you can use a Function to create alerts within TheHive without the need for an additional Python service to convert the data.
+A Function is a piece of custom Javascript code that runs inside TheHive. The function can receive inputs from the outside, treat it and call TheHive APIs directly.
 
-This feature is supported in TheHive starting from version 5.1 and later.
+This can be used for instance to create alerts inside TheHive without a python glue service that transforms the data.
 
----
+## Create a function
 
-## Function Usages
+Let's imagine that when an event occurs in your system, you want to create an alert in TheHive. Your external system has its own schema for the events, something like:
 
-In real-life use, a Function in TheHive automates tasks like processing data from external systems, triggering alerts, or updating cases. It streamlines workflows by connecting TheHive to other tools, reducing manual work and improving incident management efficiency.
+!!! Example ""
 
----
+    ```json
+    {
+        "eventId": "d9ec98b1-410f-40eb-8634-cfe189749da6",
+        "date": "2021-06-05T12:45:36.698Z",
+        "title": "An intrusion was detected",
+        "details": "An intrusion was detected on the server 10.10.43.2",
+        "data": [
+            {"kind": "ip", "value": "10.10.43.2", "name": "server-ip" },
+            {"kind": "name", "value": "root", "name": "login" },
+            {"kind": "ip", "value": "92.43.123.1", "name": "origin" }
+        ]
+    }
+    ```
 
-## Function Types
+This format is not the same as TheHive, so you need to transform the data to match TheHive alert format.
 
-Below are the different types of functions supported in TheHive. The function type you select determines the scope where the function can be executed:
+As an `org-admin`, you can create new functions for your organisation that can take this input, transform it into TheHive format and create an alert from it.
 
-1. **API**: These functions are triggered by an external service through TheHive's public API, allowing automated workflows initiated from outside the platform.
+The code of the function would be something like this:
 
-2. **Notification**: Notification functions act as notifiers and are triggered when certain events occur, such as alerts or case updates, automating the notification process based on predefined conditions.
+!!! Example ""
 
-3. **Action: Case**: Functions of the `action:case` type are manually triggered within the context of a specific case, allowing users to perform actions related to case management.
+    ```javascript
+    function handle(input, context) {
+        const theHiveAlert = {
+            "type": "event",
+            "source": "my-system",
+            "sourceRef": input.eventId,
+            "title": input.title,
+            "description": input.details,
+            "date": (new Date(input.date)).getTime(),
+            "observables": input.data.map(data => {
+                // map event data kind to TheHive Observable type
+                const dataType = data.kind === "ip" ? "ip": "other";
+                return {
+                    "dataType": dataType,
+                    "data": data.value,
+                    "tags": [`name:${data.name}`] // use a tag for the data name
+                }
+            })
+        };
+        // call TheHive APIs, here alert creation
+        return context.alert.create(theHiveAlert);
+    }
+    ```
 
-4. **Action: Alert**: The `action:alert` type refers to functions manually executed in the context of an alert, enabling users to process and act on alerts within TheHive.
+<figure markdown>
+![Create function](./images/functions_create.png){ width="500" }
+</figure>
 
----
+A function can be in one of three modes:
 
-## Function Modes
+- `Enabled`: The function will be executed when called
+- `Disabled`: The function will not be executed when called
+- `Dry-Run`: The function will be executed but no entity will be created or modified in TheHive. Entity creations will return `null` instead. This can be useful to test your integration before setting it live.
 
-A function in TheHive can operate in one of three modes:
+The creation page allows you to test your function and see what it would return once executed.
+In `dry-run` mode, the function will be executed but no resource creation or modification will be executed.
 
-- **Enabled**: The function will run as expected when triggered.
-- **Disabled**: The function will not run when triggered.
-- **Dry-Run**: The function will execute, but no entities will be created or modified in TheHive. Entity creation attempts will return `null`, making this mode ideal for testing integrations before going live.
+<figure markdown>
+![Test function input](./images/functions_test_input.png){ width="500" }
+</figure>
 
----
+<figure markdown>
+![Test function result](./images/function_test_result.png){ width="500" }
+</figure>
 
-## Create a Function
-
-Follow the steps below to create a function in TheHive:
-
-1. **Navigate to the Organization Tab**: On the left side of the interface, go to the "Organization" tab.
-2. **Access Functions**: In the navigation options, locate "Functions" and click on it.
-3. **Create a New Function**: Click on the **+ Create a function** button.
-4. **Fill Out the Create Function Form**: You will be presented with the "Create Function" form. Fill out the following details:
-    - **Name**: Enter a name for the function.
-    - **Mode**: Select the mode (Enabled, Disabled, or Dry-Run).
-    - **Type**: Choose the function type (API, Notification, Action: Case, Action: Alert).
-    - **Description**: Provide a brief description of the function’s purpose.
-    - **Definition**: Write or paste the function's JavaScript code.
-    - **Test Function**: You can test the function using input data.
-    - **How to Call the Function**: Provides an example command for calling the function.
-5. **Save the Function**: After completing the form, click **Save** to create the function.
-
-&nbsp;
-
-![Create function](./images/functions_create.png)
-
----
-
-## Call a Function
+## Call a function
 
 Once saved, the function can then be called with an http call from your system:
 
@@ -86,63 +105,13 @@ Once saved, the function can then be called with an http call from your system:
     ```
 
 TheHive will take your input (the body of the http call), the definition of your function and execute the function with the input.
-It will respond to the HTTP call with the data returned by the function.
+It will respond to the http call with the data returned by the function.
 
----
+## Example: Create an alert from a Splunk alert
 
-## Example 1: Function Use Case
+When creating a Splunk alert, you can define a [webhook as an action](https://docs.splunk.com/Documentation/Splunk/9.0.0/Alert/Webhooks). So when the alert is triggered the webhook is called with a payload. But the payload is defined by splunk and can't be changed.
 
-Suppose you want to create an alert in TheHive when an event occurs in your system. Your external system may have its own event schema, similar to the example below:
-
-```json
-{
-    "eventId": "d9ec98b1-410f-40eb-8634-cfe189749da6",
-    "date": "2021-06-05T12:45:36.698Z",
-    "title": "An intrusion was detected",
-    "details": "An intrusion was detected on the server 10.10.43.2",
-    "data": [
-        {"kind": "ip", "value": "10.10.43.2", "name": "server-ip" },
-        {"kind": "name", "value": "root", "name": "login" },
-        {"kind": "ip", "value": "92.43.123.1", "name": "origin" }
-    ]
-}
-```
-
-Because this format differs from TheHive's alert schema, the data needs to be transformed into the correct format.
-
-As an org-admin, you can create a new function for your organization to convert this input into TheHive's alert format and generate an alert. The function might look like this:
-
-```javascript
-function handle(input, context) {
-    const theHiveAlert = {
-        "type": "event",
-        "source": "my-system",
-        "sourceRef": input.eventId,
-        "title": input.title,
-        "description": input.details,
-        "date": (new Date(input.date)).getTime(),
-        "observables": input.data.map(data => {
-            // map event data kind to TheHive Observable type
-            const dataType = data.kind === "ip" ? "ip" : "other";
-            return {
-                "dataType": dataType,
-                "data": data.value,
-                "tags": [`name:${data.name}`] // use a tag for the data name
-            };
-        })
-    };
-    // call TheHive APIs, here alert creation
-    return context.alert.create(theHiveAlert);
-}
-```
-
-Creating and testing this function allows you to effortlessly convert your external event data into a format that TheHive can process as an alert.
-
----
-
-## Example 2: Creating an Alert Based on a Splunk Alert
-
-When setting up a Splunk alert, you can configure a [webhook as an action](https://docs.splunk.com/Documentation/Splunk/9.0.0/Alert/Webhooks). When the alert is triggered, the webhook will be invoked with a predefined payload, which cannot be modified. The payload will resemble something like this:
+It should look a bit like:
 
 !!! Example ""
 
@@ -180,7 +149,7 @@ When setting up a Splunk alert, you can configure a [webhook as an action](https
     }
     ```
 
-To convert this Splunk alert into a TheHive alert, you can use a function like the following:
+To transform this splunk alert into a TheHive alert, a function like this can be used:
 
 !!! Example ""
 
@@ -203,16 +172,14 @@ To convert this Splunk alert into a TheHive alert, you can use a function like t
     }
     ```
 
-In Splunk, you'll need to configure the webhook URL to point to the TheHive function URL.
+In splunk, you will need to set the webhook url to TheHive function url.
 
----
+## Example: Cold case automation
 
-## Example 3: Cold Case Automation Process
+When called, this function will:
 
-When invoked, this function will:
-
-- Identify all cases marked as `New` or `InProgress` that haven't been updated in the past month.
-- Add a `cold-case` tag to each of these cases.
+- find all cases that are `New` or `InProgress` and were not updated in the last month
+- to each of those cases, add a tag `cold-case`
 
 !!! Example ""
 
@@ -247,7 +214,6 @@ When invoked, this function will:
         });
     }
     ```
----
 
 ## Context API
 
@@ -446,5 +412,3 @@ When invoked, this function will:
 - `function.update(functionIdOrName: string, update: InputUpdateFunction): void`
 - `function.delete(functionIdOrName: string): void`
 - `function.find(query: any[]): OutputFunction`
-
-&nbsp;
