@@ -19,6 +19,10 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.2 - 21st of October 2024
+### Fixes
+- This version fixes a regression related to the query boolean parameters in the public API. These parameter values are case insensitive again.
+
 ## 5.4.1 - 11th of October 2024
 
 ### Fix
@@ -93,13 +97,13 @@ We resolved an issue with the "Time to Detect" metric during alert creation.
 
 
 ### Known issues
-Last update: 17th of October 2024
+Last update: 21st of October 2024
 
 #### Public API - Query boolean parameters case sensitive
 
 TheHive 5.4.0 introduced a non expected breaking change related to the query boolean parameters.
 The values passed in the query URL, with upper case (ex: `True` or `False`) are not accepted anymore. It does not concern the parameters passed in the body/payload.
-It impacts the endpoints listed below, and the tools that use those endpoints (like TH4Py 2.0). A fix version will be delivered soon.
+It impacts the endpoints listed below, and the tools that use those endpoints (like TH4Py 2.0). **The 5.4.2 version fixes this issue**.
 
 The following endpoints are impacted:
 
