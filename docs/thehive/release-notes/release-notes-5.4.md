@@ -20,7 +20,7 @@
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
 ## 5.4.2 - 21st of October 2024
-### Fixes
+### Fix
 - This version fixes a regression related to the query boolean parameters in the public API. These parameter values are case insensitive again.
 
 ## 5.4.1 - 11th of October 2024
