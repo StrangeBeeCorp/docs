@@ -243,6 +243,7 @@ nav:
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
         - 'Search':
+          - 'Search Functionality Overview': thehive/user-guides/analyst-corner/search/about-search.md
           - 'Search by Cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
           - 'Search by Alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
           - 'Search by Observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md

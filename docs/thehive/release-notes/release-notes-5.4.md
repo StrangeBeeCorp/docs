@@ -19,6 +19,22 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.2 - 21st of October 2024
+### Fix
+- This version fixes a regression related to the query boolean parameters in the public API. These parameter values are case insensitive again.
+
+## 5.4.1 - 11th of October 2024
+
+### Fix
+- We fixed an issue related to our backend framework configuration (pekko). This problem impacted the generated configuration file for a new installation of TheHive on Kubernetes.
+
+### Improvements
+#### Cortex Job Queue
+We have made two improvements to the management of Cortex job queues from TheHive to:
+
+- Prevent spamming the Cortex server when a large number of jobs are submitted.
+- Reduce the latency in retrieving completed job reports, even when the job queue is highly loaded.
+
 ## 5.4.0 - 26th of September 2024
 ### New Features
 
@@ -78,3 +94,22 @@ As part of our recent brand visual identity update, TheHive logo has been update
 
 #### Time metrics
 We resolved an issue with the "Time to Detect" metric during alert creation.
+
+
+### Known issues
+Last update: 21st of October 2024
+
+#### Public API - Query boolean parameters case sensitive
+
+TheHive 5.4.0 introduced a non expected breaking change related to the query boolean parameters.
+The values passed in the query URL, with upper case (ex: `True` or `False`) are not accepted anymore. It does not concern the parameters passed in the body/payload.
+It impacts the endpoints listed below, and the tools that use those endpoints (like TH4Py 2.0). **The 5.4.2 version fixes this issue**.
+
+The following endpoints are impacted:
+
+- Download Attachment from observable: GET /api/v1/observable/$id/attachment/id/download with the asZip param
+- Delete CustomField: `DELETE /api/v1/customField/$id` with `force` flag
+- Invoke Function: `POST /api/v1/function/$id` with `dryRun` flag
+- Invoke Function on an object: `POST /api/v1/function/$id/$objectType/$objectId` with `dryRun` and `sync` params
+- Test Function: `POST /api/v1/function/_test` with `dryRun` param
+- Get platform status: `GET /api/v1/status` with `verbose` param
