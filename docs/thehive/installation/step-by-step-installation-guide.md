@@ -79,7 +79,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
             ```bash
             sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
             wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
-            yum install java-1.11.0-amazon-corretto-devel &> /dev/null
+            yum install java-11-amazon-corretto-devel &> /dev/null
             echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
             export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
             ```
@@ -663,7 +663,7 @@ Install TheHive package by using the following commands:
 
     !!! Example ""
         ```bash
-        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.3 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
+        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.4 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
         sudo apt-get install -y thehive
         ```
@@ -685,7 +685,7 @@ Install TheHive package by using the following commands:
             enabled=1
             priority=1
             name=StrangeBee RPM repository
-            baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
+            baseurl=https://rpm.strangebee.com/thehive-5.4/noarch/
             gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             gpgcheck=1
             ```
