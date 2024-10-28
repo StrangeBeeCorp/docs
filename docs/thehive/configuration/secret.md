@@ -1,6 +1,9 @@
 # Secret Configuration File - `secret.conf`
 
-The secret.conf file contains a secret key that is utilized to define cookies responsible for managing user sessions within TheHive application. It is crucial that one instance of TheHive uses a unique secret key to ensure session security and integrity.
+!!! Note
+    Starting from version 5.4 of TheHive, the secret key must be at least 32 characters long as required by Play Framework 3. Ensure that the secret key complies with this requirement for secure session management.
+
+The `secret.conf` file contains a secret key that is utilized to define cookies responsible for managing user sessions within TheHive application. It is crucial that one instance of TheHive uses a unique secret key to ensure session security and integrity.
 
 - **Single Instance Deployment**: For a single instance of TheHive, ensure that the `secret.conf` file contains a unique secret key.
 
