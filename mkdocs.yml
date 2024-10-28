@@ -50,7 +50,7 @@ plugins:
         redirect_maps:
             'thehive/index.md': 'thehive/overview/index.md'
             'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
-            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.3.md'
+            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.4.md'
             'thehive/setup/index.md': 'thehive/overview/index.md'
 
 
@@ -118,6 +118,7 @@ nav:
       - 'File Storage Configuration': thehive/configuration/file-storage.md
       - 'Connectors Configuration': thehive/configuration/connectors.md
       - 'Akka Configuration': thehive/configuration/akka.md
+      - 'Pekko Configuration (TheHive 5.4+)': thehive/configuration/pekko.md
       - 'Logs Configuration': thehive/configuration/logs.md
       - 'Proxy Configuration': thehive/configuration/proxy.md
       - 'Secrets Configuration': thehive/configuration/secret.md
@@ -242,12 +243,15 @@ nav:
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
         - 'Search':
+          - 'Search Functionality Overview': thehive/user-guides/analyst-corner/search/about-search.md
           - 'Search by Cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
           - 'Search by Alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
           - 'Search by Observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
           - 'Search by Jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
           - 'Search by Tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
           - 'Search by Task Logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
+        - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
+          
     - 'API':
       - 'API Documentation': thehive/api-docs/
       - 'Python Client': https://github.com/thehive-project/thehive4py
@@ -257,6 +261,7 @@ nav:
       - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
       - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
       - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
+      - 'Release Notes for Version 5.4': thehive/release-notes/release-notes-5.4.md
   - Cortex: 
     - cortex/index.md
     - 'Download':
