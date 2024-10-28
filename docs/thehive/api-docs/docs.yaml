@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: TheHive
-  version: v1-5.3.6-1
+  version: v1-5.4.2-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -278,19 +278,20 @@ paths:
         : {\"_field\": \"<field>\", \"_from\": <from>, \"_to\": <to>}}` range filter,\
         \ from is inclusive, to is exclusive, they are both mandatory\n- `_in`: `{\"\
         _in\": {\"_field\": \"<field>\", \"_values\": [<value1>, ...] }}` the field\
-        \ is one of these values\n- `_contains`: `{\"_contains\": \"<field>\"}` if\
-        \ an object contains this field \n- `_like`: `{\"_like\": {\"_field\": \"\
-        <field>\", \"_value\": \"<value>\"}` the field (or a word, depending on the\
-        \ index type) contains the substring\n- `_match`: `{\"_match\": {\"_field\"\
-        : \"<field>\", \"_value\": \"<value>\"}` the field contains the word\n\n###\
-        \ Sorting\n\nUse `{\"_name\": \"sort\", \"fields\": [ {\"<field>\": \"<direction>\"\
-        \ }, ... ]}`\n\nWith `direction` being one of `asc` or `desc`\n\n### Pagination\
-        \ and extraData\n\n- Simple pagination: `{\"_name\": \"page\", \"from\": 0,\
-        \ \"to\": 30}`\n- Ask for extra data with the object:\n  `{\"_name\": \"page\"\
-        , \"from\": 0, \"to\": 30, \"extraData\": [\"shareCount\", \"contributors\"\
-        ] }`\n  \n  The `extraData` field of the object will contain a json object\
-        \ with the selected fields.\n  The available `extraData` depends on the entity\
-        \ being requested.\n\n\n"
+        \ is one of these values\n- ~~`_contains`~~: `{\"_contains\": \"<field>\"\
+        }` if an object contains this field **(deprecated)** replaced by `_has`\n\
+        - `_has`: `{\"_has\": \"<field>\"}` if an object contains this field\n- `_like`:\
+        \ `{\"_like\": {\"_field\": \"<field>\", \"_value\": \"<value>\"}` the field\
+        \ (or a word, depending on the index type) contains the substring\n- `_match`:\
+        \ `{\"_match\": {\"_field\": \"<field>\", \"_value\": \"<value>\"}` the field\
+        \ contains the word\n\n### Sorting\n\nUse `{\"_name\": \"sort\", \"fields\"\
+        : [ {\"<field>\": \"<direction>\" }, ... ]}`\n\nWith `direction` being one\
+        \ of `asc` or `desc`\n\n### Pagination and extraData\n\n- Simple pagination:\
+        \ `{\"_name\": \"page\", \"from\": 0, \"to\": 30}`\n- Ask for extra data with\
+        \ the object:\n  `{\"_name\": \"page\", \"from\": 0, \"to\": 30, \"extraData\"\
+        : [\"shareCount\", \"contributors\"] }`\n  \n  The `extraData` field of the\
+        \ object will contain a json object with the selected fields.\n  The available\
+        \ `extraData` depends on the entity being requested.\n\n\n"
       operationId: Query API
       requestBody:
         content:
@@ -427,7 +428,7 @@ paths:
           - Observable `data` field is protected by default
           - The `model` field is now mandatory for all formats
           - When the `fields` field is present (for `csv` format), these fields will **replace** the default exported fields
-      operationId: Export API (unstable route)
+      operationId: Export API - unstable route
       parameters:
       - name: query
         in: query
@@ -550,7 +551,7 @@ paths:
         **WARNING**: this is an unstable route. Breaking changes could happen in future releases.
 
         Get exportable fields by model.
-      operationId: Get export fields (unstable route)
+      operationId: Get export fields - unstable route
       responses:
         '200':
           description: ''
@@ -726,6 +727,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/create
   /api/v1/case/{idOrName}:
     get:
       tags:
@@ -909,6 +912,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/delete
     patch:
       tags:
       - Case
@@ -1004,6 +1009,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/_bulk:
     patch:
       tags:
@@ -1092,6 +1099,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/_merge/{ids}:
     post:
       tags:
@@ -1186,6 +1195,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/merge
   /api/v1/case/{caseId}/alert/{alertId}:
     delete:
       tags:
@@ -1283,6 +1294,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/{caseId}/observable/_merge:
     post:
       tags:
@@ -1377,6 +1390,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/{caseId}/links:
     get:
       tags:
@@ -1667,6 +1682,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.importArchive
+      x-TheHive-permissions:
+      - manageCase/create
   /api/v1/case/{caseId}/export:
     get:
       tags:
@@ -1877,6 +1894,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/{caseId}/owner:
     post:
       tags:
@@ -1975,6 +1994,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/changeOwnership
   /api/v1/case/{caseId}/similar/{alertOrCaseId}/observables:
     get:
       tags:
@@ -2081,45 +2102,94 @@ paths:
     post:
       tags:
       - Alert
-      description: "Endpoints allows the creation of alerts in TheHive\nIt supports\
-        \ both json input of multipart. **To create observables with files, you need\
-        \ to use a multipart body**.\n\nTo use the multipart, you need to send several\
-        \ parts:\n- a data part with the name `_json` containing a json of the alert\
-        \ to create\n   - in the `observables`, if you want to use a simple data,\
-        \ use the `data` field of the observable\n   - if you want to use a file,\
-        \ in the `attachment` field use a string. This string should refers to a part\
-        \ of the multipart body containing your file\n   - if you want to use an existing\
-        \ attachment in TheHive, set an object containing the name, content-type and\
-        \ id of the attachment\n\nYou can always add observables to your alert later\
-        \ using the endpoint `POST /api/v1/alert/<alertId>/observable`\n\n### With\
-        \ curl\n\nCreate an alert with observables of type strings using json\n```\n\
-        curl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer <api_key>'\
-        \ -X POST -H 'Content-Type: application/json' --data '\n{\n  \"type\": \"\
-        alertType\",\n  \"source\": \"test\",\n  \"sourceRef\": \"1\",\n  \"title\"\
-        : \"alert title\",\n  \"description\": \"alert description\",\n  \"observables\"\
-        : [\n     { \"dataType\": \"url\", \"data\": \"http://example.org\" },\n \
-        \    { \"dataType\": \"mail\", \"data\": \"foo@example.org\" }\n  ]\n}\n```\n\
-        \nCreate an alert with 2 observables, an url and a file, using multipart\n\
-        ```\ncurl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer\
-        \ <api_key>' -X POST -F _json='\n{\n  \"type\": \"alertType\",\n  \"source\"\
-        : \"test\",\n  \"sourceRef\": \"1\",\n  \"title\": \"alert title\",\n  \"\
-        description\": \"alert description\",\n  \"observables\": [\n     { \"dataType\"\
-        : \"url\", \"data\": \"http://example.org\" },\n     { \"dataType\": \"file\"\
-        , \"attachment\": \"attachment0\" }\n  ]\n}\n' -F attachment0=@<file>\n```\n\
-        \n### With python (requests)\n\nCreate an alert with two files as observables\n\
-        ```python\nimport json\nimport requests \n\n# 'fileA' and 'fileB' are arbitrary\
-        \ names. You can choose your own.\n# the name must be used as a key in the\
-        \ dictionary 'files'\nobservables = [\n    {'dataType': 'file', 'attachment':\
-        \ 'fileA'}, \n    {'dataType': 'file', 'attachment': 'fileB'}, \n]\nfiles\
-        \ = {\n    'fileA': open(path_to_fileA, 'rb'),\n    'fileB': open(path_to_fileB,\
-        \ 'rb')\n}\nalert = {\n    'title': 'my title',\n    'type': 'test',\n   \
-        \ 'source': 'python',\n    'sourceRef': '1',\n    'description': 'description\
-        \ ...',\n    'observables': observables\n}\n\n# Send the request\nresponse\
-        \ = requests.post(\n    f'{thehive_url}/api/v1/alert',\n    # send the files\
-        \ and the alert with the special part '_json'\n    files={\n        '_json':\
-        \ json.dumps(alert), \n        **files\n    },\n    headers={ 'Authorization':\
-        \ f'Bearer {thehive_api_key}' }\n)\n\n# check response code\nresponse.raise_for_status()\n\
-        ```\n\n"
+      description: |+
+        Endpoints allows the creation of alerts in TheHive
+        It supports both json input of multipart. **To create observables with files, you need to use a multipart body**.
+
+        To use the multipart, you need to send several parts:
+        - a data part with the name `_json` containing a json of the alert to create
+           - in the `observables`, if you want to use a simple data, use the `data` field of the observable
+           - if you want to use a file, in the `attachment` field use a string. This string should refers to a part of the multipart body containing your file
+           - if you want to use an existing attachment in TheHive, set an object containing the name, content-type and id of the attachment
+
+        You can always add observables to your alert later using the endpoint `POST /api/v1/alert/<alertId>/observable`
+
+        ### With curl
+
+        Create an alert with observables of type strings using json
+        ```
+        curl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer <api_key>' -X POST -H 'Content-Type: application/json' --data '
+        {
+          "type": "alertType",
+          "source": "test",
+          "sourceRef": "1",
+          "title": "alert title",
+          "description": "alert description",
+          "observables": [
+             { "dataType": "url", "data": "http://example.org" },
+             { "dataType": "mail", "data": "foo@example.org" }
+          ]
+        }
+        ```
+
+        Create an alert with 2 observables, an url and a file, using multipart
+        ```
+        curl http://<thehive_endpoint>/api/v1/alert -H 'Authorization: Bearer <api_key>' -X POST -F _json='
+        {
+          "type": "alertType",
+          "source": "test",
+          "sourceRef": "1",
+          "title": "alert title",
+          "description": "alert description",
+          "observables": [
+             { "dataType": "url", "data": "http://example.org" },
+             { "dataType": "file", "attachment": "attachment0" }
+          ]
+        }
+        ' -F attachment0=@<file>
+        ```
+
+        ### With python (requests)
+
+        Create an alert with two files as observables
+        ```python
+        import json
+        import requests
+
+        # 'fileA' and 'fileB' are arbitrary names. You can choose your own.
+        # the name must be used as a key in the dictionary 'files'
+        observables = [
+            {'dataType': 'file', 'attachment': 'fileA'},
+            {'dataType': 'file', 'attachment': 'fileB'},
+        ]
+        files = {
+            'fileA': open(path_to_fileA, 'rb'),
+            'fileB': open(path_to_fileB, 'rb')
+        }
+        alert = {
+            'title': 'my title',
+            'type': 'test',
+            'source': 'python',
+            'sourceRef': '1',
+            'description': 'description ...',
+            'observables': observables
+        }
+
+        # Send the request
+        response = requests.post(
+            f'{thehive_url}/api/v1/alert',
+            # send the files and the alert with the special part '_json'
+            files={
+                '_json': json.dumps(alert),
+                **files
+            },
+            headers={ 'Authorization': f'Bearer {thehive_api_key}' }
+        )
+
+        # check response code
+        response.raise_for_status()
+        ```
+
       operationId: Create Alert
       requestBody:
         content:
@@ -2220,6 +2290,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/create
   /api/v1/alert/{alertId}:
     get:
       tags:
@@ -2403,6 +2475,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/delete
     patch:
       tags:
       - Alert
@@ -2498,6 +2572,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/_bulk:
     patch:
       tags:
@@ -2586,6 +2662,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/{alertId}/case:
     post:
       tags:
@@ -2686,6 +2764,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/import
   /api/v1/alert/{alertId}/follow:
     post:
       tags:
@@ -2776,6 +2856,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/{alertId}/unfollow:
     post:
       tags:
@@ -2866,6 +2948,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/{alertId}/merge/{caseId}:
     post:
       tags:
@@ -2967,6 +3051,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/import
   /api/v1/alert/merge/_bulk:
     post:
       tags:
@@ -3059,6 +3145,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/import
   /api/v1/alert/delete/_bulk:
     post:
       tags:
@@ -3157,6 +3245,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/delete
   /api/v1/alert/{alertId}/similar/{alertOrCaseId}/observables:
     get:
       tags:
@@ -3383,6 +3473,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservable
   /api/v1/alert/{alertId}/observable:
     post:
       tags:
@@ -3533,6 +3625,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservable
   /api/v1/observable/{observableId}:
     get:
       tags:
@@ -3716,6 +3810,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservable
     patch:
       tags:
       - Observable
@@ -3811,6 +3907,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservable
   /api/v1/observable/_bulk:
     patch:
       tags:
@@ -3899,6 +3997,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservable
   /api/v1/case/{caseId}/task:
     post:
       tags:
@@ -3999,6 +4099,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/task/{taskId}:
     get:
       tags:
@@ -4182,6 +4284,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
     patch:
       tags:
       - Task
@@ -4277,6 +4381,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/task/_bulk:
     patch:
       tags:
@@ -4365,6 +4471,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/task/{taskId}/actionRequired:
     get:
       tags:
@@ -4765,6 +4873,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/log/{logId}:
     delete:
       tags:
@@ -4855,6 +4965,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
     patch:
       tags:
       - Task Log
@@ -4950,6 +5062,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/log/{logId}/attachments:
     post:
       tags:
@@ -5046,6 +5160,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/log/{logId}/attachments/{attachmentId}:
     delete:
       tags:
@@ -5143,6 +5259,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTask
   /api/v1/page:
     post:
       tags:
@@ -5235,6 +5353,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageKnowledgeBase
   /api/v1/page/{pageId}:
     delete:
       tags:
@@ -5325,6 +5445,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageKnowledgeBase
     patch:
       tags:
       - Page
@@ -5420,6 +5542,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageKnowledgeBase
   /api/v1/case/{caseId}/page:
     post:
       tags:
@@ -5520,6 +5644,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePage
   /api/v1/case/{caseId}/page/{pageId}:
     delete:
       tags:
@@ -5617,6 +5743,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePage
     patch:
       tags:
       - Page
@@ -5719,6 +5847,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePage
   /api/v1/case/{caseId}/comment:
     post:
       tags:
@@ -5819,6 +5949,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageComment
   /api/v1/alert/{alertId}/comment:
     post:
       tags:
@@ -5919,6 +6051,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageComment
   /api/v1/comment/{commentId}:
     delete:
       tags:
@@ -6009,6 +6143,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageComment
     patch:
       tags:
       - Comment
@@ -6104,6 +6240,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageComment
   /api/v1/case/{caseId}/timeline:
     get:
       tags:
@@ -6301,6 +6439,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomEvent
   /api/v1/customEvent/{eventId}:
     delete:
       tags:
@@ -6391,6 +6531,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomEvent
     patch:
       tags:
       - Timeline
@@ -6486,6 +6628,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomEvent
   /api/v1/caseTemplate:
     post:
       tags:
@@ -6578,6 +6722,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCaseTemplate
   /api/v1/caseTemplate/{caseTemplateNameOrId}:
     get:
       tags:
@@ -6761,6 +6907,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCaseTemplate
     patch:
       tags:
       - CaseTemplate
@@ -6856,6 +7004,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCaseTemplate
   /api/v1/caseTemplate/{caseTemplateNameOrId}/pageTemplate/link:
     put:
       tags:
@@ -7044,6 +7194,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePageTemplate
   /api/v1/pageTemplate/{pageTemplateId}:
     delete:
       tags:
@@ -7134,6 +7286,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePageTemplate
     patch:
       tags:
       - PageTemplate
@@ -7229,6 +7383,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePageTemplate
   /api/v1/case/{caseId}/procedure:
     post:
       tags:
@@ -7329,6 +7485,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/case/{caseId}/procedures:
     post:
       tags:
@@ -7431,6 +7589,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/alert/{alertId}/procedure:
     post:
       tags:
@@ -7531,6 +7691,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/alert/{alertId}/procedures:
     post:
       tags:
@@ -7633,6 +7795,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/procedure/{procedureId}:
     delete:
       tags:
@@ -7723,6 +7887,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
     patch:
       tags:
       - TTP
@@ -7818,6 +7984,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/procedure/delete/_bulk:
     post:
       tags:
@@ -7916,6 +8084,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageProcedure
   /api/v1/dashboard:
     post:
       tags:
@@ -8008,6 +8178,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageDashboard
   /api/v1/dashboard/{dashboardId}:
     get:
       tags:
@@ -8191,6 +8363,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageDashboard
     patch:
       tags:
       - Dashboard
@@ -8286,6 +8460,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageDashboard
   /api/v1/dashboard/{dashboardId}/owner:
     post:
       tags:
@@ -8382,6 +8558,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageDashboard
   /api/v1/alert/{alertId}/attachments:
     post:
       tags:
@@ -8482,6 +8660,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/{alertId}/attachment/{attachmentId}:
     get:
       tags:
@@ -8709,6 +8889,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageAlert/update
   /api/v1/alert/{alertId}/attachment/{attachmentId}/download:
     get:
       tags:
@@ -8931,6 +9113,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/case/{caseId}/attachment/{attachmentId}/download:
     get:
       tags:
@@ -9187,7 +9371,7 @@ paths:
     delete:
       tags:
       - Case
-      operationId: Delete Attachment
+      operationId: Delete Case Attachment
       parameters:
       - name: caseId
         in: path
@@ -9280,6 +9464,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/update
   /api/v1/log/{logId}/attachment/{attachmentId}/download:
     get:
       tags:
@@ -9887,6 +10073,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageKnowledgeBase
   /api/v1/attachment/{attachmentId}:
     get:
       tags:
@@ -10100,6 +10288,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageKnowledgeBase
   /api/v1/login:
     post:
       tags:
@@ -10171,7 +10361,7 @@ paths:
     get:
       tags:
       - Login
-      operationId: Logout
+      operationId: Logout GET
       responses:
         '200':
           description: ''
@@ -10220,7 +10410,7 @@ paths:
     post:
       tags:
       - Login
-      operationId: Logout
+      operationId: Logout POST
       responses:
         '200':
           description: ''
@@ -10842,6 +11032,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageUser
   /api/v1/user/{userId}:
     get:
       tags:
@@ -11028,6 +11220,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageUser
     patch:
       tags:
       - User
@@ -11220,6 +11414,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageUser
   /api/v1/user/{userId}/organisations:
     put:
       tags:
@@ -11320,6 +11516,106 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageUser
+  /api/v1/user/{userId}/login/set:
+    post:
+      tags:
+      - User
+      operationId: Set user login
+      parameters:
+      - name: userId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputSetUserLogin'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-permissions:
+      - manageUser
   /api/v1/user/{userId}/password/set:
     post:
       tags:
@@ -11416,6 +11712,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageUser
   /api/v1/user/{userId}/password/change:
     post:
       tags:
@@ -11990,6 +12288,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageOrganisation
   /api/v1/organisation/{orgId}:
     get:
       tags:
@@ -12179,6 +12479,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageOrganisation
   /api/v1/organisation/{orgId}/avatar/{fileHash}:
     get:
       tags:
@@ -12411,6 +12713,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageOrganisation
     delete:
       tags:
       - Organisation
@@ -12507,6 +12811,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageOrganisation
   /api/v1/organisation/{orgId}/links:
     get:
       tags:
@@ -12698,6 +13004,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageOrganisation
   /api/v1/sharingProfile:
     get:
       tags:
@@ -12965,6 +13273,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomField
   /api/v1/customField/{customFieldId}:
     delete:
       tags:
@@ -13062,6 +13372,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomField
     patch:
       tags:
       - CustomField
@@ -13157,6 +13469,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCustomField
   /api/v1/alertStatus:
     post:
       tags:
@@ -13251,6 +13565,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - alert.customStatus
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/alertStatus/{id}:
     delete:
       tags:
@@ -13343,6 +13659,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - alert.customStatus
+      x-TheHive-permissions:
+      - managePlatform
     patch:
       tags:
       - AlertStatus
@@ -13440,6 +13758,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - alert.customStatus
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/caseStatus:
     post:
       tags:
@@ -13534,6 +13854,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.customStatus
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/caseStatus/{id}:
     delete:
       tags:
@@ -13626,6 +13948,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.customStatus
+      x-TheHive-permissions:
+      - managePlatform
     patch:
       tags:
       - CaseStatus
@@ -13723,6 +14047,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.customStatus
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/taxonomy:
     post:
       tags:
@@ -13815,6 +14141,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTaxonomy
   /api/v1/taxonomy/import-zip:
     post:
       tags:
@@ -13913,6 +14241,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTaxonomy
   /api/v1/taxonomy/{taxonomyId}/activate:
     put:
       tags:
@@ -14003,6 +14333,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTaxonomy
   /api/v1/taxonomy/{taxonomyId}/deactivate:
     put:
       tags:
@@ -14093,6 +14425,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTaxonomy
   /api/v1/taxonomy/{taxonomyId}:
     get:
       tags:
@@ -14276,6 +14610,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageTaxonomy
   /api/v1/profile:
     post:
       tags:
@@ -14370,6 +14706,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - users.customProfiles
+      x-TheHive-permissions:
+      - manageProfile
   /api/v1/profile/{profileId}:
     get:
       tags:
@@ -14555,6 +14893,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - users.customProfiles
+      x-TheHive-permissions:
+      - manageProfile
     patch:
       tags:
       - Profile
@@ -14652,6 +14992,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - users.customProfiles
+      x-TheHive-permissions:
+      - manageProfile
   /api/v1/case/{caseId}/shares:
     get:
       tags:
@@ -14853,6 +15195,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
     post:
       tags:
       - Case
@@ -14958,6 +15302,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
     delete:
       tags:
       - Case
@@ -15053,6 +15399,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
   /api/v1/task/{taskId}/shares:
     get:
       tags:
@@ -15247,6 +15595,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
     delete:
       tags:
       - Task
@@ -15342,6 +15692,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
   /api/v1/observable/{observableId}/shares:
     get:
       tags:
@@ -15536,6 +15888,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
     delete:
       tags:
       - Observable
@@ -15631,6 +15985,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
   /api/v1/case/share/{shareId}:
     delete:
       tags:
@@ -15721,6 +16077,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
     patch:
       tags:
       - Share
@@ -15816,6 +16174,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
   /api/v1/case/shares:
     delete:
       tags:
@@ -15914,6 +16274,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageShare
   /api/v1/config/user:
     get:
       tags:
@@ -16195,7 +16557,7 @@ paths:
       - Basic: []
       - Session: []
   /api/v1/admin/log/set/{packageName}/{level}:
-    get:
+    put:
       tags:
       - Admin
       operationId: Update Log Level
@@ -16287,8 +16649,10 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/_all/trigger:
-    get:
+    put:
       tags:
       - Admin
       operationId: Trigger all checks
@@ -16369,8 +16733,10 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/{name}/trigger:
-    get:
+    put:
       tags:
       - Admin
       operationId: Trigger integrity check
@@ -16457,11 +16823,13 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/{name}/global/trigger:
     post:
       tags:
       - Admin
-      operationId: Trigger integrity check
+      operationId: Trigger global integrity check
       parameters:
       - name: name
         in: path
@@ -16545,11 +16913,13 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/{name}/dedup/trigger:
     post:
       tags:
       - Admin
-      operationId: Trigger integrity check
+      operationId: Trigger dedup integrity check
       parameters:
       - name: name
         in: path
@@ -16633,11 +17003,13 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/cancel:
     post:
       tags:
       - Admin
-      operationId: Trigger integrity check
+      operationId: Cancel current integrity check
       responses:
         '204':
           description: ''
@@ -16715,6 +17087,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/check/stats:
     get:
       tags:
@@ -16801,6 +17175,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/index/status:
     get:
       tags:
@@ -16887,6 +17263,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/index/{name}/reindex:
     post:
       tags:
@@ -16976,6 +17354,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/index/{name}/rebuild:
     post:
       tags:
@@ -17066,6 +17446,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/schema/repair/{schemaName}:
     post:
       tags:
@@ -17168,6 +17550,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/admin/schema/info/{schemaName}:
     post:
       tags:
@@ -17270,6 +17654,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/describe/{model}:
     get:
       tags:
@@ -17628,6 +18014,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/license:
     get:
       tags:
@@ -17714,6 +18102,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
     post:
       tags:
       - License
@@ -17801,6 +18191,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/license/{licenseId}/activate:
     put:
       tags:
@@ -17891,6 +18283,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/license/challenge:
     get:
       tags:
@@ -17977,6 +18371,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePlatform
   /api/v1/catalog:
     post:
       tags:
@@ -18069,6 +18465,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePattern
   /api/v1/catalog/{catalogId}:
     delete:
       tags:
@@ -18159,6 +18557,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePattern
     patch:
       tags:
       - Att&ck
@@ -18254,6 +18654,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePattern
   /api/v1/pattern/import/attack:
     post:
       tags:
@@ -18366,6 +18768,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePattern
   /api/v1/pattern/{patternId}:
     get:
       tags:
@@ -18549,6 +18953,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - managePattern
   /api/v1/pattern/case/{caseId}:
     get:
       tags:
@@ -18828,6 +19234,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservableTemplate
   /api/v1/observable/type:
     post:
       tags:
@@ -18920,6 +19328,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageObservableTemplate
   /api/v1/status/public:
     get:
       tags:
@@ -20941,6 +21351,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCase/create
   /api/v1/function:
     post:
       tags:
@@ -21056,6 +21468,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - functions
+      x-TheHive-permissions:
+      - manageFunction/create
   /api/v1/function/{function}:
     post:
       tags:
@@ -21164,6 +21578,134 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - functions
+      x-TheHive-permissions:
+      - manageFunction/invoke
+  /api/v1/function/{function}/{objectType}/{objectIdOrName}:
+    post:
+      tags:
+      - Function
+      description: Invoke function (asynchronous) on an object (Alert, Case, Task,
+        Log, Observable)
+      operationId: Invoke Function on an object
+      parameters:
+      - name: function
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: objectType
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: objectIdOrName
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: dryRun
+        in: query
+        required: false
+        allowEmptyValue: true
+        schema:
+          type: boolean
+          default: false
+      - name: sync
+        in: query
+        required: false
+        allowEmptyValue: true
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputInvokeFunctionBackground'
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - functions
+      x-TheHive-permissions:
+      - manageFunction/invoke
   /api/v1/function/{functionId}:
     get:
       tags:
@@ -21351,6 +21893,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - functions
+      x-TheHive-permissions:
+      - manageFunction/create
     patch:
       tags:
       - Function
@@ -21448,6 +21992,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - functions
+      x-TheHive-permissions:
+      - manageFunction/create
   /api/v1/function/_test:
     post:
       tags:
@@ -21550,6 +22096,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageFunction/create
   /api/v1/function/_context/documentation:
     get:
       tags:
@@ -21731,6 +22279,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
   /api/v1/caseReportTemplate/{templateId}:
     get:
       tags:
@@ -21919,6 +22469,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
     patch:
       tags:
       - Case Report Template
@@ -22016,6 +22568,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
   /api/v1/caseReportTemplate/_info:
     get:
       tags:
@@ -22202,6 +22756,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
   /api/v1/caseReportTemplate/{templateId}/attachment/{attachmentId}:
     get:
       tags:
@@ -22429,6 +22985,8 @@ paths:
       - Api Key: []
       - Basic: []
       - Session: []
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
   /api/v1/caseReportTemplate/{templateId}/attachment/{attachmentId}/download:
     get:
       tags:
@@ -22584,8 +23142,7 @@ paths:
         schema:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
       responses:
         '200':
           description: ''
@@ -22909,6 +23466,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+      x-TheHive-permissions:
+      - manageCaseReport
   /api/v1/case/{caseId}/report/upload:
     post:
       tags:
@@ -23012,6 +23571,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - case.reporting
+      x-TheHive-permissions:
+      - manageCaseReport
   /api/v1/caseReport/{reportId}/download:
     get:
       tags:
@@ -23624,6 +24185,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/config/{configId}:
     get:
       tags:
@@ -23718,6 +24281,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
     put:
       tags:
       - Email Intake
@@ -23813,6 +24378,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
     delete:
       tags:
       - Email Intake
@@ -23902,6 +24469,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/configs:
     get:
       tags:
@@ -23991,6 +24560,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
     put:
       tags:
       - Email Intake
@@ -24081,6 +24652,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/folders:
     post:
       tags:
@@ -24178,6 +24751,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/config/authorizationCode:
     post:
       tags:
@@ -24274,6 +24849,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/config/test:
     post:
       tags:
@@ -24365,6 +24942,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
   /api/v1/connector/email-intake/sync:
     post:
       tags:
@@ -24454,6 +25033,8 @@ paths:
       - Session: []
       x-TheHive-capabilities:
       - admin.setConfiguration
+      x-TheHive-permissions:
+      - manageConfig
 components:
   schemas:
     AlertField:
@@ -24510,8 +25091,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     AlertTable:
@@ -24538,8 +25118,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     CaseReportTemplateDefinition:
@@ -24563,6 +25142,29 @@ components:
           default: yyyy-MM-dd HH:mm
         i18n:
           $ref: '#/components/schemas/I18n'
+    Comments:
+      required:
+      - _kind
+      type: object
+      properties:
+        title:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        sort:
+          type: array
+          items:
+            oneOf:
+            - $ref: '#/components/schemas/FieldDirection'
+            - $ref: '#/components/schemas/Map_Direction'
+            - type: string
+              example: +_createdAt
+        maxElements:
+          type: integer
+          format: int32
+          exclusiveMinimum: 0
+        _kind:
+          $ref: '#/components/schemas/Kind'
     CustomFieldType:
       type: string
       enum:
@@ -25503,11 +26105,11 @@ components:
           - $ref: '#/components/schemas/InputAttachment'
           - type: array
             items:
-              $ref: '#/components/schemas/InputAttachment'
-          - type: array
-            items:
               type: string
               description: reference to a file attachment
+          - type: array
+            items:
+              $ref: '#/components/schemas/InputAttachment'
           - type: string
             description: reference to a file attachment
         tlp:
@@ -25966,12 +26568,23 @@ components:
           maxLength: 1048576
         config:
           $ref: '#/components/schemas/JsObject'
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputFunctionType'
     InputFunctionMode:
       type: string
       enum:
       - Enabled
       - Disabled
       - DryRun
+    InputFunctionType:
+      type: string
+      enum:
+      - api
+      - notification
+      - action:case
+      - action:alert
     InputGenerateCaseReport:
       required:
       - caseReportTemplateId
@@ -26262,6 +26875,7 @@ components:
           type: string
         definition:
           $ref: '#/components/schemas/CaseReportTemplateDefinition'
+          description: Either provide `definition` or `caseReportTemplateId`
         caseReportTemplateId:
           type: string
           description: Either provide `definition` or `caseReportTemplateId`
@@ -26275,8 +26889,16 @@ components:
           description: Limit the number of elements in tables and lists, useful for
             a preview
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
+    InputSetUserLogin:
+      required:
+      - login
+      type: object
+      properties:
+        login:
+          type: string
+          pattern: ^(([^()\[\]\\.,;:\s@"]+(\.[^()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9 -퟿豈-﷏ﷰ-￯]+\.)+[a-zA-Z -퟿豈-﷏ﷰ-￯]{2,}))$
+          maxLength: 128
     InputSetUserOrganisations:
       type: object
       properties:
@@ -27010,6 +27632,10 @@ components:
           maxLength: 1048576
         config:
           $ref: '#/components/schemas/JsObject'
+        types:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputFunctionType'
     InputUpdateLog:
       type: object
       properties:
@@ -27413,6 +28039,8 @@ components:
       - TTPTable
       - TTPList
       - Timeline
+      - Comments
+      - Pages
     Ko:
       required:
       - errors
@@ -27543,8 +28171,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     ObservableTable:
@@ -27574,8 +28201,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     Ok:
@@ -28927,6 +29553,10 @@ components:
           example: 1640000000000
         lastErrorDetails:
           $ref: '#/components/schemas/JsObject'
+        types:
+          type: array
+          items:
+            type: string
     OutputImportCase:
       required:
       - case
@@ -28946,6 +29576,8 @@ components:
           type: array
           items: {}
           description: Field is present if there were some errors during import
+    OutputInvokeFunctionBackground:
+      type: object
     OutputInvokeFunctionKo:
       required:
       - errorType
@@ -29783,6 +30415,7 @@ components:
           $ref: '#/components/schemas/OutputLicenseStatus'
         cluster:
           $ref: '#/components/schemas/JsObject'
+          description: Filled when verbose
         schemaStatus:
           type: array
           items:
@@ -30090,6 +30723,17 @@ components:
           type: array
           items:
             type: string
+    Pages:
+      required:
+      - _kind
+      type: object
+      properties:
+        title:
+          type: string
+        filter:
+          $ref: '#/components/schemas/Filter'
+        _kind:
+          $ref: '#/components/schemas/Kind'
     TTPField:
       type: string
       enum:
@@ -30125,8 +30769,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     TTPTable:
@@ -30153,8 +30796,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     TaskField:
@@ -30205,8 +30847,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     TaskTable:
@@ -30233,8 +30874,7 @@ components:
         maxElements:
           type: integer
           format: int32
-          minimum: 0
-          exclusiveMinimum: true
+          exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
     Text:
@@ -30247,6 +30887,19 @@ components:
           type: string
         template:
           type: string
+        _kind:
+          $ref: '#/components/schemas/Kind'
+    Timeline:
+      required:
+      - _kind
+      type: object
+      properties:
+        title:
+          type: string
+        events:
+          type: array
+          items:
+            $ref: '#/components/schemas/TimelineEvents'
         _kind:
           $ref: '#/components/schemas/Kind'
     TimelineEvents:
@@ -30263,31 +30916,37 @@ components:
       oneOf:
       - $ref: '#/components/schemas/AlertList'
       - $ref: '#/components/schemas/AlertTable'
+      - $ref: '#/components/schemas/Comments'
       - $ref: '#/components/schemas/CustomFields'
       - $ref: '#/components/schemas/CustomFieldsList'
       - $ref: '#/components/schemas/Image'
       - $ref: '#/components/schemas/ObservableList'
       - $ref: '#/components/schemas/ObservableTable'
+      - $ref: '#/components/schemas/Pages'
       - $ref: '#/components/schemas/TTPList'
       - $ref: '#/components/schemas/TTPTable'
       - $ref: '#/components/schemas/TaskList'
       - $ref: '#/components/schemas/TaskTable'
       - $ref: '#/components/schemas/Text'
+      - $ref: '#/components/schemas/Timeline'
       discriminator:
         propertyName: _kind
         mapping:
           AlertList: '#/components/schemas/AlertList'
           AlertTable: '#/components/schemas/AlertTable'
+          Comments: '#/components/schemas/Comments'
           CustomFields: '#/components/schemas/CustomFields'
           CustomFieldsList: '#/components/schemas/CustomFieldsList'
           Image: '#/components/schemas/Image'
           ObservableList: '#/components/schemas/ObservableList'
           ObservableTable: '#/components/schemas/ObservableTable'
+          Pages: '#/components/schemas/Pages'
           TTPList: '#/components/schemas/TTPList'
           TTPTable: '#/components/schemas/TTPTable'
           TaskList: '#/components/schemas/TaskList'
           TaskTable: '#/components/schemas/TaskTable'
           Text: '#/components/schemas/Text'
+          Timeline: '#/components/schemas/Timeline'
     _and:
       type: object
       properties:
@@ -30450,6 +31109,17 @@ components:
         A Cookie is set in the browser after a user logs in (with login/password or SSO) with the name `THEHIVE-SESSION`
       name: THEHIVE-SESSION
       in: cookie
+    Header:
+      type: http
+      description: |2
+
+        In config, you must set which header field is used to identify user. You don't need to specify a password. This technique is used when authentication is performed upstream.
+
+        With curl for instance:
+        ```
+        curl -H 'X-USER:myuser@thehive.local' ...
+        ```
+      name: Header
 x-tagGroups:
 - name: Standard Features
   tags:
