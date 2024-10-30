@@ -255,6 +255,8 @@ This section describes the necessary steps to configure Google Workspace to allo
 
     - Copy these values or download the JSON file for future reference.
 
+    ![](../images/administration/intake-19.png)
+
 8. **Configure Intake Connector Settings in TheHive**
 
     - Set up the intake settings in TheHive by filling in the following values:
