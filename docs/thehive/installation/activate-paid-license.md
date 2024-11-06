@@ -2,7 +2,7 @@
 
 ## Overview
 
-In addition to the [Community License](./request-community-license.md), The Hive provides two advanced licensing options tailored to meet various operational requirements.
+In addition to the [Community License](./request-community-license.md), TheHive provides two advanced licensing options tailored to meet various operational requirements.
 
 ### Gold License
 The Gold License is designed for internal response teams who benefit from enhanced case management lifecycles and integration within their organizational infrastructure.
@@ -10,7 +10,7 @@ The Gold License is designed for internal response teams who benefit from enhanc
 ### Platinum License
 The Platinum License is best suited for large teams needing extensive server connections, clustering, and dedicated, continuous support for mission-critical, large-scale incident response operations.
 
-For full details, refer to [The Hive Pricing](https://strangebee.com/thehive-pricing-on-prem/).
+For full details, refer to [TheHive Pricing](https://strangebee.com/thehive-pricing-on-prem/).
 
 &nbsp;
 

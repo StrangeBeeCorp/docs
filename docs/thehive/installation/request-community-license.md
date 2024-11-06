@@ -2,7 +2,7 @@
 
 ## Overview
 
-Starting with TheHive version 5.3, all users are required to generate a valid license to use the platform. Community users can obtain a **free Community License**, while paid licenses (Gold or Platinum) are available for enhanced functionality.
+Starting with TheHive version 5.3, all users are required to generate a valid license to use the platform. Community users can obtain a **free Community License**, while paid licenses (Gold or Platinum) are available.
 
 In the absence of a valid license, TheHive provides a 14-day **Platinum trial**, which supports up to 2 organizations and 5 users. After the trial expires, TheHive transitions to read-only mode, requiring a valid license for continued full functionality.
 
