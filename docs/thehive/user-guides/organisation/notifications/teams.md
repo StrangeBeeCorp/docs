@@ -45,7 +45,7 @@ To accommodate Microsoft's changes and ensure continued functionality of Teams n
 &nbsp;
 
 ### Step 2: Create a New Endpoint
-In the *Organization* configuration view, go to the *Endpoints* tab. Click the :fontawesome-regular-square-plus: button to add a new *Notifier*.
+In the *Organization* configuration view, go to the *Endpoints* tab. Click the :fontawesome-regular-square-plus: button to add a new *Connector*.
 
 <figure markdown>
   ![Endpoints list](./images/organisation-endpoints.png)
@@ -54,7 +54,7 @@ In the *Organization* configuration view, go to the *Endpoints* tab. Click the :
 &nbsp;
 
 ### Step 3: Enter the Required Information
-Select *Teams* as the notifier type and complete the necessary details.
+Select *Teams* as the connector type and complete the necessary details.
 
 <figure markdown>
   ![Teams endpoint configuration](./images/organisation-endpoints-teams-configuration.png)
@@ -83,7 +83,7 @@ If you are currently using the legacy Teams webhook, follow these steps to migra
 ---
 
 ## Notification Configuration
-When creating a *Notification* select *Teams/ENDPOINT* (with ENDPOINT the name of the endpoint created) as *Notifier* and complete the form.
+When creating a *Notification* select *Teams/ENDPOINT* (with ENDPOINT the name of the endpoint created) as *Connector* and complete the form.
 
 <figure markdown>
   ![Choose Teams](./images/organisation-notifications-teams-1.png)
@@ -92,7 +92,7 @@ When creating a *Notification* select *Teams/ENDPOINT* (with ENDPOINT the name o
 TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:
 
 * **Endpoint**: choose the endpoint to use
-* **Text template**: This is required, even if an adaptive card template is filled. This is used in the summary part, in notifications. Format is *plain text*.
+* **Text template**: If an adaptive card template is not provided, a plain text template is required. In version 5.4.3, plain text will automatically convert into an adaptive card format.
 * **Adaptive card template**:
     * Available format are: *JSON*, *Markdown* and *Plain text* 
     * Click *Add variable* to select a variable to insert in the template
