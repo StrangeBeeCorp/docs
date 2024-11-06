@@ -1,54 +1,71 @@
+
 # Manage Accounts
 
-Accounts can be created or edited from several places in TheHive:
+Accounts can be created or edited in TheHive from multiple locations:
 
-* As Administrator, in the *Users* view
-* Ad Administrator in the detailed page of an Organisation
-* As Org-admin, in the Organisation configuration page
+- As an **Administrator**, in the **Users** view
+- As an **Administrator**, on the detailed page of an Organization
+- As an **Org-admin**, on the Organization configuration page
 
-As Administrator of the platform, open the *Users* page.
+As a platform Administrator, go to the **Users** page to manage accounts.
 
-![](./images/accounts-1.png)
+![User management](./images/accounts-1.png)
 
-## Types of accounts
+## Types of Accounts
 
-Starting with TheHive 5.0, two types of accounts exist in the application:
+Starting from TheHive 5.0, there are two types of accounts:
 
-***Normal* accounts**
+### **Normal Accounts**
+These are intended for standard users, such as analysts. Normal accounts support logging in via the web UI, use of all available authentication methods, and API key generation if enabled.
 
-: They are used for standard users, like analysts. This accounts can be used to open a session on the web UI, use all available authentication methods, and API keys if enabled.
+### **Service Accounts**
+These accounts are designed for automation tasks within the application, such as creating alerts. Service accounts can only authenticate via the API using an API key and cannot log into the web UI.
 
-***Service* accounts**
+## Creating an Account
 
-: They are recommended to be used by accounts in charge of automation in the application, like the ones used by to created Alerts. These accounts can only be used to authicate the application though the API, with an API key.
+To create a new account, follow these steps:
+
+1. Click the :fontawesome-regular-square-plus: button to add an account.
+
+   ![Account creation image](./images/accounts-2.png)
+
+2. Select the account type, either *Normal* or *Service*.
+3. Enter a login name formatted as an *email address*.
+4. Provide a name for the account.
+5. Assign organizations and set an associated profile for each. To establish the default organization, click *Set as default*.
+
+Once completed, click *Confirm*.
+
+---
+
+## Updating an Account
+
+To modify an existing account:
+
+1. In the account list, click *Preview* to open the account details.
+
+   ![Account update image](./images/accounts-3.png)
+
+2. You can add an avatar to the account by clicking the :fontawesome-solid-circle-question: icon and selecting a file.[^1]
+3. Update the email address, which is used for notifications and password resets.
+4. Verify if the user has enabled MFA (Multi-Factor Authentication).
+5. To change the account password, click *Set a new password*.
+6. Click *Reset the password* to email the user a magic link for password reset. For more information, refer to [Password Reset Guide](./../user-guides/forgot-password.md).
+7. Update *Roles* and *Organizations* as needed.
+8. To delete the account, select the *Delete* option.
+
+[^1]: Accepted formats are PNG or JPG files only.
+
+---
+
+## License Management for User Profiles (Version 5.4.3 Update)
+
+In version 5.4.3, TheHive introduces a new feature for license management in user profiles. During user creation or editing, administrators can now see which profiles require a license, as indicated by a **"License Required"** label in the profile selection dropdown. This label, displayed next to profiles with permissions that consume licenses, helps administrators manage license usage effectively.
+
+This enhancement is available in both the **Org-admin** and **Global Users** views, providing consistent visibility across user management settings.
+
+![](./images/user-1.png)
+
+![](./images/user-2.png)
 
 
-## Create an account
-
-Click the :fontawesome-regular-square-plus: button to add an account.
-
-![](./images/accounts-2.png)
-
-1. Choose the type of account, *Normal* or *Service*
-2. Fill the login name (formatted as an *email address*)
-3. Specify a name for the account
-4. Select the organisations and associated profile in each of them applied for this account. And Click on *Set as default* to define the default organisation for the account
-
-Then, click *Confirm*.
-
-## Update an account
-
-In the list of accounts, click *Preview* to open accounts details view.
-
-![](./images/accounts-3.png)
-
-1. an Avatar can be added to the account. Click on the :fontawesome-solid-circle-question: to choose the file[^1]
-2. Specify the email address for the account. This is used to send notifications or reset password links to users
-3. Verify if the user has activated MFA (multi-factor authentication)
-4. Click on *Set a new password* to define a new password for the account
-5. Click *Reset the password* to send an email to the user. He will receive an email with a magic link to change his password. See [](./../user-guides/forgot-password.md) for more details.
-6. Update *Roles* and *Organisations*
-7. Delete the account
-
-[^1]:
-    PNG or JPG files only.
