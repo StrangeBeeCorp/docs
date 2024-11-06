@@ -212,3 +212,29 @@ Used with the trigger _Case created_, this template will create a card like this
     * `tlpLabel` to display the TLP value (example: `{{tlpLabel object.tlp}}`)
     * `papLabel` to display the PAP value (example: `{{papLabel object.pap}}`)
     * `severityLabel` to display the severity value (example: `{{severityLabel object.severity}}`)
+
+---
+
+## Older TheHive Versions
+
+For TheHive versions prior to 5.4.3, users can still send notifications to Microsoft Teams through incoming webhooks. This simpler method involves creating a Teams webhook and using its URL within TheHive's settings.
+
+Although straightforward, this legacy method lacks the customization and enhanced security features available with the newer Power Automate setup. Additionally, with Microsoft’s deprecation of incoming webhooks, continued use may lead to limited functionality in the future.
+
+### Legacy Setup Steps:
+
+1. Set Up Microsoft Teams:
+
+    - Follow the video tutorial to create an incoming webhook and copy the provided URL
+
+      <video controls>
+        <source id=mp4 src="../images/organisation-endpoints-msteams-configuration.mp4" type="video/mp4">
+      </video>
+
+2. Configure TheHive:
+
+    - Navigate to **TheHive** > **Organization Admin** > **Endpoint** > **Connector Teams**.
+  
+    - Paste the webhook URL and complete the configuration as needed.
+
+&nbsp;
