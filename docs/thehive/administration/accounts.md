@@ -49,7 +49,7 @@ To modify an existing account:
 2. You can add an avatar to the account by clicking the :fontawesome-solid-circle-question: icon and selecting a file.[^1]
 3. Update the email address, which is used for notifications and password resets.
 4. Verify if the user has enabled MFA (Multi-Factor Authentication).
-5. To change the account password, click *Set a new password*.
+5. To change the account password, click *Set a new password*. An email informing the user of the change is sent to their registered email address.
 6. Click *Reset the password* to email the user a magic link for password reset. For more information, refer to [Password Reset Guide](./../user-guides/forgot-password.md).
 7. Update *Roles* and *Organizations* as needed.
 8. To delete the account, select the *Delete* option.
