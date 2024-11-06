@@ -38,7 +38,7 @@ The subsequent sections will provide detailed configuration examples and step-by
 
 When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of 3. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node, meaning that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cyber threats without downtime or data loss.
 
-!!! Info "Note: For the purposes of this documentation, we assume that all nodes reside within the same network environment."
+!!! Info "Note: Note: For the purposes of this documentation, we assume that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center."
 
 &nbsp;
 
@@ -58,7 +58,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
 
         ```yaml title="/etc/cassandra/cassandra.yaml" hl_lines="13"
         cluster_name: 'thp'
-        num_tokens: 256
+        num_tokens: 16
         authenticator: PasswordAuthenticator
         authorizer: CassandraAuthorizer
         role_manager: CassandraRoleManager
@@ -72,7 +72,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
                 - seeds: "<ip node 1>, <ip node 2>, <ip node 3>"  # (1)
         listen_interface : eth0 # (2)
         rpc_interface: eth0 # (3)
-        endpoint_snitch: SimpleSnitch
+        endpoint_snitch: GossipingPropertyFileSnitch
         ```
 
         1.  Ensure to list all IP addresses of the nodes that are included in the cluster
@@ -97,10 +97,30 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
         ```
 &nbsp;
 
+3. **Configure Cassandra GossipingPropertyFileSnitch**: In the ``cassandra-rackdc.properties``  file assign the datacenter and rack names for each node.
+
+    !!! Example ""
+
+        ```yaml title="cassandra-rackdc.properties" hl_lines="13"
+        ## On node1, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
+        dc=dc1
+        rack=rack1
+
+        ## On node2, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
+        dc=dc1
+        rack=rack2
+
+        ## On node3, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
+        dc=dc1
+        rack=rack3
+
+        ```
+&nbsp;
+
 ### Starting the Nodes
 To initiate the Cassandra service on each node, follow these steps:
 
-1. **Start Cassandra Service**: Execute the following command on each node to start the Cassandra service:
+1. **Start Cassandra Service**: Start Cassandra Service: Execute the following command on each node one at a time to start the Cassandra service::
 
     !!! Example ""
         ```bash
@@ -138,27 +158,36 @@ To initialize the database, perform the following steps:
 
     !!! Info "Note that the default password for the cassandra account is ``cassandra``"
 
-2. **Change Superadmin Password**: Begin by changing the password for the superadmin user named cassandra using the following SQL query:
+    !!! Info "to prevent security issue, the cassandra default user will be removed from the base."
+
+2. **Configure the system authentification replication**: Before creating a new users, you have to modify the default replication factor for the keyspace system_auth using the following cql command:
 
     !!! Example ""
         ```sql
-        ALTER USER cassandra WITH PASSWORD 'NEWPASSWORD';
+        ALTER KEYSPACE system_auth WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': 3 };
         ```
-    
-    After executing the query, exit the CQL shell and reconnect.
 
-3. **Ensure User Account Duplication**: Ensure that user accounts are duplicated on all nodes by executing the following SQL query:
+3. **Create a custom administrator account**: Create a new administrator cassandra role that will replace the default user:
 
-    !!! Exemple ""
+    !!! Example ""
         ```sql
-        ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
-        ```
+         CREATE ROLE admin WITH PASSWORD password = 'admin_password' AND LOGIN = true AND SUPERUSER = true;
+        ```    
+    After executing the query, exit the CQL shell and reconnect  using the new admin role.
+
+    Remove the default cassandra user using the following CQL query
+
+     !!! Example ""
+        ```sql
+        DROP ROLE cassandra;
+        ```   
+
 
 4. **Create Keyspace**: Create a keyspace named thehive with a replication factor of 3 and durable writes enabled:
 
     !!! Example ""
         ```sql
-        CREATE KEYSPACE thehive WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
+        CREATE KEYSPACE thehive WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
         ```
 
 5. **Create Role and Grant Permissions**: Finally, create a role named thehive and grant permissions on the thehive keyspace. Choose a password for the role:
@@ -169,6 +198,83 @@ To initialize the database, perform the following steps:
         GRANT ALL PERMISSIONS ON KEYSPACE thehive TO 'thehive';
         ```
 
+### OPTIONAL: Enable encryption for client and inter-node communication
+
+The following steps aim to enable encryption secure communication between a client machine and a database cluster and between nodes within a cluster.
+
+#### Client to Node Encryption
+
+!!! Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores).
+
+1. **Open the ``cassandra.yaml`` Configuration File and edit the ``client_encryption_options`` section:**
+
+    !!! Example ""
+
+        ```yaml title="cassandra.yaml" hl_lines="13"
+        client_encryption_options:
+        enabled: true
+        optional: false
+        keystore: </path/to/node1.keystore>
+        keystore_password: <your_keystore_password>
+        require_client_auth: true
+        truststore: </path/to/cassandra.truststore>
+        truststore_password: <your_truststore_password>
+        protocol: TLS
+        algorithm: SunX509
+        store_type: JKS
+        cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+
+        ```
+2. **Restart the Cassandra Service on All Nodes:**
+
+    !!! Example ""
+        ```bash
+        sudo service cassandra restart
+        ```
+3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
+
+    !!! Example ""
+        ```bash
+        tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
+        ```
+
+&nbsp;
+
+#### Inter Node Encryption
+
+!!! Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores).
+
+1. **Open the ``cassandra.yaml`` Configuration File and edit the ``server_encryption_options`` section:**
+
+    !!! Example ""
+
+        ```yaml title="cassandra.yaml" hl_lines="13"
+            server_encryption_options:
+            internode_encryption: all
+            keystore: </etc/cassandra/node1.keystore>
+            keystore_password: cassandra
+            truststore: </etc/cassandra/cassandra.truststore>
+            truststore_password: <cassandra>
+            protocol: TLS
+            algorithm: SunX509
+            store_type: JKS
+            cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+            require_client_auth: true
+            enabled: true
+
+        ```
+2. **Restart the Cassandra Service on All Nodes:**
+
+    !!! Example ""
+        ```bash
+        sudo service cassandra restart
+        ```
+3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
+
+    !!! Example ""
+        ```bash
+        tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
+        ```
 ---
 
 ## Elasticsearch Setup
@@ -248,109 +354,120 @@ This command initiates the Elasticsearch service, allowing the node to join the 
 
 ---
 
-## MinIO Setup
-![](../images/installation/minio-cluster.png){ align=center }
-<br/>
-MinIO is a scalable, cloud-native object storage system designed to efficiently manage data storage and retrieval in cloud-native environments. Its primary purpose is to provide seamless scalability and reliability for storing and accessing large volumes of data across distributed systems. Within TheHive, MinIO efficiently handles vast amounts of data distributed across multiple nodes, ensuring robustness and optimal performance.
+## File storage
 
-&nbsp;
+To set up a shared file storage for TheHive in a clustered environment, several options are available. The primary goal is to establish a common storage space accessible to all nodes. 
 
-### Installation Instructions
-To implement MinIO with TheHive, follow the procedure outlined below on all servers in the cluster. For this example, we assume a cluster setup consisting of 3 servers named minio1, minio2, and minio3.
+=== "NFS"
+    Using NFS is one of the simplest methods to implement shared file storage. By configuring a single NFS endpoint, all nodes in the cluster can access and share files seamlessly.
+    
+    1. **Mount the NFS endpoint** to /opt/thp/thehive/files on each node.
+    2. **Set permissions:** Ensure the thehive user has both read and write access to this directory, including the ability to create subdirectories. This allows TheHive to manage files as required across the cluster.
 
-!!! Warning
-    Unlike Cassandra and Elasticsearch, MinIO requires a load balancer to be installed in front of the nodes to distribute connections effectively.
 
-1. **Create a Dedicated System Account**: First, create a dedicated user and group for MinIO:
+=== "Minio"
+    ![](../images/installation/minio-cluster.png){ align=center }
+    <br/>
+    MinIO is a scalable, cloud-native object storage system designed to efficiently manage data storage and retrieval in cloud-native environments. Its primary purpose is to provide seamless scalability and reliability for storing and accessing large volumes of data across distributed systems. Within TheHive, MinIO efficiently handles vast amounts of data distributed across multiple nodes, ensuring robustness and optimal performance.
+
+    &nbsp;
+
+    ### Installation Instructions
+    To implement MinIO with TheHive, follow the procedure outlined below on all servers in the cluster. For this example, we assume a cluster setup consisting of 3 servers named minio1, minio2, and minio3.
+
+    !!! Warning
+        Unlike Cassandra and Elasticsearch, MinIO requires a load balancer to be installed in front of the nodes to distribute connections effectively.
+
+    1. **Create a Dedicated System Account**: First, create a dedicated user and group for MinIO:
+
+        !!! Example ""
+            ```bash
+            adduser minio-user
+            addgroup minio-user
+            ```
+
+    2. **Create Data Volumes**: Next, create at least 2 data volumes on each server by executing the following commands:
+
+        !!! Example ""
+            ```bash
+            mkdir -p /srv/minio/{1,2}
+            chown -R minio-user:minio-user /srv/minio
+            ```
+
+    3. **Setting up Hosts Files**: To ensure proper communication between servers in your environment, it's necessary to configure the ``/etc/hosts`` file on all servers:
+
+        !!! Example ""
+
+            ``` title="/etc/hosts"
+            ip-minio-1     minio1
+            ip-minio-2     minio2
+            ip-minio-3     minio3
+            ```
+
+        In the above example, replace ip-minio-1, ip-minio-2, and ip-minio-3 with the respective IP addresses of your MinIO servers. These entries map the server names (minio1, minio2, minio3) to their corresponding IP addresses, ensuring that they can be resolved correctly within your network.
+
+    4. **Install MinIO**: Installing MinIO and MC Command Line Tool, by first downloading the latest DEB packages for MinIO and MC from the official MinIO website and then installing the downloaded DEB packages using the dpkg command:
+
+        !!! Example "Example for DEB packages"
+
+            ```bash
+            wget https://dl.min.io/server/minio/release/linux-amd64/minio_20220607003341.0.0_amd64.deb
+            wget https://dl.min.io/client/mc/release/linux-amd64/mcli_20220509040826.0.0_amd64.deb
+            dpkg -i minio_20220607003341.0.0_amd64.deb
+            dpkg -i mcli_20220509040826.0.0_amd64.deb
+            ```
+
+    !!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
+
+    &nbsp;
+
+    ### Configuration Instructions
+
+    To configure MinIO, create or edit the file ``/etc/default/minio`` with the following settings:
 
     !!! Example ""
-        ```bash
-        adduser minio-user
-        addgroup minio-user
+
+        ```conf title="/etc/default/minio"
+        MINIO_OPTS="--address :9100 --console-address :9001"
+        MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
+        MINIO_ROOT_USER=thehive
+        MINIO_ROOT_PASSWORD=password
+        MINIO_SITE_REGION="us-east-1"
         ```
 
-2. **Create Data Volumes**: Next, create at least 2 data volumes on each server by executing the following commands:
+    Ensure to replace placeholders such as ``thehive``, ``password``, and ``us-east-1`` with your desired values. These settings define the address, volumes, root user credentials, and site region for your MinIO setup.
+
+    &nbsp;
+
+    ### Enable and Start the Service
+
+    Once configured, enable and start the MinIO service using the following commands:
 
     !!! Example ""
-        ```bash
-        mkdir -p /srv/minio/{1,2}
-        chown -R minio-user:minio-user /srv/minio
-        ```
-
-3. **Setting up Hosts Files**: To ensure proper communication between servers in your environment, it's necessary to configure the ``/etc/hosts`` file on all servers:
-
-    !!! Example ""
-
-        ``` title="/etc/hosts"
-        ip-minio-1     minio1
-        ip-minio-2     minio2
-        ip-minio-3     minio3
-        ```
-
-    In the above example, replace ip-minio-1, ip-minio-2, and ip-minio-3 with the respective IP addresses of your MinIO servers. These entries map the server names (minio1, minio2, minio3) to their corresponding IP addresses, ensuring that they can be resolved correctly within your network.
-
-4. **Install MinIO**: Installing MinIO and MC Command Line Tool, by first downloading the latest DEB packages for MinIO and MC from the official MinIO website and then installing the downloaded DEB packages using the dpkg command:
-
-    !!! Example "Example for DEB packages"
 
         ```bash
-        wget https://dl.min.io/server/minio/release/linux-amd64/minio_20220607003341.0.0_amd64.deb
-        wget https://dl.min.io/client/mc/release/linux-amd64/mcli_20220509040826.0.0_amd64.deb
-        dpkg -i minio_20220607003341.0.0_amd64.deb
-        dpkg -i mcli_20220509040826.0.0_amd64.deb
+        systemctl daemon-reload
+        systemctl enable minio
+        systemctl start minio.service
         ```
 
-!!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
+    &nbsp;
 
-&nbsp;
+    ### Prepare the Service for TheHive
 
-### Configuration Instructions
+    Before proceeding, ensure that all servers are up and running. The following operations should be performed once all servers are operational, as adding a new server afterward is not supported.
 
-To configure MinIO, create or edit the file ``/etc/default/minio`` with the following settings:
+    !!! Info "Following operations should be performed once all servers are up and running. A new server CAN NOT be added afterward."
 
-!!! Example ""
+    5. Connect to one of the MinIO servers using your browser at port 9100: ``http://minio:9100``. You will need to use the access key and secret key provided during the MinIO setup process.
 
-    ```conf title="/etc/default/minio"
-    MINIO_OPTS="--address :9100 --console-address :9001"
-    MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
-    MINIO_ROOT_USER=thehive
-    MINIO_ROOT_PASSWORD=password
-    MINIO_SITE_REGION="us-east-1"
-    ```
+        ![](../images/installation/minio-login.png)
 
-Ensure to replace placeholders such as ``thehive``, ``password``, and ``us-east-1`` with your desired values. These settings define the address, volumes, root user credentials, and site region for your MinIO setup.
+    6. Create a bucket named thehive.
 
-&nbsp;
+        ![](../images/installation/minio-list-buckets.png)
 
-### Enable and Start the Service
-
-Once configured, enable and start the MinIO service using the following commands:
-
-!!! Example ""
-
-    ```bash
-    systemctl daemon-reload
-    systemctl enable minio
-    systemctl start minio.service
-    ```
-
-&nbsp;
-
-### Prepare the Service for TheHive
-
-Before proceeding, ensure that all servers are up and running. The following operations should be performed once all servers are operational, as adding a new server afterward is not supported.
-
-!!! Info "Following operations should be performed once all servers are up and running. A new server CAN NOT be added afterward."
-
-1. Connect to one of the MinIO servers using your browser at port 9100: ``http://minio:9100``. You will need to use the access key and secret key provided during the MinIO setup process.
-
-    ![](../images/installation/minio-login.png)
-
-2. Create a bucket named thehive.
-
-    ![](../images/installation/minio-list-buckets.png)
-
-Ensure that the bucket is successfully created and available on all your MinIO servers. This ensures uniformity and accessibility across your MinIO cluster.
+    Ensure that the bucket is successfully created and available on all your MinIO servers. This ensures uniformity and accessibility across your MinIO cluster.
 
 ---
 
