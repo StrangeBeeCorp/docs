@@ -238,3 +238,7 @@ Although straightforward, this legacy method lacks the customization and enhance
     - Paste the webhook URL and complete the configuration as needed.
 
 &nbsp;
+
+!!! Info "Note: As communicated by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/), connector owners must update their webhook URLs by January 31, 2025 to comply with the new structure. This update is essential to ensure seamless integration and continued functionality of connectors within Microsoft Teams."
+
+&nbsp;
