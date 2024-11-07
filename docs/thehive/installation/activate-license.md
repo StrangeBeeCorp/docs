@@ -45,7 +45,7 @@ The license includes the following capabilities:
 - Defines the number of users you can create on your platform.
 - Based on the number of users and the number of organizations.
 - Includes a validation and an expiration date.
-- Allows an unlimited number of Readonly users and Service users. Service users can use an API key to call all APIs but do not have access to TheHive interface.
+- Allows an unlimited number of Unlicensed users and Service users. Service users can use an API key to call all APIs but do not have access to TheHive interface.
 
 ---
 
