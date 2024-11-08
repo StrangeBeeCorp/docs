@@ -303,37 +303,42 @@ Following configuration, alerts and observables are generated in the selected or
 
 Each alert will contain the following details:
 
-- `alert.type`: "email-intake"
-- `alert.source`: The configuration name is formatted as "Google Workspace @strangebee.com" => "googleworkspace-strangebee"
-- `alert.sourceRef`: "{message-id}" or "{lastUidValidity}.{uidEmail}" if the message-id is inaccessible
-- `alert.title`: The email subject or "no subject"
-- `alert.severity`: "low"
-- `alert.description`: The content of the email
-- `alert.lastSyncDate`: The date the email was received
-- `alert.tlp`: "amber"
-- `alert.pap`: "amber"
-- `alert.follow`: false
-- `alert.tags`: ["email-intake", {source}, {Provider Name}, {Inbox Folder Name}]
-- `alert.status`: "new"
-- `alert.externalLink`: [Link to External Source]
-- `alert.summary`: [Summary of Alert]
-- `alert.customFields`: [Custom Fields]
+!!! Info "Mapping of email data in the Alert"
+
+    * **Title**: The email subject or "no subject"
+    * **Type**: *email-intake*
+    * **Source**: The configuration name is formatted as `Google Workspace @strangebee.com` => `googleworkspace-strangebee`
+    * **Source reference**: `{message-id}` or `{lastUidValidity}.{uidEmail}` if the message-id is inaccessible
+    * **Last sync date**: The date the email was received
+    * **Severity**:  *low*
+    * **TLP**: *amber*
+    * **PAP**: *amber*
+    *  **Follow**: *False*
+    * **Tags**: [*email-intake*, {source}, {Provider Name}, {Inbox Folder Name}]
+    * **Status**: *new*
+    * **Description**: The content of the email
+    * **Summary**: [Summary of Alert]
+    * **Custom Fields**: [Custom Fields]
+    * **Eternal link**: [Link to External Source]
+
 
 ---
 
 ### Observables
 
-The email itself is included as a .eml file, along with its sender and all attached files, which are added to the alert as observables, with the following parameters:
+The email itself is included as a `.eml` file, along with its sender and all attached files, which are added to the alert as observables, with the following parameters:
 
-- `observable.message`: The pre-formatted message
-- `observable.tlp`: {alert.tlp}
-- `observable.pap`: {alert.pap}
-- `observable.ioc`: false
-- `observable.sighted`: false
-- `observable.sightedAt`: [Timestamp]
-- `observable.ignoreSimilarity`: false
-- `observable.dataType`: "file" if it's an attachment; otherwise, "mail" for the .eml file
-- `observable.tags`: {alert.tags}
-- `observable.attachmentId`: {attachment.id}
+!!! Info "Observables metadata added with the email data"
+
+    - **Message**: The pre-formatted message
+    - **TLP**: {alert.tlp}
+    - **PAP**: {alert.pap}
+    - **IOC**: false
+    - **Sighted**: false
+    - **Sighted at**: [Timestamp]
+    - **Ignore similarity**: false
+    - **dataType**: *file* if it's an attachment; otherwise, *mail* for the `.eml` file
+    - **Tags**: {alert.tags}
+    - **attachment Id**: {attachment.id}
 
 &nbsp;
