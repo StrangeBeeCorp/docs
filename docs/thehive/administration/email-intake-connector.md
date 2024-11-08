@@ -13,10 +13,9 @@ The Email Intake Connector facilitates the connection of mailboxes used to recei
 
 ### Global Configuration
 
-The only parameter that requires adjustment is the ``refresh interval``.
+The only parameter that requires adjustment is the `refresh interval`. By default, the connector polls mailboxes every *5* minutes. Adjust the frequency by increasing or decreasing the value.
 
 ![](../images/administration/eic-2.png)
-
 
 &nbsp;
 
