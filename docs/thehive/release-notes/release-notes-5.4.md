@@ -19,6 +19,11 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.4 - 8th of November 2024
+
+### Fixes
+- Resolved a display issue with the status component in cases and alerts, which was not rendering correctly on Safari and Firefox.
+
 ## 5.4.3 - 7th of November 2024
 
 ### Improvements
