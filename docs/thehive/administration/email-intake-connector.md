@@ -27,259 +27,265 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
 &nbsp;
 
-#### Microsoft Configuration
+=== "Microsoft MS365"
 
-This section provides detailed instructions to configure Microsoft 365 to allow TheHive access to a shared mailbox. Please follow these steps to ensure proper integration.
+    ### Setting up Microsoft365 for TheHive
+     
+    This section provides detailed instructions to configure Microsoft 365 to allow TheHive access to a shared mailbox. Please follow these steps to ensure proper integration.
 
-&nbsp;
+    &nbsp;
 
-##### Prerequisites
-- Administrator account on Microsoft 365.
-- PowerShell installed and configured.
-- A shared mailbox already created in Microsoft 365 (e.g., `test-shared-mailbox@strangebee.com`).
+    #### Prerequisites
+    - Administrator account on Microsoft 365.
+    - PowerShell installed and configured.
+    - A shared mailbox already created in Microsoft 365 (e.g., `test-shared-mailbox@strangebee.com`).
 
-    ![](../images/administration/ms-intake-1.png)
+        ![](../images/administration/ms-intake-1.png){ width="600" }
 
-&nbsp;
+    &nbsp;
 
-##### Step-by-Step Configuration
+    #### Step-by-Step Configuration
 
-1. **Create a Mail-Enabled Security Group**
+    1. **Create a Mail-Enabled Security Group**
 
-    - Create a security group that includes the shared mailbox. This group will be used to restrict access to the application for the shared mailbox only.
-    - Navigate to **Admin > Exchange Admin Center**, and create a **Mail-Enabled Security Group**.
-    - Add the shared mailbox as a member of the security group.
+        - Create a security group that includes the shared mailbox. This group will be used to restrict access to the application for the shared mailbox only.
+        - Navigate to **Admin > Exchange Admin Center**, and create a **Mail-Enabled Security Group**.
+        - Add the shared mailbox as a member of the security group.
 
-    ![](../images/administration/ms-intake-2.png)
+        ![](../images/administration/ms-intake-2.png)
 
-2. **Register a New Application in Microsoft Entra**
+    2. **Register a New Application in Microsoft Entra**
 
-    - As an administrator, navigate to **Microsoft Entra admin center**.
-    - Go to **Admin > Identity > Applications > App registrations**.
+        - As an administrator, navigate to **Microsoft Entra admin center**.
+        - Go to **Admin > Identity > Applications > App registrations**.
 
-    ![](../images/administration/ms-intake-3.png)
-    
-    - Register a new application, and gather the following information:
+        ![](../images/administration/ms-intake-3.png)
+        
+
+        -  Gather the following information:
+            - **Tenant ID**
+            - **Client ID (App ID)**
+            - **Object ID** of the enterprise application
+
+          ![](../images/administration/ms-intake-4.png)
+
+    3. **Create a Secret for the Application**
+
+        - In the registered application page, go to **Certificates & Secrets**.
+        - Create a new secret, which will be used as an OAuth2 input to authenticate the service.
+        - Save the secret value securely for later use.
+
+        ![](../images/administration/ms-intake-5.png)
+
+    4. **Assign API Permissions**
+
+        - In the registered application page, go to **API Permissions**.
+        - Ensure the application has the following permissions:
+            - **Office 365 Exchange Online / IMAP.AccessAsApp**
+
+        ![](../images/administration/ms-intake-6.png)
+
+    5. **Configure PowerShell Access**
+
+        - Define the necessary values for the configuration:
+
+            ```powershell
+            $AppID = '{ClientID}'
+            $TenantID = '{TenantID}'
+            $ObjectID = '{ObjectID}'
+            $SecurityGroup = '{SecurityGroup}'  # The mail-enabled security group
+            $MailBox = '{MailBox}'  # The shared mailbox
+            ```
+
+        - Run the following PowerShell commands to configure access:
+
+            - **Define App Permissions:**
+
+            ```powershell
+            New-ServicePrincipal -AppId $AppID -ServiceId $ObjectID
+            ```
+
+            - **Grant Security Group Full Access to the Mailbox:**
+
+            ```powershell
+            Add-MailboxPermission -Identity $MailBox -User $SecurityGroup -AccessRights FullAccess
+            ```
+
+            - **Restrict Access to Members of the Security Group Only:**
+
+            ```powershell
+            New-ApplicationAccessPolicy -AppId $AppID -PolicyScopeGroupId $SecurityGroup -AccessRight RestrictAccess -Description "Restrict this app to members of distribution group {$SecurityGroup}"
+            ```
+
+    6. **Test the Configuration**
+
+        - Run the following command to test if the application access policy is properly configured:
+
+            ```powershell
+            Test-ApplicationAccessPolicy -AppId $AppID -Identity $MailBox
+            ```
+
+        - The expected output should be similar to:
+
+            ```
+            AppId             : 9367xxxx
+            Mailbox           : test-shared-mailbox20231107190659
+            AccessCheckResult : Granted
+            ```
+
+        - Running the command with a different mailbox should return `AccessCheckResult: Denied`.
+
+    7. **Configure Intake Connector Settings in TheHive**
+
+        To integrate TheHive with Microsoft 365, you will need the following information:
+
+        - **Mailbox address**
         - **Tenant ID**
-        - **Client ID (App ID)**
-        - **Object ID** of the enterprise application
+        - **Client ID**
+        - **Secret Value**
+        - **Authority:** `https://login.microsoftonline.com`
+        - **Scope:** `https://outlook.office365.com/.default`
 
-        ![](../images/administration/ms-intake-4.png)
+        ![](../images/administration/ms-intake-7.png)
 
-3. **Create a Secret for the Application**
+    ---
 
-    - In the registered application page, go to **Certificates & Secrets**.
-    - Create a new secret, which will be used as an OAuth2 input to authenticate the service.
-    - Save the secret value securely for later use.
+=== "Google Workspace"
 
-    ![](../images/administration/ms-intake-5.png)
+    ### Setting up Google Workspace for TheHive
 
-4. **Assign API Permissions**
+    This section describes the necessary steps to configure Google Workspace to allow TheHive access to a mailbox. Please follow these steps to ensure proper integration.
 
-    - In the registered application page, go to **API Permissions**.
-    - Ensure the application has the following permissions:
-        - **Office 365 Exchange Online / IMAP.AccessAsApp**
+    &nbsp;
 
-    ![](../images/administration/ms-intake-6.png)
+    #### Prerequisites
+    - Access to the Google Cloud Admin Console.
+    - Proper permissions to create projects and configure OAuth credentials.
 
-5. **Configure PowerShell Access**
+    &nbsp;
 
-    - Define the necessary values for the configuration:
+    #### Step-by-Step Configuration
 
-        ```powershell
-        $AppID = '{ClientID}'
-        $TenantID = '{TenantID}'
-        $ObjectID = '{ObjectID}'
-        $SecurityGroup = '{SecurityGroup}'  # The mail-enabled security group
-        $MailBox = '{MailBox}'  # The shared mailbox
-        ```
+    1. **Access Google Cloud Admin Console**  
+    Navigate to the Google Cloud Admin Console at [https://console.cloud.google.com/welcome](https://console.cloud.google.com/welcome).
 
-    - Run the following PowerShell commands to configure access:
 
-        - **Define App Permissions:**
+    2. **Create a New Project**  
 
-        ```powershell
-        New-ServicePrincipal -AppId $AppID -ServiceId $ObjectID
-        ```
+        - Click on **API & Services**.
 
-        - **Grant Security Group Full Access to the Mailbox:**
+        ![](../images/administration/intake-1.png)
 
-        ```powershell
-        Add-MailboxPermission -Identity $MailBox -User $SecurityGroup -AccessRights FullAccess
-        ```
+        - Select **Create a Project**.
 
-        - **Restrict Access to Members of the Security Group Only:**
+        ![](../images/administration/intake-2.png)
 
-        ```powershell
-        New-ApplicationAccessPolicy -AppId $AppID -PolicyScopeGroupId $SecurityGroup -AccessRight RestrictAccess -Description "Restrict this app to members of distribution group {$SecurityGroup}"
-        ```
+        - Provide a meaningful name for the project and click **Create**.
 
-6. **Test the Configuration**
+        ![](../images/administration/intake-3.png)
 
-    - Run the following command to test if the application access policy is properly configured:
+    3. **Configure OAuth Consent Screen**  
+    
+        - In the left-hand menu, select **OAuth consent screen**.
 
-        ```powershell
-        Test-ApplicationAccessPolicy -AppId $AppID -Identity $MailBox
-        ```
+        ![](../images/administration/intake-4.png)
 
-    - The expected output should be similar to:
+        - Choose **User Type** as **Internal** and click **Create**.
 
-        ```
-        AppId             : 9367xxxx
-        Mailbox           : test-shared-mailbox20231107190659
-        AccessCheckResult : Granted
-        ```
+        ![](../images/administration/intake-5.png)
 
-    - Running the command with a different mailbox should return `AccessCheckResult: Denied`.
+        - Assign a name to the app and specify a mailbox for support contact.
 
-7. **Configure Intake Connector Settings in TheHive**
+        ![](../images/administration/intake-6.png)
 
-    To integrate TheHive with Microsoft 365, you will need the following information:
-    - **Mailbox address**
-    - **Tenant ID**
-    - **Client ID**
-    - **Secret Value**
-    - **Authority:** `https://login.microsoftonline.com`
-    - **Scope:** `https://outlook.office365.com/.default`
+        - Provide a developer contact email address, then click **Save and Continue**.
 
-    ![](../images/administration/ms-intake-7.png)
+        ![](../images/administration/intake-7.png)
 
----
+    4. **Add Gmail API Scope**  
+    
+        - In **Step 2**, click on **Add or Remove Scopes**.
 
-#### Google Workspace Configuration
+        ![](../images/administration/intake-8.png)
 
-This section describes the necessary steps to configure Google Workspace to allow TheHive access to a mailbox. Please follow these steps to ensure proper integration.
+        - In the search bar, type the following scope: `https://mail.google.com/`.
 
-&nbsp;
+        ![](../images/administration/intake-9.png)
 
-##### Prerequisites
-- Access to the Google Cloud Admin Console.
-- Proper permissions to create projects and configure OAuth credentials.
+        - Click **Add to Table** to add the scope.
 
-&nbsp;
+        ![](../images/administration/intake-10.png)
 
-##### Step-by-Step Configuration
+        - Ensure that the new scope is checked, then click **Update**.
 
-1. **Access Google Cloud Admin Console**  
-   Navigate to the Google Cloud Admin Console at [https://console.cloud.google.com/welcome](https://console.cloud.google.com/welcome).
+        ![](../images/administration/intake-11.png)
 
+        - Scroll down to verify that the Gmail scope exists, and click **Save and Continue**.
 
-2. **Create a New Project**  
+        ![](../images/administration/intake-12.png)
 
-    - Click on **API & Services**.
+    5. **Return to Dashboard**  
+    
+        - On the summary page, click **Back to Dashboard** to complete the OAuth consent configuration.
 
-    ![](../images/administration/intake-1.png)
+        ![](../images/administration/intake-13.png)
 
-    - Select **Create a Project**.
+    6. **Create OAuth Credentials**  
+    
+        - In the left-hand menu, select **Credentials**.
 
-    ![](../images/administration/intake-2.png)
+        ![](../images/administration/intake-14.png)
 
-    - Provide a meaningful name for the project and click **Create**.
+        - Click on **Create Credentials** and choose **OAuth Client ID**.
 
-    ![](../images/administration/intake-3.png)
+        ![](../images/administration/intake-15.png)
 
-3. **Configure OAuth Consent Screen**  
-   
-    - In the left-hand menu, select **OAuth consent screen**.
+        - Set the application type as **Web application**.
 
-    ![](../images/administration/intake-4.png)
+        ![](../images/administration/intake-16.png)
 
-    - Choose **User Type** as **Internal** and click **Create**.
+        - Provide a name for the OAuth client ID.
 
-    ![](../images/administration/intake-5.png)
+        - Under **Authorized JavaScript origins**, add the appropriate URI.
 
-    - Assign a name to the app and specify a mailbox for support contact.
+        ![](../images/administration/intake-17.png)
 
-    ![](../images/administration/intake-6.png)
+        - Under **Authorized redirect URIs**, add the necessary URIs and click **Create**.
 
-    - Provide a developer contact email address, then click **Save and Continue**.
+        ![](../images/administration/intake-18.png)
 
-    ![](../images/administration/intake-7.png)
+    7. **Obtain Client ID and Secret** 
 
-4. **Add Gmail API Scope**  
-   
-    - In **Step 2**, click on **Add or Remove Scopes**.
+        * A dialog will appear with the **Client ID** and **Client Secret**.
 
-    ![](../images/administration/intake-8.png)
+        * Copy these values or download the JSON file for future reference.
 
-    - In the search bar, type the following scope: `https://mail.google.com/`.
+        ![](../images/administration/intake-19.png)
 
-    ![](../images/administration/intake-9.png)
+    8. **Configure Intake Connector Settings in TheHive**
 
-    - Click **Add to Table** to add the scope.
+        Set up the intake settings in TheHive by filling in the following values:
 
-    ![](../images/administration/intake-10.png)
+        * `Email`
+        * `clientId`
+        * `secret`
 
-    - Ensure that the new scope is checked, then click **Update**.
+        ![](../images/administration/eic-5.png)
 
-    ![](../images/administration/intake-11.png)
+    
 
-    - Scroll down to verify that the Gmail scope exists, and click **Save and Continue**.
+=== "IMAP Mailbox"
 
-    ![](../images/administration/intake-12.png)
+    For IMAP configuration, you'll need to input the following information:
 
-5. **Return to Dashboard**  
-   
-    - On the summary page, click **Back to Dashboard** to complete the OAuth consent configuration.
+    - Host: `host`
+    - Port: `port` (default: 993)
 
-    ![](../images/administration/intake-13.png)
+    Additionally, provide your mailbox credentials. We recommend enabling SSL Check Certificate Authority.
 
-6. **Create OAuth Credentials**  
-   
-    - In the left-hand menu, select **Credentials**.
+    ![](../images/administration/eic-6.png)
 
-    ![](../images/administration/intake-14.png)
-
-    - Click on **Create Credentials** and choose **OAuth Client ID**.
-
-    ![](../images/administration/intake-15.png)
-
-    - Set the application type as **Web application**.
-
-    ![](../images/administration/intake-16.png)
-
-    - Provide a name for the OAuth client ID.
-
-    - Under **Authorized JavaScript origins**, add the appropriate URI.
-
-    ![](../images/administration/intake-17.png)
-
-    - Under **Authorized redirect URIs**, add the necessary URIs and click **Create**.
-
-    ![](../images/administration/intake-18.png)
-
-7. **Obtain Client ID and Secret** 
-
-    - A dialog will appear with the **Client ID** and **Client Secret**.
-
-    - Copy these values or download the JSON file for future reference.
-
-    ![](../images/administration/intake-19.png)
-
-8. **Configure Intake Connector Settings in TheHive**
-
-    - Set up the intake settings in TheHive by filling in the following values:
-
-    - `Email`
-    - `clientId`
-    - `secret`
-
-    ![](../images/administration/eic-5.png)
-
----
-
-#### IMAP Configuration
-
-For IMAP configuration, you'll need to input the following information:
-
-- Host: `host`
-- Port: `port` (default: 993)
-
-Additionally, provide your mailbox credentials. We recommend enabling SSL Check Certificate Authority.
-
-![](../images/administration/eic-6.png)
-
----
+    
 
 ### Settings
 
