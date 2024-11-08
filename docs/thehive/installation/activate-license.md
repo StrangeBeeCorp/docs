@@ -1,8 +1,11 @@
 # Activating TheHive License
 
-Starting with TheHive version 5.3, all users are required to generate a valid license to use the platform. Community users can obtain a **free Community License**, while paid licenses (Gold or Platinum) are available for enhanced functionality.
+With version 5.3 and later, TheHive is provided with a 14-day **Platinum trial**, which supports up to 2 organizations and 5 users. After this trial period, TheHive transitions to read-only mode, requiring a valid license for continued full functionality. All users are required to generate a valid license on StrangeBee's portal to use the platform.
 
-In the absence of a valid license, TheHive provides a 14-day **Platinum trial**, which supports up to 2 organizations and 5 users. After the trial expires, TheHive transitions to read-only mode, requiring a valid license for continued full functionality.
+A free *Community license* with essential features is available. Paid licenses providing access to advanced features are also available, by [contacting us](https://strangebee.com/contact-strangebee/){target=_blank}.
+
+!!! Note
+    If you are already using TheHive 5.x Community version, please create your account on the License Portal before upgrading to version 5.3 or later. Without this Community License, your interface will be limited to read-only mode.
 
 ---
 
@@ -10,7 +13,7 @@ In the absence of a valid license, TheHive provides a 14-day **Platinum trial**,
 
 ### 1. Create an Account on the StrangeBee License Portal
 
-Visit the [StrangeBee License Portal registration page](https://portal.apps.strangebee.com/account/register), and register using your professional email address.
+Visit the [StrangeBee License Portal registration page](https://portal.apps.strangebee.com/account/register){target=_blank}, and register using your professional email address.
 
 ![](../images/installation/license1.png)
 
@@ -32,6 +35,7 @@ Once your account is validated, you will receive a notification. Follow the inst
 ![](../images/installation/license5.png)
 
 The license includes the following capabilities:
+
 - Defines the number of users you can create on your platform.
 - Based on the number of users and the number of organizations.
 - Includes a validation and an expiration date.
@@ -59,7 +63,12 @@ Click on **"Request a Community License"** to proceed to the license generation 
 
 &nbsp;
 
-### 6. Retrieve the Challenge from Your TheHive Instance
+## How to activate your license
+
+!!! Note
+    This procedure applies to both Community and Gold/Platinum licenses. 
+
+### 1. Retrieve the Challenge from Your TheHive Instance
 
 Open your TheHive instance in a new browser tab, navigate to **Admin > Platform Management > License Management**, and click **"Update the current license"** to display the challenge.
 
@@ -67,7 +76,7 @@ Open your TheHive instance in a new browser tab, navigate to **Admin > Platform 
 
 &nbsp;
 
-### 7. Generate Your License Key
+### 2. Generate Your License Key
 
 Copy the **Challenge** from TheHive, return to the StrangeBee License Portal, and paste it into the corresponding field on the license request page. Submit the form to generate your license key.
 
@@ -79,7 +88,7 @@ Copy the **Challenge** from TheHive, return to the StrangeBee License Portal, an
 
 &nbsp;
 
-### 8. Activate Your License in TheHive
+### 3. Activate Your License in TheHive
 
 Copy the generated license key, go back to your TheHive instance, paste the license key into the appropriate field, and confirm to activate your Community License.
 
@@ -87,12 +96,8 @@ Copy the generated license key, go back to your TheHive instance, paste the lice
 
 &nbsp;
 
-### 9. Enjoy TheHive Community Version
+### 4. Enjoy TheHive Community Version
 
 Your TheHive Community edition is now fully activated. You can now explore and use all the features available to you.
-
----
-
-> **Note:** If you are already using TheHive 5.x Community version, please create your account on the License Portal before upgrading to version 5.3. Without this Community License, your interface will be limited to read-only mode.
 
 &nbsp;
