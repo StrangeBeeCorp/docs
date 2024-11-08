@@ -28,7 +28,14 @@ Check your email inbox for a confirmation message, click the confirmation link t
 
 Once your account is validated, you will receive a notification. Follow the instructions to configure your password.
 
+
 ![](../images/installation/license5.png)
+
+The license includes the following capabilities:
+- Defines the number of users you can create on your platform.
+- Based on the number of users and the number of organizations.
+- Includes a validation and an expiration date.
+- Allows an unlimited number of Unlicensed users and Service users. Service users can use an API key to call all APIs but do not have access to TheHive interface.
 
 &nbsp;
 
