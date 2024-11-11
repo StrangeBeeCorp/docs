@@ -52,6 +52,11 @@ plugins:
             'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.4.md'
             'thehive/setup/index.md': 'thehive/overview/index.md'
+            'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/step-by-step-installation-guide.md'
+            'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
+            'thehive/setup/installation/docker.md':  'thehive/installation/docker/docker-compose-overview.md'
+            'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/setup/installation/migration.md': 'thehive/installation/migration.md'
             'cortex/LICENSE.md': 'cortex/index.md'
             'cortex/operations/backup-restore/1__create_a_backup_repository.md': 'cortex/operations/backup-restore.md'
             'cortex/operations/backup-restore/3__backup_your_data.md': 'cortex/operations/backup-restore.md'
@@ -65,8 +70,7 @@ plugins:
             'resources/cortexutils/LICENSE.md': 'cortex/index.md'
             'resources/cortex4py/href.md': 'cortex/index.md'
             'resources/templates/LICENSE.md': 'thehive/overview/index.md'
-            'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
-            'thehive/setup/installation/migration.md': 'thehive/installation/migration.md'
+
 
 
 extra:
@@ -258,6 +262,7 @@ nav:
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
         - 'Search':
+          - 'Search Functionality Overview': thehive/user-guides/analyst-corner/search/about-search.md
           - 'Search by Cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
           - 'Search by Alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
           - 'Search by Observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md

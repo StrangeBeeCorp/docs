@@ -19,6 +19,63 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.4 - 8th of November 2024
+
+### Fixes
+- Resolved a display issue with the status component in cases and alerts, which was not rendering correctly on Safari and Firefox.
+
+## 5.4.3 - 7th of November 2024
+
+### Improvements
+
+#### Microsoft teams Notifier Update
+Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organisation/notifications/teams.md).
+#### Cases/Alerts status visibility
+Added a colored background to the stage icon in status components for better visibility in case and alert lists.
+#### License Check Improvements
+Improved display of permissions and profiles that consume licenses for clearer management by administrators. The “Manage Dashboard” permission no longer consumes a license.
+#### Task title Limit
+Added a character limit check for task titles to notify users when their input exceeds the allowed length.
+#### Edit Alert title
+Adding the ability to edit alert title directly from the general tab.
+
+### Fixes
+
+#### Cortex job queue
+- Enhanced the handling of concurrent job submissions to the Cortex server for better efficiency and stability.
+- Fixed an issue related to job status recovery in TheHive when the Cortex server crashes.
+
+#### Live feed display
+Fixed issues with overly long text and tags in the live feed display.
+
+#### Observables list loading
+Optimized the rendering speed for the observables tab to improve performance.
+
+#### App default language
+Fixed default language selection to use the browser’s language on first connection.
+
+#### Improved Case Closure Error Handling
+Modified case closure behavior: if a backend error occurs, the case closure window now remains open to prevent data loss.
+
+#### Tasklog Display in Timeline
+When adding a tasklog with the option "display in the timeline", the tasklog now appears in the timeline view from the task preview after the preview drawer is closed.
+
+## 5.4.2 - 21st of October 2024
+### Fix
+- This version fixes a regression related to the query boolean parameters in the public API. These parameter values are case insensitive again.
+
+## 5.4.1 - 11th of October 2024
+
+### Fix
+- We fixed an issue related to our backend framework configuration (pekko). This problem impacted the generated configuration file for a new installation of TheHive on Kubernetes.
+
+### Improvements
+#### Cortex Job Queue
+We have made two improvements to the management of Cortex job queues from TheHive to:
+
+- Prevent spamming the Cortex server when a large number of jobs are submitted.
+- Reduce the latency in retrieving completed job reports, even when the job queue is highly loaded.
+
 ## 5.4.0 - 26th of September 2024
 ### New Features
 
@@ -78,3 +135,22 @@ As part of our recent brand visual identity update, TheHive logo has been update
 
 #### Time metrics
 We resolved an issue with the "Time to Detect" metric during alert creation.
+
+
+### Known issues
+Last update: 21st of October 2024
+
+#### Public API - Query boolean parameters case sensitive
+
+TheHive 5.4.0 introduced a non expected breaking change related to the query boolean parameters.
+The values passed in the query URL, with upper case (ex: `True` or `False`) are not accepted anymore. It does not concern the parameters passed in the body/payload.
+It impacts the endpoints listed below, and the tools that use those endpoints (like TH4Py 2.0). **The 5.4.2 version fixes this issue**.
+
+The following endpoints are impacted:
+
+- Download Attachment from observable: GET /api/v1/observable/$id/attachment/id/download with the asZip param
+- Delete CustomField: `DELETE /api/v1/customField/$id` with `force` flag
+- Invoke Function: `POST /api/v1/function/$id` with `dryRun` flag
+- Invoke Function on an object: `POST /api/v1/function/$id/$objectType/$objectId` with `dryRun` and `sync` params
+- Test Function: `POST /api/v1/function/_test` with `dryRun` param
+- Get platform status: `GET /api/v1/status` with `verbose` param
