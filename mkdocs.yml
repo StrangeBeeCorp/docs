@@ -107,9 +107,7 @@ nav:
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
       - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
-      - 'Running with Docker':
-        - 'Overview': thehive/installation/docker/docker-compose-overview.md
-        #- 'TheHive Setup for Testing with Docker': thehive/installation/docker/docker-compose-test.md
+      - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
