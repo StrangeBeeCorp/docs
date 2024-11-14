@@ -25,7 +25,7 @@ Hardware requirements will depend on the deployment profile being used. For exam
 
 ## Clone the Repository
 
-Clone the StrangeBeeCorp Docker repository to your local machine:
+Clone the [StrangeBee Docker repository](https://github.com/StrangeBeeCorp/docker.git) to your local machine:
 
 ```sh
 git clone https://github.com/StrangeBeeCorp/docker.git
@@ -49,7 +49,7 @@ You can choose the scenario that best suits your needs by selecting the appropri
 
 ## Starting TheHive
 
-The application stack includes several utility scripts, one of which is the init.sh script, which performs the following tasks:
+The application stack includes several utility scripts, one of which is the `init.sh` script, which performs the following tasks for you:
 
 - Prompt for a service name to include in the Nginx server certificate.
 - Initialize the `secret.conf` files for TheHive and Cortex.
