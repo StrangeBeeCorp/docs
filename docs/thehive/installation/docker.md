@@ -119,10 +119,10 @@ Open your browser, and navigate to:
 
 ## Additional Configuration
 
-For more detailed information on the directory structure, services, scripts, and their respective functions, please refer to the README.md file located within each Deployment Profile:
+For more detailed information on the directory structure, services, scripts, and their respective functions, please refer to the `README.md` file located within each deployment profile:
 
-- [Testing Environment](https://github.com/StrangeBeeCorp/docker/blob/main/testing/README.md)
-- [Production Environment #1 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive/README.md)
-- [Production Environment #2 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive/README.md)
+- [Testing Environment](https://github.com/StrangeBeeCorp/docker/blob/main/testing/README.md){target=_blank}
+- [Production Environment #1 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive/README.md){target=_blank}
+- [Production Environment #2 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive/README.md){target=_blank}
 
 &nbsp;
