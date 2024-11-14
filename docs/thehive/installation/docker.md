@@ -27,10 +27,6 @@ Basically, two hardware profiles are recommended to run the full stack for TheHi
 2. 8vCPUs, 32GB of RAM and 150GB of storage for intensive use cases.
 
 
-!!! Warning
-    Please, read carefully the documentation associated with the profile you plan to use before running any command
-
-
 ---
 
 ## Clone the Repository
@@ -46,6 +42,11 @@ git clone https://github.com/StrangeBeeCorp/docker.git
 ---
 
 ## Deployment Profiles
+
+!!! Warning "**BEFORE** RUNNING ANY COMMAND"
+    Please, read carefully the documentation related to the profile you want to use (the `README.md` files you'll find in the GitHub repository).
+
+
 
 The prebuilt deployment profiles allow you to quickly set up TheHive based on your specific use case. Choose from the following deployment options:
 
