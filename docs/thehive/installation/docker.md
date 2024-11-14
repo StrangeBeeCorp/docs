@@ -1,8 +1,8 @@
 # :material-docker: Running TheHive with Docker
 
-TheHive fully supports Docker, allowing users to quickly deploy and manage their instance of the platform using Docker containers. 
+TheHive fully supports Docker, allowing users to quickly deploy and manage their instance of the platform using Docker containers.
 
-This guide will walk you through setting up TheHive using Docker.
+We provides and maintain several setup profiles for TheHive and Cortex available on GitHub. This guide will walk you through choose the right profile and setting up TheHive using Docker.
 
 ---
 
@@ -10,9 +10,9 @@ This guide will walk you through setting up TheHive using Docker.
 
 #### Software Requirements
 
-- **Docker Engine**: Version `v23.0.15` or later. [Installation instructions](https://docs.docker.com/engine/install/)
-- **Docker Compose Plugin**: Version `v2.20.2` or later. [Installation instructions](https://docs.docker.com/compose/install/)
-- **jq**: [jq installation instructions](https://jqlang.github.io/jq/)
+- **Docker Engine**: Version `v23.0.15` or later. [Installation instructions](https://docs.docker.com/engine/install/){target=_blank}
+- **Docker Compose Plugin**: Version `v2.20.2` or later. [Installation instructions](https://docs.docker.com/compose/install/){target=_blank}
+- **jq**: [jq installation instructions](https://jqlang.github.io/jq/){target=_blank}
 - **Permissions**: The current user should have at least `sudo` permissions.
 
 &nbsp;
@@ -20,6 +20,16 @@ This guide will walk you through setting up TheHive using Docker.
 #### Hardware Requirements
 
 Hardware requirements will depend on the deployment profile being used. For example, for testing deployments, a CPU with 4 vCPUs and 8 GB RAM is recommended, while for high-performance deployments for TheHive on a dedicated server, a CPU with 8 vCPUs and 32 GB RAM is recommended. For more detailed requirements, please refer to the GitHub link provided below.
+
+Basically, two hardware profiles are recommended to run the full stack for TheHive on a single server (virtual of physical): 
+
+1. 4vCPUs, 16 GB of RAM and 100GB of storage is recommended for most use cases, 
+2. 8vCPUs, 32GB of RAM and 150GB of storage for intensive use cases.
+
+
+!!! Warning
+    Please, read carefully the documentation associated with the profile you plan to use before running any command
+
 
 ---
 
@@ -39,9 +49,17 @@ git clone https://github.com/StrangeBeeCorp/docker.git
 
 The prebuilt deployment profiles allow you to quickly set up TheHive based on your specific use case. Choose from the following deployment options:
 
-1. **Testing Environment**: Deploys both TheHive (and [Cortex](../../cortex/index.md)) on a single server for testing purposes. [Link to the deployment profile](https://github.com/StrangeBeeCorp/docker/blob/main/testing)
-2. **Production Environment #1 - TheHive**: Single server deployment optimized for TheHive. [Link to the deployment profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive)
-3. **Production Environment #2 - TheHive**: High-performance deployment for TheHive on a dedicated server. [Link to the deployment profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive)
+**Testing Environment**
+
+:  Deploys both TheHive (and [Cortex](../../cortex/index.md)) on a single server for testing purposes. [Link to the testing profile](https://github.com/StrangeBeeCorp/docker/blob/main/testing){target=_blank}
+
+**Production Environment #1 - TheHive**
+
+:  Single server deployment optimized for TheHive. [Link to the production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive){target=_blank}
+
+**Production Environment #2 - TheHive**
+
+:  High-performance deployment for TheHive on a dedicated server. [Link to the high-performance production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive){target=_blank}
 
 You can choose the scenario that best suits your needs by selecting the appropriate Docker Compose YAML file.
 
