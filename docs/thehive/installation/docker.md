@@ -56,7 +56,7 @@ The prebuilt deployment profiles allow you to quickly set up TheHive based on yo
 
 **Production Environment #1 - TheHive**
 
-:  Single server deployment optimized for TheHive. [Link to the production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive){target=_blank}
+:  Single server deployment for intensive use of TheHive. [Link to the production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive){target=_blank}
 
 **Production Environment #2 - TheHive**
 
@@ -116,7 +116,8 @@ docker compose up -d
 
 Open your browser, and navigate to: 
 
-* `https://HOSTNAME_OR_IP/thehive` to connect to TheHive
+* `https://HOSTNAME_OR_IP/thehive` to connect to TheHive if using the *testing* profile
+* `https://HOSTNAME_OR_IP/` to connect to TheHive if using the production profiles
 
 &nbsp;
 
