@@ -103,7 +103,14 @@ docker compose up -d
 
 &nbsp;
 
-![](../images/installation/docker-install-1.gif)
+!!! Example "How to start quickly with prod1-thehive environment ?"
+    1. Clone the repository
+    2. Open prod1-thehive folder
+    3. Initialize the environment
+    4. Start the application stack
+
+    ![](../images/installation/start-prod1-thehive.gif)
+
 
 ### Step 3: Access the application
 
