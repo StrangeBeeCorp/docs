@@ -19,6 +19,16 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.5 - 21st of November 2024
+
+### Fixes
+#### Cortex
+- Resolved an issue causing incorrect differentiation between "In Progress" Cortex analyzers and responders during TheHive startup process, that was causing some Responder jobs to never cleaned up.
+#### Dashboard
+- Fixed an issue related to Custom Field and negative filter on some dashboard widgets: gauge, text, and counter.
+#### Index ES
+- Fixed index deactivation during a global reindex request. Two reindexation are not required anymore.
+
 ## 5.4.4 - 8th of November 2024
 
 ### Fixes
