@@ -56,6 +56,22 @@ plugins:
             'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/step-by-step-installation-guide.md'
             'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
             'thehive/setup/installation/docker.md':  'thehive/installation/docker/docker-compose-overview.md'
+            'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/setup/installation/migration.md': 'thehive/installation/migration.md'
+            'cortex/LICENSE.md': 'cortex/index.md'
+            'cortex/operations/backup-restore/1__create_a_backup_repository.md': 'cortex/operations/backup-restore.md'
+            'cortex/operations/backup-restore/3__backup_your_data.md': 'cortex/operations/backup-restore.md'
+            'cortex/operations/backup-restore/2__register_a_snapshot_repository.md': 'cortex/operations/backup-restore.md'
+            'cortex/operations/backup-restore/4__restore_data.md': 'cortex/operations/backup-restore.md'
+            'resources/thehive4py/LICENSE.md': 'thehive/overview/index.md'
+            'resources/thehive4py/href.md': 'thehive/overview/index.md'
+            'cortex/href.md': 'cortex/index.md'
+            'resources/cortexutils/href.md': 'cortex/index.md'
+            'resources/cortex4py/LICENSE.md': 'cortex/index.md'
+            'resources/cortexutils/LICENSE.md': 'cortex/index.md'
+            'resources/cortex4py/href.md': 'cortex/index.md'
+            'resources/templates/LICENSE.md': 'thehive/overview/index.md'
+
 
 
 extra:
