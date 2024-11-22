@@ -27,7 +27,7 @@
 #### Dashboard
 - Fixed an issue related to Custom Field and negative filter on some dashboard widgets: gauge, text, and counter.
 #### Index ES
-- Fixed index deactivation during a global reindex request. Two reindexation are not required anymore.
+- Fixed index deactivation during a global reindex request. Double reindexation is not required anymore.
 
 ## 5.4.4 - 8th of November 2024
 
