@@ -24,10 +24,10 @@ The hardware requirements for TheHive depend on factors such as the number of co
 
 TheHive has been tested and is officially supported on the following operating systems:
 
-- Ubuntu 20.04 LTS & 22.04 LTS
+- Ubuntu 20.04 LTS | 22.04 LTS
 - Debian 11
-- RHEL 8
-- Fedora 35 & 37
+- RHEL 8.5 | 9.3
+- Fedora 35 | 37
 
 Additionally, an [**official Docker image**](https://hub.docker.com/r/strangebee/TheHive/tags) is available for users who prefer containerized deployments.
 
