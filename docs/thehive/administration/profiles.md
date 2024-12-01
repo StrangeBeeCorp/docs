@@ -7,7 +7,7 @@
 
 TheHive includes a set of predefined profiles for Administrators and Organizations. This set can be expanded by creating custom profiles tailored to specific needs.
 
-![Profiles Tab Image](./images/entities-management-profiles-1.png)
+![Profiles Tab Image](../images/administration-guides/entities-management-profiles-1.png)
 
 !!! Info ""
     A valid license is required to update profiles.
@@ -37,15 +37,15 @@ The **Add a Profile** window will open.
 3. Select the appropriate **Permissions** for the profile type.
 4. Click **Confirm profile creation** to finalize.
 
-![Add Profile Window Image](./images/entities-management-profiles-2.png)
+![Add Profile Window Image](../images/administration-guides/entities-management-profiles-2.png)
 
-![Permissions Selection Image](images/entities-management-profiles-3.png)
+![Permissions Selection Image](../images/administration-guides/entities-management-profiles-3.png)
 
 ## Editing or Deleting a Profile
 
 Profiles can be edited or deleted as required.
 
-![Edit/Delete Profile Image](images/entities-management-profiles-4.png)
+![Edit/Delete Profile Image](../images/administration-guides/entities-management-profiles-4.png)
 
 ---
 
@@ -109,7 +109,7 @@ The following permissions consume a license and are available under the **Licens
     - Create
     - Invoke
 
-![](./images/license-changes-1.png)
+![](../images/administration-guides/license-changes-1.png)
 
 ### Selecting Permissions by License Group
 

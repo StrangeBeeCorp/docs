@@ -4,7 +4,7 @@
 
 OAuth2 and OpenID-Connect are widely used authentication protocols that enable secure and seamless user authentication. This article provides instructions on configuring TheHive to authenticate users using an external OAuth2 authentication server. By following this guide, you will be able to integrate various OAuth2 providers, such as Keycloak, Okta, Github, Microsoft 365, and Google, with TheHive.
 
-![OAuth2 Configuration Page](./images/authentication-oauth2-1.png)
+![OAuth2 Configuration Page](../../images/administration-guides/authentication/authentication-oauth2-1.png)
 
 ---
 
@@ -119,6 +119,6 @@ To enable users to log in without prior manual creation, you can activate autocr
 * Default profile applied to new users
 
 
-![](./images/authentication-oauth2-2.png)
+![](../../images/administration-guides/authentication/authentication-oauth2-2.png)
 
 &nbsp;

@@ -4,4 +4,4 @@
 1. Enter user credentials, **Login** name and **password**.
 1. Click the **Let me In** button. 
 
-<img src="../images/sign-in-screen.png" alt="sign-in screen" width="500" height="500"/>
+<img src="../../images/user-guides/analyst-corner/sign-in-screen.png" alt="sign-in screen" width="500" height="500"/>

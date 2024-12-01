@@ -6,14 +6,14 @@ Using Slack as *Notifier* requires to create at least one endpoint. This endpoin
 In the *Organsation* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
 
 <figure markdown>
-  ![Enpoints list](./images/organisation-endpoints.png){ width="500" }
+  ![Enpoints list](../../../images/user-guides/organisation/notifications/organisation-endpoints.png){ width="500" }
 </figure>
 
 ### Enpoint configuration
 Choose *Slack* and complete required information.
 
 <figure markdown>
-  ![Slack endpoint configuration](./images/organisation-endpoints-slack-configuration.png){ width="500" }
+  ![Slack endpoint configuration](../../../images/user-guides/organisation/notifications/organisation-endpoints-slack-configuration.png){ width="500" }
 </figure>
 
 * **Name**: give a unique name to the endpoint
@@ -30,7 +30,7 @@ Then, click **confirm** to create the endpoint.
 When creating a *Notification* select *Slack* as *Notifier* and complete the form.
 
 <figure markdown>
-  ![Choose Slack](./images/organisation-notifications-slack-1.png){ width="500" }
+  ![Choose Slack](../../../images/user-guides/organisation/notifications/organisation-notifications-slack-1.png){ width="500" }
 </figure>
 
 TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most form fields:
@@ -52,7 +52,7 @@ Several configuration options come with the integration with Slack.
     * Build your blocks with the [Slack Block kit builder](https://app.slack.com/block-kit-builder/)
 
 <figure markdown>
-  ![Choose Slack](./images/organisation-notifications-slack-2.png){ width="500" }
+  ![Choose Slack](../../../images/user-guides/organisation/notifications/organisation-notifications-slack-2.png){ width="500" }
 </figure>
 
 

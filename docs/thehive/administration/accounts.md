@@ -9,7 +9,7 @@ Accounts can be created or edited in TheHive from multiple locations:
 
 As a platform Administrator, go to the **Users** page to manage accounts.
 
-![User management](./images/accounts-1.png)
+![User management](../images/administration-guides/accounts-1.png)
 
 ## Types of Accounts
 
@@ -27,7 +27,7 @@ To create a new account, follow these steps:
 
 1. Click the :fontawesome-regular-square-plus: button to add an account.
 
-   ![Account creation image](./images/accounts-2.png)
+   ![Account creation image](../images/administration-guides/accounts-2.png)
 
 2. Select the account type, either *Normal* or *Service*.
 3. Enter a login name formatted as an *email address*.
@@ -44,7 +44,7 @@ To modify an existing account:
 
 1. In the account list, click *Preview* to open the account details.
 
-   ![Account update image](./images/accounts-3.png)
+   ![Account update image](../images/administration-guides/accounts-3.png)
 
 2. You can add an avatar to the account by clicking the :fontawesome-solid-circle-question: icon and selecting a file.[^1]
 3. Update the email address, which is used for notifications and password resets.
@@ -64,8 +64,8 @@ In version 5.4.3, TheHive introduces a new feature for license management in use
 
 This enhancement is available in both the **Org-admin** and **Global Users** views, providing consistent visibility across user management settings.
 
-![](./images/user-1.png)
+![](../images/administration-guides/user-1.png)
 
-![](./images/user-2.png)
+![](../images/administration-guides/user-2.png)
 
 
