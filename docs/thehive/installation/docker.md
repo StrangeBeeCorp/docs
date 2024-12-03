@@ -133,4 +133,51 @@ For more detailed information on the directory structure, services, scripts, and
 - [Production Environment #1 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive/README.md){target=_blank}
 - [Production Environment #2 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive/README.md){target=_blank}
 
+---
+
+## TheHive Docker Entrypoint Options
+
+To view a list of all supported options for the Docker entry point, use the -h flag:
+
+```bash
+docker run --rm strangebee/thehive:<version> -h
+```
+
+The output will display available options, allowing you to configure TheHive according to your requirements.
+
+Available Options:
+
+- `--config-file <file>`: Specifies the path to the configuration file.
+- `--no-config`: Prevents TheHive from attempting to configure itself, including adding secrets and Elasticsearch settings.
+- `--no-config-secret`: Excludes the addition of a randomly generated secret from the configuration.
+- `--secret <secret>`: Sets the secret used to secure sessions.
+- `--show-secret`: Displays the generated secret.
+- `--no-config-db`: Disables automatic configuration of the database.
+- `--cql-hostnames <host>,<host>,...`: Resolves these hostnames to locate Cassandra instances.
+- `--cql-username <username>`: Specifies the username for the Cassandra database.
+- `--cql-password <password>`: Specifies the password for the Cassandra database.
+- `--no-cql-wait`: Skips waiting for Cassandra to become available.
+- `--bdb-directory <path>`: Defines the location of the local database if Cassandra is not used (default: /data/db).
+- `--index-backend`: Specifies the backend to use for index, either 'lucene' or 'elasticsearch' (default: lucene).
+- `--es-hostnames`: Specifies the Elasticsearch instances used for index.
+- `--es-index`: Specifies the Elasticsearch index name to be used (default: thehive).
+- `--no-config-storage`: Disables automatic configuration of storage.
+- `--storage-directory <path>`: Specifies the location of local storage if S3 is not used (default: /data/files).
+- `--s3-endpoint <endpoint>`: Specifies the endpoint of S3 or other object storage if used, with 's3.amazonaws.com' for AWS S3.
+- `--s3-region <region>`: Specifies the S3 region, optional for MinIO.
+- `--s3-bucket <bucket>`: Specifies the name of the bucket to use (default: thehive), which must already exist.
+- `--s3-access-key <key>`: Specifies the S3 access key (required for S3).
+- `--s3-secret-key <key>`: Specifies the S3 secret key (required for S3).
+- `--s3-use-path-access-style`: Sets this flag if using MinIO or another non-AWS S3 provider, defaulting to virtual host style.
+- `--no-config-cortex`: Excludes Cortex configuration.
+- `--cortex-proto <proto>`: Defines the protocol to connect to Cortex (default: http).
+- `--cortex-port <port>`: Defines the port to connect to Cortex (default: 9001).
+- `--cortex-hostnames <host>,<host>,...`: Resolves these hostnames to locate Cortex instances.
+- `--cortex-keys <key>,<key>,...`: Defines Cortex keys.
+- `--kubernetes`: Utilizes the Kubernetes API to join other nodes.
+- `--kubernetes-pod-label-selector <selector>`: Specifies the selector to use to select other pods running the app (default app=thehive).
+- `--cluster-min-nodes-count <count>`: Specifies the minimum number of nodes to form a cluster (default to 1).
+- `migrate <param> <param> ...`: Runs the migration tool.
+- `cloner <param> <param> ...`: Runs the cloner tool. 
+
 &nbsp;
