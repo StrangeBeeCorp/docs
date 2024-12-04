@@ -1,3 +1,4 @@
+
 # Deploy on Kubernetes
 
 To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed instructions on how to use the Docker image, please refer to the [**docker image documentation**](./docker.md)
@@ -35,7 +36,7 @@ This command will create a namespace named ``thehive`` and deploy the instances 
 
 ## Kubernetes Configuration
 
-In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the akka discovery method with the [**Kubernetes API**](https://doc.akka.io/docs/akka-management/current/discovery/kubernetes.html).
+In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the pekko discovery method with the [**Kubernetes API**](https://pekko.apache.org/docs/pekko-management/current/discovery/kubernetes.html).
 
 To enable this functionality, you need:
 
@@ -125,9 +126,9 @@ If you use the Docker entry point, include the ``--kubernetes`` flag. Additional
 If you use your own application.conf file, add the following configurations:
 
 ```hocon
-akka.remote.artery.canonical.hostname = ${?POD_IP}
+pekko.remote.artery.canonical.hostname = ${?POD_IP}
 singleInstance = false
-akka.management {
+pekko.management {
   cluster.bootstrap {
     contact-point-discovery {
       discovery-method = kubernetes-api
@@ -136,9 +137,9 @@ akka.management {
     }
   }
 }
-akka.extensions += "akka.management.cluster.bootstrap.ClusterBootstrap"
+pekko.extensions += "pekko.management.cluster.bootstrap.ClusterBootstrap"
 
-akka.discovery {
+pekko.discovery {
   kubernetes-api {
     # Set here the pod selector to use for thehive pods
     pod-label-selector = "thehive"
@@ -210,4 +211,3 @@ Below are some common issues that may arise when running TheHive with Docker:
         If this is the first setup of the cluster, consider deleting both database volumes/data and restarting both the databases and TheHive.
 
 &nbsp;
-
