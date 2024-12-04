@@ -9,7 +9,7 @@ After following the installation guides and ensuring TheHive is up and running, 
 |--------------|-----------------------|
 | **Password** | `secret`              |
 
-![](./images/first-start-login.png)
+![](../images/administration-guides/first-start-login.png)
 
 ---
 
@@ -32,11 +32,11 @@ It is crucial to change the default admin password immediately after your initia
 
 ### 1. Go to User Settings
 
-![](./images/first-start-change-user-settings.png)
+![](../images/administration-guides/first-start-change-user-settings.png)
 
 ### 2. Change Your Password
 
-![](./images/first-start-change-password.png)
+![](../images/administration-guides/first-start-change-password.png)
 
 ### 3. Confirm Changes
 
@@ -50,16 +50,16 @@ The Administrator's space is where all platform configurations are managed.
 
 * Integrate TheHive with [SMTP servers](./smtp.md), authentication directory servers, Cortex, and MISP servers: Go to the **Platform Management page**
 
-    ![](./images/first-start-platform-management.png)
+    ![](../images/administration-guides/first-start-platform-management.png)
 
 * Create Organisations
 
-    ![](./images/first-start-organisations.png)
+    ![](../images/administration-guides/first-start-organisations.png)
 
 * Create Users
 
-    ![](./images/first-start-users.png)
+    ![](../images/administration-guides/first-start-users.png)
 
 * Customize Application Behavior for Users in the **Entity Management page**
 
-    ![](./images/first-start-entities-management.png)
+    ![](../images/administration-guides/first-start-entities-management.png)

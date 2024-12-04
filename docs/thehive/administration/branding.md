@@ -11,4 +11,4 @@ To customize branding:
 2. Make the necessary changes
 3. Click **Confirm**
 
-  ![](./images/platform-management-branding.png)
+  ![](../images/administration-guides/platform-management-branding.png)

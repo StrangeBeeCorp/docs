@@ -8,7 +8,7 @@ Access to the list by opening the *Organisation* menu, then the *Templates* tab,
 
 
 <figure markdown>
-  ![List of Page templates](./images/organisation-pages-templates.png){ width="450" }
+  ![List of Page templates](../../../images/user-guides/organisation/templates/organisation-pages-templates.png){ width="450" }
   <figcaption>List of Pages templates</figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ Click the :fontawesome-regular-square-plus: button to create a new *Page templat
 
 
 <figure markdown>
-  ![Create a Page template](./images/organisation-pages-templates-2.png){ width="450"}
+  ![Create a Page template](../../../images/user-guides/organisation/templates/organisation-pages-templates-2.png){ width="450"}
   <figcaption>Create a page template</figcaption>
 </figure>
 
@@ -40,7 +40,7 @@ Content
 *Page templates* can be exported and stored as JSON files by clicking on the option icon :fontawesome-solid-ellipsis: and selecting :fontawesome-solid-file-export: *Export page template*
 
 <figure markdown>
-![](./images/organisation-pages-templates-3.png){ width="500" }
+![](../../../images/user-guides/organisation/templates/organisation-pages-templates-3.png){ width="500" }
 <figcaption>Export a page template</figcaption>
 </figure>
 
@@ -48,6 +48,6 @@ Content
 Click on the button *Import Page Template* and select the JSON formatted file to import.
 
 <figure markdown>
-![](./images/organisastion-page-templates-4.png){ width="500" }
+![](../../../images/user-guides/organisation/templates/organisastion-page-templates-4.png){ width="500" }
 <figcaption>Import a page template</figcaption>
 </figure>

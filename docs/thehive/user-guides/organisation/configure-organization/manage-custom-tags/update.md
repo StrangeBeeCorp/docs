@@ -6,7 +6,7 @@ To update custom tags:
 1. Click the tick mark to save changes.
 1. Click the cross mark to discard changes. 
 
-<img src="../images/edit_custom_tag_name.png" alt="edit custom tag name" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organisation/configure-organization/manage-custom-tags/edit_custom_tag_name.png" alt="edit custom tag name" width="1000" height="1000"/>
 
 To update colour of the tag:
 
@@ -15,4 +15,4 @@ To update colour of the tag:
 1. Click the tick mark to save changes.
 1. Click the cross mark to discard changes. 
 
-<img src="../images/edit_colour_custom_tags.png" alt="edit colour custom tags" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organisation/configure-organization/manage-custom-tags/edit_colour_custom_tags.png" alt="edit colour custom tags" width="1000" height="1000"/>

@@ -10,7 +10,7 @@ This Custom Fields view is available in the Administrator space: ooen the *Entit
 
 Click the :fontawesome-regular-square-plus: button to create a new *Custom Field*.
 
-![](./images/custom-fields-1.png)
+![](../images/administration-guides/custom-fields-1.png)
 
 Create a new Custom Fields by filling following information: 
 

@@ -16,7 +16,7 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 ## Architecture Diagram
 
-![](../images/general/thehive-architecture-full-cluster.png)
+![](../images/overview/thehive-architecture-full-cluster.png)
 
 The diagram above illustrates the key components and their interactions within the cluster architecture.
 

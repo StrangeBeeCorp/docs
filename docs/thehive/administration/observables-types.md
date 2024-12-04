@@ -8,7 +8,7 @@ Observable types are configured in the Administrators space: open *Entities Mana
 ## Create a new Observable Type
 Click the :fontawesome-regular-square-plus: button to create a new *Observable Type*.
 
-![](./images/observable-types-1.png)
+![](../images/administration-guides/observable-types-1.png)
 
 1. Specify a name for this new type
 2. Define if this new Observable Type is defined by a file attachment or not. If yes, the data entered by analysts is a file; if not, this is a text area.

@@ -9,7 +9,7 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
 
 1. On the Platform Management page, in the License tab, click the **Update the current license** button
 
-    ![](./images/platform-management-license-1.png)
+    ![](../images/administration-guides/platform-management-license-1.png)
 
     Set a License key window opens. You can see the challenge in the window.
    
@@ -23,7 +23,7 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
 
     This will activate the license and update your instance with all the features included with that license.
 
-    ![](./images/platform-management-license-2.png)
+    ![](../images/administration-guides/platform-management-license-2.png)
 
     The license is defined by the following capabilities:
 
@@ -33,7 +33,7 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
     4. It allows unlimited number of *ReadOnly* users and *Service* accounts. Service accounts are those who do not have access to the TheHive interface but can use an API key to call all the APIs
 
 <video width="600" controls>
-  <source id=mp4 src="../images/activate-license.mp4" type="video/mp4">
+  <source id=mp4 src=".../images/administration-guides/activate-license.mp4" type="video/mp4">
 </video>
 
 

@@ -9,7 +9,7 @@
 In your organisation, click on _Organisation_ in the menu on the left to access the list of users. The first tab is _Users_.
 
 <figure markdown>
-  ![List of user accounts](./images/organisation-list-users.png){ width="600" }
+  ![List of user accounts](../../images/user-guides/organisation/organisation-list-users.png){ width="600" }
   <figcaption>List of user accounts</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ In your organisation, click on _Organisation_ in the menu on the left to access 
 To access detailed information about a user, click the _Preview_ button
 
 <figure markdown>
-  ![User information](./images/organisation-user-details.png){ width="450" }
+  ![User information](../../images/user-guides/organisation/organisation-user-details.png){ width="450" }
   <figcaption>User information</figcaption>
 </figure>
 

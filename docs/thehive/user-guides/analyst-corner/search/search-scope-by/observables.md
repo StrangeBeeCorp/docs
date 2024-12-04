@@ -14,4 +14,4 @@ if you want to search based on **Observables**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../images/search-by-observables.png" alt="search by Observables" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/analyst-corner/search/search-scope-by/search-by-observables.png" alt="search by Observables" width="1000" height="1000"/>

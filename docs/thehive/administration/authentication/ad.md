@@ -4,7 +4,7 @@
     A license is required to configure Active Directory authentication
 
 
-![Active Directory configuration page](./images/authentication-ad-1.png)
+![Active Directory configuration page](../../images/administration-guides/authentication/authentication-ad-1.png)
 
 Following information are required to configure AD authentication:
 

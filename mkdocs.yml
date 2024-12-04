@@ -135,7 +135,7 @@ nav:
       - 'Backup & Restore Operations': thehive/operations/backup-restore.md 
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
-      - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
+      - 'Monitoring Setup': thehive/operations/monitoring.md
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Manage Organizations':

@@ -6,7 +6,7 @@ TheHive can connect to a SMTP server to send email notifications, and allow user
 
 On the Platform Management page, select the SMTP tab.
 
-![](./images/platform-management-smtp.png)
+![](../images/administration-guides/platform-management-smtp.png)
 
 ### Configure Server Settings
 

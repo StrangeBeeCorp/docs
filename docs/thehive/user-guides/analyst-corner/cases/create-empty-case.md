@@ -15,4 +15,4 @@ Create a new case from an empty case.
 1. Add Custom Fields. (Refer to [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
 1. Click the **Confirm case creation** button. 
 
-<img src="../images/create_empty_case.png" alt="create empty case" width="500" height="500"/>
+<img src="../../../images/user-guides/analyst-corner/cases/create_empty_case.png" alt="create empty case" width="500" height="500"/>

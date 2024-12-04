@@ -13,5 +13,3 @@ if you want to search based on **Audit Logs**
 1. Click the **Search** button at the bottom. 
 
 A set of search results appear in the right pane of the page. 
-
-<img src="../images/search-by-audit-logs.png" alt="search by Audit Logs" width="1000" height="1000"/>
