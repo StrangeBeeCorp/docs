@@ -7,7 +7,7 @@
         * Menu: Plateform Management
         * Tab: Authentication
 
-![](images/administrator-authentication-view.png)
+![](../../images/administration-guides/authentication/administrator-authentication-view.png)
 
 
 ## Session settings
@@ -25,7 +25,7 @@ Several options are available:
 
 
 ## Manage Authentication Providers
-![](images/authentication-providers-list.png)
+![](../../images/administration-guides/authentication/authentication-providers-list.png)
 
 Several options exist to authenticate users: 
 
@@ -36,5 +36,5 @@ Several options exist to authenticate users:
 - [Oauth2](oauth2.md): Use single sign-on through external Oauth2 server to authenticate users
 
 !!! Info "Use several providers"
-    ![](images/authentication-proviers-order.png)
+    ![](../../images/administration-guides/authentication/authentication-proviers-order.png)
     TheHive can use several providers to authenticate users, use the arrows to change the priority order (for example: try the Oauth2 authentication, then the local database).

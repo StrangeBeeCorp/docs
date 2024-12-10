@@ -14,5 +14,5 @@ To view case details:
 
     The case list page displays various tabs that have more details about each case such general tab, tasks, observables, TTPs, attachments, timeline, pages tab. 
 
-<img src="../images/cases-list-go-to-details-page.png" alt="cases list menu list" width="700" height="700"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-go-to-details-page.png" alt="cases list menu list" width="700" height="700"/>
 

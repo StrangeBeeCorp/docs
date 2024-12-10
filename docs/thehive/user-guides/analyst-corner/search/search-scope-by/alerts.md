@@ -14,4 +14,4 @@ if a user wants to search based on **Alerts**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../images/search-by-alerts.png" alt="search by alerts" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/analyst-corner/search/search-scope-by/search-by-alerts.png" alt="search by alerts" width="1000" height="1000"/>
