@@ -83,37 +83,33 @@ Following actions should be performed to backup the data successfully:
 1. Create a snapshot
 2. Save the data
 
+!!! The steps described below for data backup should be executed on each node. Each node's data should be backed up to ensure consistency in the backups.
+
 &nbsp;
 
 #### Create a snapshot and an archive
 
-Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BACKUP}` is the name of the snapshot, run the following commands:
+Considering that ${BACKUP} is the name of the snapshot, run the following commands:
 
 
-1. Before taking snapshots
-
-    ```bash
-    nodetool cleanup ${KEYSPACE}
-    ```
-
-2. Take a snapshot
+1. Use the ``nodetool snapshot`` command to create a snapshot of all keyspaces:
  
     ```bash
-    nodetool snapshot ${KEYSPACE} -t ${BACKUP}
+    nodetool snapshot -t ${BACKUP}
     ```
 
-3. Create and archive with the snapshot data: 
+2. Create and archive with the snapshot data: Execute the following command For every cassandra keyspace: 
 
     ```bash
-    tar cjf backup.tbz /var/lib/cassandra/data/${KEYSPACE}/*/snapshots/${BACKUP}/
+    tar cjfv ${KEYSPACE_NAME}.tbz -C /var/lib/cassandra/data/${KEYSPACE_NAME}/*/snapshots/${BACKUP} .
     ```
 
-4. Remove old snapshots (if necessary)
+3. Remove old snapshots (if necessary)
 
     ```bash
     nodetool -h localhost -p 7199 clearsnapshot -t ${BACKUP}
     ```
-
+!!! Note: We strongly recommend copying the snapshot archive files to a remote server or backup storage.
 &nbsp;
 
 #### Example
@@ -124,21 +120,40 @@ Considering that your keyspace is `${KEYSPACE}` (`thehive` by default) and `${BA
     #!/bin/bash
 
     ## Create a tbz archive containing the snapshot
+    ## This script should be executed on each node of the cluster
 
     ## Complete variables before running:
-    ## KEYSPACE: Identify the right keyspace to save in cassandra
-    ## SNAPSHOT: choose a name for the backup
-
-    SOURCE_KEYSPACE="thehive"
-    SNAPSHOT="thehive-backup"
+    HOSTNAME=$(hostname)
     SNAPSHOT_DATE="$(date +%F)"
 
-    # Backup Cassandra
-    nodetool cleanup ${SOURCE_KEYSPACE}
+    REMOTE_USER=<remote_user_to_change>
+    REMOTE_HOST=<remote_host_to_change>
 
-    nodetool snapshot ${SOURCE_KEYSPACE}  -t ${SNAPSHOT}_${SNAPSHOT_DATE}
+    ## Perform a backup for all keyspaces (system included)
+    nodetool snapshot -t ${SNAPSHOT_DATE}
 
-    tar cjf ${SNAPSHOT}_${SNAPSHOT_DATE}.tbz /var/lib/cassandra/data/${SOURCE_KEYSPACE}/*/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/
+    ## Navigate to the snapshot directory
+
+    find /var/lib/cassandra/data -name snapshots
+
+    # Archive snapshot files
+    mkdir -p /var/lib/cassandra/archive_backup/$HOSTNAME/${SNAPSHOT_DATE}
+    cd /var/lib/cassandra/archive_backup/$HOSTNAME/${SNAPSHOT_DATE}
+
+    for KEYSPACE in $(ls /var/lib/cassandra/data); do
+    mkdir $KEYSPACE
+    cd $KEYSPACE
+    for TABLE in $(ls /var/lib/cassandra/data/${KEYSPACE}); do
+        tar cjfv ${TABLE}.tbz -C /var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT_DATE} .
+    done
+    cd ..
+    done
+
+    nodetool -h localhost -p 7199 clearsnapshot -t ${SNAPSHOT_DATE}
+
+    # Copy the snapshot archive files to a remote server
+
+    scp /var/lib/cassandra/archive_backup/$HOSTNAME/${SNAPSHOT_DATE}/* ${REMOTE_USER}@${REMOTE_HOST}:/remote/node-hostname_cassandra_backup_directory
     ```
 
 &nbsp;
@@ -160,36 +175,73 @@ Following data is required to restore TheHive database successfully:
 - A backup of the database (`${SNAPSHOT}_${SNAPSHOT_DATE}.tbz`)
 - Keyspace to restore does not exist in the database (or it will be overwritten)
 
+All nodes in the cluster should be up before starting the restore procedure.
+
 &nbsp;
 
 #### Restore 
 
-1. Create the keyspace
+
+1. Start by drop the database ``TheHive``
 
     ```bash
-    cqlsh -u cassandra -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "
+    ## SOURCE_KEYSPACE contains the name of theHive database
+    CASSANDRA_PASSWORD=<your_admin_password>
+    CASSANDRA_ADDRESS=<cassandra_node_ip>
+    SOURCE_KEYSPACE=thehive
+    cqlsh -u admin -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "DROP KEYSPACE IF EXISTS ${SOURCE_KEYSPACE};"
+    ```
+
+2. Create the keyspace
+
+    ```bash
+    ## TARGET_KEYSPACE contains the new name of theHive database 
+    ## NOTE that you can keep the same database name since the old one has been deleted
+    cqlsh -u admin -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "
         CREATE KEYSPACE ${TARGET_KEYSPACE}
-        WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}
+        WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3'}
         AND durable_writes = true;"
     ```
 
-    Here it is possible to use a different keyspace name.
-
 2. Unarchive backup files: 
 
+!!! Note that the following steps should be executed for every Cassandra cluster node .
+
     ```bash
-    RESTORE_PATH=$(mktemp -d)
-    tar jxf ${SNAPSHOT}_${SNAPSHOT_DATE}.tbz -C ${RESTORE_PATH}
+    mkdir -p /var/lib/cassandra/restore
+    RESTORE_PATH="/var/lib/cassandra/restore"
+    SOURCE_KEYSPACE="thehive"
+    SNAPSHOT_DATE=<date_of_backup>
+    ## TABLES should contain the list of all tables that will be restored
+    ## table_name should include the uuid generated by cassandra, for example: table1-f901e0c05d8811ef87c71fc3a94044f4
+
+    TABLES="TABLES_TO_RESTORE"
+    ## TABLES="
+    ## table1-f901e0c05d8811ef87c71fc3a94044f4
+    ## table2-d502a0c05d8811ef87c71fc3a94044f5
+    ## table3-a703c0c05d8811ef87c71fc3a94044f6
+    ## " 
+
+    ## copy all of the snapshot tables that you want to restore from remote server or local cassandra node then extract it
+    ## repeat the following  steps on each node Cassandra for each table in the TABLES List
+
+    cd /var/lib/cassandra/restore
+    for table in $TABLES; do
+    scp remoteuser@remotehost:/remote/node_name_directory/${SNAPSHOT_DATE}/${SOURCE_KEYSPACE}/${table}.tbz .
+    mkdir -p ${RESTORE_PATH}/${SOURCE_KEYSPACE}/${table}
+    echo "Unarchive backup files for table: $table"
+    tar jxf ${table}.tbz -C ${RESTORE_PATH}/${SOURCE_KEYSPACE}/${table}
+    done
     ```
 
 3. Create tables from archive
-
-    The archive contains the table schemas. They must be executed in the new keyspace. The schema files are in `${RESTORE_PATH}/var/lib/cassandra/data/${SOURCE_KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/schema.cql`
+    
+    The archive contains the table schemas. They must be executed in the new keyspace. The schema files are in `${RESTORE_PATH}/${SOURCE_KEYSPACE}/${table}`
 
     ```bash
     for CQL in $(find ${RESTORE_PATH} -name schema.cql)
     do
-      cqlsh cassandra -f $CQL
+      cqlsh -u admin -p ${CASSANDRA_PASSWORD} -f $CQL
     done
     ```
 
@@ -202,33 +254,82 @@ Following data is required to restore TheHive database successfully:
     done
     ```
 
-4. Reorganize snapshot files:
+4. Load table data
 
-    The files in a snapshot follow the structure: `var/lib/cassandra/data/${KEYSPACE}/${TABLE}/snapshots/${SNAPSHOT}/`. In order to import files, the structure must be: `.../${KEYSPACE}/${TABLE}/`. The following command lines move files to match the expected file organization.
-
-    ```bash
-    mkdir -p ${RESTORE_PATH}/${TARGET_KEYSPACE}
-    for TABLE in ${RESTORE_PATH}/var/lib/cassandra/data/${SOURCE_KEYSPACE}/*
-    do
-      mv $TABLE/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/* ${RESTORE_PATH}/${TARGET_KEYSPACE}/$(basename $TABLE)
-    done  
-    ```
-
-5. Load table data
+!!! Note that the following command should be executed on each Cassandra node in the cluster.
 
     ```bash
     for TABLE in ${RESTORE_PATH}/${TARGET_KEYSPACE}/*
     do 
-      sstableloader -d ${CASSANDRA_IP} $TABLE
+    TABLE_BASENAME=$(basename ${TABLE})
+    TABLE_NAME=${TABLE_BASENAME%%-*}
+    nodetool import ${TARGET_KEYSPACE} ${TABLE_NAME} ${RESTORE_PATH}/${TARGET_KEYSPACE}/${TABLE_BASENAME}
+    done
+    ```
+&nbsp;
+
+If the cluster topology has changed (new nodes added ou removed from the cluster since the last data backup), please follow the run the following command to perform a restore:
+
+    ```bash
+    for TABLE in ${RESTORE_PATH}/${TARGET_KEYSPACE}/*
+    do 
+    TABLE_BASENAME=$(basename ${TABLE})
+    sstableloader -d ${CASSANDRA_IP} ${RESTORE_PATH}/${TARGET_KEYSPACE}/${TABLE_BASENAME}
     done
     ```
 
-6. Cleanup
+5. Cleanup
 
     ```bash
     rm -rf ${RESTORE_PATH}
     ```
+&nbsp;
 
+### Rebuid an existing node
+
+If for a particular reason (such as corrupted system data), you need to reintegrate the node into the cluster and restore all data (including system data), here is the procedure:
+
+1. Make sure that the Cassandra service is still down then delete the contents of the data volume:
+
+    ```bash
+    cd /var/lib/cassandra/data
+    rm -rf *
+    ```
+
+2. Copy and unarchive backup files:
+
+    ```bash
+    DATA_PATH="/var/lib/cassandra/data"
+
+    SNAPSHOT_DATE=<date_of_snaphot>
+    ## KEYSPACES list should inlude all keyspaces
+    KEYSPACES="system system_distributed system_traces system_virtual_schema system_auth system_schema system_views thehive"
+    cd ${DATA_PATH}
+    for ks in $KEYSPACES; do
+    scp -r remoteuser@remotehost:/remote/node_name_directory/${SNAPSHOT_DATE}/${ks}/ .
+    for file in /var/lib/cassandra/data/${ks}/*; do
+        echo "Processing $file"
+        filename=$(basename "$file")
+        table_name="${filename%%.*}"
+        sudo mkdir -p ${ks}/${table_name}
+        sudo tar jxf $file -C ${ks}/${table_name}
+        rm -f $file
+    done
+    done
+
+    chown -R cassandra:cassandra  /var/lib/cassandra/data
+    ```
+3. Start cassandra service 
+    
+    ```bash
+    service cassandra start
+
+    ## heck if Cassandra has started successfully by reviewing its logs
+    tail -n 100 /var/log/cassandra/system.log | grep -iE "listening for|startup complete|error|warning"
+
+    INFO  [main] ********,773 PipelineConfigurator.java:125 - Starting listening for CQL clients on localhost/127.0.0.1:9042 (unencrypted)...
+    INFO  [main] ********,790 CassandraDaemon.java:776 - Startup complete
+    ```
 
 !!! Warning "Ensure no Commitlog file exist before restarting Cassandra service. (`/var/lib/cassandra/commitlog`)"
 
@@ -246,47 +347,61 @@ Following data is required to restore TheHive database successfully:
     ## RESTORE_PATH: choose a TMP folder !!! this folder will be removed if exists.
     ## SOURCE_KEYSPACE: KEYSPACE used in the backup
     ## TARGET_KEYSPACE: new KEYSPACE name ; use same name of SOURCE_KEYSPACE if no changes
+    ## TABLES: should contain the list of all tables that will be restored, table_name should include the uuid generated by cassandra, for example: table1-f901e0c05d8811ef87c71fc3a94044f4
     ## SNAPSHOT: choose a name for the backup
     ## SNAPSHOT_DATE: date of the snapshot to restore
 
+    ## IMPORTANT: Note that the following steps should be executed on each Cassandra cluster node.
+
     CASSANDRA_ADDRESS="10.1.1.1"
-    RESTORE_PATH=$(mktemp -d)
+    RESTORE_PATH="/var/lib/cassandra/restore"
     SOURCE_KEYSPACE="thehive"
     TARGET_KEYSPACE="thehive_restore"
-    SNAPSHOT="thehive-backup"
-    SNAPSHOT_DATE="2022-11-29"
+    TABLES="
+    table1-f901e0c05d8811ef87c71fc3a94044f4
+    table2-d502a0c05d8811ef87c71fc3a94044f5
+    table3-a703c0c05d8811ef87c71fc3a94044f6
+    " 
+    SNAPSHOT_DATE="2024-09-23"
 
-    ## Uncompress data in TMP folder
-    rm -rf ${RESTORE_PATH} && mkdir ${RESTORE_PATH} 
-    tar jxf ${SNAPSHOT}_${SNAPSHOT_DATE}.tbz -C ${RESTORE_PATH}
+    ## Copy from backup folder and Uncompress data in restore folder
 
+    cd ${RESTORE_PATH}
+    for table in $TABLES; do
+        cp -r PATH_TO_BACKUP_DIRECTORY/${SNAPSHOT_DATE}/${SOURCE_KEYSPACE}/${table}.tbz .
+        mkdir -p ${RESTORE_PATH}/${SOURCE_KEYSPACE}/${table}
+        echo "Unarchive backup files for table: $table"
+        tar jxf ${table}.tbz -C ${RESTORE_PATH}/${SOURCE_KEYSPACE}/${table}
+    done
     ## Read Cassandra password
     echo -n "Cassandra admin password: " 
     read -s CASSANDRA_PASSWORD
 
+    # Drop the keyspace
+    cqlsh -u admin -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "DROP KEYSPACE IF EXISTS ${SOURCE_KEYSPACE};"
+
     # Create the keyspace
-    cqlsh -u cassandra -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "
+    ## TARGET_KEYSPACE contains the new name of theHive database 
+    ## NOTE that you can keep the same database name since the old one has been deleted
+
+    cqlsh -u admin -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "
         CREATE KEYSPACE ${TARGET_KEYSPACE}
-        WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}
+        WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3'}
         AND durable_writes = true;"
 
     # Create table in keyspace
     for CQL in $(find ${RESTORE_PATH} -name schema.cql)
     do
-      cqlsh cassandra -e "$(sed -e '/CREATE TABLE/s/'${SOURCE_KEYSPACE}/${TARGET_KEYSPACE}/ $CQL)"
+      cqlsh -u admin -p ${CASSANDRA_PASSWORD} ${CASSANDRA_ADDRESS} -e "$(sed -e '/CREATE TABLE/s/'${SOURCE_KEYSPACE}/${TARGET_KEYSPACE}/ $CQL)"
     done
     
-    # Reorganiza snapshot files
-    mkdir -p ${RESTORE_PATH}/${TARGET_KEYSPACE}
-    for TABLE in ${RESTORE_PATH}/var/lib/cassandra/data/${SOURCE_KEYSPACE}/*
-    do
-      mv $TABLE/snapshots/${SNAPSHOT}_${SNAPSHOT_DATE}/* ${RESTORE_PATH}/${TARGET_KEYSPACE}/$(basename $TABLE)
-    done  
 
     ## Load data
     for TABLE in ${RESTORE_PATH}/${TARGET_KEYSPACE}/*
-    do 
-      sstableloader -d ${CASSANDRA_IP} $TABLE
+        do 
+        TABLE_BASENAME=$(basename ${TABLE})
+        TABLE_NAME=${TABLE_BASENAME%%-*}
+        nodetool import ${TARGET_KEYSPACE} ${TABLE_NAME} ${RESTORE_PATH}/${TARGET_KEYSPACE}/${TABLE_BASENAME}
     done
     ```
 
