@@ -480,7 +480,7 @@ Wether you use local or distributed files system storage, copy the content of th
 
 ### Restore
 
-Restore the saved files into the destination folder/bucket that will be used by TheHive.
+Restore the saved files into the destination folder/bucket that will be used by TheHive. Ensure the account running TheHive application has permissions to create files and folders into the destination folder.
 
 ---
 
