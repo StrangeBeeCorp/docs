@@ -1,6 +1,6 @@
 # Deploy on Kubernetes
 
-To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed instructions on how to use the Docker image, please refer to the [**docker image documentation**](./docker/docker.md)
+To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed instructions on how to use the Docker image, please refer to the [**docker image documentation**](./docker.md)
 
 ---
 

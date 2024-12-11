@@ -13,5 +13,3 @@ if you want to search based on **Jobs**
 1. Click the **Search** button at the bottom. 
 
 A set of search results appear in the right pane of the page. 
-
-<img src="../images/search-by-jobs.png" alt="search by Jobs" width="1000" height="1000"/>

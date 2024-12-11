@@ -10,7 +10,7 @@ TheHive includes integration with the Prometheus reporter out-of-the-box. Other 
 
 ## Configuring Metrics with Prometheus and Grafana
 
-![Grafana Dashboard](grafana-dashboard.jpg)
+![Grafana Dashboard](../images/operations/grafana-dashboard.jpg)
 
 To configure TheHive for metrics reporting, add the following section to your `application.conf` file:
 

@@ -16,10 +16,10 @@ An SAML authentication provider accepts the following configuration parameters:
 
 
 
-![](./images/authentication-saml-2.png)
+![](../../images/administration-guides/authentication/authentication-saml-2.png)
 
 <figure markdown>
-![](./images/authentication-saml-3.png){ width ="400" }
+![](../../images/administration-guides/authentication/authentication-saml-3.png){ width ="400" }
 <figcaption>Configuration using XML content</figcaption>
 </figure>
 
@@ -28,6 +28,6 @@ An SAML authentication provider accepts the following configuration parameters:
 Several providers can be configured. In this case, when a user tries to log in, TheHive queries each provider in the order listed. Queries stops when one replies with the authorization to log in.
 
 <figure markdown>
-![](./images/authentication-saml-4.png){ width ="400" }
+![](../../images/administration-guides/authentication/authentication-saml-4.png){ width ="400" }
 <figcaption>Using several providers</figcaption>
 </figure>

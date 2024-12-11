@@ -11,8 +11,8 @@ The AMI can be used to set up a shiny-new TheHive v5 install or to launch an ins
 * The AMI is based on the official Ubuntu 20.04 LTS AMI from Canonical .
 * The default OS hardening has been further improved compared to our previous Ubuntu 18.04 based AMIs.
 * The AMI is updated whenever a new TheHive version is released - no need to bother updating TheHive anymore, just launch a new instance as if it were a container!
-* Migration from TheHive v3 is a manual operation detailed at length in the documentation: [https://docs.strangebee.com/thehive/setup/installation/migration/](https://docs.strangebee.com/thehive/setup/installation/migration/).
-* Upgrading from TheHive v4 AMI is not yet automated or documented (it will be very soon in a coming AMI update). If you are in a hurry, the overall upgrade process is documented here: [https://docs.strangebee.com/thehive/setup/installation/upgrade-from-4.x/](https://docs.strangebee.com/thehive/setup/installation/upgrade-from-4.x/)
+* Migration from TheHive v3 is a manual operation detailed at length in the documentation: [https://docs.strangebee.com/thehive/installation/migration/](https://docs.strangebee.com/thehive/installation/migration/).
+* Upgrading from TheHive v4 AMI is not yet automated or documented (it will be very soon in a coming AMI update). If you are in a hurry, the overall upgrade process is documented here: [https://docs.strangebee.com/thehive/installation/upgrade-from-4.x/](https://docs.strangebee.com/thehive/installation/upgrade-from-4.x/)
 
 ## Run context
 

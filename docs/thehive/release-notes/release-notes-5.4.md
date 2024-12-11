@@ -19,6 +19,57 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.5 - 21st of November 2024
+
+### Fixes
+#### Cortex
+- Resolved an issue causing incorrect differentiation between "In Progress" Cortex analyzers and responders during TheHive startup process, that was causing some Responder jobs to never cleaned up.
+#### Dashboard
+- Fixed an issue related to Custom Field and negative filter on some dashboard widgets: gauge, text, and counter.
+#### Index ES
+- Fixed index deactivation during a global reindex request. Double reindexation is not required anymore.
+
+## 5.4.4 - 8th of November 2024
+
+### Fixes
+- Resolved a display issue with the status component in cases and alerts, which was not rendering correctly on Safari and Firefox.
+
+## 5.4.3 - 7th of November 2024
+
+### Improvements
+
+#### Microsoft teams Notifier Update
+Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organisation/notifications/teams.md).
+#### Cases/Alerts status visibility
+Added a colored background to the stage icon in status components for better visibility in case and alert lists.
+#### License Check Improvements
+Improved display of permissions and profiles that consume licenses for clearer management by administrators. The “Manage Dashboard” permission no longer consumes a license.
+#### Task title Limit
+Added a character limit check for task titles to notify users when their input exceeds the allowed length.
+#### Edit Alert title
+Adding the ability to edit alert title directly from the general tab.
+
+### Fixes
+
+#### Cortex job queue
+- Enhanced the handling of concurrent job submissions to the Cortex server for better efficiency and stability.
+- Fixed an issue related to job status recovery in TheHive when the Cortex server crashes.
+
+#### Live feed display
+Fixed issues with overly long text and tags in the live feed display.
+
+#### Observables list loading
+Optimized the rendering speed for the observables tab to improve performance.
+
+#### App default language
+Fixed default language selection to use the browser’s language on first connection.
+
+#### Improved Case Closure Error Handling
+Modified case closure behavior: if a backend error occurs, the case closure window now remains open to prevent data loss.
+
+#### Tasklog Display in Timeline
+When adding a tasklog with the option "display in the timeline", the tasklog now appears in the timeline view from the task preview after the preview drawer is closed.
+
 ## 5.4.2 - 21st of October 2024
 ### Fix
 - This version fixes a regression related to the query boolean parameters in the public API. These parameter values are case insensitive again.
