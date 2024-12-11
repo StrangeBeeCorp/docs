@@ -19,6 +19,25 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.6 - 12th of December 2024
+
+### Security fix
+- This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.
+
+### Fixes
+#### Unlicensed users
+- Unlicensed profiles can now be assigned even when the quota is full.
+#### UI
+- Fixed readability issues with Analyzer reports and list export previews in dark mode.
+- Solved an issue in the similar observable detailed view: similar observables spotted in other cases can now be opened in a blank tab.
+#### Dashboards
+- Removed a useless parameter when DirectQuery / ESChart options are enabled.
+- Fixed a problem that could generate an error during the agregation query. 
+#### Other fixes
+- Fixed a regression introduced in 5.4.5 version; a route was missing in the OpenAPI documentation.
+- Fixed an issue related to uppercase characters in logins and LDAP synchronization module. 
+- Corrected a log formatting issue from notifiers.
+
 ## 5.4.5 - 21st of November 2024
 
 ### Fixes
