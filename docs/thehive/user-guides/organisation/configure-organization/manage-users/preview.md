@@ -8,10 +8,10 @@ On the list of users page, there is a Preview button corresponding to the specif
 
 1. Click the **Preview** option. 
 
-<img src="../images/preview_button.png" alt="preview users" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organisation/configure-organization/manage-users/preview_button.png" alt="preview users" width="1000" height="1000"/>
 
 The user details preview window opens.
 
 You can see details like the id, created by, created at date, updated date, name, login id, email, logo, MFA, API Key, and locked status of the user. 
 
-<img src="../images/preview_user.png" alt="preview specific user" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organisation/configure-organization/manage-users/preview_user.png" alt="preview specific user" width="1000" height="1000"/>

@@ -10,6 +10,7 @@ theme:
     # accent: custom
   features:
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     # - navigation.sections
     - navigation.instant
@@ -54,23 +55,7 @@ plugins:
             'thehive/setup/index.md': 'thehive/overview/index.md'
             'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/step-by-step-installation-guide.md'
             'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
-            'thehive/setup/installation/docker.md':  'thehive/installation/docker/docker-compose-overview.md'
-            'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
-            'thehive/setup/installation/migration.md': 'thehive/installation/migration.md'
-            'cortex/LICENSE.md': 'cortex/index.md'
-            'cortex/operations/backup-restore/1__create_a_backup_repository.md': 'cortex/operations/backup-restore.md'
-            'cortex/operations/backup-restore/3__backup_your_data.md': 'cortex/operations/backup-restore.md'
-            'cortex/operations/backup-restore/2__register_a_snapshot_repository.md': 'cortex/operations/backup-restore.md'
-            'cortex/operations/backup-restore/4__restore_data.md': 'cortex/operations/backup-restore.md'
-            'resources/thehive4py/LICENSE.md': 'thehive/overview/index.md'
-            'resources/thehive4py/href.md': 'thehive/overview/index.md'
-            'cortex/href.md': 'cortex/index.md'
-            'resources/cortexutils/href.md': 'cortex/index.md'
-            'resources/cortex4py/LICENSE.md': 'cortex/index.md'
-            'resources/cortexutils/LICENSE.md': 'cortex/index.md'
-            'resources/cortex4py/href.md': 'cortex/index.md'
-            'resources/templates/LICENSE.md': 'thehive/overview/index.md'
-
+            'thehive/setup/installation/docker.md':  'thehive/installation/docker.md'
 
 
 extra:
@@ -121,12 +106,11 @@ nav:
       - 'System Requirements': thehive/installation/system-requirements.md
       - 'Automated Installation Script': thehive/installation/automated-installation-script.md
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
-      - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
-      - 'Running with Docker':
-        - 'Overview': thehive/installation/docker/docker-compose-overview.md
-        #- 'TheHive Setup for Testing with Docker': thehive/installation/docker/docker-compose-test.md
+      - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
+      - 'Request a Free Community License': thehive/installation/request-community-license.md
+      - 'Activating Paid License': thehive/installation/activate-paid-license.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
@@ -152,7 +136,7 @@ nav:
       - 'Backup & Restore Operations': thehive/operations/backup-restore.md 
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
-      - 'Monitoring Setup': thehive/operations/monitoring/monitoring.md
+      - 'Monitoring Setup': thehive/operations/monitoring.md
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Manage Organizations':
