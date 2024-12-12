@@ -106,10 +106,11 @@ nav:
       - 'System Requirements': thehive/installation/system-requirements.md
       - 'Automated Installation Script': thehive/installation/automated-installation-script.md
       - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
-      - 'Activating the License': thehive/installation/activate-license.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
+      - 'Request a Free Community License': thehive/installation/request-community-license.md
+      - 'Activating Paid License': thehive/installation/activate-paid-license.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
