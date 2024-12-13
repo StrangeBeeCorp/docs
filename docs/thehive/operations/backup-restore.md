@@ -1,7 +1,311 @@
 # Backup and Restore Guide
 
+!!! Warning
+    Regardless of the situation, we **strongly** recommend performing **cold backups**. TheHive utilizes Cassandra as its database and Elasticsearch as its indexing engine. Files are typically stored in a folder, although some users opt for Minio S3 object storage. For every backup, the data, index, and files **must** remain intact and consistent. **Any inconsistency could result in data restoration failure**.
 
-## Pre-requisites
+    This documentation provides detailed instructions for performing cold backups. Alternatively, you may opt for a hot backup and restore strategy. To assist with this, we provide sample scripts that you can tailor to your specific requirements. However, it is important to note that the final responsibility for implementing and testing the backup and restore processes lies with you.
+
+    We strongly recommend thoroughly validating your backup and restoration procedures in a controlled environment before relying on them in production. While we strive to provide accurate and helpful guidance, we cannot assume liability for any data loss, downtime, or system failures resulting from incorrect configurations, inconsistencies in your data, or issues during the restoration process. It is essential to ensure that your chosen approach aligns with your infrastructure and operational needs.
+
+---
+# Cold backup & restore
+
+Your backup and restore strategy heavily depends on your infrastructure and orchestration approach, whether you are using physical servers, virtual servers, Docker, Kubernetes, or cloud solutions like AWS EC2 instances.
+
+For example, with AWS Amazon EC2 servers where all data, indexes, and files are stored on dedicated volumes, performing a daily backup of the volumes takes less than 3 minutes. This includes housekeeping tasks such as stopping and restarting services.
+
+
+=== "Physical servers"
+
+
+    !!! Note
+        This process and example below assume you have followed our [step-by-step guide](./../installation/step-by-step-installation-guide.md) to install the application stack.
+
+    ---
+    ## Backup process 
+    
+    The simplest way to backup data is to save configuration, logs and data for each components by following this process: 
+    
+    ### Stop the services in this order
+
+    1. TheHive
+    2. Elasticsearch
+    3. Cassandra
+
+    !!! Example ""
+
+        ```bash
+        systemctl stop thehive
+        systemctl stop elasticsearch
+        systemctl stop cassandra
+        ```
+
+    ### Copy files in a backup folder
+
+    For example, create a folder on a dedicated NFS volume named `/opt/backup` and copy all files preserving their permissions
+
+    !!! Example ""
+
+        ```bash
+        #!/bin/bash
+
+        ## WARNING
+        ## 
+        ## THIS SCRIPT SHOULD BE RUN WITH APPROPRIATE PERMISSIONS TO READ ALL DATA AND WRITE TO BACKUP FOLDERS
+        ## 
+        ##
+
+        BACKUP_ROOT_FOLDER="/opt/backup"
+        DATE="$(date +"%d%m%Y-%H%M%z" | sed 's/+/-/')"
+        BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
+
+        # Define the log file and start logging
+        LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
+        exec &> >(tee -a "$LOG_FILE")
+        
+        ## Create the backup directory
+        mkdir -p "${BACKUP_FOLDER}"  || { echo "Creating backup folder failed"; exit 1; }
+        echo "Created backup folder: ${BACKUP_FOLDER}"
+
+        ## Prepare folders tree
+        mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch}/{config,data,logs}
+        echo "Created folder structure under ${BACKUP_FOLDER}"
+
+        # Copy TheHive data
+        echo "Starting TheHive backup..."
+        rsync -a /etc/thehive/ ${BACKUP_FOLDER}/thehive/config || { echo "TheHive config backup failed"; exit 1; }
+        rsync -a /opt/thp/thehive/files/ ${BACKUP_FOLDER}/thehive/data || { echo "TheHive data backup failed"; exit 1; }
+        rsync -a /var/log/thehive/ ${BACKUP_FOLDER}/thehive/logs || { echo "TheHive logs backup failed"; exit 1; }
+        echo "TheHive backup completed."
+
+        # Copy Casssandra data
+        echo "Starting Cassandra backup..."
+        rsync -a /etc/cassandra/ ${BACKUP_FOLDER}/cassandra/config || { echo "Cassandra config backup failed"; exit 1; }
+        rsync -a /var/lib/cassandra/ ${BACKUP_FOLDER}/cassandra/data || { echo "Cassandra data backup failed"; exit 1; }
+        rsync -a /var/log/cassandra/ ${BACKUP_FOLDER}/cassandra/logs || { echo "Cassandra logs backup failed"; exit 1; }
+        echo "Cassandra backup completed."
+
+        # Copy Elasticsearch data
+        echo "Starting Elasticsearch backup..."
+        rsync -a /etc/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/config || { echo "Elasticsearch config backup failed"; exit 1; }
+        rsync -a /var/lib/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/data || { echo "Elasticsearch data backup failed"; exit 1; }
+        rsync -a /var/log/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/logs || { echo "Elasticsearch logs backup failed"; exit 1; }
+        echo "Elasticsearch backup completed."
+
+        echo "Backup process completed at: $(date)"
+        ```
+
+
+    ### Start services in this order
+
+    1. Elasticsearch
+    2. Cassandra
+    3. TheHive
+
+    !!! Example ""
+
+        ```bash
+        systemctl start thehive
+        systemctl start elasticsearch
+        systemctl start cassandra
+        ```
+
+    ---
+    ## Restore process
+
+    ### Ensure all services are stopped
+
+    !!! Example ""
+
+        ```bash
+        systemctl stop thehive
+        systemctl stop elasticsearch
+        systemctl stop cassandra
+        ```
+
+    ### Copy files from the backup folder
+
+    For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy all files preserving their permissions
+
+    !!! Example ""
+
+        ```bash
+        #!/bin/bash
+
+        ## WARNING: 
+        ## 
+        ## 1. THIS SCRIPT WILL ERASE ALL EXISTING DATA IN THEHIVE, CASSANDRA AND ELASTICSEARCH FOLDERS
+        ## 2. THIS SCRIPT SHOULD BE RUN WITH APPROPRIATE PERMISSIONS TO READ BACKUP FOLDERS AND WRITE ALL DATA IN TARGET FOLDERS
+        ## 
+        ## Update BACKUP_TO_RESTORE value before runnning
+        ##
+        ##
+
+        BACKUP_ROOT_FOLDER="/opt/backup"
+        BACKUP_TO_RESTORE="13122024-0459-0000"
+        BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${BACKUP_TO_RESTORE}"
+        
+
+        # Define the log file and start logging
+        DATE="$(date +"%d%m%Y-%H%M%z" | sed 's/+/-/')"
+        LOG_FILE="${BACKUP_ROOT_FOLDER}/restore_log_${DATE}.log"
+        exec &> >(tee -a "$LOG_FILE")
+
+        # Log the start time
+        echo "Restoration process started at: $(date)"
+
+        # Check backup backup folder exists
+        [[ -d ${BACKUP_FOLDER} ]] || { echo "Backup folder not found"; exit 1; }
+
+
+        # Copy TheHive data
+        rsync -a ${BACKUP_FOLDER}/thehive/config/ /etc/thehive  || { echo "TheHive config restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/thehive/data/ /opt/thp/thehive/files || { echo "TheHive data restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/thehive/logs/ /var/log/thehive || { echo "TheHive logs restore failed"; exit 1; }
+
+        # Copy Casssandra data
+        rsync -a ${BACKUP_FOLDER}/cassandra/config/ /etc/cassandra || { echo "Cassandra config restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/cassandra/data/ /var/lib/cassandra || { echo "Cassandra data restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/cassandra/logs/ /var/log/cassandra || { echo "Cassandra logs restore failed"; exit 1; }
+
+        # Copy Elasticsearch data
+        rsync -a ${BACKUP_FOLDER}/elasticsearch/config/ /etc/elasticsearch || { echo "Elasticsearch config restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/elasticsearch/data/ /var/lib/elasticsearch || { echo "Elasticsearch data restore failed"; exit 1; }
+        rsync -a ${BACKUP_FOLDER}/elasticsearch/logs/ /var/log/elasticsearch || { echo "Elasticsearch logs restore failed"; exit 1; }
+
+        echo "Restoration process completed at: $(date)" 
+        ```
+
+    Ensure permissions are correctly setup before running services. 
+
+    ### Start services in this order
+
+    1. Elasticsearch
+    2. Cassandra
+    3. TheHive
+
+    !!! Example ""
+
+        ```bash
+        systemctl start thehive
+        systemctl start elasticsearch
+        systemctl start cassandra
+        ```
+
+=== "Virtual servers"
+
+    !!! Note
+        This process and example below assume you have followed our [step-by-step guide](./../installation/docker.md) to install the application stack.
+    
+
+    Using virtual servers allow more solutions to perform backup and restore operations. 
+
+    ---
+    ## First solution: Backup and restore data folders
+
+    Similar to using a physical server, use scripts to back up the configuration, data, and logs from each application in your stack, storing them in a folder that can be archived elsewhere. Refer to the [cold backup and restore guide for physical server](#__tabbed_1_1) for detailed instructions.
+
+    ---
+    ## Second solution: Leverage the capabilities of the hypervisor
+
+    Hypervisors often come with the capacity to create a snapshot volumes and entire virtual machine. We recommend creating snapshots of volumes containing data and files after stopping TheHive, Cassandra and Elasticsearch applications. 
+    
+    For the restore process, begin by restoring the snapshots created with the hypervisor. This allows you to quickly revert to a previous state, ensuring that both the system configuration and application data are restored to their exact state at the time of the snapshot. Be sure to follow any additional procedures specific to your hypervisor to ensure the snapshots are properly applied and that the system operates as expected after the restore.
+    
+
+=== "Docker and Docker compose"
+
+    !!! Note
+        These solutions assume you are following our [step-by-step guide](./../installation/step-by-step-installation-guide.md) run your application stack.
+
+
+    ---
+    ## Backup process
+    The simplest way to backup data is to save configuration, logs and data for each components by following this process: 
+
+    ### Stop the services
+
+    !!! Example ""
+
+        ```bash
+        docker compose down thehive cassandra elasticsearch
+        ```
+
+    ### Copy files in a backup folder
+
+    For example, on the host server, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
+
+    !!! Example ""
+
+        ```bash
+        #!/bin/bash
+
+        DOCKER_COMPOSE_PATH="/home/thehive/docker/prod1-thehive"
+        BACKUP_ROOT_FOLDER="/opt/backup"
+        
+        DATE="$(date +"%d%m%Y-%H%M%z" | sed 's/+/-/')"
+        BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
+
+        ## Create the backup directory
+        mkdir -p "${BACKUP_FOLDER}"  || { echo "Creating backup folder failed"; exit 1; }
+        echo "Created backup folder: ${BACKUP_FOLDER}"
+
+        # Define the log file and start logging
+        LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
+        exec &> >(tee -a "$LOG_FILE")
+        
+        ## Prepare folders tree
+        mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch}
+        echo "Created folder structure under ${BACKUP_FOLDER}"
+
+        # Copy TheHive data
+        echo "Starting TheHive backup..."
+        rsync -a ${DOCKER_COMPOSE_PATH}/thehive/ ${BACKUP_FOLDER}/thehive || { echo "TheHive backup failed"; exit 1; }
+        echo "TheHive backup completed."
+
+        # Copy Casssandra data
+        echo "Starting Cassandra backup..."
+        rsync -a ${DOCKER_COMPOSE_PATH}/cassandra/ ${BACKUP_FOLDER}/cassandra || { echo "Cassandra backup failed"; exit 1; }
+        echo "Cassandra backup completed."
+
+        # Copy Elasticsearch data
+        echo "Starting Elasticsearch backup..."
+        rsync -a ${DOCKER_COMPOSE_PATH}/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch || { echo "Elasticsearch config backup failed"; exit 1; }
+        echo "Elasticsearch backup completed."
+
+        echo "Backup process completed at: $(date)"
+        ```
+
+    ### Restart the services
+
+    !!! Example ""
+
+        ```bash
+        docker compose up -d thehive cassandra elasticsearch
+        ```
+
+
+    !!! Tip
+        * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to the appropriate documentation for detailed instructions here.
+        * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.
+
+    ---
+    ## Restore process
+
+
+
+=== "Cloud environment"
+
+---
+# Hot backup and restore
+
+!!! Warning
+    As outlined in this documentation, it is **crucial** that the data, index, and files must remain intact and consistent during the backup process. Any inconsistency could jeopardize the restore process. While we provide guidance on creating and restoring Cassandra snapshots, it is important to note that Elasticsearch snapshots should be taken concurrently to ensure consistency and integrity across both systems. Additionally, when using clusters, snapshots should be taken simultaneously across all nodes to maintain consistency.
+
+    The scripts provided are examples that **you must customize** to fit your infrastructure and application stack. For instance, folder paths may differ depending on whether you're using physical servers or Docker Compose to run the services.
+
+
+### Pre-requisites
 
 **bzip2** package should be installed and available on the operating system before runing any of the scripts below.
 
@@ -15,7 +319,7 @@
 
 
 
-## Overview
+### Overview
 
 To successfully restore TheHive, the following data needs to be saved:
 
@@ -88,7 +392,7 @@ To back up or export the database from Cassandra, the following information is r
 
 ### Backup
 
-Following actions should be performed to backup the data successfully: 
+Following actions should be performed to backup the data successfully:
 
 1. Create a snapshot
 2. Save the data
@@ -181,7 +485,7 @@ Considering that ${BACKUP} is the name of the snapshot, run the following comman
 
 #### Data and index
 
-Before starting TheHive, if there is an index, ensure the index in Elasticsearch matches the data in Cassandra otherwise this would imply unpredictive behavior. You can force resync (reindex all data) by adding `db.janusgraph.forceDropAndRebuildIndex = true` in application.conf.
+Before starting TheHive, if there is an index, ensure the index in Elasticsearch matches the data in Cassandra otherwise this would imply unpredictive behavior. You can force resync (reindex all data) by adding `db.janusgraph.forceDropAndRebuildIndex = true` in `application.conf` file.
 
 !!! Warning "Remove this line once TheHive is started"
 
