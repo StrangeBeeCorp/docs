@@ -1,10 +1,14 @@
 # Setting up a Cluster with TheHive
 
+!!! Note
+    - This documentation applies to TheHive versions 5.4 and later. For earlier versions, [please refer to the Akka Configuration](../configuration/akka.md).
+    - This documentation applies for a fresh installationm for a new instance.
+
 This guide presents configuration examples for setting up a fault-tolerant cluster for TheHive. Each cluster comprises three active nodes, featuring:
 
 - Cassandra for the database
 - Elasticsearch for the indexing engine
-- MinIO for S3 data storage
+- NFS (recommanded), or MinIO data storage
 - TheHive
 - Haproxy (to demonstrate load balancing)
 - Keepalived (to demonstrate virtual IP setup)
