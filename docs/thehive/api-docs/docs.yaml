@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v1-5.4.2-1
+  version: v1-5.4.6-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -139,14 +139,18 @@ tags:
     \ by repeating the value in the array (since 5.0) or by passing an array in the\
     \ object (since 5.1) \n"
 - name: Comment
-  description: |2
+  description: |2+
 
     ### Queries:
     - Initial Queries:
       - `listComment`
       - `getComment`
     - Extra Data:
-      - `links`
+      - `case`
+      - `task`
+      - `taskId`
+      - `actionCount`
+
 - name: Task Log
   description: "\n### Queries\n- Initial Queries: \n  - `listLog`\n  - `getLog`\n\
     - Extra Data:\n  - `case`\n  - `task`\n  - `taskId`\n  - `actionCount`\n"
@@ -221,6 +225,7 @@ tags:
       - `pageTemplates`
     - Extra data:
       - `pageTemplateHeaders`
+- name: Admin
 servers:
 - url: /
 paths:
@@ -2955,6 +2960,109 @@ paths:
       tags:
       - Alert
       operationId: Merge Alert with Case
+      parameters:
+      - name: alertId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      - name: caseId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCase'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-permissions:
+      - manageAlert/import
+  /api/v1/alert/{alertId}/import/{caseId}:
+    post:
+      tags:
+      - Alert
+      operationId: Import Alert observables and procedures in Case
       parameters:
       - name: alertId
         in: path
@@ -9469,7 +9577,7 @@ paths:
   /api/v1/log/{logId}/attachment/{attachmentId}/download:
     get:
       tags:
-      - Log
+      - Task Log
       operationId: Download Attachment from log
       parameters:
       - name: logId
@@ -9591,7 +9699,7 @@ paths:
   /api/v1/log/{caseId}/attachment/{attachmentId}:
     get:
       tags:
-      - Log
+      - Task Log
       operationId: Get Attachment from log
       parameters:
       - name: caseId
@@ -9853,7 +9961,7 @@ paths:
   /api/v1/observable/{observableId}/attachment/{attachmentId}:
     get:
       tags:
-      - Log
+      - Task Log
       operationId: Get Attachment from observable
       parameters:
       - name: observableId
@@ -10290,10 +10398,125 @@ paths:
       - Session: []
       x-TheHive-permissions:
       - manageKnowledgeBase
+  /api/v1/attachment/{attachmentId}/download:
+    get:
+      tags:
+      - Organisation
+      operationId: Download Attachment
+      parameters:
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              description: the content-type of the file
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: will be of kind attachment with the filename
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/login:
     post:
       tags:
-      - Login
+      - Authentication
       operationId: Login
       requestBody:
         content:
@@ -10360,7 +10583,7 @@ paths:
   /api/v1/logout:
     get:
       tags:
-      - Login
+      - Authentication
       operationId: Logout GET
       responses:
         '200':
@@ -10409,7 +10632,7 @@ paths:
                     type: string
     post:
       tags:
-      - Login
+      - Authentication
       operationId: Logout POST
       responses:
         '200':
@@ -10459,7 +10682,7 @@ paths:
   /api/v1/auth/totp/get:
     get:
       tags:
-      - TOTP
+      - Authentication
       operationId: Get TOTP secret
       responses:
         '200':
@@ -10545,7 +10768,7 @@ paths:
   /api/v1/auth/totp/set:
     post:
       tags:
-      - TOTP
+      - Authentication
       operationId: Set TOTP secret
       requestBody:
         content:
@@ -10633,7 +10856,7 @@ paths:
   /api/v1/auth/totp/unset:
     post:
       tags:
-      - TOTP
+      - Authentication
       operationId: Unset TOTP secret
       responses:
         '204':
@@ -10715,7 +10938,7 @@ paths:
   /api/v1/auth/totp/unset/{user}:
     post:
       tags:
-      - TOTP
+      - Authentication
       operationId: Unset TOTP secret for user
       parameters:
       - name: user
@@ -10803,7 +11026,7 @@ paths:
   /api/v1/auth/local/passwordPolicy:
     get:
       tags:
-      - Login
+      - Authentication
       operationId: Get current password policy
       responses:
         '200':
@@ -14997,6 +15220,7 @@ paths:
   /api/v1/case/{caseId}/shares:
     get:
       tags:
+      - Share
       - Case
       operationId: List Shares of Case
       parameters:
@@ -15092,6 +15316,7 @@ paths:
       - Session: []
     put:
       tags:
+      - Share
       - Case
       description: "Set the share for a case with other organisations. \nFor each\
         \ organisation, you can define a profile (level of access) that the org will\
@@ -15199,6 +15424,7 @@ paths:
       - manageShare
     post:
       tags:
+      - Share
       - Case
       description: "Share the case with other organisations. \nFor each organisation,\
         \ you can define a profile (level of access) that the org will receive\n\n\
@@ -15306,6 +15532,7 @@ paths:
       - manageShare
     delete:
       tags:
+      - Share
       - Case
       operationId: Unshare a Case
       parameters:
@@ -15404,6 +15631,7 @@ paths:
   /api/v1/task/{taskId}/shares:
     get:
       tags:
+      - Share
       - Task
       operationId: List Shares of Task
       parameters:
@@ -15499,6 +15727,7 @@ paths:
       - Session: []
     post:
       tags:
+      - Share
       - Task
       description: |
         Share a task with an organisation.
@@ -15599,6 +15828,7 @@ paths:
       - manageShare
     delete:
       tags:
+      - Share
       - Task
       operationId: Unshare a Task
       parameters:
@@ -15697,6 +15927,7 @@ paths:
   /api/v1/observable/{observableId}/shares:
     get:
       tags:
+      - Share
       - Observable
       operationId: List Shares of Observable
       parameters:
@@ -15792,6 +16023,7 @@ paths:
       - Session: []
     post:
       tags:
+      - Share
       - Observable
       description: |
         Share an observable with an organisation.
@@ -15892,6 +16124,7 @@ paths:
       - manageShare
     delete:
       tags:
+      - Share
       - Observable
       operationId: Unshare an Observable
       parameters:
@@ -15990,6 +16223,7 @@ paths:
   /api/v1/case/share/{shareId}:
     delete:
       tags:
+      - Share
       - Case
       operationId: Remove a Share from Case
       parameters:
@@ -17573,6 +17807,94 @@ paths:
         required: false
         schema:
           type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JsObject'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-permissions:
+      - managePlatform
+  /api/v1/admin/stats:
+    get:
+      tags:
+      - Admin
+      operationId: Get check and index stats
       responses:
         '200':
           description: ''
@@ -25035,6 +25357,682 @@ paths:
       - admin.setConfiguration
       x-TheHive-permissions:
       - manageConfig
+  /api/v1/branding:
+    get:
+      tags:
+      - Branding
+      operationId: Get branding
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputBranding'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    post:
+      tags:
+      - Branding
+      operationId: Set branding
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/InputBranding'
+        required: true
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputBranding'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - branding
+      x-TheHive-permissions:
+      - managePlatform
+  /api/v1/branding/assets/{kind}:
+    get:
+      tags:
+      - Branding
+      operationId: Get branding attachment
+      parameters:
+      - name: kind
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: If-None-Match
+        in: header
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers:
+            Content-Type:
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              required: true
+              schema:
+                type: integer
+                format: int64
+            ETag:
+              required: false
+              schema:
+                type: string
+            Content-Security-Policy:
+              required: true
+              schema:
+                type: string
+            Referrer-Policy:
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '304':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    delete:
+      tags:
+      - Branding
+      operationId: Delete branding attachment
+      parameters:
+      - name: kind
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-capabilities:
+      - branding
+      x-TheHive-permissions:
+      - managePlatform
+  /api/v1/tag/{tagId}:
+    get:
+      tags:
+      - Tag
+      operationId: Get Tag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputTag'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+    delete:
+      tags:
+      - Tag
+      operationId: Delete Tag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-permissions:
+      - manageTag
+    patch:
+      tags:
+      - Tag
+      operationId: Update Tag
+      parameters:
+      - name: tagId
+        in: path
+        required: true
+        schema:
+          type: string
+          description: The _id of the entity or its 'name' (depends of the entity)
+          example: ~354
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputUpdateTag'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-permissions:
+      - manageTag
 components:
   schemas:
     AlertField:
@@ -25496,6 +26494,22 @@ components:
           type: boolean
           description: If set to `true`, the files can be renamed if they already
             exist with the same name
+    InputBranding:
+      type: object
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 128
+        loginLogo:
+          type: string
+          format: binary
+        menuLogo:
+          type: string
+          format: binary
+        favicon:
+          type: string
+          format: binary
     InputBulkProcedure:
       type: object
       properties:
@@ -27849,6 +28863,19 @@ components:
           type: string
           minLength: 1
           maxLength: 64
+    InputUpdateTag:
+      type: object
+      properties:
+        predicate:
+          type: string
+          minLength: 1
+          maxLength: 128
+        description:
+          type: string
+          maxLength: 1048576
+        colour:
+          type: string
+          pattern: ^#[0-9a-fA-F]{6,6}|$
     InputUpdateTask:
       type: object
       properties:
@@ -28572,6 +29599,17 @@ components:
           $ref: '#/components/schemas/JsObject'
         context:
           $ref: '#/components/schemas/JsObject'
+    OutputBranding:
+      type: object
+      properties:
+        title:
+          type: string
+        loginLogo:
+          type: string
+        menuLogo:
+          type: string
+        favicon:
+          type: string
     OutputCase:
       required:
       - _id
@@ -30227,6 +31265,7 @@ components:
       - editable
       - forAdmin
       - forOrg
+      - consumesLicense
       type: object
       properties:
         _id:
@@ -30256,6 +31295,8 @@ components:
         forAdmin:
           type: boolean
         forOrg:
+          type: boolean
+        consumesLicense:
           type: boolean
     OutputPropertyDescription:
       required:
@@ -31129,13 +32170,14 @@ x-tagGroups:
   - Case
   - Alert
   - Task
+  - Task Log
   - Observable
   - Comment
   - Timeline
   - TTP
-  - Task Log
   - Share
   - Case Report
+  - Timeline
 - name: User Management
   tags:
   - Organisation
@@ -31151,24 +32193,28 @@ x-tagGroups:
   - PageTemplate
   - Observable Type
   - Case Report Template
+  - Tag
+  - Att&ck
+  - Page
 - name: Connectors
   tags:
   - Cortex
   - MISP
   - Email Intake
+- name: Admin
+  tags:
+  - Admin
+  - License
+  - Branding
+  - Config
+  - Features
+  - GDPR
 - name: Other
   tags:
-  - Authenticated
-  - Function
-  - License
-  - Page
-  - Att&ck
-  - Log
-  - Describe
-  - Status
   - Audit
-  - Admin
-  - Login
-  - Config
-  - TOTP
+  - Function
+  - Describe
   - Dashboard
+  - Status
+  - Authenticated
+  - Authentication

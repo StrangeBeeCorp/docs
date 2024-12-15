@@ -4,7 +4,7 @@ This is the default behaviour of TheHive. The applications store usernames and p
 
 ## Configuration
 
-![](./images/authentication-local-1.png)
+![](../../images/administration-guides/authentication/authentication-local-1.png)
 
 By default, no policy is activated for local accounts. Nevertheless, a password policy and blocking settings can be adjusted:
 

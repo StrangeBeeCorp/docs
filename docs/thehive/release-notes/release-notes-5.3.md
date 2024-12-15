@@ -18,6 +18,19 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.3.9 - 21st of November 2024
+
+### Fix
+#### Cortex
+- Resolved an issue causing incorrect differentiation between "In Progress" Cortex analyzers and responders during TheHive startup process, that was causing some Responder jobs to never cleaned up.
+
+## 5.3.8 - 7th of November 2024
+
+### Fixes & improvements
+#### Cortex Job Queue
+- Enhanced the handling of concurrent job submissions to the Cortex server for better efficiency and stability.
+- Fixed an issue related to job status recovery in TheHive when the Cortex server crashes.
+
 ## 5.3.7 - 11th of October 2024
 
 ### Fix

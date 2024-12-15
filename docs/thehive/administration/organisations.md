@@ -2,7 +2,7 @@
 
 As Administrator, go to the *Organisations* page.
 
-![](./images/organisations-1.png)
+![](../images/administration-guides/organisations-1.png)
 
 ## Add an Organisation
 
@@ -16,12 +16,12 @@ Click on the :fontawesome-regular-square-plus: button and edit the required fiel
 
 Click **Confirm** to create the organisation. 
 
-![](./images/organisations-2.png)
+![](../images/administration-guides/organisations-2.png)
 
 
 ## Edit your Organisation
 
-![](./images/organisations-3.png)
+![](../images/administration-guides/organisations-3.png)
 
 Once your organisation is created:
 
@@ -32,4 +32,4 @@ Once your organisation is created:
 ## Lock an organisation
 An existing Organisation can be locked so that all users belonging to this one cannot log into it.
 
-![](./images/organisations-4.png)
+![](../images/administration-guides/organisations-4.png)

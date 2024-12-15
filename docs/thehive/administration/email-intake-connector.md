@@ -5,7 +5,7 @@ This documentation outlines the utilization of the Email Intake Connector for au
 The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
 
 
-![](../images/administration/eic-1.png)
+![](../images/administration-guides/eic-1.png)
 
 ---
 
@@ -15,7 +15,7 @@ The Email Intake Connector facilitates the connection of mailboxes used to recei
 
 The only parameter that requires adjustment is the `refresh interval`. By default, the connector polls mailboxes every *5* minutes. Adjust the frequency by increasing or decreasing the value.
 
-![](../images/administration/eic-2.png)
+![](../images/administration-guides/eic-2.png)
 
 &nbsp;
 
@@ -23,7 +23,7 @@ The only parameter that requires adjustment is the `refresh interval`. By defaul
 
 Configuration options are available for Microsoft 365 (OAuth2) and Google Workspace (OAuth2). If you use another email provider service, configuration through IMAP is necessary.
 
-![](../images/administration/eic-3.png)
+![](../images/administration-guides/eic-3.png)
 
 &nbsp;
 
@@ -40,7 +40,11 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
     - PowerShell installed and configured.
     - A shared mailbox already created in Microsoft 365 (e.g., `test-shared-mailbox@strangebee.com`).
 
+<<<<<<< HEAD
         ![](../images/administration/ms-intake-1.png){ width="600" }
+=======
+![](../images/administration-guides/eic-4.png)
+>>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 
     &nbsp;
 
@@ -54,7 +58,11 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
         ![](../images/administration/ms-intake-2.png)
 
+<<<<<<< HEAD
     2. **Register a New Application in Microsoft Entra**
+=======
+![](../images/administration-guides/eic-5.png)
+>>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 
         - As an administrator, navigate to **Microsoft Entra admin center**.
         - Go to **Admin > Identity > Applications > App registrations**.
@@ -71,6 +79,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
     3. **Create a Secret for the Application**
 
+<<<<<<< HEAD
         - In the registered application page, go to **Certificates & Secrets**.
         - Create a new secret, which will be used as an OAuth2 input to authenticate the service.
         - Save the secret value securely for later use.
@@ -286,13 +295,21 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
     ![](../images/administration/eic-6.png)
 
     
+=======
+![](../images/administration-guides/eic-6.png)
+&nbsp;
+>>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 
 ### Settings
 
 After testing your mailbox configuration, select the organization to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
 
+<<<<<<< HEAD
 ![](../images/administration/eic-7.png)
 
+=======
+![](../images/administration-guides/eic-7.png)
+>>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 ---
 
 ## Generated Alerts and Observables

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #ececec;
+            color: #1b1b34;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+        }
+        .logo img {
+            width: 15vw;
+            max-width: 200px;
+            margin-bottom: 40px;
+        }
+        .error-code {
+            font-size: 6rem;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+        .home-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.875rem;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="/assets/images/strangebee-logo.svg" alt="StrangeBee Company Logo">
+        </div>
+        <div class="error-code">
+            404
+        </div>
+        <div class="error-message">
+            Oops! Page not found.
+        </div>
+        <a href="/" class="home-button" aria-label="Return to the homepage" role="button">Return to Homepage</a>
+    </div>
+</body>
+</html>

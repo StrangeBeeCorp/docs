@@ -5,7 +5,7 @@ In this section you can find information about observables.
 Observables represent stateful properties (such as the MD5 hash of a file or the value of a registry key) or measurable events (such as the creation of a registry key or the deletion of a file) that are pertinent to the operation of computers and networks. 
 
 
-<img src="../images/cases-list-observables.png" alt="observables list" width="1000" height="1000"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-observables.png" alt="observables list" width="1000" height="1000"/>
 
 
 ## Add observables
@@ -23,7 +23,7 @@ Observables represent stateful properties (such as the MD5 hash of a file or the
 1. Click the **Save and add another** button. 
 1. Click the **Confirm** button. 
 
-<img src="../images/cases-list-adding-an-observable.png" alt="add observable" width="500" height="500"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-adding-an-observable.png" alt="add observable" width="500" height="500"/>
 
 
 
@@ -31,7 +31,7 @@ Observables represent stateful properties (such as the MD5 hash of a file or the
 
 You can make use of any of the available actions.
 
-<img src="../images/cases-list-add-observables-actions.png" alt="observables actions.png" width="100" height="100"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-add-observables-actions.png" alt="observables actions.png" width="100" height="100"/>
 
 
 ### Delete
@@ -42,7 +42,7 @@ A message pops-up
 
 1. Click the **OK** button. 
 
-<img src="../images/delete-observable.png" alt="delete pop up" width="300" height="300"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/delete-observable.png" alt="delete pop up" width="300" height="300"/>
 
 
 ### Run Analyzers
@@ -54,14 +54,14 @@ A new window opens.
 1. Select one or more **Analyzers** from the list.
 1. Click the **Run Analyzers** button.  
 
-<img src="../images/run-analyzer.png" alt="run analyzers" width="500" height="500"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/run-analyzer.png" alt="run analyzers" width="500" height="500"/>
 
 
 ### Responders
 
 1. Click the **Responders** option.
 
-<img src="../images/run-responder.png" alt="Responders" width="500" height="500"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/run-responder.png" alt="Responders" width="500" height="500"/>
 
 
 ### Pin/Unpin
@@ -81,5 +81,5 @@ To Export an observable details file:
 
 1. Click the **Copy data option**.
 
-<img src="../images/copy-to-clipboard.png" alt="copy to clipboard" width="500" height="500"/>
+<img src="../../../images/user-guides/analyst-corner/cases-list/copy-to-clipboard.png" alt="copy to clipboard" width="500" height="500"/>
 

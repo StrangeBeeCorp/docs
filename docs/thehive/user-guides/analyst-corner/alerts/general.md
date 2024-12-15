@@ -14,8 +14,8 @@ Refer to [`Configure Alert Details`](../cases-list/configure-pap-tlp-severity.md
 1. Add **Custom fields**. (Refer to [`Add custom fields`](../cases-list/add-custom-fields.md))
 1. Click **Add** to enter the respective business unit and location details. 
 
-    <img src="../images/alerts-new-business-location-details.png" alt="add location and business details" width="500" height="500"/>
+    <img src="../../../images/user-guides/analyst-corner/alerts/alerts-new-business-location-details.png" alt="add location and business details" width="500" height="500"/>
 
 
-<img src="../images/alerts-general-tab.png" alt="general tab alerts" width="700" height="700"/>
+<img src="../../../images/user-guides/analyst-corner/alerts/alerts-general-tab.png" alt="general tab alerts" width="700" height="700"/>
 
