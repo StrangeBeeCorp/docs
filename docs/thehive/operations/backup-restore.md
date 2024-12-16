@@ -345,7 +345,6 @@ For example, with AWS Amazon EC2 servers where all data, indexes, and files are 
         ## Path to backup folder
         BACKUP_ROOT_FOLDER="/opt/backups"
         ## Name of the folder containing the backup to restore
-        ## TBD: read backups from the folder and ask the basckup to restore amongst last 10
         BACKUP_TO_RESTORE="14122024-1044-0000"
         ## ============================================================
         ## DO NOT MODIFY ANYTHING BELOW THIS LINE
