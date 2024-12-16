@@ -415,10 +415,10 @@ To set up a shared file storage for TheHive in a clustered environment, several 
         !!! Example "Example for DEB packages"
 
             ```bash
-            wget https://dl.min.io/server/minio/release/linux-amd64/minio_20220607003341.0.0_amd64.deb
-            wget https://dl.min.io/client/mc/release/linux-amd64/mcli_20220509040826.0.0_amd64.deb
-            dpkg -i minio_20220607003341.0.0_amd64.deb
-            dpkg -i mcli_20220509040826.0.0_amd64.deb
+            wget https://dl.min.io/server/minio/release/linux-amd64/minio.deb
+            wget https://dl.min.io/client/mc/release/linux-amd64/mcli.deb
+            dpkg -i minio.deb
+            dpkg -i mcli.deb
             ```
 
     !!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
