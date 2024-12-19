@@ -8,7 +8,7 @@ Using virtual servers allow more solutions to perform backup and restore operati
 ---
 ## 1st solution: Restore data folders from a backup
 
-Assuming you are using our cold [backup](../backup/physical-server.md) guide to backup your data,use scripts to restore the configuration, data, and logs from each application in your stack. Refer to the cold [restore](./physical-server.md) guide for detailed instructions.
+Assuming you are using our cold [backup](../backup/physical-server.md) guide to backup your data, use scripts to restore the configuration, data, and logs from each application in your stack. Refer to the cold [restore](./physical-server.md) guide for detailed instructions.
 
 ---
 ## 2nd solution: Leverage the capabilities of the hypervisor

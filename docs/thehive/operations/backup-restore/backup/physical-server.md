@@ -91,20 +91,23 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     ## ============================================================
     ##
     # Display help message
-    if [[ "$1" == "--help" || "$1" == "-h" ]]; then
-    echo "Usage: $0 [BACKUP_ROOT_FOLDER]"
-    echo
-    echo "This script performs a backup of application data, including configurations, files, and logs."
-    echo
-    echo "Options:"
-    echo "  BACKUP_ROOT_FOLDER  Optional. Specify the root folder where backups will be stored."
-    echo "                      If not provided, you will be prompted for a folder, with a default of './backup'."
-    echo
-    echo "Examples:"
-    echo "  $0 /path/to/backup  Perform backup with specified root folder."
-    echo "  $0                 Prompt for backup root folder."
-    exit 0
-fi
+    if [[ "$1" == "--help" || "$1" == "-h" ]]
+    then
+        echo "Usage: $0 [BACKUP_ROOT_FOLDER]"
+        echo
+        echo "This script performs a backup of application data, including configurations, files, and logs."
+        echo
+        echo "Options:"
+        echo "  DOCKER_COMPOSE_PATH  Optional. Specify the path of the folder with the docker-compose.yml."
+        echo "                      If not provided, you will be prompted for a folder, with a default of '.'."
+        echo "  BACKUP_ROOT_FOLDER  Optional. Specify the root folder where backups will be stored."
+        echo "                      If not provided, you will be prompted for a folder, with a default of './backup'."
+        echo
+        echo "Examples:"
+        echo "  $0 /path/to/docker-compose-folder /path/to/backup  Perform backup with specified root folder."
+        echo "  $0                 Prompt for docker compose folder and backup root folder."
+        exit 0
+    fi
 
     ## Checks if the first argument is provided.
     ## If it is, the script uses it as the value for BACKUP_ROOT_FOLDER
@@ -112,13 +115,27 @@ fi
     ## 
     if [[ -z "$1" ]]
     then
-        read -p "Enter the backup root folder [default: ./backup]: " BACKUP_ROOT_FOLDER
-        BACKUP_ROOT_FOLDER=${BACKUP_ROOT_FOLDER:-"./backup"}
+        read -p "Enter the folder path including your docker compose file [default: ./]: " DOCKER_COMPOSE_PATH
+        DOCKER_COMPOSE_PATH=${DOCKER_COMPOSE_PATH:-"."}
     else
-        BACKUP_ROOT_FOLDER="$1"
+        DOCKER_COMPOSE_PATH="$1"
     fi
 
-    echo "Using backup root folder: ${BACKUP_ROOT_FOLDER}"
+    if [[ -e "${DOCKER_COMPOSE_PATH}/docker-compose.yml" ]]
+    then
+        echo "Path to your docker compose file: ${DOCKER_COMPOSE_PATH}/docker-compose.yml"
+    else
+        { echo "Docker compose file not found in ${DOCKER_COMPOSE_PATH}"; exit 1; }
+    fi
+
+
+    if [[ -z "$2" ]]
+    then
+    read -p "Enter the backup root folder [default: ./backup]: " BACKUP_ROOT_FOLDER
+        BACKUP_ROOT_FOLDER=${BACKUP_ROOT_FOLDER:-"./backup"}
+    else
+        BACKUP_ROOT_FOLDER="$2"
+    fi
 
 
     DATE="$(date +"%Y%m%d-%H%M%z" | sed 's/+/-/')"

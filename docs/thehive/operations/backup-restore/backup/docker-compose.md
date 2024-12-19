@@ -45,21 +45,25 @@ For example, on the host server, create a folder on a dedicated NFS volume named
 !!! Example ""
 
     ```bash
+    #!/bin/bash
+
     ## ============================================================
-    ## BACKUP SCRIPT FOR THEHIVE APPLICATION STACK
+    ## RESTORE SCRIPT FOR THEHIVE APPLICATION STACK
     ## ============================================================
     ## PURPOSE:
-    ## This script creates a backup of TheHive application stack, 
-    ## including its configuration, data, and logs. It is designed 
-    ## to ensure data is preserved for restoration purposes.
+    ## This script restores a backup of TheHive application stack, 
+    ## including its configuration, data, and logs. It is designed to 
+    ## recover from backups created using the associated backup script.
     ##
     ## IMPORTANT:
-    ## - This script must be run with appropriate permissions to read all data 
-    ##   and write to the backup folders.
-    ## - Ensure sufficient storage is available in the backup location to avoid 
-    ##   partial or failed backups.
-    ## - Services (Elasticsearch, Cassandra, and TheHive) will be stopped during 
-    ##   the backup process to ensure data integrity.
+    ## - A backup is highly recommended before running a restore operation. 
+    ##   This ensures you can revert to the current state if anything goes wrong.
+    ## - Ensure that the target data folders are empty before running this script. 
+    ##   Pre-existing files can cause conflicts or data corruption during the restore process.
+    ## - This script must be run with sufficient permissions to overwrite 
+    ##   application data and modify service configurations.
+    ## - Ensure the backup folder path is correct and contains all required 
+    ##   files and data.
     ##
     ## DISCLAIMER:
     ## - Users are strongly advised to test this script in a non-production 
@@ -71,73 +75,112 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     ##
     ## USAGE:
     ## 1. Update the variables at the start of the script to reflect your setup:
-    ##    - BACKUP_ROOT_FOLDER: Root folder where backups will be stored.
+    ##    - BACKUP_ROOT_FOLDER: Path to the root directory of your backups.
     ##    - BACKUP_TO_RESTORE: Name of the backup folder to restore.
     ## 2. Run the script using the following command:
-    ##    `bash ./scripts/backup.sh`
+    ##    `bash ./scripts/restore.sh`
     ##
     ## ADDITIONAL RESOURCES:
     ## Refer to the official documentation for detailed instructions and 
-    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/backup/docker-compose/
+    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/
     ##
     ## WARNING:
-    ## - This script stops Nginx, Elasticsearch, Cassandra, and TheHive services, 
-    ##   performs the backup, and then restarts the services.
+    ## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.
+    ## - This script will overwrite existing data. Use it with caution.
     ## - Do not modify the rest of the script unless necessary.
     ##
     ## ============================================================
-
-    ## ============================================================
-    ## USER-CONFIGURABLE VARIABLES
-    ## ============================================================
-    ##
-    ## Update the following variables to match your environment
-    ## Path to the docker-compose.yml file
-    DOCKER_COMPOSE_PATH="./"
-    ## Root folder for storing backups
-    BACKUP_ROOT_FOLDER="/opt/backups"
-    ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
     ## ============================================================
+    # Display help message
+    if [[ "$1" == "--help" || "$1" == "-h" ]]
+    then
+        echo "Usage: $0 [DOCKER_COMPOSE_PATH] [BACKUP_FOLDER]"
+        echo
+        echo "This script restores a backup of application data, including configurations, files, and logs."
+        echo
+        echo "Options:"
+        echo "  DOCKER_COMPOSE_PATH  Optional. Specify the path of the folder with the docker-compose.yml."
+        echo "                      If not provided, you will be prompted for a folder, with a default of '.'."
+        echo "  BACKUP_FOLDER  Optional. Specify the folder containing the data to restore."
+        echo "                      If not provided, you will be prompted for a folder or exit; no default folder is used."
+        echo
+        echo "Examples:"
+        echo "  $0 /path/to/docker-compose-folder /path/to/backup-folder  restores backup stored in the specified folder."
+        echo "  $0                 Prompt for docker compose folder and backup folder to restore."
+        exit 0
+    fi
 
+    ## Checks if the first argument is provided.
+    ## If it is, the script uses it as the value for BACKUP_ROOT_FOLDER
+    ## If no argument is passed, the script prompts the user to enter a value
+    ## 
+    if [[ -z "$1" ]]
+    then
+        read -p "Enter the folder path including your docker compose file [default: ./]: " DOCKER_COMPOSE_PATH
+        DOCKER_COMPOSE_PATH=${DOCKER_COMPOSE_PATH:-"."}
+    else
+        DOCKER_COMPOSE_PATH="$1"
+    fi
+
+    if [[ -e "${DOCKER_COMPOSE_PATH}/docker-compose.yml" ]]
+    then
+        echo "Path to your docker compose file: ${DOCKER_COMPOSE_PATH}/docker-compose.yml"
+    else
+        { echo "Docker compose file not found in ${DOCKER_COMPOSE_PATH}"; exit 1; }
+    fi
+
+
+    if [[ -z "$2" ]]
+    then
+        read -p "Enter the backup root folder [default: None]: " BACKUP_FOLDER
+        [[ -z "${BACKUP_FOLDER}" ]] && echo "No backup folder specified, exiting." && exit 1
+    else
+        BACKUP_FOLDER="$2"
+    fi
+
+    ## Check if the backup folder to restore exists, else exit
+    [[ -d ${BACKUP_FOLDER} ]] || { echo "Backup folder not found, exiting"; exit 1; }
+
+
+    # Define the log file and start logging. Log file is stored in the current folder
     DATE="$(date +"%Y%m%d-%H%M%z" | sed 's/+/-/')"
-    BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
-
-
-    ## Stop services
-    docker compose stop
-
-    ## Create the backup directory
-    mkdir -p "${BACKUP_FOLDER}"  || { echo "Creating backup folder failed"; exit 1; }
-    echo "Created backup folder: ${BACKUP_FOLDER}"
-
-    ## Define the log file and start logging
-    LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
+    LOG_FILE="./restore_log_${DATE}.log"
     exec &> >(tee -a "$LOG_FILE")
 
+    # Log the start time
+    echo "Restoration process started at: $(date)"
+
+    ## Exit if docker compose is running
+    docker compose ps | grep -q "Up" && { echo "Docker Compose services are running. Exiting. Stop services and remove data before retoring data"; exit 1; }
 
 
-    ## Prepare folders tree
-    mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch,nginx,certificates}
-    echo "Created folder structure under ${BACKUP_FOLDER}"
+    # Copy TheHive data
+    echo "Restoring TheHive data and configuration..."
+    rsync -aW --no-compress ${BACKUP_FOLDER}/thehive/ ${DOCKER_COMPOSE_PATH}/thehive || { echo "TheHive config restore failed"; exit 1; }
 
-    ## Copy Cortex data
-    echo "Starting Cortex backup..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/cortex/ ${BACKUP_FOLDER}/cortex || { echo "Cortex backup failed"; exit 1; }
-    echo "Cortex backup completed."
+    # Copy Cortex data
+    echo "Restoring Cortex data and configuration..."
+    rsync -aW --no-compress ${BACKUP_FOLDER}/cortex/ ${DOCKER_COMPOSE_PATH}/cortex || { echo "Cortex config restore failed"; exit 1; }
 
-    ## Copy Elasticsearch data
-    echo "Starting Elasticsearch backup..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch || { echo "Elasticsearch config backup failed"; exit 1; }
-    echo "Elasticsearch backup completed."
+    # Copy Casssandra data
+    echo "Restoring Cassandra data ..."
+    rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/ ${DOCKER_COMPOSE_PATH}/cassandra || { echo "Cassandra data restore failed"; exit 1; }
 
-    ## Copy Nginx certificates
-    echo "Starting backup of Nginx and certificates..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/nginx/ ${BACKUP_FOLDER}/nginx || { echo " Backup of Nginx failed"; exit 1; }
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/certificates/ ${BACKUP_FOLDER}/certificates || { echo " Backup of Nginx and certificates failed"; exit 1; }
-    echo "Backup of certificates completed."
 
-    echo "Backup process completed at: $(date)"
+    # Copy Elasticsearch data
+    echo "Restoring Elasticsearch data ..."
+    rsync -aW --no-compress ${BACKUP_FOLDER}/elasticsearch/ ${DOCKER_COMPOSE_PATH}/elasticsearch || { echo "Elasticsearch data restore failed"; exit 1; }
+
+
+    # Copy Nginx certificates
+    echo "Restoring Nginx data and configuration..."
+    rsync -a ${BACKUP_FOLDER}/nginx/ ${DOCKER_COMPOSE_PATH}/nginx  ||
+    { echo " Nginx configuration and certificates restore failed"; exit 1; } 
+    rsync -a ${BACKUP_FOLDER}/certificates/ ${DOCKER_COMPOSE_PATH}/certificates  ||
+    { echo " certificates restore failed"; exit 1; } 
+
+    echo "Restoration process completed at: $(date)"
     ```
 
 ### Restart the services
