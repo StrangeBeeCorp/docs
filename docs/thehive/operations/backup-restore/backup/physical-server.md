@@ -87,18 +87,39 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     ## - Do not modify the rest of the script unless necessary.
     ##
     ## ============================================================
-
-
-    ## ============================================================
-    ## USER-CONFIGURABLE VARIABLES
-    ## ============================================================
-    ##
-    ## Update the following variables to match your environment
-    ## Root folder for storing backups
-    BACKUP_ROOT_FOLDER="/opt/backups"
-    ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
     ## ============================================================
+    ##
+    # Display help message
+    if [[ "$1" == "--help" || "$1" == "-h" ]]; then
+    echo "Usage: $0 [BACKUP_ROOT_FOLDER]"
+    echo
+    echo "This script performs a backup of application data, including configurations, files, and logs."
+    echo
+    echo "Options:"
+    echo "  BACKUP_ROOT_FOLDER  Optional. Specify the root folder where backups will be stored."
+    echo "                      If not provided, you will be prompted for a folder, with a default of './backup'."
+    echo
+    echo "Examples:"
+    echo "  $0 /path/to/backup  Perform backup with specified root folder."
+    echo "  $0                 Prompt for backup root folder."
+    exit 0
+fi
+
+    ## Checks if the first argument is provided.
+    ## If it is, the script uses it as the value for BACKUP_ROOT_FOLDER
+    ## If no argument is passed, the script prompts the user to enter a value
+    ## 
+    if [[ -z "$1" ]]
+    then
+        read -p "Enter the backup root folder [default: ./backup]: " BACKUP_ROOT_FOLDER
+        BACKUP_ROOT_FOLDER=${BACKUP_ROOT_FOLDER:-"./backup"}
+    else
+        BACKUP_ROOT_FOLDER="$1"
+    fi
+
+    echo "Using backup root folder: ${BACKUP_ROOT_FOLDER}"
+
 
     DATE="$(date +"%Y%m%d-%H%M%z" | sed 's/+/-/')"
     BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
