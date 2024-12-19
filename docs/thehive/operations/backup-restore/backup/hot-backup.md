@@ -6,6 +6,7 @@
     The scripts provided are examples that **you must customize** to fit your infrastructure and application stack. For instance, folder paths may differ depending on whether you're using physical servers or Docker Compose to run the services.
 
 
+---
 ## Introduction
 
 Hot backups are an essential strategy for maintaining business continuity in environments where downtime is not acceptable. Unlike cold backups, which require stopping services to ensure consistency, hot backups allow you to capture snapshots of your data while systems remain operational. This approach is particularly suited for high-availability environments where even minimal downtime could disrupt critical operations.
@@ -37,15 +38,17 @@ Install any missing tools using package managers such as apt or yum:
 
 #### Cassandra Keyspace
 
-Identify the keyspace used by TheHive. This is typically defined in the application.conf file under the `db.janusgraph.storage.cql.keyspace` attribute.
+Identify the keyspace used by TheHive. This is typically defined in the _application.conf_ file under the `db.janusgraph.storage.cql.keyspace` attribute.
+
 
 #### Elasticsearch Repository
 
 Configure a repository for Elasticsearch snapshots. Ensure the repository is accessible and writable by Elasticsearch.
 
+
 #### File Storage Location
 
-Locate the folder or object storage (e.g., MinIO) where TheHive stores files. This will be backed up along with the database and indices.
+Locate the folder or object storage (e.g., MinIO) where TheHive stores files. This will be backed up along with the database and indices. If you're using local filesystem or NFS to store your files, the location is typically defined in the application.conf file under the `storage.localfs.location` attribute.
 
 ### Consistency Considerations
 
@@ -53,73 +56,70 @@ Locate the folder or object storage (e.g., MinIO) where TheHive stores files. Th
 
 For Cassandra and Elasticsearch clusters, ensure snapshots are taken simultaneously across all nodes to maintain consistency.
 
+
 #### Data Integrity Checks
 
 Perform a preliminary check on the system for data corruption or inconsistencies. Address any issues before proceeding with the backup.
 
+
 ### Testing and Validation
+
 Test the backup process in a staging or test environment to ensure scripts and configurations work as expected.
 
 And periodically validate your restoration procedures using test environments to confirm the integrity of the backup data.
-### Overview
 
-To successfully restore TheHive, the following data needs to be saved:
-
-- The database
-- Files
-- Optionally, the index
 
 ---
+## Why is backing up the index optional and what are the consequences ?
 
-## Why backing up the index is optional ?
+In TheHive’s architecture, the decision to back up the Elasticsearch index is a matter of balancing operational priorities such as backup speed, storage requirements, and restoration time. Here’s a breakdown of why backing up the index might be considered optional and the potential consequences of doing so.
 
-### Option 1: Backup Only the Data
+### Why backup the index might be skipped
 
-You can use Cassandra snapshots to back up the data of a Cassandra node. This can be done while the application is running, meaning there is no downtime. With this option, the index is not backed up and will be rebuilt from the data during restoration.
+#### Rebuild capability
 
-If the index doesn't exist, it is built when TheHive starts.
+Elasticsearch indices can be rebuilt from the data stored in Cassandra. This makes it possible to restore the system without explicitly backing up the index, provided the data is intact.
 
-**Pros:**
 
-- No downtime during backup
-- Backups take less space
+#### Backup size optimization
 
-**Cons:**
+Excluding the index from the backup process reduces the total backup size. This can be particularly beneficial when dealing with large datasets or limited storage.
 
-- Restoration can be lengthy (requires a full reindexation of the data)
 
-&nbsp;
+### Consequences of not backing up the index
 
-### Option 2: Backup the Data and the Index
+If the index is not backed up, it must be rebuilt from scratch during the restoration process. This can significantly increase the time required to fully restore the system.
 
-To ensure the data and the index are synchronized, TheHive must be stopped before backing up Cassandra and Elasticsearch.
+### Recommandation
 
-**Pros:**
+While skipping the index backup offers operational benefits during the backup process, it increases the restoration time and may introduce additional challenges.
 
-- TheHive can be quickly restored from a backup
+* If minimal restoration time is critical, back up the index alongside the database and files.
+* If backup speed and storage efficiency are prioritized, skip the index backup but prepare for a longer restoration process.
 
-**Cons:**
+Ultimately, the decision depends on your infrastructure, operational priorities, and acceptable downtime during recovery. Ensure you have tested and validated your backup and restore processes in a controlled environment before applying them in production.
 
-- Downtime of TheHive during the backup
-- Backups take more space
+
 
 ---
+## Backup procedures
 
-## "Backup Index, Data and Files"
+### Cassandra (database)
 
-## Cassandra (database)
+Ensure that all Cassandra data is safely stored in consistent snapshots.
 
-### Prerequisites
+
+#### Prerequisites
 
 To back up or export the database from Cassandra, the following information is required:
 
-- Cassandra admin password
-- Keyspace used by TheHive (default = `thehive`). This can be checked in the `application.conf` configuration file, in the database configuration under *storage*, *cql*, and `keyspace` attribute.
+* Cassandra admin password
+* Keyspace used by TheHive (default = `thehive`). This can be checked in the `application.conf` configuration file, in the database configuration under *storage*, *cql*, and `keyspace` attribute.
 
 !!! Tip
-    This information can be found in TheHive configuration:
+    This information can be found in TheHive configuration file - _application.conf_ - under the `db.janusgraph.storage` attribute:
 
-    ```yaml
+    ```yaml 
     db.janusgraph {
         storage {
             backend: cql
@@ -132,25 +132,20 @@ To back up or export the database from Cassandra, the following information is r
     }
     ```
 
-&nbsp;
 
-### Backup
+#### Create snapshots
 
 Following actions should be performed to backup the data successfully:
 
 1. Create a snapshot
 2. Save the data
 
-!!! Tip "The steps described below for data backup should be executed on each node. Each node's data should be backed up to ensure consistency in the backups."
-
-&nbsp;
-
-#### Create a snapshot and an archive
+!!! Warning "The steps described below for data backup should be executed on each node. Each node's data should be backed up to ensure consistency in the backups."
 
 Considering that ${BACKUP} is the name of the snapshot, run the following commands:
 
 
-##### 1 - Use the `nodetool snapshot` command to create a snapshot of all keyspaces:
+##### 1 - Use the `nodetool snapshot` command to create a snapshot of all keyspaces
 
 !!! Example  ""
 
@@ -158,7 +153,7 @@ Considering that ${BACKUP} is the name of the snapshot, run the following comman
     nodetool snapshot -t ${BACKUP}
     ```
 
-##### 2 - Create and archive with the snapshot data: Execute the following command For every cassandra keyspace: 
+##### 2 - Create and archive with the snapshot data: Execute the following command For every cassandra keyspace
 
 !!! Example  ""
 
@@ -223,18 +218,82 @@ Considering that ${BACKUP} is the name of the snapshot, run the following comman
     scp /var/lib/cassandra/archive_backup/$HOSTNAME/${SNAPSHOT_DATE}/* ${REMOTE_USER}@${REMOTE_HOST}:/remote/node-hostname_cassandra_backup_directory
     ```
 
-&nbsp;
-
 ---
-
 ## Elasticsearch (index engine)
+
+### Prerequisites
+
+#### Snapshot repository configuration
+
+Elasticsearch requires a snapshot repository to store backups. Common options include:
+
+* Shared file systems
+* AWS S3 buckets
+* Azure Blob Storage
+* Google Cloud Storage
+
+Set up the repository before taking snapshots.
+
+#### Permissions
+
+Elasticsearch must have the appropriate permissions to write to the snapshot repository.
+For shared file systems:
+
+!!! Example ""
+
+    ```bash
+    chown -R elasticsearch:elasticsearch /path/to/backups
+    chmod -R 770 /path/to/backups
+    ```
+
+#### Cluster health
+
+Ensure the cluster health is green before initiating the backup.
+
+!!! Example ""
+
+    ```bash
+    curl -X GET "localhost:9200/_cluster/health?pretty"
+    ```
+
+### Backup procedure
+
+#### Register a Snapshot Repository
+
+Use the Elasticsearch API to register a snapshot repository. Below is an example for a file-based repository:
+
+!!! Example ""
+
+    ```bash
+    curl -X PUT "http://localhost:9200/_snapshot/my_backup" -H 'Content-Type: application/json' -d'
+    {
+    "type": "fs",
+    "settings": {
+        "location": "/patch/to/backups/elasticsearch",
+        "compress": true
+    }
+    }'
+
+    ```
+
+#### Verify Snapshot Completion
+
+!!! Example ""
+
+    ```bash
+    curl -X GET "http://localhost:9200/_snapshot/my_backup/snapshot_1"
+    ```
+
+
+!!! Note
+    If using a filesystem-based repository, consider archiving the snapshot files to long-term storage (e.g., cloud storage or external disks).
 
 
 ---
 
 ## Backup files
 
-Wether you use local or distributed files system storage, copy the content of the folder/bucket.
+Wether you use local or distributed files system storage, copy the content of the folder/bucket. 
 
 
 
