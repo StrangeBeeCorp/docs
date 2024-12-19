@@ -133,18 +133,18 @@ To initiate the Cassandra service on each node, follow these steps:
 
 2. **Verify Node Status**: Ensure that all nodes are up and running by checking their status using the ``nodetool status`` command. Open a terminal and run:
 
-!!! Example ""
-    ```bash
-    root@cassandra:/# nodetool status
-    Datacenter: dc1
-    ===============
-    Status=Up/Down
-    |/ State=Normal/Leaving/Joining/Moving
-    --  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
-    UN  <ip node 1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
-    UN  <ip node 2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
-    UN  <ip node 3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
-    ```
+    !!! Example ""
+        ```bash
+        root@cassandra:/# nodetool status
+        Datacenter: dc1
+        ===============
+        Status=Up/Down
+        |/ State=Normal/Leaving/Joining/Moving
+        --  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
+        UN  <ip node 1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
+        UN  <ip node 2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
+        UN  <ip node 3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
+        ```
 
 &nbsp;
 
@@ -365,7 +365,7 @@ To set up a shared file storage for TheHive in a clustered environment, several 
 === "NFS"
     Using NFS is one of the simplest methods to implement shared file storage. By configuring a single NFS endpoint, all nodes in the cluster can access and share files seamlessly.
     
-    1. **Mount the NFS endpoint** to /opt/thp/thehive/files on each node.
+    1. **Mount the NFS endpoint** to _/opt/thp/thehive/files_ on each node.
     2. **Set permissions:** Ensure the thehive user has both read and write access to this directory, including the ability to create subdirectories. This allows TheHive to manage files as required across the cluster.
 
 
