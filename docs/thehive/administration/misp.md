@@ -14,7 +14,7 @@
 
 ### Add a new MISP server
 
-![](./images/platform-management-misp-1.png)
+![](../images/administration-guides/platform-management-misp-1.png)
 
 Specify:
 
@@ -27,7 +27,7 @@ Specify:
 
 ### Advanced settings
 
-![](./images/platform-management-misp-2.png)
+![](../images/administration-guides/platform-management-misp-2.png)
 
 By default, **ALL** Organisations in TheHive benefit from this connection.
 Additionaly, 2 options are available:
@@ -44,7 +44,7 @@ Additional options let you:
 
 ### Filters
 
-![](./images/platform-management-misp-3.png)
+![](../images/administration-guides/platform-management-misp-3.png)
 
 When importing MISP events as TheHive *Alerts*, several options are available:
 
@@ -57,7 +57,7 @@ When importing MISP events as TheHive *Alerts*, several options are available:
 
 ### Delete a Connection
 
-![](./images/platform-management-misp-4.png)
+![](../images/administration-guides/platform-management-misp-4.png)
 
 [^1]:
     If you have several connections, this is useful to give explicit names

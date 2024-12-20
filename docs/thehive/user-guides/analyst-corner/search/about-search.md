@@ -4,7 +4,7 @@ The Search function allows you to refine your search by selecting specific crite
 
 &nbsp;
 
-![search](./images/search.png)
+![search](../../../images/user-guides/analyst-corner/search/search.png)
 
 &nbsp;
 

@@ -8,7 +8,7 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 - Cassandra for the database
 - Elasticsearch for the indexing engine
-- NFS (recommanded), or MinIO data storage
+- NFS (recommanded), or S3 file storage (for example MINIO)
 - TheHive
 - Haproxy (to demonstrate load balancing)
 - Keepalived (to demonstrate virtual IP setup)
@@ -20,7 +20,7 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 ## Architecture Diagram
 
-![](../images/general/thehive-architecture-full-cluster.png)
+![](../images/overview/thehive-architecture-full-cluster.png)
 
 The diagram above illustrates the key components and their interactions within the cluster architecture.
 
@@ -551,33 +551,63 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
 
 &nbsp;
 
-#### MinIO S3 file storage
+#### File storage
 
-To enable S3 file storage for each node in TheHive cluster, add the relevant storage configuration to the ``/etc/thehive/application.conf`` file. Below is an example configuration for the first node:
 
-!!! Example ""
-    ```yaml title="/etc/thehive/application.conf"
-    storage {
-      provider: s3
-      s3 {
-        bucket = "thehive"
-        readTimeout = 1 minute
-        writeTimeout = 1 minute
-        chunkSize = 1 MB
-        endpoint = "http://<IP_MINIO_1>:9100"
-        accessKey = "thehive"
-        aws.credentials.provider = "static"
-        aws.credentials.secret-access-key = "password"
-        access-style = path
-        aws.region.provider = "static"
-        aws.region.default-region = "us-east-1"
-      }
-    }
-    ```
+=== "Using NFS file storage"
 
-- The provided configuration is backward compatible, ensuring compatibility with existing setups.
+    All nodes should have access to the same file storage. So, ideally, all TheHive nodes should have a similar NFS mount point. Then, on each node:
 
-- Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancers-with-haproxy)).
+    1. Ensure thehive user has permissions on the destination folder:
+
+        !!! Example ""
+            ```bash
+            chown -R thehive:thehive /opt/thp/thehive/files
+            ```
+
+    2. Update the _application.conf_ TheHive configuration file 
+
+        !!! Example ""
+            ```yaml title="/etc/thehive/application.conf"
+            # Attachment storage configuration
+            # By default, TheHive is configured to store files locally in the folder.
+            # The path can be updated and should belong to the user/group running thehive service. (by default: thehive:thehive)
+            storage {
+            provider = localfs
+            localfs.location = /opt/thp/thehive/files
+            }
+            ```
+
+
+=== "S3 file storage with MINIO (Optional)"
+
+    It you decide to go with S3 file storage, this section details how to configure your cluster.
+
+    To enable S3 file storage for each node in TheHive cluster, add the relevant storage configuration to the ``/etc/thehive/application.conf`` file. Below is an example configuration for the first node:
+
+    !!! Example ""
+        ```yaml title="/etc/thehive/application.conf"
+        storage {
+        provider: s3
+        s3 {
+            bucket = "thehive"
+            readTimeout = 1 minute
+            writeTimeout = 1 minute
+            chunkSize = 1 MB
+            endpoint = "http://<IP_MINIO_1>:9100"
+            accessKey = "thehive"
+            aws.credentials.provider = "static"
+            aws.credentials.secret-access-key = "password"
+            access-style = path
+            aws.region.provider = "static"
+            aws.region.default-region = "us-east-1"
+        }
+        }
+        ```
+
+    - The provided configuration is backward compatible, ensuring compatibility with existing setups.
+
+    - Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancers-with-haproxy)).
 
 &nbsp;
 
