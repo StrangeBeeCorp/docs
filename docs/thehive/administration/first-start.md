@@ -5,9 +5,9 @@
 
 After following the installation guides and ensuring TheHive is up and running, open your web browser, navigate to ``http://IP_ADDRESS:9000``, and log in using the default account credentials:
 
-| **Login**    | `admin` |
-|--------------|-----------------------|
-| **Password** | `secret`              |
+| **Login**    | `admin`  |
+|--------------|----------|
+| **Password** | `secret` |
 
 ![](../images/administration-guides/first-start-login.png)
 
@@ -15,7 +15,7 @@ After following the installation guides and ensuring TheHive is up and running, 
 
 ## Install License
 
-To unlock all features and quotas, log in to your account on StrangeBee's customer portal, and follow [this guide](../installation/activate-license.md) to setup the licence.
+To unlock all features and quotas, log in to your account on StrangeBee's customer portal, and follow [this guide](../installation/activate-paid-license.md) to setup the licence.
 
 !!! Tip
     This action is particularly required if you are setting up TheHive as a cluster: 
