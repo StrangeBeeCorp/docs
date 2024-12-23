@@ -62,7 +62,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
 
         ```yaml title="/etc/cassandra/cassandra.yaml" hl_lines="13"
         cluster_name: 'thp'
-        num_tokens: 16
+        num_tokens: 4
         authenticator: PasswordAuthenticator
         authorizer: CassandraAuthorizer
         role_manager: CassandraRoleManager
@@ -107,15 +107,15 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
 
         ```yaml title="cassandra-rackdc.properties" hl_lines="13"
         ## On node1, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
-        dc=dc1
+        dc=datacenter1
         rack=rack1
 
         ## On node2, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
-        dc=dc1
+        dc=datacenter1
         rack=rack2
 
         ## On node3, edit /etc/cassandra/cassandra-rackdc.properties and add the following conf
-        dc=dc1
+        dc=datacenter1
         rack=rack3
 
         ```
@@ -136,7 +136,7 @@ To initiate the Cassandra service on each node, follow these steps:
     !!! Example ""
         ```bash
         root@cassandra:/# nodetool status
-        Datacenter: dc1
+        Datacenter: datacenter1
         ===============
         Status=Up/Down
         |/ State=Normal/Leaving/Joining/Moving
