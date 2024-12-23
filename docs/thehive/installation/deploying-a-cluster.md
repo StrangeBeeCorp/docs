@@ -56,7 +56,7 @@ To ensure the successful deployment of Cassandra within your cluster, it's essen
 ### Configuration Instructions
 For each node in the Cassandra cluster, it's crucial to update the configuration files located at ``/etc/cassandra/cassandra.yaml`` with specific parameters to ensure proper functionality. Follow the steps below to modify the configuration:
 
-1. **Update Cassandra Configuration File**: Open the ``/etc/cassandra/cassandra.yaml`` file on each node using a text editor.
+1. **Update Cassandra Configuration File**: Open the `/etc/cassandra/cassandra.yaml` file on each node using a text editor.
 
     !!! Example ""
 
@@ -174,22 +174,25 @@ To initialize the database, perform the following steps:
 3. **Create a custom administrator account**: Create a new administrator cassandra role that will replace the default user:
 
     !!! Example ""
+
         ```sql
-         CREATE ROLE admin WITH PASSWORD password = 'admin_password' AND LOGIN = true AND SUPERUSER = true;
-        ```    
+        CREATE ROLE admin WITH PASSWORD password = 'admin_password' AND LOGIN = true AND SUPERUSER = true;
+        ```
     After executing the query, exit the CQL shell and reconnect  using the new admin role.
 
     Remove the default cassandra user using the following CQL query
 
-     !!! Example ""
+    !!! Example ""
+
         ```sql
         DROP ROLE cassandra;
-        ```   
+        ```
 
 
 4. **Create Keyspace**: Create a keyspace named thehive with a replication factor of 3 and durable writes enabled:
 
     !!! Example ""
+
         ```sql
         CREATE KEYSPACE thehive WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
         ```
@@ -197,6 +200,7 @@ To initialize the database, perform the following steps:
 5. **Create Role and Grant Permissions**: Finally, create a role named thehive and grant permissions on the thehive keyspace. Choose a password for the role:
 
     !!! Example ""
+
         ```sql
         CREATE ROLE thehive WITH LOGIN = true AND PASSWORD = 'PASSWORD';
         GRANT ALL PERMISSIONS ON KEYSPACE thehive TO 'thehive';
@@ -208,7 +212,7 @@ The following steps aim to enable encryption secure communication between a clie
 
 #### Client to Node Encryption
 
-!!! Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores).
+!!! Notes "Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores)."
 
 1. **Open the ``cassandra.yaml`` Configuration File and edit the ``client_encryption_options`` section:**
 
@@ -232,12 +236,14 @@ The following steps aim to enable encryption secure communication between a clie
 2. **Restart the Cassandra Service on All Nodes:**
 
     !!! Example ""
+
         ```bash
         sudo service cassandra restart
         ```
 3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
+
         ```bash
         tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
         ```
@@ -270,12 +276,14 @@ The following steps aim to enable encryption secure communication between a clie
 2. **Restart the Cassandra Service on All Nodes:**
 
     !!! Example ""
+
         ```bash
         sudo service cassandra restart
         ```
 3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
+
         ```bash
         tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
         ```
@@ -293,6 +301,7 @@ To establish a cluster of 3 active Elasticsearch nodes, follow the installation 
 For each node, update the configuration files located at `/etc/cassandra/elasticsearch.yml` with the following parameters, ensuring to adjust the network.host accordingly.
 
 !!! Example ""
+
     ```yaml hl_lines="8"
     http.host:  0.0.0.0
     network.bind_host:  0.0.0.0
@@ -333,9 +342,11 @@ For each node, update the configuration files located at `/etc/cassandra/elastic
 &nbsp;
 
 ### Custom JVM Options
+
 To customize Java Virtual Machine (JVM) options for Elasticsearch, create a JVM Options File named jvm.options in the directory ``/etc/elasticsearch/jvm.options.d/`` with the following lines:
 
 !!! Example ""
+
     ```
     -Dlog4j2.formatMsgNoLookups=true
     -Xms4g
@@ -347,9 +358,11 @@ To customize Java Virtual Machine (JVM) options for Elasticsearch, create a JVM 
 &nbsp;
 
 ### Starting the Nodes
+
 To start the Elasticsearch service on each node, execute the following command:
 
 !!! Example ""
+
     ```bash
     service elasticsearch start
     ```
@@ -385,6 +398,7 @@ To set up a shared file storage for TheHive in a clustered environment, several 
     1. **Create a Dedicated System Account**: First, create a dedicated user and group for MinIO:
 
         !!! Example ""
+
             ```bash
             adduser minio-user
             addgroup minio-user
@@ -393,6 +407,7 @@ To set up a shared file storage for TheHive in a clustered environment, several 
     2. **Create Data Volumes**: Next, create at least 2 data volumes on each server by executing the following commands:
 
         !!! Example ""
+
             ```bash
             mkdir -p /srv/minio/{1,2}
             chown -R minio-user:minio-user /srv/minio
@@ -402,11 +417,12 @@ To set up a shared file storage for TheHive in a clustered environment, several 
 
         !!! Example ""
 
-            ``` title="/etc/hosts"
+            ```title="/etc/hosts"
             ip-minio-1     minio1
             ip-minio-2     minio2
             ip-minio-3     minio3
             ```
+
 
         In the above example, replace ip-minio-1, ip-minio-2, and ip-minio-3 with the respective IP addresses of your MinIO servers. These entries map the server names (minio1, minio2, minio3) to their corresponding IP addresses, ensuring that they can be resolved correctly within your network.
 
@@ -496,6 +512,7 @@ When configuring TheHive for a clustered environment, it's essential to configur
 In this guide, we assume that node 1 serves as the master node. Begin by configuring the ``akka`` component in the ``/etc/thehive/application.conf`` file of each node as follows:
 
 !!! Example ""
+
     ```yaml title="/etc/thehive/application.conf"  hl_lines="8 14 15 16"
     akka {
       cluster.enable = on 
@@ -529,6 +546,7 @@ In this guide, we assume that node 1 serves as the master node. Begin by configu
 To ensure proper database and index engine configuration for TheHive, update the /etc/thehive/application.conf file as follows:
 
 !!! Example ""
+
     ```yaml title="/etc/thehive/application.conf" hl_lines="7"
     ## Database configuration
     db.janusgraph {
@@ -561,6 +579,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
     1. Ensure thehive user has permissions on the destination folder:
 
         !!! Example ""
+
             ```bash
             chown -R thehive:thehive /opt/thp/thehive/files
             ```
@@ -568,6 +587,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
     2. Update the _application.conf_ TheHive configuration file 
 
         !!! Example ""
+
             ```yaml title="/etc/thehive/application.conf"
             # Attachment storage configuration
             # By default, TheHive is configured to store files locally in the folder.
@@ -586,6 +606,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
     To enable S3 file storage for each node in TheHive cluster, add the relevant storage configuration to the ``/etc/thehive/application.conf`` file. Below is an example configuration for the first node:
 
     !!! Example ""
+
         ```yaml title="/etc/thehive/application.conf"
         storage {
         provider: s3
@@ -601,7 +622,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
             access-style = path
             aws.region.provider = "static"
             aws.region.default-region = "us-east-1"
-        }
+            }
         }
         ```
 
@@ -616,6 +637,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
 Once the configuration is updated, start TheHive service using the following command:
 
 !!! Example ""
+
     ```bash
     systemctl start thehive
     ```
@@ -631,8 +653,9 @@ To enhance the availability and distribution of HTTP requests across TheHive clu
 Below is a basic example of what should be added to the HAProxy configuration file, typically located at ``/etc/haproxy/haproxy.cfg``. This configuration should be consistent across all HAProxy instances:
 
 !!! Example ""
-    
+
     ```yaml
+
     # Listen on all interfaces, on port 80/tcp
     frontend thehive-in
             bind <VIRTUAL_IP>:80                # (1)
@@ -660,7 +683,7 @@ If you choose to use Keepalived to set up a virtual IP address for your load bal
 Keepalived is a service that monitors the status of load balancers (such as [**HAProxy**](#load-balancers-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
 
 !!! Example "" 
-    
+
     ```yaml hl_lines="12"
     vrrp_script chk_haproxy {     # (1)
           script "/usr/bin/killall -0 haproxy"  # cheaper than pidof
@@ -695,7 +718,7 @@ Issues can be encountered during cluster deployment with TheHive. Here are some 
     
     !!! Example "" 
 
-        ```text
+        ```log
         InvalidRequest: code=2200 [Invalid query] message=”org.apache.cassandra.auth.CassandraRoleManager doesn’t support PASSWORD”.`
         ```
 
@@ -709,7 +732,7 @@ Issues can be encountered during cluster deployment with TheHive. Here are some 
     
     !!! Example "" 
 
-        ```text
+        ```log
         Caused by: java.util.concurrent.ExecutionException: com.datastax.driver.core.exceptions.UnauthorizedException: Unable to perform authorization of permissions: Unable to perform authorization of super-user permission: Cannot achieve consistency level LOCAL_ONE
         ```
 
@@ -719,7 +742,7 @@ Issues can be encountered during cluster deployment with TheHive. Here are some 
 
     !!! Example "" 
 
-        ```text
+        ```sql
         ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
         ```
 
