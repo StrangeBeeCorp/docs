@@ -97,6 +97,7 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+
 nav:
   - Home: index.md
   - TheHive:
@@ -132,7 +133,20 @@ nav:
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
-      - 'Backup & Restore Operations': thehive/operations/backup-restore.md 
+      - 'Backup & Restore Operations': 
+        - 'Overview':  thehive/operations/backup-restore/overview.md
+        - 'Backup Process':
+            - 'Physical Server':  thehive/operations/backup-restore/backup/physical-server.md
+            - 'Virtual Server':  thehive/operations/backup-restore/backup/virtual-server.md
+            - 'Docker Compose':  thehive/operations/backup-restore/backup/docker-compose.md
+            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/backup/cloud.md
+            - 'Hot backups': thehive/operations/backup-restore/backup/hot-backup.md
+        - 'Restore Process':
+            - 'Physical Server':  thehive/operations/backup-restore/restore/physical-server.md
+            - 'Virtual Server':  thehive/operations/backup-restore/restore/virtual-server.md
+            - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
+            - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
+            - 'Restore hot backups': thehive/operations/backup-restore/restore/restore-hot-backup.md
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring.md
