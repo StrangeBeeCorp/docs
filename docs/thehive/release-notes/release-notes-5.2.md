@@ -7,6 +7,7 @@
 
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
+    
 ## 5.2.15 - 9th of January 2025
 
 ### Security fix
