@@ -115,3 +115,9 @@ Copy the generated license key, go back to your TheHive instance, paste the lice
 Your TheHive Community edition is now fully activated. You can now explore and use all the features available to you.
 
 &nbsp;
+
+## Video guide
+
+<video width="600" controls>
+  <source id=mp4 src="/thehive/images/administration-guides/activate-license.mp4" type="video/mp4">
+</video>
