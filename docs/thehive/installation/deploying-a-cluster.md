@@ -494,27 +494,27 @@ To set up a shared file storage for TheHive in a clustered environment, several 
 ## TheHive Setup
 ![](../images/installation/thehive-cluster.png){ align=left width=100 }
 
-TheHive utilizes the Akka toolkit to effectively manage clusters and enhance scalability. Akka facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
+TheHive utilizes the pekko toolkit to effectively manage clusters and enhance scalability. pekko facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
 
 !!! Note
-    Akka is a toolkit designed for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.
+    Apache Pekko is a toolkit designed for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.
     <br/>
-    Incorporating Akka into TheHive's configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
+    Incorporating Pekko into TheHive's configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
     <br/>
-    Source: [**https://akka.io**](https://akka.io)
+    Source: [**https://pekko.apache.org**](https://pekko.apache.org)
 
 &nbsp;
 
 ### Configuration
 #### Cluster
-When configuring TheHive for a clustered environment, it's essential to configure Akka to ensure efficient management of the cluster by the application.
+When configuring TheHive for a clustered environment, it's essential to configure pekko to ensure efficient management of the cluster by the application.
 
-In this guide, we assume that node 1 serves as the master node. Begin by configuring the ``akka`` component in the ``/etc/thehive/application.conf`` file of each node as follows:
+In this guide, we assume that node 1 serves as the master node. Begin by configuring the ``pekko`` component in the ``/etc/thehive/application.conf`` file of each node as follows:
 
 !!! Example ""
 
     ```yaml title="/etc/thehive/application.conf"  hl_lines="8 14 15 16"
-    akka {
+    pekko {
       cluster.enable = on 
       actor {
         provider = cluster
@@ -527,9 +527,9 @@ In this guide, we assume that node 1 serves as the master node. Begin by configu
     }
     # seed node list contains at least one active node
     cluster.seed-nodes = [
-                          "akka://application@<Node 1 IP address>:2551",  # (2)
-                          "akka://application@<Node 2 IP address>:2551",
-                          "akka://application@<Node 3 IP address>:2551"
+                          "pekko://application@<Node 1 IP address>:2551",  # (2)
+                          "pekko://application@<Node 2 IP address>:2551",
+                          "pekko://application@<Node 3 IP address>:2551"
                         ]
     cluster.min-nr-of-members = 2    # (3)
     }

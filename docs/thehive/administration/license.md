@@ -33,7 +33,7 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
     4. It allows unlimited number of *ReadOnly* users and *Service* accounts. Service accounts are those who do not have access to the TheHive interface but can use an API key to call all the APIs
 
 <video width="600" controls>
-  <source id=mp4 src=".../images/administration-guides/activate-license.mp4" type="video/mp4">
+  <source id=mp4 src="/thehive/images/administration-guides/activate-license.mp4" type="video/mp4">
 </video>
 
 

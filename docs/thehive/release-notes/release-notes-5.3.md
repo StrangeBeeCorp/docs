@@ -17,6 +17,11 @@
 
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
+    
+## 5.3.10 - 9th of January 2025
+
+### Security fix
+- This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.
 
 ## 5.3.9 - 21st of November 2024
 
