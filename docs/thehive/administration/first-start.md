@@ -5,9 +5,9 @@
 
 After following the installation guides and ensuring TheHive is up and running, open your web browser, navigate to ``http://IP_ADDRESS:9000``, and log in using the default account credentials:
 
-| **Login**    | `admin` |
-|--------------|-----------------------|
-| **Password** | `secret`              |
+| **Login**    | `admin`  |
+|--------------|----------|
+| **Password** | `secret` |
 
 ![](../images/administration-guides/first-start-login.png)
 
