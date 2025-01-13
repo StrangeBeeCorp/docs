@@ -5,7 +5,7 @@ This documentation outlines the utilization of the Email Intake Connector for au
 The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
 
 
-![](../images/administration-guides/eic-1.png)
+![](/thehive/images/administration-guides/eic-1.png)
 
 ---
 
@@ -15,7 +15,7 @@ The Email Intake Connector facilitates the connection of mailboxes used to recei
 
 The only parameter that requires adjustment is the `refresh interval`. By default, the connector polls mailboxes every *5* minutes. Adjust the frequency by increasing or decreasing the value.
 
-![](../images/administration-guides/eic-2.png)
+![](/thehive/images/administration-guides/eic-2.png)
 
 &nbsp;
 
@@ -23,7 +23,7 @@ The only parameter that requires adjustment is the `refresh interval`. By defaul
 
 Configuration options are available for Microsoft 365 (OAuth2) and Google Workspace (OAuth2). If you use another email provider service, configuration through IMAP is necessary.
 
-![](../images/administration-guides/eic-3.png)
+![](/thehive/images/administration-guides/eic-3.png)
 
 &nbsp;
 
@@ -40,11 +40,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
     - PowerShell installed and configured.
     - A shared mailbox already created in Microsoft 365 (e.g., `test-shared-mailbox@strangebee.com`).
 
-<<<<<<< HEAD
-        ![](../images/administration/ms-intake-1.png){ width="600" }
-=======
-![](../images/administration-guides/eic-4.png)
->>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
+        ![](/thehive/images/administration-guides/ms-intake-1.png){ width="600" }
 
     &nbsp;
 
@@ -56,18 +52,14 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
         - Navigate to **Admin > Exchange Admin Center**, and create a **Mail-Enabled Security Group**.
         - Add the shared mailbox as a member of the security group.
 
-        ![](../images/administration/ms-intake-2.png)
+        ![](/thehive/images/administration-guides/ms-intake-2.png)
 
-<<<<<<< HEAD
     2. **Register a New Application in Microsoft Entra**
-=======
-![](../images/administration-guides/eic-5.png)
->>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 
         - As an administrator, navigate to **Microsoft Entra admin center**.
         - Go to **Admin > Identity > Applications > App registrations**.
 
-        ![](../images/administration/ms-intake-3.png)
+        ![](/thehive/images/administration-guides/ms-intake-3.png)
         
 
         -  Gather the following information:
@@ -75,16 +67,15 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
             - **Client ID (App ID)**
             - **Object ID** of the enterprise application
 
-          ![](../images/administration/ms-intake-4.png)
+          ![](/thehive/images/administration-guides/ms-intake-4.png)
 
     3. **Create a Secret for the Application**
 
-<<<<<<< HEAD
         - In the registered application page, go to **Certificates & Secrets**.
         - Create a new secret, which will be used as an OAuth2 input to authenticate the service.
         - Save the secret value securely for later use.
 
-        ![](../images/administration/ms-intake-5.png)
+        ![](/thehive/images/administration-guides/ms-intake-5.png)
 
     4. **Assign API Permissions**
 
@@ -92,7 +83,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
         - Ensure the application has the following permissions:
             - **Office 365 Exchange Online / IMAP.AccessAsApp**
 
-        ![](../images/administration/ms-intake-6.png)
+        ![](/thehive/images/administration-guides/ms-intake-6.png)
 
     5. **Configure PowerShell Access**
 
@@ -155,7 +146,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
         - **Authority:** `https://login.microsoftonline.com`
         - **Scope:** `https://outlook.office365.com/.default`
 
-        ![](../images/administration/ms-intake-7.png)
+        ![](/thehive/images/administration-guides/ms-intake-7.png)
 
     ---
 
@@ -183,85 +174,85 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
         - Click on **API & Services**.
 
-        ![](../images/administration/intake-1.png)
+        ![](/thehive/images/administration-guides/intake-1.png)
 
         - Select **Create a Project**.
 
-        ![](../images/administration/intake-2.png)
+        ![](/thehive/images/administration-guides/intake-2.png)
 
         - Provide a meaningful name for the project and click **Create**.
 
-        ![](../images/administration/intake-3.png)
+        ![](/thehive/images/administration-guides/intake-3.png)
 
     3. **Configure OAuth Consent Screen**  
     
         - In the left-hand menu, select **OAuth consent screen**.
 
-        ![](../images/administration/intake-4.png)
+        ![](/thehive/images/administration-guides/intake-4.png)
 
         - Choose **User Type** as **Internal** and click **Create**.
 
-        ![](../images/administration/intake-5.png)
+        ![](/thehive/images/administration-guides/intake-5.png)
 
         - Assign a name to the app and specify a mailbox for support contact.
 
-        ![](../images/administration/intake-6.png)
+        ![](/thehive/images/administration-guides/intake-6.png)
 
         - Provide a developer contact email address, then click **Save and Continue**.
 
-        ![](../images/administration/intake-7.png)
+        ![](/thehive/images/administration-guides/intake-7.png)
 
     4. **Add Gmail API Scope**  
     
         - In **Step 2**, click on **Add or Remove Scopes**.
 
-        ![](../images/administration/intake-8.png)
+        ![](/thehive/images/administration-guides/intake-8.png)
 
         - In the search bar, type the following scope: `https://mail.google.com/`.
 
-        ![](../images/administration/intake-9.png)
+        ![](/thehive/images/administration-guides/intake-9.png)
 
         - Click **Add to Table** to add the scope.
 
-        ![](../images/administration/intake-10.png)
+        ![](/thehive/images/administration-guides/intake-10.png)
 
         - Ensure that the new scope is checked, then click **Update**.
 
-        ![](../images/administration/intake-11.png)
+        ![](/thehive/images/administration-guides/intake-11.png)
 
         - Scroll down to verify that the Gmail scope exists, and click **Save and Continue**.
 
-        ![](../images/administration/intake-12.png)
+        ![](/thehive/images/administration-guides/intake-12.png)
 
     5. **Return to Dashboard**  
     
         - On the summary page, click **Back to Dashboard** to complete the OAuth consent configuration.
 
-        ![](../images/administration/intake-13.png)
+        ![](/thehive/images/administration-guides/intake-13.png)
 
     6. **Create OAuth Credentials**  
     
         - In the left-hand menu, select **Credentials**.
 
-        ![](../images/administration/intake-14.png)
+        ![](/thehive/images/administration-guides/intake-14.png)
 
         - Click on **Create Credentials** and choose **OAuth Client ID**.
 
-        ![](../images/administration/intake-15.png)
+        ![](/thehive/images/administration-guides/intake-15.png)
 
         - Set the application type as **Web application**.
 
-        ![](../images/administration/intake-16.png)
+        ![](/thehive/images/administration-guides/intake-16.png)
 
         - Provide a name for the OAuth client ID.
 
         - Under **Authorized JavaScript origins**, add the appropriate URI.
 
-        ![](../images/administration/intake-17.png)
+        ![](/thehive/images/administration-guides/intake-17.png)
 
         - Under **Authorized redirect URIs**, add the necessary URIs and click **Create**.
 
-        ![](../images/administration/intake-18.png)
+        ![](/thehive/images/administration-guides/intake-18.png)
 
     7. **Obtain Client ID and Secret** 
 
@@ -269,7 +260,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
         * Copy these values or download the JSON file for future reference.
 
-        ![](../images/administration/intake-19.png)
+        ![](/thehive/images/administration-guides/intake-19.png)
 
     8. **Configure Intake Connector Settings in TheHive**
 
@@ -279,7 +270,7 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
         * `clientId`
         * `secret`
 
-        ![](../images/administration/eic-5.png)
+        ![](/thehive/images/administration-guides/eic-5.png)
 
     
 
@@ -292,24 +283,16 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
     Additionally, provide your mailbox credentials. We recommend enabling SSL Check Certificate Authority.
 
-    ![](../images/administration/eic-6.png)
+    ![](/thehive/images/administration-guides/eic-6.png)
 
     
-=======
-![](../images/administration-guides/eic-6.png)
-&nbsp;
->>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 
 ### Settings
 
 After testing your mailbox configuration, select the organization to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
 
-<<<<<<< HEAD
-![](../images/administration/eic-7.png)
+![](/thehive/images/administration-guides/eic-7.png)
 
-=======
-![](../images/administration-guides/eic-7.png)
->>>>>>> 316c369abad73bb7a4a9e120f47ab6581c32dbf1
 ---
 
 ## Generated Alerts and Observables
