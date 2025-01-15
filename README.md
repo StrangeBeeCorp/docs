@@ -8,7 +8,7 @@ The documentation uses MkDocs to render the content.
 
 ### Option 1: Use Python locally
 
-This method involves installing Python, setting up a virtual environment, and running MkDocs directly on your machine.
+This method uses Python installed directly on your machine to run the MkDocs server.
 
 #### 1. Install Python and pip (if not already installed)
 
@@ -63,9 +63,11 @@ mkdocs serve
 
 ### Option 2: Use a Docker container
 
-If you prefer not to install Python and dependencies locally, you can use Docker to run the MkDocs server in an isolated environment.
+This method uses Docker to run the MkDocs server in an isolated container. All dependencies, including Python, are installed inside the container.
 
 ##### 1. Build the Docker image
+
+The Docker image bundles Python, MkDocs, and all necessary dependencies.
 
 ```bash
 docker build . -t docs
@@ -73,6 +75,7 @@ docker build . -t docs
 
 ##### 2. Run the Docker container
 
+Start the container and expose the documentation server locally:
 ```bash
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
 ```
