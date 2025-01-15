@@ -6,9 +6,9 @@ The documentation uses mkdocs to render the content.
 
 ## Test changes
 
-### 1/ Install Python and the Python manager pip (if not already installed)
+#### 1/ Install Python and the Python manager pip (if not already installed)
 
-### 2/ Create a virtual environment (recommended)
+#### 2/ Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
 
 1. Create the virtual environment
@@ -58,7 +58,7 @@ mkdocs serve
 
 ```http://127.0.0.1:8000```
 
-#### Alternatively you can use a Docker container
+##### Alternatively you can use a Docker container
 
 If you prefer to use Docker instead of installing dependencies locally:
 
