@@ -6,7 +6,11 @@ The documentation uses MkDocs to render the content.
 
 ## Test changes
 
-#### 1. Install Python and the Python manager pip (if not already installed)
+### Option 1: Use Python locally
+
+This method involves installing Python, setting up a virtual environment, and running MkDocs directly on your machine.
+
+#### 1. Install Python and pip (if not already installed)
 
 #### 2. Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
@@ -14,7 +18,6 @@ A virtual environment keeps dependencies isolated and avoids conflicts.
 ##### Create the virtual environment
 
 Place it in a dedicated directory outside your project directory:
-
 ```bash
 python3 -m venv ~/venvs/mkdocs-env
 ```
@@ -36,7 +39,9 @@ source ~/venvs/mkdocs-env/bin/activate
 ~/venvs/mkdocs-env\Scripts\Activate.ps1
 ```
 
-After activating, the name of your environment should appear in brackets at the beginning of your command line.
+##### Verify activation
+
+The name of your environment should appear in brackets at the beginning of your command line.
 
 #### 3. Install the requirements
 
@@ -46,7 +51,7 @@ In your project directory, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-#### 4. Start the MkDocs server in development mode
+#### 4. Start the MkDocs server
 
  ##### Run the MkDocs development server:
 
@@ -56,9 +61,9 @@ mkdocs serve
 
 ##### Once the server is running, open your browser and visit http://127.0.0.1:8000
 
-#### Alternatively: Use a Docker container
+### Option 2: Use a Docker container
 
-If you prefer to use Docker instead of installing dependencies locally:
+If you prefer not to install Python and dependencies locally, you can use Docker to run the MkDocs server in an isolated environment.
 
 ##### Build the Docker image
 
@@ -72,9 +77,11 @@ docker build . -t docs
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
 ```
 
+##### The documentation server will be accessible at: http://127.0.0.1:8000
+
 ## Deployment
 
-The `main` branch is automatically deployed to [docs.strangebee.com](https://docs.strangebee.com)
+The `main` branch is automatically deployed to [docs.strangebee.com](https://docs.strangebee.com).
 
 If not:
 
