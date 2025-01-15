@@ -56,7 +56,7 @@ mkdocs serve
 
 2. Once the server is running, open your browser and visit http://127.0.0.1:8000
 
-##### Alternatively: Use a Docker container
+#### Alternatively: Use a Docker container
 
 If you prefer to use Docker instead of installing dependencies locally:
 
