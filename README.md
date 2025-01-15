@@ -38,7 +38,7 @@ source ~/venvs/mkdocs-env/bin/activate
 
 After activating, the name of your environment should appear in brackets at the beginning of your command line.
 
-### Install the requirements
+#### 3/ Install the requirements
 
 In your project directory, install the required dependencies:
 
@@ -46,7 +46,7 @@ In your project directory, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-### Start the mkdocs server in development mode
+#### 4/ Start the mkdocs server in development mode
 
 1. Run the MkDocs development server:
 
