@@ -2,7 +2,7 @@
 
 [![Build Status](https://github.com/StrangeBeeCorp/docs/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/StrangeBeeCorp/docs/actions/workflows/pages/pages-build-deployment)
 
-The documentation uses mkdocs to render the content.
+The documentation uses MkDocs to render the content.
 
 ## Test changes
 
@@ -46,7 +46,7 @@ In your project directory, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-#### 4/ Start the mkdocs server in development mode
+#### 4/ Start the MkDocs server in development mode
 
 1. Run the MkDocs development server:
 
@@ -54,9 +54,9 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-2. Once the server is running, open your browser and visit: http://127.0.0.1:8000
+2. Once the server is running, open your browser and visit http://127.0.0.1:8000
 
-##### Alternatively you can use a Docker container
+##### Alternatively: Use a Docker container
 
 If you prefer to use Docker instead of installing dependencies locally:
 
