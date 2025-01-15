@@ -60,13 +60,13 @@ mkdocs serve
 
 If you prefer to use Docker instead of installing dependencies locally:
 
-1. Build the Docker image
+##### Build the Docker image
 
 ```bash
 docker build . -t docs
 ```
 
-2. Run the Docker container
+##### Run the Docker container
 
 ```bash
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
