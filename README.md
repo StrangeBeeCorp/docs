@@ -11,7 +11,7 @@ The documentation uses MkDocs to render the content.
 2. Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
 
-   - Create the virtual environment
+#### Create the virtual environment
 
 Place it in a dedicated directory outside your project directory:
 
@@ -19,7 +19,7 @@ Place it in a dedicated directory outside your project directory:
 python3 -m venv ~/venvs/mkdocs-env
 ```
 
-   - Activate the virtual environment
+ #### Activate the virtual environment
 
 * Linux/macOS
 ```bash
