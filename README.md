@@ -6,7 +6,7 @@ The documentation uses mkdocs to render the content.
 
 ## Test changes
 
-### [Install Python and the Python manager pip](https://www.mkdocs.org/user-guide/installation/) (if not already installed)
+1. [Install Python and the Python manager pip](https://www.mkdocs.org/user-guide/installation/) (if not already installed)
 
 ### Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
