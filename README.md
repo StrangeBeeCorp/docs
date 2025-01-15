@@ -6,12 +6,12 @@ The documentation uses mkdocs to render the content.
 
 ## Test changes
 
-1. [Install Python and the Python manager pip](https://www.mkdocs.org/user-guide/installation/) (if not already installed)
+### Install Python and the Python manager pip (if not already installed)
 
-2. Create a virtual environment (recommended)
+### Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
 
-2.1 Create the virtual environment
+1. Create the virtual environment
 
 Place it in a dedicated directory outside your project directory:
 
@@ -19,7 +19,7 @@ Place it in a dedicated directory outside your project directory:
 python3 -m venv ~/venvs/mkdocs-env
 ```
 
-2.2 Activate the virtual environment
+2. Activate the virtual environment
 
 * Linux/macOS
 ```bash
@@ -38,7 +38,7 @@ source ~/venvs/mkdocs-env/bin/activate
 
 After activating, the name of your environment should appear in brackets at the beginning of your command line.
 
-3. Install the requirements
+### Install the requirements
 
 In your project directory, install the required dependencies:
 
@@ -46,15 +46,15 @@ In your project directory, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-4. Start the mkdocs server in development mode
+### Start the mkdocs server in development mode
 
-4.1 Run the MkDocs development server:
+1. Run the MkDocs development server:
 
 ```bash
 mkdocs serve
 ```
 
-4.2 Once the server is running, open your browser and visit:
+2. Once the server is running, open your browser and visit:
 
 ```http://127.0.0.1:8000```
 
