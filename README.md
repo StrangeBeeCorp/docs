@@ -65,19 +65,19 @@ mkdocs serve
 
 If you prefer not to install Python and dependencies locally, you can use Docker to run the MkDocs server in an isolated environment.
 
-##### Build the Docker image
+##### 1. Build the Docker image
 
 ```bash
 docker build . -t docs
 ```
 
-##### Run the Docker container
+##### 2. Run the Docker container
 
 ```bash
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
 ```
 
-##### The documentation server will be accessible at: http://127.0.0.1:8000
+##### 3. The documentation server will be accessible at: http://127.0.0.1:8000
 
 ## Deployment
 
