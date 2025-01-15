@@ -15,14 +15,14 @@ This method involves installing Python, setting up a virtual environment, and ru
 #### 2. Create a virtual environment (recommended)
 A virtual environment keeps dependencies isolated and avoids conflicts.
 
-##### Create the virtual environment
+##### 2.1 Create the virtual environment
 
 Place it in a dedicated directory outside your project directory:
 ```bash
 python3 -m venv ~/venvs/mkdocs-env
 ```
 
- ##### Activate the virtual environment
+ ##### 2.2 Activate the virtual environment
 
 * Linux/macOS
 ```bash
@@ -39,7 +39,7 @@ source ~/venvs/mkdocs-env/bin/activate
 ~/venvs/mkdocs-env\Scripts\Activate.ps1
 ```
 
-##### Verify activation
+##### 2.3 Verify activation
 
 The name of your environment should appear in brackets at the beginning of your command line.
 
@@ -53,13 +53,13 @@ pip install -r requirements.txt
 
 #### 4. Start the MkDocs server
 
- ##### Run the MkDocs development server:
+ ##### 4.1 Run the MkDocs development server:
 
 ```bash
 mkdocs serve
 ```
 
-##### Once the server is running, open your browser and visit http://127.0.0.1:8000
+##### 4.2 Once the server is running, open your browser and visit http://127.0.0.1:8000
 
 ### Option 2: Use a Docker container
 
