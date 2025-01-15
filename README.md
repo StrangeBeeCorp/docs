@@ -54,9 +54,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-2. Once the server is running, open your browser and visit:
-
-```http://127.0.0.1:8000```
+2. Once the server is running, open your browser and visit: http://127.0.0.1:8000
 
 ##### Alternatively you can use a Docker container
 
