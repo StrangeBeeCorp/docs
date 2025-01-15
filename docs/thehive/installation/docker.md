@@ -156,6 +156,7 @@ Available Options:
 - `--cql-hostnames <host>,<host>,...`: Resolves these hostnames to locate Cassandra instances.
 - `--cql-username <username>`: Specifies the username for the Cassandra database.
 - `--cql-password <password>`: Specifies the password for the Cassandra database.
+- `--cql-datacenter <datacenter>`: Specifies the name of the Cassandra datacenter used by the TheHive node. This parameter is new as of version 5.4.7 and can have different values for each node in cluster mode.
 - `--no-cql-wait`: Skips waiting for Cassandra to become available.
 - `--bdb-directory <path>`: Defines the location of the local database if Cassandra is not used (default: /data/db).
 - `--index-backend`: Specifies the backend to use for index, either 'lucene' or 'elasticsearch' (default: lucene).
