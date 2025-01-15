@@ -59,7 +59,7 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-##### 4.2 Once the server is running, open your browser and visit http://127.0.0.1:8000
+##### 4.2 Once the server is running, open your browser and visit http://127.0.0.1:8000.
 
 ### Option 2: Use a Docker container
 
@@ -67,8 +67,7 @@ This method uses Docker to run the MkDocs server in an isolated container. All d
 
 ##### 1. Build the Docker image
 
-The Docker image bundles Python, MkDocs, and all necessary dependencies.
-
+The Docker image bundles Python, MkDocs, and all necessary dependencies:
 ```bash
 docker build . -t docs
 ```
@@ -80,7 +79,7 @@ Start the container and expose the documentation server locally:
 docker run -it --rm -p 8000:8000 -v $PWD:/docs docs
 ```
 
-##### 3. The documentation server will be accessible at: http://127.0.0.1:8000
+##### 3. The documentation server will be accessible at: http://127.0.0.1:8000.
 
 ## Deployment
 
