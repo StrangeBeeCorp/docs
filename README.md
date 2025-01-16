@@ -48,7 +48,7 @@ The name of your environment should appear in brackets at the beginning of your 
 In your project directory, install the required dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 #### 4. Start the MkDocs server
