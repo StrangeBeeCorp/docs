@@ -19,6 +19,30 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.7 - 16th of January 2025
+
+### Fixes
+
+#### Global Search
+- Added support for wildcard searches using the * operator.
+  Example for a case named Phishing incident on BU-FR45, will be returned by searching BU-F* or BU*..
+
+#### UI
+- Impact field is now more readable in dark theme after case closure.
+- Fixed an issue on avatar change in the user profile page.
+- Removed an incorrect message displayed when launching a responder on an observable.
+- Fixed a display issue occurring when the function/responder list is excessively long.
+- Enhanced handling for overly long function names during input.
+
+#### Dashboard
+- Corrected the display of text color in the donut and bar charts for the dark theme.
+- Removed the “_total” value from the radar widget display.
+- Removed cache option in UI configuration when DirectQuery is activate.
+- Ensured that customized date formats are now consistently applied in dashboards.
+
+### Docker configuration file
+- The entry point docker parameter --cql-cluster is replaced by --cql-datacenter. This parameter, used in cluster configuration, allows to define the name of the Cassandra datacenter used by the TheHive node.
+
 ## 5.4.6 - 12th of December 2024
 
 ### Security fix
