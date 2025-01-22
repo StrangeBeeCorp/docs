@@ -5,10 +5,13 @@ This topic provides an overview of the various search methods available in TheHi
 * [Option 1: Enter a case number search box](#option-1-enter-a-case-number-search-box)  
 If you already know the case number you're looking for.
 
-* [Option 2: Filters in the case view](#option-2-filters-in-the-case-view)  
+* [Option 2: Similar cases](#option-2-similar-cases)  
+If you want to find one or more cases that are similar to a known case without requiring simultaneous actions.
+
+* [Option 3: Filters in the cases view](#option-3-filters-in-the-case-view)  
 If you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously.
 
-* [Option 3: Global Search feature](#option-3-global-search-feature)  
+* [Option 4: Global Search feature](#option-4-global-search-feature)  
 If you don't know the case number you're looking for or need to conduct complex searches for multiple cases without requiring simultaneous actions.
 
 ---
@@ -23,15 +26,35 @@ If you already know the case number you're looking for.
 
 Simply enter the case number in the search box located at the top of the page, visible across all views.
 
-Image
+![Enter a case number search box](../../../images/user-guides/analyst-corner/cases/find_a_case_enter_a_case_number.png)
 
 ### Results
 
-The case is displayed.
+The case description is displayed.
 
 ---
 
-## Option 2: Filters in the case view
+## Option 2: Similar cases
+
+### When to use it
+
+If you want to find one or more cases that are similar to a known case without requiring simultaneous actions.
+
+### How to access
+
+In a case description, go to the **Similar cases** tab.
+
+![Similar cases](../../../images/user-guides/analyst-corner/cases/find-a-case-similar-cases.png)
+
+Select **Quick Filters** to access predefined filters.
+
+### Results
+
+Based on your inputs, a list of results will appear in the **Similar cases** tab. A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
+
+---
+
+## Option 3: Filters in the cases view
 
 ### When to use it
 
@@ -39,38 +62,31 @@ If you don't know the case number you're looking for or need to search for multi
 
 ### How to access
 
-Filter cases in the case view, accessible directly from the sidebar menu.
+Filter cases in the cases view, accessible directly from the sidebar menu.
 
-Image
+![Filters in the cases view](../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view.png)
 
-You have three options, which can be used together for more refined results:
+You have three available approaches, which can be used together for more refined results:
 
-* **Quick Filters** to access the following predefined filters:
-    * Open cases
-    * Closed cases
-    * My open cases
-    * My closed cases
-    * Owned by my organization
-    * Shared with my organization
-    * Unassigned cases
+* Select **Quick Filters** to access predefined filters.
 
-Image
+![Filters in the cases view quick filters](../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view-quick-filters.png)
 
-* **+ Add Filter** to add one or more filters of your choice
+* Turn on the **Filters** toggle to apply one or more filters of your choice.
 
-Image
+![Filters in the cases view filters toggle](../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view-filters-toggle.png)
 
-* Select the value from a case field to use it as a filter criterion.
+* Select a value from a case field to use it as a filter criterion.
 
-Image
+![Filters in the cases view select](../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view-select.gif)
 
 ### Results
 
-Based on your inputs, the case view will display a list of results. A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
+Based on your inputs, the cases view will display a list of results. A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
 
 ---
 
-## Option 3: Global Search feature
+## Option 4: Global Search feature
 
 ### When to use it
 
@@ -80,11 +96,11 @@ If you don't know the case number you're looking for or need to conduct complex 
 
 You can access the Search feature directly through the sidebar menu.
 
-Image
+![Global search feature sidebar menu](../../../images/user-guides/analyst-corner/cases/find-a-case-global-search-feature-sidebar-menu.png)
 
 Select the **Cases** item on the Search Scope pane.
 
-Image
+![Global search feature cases item](../../../images/user-guides/analyst-corner/cases/find-a-case-global-search-feature-cases-item.png)
 
 !!! tip
     Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
@@ -100,9 +116,9 @@ You can use the wildcard character *\** to broaden your searches and capture mul
 
 Examples of use cases:
 
-* Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain
-* IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet
-* URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory
+* **Email domains**: Entering *\*@gmail.com* will return entities containing the gmail.com domain.
+* **IP subnets**: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.
+* **URLs**: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
 
 #### Filters
 
@@ -112,8 +128,6 @@ Filters are mandatory in the following cases:
 
 * **Fields with specific date formats**: Ensures accurate data handling.
 * **Custom fields**: Ensures the search engine interprets values correctly.
-
-Image
 
 ### Results
 
