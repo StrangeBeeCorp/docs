@@ -2,6 +2,15 @@
 
 This topic provides an overview of the various search methods available in TheHive for finding cases, along with use cases for when to apply each method.
 
+* [Option 1: Enter a case number search box](#option-1-enter-a-case-number-search-box)  
+If you already know the case number you're looking for.
+
+* [Option 2: Filters in the case view](#option-2-filters-in-the-case-view)  
+If you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously.
+
+* [Option 3: Global Search feature](#option-3-global-search-feature)  
+If you don't know the case number you're looking for or need to conduct complex searches for multiple cases without requiring simultaneous actions.
+
 ---
 
 ## Option 1: Enter a case number search box
@@ -65,7 +74,7 @@ Based on your inputs, the case view will display a list of results. A maximum of
 
 ### When to use it
 
-If you don't know the case number you're looking for or need to search for multiple cases without performing actions on them simultaneously.
+If you don't know the case number you're looking for or need to conduct complex searches for multiple cases without requiring simultaneous actions.
 
 ### How to access
 
