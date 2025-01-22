@@ -6,7 +6,7 @@ This topic provides an overview of the various search methods available in TheHi
 If you already know the case number you're looking for.
 
 * [Option 2: Similar cases](#option-2-similar-cases)  
-If you want to find one or more cases that are similar to a known case without requiring simultaneous actions.
+If you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.
 
 * [Option 3: Filters in the cases view](#option-3-filters-in-the-case-view)  
 If you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously.
@@ -38,7 +38,7 @@ The case description is displayed.
 
 ### When to use it
 
-If you want to find one or more cases that are similar to a known case without requiring simultaneous actions.
+If you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.
 
 ### How to access
 
@@ -133,6 +133,20 @@ Filters are mandatory in the following cases:
 
 Based on your inputs, the Search Results pane will display a list of results. A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
 
-## Troubleshooting
+### Troubleshooting
 
 If you can't find what you're looking for using the Search feature and want to learn more about how fields are indexed for search, refer to the [Search indexation modes](thehive/user-guides/analyst-corner/search-methods/search-indexation-modes.md) topic.
+
+## What's next?
+
+* [Actions on cases](../cases-list/actions.md)
+* [View a case](../cases-list/general.md)
+* [Adding to a case (tags/tasks/custom field values)](../cases/adding_to_a_case.md)
+* [View tasks](../cases-list/tasks.md)
+* [View observables](../cases-list/observables.md)
+* [View TTPs](../cases-list/ttps.md)
+* [View attachments](../cases-list/attachments.md)
+* [View timeline](../cases-list/timeline.md)
+* [View pages](../cases-list/pages.md)
+* [Run responders on case](../cases-list/run-responders.md)
+* [Run analyzers on case](../cases-list/run-analyzer.md)
