@@ -120,6 +120,9 @@ Examples of use cases:
 * **IP subnets**: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.
 * **URLs**: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
 
+!!! info
+    If you can't find what you're looking for using the Search feature and want to learn more about how fields are indexed for search, refer to the [Search indexation modes](thehive/user-guides/analyst-corner/search-methods/search-indexation-modes.md) topic.
+
 #### Filters
 
 In addition to the search box, you can apply one or more filters by selecting **Add New Filter**. These filters refine your search results and act as an equivalent to the AND operator in Boolean search.
@@ -132,10 +135,6 @@ Filters are mandatory in the following cases:
 ### Results
 
 Based on your inputs, the Search Results pane will display a list of results. A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
-
-### Troubleshooting
-
-If you can't find what you're looking for using the Search feature and want to learn more about how fields are indexed for search, refer to the [Search indexation modes](thehive/user-guides/analyst-corner/search-methods/search-indexation-modes.md) topic.
 
 ## What's next?
 
