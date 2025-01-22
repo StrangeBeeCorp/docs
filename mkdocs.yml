@@ -174,7 +174,9 @@ nav:
         - 'SMTP Configuration': thehive/administration/smtp.md
       - 'Entities Management':
         - 'Profiles Management': thehive/administration/profiles.md
-        - 'Custom Fields Management': thehive/administration/custom-fields.md
+        - 'Custom Fields Management': 
+          - thehive/administration/custom-fields.md
+          - thehive/administration/create-a-custom-field.md
         - 'Observable Types Management': thehive/administration/observables-types.md
         - 'Case Status Management': thehive/administration/case-status.md
         - 'Alert Status Management': thehive/administration/alert-status.md

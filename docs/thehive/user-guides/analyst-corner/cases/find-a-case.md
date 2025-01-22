@@ -130,7 +130,7 @@ In addition to the search box, you can apply one or more filters by selecting **
 Filters are mandatory in the following cases:
 
 * **Fields with specific date formats**: Ensures accurate data handling.
-* **Custom fields**: Ensures the search engine interprets values correctly.
+* **[Custom fields](../../../administration/custom-fields.md)**: Ensures the search engine interprets values correctly.
 
 ### Results
 
