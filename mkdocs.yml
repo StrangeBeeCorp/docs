@@ -237,6 +237,7 @@ nav:
             - 'Create a Case from Archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
             - 'Create a Case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
             - 'Create a Case from Template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
+          - 'Find a case': thehive/user-guides/analyst-corner/cases/find-a-case.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases-list/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
@@ -258,14 +259,7 @@ nav:
           - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
-        - 'Search':
-          - 'Search Functionality Overview': thehive/user-guides/analyst-corner/search/about-search.md
-          - 'Search by Cases': thehive/user-guides/analyst-corner/search/search-scope-by/cases.md
-          - 'Search by Alerts': thehive/user-guides/analyst-corner/search/search-scope-by/alerts.md
-          - 'Search by Observables': thehive/user-guides/analyst-corner/search/search-scope-by/observables.md
-          - 'Search by Jobs': thehive/user-guides/analyst-corner/search/search-scope-by/jobs.md
-          - 'Search by Tasks': thehive/user-guides/analyst-corner/search/search-scope-by/tasks.md
-          - 'Search by Task Logs': thehive/user-guides/analyst-corner/search/search-scope-by/tasklogs.md
+        - 'Search indexation modes': thehive/user-guides/analyst-corner/search-indexation-modes/search-indexation-modes.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':
