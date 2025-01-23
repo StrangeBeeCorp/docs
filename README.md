@@ -59,6 +59,12 @@ pip3 install -r requirements.txt
 mkdocs serve
 ```
 
+If you want to catch potential issues, such as broken links or missing resources, you can run the development server in strict mode:
+
+```bash
+mkdocs serve --strict
+```
+
 ##### 4.2 Once the server is running, open your browser and visit http://127.0.0.1:8000.
 
 ### Option 2: Use a Docker container
