@@ -1,5 +1,11 @@
 # Create a custom field
 
+Custom fields are used to enrich a case or alert with custom information used to give more context or be used to create statistics or dashboards.
+
+They are defined in the Administrator view of TheHive, and made available to all organisations on the platform.
+
+This Custom fields view is available in the Administrator space: ooen the *Entities Management* view, then the *Custom Fields* tab.
+
 Click the :fontawesome-regular-square-plus: button to create a new *Custom Field*.
 
 ![](../images/administration-guides/custom-fields-1.png)
