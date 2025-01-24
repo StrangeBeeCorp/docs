@@ -10,3 +10,4 @@ pymdown-extensions>=9.0
 mkdocs-redirects
 mkdocs-glightbox
 mkdocs-video
+markdown-include
