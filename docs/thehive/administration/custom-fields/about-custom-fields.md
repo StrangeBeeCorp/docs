@@ -8,9 +8,9 @@ By default, TheHive provides predefined fields for cases and alerts. If you need
 
 Custom fields are typically used to:
 
-* Provide context to cases or alerts, such as the geographic location of an incident.
+* Provide context to cases or alerts, such as the geographic location of an incident or its severity level.
 * Support organizational alignment by specifying the relevant business unit or team.
-* Enable integration with tools and feeders by including data from external systems.
+* Enable integration with tools and feeders by including identifiers or other data from external systems, or linking directly to external system data.
 * Streamline processes by indicating internal classification levels.
 * Manage checklists to ensure specific steps are validated when handling a case or alert.
 * Enhance data analysis through tagging, for example, identifying incidents involving VIPs.

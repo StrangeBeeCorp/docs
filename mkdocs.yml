@@ -217,6 +217,9 @@ nav:
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
+          - 'Search for Alerts': 
+            - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
+            - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
           - 'Manage Views': thehive/user-guides/analyst-corner/alerts/manage-views.md
           - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
           - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/actions.md

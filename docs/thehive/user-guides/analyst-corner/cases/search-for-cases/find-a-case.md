@@ -28,11 +28,11 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. {!includes/apply-filters.md!}
 
-3. {!includes/search-results-cases.md!}
+3. {!includes/search-results.md!}
 
 ---
 
-## Method 3: Filters in the cases view
+## Method 3: Filters in the Cases view
 
 *Use this method if you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously.*
 
@@ -42,7 +42,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. {!includes/apply-filters.md!}
 
-3. {!includes/search-results-cases.md!}
+3. {!includes/search-results.md!}
 
 ---
 
@@ -61,26 +61,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
     !!! note "All elements"
         Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
 
-3. Enter the keywords you want to search for in the search box displayed by default.
+{!includes/global-search-search.md!}
 
-    !!! tip "Wildcard character"
-        You can use the wildcard character *\** to broaden your searches and capture multiple variations since version 5.4.7.
-        
-        Examples of use cases:  
-        - Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain.  
-        - IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.  
-        - URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
-
-        Other advanced search options, such as Boolean and phrase searches, are not supported.
-
-4. If you need additional filters, apply one or more filters by selecting **Add new filter**. These filters refine your search results and act as an equivalent to the AND operator in Boolean search.
-
-    !!! warning "Warning"
-        Filters are required for the following fields to ensure the search engine accurately interprets values:  
-        - Fields with specific date formats  
-        - [Custom fields](../../../../administration/custom-fields/about-custom-fields.md)
-
-5. {!includes/search-results-cases.md!}
+5. {!includes/search-results.md!}
 
 ## What's next?
 
