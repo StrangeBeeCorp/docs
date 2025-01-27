@@ -1,3 +1,3 @@
-Based on your inputs, a list of results is displayed. 
+Based on your inputs, a list of results appears.
 
-A maximum of 300 results can be shown per page, and you can navigate through the results using **Previous** and **Next**.
+You can view up to 300 results per page and navigate through them using **Previous** and **Next**.

@@ -176,8 +176,8 @@ nav:
       - 'Entities Management':
         - 'Profiles Management': thehive/administration/profiles.md
         - 'Custom Fields Management': 
-          - thehive/administration/custom-fields.md
-          - thehive/administration/create-a-custom-field.md
+          - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
+          - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
         - 'Observable Types Management': thehive/administration/observables-types.md
         - 'Case Status Management': thehive/administration/case-status.md
         - 'Alert Status Management': thehive/administration/alert-status.md

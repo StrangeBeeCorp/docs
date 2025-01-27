@@ -1,4 +1,4 @@
-# Search indexation modes
+# Search Indexation Modes
 
 This topic explains how fields are indexed in TheHive backend for the Search feature, which is accessible through the sidebar menu.
 

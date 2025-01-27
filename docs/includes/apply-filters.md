@@ -1,10 +1,10 @@
-To apply filters, you can use these different options either individually or together:
+Apply filters using any of these options individually or in combination:
 
 * Select **Quick filters** to access predefined filters.
 
 ![Quick filters](../../../../images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
 
-* Enable the **Filters** toggle and select one or more filters.
+* Turn on the **Filters** toggle and enter one or more filters.
 
 ![Filters toggle](../../../../images/user-guides/analyst-corner/cases/find-a-case-filters-toggle.png)
 
