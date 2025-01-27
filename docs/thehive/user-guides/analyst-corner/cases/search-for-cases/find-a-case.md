@@ -22,7 +22,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.*
 
-1/ Open a case description and select the **Similar cases** tab.
+1/ Open a case, an alert, or a task, and select the **Similar cases** tab.
 
 ![Similar cases](../../../../images/user-guides/analyst-corner/cases/find-a-case-similar-cases.png)
 
@@ -50,7 +50,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you don't know the case number you're looking for or need to conduct advanced searches for multiple cases without requiring simultaneous actions.*
 
-1/ Access the Global Search feature through the sidebar menu.
+1/ Go to the Global Search feature in the sidebar menu.
 
 ![Global Search feature sidebar menu](../../../../images/user-guides/analyst-corner/cases/find-a-case-global-search-feature-sidebar-menu.png)
 
@@ -81,20 +81,20 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 !!! warning
     Filters are mandatory in the following cases to ensure the search engine interprets values correctly:  
     - Fields with specific date formats  
-    - [Custom fields](../../../../administration/custom-fields.md)
+    - [Custom fields](../../../../administration/custom-fields/about-custom-fields.md)
 
 5/ {!includes/search-results-cases.md!}
 
 ## What's next?
 
-* [Actions on Cases](../cases-list/actions.md)
-* [View a Case](../cases-list/general.md)
-* [Adding to a Case (Tags/Tasks/Custom Field Values)](../cases/adding_to_a_case.md)
-* [View Tasks](../cases-list/tasks.md)
-* [View Observables](../cases-list/observables.md)
-* [View TTPs](../cases-list/ttps.md)
-* [View Attachments](../cases-list/attachments.md)
-* [View Timeline](../cases-list/timeline.md)
-* [View Pages](../cases-list/pages.md)
-* [Run Responders on Case](../cases-list/run-responders.md)
-* [Run Analyzers on Case](../cases-list/run-analyzer.md)
+* [Actions on Cases](../../cases-list/actions.md)
+* [View a Case](../../cases-list/general.md)
+* [Adding to a Case (Tags/Tasks/Custom Field Values)](../../cases/adding_to_a_case.md)
+* [View Tasks](../../cases-list/tasks.md)
+* [View Observables](../../cases-list/observables.md)
+* [View TTPs](../../cases-list/ttps.md)
+* [View Attachments](../../cases-list/attachments.md)
+* [View Timeline](../../cases-list/timeline.md)
+* [View Pages](../../cases-list/pages.md)
+* [Run Responders on Case](../../cases-list/run-responders.md)
+* [Run Analyzers on Case](../../cases-list/run-analyzer.md)
