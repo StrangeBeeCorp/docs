@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for creating a custom field in The
 
 To learn more about custom fields, see the [About Custom Fields](about-custom-fields.md) topic.
 
-!!! warning
+!!! warning "Administrator access required"
     Only administrators have the ability to create custom fields in TheHive.
 
 1. As an administrator, go to the **Entities management** view from the sidebar menu.

@@ -75,7 +75,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 4. If you need additional filters, apply one or more filters by selecting **Add new filter**. These filters refine your search results and act as an equivalent to the AND operator in Boolean search.
 
-    !!! warning
+    !!! warning "Warning"
         Filters are required for the following fields to ensure the search engine accurately interprets values:  
         - Fields with specific date formats  
         - [Custom fields](../../../../administration/custom-fields/about-custom-fields.md)
