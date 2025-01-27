@@ -240,7 +240,9 @@ nav:
             - 'Create a Case from Archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
             - 'Create a Case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
             - 'Create a Case from Template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
-          - 'Find a Case': thehive/user-guides/analyst-corner/cases/find-a-case.md
+          - 'Search for Cases': 
+            - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
+            - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases-list/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
