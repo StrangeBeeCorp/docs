@@ -264,7 +264,6 @@ nav:
           - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
-        - 'Search indexation modes': thehive/user-guides/analyst-corner/search-indexation-modes/search-indexation-modes.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':

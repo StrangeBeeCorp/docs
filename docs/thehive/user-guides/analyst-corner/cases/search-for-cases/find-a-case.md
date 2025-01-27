@@ -73,9 +73,6 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
         Other advanced search options, such as Boolean and phrase searches, are not supported.
 
-    !!! info "Help"
-        If you can't find what you're looking for using the Global Search feature and want to learn more about how fields are indexed for search, refer to the [Search Indexation Modes](thehive/user-guides/analyst-corner/search-methods/search-indexation-modes.md) topic.
-
 4. If you need additional filters, apply one or more filters by selecting **Add new filter**. These filters refine your search results and act as an equivalent to the AND operator in Boolean search.
 
     !!! warning
