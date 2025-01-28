@@ -20,7 +20,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Method 2: Filters in the Alerts view
 
-*Use this method if you don't know the alert you're looking for or need to search for multiple alerts to perform actions on them simultaneously.*
+*Use this method if you need to search for multiple alerts to perform actions on them simultaneously.*
 
 1. Go to the **Alerts** view from the sidebar menu.
 
@@ -34,7 +34,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Method 3: Global Search feature
 
-*Use this method if you don't know the alert you're looking for or need to conduct advanced searches for multiple alerts without requiring simultaneous actions.*
+*Use this method if you need to conduct advanced searches for multiple alerts without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 
