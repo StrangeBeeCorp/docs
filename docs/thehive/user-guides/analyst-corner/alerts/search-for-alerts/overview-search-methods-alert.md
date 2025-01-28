@@ -6,6 +6,8 @@ This topic provides an overview of the available search methods, compares their 
 
 Use this guide to choose the most effective method for your needs.
 
+## Search method comparison
+
 | Method | Filter options | Result scope | Allows bulk actions | Use case |
 | -------| ------------------| --------| --------------------| ---------|
 | [Similar alerts](find-an-alert.md#method-1-similar-alerts) | Multiple | Multiple | Yes | If you want to find one or more alerts similar to a known alert or need to search for multiple alerts to perform actions on them simultaneously. |

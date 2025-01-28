@@ -6,6 +6,8 @@ This topic provides an overview of the available search methods, compares their 
 
 Use this guide to choose the most effective method for your needs.
 
+## Search method comparison
+
 | Method | Filter options | Result scope | Allows bulk actions | Use case |
 | -------| ------------------| --------| --------------------| ---------|
 | [Enter a case number search box](find-a-case.md#method-1-enter-a-case-number-search-box)| Single | Simple | No | If you already know the case number you're looking for.| 

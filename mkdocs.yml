@@ -258,6 +258,9 @@ nav:
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/task/about-tasks.md
+          - 'Search for Tasks': 
+            - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
+            - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
           - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
           - 'Preview Tasks': thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/task/preview-task-details/actions.md
