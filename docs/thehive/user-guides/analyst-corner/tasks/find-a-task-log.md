@@ -23,4 +23,7 @@ This topic provides step-by-step instructions to search for a task log in TheHiv
 
 ## Next steps
 
-
+* [View Tasks](../cases-list/tasks.md)
+* [Preview Tasks](../tasks/preview-task-details/Preview-tasks.md)
+* [Actions on Tasks](../tasks/preview-task-details/actions.md)
+* [Run Responders](../tasks/preview-task-details/run-responders.md)

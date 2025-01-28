@@ -1,6 +1,6 @@
 # How to Find a Case
 
-This topic provides step-by-step instructions for using various methods to search for a case in TheHive.
+This topic provides step-by-step instructions for using various methods to search for a [case](../about-a-case.md) in TheHive.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 

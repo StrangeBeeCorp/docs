@@ -1,6 +1,6 @@
 # How to Find an Alert
 
-This topic provides step-by-step instructions for using various methods to search for an alert in TheHive.
+This topic provides step-by-step instructions for using various methods to search for an [alert](../about-alerts.md) in TheHive.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Alerts](overview-search-methods-alert.md) topic.
 

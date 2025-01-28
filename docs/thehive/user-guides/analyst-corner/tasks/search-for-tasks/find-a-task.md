@@ -1,6 +1,6 @@
 # How to Find a Task
 
-This topic provides step-by-step instructions for using various methods to search for a task in TheHive.
+This topic provides step-by-step instructions for using various methods to search for a [task](../about-tasks.md) in TheHive.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
@@ -55,4 +55,5 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Next steps
 
-
+* [Actions on Tasks](../preview-task-details/actions.md)
+* [Run Responders From Task](../preview-task-details/run-responders.md)

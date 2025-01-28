@@ -39,4 +39,6 @@ This topic provides step-by-step instructions for using various methods to searc
 
 ## Next steps
 
+* [View Observables](../alerts/view-observables.md)
+
 

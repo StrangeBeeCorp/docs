@@ -1,6 +1,6 @@
 # Overview of Search Methods for Cases
 
-TheHive offers multiple methods for searching cases, each tailored to specific scenarios.
+TheHive offers multiple methods for searching [cases](../about-a-case.md), each tailored to specific scenarios.
 
 This topic provides an overview of the available search methods, compares their features, and explains when to use each one.
 

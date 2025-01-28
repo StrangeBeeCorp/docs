@@ -1,8 +1,6 @@
 # How to Create a Custom Field
 
-This topic provides step-by-step instructions for creating a custom field in TheHive.
-
-To learn more about custom fields, see the [About Custom Fields](about-custom-fields.md) topic.
+This topic provides step-by-step instructions for creating a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 
 !!! warning "Administrator access required"
     Only administrators have the ability to create custom fields in TheHive.
@@ -52,3 +50,4 @@ To learn more about custom fields, see the [About Custom Fields](about-custom-fi
 
 ## Next steps
 
+* [Add Custom Fields](../../user-guides/analyst-corner/cases-list/add-custom-fields.md)

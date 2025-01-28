@@ -1,6 +1,6 @@
 # Overview of Search Methods for Tasks
 
-TheHive offers multiple methods for searching tasks, each tailored to specific scenarios.
+TheHive offers multiple methods for searching [tasks](../about-tasks.md), each tailored to specific scenarios.
 
 This topic provides an overview of the available search methods, compares their features, and explains when to use each one.
 
