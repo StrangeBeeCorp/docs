@@ -71,6 +71,9 @@ extra:
       link: "https://chat.thehive-project.org"
     - icon: fontawesome/brands/youtube
       link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
+  analytics:
+    provider: google
+    property: G-W7W9113BRP
 
 markdown_extensions:
   - toc:
