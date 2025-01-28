@@ -12,5 +12,5 @@ Use this guide to choose the most effective method for your needs.
 | [Filters in the Alerts view](find-an-alert.md#method-2-filters-in-the-alerts-view) | Multiple | Multiple | Yes | If you don't know the alert you're looking for or need to search for multiple alerts to perform actions on them simultaneously. |
 | [Global Search feature](find-an-alert.md#method-3-global-search-feature) | Advanced | Multiple | No | If you don't know the alert you're looking for or need to conduct advanced searches for multiple alerts without requiring simultaneous actions. |
 
-## What's next?
+## Next steps
 * [How to Find an Alert](find-an-alert.md)

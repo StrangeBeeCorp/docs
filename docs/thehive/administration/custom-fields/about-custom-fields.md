@@ -27,6 +27,6 @@ Administrators define custom fields in the **Entities management** view of TheHi
 
 After they are created, custom fields become automatically available to all users across all organizations.
 
-## What's next?
+## Next steps
 
 [How to Create a Custom Field](create-a-custom-field.md)

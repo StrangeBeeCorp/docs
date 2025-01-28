@@ -13,5 +13,5 @@ Use this guide to choose the most effective method for your needs.
 | [Filters in the Cases view](find-a-case.md#method-3-filters-in-the-cases-view) | Multiple | Multiple | Yes | If you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously. |
 | [Global Search feature](find-a-case.md#method-4-global-search-feature) | Advanced | Multiple | No | If you don't know the case number you're looking for or need to conduct advanced searches for multiple cases without requiring simultaneous actions. |
 
-## What's next?
+## Next steps
 * [How to Find a Case](find-a-case.md)

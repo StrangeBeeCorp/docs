@@ -51,7 +51,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 5. {!includes/search-results.md!}
 
-## What's next?
+## Next steps
 
 * [Actions](../../alerts/actions.md)
 * [Merge Alerts](../../alerts/merge-alerts.md)

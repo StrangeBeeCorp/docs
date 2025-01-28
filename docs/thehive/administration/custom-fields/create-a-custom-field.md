@@ -47,3 +47,6 @@ To learn more about custom fields, see the [About Custom Fields](about-custom-fi
     #### If this custom field must be filled by users, turn on the **Mandatory** toggle.
 
 5. Select **Confirm custom field creation**.
+
+## Next steps
+
