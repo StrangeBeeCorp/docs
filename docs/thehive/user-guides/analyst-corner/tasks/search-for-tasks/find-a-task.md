@@ -10,7 +10,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Open a case and select the **Tasks** tab.
 
-    Image
+    ![Tasks tab](../../../../images/user-guides/analyst-corner/tasks/find-a-task-tasks-tab.png)
 
 2. {!includes/apply-filters.md!}
 
@@ -24,7 +24,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Go to the **Tasks** view from the sidebar menu.
 
-    Image
+    ![Tasks view](../../../../images/user-guides/analyst-corner/tasks/find-a-task-tasks-view.png)
 
 2. {!includes/apply-filters.md!}
 
@@ -42,7 +42,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. Select the **Tasks** item on the **Search scope** pane.
 
-    Image
+    ![Global Search Tasks](../../../../images/user-guides/analyst-corner/tasks/find-a-task-global-search.png)
 
     !!! note "All elements"
         Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.

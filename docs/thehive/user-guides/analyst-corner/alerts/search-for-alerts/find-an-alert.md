@@ -8,9 +8,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you want to find one or more alerts similar to a known alert or need to search for multiple alerts to perform actions on them simultaneously.*
 
-1. Open a case, an alert, or a task, and select the **Similar cases** tab.
+1. Open a case, an alert, or a task, and select the **Similar alerts** tab.
 
-    Image
+    ![Similar alerts](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-similar-alerts.png)
 
 2. {!includes/apply-filters.md!}
 
@@ -24,7 +24,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Go to the **Alerts** view from the sidebar menu.
 
-    Image
+    ![Filters in Alerts view](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-alerts-view.png)
 
 2. {!includes/apply-filters.md!}
 
@@ -42,7 +42,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. Select the **Alerts** item on the **Search scope** pane.
 
-    Image
+    ![Global Search Aterts item](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-global-search.png)
 
     !!! note "All elements"
         Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
