@@ -256,6 +256,8 @@ nav:
           - 'View Pages': thehive/user-guides/analyst-corner/cases-list/pages.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md
+          - 'Find an Observable': thehive/user-guides/analyst-corner/cases/find-an-observable.md
+          - 'Find a Job': thehive/user-guides/analyst-corner/cases/find-an-job.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
           - 'Search for Tasks': 

@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for using various methods to searc
 
     ![Observables tab](../../../../images/user-guides/analyst-corner/cases/find-an-observable-observables-tab.png)
 
-2. {!includes/apply-filters.md!}
+2. {!includes/apply-filters-light.md!}
 
 3. {!includes/search-results.md!}
 
@@ -26,7 +26,7 @@ This topic provides step-by-step instructions for using various methods to searc
 
 2. Select the **Observables** item on the **Search scope** pane.
 
-    ![Observables tab](../../../../images/user-guides/analyst-corner/cases/find-an-observable-global-search.png)
+    ![Global Search Observables item](../../../../images/user-guides/analyst-corner/cases/find-an-observable-global-search.png)
 
     !!! note "All elements"
         Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
