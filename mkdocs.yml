@@ -159,9 +159,10 @@ nav:
       - 'Monitoring Setup': thehive/operations/monitoring.md
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
-      - 'Manage Organizations':
-        - 'Managing an Organization': thehive/administration/manage-organizations.md
-        - 'Linking Organizations': thehive/administration/organization-links.md
+      - 'Organizations':
+        - 'About Organizations': thehive/administration/organizations/about-organizations.md
+        - 'Manage Organizations': thehive/administration/organizations/manage-organizations.md
+        - 'Link Organizations': thehive/administration/organizations/organization-links.md
       - 'Manage Accounts':
         - 'Account Creation/Update Guide': thehive/administration/accounts.md
       - 'Platform Management':
