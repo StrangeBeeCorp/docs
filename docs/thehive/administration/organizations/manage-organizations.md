@@ -1,7 +1,7 @@
 # How to Manage Organizations
 
 !!! warning "Administrator access required"
-    Only administrators have the ability to manage organizations in TheHive.
+    Only users assigned to the Admin organization with a profile that includes the `manageOrganisation` permission can create an organization in TheHive.
 
 As an administrator, go to the *Organizations* view from the sidebar menu.
 
@@ -9,7 +9,7 @@ As an administrator, go to the *Organizations* view from the sidebar menu.
 
 ## Add an organization
 
-Click on the :fontawesome-regular-square-plus: button and edit the required fields in the drawer: 
+Select :fontawesome-regular-square-plus: and edit the required fields in the drawer: 
 
 * A placeholder exists and a logo of the organization can be added
 * *Name*: Name of the new organization 
