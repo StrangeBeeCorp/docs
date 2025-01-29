@@ -160,9 +160,8 @@ nav:
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Manage Organizations':
-        - 'Creating an Organization': thehive/administration/organisations.md
-        - 'Updating an Organization': thehive/administration/organisations.md
-        - 'Linking Organizations': thehive/administration/organisation-links.md
+        - 'Managing an Organization': thehive/administration/manage-organizations.md
+        - 'Linking Organizations': thehive/administration/organization-links.md
       - 'Manage Accounts':
         - 'Account Creation/Update Guide': thehive/administration/accounts.md
       - 'Platform Management':
