@@ -14,13 +14,12 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 
     ![Global Search feature sidebar menu](../../../../images/user-guides/analyst-corner/cases/find-a-job-global-search.png)
 
-    !!! note "All elements"
-        Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
+    {!includes/global-search-all-elements.md!}
 
 3. {!includes/global-search-search-box.md!}
 
     !!! warning "Warning"
-        The `workerDefinition` field and the `operations[]` array are not indexed for search.
+        The `workerDefinition` field and the `operations[]` array aren't indexed for search.
 
 4. {!includes/global-search-additional-filters.md!}
 
