@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for searching an observable in TheHive.
 
-Observables are discrete pieces of technical evidence related to incidents. They can represent stateful properties, such as an MD5 hash or an IP address, or measurable events, such as the creation of a registry key or the execution of a file.
+Observables are discrete pieces of technical evidence related to incidents. They can represent stateful properties, such as an MD5 hash or an IP address. They can also represent measurable events, such as the creation of a registry key or the execution of a file.
 
 ## Method 1: Observables tab in cases and alerts descriptions
 
@@ -30,8 +30,7 @@ Observables are discrete pieces of technical evidence related to incidents. They
 
     ![Global Search Observables item](../../../../images/user-guides/analyst-corner/cases/find-an-observable-global-search.png)
 
-    !!! note "All elements"
-        Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
+    {!includes/global-search-all-elements.md!}
 
 3. {!includes/global-search-search-box.md!}
 

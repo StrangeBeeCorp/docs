@@ -14,7 +14,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. Press **Enter** or select :material-magnify:.
 
-3. The case description is displayed.
+3. The case description appears.
 
 ---
 
@@ -58,8 +58,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
     ![Global Search feature cases item](../../../../images/user-guides/analyst-corner/cases/find-a-case-global-search-feature-cases-item.png)
 
-    !!! note "All elements"
-        Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
+    {!includes/global-search-all-elements.md!}
 
 3. {!includes/global-search-search-box.md!}
 

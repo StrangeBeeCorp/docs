@@ -14,8 +14,7 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 
     ![Global Search Task logs](../../../../images/user-guides/analyst-corner/tasks/find-a-task-log-global-search.png)
 
-    !!! note "All elements"
-        Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
+    {!includes/global-search-all-elements.md!}
 
 3. {!includes/global-search-search-box.md!}
 

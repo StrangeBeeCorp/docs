@@ -42,10 +42,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. Select the **Alerts** item on the **Search scope** pane.
 
-    ![Global Search Aterts item](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-global-search.png)
+    ![Global Search Alerts item](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-global-search.png)
 
-    !!! note "All elements"
-        Select the **All elements** item for a comprehensive tool-wide overview that encompasses all entity types (cases, alerts, observables, jobs, tasks, and task logs), to analyze cross-linked information, or to conduct a detailed investigation.
+    {!includes/global-search-all-elements.md!}
 
 3. {!includes/global-search-search-box.md!}
 
