@@ -1,10 +1,12 @@
 # How to Find an Observable
 
-This topic provides step-by-step instructions for using various methods to search for an observable in TheHive.
+This topic provides step-by-step instructions for searching an observable in TheHive.
 
-## Method 1: Observables tab
+Observables are discrete pieces of technical evidence related to incidents. They can represent stateful properties, such as an MD5 hash or an IP address, or measurable events, such as the creation of a registry key or the execution of a file.
 
-*Use this method if you know the case or alert containing the observable you're looking for or if you need to perform actions on multiple observables simultaneously.*
+## Method 1: Observables tab in cases and alerts descriptions
+
+*Use this method if you know the case or alert containing the observable you're looking for and if you need to perform actions on multiple observables simultaneously.*
 
 1. Open a case or an alert, and select the **Observables** tab.
 

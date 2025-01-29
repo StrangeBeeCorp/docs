@@ -44,7 +44,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
     !!! info "Predefined values"
         For the string, integer, and float formats, you can define predefined values by entering each value on a separate line. If you choose to do this, users will only be able to select from the predefined values you specify.
 
-    **If this custom field must be filled by users, turn on the Mandatory toggle.**
+    **Turn on the Mandatory toggle**, if this custom field must be filled by users.
 
 5. Select **Confirm custom field creation**.
 

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
-## Method 1: Tasks tab in cases description
+## Method 1: Tasks tab in cases descriptions
 
 *Use this method if you want to find one or more tasks related to a case and want to perform actions on them simultaneously.*
 
