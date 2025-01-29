@@ -1,4 +1,4 @@
-# Link Organizations
+# How to Link Organizations
 
 By default, organizations are not linked each other: each one does not know about the others on the instance.
 

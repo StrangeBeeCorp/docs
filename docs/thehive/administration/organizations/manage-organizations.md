@@ -1,5 +1,8 @@
 # How to Manage Organizations
 
+!!! warning "Administrator access required"
+    Only administrators have the ability to manage organizations in TheHive.
+
 As an administrator, go to the *Organizations* view from the sidebar menu.
 
 ![](../images/administration-guides/organisations-1.png)
