@@ -9,7 +9,7 @@ A notification is a described by:
 2. One or more *Notifiers*
 
 <figure markdown>
-  ![Notification](../../../images/user-guides/organisation/notifications/organisation-notifications-introduction.png){ width="450" }
+  ![Notification](../../../images/user-guides/organization/notifications/organization-notifications-introduction.png){ width="450" }
 </figure>
 
 
@@ -55,7 +55,7 @@ Another trigger let you run notifications on **any** event when selecting *AnyEv
 When selecting *FilteredEvent*, TheHive lets you write a structured JSON filter. This filter aims to match particular events in the application that will trigger one or more actions described by *notifiers*.
 
 <figure markdown>
-  ![Filtered Event](../../../images/user-guides/organisation/notifications/organisation-notifications-filteredevent.png){ width="500" }
+  ![Filtered Event](../../../images/user-guides/organization/notifications/organization-notifications-filteredevent.png){ width="500" }
   <figcaption>Filtered event example: "Case severity has been updated to Hight or Critical</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ Learn how to write filtered events and find more example in the [dedicated page]
 
 Several types of *Notifiers* are available in TheHive:
 
-* **EmailToUser**: send an email to *all* [users in the current Organisation](./email-to-users.md)
+* **EmailToUser**: send an email to *all* [users in the current organization](./email-to-users.md)
 * **EmailToAddr**: send an email to [a specific email address](./email-to-addr.md)
 * **HTTP Request**: send data to a chosen [HTTP endpoint](./http-request.md)
 * **Mattermost**: send data to a chosen [Mattermost endoint](./mattermost.md)
@@ -86,16 +86,16 @@ Two of them are dedicated to run Cortex Analyzers and Responders:
 
 
 ## Create a *Notification*
-Access to the Notifications list by opening the *Organisation* menu, and the *Notifications* tab.
+Access to the Notifications list by opening the *Organization* menu, and the *Notifications* tab.
 
 <figure markdown>
-  ![Notifications list](../../../images/user-guides/organisation/notifications/organisation-notifications.png){ width="500" }
+  ![Notifications list](../../../images/user-guides/organization/notifications/organization-notifications.png){ width="500" }
 </figure>
 
 Click the :fontawesome-regular-square-plus: button to add a notification.
 
 <figure markdown>
-  ![Create a notification](../../../images/user-guides/organisation/notifications/organisation-notifications-create.png){ width="500" }
+  ![Create a notification](../../../images/user-guides/organization/notifications/organization-notifications-create.png){ width="500" }
 </figure>
 
 
@@ -113,7 +113,7 @@ Then click **confirm** to register the notification.
 In the list of notification, click on the **delete** option:
 
 <figure markdown>
-  ![Delete a notification](../../../images/user-guides/organisation/notifications/organisation-notifications-delete.png){ width="500" }
+  ![Delete a notification](../../../images/user-guides/organization/notifications/organization-notifications-delete.png){ width="500" }
 </figure>
 
 ### Disable a *Notificaiton*
@@ -121,11 +121,11 @@ In the list of notification, click on the **delete** option:
 * In the list of *Notifications*, edit the one to disable: 
 
 <figure markdown>
-  ![Disable a notification](../../../images/user-guides/organisation/notifications/organisation-notifications-delete.png){ width="500" }
+  ![Disable a notification](../../../images/user-guides/organization/notifications/organization-notifications-delete.png){ width="500" }
 </figure>
 
 * Verify the result in the list of *Notifications*
 
 <figure markdown>
-  ![Disabled notification](../../../images/user-guides/organisation/notifications/organisation-notifications-disabled.png){ width="500" }
+  ![Disabled notification](../../../images/user-guides/organization/notifications/organization-notifications-disabled.png){ width="500" }
 </figure>

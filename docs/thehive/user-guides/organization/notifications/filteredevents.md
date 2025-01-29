@@ -1,7 +1,7 @@
 # How to write filtered events for notifications ?
 
 <figure markdown>
-  ![Filtered Event](../../../images/user-guides/organisation/notifications/organisation-notifications-filteredevent.png){ width="500" }
+  ![Filtered Event](../../../images/user-guides/organization/notifications/organization-notifications-filteredevent.png){ width="500" }
   <figcaption>Filtered event example: "Case severity has been updated to High or Critical"</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ Audit fields:
 - `object`: full description of the object (after the modification)
 - `rootId`: `_id` of the top most object. For instance if a task is updated, this will be the `_id` of the case
 - `context`: context of the audit. This depends on what object is updated / created.
-- `organisation`: details about the organisation where this action happened
+- `organisation`: details about the organization where this action happened
 
 ## Writing a filter
 

@@ -6,7 +6,7 @@ To copy an attachment:
 
 1. On the attachments tab, Click the ellipsis **(...)** corresponding to the attachment to view more options.
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-attachments/attachment_functions.png" alt="attachment functions" width="700" height="700"/>
+<img src="../../../../images/user-guides/organization/configure-organization/manage-attachments/attachment_functions.png" alt="attachment functions" width="700" height="700"/>
 
 
 ## Copy

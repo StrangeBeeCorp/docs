@@ -12,7 +12,7 @@ To configure the UI:
     - e.g. YYYY-MM-DD HH:mm
 1. Click the **Save** button. 
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-ui-configuration/ui_configuration.png" alt="UI Configuration" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organization/configure-organization/manage-ui-configuration/ui_configuration.png" alt="UI Configuration" width="1000" height="1000"/>
 
 
-> NOTE:  Default date format can be configured at the Organisation level, by defining the preferred format in the UI Configuration view. This requires a user with org-admin profile or any profile with manageConfig permission.
+> NOTE:  Default date format can be configured at the organization level, by defining the preferred format in the UI Configuration view. This requires a user with org-admin profile or any profile with manageConfig permission.

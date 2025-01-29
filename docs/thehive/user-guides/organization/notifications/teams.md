@@ -18,7 +18,7 @@ To accommodate Microsoft's changes and ensure continued functionality of Teams n
 
     - Go to [Power Automate](https://make.powerautomate.com/) and sign in with your Microsoft account.
 
-      ![](../../../images/user-guides/organisation/notifications/msteams-1.png)
+      ![](../../../images/user-guides/organization/notifications/msteams-1.png)
 
   2. **Create a Flow**:
 
@@ -28,14 +28,14 @@ To accommodate Microsoft's changes and ensure continued functionality of Teams n
 
     - Choose the template **"Post to a channel when a HTTP request is received"**.
 
-      ![](../../../images/user-guides/organisation/notifications/msteams-2.png)
+      ![](../../../images/user-guides/organization/notifications/msteams-2.png)
 
   4. **Configure Flow Details**:
     
     - Name your flow and select the Microsoft Teams channel where notifications should be sent.
     - Confirm the necessary permissions for Power Automate to post messages on your behalf.
 
-      ![](../../../images/user-guides/organisation/notifications/msteams-3.png)
+      ![](../../../images/user-guides/organization/notifications/msteams-3.png)
 
   5. **Save the Flow**:
 
@@ -48,7 +48,7 @@ To accommodate Microsoft's changes and ensure continued functionality of Teams n
 In the *Organization* configuration view, go to the *Endpoints* tab. Click the :fontawesome-regular-square-plus: button to add a new *Connector*.
 
 <figure markdown>
-  ![Endpoints list](../../../images/user-guides/organisation/notifications/organisation-endpoints.png)
+  ![Endpoints list](../../../images/user-guides/organization/notifications/organization-endpoints.png)
 </figure>
 
 &nbsp;
@@ -57,7 +57,7 @@ In the *Organization* configuration view, go to the *Endpoints* tab. Click the :
 Select *Teams* as the connector type and complete the necessary details.
 
 <figure markdown>
-  ![Teams endpoint configuration](../../../images/user-guides/organisation/notifications/organisation-endpoints-teams-configuration.png)
+  ![Teams endpoint configuration](../../../images/user-guides/organization/notifications/organization-endpoints-teams-configuration.png)
 </figure>
 
 - **Name**: Provide a unique name for the endpoint.
@@ -86,7 +86,7 @@ If you are currently using the legacy Teams webhook, follow these steps to migra
 When creating a *Notification* select *Teams/ENDPOINT* (with ENDPOINT the name of the endpoint created) as *Connector* and complete the form.
 
 <figure markdown>
-  ![Choose Teams](../../../images/user-guides/organisation/notifications/organisation-notifications-teams-1.png)
+  ![Choose Teams](../../../images/user-guides/organization/notifications/organization-notifications-teams-1.png)
 </figure>
 
 TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:
@@ -190,7 +190,7 @@ TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates w
 Used with the trigger _Case created_, this template will create a card like this in Microsoft Teams:
 
 <figure markdown>
-  ![MS Teams card](../../../images/user-guides/organisation/notifications/organisation-notifications-teams-2.png)
+  ![MS Teams card](../../../images/user-guides/organization/notifications/organization-notifications-teams-2.png)
 </figure>
 
 
@@ -228,7 +228,7 @@ Although straightforward, this legacy method lacks the customization and enhance
     - Follow the video tutorial to create an incoming webhook and copy the provided URL
 
       <video controls>
-        <source id=mp4 src="../../../images/user-guides/organisation/notifications/organisation-endpoints-msteams-configuration.mp4" type="video/mp4">
+        <source id=mp4 src="../../../images/user-guides/organization/notifications/organization-endpoints-msteams-configuration.mp4" type="video/mp4">
       </video>
 
 2. Configure TheHive:

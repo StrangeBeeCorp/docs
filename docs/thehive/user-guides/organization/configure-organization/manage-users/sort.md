@@ -6,4 +6,4 @@ To sort on a field:
 
 1. Click the small arrows beside the field to be sorted.
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-users/sort.png" alt="sort" width="500" height="500"/>
+<img src="../../../../images/user-guides/organization/configure-organization/manage-users/sort.png" alt="sort" width="500" height="500"/>

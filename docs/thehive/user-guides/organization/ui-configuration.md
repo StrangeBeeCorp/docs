@@ -33,10 +33,10 @@ Access to the list by opening the *Organization* menu, and the *UI Configuration
 
 
 **Disallow "All" period option in dashboards**
-  : *disabled* by default. When enabled, users from the current Organisation cannot use the *All* period in dashboards. This could be useful if performance issues are encountered with the UI
+  : *disabled* by default. When enabled, users from the current organization cannot use the *All* period in dashboards. This could be useful if performance issues are encountered with the UI
 
 <figure markdown>
-  ![Don't select period on dashboards](../../images/user-guides/organisation/organisation-ui-configuration-4.png){ width="450" }
+  ![Don't select period on dashboards](../../images/user-guides/organization/organization-ui-configuration-4.png){ width="450" }
   <figcaption>Don't select period on dashboards</figcaption>
 </figure>
 
@@ -44,14 +44,14 @@ Access to the list by opening the *Organization* menu, and the *UI Configuration
   : Default filter for Similar Case tab, in the view of an Alert
 
 <figure markdown>
-  ![Select default filters for Case similarity](../../images/user-guides/organisation/organisation-ui-configuration-5.png){ width="450" }
+  ![Select default filters for Case similarity](../../images/user-guides/organization/organization-ui-configuration-5.png){ width="450" }
   <figcaption>Select default filters for Case similarity</figcaption>
 </figure>
 
 <figure markdown>
-  ![Result in Similar Cases tab in Alerts](../../images/user-guides/organisation/organisation-ui-configuration-6.png){ width="450" }
+  ![Result in Similar Cases tab in Alerts](../../images/user-guides/organization/organization-ui-configuration-6.png){ width="450" }
   <figcaption>Result in Similar Cases tab in Alerts</figcaption>
 </figure>
 
 **Define the default date format used to display dates**
-  : Select which format you want the dates to be displayed within the current organisation
+  : Select which format you want the dates to be displayed within the current organization

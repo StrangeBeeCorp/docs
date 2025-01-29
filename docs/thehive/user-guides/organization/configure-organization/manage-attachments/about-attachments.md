@@ -6,11 +6,11 @@ To add a new attachment:
 
 1. On the attachments tab, Click the **+** to add a new attachment.
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-attachments/attachments.png" alt="attachment" width="1000" height="1000"/>
+<img src="../../../../images/user-guides/organization/configure-organization/manage-attachments/attachments.png" alt="attachment" width="1000" height="1000"/>
 
 A new window opens. 
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-attachments/add_attachments.png" alt="new attachment" width="500" height="500"/>
+<img src="../../../../images/user-guides/organization/configure-organization/manage-attachments/add_attachments.png" alt="new attachment" width="500" height="500"/>
 
 1. Click the **Drop file or Click** option in attachment. 
 2. Click the **Confirm** button. 
