@@ -40,6 +40,9 @@ extra_css:
 
 plugins:
   - search
+  - exclude-search:
+      exclude:
+        - includes/*
   - awesome-pages
   - glightbox
   - mkdocs-video:
