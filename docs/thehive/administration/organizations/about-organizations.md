@@ -25,4 +25,4 @@ To assign users to organizations, you must be a member of the Admin organization
 ## Next steps
 
 * [How to Link Organizations](organization-links.md)
-* [Manage Users in your Organization](../../user-guides/organisation/accounts.md)
+* [Manage Users in your Organization](../../user-guides/organization/accounts.md)

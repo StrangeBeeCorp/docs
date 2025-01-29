@@ -197,27 +197,27 @@ nav:
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Indicators & KPIs Overview': thehive/user-guides/indicators.md
       - 'Organization Administration':
-        - 'User Management': thehive/user-guides/organisation/accounts.md
+        - 'User Management': thehive/user-guides/organization/accounts.md
         - 'Templates Management':
-          - 'Cases Templates Management': thehive/user-guides/organisation/templates/case-templates.md
-          - 'Pages Templates Management': thehive/user-guides/organisation/templates/page-templates.md
-          - 'Reports Templates Management': thehive/user-guides/organisation/templates/report-templates.md
-        - 'Custom Tags Management': thehive/user-guides/organisation/custom-tags.md
-        - 'UI Configuration Guide': thehive/user-guides/organisation/ui-configuration.md
+          - 'Cases Templates Management': thehive/user-guides/organization/templates/case-templates.md
+          - 'Pages Templates Management': thehive/user-guides/organization/templates/page-templates.md
+          - 'Reports Templates Management': thehive/user-guides/organization/templates/report-templates.md
+        - 'Custom Tags Management': thehive/user-guides/organization/custom-tags.md
+        - 'UI Configuration Guide': thehive/user-guides/organization/ui-configuration.md
         - 'Notifications & Endpoints Setup':
-          - 'Introduction to Notifications & Endpoints': thehive/user-guides/organisation/notifications/introduction.md
+          - 'Introduction to Notifications & Endpoints': thehive/user-guides/organization/notifications/introduction.md
           - 'Notifier Configuration':
-            - 'Mattermost Configuration': thehive/user-guides/organisation/notifications/mattermost.md
-            - 'MS Teams Configuration': thehive/user-guides/organisation/notifications/teams.md
-            - 'Slack Configuration': thehive/user-guides/organisation/notifications/slack.md
-            - 'Kafka Configuration': thehive/user-guides/organisation/notifications/kafka.md
-            - 'Redis Configuration': thehive/user-guides/organisation/notifications/redis.md
-          - 'Filtered Events Setup': thehive/user-guides/organisation/notifications/filteredevents.md
+            - 'Mattermost Configuration': thehive/user-guides/organization/notifications/mattermost.md
+            - 'MS Teams Configuration': thehive/user-guides/organization/notifications/teams.md
+            - 'Slack Configuration': thehive/user-guides/organization/notifications/slack.md
+            - 'Kafka Configuration': thehive/user-guides/organization/notifications/kafka.md
+            - 'Redis Configuration': thehive/user-guides/organization/notifications/redis.md
+          - 'Filtered Events Setup': thehive/user-guides/organization/notifications/filteredevents.md
         - 'Endpoints Management':
-          - 'About Endpoints': thehive/user-guides/organisation/manage-endpoints/about-endpoints.md
-          - 'Add Endpoints': thehive/user-guides/organisation/manage-endpoints/add_endpoints.md
-        - 'Functions Configuration': thehive/user-guides/organisation/functions.md
-        - 'Attachments Usage Guide': thehive/user-guides/organisation/attachments.md
+          - 'About Endpoints': thehive/user-guides/organization/manage-endpoints/about-endpoints.md
+          - 'Add Endpoints': thehive/user-guides/organization/manage-endpoints/add_endpoints.md
+        - 'Functions Configuration': thehive/user-guides/organization/functions.md
+        - 'Attachments Usage Guide': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
