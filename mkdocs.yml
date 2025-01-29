@@ -243,6 +243,8 @@ nav:
           - 'Search for Cases': 
             - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
             - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
+            - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
+            - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
           - 'Manage Views': thehive/user-guides/analyst-corner/cases-list/manage-views.md
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases-list/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases-list/actions.md
@@ -255,7 +257,6 @@ nav:
           - 'View a Case': thehive/user-guides/analyst-corner/cases-list/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases-list/tasks.md
-          - 'Find an Observable': thehive/user-guides/analyst-corner/cases/find-an-observable.md
           - 'View Observables': thehive/user-guides/analyst-corner/cases-list/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases-list/ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases-list/attachments.md
@@ -263,7 +264,6 @@ nav:
           - 'View Pages': thehive/user-guides/analyst-corner/cases-list/pages.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md
-          - 'Find a Job': thehive/user-guides/analyst-corner/cases/find-a-job.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
           - 'Search for Tasks': 

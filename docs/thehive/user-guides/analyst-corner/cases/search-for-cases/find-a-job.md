@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for searching a job in TheHive.
 
-A job is a task initiated by Cortex to run an [analyzer](../../../../cortex/installation-and-configuration/analyzers-responders.md) on an observable.
+A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/installation-and-configuration/analyzers-responders.md) on an observable.
 
 ## Procedure
 
@@ -28,6 +28,6 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../cortex/inst
 
 ## Next steps
 
-* [Run Analyzers on Case](../cases-list/run-analyzer.md)
-* [Run Responders on Case](../cases-list/run-responders.md)
+* [Run Analyzers on Case](../../cases-list/run-analyzer.md)
+* [Run Responders on Case](../../cases-list/run-responders.md)
 
