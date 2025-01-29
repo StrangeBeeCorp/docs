@@ -22,7 +22,7 @@ Select **Confirm** to create the organization.
 Once your organization is created:
 
 * [users](./accounts.md) can be added
-* [links](./organisation-links.md) with other existing organizations created for the purpose of sharing cases.
+* [links](./organization-links.md) with other existing organizations created for the purpose of sharing cases.
 
 ## Lock an organization
 An existing organization can be locked so that all users belonging to this one cannot log into it.

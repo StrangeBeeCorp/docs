@@ -33,11 +33,11 @@ Specify:
 
 ![](../images/administration-guides/platform-management-cortex-2.png)
 
-By default, all Analyzers and Responders made available by Cortex are available to **ALL** organisations in TheHive.
+By default, all Analyzers and Responders made available by Cortex are available to **ALL** organizations in TheHive.
 Additionaly, 2 options are available:
 
-* Make them **available ONLY** to a subset of existing Organisations in TheHive
-* Make them **unavailable** to a subset of existing Organisations in TheHive
+* Make them **available ONLY** to a subset of existing organizations in TheHive
+* Make them **unavailable** to a subset of existing organizations in TheHive
 
 
 ### Delete a Connection

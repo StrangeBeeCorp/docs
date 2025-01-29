@@ -41,7 +41,7 @@
     - Password: `secret`
 
 
-    A user named `thehive` has been created and is `org-admin` of the organisation named `demo`: 
+    A user named `thehive` has been created and is `org-admin` of the organization named `demo`: 
 
     - Login: `thehive@thehive.local`
     - Password: `thehive1234`
@@ -60,7 +60,7 @@ TheHive database comes with several samples of data, like custom fields, [MISP t
     - Login: `admin`
     - Password: `thehive1234` 
 
-    An Organisation is also created with an `orgadmin` account: 
+    An organization is also created with an `orgadmin` account: 
 
     - Login: `thehive`
     - Password: `thehive1234`

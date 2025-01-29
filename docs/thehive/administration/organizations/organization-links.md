@@ -9,14 +9,14 @@ Start managing links by opening the detailed view of an organization:
 * Open the *Linked organization* tab
 * Click on the button named *Manage linked organizations*
 
-![](../images/administration-guides/organisation-links-2.png)
+![](../images/administration-guides/organization-links-2.png)
 
 For each other organizations, select:
 
 1. if you want the current organization be linked with it
 2. The types of link that should be created
   
-![](../images/administration-guides/organisation-links-1.png){ width=500 }
+![](../images/administration-guides/organization-links-1.png){ width=500 }
 
 
 3 types of links are available: 

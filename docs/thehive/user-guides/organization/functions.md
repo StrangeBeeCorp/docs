@@ -59,7 +59,7 @@ Follow the steps below to create a function in TheHive:
 
 &nbsp;
 
-![Create function](../../images/user-guides/organisation/functions_create.png)
+![Create function](../../images/user-guides/organization/functions_create.png)
 
 ---
 
@@ -413,7 +413,7 @@ When invoked, this function will:
 - `share.shareObservable(observableId: string, input: InputCreateShare): OutputShare`
 - `share.updateShare(shareId: string, update: InputUpdateShare): void`
 
-### Organisation
+### Organization
 
 - `organisation.get(orgIdOrName: string): OutputOrganisation`
 - `organisation.create(org: InputCreateOrganisation): OutputOrganisation`

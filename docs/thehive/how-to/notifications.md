@@ -22,7 +22,7 @@ You can also send an Email as notification.
 
 ## Notifications management
 
-Notifications are unique to each organisation. With an org admin account open the Organization menu (1), and navigate to the Notifications tab (2).
+Notifications are unique to each organization. With an org admin account open the Organization menu (1), and navigate to the Notifications tab (2).
 
 To create a notification, clic on the "+" button (3)
 
@@ -33,7 +33,7 @@ To create a notification, clic on the "+" button (3)
 While clicking on add or edit a notifier, a drawer will appear where you can define the following settings:
 
 - Name: Notification name to display within TheHive
-- Send notification to every user in the organisation: Check this box to notify by email every users of the organization this Notifier has triggered
+- Send notification to every user in the organization: Check this box to notify by email every users of the organization this Notifier has triggered
 - Trigger: Chose in a list of triggers on which event you want to react. You can also select "FilteredEvent" to create your own event filter.
 - Enable notification: Check this box to enable the notifier. Uncheck the box to disable the notifier.
 

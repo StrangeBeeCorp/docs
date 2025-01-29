@@ -197,7 +197,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
     - MISP Attribute Handling: When exporting a case, MISP attributes of observables are now set correctly, ensuring seamless integration with MISP.
     - Event Editing Strategy: We've implemented a comprehensive event edit strategy to enhance your MISP experience.
 - **Comments**: Text comments without spaces now wrap correctly within the component, ensuring a neat and organized display.
-- **Authentication**: Fixed a bug that did not correctly remove the link between two organisations, which could lead to connection problems.
+- **Authentication**: Fixed a bug that did not correctly remove the link between two organizations, which could lead to connection problems.
 
 **API:**
 
@@ -376,13 +376,13 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
         Create customized, high-impact reports with Case Reporting. Use a variety of dynamic widgets such as text, images, tables and lists. Relevant case data (tasks, observables, etc.) are automatically integrated. Export your reports in HTML and Markdown.
         
-        See [dedicated page](../user-guides/organisation/templates/report-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/templates/report-templates.md) for more information (requires platinum license)
 
     - **Page template:** Customize and organize your cases pages
 
         Guide your collaborators in writing the documentation for a case by importing pages directly from the template to provide all the necessary elements and improve processes.
 
-        See [dedicated page](../user-guides/organisation/templates/page-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/templates/page-templates.md) for more information (requires platinum license)
 
     <figure markdown>
     ![Case reporting](../images/release_notes/release52-case-reporting.png){ width="450"}

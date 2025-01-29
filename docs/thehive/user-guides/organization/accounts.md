@@ -1,15 +1,15 @@
-# Manage users in your Organisation
+# Manage users in your Organization
 
 !!! Info
-    _org-admin_ profile or at least the permission `manageUser` is required to manage users in your organisation.
+    _org-admin_ profile or at least the permission `manageUser` is required to manage users in your organization.
 
 
 ## List of users
 
-In your organisation, click on _Organisation_ in the menu on the left to access the list of users. The first tab is _Users_.
+In your organization, click on _Organization_ in the menu on the left to access the list of users. The first tab is _Users_.
 
 <figure markdown>
-  ![List of user accounts](../../images/user-guides/organisation/organisation-list-users.png){ width="600" }
+  ![List of user accounts](../../images/user-guides/organization/organization-list-users.png){ width="600" }
   <figcaption>List of user accounts</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ In your organisation, click on _Organisation_ in the menu on the left to access 
 To access detailed information about a user, click the _Preview_ button
 
 <figure markdown>
-  ![User information](../../images/user-guides/organisation/organisation-user-details.png){ width="450" }
+  ![User information](../../images/user-guides/organization/organization-user-details.png){ width="450" }
   <figcaption>User information</figcaption>
 </figure>
 
@@ -63,10 +63,10 @@ Sessions
 
 ## Add Users
 
-*org-admin* users or users with the role `manageUser` in their profile can add users in the current Organisation. 
+*org-admin* users or users with the role `manageUser` in their profile can add users in the current organization. 
 
-Click the :fontawesome-regular-square-plus: button to add an account in the current organisation, and follow *[create an account](../../administration/accounts.md#create-an-account)* and *[update an account](../../administration/accounts.md#update-an-account)* guides.
+Click the :fontawesome-regular-square-plus: button to add an account in the current organization, and follow *[create an account](../../administration/accounts.md#create-an-account)* and *[update an account](../../administration/accounts.md#update-an-account)* guides.
 
 ## User management
 
-Accounts can be deleted or locked, only in the current organisation.
+Accounts can be deleted or locked, only in the current organization.

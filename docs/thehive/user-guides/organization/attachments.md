@@ -1,3 +1,3 @@
 # Attachments
 
-This sections gather all the files and images added at the Organisation level, like the knowledge base.
+This sections gather all the files and images added at the organization level, like the knowledge base.

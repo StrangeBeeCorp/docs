@@ -909,7 +909,7 @@ To configure HTTPS, follow the instructions on the [**dedicated page**](../confi
 
 <!-- ## Usage & Licenses
 
-By default, TheHive comes with no license token and let everyone use the application with 2 users and 1 organisation: this is the community version.
+By default, TheHive comes with no license token and let everyone use the application with 2 users and 1 organization: this is the community version.
 
 To unlock advanced features, contact StrangeBee to get a license - [https://wwww.strangebee.com](https://wwww.strangebee.com) / [contact@strangebee.com](mailto:contact@strangebee.com)
 

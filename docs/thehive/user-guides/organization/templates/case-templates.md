@@ -73,6 +73,6 @@ Pages
 Click on the button *Import Case Template* and select the JSON formatted file to import.
 
 <figure markdown>
-![](../../../images/user-guides/organisation/templates/organisastion-case-templates-4.png){ width="500" }
+![](../../../images/user-guides/organization/templates/organization-case-templates-4.png){ width="500" }
 <figcaption>Import a case template</figcaption>
 </figure>

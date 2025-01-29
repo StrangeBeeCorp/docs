@@ -9,13 +9,13 @@ In TheHive users can be created once an added to different organistions. User li
 
 ![User List](../images/how-to/user-management/user-list.png)
 
-When adding a user in an organisation, a user profile can be choosen for every organisation:
+When adding a user in an organization, a user profile can be choosen for every organization:
 
 ![User basic info](../images/how-to/user-management/user-details-permissions.png)
 
-![User organisation](../images/how-to/user-management/user-details-2.png)
+![User organization](../images/how-to/user-management/user-details-2.png)
 
-Users can be created by administrators or organisation administrators or any user having the `manageUser` permission. This permission is included by default in the `admin` and `org-admin` user profiles.
+Users can be created by administrators or organization administrators or any user having the `manageUser` permission. This permission is included by default in the `admin` and `org-admin` user profiles.
 
 In TheHive, there are two types of users:
 

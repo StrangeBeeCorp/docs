@@ -22,7 +22,7 @@ Your have your own cloud infrastruture and wish to manage and include TheHive an
     ## Main features of the cloud distributions of TheHive and Cortex
 
     ### Easy to use and deploy
-    The cloud distributions were built with operations and automation in mind. We wanted DevSecOps-friendly products that would fit in most organisations, no matter how simple or complex their infrastructure.
+    The cloud distributions were built with operations and automation in mind. We wanted DevSecOps-friendly products that would fit in most organizations, no matter how simple or complex their infrastructure.
 
     ### Always up-to-date
     The images are updated whenever a new TheHive or Cortex version is released. No need to bother updating your instances anymore, just launch a new one with a fresh image as if it were a container!
