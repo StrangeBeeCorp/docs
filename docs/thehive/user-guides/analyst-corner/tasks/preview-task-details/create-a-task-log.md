@@ -9,4 +9,4 @@ To  create a task log:
 1. In **Attachment** Drop file or click. You can upload an attachment. 
 1. Click the **Create a Task Log** button. 
 
-<img src="/thehive/images/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.png" alt="create a task log" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.png" alt="create a task log" width="500" height="500"/>
