@@ -14,4 +14,4 @@ if you want to search based on **Tasks**
 
 A set of search results appear in the right pane of the page. 
 
-<img src="../../../../images/user-guides/analyst-corner/search/search-scope-by/search-by-tasks.png" alt="search by tasks" width="1000" height="1000"/>
+<img src="/thehive/images/user-guides/analyst-corner/search/search-scope-by/search-by-tasks.png" alt="search by tasks" width="1000" height="1000"/>

@@ -4,7 +4,7 @@ A User can create new cases using templates.
 
 1. Click **Create Case +** on the header.
 
-<img src="../../../images/user-guides/analyst-corner/cases/create_case_header.png" alt="create case on header" width="500" height="200"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_header.png" alt="create case on header" width="500" height="200"/>
 
 A new screen opens. A user can create cases by selecting any one of the following options: 
 
@@ -15,4 +15,4 @@ Click the below links to create each type of new case.
 1. [`Archive`](../cases/create-case-from-archive.md)
 1. [`MISP`](../cases/create-case-from-misp.md)
 
-<img src="../../../images/user-guides/analyst-corner/cases/create_case.png" alt="create case" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/create_case.png" alt="create case" width="500" height="500"/>
