@@ -59,7 +59,14 @@ plugins:
             'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/step-by-step-installation-guide.md'
             'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
             'thehive/setup/installation/docker.md':  'thehive/installation/docker.md'
-
+            'thehive/user-guides/analyst-corner/search/about-search.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/alerts.md': 'thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/auditlogs.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/cases.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/jobs.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/observables.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/tasklogs.md': 'thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md'
+            'thehive/user-guides/analyst-corner/search//search-scope-by/tasks.md': 'thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md'
 
 extra:
   generator: false
