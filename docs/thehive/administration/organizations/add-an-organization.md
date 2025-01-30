@@ -1,9 +1,8 @@
 # How to Add an Organization
 
+This topic provides step-by-step instructions for adding an [organization](about-organizations.md) in TheHive.
 
-
-!!! warning "Administrator access required"
-    Only users assigned to the Admin organization with a profile that includes the `manageOrganisation` permission can create an organization in TheHive.
+{!includes/administrator-access-manage-organization.md!}
 
 ## Procedure
 
