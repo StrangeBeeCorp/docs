@@ -4,7 +4,7 @@ This section provides guidance on creating a new case from a selected alert.
 
 On the main alerts page, where all alerts are displayed, there are various types of alerts, including new and imported ones. The **New Case from Selection** option is only available for new alerts listed.
 
-![New Case Selection Menu](../../../images/user-guides/analyst-corner/alerts/alerts-actions.png)
+![New Case Selection Menu](/thehive/images/user-guides/analyst-corner/alerts/alerts-actions.png)
 
 ## Steps to Add a New Case from a Selected Alert
 
@@ -14,7 +14,7 @@ On the main alerts page, where all alerts are displayed, there are various types
 
 A new window will open to facilitate the creation of the new case.
 
-![New Case from Selection](../../../images/user-guides/analyst-corner/alerts/alerts-newcase-from-selection.png)
+![New Case from Selection](/thehive/images/user-guides/analyst-corner/alerts/alerts-newcase-from-selection.png)
 
 !!! Warning "Important Notes"
       - **Single Case Creation**: The **New Case from Selection** option allows the creation of only one case, regardless of how many alerts are selected.

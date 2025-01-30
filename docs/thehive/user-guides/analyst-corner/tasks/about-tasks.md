@@ -8,11 +8,11 @@ When navigating through the Task list, you can easily see and determine which Ta
 
 You can click on any of the tasks in the list to view more details. 
 
-<img src="../../../images/user-guides/analyst-corner/tasks/task_menu.png" alt="tasks" width="700" height="700"/>
+<img src="/thehive/images/user-guides/analyst-corner/task/task_menu.png" alt="tasks" width="700" height="700"/>
 
 The details are displayed
 
-<img src="../../../images/user-guides/analyst-corner/tasks/tasks-details-tabs-menu.png" alt="tasks" width="700" height="700"/>
+<img src="/thehive/images/user-guides/analyst-corner/task/tasks-details-tabs-menu.png" alt="tasks" width="700" height="700"/>
 
 In the left pane of the window you can configure the PAP, TLP and Severity. 
 Refer to ['Configure Alert Details'](../cases-list/configure-pap-tlp-severity.md) for more details. 

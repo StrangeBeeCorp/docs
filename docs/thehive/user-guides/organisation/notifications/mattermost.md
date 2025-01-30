@@ -6,14 +6,14 @@ Using Mattermost as *Notifier* requires to create at least one endpoint. This en
 In the *Organisation* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
 
 <figure markdown>
-  ![Enpoints list](../../../images/user-guides/organisation/notifications/organisation-endpoints.png){ width="500" }
+  ![Enpoints list](/thehive/images/user-guides/organisation/notifications/organisation-endpoints.png){ width="500" }
 </figure>
 
 ### Enpoint configuration
 Choose *Mattermost* and complete required information.
 
 <figure markdown>
-  ![Mattermost endpoint configuration](../../../images/user-guides/organisation/notifications/organisation-endpoints-mattermost-configuration.png){ width="500" }
+  ![Mattermost endpoint configuration](/thehive/images/user-guides/organisation/notifications/organisation-endpoints-mattermost-configuration.png){ width="500" }
 </figure>
 
 * **Name**: give a unique name to the endpoint
@@ -32,7 +32,7 @@ Then, click **confirm** to create the endpoint.
 When creating a *Notification* select *Mattermost* as *Notifier* and complete the form.
 
 <figure markdown>
-  ![Choose Mattermost](../../../images/user-guides/organisation/notifications/organisation-notifications-mattermost-1.png){ width="500" }
+  ![Choose Mattermost](/thehive/images/user-guides/organisation/notifications/organisation-notifications-mattermost-1.png){ width="500" }
 </figure>
 
 TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:

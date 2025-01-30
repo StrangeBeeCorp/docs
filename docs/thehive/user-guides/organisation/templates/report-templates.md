@@ -8,7 +8,7 @@ Access to the list by opening the *Organisation* menu, then the *Templates* tab,
 
 
 <figure markdown>
-  ![List of Reports templates](../../../images/user-guides/organisation/templates/organisation-report-templates.png){ width="450" }
+  ![List of Reports templates](/thehive/images/user-guides/organisation/templates/organisation-report-templates.png){ width="450" }
   <figcaption>List of reports templates</figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ Click the :fontawesome-regular-square-plus: button to create a new *Report templ
 
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-templates-2.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-templates-2.png){ width="450"}
   <figcaption>Create a report template</figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ Then define the report content, consisting of a header, footer and widget list
 The header is composed of markdown content. It is not mandatory to define a header.
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-header-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-header-templates.png){ width="450"}
   <figcaption>Define header</figcaption>
 </figure>
 
@@ -52,13 +52,13 @@ The header is composed of markdown content. It is not mandatory to define a head
 
 It is possible to define a text widget to define content.
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-text-templates-1.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-text-templates-1.png){ width="450"}
   <figcaption>Define text widget</figcaption>
 </figure>
 
 A text widget can be defined to add separating titles between widgets. 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-text-templates-2.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-text-templates-2.png){ width="450"}
   <figcaption>Define section title</figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ A text widget can be defined to add separating titles between widgets.
 
 Add images by searching for them in computer files or by drag&drop
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-image-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-image-templates.png){ width="450"}
   <figcaption>Image widget</figcaption>
 </figure>
 
@@ -81,7 +81,7 @@ Add tables containing case elements
 3. It is possible to activate protection on the display of observables to fang information.
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates.png){ width="450"}
   <figcaption>Define entity table</figcaption>
 </figure>
 
@@ -91,7 +91,7 @@ Add tables containing case elements
 3. Finally, it is possible to delete any column by clicking on the cross button of the item
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-2.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-2.png){ width="450"}
   <figcaption>Define data columns table</figcaption>
 </figure>
 
@@ -103,7 +103,7 @@ Add tables containing case elements
 5. Delete excess sort data
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-3.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-3.png){ width="450"}
   <figcaption>Define sort table</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ Add tables containing case elements
 7. Finally, you can clear all the filters to be applied
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-4.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-4.png){ width="450"}
   <figcaption>Define filters table</figcaption>
 </figure>
 
@@ -131,7 +131,7 @@ Add list containing case elements
 3. It is possible to activate protection on the display of observables to fang informations
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates.png){ width="450"}
   <figcaption>Define entity list</figcaption>
 </figure>
 
@@ -141,7 +141,7 @@ Add list containing case elements
 3. Finally, it is possible to delete any data by clicking on the cross button of the item
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-2.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-2.png){ width="450"}
   <figcaption>Define data list</figcaption>
 </figure>
 
@@ -153,7 +153,7 @@ Add list containing case elements
 5. Delete excess sort data
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-3.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-3.png){ width="450"}
   <figcaption>Define sort list</figcaption>
 </figure>
 
@@ -167,7 +167,7 @@ Add list containing case elements
 7. Finally, you can clear all the filters to be applied
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-table-templates-4.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-table-templates-4.png){ width="450"}
   <figcaption>Define filters list</figcaption>
 </figure>
 
@@ -175,7 +175,7 @@ Add list containing case elements
 The footer is composed of markdown content. It is not mandatory to define a footer.
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-footer-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-footer-templates.png){ width="450"}
   <figcaption>Define footer</figcaption>
 </figure>
 
@@ -186,7 +186,7 @@ The footer is composed of markdown content. It is not mandatory to define a foot
 4. Header and footer cannot be moved
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-organize-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-organize-templates.png){ width="450"}
   <figcaption>Organise elements</figcaption>
 </figure>
 
@@ -195,13 +195,13 @@ The footer is composed of markdown content. It is not mandatory to define a foot
 2. Delete any widget except header and footer
 3. Preview the report
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-preview-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-preview-templates.png){ width="450"}
 </figure>
 
 4. Save the report at any time
 5. Exit report editing to return to report list
 
 <figure markdown>
-  ![Create a report template](../../../images/user-guides/organisation/templates/organisation-report-actions-templates.png){ width="450"}
+  ![Create a report template](/thehive/images/user-guides/organisation/templates/organisation-report-actions-templates.png){ width="450"}
   <figcaption>Actions on reports</figcaption>
 </figure>
