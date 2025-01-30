@@ -72,7 +72,7 @@ plugins:
             'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': '/thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
 
 extra:
   generator: false
