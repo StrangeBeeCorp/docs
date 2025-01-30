@@ -5,22 +5,48 @@
 
 ## Add an organization
 
-### Procedure
+1. As an administrator, go to the **Organizations** view from the sidebar menu.
 
-1. As an administrator, 
+    ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
+2. Select :fontawesome-regular-square-plus:
 
-As an administrator, go to the *Organizations* view from the sidebar menu.
+3. Edit the required fields in the **Adding an organization** pane:
 
-Select :fontawesome-regular-square-plus: and edit the required fields in the drawer: 
+    **Name**
 
-* A placeholder exists and a logo of the organization can be added
-* *Name*: Name of the new organization 
-* *Description*: Description for the new organization
-* *Task sharing rule*: default sharing rule for tasks that will be applied when a case will be shared with another organization
-* *Observables sharing rule*: default sharing rule for observables that will be applied when a case will be shared with another organization
+    Enter the name of your new organization.
 
-Select **Confirm** to create the organization.
+    **Description**
+
+    Enter the description of your new organization.
+
+    **Tasks sharing rule**
+
+    Define the sharing rule for tasks when a case is shared with another organization. (lier avec la page qui explique comment faire ça)
+
+    Two values are available:
+        * Manual (default): This means you will have to authorize manually the sharing when sharing a case and specify a profile with certain permissions
+        * AutoShare: 
+
+    **Observables sharing rule**
+
+    Define the sharing rule for observables when a case is shared with another organization. (lier avec la page qui explique comment faire ça)
+
+    Two values are available:
+        * Manual (default)
+        * AutoShare
+
+4. Select **Confirm**.
+
+5. On the organizations list, find your new organization, hover and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
+
+6. Select the default organization logo to edit it.
+
+7. Upload the image you want to use as the logo of your new organization.
+
+Next steps: Add users to the organization
+Link organizations
 
 ## Edit your organization
 
