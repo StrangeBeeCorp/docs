@@ -3,9 +3,14 @@
 !!! warning "Administrator access required"
     Only users assigned to the Admin organization with a profile that includes the `manageOrganisation` permission can create an organization in TheHive.
 
-As an administrator, go to the *Organizations* view from the sidebar menu.
-
 ## Add an organization
+
+### Procedure
+
+1. As an administrator, 
+
+
+As an administrator, go to the *Organizations* view from the sidebar menu.
 
 Select :fontawesome-regular-square-plus: and edit the required fields in the drawer: 
 
