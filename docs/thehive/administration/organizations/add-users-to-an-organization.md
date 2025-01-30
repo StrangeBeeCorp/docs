@@ -22,8 +22,30 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
-2. Select the organization you want to add users to.
+2. Add the new user to organizations using one of these methods:
 
-3. Select :fontawesome-regular-square-plus:.
+    **Method 1:**
 
-4. 
+    2.1.0. Select the organization you want to add users to.
+
+    2.1.2. Select :fontawesome-regular-square-plus:.
+
+    2.1.3. In the **Adding a user** pane, enter:
+
+    **Type**
+
+    The user type you want to create.
+
+    Pick from the options in the dropdown list:  
+        - *Normal*: XXX.
+        - *Service*: XXX.
+
+    **Login**
+
+    The email address of the user that they will use for login.
+
+    **Name**
+
+    **Profile**
+
+    2.1.4. Select **Confirm**, or **Save and add another** if you want to add another new user.
