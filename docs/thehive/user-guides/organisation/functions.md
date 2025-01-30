@@ -59,7 +59,7 @@ Follow the steps below to create a function in TheHive:
 
 &nbsp;
 
-![Create function](../../images/user-guides/organisation/functions_create.png)
+![Create function](/thehive/images/user-guides/organisation/functions_create.png)
 
 ---
 

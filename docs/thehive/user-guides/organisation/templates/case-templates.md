@@ -8,7 +8,7 @@ Access to the list by opening the *Organisation* menu, then the *Templates* tab,
 
 
 <figure markdown>
-  ![List of Case templates](../../../images/user-guides/organisation/templates/organisation-case-templates.png){ width="450" }
+  ![List of Case templates](/thehive/images/user-guides/organisation/templates/organisation-case-templates.png){ width="450" }
   <figcaption>List of Case templates</figcaption>
 </figure>
 
@@ -19,7 +19,7 @@ Click the :fontawesome-regular-square-plus: button to create a new *Case templat
 
 
 <figure markdown>
-  ![Create a Case template](../../../images/user-guides/organisation/templates/organisation-case-templates-2.png){ width="450" }
+  ![Create a Case template](/thehive/images/user-guides/organisation/templates/organisation-case-templates-2.png){ width="450" }
   <figcaption>Create a case template</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ Pages
 *Case templates* can be exported and stored as JSON files by clicking on the option icon :fontawesome-solid-ellipsis: and selecting :fontawesome-solid-file-export: *Export case template*
 
 <figure markdown>
-![](../../../images/user-guides/organisation/templates/organisation-case-templates-3.png){ width="500" }
+![](/thehive/images/user-guides/organisation/templates/organisation-case-templates-3.png){ width="500" }
 <figcaption>Export a case template</figcaption>
 </figure>
 
@@ -73,6 +73,6 @@ Pages
 Click on the button *Import Case Template* and select the JSON formatted file to import.
 
 <figure markdown>
-![](../../../images/user-guides/organisation/templates/organisastion-case-templates-4.png){ width="500" }
+![](/thehive/images/user-guides/organisation/templates/organisastion-case-templates-4.png){ width="500" }
 <figcaption>Import a case template</figcaption>
 </figure>

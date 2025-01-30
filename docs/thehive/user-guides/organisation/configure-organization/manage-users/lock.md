@@ -7,10 +7,10 @@ To lock the user details:
 1. Click the ellipsis **(...)** corresponding to the user details that you want to lock.
 1. Click the **Lock** option.
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-users/lock_user_option.png" alt="lock user option" width="1000" height="1000"/>
+<img src="/thehive/images/user-guides/organisation/configure-organization/manage-users/lock_user_option.png" alt="lock user option" width="1000" height="1000"/>
 
 A new pop up message opens.
 
 1. Click the **OK** button.
 
-<img src="../../../../images/user-guides/organisation/configure-organization/manage-users/lock_user.png" alt="lock user" width="300" height="300"/>
+<img src="/thehive/images/user-guides/organisation/configure-organization/manage-users/lock_user.png" alt="lock user" width="300" height="300"/>

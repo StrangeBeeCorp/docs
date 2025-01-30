@@ -13,9 +13,9 @@ Refer to [`Configure Case Details`](../cases-list/configure-pap-tlp-severity.md)
 1. Enter the **Company name**. 
 1. **Add** business unit, detection source and location details. 
 
-    <img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-add-details.png" alt="add details" width="500" height="500"/>
+    <img src="/thehive/images/user-guides/analyst-corner/cases-list/cases-list-add-details.png" alt="add details" width="500" height="500"/>
     
 1. Click the **Confirm** button. 
 1. Click the **Comment** button. 
 
-<img src="../../../images/user-guides/analyst-corner/cases-list/cases-list-go-to-details-page.png" alt="general tab alerts" width="1000" height="1000"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases-list/cases-list-go-to-details-page.png" alt="general tab alerts" width="1000" height="1000"/>

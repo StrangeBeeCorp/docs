@@ -1,7 +1,7 @@
 # How to write filtered events for notifications ?
 
 <figure markdown>
-  ![Filtered Event](../../../images/user-guides/organisation/notifications/organisation-notifications-filteredevent.png){ width="500" }
+  ![Filtered Event](/thehive/images/user-guides/organisation/notifications/organisation-notifications-filteredevent.png){ width="500" }
   <figcaption>Filtered event example: "Case severity has been updated to High or Critical"</figcaption>
 </figure>
 
