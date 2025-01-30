@@ -22,20 +22,16 @@
     The description of your new organization.
 
     **Tasks sharing rule**
-
+Ò
     The sharing rule for tasks when a case is shared with another organization.
 
-    Two values are available:
-        * Manual (default): This means you will have to authorize manually the sharing when sharing a case and specify a profile with certain permissions
-        * AutoShare: 
+    {!includes/sharing-rules-case.md!}
 
     **Observables sharing rule**
 
     The sharing rule for observables when a case is shared with another organization.
 
-    Two values are available:
-        * Manual (default)
-        * AutoShare
+    {!includes/sharing-rules-case.md!}
 
 4. Select **Confirm**.
 
