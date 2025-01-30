@@ -67,6 +67,12 @@ plugins:
             'thehive/user-guides/analyst-corner/search//search-scope-by/observables.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md'
             'thehive/user-guides/analyst-corner/search//search-scope-by/tasklogs.md': 'thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md'
             'thehive/user-guides/analyst-corner/search//search-scope-by/tasks.md': 'thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md'
+            'thehive/administration/custom-fields.md': 'thehive/administration/custom-fields/about-custom-fields.md'
+            'thehive/user-guides/analyst-corner/task/about-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': '/thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
 
 extra:
   generator: false
