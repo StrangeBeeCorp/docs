@@ -174,7 +174,7 @@ nav:
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Organizations':
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
-        - 'Add an Organization': thehive/administration/organizations/add-an-organization.md
+        - 'Create an Organization': thehive/administration/organizations/create-an-organization.md
         - 'Add Users to an Organization': thehive/administration/organizations/add-users-to-an-organization.md
         - 'Link an Organization': thehive/administration/organizations/link-an-organization.md
         - 'Lock an Organization': thehive/administration/organizations/lock-an-organization.md

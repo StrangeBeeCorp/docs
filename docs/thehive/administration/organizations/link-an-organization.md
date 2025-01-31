@@ -6,7 +6,7 @@ By default, organizations in TheHive are not linked. Each organization operates 
 
 Link organizations to enable data sharing between them. You can define how cases are shared with the other organization and vice versa.
 
-{!includes/administrator-access-manage-organization.md!}
+{!includes/administrator-access-manage-organizations.md!}
 
 ## Procedure
 

@@ -18,11 +18,11 @@ When assigning a user to an organization, the system suggests only [permission p
 
 ## Permissions
 
-To access the **Organizations** view, you must be a member of the Admin organization with a profile that includes the `manageOrganisation` permission.
-
-To assign users to organizations, you must be a member of the Admin organization with a profile that includes the `manageUser` permission.
+{!includes/administrator-access-manage-organizations.md!}
 
 ## Next steps
 
+* [How to Create an Organization](create-an-organization.md)
+* [How to Add Users to an Organization](add-users-to-an-organization.md)
 * [How to Link Organizations](link-an-organization.md)
-* [Manage Users in your Organization](../../user-guides/organization/accounts.md)
+* [How to Lock an Organization](lock-an-organization.md)

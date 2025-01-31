@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for adding new and existing users to an [organization](about-organizations.md) in TheHive.
 
-{!includes/administrator-access-manage-organization.md!}
+{!includes/administrator-access-manage-organizations.md!}
 
 ## Add an existing user to an organization
 
