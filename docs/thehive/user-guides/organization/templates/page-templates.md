@@ -48,6 +48,6 @@ Content
 Click on the button *Import Page Template* and select the JSON formatted file to import.
 
 <figure markdown>
-![](../../../images/user-guides/organization/templates/organisastion-page-templates-4.png){ width="500" }
+![](../../../images/user-guides/organization/templates/organization-page-templates-4.png){ width="500" }
 <figcaption>Import a page template</figcaption>
 </figure>
