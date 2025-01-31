@@ -4,7 +4,7 @@ Custom fields let you add additional information to [cases](../../user-guides/an
 
 By default, TheHive includes predefined fields for cases and alerts. To better suit your needs, you can create custom fields to tailor cases and alerts. 
 
-These fields can be configured as optional or mandatory for users.
+You can configure these fields as optional or mandatory for users.
 
 ## Use cases
 
@@ -14,7 +14,7 @@ You can use custom fields to:
 * Support organizational alignment by specifying the relevant business unit or team.
 * Enable integration with tools and feeders by including identifiers or other data from external systems, or linking directly to external system data.
 * Streamline processes by indicating internal classification levels.
-* Manage checklists to ensure specific steps are validated when handling a case or alert.
+* Manage checklists to validate specific steps when handling a case or alert.
 * Enhance data analysis through tagging, for example, identifying incidents involving VIPs.
 
 ## Types
@@ -27,7 +27,7 @@ You can define custom fields in the following formats:
 
 You must be an administrator to create custom fields in the **Entities management** view.
 
-After they are created, custom fields become automatically available to all users across all organizations.
+After creation, custom fields become automatically available to all users across all organizations.
 
 ## Next steps
 
