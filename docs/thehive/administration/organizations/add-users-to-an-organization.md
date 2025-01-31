@@ -22,30 +22,33 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
-2. Add the new user to organizations using one of these methods:
+2. Select the organization to add users to, then select :fontawesome-regular-square-plus:. Alternatively, hover over the organization, select ![Eye](../../images/administration-guides/manage-organizations-eye.png), and select **Add** in the **Users** section.
 
-    **Method 1:**
-
-    2.1.0. Select the organization you want to add users to.
-
-    2.1.2. Select :fontawesome-regular-square-plus:.
-
-    2.1.3. In the **Adding a user** pane, enter:
+3. In the **Adding a user** pane, enter:
 
     **Type**
 
     The user type you want to create.
 
-    Pick from the options in the dropdown list:  
-        - *Normal*: XXX.
-        - *Service*: XXX.
+    Pick from the options in the dropdown list:   
+        - *Normal*: Allows the user to access TheHive through the user interface.  
+        - *Service*: Allows the user to access TheHive through the API.
 
     **Login**
 
-    The email address of the user that they will use for login.
+    The user's email address used for login.
 
     **Name**
 
+    The user's name.
+
     **Profile**
 
-    2.1.4. Select **Confirm**, or **Save and add another** if you want to add another new user.
+    Pick a permission profile for the user from the dropdown list.
+
+4. Select **Confirm**, or **Save and add another** if you want to add another new user.
+
+## Next steps
+
+* [Link an Organization](link-an-organization.md)
+* [Lock an Organization](lock-an-organization.md)
