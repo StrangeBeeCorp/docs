@@ -25,9 +25,9 @@ You can define custom fields in the following formats:
 
 ## Permissions
 
-You must be an administrator to create custom fields in the **Entities management** view.
+{!includes/administrator-access-manage-custom-fields.md!}
 
-After creation, custom fields become automatically available to all users across all organizations.
+After creation, custom fields are automatically available to all users across your organizations, allowing them to add the fields to cases and alerts.
 
 ## Next steps
 
