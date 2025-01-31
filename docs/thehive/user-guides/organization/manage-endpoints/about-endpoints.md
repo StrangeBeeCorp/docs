@@ -4,7 +4,7 @@ In this section you can find information regarding endpoints. An endpoint is the
 
 A user can create an endpoint. 
 
-<img src="../../../images/user-guides/organization/manage-endpoints/endpoints.png" alt="end points" width="1000" height="1000"/>
+<img src="/thehive/images/user-guides/organization/manage-endpoints/endpoints.png" alt="end points" width="1000" height="1000"/>
 
 <img src="endpoints.png" alt="end points" width="1000" height="1000"/>
 
