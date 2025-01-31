@@ -6,4 +6,4 @@ When you install the TheHive application, it comes with a set of pre-defined obs
 
 You can define your own observable type. You can see the list of all Observable Types.
 
-<img src="../../../images/user-guides/analyst-corner/alerts/alerts-observables-tab.png" alt=" view observables tab alerts" width="700" height="700"/>
+<img src="/thehive/images/user-guides/analyst-corner/alerts/alerts-observables-tab.png" alt=" view observables tab alerts" width="700" height="700"/>

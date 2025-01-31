@@ -1,6 +1,6 @@
 # Custom tags
 
-*Custom tags* gathers all tags coming from *Alerts* or added to *Cases* or *Observables* that are not included in [Taxonomies](../../administration/taxonomies.md) added to TheHive, even if they are not activated.
+*Custom tags* gathers all tags coming from *Alerts* or added to *Cases* or *Observables* that are not included in [Taxonomies](/thehive/administration/taxonomies.md) added to TheHive, even if they are not activated.
 
 <figure markdown>
   ![Custom tags](../../images/user-guides/organization/organization-custom-tags.png){ width="600" }

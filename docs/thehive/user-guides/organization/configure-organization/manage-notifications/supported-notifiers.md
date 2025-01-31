@@ -12,7 +12,7 @@
 
 1. Click HttpRequest.
 
-    1. Select **Endpoint**. (Refer to [`Add endpoints`](../../manage-endpoints/add_endpoints.md))
+    1. Select **Endpoint**. (Refer to [`Add endpoints`](/thehive/manage-endpoints/add_endpoints.md))
     1. Select the HTTP **Method**.
     1. Either enter the **URL**. 
     1. Or select the option **Use endpoint url as prefix**. 
@@ -32,7 +32,7 @@
 
 1. Click MatterMost.
 
-    1. Select **Endpoint**.(Refer to [`Add endpoints`](../../manage-endpoints/add_endpoints.md))
+    1. Select **Endpoint**.(Refer to [`Add endpoints`](/thehive/manage-endpoints/add_endpoints.md))
     1. Enter the **Username**.
     1. Enter the **Channel**.
     1. Click **Add variable** to add in the **Template** field.
@@ -42,7 +42,7 @@
 
 1. Click Slack.
 
-    1. Select **Endpoint**. (Refer to [`Add endpoints`](../../manage-endpoints/add_endpoints.md))
+    1. Select **Endpoint**. (Refer to [`Add endpoints`](/thehive/manage-endpoints/add_endpoints.md))
     1. Click **Add variable** to add in the **Text Template** field.
     1. Enter the **Username**.
     1. Enter the **Channel**.

@@ -55,7 +55,7 @@ Password
   : Create or update the password of the user
 
 Reset Password
-  : If the application is configured with a [SMTP server](../../administration/smtp.md), send an email with a magic link to the user. link is active for a short time period.
+  : If the application is configured with a [SMTP server](/thehive/administration/smtp.md), send an email with a magic link to the user. link is active for a short time period.
 
 Sessions
   : List of opened interactive sessions. Click delete to close a session

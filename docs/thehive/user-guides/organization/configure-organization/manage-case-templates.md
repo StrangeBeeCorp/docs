@@ -30,10 +30,10 @@ A new window opens.
 1. Select **TLP**, (White/Green/Amber/Red).
 1. Select **PAP**, (White/Green/Amber/Red).
 1. Select **Severity**, (Low/Medium/High/Critical).
-1. Click **+** to add **Tags**. (Refer to [`Add tags`](../../analyst-corner/cases/adding_to_a_case.md#add-tags)).
+1. Click **+** to add **Tags**. (Refer to [`Add tags`](/thehive/analyst-corner/cases/adding_to_a_case.md#add-tags)).
 1. Enter the case description in the **Description**. 
-1. Click **+** to Add Tasks. (Refer to [`Add tasks`](../../analyst-corner/cases/adding_to_a_case.md#add-tasks)).
-1. Click **+** to Add Custom Fields. (Refer to [`Add custom field values`](../../analyst-corner/cases/adding_to_a_case.md#add-custom-field-values)).
+1. Click **+** to Add Tasks. (Refer to [`Add tasks`](/thehive/analyst-corner/cases/adding_to_a_case.md#add-tasks)).
+1. Click **+** to Add Custom Fields. (Refer to [`Add custom field values`](/thehive/analyst-corner/cases/adding_to_a_case.md#add-custom-field-values)).
 1. Click the **Confirm case template creation** button. 
 
 <img src="../../../images/user-guides/organization/configure-organization/adding-a-case-template.png" alt="adding a case templates" width="1000" height="1000"/>

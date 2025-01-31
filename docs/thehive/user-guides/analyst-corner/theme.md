@@ -23,7 +23,7 @@ Follow these steps to customize your theme in TheHive:
 
 3. **Open Theme Settings**: In the dropdown menu, click on **"Themes"**. A popup window will appear displaying the theme options.
 
-    ![](../../images/user-guides/analyst-corner/operation1.png)
+    ![](/thehive/images/user-guides/analyst-corner/operation1.png)
 
 4. **Select Your Preferred Theme**: The popup will present three options with radio buttons:
      
@@ -31,15 +31,15 @@ Follow these steps to customize your theme in TheHive:
      - **Dark**
      - **System**
 
-    ![](../../images/user-guides/analyst-corner/operation2.png)
+    ![](/thehive/images/user-guides/analyst-corner/operation2.png)
 
 5. **Apply Changes**: Click on the radio button next to your desired theme. The interface will update immediately to reflect your selection.
 
     === "Light Theme" 
-        ![Light Theme](../../images/user-guides/analyst-corner/lightmode.png)
+        ![Light Theme](/thehive/images/user-guides/analyst-corner/lightmode.png)
 
     === "Dark Theme"
-        ![Dark Theme](../../images/user-guides/analyst-corner/darkmode.png)
+        ![Dark Theme](/thehive/images/user-guides/analyst-corner/darkmode.png)
 
 ---
 
