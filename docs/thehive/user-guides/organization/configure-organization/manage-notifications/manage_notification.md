@@ -13,6 +13,6 @@ To Add a notification:
 1. Select **Notifiers**. (Refer to [`Selecting supported notifiers`](../manage-notifications/supported-notifiers.md))
 1. Click the **Save** button.
 
-<img src="../../../../images/user-guides/organization/configure-organization/manage-notifications/add_notification.png" alt="add notification" width="1000" height="1000"/>
+<img src="/thehive/configure-organization/manage-notifications/add_notification.png" alt="add notification" width="1000" height="1000"/>
 
 

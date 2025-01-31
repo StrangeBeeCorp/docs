@@ -8,5 +8,5 @@ A user can add, edit, delete, and change the colour of a custom tags. A user can
 
 A user can view all the details about the number of cases, alerts, observables, templates, and details of created By, dates of creation and dates of update. 
 
-<img src="../../../../images/user-guides/organization/configure-organization/manage-custom-tags/custom_tags.png" alt="custom tags" width="1000" height="1000"/>
+<img src="/thehive/configure-organization/manage-custom-tags/custom_tags.png" alt="custom tags" width="1000" height="1000"/>
 
