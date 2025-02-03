@@ -26,7 +26,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
     Options are the followings:
     - *default*: Cases will not automatically shared with the other organization. It will require a manual action from you to be shared.
-    - *supervised*: Cases will automatically be shared with the other organization with an analyst-type permission profile.
+    - *supervised*: Cases will automatically be shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.
     - *notify*: Cases will automatically be shared with the other organization with the read-only permission profile.
 
 6. Select **Confirm**.
