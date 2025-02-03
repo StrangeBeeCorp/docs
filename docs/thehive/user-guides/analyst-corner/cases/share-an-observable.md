@@ -1,4 +1,4 @@
-# How to Share or Unshare an Observable
+# How to Share an Observable
 
 This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) on observables with [linked organizations](../../../administration/organizations/link-an-organization.md) for a specific case in TheHive.
 
@@ -16,7 +16,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
     !!! warning "Bulk actions not allowed"
         You must modify local sharing rules on observables individually. Bulk actions are not supported.
 
-3. If the case is shared with at least one linked organization, select the observables sharing rules to apply using the dropdown list. If the case is not shared with any linked organization, refer to [Share or Unshare a Case](share-unshare-a-case.md).
+3. If the case is shared with at least one linked organization, select the observables sharing rules to apply using the dropdown list. If the case is not shared with any linked organization, refer to [Share a Case](share-a-case.md).
 
     {!includes/sharing-rules-case.md!}
 
@@ -34,5 +34,5 @@ To learn more about how sharing rules function and interact, see [About Organiza
 
 ## Next steps
 
-* [Share or Unshare a Task](../tasks/share-unshare-a-task.md)
-* [Share or Unshare a Case](share-unshare-a-case.md)
+* [Share a Task](../tasks/share-a-task.md)
+* [Share a Case](share-a-case.md)

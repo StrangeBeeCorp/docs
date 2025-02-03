@@ -1,4 +1,4 @@
-# How to Share or Unshare a Task
+# How to Share a Task
 
 This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) on tasks with [linked organizations](../../../administration/organizations/link-an-organization.md) for a specific case in TheHive.
 
@@ -23,7 +23,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
     !!! info "Sharing existing tasks"
     Tasks sharing rules apply only to new tasks. Existing tasks will not be shared automatically when updating the rules.
 
-    If the case is not shared with any linked organization, refer to [Share or Unshare a Case](share-unshare-a-case.md).
+    If the case is not shared with any linked organization, refer to [Share a Case](share-a-case.md).
 
 4. [Optional] To apply the new rules to existing tasks, follow these steps:
     4.1 Select **Manage case sharings** again.
@@ -36,5 +36,5 @@ To learn more about how sharing rules function and interact, see [About Organiza
 
 ## Next steps
 
-* [Share or Unshare an Observable](../cases/share-unshare-an-observable.md)
-* [Share or Unshare a Case](share-unshare-a-case.md)
+* [Share an Observable](../cases/share-an-observable.md)
+* [Share a Case](share-a-case.md)

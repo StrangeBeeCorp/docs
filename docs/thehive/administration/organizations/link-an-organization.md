@@ -1,6 +1,6 @@
-# How to Link or Unlink an Organization
+# How to Link an Organization
 
-This topic provides step-by-step instructions for linking or unlinking an [organization](about-organizations.md) to another in TheHive.
+This topic provides step-by-step instructions for linking an [organization](about-organizations.md) to another in TheHive.
 
 By default, organizations in TheHive are not linked. Each organization operates independently and cannot access others on the instance.
 
@@ -8,7 +8,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Link an Organization
+## Procedure
 
 1. As an administrator, go to the **Organizations** view
 
@@ -30,25 +30,9 @@ Link organizations to enable data sharing and define the applicable sharing rule
     - *notify*: Cases will automatically be shared with the other organization with the read-only permission profile.
 
 6. Select **Confirm**.
-
-## Unlink an Organization
-
-1. As an administrator, go to the **Organizations** view
-
-    ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
-
-2. Select the organization to unlink to another, then select **Linked organizations**. Alternatively, hover over the organization and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
-
-    ![Link an organization](../../images/administration-guides/link-an-organization.png)
-
-3. Select **Manage linked organizations**.
-
-4. Select the organizations you want to unlink to your organization.
-
-5. Select **Confirm**.
     
 ## Next steps
 
-* [Share or Unshare a Case](share-unshare-a-case.md)
-* [Share or Unshare a Task](../tasks/share-unshare-a-task.md)
-* [Share or Unshare an Observable](share-unshare-an-observable.md)
+* [Share a Case](share-a-case.md)
+* [Share a Task](../tasks/share-a-task.md)
+* [Share an Observable](share-an-observable.md)

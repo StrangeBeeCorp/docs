@@ -30,17 +30,17 @@ They are useful in the following scenarios:
 
 ### Sharing or unsharing an existing case
 
-You can share or unshare an existing case by modifying its sharing rules directly within the case settings. 
+You can share or unshare an existing case by modifying its sharing rules directly within the case settings.
 
-Follow this step-by-step instructions to see [how to share or unshare an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
+Follow this step-by-step instructions to see [how to share an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
 
 ### Modify tasks and observables sharing rules for an existing case
 
 You can modify the tasks and observables sharing rules for an existing case by updating the configuration directly within the case settings.
 
-Follow this step-by-step instructions to see [how to share or unshare tasks on an existing case](../../user-guides/analyst-corner/tasks/share-unshare-a-task.md.md).
+Follow this step-by-step instructions to see [how to share tasks on an existing case](../../user-guides/analyst-corner/tasks/share-a-task.md.md).
 
-Follow this step-by-step instructions to see [how to share or unshare observables on an existing case](../../user-guides/analyst-corner/cases/share-unshare-an-observable.md).
+Follow this step-by-step instructions to see [how to share observables on an existing case](../../user-guides/analyst-corner/cases/share-an-observable.md).
 
 !!! tip "Sharing rules override"
     The new local sharing rules defined for tasks and observables within a case will override the global configuration set at the organization level.
@@ -55,7 +55,7 @@ Follow this step-by-step instructions to see [how to share or unshare observable
 
 ## Next steps
 
-* [Link or Unlink an Organization](link-unlink-an-organization.md)
-* [Share or Unshare a Case](share-unshare-a-case.md)
-* [Share or Unshare a Task](../tasks/share-unshare-a-task.md)
-* [Share or Unshare an Observable](share-unshare-an-observable.md)
+* [Link an Organization](link-an-organization.md)
+* [Share a Case](share-a-case.md)
+* [Share a Task](../tasks/share-a-task.md)
+* [Share an Observable](share-an-observable.md)
