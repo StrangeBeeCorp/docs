@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 ## Add an existing user to an organization
 
-1. As an administrator, go to the **Users** view from the sidebar menu.
+1. Go to the **Users** view from the sidebar menu.
 
     ![Users view](../../images/administration-guides/add-users-to-an-organization-existing.png)
 
@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 ## Add a new user to an organization
 
-1. As an administrator, go to the **Organizations** view from the sidebar menu.
+1. Go to the **Organizations** view from the sidebar menu.
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png) 
 

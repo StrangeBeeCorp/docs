@@ -10,7 +10,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
 ## Procedure
 
-1. As an administrator, go to the **Organizations** view
+1. Go to the **Organizations** view
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
