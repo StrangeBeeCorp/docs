@@ -19,6 +19,8 @@ To share existing cases, tasks, or observables created before the rule was imple
 * Share a Task
 * Share an Observable
 
+Voir autorisation demandée pour share un case : manageShare ou juste manageCase
+
 ## How sharing rules work together
 
 | Cases sharing rule ↓ \ Tasks and observables sharing rule → | *manual* | *autoShare* |
