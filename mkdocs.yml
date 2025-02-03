@@ -174,10 +174,10 @@ nav:
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Organizations':
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
+        - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
         - 'Create an Organization': thehive/administration/organizations/create-an-organization.md
         - 'Add Users to an Organization': thehive/administration/organizations/add-users-to-an-organization.md
         - 'Link an Organization': thehive/administration/organizations/link-an-organization.md
-        - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
         - 'Lock an Organization': thehive/administration/organizations/lock-an-organization.md
       - 'Manage Accounts':
         - 'Account Creation/Update Guide': thehive/administration/accounts.md
@@ -280,6 +280,8 @@ nav:
           - 'View Pages': thehive/user-guides/analyst-corner/cases-list/pages.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases-list/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-list/run-analyzer.md
+          - 'Share a Case' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+          - 'Share an Observable' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
           - 'Search for Tasks': 
@@ -290,6 +292,7 @@ nav:
           - 'Preview Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
+          - 'Share a Task' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
         - 'Dashboard Usage':
           - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
           - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
