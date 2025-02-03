@@ -34,7 +34,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Method 3: Filters in the Cases view
 
-*Use this method if you don't know the case number you're looking for or need to search for multiple cases to perform actions on them simultaneously.*
+*Use this method if you want to find one or more cases to perform actions on them simultaneously.*
 
 1. Go to the **Cases** view from the sidebar menu.
 
@@ -48,7 +48,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Method 4: Global Search feature
 
-*Use this method if you don't know the case number you're looking for or need to conduct advanced searches for multiple cases without requiring simultaneous actions.*
+*Use this method if you need to conduct advanced searches for one or more cases without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 
