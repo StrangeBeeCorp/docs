@@ -50,5 +50,5 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 ## Next steps
 
-* [Link an Organization](link-an-organization.md)
-* [Lock an Organization](lock-an-organization.md)
+* [Link or Unlink an Organization](link-unlink-an-organization.md)
+* [Lock or Unlock an Organization](lock-unlock-an-organization.md)

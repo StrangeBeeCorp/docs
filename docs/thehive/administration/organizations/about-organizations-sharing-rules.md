@@ -1,40 +1,61 @@
 # About Organizations Sharing Rules
 
-When [linking organizations](link-an-organization.md), you must define sharing rules for [cases](../../user-guides/analyst-corner/cases/about-a-case.md). Additionally, sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-a-task.md) and observables within cases are set when [creating an organization](create-an-organization.md).
+Sharing rules define how cases are shared with linked organizations.
 
-This topic explains how sharing rules work and interact with each other.
+These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-a-task.md) and observables, which are configured when creating an organization.
+
+This topic explains how these sharing rules function and work together.
+
+## Global sharing rules
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## How sharing rules apply
+Global sharing rules set [at the organization level](create-an-organization.md) and when [linking organizations](link-an-organization.md) define how newly created cases, along with their related tasks and observables, are shared with linked organizations.
 
-When you define a sharing rule for cases, tasks, or observables, it applies only to new cases created after the rule takes effect.
+The configuration determines whether this sharing occurs automatically. For cases with automatic sharing enabled, you can assign a permission profile to linked organizations, selecting either analyst-type or read-only access.
 
-You can [modify sharing rules for tasks and observables individually](../../user-guides/analyst-corner/cases/modify-task-observable-sharing-rules-for-a-case.md) fo each case that will apply for each new case only. 
+!!! info "Managing sharing rules for existing cases"
+    Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. To apply sharing rules to existing cases, you must configure them manually, [one case at a time](#local-sharing-rules).
 
-Si on s'est trompé en mettant qu'on voulait pas partager les tasks et observables, impossible de les partager manuellement. Il faut départager le case, enregistrer, puis repartager le case en modificant la task et observable sharing rule sur le case en question.
+## Local sharing rules
 
-To share existing cases, tasks, or observables created before the rule was implemented, you must share them manually by sharing a case and select the autoShare opion for task and observable:
-* [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)
-* Share a Task
-* Share an Observable
+Local sharing rules override the global sharing rules defined at the organization level and when linking organizations. This allows you to customize sharing settings for specific cases.
 
-Voir autorisation demandée pour share un case : manageShare ou juste manageCase
+They are useful in the following scenarios:
+
+* You have [global sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) for newly created cases but want to apply the same rules to an existing case.
+* You need to apply different sharing rules to one or more cases instead of following the global sharing rules.
+
+{!includes/access-manage-case-sharing.md!}
+
+### Sharing or unsharing an existing case
+
+You can share or unshare an existing case by modifying its sharing rules directly within the case settings. 
+
+Follow this step-by-step instructions to see [how to share or unshare an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
+
+### Modify tasks and observables sharing rules for an existing case
+
+You can modify the tasks and observables sharing rules for an existing case by updating the configuration directly within the case settings.
+
+Follow this step-by-step instructions to see [how to share or unshare tasks on an existing case](../../user-guides/analyst-corner/tasks/share-unshare-a-task.md.md).
+
+Follow this step-by-step instructions to see [how to share or unshare observables on an existing case](../../user-guides/analyst-corner/cases/share-unshare-an-observable.md).
+
+!!! tip "Sharing rules override"
+    The new local sharing rules defined for tasks and observables within a case will override the global configuration set at the organization level.
 
 ## How sharing rules work together
 
 | Cases sharing rule ↓ \ Tasks and observables sharing rule → | *manual* | *autoShare* |
 |----------------------------------------------------------|--------------------------------------|--------------------------------------|
-| *default* | New cases are not shared | New cases are shared with linked tasks and observables |
-| *supervised* | New cases are shared without linked tasks and observables| New cases are shared with linked tasks and observables |
-| *notify* | New cases are shared without linked tasks and observables| New cases are shared with linked tasks and observables |
+| *default* | New cases are not automatically shared | New cases are not automatically shared, and neither are their tasks and observables |
+| *supervised* | New cases are automatically shared without their linked tasks and observables| New cases are automatically shared with their linked tasks and observables |
+| *notify* | New cases are automatically shared without their linked tasks and observables| New cases are automatically shared with their linked tasks and observables |
 
-The case-sharing rule set when linking an organization overrides the task and observable sharing rules set when [creating the organization](add-an-organization.md).
+## Next steps
 
-For example, if you select the *default* option, you will have to manually share the case afterwards even if you mentioned the *autoShare* option when defining the task and observable sharing rule when creating the organization.
-
-The same way, if you select the *supervised* or *notify* options, but selected the *manual* option when defining the task and observable sharing rule when creating the organization, you will have to share it manually from the task view.
-
-You can modify the task and observables rules at a case level from a case at any time so that new tasks or observables are automaticaaly shared.
-
-C'est seulement à la création que c'est automatique. Si cases déjà existants, il faut faire une action bulk pour les partager en masse. Expliquer la méthode la plus efficace.
+* [Link or Unlink an Organization](link-unlink-an-organization.md)
+* [Share or Unshare a Case](share-unshare-a-case.md)
+* [Share or Unshare a Task](../tasks/share-unshare-a-task.md)
+* [Share or Unshare an Observable](share-unshare-an-observable.md)

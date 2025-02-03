@@ -45,5 +45,5 @@ This topic provides step-by-step instructions for adding an [organization](about
 ## Next steps
 
 * [Add Users to an Organization](add-users-to-an-organization.md)
-* [Link an Organization](link-an-organization.md)
-* [Lock an Organization](lock-an-organization.md)
+* [Link or Unlink an Organization](link-unlink-an-organization.md)
+* [Lock or Unlock an Organization](lock-unlock-an-organization.md)
