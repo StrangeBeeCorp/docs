@@ -13,7 +13,7 @@ To learn more about how sharing rules function and interact, refer to [About Org
 
 1. [Locate the case you want to share](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. On the case description, select ![Sharing button](../../../../images/user-guides/analyst-corner/cases/sharing-button.png).
+2. On the case description, select ![Sharing button](../../../images/user-guides/analyst-corner/cases/sharing-button.png).
 
     !!! warning "Bulk actions not allowed"
         You must share cases individually. Bulk actions are not supported.

@@ -33,6 +33,6 @@ Link organizations to enable data sharing and define the applicable sharing rule
     
 ## Next steps
 
-* [Share a Case](share-a-case.md)
-* [Share a Task](../tasks/share-a-task.md)
-* [Share an Observable](share-an-observable.md)
+* [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)
+* [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)

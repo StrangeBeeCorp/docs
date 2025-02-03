@@ -2,7 +2,7 @@
 
 Sharing rules define how cases are shared with linked organizations.
 
-These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-a-task.md) and observables, which are configured when creating an organization.
+These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables, which are configured when creating an organization.
 
 This topic explains how these sharing rules function and work together.
 
@@ -23,7 +23,7 @@ Local sharing rules override the global sharing rules defined at the organizatio
 
 They are useful in the following scenarios:
 
-* You have [global sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) for newly created cases but want to apply the same rules to an existing case.
+* You have [global sharing rules](#global-sharing-rules) for newly created cases but want to apply the same rules to an existing case.
 * You need to apply different sharing rules to one or more cases instead of following the global sharing rules.
 
 {!includes/access-manage-case-sharing.md!}
@@ -38,7 +38,7 @@ Follow this step-by-step instructions to see [how to share an existing case](../
 
 You can modify the tasks and observables sharing rules for an existing case by updating the configuration directly within the case settings.
 
-Follow this step-by-step instructions to see [how to share tasks on an existing case](../../user-guides/analyst-corner/tasks/share-a-task.md.md).
+Follow this step-by-step instructions to see [how to share tasks on an existing case](../../user-guides/analyst-corner/tasks/share-a-task.md).
 
 Follow this step-by-step instructions to see [how to share observables on an existing case](../../user-guides/analyst-corner/cases/share-an-observable.md).
 
@@ -56,6 +56,6 @@ Follow this step-by-step instructions to see [how to share observables on an exi
 ## Next steps
 
 * [Link an Organization](link-an-organization.md)
-* [Share a Case](share-a-case.md)
-* [Share a Task](../tasks/share-a-task.md)
-* [Share an Observable](share-an-observable.md)
+* [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)
+* [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)

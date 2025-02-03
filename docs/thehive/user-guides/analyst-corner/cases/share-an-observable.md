@@ -11,7 +11,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
 
 1. [Locate the case where you want to modify the observables sharing rules](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. On the case description, select ![Sharing button](../../../../images/user-guides/analyst-corner/cases/sharing-button.png).
+2. On the case description, select ![Sharing button](../../../images/user-guides/analyst-corner/cases/sharing-button.png).
 
     !!! warning "Bulk actions not allowed"
         You must modify local sharing rules on observables individually. Bulk actions are not supported.

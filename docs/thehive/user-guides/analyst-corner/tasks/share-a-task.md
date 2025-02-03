@@ -11,7 +11,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
 
 1. [Locate the case where you want to modify the tasks sharing rules](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. On the case description, select ![Sharing button](../../../../images/user-guides/analyst-corner/cases/sharing-button.png).
+2. On the case description, select ![Sharing button](../../../images/user-guides/analyst-corner/cases/sharing-button.png).
 
     !!! warning "Bulk actions not allowed"
         You must modify local sharing rules on tasks individually. Bulk actions are not supported.
@@ -23,7 +23,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
     !!! info "Sharing existing tasks"
     Tasks sharing rules apply only to new tasks. Existing tasks will not be shared automatically when updating the rules.
 
-    If the case is not shared with any linked organization, refer to [Share a Case](share-a-case.md).
+    If the case is not shared with any linked organization, refer to [Share a Case](../cases/share-a-case.md).
 
 4. [Optional] To apply the new rules to existing tasks, follow these steps:
     4.1 Select **Manage case sharings** again.
@@ -37,4 +37,4 @@ To learn more about how sharing rules function and interact, see [About Organiza
 ## Next steps
 
 * [Share an Observable](../cases/share-an-observable.md)
-* [Share a Case](share-a-case.md)
+* [Share a Case](../cases/share-a-case.md)
