@@ -84,7 +84,6 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/about-notifications.md.old': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md.old'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/manage_notification.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/supported-notifiers.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/triggering-events.md'
