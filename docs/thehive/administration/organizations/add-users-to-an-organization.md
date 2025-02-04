@@ -36,7 +36,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     **Login**
 
-    The user's email address used for login.
+    The login used for the user to sign in. It can be an email address or another identifier.
 
     **Name**
 
@@ -47,6 +47,19 @@ This topic provides step-by-step instructions for adding new and existing users 
     Pick a permission profile for the user from the dropdown list.
 
 4. Select **Confirm**, or **Save and add another** if you want to add another new user.
+
+5. In the users list, hover over the user you just created and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
+
+6. [Optional] Select the default user image to modify it, then upload a new image.
+
+7. [Optional] If your login is not an email, add your email address in the **Email** field.
+
+8. [Optional] If the user's type is set to *Service*, select **Create** to generate an API key.
+
+9. Select **Set a new password** to create a default passsword for the user.
+
+10. Select **Confirm**.
+
 
 ## Next steps
 
