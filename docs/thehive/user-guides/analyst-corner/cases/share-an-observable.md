@@ -18,7 +18,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
     {!includes/sharing-rules-case-observables.md!}
 
     !!! info "Sharing existing observables"
-        Observables sharing rules apply only to new observables. Existing observables will not be shared automatically when updating the rules.  
+        Observables sharing rules apply only to new observables. Existing observables won't be shared automatically when updating the rules.  
         To apply the new rules to existing observables, follow these steps:   
             1. Select **Manage case sharings** again.  
             2. Turn off the **Share this case?** toggle for the relevant organization.  

@@ -2,7 +2,7 @@
 
 Sharing rules define how cases are shared with linked organizations.
 
-These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables, which are configured when creating an organization.
+These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables, which you configure when you create an organization.
 
 This topic explains how these sharing rules function and work together.
 
@@ -10,7 +10,7 @@ This topic explains how these sharing rules function and work together.
 
 {!includes/administrator-access-manage-organizations.md!}
 
-Global sharing rules, set when [linking organizations](link-an-organization.md) for cases and [creating an organization](create-an-organization.md) for tasks and observables, define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
+Global sharing rules are set when [linking organizations](link-an-organization.md) for cases and [creating an organization](create-an-organization.md) for tasks and observables. They define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
 
 The configuration determines whether this sharing occurs automatically.
 
@@ -49,7 +49,7 @@ Follow this step-by-step instructions to see [how to share observables on an exi
 
 | Cases ↓ \ Tasks and observables → | *manual* | *autoShare* |
 |----------------------------------------------------------|--------------------------------------|--------------------------------------|
-| *default* | New cases are not automatically shared. | New cases are not automatically shared, and neither are their tasks and observables. |
+| *default* | New cases aren't automatically shared. | New cases aren't automatically shared, and neither are their tasks and observables. |
 | *supervised* | New cases are automatically shared without their linked tasks and observables.| New cases are automatically shared with their linked tasks and observables. |
 | *notify* | New cases are automatically shared without their linked tasks and observables. | New cases are automatically shared with their linked tasks and observables. |
 

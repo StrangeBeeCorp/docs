@@ -18,7 +18,7 @@ To learn more about how sharing rules function and interact, see [About Organiza
     {!includes/sharing-rules-case-tasks.md!}
 
     !!! info "Sharing existing tasks"
-        Tasks sharing rules apply only to new tasks. Existing tasks will not be shared automatically when updating the rules.  
+        Tasks sharing rules apply only to new tasks. Existing tasks won't be shared automatically when updating the rules.  
         To apply the new rules to existing tasks, follow these steps:   
             1. Select **Manage case sharings** again.  
             2. Turn off the **Share this case?** toggle for the relevant organization.  

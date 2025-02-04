@@ -30,7 +30,7 @@ To learn more about how sharing rules function and interact, refer to [About Org
     {!includes/sharing-rules-case-observables.md!}
 
     !!! info "Sharing existing tasks and observables"
-        Tasks and observables sharing rules apply only to new items. Existing tasks and observables will not be shared automatically when updating the rules.  
+        Tasks and observables sharing rules apply only to new items. Existing tasks and observables won't be shared automatically when updating the rules.  
         To share existing tasks and observables, follow these step-by-step instructions on:  
         - [How to share a task](../tasks/share-a-task.md)  
         - [How to share an observable](share-an-observable.md)

@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for locking an [organization](abou
 Locking an organization is useful when you want to prevent users from logging in with that organization.
 
 !!! info "Deleting an organization"
-    In TheHive, organizations cannot be deleted to ensure database integrity and safety.
+    In TheHive, organizations can't be deleted to ensure database integrity and safety.
 
 {!includes/administrator-access-manage-organizations.md!}
 
