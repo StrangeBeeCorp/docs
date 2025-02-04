@@ -1,4 +1,4 @@
-## How to Add Users to an Organization
+# How to Add Users to an Organization
 
 This topic provides step-by-step instructions for adding new and existing users to an [organization](about-organizations.md) in TheHive.
 
@@ -30,21 +30,21 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     The user type you want to create.
 
-    Pick from the options in the dropdown list:   
+    Pick an option from the dropdown list:   
         - *Normal*: Allows the user to access TheHive through the user interface.  
         - *Service*: Allows the user to access TheHive through the API.
 
     **Login**
 
-    The login used for the user to sign in. It can be an email address or another identifier.
+    The login used for the user to sign in. It can be an email address or another identifier, depending on your TheHive configuration.
 
     **Name**
 
-    The user's name.
+    The user's display name.
 
     **Profile**
 
-    Pick a permission profile for the user from the dropdown list.
+    Pick a [permission profile](../../administration/profiles.md) for the user from the dropdown list.
 
 4. Select **Confirm**, or **Save and add another** if you want to add another new user.
 
@@ -52,14 +52,13 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 6. [Optional] Select the default user image to modify it, then upload a new image.
 
-7. [Optional] If your login is not an email, add your email address in the **Email** field.
+7. [Optional] If the login is not an email, add an email address in the **Email** field.
 
 8. [Optional] If the user's type is set to *Service*, select **Create** to generate an API key.
 
 9. Select **Set a new password** to create a default passsword for the user.
 
 10. Select **Confirm**.
-
 
 ## Next steps
 

@@ -1,6 +1,6 @@
 # How to Create an Organization
 
-This topic provides step-by-step instructions for adding an [organization](about-organizations.md) in TheHive.
+This topic provides step-by-step instructions for creating an [organization](about-organizations.md) in TheHive.
 
 {!includes/administrator-access-manage-organizations.md!}
 
@@ -26,21 +26,19 @@ This topic provides step-by-step instructions for adding an [organization](about
 
     How tasks linked to a case are handled when the case is shared with another organization.
 
-    {!includes/sharing-rules-case.md!}
+    {!includes/sharing-rules-case-tasks.md!}
 
     **Observables sharing rule**
 
     How observables linked to a case are handled when the case is shared with another organization.
 
-    {!includes/sharing-rules-case.md!}
+    {!includes/sharing-rules-case-observables.md!}
 
 4. Select **Confirm**.
 
 5. In the **Organizations** view, locate your new organization, hover over it, and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
 
-6. Select the default organization logo to modify it.
-
-7. Upload an image to set as the logo for your new organization.
+6. [Optional] Select the default organization logo to modify it, then upload an image to set it as the new logo for your organization.
 
 ## Next steps
 

@@ -1,2 +1,2 @@
-!!! warning "Permissions required for managing case sharing"
-    You need to have the `manageCase/update` permission to be able to share a case and modify sharing rules of an existing case.
+!!! warning "Permissions for setting local sharing rules"
+    Only users with the `manageCase/update` permission can modify sharing rules of an existing case.
