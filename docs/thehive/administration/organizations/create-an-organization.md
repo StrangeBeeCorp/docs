@@ -34,6 +34,8 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     {!includes/sharing-rules-case-observables.md!}
 
+    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+
 4. Select **Confirm**.
 
 5. In the **Organizations** view, locate your new organization, hover over it, and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
