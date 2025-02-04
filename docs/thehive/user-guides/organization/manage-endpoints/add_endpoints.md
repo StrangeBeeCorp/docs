@@ -13,4 +13,4 @@ A new page opens.
 1. Select the connector.
 2. Click the **Save** button.
 
-<img src="../../../images/user-guides/organization/manage-endpoints/add_endpoint.png" alt="end points" width="500" height="500"/>
+<img src="/thehive/images/user-guides/organization/manage-endpoints/add_endpoint.png" alt="end points" width="500" height="500"/>
