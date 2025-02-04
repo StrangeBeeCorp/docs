@@ -34,7 +34,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     {!includes/sharing-rules-case-observables.md!}
 
-    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
 4. Select **Confirm**.
 

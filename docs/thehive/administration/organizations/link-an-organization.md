@@ -29,7 +29,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
     - *supervised*: Cases are automatically shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.  
     - *notify*: Cases are automatically shared with the other organization with a read-only permission profile.
 
-    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
 6. Select **Confirm**.
     
