@@ -50,11 +50,11 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 5. In the users list, hover over the user you just created and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
 
-6. [Optional] Select the default user image to modify it, then upload a new image.
+6. Optional: Select the default user image to modify it, then upload a new image.
 
-7. [Optional] If the login isn't an email, add an email address in the **Email** field.
+7. Optional: If the login isn't an email, add an email address in the **Email** field.
 
-8. [Optional] If you set the user's type to *Service*, select **Create** to generate an API key.
+8. Optional: If you set the user's type to *Service*, select **Create** to generate an API key.
 
 9. Select **Set a new password** to create a default password for the user.
 
