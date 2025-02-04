@@ -19,7 +19,7 @@ The configuration determines whether this sharing occurs automatically.
 
 ## Local sharing rules
 
-Local sharing rules allow you to customize sharing settings with linked organizations for a case. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
+Local sharing rules allow you to customize sharing settings with linked organizations for an existing case. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
 
 Local sharing rules are useful in the following scenarios:
 
