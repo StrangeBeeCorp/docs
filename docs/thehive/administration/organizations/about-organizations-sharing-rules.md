@@ -42,9 +42,6 @@ Follow this step-by-step instructions to see [how to share tasks on an existing 
 
 Follow this step-by-step instructions to see [how to share observables on an existing case](../../user-guides/analyst-corner/cases/share-an-observable.md).
 
-!!! tip "Sharing rules override"
-    The new local sharing rules defined for tasks and observables within a case override the global configuration set when creating an organization.
-
 ## How sharing rules work together
 
 | Cases ↓ \ Tasks and observables → | *manual* | *autoShare* |
