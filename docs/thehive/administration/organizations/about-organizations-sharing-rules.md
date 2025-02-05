@@ -28,13 +28,17 @@ Local sharing rules are useful in the following scenarios:
 
 {!includes/access-manage-case-sharing.md!}
 
-Follow this step-by-step instructions to see [how to modify the sharing rules of an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
+Follow these step-by-step instructions to see [how to modify the sharing rules of an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
 
 ## Manual sharing of tasks and observables in a shared case
 
 You can manually share tasks and observables in a shared case. 
 
 This is useful when task and observable sharing rules are set to *manual* to ensure that users manually select which tasks and observables to share.
+
+Follow these step-by-step instructions to:
+* [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)
 
 ## How sharing rules work together
 
