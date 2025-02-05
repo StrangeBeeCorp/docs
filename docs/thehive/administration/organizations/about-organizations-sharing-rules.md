@@ -19,7 +19,7 @@ The configuration determines whether this sharing occurs automatically.
 
 ## Local sharing rules
 
-Local sharing rules allow you to customize sharing settings with linked organizations for an existing case. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
+Local sharing rules let you customize sharing settings with linked organizations for an existing case and its related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
 
 Local sharing rules are useful in the following scenarios:
 
@@ -28,19 +28,13 @@ Local sharing rules are useful in the following scenarios:
 
 {!includes/access-manage-case-sharing.md!}
 
-### Sharing an existing case
+Follow this step-by-step instructions to see [how to modify the sharing rules of an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
 
-You can share an existing case by modifying its sharing rules directly within the case settings.
+## Manual sharing of tasks and observables in a shared case
 
-Follow this step-by-step instructions to see [how to share an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
+You can manually share tasks and observables in a shared case. 
 
-### Modify tasks and observables sharing rules for an existing case
-
-You can modify the tasks and observables sharing rules for an existing case by updating the configuration directly within the case settings.
-
-Follow this step-by-step instructions to see [how to share tasks on an existing case](../../user-guides/analyst-corner/tasks/share-a-task.md).
-
-Follow this step-by-step instructions to see [how to share observables on an existing case](../../user-guides/analyst-corner/cases/share-an-observable.md).
+This is useful when task and observable sharing rules are set to *manual* to ensure that users manually select which tasks and observables to share.
 
 ## How sharing rules work together
 
