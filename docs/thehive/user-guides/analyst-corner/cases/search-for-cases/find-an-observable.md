@@ -6,7 +6,7 @@ Observables are discrete pieces of technical evidence related to incidents. They
 
 ## Method 1: Observables tab in cases and alerts descriptions
 
-*Use this method if you know the case or alert containing the observable you're looking for and if you need to perform actions on multiple observables simultaneously.*
+*Use this method if you know the case or alert containing the observable you're looking for and if you need to perform actions on one or more observables simultaneously.*
 
 1. Open a case or an alert, and select the **Observables** tab.
 
@@ -20,7 +20,7 @@ Observables are discrete pieces of technical evidence related to incidents. They
 
 ## Method 2: Global Search feature
 
-*Use this method if you’re unsure where to find the observable you’re looking for or if you need to conduct advanced searches for multiple observables without requiring simultaneous actions.*
+*Use this method if you’re unsure where to find the observable you’re looking for or if you need to conduct advanced searches for one or more observables without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 

@@ -277,7 +277,7 @@ When invoked, this function will:
 
 ### Alert
 
-- `alert.create(input: InputCreateAlert): OutputAlert`
+- `alert.create(alertId: string, input: InputCreateAlert | null): OutputAlert`
 - `alert.get(id: string): OutputAlert`
 - `alert.update(InputUpdateAlert): OutputAlert`
 - `alert.delete(alertId: string): void`
