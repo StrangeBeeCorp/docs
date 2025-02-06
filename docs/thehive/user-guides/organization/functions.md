@@ -279,9 +279,9 @@ When invoked, this function will:
 
 - `alert.create(input: InputCreateAlert): OutputAlert`
 - `alert.get(id: string): OutputAlert`
-- `alert.update(InputUpdateAlert): OutputAlert`
+- `alert.update(alertId: string, input: InputUpdateAlert): OutputAlert`
 - `alert.delete(alertId: string): void`
-- `alert.createCase(alert: InputCreateAlert): OutputCase`
+- `alert.createCase(alertId: string, input: InputCreateAlert): OutputCase`
 - `alert.bulkDelete(input: {ids: string[]}): void`
 - `alert.mergeWithCase(alertId: string, caseId: string): OutputCase`
 - `alert.bulkMergeWithCase( {caseId: string, alertIds: string[]} ): OutputCase`
