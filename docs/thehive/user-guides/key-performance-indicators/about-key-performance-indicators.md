@@ -1,6 +1,6 @@
 # About Key Performance Indicators
 
-Starting from version 5.1, TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators for [cases](../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
+Starting from version 5.1, TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
 
 This topic defines each of these indicators.
 

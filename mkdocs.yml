@@ -243,44 +243,44 @@ nav:
           - 'Search for Alerts': 
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/alerts/manage-views.md
-          - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/preview-alerts.md
-          - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/actions.md
-          - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/merge-alerts.md
-          - 'Create a Case from Alerts': thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md
-          - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/general.md 
-          - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/run-responders.md
-          - 'View Responders': thehive/user-guides/analyst-corner/alerts/view-responders.md
-          - 'View Similar Alerts': thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md
-          - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/view-similar-cases.md
-          - 'View TTPs': thehive/user-guides/analyst-corner/alerts/view-ttps.md
-          - 'View Observables': thehive/user-guides/analyst-corner/alerts/view-observables.md
+          - 'Manage Views': thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md
+          - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
+          - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md
+          - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md
+          - 'Create a Case from Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md
+          - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/alerts-description/general.md 
+          - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
+          - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
+          - 'View Similar Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md
+          - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
+          - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
         - 'Cases Management':
-          - 'About Cases': thehive/user-guides/analyst-corner/cases/about-a-case.md
+          - 'About Cases': thehive/user-guides/analyst-corner/cases/about-cases.md
           - 'Search for Cases': 
             - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
             - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/cases-description/manage-views.md
-          - 'Preview Cases': thehive/user-guides/analyst-corner/cases-description/preview-cases.md
-          - 'Actions on Cases': thehive/user-guides/analyst-corner/cases-description/actions.md
+          - 'Manage Views': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
+          - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
+          - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'Create a Case':
             - 'Create a New Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
             - 'Create an Empty Case': thehive/user-guides/analyst-corner/cases/create-empty-case.md
             - 'Create a Case from Archive': thehive/user-guides/analyst-corner/cases/create-case-from-archive.md
             - 'Create a Case from MISP': thehive/user-guides/analyst-corner/cases/create-case-from-misp.md
             - 'Create a Case from Template': thehive/user-guides/analyst-corner/cases/create-case-from-template.md
-          - 'View a Case': thehive/user-guides/analyst-corner/cases-description/general.md
+          - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
-          - 'View Tasks': thehive/user-guides/analyst-corner/cases-description/tasks.md
-          - 'View Observables': thehive/user-guides/analyst-corner/cases-description/observables.md
-          - 'View TTPs': thehive/user-guides/analyst-corner/cases-description/ttps.md
-          - 'View Attachments': thehive/user-guides/analyst-corner/cases-description/attachments.md
-          - 'View Timeline': thehive/user-guides/analyst-corner/cases-description/timeline.md
-          - 'View Pages': thehive/user-guides/analyst-corner/cases-description/pages.md
-          - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases-description/run-responders.md
-          - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases-description/run-analyzer.md
+          - 'View Tasks': thehive/user-guides/analyst-corner/cases/cases-description/tasks.md
+          - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
+          - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
+          - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
+          - 'View Timeline': thehive/user-guides/analyst-corner/cases/cases-description/timeline.md
+          - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
+          - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
+          - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
           - 'Search for Tasks': 

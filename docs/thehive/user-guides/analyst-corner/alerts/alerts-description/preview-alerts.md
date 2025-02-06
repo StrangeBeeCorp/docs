@@ -16,7 +16,7 @@ The alert details preview window opens.
 
 You can see details like the id, created by, created at date, last reviewed by, last reviewed date, import date, TLP, PAP and severity details, title, tags, description, status and summary of the alert. 
 
-Add **Custom fields** (Refer to [`Add custom fields`](../cases-description/add-custom-fields.md)), **business unit**, and **location**  details.
+Add **Custom fields** (Refer to [`Add custom fields`](../../cases/cases-description/add-custom-fields.md)), **business unit**, and **location**  details.
 
 1. Click **Add** to enter business unit and location details. 
 
@@ -27,7 +27,7 @@ Add **Custom fields** (Refer to [`Add custom fields`](../cases-description/add-c
 
 <img src="/thehive/images/user-guides/analyst-corner/alerts/action-button.png" alt="actions button" width="500" height="500"/>
 
-You can click the [`Actions Button` ](../alerts/actions.md) to start, close, track/ignore new updates, unlink the alerts or to [`Run Responders`](../alerts/run-responders.md). 
+You can click the [`Actions Button` ](../alerts-description/actions.md) to start, close, track/ignore new updates, unlink the alerts or to [`Run Responders`](../alerts-description/run-responders.md). 
 
 
 

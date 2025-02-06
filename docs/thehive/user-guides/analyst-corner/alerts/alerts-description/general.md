@@ -4,7 +4,7 @@ The information on the general page comes from templates and is auto-populated.
 In the left pane of the window, you can see details such as created by, created date, TLP, PAP, severity details, status of the alert, start date, and task completion details. 
 
 In the left pane of the window you can configure the PAP,TLP and Severity. 
-Refer to [`Configure Alert Details`](../cases-description/configure-pap-tlp-severity.md) for more details. 
+Refer to [`Configure Alert Details`](../../cases/cases-description/configure-pap-tlp-severity.md) for more details. 
 
 
 1. In the right pane of the window, enter **Comments** if any. 

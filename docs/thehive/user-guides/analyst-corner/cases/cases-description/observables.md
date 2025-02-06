@@ -18,7 +18,7 @@ Observables represent stateful properties (such as the MD5 hash of a file or the
 1. Switch the on button for **Is IOC**. (IoC repository contains objects, and each of the objects contain a specific piece of information.)
 1. Switch on the button for **Has Been Sighted**. 
 1. Switch on the button for **Ignore Similarity**. 
-1. Add Tags. (Refer to [`Add tags`](../cases/adding_to_a_case.md#add-tags)).
+1. Add Tags. (Refer to [`Add tags`](../adding_to_a_case.md)).
 1. Type the **Description**. 
 1. Click the **Save and add another** button. 
 1. Click the **Confirm** button. 

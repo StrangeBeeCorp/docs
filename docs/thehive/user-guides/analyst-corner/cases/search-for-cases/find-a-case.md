@@ -70,7 +70,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 * [Actions on Cases](../cases-description/actions.md)
 * [View a Case](../cases-description/general.md)
-* [Adding to a Case (Tags/Tasks/Custom Field Values)](../cases/adding_to_a_case.md)
+* [Adding to a Case (Tags/Tasks/Custom Field Values)](../../cases/adding_to_a_case.md)
 * [View Tasks](../cases-description/tasks.md)
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
