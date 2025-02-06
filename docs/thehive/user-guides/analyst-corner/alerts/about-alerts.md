@@ -2,6 +2,8 @@
 
 In this section you can find information about Alerts. 
 
+Mettre un schéma pour identifier les cases par rapport aux autres entités.
+
 Alerts provide timely information about current security issues, vulnerabilities, and exploits.
 
 ## View alert details
