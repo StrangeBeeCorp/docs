@@ -18,13 +18,13 @@ To learn more about how sharing rules function and interact, refer to [About Org
 3. Select the tasks sharing rules to apply.
 
     Pick an option from the dropdown list:  
-            - *manual* (default): Tasks are not shared automatically. Users must [share them manually](../tasks/share-a-task.md).  
+            - *manual* (default): Tasks aren't shared automatically. Users must [share them manually](../tasks/share-a-task.md).  
             - *autoShare*: Tasks are shared automatically.
 
 4. Select the observables sharing rules to apply.
 
     Pick an option from the dropdown list:  
-            - *manual* (default): Observables are not shared automatically. Users must [share them manually](../cases/share-an-observable.md).  
+            - *manual* (default): Observables aren't shared automatically. Users must [share them manually](../cases/share-an-observable.md).  
             - *autoShare*: Observables are shared automatically.
 
     !!! warning "Task and observable sharing scope"
