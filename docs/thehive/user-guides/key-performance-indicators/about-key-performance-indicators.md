@@ -30,5 +30,5 @@ To learn how these indicators are calculated, refer to [Key Performance Indicato
 
 ## Next steps
 
-* [Evaluate Case Performance]()
-* [Evaluate Alert Performance]()
+* [Evaluate Case Performance](measure-case-management-performance.md)
+* [Evaluate Alert Performance](measure-alert-management-performance.md)

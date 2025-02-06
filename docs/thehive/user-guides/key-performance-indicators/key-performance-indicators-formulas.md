@@ -15,5 +15,5 @@ This topic outlines the formulas used to calculate key performance indicators (K
 ## Next steps
 
 * [About Key Performance Indicators](about-key-performance-indicators.md)
-* [Evaluate Case Performance]()
-* [Evaluate Alert Performance]()
+* [Evaluate Case Performance](measure-case-management-performance.md)
+* [Evaluate Alert Performance](measure-alert-management-performance.md)

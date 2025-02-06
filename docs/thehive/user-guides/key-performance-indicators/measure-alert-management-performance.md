@@ -1,1 +1,63 @@
 # How to Measure Alert Management Performance
+
+This topic provides step-by-step instructions for measuring alert management performance in TheHive.
+
+You can measure alert management performance [for all alerts in your organization](#measure-the-performance-of-all-alerts-in-your-organization) or [a specific case](#measure-the-performance-of-a-specific-alert).
+
+If you want to know more about the key performance indicators available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
+
+## Measure the performance of all alerts in your organization
+
+1. Go to the **Dashboards** view from the sidebar menu.
+
+    ![Measure case management performance](../../images/user-guides/measure-case-management-performance.png)
+
+2. Select a dashboard related to alerts.
+
+3. Select ![Edit dashboards](../../images/user-guides/edit-dashboards.png).
+
+4. Select **Edit** on the section where you want to add your alert management KPIs.
+
+5. Select one of the following values in any **Filters** box:
+
+    * *timeToAcknowledge*
+    * *timeToAcknowledgeInDays*
+    * *timeToAcknowledgeInHours*
+    * *timeToAcknowledgeInMinutes*
+    * *timeToAcknowledgeInSeconds*
+
+    * *timeToDetect*
+    * *timeToDetectInDays*
+    * *timeToDetectInHours*
+    * *timeToDetectInMinutes*
+    * *timeToDetectInSeconds*
+
+    * *timeToQualify*
+    * *timeToQualifyInDays*
+    * *timeToQualifyInHours*
+    * *timeToQualifyInMinutes*
+    * *timeToQualifyInSeconds*
+
+    * *timeToResolve*
+    * *timeToResolveInDays*
+    * *timeToResolveInHours*
+    * *timeToResolveInMinutes*
+    * *timeToResolveInSeconds*
+
+    * *timeToTriage*
+    * *timeToTriageInDays*
+    * *timeToTriageInHours*
+    * *timeToTriageInMinutes*
+    * *timeToTriageInSeconds*
+
+## Measure the performance of a specific alert
+
+1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
+
+2. In the alert description, move through the **Time metrics** section in the left pane.
+
+3. Review the available indicators for your alert.
+
+## Next steps
+
+* [Evaluate Case Performance](measure-case-management-performance.md)

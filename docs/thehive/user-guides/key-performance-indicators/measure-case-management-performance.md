@@ -54,5 +54,12 @@ If you want to know more about the key performance indicators available in TheHi
 
 1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. On the case description, move through the **Time metrics** section on the left pane.
+2. In the case description, move through the **Time metrics** section in the left pane.
+
+3. Review the available indicators for your case.
+
+## Next steps
+
+* [Evaluate Alert Performance](measure-alert-management-performance.md)
+
 
