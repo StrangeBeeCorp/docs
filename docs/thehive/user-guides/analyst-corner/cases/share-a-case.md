@@ -1,9 +1,9 @@
 # How to Share a Case
 
-This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) with [linked organizations](../../../administration/organizations/link-an-organization.md) for a case in TheHive.
+This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) with [linked organizations](../../../administration/organizations/link-an-organization.md) for an existing case in TheHive.
 
 !!! info "Global sharing rules"
-    This guide focuses on local sharing rules for individual cases. To configure global sharing rules for all cases in your organization, refer to [How to Link an Organization](../../../administration/organizations/link-an-organization.md).
+    This guide focuses on local sharing rules for individual existing cases. To configure global sharing rules for all cases in your organization, refer to [How to Link an Organization](../../../administration/organizations/link-an-organization.md).
 
 To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
 
@@ -15,22 +15,22 @@ To learn more about how sharing rules function and interact, refer to [About Org
 
 2. On the case description, select ![Sharing button](../../../images/user-guides/analyst-corner/cases/sharing-button.png).
 
-3. Select the tasks sharing rules to apply using the dropdown list.
+3. Select the tasks sharing rules to apply.
 
     {!includes/sharing-rules-case-tasks.md!}
 
-4. Select the observables sharing rules to apply using the dropdown list.
+4. Select the observables sharing rules to apply.
 
     {!includes/sharing-rules-case-observables.md!}
 
-    !!! warning "Scope of task and observable sharing rules"
-        Task and observable sharing rules apply to all linked organizations with which the case is shared.
+    !!! warning "Task and observable sharing scope"
+        Task and observable sharing rules apply to all linked organizations the case is shared with.
 
 5. Select **Confirm**.
 
 6. Select **Manage case sharings**.
 
-7. To share this case, turn on the **Share this case** toggle for each relevant organization and select the appropriate [permission profile](../../../administration/profiles.md).
+7. To share the case, turn on the **Share this case** toggle for each relevant organization and select the appropriate [permission profile](../../../administration/profiles.md).
 
 8. Select **Confirm**.
 

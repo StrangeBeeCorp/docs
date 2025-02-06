@@ -2,7 +2,7 @@
 
 Sharing rules define how cases are shared with linked organizations.
 
-These rules also interact with the sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables, which you configure when you create an organization.
+Sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables are also set when you create an organization.
 
 This topic explains how these sharing rules function and work together.
 
@@ -36,7 +36,8 @@ You can manually share tasks and observables in a shared case.
 
 This is useful when task and observable sharing rules are set to *manual* to ensure that users manually select which tasks and observables to share.
 
-Follow these step-by-step instructions to:
+Follow these step-by-step instructions to learn how to:
+
 * [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
 * [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)
 
