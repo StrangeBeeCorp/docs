@@ -40,6 +40,6 @@ Observables are discrete pieces of technical evidence related to incidents. They
 
 ## Next steps
 
-* [View Observables](../../alerts/view-observables.md)
+* [View Observables](../../alerts/alerts-description/view-observables.md)
 
 

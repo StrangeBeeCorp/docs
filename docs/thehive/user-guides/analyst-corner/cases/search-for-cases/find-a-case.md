@@ -1,6 +1,6 @@
 # How to Find a Case
 
-This topic provides step-by-step instructions for using various methods to search for a [case](../about-a-case.md) in TheHive.
+This topic provides step-by-step instructions for using various methods to search for a [case](../about-cases.md) in TheHive.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 
@@ -68,14 +68,14 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Next steps
 
-* [Actions on Cases](../../cases-description/actions.md)
-* [View a Case](../../cases-description/general.md)
-* [Adding to a Case (Tags/Tasks/Custom Field Values)](../../cases/adding_to_a_case.md)
-* [View Tasks](../../cases-description/tasks.md)
-* [View Observables](../../cases-description/observables.md)
-* [View TTPs](../../cases-description/ttps.md)
-* [View Attachments](../../cases-description/attachments.md)
-* [View Timeline](../../cases-description/timeline.md)
-* [View Pages](../../cases-description/pages.md)
-* [Run Responders on Case](../../cases-description/run-responders.md)
-* [Run Analyzers on Case](../../cases-description/run-analyzer.md)
+* [Actions on Cases](../cases-description/actions.md)
+* [View a Case](../cases-description/general.md)
+* [Adding to a Case (Tags/Tasks/Custom Field Values)](../cases/adding_to_a_case.md)
+* [View Tasks](../cases-description/tasks.md)
+* [View Observables](../cases-description/observables.md)
+* [View TTPs](../cases-description/ttps.md)
+* [View Attachments](../cases-description/attachments.md)
+* [View Timeline](../cases-description/timeline.md)
+* [View Pages](../cases-description/pages.md)
+* [Run Responders on Case](../cases-description/run-responders.md)
+* [Run Analyzers on Case](../cases-description/run-analyzer.md)
