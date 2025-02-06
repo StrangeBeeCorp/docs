@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for [manually sharing an observable in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
 
-!!! warning "Shared cases only"
+!!! info "Shared cases only"
     To share an observable manually, the case must already be shared with the relevant linked organizations. If not, refer to [How to Share a Case](share-a-case.md).
 
 This is useful when observable sharing rules are set to *manual* to ensure that users manually select which observables to share.
