@@ -210,7 +210,11 @@ nav:
         # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
-      - 'Indicators & KPIs Overview': thehive/user-guides/indicators.md
+      - 'Key Performance Indicators':
+          - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
+          - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md
+          - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
+          - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
       - 'Organization Administration':
         - 'User Management': thehive/user-guides/organisation/accounts.md
         - 'Templates Management':
