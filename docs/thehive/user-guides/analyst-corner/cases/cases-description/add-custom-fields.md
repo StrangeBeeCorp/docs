@@ -11,4 +11,4 @@ A new window opens.
 1. Add the custom fields from the list.
 1. Click the **Confirm** button.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-list/cases-list-add-custom-fields.png" alt="cases list add custom fields" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-add-custom-fields.png" alt="cases list add custom fields" width="500" height="500"/>
