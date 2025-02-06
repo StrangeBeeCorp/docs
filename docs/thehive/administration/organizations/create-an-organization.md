@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 2. Select :fontawesome-regular-square-plus:.
 
-3. In the **Adding an organization** pane, enter:
+3. In the **Adding an organization** drawer, enter:
 
     **Name**
 
