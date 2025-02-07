@@ -1,4 +1,4 @@
-# Cases
+# About Case Descriptions
 
 In this section you can find information about cases. 
 
