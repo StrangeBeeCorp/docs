@@ -2,6 +2,8 @@
 
 Starting from version 5.1, TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
 
+These KPIs are displayed by default on all cases and alerts in TheHive.
+
 This topic defines each of these indicators.
 
 ## Time to detect (TDD)
@@ -24,11 +26,13 @@ The time it takes for your security team to acknowledge an event by transitionin
 
 The time it takes to fully resolve an incident after it has been marked *In Progress*. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
 
-For more information on these KPIs, we recommend you consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
+---
 
-To learn how these KPIs are calculated in TheHive, refer to [Key Performance Indicator Formulas](key-performance-indicators-formulas.md).
+For more information on these KPIs, we recommend you consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
 
 ## Next steps
 
+* [Key Performance Indicator Formulas](key-performance-indicator-formulas.md)
+* [Hide Key Performance Indicators](hide-key-performance-indicators.md)
 * [Evaluate Case Performance](measure-case-management-performance.md)
 * [Evaluate Alert Performance](measure-alert-management-performance.md)
