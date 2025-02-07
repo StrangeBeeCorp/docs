@@ -34,7 +34,7 @@ Follow these step-by-step instructions to see [how to modify the sharing rules o
 
 You can manually share tasks and observables in a shared case. 
 
-This is useful when task and observable sharing rules are set to *manual* to ensure that users manually select which tasks and observables to share.
+This is useful when task and observable sharing rules are set to *manual*, ensuring that users share only the relevant tasks and observables.
 
 Follow these step-by-step instructions to learn how to:
 

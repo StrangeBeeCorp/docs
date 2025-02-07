@@ -5,9 +5,9 @@ This topic provides step-by-step instructions for [manually sharing an observabl
 !!! info "Shared cases only"
     To share an observable manually, the case must already be shared with the relevant linked organizations. If not, refer to [How to Share a Case](share-a-case.md).
 
-This is useful when observable sharing rules are set to *manual* to ensure that users manually select which observables to share.
+This is useful when observable sharing rules are set to *manual*, ensuring that users share only the relevant observables.
 
-To learn more about how sharing rules function and interact, see [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, see the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
 
 {!includes/access-manage-case-sharing.md!}
 

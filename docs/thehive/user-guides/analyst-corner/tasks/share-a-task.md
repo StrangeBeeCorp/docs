@@ -5,9 +5,9 @@ This topic provides step-by-step instructions for [manually sharing a task in a 
 !!! info "Shared cases only"
     To share a task manually, the case must already be shared with the relevant linked organizations. If not, refer to [How to Share a Case](../cases/share-a-case.md).
 
-This is useful when task sharing rules are set to *manual* to ensure that users manually select which tasks to share.
+This is useful when task sharing rules are set to *manual*, ensuring that users share only the relevant tasks.
 
-To learn more about how sharing rules function and interact, see [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, see the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
 
 {!includes/access-manage-case-sharing.md!}
 

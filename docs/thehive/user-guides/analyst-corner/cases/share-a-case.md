@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for configuring [local sharing rul
 !!! info "Global sharing rules"
     This guide focuses on local sharing rules for individual existing cases. To configure global sharing rules for all cases in your organization, refer to [How to Link an Organization](../../../administration/organizations/link-an-organization.md).
 
-To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, refer to the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
 
 {!includes/access-manage-case-sharing.md!}
 
@@ -34,7 +34,7 @@ To learn more about how sharing rules function and interact, refer to [About Org
 
 6. Select **Manage case sharings**.
 
-7. To share the case, turn on the **Share this case** toggle for each relevant organization and select the appropriate [permission profile](../../../administration/profiles.md).
+7. Turn on the **Share this case** toggle for each relevant organization and select the appropriate [permission profile](../../../administration/profiles.md).
 
 8. Select **Confirm**.
 
