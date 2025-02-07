@@ -37,7 +37,6 @@ In TheHive, you can create a case from the following sources:
 ## Next steps
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
-* [About Case Descriptions](../cases/cases-description/about-case-descriptions.md)
 * [Create an Empty Case](../cases/create-empty-case.md)
 * [Create a Case from Templates](../cases/create-case-from-template.md)
 * [Create a Case from Archive](../cases/create-case-from-archive.md)

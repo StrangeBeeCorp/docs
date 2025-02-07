@@ -29,6 +29,5 @@ In TheHive, an alert can be created from the following sources:
 ## Next steps
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
-* [About Alert Descriptions](../alerts/about-alerts.md)
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
