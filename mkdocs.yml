@@ -213,6 +213,7 @@ nav:
       - 'Key Performance Indicators':
           - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
           - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md
+          - 'Hide KPIs': thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md
           - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
           - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
       - 'Organization Administration':

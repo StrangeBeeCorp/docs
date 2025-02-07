@@ -1,6 +1,6 @@
 # Key Performance Indicator Formulas
 
-This topic outlines the formulas used to calculate key performance indicators (KPIs) for cases and alerts in TheHive.
+This topic outlines the formulas used to calculate key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md) in TheHive.
 
 ## KPI formulas table
 

@@ -8,6 +8,8 @@ If you want to know more about the key performance indicators available in TheHi
 
 ## Measure the performance of all alerts in your organization
 
+{!includes/dashboard-access.md!}
+
 1. Go to the **Dashboards** view from the sidebar menu.
 
     ![Measure case management performance](../../images/user-guides/measure-case-management-performance.png)
