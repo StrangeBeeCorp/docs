@@ -72,7 +72,7 @@ display_success() {
   ---
   Cortex installation complete! 
 
-  Connect to http://${IP}:9001 and start configuring the application. Create a global Admin account, and then Organisations and users.
+  Connect to http://${IP}:9001 and start configuring the application. Create a global Admin account, and then organizations and users.
   
   Information:
   Cortex is installed with basic configuration parameters. It is configured to use:

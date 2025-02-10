@@ -156,7 +156,7 @@
 
 - Fix permission issue for user edition
 - Fix issue when trying to repair the index with a vertex containing non indexed fields
-- Refresh license quotas faster after an organisation is locked
+- Refresh license quotas faster after an organization is locked
 
 ### Security Updates
 
@@ -300,7 +300,7 @@ Description:
 **UI:**
 
 - Notifications: display the name of the webhook
-- Ability to filter users by profile when listing the users of an organisation
+- Ability to filter users by profile when listing the users of an organization
 - In search page, add link to observable parent (case or alert)
 - In live stream, display full date instead of 'x seconds ago'
 - Dashboard:
@@ -318,9 +318,9 @@ Description:
     - Clicking on a counter or donut now correctly sets the filters in the search page
     - conversion of v4 dashboards failed with `not` operator
 - Improvement around time filters (custom and periods)
-- Assignees from other organisations are visible and searchable in case assignment
+- Assignees from other organizations are visible and searchable in case assignment
 - Fix bad date format when using am/pm
-- Case sharing displayed an empty list of organisation
+- Case sharing displayed an empty list of organization
 - Quote in the markdown editor only worked for the first line
 - On small screen preview button was not visible when using Firefox
 - Fix bug in list of TTP tactics
@@ -343,7 +343,7 @@ Description:
 - Dashboard:
     - Default period is now 3 months instead of "All"
     - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
-    - An org admin can disallow the "All" period in the dasboards (organisation settings > UI Configuration)
+    - An org admin can disallow the "All" period in the dasboards (organization settings > UI Configuration)
     - Widgets legends now show fully
 - Add an indicator on the number of open requests made by the browser
 - Admin can now configure the default user domain from the admin settings
@@ -365,7 +365,7 @@ Description:
 
 **UI:**
 
-- Fix issue where case assignee was not displayed (because user was in an other organisation)
+- Fix issue where case assignee was not displayed (because user was in an other organization)
 - Fix org switch not working when using http context (bug introduced in 5.0.11)
 
 **API:**
@@ -398,7 +398,7 @@ Description:
 **UI:**
 
 - Fix import of .thar files
-- When switching of organisation, the user is redirected to her homepage.
+- When switching of organization, the user is redirected to her homepage.
 - Filters on number types showed `-1` in the preview
 - In endpoints configuration, the setting "Do not check Certificate Authority" was not sent correctly
 - Fix filters when using between dates with an hour or minute precision
@@ -553,7 +553,7 @@ If you are using the ad/ldap authentification, you should update to TheHive 5.0.
 - Dashboard: fix an issue when converting a v4 dashboard
 - Case count was not refreshed when adding a case
 - Refresh comment section
-- Misp configuration: Fix organisation selection
+- Misp configuration: Fix organization selection
 - Analyzer reports:
     - in an alert, display the extractable observables
     - can now import an observable of type file

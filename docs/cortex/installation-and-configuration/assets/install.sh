@@ -110,7 +110,7 @@ display-cortex-success() {
   ---
   Cortex installation is complete! 
 
-  Connect to http://${IP}:9001 and start configuring the application. Create a global Admin account, and then Organisations and users ; then enable some Analyzers and Responders.
+  Connect to http://${IP}:9001 and start configuring the application. Create a global Admin account, and then organizations and users ; then enable some Analyzers and Responders.
 
 
   Information:
@@ -139,7 +139,7 @@ display-thehive-success() {
   ---
   TheHive installation is complete! 
 
-  Connect to http://${IP}:9000 and start configuring the application. Create a global Admin account, and then Organisations and users.
+  Connect to http://${IP}:9000 and start configuring the application. Create a global Admin account, and then organizations and users.
   
 
   Information:

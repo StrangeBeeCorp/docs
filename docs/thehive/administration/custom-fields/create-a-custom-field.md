@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 ## Procedure
 
-1. As an administrator, go to the **Entities management** view from the sidebar menu.
+1. Go to the **Entities management** view from the sidebar menu.
 
     ![Entities management](../../images/administration-guides/create-a-custom-field-entities-management.png)
 

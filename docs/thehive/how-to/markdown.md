@@ -191,14 +191,14 @@ Sample text here...
 ## Links
 
 ###Code
-    [link text](https://docs.strangebee.com/thehive/administration/organisations/)
-    [link with title](https://docs.strangebee.com/thehive/administration/organisations/ "title text!")
+    [link text](https://docs.strangebee.com/thehive/administration/organizations/)
+    [link with title](https://docs.strangebee.com/thehive/administration/organizations/ "title text!")
 
 ###Example
 
-[link text](https://docs.strangebee.com/thehive/administration/organisations/)
+[link text](https://docs.strangebee.com/thehive/administration/organizations/)
 
-[link with title](https://docs.strangebee.com/thehive/administration/organisations/ "title text!")
+[link with title](https://docs.strangebee.com/thehive/administration/organizations/ "title text!")
 
 ---
 ## Images

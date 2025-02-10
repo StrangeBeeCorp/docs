@@ -114,8 +114,8 @@ To authenticate users using an external OAuth2 server, you need to specify the f
 To enable users to log in without prior manual creation, you can activate autocreation and specify the following options:
 
 * Field that contains the name of the user in user info
-* Field that contains the name of the organisation in user info
-* Default organisation applied to new users
+* Field that contains the name of the organization in user info
+* Default organization applied to new users
 * Default profile applied to new users
 
 

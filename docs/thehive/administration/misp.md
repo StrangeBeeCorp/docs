@@ -29,11 +29,11 @@ Specify:
 
 ![](../images/administration-guides/platform-management-misp-2.png)
 
-By default, **ALL** Organisations in TheHive benefit from this connection.
+By default, **ALL** organizations in TheHive benefit from this connection.
 Additionaly, 2 options are available:
 
-* Make this connection **available ONLY** to a subset of existing Organisations in TheHive
-* Make this connection **unavailable** to a subset of existing Organisations in TheHive
+* Make this connection **available ONLY** to a subset of existing organizations in TheHive
+* Make this connection **unavailable** to a subset of existing organizations in TheHive
 
 Additional options let you:
 
@@ -49,8 +49,8 @@ Additional options let you:
 When importing MISP events as TheHive *Alerts*, several options are available:
 
 * Define the maximum age of a MISP event allowed to be imported
-* Specify a list of organisations *owner* of the MISP events allowed to be imported
-* Specify a list of organisations *owner* of the MISP events that are not allowed to be imported
+* Specify a list of organizations *owner* of the MISP events allowed to be imported
+* Specify a list of organizations *owner* of the MISP events that are not allowed to be imported
 * Define a limit for the number of attributes (~observables) included in the MISP event to import it
 * Specify a list of tags that should exist in the MISP event to import it
 * Specify a list of tags that should exist in the MISP event to ignore it

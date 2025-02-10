@@ -7,12 +7,12 @@ hide:
 
 TheHive has a knowledge base module that allow writing Markdown pages at two levels:
 
-- Organisation level
+- Organization level
 - Case level
 
-## Organisation wiki
+## Organization wiki
 
-Every organisation is able to define a set of Markdown pages accessible to all the users. Adding pages requires a `manageKnowledgeBase` user permission.
+Every organization is able to define a set of Markdown pages accessible to all the users. Adding pages requires a `manageKnowledgeBase` user permission.
 
 ![Knowledge base](../images/how-to/kb/knowledge-base.png)
 

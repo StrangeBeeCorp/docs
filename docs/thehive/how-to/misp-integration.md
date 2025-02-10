@@ -16,7 +16,7 @@ This integration is highly configurable and allows TheHive to synchronize with o
 
 ## Configuration
 
-To add or configure a MISP server, open the Admin Organisation page (1), go to the Platform Management menu (2) and navigate to the MISP tab (3).
+To add or configure a MISP server, open the Admin organization page (1), go to the Platform Management menu (2) and navigate to the MISP tab (3).
 
 Click the "+" button to add a new MISP server (4).
 
@@ -53,7 +53,7 @@ Proxy settings should be set only if a proxy is required to reach the MISP serve
 
 ### Server Advanced Settings
 
-- Chose the filter on TheHive organizations: For each server, you can define which TheHive organisation(s) to include or exclude of the synchronization (excluded or not included organisations will not receive the MISP events as `Alerts`)
+- Chose the filter on TheHive organizations: For each server, you can define which TheHive organization(s) to include or exclude of the synchronization (excluded or not included organizations will not receive the MISP events as `Alerts`)
 - Tags: Append one or several tags to each MISP event ingested as `Alert` 
 - Export case tags: If enabled, the export will include the `Case` tags. 
 - Export observables tags: If enabled, the exported `Observables` will include the `Observables` tags.
@@ -65,8 +65,8 @@ Proxy settings should be set only if a proxy is required to reach the MISP serve
 This section allows to define filters for MISP events import. 
 
  - Maximum age: define the maximum age (based on creation date) for an event to be imported in TheHive.
- - Organizations to include: Import only events created by the MISP organisation(s) defined in this field.
- - Organizations to exclude: Import only events NOT created by the MISP organisation(s) defined in this field.
+ - Organizations to include: Import only events created by the MISP organization(s) defined in this field.
+ - Organizations to exclude: Import only events NOT created by the MISP organization(s) defined in this field.
  - Maximum number of attributes: Define a maximum number of MISP attributes (observables) per event to import. 
  - List of allowed tags: Import only events that contains the tags defined in this field
  - Prohibited tags list: Import only events that DON'T contains the tags defined in this field

@@ -82,7 +82,7 @@
 ### Improvements
 
 #### Microsoft teams Notifier Update
-Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organisation/notifications/teams.md).
+Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organization/notifications/teams.md).
 #### Cases/Alerts status visibility
 Added a colored background to the stage icon in status components for better visibility in case and alert lists.
 #### License Check Improvements
