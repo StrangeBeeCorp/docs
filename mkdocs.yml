@@ -257,14 +257,22 @@ nav:
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Indicators & KPIs Overview': thehive/user-guides/indicators.md
       - 'Organization Administration':
-        - 'User Management': thehive/user-guides/organization/accounts.md
-        - 'Templates Management':
-          - 'Cases Templates Management': thehive/user-guides/organization/templates/case-templates.md
-          - 'Pages Templates Management': thehive/user-guides/organization/templates/page-templates.md
-          - 'Reports Templates Management': thehive/user-guides/organization/templates/report-templates.md
-        - 'Custom Tags Management': thehive/user-guides/organization/custom-tags.md
-        - 'UI Configuration Guide': thehive/user-guides/organization/ui-configuration.md
-        - 'Notifications & Endpoints Setup':
+        - 'User': thehive/user-guides/organization/accounts.md
+        - 'Templates':
+          - 'Case Templates':
+            - 'About Case Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md
+            - 'Create a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md
+            - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
+            - 'Modify a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/modify-a-case-template.md
+            - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
+            - 'Delete a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template.md
+          - 'Page Templates':
+            - 'Page Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md
+          - 'Report Templates':
+            - 'Report Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md
+        - 'Custom Tags': thehive/user-guides/organization/custom-tags.md
+        - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
+        - 'Notifications & Endpoints':
           - 'Introduction to Notifications & Endpoints': thehive/user-guides/organization/notifications/introduction.md
           - 'Notifier Configuration':
             - 'Mattermost Configuration': thehive/user-guides/organization/notifications/mattermost.md
@@ -273,11 +281,11 @@ nav:
             - 'Kafka Configuration': thehive/user-guides/organization/notifications/kafka.md
             - 'Redis Configuration': thehive/user-guides/organization/notifications/redis.md
           - 'Filtered Events Setup': thehive/user-guides/organization/notifications/filteredevents.md
-        - 'Endpoints Management':
+        - 'Endpoints':
           - 'About Endpoints': thehive/user-guides/organization/manage-endpoints/about-endpoints.md
           - 'Add Endpoints': thehive/user-guides/organization/manage-endpoints/add_endpoints.md
-        - 'Functions Configuration': thehive/user-guides/organization/functions.md
-        - 'Attachments Usage Guide': thehive/user-guides/organization/attachments.md
+        - 'Functions': thehive/user-guides/organization/functions.md
+        - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
