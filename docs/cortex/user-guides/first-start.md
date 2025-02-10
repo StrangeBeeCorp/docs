@@ -37,6 +37,6 @@ Enable the analyzers you need, configure them using the **Organization** > **Con
 
 ## Step 7 (Optional): Create an Account for TheHive integration
 
-If you are using TheHive, create a new account inside your organisation with the `read, analyze` role and generate an API key that you will need to add to TheHive's configuration.
+If you are using TheHive, create a new account inside your organization with the `read, analyze` role and generate an API key that you will need to add to TheHive's configuration.
 
 ![Read/Analyze user](images/thehive_account.png)

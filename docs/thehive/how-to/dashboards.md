@@ -9,7 +9,7 @@ TheHive comes with a reporting module that allows designing shared and private d
 
 ## Dashboards
 
-Every user has read access to the dashboards defined in the organisation (s)he belongs to. If the `manageDashboard` permission is part of the user's profile, the user can create dashboards.
+Every user has read access to the dashboards defined in the organization (s)he belongs to. If the `manageDashboard` permission is part of the user's profile, the user can create dashboards.
 
 ### Create a dashboard
 

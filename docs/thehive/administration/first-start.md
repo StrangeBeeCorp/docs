@@ -52,9 +52,9 @@ The Administrator's space is where all platform configurations are managed.
 
     ![](../images/administration-guides/first-start-platform-management.png)
 
-* Create Organisations
+* Create organizations
 
-    ![](../images/administration-guides/first-start-organisations.png)
+    ![](../images/administration-guides/first-start-organizations.png)
 
 * Create Users
 

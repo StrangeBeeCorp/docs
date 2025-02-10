@@ -41,5 +41,5 @@ To unlock capabilities[^1] and quotas[^2], a license is required.
     Capabilities included in the license: clustering, branding, Active directory, SAML and OAUTH2 authentication, Case timelines.
 
 [^2]:
-    Quotas concern Organisations and Users.
+    Quotas concern organizations and Users.
 

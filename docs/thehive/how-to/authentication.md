@@ -35,5 +35,5 @@ Several authentication providers can be enable. Each of them is check sequential
 The user can be provisionned and deprovisionned automatically based on the content of a directory.
 The user data are synchronised periodically. New users in LDAP are created in TheHive, removed users are disabled.
 
-The organisation membership and the profile of an user are set using LDAP groups. The configuration contain the mapping of LDAP groups with organisation/profile.
+The organization membership and the profile of an user are set using LDAP groups. The configuration contain the mapping of LDAP groups with organization/profile.
 ![LDAP synchronisation configuration page](../images/how-to/authentication/auth_ldap_sync.png)
