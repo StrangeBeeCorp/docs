@@ -1,15 +1,24 @@
 # How to Delete a Case Template
 
-### Delete a case template
+This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
 
-To Delete a case template: 
+{!includes/access-manage-case-templates.md!}
 
-1. Click the **Delete** option from the list.
+## Procedure
 
-<img src="/thehive/images/user-guides/organization/configure-organization/delete-case-templates.png" alt=" delete case templates" width="700" height="700"/>
+1. {!includes/organization-view-go-to.md!}
 
-A new message pops-up.
+2. {!includes/templates-go-to.md!}
 
-1. Click **OK** to delete the case template from the list.
+3. {!includes/case-templates-go-to.md!}
 
-<img src="/thehive/images/user-guides/organization/configure-organization/delete-case-template-popup.png" alt=" delete case templates" width="300" height="300"/>
+4. Select ![Three dots](../../../../../images/user-guides/organization/configure-organization/three-dots.png) next to the case template you want to delete.
+
+5. Select **Delete**.
+
+6. Select **OK**.
+
+## Next steps
+
+* [Export a Case Template](export-a-case-template.md)
+* [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)

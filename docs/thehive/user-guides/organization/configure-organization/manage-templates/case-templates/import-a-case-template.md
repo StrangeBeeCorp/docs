@@ -1,24 +1,25 @@
-### Import a case template
+# How to Import a Case Template
 
-To Import a case template: 
+This topic provides step-by-step instructions for importing a [case template](about-case-templates.md) in TheHive.
 
-<img src="/thehive/images/user-guides/organization/configure-organization/import-case-templates.png" alt=" import case templates" width="700" height="700"/>
+This is useful if you want to use a case template from another organization.
 
-1. Click the **Import Case Template** option. 
+{!includes/access-manage-case-templates.md!}
 
-A new window opens. 
+## Procedure
 
-1. Click the **Drop file or Click** option in attachment. 
-2. Click the **Confirm** button. 
+1. {!includes/organization-view-go-to.md!}
 
-> NOTE: The file must be a valid JSON file. You can use the exported case template directly from theHive platform. 
+2. {!includes/templates-go-to.md!}
 
-<img src="/thehive/images/user-guides/organization/configure-organization/import-a-case-template.png" alt=" import case templates" width="700" height="700"/>
+3. {!includes/case-templates-go-to.md!}
 
-#### Import a *Case template*
-Click on the button *Import Case Template* and select the JSON formatted file to import.
+4. Select **Import case template**.
 
-<figure markdown>
-![](../../../images/user-guides/organization/templates/organization-case-templates-4.png){ width="500" }
-<figcaption>Import a case template</figcaption>
-</figure>
+5. In the **Importing a case template** drawer, drop a JSON file direclty into the **Attachment** section or click to select the JSON file from your computer. You can directly use the file you obtained from [exporting the case template](export-a-case-template.md).
+
+6. Select **Confirm case template import**.
+
+## Next steps
+
+* [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)

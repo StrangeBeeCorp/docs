@@ -1,6 +1,6 @@
-# How to Create a Case Template
+# How to Edit a Case Template
 
-This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
+This topic provides step-by-step instructions for editing a [case template](about-case-templates.md) in TheHive.
 
 {!includes/access-manage-case-templates.md!}
 
@@ -12,9 +12,11 @@ This topic provides step-by-step instructions for creating a [case template](abo
 
 3. {!includes/case-templates-go-to.md!}
 
-4. Select :fontawesome-regular-square-plus:.
+4. Select ![Three dots](../../../../../images/user-guides/organization/configure-organization/three-dots.png) next to the case template you want to edit.
 
-5. In the **Adding a case template** drawer, enter values in some or all of the following fields to prefill:
+5. Select **Edit**.
+
+6. In the **Editing a case template** drawer, enter your new values in the following fields:
 
     **Prefix**  
     A prefix that is automatically added to case names. The prefix value is not visible when creating a case from the template but is applied after creation. Use it to categorize cases for reporting.
@@ -49,10 +51,9 @@ This topic provides step-by-step instructions for creating a [case template](abo
     **Pages**  
     A page template for cases.
 
-6. Select **Confirm case template creation**.
+7. Select **Confirm case template creation**.
 
 ## Next steps
 
-* [Edit a Case Template](edit-a-case-template.md)
 * [Export a Case Template](export-a-case-template.md)
 * [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)

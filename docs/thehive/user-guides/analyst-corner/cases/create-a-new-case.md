@@ -1,4 +1,6 @@
-# Create a Case
+# How to Create a Case
+
+
 
 ## Create new cases using templates
 

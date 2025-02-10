@@ -262,10 +262,10 @@ nav:
           - 'Case Templates':
             - 'About Case Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md
             - 'Create a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md
-            - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
-            - 'Modify a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/modify-a-case-template.md
-            - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
+            - 'Edit a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/edit-a-case-template.md
             - 'Delete a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template.md
+            - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
+            - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
           - 'Page Templates':
             - 'Page Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md
           - 'Report Templates':
