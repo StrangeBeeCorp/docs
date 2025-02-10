@@ -238,16 +238,16 @@ nav:
           - 'OAUTH2 Authentication': thehive/administration/authentication/oauth2.md
         - 'SMTP Configuration': thehive/administration/smtp.md
       - 'Entities Management':
-        - 'Profiles Management': thehive/administration/profiles.md
-        - 'Custom Fields Management': 
+        - 'Profiles': thehive/administration/profiles.md
+        - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
-        - 'Observable Types Management': thehive/administration/observables-types.md
-        - 'Case Status Management': thehive/administration/case-status.md
-        - 'Alert Status Management': thehive/administration/alert-status.md
-        - 'Analyzers Templates Management': thehive/administration/analyzers-templates.md
-        - 'Taxonomies Management': thehive/administration/taxonomies.md
-        - 'Att&ck Patterns Management': thehive/administration/attack-patterns.md
+        - 'Observable Types': thehive/administration/observables-types.md
+        - 'Case Status': thehive/administration/case-status.md
+        - 'Alert Status': thehive/administration/alert-status.md
+        - 'Analyzers Templates': thehive/administration/analyzers-templates.md
+        - 'Taxonomies': thehive/administration/taxonomies.md
+        - 'Att&ck Patterns': thehive/administration/attack-patterns.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Notification Configuration': thehive/how-to/notifications.md
