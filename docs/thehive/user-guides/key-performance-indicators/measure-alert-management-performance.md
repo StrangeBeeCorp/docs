@@ -34,4 +34,4 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Next steps
 
-* [Evaluate Case Performance](measure-case-management-performance.md)
+* [Measure Case Performance](measure-case-management-performance.md)

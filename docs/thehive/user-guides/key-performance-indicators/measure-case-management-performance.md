@@ -34,6 +34,6 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Next steps
 
-* [Evaluate Alert Performance](measure-alert-management-performance.md)
+* [Measure Alert Performance](measure-alert-management-performance.md)
 
 

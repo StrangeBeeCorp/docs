@@ -34,5 +34,5 @@ For more information on these KPIs, we recommend you consult this [SecurityScore
 
 * [Key Performance Indicator Formulas](key-performance-indicators-formulas.md)
 * [Hide Key Performance Indicators](hide-key-performance-indicators.md)
-* [Evaluate Case Performance](measure-case-management-performance.md)
-* [Evaluate Alert Performance](measure-alert-management-performance.md)
+* [Measure Case Performance](measure-case-management-performance.md)
+* [Measure Alert Performance](measure-alert-management-performance.md)
