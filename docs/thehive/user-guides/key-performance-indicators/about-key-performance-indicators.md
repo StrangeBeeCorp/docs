@@ -28,11 +28,12 @@ The time it takes to fully resolve an incident after it has been marked *In Prog
 
 ---
 
+To view the formulas for each indicator, refer to the [Key Performance Indicator Formulas](key-performance-indicators-formulas.md) topic.
+
 For more information on these KPIs, we recommend you consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
 
 ## Next steps
 
-* [Key Performance Indicator Formulas](key-performance-indicators-formulas.md)
 * [Hide Key Performance Indicators](hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)
 * [Measure Alert Performance](measure-alert-management-performance.md)
