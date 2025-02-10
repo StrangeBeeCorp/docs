@@ -8,7 +8,12 @@ This topic explains how sharing rules work and interact.
 
 {!includes/administrator-access-manage-organizations.md!}
 
-Set global sharing rules when [linking organizations](link-an-organization.md) for cases and [creating an organization](create-an-organization.md) for tasks and observables. These rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
+You must set global sharing rules:
+
+* For cases when [linking organizations](link-an-organization.md).
+* For tasks and observables when [creating an organization](create-an-organization.md).
+
+These rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
 
 The configuration determines whether this sharing occurs automatically.
 
