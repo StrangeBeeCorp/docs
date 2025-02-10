@@ -11,6 +11,8 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 {!includes/access-manage-case-sharing.md!}
 
+## Procedure
+
 1. [Locate the shared case where you want to share the observable](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
 2. Go to the **Observables** tab.
