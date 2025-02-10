@@ -1,10 +1,8 @@
 # About Organizations Sharing Rules
 
-Sharing rules define how cases are shared with linked organizations.
+Sharing rules determine how cases, along with their tasks and observables, are shared with linked organizations.
 
-Sharing rules for [tasks](../../user-guides/analyst-corner/tasks/about-tasks.md) and observables are also set when you create an organization.
-
-This topic explains how these sharing rules function and work together.
+This topic explains how sharing rules work and interact.
 
 ## Global sharing rules
 
