@@ -16,7 +16,7 @@ In TheHive, an alert can be created from the following sources:
 
 ## Key components
 
-In TheHive, an alert consists of the following elements:
+In TheHive, an alert includes the following elements:
 
 * [Observables](../alerts/alerts-description/view-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 

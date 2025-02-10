@@ -22,7 +22,7 @@ In TheHive, you can create a case from the following sources:
 
 ## Key components
 
-In TheHive, a case consists of the following elements:
+In TheHive, a case includes the following elements:
 
 * [Observables](../cases/cases-description/observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 
