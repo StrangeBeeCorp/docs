@@ -14,6 +14,8 @@ Several options are offered to create a case in TheHive:
 
 * [Create a case from an alert]()
 
+{!includes/access-create-a-case.md!}
+
 ## Create an empty case
 
 1. {!includes/create-a-case.md!}
@@ -22,39 +24,40 @@ Several options are offered to create a case in TheHive:
 
 3. Enter the following fields:
 
-    **Title \***
-
+    **Title \***  
     The title of the case.
 
-    **Date \***
+    **Date \***  
+    The start date and time of the case. It indicates when the investigation began. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../../user-guides/indicators.md).
 
-    The date and time of creation of the case. By default, it is set up with the current date and time.
+    **Severity \***  
+    The severity level for the case.
 
-    **Severity \***
+    **TLP \***  
+    The TLP level for the case.
 
-    The severity level of the case.
+    **PAP \***  
+    The PAP level for the case.
 
-    **TLP \***
+    **[Tags](../../organization/configure-organization/manage-custom-tags/about_custom_tags.md)**  
+    Relevant tags to categorize the case.
 
-    The TLP of the case.
+    **Description \***  
+    A description of the case.
 
-    **PAP \***
+    **[Tasks](../tasks/about-tasks.md)**  
+    Tasks for the case.
 
-    The PAP of the case.
+    **[Custom fields](../../../administration/custom-fields/about-custom-fields.md)**  
+    Custom fields for the case, with or without predefined values.
 
-    **Tags**
+    **[Pages](../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    Pages to document the case.
 
-    **Description**
+    **Sharing**  
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. You can modify these rules to apply local sharing settings for the case. To modify local sharing rules for tasks and observables, manage them after the case is created. For more information, see the [Share a Case](../cases/share-a-case.md) topic.
 
-    **Tasks**
-
-    **Custom fields**
-
-    **Pages**
-
-    **Sharing**
-
-You can still apply a case template after creation if needed.
+You can still apply a case template after creation if needed. Refer to the Apply a Case Template topic to see how to do it.
 
 ## Create a case from a template
 

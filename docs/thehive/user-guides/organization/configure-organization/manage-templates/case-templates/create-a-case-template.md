@@ -46,8 +46,8 @@ This topic provides step-by-step instructions for creating a [case template](abo
     **[Custom fields](../../../../../administration/custom-fields/about-custom-fields.md)**  
     One or more custom fields for cases, with or without predefined values.
     
-    **Pages**  
-    A page template for cases.
+    **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    A page template to document cases.
 
 6. Select **Confirm case template creation**.
 
