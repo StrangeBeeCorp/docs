@@ -93,6 +93,9 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from a MISP event
 
+!!! info "Data transfer"
+    Data from the MISP event, such as observables, is automatically transferred to the case.
+
 1. {!includes/create-a-case.md!}
 
 2. In the **Create case** drawer, select **From MISP (.json)**.
@@ -116,6 +119,11 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an alert
 
+{!includes/access-create-case-from-alert.md!}
+
+!!! info "Data transfer"
+    Data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
+
 1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
 
 2. In the alert description, select ![Convert an alert into a case](/thehive/images/user-guides/analyst-corner/cases/convert-alert-into-case.png).
@@ -130,3 +138,4 @@ Several options are offered to create a case in TheHive:
 ## Next steps
 
 * [Apply a Case Template](apply-a-case-template.md)
+* [Adding to a Case](adding_to_a_case.md)

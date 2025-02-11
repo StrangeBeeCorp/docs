@@ -20,4 +20,4 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 ## Next steps
 
-* []()
+* [Adding to a Case](adding_to_a_case.md)
