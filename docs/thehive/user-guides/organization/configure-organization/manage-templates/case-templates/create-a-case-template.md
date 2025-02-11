@@ -23,7 +23,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
     The name of the case template. This name is used to identify the case template in the API.
     
     **Display name**  
-    The name that appears when users [select this template to create a new case](../../../analyst-corner/cases/create-a-new-case.md). If no display name is specified, the case template name is used.
+    The name that appears when users [select this template to create a new case](../../../../analyst-corner/cases/create-a-new-case.md). If no display name is specified, the case template name is used.
     
     **TLP**  
     The default TLP value for cases.
