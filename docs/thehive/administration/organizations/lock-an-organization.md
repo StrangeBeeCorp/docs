@@ -15,7 +15,7 @@ Locking an organization is useful when you want to prevent users from logging in
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
-2. Select the checkbox on the left of the organization to lock and select ![Lock button](../../images/administration-guides/lock-button.png). Alternatively, hover over the organization, select ![Eye](../../images/administration-guides/manage-organizations-eye.png), and turn on the **Locked** toggle to lock the organization.
+2. Select the checkbox on the left of the organization to lock and select :fontawesome-solid-lock:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and turn on the **Locked** toggle to lock the organization.
 
     ![Lock organization lock](../../images/administration-guides/lock-organization-lock.png)
 

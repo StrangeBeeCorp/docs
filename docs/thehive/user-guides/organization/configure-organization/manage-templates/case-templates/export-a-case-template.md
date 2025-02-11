@@ -16,7 +16,7 @@ This is useful if you want to share a case template with another organization or
 
 4. Select **Import case template**.
 
-5. Select ![Three dots](../../../../../images/user-guides/organization/configure-organization/three-dots.png) next to the case template you want to export.
+5. Select :fontawesome-solid-ellipsis: next to the case template you want to export.
 
 6. Select **Export case template** to export the case template in JSON format.
 

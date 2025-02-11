@@ -126,7 +126,9 @@ Several options are offered to create a case in TheHive:
 
 1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
 
-2. In the alert description, select ![Convert an alert into a case](/thehive/images/user-guides/analyst-corner/cases/convert-alert-into-case.png).
+2. In the alert description, select the **Create case from alert** button.
+
+    ![Create case from alert](/thehive/images/user-guides/analyst-corner/cases/create-case-from-alert.png)
 
 3. In the **Create case** drawer, select either **Empty case** or **From template**.
 

@@ -11,7 +11,9 @@ You might need to export a case to:
 
 1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
 
-2. In the case description, select ![Export a case](/thehive/images/user-guides/analyst-corner/cases/export-a-case.png).
+2. In the case description, select the **Export** button.
+
+    ![Export a case](/thehive/images/user-guides/analyst-corner/cases/export-a-case.png)
 
 3. Two export options are available:
 

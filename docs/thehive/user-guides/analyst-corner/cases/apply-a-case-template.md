@@ -10,7 +10,9 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
 
-2. In the case description, select ![Apply a case template](/thehive/images/user-guides/analyst-corner/cases/apply-case-template.png).
+2. In the case description, select the **Apply a case template** button.
+
+    ![Apply a case template](/thehive/images/user-guides/analyst-corner/cases/apply-a-case-template.png)
 
 3. In the **Apply case template** drawer, select a template from the dropdown list.
 

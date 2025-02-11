@@ -14,7 +14,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
-2. Select the organization to link to another, then select **Linked organizations**. Alternatively, hover over the organization and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
+2. Select the organization to link to another, then select **Linked organizations**. Alternatively, hover over the organization and select :fontawesome-solid-eye:.
 
     ![Link an organization](../../images/administration-guides/link-an-organization.png)
 

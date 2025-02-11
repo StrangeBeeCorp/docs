@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for deleting a [case template](abo
 
 3. {!includes/case-templates-go-to.md!}
 
-4. Select ![Three dots](../../../../../images/user-guides/organization/configure-organization/three-dots.png) next to the case template you want to delete.
+4. Select :fontawesome-solid-ellipsis: next to the case template you want to delete.
 
 5. Select **Delete**.
 
