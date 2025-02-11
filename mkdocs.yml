@@ -282,8 +282,8 @@ nav:
             - 'Redis Configuration': thehive/user-guides/organization/notifications/redis.md
           - 'Filtered Events Setup': thehive/user-guides/organization/notifications/filteredevents.md
         - 'Endpoints':
-          - 'About Endpoints': thehive/user-guides/organization/manage-endpoints/about-endpoints.md
-          - 'Add Endpoints': thehive/user-guides/organization/manage-endpoints/add_endpoints.md
+          - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
+          - 'Add Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md
         - 'Functions': thehive/user-guides/organization/functions.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
