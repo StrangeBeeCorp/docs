@@ -17,7 +17,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
 5. In the **Adding a case template** drawer, enter values in some or all of the following fields to prefill:
 
     **Prefix**  
-    A prefix that is automatically added to case names. The prefix value is not visible when creating a case from the template but is applied after creation. Use it to categorize cases for reporting.
+    A prefix that is automatically added to case titles. The prefix value is not visible when creating a case from the template but is applied after creation. Use it to categorize cases for reporting.
         
     **Name \***  
     The name of the case template. This name is used to identify the case template in the API.
@@ -56,3 +56,4 @@ This topic provides step-by-step instructions for creating a [case template](abo
 * [Edit a Case Template](edit-a-case-template.md)
 * [Export a Case Template](export-a-case-template.md)
 * [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

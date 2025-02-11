@@ -11,13 +11,16 @@ Use case templates to:
 * Simplify case creation workflows
 * Save time when creating new cases
 * Maintain consistency in case descriptions
+* Enrich ongoing cases by adding additional information
 
 ## Usage
 
-You can create a case from a case template as one of the available options when [initiating a new case](../../../analyst-corner/cases/create-a-new-case.md).
+You can create a case from a case template when [initiating a new case](../../../analyst-corner/cases/create-a-new-case.md).
 
 !!! info "Modifiable values"
     When creating a case from a template, users can modify prepopulated values as needed.
+
+You can also [apply a case template to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md).
 
 ## Permissions
 
@@ -31,3 +34,4 @@ If you need to share a case template with another organization, [export it from 
 
 * [Create a Case Template](create-a-case-template.md)
 * [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

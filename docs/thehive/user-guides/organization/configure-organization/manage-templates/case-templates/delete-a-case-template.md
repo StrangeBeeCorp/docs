@@ -22,3 +22,4 @@ This topic provides step-by-step instructions for deleting a [case template](abo
 
 * [Export a Case Template](export-a-case-template.md)
 * [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

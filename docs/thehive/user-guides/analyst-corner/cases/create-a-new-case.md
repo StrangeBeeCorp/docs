@@ -1,10 +1,70 @@
 # How to Create a Case
 
+This topic provides step-by-step instructions for creating a [case](../cases/about-a-case.md) in TheHive.
+
+Several options are offered to create a case in TheHive:
+
+* [Create an empty case]()
+
+* [Create a case from a template]()
+
+* [Create a case from an archived case]()
+
+* [Create a case from a MISP event]()
+
+* [Create a case from an alert]()
+
+## Create an empty case
+
+1. From any view, select **+ Create case**.
+
+    Image
+
+2. Select **Empty case**
+
+    Image
+
+3. In the **Create case** drawer, fill in the following fields:
+
+    **Title**
+
+    **Date**
+
+    **Severity**
+
+    **TLP**
+
+    **PAP**
+
+    **Tags**
+
+    **Description**
+
+    **Tasks**
+
+    **Custom fields**
+
+    **Pages**
+
+    **Sharing**
 
 
-## Create new cases using templates
 
-A User can create new cases using templates.
+## Create a case from a template
+
+## Create a case from an archived case
+
+## Create a case from a MISP event
+
+## Create a case from an alert
+
+## Next steps
+
+
+
+
+
+A user can create new cases using templates.
 
 1. Click **Create Case +** on the header.
 

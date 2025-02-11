@@ -22,4 +22,4 @@ This is useful if you want to share a case template with another organization.
 
 ## Next steps
 
-[Import a Case Template](import-a-case-template.md)
+* [Import a Case Template](import-a-case-template.md)
