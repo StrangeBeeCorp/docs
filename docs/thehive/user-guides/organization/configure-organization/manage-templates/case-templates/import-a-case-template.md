@@ -22,5 +22,5 @@ This is useful if you want to use a case template from another organization or T
 
 ## Next steps
 
-* [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Create a Case](../../../../analyst-corner/cases/create-a-new-case.md)
 * [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

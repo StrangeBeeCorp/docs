@@ -33,5 +33,5 @@ If you need to share a case template with another organization or TheHive instan
 ## Next steps
 
 * [Create a Case Template](create-a-case-template.md)
-* [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Create a Case](../../../../analyst-corner/cases/create-a-new-case.md)
 * [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

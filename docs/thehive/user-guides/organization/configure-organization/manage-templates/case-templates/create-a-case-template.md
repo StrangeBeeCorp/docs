@@ -55,5 +55,5 @@ This topic provides step-by-step instructions for creating a [case template](abo
 
 * [Edit a Case Template](edit-a-case-template.md)
 * [Export a Case Template](export-a-case-template.md)
-* [Create a New Case](../../../../analyst-corner/cases/create-a-new-case.md)
+* [Create a Case](../../../../analyst-corner/cases/create-a-new-case.md)
 * [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

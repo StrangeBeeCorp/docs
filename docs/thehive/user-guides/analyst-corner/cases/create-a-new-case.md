@@ -129,45 +129,4 @@ Several options are offered to create a case in TheHive:
 
 ## Next steps
 
-* []()
-* []()
-
-
-
-
-![case details](../images/how-to/case-management/case-details.png)
-
-### Case tasks
-
-![case-tasks](../images/how-to/case-management/case-tasks.png)
-
-![case-task-details](../images/how-to/case-management/case-task-details.png)
-
-### Case observables
-
-![case-observables](../images/how-to/case-management/case-observables.png)
-![case-observable-details](../images/how-to/case-management/case-observable-details.png)
-![case-observable-analysis](../images/how-to/case-management/case-observable-analysis.png)
-![case-observable-report](../images/how-to/case-management/case-observable-report.png)
-
-### Case TTPs
-
-![case-ttps](../images/how-to/case-management/case-ttps.png)
-
-### Case timeline
-
-![case-timeline-1](../images/how-to/case-management/case-timeline-1.png)
-![case-timeline-2](../images/how-to/case-management/case-timeline-2.png)
-
-### Case correlations
-
-Case correlations with existing cases and alert are based on the common observables
-
-![case-related-cases](../images/how-to/case-management/case-related-cases.png)
-![case-similar-alerts](../images/how-to/case-management/case-similar-alerts.png)
-
-## Case export
-
-Cases can be exported as password protected archives or as a MISP event
-
-![case-export](../images/how-to/case-management/case-export.png)
+* [Apply a Case Template](apply-a-case-template.md)
