@@ -22,18 +22,18 @@ You can also send an Email as notification.
 
 ## Notifications management
 
-Notifications are unique to each organisation. With an org admin account open the Organization menu (1), and navigate to the Notifications tab (2).
+Notifications are unique to each organization. With an org admin account open the Organization menu (1), and navigate to the Notifications tab (2).
 
 To create a notification, clic on the "+" button (3)
 
-![Notifications management page](images/notifications/notifications_management.png)
+![Notifications management page](../images/how-to/notifications/notifications_management.png)
 
 ## Configure a Notification
 
 While clicking on add or edit a notifier, a drawer will appear where you can define the following settings:
 
 - Name: Notification name to display within TheHive
-- Send notification to every user in the organisation: Check this box to notify by email every users of the organization this Notifier has triggered
+- Send notification to every user in the organization: Check this box to notify by email every users of the organization this Notifier has triggered
 - Trigger: Chose in a list of triggers on which event you want to react. You can also select "FilteredEvent" to create your own event filter.
 - Enable notification: Check this box to enable the notifier. Uncheck the box to disable the notifier.
 
@@ -78,7 +78,7 @@ But you can also chose to use a custom filter to react on specific events.
 Custom filters are JSON format written and can use common operators.
 Example with a filter for cases which Severity is updated to High or Critical:
 
-![Notifications management page](images/notifications/notifications_filteredevent.png)
+![Notifications management page](../images/how-to/notifications/notifications_filteredevent.png)
 
 ### Use variables in notifications
 
@@ -86,7 +86,7 @@ You can include variables in your Email & HTTP notification.
 
 Use the "add variable" bouton to see the list of available variables. Example with an email notification:
 
-![Notifications management page](images/notifications/notifications_mail_example.png)
+![Notifications management page](../images/how-to/notifications/notifications_mail_example.png)
 
 The templating engine is based on [mustache](https://mustache.github.io) so you can add some logic to your template. Example:
 

@@ -9,23 +9,23 @@ TheHive comes with a reporting module that allows designing shared and private d
 
 ## Dashboards
 
-Every user has read access to the dashboards defined in the organisation (s)he belongs to. If the `manageDashboard` permission is part of the user's profile, the user can create dashboards.
+Every user has read access to the dashboards defined in the organization (s)he belongs to. If the `manageDashboard` permission is part of the user's profile, the user can create dashboards.
 
 ### Create a dashboard
 
-![Create dashboard](./images/dashboards/dashboard-create.png)
+![Create dashboard](../images/how-to/dashboards/dashboard-create.png)
 
 ### List dashboards
 
-![List dashboards](./images/dashboards/dashboard-list.png)
+![List dashboards](../images/how-to/dashboards/dashboard-list.png)
 
 ### View dashboard
 
-![View dashboard](./images/dashboards/dashboard-view.png)
+![View dashboard](../images/how-to/dashboards/dashboard-view.png)
 
 ### Configure widgets
 
-![Configure widgets](./images/dashboards/dashboard-widget.png)
+![Configure widgets](../images/how-to/dashboards/dashboard-widget.png)
 
 ## Case timelines
 
@@ -40,6 +40,6 @@ Case timelines are a second part of TheHive's reporting capabilities. Case timel
 - Mitre Attack patterns
 - Additional custom events
 
-![Case timeline 1](./images/dashboards/case-timeline-1.png)
+![Case timeline 1](../images/how-to/dashboards/case-timeline-1.png)
 
-![Case timeline 2](./images/dashboards/case-timeline-2.png)
+![Case timeline 2](../images/how-to/dashboards/case-timeline-2.png)

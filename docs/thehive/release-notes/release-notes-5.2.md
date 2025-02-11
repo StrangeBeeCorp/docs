@@ -7,6 +7,11 @@
 
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
+    
+## 5.2.15 - 9th of January 2025
+
+### Security fix
+- This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.
 
 ## 5.2.14 - 9th April 2024
 
@@ -192,7 +197,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
     - MISP Attribute Handling: When exporting a case, MISP attributes of observables are now set correctly, ensuring seamless integration with MISP.
     - Event Editing Strategy: We've implemented a comprehensive event edit strategy to enhance your MISP experience.
 - **Comments**: Text comments without spaces now wrap correctly within the component, ensuring a neat and organized display.
-- **Authentication**: Fixed a bug that did not correctly remove the link between two organisations, which could lead to connection problems.
+- **Authentication**: Fixed a bug that did not correctly remove the link between two organizations, which could lead to connection problems.
 
 **API:**
 
@@ -312,7 +317,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 - Cancelled tasks are now displayed in a case's task list and in the task menu. It will also be possible to see them in progress, and a quick filter on canceled tasks has been added.
 - The severity component of a case and the case number have been split. A new severity component has been created and standardized in the application
     <figure markdown>
-    ![Severity component](./images/release52-severity.png){ width="450"}
+    ![Severity component](../images/release_notes/release52-severity.png){ width="450"}
     </figure>
 - Alert comments are visible in case they have been imported
 - Added the ability to copy case number, case title and alert title to the clipboard
@@ -371,16 +376,16 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
         Create customized, high-impact reports with Case Reporting. Use a variety of dynamic widgets such as text, images, tables and lists. Relevant case data (tasks, observables, etc.) are automatically integrated. Export your reports in HTML and Markdown.
         
-        See [dedicated page](../user-guides/organisation/templates/report-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/templates/report-templates.md) for more information (requires platinum license)
 
     - **Page template:** Customize and organize your cases pages
 
         Guide your collaborators in writing the documentation for a case by importing pages directly from the template to provide all the necessary elements and improve processes.
 
-        See [dedicated page](../user-guides/organisation/templates/page-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/templates/page-templates.md) for more information (requires platinum license)
 
     <figure markdown>
-    ![Case reporting](./images/release52-case-reporting.png){ width="450"}
+    ![Case reporting](../images/release_notes/release52-case-reporting.png){ width="450"}
     </figure>
 
 - **What's new in alerts:** 
@@ -394,7 +399,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
         Benefit from new alert triggers to trigger your notifications.
     
     <figure markdown>
-    ![Assign alerts](./images/release52-alerts.png){ width="450"}
+    ![Assign alerts](../images/release_notes/release52-alerts.png){ width="450"}
     </figure>
 
 - **Transition to TLP 2.0**
@@ -402,7 +407,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
     Our compatibility with the new TLP 2.0 standard is a key advantage for your business. Use the new TLP 2.0 terminologies to strengthen your cases, dashboards and reports.
 
     <figure markdown>
-    ![TLP 2.0](./images/release52-TLP.png){ width="150"}
+    ![TLP 2.0](../images/release_notes/release52-TLP.png){ width="150"}
     </figure>
 
 - **Notifiers Redis and Microsoft Teams**
@@ -410,7 +415,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
     With the new Redis Notifiers and Microsoft Teams, strengthen your communication. Keep your teams informed in real time about the progress of your processes.
 
     <figure markdown>
-    ![Notifiers MS and Redis](./images/release52-notifiers.png){ width="450"}
+    ![Notifiers MS and Redis](../images/release_notes/release52-notifiers.png){ width="450"}
     </figure>
 
 - **List Export**
@@ -418,7 +423,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
     Export your list information as you wish in JSON or CSV format. Apply filters and/or select items for export to keep only what you need. Exploit exported data according to your specific needs.
 
     <figure markdown>
-    ![List export](./images/release52-list-export.png){ width="450"}
+    ![List export](../images/release_notes/release52-list-export.png){ width="450"}
     </figure>
 
 - **Two-factor authentication activation indicator**

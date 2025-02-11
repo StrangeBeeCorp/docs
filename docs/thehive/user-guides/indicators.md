@@ -84,7 +84,7 @@ With the new time metrics indicators, you can now have visibility into the detec
 
 
 <figure markdown>
-  ![Metrics view in Case](./images/case-metrics-view.png){ width="600" }
+  ![Metrics view in Case](/thehive/images/user-guides/case-metrics-view.png){ width="600" }
 </figure>
 
 
@@ -92,5 +92,5 @@ With the new time metrics indicators, you can now have visibility into the detec
 Using _Mean Time To_ metrics in dashboards can building dashboards with useful KPIs to understand your efficiency and identify areas that may require more attention or effort.
 
 <figure markdown>
-  ![KPIs in Dashboards](./images/metrics-dashboard.png){ width="600" }
+  ![KPIs in Dashboards](/thehive/images/user-guides/metrics-dashboard.png){ width="600" }
 </figure>

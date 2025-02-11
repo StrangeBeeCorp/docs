@@ -1,23 +1,29 @@
 # OAuth2 / OpenID-Connect
 
-![OAuth2 configuration page](./images/authentication-oauth2-1.png)
+## Introduction
 
+OAuth2 and OpenID-Connect are widely used authentication protocols that enable secure and seamless user authentication. This article provides instructions on configuring TheHive to authenticate users using an external OAuth2 authentication server. By following this guide, you will be able to integrate various OAuth2 providers, such as Keycloak, Okta, Github, Microsoft 365, and Google, with TheHive.
+
+![OAuth2 Configuration Page](../../images/administration-guides/authentication/authentication-oauth2-1.png)
+
+---
 
 ## Configuration
 
-Authenticate the user using an external OAuth2 authenticator server. It accepts the following configuration parameters:
+To authenticate users using an external OAuth2 server, you need to specify the following configuration parameters:
 
-| Parameter                                           | Description                                                  |
-|-----------------------------------------------------|--------------------------------------------------------------|
-| Client ID                                           | client ID in the OAuth2 server                               |
-| Client secret                                       | client secret in the OAuth2 server                           |
-| TheHive redirect URL                                | the url of TheHive AOuth2 page ( `https://xxx/api/ssoLogin`) |
-| Authorization URL                                   | the url of the OAuth2 server                                 |
-| Token URL                                           | the token url of the OAuth2 server                           |
-| User information URL                                | the url to get user information in OAuth2 server             |
-| List of scope                                       | list of scope                                                |
-| Field that contains the id of the user in user info | the field that contains the id of the user in user info      |
+| Parameter                                           | Description                                                   |
+|-----------------------------------------------------|---------------------------------------------------------------|
+| Client ID                                           | Client ID in the OAuth2 server                                |
+| Client Secret                                       | Client Secret in the OAuth2 server                            |
+| TheHive Redirect URL                                | The URL of TheHive OAuth2 page (`https://xxx/api/ssoLogin`)   |
+| Authorization URL                                   | The URL of the OAuth2 server                                  |
+| Token URL                                           | The Token URL of the OAuth2 server                            |
+| User Information URL                                | The URL to get user information in the OAuth2 server          |
+| List of Scope                                       | List of scopes                                                |
+| Field that contains the ID of the user in user info | The field that contains the ID of the user in user info       |
 
+&nbsp;
 
 ### Examples
 
@@ -101,15 +107,18 @@ Authenticate the user using an external OAuth2 authenticator server. It accepts 
             - Instructions on how to create Oauth2 credentials at [https://support.google.com/cloud/answer/6158849](https://support.google.com/cloud/answer/6158849)
             - For the latest reference for Google auth URLs please check Google's [.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration)
 
+---
 
-## User autocreation
+## User Autocreation
 
-To allow users to login without previously creating them, you can enable autocreation, and specify few options:
+To enable users to log in without prior manual creation, you can activate autocreation and specify the following options:
 
 * Field that contains the name of the user in user info
-* Field that contains the name of the organisation in user info
-* Default organisation applied to new users
+* Field that contains the name of the organization in user info
+* Default organization applied to new users
 * Default profile applied to new users
 
 
-![](./images/authentication-oauth2-2.png)
+![](../../images/administration-guides/authentication/authentication-oauth2-2.png)
+
+&nbsp;

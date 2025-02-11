@@ -10,6 +10,6 @@ To merge alerts:
 1. Select the alert to merge data into
 1. Click **merge alerts**.
 
-<img src="../images/merge-alerts.png" alt="merge alertsr" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/alerts/merge-alerts.png" alt="merge alertsr" width="500" height="500"/>
 
 > NOTE: Merging two cases, removes the originating cases, and creates a new one with all the merged data.

@@ -18,7 +18,7 @@ Create a new case from templates
 1. Sharing (Refer to [`Sharing`](#Sharing).)
 1. Click the **Confirm case creation** button. 
 
-<img src="../images/create_case_edr_template.png" alt="create case from edr template" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_edr_template.png" alt="create case from edr template" width="500" height="500"/>
 
 
 ## 2. Create a new case from Phishing template.
@@ -38,14 +38,14 @@ Create a new case from templates
 1. Sharing (Refer to [`Sharing`](#Sharing).) 
 1. Click the **Confirm case creation** button. 
 
-<img src="../images/create_case_phishing_template.png" alt="create case from phishing template" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_phishing_template.png" alt="create case from phishing template" width="500" height="500"/>
 
 ## Add tags 
 1. Choose tags from the Taxonomy.
 The selected tag will appear in the **Selected Tags** box
 1. Click the **Add selected tags** button.
 
-<img src="../images/select_tags.png" alt="select tags" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/select_tags.png" alt="select tags" width="500" height="500"/>
 
 
 ## Add tasks 
@@ -57,14 +57,14 @@ The task **Group** is default.
 1. Click **Confirm**.
 1. Click **Save and add another**, to add another task. 
 
-<img src="../images/adding_a_task.png" alt="add tasks" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_task.png" alt="add tasks" width="500" height="500"/>
 
 
 ## Add custom field values 
 1. Select custom field value from the given list. (location/business-unit/detection-source/test).
 1. Click **Confirm custom field value creation**.
 
-<img src="../images/adding_a_custom_field_value.png" alt="custom field values" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_custom_field_value.png" alt="custom field values" width="500" height="500"/>
 
 ## Add pages
 By selecting **Create new page**
@@ -75,7 +75,7 @@ By selecting **Create new page**
 1. Click **Confirm**.
 1. Click **Save and add another**, to add another task. 
 
-<img src="../images/adding_a_new_page.png" alt="page" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_new_page.png" alt="page" width="500" height="500"/>
 
 By selecting **Use an existing page template**
 
@@ -83,43 +83,43 @@ By selecting **Use an existing page template**
 1. Click **Confirm**.
 1. Click **Save and add another**, to add another task. 
 
-<img src="../images/adding_a_existng_page.png" alt="page" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_existng_page.png" alt="page" width="500" height="500"/>
 
 ## Edit tasks 
 1. Click the edit link.
 
-<img src="../images/edit_task_option.png" alt="edit task" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/edit_task_option.png" alt="edit task" width="500" height="500"/>
 
 A new window opens. 
 
 1. Edit the required values 
 1. Click the **Confirm edition** button.
 
-<img src="../images/editing_a_task.png" alt="edit task" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/editing_a_task.png" alt="edit task" width="500" height="500"/>
 
 ## Edit custom field values 
 1. Click the edit link.
 
-<img src="../images/edit_custom_field_option.png" alt="edit custom field values" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/edit_custom_field_option.png" alt="edit custom field values" width="500" height="500"/>
 
 A new window opens.
 
 1. Edit the required custom field values 
 1. Click the **Confirm custom field value edition** button.
 
-<img src="../images/edit_custom_field_value.png" alt="edit custom field values" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/edit_custom_field_value.png" alt="edit custom field values" width="500" height="500"/>
 
 ## Delete tasks
 1. Click the delete link beside the value that has to be deleted. 
 
-<img src="../images/delete_task_option.png" alt="delete tasks" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/delete_task_option.png" alt="delete tasks" width="500" height="500"/>
 
 ## Delete custom field values
 1. Click the delete link beside the custom field value that has to be deleted. 
 
-<img src="../images/delete_custom_field_option.png" alt="delete custom field values" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/delete_custom_field_option.png" alt="delete custom field values" width="500" height="500"/>
 
 ## Delete pages
 1. Click the delete link beside the value that has to be deleted. 
 
-<img src="../images/delete_page_option.png" alt="delete page" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases/delete_page_option.png" alt="delete page" width="500" height="500"/>

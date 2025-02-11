@@ -8,4 +8,4 @@ Create a new case from MISP.
 
 1. Click the **Confirm case creation** button. 
 
-    <img src="../images/create_case_from_misp.png" alt="create case from misp" width="500" height="500"/>
+    <img src="/thehive/images/user-guides/analyst-corner/cases/create_case_from_misp.png" alt="create case from misp" width="500" height="500"/>

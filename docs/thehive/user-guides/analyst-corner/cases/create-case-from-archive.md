@@ -6,5 +6,5 @@ Create a new case from archive.
 1. Enter the **Password**. 
 1. Click the **Confirm case creation** button. 
 
-    <img src="../images/create_case_from_archive.png" alt="create case from archive" width="500" height="500"/>
+    <img src="/thehive/images/user-guides/analyst-corner/cases/create_case_from_archive.png" alt="create case from archive" width="500" height="500"/>
 

@@ -121,7 +121,7 @@
 
 - Fix edition of property "includeInTimeline" for task activities
 - Fix case template search when creating a new case
-- Admin: show username and organisation name as required in forms
+- Admin: show username and organization name as required in forms
 - other small fixes
 
 ### Improvements
@@ -296,11 +296,11 @@
 
 - Apply case template on existing case: enrich a case with tasks, custom fields, tags from other case templates
 
-    This will allow your organisation to create more reusable case templates and apply them during the lifecycle of a case
+    This will allow your organization to create more reusable case templates and apply them during the lifecycle of a case
 
 - KPIs
 
-    Get more indicators about your organisation response: Time to Respond, Time to Acknowledge ...
+    Get more indicators about your organization response: Time to Respond, Time to Acknowledge ...
 
 - Global search
 
@@ -328,7 +328,7 @@
 
 - Functions (Beta)
 
-    See [dedicated page](../user-guides/organisation/functions.md) for more information (requires platinum license)
+    See [dedicated page](../user-guides/organization/functions.md) for more information (requires platinum license)
 
 ### Other features
 

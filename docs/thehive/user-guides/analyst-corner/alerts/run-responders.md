@@ -8,4 +8,4 @@ A new window appears.
 
 1. Search for a **specific responder** in the search box.
 
-<img src="../images/responder-alerts.png" alt="run responder alerts" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/alerts/responder-alerts.png" alt="run responder alerts" width="500" height="500"/>

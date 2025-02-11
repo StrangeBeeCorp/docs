@@ -10,12 +10,7 @@ The migration tool is located in `/opt/thehive/bin/migrate`.
 
 ## Supported Versions
 
-The migration tool facilitates the transition from both TheHive 3.4.x and 3.5.x versions. Below is the compatibility matrix:
-
-| Migrating from  | Elasticsearch Version   |
-| --------------- | ----------------------- | 
-| TheHive 3.4.x   | v6.x                    |
-| TheHive 3.5.x   | v7.x                    |
+The migration tool facilitates the transition from both TheHive 3.4.x and 3.5.x versions.
 
 ---
 

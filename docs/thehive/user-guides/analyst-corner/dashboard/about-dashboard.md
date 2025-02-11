@@ -6,4 +6,4 @@ A dashboard is a visual display of data to provide information at-a-glance. The 
 
 The dashboard lists all details of cases such as, status, name, version number, widget, created by, dates of creation and date on which data was updated. A user can apply filters on the dashboard, sort based on fields, and manage views. 
 
-<img src="../images/dashboard.png" alt="dashboards" width="1000" height="1000"/>
+<img src="/thehive/images/user-guides/analyst-corner/dashboard/dashboard.png" alt="dashboards" width="1000" height="1000"/>

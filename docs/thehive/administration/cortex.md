@@ -19,7 +19,7 @@ One or more Cortex instances can be connected to TheHive.
 
 ### Add a new Cortex server
 
-![](./images/platform-management-cortex-1.png)
+![](../images/administration-guides/platform-management-cortex-1.png)
 
 Specify:
 
@@ -31,18 +31,18 @@ Specify:
 
 ### Advanced settings
 
-![](./images/platform-management-cortex-2.png)
+![](../images/administration-guides/platform-management-cortex-2.png)
 
-By default, all Analyzers and Responders made available by Cortex are available to **ALL** organisations in TheHive.
+By default, all Analyzers and Responders made available by Cortex are available to **ALL** organizations in TheHive.
 Additionaly, 2 options are available:
 
-* Make them **available ONLY** to a subset of existing Organisations in TheHive
-* Make them **unavailable** to a subset of existing Organisations in TheHive
+* Make them **available ONLY** to a subset of existing organizations in TheHive
+* Make them **unavailable** to a subset of existing organizations in TheHive
 
 
 ### Delete a Connection
 
-![](./images/platform-management-cortex-3.png)
+![](../images/administration-guides/platform-management-cortex-3.png)
 
 [^1]:
     If you have several connections, this is useful to give explicit names
