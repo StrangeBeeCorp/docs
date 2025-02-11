@@ -6,7 +6,7 @@ These KPIs are displayed by default on all cases and alerts in TheHive.
 
 This topic defines each of these indicators.
 
-## Time to detect (TDD)
+## Time to detect (TTD)
 
 The time it takes for your security team to detect abnormal activity that may indicate malicious, suspicious, or risky behavior in your environment. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
 
@@ -14,13 +14,13 @@ The time it takes for your security team to detect abnormal activity that may in
 
 The time it takes for your security team to assess and prioritize a detected alert, determining its relevance, severity, and required response. It reflects how efficiently alerts are reviewed and escalated for investigation.
 
-## Time to qualify (TTQ)
-
-The time it takes for your security team to analyze an alert and determine its validity—whether it's a true positive, a false positive, or requires further investigation. This metric helps measure the accuracy and speed of the qualification process.
-
 ## Time to acknowledge (TTA)
 
 The time it takes for your security team to acknowledge an event by transitioning its status to *In Progress*. This measures the responsiveness of your team after detecting a potential security incident.
+
+## Time to qualify (TTQ)
+
+The time it takes for your security team to analyze an alert and determine its validity—whether it's a true positive, a false positive, or requires further investigation. This metric helps measure the accuracy and speed of the qualification process.
 
 ## Time to resolve (TTR)
 
