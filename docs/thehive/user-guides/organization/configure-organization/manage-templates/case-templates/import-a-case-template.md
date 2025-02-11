@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for importing a [case template](about-case-templates.md) in TheHive.
 
-This is useful if you want to use a case template from another organization.
+This is useful if you want to use a case template from another organization or TheHive instance.
 
 {!includes/access-manage-case-templates.md!}
 

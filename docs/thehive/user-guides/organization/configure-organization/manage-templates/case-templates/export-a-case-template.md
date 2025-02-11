@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for exporting a [case template](about-case-templates.md) in TheHive.
 
-This is useful if you want to share a case template with another organization.
+This is useful if you want to share a case template with another organization or TheHive instance.
 
 {!includes/access-manage-case-templates.md!}
 

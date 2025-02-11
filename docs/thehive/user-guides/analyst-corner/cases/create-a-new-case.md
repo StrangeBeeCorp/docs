@@ -16,25 +16,31 @@ Several options are offered to create a case in TheHive:
 
 ## Create an empty case
 
-1. From any view, select **+ Create case**.
+1. {!includes/create-a-case.md!}
 
-    Image
+2. In the **Create case** drawer, select **Empty case**.
 
-2. Select **Empty case**
+3. Enter the following fields:
 
-    Image
+    **Title \***
 
-3. In the **Create case** drawer, fill in the following fields:
+    The title of the case.
 
-    **Title**
+    **Date \***
 
-    **Date**
+    The date and time of creation of the case. By default, it is set up with the current date and time.
 
-    **Severity**
+    **Severity \***
 
-    **TLP**
+    The severity level of the case.
 
-    **PAP**
+    **TLP \***
+
+    The TLP of the case.
+
+    **PAP \***
+
+    The PAP of the case.
 
     **Tags**
 
@@ -48,7 +54,7 @@ Several options are offered to create a case in TheHive:
 
     **Sharing**
 
-
+You can still apply a case template after creation if needed.
 
 ## Create a case from a template
 
