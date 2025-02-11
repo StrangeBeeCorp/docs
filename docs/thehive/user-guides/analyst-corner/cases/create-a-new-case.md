@@ -4,15 +4,15 @@ This topic provides step-by-step instructions for creating a [case](../cases/abo
 
 Several options are offered to create a case in TheHive:
 
-* [Create an empty case]()
+* [Create an empty case](#create-an-empty-case)
 
-* [Create a case from a template]()
+* [Create a case from a template](#create-a-case-from-a-template)
 
-* [Create a case from an archived case]()
+* [Create a case from an archived case](#create-a-case-from-an-archived-case)
 
-* [Create a case from a MISP event]()
+* [Create a case from a MISP event](#create-a-case-from-a-misp-event)
 
-* [Create a case from an alert]()
+* [Create a case from an alert](#create-a-case-from-an-alert)
 
 {!includes/access-create-a-case.md!}
 
@@ -28,7 +28,7 @@ Several options are offered to create a case in TheHive:
     The title of the case.
 
     **Date \***  
-    The start date and time of the case. It indicates when the investigation began. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../../user-guides/indicators.md).
+    The start date and time of the case. It indicates when the incident occured. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../../user-guides/indicators.md).
 
     **Severity \***  
     The severity level for the case.
@@ -55,251 +55,85 @@ Several options are offered to create a case in TheHive:
     Pages to document the case.
 
     **Sharing**  
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. You can modify these rules to apply local sharing settings for the case. To modify local sharing rules for tasks and observables, manage them after the case is created. For more information, see the [Share a Case](../cases/share-a-case.md) topic.
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
-You can still apply a case template after creation if needed. Refer to the Apply a Case Template topic to see how to do it.
+4. Select **Confirm**.
+
+!!! info "Case template"
+    If needed, you can apply [a case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) after creating the case. For more details, see the [Apply a Case Template](../cases/apply-a-case-template.md) topic.
 
 ## Create a case from a template
 
+1. {!includes/create-a-case.md!}
+
+2. In the **Create case** drawer, select a template from the dropdown list in the **From template** section.
+
+3. In the **Create case from template** drawer, review the values inherited from the template and complete any missing ones. For more information about the fields, see the [Create an empty case](#create-an-empty-case) section.
+
+4. Select **Confirm**.
+
 ## Create a case from an archived case
+
+1. {!includes/create-a-case.md!}
+
+2. In the **Create case** drawer, select **From archive (.thar)**.
+
+3. In the **Import case** drawer:
+
+    **Attachment \***
+    Drop a THAR file direclty into the **Attachment** section or click to select the THAR file from your computer. THAR files are TheHive archive files. For instructions on exporting a case as an archive, see the [Export a Case](export-a-case.md) topic.
+
+    **Password \***
+    Enter the archive password that was set during the case export.
+
+    **Sharing**
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
+
+4. Select **Confirm**.
 
 ## Create a case from a MISP event
 
+1. {!includes/create-a-case.md!}
+
+2. In the **Create case** drawer, select **From MISP (.json)**.
+
+3. In the **Import from MISP** drawer:
+
+    **Attachment \***
+
+    Drop a JSON file direclty into the **Attachment** section or click to select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
+
+    **[Tasks](../tasks/about-tasks.md)**  
+    Tasks for the case.
+
+    **[Custom fields](../../../administration/custom-fields/about-custom-fields.md)**  
+    Custom fields for the case, with or without predefined values.
+
+    **Sharing**
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
+
+4. Select **Confirm**.
+
 ## Create a case from an alert
+
+1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
+
+2. In the alert description, select ![Convert an alert into a case](/thehive/images/user-guides/analyst-corner/cases/convert-alert-into-case.png).
+
+3. In the **Create case** drawer, select either **Empty case** or **From template**.
+
+4. Follow the instructions provided in the related sections:
+
+    * [Create an empty case](#create-an-empty-case)
+    * [Create a case from a template](#create-a-case-from-a-template)
 
 ## Next steps
 
+* []()
+* []()
 
 
 
-
-A user can create new cases using templates.
-
-1. Click **Create Case +** on the header.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_header.png" alt="create case on header" width="500" height="200"/>
-
-A new screen opens. A user can create cases by selecting any one of the following options: 
-
-Click the below links to create each type of new case. 
-
-1. [`Empty Case`](../cases/create-empty-case.md)
-1. [`EDR / Phishing Template`](../cases/create-case-from-template.md)
-1. [`Archive`](../cases/create-case-from-archive.md)
-1. [`MISP`](../cases/create-case-from-misp.md)
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/create_case.png" alt="create case" width="500" height="500"/>
-
-# From archive (.thar)
-
-Create a new case from archive.
-
-1. Upload **File** as Attachment.
-1. Enter the **Password**. 
-1. Click the **Confirm case creation** button. 
-
-    <img src="/thehive/images/user-guides/analyst-corner/cases/create_case_from_archive.png" alt="create case from archive" width="500" height="500"/>
-
-# From MISP(.json)
-
-Create a new case from MISP.
-
-1. Upload **File** as Attachment.(import from MISP).
-1. Add Tasks. (Refer to [`Add tasks`](../cases/adding_to_a_case.md#add-tasks)).
-1. Add Custom Fields. (Refer to [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
-
-1. Click the **Confirm case creation** button. 
-
-    <img src="/thehive/images/user-guides/analyst-corner/cases/create_case_from_misp.png" alt="create case from misp" width="500" height="500"/>
-
-# From template
-Create a new case from templates
-
-## 1. Create a new case from EDR template.
-
-1. Enter the case title in the **Title**.
-1. Select the date from the **Date**. 
-1. Select **Severity**, (Low/Medium/High/Critical).
-1. Select **TLP**, (White/Green/Amber/Red).
-1. Select **PAP**, (White/Green/Amber/Red).
-1. Click **+** to add **Tags**. (Refer to [`Add tags`](#add-tags).)
-1. Enter the case description in the **Description**. 
-1. Choose a **Task rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Choose an **Observable rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Add Tasks. (Refer to [`Add tasks`](#add-tasks). / [`Edit tasks`](#edit-tasks). /[`Delete tasks`](#delete-tasks).) 
-1. Add Custom Fields. (Refer to [`Add custom field values`](#add-custom-field-values). /[`Edit custom field values`](#edit-custom-field-values). /[`Delete custom field values`](#delete-custom-field-values).)
-1. Add Pages. (Refer to [`Add pages`](#add-pages). /[`Delete pages`](#delete-pages).)
-1. Sharing (Refer to [`Sharing`](#Sharing).)
-1. Click the **Confirm case creation** button. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_edr_template.png" alt="create case from edr template" width="500" height="500"/>
-
-
-## 2. Create a new case from Phishing template.
-
-1. Enter the case title in the **Title**.
-1. Select the date from the **Date**. 
-1. Select **Severity**, (Low/Medium/High/Critical).
-1. Select **TLP**, (White/Green/Amber/Red).
-1. Select **PAP**, (White/Green/Amber/Red).
-1. Click **+** to add **Tags**. (Refer to [`Add tags`](#add-tags).)
-1. Enter the case description in the **Description**. 
-1. Choose a **Task rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Choose an **Observable rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Add Tasks. (Refer to [`Add tasks`](#add-tasks). /[`Edit tasks`](#edit-tasks). /[`Delete tasks`](#delete-tasks).) 
-1. Add Custom Fields. (Refer to [`Add custom field values`](#add-custom-field-values). /[`Edit custom field values`](#edit-custom-field-values). /[`Delete custom field values`](#delete-custom-field-values).)
-1. Add Pages. (Refer to [`Add pages`](#add-pages). /[`Edit pages`](#edit-pages). /[`Delete pages`](#delete-pages).)
-1. Sharing (Refer to [`Sharing`](#Sharing).) 
-1. Click the **Confirm case creation** button. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/create_case_phishing_template.png" alt="create case from phishing template" width="500" height="500"/>
-
-## Add tags 
-1. Choose tags from the Taxonomy.
-The selected tag will appear in the **Selected Tags** box
-1. Click the **Add selected tags** button.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/select_tags.png" alt="select tags" width="500" height="500"/>
-
-
-## Add tasks 
-The task **Group** is default. 
-
-1. Enter the task **Title**.
-1. Enter the task description in the **Description**. 
-1. Select the **Due date**. 
-1. Click **Confirm**.
-1. Click **Save and add another**, to add another task. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_task.png" alt="add tasks" width="500" height="500"/>
-
-
-## Add custom field values 
-1. Select custom field value from the given list. (location/business-unit/detection-source/test).
-1. Click **Confirm custom field value creation**.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_custom_field_value.png" alt="custom field values" width="500" height="500"/>
-
-## Add pages
-By selecting **Create new page**
-
-1. Enter the page **Title**.
-1. Enter or select the **Category**. 
-1. Enter the page content in the **content**. 
-1. Click **Confirm**.
-1. Click **Save and add another**, to add another task. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_new_page.png" alt="page" width="500" height="500"/>
-
-By selecting **Use an existing page template**
-
-1. Choose template(s) from those available in the list of existing templates
-1. Click **Confirm**.
-1. Click **Save and add another**, to add another task. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/adding_a_existng_page.png" alt="page" width="500" height="500"/>
-
-## Edit tasks 
-1. Click the edit link.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/edit_task_option.png" alt="edit task" width="500" height="500"/>
-
-A new window opens. 
-
-1. Edit the required values 
-1. Click the **Confirm edition** button.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/editing_a_task.png" alt="edit task" width="500" height="500"/>
-
-## Edit custom field values 
-1. Click the edit link.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/edit_custom_field_option.png" alt="edit custom field values" width="500" height="500"/>
-
-A new window opens.
-
-1. Edit the required custom field values 
-1. Click the **Confirm custom field value edition** button.
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/edit_custom_field_value.png" alt="edit custom field values" width="500" height="500"/>
-
-## Delete tasks
-1. Click the delete link beside the value that has to be deleted. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/delete_task_option.png" alt="delete tasks" width="500" height="500"/>
-
-## Delete custom field values
-1. Click the delete link beside the custom field value that has to be deleted. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/delete_custom_field_option.png" alt="delete custom field values" width="500" height="500"/>
-
-## Delete pages
-1. Click the delete link beside the value that has to be deleted. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/delete_page_option.png" alt="delete page" width="500" height="500"/>
-
-# From an empty case
-
-Create a new case from an empty case. 
-
-1. Enter the case title in the **Title**.
-1. Select the date from the **Date**. 
-1. Select **Severity**, (Low/Medium/High/Critical).
-1. Select **TLP**, (White/Green/Amber/Red).
-1. Select **PAP**, (White/Green/Amber/Red).
-1. Click **+** to add **Tags**. (Refer to [`Add tags`](../cases/adding_to_a_case.md#add-tags)).
-1. Enter the case description in the **Description**. 
-1. Choose a **Task rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Choose an **Observable rule** from the list, (manual/existingOnly/upcommingOnly/all).
-1. Add Tasks. (Refer to [`Add tasks`](../cases/adding_to_a_case.md#add-tasks)).
-1. Add Custom Fields. (Refer to [`Add custom field values`](../cases/adding_to_a_case.md#add-custom-field-values)).
-1. Click the **Confirm case creation** button. 
-
-<img src="/thehive/images/user-guides/analyst-corner/cases/create_empty_case.png" alt="create empty case" width="500" height="500"/>
-
-
-# Case Management
-
-Case Management is the main purpose of TheHive. Handling incidents with predefined tasks or manually added tasks, assiging a case owner, adding observables and enrich them, looking for correlations with existing cases and alert, prioritising incidents and classifying them... those are few of the case management capabilities in TheHive.
-
-![case-list](../images/how-to/case-management/case-list.png)
-![case-preview](../images/how-to/case-management/case-preview.png)
-
-## Creating case
-
-Cases can be created in various ways:
-
-- Manually from scratch
-- Manually using a case template
-- Importing a TheHive archive generated from another TheHive instance
-- Converting one or many alerts into a incident
-
-![case-create-options](../images/how-to/case-management/case-create-options.png)
-
-### Creating a case from a case template
-
-Case templates are models of cases, including predefined and documented tasks as well as custom fields
-
-![case-create](../images/how-to/case-management/case-create.png)
-
-### Applying case template on ongoing investigations
-
-Case templates can also be used to enrich a case with additional tasks, tags and custom field during open investigations:
-
-![case-apply-template](../images/how-to/case-management/case-apply-template.png)
-
-## Anatomy of a case
-
-A case in TheHive is defined by:
-
-- A set of predefined properties: Title, tags, assignee, TLP, PAP, severity, description, status
-- A set of custom fields (optional or mandatory) 
-- A set of tasks, defined by a title, assignee, status, description and a set of task logs and attachements
-- A set of observables, of predefined or custom data types, defined by a value, IoC and Sighted flags, sighting date, tags and a description
-- A set of TTPs related to MITRE ATT&CK
-- A set of attachments
-- A set of pages as a wiki
-- A set of comments
 
 ![case details](../images/how-to/case-management/case-details.png)
 
