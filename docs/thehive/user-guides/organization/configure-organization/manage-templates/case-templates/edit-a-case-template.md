@@ -19,13 +19,13 @@ This topic provides step-by-step instructions for editing a [case template](abou
 6. In the **Editing a case template** drawer, enter your new values in the following fields:
 
     **Prefix**  
-    A prefix that is automatically added to case titles. The prefix value is not visible when creating a case from the template but is applied after creation. Use it to categorize cases for reporting.
+    A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting.
             
     **Name \***  
-    The name of the case template. This name is used to identify the case template in the API.
+    The name of the case template. This name identifies the case template in the API.
     
     **Display name**  
-    The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If no display name is specified, the case template name is used.
+    The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
     **TLP**  
     The default TLP value for cases.
