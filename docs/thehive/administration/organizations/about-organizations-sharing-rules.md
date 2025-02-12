@@ -8,21 +8,19 @@ This topic explains how sharing rules work and interact.
 
 {!includes/administrator-access-manage-organizations.md!}
 
+Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.
+
 You must set global sharing rules:
 
-* For cases when [linking organizations](link-an-organization.md).
-* For tasks and observables when [creating an organization](create-an-organization.md).
-
-These rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
-
-The configuration determines whether this sharing occurs automatically.
+* For cases when [linking organizations](link-an-organization.md)
+* For tasks and observables when [creating an organization](create-an-organization.md)
 
 !!! info "Managing sharing rules for existing cases"
     Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. To apply sharing rules to existing cases, you must configure them manually, [one case at a time](#local-sharing-rules).
 
 ## Local sharing rules
 
-Local sharing rules let you customize sharing settings with linked organizations for both existing and new cases, including their related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
+Local sharing rules let you customize sharing settings with linked organizations for both new and existing cases, including their related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
 
 Local sharing rules are useful in the following scenarios:
 
