@@ -17,9 +17,6 @@ Use case templates to:
 
 You can create a case from a case template when [initiating a new case](../../../../analyst-corner/cases/create-a-new-case.md).
 
-!!! info "Modifiable values"
-    When creating a case from a template, users can modify prepopulated values as needed.
-
 You can also [apply a case template to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md).
 
 ## Permissions

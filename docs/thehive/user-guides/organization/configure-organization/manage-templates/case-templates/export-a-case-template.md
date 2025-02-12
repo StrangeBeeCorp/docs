@@ -14,11 +14,9 @@ This is useful if you want to share a case template with another organization or
 
 3. {!includes/case-templates-go-to.md!}
 
-4. Select **Import case template**.
+4. Select :fontawesome-solid-ellipsis: next to the case template you want to export.
 
-5. Select :fontawesome-solid-ellipsis: next to the case template you want to export.
-
-6. Select **Export case template** to export the case template in JSON format.
+5. Select **Export case template** to export the case template in JSON format.
 
 ## Next steps
 

@@ -17,9 +17,9 @@ This topic provides step-by-step instructions for creating a [case template](abo
 
 4. Two options are available:
 
-  * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
 
-  * [Available since version 5.4] Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate**.
+    * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
 
 5. In the **Adding a case template** drawer, enter values in some or all of the following fields to prefill:
 
@@ -30,7 +30,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
     The name of the case template. This name is used to identify the case template in the API.
     
     **Display name**  
-    The name that appears when users [select this template to create a new case](../../../../analyst-corner/cases/create-a-new-case.md). If no display name is specified, the case template name is used.
+    The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If no display name is specified, the case template name is used.
     
     **TLP**  
     The default TLP value for cases.
@@ -41,16 +41,16 @@ This topic provides step-by-step instructions for creating a [case template](abo
     **Severity**  
     The default severity level for cases.
     
-    **[Tags](../../manage-custom-tags/about_custom_tags.md)**  
+    **[Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tags to categorize cases.
     
     **Description \***  
     A description for cases.
     
-    **[Tasks](../../../../analyst-corner/tasks/about-tasks.md)**  
+    **[Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tasks for cases.
     
-    **[Custom fields](../../../../../administration/custom-fields/about-custom-fields.md)**  
+    **[Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more custom fields for cases, with or without predefined values.
     
     **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
