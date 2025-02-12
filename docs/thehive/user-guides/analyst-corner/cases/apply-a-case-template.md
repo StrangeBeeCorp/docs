@@ -8,7 +8,7 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 ## Procedure
 
-1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
+1. [Locate the case to apply the template](../cases/search-for-cases/find-a-case.md).
 
 2. In the case description, select the **Apply a case template** button.
 

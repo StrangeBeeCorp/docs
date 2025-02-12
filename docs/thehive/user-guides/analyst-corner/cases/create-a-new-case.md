@@ -39,16 +39,16 @@ Several options are offered to create a case in TheHive:
     **PAP \***  
     The PAP level for the case.
 
-    **[Tags](../../organization/configure-organization/manage-custom-tags/about_custom_tags.md)**  
+    **[Tags](../cases/adding_to_a_case.md)**  
     Relevant tags to categorize the case.
 
     **Description \***  
     A description of the case.
 
-    **[Tasks](../tasks/about-tasks.md)**  
+    **[Tasks](../cases/adding_to_a_case.md)**  
     Tasks for the case.
 
-    **[Custom fields](../../../administration/custom-fields/about-custom-fields.md)**  
+    **[Custom fields](../cases/adding_to_a_case.md)**  
     Custom fields for the case, with or without predefined values.
 
     **[Pages](../../../../thehive/how-to/knowledge-base.md#case-pages)**  
@@ -60,7 +60,7 @@ Several options are offered to create a case in TheHive:
 4. Select **Confirm**.
 
 !!! info "Case template"
-    If needed, you can apply [a case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) after creating the case. For more details, see the [Apply a Case Template](../cases/apply-a-case-template.md) topic.
+    You can apply [a case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) after creating the case. For more details, see the [Apply a Case Template](../cases/apply-a-case-template.md) topic.
 
 ## Create a case from a template
 
@@ -80,13 +80,13 @@ Several options are offered to create a case in TheHive:
 
 3. In the **Import case** drawer:
 
-    **Attachment \***
-    Drop a THAR file direclty into the **Attachment** section or click to select the THAR file from your computer. THAR files are TheHive archive files. For instructions on exporting a case as an archive, see the [Export a Case](export-a-case.md) topic.
+    **Attachment \***  
+    Drop a THAR file direclty into the **Attachment** section or select the THAR file from your computer. THAR files are TheHive archive files. For instructions on exporting a case as an archive, see the [Export a Case](export-a-case.md) topic.
 
-    **Password \***
+    **Password \***  
     Enter the archive password that was set during the case export.
 
-    **Sharing**
+    **Sharing**  
     By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
 4. Select **Confirm**.
@@ -104,15 +104,15 @@ Several options are offered to create a case in TheHive:
 
     **Attachment \***
 
-    Drop a JSON file direclty into the **Attachment** section or click to select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
+    Drop a JSON file direclty into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
 
-    **[Tasks](../tasks/about-tasks.md)**  
+    **[Tasks](../cases/adding_to_a_case.md)**  
     Tasks for the case.
 
-    **[Custom fields](../../../administration/custom-fields/about-custom-fields.md)**  
+    **[Custom fields](../cases/adding_to_a_case.md)**  
     Custom fields for the case, with or without predefined values.
 
-    **Sharing**
+    **Sharing**  
     By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
 4. Select **Confirm**.
