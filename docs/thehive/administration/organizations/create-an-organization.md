@@ -45,7 +45,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 4. Select **Confirm**.
 
-5. Optional: In the **Organizations** view, locate your new organization, hover over it, select ![Eye](../../images/administration-guides/manage-organizations-eye.png), select the default organization logo to modify it, and upload an image to set it as the new logo for your organization.
+5. Optional: In the **Organizations** view, locate your new organization, hover over it, select :fontawesome-solid-eye:, select the default organization logo to modify it, and upload an image to set it as the new logo for your organization.
 
 ## Next steps
 

@@ -13,7 +13,9 @@ To learn more about how sharing rules function and interact, refer to the [About
 
 1. [Locate the case you want to share](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. On the case description, select ![Sharing button](../../../images/user-guides/analyst-corner/cases/sharing-button.png).
+2. On the case description, select the **Sharing** button.
+
+    ![Sharing a case](/thehive/images/user-guides/analyst-corner/cases/sharing-a-case.png)
 
 3. Select the tasks sharing rules to apply.
 

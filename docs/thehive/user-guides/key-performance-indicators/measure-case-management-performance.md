@@ -19,13 +19,19 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 2. Select a dashboard related to cases.
 
-3. Select ![Edit dashboards](../../images/user-guides/edit-dashboards.png).
+3. Select :fontawesome-solid-pen:.
 
 4. Select **Edit** on the section where you want to add your case management KPIs.
 
 5. Select any value that begins with *timeTo* to any **Filters** box.
 
+{!includes/units-time-to.md!}
+
 ## Measure the performance of a specific case
+
+Two options are available to measure a case's performance:
+
+**In a case description:**
 
 1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
 
@@ -34,6 +40,26 @@ If you want to know more about the key performance indicators (KPIs) available i
     ![Case description metrics](../../images/user-guides/case-description-metrics.png)
 
 3. Review the available indicators for your case.
+
+**In a case report template:**
+
+{!includes/access-manage-case-reports.md!}
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/templates-go-to.md!}
+
+3. {!includes/report-templates-go-to.md!}
+
+4. Select a case report template.
+
+5. Select :fontawesome-solid-pen: on the section where you want to add your case management KPIs.
+
+6. Select **Add variable**.
+
+7. Select any value that begins with *timeTo*.
+
+{!includes/units-time-to.md!}
 
 ## Next steps
 

@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Users view](../../images/administration-guides/add-users-to-an-organization-existing.png)
 
-2. Locate the user you're looking for, hover over it, and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
+2. Locate the user you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
 3. In the drawer, go to the **Organizations** section, select the organizations to assign the user to, and choose their [permission profile](../../administration/profiles.md).
 
@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png) 
 
-2. Select the organization to add the user to, then select :fontawesome-regular-square-plus:. Alternatively, hover over the organization, select ![Eye](../../images/administration-guides/manage-organizations-eye.png), and select **Add** in the **Users** section.
+2. Select the organization to add the user to, then select :fontawesome-regular-square-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
 
 3. In the **Adding a user** drawer, enter:
 
@@ -48,7 +48,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 4. Select **Confirm**, or **Save and add another** if you want to add another new user.
 
-5. In the users list, hover over the user you just created and select ![Eye](../../images/administration-guides/manage-organizations-eye.png).
+5. In the users list, hover over the user you just created and select :fontawesome-solid-eye:.
 
 6. Optional: Select the default user image to modify it, then upload a new image.
 

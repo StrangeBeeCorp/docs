@@ -2,7 +2,7 @@
 
 Starting from version 5.1, TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
 
-These KPIs are displayed by default on all cases and alerts in TheHive.
+These KPIs are displayed by default on all cases and alerts in TheHive. You can also integrate them into dashboards and case reports.
 
 This topic defines each of these indicators.
 
