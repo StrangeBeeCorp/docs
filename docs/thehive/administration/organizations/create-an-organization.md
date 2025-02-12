@@ -17,15 +17,15 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 3. In the **Adding an organization** drawer, enter:
 
-    **Name**
+    **Name \***
 
     The name of your new organization.
 
-    **Description**
+    **Description \***
 
     The description of your new organization.
 
-    **Tasks sharing rule**
+    **Tasks sharing rule \***
 
     How tasks linked to a case are handled when the case is shared with another organization.
 
@@ -33,7 +33,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
         - *manual* (default): Tasks aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/tasks/share-a-task.md).  
         - *autoShare*: Tasks are shared automatically.
 
-    **Observables sharing rule**
+    **Observables sharing rule \***
 
     How observables linked to a case are handled when the case is shared with another organization.
 

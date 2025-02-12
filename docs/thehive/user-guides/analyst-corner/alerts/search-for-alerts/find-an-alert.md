@@ -54,13 +54,13 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ## Next steps
 
-* [Actions](../../alerts/actions.md)
-* [Merge Alerts](../../alerts/merge-alerts.md)
-* [New Case From Selection](../../alerts/new-case-from-selection.md)
-* [Preview Alerts](../../alerts/preview-alerts.md)
-* [Run Responders](../../alerts/run-responders.md)
-* [View Responders](../../alerts/view-responders.md)
-* [View Observables](../../alerts/view-observables.md)
-* [View Similar Alerts](../../alerts/view-similar-alerts.md)
-* [View Similar Cases](../../alerts/view-similar-cases.md)
-* [View TTPs](../../alerts/view-ttps.md)
+* [Actions](../alerts-description/actions.md)
+* [Merge Alerts](../alerts-description/merge-alerts.md)
+* [New Case From Selection](../alerts-description/new-case-from-selection.md)
+* [Preview Alerts](../alerts-description/preview-alerts.md)
+* [Run Responders](../alerts-description/run-responders.md)
+* [View Responders](../alerts-description/view-responders.md)
+* [View Observables](../alerts-description/view-observables.md)
+* [View Similar Alerts](../alerts-description/view-similar-alerts.md)
+* [View Similar Cases](../alerts-description/view-similar-cases.md)
+* [View TTPs](../alerts-description/view-ttps.md)

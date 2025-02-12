@@ -8,16 +8,19 @@ This topic explains how sharing rules work and interact.
 
 {!includes/administrator-access-manage-organizations.md!}
 
-Set global sharing rules when [linking organizations](link-an-organization.md) for cases and [creating an organization](create-an-organization.md) for tasks and observables. These rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations.
+Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.
 
-The configuration determines whether this sharing occurs automatically.
+You must set global sharing rules:
+
+* For cases when [linking organizations](link-an-organization.md)
+* For tasks and observables when [creating an organization](create-an-organization.md)
 
 !!! info "Managing sharing rules for existing cases"
     Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. To apply sharing rules to existing cases, you must configure them manually, [one case at a time](#local-sharing-rules).
 
 ## Local sharing rules
 
-Local sharing rules let you customize sharing settings with linked organizations for an existing case and its related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
+Local sharing rules let you customize sharing settings with linked organizations for both new and existing cases, including their related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
 
 Local sharing rules are useful in the following scenarios:
 
@@ -26,7 +29,10 @@ Local sharing rules are useful in the following scenarios:
 
 {!includes/access-manage-case-sharing.md!}
 
-Follow these step-by-step instructions to see [how to modify the sharing rules of an existing case](../../user-guides/analyst-corner/cases/share-a-case.md).
+Follow these step-by-step instructions to see:
+
+* [How to set up local sharing rules for an existing case](../../user-guides/analyst-corner/cases/share-a-case.md)
+* [How to set up local sharing rules for a new case](../../user-guides/analyst-corner/cases/create-a-new-case.md)
 
 ## Manual sharing of tasks and observables in a shared case
 

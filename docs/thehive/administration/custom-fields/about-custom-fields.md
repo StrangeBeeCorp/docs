@@ -1,10 +1,10 @@
 # About Custom Fields
 
-Custom fields let you add additional information to [cases](../../user-guides/analyst-corner/cases/about-a-case.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md).
+Custom fields let you add additional information to [cases](../../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md).
 
-By default, TheHive includes predefined fields for cases and alerts. To better suit your needs, you can create custom fields to tailor cases and alerts. 
+By default, TheHive includes predefined fields for cases and alerts. To better suit your needs, you can create custom fields to tailor cases and alerts.
 
-You can configure these fields as optional or mandatory for users.
+This topic provides a general overview of custom field usage in TheHive.
 
 ## Use cases
 
@@ -27,7 +27,7 @@ You can define custom fields in the following formats:
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
-After creation, custom fields are automatically available to all users across your organizations, allowing them to add the fields to cases and alerts.
+After creation, custom fields are automatically available to all users across your organizations, allowing them to add the fields to cases and alerts. You can configure these fields to be either optional or mandatory for analysts to complete.
 
 ## Next steps
 

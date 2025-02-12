@@ -26,7 +26,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 3. In the **Adding a user** drawer, enter:
 
-    **Type**
+    **Type \***
 
     The user type you want to create.
 
@@ -34,15 +34,15 @@ This topic provides step-by-step instructions for adding new and existing users 
         - *Normal*: Allows the user to access TheHive through the user interface.  
         - *Service*: Allows the user to access TheHive through the API.
 
-    **Login**
+    **Login \***
 
     The login used for the user to sign in. It can be an email address or another identifier, depending on your TheHive configuration.
 
-    **Name**
+    **Name \***
 
     The user's display name.
 
-    **Profile**
+    **Profile \***
 
     Pick a [permission profile](../../administration/profiles.md) for the user from the dropdown list.
 
