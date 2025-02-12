@@ -6,6 +6,9 @@ You can measure case management performance [for all cases in your organization]
 
 If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
 
+!!! info "Automated actions"
+    If cases are created or updated through automated actions (API, functions, or external services), some indicators may be identical or very close in value, especially if multiple operations occur within the same second.
+
 ## Measure the performance of all cases in your organization
 
 {!includes/dashboard-access.md!}
