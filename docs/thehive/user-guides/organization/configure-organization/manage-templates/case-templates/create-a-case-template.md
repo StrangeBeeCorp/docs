@@ -2,6 +2,9 @@
 
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
+!!! info "Duplicate an existing case"
+    Since version 5.4, you can duplicate an existing case to speed up the process by pre-filling some fields.
+
 {!includes/access-manage-case-templates.md!}
 
 ## Procedure
