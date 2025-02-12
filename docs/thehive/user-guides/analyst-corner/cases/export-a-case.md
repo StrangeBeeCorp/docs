@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for exporting a [case](../cases/ab
 
 You might need to export a case to:
 
-* [Create a case from the exported case](create-a-new-case.md)
+* [Create a case from the exported case](create-a-new-case.md#create-a-case-from-an-archived-case)
 * Share the case with MISP servers
 
 ## Procedure
