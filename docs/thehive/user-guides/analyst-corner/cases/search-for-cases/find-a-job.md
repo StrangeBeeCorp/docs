@@ -27,6 +27,6 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 
 ## Next steps
 
-* [Run Analyzers on Case](../../cases-list/run-analyzer.md)
-* [Run Responders on Case](../../cases-list/run-responders.md)
+* [Run Analyzers on Case](../cases-description/run-analyzer.md)
+* [Run Responders on Case](../cases-description/run-responders.md)
 
