@@ -29,8 +29,14 @@ pekko {
       port = 7355
     }
   }
-# Seed node list contains at least one active node
-  cluster.seed-nodes = [ "pekko://application@HOSTNAME1:7355", "pekko://application@HOSTNAME2:7355", "pekko://application@HOSTNAME3:7355" ]
+
+  cluster.seed-nodes = [ 
+    "pekko://application@HOSTNAME1:7355", 
+    "pekko://application@HOSTNAME2:7355", 
+    "pekko://application@HOSTNAME3:7355" 
+  ]
+
+  cluster.min-nr-of-members = 2  # Set to the minimum number of nodes required
 }
 ```
 
@@ -62,6 +68,8 @@ In this configuration:
             "pekko://application@10.1.2.2:7355",
             "pekko://application@10.1.2.3:7355"
           ]
+
+          cluster.min-nr-of-members = 2
         }
         ```
 
@@ -86,6 +94,8 @@ In this configuration:
             "pekko://application@10.1.2.2:7355",
             "pekko://application@10.1.2.3:7355"
           ]
+
+          cluster.min-nr-of-members = 2
         }
         ```
 
@@ -110,6 +120,8 @@ In this configuration:
             "pekko://application@10.1.2.2:7355",
             "pekko://application@10.1.2.3:7355"
           ]
+
+          cluster.min-nr-of-members = 2
         }
         ```
 
@@ -146,6 +158,8 @@ pekko {
     "pekko://application@HOSTNAME2:7355",
     "pekko://application@HOSTNAME3:7355"
   ]
+
+  cluster.min-nr-of-members = 2
 }
 ```
 
@@ -193,7 +207,13 @@ pekko {
         }
       }
       
-      cluster.seed-nodes = [ "pekko://application@10.1.2.1:7355", "pekko://application@10.1.2.2:7355", "pekko://application@10.1.2.3:7355" ]
+      cluster.seed-nodes = [ 
+        "pekko://application@10.1.2.1:7355", 
+        "pekko://application@10.1.2.2:7355", 
+        "pekko://application@10.1.2.3:7355" 
+      ]
+
+      cluster.min-nr-of-members = 2
     }
     ```
 
