@@ -25,6 +25,8 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 5. Select any value that begins with *timeTo* to any **Filters** box.
 
+{!includes/units-time-to.md!}
+
 ## Measure the performance of a specific alert
 
 1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).

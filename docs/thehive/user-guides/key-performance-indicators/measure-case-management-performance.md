@@ -25,7 +25,13 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 5. Select any value that begins with *timeTo* to any **Filters** box.
 
+{!includes/units-time-to.md!}
+
 ## Measure the performance of a specific case
+
+Two options are available:
+
+* In a case description:
 
 1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
 
@@ -34,6 +40,24 @@ If you want to know more about the key performance indicators (KPIs) available i
     ![Case description metrics](../../images/user-guides/case-description-metrics.png)
 
 3. Review the available indicators for your case.
+
+* In a case report template:
+
+{!includes/access-manage-case-reports.md!}
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/templates-go-to.md!}
+
+3. {!includes/report-templates-go-to.md!}
+
+4. Select :fontawesome-solid-pen: on the section where you want to add your case management KPIs.
+
+5. Select **Add variable**.
+
+6. Select any value that begins with *timeTo*.
+
+{!includes/units-time-to.md!}
 
 ## Next steps
 

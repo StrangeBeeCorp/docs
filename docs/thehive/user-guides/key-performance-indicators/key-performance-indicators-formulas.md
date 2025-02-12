@@ -12,6 +12,8 @@ This topic outlines the formulas used to calculate key performance indicators (K
 | [Time to qualify](about-key-performance-indicators.md#time-to-qualify---ttq) (TTQ) | = date of alert closure or merge into case - alert creation date in TheHive| = `max(alert.importedDate, alert.closedDate)` - `alert.newDate` | not applicable |
 | [Time to resolve](about-key-performance-indicators.md#time-to-resolve---ttr) (TTR) | = end of the incident date - date of status *In Progress* | = `case.endDate` - `min(alert.inProgress, case.inProgress)` | not applicable |
 
+{!includes/units-time-to.md!}
+
 ## Next steps
 
 * [About Key Performance Indicators](about-key-performance-indicators.md)
