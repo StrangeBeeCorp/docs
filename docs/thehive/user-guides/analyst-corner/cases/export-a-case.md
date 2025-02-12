@@ -1,6 +1,6 @@
 # How to Export a Case
 
-This topic provides step-by-step instructions for exporting a [case](../cases/about-a-case.md) in TheHive.
+This topic provides step-by-step instructions for exporting a [case](../cases/about-cases.md) in TheHive.
 
 You might need to export a case to:
 

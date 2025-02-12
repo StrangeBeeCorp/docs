@@ -1,6 +1,6 @@
 # How to Create a Case
 
-This topic provides step-by-step instructions for creating a [case](../cases/about-a-case.md) in TheHive.
+This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) in TheHive.
 
 Several options are offered to create a case in TheHive:
 
@@ -28,7 +28,7 @@ Several options are offered to create a case in TheHive:
     The title of the case.
 
     **Date \***  
-    The start date and time of the case. It indicates when the incident occured. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../../user-guides/indicators.md).
+    The start date and time of the case. It indicates when the incident occured. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators-formulas.md).
 
     **Severity \***  
     The severity level for the case.
