@@ -12,7 +12,11 @@ This topic provides step-by-step instructions for creating a [case template](abo
 
 3. {!includes/case-templates-go-to.md!}
 
-4. Select :fontawesome-regular-square-plus:.
+4. Two options are available:
+
+  * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
+
+  * [Available since version 5.4] Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate**.
 
 5. In the **Adding a case template** drawer, enter values in some or all of the following fields to prefill:
 
