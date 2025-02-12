@@ -19,7 +19,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 2. Select a dashboard related to alerts.
 
-3. Select ![Edit dashboards](../../images/user-guides/edit-dashboards.png).
+3. Select :fontawesome-solid-pen:.
 
 4. Select **Edit** on the section where you want to add your alert management KPIs.
 
