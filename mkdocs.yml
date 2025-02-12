@@ -144,6 +144,18 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md'
             'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md'
+            'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
+            'thehive/user-guides/analyst-corner/cases/create-case-from-archive.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
+            'thehive/user-guides/analyst-corner/cases/create-case-from-misp.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
+            'thehive/user-guides/analyst-corner/cases/create-case-from-template.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
+            'thehive/user-guides/analyst-corner/cases/create-empty-case.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
+            'thehive/user-guides/organization/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
+            'thehive/user-guides/organization/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
+            'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
+            'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md'
+            'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
+
 
 extra:
   generator: false
