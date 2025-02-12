@@ -129,49 +129,91 @@ If using Docker images of Analyzers and Responders, Docker engine is required on
         ```
 
 
-## Cortex
+# Cortex Installation and Configuration
 
-This part contains instructions to install Cortex and then configure it.
+This section provides step-by-step instructions to install Cortex and configure it properly.
 
-### Installation
+## Installation
 
-All packages are published on our packages repository. We support Debian and RPM packages as well as binary packages (zip archive). All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY). Its fingerprint is `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`.
+Cortex is available in Debian, RPM, and binary (zip archive) formats. All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY), with the following fingerprint:
 
-!!! Example ""
+```
+0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C
+```
 
-    === "Debian"
- 
-        ```bash
-        wget -O- "https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY"  | sudo apt-key add -
-        wget -qO- https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY |  sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg
-        echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-        apt install cortex
-        ```
- 
-    === "RPM"
+### Debian-based Installation
 
-        ```title="/etc/yum.repos.d/thehive-project.repo"
-        [cortex]
-        enabled=1
-        priority=1
-        name=TheHive-Project RPM repository
-        baseurl=https://rpm.thehive-project.org/release/noarch
-        gpgkey=https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY
-        gpgcheck=1
-        ```
+Ensure your system is up to date before installing Cortex. Run the following commands:
 
-        ```bash
-        yum install cortex
-        ```
+```bash
+wget -qO- https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo tee /usr/share/keyrings/thehive-project.gpg > /dev/null
+```
 
+Add the repository to your system:
 
-Once installed, if running _Analyzers & Responders_ with Docker, ensure _cortex_ service account can use it: 
+```bash
+echo "deb [arch=all signed-by=/usr/share/keyrings/thehive-project.gpg] https://deb.thehive-project.org release main" | sudo tee /etc/apt/sources.list.d/thehive-project.list
+```
 
-!!! Example ""
+Update the package list and install Cortex:
 
-    ```
-    sudo usermod -a -G docker cortex
-    ```
+```bash
+sudo apt update
+sudo apt install cortex
+```
+
+### RPM-based Installation
+
+For RPM-based distributions (CentOS, RHEL, Fedora), create a new repository configuration file:
+
+```bash
+sudo tee /etc/yum.repos.d/thehive-project.repo <<EOL
+[cortex]
+enabled=1
+priority=1
+name=TheHive-Project RPM repository
+baseurl=https://rpm.thehive-project.org/release/noarch
+gpgkey=https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY
+gpgcheck=1
+EOL
+```
+
+Then, install Cortex:
+
+```bash
+sudo yum install cortex
+```
+
+### Binary Installation
+
+For environments where package managers are not available, download and extract the Cortex binary package:
+
+```bash
+wget https://download.thehive-project.org/cortex-latest.zip
+unzip cortex-latest.zip -d /opt/cortex
+cd /opt/cortex
+chmod +x cortex
+```
+
+## Post-Installation Configuration
+
+### Running Analyzers & Responders with Docker
+
+If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensure the `cortex` service account has appropriate permissions to interact with Docker:
+
+```bash
+sudo usermod -a -G docker cortex
+```
+
+### Verify Installation
+
+After installation, you can check if Cortex is properly installed by running:
+
+```bash
+cortex --version
+```
+
+This should return the installed version of Cortex.
 
 ### Configuration
 

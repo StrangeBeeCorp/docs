@@ -4,7 +4,7 @@ TheHive utilizes [Cassandra](https://cassandra.apache.org/) and [Elasticsearch](
 
 ---
 
-## Basic Configuation 
+## Basic Configuration 
 
 A typical database configuration for TheHive is structured as follows:
 
