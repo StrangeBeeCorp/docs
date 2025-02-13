@@ -7,6 +7,8 @@ Only observables marked as IOCs will be exported in the case. The event created 
 ''' info "Manual export to MISP only"
     You must manually export cases to MISP, as each case requires individual review. Only [imports can be automated](../../../administration/misp.md).
 
+Once exported to MISP, any updates to the case IOCs will be automatically synchronized with MISP, requiring no manual intervention.
+
 ## Procedure
 
 1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
