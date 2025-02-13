@@ -14,7 +14,7 @@ In TheHive, an alert can be created from the following sources:
 
 * Detection tools such as SIEM, IDS, EDR, or firewalls connected to TheHive
 
-* Threat intelligence platforms like MISP connected to TheHive
+* Threat intelligence platforms like [MISP](../../../administration/misp.md) connected to TheHive
 
 * [Emails servers](../../../administration/email-intake-connector.md) connected to TheHive
 
