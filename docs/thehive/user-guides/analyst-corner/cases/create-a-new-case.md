@@ -33,11 +33,11 @@ Several options are offered to create a case in TheHive:
     **Severity \***  
     The severity level for the case.
 
-    **TLP \***  
-    The TLP level for the case.
-
-    **PAP \***  
-    The PAP level for the case.
+    **[TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    The TLP level for the case. It guides analysts on how they can share case information.
+    
+    **[PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    The PAP level for the case. It guides analysts on how they can use case data.
 
     **[Tags](../cases/adding_to_a_case.md)**  
     Relevant tags to categorize the case.
