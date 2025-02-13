@@ -14,6 +14,8 @@ Several options are offered to create a case in TheHive:
 
 * [Create a case from an alert](#create-a-case-from-an-alert)
 
+* [Create a case from a detection tool](#create-a-case-from-a-detection-tool)
+
 {!includes/access-create-a-case.md!}
 
 ## Create an empty case
@@ -117,7 +119,7 @@ Several options are offered to create a case in TheHive:
 
 4. Select **Confirm**.
 
-## Create a case from an alert
+## Create a case from an [alert](../alerts/about-alerts.md)
 
 {!includes/access-create-case-from-alert.md!}
 
@@ -136,6 +138,10 @@ Several options are offered to create a case in TheHive:
 
     * [Create an empty case](#create-an-empty-case)
     * [Create a case from a template](#create-a-case-from-a-template)
+
+## Create a case from a detection tool
+
+The creation of cases through detection tools is managed directly via the [API](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Create%20case).
 
 ## Next steps
 

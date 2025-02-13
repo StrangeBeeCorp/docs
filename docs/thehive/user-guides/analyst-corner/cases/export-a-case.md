@@ -17,9 +17,9 @@ You might need to export a case to:
 
 3. Two export options are available:
 
-    * **Export as an archive**: If you want to export a case as an archive to create a case from the exported case, enter an archive password. This password will be required when [importing the archived case](../cases/create-a-new-case.md#create-a-case-from-an-archived-case).
+    * **Export as an archive**: If you want to export a case as an archive to create a case from an past investigation, enter an archive password. This password will be required when [importing the archived case](../cases/create-a-new-case.md#create-a-case-from-an-archived-case).
 
-    * **Export to MISP**: If you want to export a case to MISP servers, select the relevant servers for the case.
+    * **Export to MISP**: If you want to export a case to MISP servers, select the relevant servers for the case. Only observables marked as IOCs will be exported in the case. The event created in MISP will not be published by default—you must review it and update its status in MISP to publish it.
 
 4. Select **Export archive** or **Export**.
 

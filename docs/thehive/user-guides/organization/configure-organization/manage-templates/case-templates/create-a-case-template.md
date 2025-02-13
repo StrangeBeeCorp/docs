@@ -42,7 +42,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
     The default severity level for cases.
     
     **[Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
-    One or more tags to categorize cases.
+    One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
     **Description \***  
     A description for cases.
