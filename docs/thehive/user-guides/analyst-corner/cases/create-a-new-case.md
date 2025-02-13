@@ -83,7 +83,7 @@ Several options are offered to create a case in TheHive:
 3. In the **Import case** drawer:
 
     **Attachment \***  
-    Drop a THAR file direclty into the **Attachment** section or select the THAR file from your computer. THAR files are TheHive archive files. For instructions on exporting a case as an archive, see the [Export a Case](export-a-case.md) topic.
+    Drop a THAR file direclty into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
 
     **Password \***  
     Enter the archive password that was set during the case export.

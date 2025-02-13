@@ -358,15 +358,16 @@ nav:
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
           - 'Create a Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
-          - 'Export a Case': thehive/user-guides/analyst-corner/cases/export-a-case.md
+          - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
+          - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
           - 'Manage Views': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
-          - 'Share a Case' : thehive/user-guides/analyst-corner/cases/share-a-case.md
-          - 'Share an Observable' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
+          - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+          - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases/cases-description/tasks.md
           - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
@@ -385,7 +386,7 @@ nav:
           - 'Preview Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
-          - 'Share a Task' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+          - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
         - 'Dashboard Usage':
           - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
           - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
