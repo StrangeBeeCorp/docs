@@ -20,9 +20,9 @@ Use case reports to:
 
 ## Structure
 
-Every case report template includes a default header and footer section, which can be customized with content and case variables. While these sections cannot be deleted, they will not appear in the case report if left empty.
+Every case report template includes a default header and footer section, which can be customized with content and case variables. While these sections cannot be moved or deleted, they will not appear in the case report if left empty.
 
-You can add [widgets](about-widgets.md) between these sections to display case data.
+You can add [widgets](about-widgets.md) between these sections to display case data. You can rearrange the order of widgets at any time.
 
 ## Permissions
 

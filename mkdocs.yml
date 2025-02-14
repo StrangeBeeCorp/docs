@@ -113,7 +113,7 @@ plugins:
             'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/notifications/webhook.md'
             'thehive/user-guides/organisation/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md'
             'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
-            'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md'
+            'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
             'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
             'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md'
@@ -153,7 +153,7 @@ plugins:
             'thehive/user-guides/organization/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
             'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
             'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
-            'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md'
+            'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
 
 
@@ -315,7 +315,11 @@ nav:
           - 'Page Templates':
             - 'Page Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md
           - 'Report Templates':
-            - 'Report Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md
+            - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
+            - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md
+            - 'Create a Case Report Template': thehive/user-guides/organization/configure-organization/case-report-templates/create-a-case-report-template.md
+            - 'Edit a Case Report Template': thehive/user-guides/organization/configure-organization/case-report-templates/edit-a-case-report-template.md
+            - 'Delete a Case Report Template': thehive/user-guides/organization/configure-organization/case-report-templates/delete-a-case-report-template.md
         - 'Custom Tags': thehive/user-guides/organization/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
         - 'Notifications & Endpoints':

@@ -35,8 +35,7 @@ Table widget configuration includes:
 * A parameter selection to choose from observables, tasks, TTPs, alerts, or custom fields, along with the data to display
 * Sorting rules and filters to refine the displayed data
 
-!!! warning "Protect data observables"
-    XXX
+{!includes/protect-observable-urls.md!}
 
 ## List widget
 
@@ -48,8 +47,7 @@ List widget configuration includes:
 * A parameter selection to choose from observables, tasks, TTPs, or alerts, along with the data to display
 * Sorting rules and filters to refine the displayed data
 
-!!! warning "Protect data observables"
-    XXX
+{!includes/protect-observable-urls.md!}
 
 ## Timeline widget
 
@@ -58,7 +56,7 @@ Add a case timeline in a list format to your case report template.
 Timeline widget configuration includes:
 
 * A title for the timeline
-* A selection of multiple parameters, allowing you to choose from alerts, case events, tasks, task logs, sighted IOCs, TTPs, and custom events
+* A selection of multiple parameters, allowing you to choose from alerts, case events, tasks, task logs, sighted IOCs, TTPs, and [custom events](../../../../analyst-corner/cases/cases-description/add-custom-event.md)
 
 ## Comments widget
 

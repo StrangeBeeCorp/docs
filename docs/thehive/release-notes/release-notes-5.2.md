@@ -376,7 +376,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
         Create customized, high-impact reports with Case Reporting. Use a variety of dynamic widgets such as text, images, tables and lists. Relevant case data (tasks, observables, etc.) are automatically integrated. Export your reports in HTML and Markdown.
         
-        See [dedicated page](../user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md) for more information (requires platinum license)
 
     - **Page template:** Customize and organize your cases pages
 
