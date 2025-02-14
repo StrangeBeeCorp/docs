@@ -28,9 +28,9 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 6. Select **Add report template** or **Edit report template**. 
 
-7. Drag and drop available [widgets](about-widgets.md) to position them as needed.
+7. Drag available [widgets](about-widgets.md) to position them as needed.
 
-    ![Drag and drop widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
+    ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
 8. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
 

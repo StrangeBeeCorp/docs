@@ -14,9 +14,9 @@ This topic provides step-by-step instructions for editing a [case report templat
 
 4. Select the case report template you want to edit, or select :fontawesome-solid-ellipsis: next to the case report template you want to edit and then **Edit**.
 
-5. Drag and drop available [widgets](about-widgets.md) to position them as needed.
+5. Drag available [widgets](about-widgets.md) to position them as needed.
 
-    ![Drag and drop widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
+    ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
 6. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
 

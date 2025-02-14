@@ -1,6 +1,6 @@
 # About Case Report Templates
 
-Case report templates generate reports in a predefined format, accessible from case descriptions.
+Case report templates generate reports in a predefined format, available from case descriptions.
 
 This topic provides an overview of case report templates and their usage in TheHive.
 
@@ -20,7 +20,7 @@ Use case reports to:
 
 ## Structure
 
-Every case report template includes a default header and footer section, which can be customized with content and case variables. While these sections cannot be moved or deleted, they will not appear in the case report if left empty.
+Every case report template includes a default header and footer section, which you can customize with content and case variables. You can't move or delete these sections, but they won't appear in the case report if left empty.
 
 You can add [widgets](about-widgets.md) between these sections to display case data. You can rearrange the order of widgets at any time.
 
