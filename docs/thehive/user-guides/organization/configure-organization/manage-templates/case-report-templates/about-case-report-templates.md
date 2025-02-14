@@ -16,9 +16,13 @@ Use case reports to:
 
 ## Usage
 
-Create a case report template to automatically generate reports with predefined widgets in case descriptions.
+[Create a case report template](create-a-case-report-template.md) to automatically generate reports in case descriptions.
 
-Find more details about available widgets in the [About Widgets](about-widgets.md) topic.
+## Structure
+
+Every case report template includes a default header and footer section, which can be customized with content and case variables. While these sections cannot be deleted, they will not appear in the case report if left empty.
+
+You can add [widgets](about-widgets.md) between these sections to display case data.
 
 ## Permissions
 
