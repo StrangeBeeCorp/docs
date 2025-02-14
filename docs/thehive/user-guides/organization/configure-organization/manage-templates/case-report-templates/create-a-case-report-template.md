@@ -20,10 +20,10 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 5. In the drawer, enter the following fields:
 
-    **Title \***
+    **Title \***  
     The title users will see when selecting reports in case descriptions.
 
-    **Description**
+    **Description**  
     A brief summary of your case report template, outlining its purpose and contents.
 
 6. Select **Add report template** or **Edit report template**. 
@@ -32,7 +32,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
     ![Drag and drop widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
-8. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone to duplicate them, and :fontawesome-solid-trash to delete them.
+8. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
 
 9. Select :fontawesome-solid-eye: to preview the case report display.
 

@@ -17,13 +17,13 @@ Text widget configuration includes:
 
 Add an image to your case report template.
 
+!!! warning "Supported image formats"
+    Image widgets only support JPG, JPEG, and PNG formats.
+
 Image widget configuration includes:
 
 * A title for the image
 * An image that you can upload by dragging and dropping or selecting from your computer
-
-!!! warning "Supported image formats"
-    Image widgets only support JPG, JPEG, and PNG formats.
 
 ## Table widget
 
@@ -32,10 +32,9 @@ Add a table to your case report template.
 Table widget configuration includes:
 
 * A title for the table
-* A parameter selection to choose from observables, tasks, TTPs, alerts, or custom fields, along with the data to display
-* Sorting rules and filters to refine the displayed data
-
+* A parameter selection to choose from observables, tasks, TTPs, alerts, or [custom fields](../../../../../administration/custom-fields/about-custom-fields.md), along with the data to display
 {!includes/protect-observable-urls.md!}
+* Sorting rules and filters to refine the displayed data
 
 ## List widget
 
@@ -45,9 +44,8 @@ List widget configuration includes:
 
 * A title for the list
 * A parameter selection to choose from observables, tasks, TTPs, or alerts, along with the data to display
-* Sorting rules and filters to refine the displayed data
-
 {!includes/protect-observable-urls.md!}
+* Sorting rules and filters to refine the displayed data
 
 ## Timeline widget
 
