@@ -32,11 +32,15 @@ This topic provides step-by-step instructions for creating a [case report templa
 
     ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
-8. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
+8. Enter the [required information for the widget](about-widgets.md).
 
-9. Select :fontawesome-solid-eye: to preview the case report display.
+9. Select **Confirm**.
 
-10. Select :fontawesome-solid-floppy-disk: to save your case report template.
+10. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
+
+11. Select :fontawesome-solid-eye: to preview the case report display.
+
+12. Select :fontawesome-solid-floppy-disk: to save your case report template.
 
 ## Next steps
 

@@ -18,11 +18,15 @@ This topic provides step-by-step instructions for editing a [case report templat
 
     ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
-6. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
+6. Enter the [required information for the widget](about-widgets.md).
 
-7. Select :fontawesome-solid-eye: to preview the case report display.
+7. Select **Confirm**.
 
-8. Select :fontawesome-solid-floppy-disk: to save your case report template.
+8. Select :fontawesome-solid-pen: to edit sections, :fontawesome-solid-clone: to duplicate them, and :fontawesome-solid-trash: to delete them.
+
+9. Select :fontawesome-solid-eye: to preview the case report display.
+
+10. Select :fontawesome-solid-floppy-disk: to save your case report template.
 
 ## Next steps
 
