@@ -8,9 +8,9 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
   * [Organization APIs](#organization-apis)
     * [Organization Model](#organization-model)
     * [List](#list)
-    * [Create](#create)
-    * [Update](#update)
-    * [Delete](#delete)
+    * [Create](#create-an-organization)
+    * [Update](#update-an-organization)
+    * [Delete](#delete-an-organization)
     * [Obtain Details](#obtain-details)
     * [List Users](#list-users)
     * [List Enabled Analyzers](#list-enabled-analyzers)
@@ -19,8 +19,8 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
     * [List All](#list-all)
     * [List Users within an Organization](#list-users-within-an-organization)
     * [Search](#search)
-    * [Create](#create-1)
-    * [Update](#update-1)
+    * [Create](#create-a-user)
+    * [Update](#update-a-user)
     * [Get Details](#get-details)
     * [Set a Password](#set-a-password)
     * [Change a password](#change-a-password)
@@ -182,7 +182,7 @@ curl -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application/json' 
 
 Both APIs supports the `range` and `sort` query parameters described in [paging and sorting details](#paging-and-sorting).
 
-### Create
+### Create an organization
 It is possible to create an organization using the following API call, which requires the API key associated with a `superAdmin` account:
 
 ```bash
@@ -193,7 +193,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 }'
 ```
 
-### Update
+### Update an organization
 You can update an organization's description and status (`Active` or `Locked`) using the following API call. This requires the API key associated with a `superAdmin` account:
 
 ```bash
@@ -210,7 +210,7 @@ curl -XPATCH -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: applicatio
 }'
 ```
 
-### Delete
+### Delete an organization
 Deleting an organization just marks it as `Locked` and doesn't remove the associated data from the DB. To "delete" an organization, you can use the API call shown below. It requires the API key associated with a `superAdmin` account.
 
 ```bash
@@ -318,7 +318,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 
 This call supports the `range` and `sort` query parameters declared in [paging and sorting details](#paging-and-sorting)
 
-### Create
+### Create a user
 This API calls allows you to programmatically create user creation. If the call is made by a `superAdmin` user, the request must specify the organization to which the user belong in the `organization` field.
 
 If the call is made by an `orgAdmin` user, the value of `organization` field must be the same as the user who makes the call: `orgAdmin` users are allowed to create users only in their organization.
@@ -356,7 +356,7 @@ If successful, the call returns a JSON object representing the created user as d
 }
 ```
 
-### Update
+### Update a user
 This API call allows updating the writable attributed of a user account. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to update their own information (but obviously not their roles).
 
 ```bash
