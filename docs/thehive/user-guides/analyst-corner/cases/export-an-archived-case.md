@@ -1,8 +1,8 @@
-# How to Export a Case to MISP
+# How to Export an Archived Case
 
 This topic provides step-by-step instructions for exporting an archived [case](../cases/about-cases.md) in TheHive.
 
-You might need to export an archived case to [create a case from a past investigation](create-a-new-case.md#create-a-case-from-an-archived-case).
+You might need to export an archived case to [create a case based on a past investigation](create-a-new-case.md#create-a-case-from-an-archived-case).
 
 ## Procedure
 

@@ -42,5 +42,5 @@ To learn more about how sharing rules function and interact, refer to the [About
 
 ## Next steps
 
-* [Share a Task](../tasks/share-a-task.md)
-* [Share an Observable](share-an-observable.md)
+* [Share a Task with Other Organizations](../tasks/share-a-task.md)
+* [Share an Observable with Other Organizations](share-an-observable.md)

@@ -27,5 +27,5 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 ## Next steps
 
-* [Share a Task](../tasks/share-a-task.md)
-* [Share a Case](share-a-case.md)
+* [Share a Task with Other Organizations](../tasks/share-a-task.md)
+* [Share a Case with Other Organizations](share-a-case.md)
