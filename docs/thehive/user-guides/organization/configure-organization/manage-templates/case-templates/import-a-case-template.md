@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for importing a [case template](ab
 
 This is useful if you want to use a case template from another organization or TheHive instance.
 
+!!! info "Find case templates"
+    Check out our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates) for case templates shared by other users.
+
 {!includes/access-manage-case-templates.md!}
 
 ## Procedure

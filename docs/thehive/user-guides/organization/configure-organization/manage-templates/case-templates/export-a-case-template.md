@@ -4,6 +4,13 @@ This topic provides step-by-step instructions for exporting a [case template](ab
 
 This is useful if you want to share a case template with another organization or TheHive instance.
 
+!!! info "Share your case templates"
+    Contribute your case templates to our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates).
+    Before submitting your pull request:
+    * Remove any sensitive information. 
+    * Exclude custom fields.
+    Each contribution is reviewed by StrangeBee before being published.
+
 {!includes/access-manage-case-templates.md!}
 
 ## Procedure
