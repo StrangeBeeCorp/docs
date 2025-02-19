@@ -15,4 +15,4 @@ The details are displayed
 <img src="/thehive/images/user-guides/analyst-corner/tasks/tasks-details-tabs-menu.png" alt="tasks" width="700" height="700"/>
 
 In the left pane of the window you can configure the PAP, TLP and Severity. 
-Refer to ['Configure Alert Details'](../cases-list/configure-pap-tlp-severity.md) for more details. 
+Refer to ['Configure Alert Details'](../cases/cases-description/configure-pap-tlp-severity.md) for more details. 
