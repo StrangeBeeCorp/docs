@@ -273,7 +273,8 @@ nav:
         - 'MISP Integration': thehive/administration/misp.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
-          - 'General Settings': thehive/administration/authentication/general.md
+          - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
+          - 'Configure Authentication Providers': 
           - 'Local Authentication': thehive/administration/authentication/local.md
           - 'LDAP Authentication': thehive/administration/authentication/ldap.md
           - 'Active Directory (AD) Authentication': thehive/administration/authentication/ad.md
