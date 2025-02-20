@@ -21,6 +21,9 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Java Virtual Machine
 
+!!! warning "Manual installation required"
+    As of Cortex 3.2, Java is no longer installed automatically. You must manually install OpenJDK 11 or later before running Cortex.
+
 !!! example "Install Java"
 
     === "Debian"
