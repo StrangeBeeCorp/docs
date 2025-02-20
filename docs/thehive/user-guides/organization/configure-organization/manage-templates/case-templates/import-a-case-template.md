@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for importing a [case template](ab
 
 This is useful if you want to use a case template from another organization or TheHive instance.
 
+!!! info "Find case templates"
+    Check out our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates) for case templates shared by other users.
+
 {!includes/access-manage-case-templates.md!}
 
 ## Procedure
@@ -16,7 +19,7 @@ This is useful if you want to use a case template from another organization or T
 
 4. Select **Import case template**.
 
-5. In the **Importing a case template** drawer, drop a JSON file directly into the **Attachment** section or select the JSON file from your computer. Use the file you obtained from [exporting the case template](export-a-case-template.md).
+5. In the **Importing a case template** drawer, drop a JSON file directly into the **Attachment** section or select it from your computer. Use the file you obtained from [exporting the case template](export-a-case-template.md).
 
 6. Select **Confirm case template import**.
 

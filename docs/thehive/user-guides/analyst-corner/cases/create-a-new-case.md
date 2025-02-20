@@ -14,6 +14,8 @@ Several options are offered to create a case in TheHive:
 
 * [Create a case from an alert](#create-a-case-from-an-alert)
 
+* [Create a case from a detection tool](#create-a-case-from-a-detection-tool)
+
 {!includes/access-create-a-case.md!}
 
 ## Create an empty case
@@ -28,16 +30,16 @@ Several options are offered to create a case in TheHive:
     The title of the case.
 
     **Date \***  
-    The start date and time of the case. It indicates when the incident occured. By default, this field is prefilled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators-formulas.md).
+    The start date and time of the case. It indicates when the incident occured. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators-formulas.md).
 
     **Severity \***  
     The severity level for the case.
 
-    **TLP \***  
-    The TLP level for the case.
-
-    **PAP \***  
-    The PAP level for the case.
+    **[TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    The TLP level for the case. It guides analysts on how they can share case information.
+    
+    **[PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    The PAP level for the case. It guides analysts on how they can use case data.
 
     **[Tags](../cases/adding_to_a_case.md)**  
     Relevant tags to categorize the case.
@@ -81,7 +83,7 @@ Several options are offered to create a case in TheHive:
 3. In the **Import case** drawer:
 
     **Attachment \***  
-    Drop a THAR file direclty into the **Attachment** section or select the THAR file from your computer. THAR files are TheHive archive files. For instructions on exporting a case as an archive, see the [Export a Case](export-a-case.md) topic.
+    Drop a THAR file direclty into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
 
     **Password \***  
     Enter the archive password that was set during the case export.
@@ -117,7 +119,7 @@ Several options are offered to create a case in TheHive:
 
 4. Select **Confirm**.
 
-## Create a case from an alert
+## Create a case from an [alert](../alerts/about-alerts.md)
 
 {!includes/access-create-case-from-alert.md!}
 
@@ -136,6 +138,10 @@ Several options are offered to create a case in TheHive:
 
     * [Create an empty case](#create-an-empty-case)
     * [Create a case from a template](#create-a-case-from-a-template)
+
+## Create a case from a detection tool
+
+The creation of cases through detection tools is managed directly via the [API](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Create%20case).
 
 ## Next steps
 

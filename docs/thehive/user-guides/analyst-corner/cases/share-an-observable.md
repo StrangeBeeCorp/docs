@@ -1,4 +1,4 @@
-# How to Share an Observable
+# How to Share an Observable with Other Organizations
 
 This topic provides step-by-step instructions for [manually sharing an observable in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
 
@@ -27,5 +27,5 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 ## Next steps
 
-* [Share a Task](../tasks/share-a-task.md)
-* [Share a Case](share-a-case.md)
+* [Share a Task with Other Organizations](../tasks/share-a-task.md)
+* [Share a Case with Other Organizations](share-a-case.md)

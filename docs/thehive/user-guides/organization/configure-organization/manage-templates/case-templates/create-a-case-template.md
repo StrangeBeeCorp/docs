@@ -2,8 +2,10 @@
 
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
-!!! info "Duplicate an existing case"
-    Since version 5.4, you can duplicate an existing case to speed up the process by pre-filling some fields.
+!!! info "Duplicate an existing case template"
+    Since version 5.4, you can duplicate an existing case template within your organization to quickly pre-fill fields and streamline the process.
+
+To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](import-a-case-template.md) topic.
 
 {!includes/access-manage-case-templates.md!}
 
@@ -21,7 +23,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
 
     * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
 
-5. In the **Adding a case template** drawer, enter values in some or all the following fields to prefill:
+5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
     **Prefix**  
     A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting.
@@ -32,17 +34,17 @@ This topic provides step-by-step instructions for creating a [case template](abo
     **Display name**  
     The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
-    **TLP**  
-    The default TLP value for cases.
+    **[TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    The TLP level for the case. It guides analysts on how they can share case information.
     
-    **PAP**  
-    The default PAP value for cases.
+    **[PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    The PAP level for the case. It guides analysts on how they can use case data.
     
     **Severity**  
     The default severity level for cases.
     
     **[Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
-    One or more tags to categorize cases.
+    One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
     **Description \***  
     A description for cases.

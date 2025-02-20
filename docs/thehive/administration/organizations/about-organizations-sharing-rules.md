@@ -42,8 +42,8 @@ This is useful when task and observable sharing rules are set to *manual*, ensur
 
 Follow these step-by-step instructions to learn how to:
 
-* [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
-* [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)
+* [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable with Other Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
 
 ## How sharing rules work together
 
@@ -57,5 +57,5 @@ Follow these step-by-step instructions to learn how to:
 
 * [Link an Organization](link-an-organization.md)
 * [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)
-* [Share a Task](../../user-guides/analyst-corner/tasks/share-a-task.md)
-* [Share an Observable](../../user-guides/analyst-corner/cases/share-an-observable.md)
+* [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable with Other Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
