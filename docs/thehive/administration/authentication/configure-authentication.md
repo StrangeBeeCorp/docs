@@ -36,29 +36,27 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **Enable API key authentication**
 
-    Authenticates HTTP requests using an API key. Each user in TheHive can have [an API key](../../user-guides/organization/accounts.md#user-information).
+    Authenticates HTTP requests using an API key.
 
     **Enable basic authentication**
 
-    Authenticates HTTP requests using [the login and password provided](../../user-guides/organization/accounts.md#user-information).
+    Authenticates HTTP requests using a login and password.
 
     **Enable HTTP header authentication**
 
-    Authenticates HTTP requests using a HTTP header containing [the user login](../../user-guides/organization/accounts.md#user-information).
+    Authenticates HTTP requests using a HTTP header that cointains a user login.
 
     **Enable multi-factor authentication**
 
-    
+    Enables multi-factor authentication (MFA), allowing users to activate it.
+
+    **Default domain for user login**
+
+    By default, logins use email addresses. This allows users to sign in without specifying the email domain. Instead of entering *user@domain.com*, users only need to enter *user*.
 
 ## Next steps
 
 
-
-Several options are available:
-
-3. **Enable HTTP Header Authentication**: Authenticates HTTP requests using a HTTP header containing the user login
-4. **Enable Multifactor authentication**: Multi-Factor Authentication is enabled by default. This means users can configure their MFA through their User Settings page
-5. **Default user domain**: By default, users log in with an email address for example: _user@domain.com_. When set up, users are allowed to log in without the domain (for example _user_).
 
 
 ## Manage Authentication Providers
@@ -71,6 +69,8 @@ Several options exist to authenticate users:
 - [Using Active directory](ad.md): configure TheHive to use a LDAP server
 - [SAML](saml.md): Use single sign-on through on or more SAML providers to authenticate users
 - [Oauth2](oauth2.md): Use single sign-on through external Oauth2 server to authenticate users
+
+Oauth2 limité par la license voire même les autres
 
 !!! Info "Use several providers"
     ![](../../images/administration-guides/authentication/authentication-proviers-order.png)
