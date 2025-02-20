@@ -1,4 +1,4 @@
-# How to Share a Case
+# How to Share a Case with Other Organizations
 
 This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) with [linked organizations](../../../administration/organizations/link-an-organization.md) for an existing case in TheHive.
 
@@ -42,5 +42,5 @@ To learn more about how sharing rules function and interact, refer to the [About
 
 ## Next steps
 
-* [Share a Task](../tasks/share-a-task.md)
-* [Share an Observable](share-an-observable.md)
+* [Share a Task with Other Organizations](../tasks/share-a-task.md)
+* [Share an Observable with Other Organizations](share-an-observable.md)

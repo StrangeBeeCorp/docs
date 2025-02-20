@@ -27,17 +27,17 @@ This topic provides step-by-step instructions for editing a [case template](abou
     **Display name**  
     The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
-    **TLP**  
-    The default TLP value for cases.
+    **[TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    The TLP level for the case. It guides analysts on how they can share case information.
     
-    **PAP**  
-    The default PAP value for cases.
+    **[PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    The PAP level for the case. It guides analysts on how they can use case data.
     
     **Severity**  
     The default severity level for cases.
     
     **[Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
-    One or more tags to categorize cases.
+    One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
     **Description \***  
     A description for cases.
