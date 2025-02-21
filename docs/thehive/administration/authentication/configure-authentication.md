@@ -6,13 +6,9 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 ## Procedure
 
-1. Go to the **Platform management** view from the sidebar menu.
+1. {!includes/platform-management-view-go-to.md!}
 
-    ![Platform management](../../images/administration-guides/authentication/platform-management.png.png)
-
-2. Select the **Authentication** tab.
-
-    ![Platform management](../../images/administration-guides/authentication/authentication-configuration.png.png)
+2. {!includes/authentication-tab-go-to.md!}
 
 3. Enter the values for each session setting:
 
@@ -40,11 +36,11 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **Enable basic authentication**
 
-    Authenticates HTTP requests using a login and password.
+    Authenticates HTTP requests using a login and password. When enabled, you must provide a realm—a string that defines a protected space on the server.
 
     **Enable HTTP header authentication**
 
-    Authenticates HTTP requests using a HTTP header that cointains a user login.
+    Authenticates HTTP requests using a HTTP header that contains a user login. When enabled, you must provide the header name that the server will use to extract the login information from incoming requests.
 
     **Enable multi-factor authentication**
 
@@ -52,26 +48,47 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **Default domain for user login**
 
-    By default, logins use email addresses. This allows users to sign in without specifying the email domain. Instead of entering *user@domain.com*, users only need to enter *user*.
+    By default, logins use email addresses. This feature lets users sign in without specifying the email domain. Instead of entering *user@example.com*, they only need to enter *user*.
+
+5. Select the authentication providers you want to configure.
+
+    {!includes/license-required-authentication.md!}
+
+    **Local authentication**
+
+    Authenticates users against a local database managed by TheHive. You can configure password policies, including complexity requirements, expiration periods, and account lockout settings.
+
+    For more information, see the [Configure Local Authentication](local.md) topic.
+
+    **Directories authentication**
+
+    Authenticates users using a Lightweight Directory Access Protocol (LDAP) server, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
+
+    !!! warning "LDAP server required"
+        Configuring LDAP means you must have LDAP servers configured in TheHive.
+
+    For more information, see the [Configure an Active Directory Authentication](ad.md) and [Configure LDAP Authentication](ldap.md) topics.
+
+    **OAuth 2.0 authentication**
+
+    Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Google, Microsoft Azure AD, or GitHub. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
+
+    For more information, see the [Configure OAuth 2.0 Authentication](oauth2.md) topic.
+
+    **SAML authentication**
+
+    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta, ADFS, or Google Workspace. This method supports secure, federated identity management for large organizations.
+
+    For more information, see the [Configure SAML Authentication](saml.md) topic.
+
+6. If you enabled multiple providers, adjust the priority order using the arrows.
+    
+    The priority order defines the sequence in which TheHive attempts authentication. It starts with the highest priority and moves down until the user is authenticated or all providers are checked. Set the most secure or frequently used provider first.
 
 ## Next steps
 
-
-
-
-## Manage Authentication Providers
-![](../../images/administration-guides/authentication/authentication-providers-list.png)
-
-Several options exist to authenticate users: 
-
-- [local accounts](local.md): manage a local user database where you can configure the password policy
-- [Using LDAP directory](ldap.md): configure TheHive to use a LDAP server 
-- [Using Active directory](ad.md): configure TheHive to use a LDAP server
-- [SAML](saml.md): Use single sign-on through on or more SAML providers to authenticate users
-- [Oauth2](oauth2.md): Use single sign-on through external Oauth2 server to authenticate users
-
-Oauth2 limité par la license voire même les autres
-
-!!! Info "Use several providers"
-    ![](../../images/administration-guides/authentication/authentication-proviers-order.png)
-    TheHive can use several providers to authenticate users, use the arrows to change the priority order (for example: try the Oauth2 authentication, then the local database).
+* [Configure Local Authentication](local.md)
+* [Configure an Active Directory Authentication](ad.md)
+* [Configure LDAP Authentication](ldap.md)
+* [Configure OAuth 2.0 Authentication](oauth2.md)
+* [Configure SAML Authentication](saml.md)

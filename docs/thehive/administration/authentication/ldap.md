@@ -1,13 +1,26 @@
-# Setting LDAP Authentication
+# How to Configure LDAP Authentication
 
-![](../../images/administration-guides/authentication/authentication-providers-list.png)
+This topic provides step-by-step instructions for configuring LDAP authentication in TheHive.
 
-To setup LDAP authentication:
+{!includes/license-required-authentication.md!}
 
-1. Click on **Directory Authentication**
-2. use the switch to enable directory 
-3. then choose **LDAP** in the menu ; the list of required parameters appears
-  ![](../../images/administration-guides/authentication/authentication-configure-ldap.png){witdh=400}
+{!includes/access-authentication.md!}
+
+## Procedure
+
+1. {!includes/platform-management-view-go-to.md!}
+
+2. {!includes/authentication-tab-go-to.md!}
+
+3. Select **Directories authentication** in the **Authentication providers** section.
+
+4. Turn on the **Enable directory** toggle.
+
+5. Select **ldap** from the dropdown list.
+
+## Next steps
+
+
 4. Confirm and save your changes
 5. move the _Directories Authentication_ line to be the first provider to use in the list of authentication providers
 

@@ -274,13 +274,13 @@ nav:
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
-          - 'Configure Authentication Providers': 
-          - 'Local Authentication': thehive/administration/authentication/local.md
-          - 'LDAP Authentication': thehive/administration/authentication/ldap.md
-          - 'Active Directory (AD) Authentication': thehive/administration/authentication/ad.md
-          - 'SAML Authentication': thehive/administration/authentication/saml.md
-          - 'OAUTH2 Authentication': thehive/administration/authentication/oauth2.md
-        - 'SMTP Configuration': thehive/administration/smtp.md
+          - 'Configure Providers': 
+            - 'Local': thehive/administration/authentication/local.md
+            - 'Active Directory (AD)': thehive/administration/authentication/ad.md
+            - 'LDAP': thehive/administration/authentication/ldap.md
+            - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
+            - 'SAML': thehive/administration/authentication/saml.md
+          - 'SMTP Configuration': thehive/administration/smtp.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
         - 'Custom Fields': 
