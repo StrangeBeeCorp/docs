@@ -42,15 +42,14 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
   The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
 
+9. Select **Confirm**.
+
 ## Next steps
 
 
-4. Confirm and save your changes
-5. move the _Directories Authentication_ line to be the first provider to use in the list of authentication providers
 
 !!! Tip "Using SSL with LDAP"
     To setup a custom Certificate Authority in TheHive, please refer to [this guide](../../configuration/ssl.md#use-custom-certificate-authorities).
-
 
 ## Authenticating with LDAP
 Users able to authenticate should already have an account created in TheHive local database.

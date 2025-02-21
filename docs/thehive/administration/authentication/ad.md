@@ -36,6 +36,8 @@ This topic provides step-by-step instructions for configuring Active Directory a
 
     This ensures that authentication requests and responses are encrypted, protecting sensitive data from being intercepted during transmission.
 
+8. Select **Confirm**.
+
 ## Next steps
 
 * [How to Configure Authentication](configure-authentication.md)
