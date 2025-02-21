@@ -21,7 +21,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 ## Java Virtual Machine
 
 !!! warning "Manual installation required"
-    For new installations of Cortex 3.2, the Java Virtual Machine is no longer installed automatically. You must manually install it before running Cortex.
+    Starting with Cortex 3.2, the Java Virtual Machine is no longer installed automatically. You must manually install it before running Cortex.
 
 !!! example "Install Java"
 
