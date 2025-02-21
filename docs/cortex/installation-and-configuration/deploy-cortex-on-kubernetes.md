@@ -6,9 +6,9 @@ This guide provides step-by-step instructions for deploying Cortex on a Kubernet
 
 You will learn how to:
 
-* Configure a shared filesystem to enable Cortex and its jobs to exchange data by allowing different pods to share input files, store job results, and ensure consistent data access across the Kubernetes cluster
+* [Configure a shared filesystem](#configure-a-shared-filesystem) to enable Cortex and its jobs to exchange data by allowing different pods to share input files, store job results, and ensure consistent data access across the Kubernetes cluster
 
-* Set up a Cortex service account (SA) with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders
+* [Set up a Cortex service account (SA)](#set-up-a-cortex-service-account) with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders
 
 ## Configure a shared filesystem
 
@@ -44,7 +44,7 @@ To define a PV for your NFS server:
     Confirm that your NFS server is running and accessible from the Kubernetes cluster.
 
     !!! note "Using a different storage solution?"
-    If you're using another storage system, create a ReadWriteMany PV following your tool’s documentation, then continue with the next step.
+        If you're using another storage system, create a ReadWriteMany PV following your tool’s documentation, then continue with the next step.
 
 2. Create a PersistentVolume manifest.
 
