@@ -279,9 +279,9 @@ spec:
       serviceAccountName: cortex
 ```
 
-## Verify the deployment and SA
+## Verify the deployment and service account
 
-Run the following command to ensure the deployment is running with the correct SA:
+Run the following command to ensure the deployment is running with the correct service account (SA):
 
 ```bash
 kubectl get deployment cortex -o=jsonpath='{.spec.template.spec.serviceAccountName}'
