@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for configuring Active Directory a
 
 3. Select **Directories authentication** in the **Authentication providers** section.
 
-4. Turn on the **Enable directory** toggle.
+4. In the **Directories authentication** drawer, turn on the **Enable directory** toggle.
 
 5. Select **ad** from the dropdown list.
 
