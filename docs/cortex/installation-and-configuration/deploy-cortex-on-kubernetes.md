@@ -33,9 +33,9 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 
 To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html) with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
-### 2. Define a PersistentVolume (PV) for the NFS server
+### 2. Define a PersistentVolume for the NFS server
 
-A [PV](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) represents a piece of storage provisioned by an administrator or dynamically provisioned using storage classes. When using an NFS server, the PV allows multiple pods to access shared storage concurrently.
+A [PersistentVolume (PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) represents a piece of storage provisioned by an administrator or dynamically provisioned using storage classes. When using an NFS server, the PV allows multiple pods to access shared storage concurrently.
 
 To define a PV for your NFS server:
 
@@ -68,9 +68,9 @@ To define a PV for your NFS server:
         - nfsvers=4.2 # Specify the NFS client version
     ``` 
 
-### 3. Create a PersistentVolumeClaim (PVC)
+### 3. Create a PersistentVolumeClaim
 
-A [PVC](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV and specifies how much storage is needed and how it will be accessed.
+A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV, specifies the required storage, and defines how to access it.
 
 This manifest references the previously defined PV:
 
@@ -94,7 +94,7 @@ spec:
 Edit your Cortex deployment manifest to configure how Cortex runs within your Kubernetes cluster. This configuration connects Cortex to the shared filesystem by mounting the PVC, enabling Cortex to access and store job data.
 
 !!! warning "Partial deployment manifest"
-    The following manifest is only a snippet of the full deployment. It highlights the relevant parameters and should be integrated into your complete deployment configuration.
+    The following manifest is only a snippet of the full deployment. It highlights the relevant parameters, and you should integrate them into your complete deployment configuration.
 
 ```yaml
 apiVersion: apps/v1
@@ -134,7 +134,7 @@ spec:
             claimName: cortex-shared-fs-claim
 ```
 
-### Example: Deploy Cortex on Kubernetes using AWS Elastic File System (EFS)
+### Example: Deploy Cortex on Kubernetes using AWS EFS
 
 #### Prerequisites
 
@@ -149,7 +149,7 @@ Before setting up the PV for AWS EFS, complete the following steps:
 #### 1. Create a StorageClass for EFS
 
 !!! note "Reference example"
-    The following manifests are based on the [EFS CSI driver multiple_pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods).
+    The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods).
 
 Create a StorageClass that references your EFS filesystem:    
 
@@ -206,14 +206,14 @@ spec:
   # (...)
 ```
 
-## Set up a Cortex Service Account (SA)
+## Set up a Cortex service account
 
-!!! warning "Service Account configuration required"
-    If you don't configure Cortex SA properly, it won't be able to create Kubernetes jobs to run analyzers or responders.
+!!! warning "Service account configuration required"
+    If you don't configure the Cortex service account properly, it won't be able to create Kubernetes jobs to run analyzers or responders.
 
-In Kubernetes, a SA allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster.
+In Kubernetes, a service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster.
 
-When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex cannot execute these jobs.
+When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.
 
 ### 1. Create a SA for Cortex
 
