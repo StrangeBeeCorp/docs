@@ -12,21 +12,21 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 3. Enter the values for each session setting:
 
-    **Session expiration auto-logout**
+    **Session expiration autologout**
 
     The amount of time before you are automatically signed out when your session expires.
 
     **Session expiration warning time**
 
-    The amount of time remaining before session expiration when you receive a warning. This must be equal to or less than the session expiration auto-logout time.
+    The amount of time remaining before session expiration when you receive a warning. This must be equal to or less than the session expiration autologout time.
 
-    **Inactivity auto-logout**
+    **Inactivity autologout**
 
     The amount of time before you are automatically signed out due to inactivity.
 
     **Inactivity warning time**
 
-    The amount of time remaining before automatic sign-out due to inactivity when you receive a warning. This must be equal to or less than the inactivity auto-logout time.
+    The amount of time remaining before automatic sign-out due to inactivity when you receive a warning. This must be equal to or less than the inactivity autologout time.
 
 4. Turn the toggles on or off for advanced settings based on your preferences:
 
@@ -84,7 +84,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 6. If you enabled multiple providers, adjust the priority order using the arrows.
     
-    The priority order defines the sequence in which TheHive attempts authentication. It starts with the highest priority and moves down until the user is authenticated or all providers are checked. Set the most secure or frequently used provider first.
+    Set the most secure or frequently used provider first to define the priority order. TheHive then attempts authentication starting with the highest priority and continues down the list until it authenticates the user or checks all providers.
 
 ## Next steps
 

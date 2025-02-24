@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for configuring an OAuth 2.0 authentication provider in TheHive.
 
-By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—to enable secure and seamless authentication in TheHive.
+By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google.
 
 {!includes/license-required-authentication.md!}
 
@@ -22,7 +22,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     **Client ID**
 
-    The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. It is used to authenticate TheHive with the OAuth server during the authorization process.
+    The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. TheHive uses this identifier to authenticate with the OAuth server during the authorization process.
 
     **Client secret**
 
@@ -50,7 +50,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     **Prefix of the authorization header**
 
-    Defines the type of token being passed in the authorization header, typically:
+    Defines the type of token to pass in the authorization header, typically:
 
     * Bearer (most common)
     * Basic (used for basic authentication)
@@ -69,13 +69,13 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
     
     Examples include:
 
-    * *openid* – Access to basic user information
-    * *email* – Access to the user’s email address
-    * *profile* – Access to profile information
+    * *openid*–Access to basic user information
+    * *email*–Access to the user’s email address
+    * *profile*–Access to profile information
 
     **Field that contains the id of the user in user info**
 
-    The specific field in the user information response that holds the user's unique identifier. This is used by TheHive to map authenticated users.
+    The specific field in the user information response that holds the user's unique identifier. TheHive uses this field to map authenticated users.
 
 6. Turn on the **Enable user auto creation** to automatically create a user account in TheHive when a new user successfully authenticates through the OAuth 2.0 provider.
 
@@ -93,17 +93,17 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
     * Default configuration
     * Disabled
     * Enabled:
-        * Enter the type of protocol, either http or https
+        * Enter the type of protocol, either HTTP or HTTPS
         * Enter the IP address or domain name of the proxy server
         * Enter the port number used by the proxy server
 
 8. Add a certificate.
 
-    No custom certificate authorities are allowed, so only certificates from trusted, predefined authorities will be accepted for secure connections.
+    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
 
-    You can turn off the **Do not check certificate authority** toggle to bypass certificate validation, but this is not recommended as it may compromise connection security.
+    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
-9. Turn on the **Disable hostname verification** toggle if you want to bypass the verification of the server's hostname against the certificate.
+9. Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
 
 10. Select **Confirm**.
 

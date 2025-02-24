@@ -21,7 +21,7 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
 5. Select **ldap** from the dropdown list.
 
-6. Enter the servers hostname or IP adress.
+6. Enter the servers host name or IP address.
 
     Example: *ldap.company.com*
 

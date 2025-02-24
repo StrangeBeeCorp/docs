@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for configuring an Active Director
 
     **The addresses of the domain controllers**
 
-    The IP addresses or hostnames of the domain controllers responsible for handling authentication requests within the network.
+    The IP addresses or host names of the domain controllers responsible for handling authentication requests within the network.
 
     **The Windows domain name**
 
@@ -32,13 +32,13 @@ This topic provides step-by-step instructions for configuring an Active Director
 
     **The DNS domain name**
 
-    The fully qualified domain name (FQDN) associated with the Windows domain (e.g., *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
+    The fully qualified domain name (FQDN) associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
 
     Example: *domain.local*
 
 7. To secure communication between TheHive and the domain controllers using Secure Sockets Layer (SSL) encryption, turn on the **Use SSL** toggle.
 
-    This ensures that authentication requests and responses are encrypted, protecting sensitive data from being intercepted during transmission.
+    This encrypts authentication requests and responses, protecting sensitive data from interception during transmission.
 
 8. Select **Confirm**.
 
