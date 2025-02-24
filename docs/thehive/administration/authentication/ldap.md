@@ -1,6 +1,6 @@
-# How to Configure LDAP Authentication
+# How to Configure an LDAP Authentication Provider
 
-This topic provides step-by-step instructions for configuring LDAP authentication in TheHive.
+This topic provides step-by-step instructions for configuring an LDAP authentication provider in TheHive.
 
 {!includes/license-required-authentication.md!}
 
@@ -23,33 +23,33 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
 6. Enter the servers hostname or IP adress.
 
-  Format: *ldap.company.com*
+    Example: *ldap.company.com*
 
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
 8. Enter the following information:
 
-  **DN of the service account**
+    **DN of the service account**
 
-  The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.
+    The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.
 
-  Example: *cn=thehive,ou=users,dc=company,dc=com*
+    Example: *cn=thehive,ou=users,dc=company,dc=com*
 
-  **Bind password**
+    **Bind password**
 
-  The password associated with the service account. This password authenticates the service account to allow LDAP queries.
+    The password associated with the service account. This password authenticates the service account to allow LDAP queries.
 
-  **Users base DN**
+    **Users base DN**
 
-  The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.
+    The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.
 
-  Example: *ou=users,dc=company,dc=com*
+    Example: *ou=users,dc=company,dc=com*
 
-  **Filter used to search users**
+    **Filter used to search users**
 
-  The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
+    The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
 
-  Example: *(&(uid={0})(objectClass=inetOrgPerson))*
+    Example: *(&(uid={0})(objectClass=inetOrgPerson))*
 
 9. Select **Confirm**.
 

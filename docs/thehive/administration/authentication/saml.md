@@ -1,6 +1,6 @@
-# How to Configure SAML Authentication
+# How to Configure a SAML Authentication Provider
 
-This topic provides step-by-step instructions for configuring SAML authentication in TheHive.
+This topic provides step-by-step instructions for configuring a SAML authentication provider in TheHive.
 
 {!includes/license-required-authentication.md!}
 
@@ -27,7 +27,7 @@ This topic provides step-by-step instructions for configuring SAML authenticatio
 
     Enter a recognizable name for the authentication provider in TheHive.
 
-    Example: *Microsoft Azure AD*
+    Example: *Microsoft Entra ID*
 
     **Identity provider metadata type**
 
@@ -35,19 +35,19 @@ This topic provides step-by-step instructions for configuring SAML authenticatio
 
     * If you choose *url*, provide the full link to the metadata document.
     
-    Example: *https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml*
+        Example: *https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml*
 
     * If you choose *xml*, paste the XML metadata content directly into the field.
     
-    Example: 
+        Example: 
 
-    ``` xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <md: EntityDescriptor entityID="http://www.okta.com/exknhwsd2uAGUSK66696"                   xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
-        <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
-            <md:KeyDescriptor use="signing">
-                <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
-    ```
+        ``` xml
+        <?xml version="1.0" encoding="UTF-8"?>
+        <md: EntityDescriptor entityID="http://www.okta.com/exknhwsd2uAGUSK66696"                   xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+            <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+                <md:KeyDescriptor use="signing">
+                    <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        ```
 
     **User login attribute**
 

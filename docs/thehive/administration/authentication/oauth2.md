@@ -1,6 +1,6 @@
-# How to Configure OAuth 2.0 Authentication
+# How to Configure an OAuth 2.0 Authentication Provider
 
-This topic provides step-by-step instructions for configuring OAuth 2.0 authentication in TheHive.
+This topic provides step-by-step instructions for configuring an OAuth 2.0 authentication provider in TheHive.
 
 By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—to enable secure and seamless authentication in TheHive.
 
@@ -32,7 +32,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     The URL where the OAuth 2.0 server redirects users after authentication.
     
-    Format: https://[your-hive-domain]/api/ssoLogin
+    Format: *https://[your-hive-domain]/api/ssoLogin*
 
     **Grant type**
 
@@ -69,9 +69,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
     
     Examples include:
 
-    * openid – Access to basic user information
-    * email – Access to the user’s email address
-    * profile – Access to profile information
+    * *openid* – Access to basic user information
+    * *email* – Access to the user’s email address
+    * *profile* – Access to profile information
 
     **Field that contains the id of the user in user info**
 
@@ -94,11 +94,11 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 7. Select the proxy settings you want to apply:
 
     * Default configuration
-    * Enabled: Enter:
-        * The type of protocol, either http or https
-        * The IP address or domain name of the proxy server
-        * The port number used by the proxy server
     * Disabled
+    * Enabled:
+        * Enter the type of protocol, either http or https
+        * Enter the IP address or domain name of the proxy server
+        * Enter the port number used by the proxy server
 
 8. Add a certificate.
 
@@ -106,7 +106,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     You can turn off the **Do not check certificate authority** toggle to bypass certificate validation, but this is not recommended as it may compromise connection security.
 
-9. Turn on the **Disable hostname verification** toggle to bypass the verification of the server's hostname against the certificate.
+9. Turn on the **Disable hostname verification** toggle if you want to bypass the verification of the server's hostname against the certificate.
 
 10. Select **Confirm**.
 

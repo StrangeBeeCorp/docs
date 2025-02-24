@@ -52,34 +52,35 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 5. Select the authentication providers you want to configure.
 
-    {!includes/license-required-authentication.md!}
+    !!! note "Paid licence required"
+        A paid license is required to configure authentication providers other than the local database managed by TheHive.
 
     **Local authentication**
 
     Authenticates users against a local database managed by TheHive. You can configure password policies, including complexity requirements, expiration periods, and account lockout settings.
 
-    For more information, see the [Configure Local Authentication](local.md) topic.
+    For more information, see the [Configure a Local Authentication Provider](local.md) topic.
 
     **Directories authentication**
-
-    Authenticates users using a Lightweight Directory Access Protocol (LDAP) server, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
 
     !!! warning "LDAP servers required"
         Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
 
-    For more information, see the [Configure an Active Directory Authentication](ad.md) and [Configure LDAP Authentication](ldap.md) topics.
+    Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
+
+    For more information, see the [Configure an Active Directory Authentication Provider](ad.md) and [Configure an LDAP Authentication Provider](ldap.md) topics.
 
     **OAuth 2.0 authentication**
 
-    Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Google, Microsoft Azure AD, or GitHub. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
+    Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
-    For more information, see the [Configure OAuth 2.0 Authentication](oauth2.md) topic.
+    For more information, see the [Configure an OAuth 2.0 Authentication Provider](oauth2.md) topic.
 
     **SAML authentication**
 
-    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta, ADFS, or Google Workspace. This method supports secure, federated identity management for large organizations.
+    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
 
-    For more information, see the [Configure SAML Authentication](saml.md) topic.
+    For more information, see the [Configure a SAML Authentication Provider](saml.md) topic.
 
 6. If you enabled multiple providers, adjust the priority order using the arrows.
     
@@ -87,8 +88,8 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 ## Next steps
 
-* [Configure Local Authentication](local.md)
-* [Configure an Active Directory Authentication](ad.md)
-* [Configure LDAP Authentication](ldap.md)
-* [Configure OAuth 2.0 Authentication](oauth2.md)
-* [Configure SAML Authentication](saml.md)
+* [Configure a Local Authentication Provider](local.md)
+* [Configure an Active Directory Authentication Provider](ad.md)
+* [Configure an LDAP Authentication Provider](ldap.md)
+* [Configure an OAuth 2.0 Authentication Provider](oauth2.md)
+* [Configure a SAML Authentication Provider](saml.md)

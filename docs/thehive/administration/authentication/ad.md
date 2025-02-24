@@ -1,6 +1,6 @@
-# How to Configure Active Directory Authentication
+# How to Configure an Active Directory Authentication Provider
 
-This topic provides step-by-step instructions for configuring Active Directory authentication in TheHive.
+This topic provides step-by-step instructions for configuring an Active Directory authentication provider in TheHive.
 
 {!includes/license-required-authentication.md!}
 
@@ -34,7 +34,7 @@ This topic provides step-by-step instructions for configuring Active Directory a
 
     The fully qualified domain name (FQDN) associated with the Windows domain (e.g., *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
 
-    Format: *domain.local*
+    Example: *domain.local*
 
 7. To secure communication between TheHive and the domain controllers using Secure Sockets Layer (SSL) encryption, turn on the **Use SSL** toggle.
 

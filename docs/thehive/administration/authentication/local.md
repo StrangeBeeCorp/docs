@@ -1,6 +1,6 @@
-# How to Configure Local Authentication
+# How to Configure a Local Authentication Provider
 
-This topic provides step-by-step instructions for configuring local authentication in TheHive.
+This topic provides step-by-step instructions for configuring a local authentication provider in TheHive.
 
 This is the default behavior of TheHive. The application stores usernames and passwords in a local database managed by TheHive.
 
@@ -19,7 +19,7 @@ This is the default behavior of TheHive. The application stores usernames and pa
     * The number of failed authentication attempts before temporarily blocking the user
     * The duration for automatic user unblocking
 
-5. To define a password policy, enable the ****Enabled password policy** toggle and enter the following password requirements:
+5. To define a password policy, enable the **Enabled password policy** toggle and enter the following password requirements:
 
     * Minimum length
     * Minimum number of lowercase characters
