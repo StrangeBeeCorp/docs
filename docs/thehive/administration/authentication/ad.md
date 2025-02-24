@@ -1,6 +1,6 @@
 # How to Configure an Active Directory Authentication Provider
 
-This topic provides step-by-step instructions for configuring an Active Directory authentication provider in TheHive.
+This topic provides step-by-step instructions for configuring an Active Directory (AD) authentication provider in TheHive.
 
 {!includes/license-required-authentication.md!}
 

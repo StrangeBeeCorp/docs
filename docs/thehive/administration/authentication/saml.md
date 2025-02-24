@@ -1,6 +1,6 @@
 # How to Configure a SAML Authentication Provider
 
-This topic provides step-by-step instructions for configuring a SAML authentication provider in TheHive.
+This topic provides step-by-step instructions for configuring a Security Assertion Markup Language (SAML) authentication provider in TheHive.
 
 {!includes/license-required-authentication.md!}
 
