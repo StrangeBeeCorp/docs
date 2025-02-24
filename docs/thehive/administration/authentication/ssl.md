@@ -1,6 +1,6 @@
 # How to Configure SSL
 
-This topic provides step-by-step instructions for configuring SSL in TheHive for [AD](ad.md),[LDAP](ldap.md), and [OAuth 2.0](oauth2.md) authentication providers.
+This topic provides step-by-step instructions for configuring Secure Sockets Layer (SSL) in TheHive for [AD](ad.md), [LDAP](ldap.md), and [OAuth 2.0](oauth2.md) authentication providers.
 
 This guide provides configuration instructions for different environments:
 
@@ -13,7 +13,7 @@ This guide provides configuration instructions for different environments:
 
     Open the `/etc/default/thehive` file and uncomment the `JAVA_OPTS` variable. 
     
-    Set the path to your Java keyStore (JKS) file:
+    Set the path to your Java KeyStore (JKS) file:
 
     ``` bash
     JAVA_OPTS="-Djavax.net.ssl.trustStore=</path/to/your-jks-file>.jks -Djavax.net.ssl.trustStorePassword=<your-keystore-password>"
@@ -27,9 +27,9 @@ This guide provides configuration instructions for different environments:
 
 ## Docker environment
 
-1. Mount the Java keyStore (JKS) inside the container:
+1. Mount the Java KeyStore (JKS) inside the container:
 
-    Make sure your keystore is accessible from within the Docker container by mounting it as a volume:
+    Make sure your KeyStore is accessible from within the Docker container by mounting it as a volume:
 
     ``` bash
     docker run -d \
@@ -40,9 +40,9 @@ This guide provides configuration instructions for different environments:
 
 2. Restart TheHive Docker container:
 
-     ``` bash
+    ``` bash
     docker restart <your-thehive-container>
-     ```
+    ```
 
 ## Next steps
 

@@ -16,13 +16,23 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/authentication-tab-go-to.md!}
+
+    ---
 
 3. Select **SAML authentication** in the **Authentication providers** section.
 
+    ---
+
 4. In the **SAML authentication** drawer, turn on the **Enable SAML** toggle.
 
+    ---
+
 5. Select **Add a provider** or select :fontawesome-solid-plus:.
+
+    ---
 
 6. Enter the following information:
 

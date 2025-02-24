@@ -9,32 +9,46 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 ## Procedure
 
 !!! info "Prerequisite"
-    Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
+    Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
 
-    User data is synchronized periodically:
-    - New LDAP users are automatically created in TheHive.
-    - Removed users are disabled.
-    - Organization membership and user profiles are assigned based on LDAP group membership.
+    User data is synchronized periodically:  
+    - New LDAP users are automatically created in TheHive.  
+    - Removed users are disabled.  
+    - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/authentication-tab-go-to.md!}
+
+    ---
 
 3. Select **Directories authentication** in the **Authentication providers** section.
 
+    ---
+
 4. In the **Directories authentication** drawer, turn on the **Enable directory** toggle.
 
+    ---
+
 5. Select **ldap** from the dropdown list.
+
+    ---
 
 6. Enter the servers host name or IP address.
 
     Example: *ldap.company.com*
 
+    ---
+
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
-  For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+
+    ---
 
 8. Enter the following information:
 
@@ -59,6 +73,8 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
     The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
 
     Example: *(&(uid={0})(objectClass=inetOrgPerson))*
+
+    ---
 
 9. Select **Confirm**.
 

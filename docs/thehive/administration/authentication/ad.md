@@ -9,24 +9,34 @@ This topic provides step-by-step instructions for configuring an Active Director
 ## Procedure
 
 !!! info "Prerequisite"
-    Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
+    Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
 
-    User data is synchronized periodically:
-    - New LDAP users are automatically created in TheHive.
-    - Removed users are disabled.
-    - Organization membership and user profiles are assigned based on LDAP group membership.
+    User data is synchronized periodically:  
+    - New LDAP users are automatically created in TheHive.  
+    - Removed users are disabled.  
+    - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/authentication-tab-go-to.md!}
+
+    ---
 
 3. Select **Directories authentication** in the **Authentication providers** section.
 
+    ---
+
 4. In the **Directories authentication** drawer, turn on the **Enable directory** toggle.
 
+    ---
+
 5. Select **ad** from the dropdown list.
+
+    ---
 
 6. Enter the following information:
 
@@ -46,11 +56,15 @@ This topic provides step-by-step instructions for configuring an Active Director
 
     Example: *domain.local*
 
+    ---
+
 7. To secure communication between TheHive and the domain controllers using Secure Sockets Layer (SSL) encryption, turn on the **Use SSL** toggle.
 
     This encrypts authentication requests and responses, protecting sensitive data from interception during transmission.
 
     For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+
+    ---
 
 8. Select **Confirm**.
 

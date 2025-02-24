@@ -8,7 +8,11 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/authentication-tab-go-to.md!}
+
+    ---
 
 3. Enter the values for each session setting:
 
@@ -27,6 +31,8 @@ This topic provides step-by-step instructions for configuring authentication in 
     **Inactivity warning time**
 
     The amount of time remaining before automatic sign-out due to inactivity when you receive a warning. This must be equal to or less than the inactivity autologout time.
+
+    ---
 
 4. Turn the toggles on or off for advanced settings based on your preferences:
 
@@ -50,6 +56,8 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     By default, logins use email addresses. This feature lets users sign in without specifying the email domain. Instead of entering *user@example.com*, they only need to enter *user*.
 
+    ---
+
 5. Select the authentication providers you want to configure.
 
     !!! note "Paid licence required"
@@ -64,12 +72,12 @@ This topic provides step-by-step instructions for configuring authentication in 
     **Directories authentication**
 
     !!! info "Prerequisite"
-        Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
+        Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
     
-        User data is synchronized periodically:
-        - New LDAP users are automatically created in TheHive.
-        - Removed users are disabled.
-        - Organization membership and user profiles are assigned based on LDAP group membership.
+        User data is synchronized periodically:  
+        - New LDAP users are automatically created in TheHive.  
+        - Removed users are disabled.  
+        - Organization membership and user profiles are assigned based on LDAP group membership.  
     
         The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
 
@@ -88,6 +96,8 @@ This topic provides step-by-step instructions for configuring authentication in 
     Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
 
     For more information, see the [Configure a SAML Authentication Provider](saml.md) topic.
+
+    ---
 
 6. If you enabled multiple providers, adjust the priority order using the arrows.
     
