@@ -1,28 +1,28 @@
 # Deploy Cortex on Kubernetes
 
-Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup supports high availability and simplifies the management of large workloads.
+Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup simplifies the management of large workloads.
 
 This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster.
 
 You will learn how to:
 
-* [Configure a shared filesystem](#configure-a-shared-filesystem) to enable Cortex and its jobs to exchange data by allowing different pods to share input files, store job results, and ensure consistent data access across the Kubernetes cluster
+* [Configure a shared filesystem](#configure-a-shared-filesystem) to enable Cortex and its jobs to exchange data by allowing different pods to share input files, store job results, while ensuring consistent and reliable data access across the Kubernetes cluster
 
-* [Set up a Cortex service account (SA)](#set-up-a-cortex-service-account) with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders
+* [Set up a Kubernetes service account (SA)](#set-up-a-kubernetes-service-account) with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders
 
 ## Configure a shared filesystem
 
 !!! warning "Configuration errors"
     Improperly configured shared filesystems can cause errors when running jobs with Cortex.
 
-When deploying Cortex on Kubernetes, analyzers and responders run on separate pods. A shared filesystem allows these jobs to share input data, store and retrieve results, ensure consistency across pods, and enable concurrent access.
+When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. A shared filesystem allows these jobs to share input data, store and retrieve results, ensure consistency across pods, and enable concurrent access.
 
 Kubernetes supports several methods for sharing filesystems between pods, including:
 
 * [PersistentVolume (PV) using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)
 * Dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
 
-This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](https://aws.amazon.com/fr/efs/).
+This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](https://aws.amazon.com/efs/).
 
 ### 1. Ensure all users can access files on the shared filesystem
 
@@ -48,7 +48,7 @@ To define a PV for your NFS server:
 
 2. Create a PersistentVolume manifest.
 
-    This manifest connects Kubernetes to your NFS server:
+    This manifest indicates how pods should connect to your NFS server:
 
     ```yaml
     apiVersion: v1
@@ -70,7 +70,7 @@ To define a PV for your NFS server:
 
 ### 3. Create a PersistentVolumeClaim
 
-A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV, specifies the required storage, and defines how to access it.
+A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV or dynamically creates one, specifying the required storage capacity.
 
 This manifest references the previously defined PV:
 
@@ -167,7 +167,7 @@ parameters:
   uid: 1001 # User ID to set file permissions
   gid: 1001 # Group ID to set file permissions
   ensureUniqueDirectory: "false" # Set to false to allow shared folder access between Cortex and job containers
-  subPathPattern: "${.PVC.namespace}/${.PVC.name}" # Optional subfolder structure for PVCs
+  subPathPattern: "${.PVC.namespace}/${.PVC.name}" # Optional subfolder structure inside the NFS filesystem
 ```
 
 #### 2. Define a PV using the EFS StorageClass
@@ -206,10 +206,10 @@ spec:
   # (...)
 ```
 
-## Set up a Cortex service account
+## Set up a Kubernetes service account
 
 !!! warning "Service account configuration required"
-    If you don't configure the Cortex service account properly, it won't be able to create Kubernetes jobs to run analyzers or responders.
+    If you don't configure the Kubernetes service account properly, it won't be able to create Kubernetes jobs to run analyzers or responders.
 
 In Kubernetes, a service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster.
 
