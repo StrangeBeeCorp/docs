@@ -18,42 +18,95 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     **Client ID**
 
+    The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. It is used to authenticate TheHive with the OAuth server during the authorization process.
+
     **Client secret**
+
+    A confidential string issued by the OAuth 2.0 provider, used along with the client ID to authenticate TheHive securely.
 
     **TheHive redirect URL**
 
+    The URL where the OAuth 2.0 server redirects users after authentication.
+    
+    Format: https://[your-hive-domain]/api/ssoLogin
+
     **Grant type**
+
+    Specifies the OAuth 2.0 authorization flow used for authentication. 
+    
+    Common types include:
+
+    * Authorization code (recommended for server-side apps)
+    * Client credentials (used for machine-to-machine authentication)
+    * Implicit (used for browser-based apps, though less secure)
 
     **Authorization URL**
 
+    The endpoint of the OAuth 2.0 provider where users are redirected to authenticate and authorize access.
+
     **Prefix of the authorization header**
+
+    Defines the type of token being passed in the authorization header, typically:
+
+    * Bearer (most common)
+    * Basic (used for basic authentication)
 
     **Token URL**
 
+    The endpoint used by TheHive to exchange the authorization code for an access token.
+
     **User information URL**
+
+    The endpoint that TheHive calls using the access token to retrieve user details (such as ID, email, or name).
 
     **List of scope**
 
-    ****
+    Specifies the access permissions that TheHive requests from the OAuth 2.0 server. 
+    
+    Examples include:
 
-## Next steps
+    * openid – Access to basic user information
+    * email – Access to the user’s email address
+    * profile – Access to profile information
 
+    **Field that contains the id of the user in user info**
 
+    The specific field in the user information response that holds the user's unique identifier. This is used by TheHive to map authenticated users.
 
-| Parameter                                           | Description                                                   |
-|-----------------------------------------------------|---------------------------------------------------------------|
-| Client ID                                           | Client ID in the OAuth2 server                                |
-| Client Secret                                       | Client Secret in the OAuth2 server                            |
-| TheHive Redirect URL                                | The URL of TheHive OAuth2 page (`https://xxx/api/ssoLogin`)   |
-| Authorization URL                                   | The URL of the OAuth2 server                                  |
-| Token URL                                           | The Token URL of the OAuth2 server                            |
-| User Information URL                                | The URL to get user information in the OAuth2 server          |
-| List of Scope                                       | List of scopes                                                |
-| Field that contains the ID of the user in user info | The field that contains the ID of the user in user info       |
+6. Turn on the **Enable user auto creation** to automatically create a user account in TheHive when a new user successfully authenticates through the OAuth 2.0 provider.
 
-&nbsp;
+    Then enter the following information:
 
-### Examples
+    **Field that contains the name of the user in user info**
+
+    **Field that contains the name of the organization in user info**
+
+    **Default organization used to create TheHive user**
+
+    **Default profile used to create TheHive user**
+
+    Turn on the **Allow admin user auto creation** to automatically assign administrative privileges to newly created users upon successful authentication.
+
+7. Select the proxy settings you want to apply:
+
+    * Default configuration
+    * Enabled: Enter:
+        * The type of protocol, either http or https
+        * The IP address or domain name of the proxy server
+        * The port number used by the proxy server
+    * Disabled
+
+8. Add a certificate.
+
+    No custom certificate authorities are allowed, so only certificates from trusted, predefined authorities will be accepted for secure connections.
+
+    You can turn off the **Do not check certificate authority** toggle to bypass certificate validation, but this is not recommended as it may compromise connection security.
+
+9. Turn on the **Disable hostname verification** toggle to bypass the verification of the server's hostname against the certificate.
+
+10. Select **Confirm**.
+
+## Examples
 
 !!! Example ""
 
@@ -83,7 +136,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | List of scope                                       | `["openid", "email"]`            |
         | Field that contains the id of the user in user info | "email"                          |
 
-    === "Github"
+    === "GitHub"
 
         | Parameter                                           | Value                                       |
         |-----------------------------------------------------|---------------------------------------------|
@@ -96,9 +149,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | List of scope                                       | `["user"]`                                  |
         | Field that contains the id of the user in user info | "email"                                     |
         
-        !!! Note
-            - `CLIENT_ID` and `CLIENT_SECRET` are created in the _OAuth Apps_ section at [https://github.com/settings/developers](https://github.com/settings/developers).
-            - this configuration requires that users set the _Public email_ in their Public Profile on [https://github.com/settings/profile](https://github.com/settings/profile).
+        !!! note "GitHub configuration"
+            - Generate the `CLIENT_ID` and `CLIENT_SECRET` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers).
+            - Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile) for this configuration to work correctly.
 
     === "Microsoft 365" 
 
@@ -112,10 +165,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | User information URL                                | https://graph.microsoft.com/v1.0/me                            |
         | List of scope                                       | `["User.Read"]`                                                |
         | Field that contains the id of the user in user info | "mail"                                                         |
-        
 
-        !!! Note
-            To create `CLIENT_ID`, `CLIENT_SECRET` and `TENANT`, register a new app at [https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
+        !!! note "Microsoft configuration"
+            To generate the `CLIENT_ID`, `CLIENT_SECRET` and `TENANT`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
 
     === "Google" 
 
@@ -130,23 +182,11 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | List of scope                                       | `["email", "profile", "openid"]`                 |
         | Field that contains the id of the user in user info | "email"                                          |
         
-        !!! Note
-            - `CLIENT_ID` and `CLIENT_SECRET` are created in the `_APIs & Services_ > _Credentials_` section of the [GCP Console](https://console.cloud.google.com/apis/credentials)
-            - Instructions on how to create Oauth2 credentials at [https://support.google.com/cloud/answer/6158849](https://support.google.com/cloud/answer/6158849)
-            - For the latest reference for Google auth URLs please check Google's [.well-known/openid-configuration](https://accounts.google.com/.well-known/openid-configuration)
+        !!! note "Google configuration"
+            - Generate the `CLIENT_ID` and `CLIENT_SECRET` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
+            - Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
+            - Refer to [Google's OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
 
----
+## Next steps
 
-## User Autocreation
-
-To enable users to log in without prior manual creation, you can activate autocreation and specify the following options:
-
-* Field that contains the name of the user in user info
-* Field that contains the name of the organization in user info
-* Default organization applied to new users
-* Default profile applied to new users
-
-
-![](../../images/administration-guides/authentication/authentication-oauth2-2.png)
-
-&nbsp;
+* [How to Configure Authentication](configure-authentication.md)

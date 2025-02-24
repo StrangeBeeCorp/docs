@@ -28,9 +28,13 @@ This topic provides step-by-step instructions for configuring Active Directory a
 
     The name of the Windows domain that manages user accounts and permissions. This is typically the NetBIOS name used within the Windows network.
 
+    Example: *DOMAIN*
+
     **The DNS domain name**
 
     The fully qualified domain name (FQDN) associated with the Windows domain (e.g., *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
+
+    Format: *domain.local*
 
 7. To secure communication between TheHive and the domain controllers using Secure Sockets Layer (SSL) encryption, turn on the **Use SSL** toggle.
 

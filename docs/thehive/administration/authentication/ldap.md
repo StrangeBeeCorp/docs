@@ -23,6 +23,8 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
 6. Enter the servers hostname or IP adress.
 
+  Format: *ldap.company.com*
+
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
 8. Enter the following information:
@@ -30,6 +32,8 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
   **DN of the service account**
 
   The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.
+
+  Example: *cn=thehive,ou=users,dc=company,dc=com*
 
   **Bind password**
 
@@ -39,9 +43,13 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
   The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.
 
+  Example: *ou=users,dc=company,dc=com*
+
   **Filter used to search users**
 
   The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
+
+  Example: *(&(uid={0})(objectClass=inetOrgPerson))*
 
 9. Select **Confirm**.
 
