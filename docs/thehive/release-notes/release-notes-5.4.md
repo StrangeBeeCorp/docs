@@ -33,6 +33,7 @@
 * Fixed incorrect counter widget behavior when used with the `closeDate` field.
 * Fixed an issue preventing scrolling in the case template selection menu when creating a case from templates.
 * Added more detailed error messages for issues related to attached file storage.
+* Fixed an issue with Email Intake synchronization when TheHive is configured in a cluster environment.
 
 ### Improvements
 
