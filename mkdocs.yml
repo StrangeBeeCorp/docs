@@ -281,6 +281,7 @@ nav:
             - 'LDAP': thehive/administration/authentication/ldap.md
             - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
             - 'SAML': thehive/administration/authentication/saml.md
+          - 'Configure SSL': thehive/administration/authentication/ssl.md
           - 'SMTP Configuration': thehive/administration/smtp.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
