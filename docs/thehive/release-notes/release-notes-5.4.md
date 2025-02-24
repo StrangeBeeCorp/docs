@@ -35,11 +35,6 @@
 * Added more detailed error messages for issues related to attached file storage.
 * Fixed an issue with Email Intake synchronization when TheHive is configured in a cluster environment.
 
-### Improvements
-
-#### Automatically assign unassigned alerts when merging into a case
-Unassigned alerts are now automatically assigned to the user merging them, whether into a new or existing case.
-
 ## 5.4.7 - 16th of January 2025
 
 ### Fixes
