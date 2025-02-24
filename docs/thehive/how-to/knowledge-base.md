@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# Knwoledge Base
+# Knowledge Base
 
 TheHive has a knowledge base module that allow writing Markdown pages at two levels:
 
