@@ -76,7 +76,6 @@ plugins:
             'thehive/administration/organisation-links.md': 'thehive/administration/organizations/link-an-organization.md'
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/analyst-corner/organizations.md': 'thehive/administration/organizations/about-organizations.md'
-            'thehive/user-guides/organisation/attachments.md': 'thehive/user-guides/organization/attachments.md'
             'thehive/user-guides/organisation/accounts.md': 'thehive/user-guides/organization/accounts.md'
             'thehive/user-guides/organisation/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md'
