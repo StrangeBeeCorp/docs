@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
 {!includes/license-required-authentication.md!}
 
+!!! warning "LDAP servers required"
+        Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
+
 {!includes/access-authentication.md!}
 
 ## Procedure
@@ -19,8 +22,6 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 5. Select **ldap** from the dropdown list.
 
 6. Enter the servers hostname or IP adress.
-
-  You must [configure LDAP servers](../../administration/ldap-server.md) in TheHive first.
 
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
@@ -46,10 +47,4 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 
 ## Next steps
 
-
-
-!!! Tip "Using SSL with LDAP"
-    To setup a custom Certificate Authority in TheHive, please refer to [this guide](../../configuration/ssl.md#use-custom-certificate-authorities).
-
-## Authenticating with LDAP
-Users able to authenticate should already have an account created in TheHive local database.
+* [How to Configure Authentication](configure-authentication.md)

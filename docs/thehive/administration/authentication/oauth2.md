@@ -1,16 +1,44 @@
-# OAuth2 / OpenID-Connect
+# How to Configure OAuth 2.0 Authentication
 
-## Introduction
+This topic provides step-by-step instructions for configuring OAuth 2.0 authentication in TheHive.
 
-OAuth2 and OpenID-Connect are widely used authentication protocols that enable secure and seamless user authentication. This article provides instructions on configuring TheHive to authenticate users using an external OAuth2 authentication server. By following this guide, you will be able to integrate various OAuth2 providers, such as Keycloak, Okta, Github, Microsoft 365, and Google, with TheHive.
+By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—to enable secure and seamless authentication in TheHive.
 
-![OAuth2 Configuration Page](../../images/administration-guides/authentication/authentication-oauth2-1.png)
+## Procedure
 
----
+1. {!includes/platform-management-view-go-to.md!}
 
-## Configuration
+2. {!includes/authentication-tab-go-to.md!}
 
-To authenticate users using an external OAuth2 server, you need to specify the following configuration parameters:
+3. Select **OAuth 2 authentication** in the **Authentication providers** section.
+
+4. In the **OAuth 2 authentication** drawer, turn on the **Enable OAuth 2 provider** toggle.
+
+5. Enter the following information:
+
+    **Client ID**
+
+    **Client secret**
+
+    **TheHive redirect URL**
+
+    **Grant type**
+
+    **Authorization URL**
+
+    **Prefix of the authorization header**
+
+    **Token URL**
+
+    **User information URL**
+
+    **List of scope**
+
+    ****
+
+## Next steps
+
+
 
 | Parameter                                           | Description                                                   |
 |-----------------------------------------------------|---------------------------------------------------------------|
