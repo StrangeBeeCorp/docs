@@ -81,13 +81,10 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     Then enter the following information:
 
-    **Field that contains the name of the user in user info**
-
-    **Field that contains the name of the organization in user info**
-
-    **Default organization used to create TheHive user**
-
-    **Default profile used to create TheHive user**
+    * Field that contains the name of the user in user info
+    * Field that contains the name of the organization in user info
+    * Default organization used to create TheHive user
+    * Default profile used to create TheHive user
 
     Turn on the **Allow admin user auto creation** to automatically assign administrative privileges to newly created users upon successful authentication.
 

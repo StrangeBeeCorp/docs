@@ -43,7 +43,7 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
         ``` xml
         <?xml version="1.0" encoding="UTF-8"?>
-        <md: EntityDescriptor entityID="http://www.okta.com/exknhwsd2uAGUSK66696"                   xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+        <md: EntityDescriptor entityID="http://www.okta.com/exknhwsd2uAGUSK66696"               xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
             <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
                 <md:KeyDescriptor use="signing">
                     <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
