@@ -1,5 +1,4 @@
-# Installation & configuration guides
-
+# Installation and Configuration Guides
 
 ## Overview
 Cortex relies on Elasticsearch to store its data. A basic setup to install Elasticsearch, then Cortex on a standalone and dedicated server (physical or virtual).
@@ -9,7 +8,6 @@ Hardware requirements depends on the usage of the system. We recommend starting 
 
   * :fontawesome-solid-microchip: 8 vCPU
   * :fontawesome-solid-memory: 16 GB of RAM
-
 
 ## Operating systems
 Cortex has been tested and is supported on the following operating systems: 
@@ -40,10 +38,9 @@ Cortex has been tested and is supported on the following operating systems:
     3. Install Cortex and all its dependencies to run Analyzers & Responders as Docker Iiages
     4. Install Cortex and all its dependencies to run Analyzers & Responders on the host (Debian and Ubuntu **ONLY**)
 
-
-
 For each release, DEB, RPM and ZIP binary packages are built and provided.
 
+For deploying Cortex on a Kubernetes cluster, refer to our detailed [Kubernetes deployment guide](deploy-cortex-on-kubernetes.md).
 
 The [following Guide](step-by-step-guide.md) let you **prepare**, **install** and **configure** Cortex and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages. 
 
