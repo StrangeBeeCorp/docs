@@ -120,7 +120,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Client ID                                           | `CLIENT_ID`                                                         |
         | Client secret                                       | `CLIENT_SECRET`                                                     |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                |
+        | Grant type                                          | `authorization_code`                                  |
         | Authorization URL                                   | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth     |
+        | Prefix of the authorization header                  | `Bearer`                                |
         | Token URL                                           | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token    |
         | User information URL                                | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo |
         | List of scope                                       | `["openid", "email"]`                                               |
@@ -133,7 +135,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Client ID                                           | `CLIENT_ID`                      |
         | Client secret                                       | `CLIENT_SECRET`                  |
         | TheHive redirect URL                                | http://THEHIVE_URL/api/ssoLogin  |
+        | Grant type                                          | `authorization_code`                                  |
         | Authorization URL                                   | https://OKTA/oauth2/v1/authorize |
+        | Prefix of the authorization header                  | `Bearer`                                |
         | Token URL                                           | http://OKTA/oauth2/v1/token      |
         | User information URL                                | http://OKTA/oauth2/v1/userinfo   |
         | List of scope                                       | `["openid", "email"]`            |
@@ -146,7 +150,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Client ID                                           | `CLIENT_ID`                                 |
         | Client secret                                       | `CLIENT_SECRET`                             |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin            |
+        | Grant type                                          | `authorization_code`                                  |
         | Authorization URL                                   | https://github.com/login/oauth/authorize    |
+        | Prefix of the authorization header                  | `Bearer`                                |
         | Token URL                                           | https://github.com/login/oauth/access_token |
         | User information URL                                | https://api.github.com/user                 |
         | List of scope                                       | `["user"]`                                  |
@@ -163,7 +169,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Client ID                                           | `CLIENT_ID`                                                    |
         | Client secret                                       | `CLIENT_SECRET`                                                |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                               |
+        | Grant type                                          | `authorization_code`                                  |
         | Authorization URL                                   | https://login.microsoftonline.com/TENANT/oauth2/v2.0/authorize |
+        | Prefix of the authorization header                  | `Bearer`                                |
         | Token URL                                           | https://login.microsoftonline.com/TENANT/oauth2/v2.0/token     |
         | User information URL                                | https://graph.microsoft.com/v1.0/me                            |
         | List of scope                                       | `["User.Read"]`                                                |
@@ -179,7 +187,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Client ID                                           | `CLIENT_ID`                                      |
         | Client secret                                       | `CLIENT_SECRET`                                  |
         | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                 |
+        | Grant type                                          | `authorization_code`                                  |
         | Authorization URL                                   | https://accounts.google.com/o/oauth2/v2/auth     |
+        | Prefix of the authorization header                  | `Bearer`                                |
         | Token URL                                           | https://oauth2.googleapis.com/token              |
         | User information URL                                | https://openidconnect.googleapis.com/v1/userinfo |
         | List of scope                                       | `["email", "profile", "openid"]`                 |

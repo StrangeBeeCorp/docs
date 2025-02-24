@@ -1,6 +1,6 @@
 # How to Configure SSL
 
-This topic provides step-by-step instructions for configuring SSL in TheHive for [AD](ad.md),[LDAP](ldap.md), and [OAuth 2.0](oauth2.md) authentications.
+This topic provides step-by-step instructions for configuring SSL in TheHive for [AD](ad.md),[LDAP](ldap.md), and [OAuth 2.0](oauth2.md) authentication providers.
 
 This guide provides configuration instructions for different environments:
 
@@ -13,10 +13,10 @@ This guide provides configuration instructions for different environments:
 
     Open the `/etc/default/thehive` file and uncomment the `JAVA_OPTS` variable. 
     
-    Set the path to your Java KeyStore (JKS) file:
+    Set the path to your Java keyStore (JKS) file:
 
     ``` bash
-    JAVA_OPTS="-Djavax.net.ssl.trustStore=</path/to/your-certificate>.jks -Djavax.net.ssl.trustStorePassword=<your-password>"
+    JAVA_OPTS="-Djavax.net.ssl.trustStore=</path/to/your-jks-file>.jks -Djavax.net.ssl.trustStorePassword=<your-keystore-password>"
     ```
 
 2. Restart TheHive service:
@@ -27,13 +27,13 @@ This guide provides configuration instructions for different environments:
 
 ## Docker environment
 
-1. Mount the Java KeyStore (JKS) file inside the container:
+1. Mount the Java keyStore (JKS) inside the container:
 
-    When running TheHive in Docker, ensure the JKS file is accessible from within the container by mounting the volume:
+    Make sure your keystore is accessible from within the Docker container by mounting it as a volume:
 
     ``` bash
     docker run -d \
-      -e "JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/your_certificate.jks -Djavax.net.ssl.trustStorePassword=<yourPassword>" \
+      -e "JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/<your-jks-file>.jks -Djavax.net.ssl.trustStorePassword=<your-keystore-password>" \
       -v </host/path/to/jks>:</container/path> \
       your-thehive-image
     ```
