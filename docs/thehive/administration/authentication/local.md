@@ -1,22 +1,34 @@
-# Local account
+# How to Configure a Local Authentication Provider
 
-This is the default behaviour of TheHive. The applications store usernames and password in a local database.
+This topic provides step-by-step instructions for configuring a local authentication provider in TheHive.
 
-## Configuration
+This is the default behavior of TheHive. The application stores usernames and passwords in a local database managed by TheHive.
 
-![](../../images/administration-guides/authentication/authentication-local-1.png)
+{!includes/access-authentication.md!}
 
-By default, no policy is activated for local accounts. Nevertheless, a password policy and blocking settings can be adjusted:
+## Procedure
 
-* A number of failed attempts to authenticate before a user be temporay blocked
-* The related duration before unblock a user
+1. {!includes/platform-management-view-go-to.md!}
 
-### Password policy
-This options is disabled by default. When enabled following items can be configured: 
+2. {!includes/authentication-tab-go-to.md!}
 
-* Minimum lenght of passwords
-* Minimum number of lower cases characters included in the password
-* Minimum number of upper cases characters included in the password
-* Minimum number of digits included in the password
-* Minimum number of special characters included in the password
-* Allowing or disollowing the usage of usernames as passwords
+3. Select **Local authentication** in the **Authentication providers** section.
+
+4. In the **Local authentication** drawer, enter:
+
+    * The number of failed authentication attempts before temporarily blocking the user
+    * The duration for automatic user unblocking
+
+5. To define a password policy, enable the **Enabled password policy** toggle and enter the following password requirements:
+
+    * Minimum length
+    * Minimum number of lowercase characters
+    * Minimum number of uppercase characters
+    * Minimum number of digits
+    * Minimum number of special characters
+
+6. To prevent users from using their login as a password, enable the **Disallow using usernames as passwords** toggle.
+
+## Next steps
+
+* [How to Configure Authentication](configure-authentication.md)
