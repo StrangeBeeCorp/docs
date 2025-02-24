@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for configuring LDAP authenticatio
 {!includes/license-required-authentication.md!}
 
 !!! warning "LDAP servers required"
-        Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
+    Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
 
 {!includes/access-authentication.md!}
 
