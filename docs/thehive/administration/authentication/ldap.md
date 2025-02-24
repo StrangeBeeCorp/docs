@@ -4,12 +4,12 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
 {!includes/license-required-authentication.md!}
 
-!!! warning "LDAP servers required"
-    Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
-
 {!includes/access-authentication.md!}
 
 ## Procedure
+
+!!! info "Prerequisite"
+    Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
 
 1. {!includes/platform-management-view-go-to.md!}
 

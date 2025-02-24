@@ -63,8 +63,8 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **Directories authentication**
 
-    !!! warning "LDAP servers required"
-        Configuring LDAP means you must have [LDAP servers configured](../../administration/ldap-server.md) in TheHive.
+    !!! info "Prerequisite"
+        Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
 
     Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
 

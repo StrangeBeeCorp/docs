@@ -8,6 +8,9 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 ## Procedure
 
+!!! info "Prerequisite"
+    Users must have an existing account in TheHive's local database to authenticate successfully. To automate account creation, ensure that [LDAP servers](../../administration/ldap-server.md) are configured in TheHive.
+
 1. {!includes/platform-management-view-go-to.md!}
 
 2. {!includes/authentication-tab-go-to.md!}
