@@ -43,8 +43,11 @@ This topic provides step-by-step instructions for configuring an Active Director
 
     This encrypts authentication requests and responses, protecting sensitive data from interception during transmission.
 
+    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+
 8. Select **Confirm**.
 
 ## Next steps
 
 * [How to Configure Authentication](configure-authentication.md)
+* [Configure SSL](ssl.md)

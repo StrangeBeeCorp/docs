@@ -27,6 +27,8 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
+  For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+
 8. Enter the following information:
 
     **DN of the service account**
@@ -56,3 +58,4 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 ## Next steps
 
 * [How to Configure Authentication](configure-authentication.md)
+* [Configure SSL](ssl.md)

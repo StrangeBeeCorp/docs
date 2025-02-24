@@ -32,7 +32,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     The URL where the OAuth 2.0 server redirects users after authentication.
     
-    Format: *https://[your-hive-domain]/api/ssoLogin*
+    Format: *https://<your-hive-domain>/api/ssoLogin*
 
     **Grant type**
 
@@ -97,7 +97,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         * Enter the IP address or domain name of the proxy server
         * Enter the port number used by the proxy server
 
-8. Add a certificate.
+8. Add a certificate authority.
+
+    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
 
     Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
 
@@ -117,7 +119,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         |-----------------------------------------------------|---------------------------------------------------------------------|
         | Client ID                                           | `CLIENT_ID`                                                         |
         | Client secret                                       | `CLIENT_SECRET`                                                     |
-        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                    |
+        | TheHive redirect URL                                | https://THEHIVE_URL/api/ssoLogin                                |
         | Authorization URL                                   | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth     |
         | Token URL                                           | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token    |
         | User information URL                                | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo |
@@ -191,3 +193,4 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 ## Next steps
 
 * [How to Configure Authentication](configure-authentication.md)
+* [Configure SSL](ssl.md)
