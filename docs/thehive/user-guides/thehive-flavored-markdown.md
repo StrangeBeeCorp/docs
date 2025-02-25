@@ -1,8 +1,8 @@
-# How to Markdown: A Comprehensive Guide
+# TheHive-Flavored Markdown Syntax Reference
 
 Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explore the powerful features and capabilities of Markdown – a lightweight markup language that simplifies text formatting while retaining its readability. Whether you're new to Markdown or looking to enhance your existing knowledge, this guide will walk you through each feature step by step, providing you with practical examples and clear explanations.
 
-## Table of Contents
+## Table of contents
 
 1. [`Heading`](#heading)
 2. [`Horizontal Rules`](#horizontal-rules)
