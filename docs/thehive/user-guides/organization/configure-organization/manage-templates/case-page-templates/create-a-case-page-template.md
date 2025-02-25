@@ -19,10 +19,10 @@ To import an existing case template from another organization or TheHive instanc
 5. In the **Adding a page template** drawer, enter the following fields:
 
     **Title**  
-    The case page template title. It is used to identify the template in the API and serves as the default page title when [creating a page based on the template](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
+    The case page template title. It's used to identify the template in the API and serves as the default page title when [creating a page based on the template](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
 
     **Category**  
-    The default category the pages belongs to. Pages are visually grouped by category for easier navigation. If the category does not exist, it will be created automatically.
+    The default category the pages belongs to. Pages are visually grouped by category for easier navigation. If the category doesn't exist, it will be created automatically.
 
     **Content**  
     The default page content using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
