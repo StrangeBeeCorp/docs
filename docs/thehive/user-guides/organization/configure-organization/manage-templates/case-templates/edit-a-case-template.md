@@ -48,7 +48,7 @@ This topic provides step-by-step instructions for editing a [case template](abou
     **[Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more custom fields for cases, with or without predefined values.
     
-    **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    **[Pages](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md)**  
     A page template to document cases.
 
 7. Select **Confirm case template creation**.
