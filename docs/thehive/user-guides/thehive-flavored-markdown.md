@@ -11,12 +11,13 @@ TheHive uses a customized version of Markdown, known as TheHive-flavored Markdow
 1. [`Headings`](#headings)
 2. [`Horizontal rules`](#horizontal-rules)
 3. [`Emphasis`](#emphasis)
-4. [`Blockquotes`](#blockquotes)
-5. [`Lists`](#lists)
-6. [`Code`](#code)
-7. [`Tables`](#tables)
-8. [`Links`](#links)
-9. [`Images`](#images)
+4. [`Admonition blocks`](#admonition-blocks)
+5. [`Blockquotes`](#blockquotes)
+6. [`Lists`](#lists)
+7. [`Code`](#code)
+8. [`Tables`](#tables)
+9. [`Links`](#links)
+10. [`Images`](#images)
 
 ## Headings
 
@@ -70,6 +71,47 @@ ___
 ~~Strikethrough~~
 
 ++This is underlined text++
+
+## Admonition blocks
+
+!!! tip "Available since TheHive version 5.5"
+    Available since version 5.5, admonition blocks are used to highlight important information.
+
+### Syntax
+
+    ::: error
+    This block highlights critical information or errors that require immediate attention.
+    :::
+
+    ::: warning
+    This block alerts users to potential issues or important precautions to consider.
+    :::
+
+    ::: success
+    This block confirms that an action was completed successfully.
+    :::
+
+    ::: info
+    This block provides additional information or helpful tips.
+    :::
+
+### Rendering
+
+::: error
+This block highlights critical information or errors that require immediate attention.
+:::
+
+::: warning
+This block alerts users to potential issues or important precautions to consider.
+:::
+
+::: success
+This block confirms that an action was completed successfully.
+:::
+
+::: info
+This block provides additional information or helpful tips.
+:::
 
 ## Blockquotes
 
@@ -134,7 +176,7 @@ Start numbering with offset:
 
 ## Code
 
-#### Syntax
+### Syntax
 
     Inline `code` with `
 
@@ -151,7 +193,14 @@ Start numbering with offset:
     Sample code here...
     ```
 
-#### Rendering
+    !!! tip "Code block with syntax highlighting"
+        Since version 5.5, you can enable syntax highlighting by specifying the language name after the opening backticks.
+
+        ``` python
+        print("Hello, bees!")
+        ```
+
+### Rendering
 
 Inline `code` with `
 
@@ -201,6 +250,9 @@ Sample code here...
 | data   | Path to data files to supply the data that will be passed into templates. |
 | engine | Engine to be used for processing templates. Handlebars is the default. |
 | ext    | Extension to be used for dest files. |
+
+!!! tip "Breaking lines in tables"
+    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>` or `<br>` HTML tags.
 
 ## Links
 
