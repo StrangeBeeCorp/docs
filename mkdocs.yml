@@ -298,12 +298,14 @@ nav:
         # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
-      - 'Knowledge Base': 
+      - 'TheHive-Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/about-knowledge-base.md
-          - 'Add a Page': thehive/user-guides/add-a-knowledge-base-page.md
+          - 'Create a Page': thehive/user-guides/create-a-knowledge-base-page.md
           - 'Edit a Page': thehive/user-guides/edit-a-knowledge-base-page.md
           - 'Delete a Page': thehive/user-guides/delete-a-knowledge-base-page.md
           - 'Share a Page': thehive/user-guides/share-a-knowledge-base-page.md
+          - 'View a Page': thehive/user-guides/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
           - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
           - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md

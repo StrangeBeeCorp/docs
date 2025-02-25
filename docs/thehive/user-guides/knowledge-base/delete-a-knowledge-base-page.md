@@ -1,6 +1,6 @@
 # How to Delete a Knowledge Base Page
 
-This topic provides step-by-step instructions for deleting a Knowledge Base page.
+This topic provides step-by-step instructions for deleting a [Knowledge Base](about-knowledge-base.md) page.
 
 Instructions vary depending on whether you want to delete a page at the:
 * [Organization level](#delete-a-page-at-the-organization-level)
@@ -20,7 +20,7 @@ Instructions vary depending on whether you want to delete a page at the:
 
 ## Delete a page at the case level
 
-1. [Find the case](../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to edit a page.
+1. [Find the case](../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to delete a page.
 
 2. {!includes/pages-tab-go-to.md!}
 
@@ -35,3 +35,4 @@ Instructions vary depending on whether you want to delete a page at the:
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)
 * [Share a Knowledge Base Page](share-a-knowledge-base-page.md)
+* [View a Knowledge Base Page](view-a-knowledge-base-page.md)

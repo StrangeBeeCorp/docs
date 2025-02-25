@@ -1,11 +1,15 @@
 # TheHive-Flavored Markdown Syntax Reference
 
-Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explore the powerful features and capabilities of Markdown – a lightweight markup language that simplifies text formatting while retaining its readability. Whether you're new to Markdown or looking to enhance your existing knowledge, this guide will walk you through each feature step by step, providing you with practical examples and clear explanations.
+This topic provides a reference for TheHive-flavored Markdown syntax.
+
+Markdown is a lightweight markup language designed to format plain text using simple syntax. It allows users to create structured documents, including headings, lists, links, and code blocks, without relying on complex formatting tools.
+
+TheHive uses a customized version of Markdown, known as TheHive-flavored Markdown. This tailored syntax extends the standard Markdown features to support additional formatting options and functionalities specific to TheHive.
 
 ## Table of contents
 
-1. [`Heading`](#heading)
-2. [`Horizontal Rules`](#horizontal-rules)
+1. [`Headings`](#headings)
+2. [`Horizontal rules`](#horizontal-rules)
 3. [`Emphasis`](#emphasis)
 4. [`Blockquotes`](#blockquotes)
 5. [`Lists`](#lists)
@@ -14,11 +18,9 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
 8. [`Links`](#links)
 9. [`Images`](#images)
 
+## Headings
 
----
-##Heading
-
-###Code
+### Syntax
 
     # h1 Heading
     ## h2 Heading
@@ -27,8 +29,7 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
     ##### h5 Heading
     ###### h6 Heading
 
-
-###Example
+### Rendering
 
 # h1 Heading
 ## h2 Heading
@@ -37,28 +38,30 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
 ##### h5 Heading
 ###### h6 Heading
 
----
-# Horizontal Rules
+## Horizontal rules
 
-###Code
-
+### Syntax
 
     --- or *** or ___
 
-###Example
+### Rendering
 
 ---
 
----
+***
+
+___
+
 ## Emphasis
 
-###Code
+### Syntax
 
     **This is bold text** or __This is bold text__    
     *This is italic text* or _This is italic text_    
     ~~Strikethrough~~
+    ++This is underlined text++
 
-###Example
+### Rendering
 
 **This is bold text**
 
@@ -66,27 +69,27 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
 
 ~~Strikethrough~~
 
----
+++This is underlined text++
+
 ## Blockquotes
 
-###Code
+### Syntax
 
     > Blockquotes can also be nested...
     >> ...by using additional greater-than signs right next to each other...
     > > > ...or with spaces between arrows.
 
-###Example
+### Rendering
 
 > Blockquotes can also be nested...
 >> ...by using additional greater-than signs right next to each other...
 > > > ...or with spaces between arrows.
 
----
 ## Lists
 
-###Unordered
+### Unordered
 
-####Code
+#### Syntax
 
     + Create a list by starting a line with `+`, `-`, or `*`
     + Sub-lists are made by indenting 2 spaces:
@@ -96,7 +99,7 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
         - Nulla volutpat aliquam velit
     + Very easy!
 
-####Example
+#### Rendering
 
 + Create a list by starting a line with `+`, `-`, or `*`
 + Sub-lists are made by indenting 2 spaces:
@@ -106,15 +109,16 @@ Welcome to the "How to Markdown" guide! In this comprehensive guide, we'll explo
     - Nulla volutpat aliquam velit
 + Very easy!
 
-###Ordered
+### Ordered
 
-####Code
+#### Syntax
 
     1. Lorem ipsum dolor sit amet
     2. Consectetur adipiscing elit
     3. Integer molestie lorem at massa
 
-####Example
+#### Rendering
+
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
@@ -128,38 +132,61 @@ Start numbering with offset:
 57. foo
 1. bar
 
----
 ## Code
 
-Inline `code` with `
+#### Syntax
 
-Indented code with tab
+    Inline `code` with `
+
+    Indented code with tab:
 
     // Some comments
     line 1 of code
     line 2 of code
     line 3 of code
 
+    Block code "fences" with ```:
 
+    ```
+    Sample code here...
+    ```
 
-Block code "fences" with ```
+#### Rendering
+
+Inline `code` with `
+
+ // Some comments
+    line 1 of code
+    line 2 of code
+    line 3 of code
 
 ```
-Sample text here...
+Sample code here...
 ```
 
----
 ## Tables
 
-###Code
+### Syntax
+
+#### Alignment on the left
 
     | Option | Description |
     | ------ | ----------- |
-    | data   | path to data files to supply the data that will be passed into templates. |
-    | engine | engine to be used for processing templates. Handlebars is the default. |
-    | ext    | extension to be used for dest files. |
+    | data   | Path to data files to supply the data that will be passed into templates. |
+    | engine | Engine to be used for processing templates. Handlebars is the default. |
+    | ext    | Extension to be used for dest files. |
 
-###Example
+#### Alignment on the right
+
+    | Option | Description |
+    | ------:| -----------:|
+    | data   | Path to data files to supply the data that will be passed into templates. |
+    | engine | Engine to be used for processing templates. Handlebars is the default. |
+    | ext    | Extension to be used for dest files. |
+
+### Rendering
+
+#### Alignment on the left
 
 | Option | Description |
 | ------ | ----------- |
@@ -167,60 +194,47 @@ Sample text here...
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
 
-
-###Right aligned columns
-
-####Code
-
-    | Option | Description |
-    | ------:| -----------:|
-    | data   | path to data files to supply the data that will be passed into templates. |
-    | engine | engine to be used for processing templates. Handlebars is the default. |
-    | ext    | extension to be used for dest files. |
-
-####Example
+#### Alignment on the right
 
 | Option | Description |
 | ------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| data   | Path to data files to supply the data that will be passed into templates. |
+| engine | Engine to be used for processing templates. Handlebars is the default. |
+| ext    | Extension to be used for dest files. |
 
-
----
 ## Links
 
-###Code
-    [link text](https://docs.strangebee.com/thehive/administration/organizations/)
-    [link with title](https://docs.strangebee.com/thehive/administration/organizations/ "title text!")
+### Syntax
 
-###Example
+    [Link text](https://docs.strangebee.com/thehive/overview/)
+    [Link with title](https://docs.strangebee.com/thehive/overview/ "title text!")
 
-[link text](https://docs.strangebee.com/thehive/administration/organizations/)
+### Rendering
 
-[link with title](https://docs.strangebee.com/thehive/administration/organizations/ "title text!")
+[Link text](https://docs.strangebee.com/thehive/overview/)
 
----
+[Link with title](https://docs.strangebee.com/thehive/overview/ "title text!")
+
 ## Images
 
-###Code
+### Syntax
 
-    ![TheHive](https://www.strangebee.com/images/logos/theHivePlatformBlock.svg)
-    ![Cortex](https://www.strangebee.com/images/logos/cortexPlatformBlock.svg "Cortex")
+    ![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization-view.png)
+    ![Cortex](https://docs.strangebee.com/cortex/user-guides/images/update.png "Cortex")
 
-    Like links, Images also have a footnote style syntax
+    Like links, images also have a footnote style syntax:
 
     ![Alt text][id]
 
     With a reference later in the document defining the URL location:
 
-    [id]: https://www.strangebee.com/images/logos/theHiveCloudPlatformBlock.svg  "TheHive Cloud Platform"
+    [id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
 
-###Example
+### Rendering
 
-![TheHive](https://www.strangebee.com/images/logos/theHivePlatformBlock.svg)
-![Cortex](https://www.strangebee.com/images/logos/cortexPlatformBlock.svg "Cortex")
+![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization-view.png)
+![Cortex](https://docs.strangebee.com/cortex/user-guides/images/update.png "Cortex")
 
 ![Alt text][id]
 
-[id]: https://www.strangebee.com/images/logos/theHiveCloudPlatformBlock.svg  "TheHive Cloud Platform"
+[id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"

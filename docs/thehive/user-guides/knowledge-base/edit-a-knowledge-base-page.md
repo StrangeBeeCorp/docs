@@ -1,6 +1,6 @@
 # How to Edit a Knowledge Base Page
 
-This topic provides step-by-step instructions for editing a Knowledge Base page.
+This topic provides step-by-step instructions for editing a [Knowledge Base](about-knowledge-base.md) page.
 
 Instructions vary depending on whether you want to edit a page at the:
 * [Organization level](#edit-a-page-at-the-organization-level)
@@ -41,3 +41,4 @@ Instructions vary depending on whether you want to edit a page at the:
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
 * [Share a Knowledge Base Page](share-a-knowledge-base-page.md)
+* [View a Knowledge Base Page](view-a-knowledge-base-page.md)
