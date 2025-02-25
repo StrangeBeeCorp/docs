@@ -47,7 +47,7 @@ To import an existing case template from another organization or TheHive instanc
     One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
     **Description \***  
-    A description for cases.
+    A description for cases using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
     
     **[Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tasks for cases.
@@ -55,7 +55,7 @@ To import an existing case template from another organization or TheHive instanc
     **[Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more custom fields for cases, with or without predefined values.
     
-    **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    **[Pages](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md)**  
     A page template to document cases.
 
 6. Select **Confirm case template creation**.

@@ -13,6 +13,8 @@ Text widget configuration includes:
 * A title for the text block
 * The content of the text block, with the option to include case variables
 
+Format your text block using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
+
 ## Image widget
 
 Add an image to your case report template.
