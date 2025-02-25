@@ -290,3 +290,7 @@ Sample code here...
 ![Alt text][id]
 
 [id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
+
+## Next steps
+
+* [About the Knowledge Base](../user-guides/knowledge-base/about-knowledge-base.md)

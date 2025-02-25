@@ -1,53 +1,31 @@
-# Define Page templates
+# About Case Page Templates
 
-This section contains the Page templates you prepare for your organization.
+Case page templates streamline page creation within cases in TheHive by automatically prefilling content.
 
-## List of Page Templates
+This topic provides an overview of case page template usage in TheHive.
 
-Access to the list by opening the *Organization* menu, then the *Templates* tab, and the *Pages* tab.
+## Benefits
 
+Use case page templates to:
 
-<figure markdown>
-  ![List of Page templates](/thehive/images/user-guides/organization/templates/organization-pages-templates.png){ width="450" }
-  <figcaption>List of Pages templates</figcaption>
-</figure>
+* Simplify page creation workflows within cases
+* Save time when creating new pages in cases
+* Maintain consistency in page formatting and content
 
-Click the :fontawesome-regular-square-plus: button to create a new *Page template*.
+## Usage
 
+You can use a case page template when [creating a Knowledge Base page](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md).
 
-## New Page template
+## Permissions
 
+{!includes/access-manage-case-page-templates.md!}
 
-<figure markdown>
-  ![Create a Page template](/thehive/images/user-guides/organization/templates/organization-pages-templates-2.png){ width="450"}
-  <figcaption>Create a page template</figcaption>
-</figure>
+Once created, case page templates are automatically available to all users in your organization.
 
-### Configuration parameters
+If you need to share a case page template with another organization or TheHive instance, you can [export it](export-a-case-page-template.md) and [import it](import-a-case-page-template.md).
 
-Title
-  : Page template title. Used to identify the Page template with the API. Also used as a page title when the template is used in a case.
+## Next steps
 
-Category
-  : Category for grouping pages on a common theme. Is used as a page tree in the case of.
-
-Content
-  : Default page content when the page template is used in a case.
-
-## Import/Export
-
-#### Export a *Page template* 
-*Page templates* can be exported and stored as JSON files by clicking on the option icon :fontawesome-solid-ellipsis: and selecting :fontawesome-solid-file-export: *Export page template*
-
-<figure markdown>
-![](/thehive/images/user-guides/organization/templates/organization-pages-templates-3.png){ width="500" }
-<figcaption>Export a page template</figcaption>
-</figure>
-
-#### Import a *Page template*
-Click on the button *Import Page Template* and select the JSON formatted file to import.
-
-<figure markdown>
-![](/thehive/images/user-guides/organization/templates/organization-page-templates-4.png){ width="500" }
-<figcaption>Import a page template</figcaption>
-</figure>
+* [Create a Case Page Template](create-a-case-page-template.md)
+* [Edit a Case Page Template](edit-a-case-page-template.md)
+* [Delete a Case Page Template](delete-a-case-page-template.md)

@@ -44,7 +44,7 @@ Instructions vary depending on whether you want to create a page at the:
 
 4. Select one of the following options:
 
-    **Create new page**
+    **Create new page**  
     Start with a blank page.
 
     Enter the following information:
@@ -52,7 +52,7 @@ Instructions vary depending on whether you want to create a page at the:
     * Title: The title of your page.
     * Category: The category your page belongs to. Pages are visually grouped by category for easier navigation. If the category does not exist, it will be created automatically.
     
-    **Use an existing page template** 
+    **Use an existing page template**  
     Apply a [case page template](../organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md) to your new page.
 
     Select one or more templates. The icons next to the selected pages turn green when selected.
