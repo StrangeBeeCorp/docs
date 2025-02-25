@@ -12,7 +12,7 @@ TheHive includes a specialized feature for managing data retention policies with
 
 There are two primary strategies available:
 
-* [Replace Sensitive Values with `<redacted>`](#replace-values-with-redacted)
+* [Replace Sensitive Values with `<redacted>`](#replace-sensitive-values-with-redacted)
 * [Delete Data](#delete-data)
 
 &nbsp;

@@ -65,7 +65,7 @@ Sessions
 
 *org-admin* users or users with the role `manageUser` in their profile can add users in the current organization. 
 
-Click the :fontawesome-regular-square-plus: button to add an account in the current organization, and follow *[create an account](../../administration/accounts.md#create-an-account)* and *[update an account](../../administration/accounts.md#update-an-account)* guides.
+Click the :fontawesome-regular-square-plus: button to add an account in the current organization, and follow *[create an account](../../administration/accounts.md#creating-an-account)* and *[update an account](../../administration/accounts.md#updating-an-account)* guides.
 
 ## User management
 

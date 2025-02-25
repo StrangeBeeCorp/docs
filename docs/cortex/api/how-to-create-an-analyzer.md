@@ -8,7 +8,6 @@
     * [Example: VirusTotal Analyzer Files](#example-virustotal-analyzer-files)
     * [Input](#input)
     * [Service Interaction Configuration Items](#service-interaction-configuration-items)
-    * [Analyzer Configuration in the Global Configuration File](#analyzer-configuration-in-the-global-configuration-file)
     * [Output](#output)
     * [The Cortexutils Python Library](#the-cortexutils-python-library)
     * [Report Templates](#report-templates)
