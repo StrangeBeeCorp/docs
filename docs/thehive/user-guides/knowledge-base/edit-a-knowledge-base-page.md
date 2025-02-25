@@ -2,8 +2,9 @@
 
 This topic provides step-by-step instructions for editing a [Knowledge Base](about-knowledge-base.md) page.
 
-Instructions vary depending on whether you want to edit a page at the:
-* [Organization level](#edit-a-page-at-the-organization-level)
+Instructions vary depending on whether you want to edit a page at the:  
+
+* [Organization level](#edit-a-page-at-the-organization-level)  
 * [Case level](#edit-a-page-at-the-case-level)
 
 {!includes/access-knowledge-base.md!}

@@ -14,7 +14,7 @@ Use case page templates to:
 
 ## Usage
 
-You can use a case page template when [creating a Knowledge Base page](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md).
+You can use a case page template when [creating a Knowledge Base page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
 
 ## Permissions
 

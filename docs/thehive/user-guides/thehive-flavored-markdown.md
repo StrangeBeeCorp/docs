@@ -75,7 +75,7 @@ ___
 ## Admonition blocks
 
 !!! tip "Available since TheHive version 5.5"
-    Available since version 5.5, admonition blocks are used to highlight important information.
+    You can use admonition blocks to highlight important information.
 
 ### Syntax
 
@@ -97,21 +97,7 @@ ___
 
 ### Rendering
 
-::: error
-This block highlights critical information or errors that require immediate attention.
-:::
-
-::: warning
-This block alerts users to potential issues or important precautions to consider.
-:::
-
-::: success
-This block confirms that an action was completed successfully.
-:::
-
-::: info
-This block provides additional information or helpful tips.
-:::
+![Admonitions rendering Markdown](/thehive/images/user-guides/admonitions-rendering-markdown.png)
 
 ## Blockquotes
 
@@ -156,23 +142,16 @@ This block provides additional information or helpful tips.
 #### Syntax
 
     1. Lorem ipsum dolor sit amet
-    2. Consectetur adipiscing elit
+    1. Consectetur adipiscing elit
     3. Integer molestie lorem at massa
+    42. Fusce lobortis nisi nec mi scelerisque, at tincidunt nisi ullamcorper
 
 #### Rendering
 
 1. Lorem ipsum dolor sit amet
 2. Consectetur adipiscing elit
 3. Integer molestie lorem at massa
-
-
-1. You can use sequential numbers...
-1. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
+42. Fusce lobortis nisi nec mi scelerisque, at tincidunt nisi ullamcorper
 
 ## Code
 
@@ -180,38 +159,32 @@ Start numbering with offset:
 
     Inline `code` with `
 
-    Indented code with tab:
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-    Block code "fences" with ```:
-
     ```
     Sample code here...
     ```
-
-    !!! tip "Code block with syntax highlighting"
-        Since version 5.5, you can enable syntax highlighting by specifying the language name after the opening backticks.
-
-        ``` python
-        print("Hello, bees!")
-        ```
 
 ### Rendering
 
 Inline `code` with `
 
- // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
 ```
 Sample code here...
 ```
+
+!!! tip "Code block with syntax highlighting"
+    Since version 5.5, you can enable syntax highlighting by specifying the language name after the opening backticks.
+
+    Syntax
+
+        ``` python
+        print("Hello, bees!")
+        ```
+
+    Rendering
+
+    ``` python
+    print("Hello, bees!")
+    ```
 
 ## Tables
 
@@ -252,7 +225,7 @@ Sample code here...
 | ext    | Extension to be used for dest files. |
 
 !!! tip "Breaking lines in tables"
-    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>` or `<br>` HTML tags.
+    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>`, or `<br>` HTML tags.
 
 ## Links
 
@@ -274,12 +247,10 @@ Sample code here...
     ![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization-view.png)
     ![Cortex](https://docs.strangebee.com/cortex/user-guides/images/update.png "Cortex")
 
-    Like links, images also have a footnote style syntax:
-
+    Similar to links, images can also use footnote-style syntax:
     ![Alt text][id]
 
-    With a reference later in the document defining the URL location:
-
+    With a reference later in the document to define the URL location:
     [id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
 
 ### Rendering

@@ -2,8 +2,9 @@
 
 This topic provides step-by-step instructions for viewing a [Knowledge Base](about-knowledge-base.md) page.
 
-Instructions vary depending on whether you want to view a page at the:
-* [Organization level](#view-a-page-at-the-organization-level)
+Instructions vary depending on whether you want to view a page at the:  
+
+* [Organization level](#view-a-page-at-the-organization-level)  
 * [Case level](#view-a-page-at-the-case-level)
 
 ## View a page at the organization level

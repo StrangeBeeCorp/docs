@@ -298,7 +298,7 @@ nav:
         # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
-      - 'TheHive-Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
       - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
           - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
@@ -323,12 +323,12 @@ nav:
             - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
             - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
           - 'Case Page Templates':
-            - 'About Case Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
-            - 'Create a Case Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
-            - 'Edit a Case Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md
-            - 'Delete a Case Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
-            - 'Export a Case Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
-            - 'Import a Case Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
+            - 'About Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
+            - 'Create a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
+            - 'Edit a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md
+            - 'Delete a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
+            - 'Export a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
+            - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
           - 'Case Report Templates':
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
             - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md

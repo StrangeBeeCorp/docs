@@ -2,8 +2,9 @@
 
 This topic provides step-by-step instructions for deleting a [Knowledge Base](about-knowledge-base.md) page.
 
-Instructions vary depending on whether you want to delete a page at the:
-* [Organization level](#delete-a-page-at-the-organization-level)
+Instructions vary depending on whether you want to delete a page at the:  
+
+* [Organization level](#delete-a-page-at-the-organization-level)  
 * [Case level](#delete-a-page-at-the-case-level)
 
 {!includes/access-knowledge-base.md!}
