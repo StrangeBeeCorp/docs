@@ -1,9 +1,4 @@
----
-hide:
-  - navigation
----
-
-# Knowledge Base
+# About the Knowledge Base
 
 TheHive has a knowledge base module that allow writing Markdown pages at two levels:
 
@@ -26,3 +21,7 @@ Within every case, users with `managePage` permissions, can create and write Mar
 - any other content
 
 ![Case pages](../images/how-to/kb/case-pages.png)
+
+Pages templates à refaire aussi et à mentioner
+
+Mix case/page templates dans UI
