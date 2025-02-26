@@ -7,7 +7,7 @@ For example, you can use a function to create alerts within TheHive without requ
 !!! note "Available from version 5.1"
     This feature is supported in TheHive starting from version 5.1.
 
-This topic provides details on the different types and uses of functions.
+This topic provides details on the different types and uses of functions in TheHive.
 
 ## Trigger sources
 

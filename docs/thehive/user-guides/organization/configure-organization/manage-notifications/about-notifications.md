@@ -1,132 +1,95 @@
 # About Notifications
 
-This topic provides details on the different types and uses of functions.
+A notification is a mechanism that allows automated actions to be triggered when specific events occur.
 
-## Definition
+This topic explains the different notification capabilities in TheHive.
 
-A notification is a described by:
+## Key components
 
-1. A *Trigger*
-2. One or more *Notifiers*
+A notification consists of two key components:
 
-<figure markdown>
-  ![Notification](../../../images/user-guides/organization/notifications/organization-notifications-introduction.png){ width="450" }
-</figure>
+* [Trigger](#triggers): Defines the event that activates the notification (for example, case creation, task assignment, alert import).
+* [Notifier](#notifiers): Specifies the action taken when the notification is triggered (for example, sending an email, making an HTTP request, posting to Slack or Mattermost).
 
+!!! warning "One trigger, multiple notifiers"
+    A notification can have only one trigger but multiple notifiers.
 
 ### Triggers
 
-Each notification is associated to *only* one trigger. TheHive comes with several predefined triggers on *Cases*, *Alerts*, *Tasks*, *Observables* and *Jobs*. Custom triggers can also be defined with *FilteredEvent*.
+Each notification is associated with only one trigger.
 
-Another trigger let you run notifications on **any** event when selecting *AnyEvents*.
+TheHive provides several predefined triggers for [cases](../../../analyst-corner/cases/about-cases.md), [alerts](../../../analyst-corner/alerts/about-alerts.md), [tasks](../../../analyst-corner/tasks/about-tasks.md), [observables](../../../analyst-corner/alerts/alerts-description/view-observables.md), [actions](../../../analyst-corner/cases/cases-description/run-responders.md), and [jobs](../../../analyst-corner/cases/cases-description/run-analyzers.md). Additionally, custom triggers can be created using *FilteredEvent*.
 
+The *AnyEvent* trigger allows notifications to be executed for any event in TheHive.
 
-##### Triggers on Cases
+#### Triggers on cases
 
-* **CaseClosed**: Run an action when closing a *Case*
-* **CaseCreated**: Run an action when a *Case* is created
-* **CaseShared**: Run an action when a *Case* is shared
+* *CaseClosed*: Triggered when [a case is closed](../../../analyst-corner/cases/cases-description/actions.md#close)
+* *CaseCreated*: Triggered when [a new case is created](../../../analyst-corner/cases/create-a-new-case.md)
+* *CaseFlagged*: Triggered when [a case is flagged](../../../analyst-corner/cases/cases-description/actions.md#flagunflag)
+* *CaseShared*: Triggered when [a case is shared](../../../analyst-corner/cases/share-a-case.md)
 
+#### Triggers on alerts
 
-##### Triggers on Alerts
+* *AlertAssigned*: Triggered when an alert is assigned to a user
+* *AlertClosed*: Triggered when [an alert is closed](../../../analyst-corner/alerts/alerts-description/actions.md#close)
+* *AlertCreated*: Triggered when [a new alert is created](../../../analyst-corner/alerts/about-alerts.md#sources)
+* *AlertImported*: Triggered when an alert is imported, meaning [a case is created from an alert](../../../analyst-corner/cases/create-a-new-case.md#create-a-case-from-an-alert) or [an alert is merged into an existing case](../../../analyst-corner/alerts/alerts-description/merge-alerts.md)
 
-* **AlertCreated**: Run an action when an *Alert* is created
-* **AlertImported**: Run an action when an *Alert* in imported (*a Case is created from an Alert or an Alert is attached to an existing Case*)
+#### Triggers on observables
 
+* *AlertObservableCreated*: Triggered when an observable is created within an alert
+* *CaseObservableCreated*: Triggered when an observable is created within a case
+* *ObservableCreated*: Triggered when an observable is created, regardless of whether it belongs to an alert or a case
 
-##### Triggers on Jobs
+#### Triggers on tasks
 
-* **JobFinished**: Run an action when a *Job* is terminated, with *success* or *failure*
+* *LoginMyTask*: Triggered when [a new log is added to a task](../../../analyst-corner/tasks/preview-task-details/create-a-task-log.md)
+* *TaskAssigned*: Triggered when a task is assigned to a user or the assignee is updated
+* *TaskClosed*: Triggered when a task is closed
+* *TaskMandatory*: Triggered when a task is made mandatory
 
+#### Triggers on jobs
 
-##### Triggers on Observables
+* **JobFinished**: Triggered when an analyzer job is completed, whether it succeeds or fails
 
-* **ObservableCreated**: Run an action when an *Observable* is created
+#### Triggers on actions
 
+* **ActionFinished**: Triggered when a responder action is completed, whether it succeeds or fails
 
-##### Triggers on Tasks
+#### FilteredEvent
 
-* **LoginMyTask**: Run an action when a *Task* gain a new *Log*
-* **TaskAssigned**: Run an action when a *Task* is assigned, or the assignee is updated
-* **TaskClosed**: Run an action when a *Task* is closed
+When you select *FilteredEvent*, TheHive allows you to define a structured JSON filter. This filter is used to match specific events in TheHive.
 
-
-##### Filtered Event
-
-When selecting *FilteredEvent*, TheHive lets you write a structured JSON filter. This filter aims to match particular events in the application that will trigger one or more actions described by *notifiers*.
-
-<figure markdown>
-  ![Filtered Event](../../../images/user-guides/organization/notifications/organization-notifications-filteredevent.png){ width="500" }
-  <figcaption>Filtered event example: "Case severity has been updated to Hight or Critical</figcaption>
-</figure>
-
-Learn how to write filtered events and find more example in the [dedicated page](./filteredevents.md).
-
+Learn how to create filtered events and explore examples in the [How to Write Filtered Events](./filteredevents.md) topic.
 
 ### Notifiers
 
-Several types of *Notifiers* are available in TheHive:
+Several types of notifiers are available in TheHive:
 
-* **EmailToUser**: send an email to *all* [users in the current organization](./email-to-users.md)
-* **EmailToAddr**: send an email to [a specific email address](./email-to-addr.md)
-* **HTTP Request**: send data to a chosen [HTTP endpoint](./http-request.md)
-* **Mattermost**: send data to a chosen [Mattermost endoint](./mattermost.md)
-* **Slack**: send data to a chosen [Slack endpoint](./slack.md)
-* **MS Teams**: send data to a chosen [Microsoft Teams endpoint](./teams.md)
-* **Webhook**: send data to a chosen [webhook endpoint](./webhook.md)
-* **Kafka**: send data to a chosen [Kafka queue](./kafka.md)
-* **Redis**: send data to a chosen [Redis endpoint](./redis.md)
+* *EmailerToUser*: Sends an email to all [users in the current organization](./email-to-users.md)
+* *EmailerToAddr*: Sends an email to [a specific email address](./email-to-addr.md)
+* *HttpRequest*: Sends data to a specified [HTTP endpoint](./http-request.md)
+* *Mattermost*: Sends data to a selected [Mattermost endpoint](./mattermost.md)
+* *Slack*: Sends data to a selected [Slack endpoint](./slack.md)
+* *Teams*: Sends data to a selected [Microsoft Teams endpoint](./teams.md)
+* *Webhook*: Sends data to a chosen [webhook endpoint](./webhook.md)
+* *Kafka*: Sends data to a specified [Kafka queue](./kafka.md)
+* *Redis*: Sends data to a selected [Redis endpoint](./redis.md)
+* *RunAnalyzer*: Executes a selected [analyzer](./analyzers.md)
+* *RunResponder*: Executes a selected [responder](./responders.md)
+* *Function*: Revokes a specified [function](../manage-functions/about-functions.md)
 
-Two of them are dedicated to run Cortex Analyzers and Responders:
+!!! warning "Endpoints required"
+    Some notifiers require at least one defined endpoint. Refer to the dedicated page for each notifier to learn how to create the necessary endpoints.
 
-* **RunAnalyzer**: run [selected Analyzers](./analyzers.md)
-* **RunResponder**: run [selected Responders](./responders.md)
+## Permissions
 
-!!! Info "Some *Notifiers* require configuring *Endpoints*"
-    Some *Notifiers* require at least one *endpoint* to be defined. Refer to the page dedicated to each *Notifier* to learn how to create related endpoints.
+{!includes/access-notifications.md!}
 
+## Next steps
 
-## Create a *Notification*
-Access to the Notifications list by opening the *Organization* menu, and the *Notifications* tab.
-
-<figure markdown>
-  ![Notifications list](../../../images/user-guides/organization/notifications/organization-notifications.png){ width="500" }
-</figure>
-
-Click the :fontawesome-regular-square-plus: button to add a notification.
-
-<figure markdown>
-  ![Create a notification](../../../images/user-guides/organization/notifications/organization-notifications-create.png){ width="500" }
-</figure>
-
-
-1. Give a unique name to the notification
-2. Select a trigger
-3. Select a notifier and configure it
-
-Then click **confirm** to register the notification.
-
-
-## Operations on *Notifications*
-
-### Delete a *Notification*
-
-In the list of notification, click on the **delete** option:
-
-<figure markdown>
-  ![Delete a notification](../../../images/user-guides/organization/notifications/organization-notifications-delete.png){ width="500" }
-</figure>
-
-### Disable a *Notificaiton*
-
-* In the list of *Notifications*, edit the one to disable: 
-
-<figure markdown>
-  ![Disable a notification](../../../images/user-guides/organization/notifications/organization-notifications-delete.png){ width="500" }
-</figure>
-
-* Verify the result in the list of *Notifications*
-
-<figure markdown>
-  ![Disabled notification](../../../images/user-guides/organization/notifications/organization-notifications-disabled.png){ width="500" }
-</figure>
+* [Create a Notification](create-a-notification.md)
+* [Edit a Notification](edit-a-notification.md)
+* [Disable a Notification](disable-a-notification.md)
+* [Delete a Notification](delete-a-notification.md)
