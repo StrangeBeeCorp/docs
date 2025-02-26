@@ -2,7 +2,7 @@
 
 !!! Info
     The objects in the context API are the same as the ones used in the v1 Http Api.
-
+    
     For more details on the expected fields of each object, please refer to the [Http Api Documentation](/thehive/api-docs/)
 
 ### User
