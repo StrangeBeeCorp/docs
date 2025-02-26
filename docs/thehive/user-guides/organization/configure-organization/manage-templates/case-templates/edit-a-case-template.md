@@ -8,13 +8,23 @@ This topic provides step-by-step instructions for editing a [case template](abou
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/templates-go-to.md!}
+
+    ---
 
 3. {!includes/case-templates-go-to.md!}
 
+    ---
+
 4. Select :fontawesome-solid-ellipsis: next to the case template you want to edit.
 
+    ---
+
 5. Select **Edit**.
+
+    ---
 
 6. In the **Editing a case template** drawer, enter your new values in the following fields:
 
@@ -50,6 +60,8 @@ This topic provides step-by-step instructions for editing a [case template](abou
     
     **[Pages](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md)**  
     A page template to document cases.
+
+    ---
 
 7. Select **Confirm case template creation**.
 

@@ -157,7 +157,9 @@ plugins:
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/analyst-corner/cases/export-a-case.md': 'thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
-
+            'thehive/how-to/knowledge-base.md': 'thehive/user-guides/knowledge-base/about-knowledge-base.md'
+            'thehive/how-to/markdown.md': 'thehive/user-guides/thehive-flavored-markdown.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
 
 extra:
   generator: false
