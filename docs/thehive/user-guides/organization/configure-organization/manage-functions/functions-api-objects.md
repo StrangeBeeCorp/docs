@@ -1,16 +1,18 @@
-## Context API
+## Functions API Objects
 
-!!! Info
-    The objects in the context API are the same as the ones used in the v1 Http Api.
-    
-    For more details on the expected fields of each object, please refer to the [Http Api Documentation](/thehive/api-docs/)
+This topic lists all available objects for API-type functions in TheHive.
+
+!!! info "API documentation"
+    The objects in API-type functions are the same as those used in TheHive HTTP API.
+
+    For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/).
 
 ### User
 
 - `userId: string` : login of the user executing the function
 - `userName: string`: name of the user executing the function
 
-### Http request
+### HTTP request
 
 - `request.queryString() : Record<string, string[]>`: Dictionary with the request query string formatted as a map
 - `request.getQueryString(key: string): string | null`: Get a value from the query string
@@ -22,7 +24,6 @@
 ### Query
 
 - `query.execute(query: any[])`: execute a query on the database (cf. Api docs => query)
-
 
 ### Alert
 
@@ -40,7 +41,6 @@
 - `alert.bulkUpdate(input: {ids: string[]} & InputUpdateAlert): void`
 - `alert.find(query: any[]): OutputAlert[]`
 
-
 ### Case
 
 `case` is a reserved keywork is java, so `caze` is used instead.
@@ -56,7 +56,6 @@
 - `caze.bulkUpdate(update: {ids: string[]} & InputUpdateCase): void `
 - `caze.bulkApplyCaseTemplate(update: {ids: string[]} & InputApplyCaseTemplate): void`
 - `caze.find(query: any[]): OutputCase[]`
-
 
 ### Tasks
 
@@ -89,7 +88,7 @@
 - `observable.find(query: any[]): OutputObservable[]`
 - `observable.updateAllTypes(fromType: string, toType: String): void`
 
-### Observable Type
+### Observable type
 
 - `observableType.get(id: string): OutputObservableType`
 - `observableType.delete(id: string): void`
@@ -104,14 +103,13 @@
 - `customField.create(cf: InputCustomField): OutputCustomField`
 - `customField.find(query: any[]): OutputCustomField[]`
 
-### Case Template
+### Case template
 
 - `caseTemplate.get(idOrName: string): OutputCaseTemplate` 
 - `caseTemplate.update(idOrName: string, update: Partial<InputCaseTemplate>): void`
 - `caseTemplate.delete(idOrName: string): void`
 - `caseTemplate.create(template: InputCaseTemplate): OutputCaseTemplate`
 - `caseTemplate.find(query: any[]): OutputCaseTemplate[]`
-
 
 ### Procedure
 
@@ -123,15 +121,14 @@
 - `procedure.delete(id: string): void`
 - `procedure.find(query: any[])`
 
-
-### Case Status
+### Case status
 
 - `caseStatus.create(input: InputCreateCaseStatus): OutputCaseStatus`
 - `caseStatus.update(idOrName: string, update: InputUpdateCaseStatus): void`
 - `caseStatus.delete(idOrName: string): void`
 - `caseStatus.find(query: any[]): OutputCaseStatus[]`
 
-### Alert Status
+### Alert status
 
 - `alertStatus.create(input: InputCreateAlertStatus): OutputAlerttatus`
 - `alertStatus.update(idOrName: string, update: InputUpdateAlertStatus): void`
@@ -182,7 +179,7 @@
 - `profile.create(profile: InputCreateProfile): OutputProfile`
 - `profile.find(query: any[]): OutputProfile[]`
 
-### Custom Event
+### Custom event
 
 - `customEvent.createInCase(caseId: string, input: InputCreateCustomEvent): OutputCustomEvent`
 - `customEvent.update(id: string, update: InputUpdateCustomEvent): void`
@@ -196,4 +193,7 @@
 - `function.delete(functionIdOrName: string): void`
 - `function.find(query: any[]): OutputFunction`
 
-&nbsp;
+## Next steps
+
+* [Create a Function](create-a-function.md)
+* [Revoke a Function](revoke-a-function.md)
