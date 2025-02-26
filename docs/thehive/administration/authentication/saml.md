@@ -38,13 +38,13 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     **Name**
 
-    Enter a recognizable name for the authentication provider in TheHive.
+    Enter a recognizable name for the identity provider (IdP) in TheHive.
 
     Example: *Microsoft Entra ID*
 
     **Identity provider metadata type**
 
-    Select how TheHive retrieves configuration information for the identity provider—either from an XML file or a URL.
+    Select how TheHive retrieves configuration information for the IdP—either from an XML file or a URL.
 
     * If you choose *url*, provide the full link to the metadata document.
     
@@ -64,13 +64,13 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     **User login attribute**
 
-    Enter the name of the attribute from the identity provider that contains the user's login information (such as email or username).
+    Enter the name of the attribute from the IdP that contains the user's login information (such as email or username).
 
     **Maximum authentication life time**
 
-    Enter the maximum session duration for user authentication. This value must align with the session timeout configured on the identity provider to ensure consistent session behavior.
+    Enter the maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.
 
-    Set this value to *90 days* for optimal security and performance.
+    If you're unsure of the value set in your IdP, we recommend setting it to *90 days*, as this is the default for most IdPs.
 
 ## Next steps
 
