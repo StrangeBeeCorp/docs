@@ -73,7 +73,7 @@ A function in TheHive can operate in one of three modes:
 
 * **Enabled**: The function executes normally when triggered.
 * **Disabled**: The function does not execute when triggered.
-* **DryRun**: The function runs, but it does not create or modify cases, alerts, or other entities in TheHive. Instead, creation attempts return `null`, making this mode ideal for testing integrations before going live.
+* **Dry-run**: The function runs, but it does not create or modify cases, alerts, or other entities in TheHive. Instead, creation attempts return `null`, making this mode ideal for testing integrations before going live.
 
 ## Permissions
 
@@ -82,3 +82,4 @@ A function in TheHive can operate in one of three modes:
 ## Next steps
 
 * [Create a Function](create-a-function.md)
+* [Revoke a Function](revoke-a-function.md)
