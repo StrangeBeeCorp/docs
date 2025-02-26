@@ -336,7 +336,11 @@ nav:
         - 'Endpoints':
           - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
           - 'Add Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md
-        - 'Functions': thehive/user-guides/organization/functions.md
+        - 'Functions': 
+          - 'About Functions': thehive/user-guides/organization/about-functions.md
+          - 'Create a Function': thehive/user-guides/organization/create-a-function.md
+          - 'Revoke a Function': thehive/user-guides/organization/revoke-a-function.md
+          - 'Functions API Objects': thehive/user-guides/organization/functions-api-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
