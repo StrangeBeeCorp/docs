@@ -1,6 +1,6 @@
-## How to Create a Function
+## How to Edit a Function
 
-This topic provides step-by-step instructions for creating a [function](about-functions.md) in TheHive.
+This topic provides step-by-step instructions for editing a [function](about-functions.md) in TheHive.
 
 {!includes/access-functions.md!}
 
@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
 2. {!includes/functions-tab-go-to.md!}
 
-3. Select :fontawesome-solid-plus:.
+3. Select the function you want to edit, or select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
 4. In the **Create function** drawer:
 

@@ -1,5 +1,6 @@
-# Notifications
+# About Notifications
 
+This topic provides details on the different types and uses of functions.
 
 ## Definition
 

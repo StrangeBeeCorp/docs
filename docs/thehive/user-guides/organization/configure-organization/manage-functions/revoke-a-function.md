@@ -8,9 +8,7 @@ This topic provides step-by-step instructions for revoking a [function](about-fu
 
 1. {!includes/organization-view-go-to.md!}
 
-2. Select the **Functions** tab.
-
-    ![Functions tab](../../images/user-guides/organization/configure-organization/manage-functions/functions-tab.png)
+2. {!includes/functions-tab-go-to.md!}
 
 3. Select the function you want to revoke, or select :fontawesome-solid-ellipsis-h: and then **Edit**.
 

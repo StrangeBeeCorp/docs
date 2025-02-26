@@ -339,6 +339,8 @@ nav:
         - 'Functions': 
           - 'About Functions': thehive/user-guides/organization/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/create-a-function.md
+          - 'Edit a Function': thehive/user-guides/organization/edit-a-function.md
+          - 'Delete a Function': thehive/user-guides/organization/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/revoke-a-function.md
           - 'Functions API Objects': thehive/user-guides/organization/functions-api-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
