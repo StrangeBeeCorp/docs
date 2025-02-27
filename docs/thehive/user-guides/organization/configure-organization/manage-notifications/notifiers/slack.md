@@ -1,64 +1,69 @@
 # Send notifications to Slack channels
 
-Using Slack as *Notifier* requires to create at least one endpoint. This endpoint defines how TheHive will connect to Slack.
+This topic provides step-by-step instructions for configuring the Slack [notifier](../about-notifications.md#notifiers) in TheHive.
 
-## Create an enpoint
-In the *Organsation* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
+!!! note "Notifier availability"
+    The Slack notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    - *AnyEvent*  
+    - *FilteredEvent*  
+    - *ActionFinished*  
+    - *CaseClosed*  
+    - *CaseCreated*  
+    - *CaseFlagged*  
+    - *CaseShared*  
+    - *AlertClosed*  
+    - *AlertCreated*  
+    - *AlertImported*  
+    - *JobFinished*  
+    - *AlertObservableCreated*  
+    - *CaseObservableCreated*  
+    - *ObservableCreated*  
+    - *TaskClosed*  
+    - *TaskMandatory*
 
-<figure markdown>
-  ![Enpoints list](../../../images/user-guides/organization/notifications/organization-endpoints.png){ width="500" }
-</figure>
+{!includes/access-notifications.md!}
 
-### Enpoint configuration
-Choose *Slack* and complete required information.
+## Procedure
 
-<figure markdown>
-  ![Slack endpoint configuration](../../../images/user-guides/organization/notifications/organization-endpoints-slack-configuration.png){ width="500" }
-</figure>
+1. {!includes/organization-view-go-to.md!}
 
-* **Name**: give a unique name to the endpoint
-* **Token**: specify the token to use to connect to the service
-* **Auth Type**: Use *Basic authentication* to connect to this endpoint, or use *Key* or *Bearer* method
-* **Proxy settings**: choose to use a web proxy to connect to this endpoint
-* **Certificate authorities**: add custom Certificate Authorities if required (PEM format)
-* **SSL settings**: disable Certificate Authority checking and/or checks on hostnames
+2. {!includes/notifications-tab-go-to.md!}
 
-Then, click **confirm** to create the endpoint.
+3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
+4. Select the *Slack* notifier.
 
-## Notification configuration
-When creating a *Notification* select *Slack* as *Notifier* and complete the form.
+5. In the **Slack** drawer, enter the following information:
 
-<figure markdown>
-  ![Choose Slack](../../../images/user-guides/organization/notifications/organization-notifications-slack-1.png){ width="500" }
-</figure>
+  **Endpoint**
 
-TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most form fields:
+  Using Slack as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Slack.
 
-* **Endpoint**: choose the endpoint to use
-* **Username**: choose a username. Click on *add variable* if you want to use an information from the input data. This will override the default username configured in the endpoint
-* **Channel**: choose the target channel on Slack to send data to. Click on *add variable* if you want to use an information from the input data. This will override the default channel configured in the endpoint
-* **Template**: * Available format are: *JSON*, *Markdown* and *Plain text* 
-    * Click *Add variable* to select a variable to insert in the template
+  Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-slack-endpoint.md).
 
-Then click **confirm** to register this *Notifier*.
+  **Text template**
 
+  The message content to be sent to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
 
-## Advanced settings
-Several configuration options come with the integration with Slack. 
+  **Channel**
 
-!!! Tip "Slack documentation to the rescue"
-    * Test your integration [here](https://api.slack.com/methods/chat.postMessage/test)
-    * Build your blocks with the [Slack Block kit builder](https://app.slack.com/block-kit-builder/)
+  The Slack channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
-<figure markdown>
-  ![Choose Slack](../../../images/user-guides/organization/notifications/organization-notifications-slack-2.png){ width="500" }
-</figure>
+  **Username**
 
+  A username that will appear as the sender of the message in Slack. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+
+6. Select the **Advanced settings** checkbox if you want to configure additional options.
+
+  !!! tip "Slack documentation to the rescue"
+      - Test your integration [the postMessage page](https://api.slack.com/methods/chat.postMessage/test).  
+      - Build your blocks with the [Slack Block Kit Builder](https://app.slack.com/block-kit-builder/).
+
+7. Select **Confirm**.
 
 ### Examples
 
-!!! Example "Example of a blocks template: send notification about case creation"
+!!! example "Example of a blocks template: Send notification about case creation"
 
     * **Trigger**: *CaseCreated*
     * **Notifier**: *Slack*
@@ -93,3 +98,7 @@ Several configuration options come with the integration with Slack.
       }
     ]
     ```
+
+## Next steps
+
+* [Edit a Notification](edit-a-notification.md)

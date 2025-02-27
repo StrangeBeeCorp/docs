@@ -37,6 +37,8 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
   **Endpoint**
 
+  Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
+
   Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
 
   **Channel**
@@ -50,6 +52,8 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
   **Template**
 
   The message content to be sent to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+
+6. Select **Confirm**.
 
 ## Next steps
 

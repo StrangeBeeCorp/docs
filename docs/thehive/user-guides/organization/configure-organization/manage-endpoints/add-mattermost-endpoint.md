@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
 3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
 
-4. In the **Endpoint creation** drawer, select *Mattermost*.
+4. In the **Endpoint creation** drawer, select **Mattermost**.
 
 5. Enter the following information:
 
@@ -44,4 +44,4 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
 ## Next steps
 
-* [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
+* [Configure the Mattermost Notifier](../manage-notifications/notifiers/mattermost.md)

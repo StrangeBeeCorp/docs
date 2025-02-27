@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
 3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
 
-4. In the **Endpoint creation** drawer, select *Http*.
+4. In the **Endpoint creation** drawer, select **Http**.
 
 5. Enter the following information:
 

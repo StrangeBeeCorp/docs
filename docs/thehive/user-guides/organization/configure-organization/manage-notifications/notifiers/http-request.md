@@ -45,6 +45,8 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     **Endpoint \***
 
+    Using HttpRequest as a notifier requires at least one endpoint.
+
     Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
 
     **Method \***
