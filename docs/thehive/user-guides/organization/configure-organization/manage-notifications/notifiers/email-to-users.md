@@ -32,8 +32,10 @@ This topic provides step-by-step instructions for configuring the EmailerToUser 
 
     **Template**
 
-    The email template used for the message.
+    The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
 
 6. Select **Confirm**.
 
 ## Next steps
+
+* [Edit a Notification](edit-a-notification.md)
