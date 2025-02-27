@@ -1,17 +1,16 @@
 # How to Write and Submit a Responder
 
 ## Table of Contents
-  * [Writing a Responder](#writing-an-responder)
+  * [Writing a Responder](#writing-a-responder)
     * [The Program](#the-program)
     * [Service Interaction Files (Flavors)](#service-interaction-files-flavors)
     * [Python Requirements](#python-requirements)
     * [Example: Mailer Responder Files](#example-mailer-responder-files)
     * [Input](#input)
     * [Service Interaction Configuration Items](#service-interaction-configuration-items)
-    * [Responder Configuration in the Global Configuration File](#responder-configuration-in-the-global-configuration-file)
     * [Output](#output)
     * [The Cortexutils Python Library](#the-cortexutils-python-library)
-  * [Submitting a Responder](#submitting-an-responder)
+  * [Submitting a Responder](#submitting-a-responder)
     * [Check Existing Issues](#check-existing-issues)
     * [Open an Issue](#open-an-issue)
     * [Review your Service Interaction File(s)](#review-your-service-interaction-files)

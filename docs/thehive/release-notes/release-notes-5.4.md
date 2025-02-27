@@ -19,6 +19,22 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.8 - February 24, 2025
+
+### Fixes
+
+#### Dark mode
+* Improved the visibility of the :fontawesome-solid-xmark: button in notification messages for better readability.
+* Enhanced hover state contrast in analyzer reports for better accessibility.
+* Increased the visibility of error messages when a dashboard widget fails.
+
+#### Other fixes
+* Fixed an issue in notifications where endpoints with names ending in a space character were not handled correctly.
+* Fixed incorrect counter widget behavior when used with the `closeDate` field.
+* Fixed an issue preventing scrolling in the case template selection menu when creating a case from templates.
+* Added more detailed error messages for issues related to attached file storage.
+* Fixed an issue with Email Intake synchronization when TheHive is configured in a cluster environment.
+
 ## 5.4.7 - 16th of January 2025
 
 ### Fixes
