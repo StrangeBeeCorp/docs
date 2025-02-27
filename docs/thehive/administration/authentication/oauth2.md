@@ -100,14 +100,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     ---
 
-7. Select the proxy settings you want to apply:
-
-    * *Default configuration*
-    * *Disabled*
-    * *Enabled*:
-        * Enter the type of protocol, either HTTP or HTTPS.
-        * Enter the IP address or domain name of the proxy server.
-        * Enter the port number used by the proxy server.
+7. {!includes/proxy-settings.md!}
     
     ---
 
