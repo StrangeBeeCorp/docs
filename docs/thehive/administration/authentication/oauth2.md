@@ -108,7 +108,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
     ---
 
-9. Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
+9. {!includes/host-name-verification.md!}
 
     ---
 
