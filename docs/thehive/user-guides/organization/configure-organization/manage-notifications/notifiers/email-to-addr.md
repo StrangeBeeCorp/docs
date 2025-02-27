@@ -31,7 +31,7 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 5. In the **EmailerToAddr** drawer, enter the following information:
 
     !!! note "Available variables"
-        You can use variables in each field by selecting the **Add variable** button.
+        You can use variables in each field by selecting **Add variable**. 
 
     **Subject**
 
