@@ -3,14 +3,14 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
 
 ## Table of Contents
   * [Introduction](#introduction)
-    * [Request &amp; Response Formats](#request--response-formats)
+    * [Request &amp; Response Formats](#request-and-response-formats)
     * [Authentication](#authentication)
   * [Organization APIs](#organization-apis)
     * [Organization Model](#organization-model)
     * [List](#list)
-    * [Create](#create)
-    * [Update](#update)
-    * [Delete](#delete)
+    * [Create an Organization](#create-an-organization)
+    * [Update an Organization](#update-an-organization)
+    * [Delete an Organization](#delete-an-organization)
     * [Obtain Details](#obtain-details)
     * [List Users](#list-users)
     * [List Enabled Analyzers](#list-enabled-analyzers)
@@ -19,9 +19,9 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
     * [List All](#list-all)
     * [List Users within an Organization](#list-users-within-an-organization)
     * [Search](#search)
-    * [Create](#create-1)
-    * [Update](#update-1)
-    * [Get Details](#get-details)
+    * [Create a User](#create-a-user)
+    * [Update a User](#update-a-user)
+    * [Get Details About a User](#get-details-about-a-user)
     * [Set a Password](#set-a-password)
     * [Change a password](#change-a-password)
     * [Set and Renew an API Key](#set-and-renew-an-api-key)
@@ -29,19 +29,19 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
     * [Revoke an API Key](#revoke-an-api-key)
   * [Job APIs](#job-apis)
     * [Job Model](#job-model)
-    * [List and Search](#list-and-search)
-    * [Get Details](#get-details-1)
+    * [List and Search Jobs](#list-and-search-jobs)
+    * [Get Details About a Job](#get-details-about-a-job)
     * [Get Details and Report](#get-details-and-report)
     * [Wait and Get Job Report](#wait-and-get-job-report)
     * [Get Artifacts](#get-artifacts)
-    * [Delete](#delete-1)
+    * [Delete a Job](#delete-a-job)
   * [Analyzer APIs](#analyzer-apis)
     * [Analyzer Model](#analyzer-model)
     * [Enable](#enable)
-    * [List and Search](#list-and-search-1)
-    * [Get Details](#get-details-2)
+    * [List and Search](#list-and-search)
+    * [Get Details](#get-details)
     * [Get By Type](#get-by-type)
-    * [Update](#update-2)
+    * [Update](#update)
     * [Run](#run)
     * [Disable](#disable)
   * [Miscellaneous APIs](#miscellaneous-apis)
@@ -53,13 +53,13 @@ Cortex 2 offers a REST API that can be leveraged by various applications and pro
 
 **Note**: You can use [Cortex4py](https://github.com/TheHive-Project/Cortex4py), the Python library we provide, to facilitate interaction with the REST API of Cortex. You need Cortex4py 2.0.0 or later as earlier versions are not compatible with Cortex 2.
 
-All the exposed APIs share the same [request & response formats](#request--response-formats) and [authentication strategies](#authentication) as described below.
+All the exposed APIs share the same [request & response formats](#request-and-response-formats) and [authentication strategies](#authentication) as described below.
 
 There are also some transverse parameters supported by several calls, in addition to [utility APIs](#miscellaneous-apis).
 
 If you want to create an analyzer, please read the [How to Write and Submit an Analyzer ](how-to-create-an-analyzer.md) guide.
 
-### Request & Response Formats
+### Request and Response Formats
 Cortex accepts several parameter formats within a HTTP request. They can be used indifferently. Input data can be:
 
 - A query string
@@ -182,7 +182,7 @@ curl -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application/json' 
 
 Both APIs supports the `range` and `sort` query parameters described in [paging and sorting details](#paging-and-sorting).
 
-### Create
+### Create an Organization
 It is possible to create an organization using the following API call, which requires the API key associated with a `superAdmin` account:
 
 ```bash
@@ -193,7 +193,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 }'
 ```
 
-### Update
+### Update an Organization
 You can update an organization's description and status (`Active` or `Locked`) using the following API call. This requires the API key associated with a `superAdmin` account:
 
 ```bash
@@ -210,7 +210,7 @@ curl -XPATCH -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: applicatio
 }'
 ```
 
-### Delete
+### Delete an Organization
 Deleting an organization just marks it as `Locked` and doesn't remove the associated data from the DB. To "delete" an organization, you can use the API call shown below. It requires the API key associated with a `superAdmin` account.
 
 ```bash
@@ -318,7 +318,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 
 This call supports the `range` and `sort` query parameters declared in [paging and sorting details](#paging-and-sorting)
 
-### Create
+### Create a User
 This API calls allows you to programmatically create user creation. If the call is made by a `superAdmin` user, the request must specify the organization to which the user belong in the `organization` field.
 
 If the call is made by an `orgAdmin` user, the value of `organization` field must be the same as the user who makes the call: `orgAdmin` users are allowed to create users only in their organization.
@@ -356,7 +356,7 @@ If successful, the call returns a JSON object representing the created user as d
 }
 ```
 
-### Update
+### Update a User
 This API call allows updating the writable attributed of a user account. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to update their own information (but obviously not their roles).
 
 ```bash
@@ -372,7 +372,7 @@ curl -XPATCH -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: applicatio
 
 It returns a JSON object representing the updated user as described [above](#user-model).
 
-### Get Details
+### Get Details About a User
 This call returns the user details. It's available to users with `superAdmin` roles and to users in the same organization. Every user can also use it to read their own details.
 
 ```bash
@@ -458,7 +458,7 @@ A job is defined by the following attributes:
 | `updatedAt` | Last update date (only Cortex updates a job when it finishes) | computed |
 | `updatedBy` | User who submitted the job and which identity is used by Cortex to update the job once it is finished | computed |
 
-### List and Search
+### List and Search Jobs
 This call allows a user with `read`,`analyze` or `orgAdmin` role to list and search all the analysis jobs made by their organization.
 
 If you want to list all the jobs:
@@ -612,7 +612,7 @@ It returns a JSON array with the following structure:
 ]
 ```
 
-### Delete
+### Delete a Job
 This API allows a user with `analyze` or `orgAdmin` role to delete a job:
 
 ```bash
@@ -687,7 +687,7 @@ Both calls supports the `range` and `sort` query parameters declared in [paging 
 
 If called by a user with only an `nalyzer` role, the `configuration` attribute is not included on the JSON objects.
 
-### Get Details
+### Get Details About a Job
 This call allows a user with a `analyze` or `orgAdmin` role to get an analyzer's details.
 
 ```bash
