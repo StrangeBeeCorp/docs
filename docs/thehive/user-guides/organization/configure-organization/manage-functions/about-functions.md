@@ -67,6 +67,9 @@ Below are the different types of functions supported in TheHive:
 
 * **Action: Alert**: These functions are manually triggered within the context of an alert, enabling users to process and act on alerts within TheHive.
 
+!!! note "Multiple types allowed"
+    A function can have one or multiple types.
+
 ## Function modes
 
 A function in TheHive can operate in one of three modes:

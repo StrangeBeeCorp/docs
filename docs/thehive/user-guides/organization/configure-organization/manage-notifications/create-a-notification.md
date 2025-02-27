@@ -12,9 +12,17 @@ This topic provides step-by-step instructions for creating a [notification](abou
 
 3. Select :fontawesome-solid-plus: or **Add a new notification**.
 
-4. In the **Add notification** drawer:
+4. In the **Add notification** drawer, enter the name of your notification.
 
-    
+    This name should be unique as two notifications can't be called the same.
+
+5. Turn on the **Send notification to every user in the organization** toggle to be able to send an email to every user in the organization.
+
+    If you do so, the *AnyEvent* trigger will not be available anymore and you will only be able to select the *EmailerToUser* notifier.
+
+6. 
+
+
 
 ## Next steps
 
