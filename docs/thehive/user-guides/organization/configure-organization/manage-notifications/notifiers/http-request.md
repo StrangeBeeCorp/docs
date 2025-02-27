@@ -45,7 +45,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     **Endpoint \***
 
-    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../../configure-organization/manage-endpoints/add_endpoints.md).
+    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
 
     **Method \***
 
@@ -71,7 +71,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     ---
 
-8. In the **Authentication** section, select an authentication type if required.
+8. {!includes/authentication-type.md!}
 
     ---
 

@@ -25,18 +25,32 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
 ## Procedure
 
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/notifications-tab-go-to.md!}
+
+3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+
+4. Select the *Mattermost* notifier.
+
+5. In the **Mattermost** drawer, enter the following information:
+
+  **Endpoint**
+
+  Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
+
+  **Channel**
+
+  The Mattermost channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+
+  **Username**
+
+  A username that will appear as the sender of the message in Mattermost. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+
+  **Template**
+
+  The message content to be sent to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+
 ## Next steps
 
 * [Edit a Notification](edit-a-notification.md)
-
-TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:
-
-* **Endpoint**: choose the endpoint to use
-* **Username**: choose a username. Click on *add variable* if you want to use an information from the input data. This will override the default username configured in the endpoint
-* **Channel**: choose the target channel on Mattermost to send data to. Click on *add variable* if you want to use an information from the input data. This will override the default channel configured in the endpoint
-* **Template**:
-    * Available format are: *JSON*, *Markdown* and *Plain text* 
-    * Click *Add variable* to select a variable to insert in the template
-
-
-Then click **confirm** to register this *Notifier*.
