@@ -48,3 +48,5 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 ## Next steps
 
 * [Revoke a Function](revoke-a-function.md)
+* [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
+* [Delete a Function](delete-a-function.md)

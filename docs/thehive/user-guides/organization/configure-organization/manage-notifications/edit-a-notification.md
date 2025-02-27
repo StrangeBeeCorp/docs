@@ -28,7 +28,7 @@ This topic provides step-by-step instructions for editing a [notification](about
 
     The available notifiers depend on the selected trigger.
 
-9. Enter the required information for each selected notifier, following its respective instructions:
+9. Enter the required information for each selected notifier, following its specific configuration instructions:
 
     * [*EmailerToUser*](notifiers/email-to-users.md)
     * [*EmailerToAddr*](notifiers/email-to-addr.md)

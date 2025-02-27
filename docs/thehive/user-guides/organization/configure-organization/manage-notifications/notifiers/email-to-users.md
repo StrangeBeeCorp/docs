@@ -1,1 +1,39 @@
-#
+# How to Configure the EmailerToUser Notifier
+
+This topic provides step-by-step instructions for configuring the EmailerToUser [notifier](../about-notifications.md#notifiers) in TheHive.
+
+!!! note "Notifier availability"
+    The EmailerToUser notifier is only available if the **Send notification to every user in the organization** toggle is enabled.
+
+{!includes/access-notifications.md!}
+
+## Procedure
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/notifications-tab-go-to.md!}
+
+3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+
+4. Select the *EmailerToUser* notifier.
+
+5. In the **EmailerToUser** drawer, enter the following information:
+
+    !!! note "Available variables"
+        You can use variables in each field by selecting the **Add variable** button.
+
+    **Subject**
+
+    The email subject line.
+
+    **From**
+
+    The sender's email address.
+
+    **Template**
+
+    The email template used for the message.
+
+6. Select **Confirm**.
+
+## Next steps

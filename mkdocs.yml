@@ -341,7 +341,8 @@ nav:
           - 'Create a Function': thehive/user-guides/organization/create-a-function.md
           - 'Edit a Function': thehive/user-guides/organization/edit-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/delete-a-function.md
-          - 'Revoke a Function': thehive/user-guides/organization/revoke-a-function.md
+          - 'Revoke a Function': thehive/user-guides/organization/revoke-a-function-case-alert.md
+          - 'Run a Function': thehive/user-guides/organization/run-a-function.md
           - 'Functions API Objects': thehive/user-guides/organization/functions-api-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':

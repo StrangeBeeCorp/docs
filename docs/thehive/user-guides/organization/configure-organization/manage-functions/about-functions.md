@@ -31,6 +31,8 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### User actions
 
+* Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its status to *False positive*: [Code]()
+
 ### Automation
 
 * Identifying cold cases by addind a tag based on predefined conditions: [Code]()
@@ -85,4 +87,7 @@ A function in TheHive can operate in one of three modes:
 ## Next steps
 
 * [Create a Function](create-a-function.md)
+* [Edit a Function](edit-a-function.md)
 * [Revoke a Function](revoke-a-function.md)
+* [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
+* [Delete a Function](delete-a-function.md)
