@@ -1,10 +1,61 @@
-# Send notifications to a MS Teams channel
+# How to Configure the Microsoft Teams Notifier
 
-## Overview
+This topic provides step-by-step instructions for configuring the Microsoft Teams [notifier](../about-notifications.md#notifiers) in TheHive.
 
-With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier due to Microsoft's deprecation of the incoming webhook workflow in Teams. This change requires users to migrate from the legacy Teams webhook setup to a new configuration using Power Automate workflows.
+!!! note "Notifier availability"
+    The Microsoft Teams notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    - *AnyEvent*  
+    - *FilteredEvent*  
+    - *ActionFinished*  
+    - *CaseClosed*  
+    - *CaseCreated*  
+    - *CaseFlagged*  
+    - *CaseShared*  
+    - *AlertClosed*  
+    - *AlertCreated*  
+    - *AlertImported*  
+    - *JobFinished*  
+    - *AlertObservableCreated*  
+    - *CaseObservableCreated*  
+    - *ObservableCreated*  
+    - *TaskClosed*  
+    - *TaskMandatory*
 
----
+!!! warning "Migrating to Power Automate workflows for Microsoft Teams integration"
+    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhook workflow. Users must now migrate from the legacy Teams webhook setup to a new configuration using Power Automate workflows.
+
+{!includes/access-notifications.md!}
+
+## Procedure
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/notifications-tab-go-to.md!}
+
+3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+
+4. Select the *Teams* notifier.
+
+5. In the **Teams** drawer, enter the following information:
+
+  **Endpoint**
+
+  Using Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Teams.
+
+  Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-teams-endpoint.md).
+
+  **Text template**
+
+  The message content to be sent to the Teams endpoint. Select JSON or plain text. Select **Add Variable** to dynamically insert values using available variables.
+
+6. Select **Confirm**.
+
+## Next steps
+
+* [Edit a Notification](edit-a-notification.md)
+
+
+
 
 ## Teams Notifier Setup Using Power Automate
 
