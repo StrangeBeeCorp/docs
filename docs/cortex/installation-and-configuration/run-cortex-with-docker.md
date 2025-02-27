@@ -62,7 +62,7 @@ You can also run docker service inside Cortex container, a docker in a docker wi
 In this case you don't need to bind job directory.
 
 #### Use Docker-compose
-Cortex requires [Elasticsearch](#elasticsearch-inside-a-docker) to run. You can use `docker-compose` to start them together in Docker or install and configure Elasticsearch manually.
+Cortex requires Elasticsearch to run. You can use `docker-compose` to start them together in Docker or install and configure Elasticsearch manually.
 [Docker-compose](https://docs.docker.com/compose/install/) can start multiple dockers and link them together.
 
 The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml)

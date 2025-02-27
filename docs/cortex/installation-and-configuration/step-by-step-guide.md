@@ -2,7 +2,6 @@
 
 This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
 
-
 ## Required packages
 
 !!! Example "" 
@@ -21,23 +20,74 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Java Virtual Machine
 
+!!! warning "Manual installation required"
+    Starting with Cortex 3.2, the Java Virtual Machine is no longer installed automatically. You must manually install it before running Cortex.
+
 !!! example "Install Java"
 
-    === "Debian"
+    For enhanced security and long-term support, we recommend using [**Amazon Corretto**](https://aws.amazon.com/corretto/), an OpenJDK build provided and maintained by Amazon.
 
-        ``` bash
-        apt install -y openjdk-11-jre-headless
-        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64" >> /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-        ```
+    === "DEB"
+
+        1. Open a terminal window.
+        2. Execute the following commands:
+
+            !!! Example ""
+                ```bash
+                wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto.gpg
+                echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" | sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+                sudo apt update
+                sudo apt install java-common java-11-amazon-corretto-jdk
+                echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+                export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+                ```
+
+        3. Verify the installation by running:
+
+            !!! Example ""
+                ```bash
+                java -version
+                ```
+
+        4. You should see output similar to the following:
+
+            !!! Example ""
+                ```bash
+                openjdk version "11.0.12" 2022-07-19
+                OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
+                OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
+                ```
+
 
     === "RPM"
 
-        ``` bash
-        sudo yum install -y java-11-openjdk-headless.x86_64
-        echo JAVA_HOME="/usr/lib/jvm/java-11-openjdk" | sudo tee -a /etc/environment
-        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
-        ```
+        1. Open a terminal window.
+        2. Execute the following commands:
+
+            !!! Example ""
+                ```bash
+                sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
+                wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
+                yum install java-11-amazon-corretto-devel &> /dev/null
+                echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+                export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+                ```
+
+        3. Verify the installation by running:
+
+            !!! Example ""
+                ```bash
+                java -version
+                ```
+
+        4. You should see output similar to the following:
+
+            !!! Example ""
+                ```bash
+                openjdk version "11.0.12" 2022-07-19
+                OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
+                OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
+                ```
 
     === "Other"
 
