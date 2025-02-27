@@ -1,39 +1,33 @@
-# Send notifications to a Mattermost channel
+# How to Configure the Mattermost Notifier
 
-Using Mattermost as *Notifier* requires to create at least one endpoint. This endpoint defines how TheHive will connect to Mattermost.
+This topic provides step-by-step instructions for configuring the Mattermost [notifier](../about-notifications.md#notifiers) in TheHive.
 
-## Create an enpoint
-In the *Organization* configuration view, open the *Endpoints* tab. Then, click on the :fontawesome-regular-square-plus: button to create a new *Notifier*. 
+!!! note "Notifier availability"
+    The Mattermost notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    - *AnyEvent*  
+    - *FilteredEvent*  
+    - *ActionFinished*  
+    - *CaseClosed*  
+    - *CaseCreated*  
+    - *CaseFlagged*  
+    - *CaseShared*  
+    - *AlertClosed*  
+    - *AlertCreated*  
+    - *AlertImported*  
+    - *JobFinished*  
+    - *AlertObservableCreated*  
+    - *CaseObservableCreated*  
+    - *ObservableCreated*  
+    - *TaskClosed*  
+    - *TaskMandatory*
 
-<figure markdown>
-  ![Enpoints list](../../../images/user-guides/organization/notifications/organization-endpoints.png){ width="500" }
-</figure>
+{!includes/access-notifications.md!}
 
-### Enpoint configuration
-Choose *Mattermost* and complete required information.
+## Procedure
 
-<figure markdown>
-  ![Mattermost endpoint configuration](../../../images/user-guides/organization/notifications/organization-endpoints-mattermost-configuration.png){ width="500" }
-</figure>
+## Next steps
 
-* **Name**: give a unique name to the endpoint
-* **URL**: specify the URL to connect to your Mattermost instance
-* **Username**: default username used to send data
-* **Channel**: default channel used to send data
-* **Auth Type**: Use *Basic authentication* to connect to this endpoint, or use *Key* or *Bearer* method
-* **Proxy settings**: choose to use a web proxy to connect to this endpoint
-* **Certificate authorities**: add custom Certificate Authorities if required (PEM format)
-* **SSL settings**: disable Certificate Authority checking and/or checks on hostnames
-
-Then, click **confirm** to create the endpoint.
-
-
-## Notification configuration
-When creating a *Notification* select *Mattermost* as *Notifier* and complete the form.
-
-<figure markdown>
-  ![Choose Mattermost](../../../images/user-guides/organization/notifications/organization-notifications-mattermost-1.png){ width="500" }
-</figure>
+* [Edit a Notification](edit-a-notification.md)
 
 TheHive uses [Handlebars](https://handlebarsjs.com) to let you build templates with input data, and this can be used in most of all fields of the form:
 
