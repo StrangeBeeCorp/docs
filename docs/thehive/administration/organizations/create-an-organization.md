@@ -13,7 +13,11 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
+    ---
+
 2. Select :fontawesome-regular-square-plus:.
+
+    ---
 
 3. In the **Adding an organization** drawer, enter:
 
@@ -43,7 +47,11 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
+    ---
+
 4. Select **Confirm**.
+
+    ---
 
 5. Optional: In the **Organizations** view, locate your new organization, hover over it, select :fontawesome-solid-eye:, select the default organization logo to modify it, and upload an image to set it as the new logo for your organization.
 

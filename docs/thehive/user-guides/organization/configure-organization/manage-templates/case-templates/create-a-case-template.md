@@ -13,15 +13,23 @@ To import an existing case template from another organization or TheHive instanc
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/templates-go-to.md!}
 
+    ---
+
 3. {!includes/case-templates-go-to.md!}
+
+    ---
 
 4. Two options are available:
 
     * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
 
     * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
+
+    ---
 
 5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
@@ -47,7 +55,7 @@ To import an existing case template from another organization or TheHive instanc
     One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
     **Description \***  
-    A description for cases.
+    A description for cases using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
     
     **[Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tasks for cases.
@@ -55,8 +63,10 @@ To import an existing case template from another organization or TheHive instanc
     **[Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more custom fields for cases, with or without predefined values.
     
-    **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    **[Pages](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md)**  
     A page template to document cases.
+
+    ---
 
 6. Select **Confirm case template creation**.
 
