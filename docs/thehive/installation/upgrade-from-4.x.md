@@ -98,7 +98,7 @@ Save the existing configuration file for Cassandra 3.x. It will be used later to
 
 ### Install Cassandra
 
-Follow the [**installation process**](./step-by-step-installation-guide.md#cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
+Follow the [**installation process**](./step-by-step-installation-guide.md#apache-cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
 
 &nbsp;
 
