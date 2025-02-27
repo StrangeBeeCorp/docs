@@ -61,11 +61,9 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 9. {!includes/proxy-settings.md!}
 
-10. 
+10. {!includes/certificate-authority.md!}
 
-    Do not check Certificate Authority
-
-    Add a certificate
+11. 
 
     Disable hostname verification
 
