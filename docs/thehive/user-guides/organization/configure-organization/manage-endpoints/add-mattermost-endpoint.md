@@ -18,19 +18,19 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
     **Name \***
 
-    The endpoint name, used to identify this Mattermost integration in TheHive.
+    The endpoint name, used to identify this Mattermost integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
     **URL \***
 
-    The Mattermost webhook URL where notifications will be sent. This should be a valid and accessible Mattermost incoming webhook.
+    The URL used to connect to your Mattermost instance.
 
     **Username**
 
-    The username that will appear as the sender of the message in Mattermost. If left blank, the default username configured in Mattermost will be used.
+    The default username used to send messages. If left blank, the default username configured in Mattermost will be used.
 
     **Channel**
 
-    The Mattermost channel where the message should be sent. If specified, this overrides the default channel set in the Mattermost webhook configuration.
+    The default channel used to send messages. If specified, this overrides the default channel set in the Mattermost webhook configuration.
 
 6. {!includes/authentication-type.md!}
 

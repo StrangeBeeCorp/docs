@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
     **Name**
 
-    The endpoint name, used to identify this HttpRequest integration in TheHive.
+    The endpoint name, used to identify this HttpRequest integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
     **Method**
 
