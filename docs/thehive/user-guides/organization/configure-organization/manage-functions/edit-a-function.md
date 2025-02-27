@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
 3. Select the function you want to edit, or select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
-4. In the **Create function** drawer:
+4. In the **Edit function** drawer:
 
     **Name \***
 

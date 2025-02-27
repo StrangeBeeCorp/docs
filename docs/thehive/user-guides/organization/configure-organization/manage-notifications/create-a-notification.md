@@ -14,33 +14,39 @@ This topic provides step-by-step instructions for creating a [notification](abou
 
 4. In the **Add notification** drawer, enter the name of your notification.
 
-    This name should be unique as two notifications can't be called the same.
+    This name must be unique, as two notifications can't have the same name.
 
-5. Turn on the **Send notification to every user in the organization** toggle to be able to send an email to every user in the organization.
+5. Turn on the **Send notification to every user in the organization** toggle to be able to send an email to all users in the organization.
 
-    If you do so, the *AnyEvent* trigger will not be available anymore and you will only be able to select the *EmailerToUser* notifier.
+    If enabled, the *AnyEvent* trigger will no longer be available, and only the *EmailerToUser* notifier will be selectable.
 
-6. 
+6. Select the [trigger](about-notifications.md#triggers) you want to use.
 
+7. Turn on the **Enable notification** toggle to activate the notification.
 
+8. Select one or more [notifiers](about-notifications.md#notifiers). 
+
+    The available notifiers depend on the selected trigger.
+
+9. Enter the required information for each selected notifier, following its respective instructions:
+
+    * [*EmailerToUser*](notifiers/email-to-users.md)
+    * [*EmailerToAddr*](notifiers/email-to-addr.md)
+    * [*HttpRequest*](notifiers/http-request.md)
+    * [*Mattermost*](notifiers/mattermost.md)
+    * [*Slack*](notifiers/slack.md)
+    * [*Teams*](notifiers/teams.md)
+    * [*Webhook*](notifiers/webhook.md)
+    * [*Kafka*](notifiers/kafka.md)
+    * [*Redis*](notifiers/redis.md)
+    * [*RunAnalyzer*](notifiers/analyzers.md)
+    * [*RunResponder*](notifiers/responders.md)
+    * [*Function*](notifiers/function.md)
+
+10. Select **Confirm**.
 
 ## Next steps
 
-Access to the Notifications list by opening the *Organization* menu, and the *Notifications* tab.
-
-<figure markdown>
-  ![Notifications list](../../../images/user-guides/organization/notifications/organization-notifications.png){ width="500" }
-</figure>
-
-Click the :fontawesome-regular-square-plus: button to add a notification.
-
-<figure markdown>
-  ![Create a notification](../../../images/user-guides/organization/notifications/organization-notifications-create.png){ width="500" }
-</figure>
-
-
-1. Give a unique name to the notification
-2. Select a trigger
-3. Select a notifier and configure it
-
-Then click **confirm** to register the notification.
+* [Edit a Notification](edit-a-notification.md)
+* [Turn Off a Notification](turn-off-a-notification.md)
+* [Delete a Notification](delete-a-notification.md)

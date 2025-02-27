@@ -1,9 +1,17 @@
-## Operations on *Notifications*
+# How to Delete a Notification
 
-### Delete a *Notification*
+This topic provides step-by-step instructions for deleting a [notification](about-notifications.md) in TheHive.
 
-In the list of notification, click on the **delete** option:
+{!includes/access-notifications.md!}
 
-<figure markdown>
-  ![Delete a notification](../../../images/user-guides/organization/notifications/organization-notifications-delete.png){ width="500" }
-</figure>
+## Procedure
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/notifications-tab-go-to.md!}
+
+3. Select **OK**.
+
+## Next steps
+
+* [Create a Notification](create-a-notification.md)

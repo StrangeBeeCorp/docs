@@ -87,9 +87,9 @@ Several types of notifiers are available in TheHive:
 
 {!includes/access-notifications.md!}
 
-## Next steps
+## Next steps* [Turn Off a Notification](turn-off-a-notification.md)
 
 * [Create a Notification](create-a-notification.md)
 * [Edit a Notification](edit-a-notification.md)
-* [Disable a Notification](disable-a-notification.md)
+* [Turn Off a Notification](turn-off-a-notification.md)
 * [Delete a Notification](delete-a-notification.md)
