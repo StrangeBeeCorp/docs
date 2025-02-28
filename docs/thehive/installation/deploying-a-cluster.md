@@ -628,7 +628,7 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
 
     - The provided configuration is backward compatible, ensuring compatibility with existing setups.
 
-    - Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancers-with-haproxy)).
+    - Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancing-with-haproxy)).
 
 &nbsp;
 
@@ -680,7 +680,7 @@ This configuration ensures that incoming HTTP requests are efficiently distribut
 <br/>
 If you choose to use Keepalived to set up a virtual IP address for your load balancers, this section provides a basic example of configuration.
 
-Keepalived is a service that monitors the status of load balancers (such as [**HAProxy**](#load-balancers-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
+Keepalived is a service that monitors the status of load balancers (such as [**HAProxy**](#load-balancing-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
 
 !!! Example "" 
 
