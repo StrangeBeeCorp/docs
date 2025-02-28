@@ -1,29 +1,75 @@
-# Send notifications to Kafka
+# How to Configure the Redis Notifier
 
-!!! Info
-    * No endpoint definition is required to send data to a database in Redis
+This topic provides step-by-step instructions for configuring the Redis [notifier](../about-notifications.md#notifiers) in TheHive.
 
+!!! note "Notifier availability"
+    The webhook notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    - *AnyEvent*  
+    - *FilteredEvent*  
+    - *ActionFinished*  
+    - *CaseClosed*  
+    - *CaseCreated*  
+    - *CaseFlagged*  
+    - *CaseShared*  
+    - *AlertClosed*  
+    - *AlertCreated*  
+    - *AlertImported*  
+    - *JobFinished*  
+    - *AlertObservableCreated*  
+    - *CaseObservableCreated*  
+    - *ObservableCreated*  
+    - *TaskClosed*  
+    - *TaskMandatory*
 
-## Configuration
+{!includes/access-notifications.md!}
 
-Start by clicking on the :fontawesome-regular-square-plus: button to create an new notification.
+## Procedure
 
-<figure markdown>
-  ![Choose Redis](../../../images/user-guides/organization/notifications/organization-notifications-redis-1.png){ width="500" }
-</figure>
+!!! info "No endpoint required"
+    An endpoint definition is not required to send data to a Redis database.
 
-Then select *Redis* as *Notifier* and complete the form with: 
+1. {!includes/organization-view-go-to.md!}
 
-<figure markdown>
-  ![Configure REDIS](../../../images/user-guides/organization/notifications/organization-notifications-redis-2.png){ width="500" }
-</figure>
+2. {!includes/notifications-tab-go-to.md!}
 
+3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
-  * The Channel name used in Redis
-  * The *IP address/homstname* and *port* to connect
-  * A Username
-  * A password
-  * A database name
-  * SSL settings and custom Certificate Authorities can also be configured
+4. Select the *Redis* notifier.
 
-Then click **confirm** to create the *Notification*.
+5. In the **Redis** drawer, enter the following information:
+
+  **Channel \***
+
+  The Redis channel where the data should be published. Select **Add Variable** to dynamically insert values using available variables.
+
+  **Host \***
+
+  The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables.
+
+  **Port \***
+
+  The port number Redis is listening on.
+
+  **Username**
+
+  The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables.
+
+  **Password**
+
+  The password for authentication if Redis requires authentication.
+
+  **Database**
+
+  The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
+
+6. Turn on the **Enable SSL** toggle to encrypt the connection and secure data transmission between TheHive and the Redis server.
+
+  {!includes/certificate-authority.md!}
+
+  {!includes/host-name-verification.md!}
+
+7. Select **Confirm**.
+
+## Next steps
+
+* [Edit a Notification](edit-a-notification.md)

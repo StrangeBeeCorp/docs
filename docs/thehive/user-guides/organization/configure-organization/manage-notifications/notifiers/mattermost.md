@@ -47,7 +47,7 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
   **Username**
 
-  A username that will appear as the sender of the message in Mattermost. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+  The username that will appear as the sender of the message in Mattermost. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
   **Template**
 

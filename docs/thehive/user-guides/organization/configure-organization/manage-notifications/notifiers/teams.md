@@ -22,11 +22,38 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
     - *TaskMandatory*
 
 !!! warning "Migrating to Power Automate workflows for Microsoft Teams integration"
-    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhook workflow. Users must now migrate from the legacy Teams webhook setup to a new configuration using Power Automate workflows.
+    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhook workflow. Users [must now migrate from the legacy Teams webhook setup to a new configuration using Power Automate workflows](#migrate-to-the-microsoft-teams-notifier).
 
 {!includes/access-notifications.md!}
 
-## Procedure
+## Configure the Microsoft Teams notifier (for new users)
+
+1. Go to the [Power Automate website](https://make.powerautomate.com/) and sign in with your Microsoft account.
+
+  ![](../../../images/user-guides/organization/notifications/msteams-1.png)
+
+2. Select **Create** and then **Instant cloud flow**.
+
+3. Enter a name for your flow.
+
+4. In the **Choose how to trigger this flow** section, select **When a Teams webhook is received**.
+
+5. Select :fontawesome-solid-plus: to add an action.
+
+6. In the **Add an action** drawer, select **Post card in a chat or channel** for Microsoft Teams.
+
+7. Select your action card and enter the following values in corresponding fields:
+
+  **Post as**
+
+  Select *  *.
+
+  **Post in**
+
+  **Team**
+
+  **Channel**
+
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -56,12 +83,6 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 
 
-
-## Teams Notifier Setup Using Power Automate
-
-To accommodate Microsoft's changes and ensure continued functionality of Teams notifications, follow these steps to set up the new Teams notifier using Power Automate.
-
-&nbsp;
 
 ### Step 1: Create a New Power Automate Flow
 
@@ -122,7 +143,7 @@ Once all fields are completed, click **Confirm** to create the endpoint.
 
 ---
 
-## Migration Instructions for Current Users
+## Migrate to the latest Microsoft Teams notifier (for existing users)
 
 If you are currently using the legacy Teams webhook, follow these steps to migrate:
 
