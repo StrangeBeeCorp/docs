@@ -21,38 +21,44 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
     - *TaskClosed*  
     - *TaskMandatory*
 
-!!! warning "Migrating to Power Automate workflows for Microsoft Teams integration"
-    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhook workflow. Users [must now migrate from the legacy Teams webhook setup to a new configuration using Power Automate workflows](#migrate-to-the-microsoft-teams-notifier).
+!!! warning "Migrating to the Workflows application for Microsoft Teams integration"
+    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhooks. Users [must now migrate from the legacy webhook setup to a new configuration using the Workflows application](#migrate-to-the-latest-microsoft-teams-notifier-for-existing-users).
 
 {!includes/access-notifications.md!}
 
 ## Configure the Microsoft Teams notifier (for new users)
 
-1. Go to the [Power Automate website](https://make.powerautomate.com/) and sign in with your Microsoft account.
+### Step 1: Create a flow in the Workflows application
 
-  ![](../../../images/user-guides/organization/notifications/msteams-1.png)
+1. Go to your Microsoft Teams application.
 
-2. Select **Create** and then **Instant cloud flow**.
+2. Select :fontawesome-solid-ellipsis-h:.
 
-3. Enter a name for your flow.
+  ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
 
-4. In the **Choose how to trigger this flow** section, select **When a Teams webhook is received**.
+3. Select the **Workflows** application.
 
-5. Select :fontawesome-solid-plus: to add an action.
+  ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
 
-6. In the **Add an action** drawer, select **Post card in a chat or channel** for Microsoft Teams.
+4. In the **Workflows** application, select **New flow**.
 
-7. Select your action card and enter the following values in corresponding fields:
+5. Search for a template named *Post to a channel when a webhook request is received*.
 
-  **Post as**
+6. Select the template **Post to a channel when a webhook request is received**.
 
-  Select *  *.
+7. Enter your flow name.
 
-  **Post in**
+8. Select **Next**.
 
-  **Team**
+9. Select a Microsoft Teams team and channel.
 
-  **Channel**
+10. Select **Create flow**.
+
+11. Copy the HTTP POST URL.
+
+12. 
+
+
 
 
 1. {!includes/organization-view-go-to.md!}
