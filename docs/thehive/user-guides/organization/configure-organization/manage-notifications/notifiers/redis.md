@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the Redis [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The webhook notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Redis notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
