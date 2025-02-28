@@ -1,39 +1,60 @@
-# About Key Performance Indicators
+# Key Performance Indicators (KPIs)
 
-Starting from version 5.1, TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
+Starting from **version 5.1**, **TheHive** provides valuable insights into event and incident time metrics, allowing you to track **Key Performance Indicators (KPIs)** for both [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
 
-These KPIs are displayed by default on all cases and alerts in TheHive. You can also integrate them into dashboards and case reports.
+These KPIs are displayed by default on all cases and alerts within **TheHive**. Additionally, they can be integrated into dashboards and case reports to enhance monitoring and analysis.
 
-This topic defines each of these indicators.
+This section defines each KPI and its significance in security operations.
 
-## Time to detect (TTD)
+## Time to Detect (TTD)
 
-The time it takes for your security team to detect abnormal activity that may indicate malicious, suspicious, or risky behavior in your environment. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
+**Definition:**  
+The duration taken by your security team to detect abnormal activity that may indicate **malicious, suspicious, or risky behavior** within your environment.
 
-## Time to triage (TTT)
+**Purpose:**  
+This metric evaluates the effectiveness of your **monitoring tools** and **detection capabilities**, helping to assess how quickly threats are identified.
 
-The time it takes for your security team to assess and prioritize a detected alert, determining its relevance, severity, and required response. It reflects how efficiently alerts are reviewed and escalated for investigation.
+## Time to Triage (TTT)
 
-## Time to acknowledge (TTA)
+**Definition:**  
+The time required for your security team to **assess and prioritize a detected alert**, determining its **relevance, severity, and required response**.
 
-The time it takes for your security team to acknowledge an event by transitioning its status to *In Progress*. This measures the responsiveness of your team after detecting a potential security incident.
+**Purpose:**  
+It reflects how efficiently alerts are reviewed and escalated for investigation, ensuring that critical threats are addressed promptly.
 
-## Time to qualify (TTQ)
+## Time to Acknowledge (TTA)
 
-The time it takes for your security team to analyze an alert and determine its validity—whether it's a true positive, a false positive, or requires further investigation. This metric helps measure the accuracy and speed of the qualification process.
+**Definition:**  
+The time taken for your security team to **acknowledge an event** by transitioning its status to **In Progress**.
 
-## Time to resolve (TTR)
+**Purpose:**  
+This metric measures your team's **responsiveness** after detecting a potential security incident, indicating how quickly they react to new alerts.
 
-The time it takes to fully resolve an incident after it has been marked *In Progress*. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
+## Time to Qualify (TTQ)
+
+**Definition:**  
+The duration needed for your security team to **analyze an alert** and determine whether it is a **true positive, false positive, or requires further investigation**.
+
+**Purpose:**  
+This helps measure the **accuracy and speed** of the qualification process, ensuring that resources are focused on genuine threats.
+
+## Time to Resolve (TTR)
+
+**Definition:**  
+The time required to **fully resolve an incident** after it has been marked as **In Progress**. This includes **investigation, remediation, and closure**.
+
+**Purpose:**  
+This metric assesses the **efficiency** of your incident response process by tracking how long it takes to remediate and close security incidents.
 
 ---
 
-To view the formulas for each indicator, refer to the [Key Performance Indicator Formulas](key-performance-indicators-formulas.md) topic.
+## Additional Resources
 
-For more information on these KPIs, we recommend you consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
+- To view the formulas used for calculating each KPI, refer to **[Key Performance Indicator Formulas](key-performance-indicators-formulas.md)**.
+- For further insights on security operation KPIs, see this **[SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/)**.
 
-## Next steps
+## Next Steps
 
-* [Hide Key Performance Indicators](hide-key-performance-indicators.md)
-* [Measure Case Performance](measure-case-management-performance.md)
-* [Measure Alert Performance](measure-alert-management-performance.md)
+- [Hide Key Performance Indicators](hide-key-performance-indicators.md)
+- [Measure Case Performance](measure-case-management-performance.md)
+- [Measure Alert Performance](measure-alert-management-performance.md)

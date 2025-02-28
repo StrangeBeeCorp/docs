@@ -1,23 +1,31 @@
-# I forgot my password
+# Resetting Your Password
 
-If TheHive is connected to a SMTP server, as a user, you can change your password.
+If **TheHive** is connected to an SMTP server, you can reset your password by following these steps:
 
-1. On the login page of TheHive, click the *I forgot my password* button
+## Step 1: Initiate Password Reset
 
-    <figure markdown>
-    ![](/thehive/images/user-guides/user-forgot-password-1.png){ width="500" }
-    </figure>
+1. On the **TheHive** login page, click **I forgot my password**.
 
-2. Enter your email address and click *send*
+    ![](/thehive/images/user-guides/user-forgot-password-1.png)
 
-    <figure markdown>
-    ![](/thehive/images/user-guides/user-forgot-password-2.png){ width="500" }
-    </figure>
+## Step 2: Enter Your Email
 
-3. You should received an email including a magic link to change your password
+2. Enter your registered email address and click **Send**.
 
-    <figure markdown>
-    ![](/thehive/images/user-guides/user-forgot-password-3.png){ width="500" }
-    </figure>
+    ![](/thehive/images/user-guides/user-forgot-password-2.png)
 
-4. Click on the link and change your password. You should be able to login again once updated.
+## Step 3: Check Your Email
+
+3. You will receive an email containing a **password reset link**.
+
+    ![](/thehive/images/user-guides/user-forgot-password-3.png)
+
+   > **Note:** If you do not receive the email, check your spam/junk folder. Ensure that your email address is correctly entered.
+
+## Step 4: Reset Your Password
+
+4. Click the link in the email and follow the on-screen instructions to set a new password.
+
+5. Once updated, return to the login page and sign in with your new credentials.
+
+&nbsp;
