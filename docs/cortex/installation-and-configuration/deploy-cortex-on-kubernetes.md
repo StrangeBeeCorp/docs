@@ -24,7 +24,7 @@ Kubernetes supports several methods for sharing filesystems between pods, includ
 
 This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](https://aws.amazon.com/efs/).
 
-### 1. Ensure all users can access files on the shared filesystem
+### Step 1: Ensure all users can access files on the shared filesystem
 
 At runtime, Cortex and its jobs run on different pods and may use different user IDs (UIDs) and group IDs (GIDs):
 
@@ -33,7 +33,7 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 
 To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html) with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
-### 2. Define a PersistentVolume for the NFS server
+### Step 2: Define a PersistentVolume for the NFS server
 
 A [PersistentVolume (PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) represents a piece of storage provisioned by an administrator or dynamically provisioned using storage classes. When using an NFS server, the PV allows multiple pods to access shared storage concurrently.
 
@@ -68,7 +68,7 @@ To define a PV for your NFS server:
         - nfsvers=4.2 # Specify the NFS client version
     ``` 
 
-### 3. Create a PersistentVolumeClaim
+### Step 3: Create a PersistentVolumeClaim
 
 A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV or dynamically creates one, specifying the required storage capacity.
 
@@ -89,7 +89,7 @@ spec:
       storage: 10Gi
 ```
 
-### 4. Edit your Cortex deployment
+### Step 4: Edit your Cortex deployment
 
 Edit your Cortex deployment manifest to configure how Cortex runs within your Kubernetes cluster. This configuration connects Cortex to the shared filesystem by mounting the PVC, enabling Cortex to access and store job data.
 
@@ -146,7 +146,7 @@ Before setting up the PV for AWS EFS, complete the following steps:
     * [Official Helm Chart](https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&expanded=true)
 3. [Create an EFS filesystem](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) and note the associated EFS filesystem ID.
 
-#### 1. Create a StorageClass for EFS
+#### Step 1: Create a StorageClass for EFS
 
 !!! note "Reference example"
     The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods).
@@ -170,7 +170,7 @@ parameters:
   subPathPattern: "${.PVC.namespace}/${.PVC.name}" # Optional subfolder structure inside the NFS filesystem
 ```
 
-#### 2. Define a PV using the EFS StorageClass
+#### Step 2: Define a PV using the EFS StorageClass
 
 Create a new PV that connects to your AWS EFS using the previously defined StorageClass:
 
@@ -191,7 +191,7 @@ spec:
     volumeHandle: fs-01234567 # Replace with your EFS filesystem ID
 ```
 
-#### 3. Create a PVC using the EFS StorageClass
+#### Step 3: Create a PVC using the EFS StorageClass
 
 The PVC manifest is nearly identical to the one defined earlier. The only change required is updating the storageClassName to reference the EFS StorageClass:
 
@@ -215,7 +215,7 @@ In Kubernetes, a service account (SA) allows a pod to authenticate and interact 
 
 When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.
 
-### 1. Create a SA for Cortex
+### Step 1: Create a SA for Cortex
 
 ```yaml
 apiVersion: v1
@@ -224,7 +224,7 @@ metadata:
   name: cortex
 ```
 
-### 2. Define a role for Cortex job execution
+### Step 2: Define a role for Cortex job execution
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -240,7 +240,7 @@ rules:
     verbs: ["create", "delete", "get", "list", "watch"]
 ```
 
-### 3. Create a RoleBinding to link the SA and role
+### Step 3: Create a RoleBinding to link the SA and role
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -255,7 +255,7 @@ subjects:
   - kind: ServiceAccount
     name: cortex
 ```
-### 4. Assign the SA in the Cortex deployment
+### Step 4: Assign the SA in the Cortex deployment
 
 ```yaml
 apiVersion: apps/v1
