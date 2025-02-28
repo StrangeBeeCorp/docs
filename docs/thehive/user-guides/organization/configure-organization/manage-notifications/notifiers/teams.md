@@ -27,31 +27,44 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 ### Step 1: Create a flow in the Workflows application
 
-1. Go to your Microsoft Teams application.
+=== "If you are using TheHive 5.4.3 or later"
 
-2. Select :fontawesome-solid-ellipsis-h:.
+    1. Go to your Microsoft Teams application.
 
-  ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
+    2. Select :fontawesome-solid-ellipsis-h:.
 
-3. Select the **Workflows** application.
+      ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
 
-  ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
+    3. Select the **Workflows** application.
 
-4. In the **Workflows** application, select **New flow**.
+      ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
 
-5. Search for a template named *Post to a channel when a webhook request is received*.
+    4. In the **Workflows** application, select **New flow**.
 
-6. Select the template **Post to a channel when a webhook request is received**.
+    5. Search for a template named *Post to a channel when a webhook request is received*.
 
-7. Enter your flow name.
+    6. Select the template **Post to a channel when a webhook request is received**.
 
-8. Select **Next**.
+    7. Enter your flow name.
 
-9. Select a Microsoft Teams team and channel.
+    8. Select **Next**.
 
-10. Select **Create flow**.
+    9. Select a Microsoft Teams team and channel.
 
-11. Copy the HTTP POST URL.
+    10. Select **Create flow**.
+
+    11. Copy the HTTP POST URL.
+
+=== "If you are using TheHive 5.4.2 or earlier"
+
+For TheHive versions earlier than 5.4.3, users can still send notifications to Microsoft Teams using Incoming Webhooks. This method simply requires creating a webhook and adding its URL to TheHive’s settings.
+
+While easy to set up, this legacy approach lacks the customization and enhanced security features provided by the newer Workflows integration. Moreover, with Microsoft deprecating Incoming Webhooks, this method may become less reliable or lose functionality in the future.
+
+!!! info "Migration expected by January 31, 2025"
+    As announced by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/), Connector owners must update their webhook URLs by January 31, 2025, to comply with the new structure. This update is crucial for maintaining seamless integration and ensuring the continued functionality of Connectors in Microsoft Teams.
+
+For detailed instructions, refer to Microsoft's official documentation on [creating an Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?utm_source=chatgpt.com&tabs=newteams%2Cdotnet#create-an-incoming-webhook).
 
 ### Step 2: Create a Microsoft Teams endpoint
 
@@ -79,27 +92,26 @@ Refer to the [Add a Microsoft Teams endpoint](../../manage-endpoints/add-teams-e
 
   The message content to be sent to the Microsoft Teams endpoint.
 
-  If an [adaptive card](https://adaptivecards.io/) template is not provided, a plain text template is required. In version 5.4.3, plain text will automatically convert into an adaptive card format, which is structured using JSON.
+  If an [Adaptive Card](https://adaptivecards.io/) template is not provided, a plain text template is required. In version 5.4.3, plain text will automatically convert into an Adaptive Card format, which is structured using JSON.
 
   !!! tips "Tips to write text templates"
     
-      #### Adaptive cards designer
-      Use [https://adaptivecards.io/designer/](https://adaptivecards.io/designer/) as a starting point to design your adaptive cards.
+      #### Use the Adaptive Cards Designer
+      Use [the Adaptive Cards Designer](https://adaptivecards.io/designer/) as a starting point to design your Adaptive Cards.
     
       #### Format dates
-      * TheHive uses [handlerbars string helpers](https://github.com/jknack/handlebars.java/blob/master/handlebars/src/main/java/com/github/jknack/handlebars/helper/StringHelpers.java#L507-L543) to read dates
-      * Formatting date and time in notifications requires using dedicated [Java patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html)
+      * TheHive uses [Handlebars string helpers](https://github.com/jknack/handlebars.java/blob/master/handlebars/src/main/java/com/github/jknack/handlebars/helper/StringHelpers.java#L507-L543) to read dates.
+      * Formatting date and time in notifications requires using dedicated [Java patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html).
 
       #### Format other custom data from TheHive
-      Few data custom to TheHive can be properly displayed using custom string handlers together with `object` data in notifications: 
-
+      Few data custom to TheHive can be properly displayed using custom string handlers together with `object` data in notifications:
       * `tlpLabel` to display the TLP value (example: `{{tlpLabel object.tlp}}`)
       * `papLabel` to display the PAP value (example: `{{papLabel object.pap}}`)
       * `severityLabel` to display the severity value (example: `{{severityLabel object.severity}}`)
   
   Select **Add Variable** to dynamically insert values using available variables.
 
-  !!! example "Adaptive card template used to display notifications when a new case is created"
+  !!! example "Adaptive Card template used to display notifications when a new case is created"
 
     ```json
     {
@@ -197,31 +209,3 @@ Refer to the [Add a Microsoft Teams endpoint](../../manage-endpoints/add-teams-e
 ## Next steps
 
 * [Edit a Notification](edit-a-notification.md)
-
-## Older TheHive Versions
-
-For TheHive versions prior to 5.4.3, users can still send notifications to Microsoft Teams through incoming webhooks. This simpler method involves creating a Teams webhook and using its URL within TheHive's settings.
-
-Although straightforward, this legacy method lacks the customization and enhanced security features available with the newer Power Automate setup. Additionally, with Microsoft’s deprecation of incoming webhooks, continued use may lead to limited functionality in the future.
-
-### Legacy Setup Steps:
-
-1. Set Up Microsoft Teams:
-
-    - Follow the video tutorial to create an incoming webhook and copy the provided URL
-
-      <video controls>
-        <source id=mp4 src="../../../images/user-guides/organization/notifications/organization-endpoints-msteams-configuration.mp4" type="video/mp4">
-      </video>
-
-2. Configure TheHive:
-
-    - Navigate to **TheHive** > **Organization Admin** > **Endpoint** > **Connector Teams**.
-  
-    - Paste the webhook URL and complete the configuration as needed.
-
-&nbsp;
-
-!!! Info "Note: As communicated by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/), connector owners must update their webhook URLs by January 31, 2025 to comply with the new structure. This update is essential to ensure seamless integration and continued functionality of connectors within Microsoft Teams."
-
-&nbsp;

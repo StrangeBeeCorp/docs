@@ -45,6 +45,8 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
   The message content to be sent to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
 
+  {!includes/handlebars-templates.md!}
+
   **Channel**
 
   The Slack channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.

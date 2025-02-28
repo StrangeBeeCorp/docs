@@ -53,6 +53,8 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
   The message content to be sent to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
 
+  {!includes/handlebars-templates.md!}
+
 6. Select **Confirm**.
 
 ## Next steps
