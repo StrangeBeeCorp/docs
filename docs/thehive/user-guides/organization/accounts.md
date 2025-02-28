@@ -57,7 +57,7 @@ Users with the **_org-admin_** profile or the **`manageUser`** permission can ad
 ### Steps to Add a User
 
 1. Click the **:fontawesome-regular-square-plus:** button to create a new user account.
-2. Follow the guides for **[Creating an Account](../../administration/accounts.md#create-an-account)** and **[Updating an Account](../../administration/accounts.md#update-an-account)**.
+2. Follow the guides for **[Creating an Account](../../administration/accounts.md#creating-an-account)** and **[Updating an Account](../../administration/accounts.md#updating-an-account)**.
 
 ---
 
