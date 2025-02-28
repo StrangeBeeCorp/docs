@@ -1,14 +1,47 @@
-# How to write filtered events for notifications ?
+# How to Write a FilteredEvent Trigger
+
+This topic provides step-by-step instructions for writing a FilteredEvent [trigger](../manage-notifications/about-notifications.md#triggers) in TheHive.
+
+!!! info "Capabilities of the FilteredEvent trigger"
+    We recommend reading this [StrangeBee blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) for an introduction to the capabilities of FilteredEvent trigger.
+
+{!includes/access-notifications.md!}
+
+## Procedure
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/notifications-tab-go-to.md!}
+
+3. Select :fontawesome-solid-plus: or **Add a new notification**.
+
+4. Select the *FilteredEvent* trigger.
+
+    Selecting *FilteredEvent* opens a field where you can define a custom filter. These filters apply to all actions recorded in the organization's audit log. When an action matches the filter criteria, a notification is triggered.
+
+5. 
+
+## Next steps
+
+* [Configure the EmailerToAddr Notifier](../manage-notifications/notifiers/email-to-addr.md)
+* [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
+* [Configure the Mattermost Notifier](../manage-notifications/notifiers/mattermost.md)
+* [Configure the Slack Notifier](../manage-notifications/notifiers/slack.md)
+* [Configure the Teams Notifier](../manage-notifications/notifiers/teams.md)
+* [Configure the webhook Notifier](../manage-notifications/notifiers/webhook.md)
+* [Configure the Kafka Notifier](../manage-notifications/notifiers/kafka.md)
+* [Configure the Redis Notifier](../manage-notifications/notifiers/redis.md)
+* [Configure the RunAnalyzer Notifier](../manage-notifications/notifiers/analyzers.md)
+* [Configure the RunResponder Notifier](../manage-notifications/notifiers/responders.md)
+* [Configure the Function Notifier](../manage-notifications/notifiers/function.md)
 
 <figure markdown>
   ![Filtered Event](../../../images/user-guides/organization/notifications/organization-notifications-filteredevent.png){ width="500" }
   <figcaption>Filtered event example: "Case severity has been updated to High or Critical"</figcaption>
 </figure>
 
-Selecting “FilteredEvent” opens an empty field where we set our custom filter. The filters will apply to the audit of every actions that are happening in your organization. When there is a match, a notification is sent. 
 
-!!! info
-    We recommend reading this [blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) that introduces the capabilities of filtered events.
+
 
 ## Anatomy of an audit
 

@@ -61,7 +61,7 @@ The *AnyEvent* trigger allows notifications to be executed for any event in TheH
 
 When you select *FilteredEvent*, TheHive allows you to define a structured JSON filter. This filter is used to match specific events in TheHive.
 
-Learn how to create filtered events and explore examples in the [How to Write Filtered Events](./filteredevents.md) topic.
+Learn how to create filtered events and explore examples in the [How to Write a Filtered Event Trigger](./filtered-event-trigger.md) topic.
 
 ### Notifiers
 
@@ -78,7 +78,7 @@ Several types of notifiers are available in TheHive:
 * *Redis*: Sends data to a selected [Redis endpoint](./redis.md)
 * *RunAnalyzer*: Executes a selected [analyzer](./analyzers.md)
 * *RunResponder*: Executes a selected [responder](./responders.md)
-* *Function*: Revokes a specified [function](../manage-functions/about-functions.md)
+* *Function*: Run a specified [function](../manage-functions/about-functions.md)
 
 !!! warning "Endpoints required"
     Some notifiers require at least one defined endpoint. Refer to the dedicated page for each notifier to learn how to create the necessary endpoints.
