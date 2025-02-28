@@ -393,6 +393,7 @@ nav:
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+          - 'View a Report' : thehive/user-guides/analyst-corner/tasks/view-a-report.md
         - 'Dashboard Usage':
           - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
           - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
