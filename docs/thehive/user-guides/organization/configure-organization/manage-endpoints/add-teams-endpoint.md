@@ -1,37 +1,83 @@
 # How to Add a Microsoft Teams Endpoint
 
-!!! warning "Migrating to the Workflows application for Microsoft Teams integration"
-    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the incoming webhooks. Users [must now migrate from the legacy webhook setup to a new configuration using the Workflows application](#migrate-to-the-latest-microsoft-teams-notifier-for-existing-users).
-
 This topic provides step-by-step instructions for adding a Microsoft Teams [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
 {!includes/access-endpoints.md!}
 
-### Step 3: Enter the Required Information
-Select *Teams* as the connector type and complete the necessary details.
+## Procedure
 
-<figure markdown>
-  ![Teams endpoint configuration](../../../images/user-guides/organization/notifications/organization-endpoints-teams-configuration.png)
-</figure>
+### Step 1: Create a flow in Microsoft Teams
 
-- **Name**: Provide a unique name for the endpoint.
-- **URL**: Enter the URL for connecting to Microsoft Teams. This URL should be the one copied from Power Automate when setting up the new workflow.
-- **Auth Type**: Select an authentication method — *Basic Authentication*, *Key*, or *Bearer*.
-- **Proxy settings**: Optionally, enable a web proxy to connect to this endpoint.
-- **Certificate Authorities**: If required, add custom Certificate Authorities in PEM format.
-- **SSL settings**: Optionally, disable Certificate Authority validation or hostname checks.
+=== "If you are using TheHive 5.4.3 or later"
 
-Once all fields are completed, click **Confirm** to create the endpoint.
+    1. Go to your Microsoft Teams application.
 
----
+    2. Select :fontawesome-solid-ellipsis-h:.
 
-!!! note "Migration from the legacy webhook setup"
-      If you are using the legacy webhook setup, replace your current endpoint with the 
+      ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
 
-Migration Instructions for Current Users#
-If you are currently using the legacy Teams webhook, follow these steps to migrate:
+    3. Select the **Workflows** application.
 
-Complete the Create a New Power Automate Flow steps above to obtain the new HTTP POST URL.
-Go to TheHive > Organization Admin > Endpoint > Connector Teams.
-In the Teams webhook URL field, replace the existing webhook URL with the new HTTP POST URL from your Power Automate flow.
-Click Save to apply the update.
+      ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
+
+    4. In the **Workflows** application, select **New flow**.
+
+    5. Search for a template named *Post to a channel when a webhook request is received*.
+
+    6. Select the template **Post to a channel when a webhook request is received**.
+
+    7. Enter your flow name.
+
+    8. Select **Next**.
+
+    9. Select a Microsoft Teams team and channel.
+
+    10. Select **Create flow**.
+
+    11. Copy the HTTP POST URL.
+
+=== "If you are using TheHive 5.4.2 or earlier"
+
+For TheHive versions earlier than 5.4.3, users can still send notifications to Microsoft Teams using Incoming Webhooks. This method simply requires creating a webhook and adding its URL to TheHive’s settings.
+
+While easy to set up, this legacy approach lacks the customization and enhanced security features provided by the newer Workflows integration. Moreover, with Microsoft deprecating Incoming Webhooks, this method may become less reliable or lose functionality in the future.
+
+!!! warning "Migrating to the Workflows application for Microsoft Teams integration"
+    With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft's deprecation of the Incoming Webhooks. Users must now migrate from the legacy webhook setup to a new configuration using the Workflows application.
+
+!!! info "Migration expected by January 31, 2025"
+    As announced by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/), Connector owners must update their webhook URLs by January 31, 2025, to comply with the new structure. This update is crucial for maintaining seamless integration and ensuring the continued functionality of Connectors in Microsoft Teams.
+
+For detailed instructions, refer to Microsoft's official documentation on [creating an Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?utm_source=chatgpt.com&tabs=newteams%2Cdotnet#create-an-incoming-webhook).
+
+### Step 2: Create a Microsoft Teams endpoint
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/endpoints-tab-go-to.md!}
+
+3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
+
+4. In the **Endpoint creation** drawer, select **Teams**.
+
+5. Enter the following information:
+
+    **Name**
+
+    The endpoint name, used to identify this Microsoft Teams integration in TheHive. This name must be unique, as two endpoints can't have the same name.
+
+    **URL**
+
+    The URL used to connect to your Microsoft Teams. This should be the HTTP POST URL generated by the Workflows application or Incoming Webhooks, depending on your configuration.
+
+6. {!includes/proxy-settings.md!}
+
+7. {!includes/certificate-authority.md!}
+
+8. {!includes/host-name-verification.md!}
+
+9. Select **Confirm**.
+
+## Next steps
+
+* [Configure the Teams Notifier](../manage-notifications/notifiers/teams.md)

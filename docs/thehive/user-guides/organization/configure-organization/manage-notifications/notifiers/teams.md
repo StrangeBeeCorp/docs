@@ -25,53 +25,6 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 ## Procedure
 
-### Step 1: Create a flow in the Workflows application
-
-=== "If you are using TheHive 5.4.3 or later"
-
-    1. Go to your Microsoft Teams application.
-
-    2. Select :fontawesome-solid-ellipsis-h:.
-
-      ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
-
-    3. Select the **Workflows** application.
-
-      ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
-
-    4. In the **Workflows** application, select **New flow**.
-
-    5. Search for a template named *Post to a channel when a webhook request is received*.
-
-    6. Select the template **Post to a channel when a webhook request is received**.
-
-    7. Enter your flow name.
-
-    8. Select **Next**.
-
-    9. Select a Microsoft Teams team and channel.
-
-    10. Select **Create flow**.
-
-    11. Copy the HTTP POST URL.
-
-=== "If you are using TheHive 5.4.2 or earlier"
-
-For TheHive versions earlier than 5.4.3, users can still send notifications to Microsoft Teams using Incoming Webhooks. This method simply requires creating a webhook and adding its URL to TheHive’s settings.
-
-While easy to set up, this legacy approach lacks the customization and enhanced security features provided by the newer Workflows integration. Moreover, with Microsoft deprecating Incoming Webhooks, this method may become less reliable or lose functionality in the future.
-
-!!! info "Migration expected by January 31, 2025"
-    As announced by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/), Connector owners must update their webhook URLs by January 31, 2025, to comply with the new structure. This update is crucial for maintaining seamless integration and ensuring the continued functionality of Connectors in Microsoft Teams.
-
-For detailed instructions, refer to Microsoft's official documentation on [creating an Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?utm_source=chatgpt.com&tabs=newteams%2Cdotnet#create-an-incoming-webhook).
-
-### Step 2: Create a Microsoft Teams endpoint
-
-Refer to the [Add a Microsoft Teams endpoint](../../manage-endpoints/add-teams-endpoint.md) topic.
-
-### Step 3: Configure the Microsoft Teams notifier
-
 1. {!includes/organization-view-go-to.md!}
 
 2. {!includes/notifications-tab-go-to.md!}

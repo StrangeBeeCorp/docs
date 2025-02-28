@@ -37,6 +37,7 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 * Identifying cold cases by addind a tag based on predefined conditions: [Code]()
 * Deleting IPs in observables as part of automated cleanup: [Code]()
+* Closing duplicated alerts based on alert titles and observables: [Code]()
 
 ### Notifications
 
