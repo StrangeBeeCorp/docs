@@ -13,7 +13,7 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
     User data is synchronized periodically:  
     - New LDAP users are automatically created in TheHive.  
-    - Removed users are disabled.  
+    - Removed users become inactive.  
     - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
