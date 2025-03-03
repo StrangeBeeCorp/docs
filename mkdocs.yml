@@ -157,7 +157,8 @@ plugins:
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/analyst-corner/cases/export-a-case.md': 'thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
-
+            'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
+            'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
 
 extra:
   generator: false
@@ -273,13 +274,15 @@ nav:
         - 'MISP Integration': thehive/administration/misp.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
-          - 'General Settings': thehive/administration/authentication/general.md
-          - 'Local Authentication': thehive/administration/authentication/local.md
-          - 'LDAP Authentication': thehive/administration/authentication/ldap.md
-          - 'Active Directory (AD) Authentication': thehive/administration/authentication/ad.md
-          - 'SAML Authentication': thehive/administration/authentication/saml.md
-          - 'OAUTH2 Authentication': thehive/administration/authentication/oauth2.md
-        - 'SMTP Configuration': thehive/administration/smtp.md
+          - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
+          - 'Configure Providers': 
+            - 'Local': thehive/administration/authentication/local.md
+            - 'Active Directory (AD)': thehive/administration/authentication/ad.md
+            - 'LDAP': thehive/administration/authentication/ldap.md
+            - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
+            - 'SAML': thehive/administration/authentication/saml.md
+          - 'Configure SSL': thehive/administration/authentication/ssl.md
+          - 'SMTP Configuration': thehive/administration/smtp.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
         - 'Custom Fields': 
