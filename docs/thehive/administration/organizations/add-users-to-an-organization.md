@@ -36,7 +36,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     **Login \***
 
-    The login used for the user to sign in. It can be an email address or another identifier, depending on your TheHive configuration.
+    The login used for the user to sign in. It can be an email address or another identifier, depending on [your authentication configuration](../authentication/configure-authentication.md).
 
     **Name \***
 
