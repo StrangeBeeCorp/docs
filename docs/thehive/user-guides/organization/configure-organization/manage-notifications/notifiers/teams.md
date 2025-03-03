@@ -39,7 +39,7 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
   Using Microsoft Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Microsoft Teams.
 
-  Select [the endpoint you created]((../../manage-endpoints/add-teams-endpoint.md)).
+  Select [the endpoint you created](../../manage-endpoints/add-teams-endpoint.md).
 
   **Text template**
 
@@ -155,10 +155,10 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
   
   Used with the trigger *Case created*, this template will create a card like this in Microsoft Teams:
 
-  ![MS Teams card](../../../images/user-guides/organization/notifications/organization-notifications-teams-2.png)
+  ![MS Teams card](/images/user-guides/organization/notifications/organization-notifications-teams-2.png)
 
 6. Select **Confirm**.
 
 ## Next steps
 
-* [Edit a Notification](edit-a-notification.md)
+* [Edit a Notification](../edit-a-notification.md)

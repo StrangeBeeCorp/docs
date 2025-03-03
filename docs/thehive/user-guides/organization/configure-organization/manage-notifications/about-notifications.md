@@ -18,7 +18,7 @@ A notification consists of two key components:
 
 Each notification is associated with only one trigger.
 
-TheHive provides several predefined triggers for [cases](../../../analyst-corner/cases/about-cases.md), [alerts](../../../analyst-corner/alerts/about-alerts.md), [tasks](../../../analyst-corner/tasks/about-tasks.md), [observables](../../../analyst-corner/alerts/alerts-description/view-observables.md), [actions](../../../analyst-corner/cases/cases-description/run-responders.md), and [jobs](../../../analyst-corner/cases/cases-description/run-analyzers.md). Additionally, custom triggers can be created using *FilteredEvent*.
+TheHive provides several predefined triggers for [cases](../../../analyst-corner/cases/about-cases.md), [alerts](../../../analyst-corner/alerts/about-alerts.md), [tasks](../../../analyst-corner/tasks/about-tasks.md), [observables](../../../analyst-corner/alerts/alerts-description/view-observables.md), [actions](../../../analyst-corner/cases/cases-description/run-responders.md), and [jobs](../../../analyst-corner/cases/cases-description/run-analyzer.md). Additionally, custom triggers can be created using *FilteredEvent*.
 
 The *AnyEvent* trigger allows notifications to be executed for any event in TheHive.
 
@@ -61,7 +61,7 @@ The *AnyEvent* trigger allows notifications to be executed for any event in TheH
 
 When you select *FilteredEvent*, TheHive allows you to define a structured JSON filter. This filter is used to match specific events in TheHive.
 
-Learn how to create filtered events and explore examples in the [How to Write a Filtered Event Trigger](./filtered-event-trigger.md) topic.
+Learn how to create filtered events and explore examples in the [How to Write a Filtered Event Trigger](./write-filtered-event-trigger.md) topic.
 
 ### Notifiers
 

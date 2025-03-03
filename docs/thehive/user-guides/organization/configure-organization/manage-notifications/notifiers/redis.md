@@ -64,7 +64,13 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
 6. Turn on the **Enable SSL** toggle to encrypt the connection and secure data transmission between TheHive and the Redis server.
 
-  {!includes/certificate-authority.md!}
+  Add a certificate authority.
+
+    For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
+
+    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+
+    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
   {!includes/host-name-verification.md!}
 
@@ -72,4 +78,4 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
 ## Next steps
 
-* [Edit a Notification](edit-a-notification.md)
+* [Edit a Notification](../edit-a-notification.md)

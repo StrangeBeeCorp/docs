@@ -36,7 +36,13 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
 7. {!includes/proxy-settings.md!}
 
-8. {!includes/certificate-authority.md!}
+8. Add a certificate authority.
+
+    For more information about configuring SSL, refer to the [Configure SSL](../../../../administration/authentication/ssl.md) topic.
+
+    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+
+    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
 9. {!includes/host-name-verification.md!}
 

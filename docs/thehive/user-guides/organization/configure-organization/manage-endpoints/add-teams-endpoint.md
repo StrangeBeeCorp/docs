@@ -14,11 +14,11 @@ This topic provides step-by-step instructions for adding a Microsoft Teams [endp
 
     2. Select :fontawesome-solid-ellipsis-h:.
 
-      ![Microsoft select app](../../images/user-guides/organization/notifications/microsoft-teams.png)
+      ![Microsoft select app](/images/user-guides/organization/notifications/microsoft-teams.png)
 
     3. Select the **Workflows** application.
 
-      ![Workflows app](../../images/user-guides/organization/notifications/workflows-app.png)
+      ![Workflows app](/images/user-guides/organization/notifications/workflows-app.png)
 
     4. In the **Workflows** application, select **New flow**.
 
@@ -72,7 +72,13 @@ For detailed instructions, refer to Microsoft's official documentation on [creat
 
 6. {!includes/proxy-settings.md!}
 
-7. {!includes/certificate-authority.md!}
+7. Add a certificate authority.
+
+    For more information about configuring SSL, refer to the [Configure SSL](../../../../administration/authentication/ssl.md) topic.
+
+    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+
+    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
 8. {!includes/host-name-verification.md!}
 

@@ -50,4 +50,4 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
 
 ## Next steps
 
-* [Edit a Notification](edit-a-notification.md)
+* [Edit a Notification](../edit-a-notification.md)

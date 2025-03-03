@@ -84,9 +84,9 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/manage_notification.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/supported-notifiers.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/triggering-events.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
             'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-users/add-delete-user.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-users/lock.md'
@@ -94,23 +94,23 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-users/preview.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/organization/configure-organization/manage-users/sort.md'
             'thehive/user-guides/organisation/custom-tags.md': 'thehive/user-guides/organization/custom-tags.md'
-            'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/functions.md'
+            'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md'
             'thehive/user-guides/organisation/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
-            'thehive/user-guides/organisation/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
-            'thehive/user-guides/organisation/notifications/analyzers.md': 'thehive/user-guides/organization/notifications/analyzers.md'
-            'thehive/user-guides/organisation/notifications/email-to-addr.md': 'thehive/user-guides/organization/notifications/email-to-addr.md'
-            'thehive/user-guides/organisation/notifications/email-to-users.md': 'thehive/user-guides/organization/notifications/email-to-users.md'
-            'thehive/user-guides/organisation/notifications/endpoints.md': 'thehive/user-guides/organization/notifications/endpoints.md'
-            'thehive/user-guides/organisation/notifications/filteredevents.md': 'thehive/user-guides/organization/notifications/filteredevents.md'
-            'thehive/user-guides/organisation/notifications/http-request.md': 'thehive/user-guides/organization/notifications/http-request.md'
-            'thehive/user-guides/organisation/notifications/introduction.md': 'thehive/user-guides/organization/notifications/introduction.md'
-            'thehive/user-guides/organisation/notifications/kafka.md': 'thehive/user-guides/organization/notifications/kafka.md'
-            'thehive/user-guides/organisation/notifications/mattermost.md': 'thehive/user-guides/organization/notifications/mattermost.md'
-            'thehive/user-guides/organisation/notifications/redis.md': 'thehive/user-guides/organization/notifications/redis.md'
-            'thehive/user-guides/organisation/notifications/responders.md': 'thehive/user-guides/organization/notifications/responders.md'
-            'thehive/user-guides/organisation/notifications/slack.md': 'thehive/user-guides/organization/notifications/slack.md'
-            'thehive/user-guides/organisation/notifications/teams.md': 'thehive/user-guides/organization/notifications/teams.md'
-            'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/notifications/webhook.md'
+            'thehive/user-guides/organisation/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organisation/notifications/analyzers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md'
+            'thehive/user-guides/organisation/notifications/email-to-addr.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md'
+            'thehive/user-guides/organisation/notifications/email-to-users.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md'
+            'thehive/user-guides/organisation/notifications/endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organisation/notifications/filteredevents.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
+            'thehive/user-guides/organisation/notifications/http-request.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md'
+            'thehive/user-guides/organisation/notifications/introduction.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/notifications/kafka.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md'
+            'thehive/user-guides/organisation/notifications/mattermost.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md'
+            'thehive/user-guides/organisation/notifications/redis.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md'
+            'thehive/user-guides/organisation/notifications/responders.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md'
+            'thehive/user-guides/organisation/notifications/slack.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md'
+            'thehive/user-guides/organisation/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
+            'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
             'thehive/user-guides/organisation/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md'
             'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
@@ -151,7 +151,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/create-empty-case.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/organization/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/organization/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
-            'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
+            'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
             'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
             'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
@@ -328,25 +328,38 @@ nav:
         - 'Custom Tags': thehive/user-guides/organization/custom-tags.md
         - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
         - 'Notifications & Endpoints':
-          - 'Introduction to Notifications & Endpoints': thehive/user-guides/organization/notifications/introduction.md
+          - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
           - 'Notifier Configuration':
-            - 'Mattermost Configuration': thehive/user-guides/organization/notifications/mattermost.md
-            - 'MS Teams Configuration': thehive/user-guides/organization/notifications/teams.md
-            - 'Slack Configuration': thehive/user-guides/organization/notifications/slack.md
-            - 'Kafka Configuration': thehive/user-guides/organization/notifications/kafka.md
-            - 'Redis Configuration': thehive/user-guides/organization/notifications/redis.md
-          - 'Filtered Events Setup': thehive/user-guides/organization/notifications/filteredevents.md
-        - 'Endpoints':
-          - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
-          - 'Add Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md
+            - 'EmailToUser Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
+            - 'EmailToAddr Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
+            - 'HttpRequest Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md
+            - 'Mattermost Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md
+            - 'Slack Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md
+            - 'Teams Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md
+            - 'Webhook Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md
+            - 'Kafka Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md
+            - 'Redis Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md
+            - 'RunAnalyzer Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md
+            - 'RunResponder Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md
+            - 'Function Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function.md
+          - 'Filtered Event Setup':
+            - 'Write a FilteredEvent Trigger': thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md
+            - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/about-filtered-event-trigger-operators.md
+          - 'Endpoints':
+            - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
+            - 'Add an HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
+            - 'Add a Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
+            - 'Add a Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
+            - 'Add a Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
+            - 'Add a Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
         - 'Functions': 
-          - 'About Functions': thehive/user-guides/organization/about-functions.md
-          - 'Create a Function': thehive/user-guides/organization/create-a-function.md
-          - 'Edit a Function': thehive/user-guides/organization/edit-a-function.md
-          - 'Delete a Function': thehive/user-guides/organization/delete-a-function.md
-          - 'Revoke a Function': thehive/user-guides/organization/revoke-a-function-case-alert.md
-          - 'Run a Function': thehive/user-guides/organization/run-a-function.md
-          - 'Functions API Objects': thehive/user-guides/organization/functions-api-objects.md
+          - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
+          - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
+          - 'Edit a Function': thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md
+          - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
+          - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
+          - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Functions API Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-api-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':

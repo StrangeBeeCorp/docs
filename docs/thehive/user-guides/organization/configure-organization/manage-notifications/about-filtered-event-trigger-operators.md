@@ -1,10 +1,10 @@
-# About FilteredEvent Trigger Operators
+# FilteredEvent Trigger Operators
 
-This topic describes how to use operators within the context of the [FilteredEvent trigger](filtered-event-trigger.md).
+This topic lists the available operators for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
 
-## Operator usage
+## Operators
 
-The following operators can be used to filter events:
+The following operators can be used to filter events.
 
 ### Logical operators
 

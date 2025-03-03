@@ -41,4 +41,4 @@ This topic provides step-by-step instructions for configuring the Function [noti
 
 ## Next steps
 
-* [Edit a Notification](edit-a-notification.md)
+* [Edit a Notification](../edit-a-notification.md)
