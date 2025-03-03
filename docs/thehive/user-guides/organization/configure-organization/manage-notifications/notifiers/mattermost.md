@@ -35,25 +35,25 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
 5. In the **Mattermost** drawer, enter the following information:
 
-  **Endpoint**
+    **- Endpoint**
 
-  Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
+    Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
 
-  Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
+    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
 
-  **Channel**
+    **- Channel**
 
-  The Mattermost channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The Mattermost channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
-  **Username**
+    **- Username**
 
-  The username that will appear as the sender of the message in Mattermost. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The username that will appear as the sender of the message in Mattermost. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
-  **Template**
+    **- Template**
 
-  The message content to be sent to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+    The message content to be sent to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
 
-  {!includes/handlebars-templates.md!}
+    {!includes/handlebars-templates.md!}
 
 6. Select **Confirm**.
 

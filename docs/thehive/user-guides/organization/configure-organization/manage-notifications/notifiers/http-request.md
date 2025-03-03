@@ -43,21 +43,21 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 5. In the **HttpRequest** drawer, enter the following information:
 
-    **Endpoint \***
+    **- Endpoint \***
 
     Using HttpRequest as a notifier requires at least one endpoint.
 
     Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
 
-    **Method \***
+    **- Method \***
 
     Select an HTTP method from the dropdown list.
 
-    **URL \***
+    **- URL \***
 
     Enter a valid URL. Select **Add Variable** to dynamically insert values using available variables.
 
-    **Template \***
+    **- Template \***
 
     Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements. Select **Add Variable** to dynamically insert values using available variables.
 

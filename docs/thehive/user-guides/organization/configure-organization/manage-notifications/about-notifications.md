@@ -8,17 +8,17 @@ This topic explains the different notification capabilities in TheHive.
 
 A notification consists of two key components:
 
-* [Trigger](#triggers): Defines the event that activates the notification (for example, case creation, task assignment, alert import).
-* [Notifier](#notifiers): Specifies the action taken when the notification is triggered (for example, sending an email, making an HTTP request, posting to Slack or Mattermost).
-
 !!! warning "One trigger, multiple notifiers"
     A notification can have only one trigger but multiple notifiers.
+
+* A [trigger](#triggers): Defines the event that activates the notification, such as case creation, task assignment, or alert import.
+* One or more [notifiers](#notifiers): Specify the action taken when the notification is triggered, such as sending an email, making an HTTP request, or posting to Slack or Mattermost.
 
 ### Triggers
 
 Each notification is associated with only one trigger.
 
-TheHive provides several predefined triggers for [cases](../../../analyst-corner/cases/about-cases.md), [alerts](../../../analyst-corner/alerts/about-alerts.md), [tasks](../../../analyst-corner/tasks/about-tasks.md), [observables](../../../analyst-corner/alerts/alerts-description/view-observables.md), [actions](../../../analyst-corner/cases/cases-description/run-responders.md), and [jobs](../../../analyst-corner/cases/cases-description/run-analyzer.md). Additionally, custom triggers can be created using *FilteredEvent*.
+TheHive provides several predefined triggers for [cases](#triggers-on-cases), [alerts](#triggers-on-alerts), [tasks](#triggers-on-tasks), [observables](#triggers-on-observables), [jobs](#triggers-on-jobs), and [actions](#triggers-on-actions). Additionally, custom triggers can be created using [*FilteredEvent*](write-filtered-event-trigger.md).
 
 The *AnyEvent* trigger allows notifications to be executed for any event in TheHive.
 
@@ -61,7 +61,7 @@ The *AnyEvent* trigger allows notifications to be executed for any event in TheH
 
 When you select *FilteredEvent*, TheHive allows you to define a structured JSON filter. This filter is used to match specific events in TheHive.
 
-Learn how to create filtered events and explore examples in the [How to Write a Filtered Event Trigger](./write-filtered-event-trigger.md) topic.
+Learn how to create filtered events and explore examples in the [Write a Filtered Event Trigger](./write-filtered-event-trigger.md) topic.
 
 ### Notifiers
 
@@ -75,7 +75,7 @@ Several types of notifiers are available in TheHive:
 * *Teams*: Sends data to a selected [Microsoft Teams endpoint](./notifiers/teams.md)
 * *Webhook*: Sends data to a chosen [webhook endpoint](./notifiers/webhook.md)
 * *Kafka*: Sends data to a specified [Kafka queue](./notifiers/kafka.md)
-* *Redis*: Sends data to a selected [Redis endpoint](./notifiers/redis.md)
+* *Redis*: Sends data to a selected [Redis channel](./notifiers/redis.md)
 * *RunAnalyzer*: Executes a selected [analyzer](./notifiers/analyzers.md)
 * *RunResponder*: Executes a selected [responder](./notifiers/responders.md)
 * *Function*: Run a specified [function](./notifiers/function.md)
@@ -87,7 +87,7 @@ Several types of notifiers are available in TheHive:
 
 {!includes/access-notifications.md!}
 
-## Next steps* [Turn Off a Notification](turn-off-a-notification.md)
+## Next steps
 
 * [Create a Notification](create-a-notification.md)
 * [Edit a Notification](edit-a-notification.md)

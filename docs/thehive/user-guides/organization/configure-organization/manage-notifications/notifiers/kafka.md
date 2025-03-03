@@ -38,13 +38,13 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
 
 5. In the **Kafka** drawer, enter the following information:
 
-  **Topic**
+    **- Topic**
 
-  The Kafka topic where TheHive will publish messages. This must match an existing topic in your Kafka setup.
+    The Kafka topic where TheHive will publish messages. This must match an existing topic in your Kafka setup.
 
-  **Bootstrap servers**
+    **- Bootstrap servers**
 
-  A comma-separated list of Kafka network addresses with port numbers. These servers act as the entry point for TheHive to connect to your Kafka cluster.
+    A comma-separated list of Kafka network addresses with port numbers. These servers act as the entry point for TheHive to connect to your Kafka cluster.
 
 6. Select **Confirm**.
 

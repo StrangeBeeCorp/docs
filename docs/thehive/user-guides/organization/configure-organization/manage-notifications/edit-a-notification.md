@@ -8,25 +8,41 @@ This topic provides step-by-step instructions for editing a [notification](about
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/notifications-tab-go-to.md!}
+
+    ---
 
 3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
+    ---
+
 4. In the **Edit notification** drawer, enter the name of your notification.
 
-    This name must be unique, as two notifications can't have the same name.
+    !!! warning "Unique name"
+        This name must be unique, as two notifications can't have the same name.
+
+    ---
 
 5. Turn on the **Send notification to every user in the organization** toggle to be able to send an email to all users in the organization.
 
-    If enabled, the *AnyEvent* trigger will no longer be available, and only the *EmailerToUser* notifier will be selectable.
+    !!! note "Available trigger"
+        If enabled, the *AnyEvent* trigger will no longer be available, and only the *EmailerToUser* notifier will be selectable.
+
+    ---
 
 6. Select the [trigger](about-notifications.md#triggers) you want to use.
 
+    ---
+
 7. Turn on the **Enable notification** toggle to activate the notification.
 
-8. Select one or more [notifiers](about-notifications.md#notifiers). 
+    ---
 
-    The available notifiers depend on the selected trigger.
+8. Select one or more [notifiers](about-notifications.md#notifiers).
+
+    ---
 
 9. Enter the required information for each selected notifier, following its specific configuration instructions:
 
@@ -42,6 +58,8 @@ This topic provides step-by-step instructions for editing a [notification](about
     * [*RunAnalyzer*](notifiers/analyzers.md)
     * [*RunResponder*](notifiers/responders.md)
     * [*Function*](notifiers/function.md)
+
+    ---
 
 10. Select **Confirm**.
 

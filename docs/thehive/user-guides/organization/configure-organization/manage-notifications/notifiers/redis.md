@@ -30,41 +30,51 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/notifications-tab-go-to.md!}
+
+    ---
 
 3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
 
+    ---
+
 4. Select the *Redis* notifier.
+
+    ---
 
 5. In the **Redis** drawer, enter the following information:
 
-  **Channel \***
+    **- Channel \***
 
-  The Redis channel where the data should be published. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis channel where the data should be published. Select **Add Variable** to dynamically insert values using available variables.
 
-  **Host \***
+    **- Host \***
 
-  The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables.
 
-  **Port \***
+    **- Port \***
 
-  The port number Redis is listening on.
+    The port number Redis is listening on.
 
-  **Username**
+    **- Username**
 
-  The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables.
+    The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables.
 
-  **Password**
+    **- Password**
 
-  The password for authentication if Redis requires authentication.
+    The password for authentication if Redis requires authentication.
 
-  **Database**
+    **- Database**
 
-  The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
+    The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
+
+    ---
 
 6. Turn on the **Enable SSL** toggle to encrypt the connection and secure data transmission between TheHive and the Redis server.
 
-  Add a certificate authority.
+    Add a certificate authority.
 
     For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
 
@@ -72,7 +82,9 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
-  {!includes/host-name-verification.md!}
+    {!includes/host-name-verification.md!}
+
+    ---
 
 7. Select **Confirm**.
 

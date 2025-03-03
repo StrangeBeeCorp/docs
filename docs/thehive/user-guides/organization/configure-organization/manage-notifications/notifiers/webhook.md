@@ -33,11 +33,11 @@ This topic provides step-by-step instructions for configuring the webhook [notif
 
 4. Select the *Webhook* notifier.
 
-5. In the **Webhook** drawer, enter the endpoint.
+5. In the **Webhook** drawer, select an existing endpoint.
 
-  Using a webhook as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to the webhook.
+    Using a webhook as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to the webhook.
 
-  Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-webhook-endpoint.md).
+    You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-webhook-endpoint.md).
 
 6. Select **Confirm**.
 

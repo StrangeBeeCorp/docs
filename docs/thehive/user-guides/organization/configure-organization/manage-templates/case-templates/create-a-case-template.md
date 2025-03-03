@@ -25,37 +25,37 @@ To import an existing case template from another organization or TheHive instanc
 
 5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
-    **Prefix**  
+    **- Prefix**  
     A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting.
         
-    **Name \***  
+    **- Name \***  
     The name of the case template. This name identifies the case template in the API.
     
-    **Display name**  
+    **- Display name**  
     The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
-    **[TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
     The TLP level for the case. It guides analysts on how they can share case information.
     
-    **[PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
     The PAP level for the case. It guides analysts on how they can use case data.
     
-    **Severity**  
+    **- Severity**  
     The default severity level for cases.
     
-    **[Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
     
-    **Description \***  
+    **- Description \***  
     A description for cases.
     
-    **[Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more tasks for cases.
     
-    **[Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
     One or more custom fields for cases, with or without predefined values.
     
-    **[Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
+    **- [Pages](../../../../../../thehive/how-to/knowledge-base.md#case-pages)**  
     A page template to document cases.
 
 6. Select **Confirm case template creation**.

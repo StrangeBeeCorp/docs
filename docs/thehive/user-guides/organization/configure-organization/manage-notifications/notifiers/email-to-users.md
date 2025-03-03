@@ -22,15 +22,15 @@ This topic provides step-by-step instructions for configuring the EmailerToUser 
     !!! note "Available variables"
         You can use variables in each field by selecting **Add variable**.
 
-    **Subject**
+    **- Subject**
 
     The email subject line.
 
-    **From**
+    **- From**
 
     The sender's email address.
 
-    **Template**
+    **- Template**
 
     The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
 

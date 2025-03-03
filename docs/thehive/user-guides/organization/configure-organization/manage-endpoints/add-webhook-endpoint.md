@@ -16,15 +16,15 @@ This topic provides step-by-step instructions for adding a webhook [endpoint](..
 
 5. Enter the following information:
 
-    **Name**
+    **- Name**
 
     The endpoint name, used to identify this webhook integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
-    **URL**
+    **- URL**
 
     The URL to which TheHive will send webhook requests.
 
-    **Version**
+    **- Version**
 
     Enter the webhook version supported by your external system. This determines the payload format and request structure that TheHive will use when sending data.
 

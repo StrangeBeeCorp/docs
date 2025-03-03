@@ -16,15 +16,15 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
 5. Enter the following information:
 
-    **Name**
+    **- Name**
 
     The endpoint name, used to identify this HttpRequest integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
-    **Method**
+    **- Method**
 
     Select an HTTP method from the dropdown list.
 
-    **URL**
+    **- URL**
 
     The destination URL where the HTTP request should be sent. This must be a valid and accessible endpoint.
 

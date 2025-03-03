@@ -14,23 +14,23 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
 4. In the **Create function** drawer:
 
-    **Name \***
+    **- Name \***
 
     Enter the function name, which you will use in your HTTP call to invoke the function.
 
-    **Mode \***
+    **- Mode \***
 
     Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions#function-modes).
 
-    **Types \***
+    **- Types \***
 
     Select the type of the function. For more details on the available options, see [About Functions](about-functions#function-types).
 
-    **Description**
+    **- Description**
 
     Enter a brief description of the function’s purpose.
 
-    **Definition \***
+    **- Definition \***
 
     Enter the JavaScript code for your function. If you need inspiration, refer to our [GitHub repository with function examples]().
 

@@ -11,15 +11,26 @@ This topic provides step-by-step instructions for writing a FilteredEvent [trigg
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/notifications-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-solid-plus: or **Add a new notification**.
+
+    ---
 
 4. Select the *FilteredEvent* trigger.
 
     Selecting *FilteredEvent* opens a field where you can define a custom filter. These filters apply to all actions recorded in the organization's [audit logs](../../about-audit-logs.md). When an action matches the filter criteria, a notification is triggered.
+
+    ---
     
 5. Write your filter.
+
+    !!! tip "Operators"
+        To learn more about using operators, see the [About FilteredEvent Trigger Operators](about-filtered-event-trigger-operators.md) topic.
 
     To access a specific field within a JSON object, use dot (`.`) notation to navigate through nested properties.
 
@@ -33,13 +44,20 @@ This topic provides step-by-step instructions for writing a FilteredEvent [trigg
     }
     ```
 
-    !!! tip
-        To learn more about using operators, see the [About FilteredEvent Trigger Operators](about-filtered-event-trigger-operators.md) topic.
+    ---
 
 6. Select the relevant notifiers to configure them:
     * [Configure the EmailerToAddr Notifier](../manage-notifications/notifiers/email-to-addr.md)
     * [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
-    * [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
+    * [Configure the Mattermost Notifier](../manage-notifications/notifiers/mattermost.md)
+    * [Configure the Slack Notifier](../manage-notifications/notifiers/slack.md)
+    * [Configure the Teams Notifier](../manage-notifications/notifiers/teams.md)
+    * [Configure the webhook Notifier](../manage-notifications/notifiers/webhook.md)
+    * [Configure the Kafka Notifier](../manage-notifications/notifiers/kafka.md)
+    * [Configure the Redis Notifier](../manage-notifications/notifiers/redis.md)
+    * [Configure the RunAnalyzer Notifier](../manage-notifications/notifiers/analyzers.md)
+    * [Configure the RunResponder Notifier](../manage-notifications/notifiers/responders.md)
+    * [Configure the Function Notifier](../manage-notifications/notifiers/function.md)
 
 ## Examples
 

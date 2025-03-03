@@ -10,7 +10,9 @@ This topic provides step-by-step instructions for deleting a [notification](abou
 
 2. {!includes/notifications-tab-go-to.md!}
 
-3. Select **OK**.
+3. Select :fontawesome-solid-ellipsis-h: and then **Delete**.
+
+4. Select **OK**.
 
 ## Next steps
 

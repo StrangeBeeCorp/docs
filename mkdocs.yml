@@ -329,19 +329,23 @@ nav:
         - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
         - 'Notifications & Endpoints':
           - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
+          - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md
+          - 'Edit a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md
+          - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
+          - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
           - 'Notifier Configuration':
-            - 'EmailToUser Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
-            - 'EmailToAddr Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
-            - 'HttpRequest Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md
-            - 'Mattermost Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md
-            - 'Slack Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md
-            - 'Teams Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md
-            - 'Webhook Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md
-            - 'Kafka Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md
-            - 'Redis Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md
-            - 'RunAnalyzer Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md
-            - 'RunResponder Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md
-            - 'Function Configuration': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function.md
+            - 'EmailToUser': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
+            - 'EmailToAddr': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
+            - 'HttpRequest': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md
+            - 'Mattermost': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md
+            - 'Slack': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md
+            - 'Teams': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md
+            - 'Webhook': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md
+            - 'Kafka': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md
+            - 'Redis': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md
+            - 'RunAnalyzer': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md
+            - 'RunResponder': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md
+            - 'Function': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function.md
           - 'Filtered Event Setup':
             - 'Write a FilteredEvent Trigger': thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md
             - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/about-filtered-event-trigger-operators.md

@@ -16,11 +16,11 @@ This topic provides step-by-step instructions for adding a Slack [endpoint](../m
 
 5. Enter the following information:
 
-    **Name**
+    **- Name**
 
     The endpoint name, used to identify this Slack integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
-    **Token**
+    **- Token**
 
     The authentication token required to connect to Slack.
 
