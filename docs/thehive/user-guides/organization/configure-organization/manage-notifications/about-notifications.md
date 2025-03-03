@@ -67,18 +67,18 @@ Learn how to create filtered events and explore examples in the [How to Write a 
 
 Several types of notifiers are available in TheHive:
 
-* *EmailerToUser*: Sends an email to all [users in the current organization](./email-to-users.md)
-* *EmailerToAddr*: Sends an email to [a specific email address](./email-to-addr.md)
-* *HttpRequest*: Sends data to a specified [HTTP endpoint](./http-request.md)
-* *Mattermost*: Sends data to a selected [Mattermost endpoint](./mattermost.md)
-* *Slack*: Sends data to a selected [Slack endpoint](./slack.md)
-* *Teams*: Sends data to a selected [Microsoft Teams endpoint](./teams.md)
-* *Webhook*: Sends data to a chosen [webhook endpoint](./webhook.md)
-* *Kafka*: Sends data to a specified [Kafka queue](./kafka.md)
-* *Redis*: Sends data to a selected [Redis endpoint](./redis.md)
-* *RunAnalyzer*: Executes a selected [analyzer](./analyzers.md)
-* *RunResponder*: Executes a selected [responder](./responders.md)
-* *Function*: Run a specified [function](../manage-functions/about-functions.md)
+* *EmailerToUser*: Sends an email to all [users in the current organization](./notifiers/email-to-users.md)
+* *EmailerToAddr*: Sends an email to [a specific email address](./notifiers/email-to-addr.md)
+* *HttpRequest*: Sends data to a specified [HTTP endpoint](./notifiers/http-request.md)
+* *Mattermost*: Sends data to a selected [Mattermost endpoint](./notifiers/mattermost.md)
+* *Slack*: Sends data to a selected [Slack endpoint](./notifiers/slack.md)
+* *Teams*: Sends data to a selected [Microsoft Teams endpoint](./notifiers/teams.md)
+* *Webhook*: Sends data to a chosen [webhook endpoint](./notifiers/webhook.md)
+* *Kafka*: Sends data to a specified [Kafka queue](./notifiers/kafka.md)
+* *Redis*: Sends data to a selected [Redis endpoint](./notifiers/redis.md)
+* *RunAnalyzer*: Executes a selected [analyzer](./notifiers/analyzers.md)
+* *RunResponder*: Executes a selected [responder](./notifiers/responders.md)
+* *Function*: Run a specified [function](./notifiers/function.md)
 
 !!! warning "Endpoints required"
     Some notifiers require at least one defined endpoint. Refer to the dedicated page for each notifier to learn how to create the necessary endpoints.

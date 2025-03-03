@@ -64,7 +64,7 @@ Below are the different types of functions supported in TheHive:
 
 * **API**: These functions are triggered by an external service through TheHive's public API, allowing automated workflows initiated from outside the platform. You can find a list of available objects in the [Functions API Objects](functions-api-objects.md) topic. To be executed, the function must be [revoked via an HTTP call](revoke-a-function.md).
 
-* **Notification**: These functions act as notifiers and are triggered when certain events occur, such as alerts or case updates, automating the notification process based on predefined conditions.
+* **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and are triggered when certain events occur, such as alerts or case updates, automating the notification process based on predefined conditions.
 
 * **Action: Case**: These functions are manually triggered within the context of a specific case, allowing users to perform actions related to case management. To be executed, the function must be [manually run by users](run-a-function-case-alert.md).
 
