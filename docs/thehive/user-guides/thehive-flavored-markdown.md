@@ -225,7 +225,7 @@ Sample code here...
 | ext    | Extension to be used for dest files. |
 
 !!! tip "Breaking lines in tables"
-    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>`, or `<br>` HTML tags.
+    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>`, or `<br>` HTML tags. This feature is limited to table cells and doesn't work elsewhere.
 
 ## Links
 
