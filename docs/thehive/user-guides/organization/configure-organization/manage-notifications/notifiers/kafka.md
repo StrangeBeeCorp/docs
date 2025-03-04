@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the Kafka [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Kafka notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Kafka notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers: 
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -26,7 +26,7 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
 ## Procedure
 
 !!! info "No endpoint required"
-    An endpoint definition is not required to send data to a Kafka topic.
+    An endpoint definition isn't required to send data to a Kafka topic.
 
 1. {!includes/organization-view-go-to.md!}
 

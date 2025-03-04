@@ -1,6 +1,6 @@
 # About Notifications
 
-A notification is a mechanism that allows automated actions to be triggered when specific events occur.
+A notification triggers automated actions when specific events occur.
 
 This topic explains the different notification capabilities in TheHive.
 
@@ -16,11 +16,11 @@ A notification consists of two key components:
 
 ### Triggers
 
-Each notification is associated with only one trigger.
+Associate each notification with only one trigger.
 
-TheHive provides several predefined triggers for [cases](#triggers-on-cases), [alerts](#triggers-on-alerts), [tasks](#triggers-on-tasks), [observables](#triggers-on-observables), [jobs](#triggers-on-jobs), and [actions](#triggers-on-actions). Additionally, custom triggers can be created using [*FilteredEvent*](write-filtered-event-trigger.md).
+TheHive provides several predefined triggers for [cases](#triggers-on-cases), [alerts](#triggers-on-alerts), [tasks](#triggers-on-tasks), [observables](#triggers-on-observables), [jobs](#triggers-on-jobs), and [actions](#triggers-on-actions). Additionally, create custom triggers using [*FilteredEvent*](write-filtered-event-trigger.md).
 
-The *AnyEvent* trigger allows notifications to be executed for any event in TheHive.
+Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### Triggers on cases
 

@@ -40,7 +40,7 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
 6. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
 
-    Enter a header key and its corresponding value to include in the HTTP request. Headers can be used to send authentication tokens, content types, or other metadata required by the external system.
+    Enter a header key and its corresponding value to include in the HTTP request. The external system requires headers to receive authentication tokens, content types, or other metadata.
 
     ---
 
@@ -56,7 +56,7 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
     For more information about configuring SSL, refer to the [Configure SSL](../../../../administration/authentication/ssl.md) topic.
 
-    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+    Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 

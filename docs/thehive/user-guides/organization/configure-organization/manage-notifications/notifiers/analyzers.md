@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the RunAnalyzer [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The RunAnalyzer notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The RunAnalyzer notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
     - *FilteredEvent*  
     - *AlertObservableCreated*  
     - *CaseObservableCreated*  

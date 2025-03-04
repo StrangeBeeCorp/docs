@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for writing a *FilteredEvent* [trigger](../manage-notifications/about-notifications.md#triggers) in TheHive.
 
 !!! info "Capabilities of the *FilteredEvent* trigger"
-    We recommend reading this [StrangeBee blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) for an introduction to the capabilities of *FilteredEvent* trigger.
+    Read this [StrangeBee blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) for an introduction to the capabilities of *FilteredEvent* trigger.
 
 {!includes/access-notifications.md!}
 

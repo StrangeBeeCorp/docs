@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the EmailerToUser [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The EmailerToUser notifier is only available if the **Send notification to every user in the organization** toggle is enabled.
+    The EmailerToUser notifier is available only when you enable the **Send notification to every user in the organization** toggle.
 
 {!includes/access-notifications.md!}
 

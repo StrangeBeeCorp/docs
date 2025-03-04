@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the Slack [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Slack notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Slack notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -51,17 +51,17 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
     **- Text template**
 
-    The message content to be sent to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+    The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
 
     {!includes/handlebars-templates.md!}
 
     **- Channel**
 
-    The Slack channel where the data should be sent. This will override the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
     **- Username**
 
-    A username that will appear as the sender of the message in Slack. This will override the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
 
     ---
 

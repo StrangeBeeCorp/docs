@@ -4,13 +4,13 @@ This topic lists the available operators for use with the [FilteredEvent trigger
 
 ## Operators
 
-The following operators can be used to filter events.
+You can use the following operators to filter events.
 
 ### Logical operators
 
 * `_and`: Matches when all conditions are met
 
-This operator ensures that all filters inside the array must be true for an event to be included.
+This operator requires all filters in the array to be true to include an event.
 
 ```
 {"_and": [
@@ -32,7 +32,7 @@ This operator returns events that match any of the given filters.
 
 * `_not`: Excludes results that match the given filter
 
-This operator inverts the condition, returning events that do not match the specified filter.
+This operator inverts the condition, returning events that don't match the specified filter.
 
 ```
 {"_not": {... filterA} }
@@ -40,7 +40,7 @@ This operator inverts the condition, returning events that do not match the spec
 
 * `_any`: Matches any event (useful for wildcard filtering)
 
-This operator effectively removes all filtering and returns all events.
+This operator removes all filtering and returns all events.
 
 ```json
 {  "_any": "" }
@@ -154,7 +154,7 @@ This operator filters events where a field is empty (contains `""`, an empty arr
 { "_empty": "foo" }
 ```
 
-To check if a field does not exist, use:
+To check if a field doesn't exist, use:
 
 ```json
 {"_not": {"_has": "foo"} }

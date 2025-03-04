@@ -1,11 +1,11 @@
 # About Functions
 
-A function in TheHive is a custom JavaScript code block that runs within the platform. It accepts inputs from external sources, processes data, and interacts with TheHive's APIs to integrate external applications into its workflow.
+A function in TheHive is a custom JavaScript code block that runs within the platform. It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
 
 For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! note "Available from version 5.1"
-    Functions are supported in TheHive starting from version 5.1.
+    TheHive supports functions starting from version 5.1.
 
 !!! info "Contribute!"
     All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
@@ -14,7 +14,7 @@ This topic provides details on the different types and uses of functions in TheH
 
 ## Trigger sources
 
-Functions in TheHive can be triggered from various sources:
+Various sources can trigger functions in TheHive:
 
 * User actions in TheHive: Triggered by specific actions performed within TheHive
 
@@ -28,7 +28,7 @@ Functions in TheHive can be triggered from various sources:
 
 ## Common use cases
 
-Functions in TheHive can be used for various purposes to automate workflows, process data, and enhance case management.
+You can use functions in TheHive to automate workflows, process data, and enhance case management.
 
 Below are some common use cases, each with a link to the corresponding JavaScript function code:
 
@@ -38,7 +38,7 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### Automation
 
-* Identifying cold cases by addind a tag based on predefined conditions: [Code]()
+* Identifying cold cases by adding a tag based on predefined conditions: [Code]()
 * Deleting IPs in observables as part of automated cleanup: [Code]()
 * Closing duplicated alerts based on alert titles and observables: [Code]()
 
@@ -58,28 +58,28 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ## Function types
 
-The function type determines the scope in which the function can be executed.
+The function type defines the scope in which you can execute the function.
 
 !!! note "Multiple types allowed"
     A function can have one or multiple types.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: These functions are triggered by an external service through TheHive's public API, allowing automated workflows initiated from outside the platform. You can find a list of available objects in the [Functions API Objects](functions-api-objects.md) topic. To be executed, the function must be [revoked via an HTTP call](revoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions API Objects](functions-api-objects.md) topic. To execute the function, you must first [revoke it via an HTTP call](revoke-a-function.md).
 
-* **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and are triggered when certain events occur, such as alerts or case updates, automating the notification process based on predefined conditions.
+* **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 
-* **Action: Case**: These functions are manually triggered within the context of a specific case, allowing users to perform actions related to case management. To be executed, the function must be [manually run by users](run-a-function-case-alert.md).
+* **Action: Case**: Users manually trigger these functions within the context of a specific case. To execute the function, they must [run it manually](run-a-function-case-alert.md).
 
-* **Action: Alert**: These functions are manually triggered within the context of an alert, enabling users to process and act on alerts within TheHive. To be executed, the function must be [manually run by users](run-a-function-case-alert.md).
+* **Action: Alert**: Users manually trigger these functions within the context of a specific alert. To execute the function, they must [run it manually](run-a-function-case-alert.md).
 
 ## Function modes
 
 A function in TheHive can operate in one of three modes:
 
 * **Enabled**: The function executes normally when triggered.
-* **Disabled**: The function does not execute when triggered.
-* **Dry-run**: The function runs, but it does not create or modify cases, alerts, or other entities in TheHive. Instead, creation attempts return `null`, making this mode ideal for testing integrations before going live.
+* **Disabled**: The function doesn't execute when triggered.
+* **Dry-run**: The function runs, but it doesn't create or modify cases, alerts, or other entities in TheHive. Instead, creation attempts return `null`, making this mode ideal for testing integrations before going live.
 
 ## Permissions
 

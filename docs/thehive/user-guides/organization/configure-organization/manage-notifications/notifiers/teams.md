@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the Microsoft Teams [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Microsoft Teams notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Microsoft Teams notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -51,9 +51,9 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
     **- Text template**
 
-    The message content to be sent to the Microsoft Teams endpoint.
+    The message content to send to the Microsoft Teams endpoint.
 
-    If an [Adaptive Card](https://adaptivecards.io/) template is not provided, a plain text template is required. In version 5.4.3, plain text will automatically convert into an Adaptive Card format, which is structured using JSON.
+    If an [Adaptive Card](https://adaptivecards.io/) template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
 
     Select **Add Variable** to dynamically insert values using available variables.
 

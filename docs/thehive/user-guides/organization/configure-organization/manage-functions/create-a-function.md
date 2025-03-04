@@ -38,7 +38,7 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
     **- Definition \***
 
-    Enter the JavaScript code for your function. If you need inspiration, refer to our [GitHub repository with function examples]().
+    Enter the JavaScript code for your function. If you need inspiration, check out the [GitHub repository with function examples]().
 
     ---
 

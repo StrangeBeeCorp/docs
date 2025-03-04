@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the HttpRequest [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The HttpRequest notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The HttpRequest notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -69,7 +69,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 7. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
 
-    Enter a header key and its corresponding value to include in the HTTP request. Headers can be used to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables.
+    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables.
 
     ---
 
@@ -85,7 +85,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
 
-    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+    Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 

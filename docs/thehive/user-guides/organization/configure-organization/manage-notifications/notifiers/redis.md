@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the Redis [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Redis notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Redis notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -26,7 +26,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 ## Procedure
 
 !!! info "No endpoint required"
-    An endpoint definition is not required to send data to a Redis database.
+    An endpoint definition isn't required to send data to a Redis database.
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -48,7 +48,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Channel \***
 
-    The Redis channel where the data should be published. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis channel where you want to publish the data. Select **Add Variable** to dynamically insert values using available variables.
 
     **- Host \***
 
@@ -78,7 +78,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
 
-    Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
+    Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 

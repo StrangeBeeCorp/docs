@@ -6,7 +6,7 @@ This topic explains when an endpoint is required in TheHive.
 
 ## Notifiers endpoints
 
-Endpoints are required in TheHive tp configure the following notifiers:
+Endpoints are required in TheHive to configure the following notifiers:
 
 * [HttpRequest notifier](../manage-notifications/notifiers/http-request.md)
 * [Mattermost notifier](../manage-notifications/notifiers/mattermost.md)

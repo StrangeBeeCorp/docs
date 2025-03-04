@@ -2,10 +2,10 @@
 
 This topic provides step-by-step instructions for configuring the Function [notifier](../about-notifications.md#notifiers) in TheHive.
 
-To learn more about functions, see the [About Fonctions](../../manage-functions/about-functions.md) topic.
+To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
 
 !!! note "Notifier availability"
-    The Function notifier is only available if the **Send notification to every user in the organization** toggle is turned off and the trigger is one of the following:  
+    The Function notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers: 
     - *FilteredEvent*  
     - *ActionFinished*  
     - *CaseClosed*  
