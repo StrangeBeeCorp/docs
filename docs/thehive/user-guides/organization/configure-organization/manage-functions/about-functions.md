@@ -24,8 +24,7 @@ Various sources can trigger functions in TheHive:
 
 * External systems (push method): Triggered when an external system, such as a detection tool, pushes data to TheHive
 
-* External systems (pull method): Triggered when TheHive retrieves data from an external system using a feeder
-* External systems (pull method): Triggered when TheHive retrieves data from an external system using an [alert feeder](../manage-alert-feeders/about-alert-feeders.md)
+* External systems (pull method): Triggered when TheHive retrieves data from an external system using a [feeder](../manage-feeders/about-feeders.md)
 
 ## Common use cases
 
@@ -55,8 +54,7 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### External systems (pull method)
 
-* Creating alerts from an Airtable database via a feeder while applying data transformations: [Code]()
-* Creating alerts from an Airtable database via an [alert feeder](../manage-alert-feeders/about-alert-feeders.md) while applying data transformations: [Code]()
+* Creating alerts from an Airtable database via a [feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code]()
 
 ## Function types
 
@@ -75,7 +73,7 @@ Below are the different types of functions supported in TheHive:
 
 * **Action: Alert**: Users manually trigger these functions within the context of a specific alert. To execute the function, they must [run it manually](run-a-function-case-alert.md).
 
-* **Feeder**: You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-alert-feeders/create-an-alert-feeder.md). The function will be automatically added to the list of feeder functions. From there, you can update it, and any changes will be reflected in the alert feeder.
+* **Feeder**: You should not manually create functions of the feeder type. Instead, [create a feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the feeder, and vice-versa.
 
 ## Function modes
 
