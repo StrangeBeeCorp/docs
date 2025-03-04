@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for turning off a [notification](a
 
 2. {!includes/notifications-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
 4. Turn off the **Enable notification** toggle to deactivate the notification.
 

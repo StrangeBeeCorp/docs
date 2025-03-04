@@ -8,9 +8,15 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/functions-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-solid-plus:.
+
+    ---
 
 4. In the **Create function** drawer:
 
@@ -20,11 +26,11 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
     **- Mode \***
 
-    Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions#function-modes).
+    Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions.md#function-modes).
 
     **- Types \***
 
-    Select the type of the function. For more details on the available options, see [About Functions](about-functions#function-types).
+    Select the type of the function. For more details on the available options, see [About Functions](about-functions.md#function-types).
 
     **- Description**
 
@@ -34,14 +40,18 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
     Enter the JavaScript code for your function. If you need inspiration, refer to our [GitHub repository with function examples]().
 
+    ---
+
 5. Select the **Test function** section to test your function.
 
     Enter input data in the **Input** field. 
 
-    Select:
-    * **Result** to view the output of your function
-    * **stdout** to display standard program output
-    * **stderr** to display errors and warnings
+    Select:  
+        - **result** to view the output of your function  
+        - **stdout** to display standard program output  
+        - **stderr** to display errors and warnings
+
+    ---
 
 6. Select **Save**. 
 

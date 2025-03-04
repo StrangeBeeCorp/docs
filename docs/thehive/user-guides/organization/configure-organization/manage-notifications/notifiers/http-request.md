@@ -33,7 +33,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     ---
 
-3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
     ---
 

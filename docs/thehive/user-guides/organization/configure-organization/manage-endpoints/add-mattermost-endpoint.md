@@ -8,11 +8,19 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/endpoints-tab-go-to.md!}
+
+    ---
 
 3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
 
+    ---
+
 4. In the **Endpoint creation** drawer, select **Mattermost**.
+
+    ---
 
 5. Enter the following information:
 
@@ -32,9 +40,15 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
     The default channel used to send messages. If specified, this overrides the default channel set in the Mattermost webhook configuration.
 
+    ---
+
 6. {!includes/authentication-type.md!}
 
+    ---
+
 7. {!includes/proxy-settings.md!}
+
+    ---
 
 8. Add a certificate authority.
 
@@ -44,7 +58,11 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
+    ---
+
 9. {!includes/host-name-verification.md!}
+
+    ---
 
 10. Select **Confirm**.
 

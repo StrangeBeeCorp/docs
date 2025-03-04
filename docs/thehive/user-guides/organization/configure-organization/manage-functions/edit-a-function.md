@@ -8,9 +8,15 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/functions-tab-go-to.md!}
 
-3. Select the function you want to edit, or select :fontawesome-solid-ellipsis-h: and then **Edit**.
+    ---
+
+3. Select the function you want to edit, or select :fontawesome-solid-ellipsis: and then **Edit**.
+
+    ---
 
 4. In the **Edit function** drawer:
 
@@ -34,14 +40,18 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
     Enter the JavaScript code for your function. If you need inspiration, refer to our [GitHub repository with function examples]().
 
+    ---
+
 5. Select the **Test function** section to test your function.
 
     Enter input data in the **Input** field. 
 
-    Select:
-    * **Result** to view the output of your function
-    * **stdout** to display standard program output
-    * **stderr** to display errors and warnings
+    Select:  
+        - **result** to view the output of your function  
+        - **stdout** to display standard program output  
+        - **stderr** to display errors and warnings
+
+    ---
 
 6. Select **Save**. 
 

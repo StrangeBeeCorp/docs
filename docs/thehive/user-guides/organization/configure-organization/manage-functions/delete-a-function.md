@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for deleting a [function](about-fu
 
 2. {!includes/functions-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis-h: next to the function you want to delete, and then **Delete**.
+3. Select :fontawesome-solid-ellipsis: next to the function you want to delete, and then **Delete**.
 
 4. Select **OK**.
 

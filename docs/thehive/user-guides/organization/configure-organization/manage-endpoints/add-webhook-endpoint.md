@@ -8,11 +8,19 @@ This topic provides step-by-step instructions for adding a webhook [endpoint](..
 
 1. {!includes/organization-view-go-to.md!}
 
+    ---
+
 2. {!includes/endpoints-tab-go-to.md!}
+
+    ---
 
 3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
 
+    ---
+
 4. In the **Endpoint creation** drawer, select **Webhook**.
+
+    ---
 
 5. Enter the following information:
 
@@ -28,9 +36,15 @@ This topic provides step-by-step instructions for adding a webhook [endpoint](..
 
     Enter the webhook version supported by your external system. This determines the payload format and request structure that TheHive will use when sending data.
 
+    ---
+
 6. {!includes/authentication-type.md!}
 
+    ---
+
 7. {!includes/proxy-settings.md!}
+
+    ---
 
 8. Add a certificate authority.
 
@@ -40,7 +54,11 @@ This topic provides step-by-step instructions for adding a webhook [endpoint](..
 
     You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
+    ---
+
 9. {!includes/host-name-verification.md!}
+
+    ---
 
 10. Select **Confirm**.
 

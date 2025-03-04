@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for editing a [notification](about
 
     ---
 
-3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
     ---
 

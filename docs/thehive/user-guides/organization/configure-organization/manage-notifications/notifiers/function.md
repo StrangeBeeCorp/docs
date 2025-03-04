@@ -33,7 +33,7 @@ To learn more about functions, see the [About Fonctions](../../manage-functions/
 
 2. {!includes/notifications-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
 4. Select the *Function* notifier.
 

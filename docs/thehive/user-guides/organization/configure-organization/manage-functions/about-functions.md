@@ -5,7 +5,10 @@ A function in TheHive is a custom JavaScript code block that runs within the pla
 For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! note "Available from version 5.1"
-    This feature is supported in TheHive starting from version 5.1.
+    Functions are supported in TheHive starting from version 5.1.
+
+!!! info "Contribute!"
+    All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
 
 This topic provides details on the different types and uses of functions in TheHive.
 
@@ -13,15 +16,15 @@ This topic provides details on the different types and uses of functions in TheH
 
 Functions in TheHive can be triggered from various sources:
 
-* User actions in TheHive: Triggered by specific actions performed within TheHive.
+* User actions in TheHive: Triggered by specific actions performed within TheHive
 
-* Automation: Triggered to automate manual or repetitive tasks, either on a schedule or based on predefined conditions.
+* Automation: Triggered to automate manual or repetitive tasks, either on a schedule or based on predefined conditions
 
-* Notifications: Triggered by an event in TheHive that generates a notification.
+* Notifications: Triggered by an event in TheHive that generates a notification
 
-* External systems (push method): Triggered when an external system, such as a detection tool, pushes data to TheHive.
+* External systems (push method): Triggered when an external system, such as a detection tool, pushes data to TheHive
 
-* External systems (pull method): Triggered when TheHive retrieves data from an external system using the Alert Feeder.
+* External systems (pull method): Triggered when TheHive retrieves data from an external system using the Alert Feeder
 
 ## Common use cases
 
@@ -53,12 +56,12 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 * Creating alerts from an Airtable database via the Alert Feeder while applying data transformations: [Code]()
 
-!!! info "Contribute!"
-    All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
-
 ## Function types
 
 The function type determines the scope in which the function can be executed.
+
+!!! note "Multiple types allowed"
+    A function can have one or multiple types.
 
 Below are the different types of functions supported in TheHive:
 
@@ -69,9 +72,6 @@ Below are the different types of functions supported in TheHive:
 * **Action: Case**: These functions are manually triggered within the context of a specific case, allowing users to perform actions related to case management. To be executed, the function must be [manually run by users](run-a-function-case-alert.md).
 
 * **Action: Alert**: These functions are manually triggered within the context of an alert, enabling users to process and act on alerts within TheHive. To be executed, the function must be [manually run by users](run-a-function-case-alert.md).
-
-!!! note "Multiple types allowed"
-    A function can have one or multiple types.
 
 ## Function modes
 

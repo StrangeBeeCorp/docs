@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 
 2. {!includes/notifications-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis-h: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
 4. Select the *EmailerToAddr* notifier.
 

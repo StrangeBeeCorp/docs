@@ -2,8 +2,7 @@
 
 This topic provides step-by-step instructions for manually running a [function](about-functions.md) on a [case](../../../analyst-corner/cases/about-cases.md) or an [alert](../../../analyst-corner/alerts/about-alerts.md) in TheHive.
 
-!!! warning "Required permissions for running a function"
-    Only users with the `manageAction` permission can run a function in TheHive.
+{!includes/access-functions.md!}
 
 ## Procedure
 
@@ -11,7 +10,7 @@ This topic provides step-by-step instructions for manually running a [function](
 
 2. Select the :fontawesome-solid-gear: button.
 
-    ![Responders button](/thehive/images/user-guides/organization/configure-organization/responders-button.png)
+    ![Responders button](/thehive/images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
 
 3. Select the **Functions** tab.
 
