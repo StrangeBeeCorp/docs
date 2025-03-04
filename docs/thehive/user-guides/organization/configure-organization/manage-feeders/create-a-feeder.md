@@ -6,4 +6,6 @@ This topic provides step-by-step instructions for creating a [feeder](about-feed
 
 ## Procedure
 
+1. {!includes/organization-view-go-to.md!}
+
 ## Next steps
