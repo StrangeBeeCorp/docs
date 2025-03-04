@@ -53,7 +53,7 @@ Several options are offered to create a case in TheHive:
     **- [Custom fields](../cases/adding_to_a_case.md)**  
     Custom fields for the case, with or without predefined values.
 
-    **[Pages](../../../../knowledge-base/create-a-knowledge-base-page#create-a-page-at-the-case-level.md)**  
+    **- [Pages](../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
     Pages to document the case.
 
     **- Sharing**  
