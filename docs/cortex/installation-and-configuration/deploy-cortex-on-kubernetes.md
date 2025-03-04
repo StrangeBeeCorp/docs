@@ -170,30 +170,11 @@ parameters:
   subPathPattern: "${.PVC.namespace}/${.PVC.name}" # Optional subfolder structure inside the NFS filesystem
 ```
 
-#### Step 2: Define a PV using the EFS StorageClass
+#### Step 2: Create a PVC using the EFS StorageClass
 
-Create a new PV that connects to your AWS EFS using the previously defined StorageClass:
+Kubernetes will automatically create a PV when a PVC is defined using the EFS StorageClass. 
 
-```yaml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: cortex-shared-fs
-spec:
-  storageClassName: efs-sc # Must match the StorageClass created earlier
-  persistentVolumeReclaimPolicy: Retain # Retains data after PVC release (optional). Used by Cortex for temporary job data transfer only.
-  capacity:
-    storage: 10Gi
-  accessModes:
-    - ReadWriteMany
-  csi:
-    driver: efs.csi.aws.com # Specifies the EFS CSI driver
-    volumeHandle: fs-01234567 # Replace with your EFS filesystem ID
-```
-
-#### Step 3: Create a PVC using the EFS StorageClass
-
-The PVC manifest is nearly identical to the one defined earlier. The only change required is updating the storageClassName to reference the EFS StorageClass:
+Define the PVC as follows:
 
 ```yaml
 apiVersion: v1
@@ -201,8 +182,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: cortex-shared-fs-claim
 spec:
-  # The only change is the updated storageClassName
-  storageClassName: efs-sc # Updated to reference the EFS StorageClass
+  storageClassName: efs-sc # References the EFS StorageClass
   # (...)
 ```
 
