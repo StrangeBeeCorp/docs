@@ -10,11 +10,17 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     ![Entities management](../../images/administration-guides/create-a-custom-field-entities-management.png)
 
+    ---
+
 2. Select the **Custom fields** tab.
 
     ![Custom fields tab](../../images/administration-guides/create-a-custom-field-custom-fields.png)
 
+    ---
+
 3. Select :fontawesome-regular-square-plus:.
+
+    ---
 
 4. Enter the following information:
 
@@ -44,6 +50,8 @@ This topic provides step-by-step instructions for creating a [custom field](../c
         For the string, integer, and float formats, you can define predefined values by entering each value on a separate line. If you choose to do this, users will only be able to select from the predefined values you specify.
 
     **- Turn on the Mandatory toggle** to require users to enter a value in this custom field.
+
+    ---
 
 5. Select **Confirm custom field creation**.
 

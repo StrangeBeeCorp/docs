@@ -11,7 +11,7 @@
 The task **Group** is default. 
 
 1. Enter the task **Title**.
-1. Enter the task description in the **Description**. 
+1. Enter the task description in the **Description** using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md). 
 1. Switch the toggle button to **Flag this task?**. 
 1. Select the **Due date**. 
 1. Click **Save and add another**, to add another task. 

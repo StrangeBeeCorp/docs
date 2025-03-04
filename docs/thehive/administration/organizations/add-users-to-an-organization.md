@@ -46,7 +46,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     Pick a [permission profile](../../administration/profiles.md) for the user from the dropdown list.
 
-4. Select **Confirm**, or **Save and add another** if you want to add another new user.
+4. Select **Confirm**.
 
 5. In the users list, hover over the user you just created and select :fontawesome-solid-eye:.
 
