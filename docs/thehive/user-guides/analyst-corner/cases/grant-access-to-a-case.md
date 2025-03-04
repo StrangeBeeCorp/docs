@@ -1,0 +1,1 @@
+# How to Grant Access to a Case

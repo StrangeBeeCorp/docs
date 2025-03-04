@@ -32,6 +32,12 @@ In TheHive, a case includes the following elements:
 
 * [TTPs](../cases/cases-description/ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
+## Visibility
+
+By default, cases created through the interface are visible to all users. You can create cases with restricted access using the API.
+
+You can change the visibility of cases to restrict access to sensitive cases.
+
 ## Next steps
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
