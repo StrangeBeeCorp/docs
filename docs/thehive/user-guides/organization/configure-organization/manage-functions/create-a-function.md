@@ -47,9 +47,9 @@ This topic provides step-by-step instructions for creating a [function](about-fu
     Enter input data in the **Input** field. 
 
     Select:  
-        - **result** to view the output of your function  
-        - **stdout** to display standard program output  
-        - **stderr** to display errors and warnings
+        - *result* to view the output of your function  
+        - *stdout* to display standard program output  
+        - *stderr* to display errors and warnings
 
     ---
 

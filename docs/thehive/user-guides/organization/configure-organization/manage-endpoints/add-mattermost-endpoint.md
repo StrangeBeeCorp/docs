@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding a Mattermost [endpoint]
 
     ---
 
-4. In the **Endpoint creation** drawer, select **Mattermost**.
+4. In the **Endpoint creation** drawer, select *Mattermost*.
 
     ---
 

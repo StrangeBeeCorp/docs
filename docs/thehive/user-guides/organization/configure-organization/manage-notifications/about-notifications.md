@@ -51,11 +51,11 @@ The *AnyEvent* trigger allows notifications to be executed for any event in TheH
 
 #### Triggers on jobs
 
-* **JobFinished**: Triggered when an analyzer job is completed, whether it succeeds or fails
+* *JobFinished*: Triggered when an analyzer job is completed, whether it succeeds or fails
 
 #### Triggers on actions
 
-* **ActionFinished**: Triggered when a responder action is completed, whether it succeeds or fails
+* *ActionFinished*: Triggered when a responder action is completed, whether it succeeds or fails
 
 #### FilteredEvent
 

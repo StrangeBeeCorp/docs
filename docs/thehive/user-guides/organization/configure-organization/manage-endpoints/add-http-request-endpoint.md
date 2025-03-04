@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding an HttpRequest [endpoin
 
     ---
 
-4. In the **Endpoint creation** drawer, select **Http**.
+4. In the **Endpoint creation** drawer, select *Http*.
 
     ---
 

@@ -26,11 +26,11 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
     **- Mode \***
 
-    Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions#function-modes).
+    Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions.md#function-modes).
 
     **- Types \***
 
-    Select the type of the function. For more details on the available options, see [About Functions](about-functions#function-types).
+    Select the type of the function. For more details on the available options, see [About Functions](about-functions.md#function-types).
 
     **- Description**
 
@@ -47,9 +47,9 @@ This topic provides step-by-step instructions for editing a [function](about-fun
     Enter input data in the **Input** field. 
 
     Select:  
-        - **result** to view the output of your function  
-        - **stdout** to display standard program output  
-        - **stderr** to display errors and warnings
+        - *result* to view the output of your function  
+        - *stdout* to display standard program output  
+        - *stderr* to display errors and warnings
 
     ---
 

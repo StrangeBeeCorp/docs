@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for adding a Microsoft Teams [endp
 
     5. Search for a template named *Post to a channel when a webhook request is received*.
 
-    6. Select the template **Post to a channel when a webhook request is received**.
+    6. Select the template *Post to a channel when a webhook request is received*.
 
     7. Enter your flow name.
 
@@ -64,7 +64,7 @@ This topic provides step-by-step instructions for adding a Microsoft Teams [endp
 
     ---
 
-4. In the **Endpoint creation** drawer, select **Teams**.
+4. In the **Endpoint creation** drawer, select *Teams*.
 
     ---
 

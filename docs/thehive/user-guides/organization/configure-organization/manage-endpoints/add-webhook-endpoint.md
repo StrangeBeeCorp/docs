@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding a webhook [endpoint](..
 
     ---
 
-4. In the **Endpoint creation** drawer, select **Webhook**.
+4. In the **Endpoint creation** drawer, select *Webhook*.
 
     ---
 

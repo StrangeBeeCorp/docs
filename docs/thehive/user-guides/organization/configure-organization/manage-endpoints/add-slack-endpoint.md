@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for adding a Slack [endpoint](../m
 
     ---
 
-4. In the **Endpoint creation** drawer, select **Slack**.
+4. In the **Endpoint creation** drawer, select *Slack*.
 
     ---
 
