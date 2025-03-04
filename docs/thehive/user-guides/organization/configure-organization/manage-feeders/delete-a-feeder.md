@@ -1,0 +1,1 @@
+When a feeder is deleted, the associated function is not deleted.
