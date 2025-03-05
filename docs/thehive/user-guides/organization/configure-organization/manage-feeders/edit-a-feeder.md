@@ -1,6 +1,6 @@
-# How to Edit a Feeder
+# How to Edit an Alert Feeder
 
-This topic provides step-by-step instructions for editing a [feeder](about-feeders.md) in TheHive.
+This topic provides step-by-step instructions for editing an [alert feeder](about-feeders.md) in TheHive.
 
 {!includes/access-feeders.md!}
 

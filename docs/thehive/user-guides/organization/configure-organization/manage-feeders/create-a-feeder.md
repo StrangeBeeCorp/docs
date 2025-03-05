@@ -1,6 +1,6 @@
-# How to Create a Feeder
+# How to Create an Alert Feeder
 
-This topic provides step-by-step instructions for creating a [feeder](about-feeders.md) in TheHive.
+This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive.
 
 {!includes/access-feeders.md!}
 

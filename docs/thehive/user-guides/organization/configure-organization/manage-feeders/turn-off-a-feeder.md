@@ -1,6 +1,6 @@
-# How to Turn Off a Feeder
+# How to Turn Off an Alert Feeder
 
-This topic provides step-by-step instructions for turning off a [feeder](about-feeders.md) in TheHive.
+This topic provides step-by-step instructions for turning off an [alert feeder](about-feeders.md) in TheHive.
 
 {!includes/access-feeders.md!}
 

@@ -1,6 +1,6 @@
-# How to Delete a Feeder
+# How to Delete an Alert Feeder
 
-This topic provides step-by-step instructions for deleting a [feeder](about-feeders.md) in TheHive.
+This topic provides step-by-step instructions for deleting an [alert feeder](about-feeders.md) in TheHive.
 
 {!includes/access-feeders.md!}
 
