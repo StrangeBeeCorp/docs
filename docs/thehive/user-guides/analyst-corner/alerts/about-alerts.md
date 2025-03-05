@@ -15,7 +15,9 @@ Alerts are reviewed, triaged, and transformed into [cases](../cases/about-cases.
 
 An alert can be created from the following sources:
 
-* Detection tools such as SIEM, IDS, EDR, or firewalls connected to TheHive
+* Detection tools, such as SIEM, IDS, EDR, and firewalls, that push data to TheHive
+
+* External systems from which TheHive retrieves data using [feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) (available from version 5.5)
 
 * Threat intelligence platforms like [MISP](../../../administration/misp.md) connected to TheHive
 

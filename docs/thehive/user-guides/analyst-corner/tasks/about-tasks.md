@@ -1,18 +1,24 @@
-# Tasks
+# About Tasks
+
+This topic explains tasks, their components, and how to create them in TheHive.
+
+## Definition
+
+A task is a task to be done in a case.
+
+Task can be mandatory or not.
+
+They have a group attached to group tasks by theme.
+
+You can close a case even if some non mandatory tasks are not done. Closing a case means that all linked tasks are closed as well.
+
+## Key components
+
+In TheHive, a task includes the following elements:
+
+* Task logs also called activity
+
+## Next steps
 
 Task details, require action from its users. Task details page displays a list of tasks. 
-When navigating through the Task list, you can easily see and determine which Task needs an action. 
-
-
-## To view task details
-
-You can click on any of the tasks in the list to view more details. 
-
-<img src="/thehive/images/user-guides/analyst-corner/tasks/task_menu.png" alt="tasks" width="700" height="700"/>
-
-The details are displayed
-
-<img src="/thehive/images/user-guides/analyst-corner/tasks/tasks-details-tabs-menu.png" alt="tasks" width="700" height="700"/>
-
-In the left pane of the window you can configure the PAP, TLP and Severity. 
-Refer to ['Configure Alert Details'](../cases/cases-description/configure-pap-tlp-severity.md) for more details. 
+When navigating through the Task list, you can easily see and determine which Task needs an action.
