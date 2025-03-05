@@ -375,6 +375,7 @@ nav:
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
           - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases/cases-description/tasks.md
@@ -383,6 +384,9 @@ nav:
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
           - 'View Timeline': thehive/user-guides/analyst-corner/cases/cases-description/timeline.md
           - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
+          - 'Manage Case Visibility':
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
         - 'Tasks Management':

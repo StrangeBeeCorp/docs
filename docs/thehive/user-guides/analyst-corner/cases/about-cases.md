@@ -12,6 +12,8 @@ In TheHive, you can create a case from the following sources:
 
 * [Manual entry](../cases/create-a-new-case.md#create-an-empty-case): Create a case manually by entering details.
 
+* [Merging cases](#merging-cases): Merging cases creates a new case and deletes the original merged cases.
+
 * [Case templates](../cases/create-a-new-case.md#create-a-case-from-a-template): Use predefined templates to standardize and simplify case creation.
 
 * [Archived cases](../cases/create-a-new-case.md#create-a-case-from-an-archived-case): Restore cases from previous investigations stored in TheHive.
@@ -32,61 +34,66 @@ In TheHive, a case includes the following elements:
 
 * [TTPs](../cases/cases-description/ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
+## Merging cases
+
+{!includes/access-merge-cases.md!}
+
+Two cases can be merged if they share the same organization and permission profile pairs.
+
+Merging cases deletes the original cases and creates a new case that combines elements from both.
+
+To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
+
 ## Visibility
 
-manageCase/changeAccess
-ManagePrivateAccess
+!!! note "Restrict case visibility"
+    Starting from version 5.5, you can restrict the visibility of sensitive cases.
 
-Platinum licence
+!!! note "Platinum licence required"
+    Only users with a Platinum licence can manage the visibility of their cases.
 
-!!! note "Restrict access to a case"
-    Starting from version 5.5, you can restrict access to sensitive cases.
+{!includes/access-manage-visibility-cases.md!}
 
-By default, cases created through the interface are visible to all users in the organization. You can create cases with restricted access using the API.
+### Usage
 
-You can change the visibility of cases to restrict access to sensitive cases to a list of users (at minimum, the assignee and the person performing the action and they can't be removed). You can make it visible to all users again afterwards.
+Restricted case visibility allows you to control who can view a case by limiting access to specific team members and managers. This feature helps protect sensitive information and reduce the risk of unauthorized access.
 
-Restricted cases are identified with a :fontawesome-solid-lock: on case descriptions and the list of cases on the cases view. And background color in list is orange.
+### Configuration
 
-This feature allows case owners to restrict visibility to designated team members and managers, protecting critical information and minimising the risk of data leaks.
+By default, cases created through the user interface are visible to all users in the organization. 
 
-Users who don't have access can see the case but not access to it? Not sure
+You can [restrict visibility](restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restore visibility](restore-visibility-case.md) if needed. 
 
-When a case is defined as private, it and its children (observable, tasks, etc.) no longer appear in the global search results or in the dashboard indicators, regardless of the user connected, which guarantees strict control of its visibility and acceptable performance. This results stay only visible by the selected users.
+The case assignee and the user performing the action always have access and can't be removed.
 
-Only authorized users can be assigned to a case.
+You can create cases with restricted visibility directly [using the API](https://docs.strangebee.com/thehive/api-docs/#tag/Case).
 
-This visibilty rules must be apply to children of case (task, observables etc.).
+### Expected behavior
 
-What about tasks, observables, TTPs?
+When a case is set to restricted visibility:
 
-What should be displayed for alerts that are linked to private cases? How do we ensure that sensitive information is not inadvertently exposed through linked alerts?
+* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
 
-Impact on merge?
+* For authorized users: The restricted case appears in case lists, search results, or dashboards. Authorized users can be assigned to the case.
 
-System Behavior:
+#### Indicators
 
-If at least one of the cases being merged is marked as private, the newly created merged case will also be automatically marked as private.
+A restricted case is identifiable as follows:
 
-When multiple private cases are involved in the merge, the merged case will inherit the private status, and the list of authorized users for the new case will include all users who had access to any of the private cases involved in the merge.
+* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards, except in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
 
-The authorized user list for the merged case is a union of all users who had access to any of the private cases that were merged.
+* For authorized users: The restricted case is identified by a :fontawesome-solid-lock: symbol in the case description and case list. Additionally, the background color in the case list is orange for easy recognition.
 
-No unauthorized users gain access to the merged case if they were not part of the private cases' access list.
+### Merging a restricted case
 
-What about a case shared between organizations?
+If [one or more restricted case are merged with visible cases](merge-cases.md): The newly created merged case will automatically inherit restricted visibility.
 
-Rules:
-
-If the case is public and shared within our organization: label without a lock and clickable.
-
-If the case is public but not shared within our organization: label without a lock and not clickable.
-
-If the case is private and visible to the user: label with a lock and clickable.
-
-If the case is private and not visible to the user: label with a lock and not clickable. (only for alert)
+The list of authorized users will include all users who had access to any of the restricted cases involved in the merge.
 
 ## Next steps
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
 * [Create a Case](../cases/create-a-new-case.md)
+* [Merge Cases](../cases/merge-cases.md)
+* [Restrict Case Visibility](restrict-visibility-case.md)
+* [Restore Case Visibility](restore-visibility-case.md)
