@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for searching a task log in TheHiv
 A task log is a recorded history of actions, updates, or decisions taken on a specific task. It provides a detailed audit trail that helps track investigation progress, accountability, and compliance.
 
 !!! tip "Why can't I find a task log?"
-    Since TheHive 5.5, [case visibility](../../cases/about-cases.md#visibility) can be restricted to protect sensitive data. If a case has restricted visibility and you are not an authorized user, its linked tasks and task logs will not appear in the list, search results, or dashboards.
+    Since TheHive 5.5, [case visibility](../../cases/about-cases.md#visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks and task logs won't appear in the list, search results, or dashboards.
 
 ## Procedure
 

@@ -38,7 +38,7 @@ In TheHive, a case includes the following elements:
 
 {!includes/access-merge-cases.md!}
 
-Two cases can be merged if they share the same organization and permission profile pairs.
+You can merge two cases if they share the same organization and permission profile pairs.
 
 Merging cases deletes the original cases and creates a new case that combines elements from both.
 
@@ -70,7 +70,7 @@ You can create cases with restricted visibility directly [using the API](https:/
 
 ### Expected behavior
 
-When a case is set to restricted visibility:
+When you set a case to restricted visibility:
 
 * For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
 
@@ -86,9 +86,9 @@ A restricted case is identifiable as follows:
 
 ### Merging a restricted case
 
-If [one or more restricted case are merged with visible cases](merge-cases.md): The newly created merged case will automatically inherit restricted visibility.
+If you [merge one or more restricted cases with visible cases](merge-cases.md), the newly created merged case automatically inherits restricted visibility.
 
-The list of authorized users will include all users who had access to any of the restricted cases involved in the merge.
+The list of authorized users includes all users who had access to any of the restricted cases involved in the merge.
 
 ## Next steps
 

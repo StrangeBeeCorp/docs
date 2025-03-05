@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for searching an [observable](../cases-description/observables.md) in TheHive.
 
 !!! tip "Why can't I find an observable?"
-    Since TheHive 5.5, [case visibility](../about-cases.md#visibility) can be restricted to protect sensitive data. If a case has restricted visibility and you are not an authorized user, its linked observables will not appear in the list, search results, or dashboards.
+    Since TheHive 5.5, [case visibility](../about-cases.md#visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables won't appear in the list, search results, or dashboards.
 
 ## Method 1: Observables tab in cases and alerts descriptions
 
