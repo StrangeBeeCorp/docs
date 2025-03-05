@@ -18,6 +18,10 @@ In TheHive, a task includes the following elements:
 
 * Task logs also called activity
 
+## Highlights
+
+Tasks can be highlighted by using the flag or the pin. Flag is at the organization level when a pin is at the user level.
+
 ## Next steps
 
 Task details, require action from its users. Task details page displays a list of tasks. 

@@ -26,11 +26,12 @@ Any external system that exposes a public REST API supporting synchronous data r
 
 ### Authentication modes
 
-Currently, feeders support the following three authentication methods:
+Currently, feeders support the following four authentication methods:
 
 * None
 * Basic
 * Key
+* Bearer
 
 ### Example integrations
 
