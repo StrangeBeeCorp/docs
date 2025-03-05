@@ -4,29 +4,31 @@ This topic explains tasks, their components, and how to create them in TheHive.
 
 ## Definition
 
-A task is a task to be done in a case.
+A task is an action that needs to be completed within a case.
 
-Task can be mandatory or not.
+Tasks can be mandatory or optional and are organized into groups.
 
-They have a group attached to group tasks by theme.
+## Sources
 
-You can close a case even if some non mandatory tasks are not done. Closing a case means that all linked tasks are closed as well.
-
-## Source
-
-Of which Alert feeder
+Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md).
 
 ## Key components
 
-In TheHive, a task includes the following elements:
+A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md), also referred to as activities.
 
-* Task logs also called activity
+## Behavior
 
-## Highlights
+* Tasks are automatically closed when you close a case, even if some non-mandatory tasks remain incomplete or unassigned.
 
-Tasks can be highlighted by using the flag or the pin. Flag is at the organization level when a pin is at the user level.
+* You can flag or pin tasks o make them easier to identify:
+    * Flag a task to highlight it for all users in your organization.
+    * Pin a task to keep it easily accessible for yourself.
 
 ## Next steps
 
-Task details, require action from its users. Task details page displays a list of tasks. 
-When navigating through the Task list, you can easily see and determine which Task needs an action.
+* [Find a Task](../tasks/search-for-tasks/find-a-task.md)
+* [Share a Task](share-a-task.md)
+* [Managing Views](manage-views.md)
+* [Create a Task Log](../tasks/preview-task-details/create-a-task-log.md)
+* [Preview Tasks](../tasks/preview-task-details/Preview-tasks.md)
+* [Run Responders](../tasks/preview-task-details/run-responders.md)
