@@ -13,7 +13,7 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
     User data is synchronized periodically:  
     - New LDAP users are automatically created in TheHive.  
-    - Removed users are disabled.  
+    - Removed users become inactive.  
     - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
@@ -52,23 +52,23 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 
 8. Enter the following information:
 
-    **DN of the service account**
+    **- DN of the service account**
 
     The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.
 
     Example: *cn=thehive,ou=users,dc=company,dc=com*
 
-    **Bind password**
+    **- Bind password**
 
     The password associated with the service account. This password authenticates the service account to allow LDAP queries.
 
-    **Users base DN**
+    **- Users base DN**
 
     The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.
 
     Example: *ou=users,dc=company,dc=com*
 
-    **Filter used to search users**
+    **- Filter used to search users**
 
     The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
 

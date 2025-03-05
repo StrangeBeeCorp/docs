@@ -1,16 +1,23 @@
-# About endpoints
+# About Endpoints
 
-In this section you can find information regarding endpoints. An endpoint is the point of entry in a communication channel when two systems interact with each other. 
+An endpoint is an entry point in a communication channel where two systems interact.
 
-A user can create an endpoint. 
+This topic explains when an endpoint is required in TheHive.
 
-<img src="/thehive/images/user-guides/organization/manage-endpoints/endpoints.png" alt="end points" width="1000" height="1000"/>
+## Notifiers endpoints
 
-<img src="endpoints.png" alt="end points" width="1000" height="1000"/>
+Endpoints are required in TheHive to configure the following notifiers:
 
-## Supported connectors
+* [HttpRequest notifier](../manage-notifications/notifiers/http-request.md)
+* [Mattermost notifier](../manage-notifications/notifiers/mattermost.md)
+* [Slack notifier](../manage-notifications/notifiers/slack.md)
+* [Teams notifier](../manage-notifications/notifiers/teams.md)
+* [Webhook notifier](../manage-notifications/notifiers/webhook.md)
 
-1. Webhook.
-1. Mattermost.
-1. Slack.
-1. Http.
+## Next steps
+
+* [Add an HttpRequest Endpoint](add-http-request-endpoint.md)
+* [Add a Mattermost Endpoint](add-mattermost-endpoint.md)
+* [Add a Slack Endpoint](add-slack-endpoint.md)
+* [Add a Teams Endpoint](add-teams-endpoint.md)
+* [Add a Webhook Endpoint](add-webhook-endpoint.md)
