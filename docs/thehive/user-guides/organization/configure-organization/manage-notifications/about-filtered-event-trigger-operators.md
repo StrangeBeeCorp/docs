@@ -160,6 +160,17 @@ To check if a field doesn't exist, use:
 {"_not": {"_has": "foo"} }
 ```
 
+* `_arrayMatch`: Checks if any element within an array field satisfies a specified condition
+
+```json
+{
+  "_arrayMatch": {
+    "_field": "tags",
+    "_eq": "foo"
+  }
+}
+```
+
 ## Next steps
 
 * [Write a FilteredEvent Trigger](write-filtered-event-trigger.md)
