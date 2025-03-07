@@ -15,7 +15,7 @@ Use case templates to:
 
 ## Usage
 
-We recommend that you use a case template based on the threat category rather than the source. This approach helps you maximize the effectiveness of case templates by ensuring continuous improvement in their definition.
+Use a case template based on the threat category rather than the source. This approach helps you maximize the effectiveness of case templates by ensuring continuous improvement in their definition.
 
 You can create a case from a case template when [initiating a new case](../../../../analyst-corner/cases/create-a-new-case.md).
 
