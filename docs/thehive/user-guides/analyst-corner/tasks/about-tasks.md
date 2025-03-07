@@ -18,11 +18,18 @@ A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md),
 
 ## Behavior
 
-* Tasks are automatically closed when you close a case, even if some non-mandatory tasks remain incomplete or unassigned.
+Tasks are automatically closed when you close a case, even if some non-mandatory tasks remain incomplete or unassigned.
+
+## Highlight
 
 * You can flag or pin tasks o make them easier to identify:
     * Flag a task to highlight it for all users in your organization.
     * Pin a task to keep it easily accessible for yourself.
+
+Donc si je résume :
+pin : niveau user
+flag : niveau orga
+require actions : niveau client
 
 ## Next steps
 
