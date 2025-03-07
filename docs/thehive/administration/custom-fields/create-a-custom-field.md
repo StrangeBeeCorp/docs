@@ -28,7 +28,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     **- Description \***
 
-    Provide a description to help users understand and use this custom field appropriately. This description appears to users when they hover over the :material-help-circle: icon next to the custom field display name.
+    Provide a description to help users understand and use this custom field appropriately. This description appears to users when they hover over the :material-help-circle: symbol next to the custom field display name.
 
     **- Group name \***
 
@@ -46,11 +46,9 @@ This topic provides step-by-step instructions for creating a [custom field](../c
     **- Options**
 
     !!! note "Available only for specific formats"
-        This field appears only for *string*, *integer*, and *float* formats.
+        This field appears only for string, integer, and float formats.
 
-    Enter one option per line.
-
-    Options will appear as a dropdown list, preventing users from entering values manually. Using predefined options helps normalize data, improving dashboard accuracy and enabling automation based on consistent inputs.
+    Enter one option per line. Options will appear as a dropdown list, preventing users from entering values manually.
 
     **- Turn on the Mandatory toggle** to require users to enter a value in this custom field.
 
