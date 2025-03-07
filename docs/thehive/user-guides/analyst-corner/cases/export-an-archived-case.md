@@ -2,7 +2,8 @@
 
 This topic provides step-by-step instructions for exporting an archived [case](../cases/about-cases.md) in TheHive.
 
-You might need to export an archived case to [create a case based on a past investigation](create-a-new-case.md#create-a-case-from-an-archived-case).
+!!! warning "Only for TheHive use"
+    Exported cases are configured to be opened only within TheHive when [creating a case based on a past investigation](create-a-new-case.md#create-a-case-from-an-archived-case). Do not export an archived case for any other purpose, or you won't be able to open the file.
 
 ## Procedure
 
