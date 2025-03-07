@@ -1,12 +1,13 @@
 # About Tasks
 
-This topic explains tasks, their components, and how to create them in TheHive.
+This topic explains tasks, their components, and their behavior in TheHive.
 
 ## Definition
 
-A task is an action that needs to be completed within a case.
+A task is an action that must be completed within a case.
 
-Tasks can be mandatory or optional and are organized into groups.
+* Tasks can be mandatory or optional.
+* Tasks are organized into groups for better structure and management.
 
 ## Sources
 
@@ -18,22 +19,27 @@ A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md),
 
 ## Behavior
 
-Tasks are automatically closed when you close a case, even if some non-mandatory tasks remain incomplete or unassigned.
+### Requiring actions on a task
 
-## Highlight
+You can require users in any of your organizations to take action on a task. However, once the action is completed, the task's status remains unchanged. This is useful when you need input or assistance from someone in another team or business unit without affecting the task’s workflow.
 
-* You can flag or pin tasks o make them easier to identify:
-    * Flag a task to highlight it for all users in your organization.
-    * Pin a task to keep it easily accessible for yourself.
+### Closing a task
 
-Donc si je résume :
-pin : niveau user
-flag : niveau orga
-require actions : niveau client
+* When you close a case, all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
+
+* However, if any mandatory tasks are not completed, you will not be able to close the case.
+
+## Highlighting important tasks
+
+In TheHive, you can make important tasks stand out using the following options:
+
+* [Pin a task](../tasks/preview-task-details/actions.md#unpin): Pin a task to quickly access it from the **Tasks** tab within a case.
+* [Flag a task](../tasks/preview-task-details/actions.md#unflag): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
 
 ## Next steps
 
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)
+* [Actions on Tasks](../tasks/preview-task-details/actions.md)
 * [Share a Task](share-a-task.md)
 * [Managing Views](manage-views.md)
 * [Create a Task Log](../tasks/preview-task-details/create-a-task-log.md)
