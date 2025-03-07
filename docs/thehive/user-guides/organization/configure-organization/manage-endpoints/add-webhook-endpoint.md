@@ -1,6 +1,6 @@
-# How to Add a Webhook Endpoint
+# How to Add a Local Webhook Endpoint
 
-This topic provides step-by-step instructions for adding a webhook [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+This topic provides step-by-step instructions for adding a local webhook [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
 {!includes/access-endpoints.md!}
 

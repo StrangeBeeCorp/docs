@@ -37,7 +37,9 @@ This topic provides step-by-step instructions for configuring the webhook [notif
 
     Using a webhook as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to the webhook.
 
-    You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-webhook-endpoint.md).
+    Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations.
+
+    You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-webhook-endpoint.md).
 
 6. Select **Confirm**.
 

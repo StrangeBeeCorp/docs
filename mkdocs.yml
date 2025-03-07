@@ -304,6 +304,7 @@ nav:
             - 'SAML': thehive/administration/authentication/saml.md
           - 'Configure SSL': thehive/administration/authentication/ssl.md
           - 'SMTP Configuration': thehive/administration/smtp.md
+          - 'Add a Global Endpoint': thehive/administration/add-a-global-endpoint.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
         - 'Custom Fields': 
@@ -385,11 +386,11 @@ nav:
             - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/about-filtered-event-trigger-operators.md
           - 'Endpoints':
             - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
-            - 'Add an HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
-            - 'Add a Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
-            - 'Add a Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
-            - 'Add a Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
-            - 'Add a Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
+            - 'Add a Local HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
+            - 'Add a Local Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
+            - 'Add a Local Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
+            - 'Add a Local Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
+            - 'Add a Local Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
         - 'Functions': 
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md

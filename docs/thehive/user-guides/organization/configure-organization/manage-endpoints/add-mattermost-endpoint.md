@@ -1,6 +1,6 @@
-# How to Add a Mattermost Endpoint
+# How to Add a Local Mattermost Endpoint
 
-This topic provides step-by-step instructions for adding a Mattermost [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+This topic provides step-by-step instructions for adding a local Mattermost [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
 {!includes/access-endpoints.md!}
 

@@ -81,7 +81,7 @@ Several types of notifiers are available in TheHive:
 * *Function*: Run a specified [function](./notifiers/function.md)
 
 !!! warning "Endpoints required"
-    Some notifiers require at least one defined endpoint. Refer to the dedicated page for each notifier to learn how to create the necessary endpoints.
+    Some notifiers require at least one defined endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. Refer to the dedicated page for each notifier to learn how to create the necessary local endpoints.
 
 ## Permissions
 

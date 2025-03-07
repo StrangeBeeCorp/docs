@@ -47,7 +47,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     Using HttpRequest as a notifier requires at least one endpoint.
 
-    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
+    Select an existing endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
 
     **- Method \***
 
