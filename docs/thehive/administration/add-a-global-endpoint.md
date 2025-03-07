@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding a global endpoint(../ma
     * [Add a Local Teams Endpoint](../user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md)
     * [Add a Local Webhook Endpoint](../user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md)
 
-6. In the **Choose the filter on TheHive organizations** dropdown list, select the organizations to share your global endpoint with.
+6. Use the **Choose the filter on TheHive organizations** dropdown to select the organizations to share your global endpoint with.
 
 ## Next steps
 
