@@ -54,7 +54,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     **- Turn on the Mandatory toggle** to require users to enter a value in this custom field.
 
-    Make a custom field mandatory if it is used in dashboards or any automation workflow
+    Set a custom field as mandatory if you use it in dashboards or any automation workflow.
 
 5. Select **Confirm custom field creation**.
 

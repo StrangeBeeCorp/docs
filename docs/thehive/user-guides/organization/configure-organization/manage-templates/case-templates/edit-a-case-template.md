@@ -19,7 +19,7 @@ This topic provides step-by-step instructions for editing a [case template](abou
 6. In the **Editing a case template** drawer, enter your new values in the following fields:
 
     **Prefix**  
-    A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting. We recommend including the threat category in the prefix if your case templates are organized by threat categories, and adding a hyphen (*-*) after it to clearly separate it from the case title.
+    A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting. Include the threat category in the prefix if your case templates are organized by threat categories. Add a hyphen (*-*) after the prefix to clearly separate it from the case title.
             
     **Name \***  
     The name of the case template. This name identifies the case template in the API.
