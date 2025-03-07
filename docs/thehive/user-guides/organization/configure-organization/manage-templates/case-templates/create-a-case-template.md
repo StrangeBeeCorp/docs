@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
 !!! info "Duplicate an existing case template"
-    Since version 5.4, you can duplicate an existing case template within your organization to quickly pre-fill fields and streamline the process.
+    Since version 5.4, you can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
 
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](import-a-case-template.md) topic.
 
@@ -26,7 +26,7 @@ To import an existing case template from another organization or TheHive instanc
 5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
     **Prefix**  
-    A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting.
+    A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting. Add a hyphen (*-*) after the prefix to clearly separate it from the case title.
         
     **Name \***  
     The name of the case template. This name identifies the case template in the API.
