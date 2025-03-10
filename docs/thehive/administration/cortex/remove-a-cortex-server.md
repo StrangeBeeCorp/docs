@@ -10,9 +10,7 @@ This topic provides step-by-step instructions for removing a [Cortex](about-cort
 
 1. {!includes/platform-management-view-go-to.md!}
 
-2. Select the **Connectors** tab.
-
-    ![Connectors tab](../images/administration-guides/connectors-tab.png)
+2. {!includes/connectors-tab-go-to.md!}
 
 3. Select the **Cortex** tab.
 
