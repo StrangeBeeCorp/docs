@@ -26,7 +26,7 @@ The time it takes for your security team to acknowledge a case or alert by chang
 
 ## Time to qualify (TTQ)
 
-The time it takes for your security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into an existing case. This metric helps measure the accuracy and speed of the qualification process.
+The time it takes for your security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into a case. This metric helps measure the accuracy and speed of the qualification process.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
