@@ -8,7 +8,7 @@ This topic defines each of these indicators.
 
 ## Time to detect (TTD)
 
-The time it takes for your security team to create a case or alert in TheHive after the event occurs. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
+The time it takes to create a case or alert in TheHive after the event occurs. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
