@@ -24,6 +24,8 @@ Upon execution, users are presented with several customizable options tailored t
 3. **Install Cortex:** Facilitate the installation of Cortex and its dependencies to enable the execution of Analyzers & Responders as Docker images, ensuring scalability and efficient resource utilization.
 4. **Install Cortex on the Host:** Alternatively, install Cortex and its dependencies directly on the host machine (compatible with Debian and Ubuntu **ONLY**), offering flexibility in deployment options and optimizing system resources.
 
+{!includes/cortex-support-thehive-55.md!}
+
 </br>
 !!! Note
     For users requiring more detailed guidance, comprehensive installation guides are available for various deployment scenarios on the following links:

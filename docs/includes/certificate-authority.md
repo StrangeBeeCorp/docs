@@ -1,6 +1,6 @@
 Add a certificate authority.
 
-    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+    For more information about configuring SSL, refer to the [Configure SSL](/thehive/administration/authentication/ssl/) topic.
 
     Only use certificates from trusted, predefined authorities for secure connections; you can't use custom certificate authorities.
 
