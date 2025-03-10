@@ -157,17 +157,30 @@ This operator filters events where a field is empty (contains `""`, an empty arr
 To check if a field doesn't exist, use:
 
 ```json
-{"_not": {"_has": "foo"} }
+{ "_not": {"_has": "foo"} }
 ```
 
 * `_arrayMatch`: Checks if any element within an array field satisfies a specified condition
 
 ```json
 {
-  "_arrayMatch": {
-    "_field": "tags",
-    "_eq": "foo"
-  }
+    "_arrayMatch": {
+        "_field": "foo",
+        "_filter": {
+            "_and": [
+                {
+                    "_eq": {
+                        "name": "bar"
+                    }
+                },
+                {
+                    "_eq": {
+                        "value": "LOW"
+                    }
+                }
+            ]
+        }
+    }
 }
 ```
 
