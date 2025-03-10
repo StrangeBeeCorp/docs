@@ -8,7 +8,7 @@ This topic defines each of these indicators.
 
 ## Time to detect (TTD)
 
-The time it takes for your security team to detect abnormal activity that may indicate malicious, suspicious, or risky behavior in your environment. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
+The time it takes for your security team to create a case or alert in TheHive after the event occurs. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
@@ -26,13 +26,13 @@ The time it takes for your security team to acknowledge a case or alert by chang
 
 ## Time to qualify (TTQ)
 
-The time it takes for your security team to analyze an alert and determine its validity—whether it's a true positive, a false positive, or requires further investigation. This metric helps measure the accuracy and speed of the qualification process.
+The time it takes for your security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into an existing case. This metric helps measure the accuracy and speed of the qualification process.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
 ## Time to resolve (TTR)
 
-The time it takes to fully resolve an incident after it has been marked *In Progress*. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
+The time it takes for your security team to fully resolve an incident after it has been marked *In Progress*. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
