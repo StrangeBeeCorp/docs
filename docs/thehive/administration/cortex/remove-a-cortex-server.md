@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for removing a [Cortex](about-cortex.md) server in TheHive.
 
+{!includes/cortex-support-thehive-55.md!}
+
 {!includes/administrator-access-manage-cortex-connection.md!}
 
 ## Procedure

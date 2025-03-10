@@ -862,6 +862,8 @@ The default file storage location of TheHive is `/opt/thp/thehive/files`.
 
 The initial configuration file packaged with the software contains the following lines, which enable the Cortex and MISP modules by default. If you're not utilizing either of these modules, you can simply comment out the corresponding line and restart the service.
 
+{!includes/cortex-support-thehive-55.md!}
+
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
     # Additional modules

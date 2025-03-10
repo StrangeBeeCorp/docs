@@ -5,6 +5,8 @@ This topic provides step-by-step instructions for editing [Cortex](about-cortex.
 !!! info "Global settings"
     Editing Cortex connection settings applies to all Cortex servers.
 
+{!includes/cortex-support-thehive-55.md!}
+
 {!includes/administrator-access-manage-cortex-connection.md!}
 
 ## Procedure
