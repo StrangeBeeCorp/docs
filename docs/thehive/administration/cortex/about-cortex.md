@@ -5,7 +5,7 @@
 This topic explains what Cortex is and the benefits of using it with TheHive.
 
 !!! info "Not connected by default"
-    By default, TheHive is not connected to any Cortex server.
+    By default, TheHive isn't connected to any Cortex server.
 
 {!includes/cortex-support-thehive-55.md!}
 

@@ -13,11 +13,19 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/connectors-tab-go-to.md!}
+
+    ---
 
 3. Select the **Cortex** tab.
 
+    ---
+
 4. In the **Servers** section, select :fontawesome-solid-plus:.
+
+    ---
 
 5. In the **Set up a new server** drawer, enter the following information:
 
@@ -35,17 +43,29 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 
     The API key associated with the dedicated Cortex account.
 
+    ---
+
 6. {!includes/proxy-settings.md!}
+
+    ---
 
 7. {!includes/certificate-authority.md!}
 
+    ---
+
 8. {!includes/host-name-verification.md!}
+
+    ---
 
 9. Select the organizations to share your connection with using the **Choose the filter on TheHive organizations** dropdown.
 
     By default, all analyzers and responders provided by Cortex are available to all organizations.
 
+    ---
+
 10. Select **Test server connection** to verify your connection.
+
+    ---
 
 11. Select **Add**.
 
