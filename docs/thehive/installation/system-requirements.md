@@ -4,7 +4,7 @@ This topic outlines the hardware and operating system requirements for installin
 
 ## Hardware requirements
 
-The hardware requirements for TheHive depend on factors such as the number of concurrent users (including integrations) and their usage patterns. Below are recommended hardware thresholds for hosting all services on the same machine:
+The hardware requirements for TheHive depend on factors such as the number of concurrent users (including integrations) and their usage patterns. Below are the recommended hardware thresholds for hosting all services on the same machine:
 
 | Number of Users  | TheHive               | Cassandra             | Elasticsearch         |
 | ---------------- | --------------------- | --------------------- | --------------------- |
@@ -17,7 +17,7 @@ The hardware requirements for TheHive depend on factors such as the number of co
 
 ## Recommended operating systems
 
-TheHive has been tested and is officially supported on the following operating systems:
+TheHive runs on and is officially supported on the following operating systems:
 
 * Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS
 * Debian 11
