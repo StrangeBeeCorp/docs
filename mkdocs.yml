@@ -270,7 +270,11 @@ nav:
       - 'Platform Management':
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
-        - 'Cortex Integration': thehive/administration/cortex.md
+        - 'Cortex Integration': 
+          - 'About Cortex': thehive/administration/cortex/about-cortex.md
+          - 'Edit Cortex Connection Settings': thehive/administration/cortex/edit-cortex-connection-settings.md
+          - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
+          - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
         - 'MISP Integration': thehive/administration/misp.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
