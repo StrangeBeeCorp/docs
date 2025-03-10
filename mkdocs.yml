@@ -159,6 +159,7 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
+            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
 
 extra:
   generator: false
