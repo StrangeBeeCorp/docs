@@ -337,7 +337,7 @@ nav:
             - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
           - 'Case Report Templates':
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
-            - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets-case-report-templates.md
+            - 'Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md
             - 'Create a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md
             - 'Edit a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md
             - 'Delete a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template.md
@@ -417,10 +417,7 @@ nav:
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
         - 'Dashboard Usage':
-          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
-          - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':

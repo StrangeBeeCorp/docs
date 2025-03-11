@@ -1,4 +1,4 @@
-# Filters 
+# How to Filter and Sort
 
 In this section, you can find information about applying filters.
 
