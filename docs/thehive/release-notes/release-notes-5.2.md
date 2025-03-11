@@ -382,7 +382,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
         Guide your collaborators in writing the documentation for a case by importing pages directly from the template to provide all the necessary elements and improve processes.
 
-        See [dedicated page](../user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md) for more information (requires platinum license)
+        See [dedicated page](../user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md) for more information (requires platinum license)
 
     <figure markdown>
     ![Case reporting](../images/release_notes/release52-case-reporting.png){ width="450"}
