@@ -4,51 +4,54 @@ A dashboard compiles and visualizes data to provide key insights at a glance.
 
 This topic describes dashboards in the context of TheHive, including their functionality.
 
-## 
+!!! note "Specific case reporting"
+    To access reporting data for a specific case, use the [case report](../cases/cases-description/case-reports/about-case-reports.md) and [case timeline](../cases/cases-description/case-timelines/about-case-timeline.md) features.
 
+## Configuration
 
-The dashboard is configurable, allowing you to choose which data you want to see and whether you want to include charts or graphs to visualize the numbers.
+Dashboards consist of [widgets](widgets-dashboards.md) that you can drag into place.
 
-The dashboard lists all details of cases such as, status, name, version number, widget, created by, dates of creation and date on which data was updated. A user can apply filters on the dashboard, sort based on fields, and manage views. 
+TheHive includes four default dashboards: 
+
+* Alerts statistics
+* Cases statistics
+* Observables statistics
+* TTPs statistics
+
+You can [customize these default dashboards](edit-a-dashboard.md) and [create new ones from scratch](create-a-dashboard.md).
+
+## Scope
+
+Dashboards exist at the organization level and cannot be shared across organizations.
+
+However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-a-dashboard.md) and [importing](import-a-dashboard.md) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
+
+## Visibility
+
+Dashboards can be private or shared with the entire organization.
+
+Only the dashboard owner can [change its visibility](change-visibility-of-a-dashboard.md):
+
+* For shared dashboards, the default owner is the creator.
+* For private dashboards, the owner is the creator.
+
+## Group
+
+Dashboards are grouped to improve visibility and usability.
 
 ## Permissions
 
+{!includes/access-manage-dashboards.md!}
+
+Every user has read access to the dashboards within their organization and can export dashboards.
+
 ## Next steps
 
-In this section you can find information about dashboards.
-
-A dashboard is a visual display of data to provide information at-a-glance. The dashboard is configurable, allowing you to choose which data you want to see and whether you want to include charts or graphs to visualize the numbers.
-
-The dashboard lists all details of cases such as, status, name, version number, widget, created by, dates of creation and date on which data was updated. A user can apply filters on the dashboard, sort based on fields, and manage views. 
-
-<img src="/thehive/images/user-guides/analyst-corner/dashboard/dashboard.png" alt="dashboards" width="1000" height="1000"/>
-
-Dashboards
-Case reports
-Case timelines
-
-# Dashboards and Reporting
-
-TheHive comes with a reporting module that allows designing shared and private dashbords using various widgets for data visualisation. Reports can gather metrics from any data stored in TheHive like cases, alerts, tasks, observables...
-
-## Dashboards
-
-Every user has read access to the dashboards defined in the organization (s)he belongs to. If the `manageDashboard` permission is part of the user's profile, the user can create dashboards.
-
-### Create a dashboard
-
-![Create dashboard](../images/how-to/dashboards/dashboard-create.png)
-
-### List dashboards
-
-![List dashboards](../images/how-to/dashboards/dashboard-list.png)
-
-### View dashboard
-
-![View dashboard](../images/how-to/dashboards/dashboard-view.png)
-
-### Configure widgets
-
-![Configure widgets](../images/how-to/dashboards/dashboard-widget.png)
-
-Parler des timelines et case report en disant que c'est différent
+* [Widgets in Dashboards](widgets-dashboards.md)
+* [Create a Dashboard](create-a-dashboard.md)
+* [Edit a Dashboard](edit-a-dashboard.md)
+* [View a Dashboard](view-a-dashboard.md)
+* [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
+* [Export a Dashboard](export-a-dashboard.md)
+* [Import a Dashboard](import-a-dashboard.md)
+* [Delete a Dashboard](delete-a-dashboard.md)

@@ -1,5 +1,9 @@
 ### Add a dashboard
 
+From scratch or not
+
+Row 3 widgets max
+
 To Add a dashboard: 
 
 1. Click the **+** , to **Add** a dashboard. 
