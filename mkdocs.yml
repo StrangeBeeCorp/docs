@@ -112,7 +112,7 @@ plugins:
             'thehive/user-guides/organisation/notifications/teams.md': 'thehive/user-guides/organization/notifications/teams.md'
             'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/notifications/webhook.md'
             'thehive/user-guides/organisation/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md'
-            'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
+            'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
             'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
@@ -152,13 +152,16 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/organization/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
             'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
-            'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
+            'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/analyst-corner/cases/export-a-case.md': 'thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
-            'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
+            'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'            
+            'thehive/how-to/knowledge-base.md': 'thehive/user-guides/knowledge-base/about-knowledge-base.md'
+            'thehive/how-to/markdown.md': 'thehive/user-guides/thehive-flavored-markdown.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
 
 extra:
   generator: false
@@ -301,6 +304,14 @@ nav:
         # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
+      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Knowledge Base':
+          - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
+          - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
+          - 'Edit a Page': thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md
+          - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
+          - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
+          - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
           - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
           - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md
@@ -317,8 +328,13 @@ nav:
             - 'Delete a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template.md
             - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
             - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
-          - 'Page Templates':
-            - 'Page Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md
+          - 'Case Page Templates':
+            - 'About Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
+            - 'Create a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
+            - 'Edit a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md
+            - 'Delete a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
+            - 'Export a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
+            - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
           - 'Case Report Templates':
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
             - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets-case-report-templates.md
@@ -375,6 +391,7 @@ nav:
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
           - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
           - 'View Tasks': thehive/user-guides/analyst-corner/cases/cases-description/tasks.md
@@ -383,6 +400,9 @@ nav:
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
           - 'View Timeline': thehive/user-guides/analyst-corner/cases/cases-description/timeline.md
           - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
+          - 'Manage Case Visibility':
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
         - 'Tasks Management':
