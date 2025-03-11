@@ -418,6 +418,7 @@ nav:
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
         - 'Dashboard Usage':
           - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
+          - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':

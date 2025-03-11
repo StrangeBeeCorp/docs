@@ -74,7 +74,7 @@ ___
 
 ## Admonition blocks
 
-!!! tip "Available since TheHive version 5.5"
+!!! tip "Available since version 5.5"
     You can use admonition blocks to highlight important information.
 
 ### Syntax

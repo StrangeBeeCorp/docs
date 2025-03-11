@@ -1,8 +1,29 @@
-### Add a dashboard
+# How to Create a Dashboard
 
-From scratch or not
+This topic provides step-by-step instructions for creating a [dashboard](about-dashboards.md) in TheHive.
 
-Row 3 widgets max
+{!includes/access-manage-dashboards.md!}
+
+## Create a dashboard from scratch
+
+1. {!includes/dashboards-view-go-to.md!}
+
+2. Select :fontawesome-regular-square-plus:.
+
+3. Select a group to categorize your dashboard. You can either choose an existing group from the list by clicking in the field or create a new one by entering a custom name.
+
+4. Enter a title for your dashboard.
+
+5. Enter a description for your dashboard.
+
+6. Select the visibility you want to apply to your dashboard. Either private or shared with the entire organization.
+
+7. Select **Confirm**.
+
+## Create a dashboard from a model
+
+## Next steps
+
 
 To Add a dashboard: 
 

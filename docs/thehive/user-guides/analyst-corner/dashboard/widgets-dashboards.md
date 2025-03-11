@@ -198,11 +198,62 @@ Add a text block to your case report template.
 
 Text widget configuration includes:
 
-* A title for the text block
-* The content of the text block, with the option to include case variables
+**- Title**
 
-Format your text block using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
+A title for the text block.
+
+**- Template**
+
+The content of the text block, formatted using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
+
+**- Series**
+
+One or more datasets are displayed in the text block. Select multiple series to compare different data points over time.
+
+Enter the following details:
+
+* Entity: The specific entity the series applies to.
+* Period field: The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+* Aggregation: The method used to aggregate data values.
+* Label: The text used to identify the data series in the chart.
+* Filters: Criteria to refine and customize the displayed data.
 
 ## Gauge widget
 
+Add a gauge widget to your dashboards.
+
+Gauge widget configuration includes:
+
+**- Title**
+
+A title to define the widget’s name.
+
+**- Entity**
+
+The specific entity the widget applies to.
+
+**- Period field**
+
+The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+
+**- Min**
+
+The minimum value displayed on the gauge. This defines the starting point of the scale.
+
+**- Medium**
+
+An intermediate reference value, used to indicate a midpoint in the gauge.
+
+**- Max**
+
+The maximum value displayed on the gauge. This defines the upper limit of the scale.
+
+**- Filters**
+
+Filters to refine and customize the displayed data.
+
 ## Next steps
+
+* [About Dashboards](about-dashboards.md)
+* [Create a Dashboard](create-a-dashboard.md)
+* [Edit a Dashboard](edit-a-dashboard.md)
