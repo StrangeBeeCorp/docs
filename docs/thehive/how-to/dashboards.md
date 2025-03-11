@@ -3,6 +3,10 @@ hide:
   - navigation
 ---
 
+Dashboards
+Case reports
+Case timelines
+
 # Dashboards and Reporting
 
 TheHive comes with a reporting module that allows designing shared and private dashbords using various widgets for data visualisation. Reports can gather metrics from any data stored in TheHive like cases, alerts, tasks, observables...

@@ -22,7 +22,7 @@ Use case reports to:
 
 Every case report template includes a default header and footer section, which you can customize with content and case variables. You can't move or delete these sections, but they won't appear in the case report if left empty.
 
-You can add [widgets](about-widgets.md) between these sections to display case data. You can rearrange the order of widgets at any time.
+You can add [widgets](about-widgets-case-report-templates.md) between these sections to display case data. You can rearrange the order of widgets at any time.
 
 ## Permissions
 
@@ -32,7 +32,7 @@ Once created, case report templates are automatically available to all users in 
 
 ## Next steps
 
-* [About Widgets](about-widgets.md)
+* [About Widgets](about-widgets-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)
 * [Edit a Case Report Template](edit-a-case-report-template.md)
 * [Delete a Case Report Template](delete-a-case-report-template.md)

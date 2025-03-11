@@ -1,4 +1,4 @@
-# About Widgets
+# About Widgets in Case Report Templates
 
 Several widget types are available for case report templates in TheHive.
 

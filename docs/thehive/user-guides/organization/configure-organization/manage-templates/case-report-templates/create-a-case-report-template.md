@@ -28,11 +28,11 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 6. Select **Add report template** or **Edit report template**. 
 
-7. Drag available [widgets](about-widgets.md) to position them as needed.
+7. Drag available [widgets](about-widgets-case-report-templates.md) to position them as needed.
 
     ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
 
-8. Enter the [required information for the widget](about-widgets.md).
+8. Enter the [required information for the widget](about-widgets-case-report-templates.md).
 
 9. Select **Confirm**.
 
