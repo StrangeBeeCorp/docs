@@ -43,6 +43,10 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 5. In the **HttpRequest** drawer, enter the following information:
 
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
+
     **- Endpoint \***
 
     Using HttpRequest as a notifier requires at least one endpoint.
@@ -55,11 +59,11 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     **- URL \***
 
-    Enter a valid URL. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    Enter a valid URL.
 
     **- Template \***
 
-    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.
 
     ---
 
@@ -69,7 +73,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 7. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
 
-    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system.
 
     ---
 

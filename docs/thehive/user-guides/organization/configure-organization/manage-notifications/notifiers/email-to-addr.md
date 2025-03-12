@@ -32,8 +32,9 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 
 5. In the **EmailerToAddr** drawer, enter the following information:
 
-    !!! note "Available variables"
-        You can use variables in each field by selecting **Add variable**. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     **- Subject**
 
@@ -45,7 +46,7 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 
     **- Template**
 
-    The email template used for the message. If you select the HTML format, you must write the full HTML syntax. You can also use a [mustache-like syntax](https://mustache.github.io/) to format the email, though some limitations apply.
+    The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
 
 6. Select **Confirm**.
 

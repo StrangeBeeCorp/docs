@@ -35,6 +35,10 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
 5. In the **Mattermost** drawer, enter the following information:
 
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
+
     **- Endpoint**
 
     Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
@@ -43,15 +47,15 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
     **- Channel**
 
-    The Mattermost channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The Mattermost channel where you want to send the data. This overrides the default channel set in the endpoint configuration.
 
     **- Username**
 
-    The username that will appear as the sender of the message in Mattermost. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The username that will appear as the sender of the message in Mattermost. This overrides the default username set in the endpoint configuration.
 
     **- Template**
 
-    The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text.
 
     {!includes/handlebars-templates.md!}
 

@@ -43,6 +43,10 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 5. In the **Teams** drawer, enter the following information:
 
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
+
     **- Endpoint**
 
     Using Microsoft Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Microsoft Teams.
@@ -56,8 +60,6 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
     The message content to send to the Microsoft Teams endpoint.
 
     If an [Adaptive Card](https://adaptivecards.io/) template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
-
-    Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     !!! tips "Tips to write text templates"
         

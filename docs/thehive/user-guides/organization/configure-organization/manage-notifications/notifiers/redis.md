@@ -46,13 +46,17 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
 5. In the **Redis** drawer, enter the following information:
 
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
+
     **- Channel \***
 
-    The Redis channel where you want to publish the data. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The Redis channel where you want to publish the data.
 
     **- Host \***
 
-    The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The Redis server address. This is where TheHive will send data.
 
     **- Port \***
 
@@ -60,7 +64,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Username**
 
-    The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    The username for authentication if Redis Access Control Lists (ACLs) are enabled.
 
     **- Password**
 
