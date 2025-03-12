@@ -179,6 +179,7 @@ plugins:
             'thehive/user-guides/organization/notifications/slack.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md'
             'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
             'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
+            'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
 
 
 extra:
