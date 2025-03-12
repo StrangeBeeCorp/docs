@@ -2,13 +2,21 @@
 
 This topic provides step-by-step instructions for creating a [dashboard](about-dashboards.md) in TheHive.
 
+You can create a dashboard from scratch or duplicate an existing one.
+
+If you want to use a dashboard from another organization or TheHive instance as a template, you can [import it](import-a-dashboard.md).
+
 {!includes/access-manage-dashboards.md!}
 
-## Create a dashboard from scratch
+## Procedure
 
 1. {!includes/dashboards-view-go-to.md!}
 
-2. Select :fontawesome-regular-square-plus:.
+2. Two options are available:
+
+    * Create a dasboard from scratch by selecting :fontawesome-regular-square-plus:.
+
+    * Duplicate an existing dashboard by selecting :fontawesome-solid-ellipsis: next to dashboard you want to duplicate, then select **Duplicate**.
 
 3. Select a group to categorize your dashboard. You can either choose an existing group from the list by clicking in the field or create a new one by entering a custom name.
 
@@ -20,22 +28,23 @@ This topic provides step-by-step instructions for creating a [dashboard](about-d
 
 7. Select **Confirm**.
 
-## Create a dashboard from a model
+8. On the dashboards list, select the name of your dashboard.
+
+9. Select :fontawesome-solid-pen:.
+
+10. Drag available [widgets](widgets-dashboards.md) to position them as needed.
+
+    ![Drag widgets](/thehive/images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
+
+11. Enter the [required information for the widget](widgets-dashboards.md).
+
+12. Select **Confirm**.
 
 ## Next steps
 
-
-To Add a dashboard: 
-
-1. Click the **+** , to **Add** a dashboard. 
-
-    <img src="/thehive/images/user-guides/analyst-corner/dashboard/add-dashboard-menu.png" alt=" add dashboard menu " width="300" height="300"/>
-
-    A new window opens. 
-
-1. Enter the  **Title**.
-1. Enter the  **Description.**
-1. Select the **Visibility** option. (Private or Shared) 
-1. Click the **confirm** button. 
-
-<img src="/thehive/images/user-guides/analyst-corner/dashboard/add-new-dashboard.png" alt="adding a dashboard" width="1000" height="1000"/>
+* [Edit a Dashboard](edit-a-dashboard.md)
+* [View a Dashboard](view-a-dashboard.md)
+* [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
+* [Export a Dashboard](export-a-dashboard.md)
+* [Import a Dashboard](import-a-dashboard.md)
+* [Delete a Dashboard](delete-a-dashboard.md)

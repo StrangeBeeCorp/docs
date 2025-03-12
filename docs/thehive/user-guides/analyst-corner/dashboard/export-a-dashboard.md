@@ -1,8 +1,17 @@
-### Export a dashboard
+### How to Export a Dashboard
 
-To Export a dashboard: 
+This topic provides step-by-step instructions for exporting a [dashboard](about-dashboards.md) in TheHive.
 
-1. Click the **Export** option.
-1. A file is downloaded, that can be exported/sent.
+This is useful if you want to share a dashboard with another organization or TheHive instance.
 
-<img src="/thehive/images/user-guides/analyst-corner/dashboard/export-dashboard-menu.png" alt="export dashboard" width="500" height="500"/>
+## Procedure
+
+1. {!includes/dashboards-view-go-to.md!}
+
+2. Select :fontawesome-solid-ellipsis: next to the dashboard you want to export.
+
+3. Select **Export** to export the case page template in JSON format.
+
+## Next steps
+
+* [Import a Dashboard](import-a-dashboard.md)

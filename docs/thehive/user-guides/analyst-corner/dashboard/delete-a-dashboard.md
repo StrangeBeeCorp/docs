@@ -1,13 +1,25 @@
-### Delete a dashboard
+# How to Delete a Dashboard
 
-To Delete a dashboard: 
+This topic provides step-by-step instructions for deleting a [dashboard](about-dashboards.md) in TheHive.
 
-1. Click the **Delete** option from the list.
+{!includes/access-manage-dashboards.md!}
 
-    <img src="/thehive/images/user-guides/analyst-corner/dashboard/delete-dashboard-menu.png" alt=" delete dashboard menu" width="500" height="500"/>
+## Procedure
 
-    A new message pops-up.
+1. {!includes/dashboards-view-go-to.md!}
 
-1. Click **OK** to delete the dashboard from the list.
+2. Select :fontawesome-solid-ellipsis: next to dashboard you want to delete.
 
-<img src="/thehive/images/user-guides/analyst-corner/dashboard/delete-dashboard-popup.png" alt=" delete dashboard popup" width="300" height="300"/>
+3. Select **Delete**.
+
+4. Select **OK**.
+
+## Next steps
+
+* [Widgets in Dashboards](widgets-dashboards.md)
+* [Create a Dashboard](create-a-dashboard.md)
+* [Edit a Dashboard](edit-a-dashboard.md)
+* [View a Dashboard](view-a-dashboard.md)
+* [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
+* [Export a Dashboard](export-a-dashboard.md)
+* [Import a Dashboard](import-a-dashboard.md)

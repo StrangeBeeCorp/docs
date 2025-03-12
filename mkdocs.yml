@@ -417,8 +417,15 @@ nav:
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
         - 'Dashboard Usage':
-          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
+          - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
+          - 'Create a Dashboard': thehive/user-guides/analyst-corner/dashboard/create-a-dashboard.md
+          - 'Edit a Dashboard': thehive/user-guides/analyst-corner/dashboard/edit-a-dashboard.md
+          - 'View a Dashboard': thehive/user-guides/analyst-corner/dashboard/view-a-dashboard.md
+          - 'Delete a Dashboard': thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard.md
+          - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
+          - 'Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/import-a-dashboard.md
+          - 'Export a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-a-dashboard.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':
