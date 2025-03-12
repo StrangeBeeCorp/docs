@@ -32,7 +32,7 @@ This topic provides step-by-step instructions for configuring the EmailerToUser 
 
     **- Template**
 
-    The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
+    The email template used for the message. If you select the HTML format, you must write the full HTML syntax. You can also use a Mustache-like syntax to format the email, though some limitations apply.
 
 6. Select **Confirm**.
 
