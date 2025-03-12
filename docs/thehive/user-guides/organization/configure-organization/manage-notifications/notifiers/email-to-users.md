@@ -5,6 +5,8 @@ This topic provides step-by-step instructions for configuring the EmailerToUser 
 !!! note "Notifier availability"
     The EmailerToUser notifier is available only when you enable the **Send notification to every user in the organization** toggle.
 
+{!includes/requirements-email-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure

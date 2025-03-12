@@ -16,6 +16,8 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/requirements-email-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
