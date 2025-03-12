@@ -8,7 +8,7 @@ This topic provides examples of variable usage in the context of configuring [no
 
 **Subject**
 
-*Case #{{object.number}} serverity reached {{object.severity}}*
+*Case #{{object.number}} severity reached {{object.severity}}*
 
 **From**
 
