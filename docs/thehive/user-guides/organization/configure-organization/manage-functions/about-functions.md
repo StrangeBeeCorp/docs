@@ -17,6 +17,10 @@ For example, you can use a function to create alerts within TheHive without requ
 
 This topic provides details on the different types and uses of functions in TheHive.
 
+## Function endpoints
+
+Creating a function in TheHive automatically adds a new public endpoint to the TheHive public API, making it easy to call from an external system.
+
 ## Trigger sources
 
 Various sources can trigger functions in TheHive:
