@@ -51,7 +51,7 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
         * The `handle` function: This is where you write your script. Your function must be placed inside this structure.
         * The `input` parameter: This represents the data passed into the function. Its content depends on how the function is triggered.
-        * The `context` parameter: This provides access to TheHive’s environment, allowing your function to interact with common TheHive actions.
+        * The `context` parameter: This provides access to TheHive’s environment, allowing your function to [interact with common TheHive actions](functions-objects.md).
         
     ---
 

@@ -74,7 +74,7 @@ The function type defines the scope in which you can execute the function.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions API Objects](functions-api-objects.md) topic. To execute the function, you must first [revoke it via an HTTP call](revoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions Objects](functions-objects.md) topic. To execute the function, you must first [revoke it via an HTTP call](revoke-a-function.md).
 
 * **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 

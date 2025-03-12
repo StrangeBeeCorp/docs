@@ -398,7 +398,7 @@ nav:
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
           - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
-          - 'Functions API Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-api-objects.md
+          - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
