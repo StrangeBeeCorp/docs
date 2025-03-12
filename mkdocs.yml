@@ -318,9 +318,7 @@ nav:
         - 'Att&ck Patterns': thehive/administration/attack-patterns.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
-        - 'Notification Configuration': thehive/how-to/notifications.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
-        # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
