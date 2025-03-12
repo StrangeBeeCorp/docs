@@ -61,6 +61,30 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 
 ## Examples
 
+* An case severity has been updated to High or Critical:
+
+```json
+{
+    "_and": [
+        {
+            "_is": {
+                "action": "update"
+            }
+        },
+        {
+            "_is": {
+                "objectType": "Case"
+            }
+        },
+        {
+            "_gte": {
+                "details.severity": 3
+            }
+        }
+    ]
+}
+```
+
 * An alert has been closed without an assigned user:
 
 ```json
