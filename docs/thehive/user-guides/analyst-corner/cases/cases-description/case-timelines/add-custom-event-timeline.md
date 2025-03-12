@@ -4,4 +4,5 @@ Add a custom event (refer to - [`Add a Custom Event`](../cases-description/add-c
 
 <img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-timeline-actions.png" alt="cases list timeline" width="700" height="700"/>
 
+Paid licence
 

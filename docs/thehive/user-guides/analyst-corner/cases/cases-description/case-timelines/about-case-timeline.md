@@ -20,3 +20,5 @@ Case timelines are a second part of TheHive's reporting capabilities. Case timel
 ![Case timeline 1](../images/how-to/dashboards/case-timeline-1.png)
 
 ![Case timeline 2](../images/how-to/dashboards/case-timeline-2.png)
+
+Paid licence
