@@ -26,7 +26,7 @@ You can add [widgets](about-widgets.md) between these sections to display case d
 
 ## Permissions
 
-{!includes/licenses-required-case-reports.md!}
+{!includes/license-required-case-reports.md!}
 
 {!includes/access-manage-case-report-templates.md!}
 

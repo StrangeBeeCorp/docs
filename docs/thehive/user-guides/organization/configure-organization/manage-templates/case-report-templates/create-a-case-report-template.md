@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 {!includes/access-manage-case-report-templates.md!}
 
-{!includes/licenses-required-case-reports.md!}
+{!includes/license-required-case-reports.md!}
 
 ## Procedure
 
