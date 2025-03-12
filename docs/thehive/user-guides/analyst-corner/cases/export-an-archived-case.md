@@ -1,5 +1,7 @@
 # How to Export an Archived Case
 
+{!includes/license-required-export-import-case.md!}
+
 This topic provides step-by-step instructions for exporting an archived [case](../cases/about-cases.md) in TheHive.
 
 !!! warning "Only for TheHive use"

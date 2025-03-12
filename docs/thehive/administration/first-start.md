@@ -15,7 +15,7 @@ After following the installation guides and ensuring TheHive is up and running, 
 
 ## Install License
 
-To unlock all features and quotas, log in to your account on StrangeBee's customer portal, and follow [this guide](../installation/activate-license.md) to setup the licence.
+To unlock all features and quotas, log in to your account on StrangeBee's customer portal, and follow [this guide](../installation/activate-license.md) to setup the license.
 
 !!! Tip
     This action is particularly required if you are setting up TheHive as a cluster: 

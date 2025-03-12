@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for editing a [case report templat
 
 {!includes/access-manage-case-report-templates.md!}
 
+{!includes/licenses-required-case-reports.md!}
+
 ## Procedure
 
 1. {!includes/organization-view-go-to.md!}

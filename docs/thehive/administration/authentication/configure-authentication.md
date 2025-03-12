@@ -60,8 +60,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 5. Select the authentication providers you want to configure.
 
-    !!! note "Paid licence required"
-        A paid license is required to configure authentication providers other than the local database managed by TheHive.
+    {!includes/license-required-authentication.md!}
 
     **Local authentication**
 
