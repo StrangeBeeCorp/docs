@@ -26,6 +26,8 @@ You can add [widgets](about-widgets.md) between these sections to display case d
 
 ## Permissions
 
+{!includes/license-required-case-reports.md!}
+
 {!includes/access-manage-case-report-templates.md!}
 
 Once created, case report templates are automatically available to all users in your organization within case descriptions.
