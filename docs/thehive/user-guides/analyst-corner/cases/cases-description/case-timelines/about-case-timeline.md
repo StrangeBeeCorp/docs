@@ -2,7 +2,7 @@
 
 In this section you can find information about timelines.
 
-A time line is a where a user can view the case details at a glance. The timeline has details about custom events, TTPs, logs, tasks, alerts, case events shown on a timeline. 
+A timeline is a where a user can view the case details at a glance. The timeline has details about custom events, TTPs, logs, tasks, alerts, case events shown on a timeline. 
 
 <img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-timelines.png" alt="cases list timeline" width="500" height="500"/>
 

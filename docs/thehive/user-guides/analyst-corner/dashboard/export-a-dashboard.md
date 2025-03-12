@@ -8,7 +8,12 @@ This is useful if you want to share a dashboard with another organization or The
 
 1. {!includes/dashboards-view-go-to.md!}
 
-2. Select :fontawesome-solid-ellipsis: next to the dashboard you want to export.
+2. Two options are available:
+
+    * Select :fontawesome-solid-ellipsis: next to the dashboard you want to export.
+    * On the dashboards list, select the name of your dashboard, then select the **Export** symbol.
+
+    Image
 
 3. Select **Export** to export the case page template in JSON format.
 
