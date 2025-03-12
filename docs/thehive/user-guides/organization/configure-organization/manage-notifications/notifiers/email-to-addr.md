@@ -32,10 +32,6 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 
 5. In the **EmailerToAddr** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Subject**
 
     The email subject line.
@@ -47,6 +43,10 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
     **- Template**
 
     The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
+
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
 6. Select **Confirm**.
 

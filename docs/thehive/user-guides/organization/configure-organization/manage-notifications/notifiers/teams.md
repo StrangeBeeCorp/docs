@@ -43,10 +43,6 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 5. In the **Teams** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Endpoint**
 
     Using Microsoft Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Microsoft Teams.

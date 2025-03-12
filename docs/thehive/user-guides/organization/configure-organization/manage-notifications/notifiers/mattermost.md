@@ -35,10 +35,6 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
 5. In the **Mattermost** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Endpoint**
 
     Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
@@ -57,7 +53,9 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
     The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text.
 
-    {!includes/handlebars-templates.md!}
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
 6. Select **Confirm**.
 

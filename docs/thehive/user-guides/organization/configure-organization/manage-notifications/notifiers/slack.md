@@ -43,10 +43,6 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
 5. In the **Slack** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Endpoint**
 
     Using Slack as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Slack.
@@ -57,8 +53,6 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
     The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text.
 
-    {!includes/handlebars-templates.md!}
-
     **- Channel**
 
     The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration.
@@ -66,6 +60,10 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
     **- Username**
 
     A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration.
+
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 

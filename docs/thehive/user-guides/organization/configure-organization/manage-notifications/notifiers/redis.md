@@ -46,10 +46,6 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
 5. In the **Redis** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Channel \***
 
     The Redis channel where you want to publish the data.
@@ -73,6 +69,10 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
     **- Database**
 
     The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
+    
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 

@@ -43,10 +43,6 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 5. In the **HttpRequest** drawer, enter the following information:
 
-    {!includes/notifications-variables.md!}
-    
-    {!includes/templates-notifications-helpers.md!}
-
     **- Endpoint \***
 
     Using HttpRequest as a notifier requires at least one endpoint.
@@ -64,6 +60,10 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
     **- Template \***
 
     Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.
+
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 
