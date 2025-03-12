@@ -51,17 +51,17 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
     **- Text template**
 
-    The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+    The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     {!includes/handlebars-templates.md!}
 
     **- Channel**
 
-    The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     **- Username**
 
-    A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     ---
 

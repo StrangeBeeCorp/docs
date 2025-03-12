@@ -48,11 +48,11 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Channel \***
 
-    The Redis channel where you want to publish the data. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis channel where you want to publish the data. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     **- Host \***
 
-    The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     **- Port \***
 
@@ -60,7 +60,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Username**
 
-    The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables.
+    The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     **- Password**
 

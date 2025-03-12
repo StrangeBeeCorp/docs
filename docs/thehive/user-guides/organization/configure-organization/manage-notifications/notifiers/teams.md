@@ -57,7 +57,7 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
     If an [Adaptive Card](https://adaptivecards.io/) template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
 
-    Select **Add Variable** to dynamically insert values using available variables.
+    Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     !!! tips "Tips to write text templates"
         

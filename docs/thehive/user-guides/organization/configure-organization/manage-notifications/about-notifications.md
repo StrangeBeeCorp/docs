@@ -1,6 +1,6 @@
 # About Notifications
 
-A notification triggers automated actions when specific events occur.
+A notification triggers automated actions when specific events occur within an organization.
 
 This topic explains the different notification capabilities in TheHive.
 

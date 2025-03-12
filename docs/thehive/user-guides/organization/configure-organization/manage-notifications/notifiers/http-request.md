@@ -55,11 +55,11 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     **- URL \***
 
-    Enter a valid URL. Select **Add Variable** to dynamically insert values using available variables.
+    Enter a valid URL. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     **- Template \***
 
-    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements. Select **Add Variable** to dynamically insert values using available variables.
+    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     ---
 
@@ -69,7 +69,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 7. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
 
-    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables.
+    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
 
     ---
 
