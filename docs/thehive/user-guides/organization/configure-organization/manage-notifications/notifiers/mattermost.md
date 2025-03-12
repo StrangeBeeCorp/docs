@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure

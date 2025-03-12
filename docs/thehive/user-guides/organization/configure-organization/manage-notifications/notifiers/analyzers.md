@@ -9,6 +9,8 @@ This topic provides step-by-step instructions for configuring the RunAnalyzer [n
     - *CaseObservableCreated*  
     - *ObservableCreated*  
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure

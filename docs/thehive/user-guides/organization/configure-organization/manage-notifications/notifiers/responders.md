@@ -19,6 +19,8 @@ This topic provides step-by-step instructions for configuring the RunResponder [
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
