@@ -10,9 +10,16 @@ This topic provides step-by-step instructions for deleting a custom event from a
 
 2. In the case description, select the **Timeline** tab.
 
-    Image
+    {!includes/case-timeline-tab-go-to.md!}
 
-3. 
+3. Select the custom event to delete.
 
+4. Select :fontawesome-solid-trash:.
+
+5. Select **OK**.
 
 ## Next steps
+
+* [Add a Custom Event to a Case Timeline](add-custom-event-timeline.md)
+* [View a Case Timeline](view-case-timeline.md)
+* [Export a Case Timeline](export-case-timeline.md)

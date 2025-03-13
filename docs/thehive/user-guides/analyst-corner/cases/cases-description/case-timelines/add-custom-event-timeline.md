@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 
 2. In the case description, select the **Timeline** tab.
 
-    Image
+    {!includes/case-timeline-tab-go-to.md!}
 
 3. Select :fontawesome-regular-square-plus:.
 

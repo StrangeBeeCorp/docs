@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for downloading a [case report](ab
 
 2. In the case description, select the **Report** tab.
 
-    Image
+    {!includes/case-report-tab-go-to.md!}
 
 3. In the right pane, under the **General** section, select the template you want to apply, the format, and the maximum number of elements displayed per widget.
 
