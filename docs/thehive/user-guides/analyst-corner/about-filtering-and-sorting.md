@@ -1,4 +1,16 @@
-# How to Filter and Sort
+# About Filtering and Sorting
+
+This topic provides step-by-step instructions on how to filter and sort elements in TheHive.
+
+## Filtering elements
+
+Filtering in TheHive can be done from various different views.
+
+Filtering is managed with the 
+
+## Sorting elements
+
+## Next steps
 
 In this section, you can find information about applying filters.
 
