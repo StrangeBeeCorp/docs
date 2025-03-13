@@ -54,4 +54,5 @@ Every user has read access to the dashboards within their organization and can e
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Export a Dashboard](export-a-dashboard.md)
 * [Import a Dashboard](import-a-dashboard.md)
+* [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

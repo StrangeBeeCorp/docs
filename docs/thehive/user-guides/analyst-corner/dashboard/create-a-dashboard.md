@@ -47,4 +47,5 @@ If you want to use a dashboard from another organization or TheHive instance as 
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Export a Dashboard](export-a-dashboard.md)
 * [Import a Dashboard](import-a-dashboard.md)
+* [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

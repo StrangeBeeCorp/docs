@@ -1,24 +1,36 @@
-## About Case Timelines
+# About Case Timelines
 
-In this section you can find information about timelines.
+Case timelines provide a chronological view of all events that occurred during the lifecycle of a specific case.
 
-A timeline is a where a user can view the case details at a glance. The timeline has details about custom events, TTPs, logs, tasks, alerts, case events shown on a timeline. 
+This topic explains the components of case timelines in TheHive.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-timelines.png" alt="cases list timeline" width="500" height="500"/>
+{!includes/license-required-case-timelines.md!}
 
-Case timelines are a second part of TheHive's reporting capabilities. Case timelines display any event that happened during the lifecycle of a given case:
+## Components
 
-- Alert occurences
-- Case creation
-- Investigation start
-- Task completion
-- Flagged task logs
-- IoC sightings
-- Mitre Attack patterns
-- Additional custom events
+Case timelines consist of all types of events that have occurred in a case, including:
 
-![Case timeline 1](../images/how-to/dashboards/case-timeline-1.png)
+* Alert occurrences
+* Case creation
+* Investigation start
+* Task completion
+* Flagged task logs
+* IoC sightings
+* [MITRE ATT&CK] patterns
 
-![Case timeline 2](../images/how-to/dashboards/case-timeline-2.png)
+You can also [configure custom events](add-custom-event-timeline.md) to include additional entries in the timeline.
 
-Paid licence
+## Rendering
+
+Case timelines can be displayed as either a graph or a list.
+
+## Actions
+
+You can [create](add-custom-event-timeline.md) and [delete](delete-custom-event-timeline.md) a custom event, but you can't edit it once it has been created.
+
+## Next steps
+
+* [Add a Custom Event to a Case Timeline](add-custom-event-timeline.md)
+* [Delete a Custom Event in a Case Timeline](delete-custom-event-timeline.md)
+* [View a Case Timeline](view-case-timeline.md)
+* [Export a Case Timeline](export-case-timeline.md)

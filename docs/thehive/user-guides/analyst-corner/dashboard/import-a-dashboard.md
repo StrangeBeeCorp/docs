@@ -1,8 +1,10 @@
-### How to Import a Dashboard
+# How to Import a Dashboard
 
 This topic provides step-by-step instructions for importing a [dashboard](about-dashboards.md) in TheHive.
 
 This is useful if you want to use a dashboard from another organization or TheHive instance.
+
+{!includes/access-manage-dashboards.md!}
 
 ## Procedure
 
@@ -27,4 +29,5 @@ This is useful if you want to use a dashboard from another organization or TheHi
 * [Edit a Dashboard](edit-a-dashboard.md)
 * [View a Dashboard](view-a-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
+* [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

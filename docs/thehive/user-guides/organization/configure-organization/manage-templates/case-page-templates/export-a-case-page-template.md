@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for exporting a [case page template](about-case-page-templates.md) in TheHive.
 
-This is useful if you want to share a case page template with another organization or TheHive instance.
+The export file is a JSON file that can be [imported](import-a-case-page-template.md) into another organization or TheHive instance for sharing.
 
 {!includes/access-manage-case-page-templates.md!}
 
