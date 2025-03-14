@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for exporting a [dashboard](about-dashboards.md) in TheHive.
 
-The export file is a JSON file that can be [imported](import-a-dashboard.md) into another organization or TheHive instance for sharing.
+You can [import](import-a-dashboard.md) the exported JSON file, into another organization or TheHive instance for sharing.
 
 ## Procedure
 

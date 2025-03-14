@@ -16,17 +16,17 @@ Case timelines consist of all types of events that have occurred in a case, incl
 * Task completion
 * Flagged task logs
 * IoC sightings
-* [MITRE ATT&CK] patterns
+* MITRE ATT&CK patterns
 
 You can also [configure custom events](add-custom-event-timeline.md) to include additional entries in the timeline.
 
 ## Rendering
 
-Case timelines can be displayed as either a graph or a list.
+You can display case timelines as either a graph or a list.
 
 ## Actions
 
-You can [create](add-custom-event-timeline.md) and [delete](delete-custom-event-timeline.md) a custom event, but you can't edit it once it has been created.
+You can [create](add-custom-event-timeline.md) and [delete](delete-custom-event-timeline.md) a custom event, but you can't edit it after creation.
 
 ## Next steps
 

@@ -22,7 +22,7 @@ You can [customize these default dashboards](edit-a-dashboard.md) and [create ne
 
 ## Scope
 
-Dashboards exist at the organization level and cannot be shared across organizations.
+Organizations manage dashboards at their own level and cannot share them with other organizations.
 
 However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-a-dashboard.md) and [importing](import-a-dashboard.md) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
 
@@ -37,7 +37,7 @@ Only the dashboard owner can [change its visibility](change-visibility-of-a-dash
 
 ## Group
 
-Dashboards are grouped to improve visibility and usability.
+Organizing dashboards by groups makes them easier to find and use.
 
 ## Permissions
 

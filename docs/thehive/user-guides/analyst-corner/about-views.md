@@ -6,11 +6,11 @@ Views are a feature that allows you to save [filters and sorting](about-filterin
 
 ### Default view
 
-A *Default* view with no filters or sorting is always available. It can't be modified or deleted.
+A *Default* view with no filters or sorting is always available. You can't modify or delete it.
 
 ### Saving views
 
-When a new filter or sorting is applied, an asterisk appears next to the view name:
+When you apply a new filter or sorting, an asterisk (*\**) appears next to the view name:
 
 * To save the changes in the current view, select **Save view**.
 * To save the changes as a new view, select **Save view as**.

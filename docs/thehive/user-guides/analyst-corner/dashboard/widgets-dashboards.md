@@ -28,7 +28,7 @@ The specific entity the widget applies to.
 
 **- Category field**
 
-The field used for for categorizing data.
+The field used for categorizing data.
 
 **- Date**
 
@@ -36,7 +36,7 @@ The date field displayed on the chart.
 
 **- Period field**
 
-The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 
 **- Stack by type**
 
@@ -70,15 +70,15 @@ The specific entity the widget applies to.
 
 **- Category field**
 
-The field used for for categorizing data.
+The field used for categorizing data.
 
 **- Period field**
 
-The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 
 **- Max fragments**
 
-The maximum number of segments in the donut chart. If the specified number is lower than the number of data categories, the remaining values will be combined into an *Other* segment.
+The maximum number of segments in the donut chart. When the specified number is lower than the total data categories, the system combines the remaining values into an *Other* segment.
 
 **- Filters**
 
@@ -114,9 +114,9 @@ Enter the following details:
 
 * Entity: The specific entity the series applies to.
 * Date: The date field displayed on the chart.
-* Period field: The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+* Period field: The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 * Aggregation: The method used to aggregate data values.
-* Field: The data field on which aggregation is applied.
+* Field: Aggregation applies to this data field.
 * Label: The text used to identify the data series in the chart.
 * Type: The visualization style for the series.
 * Color: The color assigned to the data series.
@@ -146,11 +146,11 @@ The specific entity the widget applies to.
 
 **- Category field**
 
-The field used for for categorizing data.
+The field used for categorizing data.
 
 **- Period field**
 
-The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 
 **- Filters**
 
@@ -172,7 +172,7 @@ The specific entity the widget applies to.
 
 **- Period field**
 
-The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 
 **- Filters**
 
@@ -180,7 +180,7 @@ Filters to refine and customize the displayed data.
 
 **- Series**
 
-One or more datasets are displayed in the counter widget. Select multiple series to compare different data points over time.
+The counter widget displays one or more datasets. Select multiple series to compare different data points over time.
 
 Enter the following details:
 
@@ -208,12 +208,12 @@ The content of the text block, formatted using [TheHive-flavored Markdown syntax
 
 **- Series**
 
-One or more datasets are displayed in the text block. Select multiple series to compare different data points over time.
+The text block displays one or more datasets. Select multiple series to compare different data points over time.
 
 Enter the following details:
 
 * Entity: The specific entity the series applies to.
-* Period field: The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+* Period field: The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 * Aggregation: The method used to aggregate data values.
 * Label: The text used to identify the data series in the chart.
 * Filters: Criteria to refine and customize the displayed data.
@@ -234,7 +234,7 @@ The specific entity the widget applies to.
 
 **- Period field**
 
-The date field that determines how filters from the **Period** dropdown at the top of the page are applied to the data.
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
 
 **- Min**
 

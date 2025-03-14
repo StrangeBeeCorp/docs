@@ -14,7 +14,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
 2. Two options are available:
 
-    * Create a dasboard from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a dashboard from scratch by selecting :fontawesome-regular-square-plus:.
 
     * Duplicate an existing dashboard by selecting :fontawesome-solid-ellipsis: next to dashboard you want to duplicate, then select **Duplicate**.
 
