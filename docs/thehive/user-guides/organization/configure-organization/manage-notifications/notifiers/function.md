@@ -25,6 +25,8 @@ To learn more about functions, see the [About Functions](../../manage-functions/
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure

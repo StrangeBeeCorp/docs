@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
@@ -48,11 +50,11 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Channel \***
 
-    The Redis channel where you want to publish the data. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis channel where you want to publish the data.
 
     **- Host \***
 
-    The Redis server address. This is where TheHive will send data. Select **Add Variable** to dynamically insert values using available variables.
+    The Redis server address. This is where TheHive will send data.
 
     **- Port \***
 
@@ -60,7 +62,7 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
 
     **- Username**
 
-    The username for authentication if Redis Access Control Lists (ACLs) are enabled. Select **Add Variable** to dynamically insert values using available variables.
+    The username for authentication if Redis Access Control Lists (ACLs) are enabled.
 
     **- Password**
 
@@ -69,18 +71,16 @@ This topic provides step-by-step instructions for configuring the Redis [notifie
     **- Database**
 
     The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
+    
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 
 6. Turn on the **Enable SSL** toggle to encrypt the connection and secure data transmission between TheHive and the Redis server.
 
-    Add a certificate authority.
-
-    For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
-
-    Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
-
-    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
+    {!includes/certificate-authority.md!}
 
     {!includes/host-name-verification.md!}
 

@@ -179,6 +179,7 @@ plugins:
             'thehive/user-guides/organization/notifications/slack.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md'
             'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
             'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
+            'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
 
 
 extra:
@@ -304,6 +305,7 @@ nav:
             - 'SAML': thehive/administration/authentication/saml.md
           - 'Configure SSL': thehive/administration/authentication/ssl.md
           - 'SMTP Configuration': thehive/administration/smtp.md
+        - 'Add a Global Endpoint': thehive/administration/add-a-global-endpoint.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
         - 'Custom Fields': 
@@ -317,9 +319,7 @@ nav:
         - 'Att&ck Patterns': thehive/administration/attack-patterns.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
-        - 'Notification Configuration': thehive/how-to/notifications.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
-        # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
@@ -367,6 +367,7 @@ nav:
           - 'Edit a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md
           - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
           - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
+          - 'Variable Usage Examples': thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples.md
           - 'Notifier Configuration':
             - 'EmailToUser': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
             - 'EmailToAddr': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
@@ -385,11 +386,11 @@ nav:
             - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/about-filtered-event-trigger-operators.md
           - 'Endpoints':
             - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
-            - 'Add an HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
-            - 'Add a Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
-            - 'Add a Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
-            - 'Add a Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
-            - 'Add a Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
+            - 'Add a Local HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
+            - 'Add a Local Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
+            - 'Add a Local Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
+            - 'Add a Local Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
+            - 'Add a Local Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
         - 'Functions': 
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
@@ -397,7 +398,7 @@ nav:
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
           - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
-          - 'Functions API Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-api-objects.md
+          - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':

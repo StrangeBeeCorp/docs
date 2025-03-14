@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
@@ -47,15 +49,15 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
     Using Microsoft Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Microsoft Teams.
 
-    Select [the endpoint you created](../../manage-endpoints/add-teams-endpoint.md).
+    Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations.
+
+    Select [the local endpoint you created](../../manage-endpoints/add-teams-endpoint.md).
 
     **- Text template**
 
     The message content to send to the Microsoft Teams endpoint.
 
     If an [Adaptive Card](https://adaptivecards.io/) template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
-
-    Select **Add Variable** to dynamically insert values using available variables.
 
     !!! tips "Tips to write text templates"
         

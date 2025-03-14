@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
@@ -47,21 +49,23 @@ This topic provides step-by-step instructions for configuring the Slack [notifie
 
     Using Slack as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Slack.
 
-    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-slack-endpoint.md).
+    Select an existing endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-slack-endpoint.md).
 
     **- Text template**
 
-    The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
-
-    {!includes/handlebars-templates.md!}
+    The message content to send to the Slack endpoint. Select JSON, Markdown, or plain text.
 
     **- Channel**
 
-    The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The Slack channel where you want to send the data. This overrides the default channel set in the endpoint configuration.
 
     **- Username**
 
-    A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration.
+
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 

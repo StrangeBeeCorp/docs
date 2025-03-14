@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
@@ -39,21 +41,23 @@ This topic provides step-by-step instructions for configuring the Mattermost [no
 
     Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
 
-    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
+    Select an existing endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
 
     **- Channel**
 
-    The Mattermost channel where you want to send the data. This overrides the default channel set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The Mattermost channel where you want to send the data. This overrides the default channel set in the endpoint configuration.
 
     **- Username**
 
-    The username that will appear as the sender of the message in Mattermost. This overrides the default username set in the endpoint configuration. Select **Add Variable** to dynamically insert values using available variables.
+    The username that will appear as the sender of the message in Mattermost. This overrides the default username set in the endpoint configuration.
 
     **- Template**
 
-    The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text. Select **Add Variable** to dynamically insert values using available variables.
+    The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text.
 
-    {!includes/handlebars-templates.md!}
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
 6. Select **Confirm**.
 

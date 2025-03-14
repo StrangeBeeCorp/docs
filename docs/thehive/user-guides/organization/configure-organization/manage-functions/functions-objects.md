@@ -1,9 +1,9 @@
-## Functions API Objects
+## Functions Objects
 
-This topic lists all available objects for API-type functions in TheHive.
+This topic lists all available objects for functions in TheHive.
 
 !!! info "API documentation"
-    The objects in API-type functions are the same as those used in TheHive HTTP API.
+    The objects in functions are the same as those used in TheHive HTTP API.
 
     For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/).
 

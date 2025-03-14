@@ -21,6 +21,8 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
     - *TaskClosed*  
     - *TaskMandatory*
 
+{!includes/license-required-notifiers.md!}
+
 {!includes/access-notifications.md!}
 
 ## Procedure
@@ -47,7 +49,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     Using HttpRequest as a notifier requires at least one endpoint.
 
-    Select an existing endpoint. You can add a new endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
+    Select an existing endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-http-request-endpoint.md).
 
     **- Method \***
 
@@ -55,11 +57,15 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     **- URL \***
 
-    Enter a valid URL. Select **Add Variable** to dynamically insert values using available variables.
+    Enter a valid URL.
 
     **- Template \***
 
-    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements. Select **Add Variable** to dynamically insert values using available variables.
+    Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.
+
+    {!includes/notifications-variables.md!}
+    
+    {!includes/templates-notifications-helpers.md!}
 
     ---
 
@@ -69,7 +75,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
 7. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
 
-    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system. Select **Add Variable** to dynamically insert values using available variables.
+    Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system.
 
     ---
 
@@ -81,13 +87,7 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
 
     ---
 
-10. Add a certificate authority.
-
-    For more information about configuring SSL, refer to the [Configure SSL](../../../../../administration/authentication/ssl.md) topic.
-
-    Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
-
-    You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
+10. {!includes/certificate-authority.md!}
 
     ---
 

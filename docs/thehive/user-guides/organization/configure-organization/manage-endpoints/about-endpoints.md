@@ -2,6 +2,8 @@
 
 An endpoint is an entry point in a communication channel where two systems interact.
 
+In the Hive, endpoints can be local, defined at the organization level, or [global](../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations.
+
 This topic explains when an endpoint is required in TheHive.
 
 ## Notifiers endpoints
@@ -16,8 +18,9 @@ Endpoints are required in TheHive to configure the following notifiers:
 
 ## Next steps
 
-* [Add an HttpRequest Endpoint](add-http-request-endpoint.md)
-* [Add a Mattermost Endpoint](add-mattermost-endpoint.md)
-* [Add a Slack Endpoint](add-slack-endpoint.md)
-* [Add a Teams Endpoint](add-teams-endpoint.md)
-* [Add a Webhook Endpoint](add-webhook-endpoint.md)
+* [Add a Global Endpoint](../../../../administration/add-a-global-endpoint.md)
+* [Add a Local HttpRequest Endpoint](add-http-request-endpoint.md)
+* [Add a Local Mattermost Endpoint](add-mattermost-endpoint.md)
+* [Add a Local Slack Endpoint](add-slack-endpoint.md)
+* [Add a Local Teams Endpoint](add-teams-endpoint.md)
+* [Add a Local Webhook Endpoint](add-webhook-endpoint.md)
