@@ -6,6 +6,8 @@ This is useful if you want to use a case page template from another organization
 
 {!includes/access-manage-case-page-templates.md!}
 
+## Procedure
+
 1. {!includes/organization-view-go-to.md!}
 
 2. {!includes/templates-go-to.md!}
