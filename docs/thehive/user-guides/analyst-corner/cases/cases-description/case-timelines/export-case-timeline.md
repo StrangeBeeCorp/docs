@@ -1,6 +1,6 @@
 # How to Export a Case Timeline
 
-This topic provides step-by-step instructions for exporting a [case timeline](about-case-timeline.md) in TheHive.
+This topic provides step-by-step instructions for exporting a [case timeline](about-case-timelines.md) in TheHive.
 
 {!includes/license-required-case-timelines.md!}
 

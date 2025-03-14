@@ -1,6 +1,6 @@
 # How to Delete a Custom Event from a Case Timeline
 
-This topic provides step-by-step instructions for deleting a custom event from a [case timeline](about-case-timeline.md) in TheHive.
+This topic provides step-by-step instructions for deleting a custom event from a [case timeline](about-case-timelines.md) in TheHive.
 
 {!includes/license-required-case-timelines.md!}
 

@@ -204,7 +204,7 @@ A title for the text block.
 
 **- Template**
 
-The content of the text block, formatted using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
+The content of the text block, formatted using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
 
 **- Series**
 

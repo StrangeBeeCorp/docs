@@ -131,7 +131,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
             'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md'
-            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md'
+            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md'
@@ -398,9 +398,14 @@ nav:
           - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
-          - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
-          - 'Case reports':
-            - 'About Case reports': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md
+          - 'Case Timelines':
+            - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md
+            - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md
+            - 'View a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md
+            - 'Export a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md
+            - 'Delete a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/delete-custom-event-timeline.md
+          - 'Case Reports':
+            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md
             - 'Download a Case Report': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
@@ -413,7 +418,7 @@ nav:
             - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
             - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Manage View': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
           - 'Preview Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
