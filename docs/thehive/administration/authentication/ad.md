@@ -13,7 +13,7 @@ This topic provides step-by-step instructions for configuring an Active Director
 
     User data is synchronized periodically:  
     - New LDAP users are automatically created in TheHive.  
-    - Removed users are disabled.  
+    - Removed users become inactive.  
     - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
@@ -40,17 +40,17 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 6. Enter the following information:
 
-    **The addresses of the domain controllers**
+    **- The addresses of the domain controllers**
 
     The IP addresses or host names of the domain controllers responsible for handling authentication requests within the network.
 
-    **The Windows domain name**
+    **- The Windows domain name**
 
     The name of the Windows domain that manages user accounts and permissions. This is typically the NetBIOS name used within the Windows network.
 
     Example: *DOMAIN*
 
-    **The DNS domain name**
+    **- The DNS domain name**
 
     The fully qualified domain name (FQDN) associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
 

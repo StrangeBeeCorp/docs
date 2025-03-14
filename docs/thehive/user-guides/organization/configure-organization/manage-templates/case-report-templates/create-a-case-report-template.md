@@ -20,10 +20,10 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 5. In the drawer, enter the following fields:
 
-    **Title \***  
+    **- Title \***  
     The title users will see when selecting reports in case descriptions.
 
-    **Description**  
+    **- Description**  
     A brief summary of your case report template, outlining its purpose and contents.
 
 6. Select **Add report template** or **Edit report template**. 
