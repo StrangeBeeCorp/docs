@@ -328,7 +328,7 @@
 
 - Functions (Beta)
 
-    See [dedicated page](../user-guides/organization/functions.md) for more information (requires platinum license)
+    See [dedicated page](../user-guides/organization/configure-organization/manage-functions/about-functions.md) for more information (requires platinum license)
 
 ### Other features
 
