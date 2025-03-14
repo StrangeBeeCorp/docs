@@ -180,7 +180,7 @@ plugins:
             'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
             'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
             'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
-
+            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
 
 extra:
   generator: false
@@ -292,7 +292,11 @@ nav:
       - 'Platform Management':
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
-        - 'Cortex Integration': thehive/administration/cortex.md
+        - 'Cortex Integration': 
+          - 'About Cortex': thehive/administration/cortex/about-cortex.md
+          - 'Edit Cortex Connection Settings': thehive/administration/cortex/edit-cortex-connection-settings.md
+          - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
+          - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
         - 'MISP Integration': thehive/administration/misp.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
