@@ -162,6 +162,15 @@ plugins:
             'thehive/how-to/knowledge-base.md': 'thehive/user-guides/knowledge-base/about-knowledge-base.md'
             'thehive/how-to/markdown.md': 'thehive/user-guides/thehive-flavored-markdown.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
+            'thehive/how-to/dashboards.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/Filter-and-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/pages.md': 'thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md'
+            'thehive/user-guides/analyst-corner/dashboard/about-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/filter-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md'
 
 extra:
   generator: false
