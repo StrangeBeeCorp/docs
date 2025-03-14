@@ -49,8 +49,8 @@ To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 !!! note "Restrict case visibility"
     Starting from version 5.5, you can restrict the visibility of sensitive cases.
 
-!!! note "Platinum licence required"
-    Only users with a Platinum licence can manage the visibility of their cases.
+!!! note "Platinum license required"
+    Only users with a Platinum license can manage the visibility of their cases.
 
 {!includes/access-manage-visibility-cases.md!}
 

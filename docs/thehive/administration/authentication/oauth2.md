@@ -28,21 +28,21 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
 5. Enter the following information:
 
-    **Client ID**
+    **- Client ID**
 
     The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. TheHive uses this identifier to authenticate with the OAuth server during the authorization process.
 
-    **Client secret**
+    **- Client secret**
 
     A confidential string issued by the OAuth 2.0 provider, used along with the client ID to authenticate TheHive securely.
 
-    **TheHive redirect URL**
+    **- TheHive redirect URL**
 
     The URL where the OAuth 2.0 server redirects users after authentication.
     
     Format: *https://<your-hive-domain>/api/ssoLogin*
 
-    **Grant type**
+    **- Grant type**
 
     Specifies the OAuth 2.0 authorization flow used for authentication. 
     
@@ -52,26 +52,26 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
     * Client credentials (used for machine-to-machine authentication)
     * Implicit (used for browser-based apps, though less secure)
 
-    **Authorization URL**
+    **- Authorization URL**
 
     The endpoint of the OAuth 2.0 provider where users are redirected to authenticate and authorize access.
 
-    **Prefix of the authorization header**
+    **- Prefix of the authorization header**
 
     Defines the type of token to pass in the authorization header, typically:
 
     * Bearer (most common)
     * Basic (used for basic authentication)
 
-    **Token URL**
+    **- Token URL**
 
     The endpoint used by TheHive to exchange the authorization code for an access token.
 
-    **User information URL**
+    **- User information URL**
 
     The endpoint that TheHive calls using the access token to retrieve user details (such as ID, email, or name).
 
-    **List of scope**
+    **- List of scope**
 
     Specifies the access permissions that TheHive requests from the OAuth 2.0 server. 
     
@@ -81,7 +81,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
     * *email*: Access to the user’s email address
     * *profile*: Access to profile information
 
-    **Field that contains the id of the user in user info**
+    **- Field that contains the id of the user in user info**
 
     The specific field in the user information response that holds the user's unique identifier. TheHive uses this field to map authenticated users.
 
