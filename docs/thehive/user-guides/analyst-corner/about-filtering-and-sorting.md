@@ -1,39 +1,61 @@
 # About Filtering and Sorting
 
-This topic provides step-by-step instructions on how to filter and sort elements in TheHive.
+This topic explains how filtering and sorting work in TheHive.
 
 ## Filtering elements
 
-Filtering in TheHive can be done from various different views.
+Filtering in TheHive allows you to refine displayed lists across various views.
 
-Filtering is managed with the 
+### Applying filters
+
+To apply filters, turn on the **Filters** toggle at the top right of the page to access filtering options and manually enter filter values.
+
+![Filters toogle](../../images/user-guides/analyst-corner/cases/find-a-case-filters-toggle.png)
+
+If you prefer not to enter values manually, you can use these quicker alternatives when available:
+
+* Using predefined quick filters
+
+Select the **Quick filters** dropdown to access predefined filters. These filters are available to all users and can't be modified.
+
+![Quick filters](../../images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
+
+* Selecting values directly from a list
+
+Select specific values within a list to apply filters dynamically.
+
+![Selecting values](../../images/user-guides/analyst-corner/cases/find-a-case-select.gif)
+
+### Filter logic
+
+Filters are combined using the `AND` operator, meaning all selected conditions must be met.
+
+### Saving filters
+
+You can save applied filters in [a view](about-views.md) to avoid reapplying them each time. Simply select the saved view whenever needed.
 
 ## Sorting elements
 
+### Applying sorting
+
+Sorting in TheHive allows you to organize displayed lists across various views.
+
+You can sort lists by many fields.
+
+Select the small arrows next to a field name to sort the list in ascending or descending order. The first click sorts in ascending order, the second click sorts in descending order, and the third click removes sorting.
+
+When sorting is applied, the field name and the selected arrow are highlighted.
+
+![Sorting](../../images/user-guides/analyst-corner/sorting.png)
+
+### Sorting logic
+
+You can't combine sorting on multiple fields—only one field can be sorted at a time.
+
+### Saving sorting
+
+You can save applied sorting in [a view](about-views.md) to avoid reapplying it each time. Simply select the saved view whenever needed.
+
 ## Next steps
 
-In this section, you can find information about applying filters.
-
-To apply filter:
-
-1. On the list of incidents page, switch on the Filters toggle button.
-1. Click **Add filters**.
-
-Apply Filter to the required field.
-
-   <img src="/thehive/images/user-guides/analyst-corner/filters.png" alt="filters" width="1000" height="1000"/>
-
-1. Select the filters from the list.
-1. Click **Apply filters**.
-1. (Optional) Click **Clear filters** to clear all applied filters.
-
-## Sorting
-
-Sorting can be performed on any field values.  
-
-To Sort:
-
-1. On the list of incidents page, Click the small arrow that points upwards/downwards to sort on a particular filed name. 
-
-<img src="/thehive/images/user-guides/analyst-corner/sort.png" alt="sort" width="1000" height="1000"/>
-
+* [About Views](about-views.md)
