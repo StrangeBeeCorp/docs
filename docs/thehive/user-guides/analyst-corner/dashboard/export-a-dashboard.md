@@ -15,8 +15,6 @@ You can [import](import-a-dashboard.md) the exported JSON file, into another org
 
     ![Export a dashboard](/thehive/images/user-guides/analyst-corner/dashboard/export-a-dashboard.png)
 
-3. Select **Export** to export the case page template in JSON format.
-
 ## Next steps
 
 * [Import a Dashboard](import-a-dashboard.md)

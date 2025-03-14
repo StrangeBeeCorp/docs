@@ -36,7 +36,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
     ![Drag widgets](/thehive/images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
 
-11. Enter the [required information for the widget](widgets-dashboards.md).
+11. Enter the [required information for the widgets](widgets-dashboards.md).
 
 12. Select **Confirm**.
 

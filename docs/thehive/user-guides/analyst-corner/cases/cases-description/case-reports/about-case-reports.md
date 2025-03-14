@@ -8,7 +8,7 @@ This topic explains the components of case reports in TheHive.
 
 You must apply a [template](../../../../organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md) to visualize a case report.
 
-Users have access to a default template, and those with the necessary permissions can [create additional case report templates](../../../../organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md).
+Users have access to the default template and all [additional case report templates that have been created](../../../../organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md).
 
 ## Formats
 

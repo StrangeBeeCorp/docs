@@ -423,7 +423,7 @@ nav:
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
-        - 'Dashboard Usage':
+        - 'Dashboards':
           - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
           - 'Create a Dashboard': thehive/user-guides/analyst-corner/dashboard/create-a-dashboard.md

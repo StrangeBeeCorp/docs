@@ -8,9 +8,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 
 1. [Find the case](../../search-for-cases/find-a-case.md) where you want to add the custom event to the timeline.
 
-2. In the case description, select the **Timeline** tab.
-
-    {!includes/case-timeline-tab-go-to.md!}
+2. {!includes/case-timeline-tab-go-to.md!}
 
 3. Select :fontawesome-regular-square-plus:.
 

@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for editing a [dashboard](about-da
 
     ![Drag widgets](/thehive/images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
 
-5. Enter the [required information for the widget](widgets-dashboards.md).
+5. Enter the [required information for the widgets](widgets-dashboards.md).
 
 6. Select **Confirm**.
 

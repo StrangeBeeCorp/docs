@@ -16,15 +16,15 @@ If you prefer not to enter values manually, you can use these quicker alternativ
 
 * Using predefined quick filters
 
-Select the **Quick filters** dropdown to access predefined filters. All users have access to these filters and can't modify them.
+    Select the **Quick filters** dropdown to access predefined filters. All users have access to these filters and can't modify them.
 
-![Quick filters](../../images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
+    ![Quick filters](../../images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
 
 * Selecting values directly from a list
 
-Select specific values within a list to apply filters dynamically.
+    Select specific values within a list to apply filters dynamically.
 
-![Selecting values](../../images/user-guides/analyst-corner/cases/find-a-case-select.gif)
+    ![Selecting values](../../images/user-guides/analyst-corner/cases/find-a-case-select.gif)
 
 ### Filter logic
 

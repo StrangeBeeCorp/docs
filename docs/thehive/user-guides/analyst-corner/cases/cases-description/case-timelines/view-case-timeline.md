@@ -8,9 +8,7 @@ This topic provides step-by-step instructions for viewing a [case timeline](abou
 
 1. [Find the case](../../search-for-cases/find-a-case.md) to view its timeline.
 
-2. In the case description, select the **Timeline** tab.
-
-    {!includes/case-timeline-tab-go-to.md!}
+2. {!includes/case-timeline-tab-go-to.md!}
 
 ## Next steps
 

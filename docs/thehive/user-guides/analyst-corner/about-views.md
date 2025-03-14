@@ -21,9 +21,11 @@ You can switch views by selecting the view name in the top left of the screen.
 
 ![Switch views](../../images/user-guides/analyst-corner/views.png)
 
-To delete existing views, select **Manage views**. You can't rename an existing view.
+To delete existing views, select **Manage views**.
 
 ![Manage views](../../images/user-guides/analyst-corner/manage-views.png)
+
+You can't rename an existing view.
 
 ### Scope
 
