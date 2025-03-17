@@ -2,6 +2,10 @@
 
 This topic provides step-by-step instructions for restoring the visibility of a [case](../cases/about-cases.md#visibility) in TheHive.
 
+{!includes/case-visibility-v55.md!}
+
+{!includes/license-required-case-visibility.md!}
+
 {!includes/access-manage-visibility-cases.md!}
 
 ## Procedure
