@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for creating an [alert feeder](abo
 
 You can also find an example of [how to configure an Airtable alert feeder](#airtable-example).
 
+{!includes/license-alert-feeders.md!}
+
 {!includes/access-feeders.md!}
 
 ## Procedure
@@ -108,6 +110,8 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 14. Select **Confirm**.
 
 ## Airtable example
+
+[Airtable](https://www.airtable.com/) is one of the external systems you can configure as an alert feeder in TheHive. Airtable is a cloud-based platform that combines the features of a spreadsheet and a database.
 
 ### Query
 

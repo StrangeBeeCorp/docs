@@ -2,12 +2,14 @@
 
 This topic provides step-by-step instructions for editing an [alert feeder](about-feeders.md) in TheHive.
 
+{!includes/license-alert-feeders.md!}
+
 {!includes/access-feeders.md!}
 
 ## Procedure
 
-!!! warning "Names of the alert feeder and the function can't be changed after creation"
-    You can't change the alert feeder name or the feeder function name after they are created. To modify them, you must [delete](delete-a-feeder.md) the existing alert feeder and [create](create-a-feeder.md) a new one.
+!!! warning "Alert feeder and function names can't be modified after creation"
+    You define the alert feeder and function names during creation and can't change them later. To modify them, you must [delete](delete-a-feeder.md) the existing alert feeder and [create](create-a-feeder.md) a new one.
 
 1. {!includes/organization-view-go-to.md!}
 

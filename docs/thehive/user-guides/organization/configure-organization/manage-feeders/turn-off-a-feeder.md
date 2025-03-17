@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for turning off an [alert feeder](about-feeders.md) in TheHive.
 
+{!includes/license-alert-feeders.md!}
+
 {!includes/access-feeders.md!}
 
 ## Procedure

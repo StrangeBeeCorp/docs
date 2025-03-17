@@ -3,9 +3,6 @@
 !!! note "Available from version 5.5"
     Alert feeders are available starting from version 5.5.
 
-!!! warning "Platinum license required"
-    A Platinum license is required to use alert feeders. If the license expires or becomes inactive, existing alert feeders will be automatically deactivated.
-
 Alert feeders integrate external tools with TheHive without requiring them to push data. Instead, TheHive retrieves data from external systems on a scheduled basis.
 
 The primary goal of alert feeders is to enhance TheHive’s ingestion capabilities while minimizing reliance on external services for data retrieval.
@@ -16,16 +13,16 @@ This topic provides an overview of the scope and usage of alert feeders in TheHi
 
 Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [a function](../manage-functions/about-functions.md). Each alert feeder supports only one function.
 
-Alert feeders do not perform bi-directional synchronization.
+Alert feeders don't perform bi-directional synchronization.
 
-In addition to alerts, alert feeders can also generate cases and tasks.
+Alert feeders can also generate cases and tasks beyond alerts.
 
 ### Alert feeder functions
 
 !!! tip "Feeder function examples"
     Feeder function examples are available in [a dedicated GitHub repository](). You can contribute by sharing feeder functions you’ve written.
 
-You should not manually create an alert feeder function as a standalone function, as it cannot be linked to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
+Don't manually create an alert feeder function as a standalone function, because you can't link it to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
 
 You can then modify it either [from the functions list](../manage-functions/edit-a-function.md) or [the alert feeder configuration](edit-a-feeder.md).
 
@@ -33,7 +30,7 @@ When you delete an alert feeder, the associated function remains. To remove the 
 
 ## Usage
 
-Any external system that exposes a public REST API supporting synchronous data retrieval can be integrated into TheHive using an alert feeder.
+You can use an alert feeder to integrate any external system that exposes a public REST API supporting synchronous data retrieval into TheHive.
 
 ### Authentication modes
 
@@ -46,7 +43,7 @@ Currently, alert feeders support the following four authentication methods:
 
 ### Example integrations
 
-Alert feeders can be used to integrate various external systems, including:
+You can use alert feeders to integrate various external systems, including:
 
 * Jira
 * Airtable
@@ -54,9 +51,11 @@ Alert feeders can be used to integrate various external systems, including:
 * Rapid7
 * SentinelOne
 
-...and more!
+And more!
 
 ## Permissions
+
+{!includes/license-alert-feeders.md!}
 
 {!includes/access-feeders.md!}
 
