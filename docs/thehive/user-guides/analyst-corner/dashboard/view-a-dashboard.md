@@ -10,6 +10,10 @@ This topic provides step-by-step instructions for viewing a [dashboard](about-da
 
 2. On the dashboards list, select the name of your dashboard.
 
+3. In some widgets, you can access detailed data directly from the dashboards by selecting a value. This action opens the **Global search** view with predefined filters applied.
+
+    You can also hide data in some widgets by selecting the corresponding item in the legend.
+
 ## Next steps
 
 * [Widgets in Dashboards](widgets-dashboards.md)

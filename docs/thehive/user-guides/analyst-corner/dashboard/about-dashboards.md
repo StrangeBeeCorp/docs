@@ -39,6 +39,12 @@ Only the dashboard owner can [change its visibility](change-visibility-of-a-dash
 
 Organizing dashboards by groups makes them easier to find and use.
 
+## Data interactions
+
+In some widgets, you can access detailed data directly from the dashboards by selecting a value. This action opens the **Global search** view with predefined filters applied.
+
+You can also hide data in some widgets by selecting the corresponding item in the legend.
+
 ## Permissions
 
 {!includes/access-manage-dashboards.md!}
