@@ -34,6 +34,18 @@ In TheHive, a case includes the following elements:
 
 * [TTPs](../cases/cases-description/ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
+## Linking cases
+
+You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
+
+You can link a case to other cases in TheHive as well as external links. It is useful for investigating a complex security incident involving multiple related cases and requires the ability to establish and view connections between these cases, any relevant cases, and external resources to facilitate comprehensive analysis.  to connect cases and external resources for better traceability and investigation efficiency.
+
+Enhanced Traceability: Enable users to track and visualize relationships between cases and external resources efficiently.
+
+Configurable Link Types: Allow users to define and manage the types of links that can be established, enabling customization according to organizational needs.
+
+Automated Link Integration: Automatically integrate external URLs, categorizing them under a system-defined link type for consistency and ease of access.
+
 ## Merging cases
 
 {!includes/access-merge-cases.md!}
