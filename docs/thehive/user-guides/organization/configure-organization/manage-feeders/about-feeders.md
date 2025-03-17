@@ -20,7 +20,11 @@ In addition to alerts, alert feeders can also generate cases and tasks.
 
 ### Alert feeder functions
 
-You should not manually create an alert feeder function as a standalone function, as it cannot be linked to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. You can then modify it either from the functions list or the alert feeder configuration.
+You should not manually create an alert feeder function as a standalone function, as it cannot be linked to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
+
+You can then modify it either [from the functions list](../manage-functions/edit-a-function.md) or [the alert feeder configuration](edit-a-feeder.md).
+
+When you delete an alert feeder, the associated function remains. To remove the function, follow the instructions in [Delete a Function](../manage-functions/delete-a-function.md).
 
 ## Usage
 
