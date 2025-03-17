@@ -36,8 +36,9 @@ In TheHive, a case includes the following elements:
 
 ## Linking cases
 
-You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
+{!includes/case-links-v55.md!}
 
+You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
 
 
 ## Merging cases
