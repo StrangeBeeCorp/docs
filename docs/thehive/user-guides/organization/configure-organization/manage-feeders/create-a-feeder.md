@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive.
 
+You can also find an example of [how to configure an Airtable alert feeder](#airtable-example).
+
 {!includes/access-feeders.md!}
 
 ## Procedure
@@ -82,6 +84,9 @@ This topic provides step-by-step instructions for creating an [alert feeder](abo
 
 12. Create a function to map fields from the external system to TheHive’s format:
 
+    !!! info "Feeder function"
+        Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
+
     **- Function name**
 
     Enter a name for the function. You can’t change this name later.
@@ -101,6 +106,66 @@ This topic provides step-by-step instructions for creating an [alert feeder](abo
     ---
 
 14. Select **Confirm**.
+
+## Airtable example
+
+### Query
+
+``` curl 
+--location --request GET 'https://api.airtable.com/v0/appq4BcPkTvbqPeYD/tbloC5oeiM4H8JNFP?returnFieldsByFieldId=false&cellFormat=string&timeZone=GMT&userLocale=fr' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer ASKMEFORTHEKEY' \
+--header 'Cookie: brw=brwpMBTzB0WQMhB2D; AWSALBTG=GYogHbsKgqNBpu0DcXqpNXmFyX+fC9ff0uyw0FKAxMy45ODSwt1GMBKwSi6hk3DYrmL7jx24HMG2NYWW3J1LWHwqyiwxQK99LfB2u8SgLtSqSnW90/zKX207KY/VrO0xZUBuQDS+rWqpUNvZodN9KGIk3A/fKMSfsZLWgpIng5Ajw/8PyTc=; AWSALBTGCORS=GYogHbsKgqNBpu0DcXqpNXmFyX+fC9ff0uyw0FKAxMy45ODSwt1GMBKwSi6hk3DYrmL7jx24HMG2NYWW3J1LWHwqyiwxQK99LfB2u8SgLtSqSnW90/zKX207KY/VrO0xZUBuQDS+rWqpUNvZodN9KGIk3A/fKMSfsZLWgpIng5Ajw/8PyTc=' \
+--data '{
+    "returnFieldsByFieldId": true,
+    "maxRecords": 1
+}'
+```
+
+### Response
+
+``` json
+{
+    "records": [
+        {
+            "id": "rec3mzMkF2JNsApxn",
+            "createdTime": "2025-01-23T16:18:13.000Z",
+            "fields": {
+                "Incident Category": "Security",
+                "Issue Description": "Last Alert of the day"
+            }
+        },
+        {
+            "id": "rec5FB3iOuoT9avrm",
+            "createdTime": "2025-01-23T17:50:56.000Z",
+            "fields": {
+                "Incident Category": "Software",
+                "Reported By": "U003",
+                "Priority Level": "ASAP",
+                "Assigned Agent": "Charlie Chocolate",
+                "Department": "Code Conjurers",
+                "Issue Description": "Lalerte du soir",
+                "Resolution Details": "RES-003"
+            }
+        },
+        {
+            "id": "rec6FGdVFzMQX3Ke4",
+            "createdTime": "2025-01-21T14:00:49.000Z",
+            "fields": {
+                "Incident Category": "Security",
+                "Reported By": "UI",
+                "Priority Level": "ASAP",
+                "Issue Description": "Feeder is not broken"
+            }
+        },
+        ...
+    ]
+}
+```
+
+### Feeder function
+
+You can find the function example for creating an alert from Airtable in the [GitHub repository]().
 
 ## Next steps
 

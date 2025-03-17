@@ -14,11 +14,16 @@ This topic provides an overview of the scope and usage of alert feeders in TheHi
 
 ## How alert feeders work
 
-Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [functions](../manage-functions/about-functions.md), which each alert feeder supporting only one function.
+Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [a function](../manage-functions/about-functions.md). Each alert feeder supports only one function.
+
+Alert feeders do not perform bi-directional synchronization.
 
 In addition to alerts, alert feeders can also generate cases and tasks.
 
 ### Alert feeder functions
+
+!!! tip "Feeder function examples"
+    Feeder function examples are available in [a dedicated GitHub repository](). You can contribute by sharing feeder functions you’ve written.
 
 You should not manually create an alert feeder function as a standalone function, as it cannot be linked to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
 
