@@ -5,6 +5,8 @@ This topic provides step-by-step instructions for deleting an [alert feeder](abo
 !!! info "Deleting an alert feeder doesn't delete the associated feeder function"
     When you delete an alert feeder, the associated function remains. To remove the function, follow the instructions in [Delete a Function](../manage-functions/delete-a-function.md).
 
+{!includes/alert-feeders-v55.md!}
+
 {!includes/license-alert-feeders.md!}
 
 {!includes/access-feeders.md!}

@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for creating an [alert feeder](abo
 
 You can also find an example of [how to configure an Airtable alert feeder](#airtable-example).
 
+{!includes/alert-feeders-v55.md!}
+
 {!includes/license-alert-feeders.md!}
 
 {!includes/access-feeders.md!}

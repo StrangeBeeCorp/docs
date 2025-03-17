@@ -1,4 +1,4 @@
-## How to Edit a Function
+# How to Edit a Function
 
 This topic provides step-by-step instructions for editing a [function](about-functions.md) in TheHive.
 

@@ -1,4 +1,4 @@
-## How to Create a Function
+# How to Create a Function
 
 This topic provides step-by-step instructions for creating a [function](about-functions.md) in TheHive.
 
