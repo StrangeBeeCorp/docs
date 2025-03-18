@@ -437,6 +437,10 @@ nav:
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
+          - 'Link Elements in Cases':
+            - 'Add a Link to a Case': thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md
+            - 'Remove a Link from a Case': thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case.md
+            - 'View Links in a Case': thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md
           - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md

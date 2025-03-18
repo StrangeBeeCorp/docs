@@ -1,6 +1,6 @@
 # About Cases
 
-This topic explains cases, their components, and how to create them in TheHive.
+This topic explains cases in TheHive, their components, and how they work.
 
 ## Definition
 
@@ -10,19 +10,19 @@ A case is a structured entity used to track, investigate, and respond to securit
 
 In TheHive, you can create a case from the following sources:
 
-* [Manual entry](../cases/create-a-new-case.md#create-an-empty-case): Create a case manually by entering details.
+* [Manual entry](../cases/create-a-new-case.md#create-an-empty-case): Cases created through direct input by users.
 
-* [Merging cases](#merging-cases): Merging cases creates a new case and deletes the original merged cases.
+* [Merging cases](#merging-cases): A new case created by merging two existing cases.
 
-* [Case templates](../cases/create-a-new-case.md#create-a-case-from-a-template): Use predefined templates to standardize and simplify case creation.
+* [Case templates](../cases/create-a-new-case.md#create-a-case-from-a-template): Predefined structures used to standardize case creation.
 
-* [Archived cases](../cases/create-a-new-case.md#create-a-case-from-an-archived-case): Restore cases from previous investigations stored in TheHive.
+* [Archived cases](../cases/create-a-new-case.md#create-a-case-from-an-archived-case): Restored cases from previous investigations in TheHive.
 
-* [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Create cases by manually importing MISP events for further investigation.
+* [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases initiated by manually importing MISP events.
 
-* [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Convert alerts from connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector.md) into cases for further investigation.
+* [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector.md).
 
-* [Detection tools](../cases/create-a-new-case.md#create-a-case-from-a-detection-tool) (SIEM, EDR, IDS, or firewalls): Create cases directly from your detection tools if you prefer to manage alert triage there or if you trust the tool to generate mostly true positives.
+* [Detection tools](../cases/create-a-new-case.md#create-a-case-from-a-detection-tool) (SIEM, EDR, IDS, or firewalls): Cases created automatically by trusted detection tools, when you prefer to manage alert triage within the tool or trust it to generate mostly true positives.
 
 ## Key components
 
@@ -38,13 +38,51 @@ In TheHive, a case includes the following elements:
 
 {!includes/access-merge-cases.md!}
 
-You can merge two cases if they share the same organization and permission profile pairs.
+Cases can be merged when they belong to the same organization and share the same permission profile pairs. 
 
-Merging cases deletes the original cases and creates a new case that combines elements from both.
+Merging consolidates two cases into a new one, combining their contents and deleting the originals.
 
 To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 
-## Visibility
+Merging also impacts:
+
+* [Restricted cases](#merging-a-restricted-case)
+* [Linked elements](#merging-cases-with-links)
+
+## Linking elements
+
+{!includes/case-links-v55.md!}
+
+{!includes/access-manage-case-links.md!}
+
+!!! info "Alerts as linked elements"
+    You can't add an alert to the linked elements. To view alerts linked to a case, select the dedicated **Linked alerts** tab.
+
+Cases can be linked to other TheHive cases or external resources. These links enhance traceability and help visualize relationships between related incidents.
+
+### Link categories
+
+Links must be categorized to reflect the type of relationship. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
+
+### Link display
+
+Users can only view links to cases in their organization and cases they have access to.
+
+Links automatically appear in both linked cases. Deleting a case automatically removes its related links.
+
+Case links aren't included in case exports, reports, or dashboards.
+
+### Actions
+
+You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md) a link in a case, but you can’t modify it after it’s added.
+
+### Merging cases with links
+
+* When you merge cases, links from both cases are combined, and duplicates are removed based on the link and its type. Any links that point to the source merged cases are automatically removed.
+
+* When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. This link remains even if you later unlink the alert from the case.
+
+## Case visibility
 
 {!includes/case-visibility-v55.md!}
 
@@ -70,17 +108,17 @@ You can create cases with restricted visibility directly [using the API](https:/
 
 When you set a case to restricted visibility:
 
-* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
+* For unauthorized users: The restricted case doesn't appear in linked elements, case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
 
-* For authorized users: The restricted case appears in case lists, search results, or dashboards. Authorized users can be assigned to the case.
+* For authorized users: The restricted case appears in linked elements, case lists, search results, and dashboards. Authorized users can be assigned to the case.
 
 #### Indicators
 
 A restricted case is identifiable as follows:
 
-* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards, except in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
+* For unauthorized users: The restricted case is hidden from linked elements, case lists, search results, and dashboards, but it still appears in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
 
-* For authorized users: The restricted case is identified by a :fontawesome-solid-lock: symbol in the case description and case list. Additionally, the background color in the case list is orange for easy recognition.
+* For authorized users: The restricted case is marked with a :fontawesome-solid-lock: symbol in the case description, case list, and linked elements. The background color is also orange for easy recognition.
 
 ### Merging a restricted case
 
@@ -95,3 +133,6 @@ The list of authorized users includes all users who had access to any of the res
 * [Merge Cases](../cases/merge-cases.md)
 * [Restrict Case Visibility](restrict-visibility-case.md)
 * [Restore Case Visibility](restore-visibility-case.md)
+* [Add a Link to a Case](add-a-link-to-a-case.md)
+* [Remove a Link from a Case](remove-a-link-from-a-case.md)
+* [View Links in a Case](view-links-in-a-case.md)
