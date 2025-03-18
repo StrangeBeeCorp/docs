@@ -80,7 +80,7 @@ You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md)
 
 * When you merge cases, links from both cases are combined, and duplicates are removed based on the link and its type. Any links that point to the source merged cases are automatically removed.
 
-* When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. If you unlink the alert from the case, the corresponding case link is automatically removed from the linked elements.
+* When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. This link remains even if you later unlink the alert from the case.
 
 ## Case visibility
 
