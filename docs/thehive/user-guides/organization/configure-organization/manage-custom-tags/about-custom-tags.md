@@ -2,15 +2,22 @@
 
 Custom tags are free texts manually added to cases, alerts, and observables in TheHive.
 
+It's not possible to add a tag already present in a taxonomy, even if it is deactivated.
+
+## Checks
+
+No checks are done to standardize custom tags. Meaning that if two custom cases are written differently ,it will create two different custom cases.
+
+## Managing custom cases
+
+You can change the colors, rename custom cases and or delete a custom tags. You can see in how many cases, case templates, alerts, and observables a custom tag is tagged.
+
+!!! Warning
+    * Deleting a tag from this menu will remove the tag on every *Alert*, *Case* & O*bservables* in the organization.
+
+## Scope
+
+Custom tags are specific to a single organization and cant' be shared between organizations or TheHive instances. Users can define sensitive data in tags without worrying about any data leakage issue.
+
 ## Next steps
-
-In this section you can find information about custom tags. 
-
-Custom tags or free tags are free text tags associated with TheHive objects. Custom tags are not shared across organizations. Users can define sensitive data in tags without worrying about any data leakage issue.
-
-A user can add, edit, delete, and change the colour of a custom tags. A user can use the toggle filter button to apply filters, add filters and clear the filters. By default, the custom tags page displays a list of 30 items that can be navigated using the previous and next buttons. A user can manage views.  
-
-A user can view all the details about the number of cases, alerts, observables, templates, and details of created By, dates of creation and dates of update. 
-
-<img src="/thehive/configure-organization/manage-custom-tags/custom_tags.png" alt="custom tags" width="1000" height="1000"/>
 
