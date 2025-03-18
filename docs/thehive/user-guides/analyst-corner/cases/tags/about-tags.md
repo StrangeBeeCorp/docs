@@ -1,21 +1,24 @@
 # About Tags
 
-Tags allow to put labels on cases, alerts, and observables in TheHive.
+Tags allow you to assign labels to cases, alerts, and observables in TheHive.
 
 ## Sources
 
-Tags car be created in two ways in TheHive:
+Tags can be created in TheHive in two ways:
 
-* From an imported taxonomy
-* Manually directly in cases, alerts, and observables
+* [Taxonomy tags](../../../../administration/taxonomies/about-taxonomies.md): Created from an imported taxonomy
+* [Custom tags](../../../organization/custom-tags.md): Added manually as free text directly to cases, alerts, and observables
 
-All 
+## Scope
+
+* Taxonomy tags are shared across all organizations within a TheHive instance.
+* Custom tags are specific to a single organization and cant' be shared between organizations or TheHive instances.
+
+## Next steps
+
+* []()
 
 
-Taxonomy de MISP je crois
 
-Custom tags
 
-Certain tags sont automatiquement ajoutés
 
-Peuvent être ajoutés sur cases, case templates, alerts, observables

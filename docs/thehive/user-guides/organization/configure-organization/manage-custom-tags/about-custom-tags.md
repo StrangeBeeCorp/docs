@@ -1,4 +1,8 @@
-# Custom Tags
+# About Custom Tags
+
+Custom tags are free texts manually added to cases, alerts, and observables in TheHive.
+
+## Next steps
 
 In this section you can find information about custom tags. 
 
