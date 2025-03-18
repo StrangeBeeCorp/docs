@@ -18,9 +18,9 @@ In TheHive, you can create a case from the following sources:
 
 * [Archived cases](../cases/create-a-new-case.md#create-a-case-from-an-archived-case): Restored cases from previous investigations in TheHive.
 
-* [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases initiated by manually importing MISP events.
+* [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases created by manually importing MISP events.
 
-* [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) (available from version 5.5): Create a case using data retrieved from external systems through an alert feeder.
+* [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) (available from version 5.5): Cases created from data retrieved from external systems using an alert feeder.
 
 * [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector.md).
 
