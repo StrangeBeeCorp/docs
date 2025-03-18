@@ -2,8 +2,6 @@
 
 This topic provides step-by-step instructions for viewing a [dashboard](about-dashboards.md) in TheHive.
 
-{!includes/access-manage-dashboards.md!}
-
 ## Procedure
 
 1. {!includes/dashboards-view-go-to.md!}
