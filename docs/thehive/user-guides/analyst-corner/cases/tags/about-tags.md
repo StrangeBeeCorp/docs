@@ -1,9 +1,16 @@
 # About Tags
 
-Tags allow to categorize cases in TheHive.
+Tags allow to put labels on cases, alerts, and observables in TheHive.
 
-Either from the taxonomie
-Or custom tags
+## Sources
+
+Tags car be created in two ways in TheHive:
+
+* From an imported taxonomy
+* Manually directly in cases, alerts, and observables
+
+All 
+
 
 Taxonomy de MISP je crois
 
