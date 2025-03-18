@@ -4,6 +4,8 @@ Custom tags are free texts manually added to cases, alerts, and observables in T
 
 It's not possible to add a tag already present in a taxonomy, even if it is deactivated.
 
+Custom tags can't be created outside of cases, alerts, and observables.
+
 ## Checks
 
 No checks are done to standardize custom tags. Meaning that if two custom cases are written differently ,it will create two different custom cases.
