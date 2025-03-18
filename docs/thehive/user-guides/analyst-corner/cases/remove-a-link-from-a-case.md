@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for removing a link from a [case](../cases/about-cases.md#linking-elements) in TheHive.
 
 !!! info "Automatically removed case links"
-    Case links are automatically removed when a case is deleted manually or merged with another case.
+    Manually deleting or merging a case automatically removes its links.
 
 {!includes/case-links-v55.md!}
 

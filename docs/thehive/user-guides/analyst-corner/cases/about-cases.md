@@ -62,15 +62,15 @@ You can link a case to other cases and external resources in TheHive. This enhan
 
 ### Link categories
 
-Each link is categorized to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
+You categorize each link to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
 
 ### Link display
 
 Users can only view links to cases in their organization and cases they have access to.
 
-When you link two TheHive cases together, the link automatically appears in both cases. If a case is deleted, its related links are automatically removed.
+When you link two TheHive cases together, the link automatically appears in both cases. Deleting a case automatically removes its related links.
 
-Case links are not included in case exports, reports, or dashboards.
+Case links aren't included in case exports, reports, or dashboards.
 
 ### Actions
 
@@ -78,7 +78,7 @@ You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md)
 
 ### Merging cases with links
 
-* When you merge cases, links from both cases are combined and deduplicated based on the link and its type. Any links that point to the source merged cases are automatically removed.
+* When you merge cases, links from both cases are combined, and duplicates are removed based on the link and its type. Any links that point to the source merged cases are automatically removed.
 
 * When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. If you unlink the alert from the case, the corresponding case link is automatically removed from the linked elements.
 

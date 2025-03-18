@@ -22,9 +22,9 @@ The link can point to another TheHive case or to an external resource.
 
     **- Link type**
 
-    Link type specifies the category for the link. Existing categories appear when you click the field. If you enter a new category, it is created automatically  when you add the link.
+    Link type specifies the category for the link. Existing categories appear when you click the field. Entering a new category automatically creates it when you add the link.
 
-    If you do not specify a category, *Internal link* is applied by default when linking TheHive cases, and *External link* when linking external resources.
+    If you don't specify a category, *Internal link* is applied by default when linking TheHive cases, and *External link* when linking external resources.
 
     **- Case or external URL**
 
