@@ -2,6 +2,8 @@
 
 TheHive comes with built-in connectors to seamlessly integrate with Cortex and MISP. 
 
+{!includes/cortex-support-thehive-55.md!}
+
 By default, these connectors are enabled in the /etc/thehive/application.conf configuration file. However, if you are not using one or both of these integrations, you can easily disable them by commenting out the relevant line(s):
 
 ```yaml title="/etc/thehive/application.conf"
