@@ -12,9 +12,7 @@ The link can point to another TheHive case or to an external resource.
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add the link.
 
-2. In the case description, navigate to the **Linked elements** section.
-
-    {!includes/linked-elements-section.md!}
+2. {!includes/linked-elements-section.md!}
 
 3. Select :fontawesome-regular-square-plus: or **Add a link**.
 
@@ -28,7 +26,7 @@ The link can point to another TheHive case or to an external resource.
 
     **- Case or external URL**
 
-    Search for the case number or title, or paste the external URL.
+    Search for the case by number or title, or paste an external URL.
 
 5. Select :fontawesome-solid-check:.
 

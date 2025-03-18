@@ -47,7 +47,7 @@ To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 Understand how merging cases affects:
 
 * [Cases with restricted visibility](#merging-a-restricted-case)
-* [Linked elements](#merging-cases-with-links)
+* [Linked elements in cases](#merging-cases-with-links)
 
 ## Linking elements
 
@@ -55,14 +55,15 @@ Understand how merging cases affects:
 
 {!includes/access-manage-case-links.md!}
 
-You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
-
 !!! info "Alerts as linked elements"
-    You can't add an alert to the linked elements. To view linked alerts, use the dedicated **Linked alerts** tab instead.
+    You can't add an alert to the linked elements. To view alerts linked to a case, select the dedicated **Linked alerts** tab.
+
+
+You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
 
 ### Link categories
 
-You categorize each link to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
+You need to categorize each link to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
 
 ### Link display
 

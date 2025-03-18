@@ -6,15 +6,11 @@ Links can point to other TheHive cases or to external resources.
 
 {!includes/case-links-v55.md!}
 
-{!includes/access-manage-case-links.md!}
-
 ## Procedure
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to view links.
 
-2. In the case description, navigate to the **Linked elements** section.
-
-    {!includes/linked-elements-section.md!}
+2. {!includes/linked-elements-section.md!}
 
 ## Next steps
 
