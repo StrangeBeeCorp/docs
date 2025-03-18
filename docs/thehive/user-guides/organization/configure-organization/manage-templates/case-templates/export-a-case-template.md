@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for exporting a [case template](about-case-templates.md) in TheHive.
 
-This is useful if you want to share a case template with another organization or TheHive instance.
+You can [import](import-a-case-template.md) the exported JSON file, into another organization or TheHive instance for sharing.
 
 !!! info "Share your case templates"
     Contribute your case templates to our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates).  
