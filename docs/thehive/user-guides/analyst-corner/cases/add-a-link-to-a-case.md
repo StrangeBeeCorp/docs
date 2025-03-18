@@ -1,5 +1,38 @@
 # How to Add a Link to a Case
 
-Each link is categorized to reflect the relationship type. If you don't indicate any category, the category *Internal link* will be automatically added when linking TheHive cases, and *External link* when linking external resoruces.
+This topic provides step-by-step instructions for adding a link to a [case](../cases/about-cases.md#linking-elements) in TheHive.
 
-Existing categories appear when you select the field. If you enter a new category, it will be created automatically.
+The link can point to another TheHive case or to an external resource.
+
+{!includes/case-links-v55.md!}
+
+{!includes/access-manage-case-links.md!}
+
+## Procedure
+
+1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add the link.
+
+2. In the case description, navigate to the **Linked elements** section.
+
+    {!includes/linked-elements-section.md!}
+
+3. Select :fontawesome-regular-square-plus: or **Add a link**.
+
+4. Enter the following information:
+
+    **- Link type**
+
+    Link type specifies the category for the link. Existing categories appear when you click the field. If you enter a new category, it is created automatically  when you add the link.
+
+    If you do not specify a category, *Internal link* is applied by default when linking TheHive cases, and *External link* when linking external resources.
+
+    **- Case or external URL**
+
+    Search for the case number or title, or paste the external URL.
+
+5. Select :fontawesome-solid-check:.
+
+## Next steps
+
+* [Remove a Link from a Case](remove-a-link-from-a-case.md)
+* [View Links in a Case](view-links-in-a-case.md)

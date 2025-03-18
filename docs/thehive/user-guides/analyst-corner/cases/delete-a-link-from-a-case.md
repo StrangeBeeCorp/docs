@@ -1,1 +1,0 @@
-# How to Delete a Link from a Case

@@ -1,6 +1,6 @@
 # About Cases
 
-This topic explains cases, their components, and how to create them in TheHive.
+This topic explains cases in TheHive, their components, and how they work.
 
 ## Definition
 
@@ -12,7 +12,7 @@ In TheHive, you can create a case from the following sources:
 
 * [Manual entry](../cases/create-a-new-case.md#create-an-empty-case): Create a case manually by entering details.
 
-* [Merging cases](#merging-cases): Merging cases creates a new case and deletes the original merged cases.
+* [Merging cases](#merging-cases): Merge two cases to create a new case that combines their information.
 
 * [Case templates](../cases/create-a-new-case.md#create-a-case-from-a-template): Use predefined templates to standardize and simplify case creation.
 
@@ -38,13 +38,51 @@ In TheHive, a case includes the following elements:
 
 {!includes/access-merge-cases.md!}
 
-You can merge two cases if they share the same organization and permission profile pairs.
+You can merge two cases if they belong to the same organization and share the same permission profile pairs.
 
-Merging cases deletes the original cases and creates a new case that combines elements from both.
+Merging cases deletes the original cases and creates a new case that combines their elements.
 
 To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 
-## Visibility
+Understand how merging cases affects:
+
+* [Cases with restricted visibility](#merging-a-restricted-case)
+* [Linked elements](#merging-cases-with-links)
+
+## Linking elements
+
+{!includes/case-links-v55.md!}
+
+{!includes/access-manage-case-links.md!}
+
+You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
+
+!!! info "Alerts as linked elements"
+    You can't add an alert to the linked elements. To view linked alerts, use the dedicated **Linked alerts** tab instead.
+
+### Link categories
+
+Each link is categorized to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
+
+### Link display
+
+Users can only view links to cases in their organization and cases they have access to.
+
+When you link two TheHive cases together, the link automatically appears in both cases. If a case is deleted, its related links are automatically removed.
+
+Case links are not included in case exports, reports, or dashboards.
+
+### Actions
+
+You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md) a link in a case, but you can’t modify it after it’s added.
+
+### Merging cases with links
+
+* When you merge cases, links from both cases are combined and deduplicated based on the link and its type. Any links that point to the source merged cases are automatically removed.
+
+* When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. If you unlink the alert from the case, the corresponding case link is automatically removed from the linked elements.
+
+## Case visibility
 
 {!includes/case-visibility-v55.md!}
 
@@ -70,66 +108,23 @@ You can create cases with restricted visibility directly [using the API](https:/
 
 When you set a case to restricted visibility:
 
-* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
+* For unauthorized users: The restricted case doesn't appear in linked elements, case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
 
-* For authorized users: The restricted case appears in case lists, search results, or dashboards. Authorized users can be assigned to the case.
+* For authorized users: The restricted case appears in linked elements, case lists, search results, and dashboards. Authorized users can be assigned to the case.
 
 #### Indicators
 
 A restricted case is identifiable as follows:
 
-* For unauthorized users: The restricted case doesn't appear in case lists, search results, or dashboards, except in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
+* For unauthorized users: The restricted case is hidden from linked elements, case lists, search results, and dashboards, but it still appears in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
 
-* For authorized users: The restricted case is identified by a :fontawesome-solid-lock: symbol in the case description and case list. Additionally, the background color in the case list is orange for easy recognition.
+* For authorized users: The restricted case is marked with a :fontawesome-solid-lock: symbol in the case description, case list, and linked elements. The background color is also orange for easy recognition.
 
 ### Merging a restricted case
 
 If you [merge one or more restricted cases with visible cases](merge-cases.md), the newly created merged case automatically inherits restricted visibility.
 
 The list of authorized users includes all users who had access to any of the restricted cases involved in the merge.
-
-## Linking cases
-
-{!includes/case-links-v55.md!}
-
-{!includes/access-manage-case-links.md!}
-
-You can link a case to other cases and external resources in TheHive. This enhances traceability and supports the investigation of complex incidents involving multiple related cases and assets.
-
-### Link types
-
-You can link cases to:
-
-* Other TheHive cases
-* External resources
-
-### Link categories
-
-Each link is categorized to reflect the relationship type. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
-
-### Actions
-
-You can create or delete a link, but you can’t modify it after it’s created.
-
-### Behavior
-
-#### XXXX
-
-When linking two TheHive cases together, it will appear in the second one automatically. Case links are automatically removed id the case has been deleted. The linking cases only display cases from the current organisation and red cases linked to the current organisation that the logged-in user has access to. Case links are not included in any export of case data.
-
-#### Links behavior when merging cases
-
-Merge case : merge of the links and deduplication
-The system will perform a deduplication process based on the combination of the link and link type to ensure no duplicate links are added.
-Any links pointing to the source merged cases will be removed.
-
-#### Links behavior when merge a case into an alert
-
-When merging a case into an alert, external URL linked to the alert as an external link. When an alert is imported into a case, the system automatically links the external alert URL to the case under the link type "External alert link" (field externalLink). When a user unlinks an alert from a case, the corresponding case link is automatically removed from the "Linked elements" section of the case.
-
-#### Links behavior when linking a private case
-
-When a private case link is added, the linked case will display an orange background and a lock icon with title and number. (Only if the logged in user have the access). If user don’t have access to this private case, he don’t see it.
 
 ## Next steps
 
@@ -138,3 +133,6 @@ When a private case link is added, the linked case will display an orange backgr
 * [Merge Cases](../cases/merge-cases.md)
 * [Restrict Case Visibility](restrict-visibility-case.md)
 * [Restore Case Visibility](restore-visibility-case.md)
+* [Add a Link to a Case](add-a-link-to-a-case.md)
+* [Remove a Link from a Case](remove-a-link-from-a-case.md)
+* [View Links in a Case](view-links-in-a-case.md)

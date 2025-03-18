@@ -1,6 +1,6 @@
 # How to Restrict Case Visibility
 
-This topic provides step-by-step instructions for restricting the visibility of a [case](../cases/about-cases.md#visibility) in TheHive.
+This topic provides step-by-step instructions for restricting the visibility of a [case](../cases/about-cases.md#case-visibility) in TheHive.
 
 {!includes/case-visibility-v55.md!}
 
