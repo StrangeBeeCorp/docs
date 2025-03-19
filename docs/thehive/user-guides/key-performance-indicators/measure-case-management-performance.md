@@ -43,7 +43,7 @@ Two options are available to measure a case's performance:
 
 **In a case report template:**
 
-{!includes/access-manage-case-reports.md!}
+{!includes/access-manage-case-report-templates.md!}
 
 1. {!includes/organization-view-go-to.md!}
 
