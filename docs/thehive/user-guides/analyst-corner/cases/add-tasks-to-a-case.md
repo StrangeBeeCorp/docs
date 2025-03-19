@@ -34,9 +34,9 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
     **- Flag this task? \***
 
-    
-
     **- Due date**
+
+    The deadline of the task.
 
 5. Select **Confirm**.
 
