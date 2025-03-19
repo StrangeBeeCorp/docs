@@ -1,0 +1,30 @@
+# How to Delete a Taxonomy
+
+This topic provides step-by-step instructions for deleting a [taxonomy](about-taxonomies.md) in TheHive.
+
+!!! warning "Permanent deletion"
+    Deleting a taxonomy is permanent. To keep a taxonomy for future use, [deactivate it](activate-deactivate-a-taxonomy.md) instead.
+
+{!includes/administrator-access-manage-taxonomies.md!}
+
+## Procedure
+
+1. {!includes/entities-management-view-go-to.md!}
+
+2. {!includes/taxonomies-tab-go-to.md!}
+
+3. Select :fontawesome-solid-ellipsis: next to the taxonomy to delete.
+
+4. Select **Delete**.
+
+## Next steps
+
+* [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
+* [Update MISP Taxonomies](update-misp-taxonomies.md)
+* [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Add Tags to a Case](../../../analyst-corner/cases/tags/add-tags-to-a-case.md)
+* [Remove Tags from a Case](../../../analyst-corner/cases/tags/remove-tags-from-a-case.md)
+* [Add Tags to an Observable](../../../analyst-corner/cases/tags/add-tags-to-an-observable.md)
+* [Remove Tags from an Observable](../../../analyst-corner/cases/tags/remove-tags-from-an-observable.md)
+* [Add Tags to an Alert](../../../analyst-corner/alerts/add-tags-to-an-alert.md.md)
+* [Remove Tags from an Alert](../../../analyst-corner/alerts/remove-tags-from-an-alert.md.md.md)
