@@ -20,10 +20,18 @@ You can't modify taxonomies or their tags.
 
 However, you can:
 
-* [Import custom taxonomies](create-custom-taxonomies.md)
 * [Deactivate taxonomies](activate-deactivate-taxonomy.md)
 * [Delete taxonomies](delete-a-taxonomy.md)
 
 ## Permissions
 
+{!includes/administrator-access-manage-taxonomies.md!}
+
+Once created, tags from activated taxonomies can be added by users to cases, alerts, and observables.
+
 ## Next steps
+
+* [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Create a Custom Taxonomy](create-a-custom-taxonomy.md)
+* [Update Taxonomies](update-taxonomies.md)
+* [Delete a Taxonomy](delete-a-taxonomy.md)

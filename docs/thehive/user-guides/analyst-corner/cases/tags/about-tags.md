@@ -16,8 +16,6 @@ Tags can be created in TheHive in two ways:
 * Taxonomy tags are shared across all organizations within a TheHive instance.
 * Custom tags are specific to a single organization and can't be shared between organizations or TheHive instances.
 
-## Permissions
-
 ## Next steps
 
 * [About Taxonomies](../../../../administration/taxonomies/about-taxonomies.md)
