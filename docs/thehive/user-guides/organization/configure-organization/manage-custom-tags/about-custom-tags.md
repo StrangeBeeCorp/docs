@@ -1,25 +1,45 @@
 # About Custom Tags
 
-Custom tags are free texts manually added to cases, alerts, and observables in TheHive.
+Custom tags are [one of the tag categories](../../../analyst-corner/cases/tags/about-tags.md#sources) in TheHive.
 
-It's not possible to add a tag already present in a taxonomy, even if it is deactivated.
+These free-text labels are created when users add them directly to cases, alerts, or observables.
 
-Custom tags can't be created outside of cases, alerts, and observables.
-
-## Checks
-
-No checks are done to standardize custom tags. Meaning that if two custom cases are written differently ,it will create two different custom cases.
-
-## Managing custom cases
-
-You can change the colors, rename custom cases and or delete a custom tags. You can see in how many cases, case templates, alerts, and observables a custom tag is tagged.
-
-!!! Warning
-    * Deleting a tag from this menu will remove the tag on every *Alert*, *Case* & O*bservables* in the organization.
+This topic explains how custom tags are created and used.
 
 ## Scope
 
-Custom tags are specific to a single organization and cant' be shared between organizations or TheHive instances. Users can define sensitive data in tags without worrying about any data leakage issue.
+Custom tags are specific to a single organization and can't be shared between organizations or TheHive instances. You can include sensitive data in tags without the risk of data leakage outside the organization.
+
+## Sources
+
+Custom tags can be created:
+
+* Manually by users
+* Automatically by connected external tools
+* Automatically by [email servers](../../../../administration/email-intake-connector.md)
+* Automatically by [alert feeders]()
+
+## Rules
+
+!!! tip "Consistent naming"
+    Tag usage must be consistent, as TheHive does not enforce standardization. For example, tags with different formatting, such as *Phishing* and *phishing*, are treated as separate tags.
+
+You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
+
+## Actions
+
+You can manage custom tags by:
+
+* [Changing the color of a custom tag](change-the-color-of-a-custom-tag.md)
+* [Renaming a custom tag](rename-a-custom-tag.md)
+* [Deleting a custom tag](delete-a-custom-tag.md)
+
+!!! warning "Changes applied everywhere"
+    Modifying or deleting a custom tag applies to all instances of that tag across cases, alerts, and observables within the organization.
+
+You can also [view the number of times a custom tag appears](view-custom-tag-statistics.md) in cases, case templates, alerts, and observables. This helps with cleanup and maintaining consistent naming.
+
+## Permissions
 
 ## Next steps
 

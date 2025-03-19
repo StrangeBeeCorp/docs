@@ -38,9 +38,9 @@ In TheHive, a case includes the following elements:
 
 {!includes/access-merge-cases.md!}
 
-Cases can be merged when they belong to the same organization and share the same permission profile pairs. 
+Cases can be merged if they are similar or part of the same investigation, allowing you to centralize data. 
 
-Merging consolidates two cases into a new one, combining their contents and deleting the originals.
+To merge cases, they must belong to the same organization and share the same permission profile pairs. Merging consolidates two cases into a new one, combining their contents and deleting the originals.
 
 To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 
