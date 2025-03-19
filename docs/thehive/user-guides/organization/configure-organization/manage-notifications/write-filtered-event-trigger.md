@@ -17,7 +17,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new notification**.
+3. Select :fontawesome-regular-square-plus: or **Add a new notification**.
 
     ---
 

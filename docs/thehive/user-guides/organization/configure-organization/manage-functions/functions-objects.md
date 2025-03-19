@@ -1,4 +1,4 @@
-## Functions Objects
+# Functions Objects
 
 This topic lists all available objects for functions in TheHive.
 
