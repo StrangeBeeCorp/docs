@@ -31,7 +31,13 @@ This topic provides step-by-step instructions for editing an [alert feeder](abou
 
     **- Interval**
 
-    How often the alert feeder sends requests to the external system. Make sure the interval is shorter than the processing time to avoid potential issues.
+    How often the alert feeder sends requests to the external system. 
+    
+    !!! warning "Define the interval carefully based on your reactivity requirements"
+        Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.
+
+    !!! info "Execution delay for the first run"
+        After an update, the alert feeder takes 1 to 2 minutes before its first execution. After that, the configured interval is applied between subsequent executions.
 
     **- Request timeout time**
 

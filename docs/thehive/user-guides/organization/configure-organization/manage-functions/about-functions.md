@@ -82,7 +82,7 @@ Below are the different types of functions supported in TheHive:
 
 * **Action: Alert**: Users manually trigger these functions within the context of a specific alert. To execute the function, they must [run it manually](run-a-function-case-alert.md).
 
-* **Feeder** (available from version 5.5): You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
+* **Feeder** (available from version 5.5): A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
 
 ## Function modes
 

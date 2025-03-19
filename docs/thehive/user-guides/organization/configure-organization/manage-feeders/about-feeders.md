@@ -14,12 +14,14 @@ Alert feeders don't perform bi-directional synchronization.
 
 In addition to alerts, alert feeders can also generate cases and tasks
 
-## Alert feeder functions
+## Feeder functions
 
 !!! tip "Feeder function examples"
     Feeder function examples are available in [a dedicated GitHub repository]().
 
-Don't manually create an alert feeder function as a standalone function, because you can't link it to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
+A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts.
+
+Don't manually create an feeder function as a standalone function, because you can't link it to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
 
 You can then modify it either [from the functions list](../manage-functions/edit-a-function.md) or [the alert feeder configuration](edit-a-feeder.md).
 
@@ -36,13 +38,10 @@ Currently, alert feeders support the following four authentication methods:
 
 ## Example integrations
 
-You can use an alert feeder to integrate any external system that exposes a public REST API and supports synchronous data retrieval into TheHive, including:
+You can use an alert feeder to integrate any external system that exposes a public REST API with [supported authentication modes](#authentication-modes) and supports synchronous data retrieval into TheHive, including:
 
 * Jira
 * Airtable
-* IBM Radar
-* Rapid7
-* SentinelOne
 
 ## Permissions
 

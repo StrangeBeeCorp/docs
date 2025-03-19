@@ -34,7 +34,13 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
     **- Interval**
 
-    How often the alert feeder sends requests to the external system. Make sure the interval is shorter than the processing time to avoid potential issues.
+    How often the alert feeder sends requests to the external system.
+
+    !!! warning "Define the interval carefully based on your reactivity requirements"
+        Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.
+
+    !!! info "Execution delay for the first run"
+        After creation, the alert feeder takes 1 to 2 minutes before its first execution. After that, the configured interval is applied between subsequent executions.
 
     **- Request timeout time**
 
@@ -118,10 +124,9 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 ### Query
 
 ``` curl 
---location --request GET 'https://api.airtable.com/v0/appq4BcPkTvbqPeYD/tbloC5oeiM4H8JNFP?returnFieldsByFieldId=false&cellFormat=string&timeZone=GMT&userLocale=fr' \
+--location --request GET 'https://api.airtable.com/v0/<base_id>/<table_id>?returnFieldsByFieldId=false&cellFormat=string&timeZone=<timezone>&userLocale=<locale>' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer ASKMEFORTHEKEY' \
---header 'Cookie: brw=brwpMBTzB0WQMhB2D; AWSALBTG=GYogHbsKgqNBpu0DcXqpNXmFyX+fC9ff0uyw0FKAxMy45ODSwt1GMBKwSi6hk3DYrmL7jx24HMG2NYWW3J1LWHwqyiwxQK99LfB2u8SgLtSqSnW90/zKX207KY/VrO0xZUBuQDS+rWqpUNvZodN9KGIk3A/fKMSfsZLWgpIng5Ajw/8PyTc=; AWSALBTGCORS=GYogHbsKgqNBpu0DcXqpNXmFyX+fC9ff0uyw0FKAxMy45ODSwt1GMBKwSi6hk3DYrmL7jx24HMG2NYWW3J1LWHwqyiwxQK99LfB2u8SgLtSqSnW90/zKX207KY/VrO0xZUBuQDS+rWqpUNvZodN9KGIk3A/fKMSfsZLWgpIng5Ajw/8PyTc=' \
+--header 'Authorization: Bearer <api_key>' \
 --data '{
     "returnFieldsByFieldId": true,
     "maxRecords": 1
@@ -138,19 +143,19 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
             "createdTime": "2025-01-23T16:18:13.000Z",
             "fields": {
                 "Incident Category": "Security",
-                "Issue Description": "Last Alert of the day"
+                "Issue Description": "Phishing campaign on financial department"
             }
         },
         {
             "id": "rec5FB3iOuoT9avrm",
             "createdTime": "2025-01-23T17:50:56.000Z",
             "fields": {
-                "Incident Category": "Software",
-                "Reported By": "U003",
-                "Priority Level": "ASAP",
-                "Assigned Agent": "Charlie Chocolate",
-                "Department": "Code Conjurers",
-                "Issue Description": "Lalerte du soir",
+                "Incident Category": "Software",  
+                "Reported By": "U003",  
+                "Priority Level": "ASAP",  
+                "Assigned Agent": "SOC Officer",  
+                "Department": "Supply chain",  
+                "Issue Description": "Supply chain server SPC-345 infected",  
                 "Resolution Details": "RES-003"
             }
         },
@@ -159,9 +164,9 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
             "createdTime": "2025-01-21T14:00:49.000Z",
             "fields": {
                 "Incident Category": "Security",
-                "Reported By": "UI",
+                "Reported By": "Automated alert",
                 "Priority Level": "ASAP",
-                "Issue Description": "Feeder is not broken"
+                "Issue Description": "Software version need to be updated"
             }
         },
         ...
