@@ -1,8 +1,8 @@
 # About Taxonomies
 
-Taxonomies are catalogs of structured tags managed in TheHive. They are [one of the tag categories](../../user-guides/analyst-corner/cases/tags/about-tags.md) that can be added to cases, alerts, or observables.
+Taxonomies are catalogs of structured tags managed in TheHive. They're [one of the tag categories](../../user-guides/analyst-corner/cases/tags/about-tags.md) that can be added to cases, alerts, or observables.
 
-This topic explains how taxonomies are created and used.
+This topic explains how taxonomies work.
 
 ## Sources
 
@@ -11,7 +11,7 @@ Taxonomies can be created in two ways:
 * From MISP: [MISP taxonomies](https://github.com/MISP/misp-taxonomies) are imported by default when you install TheHive.
 
 !!! warning "Manual activation required"
-    By default, MISP taxonomies are not activated, so their tags can't be added to cases, alerts, or observables. You must [activate them manually](activate-deactivate-a-taxonomy.md).
+    By default, MISP taxonomies aren't activated, so you can't add their tags to cases, alerts, or observables. You must [activate them manually](activate-deactivate-a-taxonomy.md).
 
 * From custom files: You can [import custom taxonomies](add-a-custom-taxonomy.md) as needed.
 
@@ -31,7 +31,7 @@ However, you can:
 
 {!includes/administrator-access-manage-taxonomies.md!}
 
-Once created, tags from activated taxonomies can be added by users to cases, alerts, and observables.
+Once created, tags from activated taxonomies are available to add to cases, alerts, and observables.
 
 ## Next steps
 
