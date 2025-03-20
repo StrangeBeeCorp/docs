@@ -29,4 +29,6 @@ After creation, custom fields are automatically available to all users across yo
 
 ## Next steps
 
-[Create a Custom Field](create-a-custom-field.md)
+* [Create a Custom Field](create-a-custom-field.md)
+* [Edit a Custom Field](edit-a-custom-field.md)
+* [Delete a Custom Field](delete-a-custom-field.md)
