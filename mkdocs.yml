@@ -180,7 +180,14 @@ plugins:
             'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
             'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
             'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
-
+            'thehive/administration/taxonomies.md': 'thehive/administration/taxonomies/about-taxonomies.md'
+            'thehive/user-guides/analyst-corner/cases/adding_to_a_case.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/add-custom-fields.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
+            'thehive/user-guides/organization/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
 
 extra:
   generator: false
