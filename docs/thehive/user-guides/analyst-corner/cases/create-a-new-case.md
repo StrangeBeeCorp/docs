@@ -41,7 +41,7 @@ Several options are offered to create a case in TheHive:
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
     The PAP level for the case. It guides analysts on how they can use case data.
 
-    **- [Tags](../../analyst-corner/cases/tags/add-tags-to-a-case.md)**  
+    **- [Tags](../../analyst-corner/cases/tags/add-tags.md)**  
     Relevant tags for labeling the case.
 
     **- Description \***  
@@ -50,7 +50,7 @@ Several options are offered to create a case in TheHive:
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
     Tasks for the case.
 
-    **- [Custom fields](../cases/add-custom-fields-to-a-case.md)**  
+    **- [Custom fields](../cases/add-custom-fields.md)**  
     Custom fields for the case, with or without predefined values.
 
     **- [Pages](../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
@@ -111,7 +111,7 @@ Several options are offered to create a case in TheHive:
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
     Tasks for the case.
 
-    **- [Custom fields](../cases/add-custom-fields-to-a-case.md)**  
+    **- [Custom fields](../cases/add-custom-fields.md)**  
     Custom fields for the case, with or without predefined values.
 
     **- Sharing**  
@@ -147,4 +147,4 @@ The creation of cases through detection tools is managed directly via the [API](
 
 * [Apply a Case Template](apply-a-case-template.md)
 * [Add Tasks to a Case](add-tasks-to-a-case.md)
-* [Add Custom Fields to a Case](add-custom-fields-to-a-case.md)
+* [Add Custom Fields](add-custom-fields.md)

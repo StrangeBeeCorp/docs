@@ -57,4 +57,4 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 ## Next steps
 
-* [Add Custom Fields](../../user-guides/analyst-corner/cases/add-custom-fields-to-a-case.md)
+* [Add Custom Fields](../../user-guides/analyst-corner/cases/add-custom-fields.md)

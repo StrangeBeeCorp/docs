@@ -77,7 +77,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [Restore Case Visibility](../restore-visibility-case.md)
 * [View a Case](../cases-description/general.md)
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
-* [Add Custom Fields to a Case](../add-custom-fields-to-a-case.md)
+* [Add Custom Fields](../add-custom-fields.md)
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
 * [View Attachments](../cases-description/attachments.md)

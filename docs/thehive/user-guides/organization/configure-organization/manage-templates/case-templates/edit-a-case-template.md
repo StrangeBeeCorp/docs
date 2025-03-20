@@ -46,7 +46,7 @@ This topic provides step-by-step instructions for editing a [case template](abou
     **- Severity**  
     The default severity level for cases.
     
-    **- [Tags](../../../../analyst-corner/cases/tags/add-tags-to-a-case.md)**  
+    **- [Tags](../../../../analyst-corner/cases/tags/add-tags.md)**  
     One or more tags for labeling cases.
     
     **Description \***  
@@ -55,7 +55,7 @@ This topic provides step-by-step instructions for editing a [case template](abou
     **- [Tasks](../../../../analyst-corner/cases/add-tasks-to-a-case.md)**  
     One or more tasks for cases.
     
-    **- [Custom fields](../../../../analyst-corner/cases/add-custom-fields-to-a-case.md)**  
+    **- [Custom fields](../../../../analyst-corner/cases/add-custom-fields.md)**  
     One or more custom fields for cases, with or without predefined values.
     
     **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  

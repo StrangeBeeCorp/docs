@@ -24,7 +24,7 @@ In the right pane of the window, there is an option to **Add** the following:
 
 At the bottom of the window, there is an option to **Add** the following: 
 
-1. [Add custom fields](../add-custom-fields-to-a-case.md).
+1. [Add custom fields](../add-custom-fields.md).
 1. Add **business unit**, and **location**  details.
 
 1. Click **Add** to type business unit, detection-source and location details. 

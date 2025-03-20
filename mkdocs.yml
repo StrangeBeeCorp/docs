@@ -134,7 +134,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md'
-            'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/add-custom-fields-to-a-case.md'
+            'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md'
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
@@ -428,6 +428,10 @@ nav:
           - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
+          - 'Tags':
+            - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
+            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
+            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
         - 'Cases Management':
           - 'About Cases': thehive/user-guides/analyst-corner/cases/about-cases.md
           - 'Search for Cases': 
@@ -449,10 +453,8 @@ nav:
             - 'View Links in a Case': thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
-            - 'Add Tags to a Case': thehive/user-guides/analyst-corner/cases/tags/add-tags-to-a-case.md
-            - 'Add Tags to an Observable': thehive/user-guides/analyst-corner/cases/tags/add-tags-to-an-observable.md
-            - 'Remove Tags from a Case': thehive/user-guides/analyst-corner/cases/tags/remove-tags-from-a-case.md
-            - 'Remove Tags from an Observable': thehive/user-guides/analyst-corner/cases/tags/remove-tags-from-an-observable.md
+            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
+            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
