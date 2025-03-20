@@ -38,7 +38,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     **- Description \***
 
-    A description to help users understand and use this custom field appropriately.
+    A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: icon next to the custom field in a case or alert.
 
     **- Group \***
 

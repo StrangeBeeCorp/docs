@@ -1,6 +1,6 @@
 # How to Add a Custom Field
 
-This topic provides step-by-step instructions for adding a [custom field](../custom-fields/about-custom-fields.md) to a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive.
+This topic provides step-by-step instructions for adding [custom fields](../custom-fields/about-custom-fields.md) to a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive.
 
 {!includes/access-manage-custom-fields.md!}
 
@@ -8,9 +8,7 @@ This topic provides step-by-step instructions for adding a [custom field](../cus
 
 1. Find the [case](../cases/search-for-cases/find-a-case.md) or the [alert](../alerts/search-for-alerts/find-an-alert.md) where you want to add custom fields.
 
-2. In the description, move through the **Custom fields** section.
-
-    Image
+2. {!includes/custom-fields-section-go-to.md!}
 
 3. Select :fontawesome-regular-square-plus:.
 
@@ -21,3 +19,5 @@ This topic provides step-by-step instructions for adding a [custom field](../cus
 5. Select **Confirm**.
 
 ## Next steps
+
+* [Remove Custom Fields](remove-custom-fields.md)
