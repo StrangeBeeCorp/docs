@@ -6,9 +6,15 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add tasks.
 
+    ---
+
 2. {!includes/tasks-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-regular-square-plus:.
+
+    ---
 
 4. In the **Adding a task** drawer, enter the following information:
 
@@ -39,6 +45,8 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
     **- Due date**
 
     The task’s deadline.
+
+    ---
 
 5. Select **Confirm**.
 
