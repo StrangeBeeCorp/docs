@@ -17,7 +17,7 @@ Taxonomies can be created in two ways:
 
 ## Actions
 
-!!! info "TheHive upgrades don't update MISP taxonomies"
+!!! info "MISP taxonomy upgrades"
     TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html) available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. To update them, you must perform [a manual update](update-misp-taxonomies.md).
 
 You can't modify taxonomies or their tags. 

@@ -2,8 +2,7 @@
 
 This topic provides step-by-step instructions for updating MISP [taxonomies](about-taxonomies.md) in TheHive.
 
-!!! info "TheHive upgrades don't update MISP taxonomies"
-     TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html) available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. To update them, you must perform a manual update.
+This is useful when you need to update the MISP taxonomies included with your TheHive installation.
 
 {!includes/administrator-access-manage-taxonomies.md!}
 

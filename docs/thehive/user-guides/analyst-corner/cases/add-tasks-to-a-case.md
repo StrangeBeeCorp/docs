@@ -1,6 +1,6 @@
 # How to Add Tasks to a Case
 
-This topic provides step-by-step instructions for adding [tasks](../tasks/about-tasks.md) to an [case](../cases/about-cases.md) in TheHive.
+This topic provides step-by-step instructions for adding [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in TheHive.
 
 ## Procedure
 

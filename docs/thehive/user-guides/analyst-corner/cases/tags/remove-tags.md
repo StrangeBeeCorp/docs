@@ -8,6 +8,8 @@ This topic provides step-by-step instructions for removing [tags](about-tags.md)
 
 2. Select the tags you want to remove.
 
+    ![Remove tags](/thehive/images/user-guides/analyst-corner/remove-tags.gif)
+
 3. Select **Confirm**.
 
 ## Next steps

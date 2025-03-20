@@ -2,7 +2,7 @@
 
 Custom tags are [one of the tag categories](../../../analyst-corner/cases/tags/about-tags.md#sources) in TheHive.
 
-These free-text labels are created when users add them directly to cases, alerts, or observables.
+These free-text labels are created when users add them to cases, alerts, or observables.
 
 This topic explains how custom tags work.
 
@@ -23,8 +23,8 @@ Custom tags can be created:
 
 * You can create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
 
-!!! tip "Consistent naming"
-    Tag usage must be consistent, as TheHive doesn't enforce standardization. For example, tags with different formatting, such as *Phishing* and *phishing*, are treated as separate tags.
+    !!! tip "Consistent naming"
+        Tag usage must be consistent, as TheHive doesn't enforce standardization. For example, tags with different formatting, such as *Phishing* and *phishing*, are treated as separate tags.
 
 * You can manage custom tags by:
 
