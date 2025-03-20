@@ -27,7 +27,6 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 
 ## Next steps
 
-* [View tasks](../../cases/cases-description/tasks.md)
 * [Preview Tasks](../../tasks/preview-task-details/Preview-tasks.md)
 * [Actions on Tasks](../../tasks/preview-task-details/actions.md)
 * [Run Responders](../../tasks/preview-task-details/run-responders.md)
