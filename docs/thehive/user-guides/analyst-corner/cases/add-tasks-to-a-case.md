@@ -18,26 +18,35 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
     **- Title \***
 
-    The name of the task. It will be what will be seen by users on the tasks lists.
+    The name of the task, visible to users in the task list.
 
     **- Mandatory \***
 
-    Turn on the toggle if the task is mandatory.
+    Specifies whether the task is required. Turn on the toggle to make it mandatory.
 
     **- Description**
 
-    Details about the task. It will be seen by users when entering a task details.
+    Additional details about the task. It appears when users view task details.
 
     **- Assignee**
 
-    Indicate the person you want to assign the task to.
+    The person responsible for completing the task.
 
     **- Flag this task? \***
 
+    Highlights the task for all users in the organization.
+
     **- Due date**
 
-    The deadline of the task.
+    The task’s deadline.
 
 5. Select **Confirm**.
 
 ## Next steps
+
+* [Add a Link to a Case](add-a-link-to-a-case.md)
+* [Apply a Case Template](apply-a-case-template.md)
+* [Merge Cases](merge-cases.md)
+* [Restrict Case Visibility](restrict-visibility-case.md)
+* [Share a Case](share-a-case.md)
+
