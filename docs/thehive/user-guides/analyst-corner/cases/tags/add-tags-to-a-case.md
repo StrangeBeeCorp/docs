@@ -29,5 +29,5 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 * [Remove Tags from a Case](../../../analyst-corner/cases/tags/remove-tags-from-a-case.md)
 * [Add Tags to an Observable](../../../analyst-corner/cases/tags/add-tags-to-an-observable.md)
 * [Remove Tags from an Observable](../../../analyst-corner/cases/tags/remove-tags-from-an-observable.md)
-* [Add Tags to an Alert](../../../analyst-corner/alerts/add-tags-to-an-alert.md.md)
-* [Remove Tags from an Alert](../../../analyst-corner/alerts/remove-tags-from-an-alert.md.md.md)
+* [Add Tags to an Alert](../../../analyst-corner/alerts/add-tags-to-an-alert.md)
+* [Remove Tags from an Alert](../../../analyst-corner/alerts/remove-tags-from-an-alert.md)

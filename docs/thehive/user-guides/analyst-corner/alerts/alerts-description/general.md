@@ -9,9 +9,9 @@ Refer to [`Configure Alert Details`](../../cases/cases-description/configure-pap
 
 1. In the right pane of the window, enter **Comments** if any. 
 1. Click the **Comment** button. 
-1. Add Tags. (Refer to [`Add tags`](../../cases/adding_to_a_case.md#add-tags)).
+1. Add Tags. (Refer to [`Add tags`](../add-tags-to-an-alert.md)).
 1. Enter the **Description** using [TheHive-flavored Markdown syntax](../../../thehive-flavored-markdown.md) for formatting. 
-1. Add **Custom fields**. (Refer to [`Add custom fields`](../../cases/cases-description/add-custom-fields.md))
+1. Add **Custom fields**. (Refer to [`Add custom fields`](../../cases/add-custom-fields-to-a-case.md))
 1. Click **Add** to enter the respective business unit and location details. 
 
     <img src="/thehive/images/user-guides/analyst-corner/alerts/alerts-new-business-location-details.png" alt="add location and business details" width="500" height="500"/>

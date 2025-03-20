@@ -1,8 +1,8 @@
 # How to Add Tags to an Alert
 
-This topic provides step-by-step instructions for adding [tags](about-tags.md) to an [alert](../alerts/about-alerts.md) in TheHive.
+This topic provides step-by-step instructions for adding [tags](../cases/tags/about-tags.md) to an [alert](../alerts/about-alerts.md) in TheHive.
 
-## Add [taxonomy tags](../../../../administration/taxonomies/about-taxonomies.md) to an alert
+## Add [taxonomy tags](../../../administration/taxonomies/about-taxonomies.md) to an alert
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) where you want to add tags.
 
@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 
 4. Select **Add selected tags**.
 
-## Add [custom tags](../../../../user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md) to an alert
+## Add [custom tags](../../organization/configure-organization/manage-custom-tags/about-custom-tags.md) to an alert
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) where you want to add tags.
 
@@ -26,8 +26,8 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 
 ## Next steps
 
-* [Add Tags to a Case](../../../analyst-corner/cases/tags/add-tags-to-a-case.md)
-* [Remove Tags from a Case](../../../analyst-corner/cases/tags/remove-tags-from-a-case.md)
-* [Add Tags to an Observable](../../../analyst-corner/cases/tags/add-tags-to-an-observable.md)
-* [Remove Tags from an Observable](../../../analyst-corner/cases/tags/remove-tags-from-an-observable.md)
-* [Remove Tags from an Alert](../../../analyst-corner/alerts/remove-tags-from-an-alert.md.md.md)
+* [Add Tags to a Case](../cases/tags/add-tags-to-a-case.md)
+* [Remove Tags from a Case](../cases/tags/remove-tags-from-a-case.md)
+* [Add Tags to an Observable](../cases/tags/add-tags-to-an-observable.md)
+* [Remove Tags from an Observable](../cases/tags/remove-tags-from-an-observable.md)
+* [Remove Tags from an Alert](../alerts/remove-tags-from-an-alert.md)

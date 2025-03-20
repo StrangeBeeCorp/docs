@@ -9,7 +9,7 @@ This topic explains how tags are created and their scope.
 Tags can be created in TheHive in two ways:
 
 * [Taxonomy tags](../../../../administration/taxonomies/about-taxonomies.md): Created from an imported taxonomy
-* [Custom tags](../../../organization/custom-tags.md): Created manually by users as free text to cases, alerts, and observables, or automatically by connected external tools, [email servers](../../../../administration/email-intake-connector.md), or [alert feeders]()
+* [Custom tags](../../../organization/configure-organization/manage-custom-tags/about-custom-tags.md): Created manually by users as free text to cases, alerts, and observables, or automatically by connected external tools, [email servers](../../../../administration/email-intake-connector.md), or [alert feeders]()
 
 ## Scope
 
@@ -19,7 +19,7 @@ Tags can be created in TheHive in two ways:
 ## Next steps
 
 * [About Taxonomies](../../../../administration/taxonomies/about-taxonomies.md)
-* [About Custom Tags](../../../organization/custom-tags.md)
+* [About Custom Tags](../../../organization/configure-organization/manage-custom-tags/about-custom-tags.md)
 
 
 

@@ -1,6 +1,6 @@
 # How to Remove Tags from an Alert
 
-This topic provides step-by-step instructions for removing [tags](about-tags.md) from an [alert](../alerts/about-alerts.md) in TheHive.
+This topic provides step-by-step instructions for removing [tags](../cases/tags/about-tags.md) from an [alert](../alerts/about-alerts.md) in TheHive.
 
 ## Procedure
 
@@ -12,8 +12,8 @@ This topic provides step-by-step instructions for removing [tags](about-tags.md)
 
 ## Next steps
 
-* [Add Tags to a Case](../../../analyst-corner/cases/tags/add-tags-to-a-case.md)
-* [Remove Tags from a Case](../../../analyst-corner/cases/tags/remove-tags-from-a-case.md)
-* [Add Tags to an Observable](../../../analyst-corner/cases/tags/add-tags-to-an-observable.md)
-* [Remove Tags from an Observable](../../../analyst-corner/cases/tags/remove-tags-from-an-observable.md)
-* [Add Tags to an Alert](../../../analyst-corner/alerts/add-tags-to-an-alert.md.md)
+* [Add Tags to a Case](../cases/tags/add-tags-to-a-case.md)
+* [Remove Tags from a Case](../cases/tags/remove-tags-from-a-case.md)
+* [Add Tags to an Observable](../cases/tags/add-tags-to-an-observable.md)
+* [Remove Tags from an Observable](../cases/tags/remove-tags-from-an-observable.md)
+* [Add Tags to an Alert](../alerts/add-tags-to-an-alert.md)

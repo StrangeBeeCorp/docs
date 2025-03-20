@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
 ## Procedure
 
-1. [Find the case](../search-for-cases/find-a-case.md) where you want to add tasks.
+1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add tasks.
 
 2. {!includes/tasks-tab-go-to.md!}
 

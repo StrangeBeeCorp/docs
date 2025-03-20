@@ -13,7 +13,7 @@ Taxonomies can be created in two ways:
 !!! warning "Manual activation required"
     By default, MISP taxonomies are not activated, so their tags can't be added to cases, alerts, or observables. You must [activate them manually](activate-deactivate-a-taxonomy.md).
 
-* From custom files: You can [import custom taxonomies](create-custom-taxonomies.md) as needed.
+* From custom files: You can [import custom taxonomies](add-a-custom-taxonomy.md) as needed.
 
 ## Actions
 
@@ -24,7 +24,7 @@ You can't modify taxonomies or their tags.
 
 However, you can:
 
-* [Deactivate taxonomies](activate-deactivate-taxonomy.md)
+* [Deactivate taxonomies](activate-deactivate-a-taxonomy.md)
 * [Delete taxonomies](delete-a-taxonomy.md)
 
 ## Permissions
