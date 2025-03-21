@@ -1,6 +1,6 @@
-# How to Create a Custom Field
+# How to Edit a Custom Field
 
-This topic provides step-by-step instructions for creating a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
+This topic provides step-by-step instructions for editing a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
@@ -18,11 +18,15 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-ellipsis: next to the custom field you want to edit.
 
     ---
 
-4. Enter the following information:
+4. Select **Edit**.
+
+    ---
+
+5. Enter the following information:
 
     **- Display name \***
 
@@ -40,6 +44,9 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     Select an existing group name or enter a new one to create a group. It organizes related custom fields when searching and appears as a tab in cases and alerts.
 
+    !!! info "Bulk group editing"
+        Edit multiple custom fields at once to assign them to the same group. Return to the custom fields list, select :fontawesome-regular-square: next to the custom fields you want to update, and then select :fontawesome-solid-pen:.
+
     **- Type \***
 
     The type of data the custom field will contain:
@@ -55,11 +62,11 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     ---
 
-5. Select **Confirm custom field creation**.
+6. Select **Confirm custom field edition**.
 
 ## Next steps
 
-* [Edit a Custom Field](edit-a-custom-field.md)
+* [Create a Custom Field](create-a-custom-field.md)
 * [Delete a Custom Field](delete-a-custom-field.md)
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md)
 * [Remove Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md)
