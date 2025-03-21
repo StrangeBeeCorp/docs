@@ -44,7 +44,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     Select an existing group name or enter a new one to create a group. It organizes related custom fields when searching and appears as a tab in cases and alerts.
 
-    !!! info "Bluk group editing"
+    !!! info "Bulk group editing"
         Edit multiple custom fields at once to assign them to the same group. Return to the custom fields list, select :fontawesome-regular-square: next to the custom fields you want to update, and then select :fontawesome-solid-pen:.
 
     **- Type \***

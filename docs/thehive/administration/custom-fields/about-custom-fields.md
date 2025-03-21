@@ -6,7 +6,7 @@ This topic provides a general overview of custom field usage in TheHive.
 
 ## Use cases
 
-Custom fields are used to:
+In TheHive, custom fields are used to:
 
 * Provide context to cases or alerts, such as the geographic location of an incident or its severity level
 * Support organizational alignment by specifying the relevant business unit or team
