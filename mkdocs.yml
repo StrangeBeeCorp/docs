@@ -311,6 +311,8 @@ nav:
         - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
+          - 'Edit a Custom Field': thehive/administration/custom-fields/edit-a-custom-field.md
+          - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
         - 'Case Status': thehive/administration/case-status.md
         - 'Alert Status': thehive/administration/alert-status.md
@@ -418,6 +420,10 @@ nav:
           - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
+          - 'Custom Fields':
+            - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
+            - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
+            - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
         - 'Cases Management':
           - 'About Cases': thehive/user-guides/analyst-corner/cases/about-cases.md
           - 'Search for Cases': 
@@ -433,6 +439,10 @@ nav:
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
+          - 'Custom Fields':
+            - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
+            - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
+            - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
           - 'Link Elements in Cases':
             - 'Add a Link to a Case': thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md
             - 'Remove a Link from a Case': thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case.md

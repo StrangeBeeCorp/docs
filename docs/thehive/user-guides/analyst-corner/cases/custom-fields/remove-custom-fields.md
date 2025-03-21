@@ -17,3 +17,4 @@ This topic provides step-by-step instructions for removing [custom fields](../cu
 ## Next steps
 
 * [Add Custom Fields](add-custom-fields.md)
+* [Enter Values in Custom Fields](enter-values-in-custom-fields.md)

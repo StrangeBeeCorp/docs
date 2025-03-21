@@ -24,3 +24,4 @@ This topic provides step-by-step instructions for adding [custom fields](../cust
 ## Next steps
 
 * [Remove Custom Fields](remove-custom-fields.md)
+* [Enter Values in Custom Fields](enter-values-in-custom-fields.md)
