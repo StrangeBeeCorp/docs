@@ -13,16 +13,14 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
 2. {!includes/custom-fields-section-go-to.md!}
 
-3. Enter a value under the custom field name.
-
-    Depending on the configuration, the field will either accept free text or provide a dropdown list of options.
+3. Enter a value under the custom field name. Depending on the configuration, the field will either accept free text or provide a dropdown list of options.
 
     !!! tip "Available since version 5.5"
         Starting with version 5.5, you can filter mandatory custom fields and choose how many custom fields to display per line.
 
 4. Optional: Select **Add** to enter another value, if available.
 
-5. Optional: To remove incorrect values, select :fontawesome-solid-trash: or :fontawesome-solid-xmark: next to the value you want to delete.
+5. Optional: To remove incorrect values, select :fontawesome-solid-xmark: next to the value you want to delete.
 
 6. Select **Confirm**.
 

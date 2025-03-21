@@ -17,7 +17,8 @@ This topic provides step-by-step instructions for adding [custom fields](../../.
 
 4. Select the custom fields you want to add.
 
-    Select the group name to select all custom fields associated with it.
+    !!! tip "Bulk selection"
+        Select the group name to select all custom fields linked to that group.
 
 5. Select **Confirm**.
 

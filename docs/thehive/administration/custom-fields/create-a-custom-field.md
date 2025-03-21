@@ -51,7 +51,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     **- Mandatory** 
     
-        Turn on the toggle to require users to enter a value in this custom field.
+    Turn on the toggle to require users to enter a value in this custom field.
 
     ---
 

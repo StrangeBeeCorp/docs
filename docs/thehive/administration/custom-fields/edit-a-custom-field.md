@@ -49,7 +49,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     **- Type \***
 
-   The type of data the custom field will contain:
+    The type of data the custom field will contain:
 
     {!includes/custom-fields-formats.md!}
 
@@ -58,7 +58,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     **- Mandatory** 
     
-        Turn on the toggle to require users to enter a value in this custom field.
+    Turn on the toggle to require users to enter a value in this custom field.
 
     ---
 
