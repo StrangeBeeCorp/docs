@@ -1,15 +1,15 @@
 # How to Enter Values in Custom Fields
 
-This topic provides step-by-step instructions for entering values in [custom fields](../custom-fields/about-custom-fields.md) in a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive.
+This topic provides step-by-step instructions for entering values in [custom fields](../../../../administration/custom-fields/about-custom-fields.md) in a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
 !!! tip "Why can't I enter my value in a custom field?"
-    If you can't enter the value you need in a custom field, the field may not be configured correctly. Contact someone with admin-level permissions to [update the configuration](../../../administration/custom-fields/edit-a-custom-field.md).
+    If you can't enter the value you need in a custom field, the field may not be configured correctly. Contact someone with admin-level permissions to [update the configuration](../../../../administration/custom-fields/edit-a-custom-field.md).
 
 {!includes/access-manage-custom-fields.md!}
 
 ## Procedure
 
-1. Find the [case](../cases/search-for-cases/find-a-case.md) or the [alert](../alerts/search-for-alerts/find-an-alert.md) where you want to enter values in custom fields.
+1. Find the [case](../../cases/search-for-cases/find-a-case.md) or the [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to enter values in custom fields.
 
 2. {!includes/custom-fields-section-go-to.md!}
 
