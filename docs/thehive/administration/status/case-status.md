@@ -1,5 +1,7 @@
 # Case Status
 
+On ne peut pas delete un status si utilisé dans au moins 1 case or alert
+
 Case Status can be configured in the Administrators space: open *Entities Management* page, and select *Case status* tab.
 
 ## Introduction
