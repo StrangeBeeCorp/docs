@@ -21,6 +21,13 @@ Custom fields support the following types:
 
 {!includes/custom-fields-formats.md!}
 
+## Expected values
+
+The values you can enter in custom fields fall into two categories:
+
+* Free text: Users can manually enter any value.
+* Dropdown list: Users choose from predefined options.
+
 ## Permissions
 
 {!includes/administrator-access-manage-custom-fields.md!}
