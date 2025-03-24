@@ -8,7 +8,7 @@ This article explains how statuses works in TheHive.
 
 Each status is associated with:
 
-* A stage: TheHive includes three stages—*new*, *in progress*, and *closed*.
+* A stage: TheHive includes three predefined stages—*New*, *In progress*, and *Closed*. Stages are hardcoded and can't be modified, deleted, or extended.
 * A visibility: The status is either displayed or hidden.
 
 ## Permissions

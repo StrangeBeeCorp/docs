@@ -1,0 +1,1 @@
+On ne peut pas delete un status si utilisé dans au moins 1 case or alert
