@@ -22,11 +22,14 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
     **- Visibility** (available since version 5.5)
 
-    Specifies whether you want to display or hide a status for users in cases and alerts.
+    Specifies whether you want to display or hide a status in TheHive interface.
 
     **- Stage**
 
-    The stage linked to the status. TheHive includes three predefined stages—*New*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them. After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+    The stage linked to the status. TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them. After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+
+    !!! info "Imported stage"
+        The *Imported* stage isn't available for selection in the interface. It is linked to a specific status that is applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md) or [a new case](../../user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md).
 
     **- Value**
 

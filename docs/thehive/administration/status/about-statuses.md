@@ -1,16 +1,34 @@
 # About Statuses
 
-The status represents the current state of a case or alert.
+The status represents the current state of a [case](../../user-guides/analyst-corner/cases/about-cases.md) or [alert](../../user-guides/analyst-corner/alerts/about-alerts.md).
 
 This article explains how statuses works in TheHive.
+
+## Predefined statuses
+
+TheHive includes a set of predefined statuses. You can [change their color](change-color-of-a-status.md) or [hide them](change-visibility-of-a-status.md) if you prefer users to use [custom statuses you have created](create-a-status.md).
 
 ## Attributes
 
 Each status is associated with:
 
-* A stage: TheHive includes three predefined stages—*New*, *In progress*, and *Closed*. Stages are hard-coded and can't be modified, deleted, or extended.
-* A visibility: The status is either displayed or hidden (available since version 5.5).
+* A stage: TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. Stages are hard-coded and can't be modified, deleted, or extended.
+
+!!! info "Imported stage"
+    The *Imported* stage isn't available for selection in the interface. It is linked to a specific status that is applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md) or [a new case](../../user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md).
+
+* A visibility: The status is either displayed or hidden in TheHive interface (available since version 5.5).
+
 * A color: The color should help users easily recognize the status.
+
+## Behavior
+
+!!! info "Alert status restrictions"
+    You can't switch back to a status linked to the *New* or *In progress* stage if the alert is currently in a status linked to the *Closed* stage. The same restriction applies when trying to switch from *In progress* back to *New*.
+
+* Statuses linked to the *In progress* stage are available for alerts only [when starting triage](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#start).
+
+* Statuses linked to the *Closed* stage can only be selected when [closing a case](../../user-guides/analyst-corner/cases/cases-description/actions.md#close) or [closing an alert](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#close).
 
 ## Permissions
 
