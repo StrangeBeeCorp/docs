@@ -188,7 +188,8 @@ plugins:
             'thehive/user-guides/analyst-corner/dashboard/filter-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
             'thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
             'thehive/user-guides/analyst-corner/dashboard/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
-            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md'            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md'            
+            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
 
 extra:
   generator: false
