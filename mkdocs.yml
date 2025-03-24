@@ -320,7 +320,7 @@ nav:
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
-        - 'Status':
+        - 'Statuses':
           - 'About Statuses': thehive/administration/status/about-statuses.md
           - 'Create a Status': thehive/administration/status/create-a-status.md
           - 'Change a Status Visibility': thehive/administration/status/change-visibility-of-a-status.md

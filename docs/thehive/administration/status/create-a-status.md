@@ -8,9 +8,15 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
 1. {!includes/entities-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/status-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-regular-square-plus:.
+
+    ---
 
 4. In the **Add a custom status** drawer, enter the following information:
 
@@ -30,7 +36,11 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
     Enter a hex color code in the format #RRGGBB, or select :fontawesome-solid-fill-drip: to open the color picker.
 
+    ---
+
 5. Verify that the preview looks correct.
+
+    ---
 
 6. Select **Confirm custom status creation**.
 
