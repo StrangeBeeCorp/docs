@@ -19,7 +19,7 @@ This topic provides step-by-step instructions for changing a [status](about-stat
 
 5. In the **Add a custom status** drawer, enter the new visibility you want to apply.
 
-    Defines whether the status is displayed or hidden for users in cases and alerts. If you hide a status that is already applied to existing cases or alerts, it remains applied until manually changed and is no longer available for selection.
+    Specifies whether you want to display or hide a status for users in cases and alerts. If you hide a status that's already applied to existing cases or alerts, it remains applied until manually changed and is no longer available for selection.
 
 6. Select **Confirm custom status creation**.
 

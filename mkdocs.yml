@@ -320,8 +320,12 @@ nav:
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
-        - 'Case Status': thehive/administration/case-status.md
-        - 'Alert Status': thehive/administration/alert-status.md
+        - 'Status':
+          - 'About Statuses': thehive/administration/status/about-statuses.md
+          - 'Create a Status': thehive/administration/status/create-a-status.md
+          - 'Change a Status Visibility': thehive/administration/status/change-visibility-of-a-status.md
+          - 'Change a Color Visibility': thehive/administration/status/change-color-of-a-status.md
+          - 'Delete a Status': thehive/administration/status/delete-a-status.md
         - 'Analyzers Templates': thehive/administration/analyzers-templates.md
         - 'Taxonomies': thehive/administration/taxonomies.md
         - 'Att&ck Patterns': thehive/administration/attack-patterns.md

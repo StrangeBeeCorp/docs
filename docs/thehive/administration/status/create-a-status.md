@@ -16,15 +16,15 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
     **- Visibility** (available since version 5.5)
 
-    Defines whether the status is displayed or hidden for users in cases and alerts.
+    Specifies whether you want to display or hide a status for users in cases and alerts.
 
     **- Stage**
 
-    The stage linked to the status. TheHive includes three predefined stages—*New*, *In progress*, and *Closed*. Stages are hardcoded and can't be modified, deleted, or extended. Once a stage is linked to a status, it can't be changed. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+    The stage linked to the status. TheHive includes three predefined stages—*New*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them. After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
 
     **- Value**
 
-    The name of the status. Once created, the status name can't be changed. To use a different name, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+    The name of the status. After you create a status, you can't change its name. To use a different name, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
 
     **- Color**
 
