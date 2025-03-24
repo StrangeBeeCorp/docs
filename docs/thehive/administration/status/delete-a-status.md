@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for deleting a [status](about-statuses.md) for cases and alerts in TheHive.
 
 !!! info "Deletion conditions"
-    You can only delete a status if it isn't used in any case or alert. To check where a status is applied, [use filters and sorting in case and alert descriptions](../../user-guides/analyst-corner/about-filtering-and-sorting.md).
+    You can only delete a status if it isn't used in any case or alert. To check where a status is applied, [use filters and sorting in case and alert lists](../../user-guides/analyst-corner/about-filtering-and-sorting.md).
 
 {!includes/administrator-access-manage-statuses.md!}
 
