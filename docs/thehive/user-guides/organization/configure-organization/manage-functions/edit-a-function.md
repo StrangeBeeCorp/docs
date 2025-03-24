@@ -1,4 +1,4 @@
-## How to Edit a Function
+# How to Edit a Function
 
 This topic provides step-by-step instructions for editing a [function](about-functions.md) in TheHive.
 
@@ -38,18 +38,11 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
     **- Definition \***
 
-    Enter the JavaScript code for your function. If you need inspiration, check out the [GitHub repository with function examples]().
+    {!includes/function-definition.md!}
 
     ---
 
-5. Select the **Test function** section to test your function.
-
-    Enter input data in the **Input** field. 
-
-    Select:  
-        - *result* to view the output of your function  
-        - *stdout* to display standard program output  
-        - *stderr* to display errors and warnings
+5. {!includes/test-function.md!}
 
     ---
 

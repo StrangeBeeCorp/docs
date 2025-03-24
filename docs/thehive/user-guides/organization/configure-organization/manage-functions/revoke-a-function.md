@@ -1,4 +1,4 @@
-## How to Revoke a Function
+# How to Revoke a Function
 
 This topic provides step-by-step instructions for revoking a [function](about-functions.md) in TheHive.
 
