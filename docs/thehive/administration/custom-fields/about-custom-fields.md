@@ -12,7 +12,7 @@ You can use custom fields to:
 
 * Provide context to cases or alerts, such as the geographic location of an incident or its severity level
 * Support organizational alignment by specifying the relevant business unit or team
-* Enable integration with tools and feeders by including identifiers or other data from external systems, or linking directly to external system data
+* Enable integration with tools by including identifiers or other data from external systems, or linking directly to external system data
 * Streamline processes by indicating internal classification levels
 * Manage checklists to validate specific steps when handling a case or alert
 * Enhance data analysis through tagging, for example, identifying incidents involving VIPs

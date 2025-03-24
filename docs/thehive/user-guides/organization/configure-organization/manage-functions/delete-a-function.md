@@ -1,4 +1,4 @@
-## How to Delete a Function
+# How to Delete a Function
 
 This topic provides step-by-step instructions for deleting a [function](about-functions.md) in TheHive.
 
