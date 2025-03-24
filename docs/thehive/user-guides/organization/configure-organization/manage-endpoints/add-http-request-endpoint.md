@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for adding a local HttpRequest [en
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
+3. Select :fontawesome-regular-square-plus: or **Add a new endpoint**.
 
     ---
 
@@ -38,9 +38,7 @@ This topic provides step-by-step instructions for adding a local HttpRequest [en
 
     ---
 
-6. Select :fontawesome-solid-plus: in the **Headers** section to add headers.
-
-    Enter a header key and its corresponding value to include in the HTTP request. The external system requires headers to receive authentication tokens, content types, or other metadata.
+6. {!includes/headers.md!}
 
     ---
 

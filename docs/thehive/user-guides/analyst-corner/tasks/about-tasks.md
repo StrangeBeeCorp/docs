@@ -1,18 +1,47 @@
-# Tasks
+# About Tasks
 
-Task details, require action from its users. Task details page displays a list of tasks. 
-When navigating through the Task list, you can easily see and determine which Task needs an action. 
+This topic explains tasks, their components, and their behavior in TheHive.
 
+## Definition
 
-## To view task details
+A task is an action that must be completed within a case.
 
-You can click on any of the tasks in the list to view more details. 
+* Tasks can be mandatory or optional.
+* Tasks are organized into groups for better structure and management.
 
-<img src="/thehive/images/user-guides/analyst-corner/tasks/task_menu.png" alt="tasks" width="700" height="700"/>
+## Sources
 
-The details are displayed
+Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md) since version 5.5.
 
-<img src="/thehive/images/user-guides/analyst-corner/tasks/tasks-details-tabs-menu.png" alt="tasks" width="700" height="700"/>
+## Key components
 
-In the left pane of the window you can configure the PAP, TLP and Severity. 
-Refer to ['Configure Alert Details'](../cases/cases-description/configure-pap-tlp-severity.md) for more details. 
+A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md), also referred to as activities.
+
+## Behavior
+
+### Requiring actions on a task
+
+You can require users in any of your organizations to take action on a task. However, once the action is completed, the task's status remains unchanged. This is useful when you need input or assistance from someone in another team or business unit without affecting the task’s workflow.
+
+### Closing a task
+
+* When you close a case, all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
+
+* However, if any mandatory tasks are not completed, you will not be able to close the case.
+
+## Highlighting important tasks
+
+In TheHive, you can make important tasks stand out using the following options:
+
+* [Pin a task](../tasks/preview-task-details/actions.md#unpin): Pin a task to quickly access it from the **Tasks** tab within a case.
+* [Flag a task](../tasks/preview-task-details/actions.md#unflag): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
+
+## Next steps
+
+* [Find a Task](../tasks/search-for-tasks/find-a-task.md)
+* [Actions on Tasks](../tasks/preview-task-details/actions.md)
+* [Share a Task](share-a-task.md)
+* [Managing Views](manage-views.md)
+* [Create a Task Log](../tasks/preview-task-details/create-a-task-log.md)
+* [Preview Tasks](../tasks/preview-task-details/Preview-tasks.md)
+* [Run Responders](../tasks/preview-task-details/run-responders.md)

@@ -131,7 +131,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
             'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md'
-            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md'
+            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md'
@@ -180,7 +180,15 @@ plugins:
             'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
             'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
             'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
-            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
+            'thehive/how-to/dashboards.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/Filter-and-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/pages.md': 'thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md'
+            'thehive/user-guides/analyst-corner/dashboard/about-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/filter-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md'            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
 
 extra:
   generator: false
@@ -359,7 +367,7 @@ nav:
             - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
           - 'Case Report Templates':
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
-            - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md
+            - 'Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md
             - 'Create a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md
             - 'Edit a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md
             - 'Delete a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template.md
@@ -403,6 +411,12 @@ nav:
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
           - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
+        - 'Alert Feeders': 
+          - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
+          - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
+          - 'Edit an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md
+          - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md
+          - 'Delete an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
@@ -449,8 +463,15 @@ nav:
           - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
-          - 'View Timeline': thehive/user-guides/analyst-corner/cases/cases-description/timeline.md
-          - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
+          - 'Case Timelines':
+            - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md
+            - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md
+            - 'View a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md
+            - 'Export a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md
+            - 'Delete a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/delete-custom-event-timeline.md
+          - 'Case Reports':
+            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md
+            - 'Download a Case Report': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
@@ -462,16 +483,22 @@ nav:
             - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
             - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
+          - 'Manage View': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
           - 'Preview Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md
           - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
           - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
           - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
-        - 'Dashboard Usage':
-          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
-          - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+        - 'Dashboards':
+          - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
+          - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
+          - 'Create a Dashboard': thehive/user-guides/analyst-corner/dashboard/create-a-dashboard.md
+          - 'Edit a Dashboard': thehive/user-guides/analyst-corner/dashboard/edit-a-dashboard.md
+          - 'View a Dashboard': thehive/user-guides/analyst-corner/dashboard/view-a-dashboard.md
+          - 'Delete a Dashboard': thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard.md
+          - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
+          - 'Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/import-a-dashboard.md
+          - 'Export a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-a-dashboard.md
+          - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':
