@@ -20,7 +20,7 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
 4. Optional: Select **Add** to enter another value, if available.
 
-5. Optional: To remove incorrect values, select :fontawesome-solid-xmark: next to the value you want to delete.
+5. Optional: Use the :fontawesome-solid-trash: symbol to delete an entire entry in a multi-line custom field. Use the :fontawesome-solid-circle-xmark: symbol to remove a value from the field.
 
 6. Select **Confirm**.
 
