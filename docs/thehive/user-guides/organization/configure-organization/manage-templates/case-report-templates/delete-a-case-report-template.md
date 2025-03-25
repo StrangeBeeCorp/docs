@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for deleting a [case report templa
 
 {!includes/access-manage-case-report-templates.md!}
 
+{!includes/license-required-case-reports.md!}
+
 ## Procedure
 
 1. {!includes/organization-view-go-to.md!}
