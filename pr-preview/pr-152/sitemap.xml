@@ -173,6 +173,10 @@
          <lastmod>2025-03-25</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-cortex-connection/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-manage-custom-fields/</loc>
          <lastmod>2025-03-25</lastmod>
     </url>
@@ -226,6 +230,14 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/certificate-authority/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/connectors-tab-go-to/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/cortex-support-thehive-55/</loc>
          <lastmod>2025-03-25</lastmod>
     </url>
     <url>
@@ -505,10 +517,6 @@
          <lastmod>2025-03-25</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/administration/cortex/</loc>
-         <lastmod>2025-03-25</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/administration/email-intake-connector/</loc>
          <lastmod>2025-03-25</lastmod>
     </url>
@@ -570,6 +578,22 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/ssl/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/cortex/about-cortex/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/cortex/add-a-cortex-server/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/cortex/edit-cortex-connection-settings/</loc>
+         <lastmod>2025-03-25</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/cortex/remove-a-cortex-server/</loc>
          <lastmod>2025-03-25</lastmod>
     </url>
     <url>
