@@ -26,7 +26,7 @@ Each status is associated with:
 !!! info "Alert status restrictions"
     You can't switch back to a status linked to the *New* or *In progress* stage if the alert is currently in a status linked to the *Closed* stage. The same restriction applies when trying to switch from *In progress* back to *New*.
 
-* Statuses linked to the *In progress* stage are available for alerts only [when starting triage](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#start).
+* Statuses linked to the *In progress* stage are available for alerts only [when starting work on an alert](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#start).
 
 * Statuses linked to the *Closed* stage can only be selected when [closing a case](../../user-guides/analyst-corner/cases/cases-description/actions.md#close) or [closing an alert](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#close).
 
