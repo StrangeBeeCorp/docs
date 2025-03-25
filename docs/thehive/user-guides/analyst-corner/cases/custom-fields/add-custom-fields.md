@@ -13,7 +13,7 @@ This topic provides step-by-step instructions for adding [custom fields](../../.
 
 2. {!includes/custom-fields-section-go-to.md!}
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
 4. Select the custom fields you want to add.
 
