@@ -5840,6 +5840,30 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#549-march-25-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4.9 - March 25, 2025
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4.9 - March 25, 2025">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#548-february-24-2025" class="md-nav__link">
     <span class="md-ellipsis">
       5.4.8 - February 24, 2025
@@ -5850,7 +5874,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes" class="md-nav__link">
+  <a href="#fixes_1" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -5898,7 +5922,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes_1" class="md-nav__link">
+  <a href="#fixes_2" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -5973,7 +5997,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_2" class="md-nav__link">
+  <a href="#fixes_3" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -6039,7 +6063,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes_3" class="md-nav__link">
+  <a href="#fixes_4" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -6096,7 +6120,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fixes_4" class="md-nav__link">
+  <a href="#fixes_5" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -6180,7 +6204,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_5" class="md-nav__link">
+  <a href="#fixes_6" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -6474,7 +6498,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fixes_6" class="md-nav__link">
+  <a href="#fixes_7" class="md-nav__link">
     <span class="md-ellipsis">
       Fixes
     </span>
@@ -8141,8 +8165,14 @@
 <p class="admonition-title">Info</p>
 <p>An <a href="../../installation/upgrade-from-5.x/">upgrade guide</a> is available to help you migrate from TheHive 5.x</p>
 </div>
-<h2 id="548-february-24-2025">5.4.8 - February 24, 2025<a class="headerlink" href="#548-february-24-2025" title="Permanent link">#</a></h2>
+<h2 id="549-march-25-2025">5.4.9 - March 25, 2025<a class="headerlink" href="#549-march-25-2025" title="Permanent link">#</a></h2>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Resolved a potential deadlock when invoking functions, depending on the cache state (related to the Query API).</li>
+<li>Eliminated redundant <code>/status</code> API calls triggered on each keystroke in the user creation form.</li>
+</ul>
+<h2 id="548-february-24-2025">5.4.8 - February 24, 2025<a class="headerlink" href="#548-february-24-2025" title="Permanent link">#</a></h2>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <h4 id="dark-mode">Dark mode<a class="headerlink" href="#dark-mode" title="Permanent link">#</a></h4>
 <ul>
 <li>Improved the visibility of the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3l105.4 105.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256z"></path></svg></span> button in notification messages for better readability.</li>
@@ -8158,7 +8188,7 @@
 <li>Fixed an issue with Email Intake synchronization when TheHive is configured in a cluster environment.</li>
 </ul>
 <h2 id="547-16th-of-january-2025">5.4.7 - 16th of January 2025<a class="headerlink" href="#547-16th-of-january-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <h4 id="global-search">Global Search<a class="headerlink" href="#global-search" title="Permanent link">#</a></h4>
 <ul>
 <li>Added support for wildcard searches using the * operator.
@@ -8188,7 +8218,7 @@
 <ul>
 <li>This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.</li>
 </ul>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <h4 id="unlicensed-users">Unlicensed users<a class="headerlink" href="#unlicensed-users" title="Permanent link">#</a></h4>
 <ul>
 <li>Unlicensed profiles can now be assigned even when the quota is full.</li>
@@ -8210,7 +8240,7 @@
 <li>Corrected a log formatting issue from notifiers.</li>
 </ul>
 <h2 id="545-21st-of-november-2024">5.4.5 - 21st of November 2024<a class="headerlink" href="#545-21st-of-november-2024" title="Permanent link">#</a></h2>
-<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
+<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
 <h4 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h4>
 <ul>
 <li>Resolved an issue causing incorrect differentiation between "In Progress" Cortex analyzers and responders during TheHive startup process, that was causing some Responder jobs to never cleaned up.</li>
@@ -8224,7 +8254,7 @@
 <li>Fixed index deactivation during a global reindex request. Double reindexation is not required anymore.</li>
 </ul>
 <h2 id="544-8th-of-november-2024">5.4.4 - 8th of November 2024<a class="headerlink" href="#544-8th-of-november-2024" title="Permanent link">#</a></h2>
-<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
+<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
 <ul>
 <li>Resolved a display issue with the status component in cases and alerts, which was not rendering correctly on Safari and Firefox.</li>
 </ul>
@@ -8240,7 +8270,7 @@
 <p>Added a character limit check for task titles to notify users when their input exceeds the allowed length.</p>
 <h4 id="edit-alert-title">Edit Alert title<a class="headerlink" href="#edit-alert-title" title="Permanent link">#</a></h4>
 <p>Adding the ability to edit alert title directly from the general tab.</p>
-<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
+<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
 <h4 id="cortex-job-queue">Cortex job queue<a class="headerlink" href="#cortex-job-queue" title="Permanent link">#</a></h4>
 <ul>
 <li>Enhanced the handling of concurrent job submissions to the Cortex server for better efficiency and stability.</li>
@@ -8301,7 +8331,7 @@
 <p>Those two options DirectQuery &amp; ESChart are enabled by default, but can be deactivated through API configuration.</p>
 <h4 id="new-logo-and-favicon">New logo and favicon<a class="headerlink" href="#new-logo-and-favicon" title="Permanent link">#</a></h4>
 <p>As part of our recent brand visual identity update, TheHive logo has been updated throughout the entire application. This includes changes on the login page, favicon, and navigation bar.</p>
-<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
+<h3 id="fixes_7">Fixes<a class="headerlink" href="#fixes_7" title="Permanent link">#</a></h3>
 <h4 id="time-metrics">Time metrics<a class="headerlink" href="#time-metrics" title="Permanent link">#</a></h4>
 <p>We resolved an issue with the "Time to Detect" metric during alert creation.</p>
 <h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">#</a></h3>
