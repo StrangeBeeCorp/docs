@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for removing [custom fields](../..
 
 2. {!includes/custom-fields-section-go-to.md!}
 
-3. Select :fontawesome-solid-xmark: next to the custom fields you want to remove.
+3. Select :fontawesome-solid-xmark: in the top-right corner of the custom field you want to remove.
 
     ![Remove custom fields](../../../../images/user-guides/analyst-corner/cases/remove-custom-fields.png)
 

@@ -15,8 +15,12 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
 3. Enter a value under the custom field name. Depending on the configuration, the field will either accept free text or provide a dropdown list of options.
 
+    ![Enter value custom fields](../../../../images/user-guides/analyst-corner/cases/enter-values-custom-fields.png)
+
     !!! tip "Available since version 5.5"
         Starting with version 5.5, you can filter mandatory custom fields and choose how many custom fields to display per line.
+
+        ![Options custom fields](../../../../images/user-guides/analyst-corner/cases/options-custom-fields.png)
 
 4. Optional: Select **Add** to enter another value, if available.
 
