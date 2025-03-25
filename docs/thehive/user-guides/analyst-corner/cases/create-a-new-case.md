@@ -76,6 +76,8 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an archived case
 
+{!includes/license-required-export-import-case.md!}
+
 1. {!includes/create-a-case.md!}
 
 2. In the **Create case** drawer, select **From archive (.thar)**.
