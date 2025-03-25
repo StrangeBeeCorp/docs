@@ -19,6 +19,13 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.9 - March 25, 2025
+
+### Fixes
+
+* Resolved a potential deadlock when invoking functions, depending on the cache state (related to the Query API).
+* Eliminated redundant `/status` API calls triggered on each keystroke in the user creation form.
+
 ## 5.4.8 - February 24, 2025
 
 ### Fixes
