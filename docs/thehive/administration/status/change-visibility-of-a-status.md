@@ -21,7 +21,10 @@ This is useful if you want to hide TheHive’s predefined statuses, so users onl
 
 5. In the **Add a custom status** drawer, enter the new visibility you want to apply.
 
-    Specifies whether you want to display or hide a status in TheHive interface. If you hide a status that's already applied to existing cases or alerts, it remains applied until manually changed and is no longer available for selection.
+    Specifies whether you want to display or hide a status in TheHive interface. 
+    
+    !!! info "Hiding impact on existing cases and alerts"
+        If you hide a status that is already applied to existing cases or alerts, it remains applied until manually changed. It is no longer available for selection in the interface.
 
 6. Select **Confirm custom status creation**.
 

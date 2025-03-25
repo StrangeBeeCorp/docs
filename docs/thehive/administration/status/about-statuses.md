@@ -6,7 +6,7 @@ This article explains how statuses works in TheHive.
 
 ## Predefined statuses
 
-TheHive includes a set of predefined statuses. You can [change their color](change-color-of-a-status.md) or [hide them](change-visibility-of-a-status.md) if you prefer users to use [custom statuses you have created](create-a-status.md).
+TheHive includes a set of predefined statuses. You can [change their color](change-color-of-a-status.md) or [hide them](change-visibility-of-a-status.md) to guide users toward using the [custom statuses you have created](create-a-status.md).
 
 ## Attributes
 

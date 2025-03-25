@@ -14,9 +14,7 @@ This topic provides step-by-step instructions for changing a [status](about-stat
 
 4. Select **Edit**.
 
-5. In the **Add a custom status** drawer, enter the new color you want to apply.
-
-    Enter a hex color code in the format #RRGGBB, or select :fontawesome-solid-fill-drip: to open the color picker.
+5. In the **Add a custom status** drawer, enter a hex color code in the format #RRGGBB, or select :fontawesome-solid-fill-drip: to open the color picker.
 
 6. Verify that the preview looks correct.
 
