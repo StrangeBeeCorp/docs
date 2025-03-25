@@ -13,9 +13,9 @@ This topic provides step-by-step instructions for changing the [status](about-st
 
 1. Find [the alert](../alerts/search-for-alerts/find-an-alert.md) you want to update.
 
-2. In the alert description, move through the **Status** section on the left panel
+2. In the alert description, move through the **Status** section on the left panel.
 
-    
+    ![Status](../../../images/user-guides/analyst-corner/alerts/change-status-alert.png)
 
 3. Select the new status from the dropdown list.
 
@@ -23,7 +23,6 @@ This topic provides step-by-step instructions for changing the [status](about-st
 
 ## Next steps
 
-* [Add a Link to a Case](add-a-link-to-a-case.md)
-* [Apply a Case Template](apply-a-case-template.md)
-* [Share a Case](share-a-case.md)
-* [Actions](../cases/cases-description/actions.md)
+* [Actions](../alerts/alerts-description/actions.md)
+* [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Run Responders](../alerts/alerts-description/run-responders.md)
