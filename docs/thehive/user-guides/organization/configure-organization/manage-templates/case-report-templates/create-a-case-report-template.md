@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 4. Two options are available:
 
-    * Create a case report template from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a case report template from scratch by selecting :fontawesome-solid-plus:.
 
     * Duplicate an existing case report template by selecting :fontawesome-solid-ellipsis: next to the case report template you want to duplicate, then select **Duplicate**.
 

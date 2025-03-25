@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

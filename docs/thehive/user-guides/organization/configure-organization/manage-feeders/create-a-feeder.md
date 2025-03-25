@@ -22,7 +22,7 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

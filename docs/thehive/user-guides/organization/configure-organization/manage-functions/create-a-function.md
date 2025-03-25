@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

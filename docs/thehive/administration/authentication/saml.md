@@ -30,7 +30,7 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     ---
 
-5. Select **Add a provider** or select :fontawesome-regular-square-plus:.
+5. Select **Add a provider** or select :fontawesome-solid-plus:.
 
     ---
 

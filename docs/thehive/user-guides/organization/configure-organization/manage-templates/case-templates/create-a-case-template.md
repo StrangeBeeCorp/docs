@@ -25,7 +25,7 @@ To import an existing case template from another organization or TheHive instanc
 
 4. Two options are available:
 
-    * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a case template from scratch by selecting :fontawesome-solid-plus:.
 
     * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
 

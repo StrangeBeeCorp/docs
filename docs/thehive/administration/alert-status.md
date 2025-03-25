@@ -13,7 +13,7 @@ TheHive comes with a set of predifined statuses. Each status belongs to a *Stage
 
 ## Create a Status
 
-Click on the :fontawesome-regular-square-plus: button to add a new status.
+Click on the :fontawesome-solid-plus: button to add a new status.
 
 ![](../images/administration-guides/alert-status-2.png)
 
