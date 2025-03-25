@@ -38,7 +38,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     **- Description \***
 
-    A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: icon next to the custom field in a case or alert.
+    A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: symbol next to the custom field in a case or alert.
 
     **- Group \***
 
@@ -49,7 +49,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
     **- Type \***
 
-    The type of data the custom field will contain:
+    The type of data the custom field contains:
 
     {!includes/custom-fields-formats.md!}
 
@@ -59,6 +59,8 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
     **- Mandatory** 
     
     Turn on the toggle to require users to enter a value in this custom field.
+
+    Set a custom field as mandatory if you use it in dashboards or any automation workflow.
 
     ---
 

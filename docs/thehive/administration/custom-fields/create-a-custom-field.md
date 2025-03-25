@@ -34,7 +34,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     **- Description \***
 
-    A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: icon next to the custom field in a case or alert.
+    A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: symbol next to the custom field in a case or alert.
 
     **- Group \***
 
@@ -42,7 +42,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     **- Type \***
 
-    The type of data the custom field will contain:
+    The type of data the custom field contains:
 
     {!includes/custom-fields-formats.md!}
 
