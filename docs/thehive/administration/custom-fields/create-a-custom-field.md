@@ -25,16 +25,13 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 4. Enter the following information:
 
     **- Display name \***
-    **- Display name \***
 
     The name users will see when adding this custom field to their cases or alerts.
 
     **- Technical name \***
-    **- Technical name \***
 
     By default, the technical name is automatically generated from the display name, but you can adjust it if needed. Users don't see the technical name when adding a custom field, but it's used when accessing the custom field via the API.
 
-    **- Description \***
     **- Description \***
 
     A description to help users understand and use this custom field appropriately. It appears when users hover over the :fontawesome-solid-circle-question: icon next to the custom field in a case or alert.
