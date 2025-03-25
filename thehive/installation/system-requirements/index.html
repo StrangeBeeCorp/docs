@@ -147,7 +147,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#hardware-requirements" class="md-skip">
+        <a href="#thehive-installation-system-requirements" class="md-skip">
           Skip to content
         </a>
       
@@ -354,8 +354,6 @@
           
             
               
-                
-              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -545,6 +543,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    System Requirements
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -555,6 +565,54 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-operating-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recommended operating systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Next steps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -7399,14 +7457,13 @@
               <article class="md-content__inner md-typeset">
                 
                   
-  
 
 
 
-
-<div><hr>
-<h1 id="hardware-requirements">Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">#</a></h1>
-<p>The hardware requirements for TheHive depend on factors such as the number of concurrent users (including integrations) and their usage patterns. Below are recommended hardware thresholds for hosting all services on the same machine:</p>
+<div><h1 id="thehive-installation-system-requirements">TheHive Installation System Requirements<a class="headerlink" href="#thehive-installation-system-requirements" title="Permanent link">#</a></h1>
+<p>This topic outlines the hardware and operating system requirements for installing TheHive.</p>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">#</a></h2>
+<p>The hardware requirements for TheHive depend on factors such as the number of concurrent users (including integrations) and their usage patterns. Below are the recommended hardware thresholds for hosting all services on the same machine:</p>
 <table>
 <thead>
 <tr>
@@ -7438,20 +7495,23 @@
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>When deploying all services on the same server, it's recommended to have at least 4 cores and 16 GB of RAM. Additionally, ensure that <code>jvm.options</code> is configured appropriately for Elasticsearch.</p>
+<p class="admonition-title">Recommendations</p>
+<p>Deploying all services on the same server requires at least 4 cores and 16 GB of RAM. Additionally, configure <code>jvm.options</code> appropriately for Elasticsearch.</p>
 </div>
-<hr>
-<h1 id="operating-system">Operating System<a class="headerlink" href="#operating-system" title="Permanent link">#</a></h1>
-<p>TheHive has been tested and is officially supported on the following operating systems:</p>
+<h2 id="recommended-operating-systems">Recommended operating systems<a class="headerlink" href="#recommended-operating-systems" title="Permanent link">#</a></h2>
+<p>TheHive runs on and is officially supported on the following operating systems:</p>
 <ul>
-<li>Ubuntu 20.04 LTS | 22.04 LTS</li>
+<li>Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS</li>
 <li>Debian 11</li>
 <li>RHEL 8.5 | 9.3</li>
+<li>Rocky Linux 9.4</li>
 <li>Fedora 35 | 37</li>
 </ul>
 <p>Additionally, an <a href="https://hub.docker.com/r/strangebee/TheHive/tags"><strong>official Docker image</strong></a> is available for users who prefer containerized deployments.</p>
-<p> </p></div>
+<h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="../step-by-step-installation-guide/">Step by Step Installation Guide</a></li>
+</ul></div>
 
 
 
@@ -7459,15 +7519,10 @@
 
 
 
-  
-  
-
-
-
-  
 
 
   
+
 
 
 
