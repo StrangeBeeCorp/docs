@@ -27,7 +27,7 @@ You can define custom fields in the following formats:
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
-After creation, custom fields are automatically available to all users across your organizations, allowing them to add the fields to cases and alerts. You can configure these fields to be either optional or mandatory for analysts to complete.
+After creation, custom fields are automatically available to all users across your organizations, allowing them to [add the fields](../../user-guides/analyst-corner/cases/cases-description/add-custom-fields.md) to cases and alerts. You can configure these fields to be either optional or mandatory for analysts to complete.
 
 ## Next steps
 
