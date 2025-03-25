@@ -2345,9 +2345,22 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../administration/cortex/" class="md-nav__link">
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_4_3" id="__nav_2_6_4_3_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Cortex Integration
@@ -2355,7 +2368,107 @@
   </span>
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_6_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cortex Integration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/cortex/about-cortex/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About Cortex
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/cortex/edit-cortex-connection-settings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Edit Cortex Connection Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/cortex/add-a-cortex-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add a Cortex Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/cortex/remove-a-cortex-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remove a Cortex Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -10610,6 +10723,10 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 </div>
 <h4 id="cortex-misp">Cortex &amp; MISP<a class="headerlink" href="#cortex-misp" title="Permanent link">#</a></h4>
 <p>The initial configuration file packaged with the software contains the following lines, which enable the Cortex and MISP modules by default. If you're not utilizing either of these modules, you can simply comment out the corresponding line and restart the service.</p>
+<div class="admonition note">
+<p class="admonition-title">Cortex support</p>
+<p>Starting from TheHive 5.5, Cortex 3.1.5 and earlier are no longer supported.</p>
+</div>
 <div class="admonition example">
 <div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="c1"># Additional modules</span>
 <span class="c1">#</span>
