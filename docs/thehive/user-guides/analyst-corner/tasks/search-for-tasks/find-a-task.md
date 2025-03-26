@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
-!!! tip "Why can't I find a task?"
+!!! tip "Can't find a task?"
     Since TheHive 5.5, [case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
 
 ## Method 1: Tasks tab in cases descriptions

@@ -46,16 +46,16 @@ This topic provides step-by-step instructions for editing a [case template](abou
     **- Severity**  
     The default severity level for cases.
     
-    **- [Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
-    One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
+    **- [Tags](../../../../analyst-corner/cases/tags/add-tags.md)**  
+    One or more tags for labeling cases.
     
     **Description \***  
     A description for cases using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
     
-    **- [Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Tasks](../../../../analyst-corner/cases/add-tasks-to-a-case.md)**  
     One or more tasks for cases.
     
-    **- [Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Custom fields](../../../../analyst-corner/cases/add-custom-fields.md)**  
     One or more custom fields for cases, with or without predefined values.
     
     **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  

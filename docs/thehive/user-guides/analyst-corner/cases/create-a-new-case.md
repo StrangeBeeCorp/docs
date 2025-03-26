@@ -41,16 +41,16 @@ Several options are offered to create a case in TheHive:
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
     The PAP level for the case. It guides analysts on how they can use case data.
 
-    **- [Tags](../cases/adding_to_a_case.md)**  
-    Relevant tags to categorize the case.
+    **- [Tags](../../analyst-corner/cases/tags/add-tags.md)**  
+    Relevant tags for labeling the case.
 
     **- Description \***  
     A description of the case.
 
-    **- [Tasks](../cases/adding_to_a_case.md)**  
+    **- [Tasks](../cases/add-tasks-to-a-case.md)**  
     Tasks for the case.
 
-    **- [Custom fields](../cases/adding_to_a_case.md)**  
+    **- [Custom fields](../cases/add-custom-fields.md)**  
     Custom fields for the case, with or without predefined values.
 
     **- [Pages](../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
@@ -110,10 +110,10 @@ Several options are offered to create a case in TheHive:
 
     Drop a JSON file direclty into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
 
-    **- [Tasks](../cases/adding_to_a_case.md)**  
+    **- [Tasks](../cases/add-tasks-to-a-case.md)**  
     Tasks for the case.
 
-    **- [Custom fields](../cases/adding_to_a_case.md)**  
+    **- [Custom fields](../cases/add-custom-fields.md)**  
     Custom fields for the case, with or without predefined values.
 
     **- Sharing**  
@@ -148,4 +148,5 @@ The creation of cases through detection tools is managed directly via the [API](
 <h2>Next steps</h2>
 
 * [Apply a Case Template](apply-a-case-template.md)
-* [Adding to a Case](adding_to_a_case.md)
+* [Add Tasks to a Case](add-tasks-to-a-case.md)
+* [Add Custom Fields](add-custom-fields.md)

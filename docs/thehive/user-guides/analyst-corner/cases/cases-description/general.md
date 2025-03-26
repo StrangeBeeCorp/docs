@@ -7,7 +7,7 @@ Refer to [`Configure Case Details`](../cases-description/configure-pap-tlp-sever
 
 1. In the right pane, at bottom of the window, type **Comments** if any for the team. 
 1. Enter the **Title**.
-1. Add Tags. (Refer to [`Add tags`](../adding_to_a_case.md)).
+1. Add Tags. (Refer to [`Add tags`](../tags/add-tags.md)).
 1. Enter the **Description** using [TheHive-flavored Markdown syntax](../../../thehive-flavored-markdown.md) for formatting. 
 1. Add **Custom fields**. (Refer to [`Add custom fields`](../custom-fields/add-custom-fields.md)).
 1. Enter the **Company name**. 
