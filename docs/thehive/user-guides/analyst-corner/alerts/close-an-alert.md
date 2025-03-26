@@ -19,7 +19,7 @@ This topic provides step-by-step instructions for closing an [alert](about-alert
 5. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 
 
     !!! info "Custom fields completion"
-        You can't close an alert unless all mandatory custom fields are completed.
+        You must complete all mandatory custom fields to close an alert.
 
 6. Select **Confirm**.
 

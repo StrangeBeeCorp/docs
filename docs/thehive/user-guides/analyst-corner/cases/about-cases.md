@@ -88,9 +88,7 @@ You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md)
 
 {!includes/access-close-cases.md!}
 
-Cases can be [closed](close-a-case.md) once the investigation is complete. 
-
-When closing a case, a [status]() must be selected to reflect the outcome of the investigation.
+Cases can be [closed](close-a-case.md) once the investigation is complete.
 
 ### Custom fields completion
 

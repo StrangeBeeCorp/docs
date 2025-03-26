@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for closing a [case](about-cases.m
 5. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 
 
     !!! info "Custom fields completion"
-        You can't close a case unless all mandatory custom fields are completed.
+        You must complete all mandatory custom fields to close a case.
 
 6. Select **Close tasks and case**.
 
