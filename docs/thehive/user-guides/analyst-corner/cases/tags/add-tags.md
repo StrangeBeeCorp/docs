@@ -10,6 +10,9 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 
     ![Taxonomy tags](/thehive/images/administration-guides/taxonomy-tags.gif)
 
+    !!! tip "Why can't I add any taxonomy tags?"
+        Taxonomy tags can be added only if at least one taxonomy has been activated. To do so, contact someone with 
+
 3. In the **Select tags from library** drawer, select the relevant taxonomy and the tags you want to add.
 
 4. Select **Add selected tags**.
