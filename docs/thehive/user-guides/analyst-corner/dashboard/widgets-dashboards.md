@@ -252,6 +252,16 @@ The maximum value displayed on the gauge. This defines the upper limit of the sc
 
 Filters to refine and customize the displayed data.
 
+## Table widget
+
+
+
+Add a table widget to your dashboards.
+
+Table widget configuration includes:
+
+
+
 ## Next steps
 
 * [About Dashboards](about-dashboards.md)
