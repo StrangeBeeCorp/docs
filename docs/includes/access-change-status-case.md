@@ -1,0 +1,2 @@
+!!! warning "Required permissions for changing a case status"
+    Only users with the `manageCase/update` or `manageCase/reopen` permissions can change a case status in TheHive.
