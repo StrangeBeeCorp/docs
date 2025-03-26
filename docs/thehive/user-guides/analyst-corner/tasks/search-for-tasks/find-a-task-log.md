@@ -7,7 +7,7 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 !!! tip "Why can't I find a task log?"
     Since TheHive 5.5, [case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks and task logs won't appear in the list, search results, or dashboards.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Global Search** view from the sidebar menu.
 
@@ -25,7 +25,7 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Preview Tasks](../../tasks/preview-task-details/Preview-tasks.md)
 * [Actions on Tasks](../../tasks/preview-task-details/actions.md)

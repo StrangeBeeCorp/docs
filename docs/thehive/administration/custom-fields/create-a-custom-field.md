@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Entities management** view from the sidebar menu.
 
@@ -67,6 +67,6 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 5. Select **Confirm custom field creation**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/add-custom-fields.md)

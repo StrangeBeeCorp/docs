@@ -145,7 +145,7 @@ Several options are offered to create a case in TheHive:
 
 The creation of cases through detection tools is managed directly via the [API](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Create%20case).
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Apply a Case Template](apply-a-case-template.md)
 * [Add Tasks to a Case](add-tasks-to-a-case.md)

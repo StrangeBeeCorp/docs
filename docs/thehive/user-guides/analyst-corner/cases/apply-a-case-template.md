@@ -6,7 +6,7 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 {!includes/access-update-a-case.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the case to apply the template](../cases/search-for-cases/find-a-case.md).
 
@@ -20,7 +20,7 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add Tasks to a Case](add-tasks-to-a-case.md)
 * [Add Custom Fields](add-custom-fields.md)

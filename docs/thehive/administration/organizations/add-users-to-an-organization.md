@@ -60,7 +60,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 10. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

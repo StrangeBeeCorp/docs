@@ -37,6 +37,6 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 3. Review the available indicators for your alert.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Measure Case Performance](measure-case-management-performance.md)

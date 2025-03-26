@@ -6,13 +6,13 @@ Links can point to other TheHive cases or to external resources.
 
 {!includes/case-links-v55.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to view links.
 
 2. {!includes/linked-elements-section.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Link to a Case](add-a-link-to-a-case.md)
 * [Remove a Link from a Case](remove-a-link-from-a-case.md)

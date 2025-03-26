@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for removing a [Cortex](about-cort
 
 {!includes/administrator-access-manage-cortex-connection.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -20,7 +20,7 @@ This topic provides step-by-step instructions for removing a [Cortex](about-cort
 
 6. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit Cortex Connection Settings](edit-cortex-connection-settings.md)
 * [Add a Cortex Server](add-a-cortex-server.md)

@@ -9,7 +9,7 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 
 {!includes/administrator-access-manage-cortex-connection.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -69,7 +69,7 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 
 11. Select **Add**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit Cortex Connection Settings](edit-cortex-connection-settings.md)
 * [Remove a Cortex Server](remove-a-cortex-server.md)

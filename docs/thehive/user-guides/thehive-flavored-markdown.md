@@ -262,6 +262,6 @@ Sample code here...
 
 [id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About the Knowledge Base](../user-guides/knowledge-base/about-knowledge-base.md)

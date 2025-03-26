@@ -87,7 +87,7 @@ Several types of notifiers are available in TheHive:
 
 {!includes/access-notifications.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Notification](create-a-notification.md)
 * [Edit a Notification](edit-a-notification.md)

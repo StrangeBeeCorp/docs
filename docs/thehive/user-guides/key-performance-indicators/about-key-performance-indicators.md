@@ -40,7 +40,7 @@ The time it takes for your security team to fully resolve an incident after it h
 
 For more information on these KPIs, consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Hide Key Performance Indicators](hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)

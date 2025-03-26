@@ -31,7 +31,7 @@ In TheHive, an alert includes the following elements:
 
 * [TTPs](../alerts/alerts-description/view-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
