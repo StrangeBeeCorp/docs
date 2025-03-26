@@ -49,7 +49,7 @@ You can use an alert feeder to integrate any external system that exposes a publ
 
 {!includes/access-feeders.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create an Alert Feeder](create-a-feeder.md)
 * [Edit an Alert Feeder](edit-a-feeder.md)

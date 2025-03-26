@@ -11,7 +11,7 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 {!includes/access-manage-case-sharing.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the shared case where you want to share the observable](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
@@ -25,7 +25,7 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 6. Select **Add share**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Share a Task with Other Organizations](../tasks/share-a-task.md)
 * [Share a Case with Other Organizations](share-a-case.md)

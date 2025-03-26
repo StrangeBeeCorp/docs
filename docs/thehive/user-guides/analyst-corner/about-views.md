@@ -35,6 +35,6 @@ Views are user-specific and list-specific, meaning each user has access to their
 
 The last used view is automatically applied by default when accessing a list.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Filtering and Sorting](about-filtering-and-sorting.md)

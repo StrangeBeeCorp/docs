@@ -36,7 +36,7 @@ In TheHive, you can make important tasks stand out using the following options:
 * [Pin a task](../tasks/preview-task-details/actions.md#unpin): Pin a task to quickly access it from the **Tasks** tab within a case.
 * [Flag a task](../tasks/preview-task-details/actions.md#unflag): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)
 * [Actions on Tasks](../tasks/preview-task-details/actions.md)

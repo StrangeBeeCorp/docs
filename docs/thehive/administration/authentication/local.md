@@ -6,7 +6,7 @@ This is the default behavior of TheHive. The application stores usernames and pa
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -29,6 +29,6 @@ This is the default behavior of TheHive. The application stores usernames and pa
 
 6. To prevent users from using their login as a password, enable the **Disallow using usernames as passwords** toggle.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)

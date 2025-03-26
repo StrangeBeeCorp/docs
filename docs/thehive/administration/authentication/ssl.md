@@ -44,7 +44,7 @@ This guide provides configuration instructions for different environments:
     docker restart <your-thehive-container>
     ```
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
 * [Configure a Local Authentication Provider](local.md)

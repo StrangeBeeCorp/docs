@@ -16,7 +16,7 @@ Endpoints are required in TheHive to configure the following notifiers:
 * [Teams notifier](../manage-notifications/notifiers/teams.md)
 * [Webhook notifier](../manage-notifications/notifiers/webhook.md)
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Global Endpoint](../../../../administration/add-a-global-endpoint.md)
 * [Add a Local HttpRequest Endpoint](add-http-request-endpoint.md)

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
 {!includes/access-functions.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -48,7 +48,7 @@ This topic provides step-by-step instructions for editing a [function](about-fun
 
 6. Select **Save**. 
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Revoke a Function](revoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)

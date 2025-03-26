@@ -51,7 +51,7 @@ You can also hide data in some widgets by selecting the corresponding item in th
 
 Every user has read access to the dashboards within their organization and can export dashboards.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)

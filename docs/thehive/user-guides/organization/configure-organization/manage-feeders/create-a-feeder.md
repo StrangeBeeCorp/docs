@@ -10,7 +10,7 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
 {!includes/access-feeders.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -175,7 +175,7 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
 You can find the function example for creating an alert from Airtable in the [GitHub repository]().
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit an Alert Feeder](edit-a-feeder.md)
 * [Turn Off an Alert Feeder](turn-off-a-feeder.md)

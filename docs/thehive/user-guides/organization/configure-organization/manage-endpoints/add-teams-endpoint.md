@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for adding a local Microsoft Teams
 
 {!includes/access-endpoints.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 ### Step 1: Create a flow in Microsoft Teams
 
@@ -94,6 +94,6 @@ This topic provides step-by-step instructions for adding a local Microsoft Teams
 
 9. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Configure the Teams Notifier](../manage-notifications/notifiers/teams.md)

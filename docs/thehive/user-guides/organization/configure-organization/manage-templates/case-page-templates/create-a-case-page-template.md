@@ -6,7 +6,7 @@ To import an existing case template from another organization or TheHive instanc
 
 {!includes/access-manage-case-page-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -29,7 +29,7 @@ To import an existing case template from another organization or TheHive instanc
 
 6. Select **Add page template**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Case Page Template](edit-a-case-page-template.md)
 * [Delete a Case Page Template](delete-a-case-page-template.md)

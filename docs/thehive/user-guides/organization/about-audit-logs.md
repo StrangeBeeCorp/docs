@@ -127,6 +127,6 @@ An audit entry is represented as a JSON object with the following structure:
 }
 ```
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Write a FilteredEvent Trigger](../organization/configure-organization/manage-notifications/write-filtered-event-trigger.md)

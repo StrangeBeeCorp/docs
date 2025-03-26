@@ -6,7 +6,7 @@ You can [import](import-a-case-page-template.md) the exported JSON file, into an
 
 {!includes/access-manage-case-page-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -18,6 +18,6 @@ You can [import](import-a-case-page-template.md) the exported JSON file, into an
 
 5. Select **Export case template** to export the case page template in JSON format.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Import a Case Page Template](import-a-case-page-template.md)

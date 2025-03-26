@@ -70,7 +70,7 @@ Instructions vary depending on whether you want to create a page at the:
 
 9. {!includes/save-content-page.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)

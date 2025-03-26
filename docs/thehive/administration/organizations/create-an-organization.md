@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Organizations** view from the sidebar menu.
 
@@ -55,7 +55,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 5. Optional: In the **Organizations** view, locate your new organization, hover over it, select :fontawesome-solid-eye:, select the default organization logo to modify it, and upload an image to set it as the new logo for your organization.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add Users to an Organization](add-users-to-an-organization.md)
 * [Link an Organization](link-an-organization.md)

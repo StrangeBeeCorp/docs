@@ -8,7 +8,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -205,7 +205,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
             - Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
             - Refer to [Google's OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
 * [Configure SSL](ssl.md)

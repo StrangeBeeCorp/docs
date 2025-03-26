@@ -28,7 +28,7 @@ Knowledge Base pages use [TheHive-flavored Markdown syntax](../thehive-flavored-
 
 After a page is created at the organization level, it's visible to all users. At the case level, it's visible only to users with access to the case.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)

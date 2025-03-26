@@ -34,7 +34,7 @@ The values you can enter in custom fields fall into two categories:
 
 {!includes/access-manage-custom-fields.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Custom Field](create-a-custom-field.md)
 * [Edit a Custom Field](edit-a-custom-field.md)

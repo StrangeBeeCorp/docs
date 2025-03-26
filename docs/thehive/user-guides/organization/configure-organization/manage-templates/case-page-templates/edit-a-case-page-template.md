@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for editing a [case page template]
 
 {!includes/access-manage-case-page-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -29,7 +29,7 @@ This topic provides step-by-step instructions for editing a [case page template]
 
 7. Select **Edit page template**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Export a Case Page Template](export-a-case-page-template.md)
 * [Delete a Case Page Template](delete-a-case-page-template.md)

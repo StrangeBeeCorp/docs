@@ -37,7 +37,7 @@ Instructions vary depending on whether you want to edit a page at the:
 
 6. {!includes/save-content-page.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)

@@ -8,7 +8,7 @@ The link can point to another TheHive case or to an external resource.
 
 {!includes/access-manage-case-links.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add the link.
 
@@ -30,7 +30,7 @@ The link can point to another TheHive case or to an external resource.
 
 5. Select :fontawesome-solid-check:.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Remove a Link from a Case](remove-a-link-from-a-case.md)
 * [View Links in a Case](view-links-in-a-case.md)

@@ -39,7 +39,7 @@ Regards,
 TheHive Notification System
 ```
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Configure the EmailerToAddr Notifier](../manage-notifications/notifiers/email-to-addr.md)
 * [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
