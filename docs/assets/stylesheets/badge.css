@@ -1,0 +1,32 @@
+/* this file implements styling for badge shortcodes
+ * taken directly from mkdocs-material here:
+ * https://github.com/squidfunk/mkdocs-material/blob/master/src/overrides/assets/stylesheets/custom/_typeset.scss
+ * and compiled into similar CSS
+ */
+
+.md-typeset .mdx-badge {
+	font-size: 0.85em;
+}
+
+.md-typeset .mdx-badge--right {
+	float: right;
+	margin-left: 0.35em;
+}
+
+.md-typeset .mdx-badge__icon {
+  border-top-left-radius: .1rem;
+  border-bottom-left-radius: .1rem;
+  background: var(--md-accent-fg-color--transparent);
+  padding: .2rem;
+}
+
+.md-typeset .mdx-badge__icon:last-child {
+	border-radius: px2rem(2px);
+}
+
+.md-typeset .mdx-badge__text {
+  border-bottom-right-radius: .1rem;
+  border-top-right-radius: .1rem;
+  box-shadow: 0 0 0 1px inset var(--md-accent-fg-color--transparent);
+  padding: .2rem .3rem;
+}
