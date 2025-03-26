@@ -19,7 +19,7 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 3. Move through the **Shares** section.
 
-4. Select :fontawesome-regular-square-plus:.
+4. Select :fontawesome-solid-plus:.
 
 5. Select the linked organization to share the task with.
 

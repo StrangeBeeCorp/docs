@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png) 
 
-2. Select the organization to add the user to, then select :fontawesome-regular-square-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
+2. Select the organization to add the user to, then select :fontawesome-solid-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
 
 3. In the **Adding a user** drawer, enter:
 
