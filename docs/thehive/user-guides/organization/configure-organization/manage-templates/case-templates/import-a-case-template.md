@@ -9,7 +9,7 @@ This is useful if you want to use a case template from another organization or T
 
 {!includes/access-manage-case-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -23,7 +23,7 @@ This is useful if you want to use a case template from another organization or T
 
 6. Select **Confirm case template import**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Case](../../../../analyst-corner/cases/create-a-new-case.md)
 * [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

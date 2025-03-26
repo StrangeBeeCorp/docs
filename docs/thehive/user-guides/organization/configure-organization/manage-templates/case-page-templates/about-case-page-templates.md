@@ -24,7 +24,7 @@ Once created, case page templates are automatically available to all users in yo
 
 If you need to share a case page template with another organization or TheHive instance, you can [export it](export-a-case-page-template.md) and [import it](import-a-case-page-template.md).
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Case Page Template](create-a-case-page-template.md)
 * [Edit a Case Page Template](edit-a-case-page-template.md)

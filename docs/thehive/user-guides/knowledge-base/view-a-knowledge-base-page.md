@@ -21,7 +21,7 @@ Instructions vary depending on whether you want to view a page at the:
 
 3. Select the page you want to view in the right pane.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)

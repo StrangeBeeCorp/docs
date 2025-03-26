@@ -54,6 +54,6 @@ You can apply sorting to only one field at a time, as multiple-field sorting is 
 
 You can save applied sorting in [a view](about-views.md) to avoid reapplying it each time. Simply select the saved view whenever needed.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Views](about-views.md)

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 
 {!includes/license-required-case-timelines.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../../search-for-cases/find-a-case.md) where you want to add the custom event to the timeline.
 
@@ -35,7 +35,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 
 5. Select **Add**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Delete a Custom Event in a Case Timeline](delete-custom-event-timeline.md)
 * [View a Case Timeline](view-case-timeline.md)

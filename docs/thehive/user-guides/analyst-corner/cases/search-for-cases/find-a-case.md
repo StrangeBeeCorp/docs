@@ -69,7 +69,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions on Cases](../cases-description/actions.md)
 * [Merge Cases](../merge-cases.md)

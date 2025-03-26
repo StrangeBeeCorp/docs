@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for restricting the visibility of 
 
 {!includes/access-manage-visibility-cases.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) you want to restrict.
 
@@ -23,6 +23,6 @@ This topic provides step-by-step instructions for restricting the visibility of 
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Restore Case Visibility](restore-visibility-case.md)

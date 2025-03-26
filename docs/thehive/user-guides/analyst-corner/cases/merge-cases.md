@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for merging [cases](../cases/about
 
 {!includes/access-merge-cases.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the two cases](../cases/search-for-cases/find-a-case.md) that you want to merge.
 
@@ -27,7 +27,7 @@ This topic provides step-by-step instructions for merging [cases](../cases/about
 
 4. Select **Merge**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
 * [Create a Case](../cases/create-a-new-case.md)

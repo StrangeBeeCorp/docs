@@ -11,7 +11,7 @@ If you want to know more about the KPIs available in TheHive, refer to the [Abou
 !!! warning "Required permissions for hiding KPIs"
     Only users with an admin-type profile that has the `manageConfig` permission can hide KPIs in case and alert descriptions in TheHive.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Organization** view from the sidebar menu.
 
@@ -27,7 +27,7 @@ If you want to know more about the KPIs available in TheHive, refer to the [Abou
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Measure Case Management Performance](measure-case-management-performance.md)
 * [Measure Alert Management Performance](measure-alert-management-performance.md)

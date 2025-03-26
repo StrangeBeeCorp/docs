@@ -31,7 +31,7 @@ Instructions vary depending on whether you want to delete a page at the:
 
 5. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)

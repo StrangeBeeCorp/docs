@@ -184,6 +184,6 @@ To check if a field doesn't exist, use:
 }
 ```
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Write a FilteredEvent Trigger](write-filtered-event-trigger.md)

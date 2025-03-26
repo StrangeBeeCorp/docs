@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for exporting a [dashboard](about-
 
 You can [import](import-a-dashboard.md) the exported JSON file, into another organization or TheHive instance for sharing.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -15,6 +15,6 @@ You can [import](import-a-dashboard.md) the exported JSON file, into another org
 
     ![Export a dashboard](/thehive/images/user-guides/analyst-corner/dashboard/export-a-dashboard.png)
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Import a Dashboard](import-a-dashboard.md)

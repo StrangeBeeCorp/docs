@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for viewing a [dashboard](about-dashboards.md) in TheHive.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for viewing a [dashboard](about-da
 
     * You can also hide data in some widgets by selecting the corresponding item in the legend.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
