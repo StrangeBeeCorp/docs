@@ -28,6 +28,10 @@ The values you can enter in custom fields fall into two categories:
 * Free text: Users can manually enter any value.
 * Dropdown list: Users choose from predefined options.
 
+## Completion rules
+
+Custom fields can be either optional or mandatory. You must complete all mandatory custom fields before [closing a case](../../user-guides/analyst-corner/cases/close-a-case.md) or [an alert](../../user-guides/analyst-corner/alerts/close-an-alert.md).
+
 ## Permissions
 
 {!includes/administrator-access-manage-custom-fields.md!}
