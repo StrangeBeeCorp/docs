@@ -10,8 +10,8 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 
     ![Taxonomy tags](/thehive/images/administration-guides/taxonomy-tags.gif)
 
-    !!! tip "Why can't I add any taxonomy tags?"
-        Taxonomy tags can be added only if at least one taxonomy has been activated. To do so, contact someone with 
+    !!! tip "Can't find the :fontawesome-regular-square-plus: button?"
+        The button appears only if at least one taxonomy is active. Contact someone with admin-level permissions to [activate taxonomies](../../../../administration/taxonomies/activate-deactivate-a-taxonomy.md).
 
 3. In the **Select tags from library** drawer, select the relevant taxonomy and the tags you want to add.
 
