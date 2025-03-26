@@ -6,7 +6,7 @@ This is useful if you want to use a case page template from another organization
 
 {!includes/access-manage-case-page-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -20,6 +20,6 @@ This is useful if you want to use a case page template from another organization
 
 6. Select **Confirm case template import**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)

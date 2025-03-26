@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for turning off an [alert feeder](
 
 {!includes/access-feeders.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for turning off an [alert feeder](
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create an Alert Feeder](create-a-feeder.md)
 * [Edit an Alert Feeder](edit-a-feeder.md)

@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for restoring the visibility of a 
 
 {!includes/access-manage-visibility-cases.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) that you want to restore visibility for all users.
 
@@ -18,6 +18,6 @@ This topic provides step-by-step instructions for restoring the visibility of a 
 
 4. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Restrict Case Visibility](restrict-visibility-case.md)

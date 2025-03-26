@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for removing a link from a [case](
 
 {!includes/access-manage-case-links.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 !!! info "Automatically removed case links"
     Deleting or merging a case automatically removes its links. No manual action is required.
@@ -19,7 +19,7 @@ This topic provides step-by-step instructions for removing a link from a [case](
 
 4. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Link to a Case](add-a-link-to-a-case.md)
 * [View Links in a Case](view-links-in-a-case.md)

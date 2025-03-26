@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -104,7 +104,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     
     Set the most secure or frequently used provider first to define the priority order. TheHive then attempts authentication starting with the highest priority and continues down the list until it authenticates the user or checks all providers.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Configure a Local Authentication Provider](local.md)
 * [Configure an Active Directory Authentication Provider](ad.md)

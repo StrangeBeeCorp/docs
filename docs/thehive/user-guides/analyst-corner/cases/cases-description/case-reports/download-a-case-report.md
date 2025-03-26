@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for downloading a [case report](ab
 
 {!includes/license-required-case-reports.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../../search-for-cases/find-a-case.md) to download the report.
 
@@ -17,6 +17,6 @@ This topic provides step-by-step instructions for downloading a [case report](ab
 
 4. Select **Save and download**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Cases](../../about-cases.md)

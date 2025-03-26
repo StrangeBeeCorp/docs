@@ -13,7 +13,7 @@ This topic provides step-by-step instructions for configuring the RunAnalyzer [n
 
 {!includes/access-notifications.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -27,6 +27,6 @@ This topic provides step-by-step instructions for configuring the RunAnalyzer [n
 
 6. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Notification](../edit-a-notification.md)

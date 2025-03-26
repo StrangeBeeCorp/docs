@@ -61,7 +61,7 @@ Two options are available to measure a case's performance:
 
 {!includes/units-time-to.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Measure Alert Performance](measure-alert-management-performance.md)
 

@@ -24,6 +24,6 @@ Case reports are available in three formats:
 
 {!includes/access-manage-case-report-templates.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Download a Case Report](download-a-case-report.md)

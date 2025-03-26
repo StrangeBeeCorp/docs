@@ -96,7 +96,7 @@ A function in TheHive can operate in one of three modes:
 
 {!includes/access-functions.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Function](create-a-function.md)
 * [Edit a Function](edit-a-function.md)

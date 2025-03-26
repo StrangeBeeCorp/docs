@@ -52,7 +52,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions](../alerts-description/actions.md)
 * [Merge Alerts](../alerts-description/merge-alerts.md)

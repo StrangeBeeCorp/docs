@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 {!includes/license-required-case-reports.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -44,6 +44,6 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 12. Select :fontawesome-solid-floppy-disk: to save your case report template.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Case Report Template](edit-a-case-report-template.md)

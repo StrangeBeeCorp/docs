@@ -252,7 +252,7 @@ The maximum value displayed on the gauge. This defines the upper limit of the sc
 
 Filters to refine and customize the displayed data.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Dashboards](about-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)

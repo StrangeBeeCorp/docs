@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for manually running a [function](
 
 {!includes/access-functions.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the case](../../../analyst-corner/cases/search-for-cases/find-a-case.md) or [alert](../../../analyst-corner/alerts/search-for-alerts/find-an-alert.md) on which you want to run the function.
 
@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for manually running a [function](
 
 5. Select **Launch action(s)**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Function](edit-a-function.md)
 * [Revoke a Function](revoke-a-function.md)

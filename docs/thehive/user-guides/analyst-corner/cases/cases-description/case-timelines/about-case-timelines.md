@@ -28,7 +28,7 @@ You can display case timelines as either a graph or a list.
 
 You can [create](add-custom-event-timeline.md) and [delete](delete-custom-event-timeline.md) a custom event, but you can't edit it after creation.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Custom Event to a Case Timeline](add-custom-event-timeline.md)
 * [Delete a Custom Event in a Case Timeline](delete-custom-event-timeline.md)

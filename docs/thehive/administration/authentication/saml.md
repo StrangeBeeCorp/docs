@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 !!! info "Prerequisite"
     Users must have an existing account in TheHive's local database to authenticate successfully.
@@ -72,6 +72,6 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     If you're unsure of the value set in your IdP, we recommend setting it to *90 days*, as this is the default for most IdPs.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
