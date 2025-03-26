@@ -13,7 +13,7 @@ Instructions vary depending on whether you want to create a page at the:
 
 1. {!includes/knowledge-base-view-go-to.md!}
 
-2. Select **Add a page** or :fontawesome-regular-square-plus:.
+2. Select **Add a page** or :fontawesome-solid-plus:.
 
 3. In the **Add a page to the Knowledge Base** drawer, enter the following information:
 
@@ -41,7 +41,7 @@ Instructions vary depending on whether you want to create a page at the:
 
 2. {!includes/pages-tab-go-to.md!}
 
-3. Select **Add a page** or :fontawesome-regular-square-plus:.
+3. Select **Add a page** or :fontawesome-solid-plus:.
 
 4. Select one of the following options:
 

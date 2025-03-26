@@ -14,7 +14,7 @@ To import an existing case template from another organization or TheHive instanc
 
 3. {!includes/case-page-templates-go-to.md!}
 
-4. Select :fontawesome-regular-square-plus:.
+4. Select :fontawesome-solid-plus:.
 
 5. In the **Adding a page template** drawer, enter the following fields:
 

@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for adding a global endpoint(../ma
 
 2. {!includes/global-endpoints-tab-go-to.md!}
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
 4. Select the connector for which you want to create an endpoint.
 
