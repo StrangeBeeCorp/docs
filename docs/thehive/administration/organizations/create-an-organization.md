@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     ---
 
-2. Select :fontawesome-regular-square-plus:.
+2. Select :fontawesome-solid-plus:.
 
     ---
 

@@ -24,7 +24,7 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### Triggers on cases
 
-* *CaseClosed*: Triggered when [a case is closed](../../../analyst-corner/cases/cases-description/actions.md#close)
+* *CaseClosed*: Triggered when [a case is closed](../../../analyst-corner/cases/close-a-case.md)
 * *CaseCreated*: Triggered when [a new case is created](../../../analyst-corner/cases/create-a-new-case.md)
 * *CaseFlagged*: Triggered when [a case is flagged](../../../analyst-corner/cases/cases-description/actions.md#flagunflag)
 * *CaseShared*: Triggered when [a case is shared](../../../analyst-corner/cases/share-a-case.md)
@@ -32,9 +32,9 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 #### Triggers on alerts
 
 * *AlertAssigned*: Triggered when an alert is assigned to a user
-* *AlertClosed*: Triggered when [an alert is closed](../../../analyst-corner/alerts/alerts-description/actions.md#close)
+* *AlertClosed*: Triggered when [an alert is closed](../../../analyst-corner/alerts/close-an-alert.md)
 * *AlertCreated*: Triggered when [a new alert is created](../../../analyst-corner/alerts/about-alerts.md#sources)
-* *AlertImported*: Triggered when an alert is imported, meaning [a case is created from an alert](../../../analyst-corner/cases/create-a-new-case.md#create-a-case-from-an-alert) or [an alert is merged into an existing case](../../../analyst-corner/alerts/alerts-description/merge-alerts.md)
+* *AlertImported*: Triggered when an alert is imported, meaning [a case is created from an alert](../../../analyst-corner/cases/create-a-new-case.md#create-a-case-from-an-alert) or an alert is merged into an existing case.
 
 #### Triggers on observables
 

@@ -16,7 +16,7 @@ The alert details preview window opens.
 
 You can see details like the id, created by, created at date, last reviewed by, last reviewed date, import date, TLP, PAP and severity details, title, tags, description, status and summary of the alert. 
 
-Add **Custom fields** (Refer to [`Add custom fields`](../../cases/add-custom-fields.md)), **business unit**, and **location**  details.
+Add **Custom fields** (Refer to [`Add custom fields`](../../cases/custom-fields/add-custom-fields.md)), **business unit**, and **location**  details.
 
 1. Click **Add** to enter business unit and location details. 
 

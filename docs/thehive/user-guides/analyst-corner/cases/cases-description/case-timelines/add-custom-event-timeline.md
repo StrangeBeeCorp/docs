@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 
 2. {!includes/case-timeline-tab-go-to.md!}
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
 4. In the **Add custom event** drawer, enter the following information:
 
