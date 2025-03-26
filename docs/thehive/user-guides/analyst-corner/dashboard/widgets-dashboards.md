@@ -10,7 +10,7 @@ A row widget is a prerequisite for adding other types of widgets. Each row can c
 
 ## Bar widget
 
-Add a bar widget to your dashboards.
+Displays grouped data in a vertical bar chart. Useful for comparing categories over time or by type.
 
 Bar widget configuration includes:
 
@@ -56,7 +56,7 @@ For certain category fields, you can customize the label and color of each possi
 
 ## Donut widget
 
-Add a donut widget to your dashboards.
+Visualizes categorical data as a segmented ring. Ideal for showing proportions or distributions within a dataset.
 
 Donut widget configuration includes:
 
@@ -94,7 +94,7 @@ For certain category fields, you can customize the label and color of each possi
 
 ## Line widget
 
-Add a line widget to your dashboards.
+Plots one or more data series as lines across a time axis. Useful for identifying trends and comparisons over time.
 
 Line widget configuration includes:
 
@@ -132,7 +132,7 @@ The option to apply a logarithmic scale for better visualization of large value 
 
 ## Radar widget
 
-Add a radar widget to your dashboards.
+Displays data across multiple categories in a radial chart. Good for comparing multiple variables on the same scale.
 
 Radar widget configuration includes:
 
@@ -158,7 +158,7 @@ Filters to refine and customize the displayed data.
 
 ## Counter widget
 
-Add a counter widget to your dashboards.
+Shows numeric values with optional thresholds. Useful for displaying KPIs or status metrics at a glance.
 
 Counter widget configuration includes:
 
@@ -194,7 +194,7 @@ Enter the following details:
 
 ## Text widget
 
-Add a text block to your case report template.
+Displays rich text or aggregated data using TheHive-flavored Markdown. Useful for contextual notes, summaries, or custom metrics.
 
 Text widget configuration includes:
 
@@ -220,7 +220,7 @@ Enter the following details:
 
 ## Gauge widget
 
-Add a gauge widget to your dashboards.
+Visualizes a single value against a scale using a circular gauge. Ideal for tracking performance against defined thresholds.
 
 Gauge widget configuration includes:
 
@@ -254,13 +254,48 @@ Filters to refine and customize the displayed data.
 
 ## Table widget
 
+!!! note "Available from version 5.5"
+    Table widgets are available starting in version 5.5.
 
-
-Add a table widget to your dashboards.
+Displays data in a tabular format. Useful for listing critical in-progress cases, alerts, or tasks.
 
 Table widget configuration includes:
 
+**- Title**
 
+A title to define the widget’s name.
+
+**- Entity**
+
+The specific entity the widget applies to. Only cases, alerts, and tasks are supported.
+
+**- Max elements in the table**
+
+The maximum number of elements to display in the table.
+
+**- Period field**
+
+The date field that controls how filters from the **Period** dropdown at the top of the page apply to the data.
+
+**- Columns**
+
+The data fields to display in each column of the table. For optimal visual clarity on a one-third width layout, we recommend using no more than three columns. You can configure up to nine columns in total.
+
+!!! info "Excluded data fields"
+
+    Some data fields are excluded and can't be selected:
+
+    * For cases: `description`, `customFields`, `tags`, `userPermissions`, `extraData`, `summary`, and any computed fields.
+    * For alerts: `description`, `customFields`, `tags`, `userPermissions`, `extraData`, `externalLink`, `summary`, and any computed fields (for example, handlingDuration).
+    * For tasks: `description` and `extraData`.
+
+**- Filters**
+
+Filters to refine and customize the displayed data.
+
+**- Sort**
+
+Sorting rules to refine the displayed data.
 
 ## Next steps
 

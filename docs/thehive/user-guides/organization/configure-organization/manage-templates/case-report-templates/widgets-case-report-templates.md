@@ -6,7 +6,7 @@ This topic describes each widget type and its attributes.
 
 ## Text widget
 
-Add a text block to your case report template.
+Displays formatted text, with support for case variables and TheHive-flavored Markdown.
 
 Text widget configuration includes:
 
@@ -17,7 +17,7 @@ Format your text block using [TheHive-flavored Markdown syntax](../../../../theh
 
 ## Image widget
 
-Add an image to your case report template.
+Displays an image to visually support the report content.
 
 !!! warning "Supported image formats"
     Image widgets only support JPG, JPEG, and PNG formats.
@@ -29,7 +29,7 @@ Image widget configuration includes:
 
 ## Table widget
 
-Add a table to your case report template.
+Displays structured data in a tabular format, based on selected case elements.
 
 Table widget configuration includes:
 
@@ -40,7 +40,7 @@ Table widget configuration includes:
 
 ## List widget
 
-Add a list to your case report template.
+Displays a simplified list of observables, tasks, TTPs, or alerts.
 
 List widget configuration includes:
 
@@ -51,7 +51,7 @@ List widget configuration includes:
 
 ## Timeline widget
 
-Add a case timeline in a list format to your case report template.
+Displays case activity in a chronological list format.
 
 Timeline widget configuration includes:
 
@@ -63,7 +63,7 @@ Timeline widget configuration includes:
 !!! note "Available since version 5.4"
     Comments widgets are available only for users running TheHive version 5.4 or later.
 
-Add case comments to your case report template.
+Displays case comments with optional filters and a maximum display limit.
 
 Comments widget configuration includes:
 
@@ -76,7 +76,7 @@ Comments widget configuration includes:
 !!! note "Available since version 5.4"
     Pages widgets are available only for users running TheHive version 5.4 or later.
 
-Add case pages to your case report template.
+Displays selected [case pages](../../../../knowledge-base/about-knowledge-base.md).
 
 Pages widget configuration includes:
 
