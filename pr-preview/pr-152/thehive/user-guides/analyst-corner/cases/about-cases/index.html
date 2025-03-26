@@ -5703,6 +5703,28 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../alerts/close-an-alert/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Close an Alert
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -5714,10 +5736,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6_1_15" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6_1_16" >
         
           
-          <label class="md-nav__link" for="__nav_2_7_6_1_15" id="__nav_2_7_6_1_15_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7_6_1_16" id="__nav_2_7_6_1_16_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -5729,8 +5751,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_7_6_1_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7_6_1_15">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_7_6_1_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_6_1_16">
             <span class="md-nav__icon md-icon"></span>
             Custom Fields
           </label>
@@ -5958,47 +5980,14 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Linking elements">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#link-categories" class="md-nav__link">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closing-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Link categories
+      Closing cases
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#link-display" class="md-nav__link">
-    <span class="md-ellipsis">
-      Link display
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#actions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Actions
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-cases-with-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merging cases with links
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -6008,63 +5997,6 @@
       Case visibility
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Case visibility">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usage
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expected-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expected behavior
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Expected behavior">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#indicators" class="md-nav__link">
-    <span class="md-ellipsis">
-      Indicators
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-a-restricted-case" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merging a restricted case
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -7163,6 +7095,28 @@
   
   <span class="md-ellipsis">
     Run Analyzers on Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../close-a-case/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Close a Case
     
   </span>
   
@@ -9692,6 +9646,15 @@
 <p>When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the <em>External alert link</em> type. This link remains even if you later unlink the alert from the case.</p>
 </li>
 </ul>
+<h2 id="closing-cases">Closing cases<a class="headerlink" href="#closing-cases" title="Permanent link">#</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Required permissions for closing cases</p>
+<p>Only users with the <code>manageCase/update</code> permission can close cases in TheHive.</p>
+</div>
+<p>Cases can be <a href="../close-a-case/">closed</a> once the investigation is complete. </p>
+<p>When closing a case, a <a href="">status</a> must be selected to reflect the outcome of the investigation.</p>
+<h3 id="custom-fields-completion">Custom fields completion<a class="headerlink" href="#custom-fields-completion" title="Permanent link">#</a></h3>
+<p>Cases can't be closed if any required <a href="../../../../administration/custom-fields/about-custom-fields/">custom fields</a> are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.</p>
 <h2 id="case-visibility">Case visibility<a class="headerlink" href="#case-visibility" title="Permanent link">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Available from version 5.5</p>
@@ -9746,6 +9709,7 @@
 <li><a href="../add-a-link-to-a-case/">Add a Link to a Case</a></li>
 <li><a href="../remove-a-link-from-a-case/">Remove a Link from a Case</a></li>
 <li><a href="../view-links-in-a-case/">View Links in a Case</a></li>
+<li><a href="../close-a-case/">Close a Case</a></li>
 </ul></div>
 
 
