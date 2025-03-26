@@ -97,6 +97,22 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-change-status-alert/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-change-status-case/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-close-alerts/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-close-cases/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-create-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -145,6 +161,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-custom-tags/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-manage-dashboards/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -178,6 +202,14 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-manage-organizations/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-statuses/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-taxonomies/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -245,6 +277,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/custom-fields-section-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/custom-tags-tab-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/dashboard-access/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -254,6 +294,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/endpoints-tab-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/entities-management-view-go-to/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -377,6 +421,18 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/status-tab-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/tasks-tab-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/taxonomies-tab-go-to/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/templates-go-to/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -489,10 +545,6 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/administration/alert-status/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/administration/analyzers-templates/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -502,10 +554,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/branding/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/administration/case-status/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -538,10 +586,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/smtp/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -597,6 +641,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/administration/custom-fields/delete-a-custom-field/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/custom-fields/edit-a-custom-field/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/about-organizations-sharing-rules/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -618,6 +670,46 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/lock-an-organization/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/status/about-statuses/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/status/change-color-of-a-status/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/status/change-visibility-of-a-status/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/status/create-a-status/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/status/delete-a-status/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/about-taxonomies/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/activate-deactivate-a-taxonomy/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/add-a-custom-taxonomy/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/delete-a-taxonomy/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/taxonomies/update-misp-taxonomies/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -873,6 +965,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/change-status-alert/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/close-an-alert/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/actions/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -937,11 +1037,23 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/adding_to_a_case/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/add-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/apply-a-case-template/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/change-status-case/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/close-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -993,10 +1105,6 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/attachments/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -1026,10 +1134,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/run-responders/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/tasks/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -1065,6 +1169,18 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -1078,6 +1194,18 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/about-tags/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/add-tags/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/remove-tags/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -1221,10 +1349,6 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/custom-tags/</loc>
-         <lastmod>2025-03-26</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/ui-configuration/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -1237,15 +1361,23 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/update/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
