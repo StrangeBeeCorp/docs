@@ -297,7 +297,7 @@ Filters to refine and customize the displayed data.
 
 Sorting rules to refine the displayed data.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Dashboards](about-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
