@@ -29,6 +29,6 @@ You can define custom fields in the following formats:
 
 After creation, custom fields are automatically available to all users across your organizations, allowing them to [add the fields](../../user-guides/analyst-corner/cases/cases-description/add-custom-fields.md) to cases and alerts. You can configure these fields to be either optional or mandatory for analysts to complete.
 
-## Next steps
+<h2>Next steps</h2>
 
 [How to Create a Custom Field](create-a-custom-field.md)

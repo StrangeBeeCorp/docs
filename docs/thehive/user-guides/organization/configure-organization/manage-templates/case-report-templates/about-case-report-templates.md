@@ -32,7 +32,7 @@ You can add [widgets](widgets-case-report-templates.md) between these sections t
 
 Once created, case report templates are automatically available to all users in your organization within case descriptions.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Widgets](widgets-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)

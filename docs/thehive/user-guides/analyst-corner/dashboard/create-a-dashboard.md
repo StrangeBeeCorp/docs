@@ -8,7 +8,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
 {!includes/access-manage-dashboards.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -40,7 +40,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
 12. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Dashboard](edit-a-dashboard.md)
 * [View a Dashboard](view-a-dashboard.md)

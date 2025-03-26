@@ -27,6 +27,6 @@ TheHive runs on and is officially supported on the following operating systems:
 
 Additionally, an [**official Docker image**](https://hub.docker.com/r/strangebee/TheHive/tags) is available for users who prefer containerized deployments.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Step by Step Installation Guide](step-by-step-installation-guide.md)

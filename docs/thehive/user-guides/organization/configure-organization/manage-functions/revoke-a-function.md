@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for revoking a [function](about-fu
 
 {!includes/access-functions.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -36,6 +36,6 @@ This topic provides step-by-step instructions for revoking a [function](about-fu
 
     TheHive processes your input (the body of the HTTP call) using the function definition and executes the function accordingly. It then responds to the HTTP call with the data returned by the function.    
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Function](create-a-function.md)

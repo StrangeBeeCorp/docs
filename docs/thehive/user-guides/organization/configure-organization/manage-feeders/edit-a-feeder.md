@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for editing an [alert feeder](abou
 
 {!includes/access-feeders.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 !!! warning "Alert feeder and function names can't be modified after creation"
     You define the alert feeder and function names during creation and can't change them later. To modify them, you must [delete](delete-a-feeder.md) the existing alert feeder and [create](create-a-feeder.md) a new one.
@@ -104,7 +104,7 @@ This topic provides step-by-step instructions for editing an [alert feeder](abou
 
 14. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create an Alert Feeder](create-a-feeder.md)
 * [Turn Off an Alert Feeder](turn-off-a-feeder.md)

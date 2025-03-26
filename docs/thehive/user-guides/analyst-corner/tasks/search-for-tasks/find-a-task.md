@@ -55,7 +55,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions on Tasks](../preview-task-details/actions.md)
 * [Run Responders From Task](../preview-task-details/run-responders.md)

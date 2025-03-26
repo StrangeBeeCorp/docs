@@ -194,7 +194,7 @@ This topic lists all available objects for functions in TheHive.
 - `function.delete(functionIdOrName: string): void`: Deletes a function.
 - `function.find(query: any[]): OutputFunction`: Searches for functions based on query parameters.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Function](create-a-function.md)
 * [Revoke a Function](revoke-a-function.md)

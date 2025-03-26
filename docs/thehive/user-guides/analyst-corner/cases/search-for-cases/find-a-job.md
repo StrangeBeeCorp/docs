@@ -7,7 +7,7 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 !!! tip "Why can't I find a job?"
     Since TheHive 5.5, [case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables and any jobs launched on those observables won't appear in the list, search results, or dashboards.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Global Search** view from the sidebar menu.
 
@@ -28,7 +28,7 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Run Analyzers on Case](../cases-description/run-analyzer.md)
 * [Run Responders on Case](../cases-description/run-responders.md)
