@@ -40,9 +40,9 @@ In TheHive, a case includes the following elements:
 
 {!includes/access-merge-cases.md!}
 
-Cases can be merged when they belong to the same organization and share the same permission profile pairs. 
+Cases can be merged if they are similar or part of the same investigation, allowing you to centralize data. 
 
-Merging consolidates two cases into a new one, combining their contents and deleting the originals.
+To merge cases, they must belong to the same organization and share the same permission profile pairs. Merging consolidates two cases into a new one, combining their contents and deleting the originals.
 
 To learn how to merge cases, see [Merge Cases](../cases/merge-cases.md).
 
@@ -83,6 +83,16 @@ You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md)
 * When you merge cases, links from both cases are combined, and duplicates are removed based on the link and its type. Any links that point to the source merged cases are automatically removed.
 
 * When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. This link remains even if you later unlink the alert from the case.
+
+## Closing cases
+
+{!includes/access-close-cases.md!}
+
+Cases can be [closed](close-a-case.md) once the investigation is complete.
+
+### Custom fields completion
+
+Cases can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
 
 ## Case visibility
 
@@ -138,3 +148,4 @@ The list of authorized users includes all users who had access to any of the res
 * [Add a Link to a Case](add-a-link-to-a-case.md)
 * [Remove a Link from a Case](remove-a-link-from-a-case.md)
 * [View Links in a Case](view-links-in-a-case.md)
+* [Close a Case](close-a-case.md)

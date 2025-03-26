@@ -18,13 +18,13 @@ You can see details like the id, created by, created at date, updated date, TLP,
 
 In the right pane of the window, there is an option to **Add** the following: 
 
-1. [Add Task](../adding_to_a_case.md#add-tasks).
+1. [Add Task](../add-tasks-to-a-case.md).
 1. [Add Observable](../cases-description/observables.md#add-observables).
 1. [Add TTP](../cases-description/ttps.md#add-ttp).
 
 At the bottom of the window, there is an option to **Add** the following: 
 
-1. [Add custom fields](../cases-description/add-custom-fields.md).
+1. [Add custom fields](../../cases/custom-fields/add-custom-fields.md).
 1. Add **business unit**, and **location**  details.
 
 1. Click **Add** to type business unit, detection-source and location details. 

@@ -25,7 +25,7 @@ To import an existing case template from another organization or TheHive instanc
 
 4. Two options are available:
 
-    * Create a case template from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a case template from scratch by selecting :fontawesome-solid-plus:.
 
     * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
 
@@ -51,16 +51,16 @@ To import an existing case template from another organization or TheHive instanc
     **- Severity**  
     The default severity level for cases.
     
-    **- [Tags](../../../../analyst-corner/cases/adding_to_a_case.md)**  
-    One or more tags to categorize cases. Only tags defined in the [taxonomies](../../../../../administration/taxonomies.md#view-a-taxonomie) are available for selection.
+    **- [Tags](../../../../analyst-corner/cases/tags/add-tags.md)**  
+    One or more tags for labeling cases.
     
     **Description \***  
     A description for cases using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
     
-    **- [Tasks](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Tasks](../../../../analyst-corner/cases/add-tasks-to-a-case.md)**  
     One or more tasks for cases.
     
-    **- [Custom fields](../../../../analyst-corner/cases/adding_to_a_case.md)**  
+    **- [Custom fields](../../../../analyst-corner/cases/add-custom-fields.md)**  
     One or more custom fields for cases, with or without predefined values.
     
     **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  

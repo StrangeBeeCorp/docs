@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 
-!!! tip "Why can't I find a case?"
+!!! tip "Can't find a case?"
     Since TheHive 5.5, [case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
 
 ## Method 1: Enter a case number search box
@@ -76,8 +76,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [Restrict Case Visibility](../restrict-visibility-case.md)
 * [Restore Case Visibility](../restore-visibility-case.md)
 * [View a Case](../cases-description/general.md)
-* [Adding to a Case (Tags/Tasks/Custom Field Values)](../../cases/adding_to_a_case.md)
-* [View Tasks](../cases-description/tasks.md)
+* [Add Tasks to a Case](../add-tasks-to-a-case.md)
+* [Add Custom Fields](../add-custom-fields.md)
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
 * [View Attachments](../cases-description/attachments.md)
