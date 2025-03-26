@@ -97,6 +97,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-close-alerts/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-close-cases/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-create-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -142,6 +150,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/access-manage-case-templates/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-custom-fields/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -250,6 +262,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/custom-fields-formats/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/custom-fields-section-go-to/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -617,6 +633,14 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/administration/custom-fields/delete-a-custom-field/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/custom-fields/edit-a-custom-field/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/about-organizations-sharing-rules/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -913,6 +937,10 @@
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/close-an-alert/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/actions/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
@@ -986,6 +1014,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/apply-a-case-template/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/close-a-case/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
@@ -1098,6 +1130,18 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/</loc>
+         <lastmod>2025-03-26</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/</loc>
          <lastmod>2025-03-26</lastmod>
     </url>
     <url>
