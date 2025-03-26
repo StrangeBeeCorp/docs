@@ -84,6 +84,18 @@ You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md)
 
 * When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. This link remains even if you later unlink the alert from the case.
 
+## Closing cases
+
+{!includes/access-close-cases.md!}
+
+Cases can be [closed](close-a-case.md) once the investigation is complete. 
+
+When closing a case, a [status]() must be selected to reflect the outcome of the investigation.
+
+### Custom fields completion
+
+Cases can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
+
 ## Case visibility
 
 {!includes/case-visibility-v55.md!}
@@ -138,3 +150,4 @@ The list of authorized users includes all users who had access to any of the res
 * [Add a Link to a Case](add-a-link-to-a-case.md)
 * [Remove a Link from a Case](remove-a-link-from-a-case.md)
 * [View Links in a Case](view-links-in-a-case.md)
+* [Close a Case](close-a-case.md)

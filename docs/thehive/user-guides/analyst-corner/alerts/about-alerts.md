@@ -31,8 +31,21 @@ In TheHive, an alert includes the following elements:
 
 * [TTPs](../alerts/alerts-description/view-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
+## Closing alerts
+
+{!includes/access-close-alerts.md!}
+
+Alerts can be [closed](../alerts/close-an-alert.md) when they are not worth escalating into a new case or an existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
+
+When closing an alert, a [status]() must be selected to indicate the reason for closure.
+
+### Custom fields completion
+
+Alerts can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
+
 <h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Close an Alert](close-an-alert.md)

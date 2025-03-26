@@ -213,6 +213,7 @@ markdown_extensions:
   - toc:
       permalink: "#"
       title: On this page
+      toc_depth: 2
   - footnotes
   - attr_list
   - md_in_html
@@ -440,6 +441,7 @@ nav:
           - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
+          - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
@@ -489,6 +491,7 @@ nav:
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
+          - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
           - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
           - 'Search for Tasks': 

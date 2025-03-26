@@ -11,20 +11,6 @@ You can make use of any of the available actions.
 
 <img src="/thehive/images/user-guides/analyst-corner/alerts/action-button.png" alt="start task" width="500" height="500"/>
 
-
-## Close
-
-1. Click the **Close option** to remove a task.
-
-A new window opens.
-
-1. Select **Status** from the list. 
-1. Change the **Summary**
-1. Click the **Close tasks and case** button.
-
-<img src="/thehive/images/user-guides/analyst-corner/alerts/change-alert-status-onclose.png" alt="change alert status" width="500" height="500"/>
-
-
 ## Track/Ignore New Updates
 
 1. Click the **Track New Updates** option to track an alert.
