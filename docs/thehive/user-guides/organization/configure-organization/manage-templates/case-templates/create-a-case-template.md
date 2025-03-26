@@ -9,7 +9,7 @@ To import an existing case template from another organization or TheHive instanc
 
 {!includes/access-manage-case-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -70,7 +70,7 @@ To import an existing case template from another organization or TheHive instanc
 
 6. Select **Confirm case template creation**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Case Template](edit-a-case-template.md)
 * [Export a Case Template](export-a-case-template.md)

@@ -29,7 +29,7 @@ To learn more about functions, see the [About Functions](../../manage-functions/
 
 {!includes/access-notifications.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -43,6 +43,6 @@ To learn more about functions, see the [About Functions](../../manage-functions/
 
 6. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Notification](../edit-a-notification.md)

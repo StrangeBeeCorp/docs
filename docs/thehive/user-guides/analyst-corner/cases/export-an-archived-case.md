@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for exporting an archived [case](.
 
 {!includes/license-required-export-import-case.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
 
@@ -21,6 +21,6 @@ This topic provides step-by-step instructions for exporting an archived [case](.
 
 4. Select **Export archive** to export the case in THAR format.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Case](create-a-new-case.md#create-a-case-from-an-archived-case)

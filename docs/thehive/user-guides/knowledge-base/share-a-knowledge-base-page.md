@@ -7,7 +7,7 @@ This is useful for sharing a case page with your teammates through a messaging t
 !!! warning "Available only for case-level pages"
     Sharing is only available for pages at the case level.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to share a page.
 
@@ -17,7 +17,7 @@ This is useful for sharing a case page with your teammates through a messaging t
 
 4. Select :fontawesome-solid-link:.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)

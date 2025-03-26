@@ -39,7 +39,7 @@ This topic provides step-by-step instructions for searching an [observable](../c
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [View Observables](../../alerts/alerts-description/view-observables.md)
 

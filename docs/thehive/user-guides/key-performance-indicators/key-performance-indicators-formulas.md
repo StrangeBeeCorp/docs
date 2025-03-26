@@ -14,7 +14,7 @@ This topic outlines the formulas used to calculate key performance indicators (K
 
 {!includes/units-time-to.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Key Performance Indicators](about-key-performance-indicators.md)
 * [Hide Key Performance Indicators](hide-key-performance-indicators.md)

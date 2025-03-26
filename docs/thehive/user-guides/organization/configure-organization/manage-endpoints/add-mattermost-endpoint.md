@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for adding a local Mattermost [end
 
 {!includes/access-endpoints.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -60,6 +60,6 @@ This topic provides step-by-step instructions for adding a local Mattermost [end
 
 10. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Configure the Mattermost Notifier](../manage-notifications/notifiers/mattermost.md)

@@ -83,7 +83,7 @@ Pages widget configuration includes:
 * A title for the pages widget
 * Filters to refine the displayed pages
 
-## Next steps
+<h2>Next steps</h2>
 
 * [About Case Report Templates](about-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)

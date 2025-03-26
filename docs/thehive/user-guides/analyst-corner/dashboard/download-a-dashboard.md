@@ -6,7 +6,7 @@ The PNG format is available for both the entire dashboard and individual [widget
 
 To download your dashboard in JSON format, refer to the [Export a Dashboard](export-a-dashboard.md) topic.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -20,7 +20,7 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
     ![Download widget dashboard](/thehive/images/user-guides/analyst-corner/dashboard/download-widget-dashboard.gif)
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)

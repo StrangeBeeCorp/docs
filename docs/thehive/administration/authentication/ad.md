@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 !!! info "Prerequisite"
     Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
@@ -68,7 +68,7 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 8. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
 * [Configure SSL](ssl.md)

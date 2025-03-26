@@ -128,7 +128,7 @@ If you [merge one or more restricted cases with visible cases](merge-cases.md), 
 
 The list of authorized users includes all users who had access to any of the restricted cases involved in the merge.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
 * [Create a Case](../cases/create-a-new-case.md)

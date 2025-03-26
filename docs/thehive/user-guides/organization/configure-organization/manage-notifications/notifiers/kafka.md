@@ -25,7 +25,7 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
 
 {!includes/access-notifications.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 !!! info "No endpoint required"
     An endpoint definition isn't required to send data to a Kafka topic.
@@ -50,6 +50,6 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
 
 6. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Edit a Notification](../edit-a-notification.md)
