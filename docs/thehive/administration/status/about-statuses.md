@@ -28,7 +28,7 @@ Each status is associated with:
 
 * Statuses linked to the *In progress* stage are available at any time for cases, but only [when starting work on an alert](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#start) for alerts.
 
-* Statuses linked to the *Closed* stage can only be selected when [closing a case](../../user-guides/analyst-corner/cases/cases-description/actions.md#close) or [closing an alert](../../user-guides/analyst-corner/alerts/alerts-description/actions.md#close).
+* Statuses linked to the *Closed* stage can only be selected when [closing a case](../../user-guides/analyst-corner/cases/close-a-case.md) or [closing an alert](../../user-guides/analyst-corner/alerts/close-an-alert.md).
 
 ## Permissions
 
