@@ -279,7 +279,7 @@ The date field that controls how filters from the **Period** dropdown at the top
 
 **- Columns**
 
-The data fields to display in each column of the table. For optimal visual clarity on a one-third width layout, we recommend using no more than three columns. You can configure up to nine columns in total.
+The data fields to display in each column of the table. For optimal visual clarity on a one-third width layout, use no more than three columns. You can configure up to nine columns in total.
 
 !!! info "Excluded data fields"
 
