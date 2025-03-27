@@ -23,6 +23,9 @@ This topic provides step-by-step instructions for restricting the visibility of 
 
 5. Select **Confirm**.
 
+    !!! info "Hang tight"
+        It may take a few seconds to apply restricted visibility to all elements linked to the case, such as observables and tasks.
+
 <h2>Next steps</h2>
 
 * [Restore Case Visibility](restore-visibility-case.md)
