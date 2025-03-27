@@ -1,7 +1,13 @@
-/* this file implements styling for badge shortcodes
- * taken directly from mkdocs-material here:
+/* 
+ * This file implements styling for badge shortcodes.
+ * It is adapted from the MkDocs Material project:
  * https://github.com/squidfunk/mkdocs-material/blob/master/src/overrides/assets/stylesheets/custom/_typeset.scss
- * and compiled into similar CSS
+ *
+ * The original work is licensed under the MIT License:
+ * https://github.com/squidfunk/mkdocs-material/blob/master/LICENSE
+ * © Martin Donath / MkDocs Material
+ *
+ * The styles have been compiled into standard CSS to fit our project structure.
  */
 
 .md-typeset .mdx-badge {

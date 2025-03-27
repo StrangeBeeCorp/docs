@@ -1,8 +1,12 @@
-# this file implements a hook for version badges
-# it is based on the mkdocs-material implementation here:
+# This file implements a hook for version badges.
+# It is adapted from the MkDocs Material project:
 # https://github.com/squidfunk/mkdocs-material/blob/master/src/overrides/hooks/shortcodes.py
 #
-# more information on mkdocs hooks is available here:
+# The original work is licensed under the MIT License:
+# https://github.com/squidfunk/mkdocs-material/blob/master/LICENSE
+# © Martin Donath / MkDocs Material
+#
+# More information on MkDocs hooks is available here:
 # https://www.mkdocs.org/user-guide/configuration/#hooks
 
 import posixpath
@@ -84,7 +88,7 @@ def _badge_for_version(text: str, page: Page, files: Files):
 
     # Return badge
     icon = "material-tag-outline"
-    href = _resolve_path("explanation/conventions.md#version", page, files)
+    href = _resolve_path(f"thehive/release-notes/release-notes-5.4.md#{text}", page, files)
     return _badge(
         icon = f"[:{icon}:]({href} 'Minimum version')",
         text = f"[{text}]({_resolve_path(path, page, files)})" if spec else ""
