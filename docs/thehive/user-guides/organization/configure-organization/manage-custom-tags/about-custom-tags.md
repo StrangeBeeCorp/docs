@@ -17,7 +17,7 @@ Custom tags can be created:
 * Manually by users when added to cases, alerts, or observables
 * Automatically by connected external tools
 * Automatically by [email servers](../../../../administration/email-intake-connector.md)
-* Automatically by [alert feeders]()
+* Automatically by [alert feeders](../manage-feeders/about-feeders.md)
 
 ## Actions
 

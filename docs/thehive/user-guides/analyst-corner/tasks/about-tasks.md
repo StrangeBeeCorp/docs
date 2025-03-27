@@ -25,7 +25,7 @@ You can require users in any of your organizations to take action on a task. How
 
 ### Closing a task
 
-* When you close a case, all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
+* When you [close a case](../cases/close-a-case.md), all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
 
 * However, if any mandatory tasks are not completed, you will not be able to close the case.
 
