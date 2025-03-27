@@ -15,7 +15,7 @@ Tasks can be created manually or automatically through [alert feeders](../../org
 
 ## Key components
 
-A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md), also referred to as activities.
+A task includes [task logs](../tasks/about-task-logs.md), also referred to as activities.
 
 ## Behavior
 
@@ -23,18 +23,18 @@ A task includes [task logs](../tasks/preview-task-details/create-a-task-log.md),
 
 You can require users in any of your organizations to take action on a task. However, once the action is completed, the task's status remains unchanged. This is useful when you need input or assistance from someone in another team or business unit without affecting the task’s workflow.
 
-### Closing a task
-
-* When you [close a case](../cases/close-a-case.md), all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
-
-* However, if any mandatory tasks are not completed, you will not be able to close the case.
-
 ## Highlighting important tasks
 
 In TheHive, you can make important tasks stand out using the following options:
 
 * [Pin a task](../tasks/preview-task-details/actions.md#unpin): Pin a task to quickly access it from the **Tasks** tab within a case.
 * [Flag a task](../tasks/preview-task-details/actions.md#unflag): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
+
+### Closing a task
+
+* When you [close a case](../cases/close-a-case.md), all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
+
+* However, if any mandatory tasks are not completed, you will not be able to close the case.
 
 <h2>Next steps</h2>
 
