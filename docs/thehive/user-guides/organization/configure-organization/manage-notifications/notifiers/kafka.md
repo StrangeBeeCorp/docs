@@ -1,5 +1,7 @@
 # How to Configure the Kafka Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the Kafka [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -20,8 +22,6 @@ This topic provides step-by-step instructions for configuring the Kafka [notifie
     - *ObservableCreated*  
     - *TaskClosed*  
     - *TaskMandatory*
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 

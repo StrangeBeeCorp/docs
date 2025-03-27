@@ -45,8 +45,6 @@ You can use an alert feeder to integrate any external system that exposes a publ
 
 ## Permissions
 
-{!includes/license-alert-feeders.md!}
-
 {!includes/access-feeders.md!}
 
 <h2>Next steps</h2>

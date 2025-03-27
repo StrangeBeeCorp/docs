@@ -1,8 +1,8 @@
 # How to View a Case Timeline
 
-This topic provides step-by-step instructions for viewing a [case timeline](about-case-timelines.md) in TheHive.
+<!-- md:license Gold --> <!-- md:license Platinum -->
 
-{!includes/license-required-case-timelines.md!}
+This topic provides step-by-step instructions for viewing a [case timeline](about-case-timelines.md) in TheHive.
 
 <h2>Procedure</h2>
 

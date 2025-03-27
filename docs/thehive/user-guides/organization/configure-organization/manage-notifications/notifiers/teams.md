@@ -1,5 +1,7 @@
 # How to Configure the Microsoft Teams Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the Microsoft Teams [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -20,8 +22,6 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
     - *ObservableCreated*  
     - *TaskClosed*  
     - *TaskMandatory*
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 

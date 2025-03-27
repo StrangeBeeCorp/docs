@@ -98,8 +98,6 @@ Cases can't be closed if any required [custom fields](../../../administration/cu
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 
-{!includes/license-required-case-visibility.md!}
-
 {!includes/access-manage-visibility-cases.md!}
 
 ### Usage

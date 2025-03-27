@@ -1,5 +1,7 @@
 # About Case Report Templates
 
+<!-- md:license Platinum -->
+
 Case report templates generate reports in a predefined format, available from case descriptions.
 
 This topic provides an overview of case report templates and their usage in TheHive.
@@ -25,8 +27,6 @@ Every case report template includes a default header and footer section, which y
 You can add [widgets](widgets-case-report-templates.md) between these sections to display case data. You can rearrange the order of widgets at any time.
 
 ## Permissions
-
-{!includes/license-required-case-reports.md!}
 
 {!includes/access-manage-case-report-templates.md!}
 

@@ -1,10 +1,10 @@
 # About Case Timelines
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 Case timelines provide a chronological view of all events that occurred during the lifecycle of a specific case.
 
 This topic explains the components of case timelines in TheHive.
-
-{!includes/license-required-case-timelines.md!}
 
 ## Components
 

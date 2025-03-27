@@ -76,7 +76,7 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an archived case
 
-{!includes/license-required-export-import-case.md!}
+<!-- md:license Gold --> <!-- md:license Platinum -->
 
 1. {!includes/create-a-case.md!}
 

@@ -1,5 +1,7 @@
 # How to Configure the RunAnalyzer Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the RunResponder [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -18,8 +20,6 @@ This topic provides step-by-step instructions for configuring the RunResponder [
     - *ObservableCreated*  
     - *TaskClosed*  
     - *TaskMandatory*
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 
