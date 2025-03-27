@@ -1,6 +1,8 @@
-# How to Restrict Case Visibility <!-- md:version 5.4 -->
+# How to Restrict Case Visibility <!-- md:version 5.4 --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for restricting the visibility of a [case](../cases/about-cases.md#case-visibility) in TheHive.
+
+<!-- md:version 5.4 --> <!-- md:license Platinum -->
 
 {!includes/case-visibility-v55.md!}
 
@@ -8,7 +10,7 @@ This topic provides step-by-step instructions for restricting the visibility of 
 
 {!includes/access-manage-visibility-cases.md!}
 
-<h2>Procedure</h2>
+<h2>Procedure</h2> <!-- md:version 5.4 --> <!-- md:license Platinum -->
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) you want to restrict.
 

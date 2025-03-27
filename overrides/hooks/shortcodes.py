@@ -45,6 +45,8 @@ def on_page_markdown(
         args = args.strip()
         if type == "version":
             return _badge_for_version(args, page, files)
+        if type == "license":
+            return _badge_for_license(args, page, files)
         # Otherwise, raise an error
         raise RuntimeError(f"Unknown shortcode: {type}")
 
@@ -82,7 +84,6 @@ def _badge(icon: str, text: str = "", type: str = ""):
 
 
 # Create badge for version
-
 def _badge_for_version(text: str, page: Page, files: Files):
     # Extract major.minor from full version (e.g. "5.3.1" → "5.3")
     version_parts = text.split(".")
@@ -99,4 +100,12 @@ def _badge_for_version(text: str, page: Page, files: Files):
     return _badge(
         icon = f"[:{icon}:]({href} 'Minimum version')",
         text = f"[{text}]({href})" if text else ""
+    )
+
+# Create badge for license
+def _badge_for_license(text: str, page: Page, files: Files):
+    icon = "material-license"
+    return _badge(
+        icon=f"[:{icon}:]('#' 'License type')",
+        text=text
     )
