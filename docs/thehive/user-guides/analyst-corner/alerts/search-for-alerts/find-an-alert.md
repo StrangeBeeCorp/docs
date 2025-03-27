@@ -48,7 +48,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 3. Enter the keywords you want to search for in the search box displayed by default.
 
-    !!! tip "<!-- md:version 5.4 --> Wildcard character"
+    !!! tip "<!-- md:version 5.4.7 --> Wildcard character"
         You can use the wildcard character *\** to broaden your searches.
 
         The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.

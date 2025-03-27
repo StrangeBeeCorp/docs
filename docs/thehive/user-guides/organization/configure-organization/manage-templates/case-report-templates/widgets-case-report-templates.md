@@ -60,8 +60,7 @@ Timeline widget configuration includes:
 
 ## Comments widget
 
-!!! note "Available since version 5.4"
-    Comments widgets are available only for users running TheHive version 5.4 or later.
+<!-- md:version 5.4 -->
 
 Add case comments to your case report template.
 
@@ -73,8 +72,7 @@ Comments widget configuration includes:
 
 ## Pages widget
 
-!!! note "Available since version 5.4"
-    Pages widgets are available only for users running TheHive version 5.4 or later.
+<!-- md:version 5.4 -->
 
 Add case pages to your case report template.
 

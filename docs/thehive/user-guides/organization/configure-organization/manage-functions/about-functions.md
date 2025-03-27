@@ -1,16 +1,12 @@
 # About Functions
 
+<!-- md:version 5.1 --> <!-- md:license Platinum -->
+
 A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it cannot access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
 It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
 
 For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
-
-!!! note "Available from version 5.1"
-    TheHive supports functions starting from version 5.1.
-
-!!! note "Platinum license required"
-    A Platinum license is required to configure and use functions in TheHive.
 
 !!! tip "Contribute!"
     All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
