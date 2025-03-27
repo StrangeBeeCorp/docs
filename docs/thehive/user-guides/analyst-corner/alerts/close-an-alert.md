@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for closing an [alert](about-alert
 
     ![Close an alert](../../../images/user-guides/analyst-corner/alerts/close-an-alert.png)
 
-3. In the **Change the alert status** drawer, select the status that explains why the alert wasn't escalated to a new or existing case for further investigation.
+3. In the **Change the alert status** drawer, select the [status](../../../administration/status/about-statuses.md) that explains why the alert wasn't escalated to a new or existing case for further investigation.
 
 4. Optional: Enter a summary describing why the alert wasn't escalated to a case.
 
