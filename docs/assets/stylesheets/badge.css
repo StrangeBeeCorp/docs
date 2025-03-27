@@ -35,4 +35,5 @@
   border-top-right-radius: 0.5rem;
   box-shadow: 0 0 0 2px inset var(--badge-border-color, #FFC72C);
   padding: .2rem .3rem;
+  font-weight: bold;
 }
