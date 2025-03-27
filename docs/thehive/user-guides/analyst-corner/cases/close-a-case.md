@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for closing a [case](about-cases.m
 
     ![Close a case](../../../images/user-guides/analyst-corner/cases/close-a-case.png)
 
-3. In the **Close case** drawer, select the status that reflects the outcome of the investigation.
+3. In the **Close case** drawer, select the [status](../../../administration/status/about-statuses.md) that reflects the outcome of the investigation.
 
 4. Enter a summary describing the outcome of the investigation.
 

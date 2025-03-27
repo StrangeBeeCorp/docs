@@ -43,7 +43,7 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### User actions
 
-* Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its status to *False positive*: [Code]()
+* Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its [status](../../../../administration/status/about-statuses.md) to *False positive*: [Code]()
 
 ### Automation
 
