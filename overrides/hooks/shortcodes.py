@@ -82,14 +82,21 @@ def _badge(icon: str, text: str = "", type: str = ""):
 
 
 # Create badge for version
+
 def _badge_for_version(text: str, page: Page, files: Files):
-    spec = text
-    path = f"thehive/release-notes/release-notes-5.4.md#{spec}"
+    # Extract major.minor from full version (e.g. "5.3.1" → "5.3")
+    version_parts = text.split(".")
+    major_minor = ".".join(version_parts[:2]) if len(version_parts) >= 2 else text
+
+    # Construct path to the right release notes file
+    path = f"thehive/release-notes/release-notes-{major_minor}.md#{text}"
+
+    # Create link
+    icon = "material-tag-outline"
+    href = _resolve_path(path, page, files)
 
     # Return badge
-    icon = "material-tag-outline"
-    href = _resolve_path(f"thehive/release-notes/release-notes-5.4.md#{text}", page, files)
     return _badge(
         icon = f"[:{icon}:]({href} 'Minimum version')",
-        text = f"[{text}]({_resolve_path(path, page, files)})" if spec else ""
+        text = f"[{text}]({href})" if text else ""
     )
