@@ -9,7 +9,7 @@ This topic helps you understand how tags work.
 In TheHive, tags are created in two ways:
 
 * [Taxonomy tags](../../../../administration/taxonomies/about-taxonomies.md): Created from an imported taxonomy
-* [Custom tags](../../../organization/configure-organization/manage-custom-tags/about-custom-tags.md): Created manually by users as free text to cases, alerts, and observables, or automatically by connected external tools, [email servers](../../../../administration/email-intake-connector.md), or [alert feeders]()
+* [Custom tags](../../../organization/configure-organization/manage-custom-tags/about-custom-tags.md): Created manually by users as free text to cases, alerts, and observables, or automatically by connected external tools, [email servers](../../../../administration/email-intake-connector.md), or [alert feeders](../../../organization/configure-organization/manage-feeders/about-feeders.md)
 
 ## Scope
 

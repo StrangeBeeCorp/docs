@@ -14,13 +14,13 @@ The time it takes to create a case or alert in TheHive after the event occurs. T
 
 ## Time to triage (TTT)
 
-The time it takes for your security team to acknowledge a case or alert by changing its status to *In Progress* after its creation in TheHive. It reflects how efficiently alerts and cases are reviewed and escalated for investigation.
+The time it takes for your security team to acknowledge a case or alert by changing its [status](../../administration/status/about-statuses.md) to *In Progress* after its creation in TheHive. It reflects how efficiently alerts and cases are reviewed and escalated for investigation.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
 ## Time to acknowledge (TTA)
 
-The time it takes for your security team to acknowledge a case or alert by changing its status to *In Progress* after the event occurs. This measures the responsiveness of your team after detecting a potential security incident.
+The time it takes for your security team to acknowledge a case or alert by changing its [status](../../administration/status/about-statuses.md) to *In Progress* after the event occurs. This measures the responsiveness of your team after detecting a potential security incident.
 
 [Check the formula](key-performance-indicators-formulas.md)
 
