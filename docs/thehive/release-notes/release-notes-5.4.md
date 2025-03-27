@@ -1,4 +1,4 @@
-# Release Notes of 5.4 series
+# Release Notes of 5.4 Series
 
 !!! warning
     Backend framework upgraded to Pekko/Play3
