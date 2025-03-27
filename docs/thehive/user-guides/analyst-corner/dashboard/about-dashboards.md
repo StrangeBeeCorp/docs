@@ -47,7 +47,8 @@ You can also hide data in some widgets by selecting the corresponding item in th
 
 ## Permissions
 
-{!includes/access-manage-dashboards.md!}
+!!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
+    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
 Every user has read access to the dashboards within their organization and can export dashboards.
 

@@ -1,7 +1,7 @@
 Enter the keywords you want to search for in the search box displayed by default.
 
-    !!! tip "Wildcard character"
-        You can use the wildcard character *\** to broaden your searches since version 5.4.7.
+    !!! tip "<!-- md:version 5.4 --> Wildcard character"
+        You can use the wildcard character *\** to broaden your searches.
 
         The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.
         

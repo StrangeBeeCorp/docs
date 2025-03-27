@@ -4,7 +4,8 @@ This topic provides step-by-step instructions for importing a [dashboard](about-
 
 This is useful if you want to use a dashboard from another organization or TheHive instance.
 
-{!includes/access-manage-dashboards.md!}
+!!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
+    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
 <h2>Procedure</h2>
 
