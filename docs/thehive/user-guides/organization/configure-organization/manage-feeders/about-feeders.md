@@ -1,10 +1,10 @@
 # About Alert Feeders
 
+<!-- md:version 5.5 --> <!-- md:license Platinum -->
+
 Alert feeders enable TheHive to retrieve data from external systems on a schedule, eliminating the need for external tools to push data.
 
 This topic provides an overview of the scope and usage of alert feeders in TheHive.
-
-{!includes/alert-feeders-v55.md!}
 
 ## How alert feeders work
 

@@ -1,12 +1,10 @@
 # How to Create an Alert Feeder
 
+<!-- md:version 5.5 --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive.
 
 You can also find an example of [how to configure an Airtable alert feeder](#airtable-example).
-
-{!includes/alert-feeders-v55.md!}
-
-{!includes/license-alert-feeders.md!}
 
 {!includes/access-feeders.md!}
 

@@ -17,7 +17,7 @@ An alert can be created from the following sources:
 
 * Detection tools, such as SIEM, IDS, EDR, and firewalls, that push data to TheHive
 
-* External systems from which TheHive retrieves data using [alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) (available from version 5.5)
+* <!-- md:version 5.5 --> External systems from which TheHive retrieves data using [alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md)
 
 * Threat intelligence platforms like [MISP](../../../administration/misp.md) from which TheHive retrieves data.
 

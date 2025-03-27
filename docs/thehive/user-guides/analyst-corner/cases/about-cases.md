@@ -20,7 +20,7 @@ In TheHive, you can create a case from the following sources:
 
 * [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases created by manually importing MISP events.
 
-* [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) (available from version 5.5): Cases created from data retrieved from external systems using an alert feeder.
+* <!-- md:version 5.5 --> [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md): Cases created from data retrieved from external systems using an alert feeder.
 
 * [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector.md).
 
@@ -53,7 +53,7 @@ Merging also impacts:
 
 ## Linking elements
 
-{!includes/case-links-v55.md!}
+<!-- md:version 5.5 -->
 
 {!includes/access-manage-case-links.md!}
 
@@ -96,7 +96,7 @@ Cases can't be closed if any required [custom fields](../../../administration/cu
 
 ## Case visibility
 
-{!includes/case-visibility-v55.md!}
+<!-- md:version 5.5 --> <!-- md:license Platinum -->
 
 {!includes/license-required-case-visibility.md!}
 

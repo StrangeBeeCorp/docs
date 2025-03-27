@@ -1,10 +1,10 @@
 # How to View Links in a Case
 
+<!-- md:version 5.5 -->
+
 This topic provides step-by-step instructions for viewing links in a [case](../cases/about-cases.md#linking-elements) in TheHive.
 
 Links can point to other TheHive cases or to external resources.
-
-{!includes/case-links-v55.md!}
 
 <h2>Procedure</h2>
 

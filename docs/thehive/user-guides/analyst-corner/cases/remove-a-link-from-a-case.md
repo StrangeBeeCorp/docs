@@ -1,8 +1,8 @@
 # How to Remove a Link from a Case
 
-This topic provides step-by-step instructions for removing a link from a [case](../cases/about-cases.md#linking-elements) in TheHive.
+<!-- md:version 5.5 -->
 
-{!includes/case-links-v55.md!}
+This topic provides step-by-step instructions for removing a link from a [case](../cases/about-cases.md#linking-elements) in TheHive.
 
 {!includes/access-manage-case-links.md!}
 
