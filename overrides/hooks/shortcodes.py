@@ -80,7 +80,7 @@ def _badge(icon: str, text: str = "", type: str = ""):
 # Create badge for version
 def _badge_for_version(text: str, page: Page, files: Files):
     spec = text
-    path = f"SOME/FILE/PATH.md#{spec}"
+    path = f"thehive/release-notes/release-notes-5.4.md#{spec}"
 
     # Return badge
     icon = "material-tag-outline"
