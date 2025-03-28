@@ -1,10 +1,10 @@
 # How to Configure an OAuth 2.0 Authentication Provider
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring an OAuth 2.0 authentication provider in TheHive.
 
 By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google.
-
-{!includes/license-required-authentication.md!}
 
 {!includes/access-authentication.md!}
 

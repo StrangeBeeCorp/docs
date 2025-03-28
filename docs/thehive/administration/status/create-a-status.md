@@ -22,7 +22,7 @@ This is useful for adding custom statuses to [the predefined ones managed by The
 
 4. In the **Add a custom status** drawer, enter the following information:
 
-    **- Visibility** (available since version 5.5)
+    **- Visibility** <!-- md:version 5.5 -->
 
     Specifies whether you want to display or hide a status in TheHive interface.
 

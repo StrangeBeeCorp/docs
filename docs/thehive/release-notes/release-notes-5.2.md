@@ -1,4 +1,4 @@
-# Release Notes of 5.2 series
+# Release Notes of 5.2 Series
 
 !!! danger
     The 5.2 release comes with some changes on the database schema that can't be reversed. Please make sure to make a backup of your database before upgrading.

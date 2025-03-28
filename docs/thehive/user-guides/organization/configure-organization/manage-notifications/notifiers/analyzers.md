@@ -1,5 +1,7 @@
 # How to Configure the RunAnalyzer Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the RunAnalyzer [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -8,8 +10,6 @@ This topic provides step-by-step instructions for configuring the RunAnalyzer [n
     - *AlertObservableCreated*  
     - *CaseObservableCreated*  
     - *ObservableCreated*  
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 

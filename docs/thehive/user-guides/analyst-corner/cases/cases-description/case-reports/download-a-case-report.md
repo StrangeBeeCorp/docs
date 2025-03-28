@@ -1,8 +1,8 @@
 # How to Download a Case Report
 
-This topic provides step-by-step instructions for downloading a [case report](about-case-reports.md) in TheHive.
+<!-- md:license Platinum -->
 
-{!includes/license-required-case-reports.md!}
+This topic provides step-by-step instructions for downloading a [case report](about-case-reports.md) in TheHive.
 
 <h2>Procedure</h2>
 
