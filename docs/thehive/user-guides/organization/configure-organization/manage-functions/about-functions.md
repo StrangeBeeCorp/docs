@@ -9,7 +9,7 @@ It accepts inputs from external sources, processes data, and interacts with TheH
 For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! tip "Contribute!"
-    All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
+    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). You can contribute by sharing functions you’ve written.
 
 This topic provides details on the different types and uses of functions in TheHive.
 
@@ -35,33 +35,32 @@ Various sources can trigger functions in TheHive:
 
 You can use functions in TheHive to automate workflows, process data, and enhance case management.
 
-Below are some common use cases, each with a link to the corresponding JavaScript function code:
+Below are some common use cases, each with a link to the corresponding JavaScript function:
 
 ### User actions
 
-Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its [status](../../../../administration/status/about-statuses.md) to *False positive*: [Code]()
+* Deleting observables of type IP from an alert: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Action%20Functions/function_Action_deleteIPObsFromAlert.js)
+* Changing the assignee of a case and all its associated tasks to the user who runs the function: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Action%20Functions/function_Action_assignToMe.js)
 
 ### Automation
 
-* Identifying cold cases by adding a tag based on predefined conditions: [Code]()
-* Deleting IPs in observables as part of automated cleanup: [Code]()
-* Closing duplicated alerts based on alert titles and observables: [Code]()
+Identifying *New* and *In progress* cases that haven't been updated in the last month and tagging them with *cold-case*: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/API%20Functions/function_API_coldCaseAutomation.js)
 
 ### Notifications
 
-* Automatically assigning high/critical severity alerts to a designated user upon creation via a notification: [Code]()
+* Assigning high or critical alerts to a specific user when they're created via a notification: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Notifier%20Functions/function_notifier_assignAlert.js)
+* Updating the status of alerts merged into a case that was closed via a notification: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Notifier%20Functions/function_notifier_changeImportedAlertStatus.js)
 
 ### External systems (push method)
 
-* Processing data from external systems to enrich or transform information: [Code]()
-* Creating alerts from detection tools while applying data transformations: [Code]()
-* Ingesting Splunk alerts and converting them into TheHive alerts: [Code]()
+Ingesting Splunk alerts and converting them into TheHive alerts: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/API%20Functions/function_API_createAlertFromSplunk.js)
 
 ### External systems (pull method)
 
 <!-- md:version 5.5 --> 
 
-Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code]()
+* Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js)
+* Creating alerts from Jira via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromJIRA.js)
 
 ## Function types
 

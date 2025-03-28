@@ -171,7 +171,7 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
 ### Feeder function
 
-You can find the function example for creating an alert from Airtable in the [GitHub repository]().
+You can find the function example for creating an alert from Airtable in the [GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js).
 
 <h2>Next steps</h2>
 
