@@ -1,5 +1,7 @@
 # How to Manually Run a Function on a Case or an Alert
 
+<!-- md:version 5.1 --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for manually running a [function](about-functions.md) on a [case](../../../analyst-corner/cases/about-cases.md) or an [alert](../../../analyst-corner/alerts/about-alerts.md) in TheHive.
 
 {!includes/access-functions.md!}

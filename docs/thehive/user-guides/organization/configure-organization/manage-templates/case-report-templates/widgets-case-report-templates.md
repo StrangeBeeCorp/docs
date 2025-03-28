@@ -60,8 +60,7 @@ Timeline widget configuration includes:
 
 ## Comments widget
 
-!!! note "Available since version 5.4"
-    Comments widgets are available only for users running TheHive version 5.4 or later.
+<!-- md:version 5.4 -->
 
 Displays case comments with optional filters and a maximum display limit.
 
@@ -73,8 +72,7 @@ Comments widget configuration includes:
 
 ## Pages widget
 
-!!! note "Available since version 5.4"
-    Pages widgets are available only for users running TheHive version 5.4 or later.
+<!-- md:version 5.4 -->
 
 Displays selected [case pages](../../../../knowledge-base/about-knowledge-base.md).
 

@@ -17,8 +17,8 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
     ![Enter value custom fields](../../../../images/user-guides/analyst-corner/cases/enter-values-custom-fields.png)
 
-    !!! tip "Available since version 5.5"
-        Starting with version 5.5, you can filter mandatory custom fields and choose how many custom fields to display per line.
+    !!! tip "<!-- md:version 5.5 --> Custom field view"
+        You can filter mandatory custom fields and choose how many custom fields to display per line.
 
         ![Options custom fields](../../../../images/user-guides/analyst-corner/cases/options-custom-fields.png)
 

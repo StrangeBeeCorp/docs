@@ -2,8 +2,8 @@
 
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
-!!! info "Duplicate an existing case template"
-    Since version 5.4, you can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
+!!! info "<!-- md:version 5.4 --> Duplicate an existing case template"
+    You can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
 
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](import-a-case-template.md) topic.
 
@@ -27,7 +27,7 @@ To import an existing case template from another organization or TheHive instanc
 
     * Create a case template from scratch by selecting :fontawesome-solid-plus:.
 
-    * Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate** (available since version 5.4).
+    * <!-- md:version 5.4 --> Duplicate an existing template by selecting :fontawesome-solid-ellipsis: next to the case template you want to duplicate, then select **Duplicate**.
 
     ---
 

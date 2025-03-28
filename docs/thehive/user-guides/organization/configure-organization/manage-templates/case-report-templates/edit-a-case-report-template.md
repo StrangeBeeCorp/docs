@@ -1,10 +1,10 @@
 # How to Edit a Case Report Template
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for editing a [case report template](about-case-report-templates.md) in TheHive.
 
 {!includes/access-manage-case-report-templates.md!}
-
-{!includes/license-required-case-reports.md!}
 
 <h2>Procedure</h2>
 

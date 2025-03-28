@@ -1,10 +1,12 @@
 # How to Hide Key Performance Indicators
 
+<!-- md:version 5.4 -->
+
 This topic provides step-by-step instructions for hiding one or several key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md) in TheHive.
 
 By default, all indicators are displayed in case and alert descriptions. 
 
-Since version 5.4, you can hide some or all indicators if they're not useful or could be misleading for your organization.
+You can hide some or all indicators if they're not useful or could be misleading for your organization.
 
 If you want to know more about the KPIs available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
 

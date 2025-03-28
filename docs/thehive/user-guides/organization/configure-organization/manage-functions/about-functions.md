@@ -1,16 +1,12 @@
 # About Functions
 
+<!-- md:version 5.1 --> <!-- md:license Platinum -->
+
 A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it cannot access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
 It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
 
 For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
-
-!!! note "Available from version 5.1"
-    TheHive supports functions starting from version 5.1.
-
-!!! note "Platinum license required"
-    A Platinum license is required to configure and use functions in TheHive.
 
 !!! tip "Contribute!"
     All function use cases are available in [a dedicated GitHub repository](). You can contribute by sharing functions you’ve written.
@@ -33,7 +29,7 @@ Various sources can trigger functions in TheHive:
 
 * External systems (push method): Triggered when an external system, such as a detection tool, pushes data to TheHive
 
-* External systems (pull method) (available from version 5.5): Triggered when TheHive retrieves data from an external system using an [alert feeder](../manage-feeders/about-feeders.md)
+* <!-- md:version 5.5 --> External systems (pull method): Triggered when TheHive retrieves data from an external system using an [alert feeder](../manage-feeders/about-feeders.md)
 
 ## Common use cases
 
@@ -43,7 +39,7 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### User actions
 
-* Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its [status](../../../../administration/status/about-statuses.md) to *False positive*: [Code]()
+Detecting whether a case is a false positive and, if so, automatically closing its associated tasks and setting its [status](../../../../administration/status/about-statuses.md) to *False positive*: [Code]()
 
 ### Automation
 
@@ -61,9 +57,11 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 * Creating alerts from detection tools while applying data transformations: [Code]()
 * Ingesting Splunk alerts and converting them into TheHive alerts: [Code]()
 
-### External systems (pull method) (available from version 5.5)
+### External systems (pull method)
 
-* Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code]()
+<!-- md:version 5.5 --> 
+
+Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code]()
 
 ## Function types
 
@@ -82,7 +80,7 @@ Below are the different types of functions supported in TheHive:
 
 * **Action: Alert**: Users manually trigger these functions within the context of a specific alert. To execute the function, they must [run it manually](run-a-function-case-alert.md).
 
-* **Feeder** (available from version 5.5): A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
+* <!-- md:version 5.5 --> **Feeder**: A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
 
 ## Function modes
 
