@@ -1,5 +1,7 @@
 # How to Edit a Function
 
+<!-- md:version 5.1 --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for editing a [function](about-functions.md) in TheHive.
 
 {!includes/access-functions.md!}

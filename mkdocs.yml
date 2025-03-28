@@ -35,8 +35,15 @@ theme:
     code: Source Code Pro
   favicon: assets/images/favicon.ico
 
+watch:
+  - ./overrides/
+
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/badge.css
+
+hooks:
+  - ./overrides/hooks/shortcodes.py
 
 plugins:
   - search

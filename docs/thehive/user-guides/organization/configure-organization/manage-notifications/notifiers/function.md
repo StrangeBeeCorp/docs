@@ -1,5 +1,7 @@
 # How to Configure the Function Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the Function [notifier](../about-notifications.md#notifiers) in TheHive.
 
 To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
@@ -24,8 +26,6 @@ To learn more about functions, see the [About Functions](../../manage-functions/
     - *TaskAssigned*  
     - *TaskClosed*  
     - *TaskMandatory*
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 

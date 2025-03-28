@@ -1,8 +1,8 @@
 # How to Configure an LDAP Authentication Provider
 
-This topic provides step-by-step instructions for configuring an Lightweight Directory Access Protocol (LDAP) authentication provider in TheHive.
+<!-- md:license Gold --> <!-- md:license Platinum -->
 
-{!includes/license-required-authentication.md!}
+This topic provides step-by-step instructions for configuring an Lightweight Directory Access Protocol (LDAP) authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 

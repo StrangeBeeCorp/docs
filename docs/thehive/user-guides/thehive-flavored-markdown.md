@@ -74,8 +74,7 @@ ___
 
 ## Admonition blocks
 
-!!! tip "Available since version 5.5"
-    You can use admonition blocks to highlight important information.
+<!-- md:version 5.5 -->
 
 ### Syntax
 
@@ -171,8 +170,8 @@ Inline `code` with `
 Sample code here...
 ```
 
-!!! tip "Code block with syntax highlighting"
-    Since version 5.5, you can enable syntax highlighting by specifying the language name after the opening backticks.
+!!! tip "<!-- md:version 5.5 --> Code block with syntax highlighting"
+    You can enable syntax highlighting by specifying the language name after the opening backticks.
 
     Syntax
 
@@ -224,8 +223,8 @@ Sample code here...
 | engine | Engine to be used for processing templates. Handlebars is the default. |
 | ext    | Extension to be used for dest files. |
 
-!!! tip "Breaking lines in tables"
-    Since version 5.5, you can break lines within table cells by using the `<br />`, `<br/>`, or `<br>` HTML tags. This feature is limited to table cells and doesn't work elsewhere.
+!!! tip "<!-- md:version 5.5 --> Breaking lines in tables"
+    You can break lines within table cells by using the `<br />`, `<br/>`, or `<br>` HTML tags. This feature is limited to table cells and doesn't work elsewhere.
 
 ## Links
 

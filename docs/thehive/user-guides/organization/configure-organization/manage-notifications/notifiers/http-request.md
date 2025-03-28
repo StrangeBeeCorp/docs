@@ -1,5 +1,7 @@
 # How to Configure the HttpRequest Notifier
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for configuring the HttpRequest [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -20,8 +22,6 @@ This topic provides step-by-step instructions for configuring the HttpRequest [n
     - *ObservableCreated*  
     - *TaskClosed*  
     - *TaskMandatory*
-
-{!includes/license-required-notifiers.md!}
 
 {!includes/access-notifications.md!}
 

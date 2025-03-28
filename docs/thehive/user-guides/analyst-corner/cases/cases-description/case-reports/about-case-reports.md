@@ -1,5 +1,7 @@
 # About Case Reports
 
+<!-- md:license Platinum -->
+
 Case reports allow you to visualize all data related to a specific case in one place.
 
 This topic explains the components of case reports in TheHive.
@@ -19,8 +21,6 @@ Case reports are available in three formats:
 * Word
 
 ## Permissions
-
-{!includes/license-required-case-reports.md!}
 
 {!includes/access-manage-case-report-templates.md!}
 

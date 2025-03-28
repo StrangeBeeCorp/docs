@@ -2,7 +2,8 @@
 
 This topic provides step-by-step instructions for deleting a [dashboard](about-dashboards.md) in TheHive.
 
-{!includes/access-manage-dashboards.md!}
+!!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
+    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
 <h2>Procedure</h2>
 

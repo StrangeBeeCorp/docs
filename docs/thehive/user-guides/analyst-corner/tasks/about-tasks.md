@@ -11,7 +11,7 @@ A task is an action that must be completed within a case.
 
 ## Sources
 
-Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md) since version 5.5.
+Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md).
 
 ## Key components
 
