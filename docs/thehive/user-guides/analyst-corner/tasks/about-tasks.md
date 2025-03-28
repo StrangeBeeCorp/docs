@@ -4,7 +4,7 @@ This topic explains tasks, their components, and their behavior in TheHive.
 
 ## Definition
 
-A task is an action that must be completed within a case.
+A task represents one or more actions, called [task logs](../tasks/about-task-logs.md)—also referred to as activities—that must be completed within a [case](../cases/about-cases.md).
 
 * Tasks can be mandatory or optional.
 * Tasks are organized into groups for better structure and management.
@@ -12,10 +12,6 @@ A task is an action that must be completed within a case.
 ## Sources
 
 Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md).
-
-## Key components
-
-A task includes [task logs](../tasks/about-task-logs.md), also referred to as activities.
 
 ## Behavior
 

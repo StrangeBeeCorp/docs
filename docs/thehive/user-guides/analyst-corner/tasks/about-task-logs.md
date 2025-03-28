@@ -4,26 +4,39 @@ This topic explains what task logs are and how they are used in TheHive.
 
 ## Definition
 
-A task log is a record of actions, observations, or decisions made while working on a specific [task](about-tasks.md). Task logs help ensure traceability, support team collaboration, and provide a clear audit trail for compliance and post-incident reviews.
+A task log is where analysts record their actions, observations, and decisions in response to a [task](about-tasks.md).
 
 In TheHive, a task log is also referred to as an activity.
 
 ## Sources
 
-Task logs must be created manually. Users should create a task log whenever they perform or complete a meaningful action related to the task.
+Analysts should create a task log whenever they perform or complete a meaningful action, observation, or decision related to the task. Certain task logs can be automated, but analytical insights and contextual observations typically require manual input.
 
-This includes steps like:
+## Examples
 
-* Collecting evidence
-* Reaching out to stakeholders
-* Updating a system
-* Documenting conclusions
+Tasks logs can include actions such as:
+
+* Investigating authentication, VPN, or endpoint activity
+* Reviewing system or script execution logs
+* Identifying signs of lateral movement or account compromise
+* Running targeted scans for potential exposures
+
+* Applying network or system-level containment measures
+
+* Providing awareness or policy guidance to employees
+* Implementing or reinforcing data protection policies
+
+* Tuning detection rules for improved accuracy
+* Updating workflows or processes based on incident findings
+
+* Documenting insights or lessons learned
 
 ## Format
 
-
-
-## Permissions
+Task logs can include text using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md) or images.
 
 <h2>Next steps</h2>
 
+* [Create a Task Log](create-a-task-log.md)
+* [Find a Task Log](../tasks/search-for-tasks/find-a-task-log.md)
+* [Find a Task](../tasks/search-for-tasks/find-a-task.md)

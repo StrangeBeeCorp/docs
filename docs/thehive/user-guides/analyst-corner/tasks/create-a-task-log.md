@@ -1,12 +1,21 @@
-# Create a task log
+# How to Create a Task Log
 
-In this section you can find information about creating a task log.
+This topic provides step-by-step instructions for creating a [task log](about-task-logs.md) in TheHive.
 
-To  create a task log: 
+<h2>Procedure</h2>
 
-1. Enter the log message in **Description** area of the given box using [TheHive-flavored Markdown syntax](../../../thehive-flavored-markdown.md) for formatting.
-1. Switch on the Toggle the button to **include in timeline**. (If you opt for a timeline, you have to provide the date for the timeline).
-1. In **Attachment** Drop file or click. You can upload an attachment. 
-1. Click the **Create a Task Log** button. 
+1. [Locate the task](../tasks/search-for-tasks/find-a-task.md) where you want to create a task log.
 
-<img src="/thehive/images/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.png" alt="create a task log" width="500" height="500"/>
+2. {!includes/activity-section-go-to.md!}
+
+3. Select :fontawesome-solid-plus:.
+
+4. In the **Create a task log** drawer, enter the text you want to add in the **Log** field using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
+
+5. Optional: Add images to the task log:
+
+    * To attach an image, drag and drop it into the **Attachment section** or select it from your computer.
+    * <!-- md:version 5.5 --> You can also drag and drop the image directly into the **Log** field.
+
+<h2>Next steps</h2>
+
