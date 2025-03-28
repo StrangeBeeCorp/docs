@@ -82,7 +82,6 @@ def _badge(icon: str, text: str = "", type: str = ""):
         f"</span>",
     ])
 
-
 # Create badge for version
 def _badge_for_version(text: str, page: Page, files: Files):
     # Extract major.minor from full version (e.g. "5.3.1" → "5.3")
