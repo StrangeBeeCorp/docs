@@ -93,7 +93,7 @@ def _badge_for_version(text: str, page: Page, files: Files):
     path = f"thehive/release-notes/release-notes-{major_minor}.md#{text}"
 
     # Create link
-    icon = "material-tag-outline"
+    icon = "material-new-box"
     href = _resolve_path(path, page, files)
 
     # Return badge

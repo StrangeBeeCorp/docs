@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for searching a job in TheHive.
 A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/installation-and-configuration/analyzers-responders.md) on an observable.
 
 !!! tip "Can't find a job?"
-    Since TheHive 5.5, [case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables and any jobs launched on those observables won't appear in the list, search results, or dashboards.
+    <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables and any jobs launched on those observables won't appear in the list, search results, or dashboards.
 
 <h2>Procedure</h2>
 
