@@ -38,6 +38,10 @@ In TheHive, you can make important tasks stand out using the following options:
 
 * However, if any mandatory tasks are not completed, you will not be able to close the case.
 
+## Permissions
+
+{!includes/access-manage-tasks.md!}
+
 <h2>Next steps</h2>
 
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)

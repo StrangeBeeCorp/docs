@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for flagging a [task](about-tasks.
 
 Flagging a task highlights it for all users in your organization, making it more visible in the task list.
 
+{!includes/access-manage-tasks.md!}
+
 <h2>Procedure</h2>
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to flag.

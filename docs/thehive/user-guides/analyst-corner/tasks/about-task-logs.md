@@ -35,6 +35,10 @@ Tasks logs can include actions such as:
 
 Task logs can include text using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md) or images.
 
+## Permissions
+
+{!includes/access-manage-tasks.md!}
+
 <h2>Next steps</h2>
 
 * [Create a Task Log](create-a-task-log.md)

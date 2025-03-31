@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for editing a [task](about-tasks.md) in TheHive.
 
+{!includes/access-manage-tasks.md!}
+
 <h2>Procedure</h2>
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to update.
@@ -22,7 +24,7 @@ This topic provides step-by-step instructions for editing a [task](about-tasks.m
 
     **- Description**
 
-    A description of the task. It appears only in the task preview.
+    A description of the task using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md). It appears only in the task preview.
 
     **- Assignee**
 

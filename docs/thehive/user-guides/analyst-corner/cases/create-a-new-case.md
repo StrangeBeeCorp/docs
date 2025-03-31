@@ -27,36 +27,52 @@ Several options are offered to create a case in TheHive:
 3. Enter the following fields:
 
     **- Title \***  
+
     The title of the case.
 
     **- Date \***  
+
     The start date and time of the case. It indicates when the incident occured. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators-formulas.md).
 
     **- Severity \***  
+
     The severity level for the case.
 
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+
     The TLP level for the case. It guides analysts on how they can share case information.
     
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+
     The PAP level for the case. It guides analysts on how they can use case data.
 
     **- [Tags](../../analyst-corner/cases/tags/add-tags.md)**  
+
     Relevant tags for labeling the case.
 
     **- Description \***  
-    A description of the case.
+
+    A description of the case using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md). 
+    
+    <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Description** field or selecting the :fontawesome-solid-image: symbol.
+
+    !!! tip "Wait for the upload to complete"
+        Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
+
     Tasks for the case.
 
     **- [Custom fields](../cases/add-custom-fields.md)**  
+
     Custom fields for the case, with or without predefined values.
 
     **- [Pages](../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
+
     Pages to document the case.
 
     **- Sharing**  
+
     By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
 4. Select **Confirm**.
@@ -85,12 +101,15 @@ Several options are offered to create a case in TheHive:
 3. In the **Import case** drawer:
 
     **- Attachment \***  
+
     Drop a THAR file direclty into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
 
     **- Password \***  
+
     Enter the archive password that was set during the case export.
 
     **- Sharing**  
+
     By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
 4. Select **Confirm**.
@@ -111,12 +130,15 @@ Several options are offered to create a case in TheHive:
     Drop a JSON file direclty into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
 
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
+
     Tasks for the case.
 
     **- [Custom fields](../cases/add-custom-fields.md)**  
+    
     Custom fields for the case, with or without predefined values.
 
     **- Sharing**  
+
     By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
 
 4. Select **Confirm**.
@@ -130,7 +152,7 @@ Several options are offered to create a case in TheHive:
 
 1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
 
-2. In the alert description, select the **Create case from alert** button.
+2. In the alert description, select **Create case from alert**.
 
     ![Create case from alert](/thehive/images/user-guides/analyst-corner/cases/create-case-from-alert.png)
 

@@ -4,14 +4,16 @@ This topic provides step-by-step instructions for changing the [status](about-ta
 
 {!includes/task-statuses-excluded.md!}
 
-!!! warning "Can't change the status?"
-    For mandatory tasks, you must [create at least one task log](create-a-task-log.md) before marking them as *Completed*.
+{!includes/access-manage-tasks.md!}
 
 <h2>Procedure</h2>
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to update.
 
 2. In the task details, select a status from the **Status** dropdown list.
+
+    !!! warning "Can't change the status?"
+        For mandatory tasks, you must [create at least one task log](create-a-task-log.md) before marking them as *Completed*.
 
 3. Select **Confirm**.
 

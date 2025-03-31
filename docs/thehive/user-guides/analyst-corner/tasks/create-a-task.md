@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
 
+{!includes/access-manage-tasks.md!}
+
 <h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add a task.
@@ -26,7 +28,7 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 
     **- Description**
 
-    A description of the task. It appears only in the task preview.
+    A description of the task using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md). It appears only in the task preview.
 
     **- Assignee**
 
