@@ -38,13 +38,6 @@ This topic provides step-by-step instructions for editing a [task](about-tasks.m
 
     The date by which the task should be completed.
 
-    **- Status**
-
-    The status of the task.
-
-    !!! warning "Can't change the status?"
-        For mandatory tasks, you must [create at least one task log](create-a-task-log.md) before marking them as *Completed*.
-
 3. Select **Confirm**.
 
 <h2>Next steps</h2>
