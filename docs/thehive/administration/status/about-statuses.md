@@ -4,6 +4,8 @@ The status represents the current state of a [case](../../user-guides/analyst-co
 
 This article explains how statuses works in TheHive.
 
+{!includes/task-statuses-excluded.md!}
+
 ## Predefined statuses
 
 TheHive includes a set of predefined statuses. You can [change their color](change-color-of-a-status.md) or [hide them](change-visibility-of-a-status.md) to guide users toward using the [custom statuses you have created](create-a-status.md).

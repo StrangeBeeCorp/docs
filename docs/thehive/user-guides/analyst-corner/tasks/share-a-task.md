@@ -13,19 +13,29 @@ To learn more about how sharing rules function and interact, see the [About Orga
 
 <h2>Procedure</h2>
 
-1. [Locate the shared case where you want to share the task](../../analyst-corner/cases/search-for-cases/find-a-case.md).
+1. [Locate the shared case](../../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to share the task.
 
-2. Go to the **Tasks** tab.
+2. {!includes/tasks-tab-go-to.md!}
 
-3. Move through the **Shares** section.
+3. Select the task you want to share.
 
-4. Select :fontawesome-solid-plus:.
+4. Move through the **Shares** section.
 
-5. Select the linked organization to share the task with.
+5. Select :fontawesome-solid-plus:.
 
-6. Select **Add share**.
+6. Select the linked organization to share the task with.
+
+7. Select **Add share**.
 
 <h2>Next steps</h2>
 
 * [Share an Observable](../cases/share-an-observable.md)
 * [Share a Case](../cases/share-a-case.md)
+* [Start a Task](start-a-task.md)
+* [Change a Task Status](change-task-status.md)
+* [Edit a Task](edit-a-task.md)
+* [Delete a Task](delete-a-task.md)
+* [Flag a Task](flag-a-task.md)
+* [Pin a Task](pin-a-task.md)
+* [View a Task](pin-a-task.md)
+* [Create a Task Log](create-a-task-log.md)

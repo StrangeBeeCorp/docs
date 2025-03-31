@@ -38,5 +38,7 @@ Task logs can include text using [TheHive-flavored Markdown syntax](../../thehiv
 <h2>Next steps</h2>
 
 * [Create a Task Log](create-a-task-log.md)
+* [Edit a Task Log](edit-a-task-log.md)
+* [Delete a Task Log](delete-a-task-log.md)
 * [Find a Task Log](../tasks/search-for-tasks/find-a-task-log.md)
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)

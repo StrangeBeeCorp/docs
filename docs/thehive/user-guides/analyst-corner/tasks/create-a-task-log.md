@@ -12,10 +12,20 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
 
 4. In the **Create a task log** drawer, enter the text you want to add in the **Log** field using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
 
-5. Optional: Add images to the task log:
+5. Optional: Add images to the task log.
 
-    * To attach an image, drag and drop it into the **Attachment section** or select it from your computer.
-    * <!-- md:version 5.5 --> You can also drag and drop the image directly into the **Log** field.
+    * To add an image as an attachment, drop it into the **Attachment** section or select it from your computer.
+
+    * <!-- md:version 5.5 --> To display an image at full size in the **Activity** feed, drop it into the **Log** field or use the :fontawesome-solid-image: symbol.
+
+    !!! tip "Wait for the upload to complete"
+        Wait until the image path appears in parentheses in the log field. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
+
+      GIF
+
+6. Select **Confirm**.
 
 <h2>Next steps</h2>
 
+* [Edit a Task Log](edit-a-task-log.md)
+* [Delete a Task Log](delete-a-task-log.md)
