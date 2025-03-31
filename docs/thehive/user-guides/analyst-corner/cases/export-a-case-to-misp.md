@@ -1,8 +1,10 @@
 # How to Export a Case to MISP
 
-This topic provides step-by-step instructions for exporting a [case](../cases/about-cases.md) to MISP in TheHive.
+This topic provides step-by-step instructions for exporting a [case](../cases/about-cases.md) to [MISP](https://www.misp-project.org/) in TheHive.
 
-Only observables marked as IOCs will be exported in the case. Once exported to MISP, any updates to the case IOCs will be automatically synchronized with MISP, requiring no manual intervention.
+This is useful if you want to share the results of your investigations with this open-source threat intelligence and sharing platform and contribute to the community.
+
+Only observables marked as IOCs will be exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.
 
 !!! info "Manual export to MISP only"
     You must manually export cases to MISP, as each case requires individual review.

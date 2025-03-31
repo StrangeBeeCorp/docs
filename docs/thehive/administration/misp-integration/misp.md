@@ -1,6 +1,7 @@
 # MISP
 
 ## Introduction
+
 !!! Info
     An account and an API key are required on a MISP server to define a connection.
 
