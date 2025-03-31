@@ -15,7 +15,14 @@ Tasks can be created manually or automatically through [alert feeders](../../org
 
 ## Statuses
 
-Task statuses are hard-coded in TheHive. They can't be modified, deleted, or extended.
+The following task statuses are available in TheHive:
+
+* *In progress*
+* *Waiting*
+* *Cancelled*
+* *Completed*
+
+Task statuses are hard-coded. They can't be modified, deleted, or extended.
 
 Mandatory tasks can’t be marked as *Completed* unless at least [one task log has been created](create-a-task-log.md).
 
@@ -29,14 +36,14 @@ You can require users in any of your organizations to take action on a task. How
 
 In TheHive, you can make important tasks stand out using the following options:
 
-* [Pin a task](pin-a-task.md): Pin a task to quickly access it from the **Tasks** tab within a case.
+* [Pin a task](pin-a-task.md): Pin a task to access it from the **Tasks** tab within a case.
 * [Flag a task](flag-a-task.md): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
 
 ### Closing a case with open tasks
 
 * When you [close a case](../cases/close-a-case.md), all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
 
-* However, if any mandatory tasks are not completed, you will not be able to close the case.
+* However, if any mandatory tasks aren't completed, you won't be able to close the case.
 
 ## Permissions
 
@@ -53,5 +60,5 @@ In TheHive, you can make important tasks stand out using the following options:
 * [Delete a Task](delete-a-task.md)
 * [Flag a Task](flag-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [Create a Task Log](../tasks/preview-task-details/create-a-task-log.md)
+* [Create a Task Log](../tasks/create-a-task-log.md)
 * [Run Responders](../tasks/preview-task-details/run-responders.md)

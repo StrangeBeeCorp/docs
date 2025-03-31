@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for pinning a [task](about-tasks.md) in TheHive.
 
-Pinning a task allows you to quickly access it from the **Tasks** tab within a case. Pins are personal and only visible to you.
+Pinning a task allows you to access it from the **Tasks** tab within a case. Pins are personal and only visible to you.
 
 {!includes/access-manage-tasks.md!}
 

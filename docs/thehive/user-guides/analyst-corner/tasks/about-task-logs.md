@@ -1,6 +1,6 @@
 # About Task Logs
 
-This topic explains what task logs are and how they are used in TheHive.
+This topic explains what task logs are and how they're used in TheHive.
 
 ## Definition
 

@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 
     **- Mandatory \***
 
-    Whether the task is mandatory. Mandatory tasks must have at least one [task log](about-task-logs.md) before they can be marked as *Completed*, and the case can't be closed until all mandatory tasks are completed.
+    Whether the task is mandatory. Mandatory tasks must contain at least one [task log](about-task-logs.md) before you can mark them as *Completed*. You can't close a case until all mandatory tasks are completed.
 
     **- Description**
 

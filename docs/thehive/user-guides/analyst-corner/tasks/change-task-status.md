@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for changing the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive.
 
-Task statuses are hard-coded in TheHive. They can't be modified, deleted, or extended.
+Task statuses are hard-coded in TheHive. You can't modify, delete, or extend them.
 
 {!includes/access-manage-tasks.md!}
 

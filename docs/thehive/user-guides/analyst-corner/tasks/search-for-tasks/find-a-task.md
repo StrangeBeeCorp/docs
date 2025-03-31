@@ -69,5 +69,13 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 <h2>Next steps</h2>
 
-* [Actions on Tasks](../preview-task-details/actions.md)
-* [Run Responders From Task](../preview-task-details/run-responders.md)
+* [Create a Task](../create-a-task.md)
+* [Start a Task](../start-a-task.md)
+* [Share a Task](../share-a-task.md)
+* [Change a Task Status](../change-task-status.md)
+* [Edit a Task](../edit-a-task.md)
+* [Delete a Task](../delete-a-task.md)
+* [Flag a Task](../flag-a-task.md)
+* [Pin a Task](../pin-a-task.md)
+* [Create a Task Log](../create-a-task-log.md)
+* [Run Responders](../../tasks/preview-task-details/run-responders.md)
