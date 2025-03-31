@@ -254,8 +254,7 @@ Filters to refine and customize the displayed data.
 
 ## Table widget
 
-!!! note "Available from version 5.5"
-    Table widgets are available starting with version 5.5
+<!-- md:version 5.5 -->
 
 Displays data in a tabular format. Useful for listing critical in-progress cases, alerts, or tasks.
 
