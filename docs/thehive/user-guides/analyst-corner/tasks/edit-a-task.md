@@ -8,7 +8,9 @@ This topic provides step-by-step instructions for editing a [task](about-tasks.m
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to update.
 
-2. Enter the following information:
+    ---
+
+2. In the task details, enter the following information:
 
     **- Group \***
 
@@ -37,6 +39,8 @@ This topic provides step-by-step instructions for editing a [task](about-tasks.m
     **- Due date**
 
     The date by which the task should be completed.
+
+    ---
 
 3. Select **Confirm**.
 

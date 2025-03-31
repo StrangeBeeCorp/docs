@@ -20,7 +20,7 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
 
     * <!-- md:version 5.5 --> To display an image at full size in the **Activity** feed, drop it into the **Log** field or use the :fontawesome-solid-image: symbol.
 
-    !!! tip "Wait for the upload to complete"
+    !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
       GIF

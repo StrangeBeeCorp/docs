@@ -20,7 +20,7 @@ Close an alert if it doesn't require escalation into a new or existing case for 
 
     <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Summary** field or selecting the :fontawesome-solid-image: symbol.
 
-    !!! tip "Wait for the upload to complete"
+    !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
 5. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 

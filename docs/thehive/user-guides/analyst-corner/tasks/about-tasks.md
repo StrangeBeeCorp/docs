@@ -32,7 +32,7 @@ Mandatory tasks can’t be marked as *Completed* unless at least [one task log h
 
 You can require users in any of your organizations to take action on a task. However, once the action is completed, the task's status remains unchanged. This is useful when you need input or assistance from someone in another team or business unit without affecting the task’s workflow.
 
-## Highlighting important tasks
+### Highlighting important tasks
 
 In TheHive, you can make important tasks stand out using the following options:
 

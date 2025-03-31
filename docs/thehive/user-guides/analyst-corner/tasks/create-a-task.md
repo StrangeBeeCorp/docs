@@ -8,11 +8,17 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add a task.
 
+    ---
+
 2. {!includes/tasks-tab-go-to.md!}
+
+    ---
 
 3. Select :fontawesome-solid-plus:.
 
-4. Enter the following information:
+    ---
+
+4. In the **Adding a task** drawer, enter the following information:
 
     **- Group \***
 
@@ -41,6 +47,8 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
     **- Due date**
 
     The date by which the task should be completed.
+
+     ---
 
 5. Select **Confirm**.
 

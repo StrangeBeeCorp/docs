@@ -8,6 +8,8 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) you want to enrich.
 
+    ---
+
 2. Update the following fields:
 
     **- Title**
@@ -24,12 +26,16 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 
     <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Description** field or selecting the :fontawesome-solid-image: symbol.
 
-    !!! tip "Wait for the upload to complete"
+    !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
     **- [Custom fields](../cases/add-custom-fields.md)**  
 
     Custom fields for the alert, with or without predefined values.
+
+    ---
+
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

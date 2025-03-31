@@ -2,8 +2,6 @@
 
 This topic provides step-by-step instructions for changing the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive.
 
-Task statuses are hard-coded in TheHive. You can't modify, delete, or extend them.
-
 {!includes/access-manage-tasks.md!}
 
 <h2>Procedure</h2>
@@ -12,7 +10,7 @@ Task statuses are hard-coded in TheHive. You can't modify, delete, or extend the
 
 2. In the task details, select a status from the **Status** dropdown list.
 
-    !!! warning "Can't change the status?"
+    !!! tip "Can't change the status?"
         For mandatory tasks, you must [create at least one task log](create-a-task-log.md) before marking them as *Completed*.
 
 3. Select **Confirm**.
