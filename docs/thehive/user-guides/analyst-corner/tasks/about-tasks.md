@@ -49,6 +49,5 @@ In TheHive, you can make important tasks stand out using the following options:
 * [Delete a Task](delete-a-task.md)
 * [Flag a Task](flag-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](../tasks/preview-task-details/create-a-task-log.md)
 * [Run Responders](../tasks/preview-task-details/run-responders.md)

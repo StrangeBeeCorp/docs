@@ -19,5 +19,4 @@ Pinning a task allows you to quickly access it from the **Tasks** tab within a c
 * [Edit a Task](edit-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Flag a Task](flag-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

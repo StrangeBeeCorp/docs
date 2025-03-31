@@ -21,5 +21,4 @@ Flagging a task highlights it for all users in your organization, making it more
 * [Edit a Task](edit-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

@@ -20,5 +20,4 @@ Starting a case automatically changes the status of a task to *In Progress*.
 * [Delete a Task](delete-a-task.md)
 * [Flag a Task](flag-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

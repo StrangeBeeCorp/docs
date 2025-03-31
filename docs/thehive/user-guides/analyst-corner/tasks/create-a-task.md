@@ -51,5 +51,4 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 * [Delete a Task](delete-a-task.md)
 * [Flag a Task](flag-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

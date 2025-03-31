@@ -21,5 +21,4 @@ This topic provides step-by-step instructions for deleting a [task](about-tasks.
 * [Edit a Task](edit-a-task.md)
 * [Flag a Task](flag-a-task.md)
 * [Pin a Task](pin-a-task.md)
-* [View a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)
