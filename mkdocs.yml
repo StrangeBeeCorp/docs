@@ -209,6 +209,11 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
             'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
             'thehive/user-guides/organization/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/analyst-corner/tasks/index.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/manage-views.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
 
 extra:
   generator: false
