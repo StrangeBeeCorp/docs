@@ -8801,6 +8801,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#table-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table widget
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -10952,7 +10961,7 @@
 <h2 id="row-widget">Row widget<a class="headerlink" href="#row-widget" title="Permanent link">#</a></h2>
 <p>A row widget is a prerequisite for adding other types of widgets. Each row can contain up to three widgets. If a row already exists, you can add more widgets to it.</p>
 <h2 id="bar-widget">Bar widget<a class="headerlink" href="#bar-widget" title="Permanent link">#</a></h2>
-<p>Add a bar widget to your dashboards.</p>
+<p>Displays grouped data in a vertical bar chart. Useful for comparing categories over time or by type.</p>
 <p>Bar widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -10975,7 +10984,7 @@
 <p><strong>- Customize</strong></p>
 <p>For certain category fields, you can customize the label and color of each possible value.</p>
 <h2 id="donut-widget">Donut widget<a class="headerlink" href="#donut-widget" title="Permanent link">#</a></h2>
-<p>Add a donut widget to your dashboards.</p>
+<p>Visualizes categorical data as a segmented ring. Ideal for showing proportions or distributions within a dataset.</p>
 <p>Donut widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -10994,7 +11003,7 @@
 <p><strong>- Customize</strong></p>
 <p>For certain category fields, you can customize the label and color of each possible value.</p>
 <h2 id="line-widget">Line widget<a class="headerlink" href="#line-widget" title="Permanent link">#</a></h2>
-<p>Add a line widget to your dashboards.</p>
+<p>Plots one or more data series as lines across a time axis. Useful for identifying trends and comparisons over time.</p>
 <p>Line widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -11019,7 +11028,7 @@
 <p><strong>- Logarithmic scale for y-axis</strong></p>
 <p>The option to apply a logarithmic scale for better visualization of large value differences.</p>
 <h2 id="radar-widget">Radar widget<a class="headerlink" href="#radar-widget" title="Permanent link">#</a></h2>
-<p>Add a radar widget to your dashboards.</p>
+<p>Displays data across multiple categories in a radial chart. Good for comparing multiple variables on the same scale.</p>
 <p>Radar widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -11032,7 +11041,7 @@
 <p><strong>- Filters</strong></p>
 <p>Filters to refine and customize the displayed data.</p>
 <h2 id="counter-widget">Counter widget<a class="headerlink" href="#counter-widget" title="Permanent link">#</a></h2>
-<p>Add a counter widget to your dashboards.</p>
+<p>Shows numeric values with optional thresholds. Useful for displaying KPIs or status metrics at a glance.</p>
 <p>Counter widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -11057,7 +11066,7 @@
 <li>Filters: Criteria to refine and customize the displayed data.</li>
 </ul>
 <h2 id="text-widget">Text widget<a class="headerlink" href="#text-widget" title="Permanent link">#</a></h2>
-<p>Add a text block to your case report template.</p>
+<p>Displays rich text or aggregated data using TheHive-flavored Markdown. Useful for contextual notes, summaries, or custom metrics.</p>
 <p>Text widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title for the text block.</p>
@@ -11074,7 +11083,7 @@
 <li>Filters: Criteria to refine and customize the displayed data.</li>
 </ul>
 <h2 id="gauge-widget">Gauge widget<a class="headerlink" href="#gauge-widget" title="Permanent link">#</a></h2>
-<p>Add a gauge widget to your dashboards.</p>
+<p>Visualizes a single value against a scale using a circular gauge. Ideal for tracking performance against defined thresholds.</p>
 <p>Gauge widget configuration includes:</p>
 <p><strong>- Title</strong></p>
 <p>A title to define the widget’s name.</p>
@@ -11090,6 +11099,36 @@
 <p>The maximum value displayed on the gauge. This defines the upper limit of the scale.</p>
 <p><strong>- Filters</strong></p>
 <p>Filters to refine and customize the displayed data.</p>
+<h2 id="table-widget">Table widget<a class="headerlink" href="#table-widget" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Available from version 5.5</p>
+<p>Table widgets are available starting with version 5.5</p>
+</div>
+<p>Displays data in a tabular format. Useful for listing critical in-progress cases, alerts, or tasks.</p>
+<p>Table widget configuration includes:</p>
+<p><strong>- Title</strong></p>
+<p>A title to define the widget’s name.</p>
+<p><strong>- Entity</strong></p>
+<p>The specific entity the widget applies to. Only cases, alerts, and tasks are supported.</p>
+<p><strong>- Max elements in the table</strong></p>
+<p>The maximum number of elements to display in the table.</p>
+<p><strong>- Period field</strong></p>
+<p>The date field that controls how filters from the <strong>Period</strong> dropdown at the top of the page apply to the data.</p>
+<p><strong>- Columns</strong></p>
+<p>The data fields to display in each column of the table. For optimal visual clarity on a one-third width layout, use no more than three columns. You can configure up to nine columns in total.</p>
+<div class="admonition info">
+<p class="admonition-title">Excluded data fields</p>
+<p>Some data fields are excluded and can't be selected:</p>
+<ul>
+<li>For cases: <code>description</code>, <code>customFields</code>, <code>tags</code>, <code>userPermissions</code>, <code>extraData</code>, <code>summary</code>, and any computed fields.</li>
+<li>For alerts: <code>description</code>, <code>customFields</code>, <code>tags</code>, <code>userPermissions</code>, <code>extraData</code>, <code>externalLink</code>, <code>summary</code>, and any computed fields (for example, handlingDuration).</li>
+<li>For tasks: <code>description</code> and <code>extraData</code>.</li>
+</ul>
+</div>
+<p><strong>- Filters</strong></p>
+<p>Filters to refine and customize the displayed data.</p>
+<p><strong>- Sort</strong></p>
+<p>Sorting rules to refine the displayed data.</p>
 <h2>Next steps</h2>
 
 <ul>
