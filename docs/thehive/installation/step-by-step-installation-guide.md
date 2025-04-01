@@ -185,7 +185,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
 
 **1.Locate the Cassandra configuration file:**
    
-   Navigate to the directory containing the Cassandra configuration file `/etc/cassandra/`.
+    Navigate to the directory containing the Cassandra configuration file `/etc/cassandra/`.
 
 **2.Edit the `cassandra.yaml` file:**
    
@@ -363,18 +363,18 @@ For additional configuration options, refer to:
 [Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
 
 !!! note "Elasticsearch support"
-    From version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Previous TheHive versions only support Elasticsearch 7.x.
+    Starting from version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x.
 
-!!! note 
-    Starting from TheHive 5.3, for advanced use-cases, OpenSearch is also supported.
+!!! note "OpenSearch support"
+    Starting from version 5.3, TheHive supports [OpenSearch](https://opensearch.org/) for advanced use cases.
 
 ### Installation
 
 === "DEB"
     
-    1. Add Elasticsearch repository references
+    1. Add Elasticsearch repository references:
 
-        - *To add Elasticsearch repository keys, execute the following command:*
+        - To add Elasticsearch repository keys, execute the following command:
 
         !!! Example ""
             ```bash
@@ -382,16 +382,14 @@ For additional configuration options, refer to:
             sudo apt-get install apt-transport-https
             ```
 
-        - *Add the repository to your system by appending the following line to the /etc/apt/sources.list.d/elastic-7.x.list file. This file may not exist, and you may need to create it*
+        - Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/elastic-7.x.list` file. This file may not exist, and you may need to create it.
 
         !!! Example ""
             ```bash
             echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list 
             ```
 
-    2. Install the package
-
-        - *Once the repository references are added, update your package index and install Elasticsearch using the following commands:*
+    2. Once the repository references are added, update your package index and install Elasticsearch using the following command:
 
         !!! Example ""
             ```bash
@@ -402,18 +400,14 @@ For additional configuration options, refer to:
 
 === "RPM"
 
-    1. Add Elasticsearch repository references
-
-        - *To add Elasticsearch repository keys, execute the following command:*
+    1. Add Elasticsearch repository keys using following command:
 
         !!! Example ""
             ```bash
             rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
             ```
 
-    2. Add the RPM repository of Elasticsearch to `/etc/yum.repos.d/elasticsearch.repo`
-
-        - *To add the repository configuration for Elasticsearcg, you need to create a new file named `/etc/yum.repos.d/elasticsearch.repo` and add the following content to it:*
+    2. Add the RPM repository of Elasticsearch to a new file named `/etc/yum.repos.d/elasticsearch.repo` and add the following content to it:
 
         !!! Example ""
             ```bash title="/etc/yum.repos.d/elasticsearch.repo"
@@ -427,70 +421,66 @@ For additional configuration options, refer to:
             type=rpm-md
             ```
 
-    3. Install the package
-
-        - *After adding the repository configuration, install Elasticsearch using the following command:*
+    3. After adding the repository configuration, install Elasticsearch using the following command:
 
         !!! Example ""
             ```bash
             sudo yum install --enablerepo=elasticsearch elasticsearch
             ```
     
-    _Please refer to the official Elasticsearch documentation website for the most up-to-date instructions_: [**https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html**](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+    Please refer to the official Elasticsearch documentation website for the most up-to-date instructions: [**https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html**](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
-=== "Other Installation Methods"
+=== "Other installation methods"
 
-    Download the tar.gz archive from **http://cassandra.apache.org/download/** and extract it into the folder of your choice. You can use utilities like wget to download the archive.
-
-&nbsp;
+    Download the tar.gz archive from http://cassandra.apache.org/download/ and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
 
 ### Configuration 
 
 You can configure Elasticsearch by modifying settings within the `/etc/elasticsearch/elasticsearch.yml` file.
 
-**1. Locate the Elasticsearch Configuration File:**
+**1. Locate the Elasticsearch configuration file:**
    
-   - Navigate to the directory containing the Elasticsearch configuration file `/etc/elasticsearch/`.
+    Navigate to the directory containing the Elasticsearch configuration file `/etc/elasticsearch/`.
 
-**2. Edit the elasticsearch.yml File:**
+**2. Edit the elasticsearch.yml file:**
    
-   - Open the `elasticsearch.yml` file in a text editor with appropriate permissions.
+    Open the `elasticsearch.yml` file in a text editor with appropriate permissions.
 
-**3. Configure HTTP and Transport Hosts:**
+**3. Configure HTTP and transport hosts:**
    
-   - Set the `http.host` and `transport.host` parameters to `127.0.0.1` or the desired IP address.
+    Set the `http.host` and `transport.host` parameters to `127.0.0.1` or the desired IP address.
 
-**4. Configure Cluster Name:**
+**4. Configure cluster name:**
    
-   - Set the `cluster.name` parameter to the desired name. This name helps identify the Elasticsearch cluster.
+    Set the `cluster.name` parameter to the desired name. This name helps identify the Elasticsearch cluster.
 
-**5. Configure Thread Pool Search Queue Size:**
+**5. Configure thread pool search queue size:**
    
-   - Set the `thread_pool.search.queue_size` parameter to the desired value, such as `100000`.
+    Set the `thread_pool.search.queue_size` parameter to the desired value, such as `100000`.
 
-**6. Configure Paths for Logs and Data:**
+**6. Configure paths for logs and data:**
    
-   - Set the `path.logs` and `path.data` parameters to the desired directories, such as `"/var/log/elasticsearch"` and `"/var/lib/elasticsearch"`, respectively.
+    Set the `path.logs` and `path.data` parameters to the desired directories, such as `/var/log/elasticsearch` and `/var/lib/elasticsearch`, respectively.
 
-**7. Configure X-Pack Security (Optional):**
+**7. Optional: Configure X-Pack security:**
    
-   - If you're not using X-Pack security, ensure that `xpack.security.enabled` is set to `false`.
+    If you're not using X-Pack security, ensure that `xpack.security.enabled` is set to `false`.
 
-**8. Configure Script Allowed Types (Optional):**
+**8. Optional: Configure script allowed types:**
    
-   - If needed, set the `script.allowed_types` parameter to specify allowed script types.
+    If needed, set the `script.allowed_types` parameter to specify allowed script types.
 
-**9. Save the Changes:**
+**9. Save the changes:**
    
-   - After making the necessary configurations, save the changes to the `elasticsearch.yml` file.
+    After making the necessary configurations, save the changes to the `elasticsearch.yml` file.
 
-**10. Custom JVM Options:**
+**10. Custom JVM options:**
    
-   - Create the file `/etc/elasticsearch/jvm.options.d/jvm.options` if it doesn't exist.
+    Create the file `/etc/elasticsearch/jvm.options.d/jvm.options` if it doesn't exist.
 
-**11. Custom JVM Options:**
+**11. Custom JVM options:**
    
-   - Inside `jvm.options`, add the desired JVM options, such as:
+    Inside `jvm.options`, add the desired JVM options, such as:
 
     !!! Example ""
         ```
@@ -499,8 +489,8 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
         -Xmx4g
         ```
 
-    !!! Note "Adjust the memory settings (`-Xms` and `-Xmx`) according to the available memory."
-
+    !!! note "Memory settings"
+        Adjust the memory settings (`-Xms` and `-Xmx`) according to the available memory.
 
 !!! Example ""
     ```yaml title="/etc/elasticsearch/elasticsearch.yml"
@@ -514,38 +504,32 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
     script.allowed_types: "inline,stored"
     ```
 
-!!! Info
+!!! info "Index creation and management in TheHive"
     - Index creation occurs during TheHive's initial startup, which may take some time to complete.
     - Similar to data and files, indexes should be included in the backup policy to ensure their preservation.
     - Indexes can be removed and re-created as needed.
-
-&nbsp;
 
 ### Start the service
 
 === "DEB"
     
-    1. Start the Service
-
-        - *Execute the following command to start the Elasticsearch service:*
+    1. Execute the following command to start the Elasticsearch service:
         
         !!! Example ""
             ```bash
             sudo systemctl start elasticsearch
             ```
 
-    2. Ensure Service Restarts After Reboot:
-
-        - *Enable the Elasticsearch service to restart automatically after a system reboot:*
+    2. Enable the Elasticsearch service to restart automatically after a system reboot:
 
         !!! Example ""
             ```bash
             sudo systemctl enable elasticsearch
             ```
 
-    3. (Optional) Remove Existing Data Before Starting
-
-        - *If the Elasticsearch service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. Execute the following commands:*
+    3. Optional: If the Elasticsearch service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    
+        Execute the following commands:
  
         !!! Example ""
             ```bash
@@ -555,9 +539,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 === "RPM"
 
-    1. Start the Service
-
-        - *Start the Elasticsearch service by running:*
+    1. Start the Elasticsearch service by running:
         
         !!! Example ""
             ```bash
@@ -565,9 +547,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
             sudo service elasticsearch start
             ```
 
-    2. Ensure Service Restarts After Reboot
-
-        - *Enable the Elasticsearch service to restart automatically after a system reboot:*
+    2. Enable the Elasticsearch service to restart automatically after a system reboot:
 
         !!! Example ""
             ```bash
@@ -577,6 +557,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 ---
 
 ## :fontawesome-solid-folder-tree: File Storage
+
 For standalone production and test servers, we recommend using the local filesystem. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to the [**related guide**](./deploying-a-cluster.md).
 
 === "Local Filesystem"
