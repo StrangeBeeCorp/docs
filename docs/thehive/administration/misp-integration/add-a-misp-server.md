@@ -29,11 +29,19 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     **- Server name**
 
+    A name for the connection. Use explicit, precise names for each connection if you have multiple servers configured in TheHive.
+
     **- Server url**
+
+    The URL of the MISP server to connect with. For example: *https://misp.mycompany.com*.
 
     **- API key**
 
+    The API key for the dedicated MISP account. You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
+
     **- Purpose**
+    
+    The purpose of this connection: *Import only*, *Export only*, or both, *Import & Export*.
 
 6. {!includes/proxy-settings.md!}
 
@@ -45,13 +53,29 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     **- Choose the filter on TheHive organizations**
 
-    **- Tags**
+    By default, all your organizations in TheHive benefit from this connection.
+
+    The following options are available:
+
+    * Include all organizations
+    * Include selected organizations
+    * Exclude selected organizations
+
+    **- [Tags](../../administration/taxonomies.md)**
+
+    The tags to be appended to alerts when importing MISP events.
 
     **- Export case tags**
 
+    When exporting observables marked as IOCs to MISP, also export the case tags in the MISP event.
+
     **- Export observables tags**
 
+    When exporting observables marked as IOCs to MISP, also export the tags from the observables in the MISP event.
+
     **- Export TheHive url**
+
+    
 
 10. In the **Filter settings** section, enter the following information:
 

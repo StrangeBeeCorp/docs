@@ -1,35 +1,5 @@
 # MISP
 
-## Manage MISP connections
-
-### Add a new MISP server
-
-![](../images/administration-guides/platform-management-misp-1.png)
-
-Specify:
-
-* A name for this connection, for example: `misp`[^1]
-* The URL of MISP server to connect with, for example: ` https://misp.mycompany.com` 
-* The API key of the dedicated MISP account
-* The purpose of this connection: *Import only*, *Export Only*, or both, *Import & Export*
-* Proxy settings if required for TheHive to connect with MISP
-
-
-### Advanced settings
-
-![](../images/administration-guides/platform-management-misp-2.png)
-
-By default, **ALL** organizations in TheHive benefit from this connection.
-Additionaly, 2 options are available:
-
-* Make this connection **available ONLY** to a subset of existing organizations in TheHive
-* Make this connection **unavailable** to a subset of existing organizations in TheHive
-
-Additional options let you:
-
-* Define *tags* that will be appended to Alerts when importing MISP events
-* When exporting IOCs in MISP, also export tags from the Case in the new MISP event
-* When exporting IOCs in MISP, also export tags from the observables
 
 
 ### Filters
