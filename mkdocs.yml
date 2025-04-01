@@ -160,6 +160,8 @@ plugins:
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/administration/misp.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
 
 extra:
   generator: false
