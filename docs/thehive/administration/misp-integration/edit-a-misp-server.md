@@ -37,7 +37,7 @@ This topic provides step-by-step instructions for editing a [MISP server connect
 
     A name for the connection. Use explicit, precise names for each connection if you have multiple servers configured in TheHive.
 
-    **- Server url**
+    **- Server URL**
 
     The URL of the MISP server to connect with. For example: *https://misp.mycompany.com*.
 
@@ -105,7 +105,7 @@ This topic provides step-by-step instructions for editing a [MISP server connect
 
     **- Organizations to include**
 
-    Only events created by the MISP organizations defined in this field are imported.
+    Import only events created by the MISP organizations defined in this field are imported.
 
     **- Organizations to exclude**
 

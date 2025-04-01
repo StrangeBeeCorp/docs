@@ -48,7 +48,7 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     A name for the connection. Use explicit, precise names for each connection if you have multiple servers configured in TheHive.
 
-    **- Server url**
+    **- Server URL**
 
     The URL of the MISP server to connect with. For example: *https://misp.mycompany.com*.
 

@@ -1,12 +1,12 @@
 # About MISP Integration
 
-This topic explains how the malware information sharing platform (MISP) is integrated with TheHive.
+This topic explains how the malware information sharing platform (MISP) integrates with TheHive.
 
 {!includes/upgrade-misp.md!}
 
-## What is MISP?
+## What's MISP?
 
-[MISP](https://www.misp-project.org/) is an open-source threat intelligence platform designed to improve the sharing of structured threat information, including indicators of compromise (IOCs), tactics, techniques, and procedures (TTPs), and other relevant data. 
+[MISP](https://www.misp-project.org/) is an open-source threat intelligence platform designed to improve the sharing of structured threat information. This includes indicators of compromise (IOCs), tactics, techniques, procedures (TTPs), and other relevant data.
 
 MISP enables organizations to share, store, and correlate security information to enhance their cybersecurity efforts and collaborate with other organizations or threat intelligence communities.
 
