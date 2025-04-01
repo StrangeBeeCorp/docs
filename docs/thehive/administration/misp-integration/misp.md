@@ -1,16 +1,5 @@
 # MISP
 
-## Introduction
-
-!!! Info
-    An account and an API key are required on a MISP server to define a connection.
-
-* One or more MISP instances can be connected to TheHive.
-* For each one:
-  * MISP events can be **imported** as Alerts in TheHive. A set of filter can refine the imported events
-  * Observables flagged as IOCs in a Case can be **exported** in a new event in MISP
-
-
 ## Manage MISP connections
 
 ### Add a new MISP server
@@ -63,21 +52,7 @@ When importing MISP events as TheHive *Alerts*, several options are available:
 [^1]:
     If you have several connections, this is useful to give explicit names
 
-    ---
-    hide:
-      - navigation
-    ---
-    
-    # MISP Integration
-    
-    TheHive in strongly integrated with MISP (Malware Information Sharing Platform).
-    
-    Using it's connector, TheHive has the capabilities to:
-    
-    - Receive MISP events and ingest them as alerts
-    - Send TheHive `Cases` to MISP as events
-    
-    This integration is highly configurable and allows TheHive to synchronize with one or multiple MISP servers.
+   
     
     ## Configuration
     

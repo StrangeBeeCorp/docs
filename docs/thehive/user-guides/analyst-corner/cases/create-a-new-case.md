@@ -100,6 +100,9 @@ Several options are offered to create a case in TheHive:
 !!! info "Data transfer"
     When creating a case from a MISP event, data from the event, such as observables, is automatically transferred to the case.
 
+!!! note "Automatic integration with MISP"
+    To automatically generate alerts from MISP events, you need to [configure one or more MISP servers](../../../administration/misp-integration/add-a-misp-server.md) in TheHive.
+
 1. {!includes/create-a-case.md!}
 
 2. In the **Create case** drawer, select **From MISP (.json)**.
