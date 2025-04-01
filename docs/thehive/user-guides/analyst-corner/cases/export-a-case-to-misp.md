@@ -14,7 +14,7 @@ Only observables marked as IOCs will be exported in the case. Once exported to M
 
 ## Procedure
 
-1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
+1. [Locate the case](../cases/search-for-cases/find-a-case.md) you want to export.
 
 2. In the case description, select the **Export** button.
 
