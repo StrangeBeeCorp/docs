@@ -1,14 +1,15 @@
 # Step-by-Step Guide
 
-This article provides a comprehensive installation and configuration guide to set up an instance of TheHive. The guide offers detailed instructions accompanied by examples for systems based on DEB and RPM packages, as well as for installation from binary packages.
+This topic provides a comprehensive installation and configuration guide to set up a new instance of TheHive. It includes detailed instructions with examples for systems using DEB and RPM packages, as well as installation from binary packages.
 
-!!! Info "Note: Installation for a new instance of TheHive only is covered in this guide."
+!!! info "New instance only"
+    This guide covers the installation process for setting up a new instance of TheHive only.
 
 ---
 
 ## Dependencies
 
-Before proceeding with the installation, ensure that the following programs are already installed on your system:
+Before proceeding, install the following dependencies:
 
 === "DEB"
 
@@ -34,8 +35,8 @@ Ensure that all dependencies are successfully installed before proceeding with t
 
 ## :fontawesome-brands-java: Java Virtual Machine
  
-!!! Danger "Important Note:"
-    - For security and long-term support, it is mandatory to use [**Amazon Corretto**](https://aws.amazon.com/corretto/) builds, which are OpenJDK builds provided and maintained by Amazon.
+!!! danger "Java support"
+    - For security and long-term support, you must use [**Amazon Corretto**](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
     - Java version 8 is no longer supported.
 
 === "DEB"
@@ -102,42 +103,38 @@ Ensure that all dependencies are successfully installed before proceeding with t
 
 
 === "Other"
-    If you are using a system other than DEB or RPM, please consult your system documentation for instructions on installing Java 11.
+    If you're using a system other than DEB or RPM, refer to your system documentation for instructions on installing Java 11.
 
 ---
 
 ## :fontawesome-solid-database: Apache Cassandra
 
-Apache Cassandra is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release version **4.0.x**.
+[Apache Cassandra](https://cassandra.apache.org/_/index.html) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.
 
-!!! Info "Upgrading from Cassandra 3.x"
-    The information provided in this guide pertains specifically to fresh installations. If you are currently using Cassandra 3.x and considering an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md). 
-
-&nbsp;
+!!! info "Upgrading from Cassandra 3.x"
+    This guide is intended for fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md).
 
 ### Installation
 
 === "DEB"
     
-    1. Add Apache Cassandra repository references
+    1. Add Apache Cassandra repository references:
 
-        - *Download Apache Cassandra repository keys using the following command:*
+        - Download Apache Cassandra repository keys using the following command:
         
         !!! Example ""
             ```bash
             wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
             ```
 
-        - *Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/cassandra.sources.list` file. This file may not exist, and you may need to create it.*
+        - Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/cassandra.sources.list` file. This file may not exist, and you may need to create it.
         
         !!! Example ""
             ```bash
             echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
             ```
 
-    2. Install the package
-
-        - *Once the repository references are added, update your package index and install Cassandra using the following commands:*
+    2. Once the repository references are added, update your package index and install Cassandra using the following command:
 
         !!! Example ""
             ```bash
@@ -147,18 +144,14 @@ Apache Cassandra is a highly scalable and robust database system. TheHive is ful
 
 === "RPM"
 
-    1. Add Cassandra repository keys
-
-        - *To add Cassandra repository keys, execute the following command:*
+    1. Add Cassandra repository keys using the following command:
         
         !!! Example ""
             ```bash
             rpm --import https://downloads.apache.org/cassandra/KEYS
             ```
     
-    2. Add the Apache repository for Cassandra to **/etc/yum.repos.d/cassandra.repo**
-
-        - *To add the Apache repository configuration for Cassandra, you need to create a new file named `/etc/yum.repos.d/cassandra.repo` and add the following content to it:*
+    2. Add the Apache repository configuration for Cassandra to a new file named `/etc/yum.repos.d/cassandra.repo`and add the following content to it:
         
         !!! Example ""
             ```bash
@@ -170,65 +163,57 @@ Apache Cassandra is a highly scalable and robust database system. TheHive is ful
             gpgkey=https://downloads.apache.org/cassandra/KEYS
             ```
         
-        !!! Note "Note"
-            You can create the file and add the content using a text editor like **nano** or **vim**. 
+        !!! note "Using a text editor"
+            You can create the file and add the content using a text editor such as [nano](https://www.nano-editor.org/) or [Vim](https://www.vim.org/).
 
-    3. Install the package
-
-        - *After adding the repository configuration, install Cassandra using the following command:*
+    3. After adding the repository configuration, install Cassandra using the following command:
         
         !!! Example ""
             ```bash
             sudo yum install cassandra
             ```
 
-=== "Other Installation Methods"
+=== "Other installation methods"
 
-
-    Download the tar.gz archive from [**Apache Cassandra Downloads**](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like `wget` to download the archive.
-
+    Download the tar.gz archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
 
 By default, data is stored in `/var/lib/cassandra`. Ensure appropriate permissions are set for this directory to avoid any issues with data storage and access.
 
-&nbsp;
-
 ### Configuration
 
-You can configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.yaml` file.
+Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.yaml` file.
 
-
-**1.Locate the Cassandra Configuration File:**
+**1.Locate the Cassandra configuration file:**
    
    Navigate to the directory containing the Cassandra configuration file `/etc/cassandra/`.
 
-**2.Edit the `cassandra.yaml` File:**
+**2.Edit the `cassandra.yaml` file:**
    
    Open the `cassandra.yaml` file in a text editor with appropriate permissions.
 
-**3.Configure Cluster Name:**
+**3.Configure cluster name:**
    
    Set the `cluster_name` parameter to the desired name. This name helps identify the Cassandra cluster.
 
-**4.Configure Listen Address:**
+**4.Configure listen address:**
    
    Set the `listen_address` parameter to the IP address of the node within the cluster. This address is used by other nodes within the cluster to communicate.
 
-**5.Configure RPC Address:**
+**5.Configure RPC address:**
    
    Set the `rpc_address` parameter to the IP address of the node to enable clients to connect to the Cassandra cluster.
 
-**6.Configure Seed Provider:**
+**6.Configure seed provider:**
    
-   Ensure the `seed_provider` section is properly configured. The `seeds` parameter should contain the IP address(es) of the seed node(s) in the cluster.
+   Ensure the `seed_provider` section is properly configured. The `seeds` parameter should contain the IP addresses of the seed nodes in the cluster.
 
-**7.Configure Directories:**
+**7.Configure directories:**
    
    Set the directories for data storage, commit logs, saved caches, and hints as per your requirements. Ensure that the specified directories exist and have appropriate permissions.
 
-**8.Save the Changes:**
+**8.Save the changes:**
    
    After making the necessary configurations, save the changes to the `cassandra.yaml` file.
-
 
 !!! Example ""
     ```yaml title="/etc/cassandra/cassandra.yaml"
@@ -251,33 +236,27 @@ You can configure Cassandra by modifying settings within the `/etc/cassandra/cas
     [..]
     ```
 
-&nbsp;
-
 ### Start the service 
 
 === "DEB"
     
-    1. Start the Service
-
-        - *Execute the following command to start the Cassandra service:*
+    1. Execute the following command to start the Cassandra service:
         
         !!! Example ""
             ```bash
             sudo systemctl start cassandra
             ```
 
-    2. Ensure Service Restarts After Reboot:
-
-        - *Enable the Cassandra service to restart automatically after a system reboot:*
+    2. Enable the Cassandra service to restart automatically after a system reboot:
 
         !!! Example ""
             ```bash
             sudo systemctl enable cassandra
             ```
 
-    3. (Optional) Remove Existing Data Before Starting
-
-        - *If the Cassandra service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. Execute the following commands:*
+    3. Optional: If the Cassandra service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    
+        Execute the following commands:
 
         !!! Example ""
             ```bash
@@ -287,9 +266,7 @@ You can configure Cassandra by modifying settings within the `/etc/cassandra/cas
 
 === "RPM"
 
-    1. Start the Service
-
-        - *Start the Cassandra service by running:*
+    1. Start the Cassandra service by running:
         
         !!! Example ""
             ```bash
@@ -297,17 +274,15 @@ You can configure Cassandra by modifying settings within the `/etc/cassandra/cas
             sudo service cassandra start
             ```
 
-    2. Ensure Service Restarts After Reboot
-
-        - *Enable the Cassandra service to restart automatically after a system reboot:*
+    2. Enable the Cassandra service to restart automatically after a system reboot:
 
         !!! Example ""
             ```bash
             sudo systemctl enable cassandra
             ```
 
-!!! Note "Note"
-    Cassandra defaults to listening on port 7000/tcp for inter-node communication and port 9042/tcp for client communication.
+!!! note "Default ports for Cassandra communication"
+    Cassandra defaults to listening on port 7000/tcp for inter-node communication and on port 9042/tcp for client communication.
 
 
 <!-- #### Additional configuration : disable tombstones  (for standalone server **ONLY**)
@@ -385,15 +360,13 @@ For additional configuration options, refer to:
 
 ## :fontawesome-solid-list: Elasticsearch
 
-Elasticsearch is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
+[Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
 
-!!! Note 
-    From Version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Previous TheHive versions only support Elasticsearch 7.x.
+!!! note "Elasticsearch support"
+    From version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Previous TheHive versions only support Elasticsearch 7.x.
 
-!!! Note 
+!!! note 
     Starting from TheHive 5.3, for advanced use-cases, OpenSearch is also supported.
-
-&nbsp;
 
 ### Installation
 
