@@ -23,9 +23,14 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
 3. {!includes/misp-tab-go-to.md!}
 
-4. Select :fontawesome-solid-plus:.
+4. Enter the time interval between each event polling from TheHive to MISP.
 
-5. In the **Set up the new server** drawer, enter the following information in the **General settings** section:
+    !!! info "Configuration for all MISP servers"
+        This time interval applies to all MISP servers connected to TheHive.
+
+5. Select :fontawesome-solid-plus:.
+
+6. In the **Set up the new server** drawer, enter the following information in the **General settings** section:
 
     **- Server name**
 
@@ -41,15 +46,15 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     **- Purpose**
     
-    The purpose of this connection: *Import only*, *Export only*, or both, *Import & Export*.
+    The purpose of this connection: *Import only*, *Export only*, or *Import and export*.
 
-6. {!includes/proxy-settings.md!}
+7. {!includes/proxy-settings.md!}
 
-7. {!includes/certificate-authority.md!}
+8. {!includes/certificate-authority.md!}
 
-8. {!includes/host-name-verification.md!}
+9. {!includes/host-name-verification.md!}
 
-9. In the **Advanced settings** section, enter the following information:
+10. In the **Advanced settings** section, enter the following information:
 
     **- Choose the filter on TheHive organizations**
 
@@ -73,11 +78,10 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     When exporting observables marked as IOCs to MISP, also export the tags from the observables in the MISP event.
 
-    **- Export TheHive url**
+    **- Export TheHive URL**
+  
 
-    
-
-10. In the **Filter settings** section, enter the following information:
+11. In the **Filter settings** section, enter the following information:
 
     **- Maximum age**
 
@@ -90,5 +94,9 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
     **- List of allowed tags**
 
     **- Prohibited tags list**
+
+12. Select **Test server connection**.
+
+13. Select **Add**.
 
 <h2>Next steps</h2>

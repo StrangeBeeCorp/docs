@@ -23,15 +23,7 @@ When importing MISP events as TheHive *Alerts*, several options are available:
     If you have several connections, this is useful to give explicit names
 
    
-    
-    ## Configuration
-    
-    To add or configure a MISP server, open the Admin organization page (1), go to the Platform Management menu (2) and navigate to the MISP tab (3).
-    
-    Click the "+" button to add a new MISP server (4).
-    
-    ![MISP Connector configuration](../images/how-to/misp/configure_misp.png)
-    
+
     ### General settings
     
     This configuration is common to all MISP servers connected to TheHive.
