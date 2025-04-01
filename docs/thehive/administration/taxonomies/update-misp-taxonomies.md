@@ -6,7 +6,7 @@ This is useful when you need to update the MISP taxonomies included with your Th
 
 {!includes/administrator-access-manage-taxonomies.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -20,7 +20,7 @@ This is useful when you need to update the MISP taxonomies included with your Th
 
 6. Select **Import**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
 * [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)

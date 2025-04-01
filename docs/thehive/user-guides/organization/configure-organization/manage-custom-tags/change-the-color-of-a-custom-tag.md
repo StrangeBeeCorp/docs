@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for changing the color of a [custo
 
 {!includes/access-manage-custom-tags.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for changing the color of a [custo
 
 5. Select :fontawesome-solid-check:.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Rename a Custom Tag](rename-a-custom-tag.md)
 * [View Custom Tag Statistics](view-custom-tag-statistics.md)

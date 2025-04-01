@@ -9,7 +9,7 @@ This topic provides step-by-step instructions for deleting a [status](about-stat
 
 {!includes/administrator-access-manage-statuses.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -21,7 +21,7 @@ This topic provides step-by-step instructions for deleting a [status](about-stat
 
 5. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Status](create-a-status.md)
 * [Change a Status Visibility](change-visibility-of-a-status.md)

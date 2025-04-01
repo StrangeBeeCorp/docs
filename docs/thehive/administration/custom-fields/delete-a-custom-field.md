@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for deleting a [custom field](../c
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Entities management** view from the sidebar menu.
 
@@ -20,7 +20,7 @@ This topic provides step-by-step instructions for deleting a [custom field](../c
 
 5. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Custom Field](create-a-custom-field.md)
 * [Edit a Custom Field](edit-a-custom-field.md)

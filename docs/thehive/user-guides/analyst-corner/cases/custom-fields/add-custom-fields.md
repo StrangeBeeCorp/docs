@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for adding [custom fields](../../.
 
 {!includes/access-manage-custom-fields.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Find the [case](../../cases/search-for-cases/find-a-case.md) or the [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to add custom fields.
 
@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding [custom fields](../../.
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Remove Custom Fields](remove-custom-fields.md)
 * [Enter Values in Custom Fields](enter-values-in-custom-fields.md)

@@ -13,7 +13,7 @@ This is useful if you want to hide [TheHive’s predefined statuses](about-statu
 
 {!includes/administrator-access-manage-statuses.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -32,7 +32,7 @@ This is useful if you want to hide [TheHive’s predefined statuses](about-statu
 
 6. Select **Confirm custom status creation**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Status](create-a-status.md)
 * [Delete a Status](delete-a-status.md)

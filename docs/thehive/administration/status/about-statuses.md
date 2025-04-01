@@ -38,7 +38,7 @@ Each status is associated with:
 
 After creation, statuses are available to users in cases and alerts.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Status](create-a-status.md)
 * [Change a Status Visibility](change-visibility-of-a-status.md)

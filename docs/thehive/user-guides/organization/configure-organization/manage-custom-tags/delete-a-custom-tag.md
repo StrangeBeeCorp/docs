@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for deleting a [custom tag](about-
 
 {!includes/access-manage-custom-tags.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for deleting a [custom tag](about-
 
 5. Select **OK**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Rename a Custom Tag](rename-a-custom-tag.md)
 * [Change the Color of a Custom Tag](change-the-color-of-a-custom-tag.md)
