@@ -14,6 +14,8 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
 
 4. In the **Create a task log** drawer, enter the text you want to add in the **Log** field using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
 
+    {!includes/task-logs-no-observables.md!}
+
 5. Optional: Add images to the task log.
 
     * To add an image as an attachment, drop it into the **Attachment** section or select it from your computer.
