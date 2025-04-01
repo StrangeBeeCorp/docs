@@ -2,6 +2,8 @@
 
 This topic explains how the malware information sharing platform (MISP) is integrated with TheHive.
 
+{!includes/upgrade-misp.md!}
+
 ## What is MISP?
 
 [MISP](https://www.misp-project.org/) is an open-source threat intelligence platform designed to improve the sharing of structured threat information, including indicators of compromise (IOCs), tactics, techniques, and procedures (TTPs), and other relevant data. 
@@ -23,5 +25,6 @@ TheHive integrates with MISP in several ways:
 
 <h2>Next steps</h2>
 
-* [Add a MISP Server](add-a-misp-server.md)
-* [Remove a MISP Server](remove-a-misp-server.md)
+* [Connect a MISP Server](connect-a-misp-server.md)
+* [Edit a MISP Server Connection](edit-a-misp-server.md)
+* [Delete a MISP Server Connection](delete-a-misp-server.md)

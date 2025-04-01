@@ -10,7 +10,7 @@ Only observables marked as IOCs will be exported in the case. Once exported to M
     The event created in MISP is not published by default. You must review it and update its status in MISP to publish it.
 
 !!! note "Automatic integration with MISP"
-    To automatically share observables marked as IOCs from your cases with MISP, you must [configure one or more MISP servers](../../../administration/misp-integration/add-a-misp-server.md) in TheHive.
+    To automatically share observables marked as IOCs from your cases with MISP, you must [configure one or more MISP servers](../../../administration/misp-integration/connect-a-misp-server.md) in TheHive.
 
 ## Procedure
 
