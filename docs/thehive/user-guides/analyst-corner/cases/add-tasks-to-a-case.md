@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for adding [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in TheHive.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add tasks.
 
@@ -50,7 +50,7 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a Link to a Case](add-a-link-to-a-case.md)
 * [Apply a Case Template](apply-a-case-template.md)

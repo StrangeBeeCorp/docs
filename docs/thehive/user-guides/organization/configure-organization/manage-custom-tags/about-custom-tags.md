@@ -43,7 +43,7 @@ Custom tags can be created:
 
 Users can create new custom tags by adding them directly to cases, alerts, and observables.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Change the Color of a Custom Tag](change-the-color-of-a-custom-tag.md)
 * [Rename a Custom Tag](rename-a-custom-tag.md)

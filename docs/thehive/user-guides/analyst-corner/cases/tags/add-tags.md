@@ -31,6 +31,6 @@ This topic provides step-by-step instructions for adding [tags](about-tags.md) t
 
 5. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Remove Tags](../../../analyst-corner/cases/tags/remove-tags.md)

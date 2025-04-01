@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 {!includes/access-change-status-alert.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Find [the alert](../alerts/search-for-alerts/find-an-alert.md) you want to update.
 
@@ -21,7 +21,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 4. Select **Save**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions](../alerts/alerts-description/actions.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)

@@ -8,7 +8,7 @@ This is useful for adding custom statuses to [the predefined ones managed by The
 
 {!includes/administrator-access-manage-statuses.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -51,7 +51,7 @@ This is useful for adding custom statuses to [the predefined ones managed by The
 
 6. Select **Confirm custom status creation**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Change a Status Visibility](change-visibility-of-a-status.md)
 * [Change a Status Color](change-color-of-a-status.md)

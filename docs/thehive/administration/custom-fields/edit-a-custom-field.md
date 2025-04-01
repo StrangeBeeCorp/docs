@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
 {!includes/administrator-access-manage-custom-fields.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Entities management** view from the sidebar menu.
 
@@ -66,7 +66,7 @@ This topic provides step-by-step instructions for editing a [custom field](../cu
 
 6. Select **Confirm custom field edition**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Custom Field](create-a-custom-field.md)
 * [Delete a Custom Field](delete-a-custom-field.md)

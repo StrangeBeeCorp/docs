@@ -33,7 +33,7 @@ However, you can:
 
 Once created, tags from activated taxonomies are available to add to cases, alerts, and observables.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)

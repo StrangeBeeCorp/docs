@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
 {!includes/access-manage-custom-fields.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Find the [case](../../cases/search-for-cases/find-a-case.md) or the [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to enter values in custom fields.
 
@@ -28,7 +28,7 @@ This topic provides step-by-step instructions for entering values in [custom fie
 
 6. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add Custom Fields](add-custom-fields.md)
 * [Remove Custom Fields](remove-custom-fields.md)
