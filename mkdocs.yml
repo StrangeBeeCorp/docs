@@ -272,7 +272,11 @@ nav:
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
-        - 'MISP Integration': thehive/administration/misp.md
+        - 'MISP Integration':
+          - 'About MISP Integration': thehive/administration/misp-integration/about-misp-integration.md
+          - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
+          - 'Edit a MISP Server Connection': thehive/administration/misp-integration/edit-a-misp-server.md
+          - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
