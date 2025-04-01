@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
 This is useful for adding custom statuses to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
 
+{!includes/task-statuses-excluded.md!}
+
 {!includes/administrator-access-manage-statuses.md!}
 
 ## Procedure

@@ -9,6 +9,8 @@ This is useful if you want to hide [TheHive’s predefined statuses](about-statu
 !!! note "No impact on API"
     Changing the visibility of a status doesn't affect [the API](https://docs.strangebee.com/thehive/api-docs/). All statuses remain available through the API.
 
+{!includes/task-statuses-excluded.md!}
+
 {!includes/administrator-access-manage-statuses.md!}
 
 ## Procedure

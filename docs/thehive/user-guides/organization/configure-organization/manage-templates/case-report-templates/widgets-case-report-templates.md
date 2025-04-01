@@ -1,6 +1,6 @@
 # Widgets in Case Report Templates
 
-Several widget types are available for case report templates in TheHive.
+Several widget types are available for [case report templates](about-case-report-templates.md) in TheHive.
 
 This topic describes each widget type and its attributes.
 

@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for closing a [case](about-cases.md) in TheHive.
 
+Close the case when the investigation is complete.
+
 !!! info "Pending tasks"
     Closing a case also permanently closes all pending tasks. This action can't be undone.
 
@@ -18,6 +20,11 @@ This topic provides step-by-step instructions for closing a [case](about-cases.m
 3. In the **Close case** drawer, select the [status](../../../administration/status/about-statuses.md) that reflects the outcome of the investigation.
 
 4. Enter a summary describing the outcome of the investigation.
+
+    <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Summary** field or selecting the :fontawesome-solid-image: symbol.
+
+    !!! warning "Wait for the upload to complete"
+        Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
 5. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 
 

@@ -44,7 +44,7 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### Triggers on tasks
 
-* *LoginMyTask*: Triggered when [a new log is added to a task](../../../analyst-corner/tasks/preview-task-details/create-a-task-log.md)
+* *LoginMyTask*: Triggered when [a new log is added to a task](../../../analyst-corner/tasks/create-a-task-log.md)
 * *TaskAssigned*: Triggered when a task is assigned to a user or the assignee is updated
 * *TaskClosed*: Triggered when a task is closed
 * *TaskMandatory*: Triggered when a task is made mandatory

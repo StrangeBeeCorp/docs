@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) color for cases and alerts in TheHive.
 
+{!includes/task-statuses-excluded.md!}
+
 {!includes/administrator-access-manage-statuses.md!}
 
 ## Procedure
