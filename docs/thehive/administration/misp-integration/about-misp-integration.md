@@ -21,7 +21,7 @@ TheHive integrates with MISP in several ways:
 
 {!includes/administrator-access-manage-misp-servers.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add a MISP Server](add-a-misp-server.md)
 * [Remove a MISP Server](remove-a-misp-server.md)

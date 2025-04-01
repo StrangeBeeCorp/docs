@@ -15,7 +15,7 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
 {!includes/administrator-access-manage-misp-servers.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -67,4 +67,4 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     **- Prohibited tags list**
 
-## Next steps
+<h2>Next steps</h2>
