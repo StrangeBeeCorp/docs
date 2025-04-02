@@ -556,9 +556,9 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 ---
 
-## :fontawesome-solid-folder-tree: File Storage
+## :fontawesome-solid-folder-tree: File storage
 
-For standalone production and test servers, we recommend using the local filesystem. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to the [**related guide**](./deploying-a-cluster.md).
+For standalone production and test servers, we recommend using the local file system. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to [Setting up a Cluster](./deploying-a-cluster.md).
 
 === "Local Filesystem"
     To utilize the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
