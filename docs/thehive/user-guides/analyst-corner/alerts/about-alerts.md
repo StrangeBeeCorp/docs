@@ -19,7 +19,7 @@ An alert can be created from the following sources:
 
 * <!-- md:version 5.5 --> External systems from which TheHive retrieves data using [alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md)
 
-* Threat intelligence platforms like [MISP](../../../administration/misp.md) from which TheHive retrieves data.
+* Threat intelligence platforms like [MISP](../../../administration/misp-integration/about-misp-integration.md) connected to TheHive
 
 * [Email servers](../../../administration/email-intake-connector.md) from which TheHive retrieves data.
 
