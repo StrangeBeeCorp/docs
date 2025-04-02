@@ -113,39 +113,39 @@ The database and index engine configurations can vary depending on the use case 
 
 === "Standalone server with Cassandra and Elasticsearch" 
 
-  To set up TheHive on a standalone server with Cassandra and Elasticsearch:
+    To set up TheHive on a standalone server with Cassandra and Elasticsearch:
 
-  1. Install a Cassandra server locally.
+    1. Install a Cassandra server locally.
 
-  2. Install Elasticsearch.
+    2. Install Elasticsearch.
 
-  3. Configure TheHive with the following settings:
+    3. Configure TheHive with the following settings:
 
-      ```hocon
-      ## Database Configuration
-      db {
-        provider = janusgraph
-        janusgraph {
-          ## Storage configuration
-          storage {
-            backend = cql
-            hostname = ["127.0.0.1"]
-            ## Cassandra authentication (if configured)
-            username = "thehive_account"
-            password = "cassandra_password"
-            cql {
-              cluster-name = thp
-              keyspace = thehive
+        ```hocon
+        ## Database Configuration
+        db {
+          provider = janusgraph
+          janusgraph {
+            ## Storage configuration
+            storage {
+              backend = cql
+              hostname = ["127.0.0.1"]
+              ## Cassandra authentication (if configured)
+              username = "thehive_account"
+              password = "cassandra_password"
+              cql {
+                cluster-name = thp
+                keyspace = thehive
+              }
+            }
+            ## Index configuration
+            index.search {
+              backend = elasticsearch
+              hostname = ["127.0.0.1"]
+              index-name = thehive
             }
           }
-          ## Index configuration
-          index.search {
-            backend = elasticsearch
-            hostname = ["127.0.0.1"]
-            index-name = thehive
-          }
-        }
-    ```
+        ```
 
 === "Cluster with Cassandra and Elasticsearch" 
 
