@@ -6,6 +6,9 @@ This is useful if you want to share the results of your investigations with this
 
 Only observables marked as IOCs will be exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.
 
+!!! info "Requirements"
+    The MISP server you want to share your case with must be [configured with either the *Import and export* or *Export only* purpose](../../../administration/misp-integration/connect-a-misp-server.md).
+
 !!! warning "MISP actions required"
     The event created in MISP is not published by default. You must review it and update its status in MISP to publish it.
 

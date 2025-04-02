@@ -17,7 +17,7 @@ TheHive integrates with MISP in several ways:
 * [Default import of MISP taxonomies](../taxonomies.md) during TheHive installation
 * [Automatic connections](connect-a-misp-server.md) to retrieve events from one or more MISP servers and convert them into alerts in TheHive
 * [Manual import of MISP events into TheHive as cases](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event)
-* [Manual export of cases to MISP as events](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md) for sharing information with the community
+* [Manual export of cases to MISP as events](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md) for sharing observables marked as IOCs with the community
 
 ## Permissions
 

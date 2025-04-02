@@ -2,11 +2,9 @@
 
 This topic provides step-by-step instructions for connecting a [MISP server](about-misp-integration.md) to TheHive.
 
-This is useful if you want to automatically retrieve filtered MISP events as alerts in TheHive or share observables marked as IOCs from your cases with MISP. 
+This is useful if you want to automatically retrieve filtered MISP events as alerts in TheHive or [manually export observables marked as IOCs from cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md).
 
 You can configure multiple MISP servers in TheHive.
-
-If you prefer to manually export your cases to MISP, see [How to Manually Export a Case to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md).
 
 To manually import a MISP event as a case in TheHive, refer to [How to Create a New Case](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event).
 
@@ -58,11 +56,11 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     **- Purpose**
     
-    The purpose of this connection: 
+    The purpose of this connection indicates what actions you are allowed to perform with the server:
     
-    * *Import only*: Only import events from MISP to TheHive.
-    * *Export only*: Only export cases from TheHive to MISP.
-    * *Import and export*: Enables two-way synchronization.
+    * *Import only*: Automatically import events from MISP to TheHive as alerts
+    * *Export only*: [Manually export observables marked as IOCs from TheHive cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md)
+    * *Import and export*: Allows both automatically importing events from MISP to TheHive and manually exporting observables marked as IOCs from TheHive cases to MISP
 
     ---
 

@@ -47,11 +47,11 @@ This topic provides step-by-step instructions for editing a [MISP server connect
 
     **- Purpose**
     
-    The purpose of this connection: 
+    The purpose of this connection indicates what actions you are allowed to perform with the server:
     
-    * *Import only*: Only import events from MISP to TheHive.
-    * *Export only*: Only export cases from TheHive to MISP.
-    * *Import and export*: Enables two-way synchronization.
+    * *Import only*: Automatically import events from MISP to TheHive as alerts
+    * *Export only*: [Manually export observables marked as IOCs from TheHive cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md)
+    * *Import and export*: Allows both automatically importing events from MISP to TheHive and manually exporting observables marked as IOCs from TheHive cases to MISP
 
     ---
 
