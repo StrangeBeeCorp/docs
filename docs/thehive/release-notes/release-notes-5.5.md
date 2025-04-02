@@ -14,9 +14,9 @@
 
 You can now make a case private, allowing authorized users to restrict access to designated team members and managers, enhancing data security.
 
-#### [Alert feeder](../user-guides/organization/configure-organization/manage-feeders/about-feeders.md)
+#### [Alert feeders](../user-guides/organization/configure-organization/manage-feeders/about-feeders.md)
 
-The Alert feeder is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive's public API.
+An alert feeder is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive's public API.
 
 #### [Case links: Link external or internal elements to a case](../user-guides/analyst-corner/cases/about-cases.md#linking-elements)
 
@@ -38,20 +38,59 @@ You now have access to three new improvements in the Markdown formatting options
 
 #### New OpenID SSO provider
 
-This feature allows to plug TheHive with an OpenID authentication provider, and offer the users a Single Sign-On (SSO) access to TheHive. It was already possible to authenticate with SAML, and OAuth2. Built on-top of OAuth2 authorization layer, OpenID makes easier the authentication.
+TheHive now supports integration with an OpenID authentication provider, offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.
 
-#### Hide some status 
+#### [Hide predefined statuses](../administration/status/change-visibility-of-a-status.md)
 
-Introduces a new option to hide statuses in Cases and Alerts, providing a cleaner, more organized status list that displays only relevant information for an improved user experience.
+You can now hide predefined statuses for cases and alerts, allowing users to see only the custom statuses you’ve created. This provides a cleaner, more organized status list, displaying only relevant information for an improved user experience.
 
-#### MS Graph API for Email Intake
+#### MS Graph API for email intakes
 
-A new connector is available for Email Intake. The Microsoft 365 GraphAPI connector uses the recommended by Microsoft standard API, to connect and get emails from a Microsoft mail-box.
+A new connector is available for email intakes. The Microsoft 365 Graph API connector uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.
 
-#### Case report template: new option to display the description of custom events
+#### Case report templates: Display the description of custom events
 
-This option makes clearer the timelines information included in a case report. It is now possible to hide or show the custom events description in the timeline widget report.
+You can now hide or show the description of custom events in the timeline widget report.
 
 ### Improvements
 
+#### Taxonomy drawer
+
+The taxonomies component has been redesigned to provide an improved user experience.
+
+#### Better user experience for custom fields
+
+The display of custom fields has been improved for better consistency and intuitiveness, making data entry and management more efficient while reducing errors.
+
+#### Images in descriptions
+
+You can now display full-size images by dropping them directly into the descriptions of cases, alerts, and task logs. This improvement complements the existing attachment system, which displays images as attachments.
+
+#### Status visibility in the task tab of cases
+
+The status of tasks is now clearly visible in each row of the task tab in cases, enabling quick identification without needing to open the details.
+
+#### Public API observable route optimization
+
+The observable creation routes in alerts and cases have been optimized, making the creation of dozens of observables five times faster.
+
 ### Fixes
+
+#### UI
+
+##### Dark Mode
+
+* Corrected rendering of tag colors in report analyzers.
+* Fixed color display for failure messages on dashboards.
+
+#### Others
+
+* MISP server connection: Improved by trimming the server URL.
+* Attachment tab on cases: Fixed the counter to display the correct number. Filtering and sorting of attachments now work correctly.
+* Case and alert closure: Added the ability to input multiple values in custom fields.
+* Dashboards: 
+    * Selecting *Audit* in the **Entity** field is no longer allowed for any widget. Previously created widgets remain unaffected.
+    * Fixed an issue when using a date-type custom field as the date field in the widget.
+* Case export to MISP: Fixed an issue with attachments when exporting a case to MISP.
+* Merged alert audits: Fixed a regression introduced in [version 5.4.8](release-notes-5.4.md#548---february-24-2025) related to the JSON audit object of merged alerts. In the audit, the `object.*` field refers to the merged alert, while the `context.*` object refers to the case where the alert has been merged.
+* Notification form: Improved the performance of the filteredEvent input.
