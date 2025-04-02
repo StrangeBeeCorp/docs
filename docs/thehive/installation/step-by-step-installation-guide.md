@@ -109,7 +109,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
 
 ## :fontawesome-solid-database: Apache Cassandra
 
-[Apache Cassandra](https://cassandra.apache.org/_/index.html) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.
+[Apache Cassandra](https://cassandra.apache.org) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.
 
 !!! info "Upgrading from Cassandra 3.x"
     This guide is intended for fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md).
@@ -850,9 +850,9 @@ For security reasons, it is strongly advised to change the default password afte
 
 ## Advanced configuration
 
-For further customization options, please consult the Configuration and operations section.
+For further customization options, please consult the Configuration and Operations sections.
 
-To configure HTTPS, follow the instructions on the [**dedicated page**](../configuration/ssl.md).
+To configure HTTPS, follow the instructions on [SSL Configuration](../configuration/ssl.md).
 
 <!-- ## Usage & Licenses
 
@@ -864,4 +864,4 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 
 Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md). -->
 
-
+<h2>Next steps</h2>

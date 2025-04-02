@@ -1,10 +1,10 @@
 # Database and Index Configuration
 
-TheHive utilizes [Cassandra](https://cassandra.apache.org/) and [Elasticsearch](https://www.elastic.co/elasticsearch/) databases for data management and indexing purposes. Below outlines the configuration options available:
+TheHive uses [Cassandra](https://cassandra.apache.org/) and [Elasticsearch](https://www.elastic.co/elasticsearch/) databases for data management and indexing. Below are the available configuration options:
 
 ---
 
-## Basic Configuration 
+## Basic configuration 
 
 A typical database configuration for TheHive is structured as follows:
 
