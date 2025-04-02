@@ -160,6 +160,8 @@ plugins:
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/administration/misp.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
 
 extra:
   generator: false
@@ -272,7 +274,11 @@ nav:
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': thehive/administration/cortex.md
-        - 'MISP Integration': thehive/administration/misp.md
+        - 'MISP Integration':
+          - 'About MISP Integration': thehive/administration/misp-integration/about-misp-integration.md
+          - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
+          - 'Edit a MISP Server Connection': thehive/administration/misp-integration/edit-a-misp-server.md
+          - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
