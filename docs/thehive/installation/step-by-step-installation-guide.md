@@ -558,9 +558,9 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 ## :fontawesome-solid-folder-tree: File storage
 
-For standalone production and test servers, we recommend using the local file system. However, if you are considering building a cluster with TheHive, there are several possible solutions available, including NFS or S3 services. For further details and an example involving MinIO servers, please refer to [Setting up a Cluster](./deploying-a-cluster.md).
+For standalone production and test servers, we recommend using the local filesystem. However, if you are planning to build a cluster with TheHive, several solutions are available, including NFS or S3 services. For more details and an example using MinIO servers, refer to [Setting up a Cluster](./deploying-a-cluster.md).
 
-=== "Local Filesystem"
+=== "Local filesystem"
     To utilize the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
 
     !!! Example ""
@@ -575,25 +575,23 @@ For standalone production and test servers, we recommend using the local file sy
         chown -R thehive:thehive /opt/thp/thehive/files
         ```
 
-=== "S3 with Min.io"
+=== "S3 with MinIO"
 
-    Detailed documentation on the installation, configuration, and usage of Min.IO can be found in [this documentation](./deploying-a-cluster.md).
+    Detailed documentation on the installation, configuration, and usage of MinIO can be found in the [Setting up a Cluster](./deploying-a-cluster.md) topic.
 
 ---
 
-## :material-beehive-outline: TheHive Installation and Configuration
+## :material-beehive-outline: TheHive installation and configuration
 
 This section provides detailed instructions for installing and configuring TheHive.
 
-&nbsp;
-
 ### Installation
 
-All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in zip format. All packages are signed using our GPG key [**562CBC1C**](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
+All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in ZIP format. All packages are signed using our GPG key [**562CBC1C**](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
 
 === "DEB"
 
-    For Debian systems, use the following commands:
+    For Debian systems, use the following command:
 
     !!! Example ""
         ```bash
@@ -631,7 +629,7 @@ Install TheHive package by using the following commands:
             sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             ```
 
-    2. Create and edit the file /etc/yum.repos.d/strangebee.repo:
+    2. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
 
         !!! Example ""
             ```bash title="/etc/yum.repos.d/strangebee.repo"
@@ -651,10 +649,9 @@ Install TheHive package by using the following commands:
             sudo yum install thehive
             ```
 
-=== "Other Installation Methods"
+=== "Other installation methods"
 
     If you prefer a binary package, follow these steps:
-
 
     1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
 
@@ -689,8 +686,6 @@ Install TheHive package by using the following commands:
             sudo cp thehive.service /etc/systemd/system/thehive.service
             ```
 
-&nbsp;
-
 ### Configuration
 
 The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
@@ -714,8 +709,6 @@ The following configurations are necessary for successful initiation of TheHive:
 - Database configuration
 - File storage configuration
 
-&nbsp;
-
 #### Secret key configuration
 
 === "DEB"
@@ -734,7 +727,8 @@ The following configurations are necessary for successful initiation of TheHive:
         _EOF_
         ```
 
-#### Database & index
+#### Database and index
+
 By default, TheHive is configured to connect to local Cassandra and Elasticsearch databases.
 
 !!! Example ""
@@ -791,7 +785,8 @@ The default file storage location of TheHive is `/opt/thp/thehive/files`.
             ```
 
 === "S3"
-    If you opt for MinIO and an S3 object storage system to store files in a filesystem, append the following lines to TheHive configuration file (/etc/thehive/application.conf):
+
+    If you opt for MinIO and an S3 object storage system to store files in a filesystem, append the following lines to TheHive configuration file (`/etc/thehive/application.conf`):
 
     !!! Example ""
         ```yaml title="/etc/thehive/application.conf"
@@ -812,7 +807,7 @@ The default file storage location of TheHive is `/opt/thp/thehive/files`.
         alpakka.s3.path-style-access = force
         ```
 
-#### Cortex & MISP
+#### Cortex and MISP
 
 The initial configuration file packaged with the software contains the following lines, which enable the Cortex and MISP modules by default. If you're not utilizing either of these modules, you can simply comment out the corresponding line and restart the service.
 
@@ -827,8 +822,6 @@ The initial configuration file packaged with the software contains the following
     scalligraph.modules += org.thp.thehive.connector.misp.MispModule
     ```
 
-&nbsp;
-
 ### Run
 
 To start TheHive service and enable it to run on system boot, execute the following commands in your terminal:
@@ -839,13 +832,13 @@ To start TheHive service and enable it to run on system boot, execute the follow
     sudo systemctl enable thehive
     ```
 
-!!! Info "Please be aware that the service may take some time to start initially."
+!!! info "Service startup delay"
+    Please be aware that the service may take some time to start initially.
 
 After the service has successfully started, launch your web browser and navigate to `http://YOUR_SERVER_ADDRESS:9000/`
-
 The default admin user credentials are as follows:
 
-!!! Note ""
+!!! note ""
     ```bash
     Username: admin@thehive.local
     Password: secret
@@ -855,9 +848,9 @@ For security reasons, it is strongly advised to change the default password afte
 
 ---
 
-## Advanced Configuration
+## Advanced configuration
 
-For further customization options, please consult the **Configuration & Operations** section.
+For further customization options, please consult the Configuration and operations section.
 
 To configure HTTPS, follow the instructions on the [**dedicated page**](../configuration/ssl.md).
 
@@ -871,4 +864,4 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 
 Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md). -->
 
-&nbsp;
+
