@@ -88,15 +88,15 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
     * Include selected organizations
     * Exclude selected organizations
 
-    **- [Tags](../../administration/taxonomies.md)**
+    **- [Tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     The tags to be appended to alerts when importing MISP events.
 
-    **- Export case tags**
+    **- Export case [tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     Exports the case tags to the MISP event.
 
-    **- Export observables tags**
+    **- Export observables [tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     Exports the tags from the observables to the MISP event.
 
