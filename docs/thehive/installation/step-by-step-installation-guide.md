@@ -1,6 +1,6 @@
 # Step-by-Step Guide
 
-This topic provides a comprehensive installation and configuration guide to set up a new instance of TheHive. It includes detailed instructions with examples for systems using DEB and RPM packages, as well as installation from binary packages.
+This topic provides a comprehensive installation and configuration guide to set up a new instance of TheHive. It includes detailed instructions with examples for systems using DEB and RPM packages, and for installation from binary packages.
 
 !!! info "New instance only"
     This guide covers the installation process for setting up a new instance of TheHive only.
@@ -36,7 +36,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
 ## :fontawesome-brands-java: Java Virtual Machine
  
 !!! danger "Java support"
-    - For security and long-term support, you must use [**Amazon Corretto**](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
+    - For security and long-term support, you must use [Amazon Corretto](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
     - Java version 8 is no longer supported.
 
 === "DEB"
@@ -112,7 +112,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
 [Apache Cassandra](https://cassandra.apache.org) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.
 
 !!! info "Upgrading from Cassandra 3.x"
-    This guide is intended for fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, we recommend referring to the [**dedicated guide**](./upgrade-from-4.x.md).
+    This guide targets fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, refer to the [Upgrade from TheHive 4.x](./upgrade-from-4.x.md) topic.
 
 ### Installation
 
@@ -175,9 +175,9 @@ Ensure that all dependencies are successfully installed before proceeding with t
 
 === "Other installation methods"
 
-    Download the tar.gz archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
+    Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
 
-By default, data is stored in `/var/lib/cassandra`. Ensure appropriate permissions are set for this directory to avoid any issues with data storage and access.
+By default, data is stored in `/var/lib/cassandra`. Set appropriate permissions for this directory to avoid any issues with data storage and access.
 
 ### Configuration
 
@@ -197,7 +197,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
 
 **4.Configure listen address:**
    
-   Set the `listen_address` parameter to the IP address of the node within the cluster. This address is used by other nodes within the cluster to communicate.
+   Set the `listen_address` parameter to the IP address of the node within the cluster. Other nodes within the cluster use this address to communicate.
 
 **5.Configure RPC address:**
    
@@ -209,7 +209,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
 
 **7.Configure directories:**
    
-   Set the directories for data storage, commit logs, saved caches, and hints as per your requirements. Ensure that the specified directories exist and have appropriate permissions.
+   Set the directories for data storage, commit logs, saved caches, and hints per your requirements. Ensure that the specified directories exist and have appropriate permissions.
 
 **8.Save the changes:**
    
@@ -360,13 +360,16 @@ For additional configuration options, refer to:
 
 ## :fontawesome-solid-list: Elasticsearch
 
-[Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. It is used by TheHive to manage data indices efficiently.
+[Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. TheHive uses it to manage data indices efficiently.
 
 !!! note "Elasticsearch support"
     Starting from version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x.
 
 !!! note "OpenSearch support"
     Starting from version 5.3, TheHive supports [OpenSearch](https://opensearch.org/) for advanced use cases.
+
+!!! warning "Elasticsearch authentication permissions"
+    The account used for authenticating with Elasticsearch must have [the `manage` cluster privilege](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html#privileges-list-cluster). This is a mandatory configuration for TheHive to function correctly. If you are using an existing Elasticsearch instance, ensure it complies with your internal security policies, as certain configurations might be incompatible. Additionally, the account must have [the `all` indices privilege](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html#privileges-list-indices), specifically for the `thehive*` indices.
 
 ### Installation
 
@@ -428,7 +431,7 @@ For additional configuration options, refer to:
             sudo yum install --enablerepo=elasticsearch elasticsearch
             ```
     
-    Please refer to the official Elasticsearch documentation website for the most up-to-date instructions: [**https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html**](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
+    Please refer to the official Elasticsearch documentation website for the most up-to-date instructions: [https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html)
 
 === "Other installation methods"
 
@@ -506,8 +509,8 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 !!! info "Index creation and management in TheHive"
     - Index creation occurs during TheHive's initial startup, which may take some time to complete.
-    - Similar to data and files, indexes should be included in the backup policy to ensure their preservation.
-    - Indexes can be removed and re-created as needed.
+    - Similar to data and files, include indexes in the backup policy to ensure their preservation.
+    - Remove and re-create indexes as needed.
 
 ### Start the service
 
@@ -558,10 +561,10 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 ## :fontawesome-solid-folder-tree: File storage
 
-For standalone production and test servers, we recommend using the local filesystem. However, if you are planning to build a cluster with TheHive, several solutions are available, including NFS or S3 services. For more details and an example using MinIO servers, refer to [Setting up a Cluster](./deploying-a-cluster.md).
+For standalone production and test servers, use the local filesystem. However, if you are planning to build a cluster with TheHive, several solutions are available, including NFS or S3 services. For more details and an example using MinIO servers, refer to [Setting up a Cluster](./deploying-a-cluster.md).
 
 === "Local filesystem"
-    To utilize the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
+    To use the local filesystem for file storage, begin by selecting a dedicated folder. By default, this folder is located at `/opt/thp/thehive/files`:
 
     !!! Example ""
         ```bash
@@ -587,7 +590,7 @@ This section provides detailed instructions for installing and configuring TheHi
 
 ### Installation
 
-All required packages are available on our package repository. We support Debian and RPM packages, as well as binary packages in ZIP format. All packages are signed using our GPG key [**562CBC1C**](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
+TheHive package repository provides all required packages. Support is provided for Debian and RPM packages, and binary packages in ZIP format. All packages are signed using TheHive GPG key [`562CBC1C`](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
 
 === "DEB"
 
@@ -729,7 +732,7 @@ The following configurations are necessary for successful initiation of TheHive:
 
 #### Database and index
 
-By default, TheHive is configured to connect to local Cassandra and Elasticsearch databases.
+By default, TheHive configures to connect to local Cassandra and Elasticsearch databases.
 
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
@@ -844,7 +847,7 @@ The default admin user credentials are as follows:
     Password: secret
     ```
 
-For security reasons, it is strongly advised to change the default password after logging in.
+For security reasons, it's strongly advised to change the default password after logging in.
 
 ---
 
@@ -865,3 +868,15 @@ To unlock advanced features, contact StrangeBee to get a license - [https://wwww
 Now the application is up & running, [make your first steps](./../../administration/first-start.md) as Administrator, and follow this guide to activate a license: [Activate a license](./../../administration/license.md). -->
 
 <h2>Next steps</h2>
+
+* [Database and Index Configuration](../configuration/database.md)
+* [File Storage Configuration](../configuration/file-storage.md)
+* [TheHive Connectors](../configuration/connectors.md)
+* [Akka Configuration](../configuration/akka.md)
+* [Pekko Configuration (TheHive 5.4+)](../configuration/pekko.md)
+* [Logs Configuration](../configuration/logs.md)
+* [Proxy Settings](../configuration/proxy.md)
+* [Secret Configuration File](../configuration/secret.md)
+* [SSL Configuration](../configuration/ssl.md)
+* [Service Configuration](../configuration/service.md)
+* [GDPR Compliance in TheHive 5.x](../configuration/gdpr.md)
