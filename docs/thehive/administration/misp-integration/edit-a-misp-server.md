@@ -79,15 +79,15 @@ This topic provides step-by-step instructions for editing a [MISP server connect
     * Include selected organizations
     * Exclude selected organizations
 
-    **- [Tags](../../administration/taxonomies.md)**
+    **- [Tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     The tags to be appended to alerts when importing MISP events.
 
-    **- Export case [tags](../../administration/taxonomies.md)**
+    **- Export case [tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     Exports the case tags to the MISP event.
 
-    **- Export observables [tags](../../administration/taxonomies.md)**
+    **- Export observables [tags](../../user-guides/analyst-corner/cases/tags/about-tags.md)**
 
     Exports the tags from the observables to the MISP event.
 
