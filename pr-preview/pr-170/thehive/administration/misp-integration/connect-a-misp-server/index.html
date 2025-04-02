@@ -7848,9 +7848,8 @@
 
 <div><h1 id="how-to-connect-a-misp-server">How to Connect a MISP Server<a class="headerlink" href="#how-to-connect-a-misp-server" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for connecting a <a href="../about-misp-integration/">MISP server</a> to TheHive.</p>
-<p>This is useful if you want to automatically retrieve filtered MISP events as alerts in TheHive or share observables marked as IOCs from your cases with MISP. </p>
+<p>This is useful if you want to automatically retrieve filtered MISP events as alerts in TheHive or <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/">manually export observables marked as IOCs from cases to MISP</a>.</p>
 <p>You can configure multiple MISP servers in TheHive.</p>
-<p>If you prefer to manually export your cases to MISP, see <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/">How to Manually Export a Case to MISP</a>.</p>
 <p>To manually import a MISP event as a case in TheHive, refer to <a href="../../../user-guides/analyst-corner/cases/create-a-new-case/#create-a-case-from-a-misp-event">How to Create a New Case</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Requirements</p>
@@ -7903,11 +7902,11 @@
 <p><strong>- API key</strong></p>
 <p>The API key for the dedicated MISP account. You can find the API key under the <strong>My Profile</strong> page (/users/view/me) on your MISP instance.</p>
 <p><strong>- Purpose</strong></p>
-<p>The purpose of this connection: </p>
+<p>The purpose of this connection indicates what actions you are allowed to perform with the server:</p>
 <ul>
-<li><em>Import only</em>: Only import events from MISP to TheHive.</li>
-<li><em>Export only</em>: Only export cases from TheHive to MISP.</li>
-<li><em>Import and export</em>: Enables two-way synchronization.</li>
+<li><em>Import only</em>: Automatically import events from MISP to TheHive as alerts</li>
+<li><em>Export only</em>: <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/">Manually export observables marked as IOCs from TheHive cases to MISP</a></li>
+<li><em>Import and export</em>: Allows both automatically importing events from MISP to TheHive and manually exporting observables marked as IOCs from TheHive cases to MISP</li>
 </ul>
 <hr>
 </li>
