@@ -16,6 +16,8 @@ This topic provides step-by-step instructions for editing a [task log](about-tas
 
 5. In the **Edit a task log** drawer, enter the text you want to add in the **Log** field using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
 
+    {!includes/task-logs-no-observables.md!}
+
 6. Optional: Add images to the task log.
 
     * To add an image as an attachment, drop it into the **Attachment** section or select it from your computer.
