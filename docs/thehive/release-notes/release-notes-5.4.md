@@ -48,7 +48,7 @@ Last update: April 3, 2025
 
 #### Merged alert audits
 
-A regression related to the JSON audit object of merged alerts was introduced. This has been fixed in [version 5.5](release-notes-5.5.md#550---april-3-2025).
+A regression related to the JSON audit object of merged alerts was introduced. This has been fixed in [version 5.5](release-notes-5.5.md).
 
 ## 5.4.7 - 16th of January 2025
 
