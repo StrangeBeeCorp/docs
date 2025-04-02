@@ -1,4 +1,3 @@
-
 # Pekko Configuration (TheHive 5.4+)
 
 !!! Note
@@ -12,7 +11,7 @@ This guide provides instructions on updating your configuration to support this 
 
 ---
 
-## Basic Configuration
+## Basic configuration
 
 For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Each node should be configured with Pekko as outlined below:
 
@@ -45,11 +44,11 @@ In this configuration:
 - `remote.artery.canonical.hostname` should be set to the hostname or IP address of the node.
 - `cluster.seed-nodes` should contain the same list of Pekko nodes, ensuring consistency across all nodes.
 
-!!! Example "Configuration of a Cluster with 3 Nodes"
+!!! Example "Configuration of a cluster with three nodes"
 
     === "Node 1"
 
-        Pekko configuration for Node 1:
+        Pekko configuration for node 1:
 
         ```yaml
         pekko {
@@ -75,7 +74,7 @@ In this configuration:
 
     === "Node 2"
 
-        Pekko configuration for Node 2:
+        Pekko configuration for node 2:
 
         ```yaml
         pekko {
@@ -101,7 +100,7 @@ In this configuration:
 
     === "Node 3"
 
-        Pekko configuration for Node 3:
+        Pekko configuration for node 3:
 
         ```yaml
         pekko {
@@ -127,7 +126,7 @@ In this configuration:
 
 ---
 
-## SSL/TLS Support
+## SSL/TLS support
 
 Pekko offers robust support for SSL/TLS encryption, ensuring secure communication between nodes. Below is a standard configuration to enable SSL/TLS support:
 
@@ -163,10 +162,10 @@ pekko {
 }
 ```
 
-!!! Warning "Certificate Considerations"
+!!! warning "Certificate considerations"
     Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.
     
-    **For detailed instructions, see**: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool)
+    For detailed instructions, see: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool).
 
     Your server certificates should include the following _KeyUsage_ and _ExtendedkeyUsage_ extensions for proper functioning:
         
@@ -179,7 +178,7 @@ pekko {
         - `serverAuth`
         - `clientAuth`
 
-!!! Example "Pekko Configuration with SSL/TLS for Node 1"
+!!! Example "Pekko configuration with SSL/TLS for node 1"
 
     ```yaml
     ## Pekko server
@@ -221,7 +220,7 @@ pekko {
 
 ---
 
-!!! Note
+!!! note
     From version 5.4 onwards, the `secret.conf` file must include a secret key of at least 32 characters for session security, as required by Play Framework 3. For clustered setups, all nodes must share the same key, ensuring consistency across the deployment.
 
-&nbsp;
+
