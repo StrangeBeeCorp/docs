@@ -18,19 +18,19 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **Session expiration autologout**
 
-    The amount of time before you are automatically signed out when your session expires.
+    The amount of time before users are automatically signed out, regardless of activity. This is based on the total duration of the session.
 
     **Session expiration warning time**
 
-    The amount of time remaining before session expiration when you receive a warning. This must be equal to or less than the session expiration autologout time.
+    The amount of time remaining before session expiration when users receive a warning. This must be equal to or less than the session expiration autologout time.
 
     **Inactivity autologout**
 
-    The amount of time before you are automatically signed out due to inactivity.
+    The amount of time before users are automatically signed out due to inactivity. If users interact with the interface, the timer is reset.
 
     **Inactivity warning time**
 
-    The amount of time remaining before automatic sign-out due to inactivity when you receive a warning. This must be equal to or less than the inactivity autologout time.
+    The amount of time remaining before automatic sign-out due to inactivity when users receive a warning. This must be equal to or less than the inactivity autologout time.
 
     ---
 
