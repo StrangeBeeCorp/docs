@@ -167,6 +167,8 @@ plugins:
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
             'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'            
             'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/administration/misp.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
             'thehive/how-to/knowledge-base.md': 'thehive/user-guides/knowledge-base/about-knowledge-base.md'
             'thehive/how-to/markdown.md': 'thehive/user-guides/thehive-flavored-markdown.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
@@ -331,7 +333,11 @@ nav:
           - 'Edit Cortex Connection Settings': thehive/administration/cortex/edit-cortex-connection-settings.md
           - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
           - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
-        - 'MISP Integration': thehive/administration/misp.md
+        - 'MISP Integration':
+          - 'About MISP Integration': thehive/administration/misp-integration/about-misp-integration.md
+          - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
+          - 'Edit a MISP Server Connection': thehive/administration/misp-integration/edit-a-misp-server.md
+          - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
