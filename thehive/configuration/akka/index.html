@@ -22,7 +22,7 @@
     
     
       
-        <title>Akka Configuration - TheHive 5 Documentation</title>
+        <title>Akka (Version 5.3 and Earlier) - TheHive 5 Documentation</title>
       
     
     
@@ -147,7 +147,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#akka-configuration" class="md-skip">
+        <a href="#akka-configuration-version-53-and-earlier" class="md-skip">
           Skip to content
         </a>
       
@@ -182,7 +182,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Akka Configuration
+              Akka (Version 5.3 and Earlier)
             
           </span>
         </div>
@@ -910,7 +910,7 @@
   
   
   <span class="md-ellipsis">
-    Database & Index Configuration
+    Database & Index
     
   </span>
   
@@ -933,7 +933,7 @@
   
   
   <span class="md-ellipsis">
-    File Storage Configuration
+    File Storage
     
   </span>
   
@@ -956,7 +956,7 @@
   
   
   <span class="md-ellipsis">
-    Connectors Configuration
+    Connectors
     
   </span>
   
@@ -988,7 +988,7 @@
   
   
   <span class="md-ellipsis">
-    Akka Configuration
+    Akka (Version 5.3 and Earlier)
     
   </span>
   
@@ -1001,7 +1001,7 @@
   
   
   <span class="md-ellipsis">
-    Akka Configuration
+    Akka (Version 5.3 and Earlier)
     
   </span>
   
@@ -1028,7 +1028,7 @@
         <li class="md-nav__item">
   <a href="#basic-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Configuration
+      Basic configuration
     </span>
   </a>
   
@@ -1037,7 +1037,7 @@
         <li class="md-nav__item">
   <a href="#ssltls-support" class="md-nav__link">
     <span class="md-ellipsis">
-      SSL/TLS Support
+      SSL/TLS support
     </span>
   </a>
   
@@ -1064,7 +1064,7 @@
   
   
   <span class="md-ellipsis">
-    Pekko Configuration (TheHive 5.4+)
+    Pekko (Version 5.4+)
     
   </span>
   
@@ -1087,7 +1087,7 @@
   
   
   <span class="md-ellipsis">
-    Logs Configuration
+    Logs
     
   </span>
   
@@ -1110,7 +1110,7 @@
   
   
   <span class="md-ellipsis">
-    Proxy Configuration
+    Proxy
     
   </span>
   
@@ -1133,7 +1133,7 @@
   
   
   <span class="md-ellipsis">
-    Secrets Configuration
+    Secrets
     
   </span>
   
@@ -1156,7 +1156,7 @@
   
   
   <span class="md-ellipsis">
-    SSL Configuration
+    SSL
     
   </span>
   
@@ -1179,7 +1179,7 @@
   
   
   <span class="md-ellipsis">
-    Service Configuration
+    Service
     
   </span>
   
@@ -7894,19 +7894,16 @@
 
 
 
-<div><h1 id="akka-configuration">Akka Configuration<a class="headerlink" href="#akka-configuration" title="Permanent link">#</a></h1>
+<div><h1 id="akka-configuration-version-53-and-earlier">Akka Configuration (Version 5.3 and Earlier)<a class="headerlink" href="#akka-configuration-version-53-and-earlier" title="Permanent link">#</a></h1>
+<p><a href="https://akka.io/">Akka</a> is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.</p>
+<p>Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.</p>
+<p>This topic provides instructions for configuring Akka in your environment.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, please refer to the <a href="../pekko/">Pekko Configuration</a>.</p>
+<p class="admonition-title">Version compatibility</p>
+<p>This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, refer to the <a href="../pekko/">Pekko Configuration</a> topic.</p>
 </div>
-<div class="admonition quote">
-<p>Akka is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala. </p>
-<p><a href="https://akka.io/">https://akka.io/</a></p>
-</div>
-<p>Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience. </p>
-<hr>
-<h2 id="basic-configuration">Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">#</a></h2>
-<p>For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Each node should be configured with Akka as outlined below: </p>
+<h2 id="basic-configuration">Basic configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">#</a></h2>
+<p>For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Configure each node with Akka as outlined below:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## Akka server</span>
 <span class="l l-Scalar l-Scalar-Plain">akka {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span>
@@ -7925,15 +7922,15 @@
 </code></pre></div>
 <p>In this configuration:</p>
 <ul>
-<li><code>remote.artery.hostname</code> should be set to the hostname or IP address of the node.</li>
-<li><code>cluster.seed-nodes</code> should contain the same list of Akka nodes, ensuring consistency across all nodes.</li>
+<li>Set <code>remote.artery.hostname</code> to the host name or IP address of the node.</li>
+<li>Include the same list of Akka nodes in <code>cluster.seed-nodes</code> to ensure consistency across all nodes.</li>
 </ul>
 <div class="admonition example">
-<p class="admonition-title">Configuration of a Cluster with 3 Nodes</p>
+<p class="admonition-title">Configuration of a cluster with three nodes</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Node 1</label><label for="__tabbed_1_2">Node 2</label><label for="__tabbed_1_3">Node 3</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Akka configuration for Node 1:</p>
+<p>Akka configuration for node 1:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">akka {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">actor {</span>
@@ -7951,7 +7948,7 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Akka configuration for Node 2:</p>
+<p>Akka configuration for node 2:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">akka {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">actor {</span>
@@ -7969,7 +7966,7 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Akka configuration for Node 3:</p>
+<p>Akka configuration for node 3:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">akka {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">actor {</span>
@@ -7989,8 +7986,7 @@
 </div>
 </div>
 </div>
-<hr>
-<h2 id="ssltls-support">SSL/TLS Support<a class="headerlink" href="#ssltls-support" title="Permanent link">#</a></h2>
+<h2 id="ssltls-support">SSL/TLS support<a class="headerlink" href="#ssltls-support" title="Permanent link">#</a></h2>
 <p>Akka offers robust support for SSL/TLS encryption, guaranteeing secure communication between nodes. Below, you'll find a standard configuration to enable SSL/TLS support:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## Akka server</span>
 <span class="l l-Scalar l-Scalar-Plain">akka {</span>
@@ -8021,24 +8017,28 @@
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note that <code>akka.remote.artery.transport</code> has changed and <code>akka.ssl.config-ssl-engine</code> needs to be configured.</p>
-<p><strong>For more details, refer to</strong>: <a href="https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security">Akka Remoting with Artery - Remote Security</a></p>
+<p class="admonition-title">Remoting and security configuration</p>
+<p>Note that <code>akka.remote.artery.transport</code> has changed and <code>akka.ssl.config-ssl-engine</code> needs to be configured.  </p>
+<p>For more details, refer to <a href="https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security">Akka Remoting with Artery - Remote Security</a>.</p>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Certificate Considerations</p>
-<p>Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.</p>
-<p><strong>For detailed instructions, see</strong>: <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool">Using keytool for Certificate Generation</a></p>
-<p>Your server certificates should include the following <em>KeyUsage</em> and <em>ExtendedkeyUsage</em> extensions for proper functioning:</p>
+<p class="admonition-title">Certificate considerations</p>
+<p>Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.  </p>
+<p>For detailed instructions, see <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool">Using Keytool for X.509 Certificate Generation</a>.  </p>
+<p>Your server certificates should include the following <code>KeyUsage</code> and <code>ExtendedkeyUsage</code> extensions for proper functioning:</p>
 <ul>
-<li><em>KeyUsage</em> extensions<ul>
+<li>
+<p><em>KeyUsage</em> extensions</p>
+<ul>
 <li><code>nonRepudiation</code></li>
 <li><code>dataEncipherment</code></li>
 <li><code>digitalSignature</code></li>
 <li><code>keyEncipherment</code></li>
 </ul>
 </li>
-<li><em>ExtendedkeyUsage</em> extensions<ul>
+<li>
+<p><em>ExtendedkeyUsage</em> extensions</p>
+<ul>
 <li><code>serverAuth</code></li>
 <li><code>clientAuth</code></li>
 </ul>
@@ -8046,7 +8046,7 @@
 </ul>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Akka Configuration with SSL/TLS for Node 1</p>
+<p class="admonition-title">Akka configuration with SSL/TLS for node 1</p>
 <div class="highlight"><pre><span></span><code><span class="c1">## Akka server</span>
 <span class="l l-Scalar l-Scalar-Plain">akka {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span>
@@ -8075,9 +8075,21 @@
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.seed-nodes = [ "akka://application@10.1.2.1:2551", "akka://application@10.1.2.2:2551", "akka://application@10.1.2.3:2551" ]</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
-<p>Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.</p>
+<p>Be sure to apply the same configuration principles to all other nodes and restart all services afterward.</p>
 </div>
-<p> </p></div>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../database/">Database and Index Configuration</a></li>
+<li><a href="../file-storage/">File Storage Configuration</a></li>
+<li><a href="../connectors/">TheHive Connectors</a></li>
+<li><a href="../logs/">Logs Configuration</a></li>
+<li><a href="../proxy/">Proxy Settings</a></li>
+<li><a href="../secret/">Secret Configuration File</a></li>
+<li><a href="../ssl/">SSL Configuration</a></li>
+<li><a href="../service/">Service Configuration</a></li>
+<li><a href="../gdpr/">GDPR Compliance in TheHive 5.x</a></li>
+</ul></div>
 
 
 
