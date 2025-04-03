@@ -25,7 +25,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 !!! example "Install Java"
 
-    For enhanced security and long-term support, we recommend using [Amazon Corretto](https://aws.amazon.com/corretto/), an OpenJDK build provided and maintained by Amazon. Corretto 11 or higher is required to install Cortex.
+    For enhanced security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/), an OpenJDK build provided and maintained by Amazon. Corretto 11 or higher is required to install Cortex.
 
     === "DEB"
 
