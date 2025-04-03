@@ -1,4 +1,4 @@
-# Step-by-Step guide
+# Step-by-Step Guide
 
 This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
 
@@ -191,7 +191,7 @@ Cortex is available in Debian, RPM, and binary (zip archive) formats. All packag
 0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C
 ```
 
-### Debian-based Installation
+### Debian-based installation
 
 Ensure your system is up to date before installing Cortex. Run the following commands:
 
@@ -212,7 +212,7 @@ sudo apt update
 sudo apt install cortex
 ```
 
-### RPM-based Installation
+### RPM-based installation
 
 For RPM-based distributions (CentOS, RHEL, Fedora), create a new repository configuration file:
 
@@ -234,7 +234,7 @@ Then, install Cortex:
 sudo yum install cortex
 ```
 
-### Binary Installation
+### Binary installation
 
 For environments where package managers are not available, download and extract the Cortex binary package:
 
@@ -245,7 +245,7 @@ cd /opt/cortex
 chmod +x cortex
 ```
 
-## Post-Installation Configuration
+## Post-Installation configuration
 
 ### Running Analyzers & Responders with Docker
 
@@ -255,7 +255,7 @@ If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensur
 sudo usermod -a -G docker cortex
 ```
 
-### Verify Installation
+### Verify installation
 
 After installation, you can check if Cortex is properly installed by running:
 
