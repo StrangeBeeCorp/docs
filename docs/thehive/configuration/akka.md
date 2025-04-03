@@ -1,14 +1,13 @@
 # Akka Configuration (Version 5.3 and Earlier)
 
-!!! note "Version compatibility"
-    This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, refer to the [Pekko Configuration](./pekko.md) topic.
-
-!!! quote "About Akka"
-    [Akka](https://akka.io/) is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.
+[Akka](https://akka.io/) is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.
 
 Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.
 
 This topic provides instructions for configuring Akka in your environment.
+
+!!! note "Version compatibility"
+    This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, refer to the [Pekko Configuration](./pekko.md) topic.
 
 ## Basic configuration
 

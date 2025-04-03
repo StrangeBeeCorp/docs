@@ -120,8 +120,6 @@ In this configuration:
         }
         ```
 
----
-
 ## SSL/TLS support
 
 Pekko offers robust support for SSL/TLS encryption, ensuring secure communication between nodes. Below is a standard configuration to enable SSL/TLS support:
@@ -213,8 +211,6 @@ pekko {
     ```
 
     Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.
-
----
 
 !!! note "Session security key requirement"
     Starting with version 5.4, the `secret.conf` file must include a secret key of at least 32 characters for session security, as required by Play Framework 3. In clustered environments, all nodes must use the same key to maintain consistency across the deployment.

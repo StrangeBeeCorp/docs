@@ -226,16 +226,16 @@ nav:
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
       - 'Archives': thehive/download/archives.md
     - 'Configuration':
-      - 'Database & Index Configuration': thehive/configuration/database.md
-      - 'File Storage Configuration': thehive/configuration/file-storage.md
-      - 'Connectors Configuration': thehive/configuration/connectors.md
-      - 'Akka Configuration': thehive/configuration/akka.md
-      - 'Pekko Configuration (TheHive 5.4+)': thehive/configuration/pekko.md
-      - 'Logs Configuration': thehive/configuration/logs.md
-      - 'Proxy Configuration': thehive/configuration/proxy.md
-      - 'Secrets Configuration': thehive/configuration/secret.md
-      - 'SSL Configuration': thehive/configuration/ssl.md
-      - 'Service Configuration': thehive/configuration/service.md
+      - 'Database & Index': thehive/configuration/database.md
+      - 'File Storage': thehive/configuration/file-storage.md
+      - 'Connectors': thehive/configuration/connectors.md
+      - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
+      - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
+      - 'Logs': thehive/configuration/logs.md
+      - 'Proxy': thehive/configuration/proxy.md
+      - 'Secrets': thehive/configuration/secret.md
+      - 'SSL': thehive/configuration/ssl.md
+      - 'Service': thehive/configuration/service.md
       - 'Compliance':
         - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
     - 'Operations':
