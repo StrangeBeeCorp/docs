@@ -8,9 +8,11 @@
 
 Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.
 
+This topic provides instructions for configuring Akka in your environment.
+
 ## Basic configuration
 
-For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Each node should be configured with Akka as outlined below: 
+For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Configure each node with Akka as outlined below:
 
 ```yaml
 ## Akka server
@@ -32,9 +34,8 @@ akka {
 
 In this configuration:
 
-- `remote.artery.hostname` should be set to the hostname or IP address of the node.
-- `cluster.seed-nodes` should contain the same list of Akka nodes, ensuring consistency across all nodes.
-
+- Set `remote.artery.hostname` to the host name or IP address of the node.
+- Include the same list of Akka nodes in `cluster.seed-nodes` to ensure consistency across all nodes.
 
 !!! Example "Configuration of a cluster with three nodes"
 
@@ -195,3 +196,12 @@ akka {
 
 <h2>Next steps</h2>
 
+* [Database and Index Configuration](database.md)
+* [File Storage Configuration](file-storage.md)
+* [TheHive Connectors](connectors.md)
+* [Logs Configuration](logs.md)
+* [Proxy Settings](proxy.md)
+* [Secret Configuration File](secret.md)
+* [SSL Configuration](ssl.md)
+* [Service Configuration](service.md)
+* [GDPR Compliance in TheHive 5.x](gdpr.md)
