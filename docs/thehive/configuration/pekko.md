@@ -1,15 +1,11 @@
-# Pekko Configuration (TheHive 5.4+)
+# Pekko Configuration (Version 5.4+)
 
-!!! Note
-    This documentation applies to TheHive version 5.4 and later. For earlier versions, please refer to the [Akka Configuration](./akka.md).
+!!! note "Version compatibility "
+    This documentation applies to TheHive version 5.4 and later. For instructions related to earlier versions, refer to the [Akka Configuration](./akka.md) topic.
 
-## Introduction
-
-With the release of TheHive version 5.4, we have transitioned from the Scala framework **Akka** to **Apache Pekko**. This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
+With the release of TheHive version 5.4, we have transitioned from the Scala framework Akka to [Apache Pekko](https://pekko.apache.org/). This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
 
 This guide provides instructions on updating your configuration to support this change.
-
----
 
 ## Basic configuration
 
@@ -41,7 +37,7 @@ pekko {
 
 In this configuration:
 
-- `remote.artery.canonical.hostname` should be set to the hostname or IP address of the node.
+- `remote.artery.canonical.hostname` should be set to the host name or IP address of the node.
 - `cluster.seed-nodes` should contain the same list of Pekko nodes, ensuring consistency across all nodes.
 
 !!! Example "Configuration of a cluster with three nodes"
@@ -220,7 +216,7 @@ pekko {
 
 ---
 
-!!! note
+!!! note "Session security key requirement"
     From version 5.4 onwards, the `secret.conf` file must include a secret key of at least 32 characters for session security, as required by Play Framework 3. For clustered setups, all nodes must share the same key, ensuring consistency across the deployment.
 
 <h2>Next steps</h2>

@@ -1,18 +1,14 @@
-# Akka Configuration
+# Akka Configuration (Version 5.3 and Earlier)
 
-!!! Note
-    This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, please refer to the [Pekko Configuration](./pekko.md).
+!!! note "Version compatibility"
+    This documentation applies to TheHive versions earlier than 5.4. For version 5.4 and later, refer to the [Pekko Configuration](./pekko.md) topic.
 
-!!! Quote ""
-    Akka is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala. 
+!!! quote "About Akka"
+    [Akka](https://akka.io/) is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.
 
-    [https://akka.io/](https://akka.io/)
+Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.
 
-Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience. 
-
----
-
-## Basic Configuration
+## Basic configuration
 
 For a reliable cluster setup, it's essential to have a minimum of three nodes for TheHive application. Each node should be configured with Akka as outlined below: 
 
@@ -40,11 +36,11 @@ In this configuration:
 - `cluster.seed-nodes` should contain the same list of Akka nodes, ensuring consistency across all nodes.
 
 
-!!! Example "Configuration of a Cluster with 3 Nodes"
+!!! Example "Configuration of a cluster with three nodes"
 
     === "Node 1"
 
-        Akka configuration for Node 1:
+        Akka configuration for node 1:
 
         ```yaml
         akka {
@@ -66,7 +62,7 @@ In this configuration:
 
     === "Node 2"
 
-        Akka configuration for Node 2:
+        Akka configuration for node 2:
 
         ```yaml
         akka {
@@ -87,7 +83,7 @@ In this configuration:
 
     === "Node 3"
 
-        Akka configuration for Node 3:
+        Akka configuration for node 3:
 
         ```yaml
         akka {
@@ -106,9 +102,7 @@ In this configuration:
         }
         ```
 
----
-
-## SSL/TLS Support
+## SSL/TLS support
 
 Akka offers robust support for SSL/TLS encryption, guaranteeing secure communication between nodes. Below, you'll find a standard configuration to enable SSL/TLS support:
 
@@ -142,33 +136,30 @@ akka {
 }
 ```
 
-!!! Note
-    Note that `akka.remote.artery.transport` has changed and `akka.ssl.config-ssl-engine` needs to be configured.
+!!! note "Remoting and security configuration"
+    Note that `akka.remote.artery.transport` has changed and `akka.ssl.config-ssl-engine` needs to be configured.  
     
-    **For more details, refer to**: [Akka Remoting with Artery - Remote Security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security)
+    For more details, refer to [Akka Remoting with Artery - Remote Security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security).
 
 
-!!! Warning "Certificate Considerations"
-    Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.
+!!! warning "Certificate considerations"
+    Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.  
     
-    **For detailed instructions, see**: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool)
+    For detailed instructions, see [Using Keytool for X.509 Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool).  
 
-    Your server certificates should include the following _KeyUsage_ and _ExtendedkeyUsage_ extensions for proper functioning:
+    Your server certificates should include the following `KeyUsage` and `ExtendedkeyUsage` extensions for proper functioning:
         
     - _KeyUsage_ extensions
         - `nonRepudiation`
         - `dataEncipherment`
         - `digitalSignature`
         - `keyEncipherment`
+
     - _ExtendedkeyUsage_ extensions
         - `serverAuth`
         - `clientAuth`
 
-
-
-
-
-!!! Example "Akka Configuration with SSL/TLS for Node 1"
+!!! Example "Akka configuration with SSL/TLS for node 1"
 
     ```yaml
     ## Akka server
@@ -200,6 +191,7 @@ akka {
     }
     ```
 
-    Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.
+    Be sure to apply the same configuration principles to all other nodes and restart all services afterward.
 
-&nbsp;
+<h2>Next steps</h2>
+
