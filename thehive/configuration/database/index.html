@@ -959,7 +959,7 @@
         <li class="md-nav__item">
   <a href="#basic-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Basic Configuration
+      Basic configuration
     </span>
   </a>
   
@@ -968,7 +968,7 @@
         <li class="md-nav__item">
   <a href="#list-of-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      List of Parameters
+      List of parameters
     </span>
   </a>
   
@@ -977,7 +977,7 @@
         <li class="md-nav__item">
   <a href="#use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Use Cases
+      Use cases
     </span>
   </a>
   
@@ -7904,10 +7904,14 @@
 
 
 <div><h1 id="database-and-index-configuration">Database and Index Configuration<a class="headerlink" href="#database-and-index-configuration" title="Permanent link">#</a></h1>
-<p>TheHive utilizes <a href="https://cassandra.apache.org/">Cassandra</a> and <a href="https://www.elastic.co/elasticsearch/">Elasticsearch</a> databases for data management and indexing purposes. Below outlines the configuration options available:</p>
+<p>TheHive uses <a href="https://cassandra.apache.org/">Cassandra</a> and <a href="https://www.elastic.co/elasticsearch/">Elasticsearch</a> databases for data management and indexing. This topic offers instructions for configuring each available option.</p>
+<div class="admonition warning">
+<p class="admonition-title">Elasticsearch authentication permissions</p>
+<p>The account used for authenticating with Elasticsearch must have <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html#privileges-list-cluster">the <code>manage</code> cluster privilege</a>. This is a mandatory configuration for TheHive to function correctly. If you are using an existing Elasticsearch instance, ensure it complies with your internal security policies, as certain configurations might be incompatible. Additionally, the account must have <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-privileges.html#privileges-list-indices">the <code>all</code> indices privilege</a>, specifically for the <code>thehive*</code> indices.</p>
+</div>
 <hr>
-<h2 id="basic-configuration">Basic Configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">#</a></h2>
-<p>A typical database configuration for TheHive is structured as follows:</p>
+<h2 id="basic-configuration">Basic configuration<a class="headerlink" href="#basic-configuration" title="Permanent link">#</a></h2>
+<p>A typical database configuration for TheHive structures as follows:</p>
 <div class="highlight"><pre><span></span><code>## Database configuration
 db {
   provider = janusgraph
@@ -7931,39 +7935,39 @@ db {
 }
 </code></pre></div>
 <p>This configuration specifies the following components:</p>
-<p><strong>Database Provider</strong>: </p>
+<p><strong>Database provider</strong>: </p>
 <ul>
-<li>The database provider is set to JanusGraph, a distributed graph database.</li>
+<li>The database provider is set to <a href="https://janusgraph.org/">JanusGraph</a>, a distributed graph database.</li>
 </ul>
-<p><strong>Storage Configuration</strong>:</p>
+<p><strong>Storage configuration</strong>:</p>
 <ul>
 <li>
 <p>Backend: Cassandra is specified as the backend storage system.</p>
 </li>
 <li>
-<p>Hostname: The IP address of the Cassandra cluster is provided.</p>
+<p>Host name: The IP address of the Cassandra cluster is provided.</p>
 </li>
 <li>
-<p>Cluster Name: The name of the Cassandra cluster is set to 'thp'.</p>
+<p>Cluster name: The name of the Cassandra cluster is set to <code>thp</code>.</p>
 </li>
 <li>
-<p>Keyspace: The keyspace within Cassandra where TheHive data will be stored is named 'thehive'.</p>
+<p>Keyspace: The keyspace within Cassandra where TheHive data will be stored is named <code>thehive</code>.</p>
 </li>
 </ul>
-<p><strong>Index Configuration</strong>:</p>
+<p><strong>Index configuration</strong>:</p>
 <ul>
 <li>
 <p>Backend: Elasticsearch is designated as the backend for indexing.</p>
 </li>
 <li>
-<p>Hostname: The IP address of the Elasticsearch instance is set to '127.0.0.1'.</p>
+<p>Host name: The IP address of the Elasticsearch instance is set to <code>127.0.0.1</code>.</p>
 </li>
 <li>
-<p>Index Name: The index name within Elasticsearch for TheHive is specified as 'thehive'.</p>
+<p>Index name: The index name within Elasticsearch for TheHive is specified as <code>thehive</code>.</p>
 </li>
 </ul>
 <hr>
-<h2 id="list-of-parameters">List of Parameters<a class="headerlink" href="#list-of-parameters" title="Permanent link">#</a></h2>
+<h2 id="list-of-parameters">List of parameters<a class="headerlink" href="#list-of-parameters" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -7991,7 +7995,7 @@ db {
 <tr>
 <td><code>storage.hostname</code></td>
 <td>list of string</td>
-<td>List of IP addresses or hostnames when using the <code>cql</code> backend.</td>
+<td>List of IP addresses or host names when using the <code>cql</code> backend.</td>
 </tr>
 <tr>
 <td><code>storage.directory</code></td>
@@ -8081,7 +8085,7 @@ db {
 <tr>
 <td><code>index.search.hostname</code></td>
 <td>list of string</td>
-<td>List of IP addresses or hostnames when using the elasticsearch engine.</td>
+<td>List of IP addresses or host names when using the elasticsearch engine.</td>
 </tr>
 <tr>
 <td><code>index.search.index-name</code></td>
@@ -8146,56 +8150,62 @@ db {
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title">The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.</p>
+<p class="admonition-title">Initial startup delay</p>
+<p>The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.</p>
 </div>
-<p>For more detailed information on configuring Elasticsearch connection, refer to the <a href="https://docs.janusgraph.org/index-backend/elasticsearch/"><strong>official JanusGraph documentation.</strong></a></p>
+<p>For more detailed information on configuring Elasticsearch connection, refer to the <a href="https://docs.janusgraph.org/index-backend/elasticsearch/">official JanusGraph documentation.</a></p>
 <hr>
-<h2 id="use-cases">Use Cases<a class="headerlink" href="#use-cases" title="Permanent link">#</a></h2>
+<h2 id="use-cases">Use cases<a class="headerlink" href="#use-cases" title="Permanent link">#</a></h2>
 <p>The database and index engine configurations can vary depending on the use case and target setup.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Standalone Server with Cassandra &amp; Elasticsearch</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Standalone server with Cassandra and Elasticsearch</label><label for="__tabbed_1_2">Cluster with Cassandra and Elasticsearch</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p>To set up TheHive on a standalone server with Cassandra and Elasticsearch:</p>
 <ol>
-<li>Install a Cassandra server locally.</li>
-<li>Install Elasticsearch.</li>
+<li>
+<p>Install a Cassandra server locally.</p>
+</li>
+<li>
+<p>Install Elasticsearch.</p>
+</li>
 <li>
 <p>Configure TheHive with the following settings:</p>
-<p><code>hocon
-  ## Database Configuration
-  db {
-    provider = janusgraph
-    janusgraph {
-      ## Storage configuration
-      storage {
-        backend = cql
-        hostname = ["127.0.0.1"]
-        ## Cassandra authentication (if configured)
-        username = "thehive_account"
-        password = "cassandra_password"
-        cql {
-          cluster-name = thp
-          keyspace = thehive
-        }
+<div class="highlight"><pre><span></span><code>## Database Configuration
+db {
+  provider = janusgraph
+  janusgraph {
+    ## Storage configuration
+    storage {
+      backend = cql
+      hostname = ["127.0.0.1"]
+      ## Cassandra authentication (if configured)
+      username = "thehive_account"
+      password = "cassandra_password"
+      cql {
+        cluster-name = thp
+        keyspace = thehive
       }
-      ## Index configuration
-      index.search {
-        backend = elasticsearch
-        hostname = ["127.0.0.1"]
-        index-name = thehive
-      }
-    }</code></p>
+    }
+    ## Index configuration
+    index.search {
+      backend = elasticsearch
+      hostname = ["127.0.0.1"]
+      index-name = thehive
+    }
+  }
+</code></pre></div>
 </li>
 </ol>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Cluster with Cassandra &amp; Elasticsearch</label></div>
-<div class="tabbed-content">
+</div>
 <div class="tabbed-block">
 <p>To deploy TheHive on a cluster with Cassandra and Elasticsearch:</p>
 <ol>
-<li>Install a cluster of Cassandra servers.</li>
-<li>Set up access to an Elasticsearch server.</li>
+<li>
+<p>Install a cluster of Cassandra servers.</p>
+</li>
+<li>
+<p>Set up access to an Elasticsearch server.</p>
+</li>
 <li>
 <p>Configure TheHive with the following settings:</p>
 <div class="highlight"><pre><span></span><code>## Database Configuration
@@ -8246,16 +8256,29 @@ db {
 </li>
 </ol>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Consistent configuration across all TheHive nodes</p>
 <p>In this configuration, all TheHive nodes should have the same configuration.</p>
-<p>Elasticsearch configuration should use the default value for <code>script.allowed_types</code>, or contain the following configuration line = </p>
+<p>Elasticsearch configuration should use the default value for <code>script.allowed_types</code>, or contain the following configuration line: </p>
 <div class="highlight"><pre><span></span><code><span class="nt">script.allowed_types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 </div>
-<p> </p></div>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../file-storage/">File Storage Configuration</a></li>
+<li><a href="../connectors/">TheHive Connectors</a></li>
+<li><a href="../akka/">Akka Configuration</a></li>
+<li><a href="../pekko/">Pekko Configuration (TheHive 5.4+)</a></li>
+<li><a href="../logs/">Logs Configuration</a></li>
+<li><a href="../proxy/">Proxy Settings</a></li>
+<li><a href="../secret/">Secret Configuration File</a></li>
+<li><a href="../ssl/">SSL Configuration</a></li>
+<li><a href="../service/">Service Configuration</a></li>
+<li><a href="../gdpr/">GDPR Compliance in TheHive 5.x</a></li>
+</ul></div>
 
 
 
