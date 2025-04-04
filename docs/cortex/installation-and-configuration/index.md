@@ -1,6 +1,5 @@
 # Installation & configuration guides
 
-
 ## Overview
 Cortex relies on Elasticsearch to store its data. A basic setup to install Elasticsearch, then Cortex on a standalone and dedicated server (physical or virtual).
 
@@ -10,7 +9,6 @@ Hardware requirements depends on the usage of the system. We recommend starting 
   * :fontawesome-solid-microchip: 8 vCPU
   * :fontawesome-solid-memory: 16 GB of RAM
 
-
 ## Operating systems
 Cortex has been tested and is supported on the following operating systems: 
 
@@ -19,7 +17,7 @@ Cortex has been tested and is supported on the following operating systems:
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
-## Installation Guide
+## Installation guide
 
 !!! Tip "Too much in a hurry to read ? "
 
@@ -47,7 +45,7 @@ For each release, DEB, RPM and ZIP binary packages are built and provided.
 
 The [following Guide](step-by-step-guide.md) let you **prepare**, **install** and **configure** Cortex and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages. 
 
-## Configuration Guides
+## Configuration guides
 
 The configuration of Cortex is in files stored in the `/etc/cortex` folder:
     
