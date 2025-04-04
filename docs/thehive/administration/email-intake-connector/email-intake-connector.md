@@ -1,24 +1,3 @@
-# Email Intake Connector
-
-This documentation outlines the utilization of the Email Intake Connector for automatically generating alerts from a designated mailbox.
-
-The Email Intake Connector facilitates the connection of mailboxes used to receive cybersecurity alerts. It automatically transforms new emails into alerts within TheHive platform. Presently, the primary function supported is the creation of alerts regardless of the received email content.
-
-
-![](/thehive/images/administration-guides/eic-1.png)
-
----
-
-## Configuration
-
-### Global Configuration
-
-The only parameter that requires adjustment is the `refresh interval`. By default, the connector polls mailboxes every *5* minutes. Adjust the frequency by increasing or decreasing the value.
-
-![](/thehive/images/administration-guides/eic-2.png)
-
-&nbsp;
-
 ### Adding a Mailbox
 
 Configuration options are available for Microsoft 365 (OAuth2) and Google Workspace (OAuth2). If you use another email provider service, configuration through IMAP is necessary.
@@ -292,53 +271,3 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 After testing your mailbox configuration, select the organization to connect, determining where alerts will be created. Define the mailbox folder to monitor (typically INBOX). Finally, specify the action to take on incoming emails: ``archive``, ``mark as read``, or ``no action``.
 
 ![](/thehive/images/administration-guides/eic-7.png)
-
----
-
-## Generated Alerts and Observables
-
-Following configuration, alerts and observables are generated in the selected organization.
-
-### Alerts
-
-Each alert will contain the following details:
-
-!!! Info "Mapping of email data in the Alert"
-
-    * **Title**: The email subject or "no subject"
-    * **Type**: *email-intake*
-    * **Source**: The configuration name is formatted as `Google Workspace @strangebee.com` => `googleworkspace-strangebee`
-    * **Source reference**: `{message-id}` or `{lastUidValidity}.{uidEmail}` if the message-id is inaccessible
-    * **Last sync date**: The date the email was received
-    * **Severity**:  *low*
-    * **TLP**: *amber*
-    * **PAP**: *amber*
-    *  **Follow**: *False*
-    * **Tags**: [*email-intake*, {source}, {Provider Name}, {Inbox Folder Name}]
-    * **Status**: *new*
-    * **Description**: The content of the email
-    * **Summary**: [Summary of Alert]
-    * **Custom Fields**: [Custom Fields]
-    * **Eternal link**: [Link to External Source]
-
-
----
-
-### Observables
-
-The email itself is included as a `.eml` file, along with its sender and all attached files, which are added to the alert as observables, with the following parameters:
-
-!!! Info "Observables metadata added with the email data"
-
-    - **Message**: The pre-formatted message
-    - **TLP**: {alert.tlp}
-    - **PAP**: {alert.pap}
-    - **IOC**: false
-    - **Sighted**: false
-    - **Sighted at**: [Timestamp]
-    - **Ignore similarity**: false
-    - **dataType**: *file* if it's an attachment; otherwise, *mail* for the `.eml` file
-    - **Tags**: {alert.tags}
-    - **attachment Id**: {attachment.id}
-
-&nbsp;
