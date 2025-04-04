@@ -31,15 +31,13 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         3. Select **Create project**.
 
-            
-
-
+            ![Google Cloud Console Create project](/thehive/images/administration-guides/google-cloud-platform-create-project.png)
 
     === <!-- md:license Gold --> <!-- md:license Platinum --> "IMAP server"
 
     === <!-- md:license Platinum --> "Microsoft 365"
     
-    === <!-- md:version 5.5 --> "Microsoft Graph API"
+    === <!-- md:version 5.5 --> <!-- md:license Platinum --> "Microsoft Graph API"
 
 
 <h2>Next steps</h2>
