@@ -462,7 +462,6 @@ nav:
         - 'Alert Feeders': 
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
           - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
-          - 'Edit an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md
           - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md
           - 'Delete an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
