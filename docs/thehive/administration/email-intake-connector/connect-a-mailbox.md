@@ -17,17 +17,19 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
     !!! info "Manual refresh"
         If needed, you can also [manually trigger an email fetch](fetch-emails.md) for a mailbox. 
 
-5. Select :fontawesome-solid-plus: to create a new connection, or select :fontawesome-solid-ellipsis: next to the connector you want to edit and select **Edit**.
+5. Select :fontawesome-solid-plus: to create a new connection, or select :fontawesome-solid-ellipsis: next a connector and select **Edit**.
 
 6. Configure your email intake connector by following these steps. IMAP configuration is required if your email provider is neither Google nor Microsoft.
 
-    === <!-- md:license Platinum --> "Google Workspace"
+    === "Google Workspace"
+    
+        <!-- md:license Platinum -->
 
         !!! warning "Prerequisites"
             You must have administrator access to the Google Cloud Console, with the necessary permissions to create projects and configure OAuth 2.0 credentials.
-        
+
         ### Step 1: Create a project in the Google Cloud Console
-        
+
         1. Go to the [Google Admin Console](https://console.cloud.google.com/welcome).
 
         2. Select **APIs & Services**.
@@ -132,46 +134,12 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         Then, select **Connect** to authorize TheHive to access your Google Workspace account for use with the application.
 
-    === <!-- md:license Gold --> <!-- md:license Platinum --> "IMAP server"
-
-        1. In the **Provider** section, enter the following information:
-
-            **- Name**
-
-            A name for your connector.
-
-            **- Provider**
-
-            Select *IMAP server* from the dropdown.
-
-            **- Host**
-
-            The host address of the IMAP server.
-
-            **- Port**
-
-            The port number of the IMAP server.
-
-        2. {!includes/certificate-authority.md!}
-
-        3. {!includes/host-name-verification.md!}
-
-        4. In the **Authentication** section, enter the following information:
-
-            **- Email**
-
-            The email address associated with your account.
-
-            **- Password**
-
-            The password associated with your account.
-
-    === <!-- md:license Platinum --> "Microsoft 365"
-
+    === "Microsoft 365"
+        <!-- md:license Platinum -->
         !!! warning "Prerequisites"
-            You must have: 
-            - Administrator access to Microsoft 365.
-            - PowerShell installed and properly configured.
+            You must have:  
+            - Administrator access to Microsoft 365.  
+            - PowerShell installed and properly configured.  
             - A shared mailbox already created in Microsoft 365.
 
         ### Step 1: Create a mail-enabled security group
@@ -289,14 +257,16 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         Then, select **Connect** to authorize TheHive to access your Microsoft 365 account for use with the application.
 
-    === <!-- md:version 5.5 --> <!-- md:license Platinum --> "Microsoft Graph API"
+    === "Microsoft Graph API"
+
+        <!-- md:version 5.5 --> <!-- md:license Platinum -->
 
         Microsoft Graph API is the recommended standard API for all interactions with Microsoft services.
 
         !!! warning "Prerequisites"
-            You must have: 
-            - Administrator access to Microsoft 365.
-            - PowerShell installed and properly configured.
+            You must have:  
+            - Administrator access to Microsoft 365.  
+            - PowerShell installed and properly configured.  
             - A shared mailbox already created in Microsoft 365.
 
         ### Step 1: Create a mail-enabled security group
@@ -413,6 +383,48 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
             Paste the Client Secret value you obtained from Microsoft.
 
         Then, select **Connect** to authorize TheHive to access your Microsoft 365 account for use with the application.
+
+    === "IMAP server"
+    
+        <!-- md:license Gold --> <!-- md:license Platinum -->
+
+        1. In the **Provider** section, enter the following information:
+
+            **- Name**
+
+            A name for your connector.
+
+            **- Provider**
+
+            Select *IMAP server* from the dropdown.
+
+            **- Host**
+
+            The host address of the IMAP server.
+
+            **- Port**
+
+            The port number of the IMAP server.
+
+        2. Add a certificate authority.
+
+            For more information about configuring SSL, refer to the [Configure SSL](/thehive/administration/authentication/ssl/) topic.
+
+            Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.
+
+            You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
+
+        3. Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
+
+        4. In the **Authentication** section, enter the following information:
+
+            **- Email**
+
+            The email address associated with your account.
+
+            **- Password**
+
+            The password associated with your account.
 
 7. In the **Settings** section, enter the following information:
 

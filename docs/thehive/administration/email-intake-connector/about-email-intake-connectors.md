@@ -39,8 +39,6 @@ It automatically processes incoming emails, extracts relevant information, and c
 
 ### Observables
 
-The email itself, as a `.eml` file, along with its sender and any attached files, are added as observables within the respective alert, with the following parameters:
-
 | Observable field API | Observable field UI | Observable value |
 |---|---|---|
 | `message` | Description | *Automatically created from email* followed by `{alert.id}` and either `{sender}` or `{file}`. |
