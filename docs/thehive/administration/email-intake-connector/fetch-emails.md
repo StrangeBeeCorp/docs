@@ -14,5 +14,7 @@ This topic provides step-by-step instructions for manually triggering email fetc
 
 4. Select :fontawesome-solid-ellipsis: next to the connector and select **Fetch emails**.
 
+<h2>Next steps</h2>
+
 * [Connect a Mailbox](connect-a-mailbox.md)
 * [Delete a Mailbox](delete-a-mailbox.md)
