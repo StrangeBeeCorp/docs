@@ -142,5 +142,4 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
 <h2>Next steps</h2>
 
-* [Edit a MISP Server Connection](edit-a-misp-server.md)
 * [Delete a MISP Server Connection](delete-a-misp-server.md)
