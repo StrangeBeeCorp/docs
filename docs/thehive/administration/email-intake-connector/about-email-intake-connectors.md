@@ -68,5 +68,5 @@ The following email providers are available in TheHive:
 <h2>Next steps</h2>
 
 * [Connect a Mailbox](connect-a-mailbox.md)
-* [Edit a Mailbox](edit-a-mailbox.md)
 * [Delete a Mailbox](delete-a-mailbox.md)
+* [Manually Trigger Email Fetch in a Mailbox](fetch-emails.md)
