@@ -1,11 +1,11 @@
-# How to Edit a Dashboard
+# How to Add or Remove Widgets in a Dashboard
 
-This topic provides step-by-step instructions for editing a [dashboard](about-dashboards.md) in TheHive.
+This topic provides step-by-step instructions for adding or removing [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive.
 
 !!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
     Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
-<h2>Procedure</h2>
+## Add widgets in a dashboard
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -21,12 +21,22 @@ This topic provides step-by-step instructions for editing a [dashboard](about-da
 
 6. Select **Confirm**.
 
+## Remove widgets in a dashboard
+
+1. {!includes/dashboards-view-go-to.md!}
+
+2. On the dashboards list, select the name of your dashboard.
+
+3. Select :fontawesome-solid-pen:.
+
+4. Select :fontawesome-solid-trash: at the top right of the widget you want to remove.
+
+5. Select **OK**.
+
 <h2>Next steps</h2>
 
 * [Create a Dashboard](create-a-dashboard.md)
-* [View a Dashboard](view-a-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
-* [Export a Dashboard](export-a-dashboard.md)
-* [Import a Dashboard](import-a-dashboard.md)
+* [Export or Import a Dashboard](export-import-a-dashboard.md)
 * [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

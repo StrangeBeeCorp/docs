@@ -21,4 +21,3 @@ This topic provides step-by-step instructions for deleting a [MISP server connec
 <h2>Next steps</h2>
 
 * [Connect a MISP Server](connect-a-misp-server.md)
-* [Edit a MISP Server Connection](edit-a-misp-server.md)

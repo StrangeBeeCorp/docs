@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for creating a [dashboard](about-d
 
 You can create a dashboard from scratch or duplicate an existing one.
 
-If you want to use a dashboard from another organization or TheHive instance as a template, you can [import it](import-a-dashboard.md).
+If you want to use a dashboard from another organization or TheHive instance as a template, you can [import it](export-import-a-dashboard.md#import-a-dashboard).
 
 !!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
     Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
@@ -43,10 +43,8 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
 <h2>Next steps</h2>
 
-* [Edit a Dashboard](edit-a-dashboard.md)
-* [View a Dashboard](view-a-dashboard.md)
+* [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
-* [Export a Dashboard](export-a-dashboard.md)
-* [Import a Dashboard](import-a-dashboard.md)
+* [Export or Import a Dashboard](export-import-a-dashboard.md)
 * [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

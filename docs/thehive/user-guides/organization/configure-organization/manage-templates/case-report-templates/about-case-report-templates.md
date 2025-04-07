@@ -36,5 +36,5 @@ Once created, case report templates are automatically available to all users in 
 
 * [About Widgets](widgets-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)
-* [Edit a Case Report Template](edit-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
 * [Delete a Case Report Template](delete-a-case-report-template.md)

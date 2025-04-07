@@ -71,5 +71,4 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 
 <h2>Next steps</h2>
 
-* [Edit Cortex Connection Settings](edit-cortex-connection-settings.md)
 * [Remove a Cortex Server](remove-a-cortex-server.md)

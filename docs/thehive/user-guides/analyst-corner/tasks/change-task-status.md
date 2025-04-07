@@ -17,10 +17,7 @@ This topic provides step-by-step instructions for changing the [status](about-ta
 
 <h2>Next steps</h2>
 
-* [Start a Task](start-a-task.md)
 * [Share a Task](share-a-task.md)
-* [Edit a Task](edit-a-task.md)
+* [Manage a Task](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
-* [Flag a Task](flag-a-task.md)
-* [Pin a Task](pin-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

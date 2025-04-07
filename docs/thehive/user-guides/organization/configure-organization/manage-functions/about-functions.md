@@ -96,7 +96,6 @@ A function in TheHive can operate in one of three modes:
 <h2>Next steps</h2>
 
 * [Create a Function](create-a-function.md)
-* [Edit a Function](edit-a-function.md)
 * [Revoke a Function](revoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
 * [Delete a Function](delete-a-function.md)

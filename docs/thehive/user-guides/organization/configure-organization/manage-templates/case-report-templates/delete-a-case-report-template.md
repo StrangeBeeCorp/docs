@@ -21,4 +21,4 @@ This topic provides step-by-step instructions for deleting a [case report templa
 <h2>Next steps</h2>
 
 * [Create a Case Report Template](create-a-case-report-template.md)
-* [Edit a Case Report Template](edit-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)

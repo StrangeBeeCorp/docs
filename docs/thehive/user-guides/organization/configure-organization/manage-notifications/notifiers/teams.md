@@ -173,4 +173,5 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
 <h2>Next steps</h2>
 
-* [Edit a Notification](../edit-a-notification.md)
+* [Turn Off a Notification](../turn-off-a-notification.md)
+* [Delete a Notification](../delete-a-notification.md)

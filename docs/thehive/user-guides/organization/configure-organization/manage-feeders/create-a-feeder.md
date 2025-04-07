@@ -175,6 +175,5 @@ You can find the function example for creating an alert from Airtable in the [Gi
 
 <h2>Next steps</h2>
 
-* [Edit an Alert Feeder](edit-a-feeder.md)
 * [Turn Off an Alert Feeder](turn-off-a-feeder.md)
 * [Delete an Alert Feeder](delete-a-feeder.md)

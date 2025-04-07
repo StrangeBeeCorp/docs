@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for downloading a [dashboard](abou
 
 The PNG format is available for both the entire dashboard and individual [widgets](widgets-dashboards.md), while the CSV format is only available for individual widgets.
 
-To download your dashboard in JSON format, refer to the [Export a Dashboard](export-a-dashboard.md) topic.
+To download your dashboard in JSON format, refer to the [Export a Dashboard](export-import-a-dashboard.md#export-a-dashboard) topic.
 
 <h2>Procedure</h2>
 
@@ -24,7 +24,6 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
-* [Edit a Dashboard](edit-a-dashboard.md)
-* [View a Dashboard](view-a-dashboard.md)
+* [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

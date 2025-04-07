@@ -1,12 +1,12 @@
-# How to Edit a Case Report Template
+# How to Add or Remove Widgets in a Case Report Template
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for editing a [case report template](about-case-report-templates.md) in TheHive.
+This topic provides step-by-step instructions for adding or removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
 
 {!includes/access-manage-case-report-templates.md!}
 
-<h2>Procedure</h2>
+## Add widgets in a case report template
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -29,6 +29,20 @@ This topic provides step-by-step instructions for editing a [case report templat
 9. Select :fontawesome-solid-eye: to preview the case report display.
 
 10. Select :fontawesome-solid-floppy-disk: to save your case report template.
+
+## Remove widgets in a case report template
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/templates-go-to.md!}
+
+3. {!includes/report-templates-go-to.md!}
+
+4. Select the case report template you want to edit, or select :fontawesome-solid-ellipsis: next to the case report template you want to edit and then **Edit**.
+
+5. Select :fontawesome-solid-trash: at the top right of the widget you want to remove.
+
+6. Select **OK**.
 
 <h2>Next steps</h2>
 
