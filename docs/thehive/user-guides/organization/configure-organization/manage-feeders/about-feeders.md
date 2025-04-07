@@ -23,7 +23,7 @@ A feeder function transforms data retrieved from the HTTP API call and converts 
 
 Don't manually create an feeder function as a standalone function, because you can't link it to an alert feeder. Instead, [create it directly within the alert feeder](create-a-feeder.md). Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
 
-You can then modify it either [from the functions list](../manage-functions/edit-a-function.md) or the alert feeder configuration.
+You can then modify it either [from the functions list](../manage-functions/about-functions.md) or the alert feeder configuration.
 
 When you delete an alert feeder, the associated function remains. To remove the function, follow the steps in [Delete a Function](../manage-functions/delete-a-function.md).
 

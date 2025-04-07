@@ -454,7 +454,6 @@ nav:
         - 'Functions': 
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
-          - 'Edit a Function': thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
           - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
