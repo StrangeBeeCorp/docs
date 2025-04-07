@@ -22,5 +22,4 @@ This topic provides step-by-step instructions for removing a [Cortex](about-cort
 
 <h2>Next steps</h2>
 
-* [Edit Cortex Connection Settings](edit-cortex-connection-settings.md)
 * [Add a Cortex Server](add-a-cortex-server.md)

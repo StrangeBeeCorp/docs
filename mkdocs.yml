@@ -330,7 +330,6 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': 
           - 'About Cortex': thehive/administration/cortex/about-cortex.md
-          - 'Edit Cortex Connection Settings': thehive/administration/cortex/edit-cortex-connection-settings.md
           - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
           - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
         - 'MISP Integration':
