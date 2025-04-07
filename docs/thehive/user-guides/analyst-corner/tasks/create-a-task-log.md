@@ -31,5 +31,4 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
 
 <h2>Next steps</h2>
 
-* [Edit a Task Log](edit-a-task-log.md)
 * [Delete a Task Log](delete-a-task-log.md)

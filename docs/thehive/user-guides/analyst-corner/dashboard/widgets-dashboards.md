@@ -300,4 +300,4 @@ Sorting rules to refine the displayed data.
 
 * [About Dashboards](about-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
-* [Edit a Dashboard](edit-a-dashboard.md)
+* [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)

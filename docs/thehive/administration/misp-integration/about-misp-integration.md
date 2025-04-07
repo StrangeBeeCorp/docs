@@ -26,5 +26,4 @@ TheHive integrates with MISP in several ways:
 <h2>Next steps</h2>
 
 * [Connect a MISP Server](connect-a-misp-server.md)
-* [Edit a MISP Server Connection](edit-a-misp-server.md)
 * [Delete a MISP Server Connection](delete-a-misp-server.md)

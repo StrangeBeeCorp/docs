@@ -27,5 +27,4 @@ If you need to share a case page template with another organization or TheHive i
 <h2>Next steps</h2>
 
 * [Create a Case Page Template](create-a-case-page-template.md)
-* [Edit a Case Page Template](edit-a-case-page-template.md)
 * [Delete a Case Page Template](delete-a-case-page-template.md)
