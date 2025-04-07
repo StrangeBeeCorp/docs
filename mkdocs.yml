@@ -342,7 +342,7 @@ nav:
           - 'About Email Intake Connectors': thehive/administration/email-intake-connector/about-email-intake-connectors.md
           - 'Connect a Mailbox': thehive/administration/email-intake-connector/connect-a-mailbox.md
           - 'Manually Fetch Emails': thehive/administration/email-intake-connector/fetch-emails.md
-          - 'Delete a Mailbox Connection': thehive/administration/email-intake-connector/delete-a-mailbox.md
+          - 'Delete a Mailbox Connection': thehive/administration/email-intake-connector/delete-a-mailbox-connection.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
           - 'Configure Providers': 

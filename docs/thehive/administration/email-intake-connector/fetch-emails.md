@@ -17,4 +17,4 @@ This topic provides step-by-step instructions for manually triggering email fetc
 <h2>Next steps</h2>
 
 * [Connect a Mailbox](connect-a-mailbox.md)
-* [Delete a Mailbox](delete-a-mailbox.md)
+* [Delete a Mailbox](delete-a-mailbox-connection.md)
