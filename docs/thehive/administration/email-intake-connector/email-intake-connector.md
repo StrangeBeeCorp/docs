@@ -127,60 +127,6 @@ Configuration options are available for Microsoft 365 (OAuth2) and Google Worksp
 
         ![](/thehive/images/administration-guides/ms-intake-7.png)
 
-    ---
-
-        - Scroll down to verify that the Gmail scope exists, and click **Save and Continue**.
-
-        ![](/thehive/images/administration-guides/intake-12.png)
-
-    5. **Return to Dashboard**  
-    
-        - On the summary page, click **Back to Dashboard** to complete the OAuth consent configuration.
-
-        ![](/thehive/images/administration-guides/intake-13.png)
-
-    6. **Create OAuth Credentials**  
-    
-        - In the left-hand menu, select **Credentials**.
-
-        ![](/thehive/images/administration-guides/intake-14.png)
-
-        - Click on **Create Credentials** and choose **OAuth Client ID**.
-
-        ![](/thehive/images/administration-guides/intake-15.png)
-
-        - Set the application type as **Web application**.
-
-        ![](/thehive/images/administration-guides/intake-16.png)
-
-        - Provide a name for the OAuth client ID.
-
-        - Under **Authorized JavaScript origins**, add the appropriate URI.
-
-        ![](/thehive/images/administration-guides/intake-17.png)
-
-        - Under **Authorized redirect URIs**, add the necessary URIs and click **Create**.
-
-        ![](/thehive/images/administration-guides/intake-18.png)
-
-    7. **Obtain Client ID and Secret** 
-
-        * A dialog will appear with the **Client ID** and **Client Secret**.
-
-        * Copy these values or download the JSON file for future reference.
-
-        ![](/thehive/images/administration-guides/intake-19.png)
-
-    8. **Configure Intake Connector Settings in TheHive**
-
-        Set up the intake settings in TheHive by filling in the following values:
-
-        * `Email`
-        * `clientId`
-        * `secret`
-
-        ![](/thehive/images/administration-guides/eic-5.png)
-
     
 
 === "IMAP Mailbox"

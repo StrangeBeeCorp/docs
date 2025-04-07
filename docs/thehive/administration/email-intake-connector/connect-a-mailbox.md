@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
 5. Select :fontawesome-solid-plus:.
 
-6. In the **Add intake configuration** drawer, configure your email intake connector by following these steps:
+6. Configure your email intake connector by following these steps:
 
     === <!-- md:license Platinum --> "Google Workspace"
 
@@ -57,7 +57,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         6. Select **Create**.
 
-        ### Step 3: Remove scopes in the Google Auth Platform
+        ### Step 3: Add a scope in the Google Auth Platform
 
         1. Select **Data access** from the left pane.
 
@@ -73,7 +73,79 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         5. Make sure the new scope is selected, then select **Update**.
 
-        6. 
+        6. Make sure the scope is added to the **Your restricted scopes** section, then select *Save*.
+
+        ### Step 4: Create OAuth credentials
+
+        1. Enter *credentials* in the search bar at the top of the screen.
+
+        2. Select **Credentials** from the APIs & Services results.
+
+        3. Select **Create credentials**, then **OAuth Client ID**.
+
+            ![Google Cloud Platform Add credentials](/thehive/images/administration-guides/google-cloud-platform-credentials-oauthclientid.png)
+        
+        4. Select *Web application* as the application type.
+
+        5. Enter an internal name for the OAuth 2.0 client.
+
+        6. Select **Add URI** in the **Authorized JavaScript origins** section.
+
+        8. Enter a URI following this format: https://<your-thehive-instance-fqdn>.org.
+
+        9. Enter the same URI in the **Authorized redirect URIs** section.
+
+        10. Select **Create**.
+
+        11. Copy the Client ID and Client Secret values from the dialog.
+
+        ### Step 5: Configure the email intake connector in TheHive
+
+        1. Retunr to your TheHive application.
+
+        2. In the **Provider** section, enter the following information:
+
+            **- Name**
+
+            A name for your connector.
+
+            **- Provider**
+
+            Select *Google Workspace* from the dropdown.
+
+        3. In the **Authentication** section, enter the following information:
+
+            **- Email**
+
+            The email address associated with your account.
+
+            **- ClientId**
+
+            Paste the Client ID value you obtained from Google.
+
+            **- Secret**
+
+            Paste the Client Secret value you obtained from Google.
+
+        Then, select **Connect** to authorize TheHive to access your Google Workspace account for use with the application.
+
+        4. In the **Settings** section, enter the following information:
+
+            **- Organization**
+
+            The relevant Google Workspace organization.
+
+            **- Folder**
+
+            The folder from which emails are fetched.
+
+            **- Action in mailbox**
+
+            The action to perform in the mailbox when receiving an email.
+
+        5. Select **Test connection** to verify your connection.
+
+        6. Select **Confirm**.
 
     === <!-- md:license Gold --> <!-- md:license Platinum --> "IMAP server"
 
