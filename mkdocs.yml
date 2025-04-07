@@ -404,7 +404,6 @@ nav:
           - 'Case Page Templates':
             - 'About Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
             - 'Create a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
-            - 'Edit a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md
             - 'Delete a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
             - 'Export a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
             - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
