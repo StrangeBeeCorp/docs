@@ -17,7 +17,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
     !!! info "Manual refresh"
         If needed, you can also [manually trigger an email fetch](fetch-emails.md) for a mailbox. 
 
-5. Select :fontawesome-solid-plus: to create a new connection, or select :fontawesome-solid-ellipsis: next a connector and select **Edit**.
+5. Select :fontawesome-solid-plus:.
 
 6. Configure your email intake connector by following these steps. IMAP configuration is required if your email provider is neither Google nor Microsoft.
 
