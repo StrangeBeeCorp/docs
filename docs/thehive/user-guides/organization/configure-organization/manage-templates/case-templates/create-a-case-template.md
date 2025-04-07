@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for creating a [case template](abo
 !!! info "<!-- md:version 5.4 --> Duplicate an existing case template"
     You can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
 
-To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](import-a-case-template.md) topic.
+To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](export-import-a-case-template.md#import-a-case-template) topic.
 
 {!includes/access-manage-case-templates.md!}
 
@@ -72,7 +72,6 @@ To import an existing case template from another organization or TheHive instanc
 
 <h2>Next steps</h2>
 
-* [Edit a Case Template](edit-a-case-template.md)
-* [Export a Case Template](export-a-case-template.md)
+* [Export or Import a Case Template](export-import-a-case-template.md)
 * [Create a Case](../../../../analyst-corner/cases/create-a-new-case.md)
 * [Apply a Case Template](../../../../analyst-corner/cases/apply-a-case-template.md)

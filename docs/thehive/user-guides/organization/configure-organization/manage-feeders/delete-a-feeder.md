@@ -26,5 +26,4 @@ This topic provides step-by-step instructions for deleting an [alert feeder](abo
 <h2>Next steps</h2>
 
 * [Create an Alert Feeder](create-a-feeder.md)
-* [Edit an Alert Feeder](edit-a-feeder.md)
 * [Turn Off an Alert Feeder](turn-off-a-feeder.md)

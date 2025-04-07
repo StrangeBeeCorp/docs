@@ -18,13 +18,13 @@ TheHive includes four default dashboards:
 * Observables statistics
 * TTPs statistics
 
-You can [customize these default dashboards](edit-a-dashboard.md) and [create new ones from scratch](create-a-dashboard.md).
+You can [customize these default dashboards](add-remove-widgets-dashboard.md) and [create new ones from scratch](create-a-dashboard.md).
 
 ## Scope
 
 Dashboards are at the organization level and cannot be shared between organizations.
 
-However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-a-dashboard.md) and [importing](import-a-dashboard.md) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
+However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-import-a-dashboard.md#export-a-dashboard) and [importing](export-import-a-dashboard.md#import-a-dashboard) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
 
 ## Visibility
 
@@ -56,10 +56,8 @@ Every user has read access to the dashboards within their organization and can e
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
-* [Edit a Dashboard](edit-a-dashboard.md)
-* [View a Dashboard](view-a-dashboard.md)
+* [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
-* [Export a Dashboard](export-a-dashboard.md)
-* [Import a Dashboard](import-a-dashboard.md)
+* [Export or Import a Dashboard](export-import-a-dashboard.md)
 * [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

@@ -216,6 +216,27 @@ plugins:
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/administration/cortex/edit-cortex-connection-settings.md': 'thehive/administration/cortex/add-a-cortex-server.md'
+            'thehive/administration/custom-fields/edit-a-custom-field.md': 'thehive/administration/custom-fields/manage-a-custom-field.md'
+            'thehive/administration/misp-integration/edit-a-misp-server.md': 'thehive/administration/misp-integration/connect-a-misp-server.md'
+            'thehive/user-guides/analyst-corner/dashboard/edit-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard.md'
+            'thehive/user-guides/analyst-corner/dashboard/export-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md'
+            'thehive/user-guides/analyst-corner/dashboard/view-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/import-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md'
+            'thehive/user-guides/analyst-corner/tasks/edit-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/user-guides/analyst-corner/tasks/edit-a-task.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/flag-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/pin-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/start-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md'
+            'thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md': 'thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md'
+            'thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md'
+            'thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/edit-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
 
 extra:
   generator: false
@@ -330,13 +351,11 @@ nav:
         - 'License Management': thehive/administration/license.md
         - 'Cortex Integration': 
           - 'About Cortex': thehive/administration/cortex/about-cortex.md
-          - 'Edit Cortex Connection Settings': thehive/administration/cortex/edit-cortex-connection-settings.md
           - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
           - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
         - 'MISP Integration':
           - 'About MISP Integration': thehive/administration/misp-integration/about-misp-integration.md
           - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
-          - 'Edit a MISP Server Connection': thehive/administration/misp-integration/edit-a-misp-server.md
           - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
         - 'Email Intake Connector': thehive/administration/email-intake-connector.md
         - 'Authentication Settings':
@@ -355,7 +374,7 @@ nav:
         - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
-          - 'Edit a Custom Field': thehive/administration/custom-fields/edit-a-custom-field.md
+          - 'Manage Custom Fields': thehive/administration/custom-fields/manage-a-custom-field.md
           - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
         - 'Statuses':
@@ -381,7 +400,6 @@ nav:
       - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
           - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
-          - 'Edit a Page': thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md
           - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
           - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
           - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
@@ -397,14 +415,11 @@ nav:
           - 'Case Templates':
             - 'About Case Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md
             - 'Create a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md
-            - 'Edit a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/edit-a-case-template.md
             - 'Delete a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template.md
-            - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
-            - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
+            - 'Export or Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md
           - 'Case Page Templates':
             - 'About Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
             - 'Create a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
-            - 'Edit a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md
             - 'Delete a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
             - 'Export a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
             - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
@@ -412,7 +427,7 @@ nav:
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
             - 'Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md
             - 'Create a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md
-            - 'Edit a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md
+            - 'Add or Remove Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template.md
             - 'Delete a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template.md
         - 'Custom Tags': 
           - 'About Custom Tags': thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md
@@ -424,7 +439,6 @@ nav:
         - 'Notifications & Endpoints':
           - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
           - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md
-          - 'Edit a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md
           - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
           - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
           - 'Variable Usage Examples': thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples.md
@@ -454,7 +468,6 @@ nav:
         - 'Functions': 
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
-          - 'Edit a Function': thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
           - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
@@ -462,7 +475,6 @@ nav:
         - 'Alert Feeders': 
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
           - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
-          - 'Edit an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md
           - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md
           - 'Delete an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
@@ -549,12 +561,9 @@ nav:
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
             - 'Create a Task': thehive/user-guides/analyst-corner/tasks/create-a-task.md
-            - 'Start a Task': thehive/user-guides/analyst-corner/tasks/start-a-task.md
             - 'Change a Task Status': thehive/user-guides/analyst-corner/tasks/change-task-status.md
-            - 'Edit a Task': thehive/user-guides/analyst-corner/tasks/edit-a-task.md
+            - 'Manage a Task': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
             - 'Delete a Task': thehive/user-guides/analyst-corner/tasks/delete-a-task.md
-            - 'Flag a Task': thehive/user-guides/analyst-corner/tasks/flag-a-task.md
-            - 'Pin a Task': thehive/user-guides/analyst-corner/tasks/pin-a-task.md
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
@@ -563,19 +572,16 @@ nav:
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
             - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
-            - 'Edit a Task Log': thehive/user-guides/analyst-corner/tasks/edit-a-task-log.md
             - 'Delete a Task Log': thehive/user-guides/analyst-corner/tasks/delete-a-task-log.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
         - 'Dashboards':
           - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
           - 'Create a Dashboard': thehive/user-guides/analyst-corner/dashboard/create-a-dashboard.md
-          - 'Edit a Dashboard': thehive/user-guides/analyst-corner/dashboard/edit-a-dashboard.md
-          - 'View a Dashboard': thehive/user-guides/analyst-corner/dashboard/view-a-dashboard.md
+          - 'Add or Remove Widgets': thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard.md
           - 'Delete a Dashboard': thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard.md
           - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
-          - 'Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/import-a-dashboard.md
-          - 'Export a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-a-dashboard.md
+          - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           

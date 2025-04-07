@@ -36,8 +36,8 @@ You can require users in any of your organizations to take action on a task. How
 
 In TheHive, you can make important tasks stand out using the following options:
 
-* [Pin a task](pin-a-task.md): Pin a task to access it from the **Tasks** tab within a case.
-* [Flag a task](flag-a-task.md): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
+* [Pin a task](manage-a-task.md#pin-a-task): Pin a task to access it from the **Tasks** tab within a case.
+* [Flag a task](manage-a-task.md#flag-a-task): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
 
 ### Closing a case with open tasks
 
@@ -53,12 +53,9 @@ In TheHive, you can make important tasks stand out using the following options:
 
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)
 * [Create a Task](create-a-task.md)
-* [Start a Task](start-a-task.md)
 * [Share a Task](share-a-task.md)
 * [Change a Task Status](change-task-status.md)
-* [Edit a Task](edit-a-task.md)
+* [Manage a Task](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
-* [Flag a Task](flag-a-task.md)
-* [Pin a Task](pin-a-task.md)
 * [Create a Task Log](../tasks/create-a-task-log.md)
 * [Run Responders](../tasks/preview-task-details/run-responders.md)

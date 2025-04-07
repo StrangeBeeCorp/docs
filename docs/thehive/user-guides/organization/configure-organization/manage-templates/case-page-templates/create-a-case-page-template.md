@@ -31,6 +31,5 @@ To import an existing case template from another organization or TheHive instanc
 
 <h2>Next steps</h2>
 
-* [Edit a Case Page Template](edit-a-case-page-template.md)
 * [Delete a Case Page Template](delete-a-case-page-template.md)
 * [Create a Knowledge Base Page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)

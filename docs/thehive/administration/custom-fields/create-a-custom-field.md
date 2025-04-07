@@ -6,15 +6,11 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 <h2>Procedure</h2>
 
-1. Go to the **Entities management** view from the sidebar menu.
-
-    ![Entities management](../../images/administration-guides/create-a-custom-field-entities-management.png)
+1. {!includes/entities-management-view-go-to.md!}
 
     ---
 
-2. Select the **Custom fields** tab.
-
-    ![Custom fields tab](../../images/administration-guides/create-a-custom-field-custom-fields.png)
+2. {!includes/custom-fields-tab-go-to.md!}
 
     ---
 
@@ -59,7 +55,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 <h2>Next steps</h2>
 
-* [Edit a Custom Field](edit-a-custom-field.md)
+* [Manage a Custom Field](manage-a-custom-field.md)
 * [Delete a Custom Field](delete-a-custom-field.md)
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md)
 * [Remove Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md)

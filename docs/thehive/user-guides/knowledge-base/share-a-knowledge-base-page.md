@@ -20,6 +20,5 @@ This is useful for sharing a case page with your teammates through a messaging t
 <h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
-* [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
 * [View a Knowledge Base Page](view-a-knowledge-base-page.md)

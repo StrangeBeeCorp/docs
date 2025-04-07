@@ -31,6 +31,5 @@ After a page is created at the organization level, it's visible to all users. At
 <h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
-* [Edit a Knowledge Base Page](edit-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
 * [Share a Knowledge Base Page](share-a-knowledge-base-page.md)
