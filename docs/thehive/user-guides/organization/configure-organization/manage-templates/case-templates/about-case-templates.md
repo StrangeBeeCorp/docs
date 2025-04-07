@@ -27,7 +27,7 @@ You can also [apply a case template to an existing case](../../../../analyst-cor
 
 Once created, case templates are automatically available to all users in your organization.
 
-If you need to share a case template with another organization or TheHive instance, you can [export it](export-a-case-template.md) and [import it](import-a-case-template.md).
+If you need to share a case template with another organization or TheHive instance, you can [export it](export-import-a-case-template.md#export-a-case-template) and [import it](export-import-a-case-template.md#import-a-case-template).
 
 <h2>Next steps</h2>
 
