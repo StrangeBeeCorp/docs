@@ -424,7 +424,6 @@ nav:
         - 'Notifications & Endpoints':
           - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
           - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md
-          - 'Edit a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md
           - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
           - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
           - 'Variable Usage Examples': thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples.md
