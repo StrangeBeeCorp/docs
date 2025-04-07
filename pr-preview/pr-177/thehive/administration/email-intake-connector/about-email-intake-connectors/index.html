@@ -11157,8 +11157,25 @@
 <p>It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.</p>
 <div class="admonition tip">
 <p class="admonition-title">Parsing emails</p>
-<p>The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing, you must <a href="../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/">write a FilteredEvent trigger</a> within <a href="../../../user-guides/organization/configure-organization/manage-notifications/about-notifications/">a notification</a> that executes the <em>EmlParser</em> analyzer:</p>
+<p>The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing, you must <a href="../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/">write a FilteredEvent trigger</a> within <a href="../../../user-guides/organization/configure-organization/manage-notifications/about-notifications/">a notification</a> that executes the <em>EmlParser</em> analyzer. Below is an example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alert"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"object.type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email-intake"</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 </div>
