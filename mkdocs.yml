@@ -216,6 +216,7 @@ plugins:
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/administration/email-intake-connector.md': 'thehive/administration/email-intake-connector/about-email-intake-connectors.md'
 
 extra:
   generator: false
