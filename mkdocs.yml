@@ -338,7 +338,11 @@ nav:
           - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
           - 'Edit a MISP Server Connection': thehive/administration/misp-integration/edit-a-misp-server.md
           - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
-        - 'Email Intake Connector': thehive/administration/email-intake-connector.md
+        - 'Email Intake Connectors':
+          - 'About Email Intake Connectors': thehive/administration/email-intake-connector/about-email-intake-connectors.md
+          - 'Connect a Mailbox': thehive/administration/email-intake-connector/connect-a-mailbox.md
+          - 'Manually Fetch Emails': thehive/administration/email-intake-connector/fetch-emails.md
+          - 'Delete a Mailbox Connection': thehive/administration/email-intake-connector/delete-a-mailbox.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
           - 'Configure Providers': 
