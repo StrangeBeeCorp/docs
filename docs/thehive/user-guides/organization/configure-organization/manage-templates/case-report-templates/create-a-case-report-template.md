@@ -46,4 +46,4 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 <h2>Next steps</h2>
 
-* [Edit a Case Report Template](edit-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
