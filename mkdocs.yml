@@ -353,7 +353,7 @@ nav:
         - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
-          - 'Manage a Custom Field': thehive/administration/custom-fields/manage-a-custom-field.md
+          - 'Manage Custom Fields': thehive/administration/custom-fields/manage-a-custom-field.md
           - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
         - 'Statuses':
