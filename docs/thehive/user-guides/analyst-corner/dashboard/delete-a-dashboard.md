@@ -19,9 +19,7 @@ This topic provides step-by-step instructions for deleting a [dashboard](about-d
 
 * [Widgets in Dashboards](widgets-dashboards.md)
 * [Create a Dashboard](create-a-dashboard.md)
-* [Edit a Dashboard](edit-a-dashboard.md)
-* [View a Dashboard](view-a-dashboard.md)
+* [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
-* [Export a Dashboard](export-a-dashboard.md)
-* [Import a Dashboard](import-a-dashboard.md)
+* [Export or Import a Dashboard](export-import-a-dashboard.md)
 * [Download a Dashboard](download-a-dashboard.md)
