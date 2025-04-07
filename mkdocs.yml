@@ -381,7 +381,6 @@ nav:
       - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
           - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
-          - 'Edit a Page': thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md
           - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
           - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
           - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
