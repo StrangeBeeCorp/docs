@@ -11065,7 +11065,23 @@ AccessCheckResult : Granted
 <p>Select <strong>API permissions</strong> from the left pane.</p>
 </li>
 <li>
-<p>Follow <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph">the Microsoft instructions and add the <em>IMAP.AccessAsApp</em> permission</a>.</p>
+<p>Follow <a href="https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph">the Microsoft instructions to add the relevant permissions</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommanded permissions</p>
+<p>For Microsoft Graph to work correctly with TheHive, ensure that the following permissions are added:</p>
+<ul>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailread">Mail.Read</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasic">Mail.ReadBasic</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasicall">Mail.ReadBasic.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite">Mail.ReadWrite</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxfolderreadall">MailboxFolder.Read.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall">User.Read.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadbasicall">User.ReadBasic.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userreadwriteall">User.ReadWrite.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadall">UserAuthenticationMethod.Read.All</a></li>
+<li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall">UserAuthenticationMethod.ReadWrite.All</a></li>
+</ul>
+</div>
 </li>
 </ol>
 <h4 id="step-5-configure-powershell-access_1">Step 5: Configure PowerShell access<a class="headerlink" href="#step-5-configure-powershell-access_1" title="Permanent link">#</a></h4>
