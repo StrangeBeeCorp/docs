@@ -21,7 +21,7 @@ An alert can be created from the following sources:
 
 * Threat intelligence platforms like [MISP](../../../administration/misp-integration/about-misp-integration.md) connected to TheHive
 
-* [Email servers](../../../administration/email-intake-connector.md) from which TheHive retrieves data.
+* [Email servers](../../../administration/email-intake-connector/about-email-intake-connectors.md) from which TheHive retrieves data.
 
 ## Key components
 

@@ -41,7 +41,7 @@ Custom fields can be either optional or mandatory. You must complete all mandato
 <h2>Next steps</h2>
 
 * [Create a Custom Field](create-a-custom-field.md)
-* [Manage a Custom Field](manage-a-custom-field.md)
+* [Manage Custom Fields](manage-a-custom-field.md)
 * [Delete a Custom Field](delete-a-custom-field.md)
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md)
 * [Remove Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md)

@@ -32,6 +32,6 @@ To learn more about how sharing rules function and interact, see the [About Orga
 * [Share an Observable](../cases/share-an-observable.md)
 * [Share a Case](../cases/share-a-case.md)
 * [Change a Task Status](change-task-status.md)
-* [Manage a Task](manage-a-task.md)
+* [Manage Tasks](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Create a Task Log](create-a-task-log.md)
