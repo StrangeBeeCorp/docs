@@ -8,10 +8,10 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
 <h2>Procedure</h2>
 
-!!! info "Prerequisite"
+!!! warning "Prerequisite"
     Users must have an existing account in TheHive's local database to authenticate successfully.
 
-!!! warning "Login flow with multiple SAML providers"
+!!! info "Login flow with multiple SAML providers"
     You can configure multiple SAML providers in TheHive. When a user attempts to log in, TheHive queries each provider sequentially, following the defined order. The process stops as soon as a provider grants authorization.
 
 1. {!includes/platform-management-view-go-to.md!}
