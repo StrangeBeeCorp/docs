@@ -1,4 +1,4 @@
-# How to Manage a Task
+# How to Manage Tasks
 
 This topic provides step-by-step instructions for managing a [task](about-tasks.md) in TheHive.
 

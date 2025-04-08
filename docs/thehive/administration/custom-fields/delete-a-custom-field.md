@@ -23,7 +23,7 @@ This topic provides step-by-step instructions for deleting a [custom field](../c
 <h2>Next steps</h2>
 
 * [Create a Custom Field](create-a-custom-field.md)
-* [Manage a Custom Field](manage-a-custom-field.md)
+* [Manage Custom Fields](manage-a-custom-field.md)
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md)
 * [Remove Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md)
 * [Enter Values in Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md)
