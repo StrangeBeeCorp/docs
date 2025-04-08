@@ -298,7 +298,21 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         1. Select **API permissions** from the left pane.
 
-        2. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
+        2. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
+
+            !!! tip "Recommanded permissions"
+                For Microsoft Graph to work correctly with TheHive, ensure that the following permissions are added:
+
+                * [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread)
+                * [Mail.ReadBasic](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasic)
+                * [Mail.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasicall)
+                * [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite)
+                * [MailboxFolder.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxfolderreadall)
+                * [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall)
+                * [User.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadbasicall)
+                * [User.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadwriteall)
+                * [UserAuthenticationMethod.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadall)
+                * [UserAuthenticationMethod.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall)
 
         #### Step 5: Configure PowerShell access
 

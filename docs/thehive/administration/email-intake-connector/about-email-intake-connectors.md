@@ -11,10 +11,29 @@ Email intake connectors integrate mailboxes that receive cybersecurity alerts.
 It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.
 
 !!! tip "Parsing emails"
-    The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing and extraction of potential observables, you must write [a notification](../../user-guides/organization/configure-organization/manage-notifications/about-notifications.md) triggered by [a FilteredEvent](../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md) that runs the *EmlParser* analyzer.
+    The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing and extraction of potential observables, you must [create a notification](../../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md) triggered by [a FilteredEvent](../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md) that [runs the *EmlParser* analyzer](../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md).
+
+    Below is an example of the FilteredEvent trigger you can use:
 
     ```json
     {
+        "_and": [
+            {
+                "_is": {
+                    "action": "create"
+                }
+            },
+            {
+                "_is": {
+                    "objectType": "Observable"
+                }
+            },
+            {
+                "_is": {
+                    "object.alert.type": "email-intake"
+                }
+            }
+        ]
     }
     ```
 
