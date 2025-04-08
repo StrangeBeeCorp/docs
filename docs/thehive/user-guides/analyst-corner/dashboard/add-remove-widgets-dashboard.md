@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for adding or removing [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive.
 
-!!! warning "<!-- md:version 5.4 --> Required permissions for managing dashboards"
+!!! warning "<!-- md:version 5.4 --> Required permissions"
     Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
 ## Add widgets in a dashboard

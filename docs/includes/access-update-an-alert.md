@@ -1,2 +1,2 @@
-!!! warning "Required permissions for updating an alert"
+!!! warning "Required permissions"
     Only users with the `manageAlert/update` permission can update an alert in TheHive.

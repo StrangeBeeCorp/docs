@@ -43,7 +43,7 @@ This topic lists all available objects for functions in TheHive.
 
 ### Case
 
-!!! note "Caze"
+!!! info "Caze"
     Since `case` is a reserved keyword is Java, the API uses `caze`.
 
 - `caze.create(input: InputCreateCase): OutputCase`: Creates a new case.

@@ -10,7 +10,7 @@ You can hide some or all indicators if they're not useful or could be misleading
 
 If you want to know more about the KPIs available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
 
-!!! warning "Required permissions for hiding KPIs"
+!!! warning "Required permissions"
     Only users with an admin-type profile that has the `manageConfig` permission can hide KPIs in case and alert descriptions in TheHive.
 
 <h2>Procedure</h2>
