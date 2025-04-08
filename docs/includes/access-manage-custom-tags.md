@@ -1,2 +1,2 @@
-!!! warning "Required permissions for managing custom tags"
+!!! warning "Required permissions"
     Only users with the `manageTag` permission can manage custom tags in TheHive.

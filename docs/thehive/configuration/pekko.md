@@ -1,5 +1,7 @@
 # Pekko Configuration (Version 5.4+)
 
+<!-- md:version 5.4 -->
+
 With the release of version 5.4, TheHive transitioned from the Scala framework Akka to [Apache Pekko](https://pekko.apache.org/). This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
 
 This topic provides instructions on updating your configuration to support this change.
@@ -212,7 +214,7 @@ pekko {
 
     Ensure to apply the same principle for configuring other nodes, and remember to restart all services afterward.
 
-!!! note "Session security key requirement"
+!!! tip "Session security key requirement"
     Starting with version 5.4, the `secret.conf` file must include a secret key of at least 32 characters for session security, as required by Play Framework 3. In clustered environments, all nodes must use the same key to maintain consistency across the deployment.
 
 <h2>Next steps</h2>

@@ -163,7 +163,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
             gpgkey=https://downloads.apache.org/cassandra/KEYS
             ```
         
-        !!! note "Using a text editor"
+        !!! tip "Using a text editor"
             You can create the file and add the content using a text editor such as [nano](https://www.nano-editor.org/) or [Vim](https://www.vim.org/).
 
     3. After adding the repository configuration, install Cassandra using the following command:
@@ -281,7 +281,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
             sudo systemctl enable cassandra
             ```
 
-!!! note "Default ports for Cassandra communication"
+!!! info "Default ports for Cassandra communication"
     Cassandra defaults to listening on port 7000/tcp for inter-node communication and on port 9042/tcp for client communication.
 
 
@@ -492,7 +492,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
         -Xmx4g
         ```
 
-    !!! note "Memory settings"
+    !!! tip "Memory settings"
         Adjust the memory settings (`-Xms` and `-Xmx`) according to the available memory.
 
 !!! Example ""
@@ -843,7 +843,7 @@ To start TheHive service and enable it to run on system boot, execute the follow
 After the service has successfully started, launch your web browser and navigate to `http://YOUR_SERVER_ADDRESS:9000/`
 The default admin user credentials are as follows:
 
-!!! note ""
+!!! example ""
     ```bash
     Username: admin@thehive.local
     Password: secret

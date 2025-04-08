@@ -1,2 +1,2 @@
-    !!! warning "Required permissions for managing case reports"
+    !!! warning "Required permissions"
         Only users with the `manageCaseReport` permission can manage case reports in TheHive.
