@@ -55,7 +55,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
 <h2>Next steps</h2>
 
-* [Manage a Custom Field](manage-a-custom-field.md)
+* [Manage Custom Fields](manage-a-custom-field.md)
 * [Delete a Custom Field](delete-a-custom-field.md)
 * [Add Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md)
 * [Remove Custom Fields](../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md)

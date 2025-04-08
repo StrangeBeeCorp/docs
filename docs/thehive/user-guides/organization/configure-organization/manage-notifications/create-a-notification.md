@@ -28,7 +28,7 @@ This topic provides step-by-step instructions for creating a [notification](abou
 5. Turn on the **Send notification to every user in the organization** toggle to be able to send an email to all users in the organization.
 
     !!! note "Available trigger"
-        If enabled, the *AnyEvent* trigger will no longer be available, and only the *EmailerToUser* notifier will be selectable.
+        If enabled, the *AnyEvent* trigger is no longer available, and only the *EmailerToUser* notifier is selectable.
 
     ---
 

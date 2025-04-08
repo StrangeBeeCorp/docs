@@ -18,6 +18,6 @@ This topic provides step-by-step instructions for changing the [status](about-ta
 <h2>Next steps</h2>
 
 * [Share a Task](share-a-task.md)
-* [Manage a Task](manage-a-task.md)
+* [Manage Tasks](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Create a Task Log](create-a-task-log.md)

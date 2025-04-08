@@ -22,7 +22,7 @@ In TheHive, you can create a case from the following sources:
 
 * <!-- md:version 5.5 --> [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md): Cases created from data retrieved from external systems using an alert feeder.
 
-* [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector.md).
+* [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector/about-email-intake-connectors.md).
 
 * [Detection tools](../cases/create-a-new-case.md#create-a-case-from-a-detection-tool) (SIEM, EDR, IDS, or firewalls): Cases created automatically by trusted detection tools, when you prefer to manage alert triage within the tool or trust it to generate mostly true positives.
 
