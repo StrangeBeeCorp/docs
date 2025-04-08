@@ -33,7 +33,7 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 
         Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
-    !!! warning "Warning"
+    !!! warning "Unindexed fields"
         The `workerDefinition` field and the `operations[]` array aren't indexed for search.
 
 4. {!includes/global-search-additional-filters.md!}

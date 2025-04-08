@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for revoking a [function](about-fu
 
 5. Copy the cURL or Python command example to use in your HTTP call.
 
-!!! note "Example"
+!!! example ""
 
     ```bash
     curl -X POST -H 'Authorization: Bearer $API_KEY' https://<thehive_url>/api/v1/function/<function_name> -H 'Content-Type: application/json' --data '
