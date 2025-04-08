@@ -462,7 +462,7 @@ nav:
             - 'Function': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function.md
           - 'Filtered Event Setup':
             - 'Write a FilteredEvent Trigger': thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md
-            - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/about-filtered-event-trigger-operators.md
+            - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators.md
           - 'Endpoints':
             - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
             - 'Add a Local HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md

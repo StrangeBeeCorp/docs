@@ -30,7 +30,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 5. Write your filter.
 
     !!! tip "Operators"
-        To learn more about using operators, see the [About FilteredEvent Trigger Operators](about-filtered-event-trigger-operators.md) topic.
+        To learn more about using operators, see the [About FilteredEvent Trigger Operators](filtered-event-trigger-operators.md) topic.
 
     To access a specific field within a JSON object, use dot (`.`) notation to navigate through nested properties.
 

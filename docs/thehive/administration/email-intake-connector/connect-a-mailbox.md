@@ -28,7 +28,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
         !!! warning "Prerequisites"
             You must have administrator access to the Google Cloud Console, with the necessary permissions to create projects and configure OAuth 2.0 credentials.
 
-        ### Step 1: Create a project in the Google Cloud Console
+        #### Step 1: Create a project in the Google Cloud Console
 
         1. Go to the [Google Admin Console](https://console.cloud.google.com/welcome).
 
@@ -44,7 +44,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         5. Select **Create**.
 
-        ### Step 2: Configure OAuth consent
+        #### Step 2: Configure OAuth consent
 
         1. Select **OAuth consent screen** from the left pane.
 
@@ -62,7 +62,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         6. Select **Create**.
 
-        ### Step 3: Add a scope in the Google Auth Platform
+        #### Step 3: Add a scope in the Google Auth Platform
 
         1. Select **Data access** from the left pane.
 
@@ -80,7 +80,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         6. Make sure the scope is added to the **Your restricted scopes** section, then select *Save*.
 
-        ### Step 4: Create OAuth credentials
+        #### Step 4: Create OAuth credentials
 
         1. Enter *credentials* in the search bar at the top of the screen.
 
@@ -104,7 +104,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         11. Copy the Client ID and Client Secret values from the dialog for use in TheHive configuration.
 
-        ### Step 5: Configure the email intake connector in TheHive
+        #### Step 5: Configure the email intake connector in TheHive
 
         1. Return to your TheHive application.
 
@@ -142,7 +142,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
             - PowerShell installed and properly configured.  
             - A shared mailbox already created in Microsoft 365.
 
-        ### Step 1: Create a mail-enabled security group
+        #### Step 1: Create a mail-enabled security group
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
@@ -150,13 +150,13 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         2. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
 
-        ### Step 2: Register a new application
+        #### Step 2: Register a new application
 
         1. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
 
         2. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
-        ### Step 3: Add a secret
+        #### Step 3: Add a secret
 
         1. Select **Certificates & secrets** from the left pane.
 
@@ -167,13 +167,13 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
             !!! warning "One-time display"
                 This secret value is never displayed again after you leave this page.
         
-        ### Step 4: Assign API permissions
+        #### Step 4: Assign API permissions
 
         1. Select **API permissions** from the left pane.
 
         2. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission for Office 365 Exchange Online](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api).
 
-        ### Step 5: Configure PowerShell access
+        #### Step 5: Configure PowerShell access
 
         1. Define the necessary values for the configuration:
 
@@ -223,7 +223,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
             c. Running the command with a different mailbox should return `AccessCheckResult: Denied`.
 
-        ### Step 6: Configure the email intake connector in TheHive
+        #### Step 6: Configure the email intake connector in TheHive
 
         1. Return to your TheHive application.
 
@@ -269,7 +269,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
             - PowerShell installed and properly configured.  
             - A shared mailbox already created in Microsoft 365.
 
-        ### Step 1: Create a mail-enabled security group
+        #### Step 1: Create a mail-enabled security group
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
@@ -277,13 +277,13 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
         2. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
 
-        ### Step 2: Register a new application
+        #### Step 2: Register a new application
 
         1. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
 
         2. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
-        ### Step 3: Add a secret
+        #### Step 3: Add a secret
 
         1. Select **Certificates & secrets** from the left pane.
 
@@ -294,13 +294,13 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
             !!! warning "One-time display"
                 This secret value is never displayed again after you leave this page.
         
-        ### Step 4: Assign API permissions
+        #### Step 4: Assign API permissions
 
         1. Select **API permissions** from the left pane.
 
         2. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
 
-        ### Step 5: Configure PowerShell access
+        #### Step 5: Configure PowerShell access
 
         1. Define the necessary values for the configuration:
 
@@ -350,7 +350,7 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
             c. Running the command with a different mailbox should return `AccessCheckResult: Denied`.
 
-        ### Step 6: Configure the email intake connector in TheHive
+        #### Step 6: Configure the email intake connector in TheHive
 
         1. Return to your TheHive application.
 
