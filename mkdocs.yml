@@ -238,6 +238,7 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
             'thehive/administration/email-intake-connector.md': 'thehive/administration/email-intake-connector/about-email-intake-connectors.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md'
 
 extra:
   generator: false
