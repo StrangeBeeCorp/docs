@@ -567,7 +567,7 @@ nav:
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
             - 'Create a Task': thehive/user-guides/analyst-corner/tasks/create-a-task.md
             - 'Change a Task Status': thehive/user-guides/analyst-corner/tasks/change-task-status.md
-            - 'Manage a Task': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
+            - 'Manage Tasks': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
             - 'Delete a Task': thehive/user-guides/analyst-corner/tasks/delete-a-task.md
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md

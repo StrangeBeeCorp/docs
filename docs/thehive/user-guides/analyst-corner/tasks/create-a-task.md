@@ -56,6 +56,6 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 
 * [Share a Task](share-a-task.md)
 * [Change a Task Status](change-task-status.md)
-* [Manage a Task](manage-a-task.md)
+* [Manage Tasks](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Create a Task Log](create-a-task-log.md)
