@@ -140,7 +140,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
             'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
-            'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md'
+            'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md'
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
