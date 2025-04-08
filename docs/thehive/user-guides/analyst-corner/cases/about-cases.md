@@ -126,9 +126,9 @@ When you set a case to restricted visibility:
     A case with restricted visibility still triggers [configured notifications](../../organization/configure-organization/manage-notifications/about-notifications.md), regardless of who can view the case.
 
 !!! warning "Audit logs behavior"
-    The behavior of [audit logs](../../organization/about-audit-logs.md) when visibility is restricted on a case depends on the indexation technology you're using:
-    - With JanusGraph, visibility is calculated dynamically. When visibility is restricted on a case, all associated audit logs, including those created earlier, immediately become private.
-    - With Elasticsearch, visibility is set when the audit log is created. When visibility is restricted on a case, existing audit logs remain public. If the case becomes accessible again, audit logs created while it had restricted visibility remain private.
+    The behavior of [audit logs](../../organization/about-audit-logs.md) when visibility is restricted on a case depends on the indexation technology you're using:  
+    - With JanusGraph, visibility is calculated dynamically. When visibility is restricted on a case, all associated audit logs, including those created earlier, immediately become private.  
+    - With Elasticsearch, visibility is set when the audit log is created. When visibility is restricted on a case, existing audit logs remain public. However, if the case becomes accessible again, audit logs created while it had restricted visibility remain private.
 
 #### Indicators
 
