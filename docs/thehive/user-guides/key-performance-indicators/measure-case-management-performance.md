@@ -15,7 +15,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 1. Go to the **Dashboards** view from the sidebar menu.
 
-    ![Measure case management performance](../../images/user-guides/measure-case-management-performance.png)
+    ![Measure case management performance](../../images/user-guides/kpis/measure-case-management-performance.png)
 
 2. Select a dashboard related to cases.
 
@@ -37,7 +37,7 @@ Two options are available to measure a case's performance:
 
 2. In the case description, move through the **Time metrics** section in the left pane.
 
-    ![Case description metrics](../../images/user-guides/case-description-metrics.png)
+    ![Case description metrics](../../images/user-guides/kpis/case-description-metrics.png)
 
 3. Review the available indicators for your case.
 
