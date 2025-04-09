@@ -25,31 +25,23 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     === "Version 5.4 and earlier"
 
-        3. Select **SAML authentication** in the **Authentication providers** section.
+        1. Select **SAML authentication** in the **Authentication providers** section.
 
-            ---
+        2. In the **SAML authentication** drawer, turn on the **Enable SAML** toggle.
 
-        4. In the **SAML authentication** drawer, turn on the **Enable SAML** toggle.
-
-            ---
-
-        5. Select **Add a provider** or select :fontawesome-solid-plus:.
+        3. Select **Add a provider** or select :fontawesome-solid-plus:.
 
     === "Since version 5.5"
 
-        3. Select **SSO authentication** in the **Authentication providers** section.
+        1. Select **SSO authentication** in the **Authentication providers** section.
 
-            ---
+        2. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
 
-        4. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
-
-            ---
-
-        5. Select **Add a provider** or select :fontawesome-solid-plus:. Then select *SAML* from the dropdown list.
+        3. Select **Add a provider** or select :fontawesome-solid-plus:. Then select *SAML* from the dropdown list.
 
     ---
 
-6. Enter the following information:
+4. Enter the following information:
 
     **- Name \***
 
