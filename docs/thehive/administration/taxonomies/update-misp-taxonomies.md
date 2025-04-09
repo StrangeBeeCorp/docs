@@ -25,5 +25,4 @@ This is useful when you need to update the MISP taxonomies included with your Th
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
 * [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Delete a Taxonomy](delete-a-taxonomy.md)
-* [Add Tags](../../user-guides/analyst-corner/cases/tags/add-tags.md)
-* [Remove Tags](../../user-guides/analyst-corner/cases/tags/remove-tags.md)
+* [Add or Remove Tags](../../user-guides/analyst-corner/cases/tags/add-remove-tags.md)

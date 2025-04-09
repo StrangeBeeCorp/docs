@@ -23,5 +23,4 @@ This is useful if you want to add taxonomies other than the default imported MIS
 * [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Update MISP Taxonomies](update-misp-taxonomies.md)
 * [Delete a Taxonomy](delete-a-taxonomy.md)
-* [Add Tags](../../user-guides/analyst-corner/cases/tags/add-tags.md)
-* [Remove Tags](../../user-guides/analyst-corner/cases/tags/remove-tags.md)
+* [Add or Remove Tags](../../user-guides/analyst-corner/cases/tags/add-remove-tags.md)

@@ -537,8 +537,7 @@ nav:
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
-            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
-            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
