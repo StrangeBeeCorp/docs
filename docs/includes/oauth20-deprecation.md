@@ -1,2 +1,2 @@
-!!! warning "Deprecated"
-    The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](/thehive/administration/authentication/openid/) instead.
+    !!! warning "Deprecated"
+        The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](/thehive/administration/authentication/openid/) instead.

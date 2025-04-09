@@ -8,9 +8,6 @@ This topic provides step-by-step instructions for configuring an OpenID authenti
 
 <h2>Procedure</h2>
 
-!!! info "Local account"
-    Users must have an existing account in TheHive's local database to authenticate successfully.
-
 {!includes/prerequisites-authentication-providers.md!}
 
 !!! info "Login flow with multiple OpenID providers"
@@ -42,21 +39,21 @@ This topic provides step-by-step instructions for configuring an OpenID authenti
 
 7. Enter the following information:
 
-    **- Name**
+    **- Name \***
 
     A recognizable name for the identity provider (IdP) in TheHive.
 
     Example: *Microsoft Entra ID*
 
-    **- Client ID**
+    **- Client ID \***
 
     The unique identifier for the OpenID application registered with the IdP.
 
-    **- Secret**
+    **- Secret \***
 
     The secret key associated with the Client ID.
 
-    **- Identity provider metadata type**
+    **- Identity provider metadata type \***
 
     Select how TheHive retrieves configuration information for the IdP—either from an JSON file or a URL.
 
@@ -70,9 +67,9 @@ This topic provides step-by-step instructions for configuring an OpenID authenti
 
         ``` json
         {
-            "issuer": "https://login.microsoftonline.com/{tenant-id}/v2.0",
-            "authorization_endpoint": "https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/authorize",
-            "token_endpoint": "https://login.microsoftonline.com/{tenant-id}/oauth2/v2.0/token",
+            "issuer": "https://login.microsoftonline.com/<tenant-id>/v2.0",
+            "authorization_endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/authorize",
+            "token_endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token",
             "userinfo_endpoint": "https://graph.microsoft.com/oidc/userinfo"
         }
         ```

@@ -8,9 +8,6 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
 <h2>Procedure</h2>
 
-!!! info "Local account"
-    Users must have an existing account in TheHive's local database to authenticate successfully.
-
 {!includes/prerequisites-authentication-providers.md!}
 
 !!! info "Login flow with multiple SAML providers"
@@ -24,43 +21,43 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     ---
 
-=== "Version 5.4 and earlier"
+3. 
 
-    3. Select **SAML authentication** in the **Authentication providers** section.
+    === "Version 5.4 and earlier"
 
-        ---
+        3. Select **SAML authentication** in the **Authentication providers** section.
 
-    4. In the **SAML authentication** drawer, turn on the **Enable SAML** toggle.
+            ---
 
-        ---
+        4. In the **SAML authentication** drawer, turn on the **Enable SAML** toggle.
 
-    5. Select **Add a provider** or select :fontawesome-solid-plus:.
+            ---
 
-=== "Since version 5.5"
+        5. Select **Add a provider** or select :fontawesome-solid-plus:.
 
-    <!-- md:version 5.5 -->
+    === "Since version 5.5"
 
-    3. Select **SSO authentication** in the **Authentication providers** section.
+        3. Select **SSO authentication** in the **Authentication providers** section.
 
-        ---
+            ---
 
-    4. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
+        4. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
 
-        ---
+            ---
 
-    5. Select **Add a provider** or select :fontawesome-solid-plus:. Then select *SAML* from the dropdown list.
+        5. Select **Add a provider** or select :fontawesome-solid-plus:. Then select *SAML* from the dropdown list.
 
     ---
 
 6. Enter the following information:
 
-    **- Name**
+    **- Name \***
 
     A recognizable name for the identity provider (IdP) in TheHive.
 
     Example: *Microsoft Entra ID*
 
-    **- Identity provider metadata type**
+    **- Identity provider metadata type \***
 
     Select how TheHive retrieves configuration information for the IdP—either from an XML file or a URL.
 
@@ -74,17 +71,18 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
         ``` xml
         <?xml version="1.0" encoding="UTF-8"?>
-        <md: EntityDescriptor entityID="http://www.okta.com/exknhwsd2uAGUSK66696"               xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+        <md: EntityDescriptor entityID="http://www.okta.com/<entity-id>"               xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
             <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
                 <md:KeyDescriptor use="signing">
                     <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                    <!-- Replace with your key information -->
         ```
 
     **- User login attribute**
 
     The name of the attribute from the IdP that contains the user's login information (such as email or username).
 
-    **- Maximum authentication life time**
+    **- Maximum authentication life time \***
 
     The maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.
 
