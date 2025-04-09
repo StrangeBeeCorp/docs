@@ -505,8 +505,7 @@ nav:
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
-            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
-            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
