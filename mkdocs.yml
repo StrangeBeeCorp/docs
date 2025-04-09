@@ -369,7 +369,7 @@ nav:
             - 'Local': thehive/administration/authentication/local.md
             - 'Active Directory (AD)': thehive/administration/authentication/ad.md
             - 'LDAP': thehive/administration/authentication/ldap.md
-            - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
+            - 'OAUTH 2.0 (Deprecated)': thehive/administration/authentication/oauth2.md
             - 'SAML': thehive/administration/authentication/saml.md
             - 'OpenID': thehive/administration/authentication/openid.md
           - 'Configure SSL': thehive/administration/authentication/ssl.md
