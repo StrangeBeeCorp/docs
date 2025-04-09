@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for adding or removing [widgets](w
 
 4. Drag available [widgets](widgets-dashboards.md) to position them as needed.
 
-    ![Drag widgets](/thehive/images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
+    ![Drag widgets](../../../images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
 
 5. Enter the [required information for the widgets](widgets-dashboards.md).
 
