@@ -35,7 +35,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 
 10. Drag available [widgets](widgets-dashboards.md) to position them as needed.
 
-    ![Drag widgets](/thehive/images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
+    ![Drag widgets](../../../images/user-guides/analyst-corner/dashboard/drag-widgets.gif)
 
 11. Enter the [required information for the widgets](widgets-dashboards.md).
 

@@ -238,6 +238,8 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
             'thehive/administration/email-intake-connector.md': 'thehive/administration/email-intake-connector/about-email-intake-connectors.md'
+            'thehive/user-guides/analyst-corner/cases/tags/remove-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
+            'thehive/user-guides/analyst-corner/cases/tags/add-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md'
 
 extra:
@@ -506,8 +508,7 @@ nav:
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
-            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
-            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
@@ -539,8 +540,7 @@ nav:
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
-            - 'Add Tags': thehive/user-guides/analyst-corner/cases/tags/add-tags.md
-            - 'Remove Tags': thehive/user-guides/analyst-corner/cases/tags/remove-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
