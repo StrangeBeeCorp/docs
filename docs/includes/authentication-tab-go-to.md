@@ -1,3 +1,3 @@
 Select the **Authentication** tab.
 
-    ![Authentication tab](../../images/administration-guides/authentication/authentication-configuration.png)
+    ![Authentication tab](../../images/administration-guides/authentication-configuration.png)
