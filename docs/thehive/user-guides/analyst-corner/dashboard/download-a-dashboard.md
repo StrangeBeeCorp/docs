@@ -14,11 +14,11 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
 3. Select the **Export** symbol at the top right of the page to export the entire dashboard.
 
-    ![Download a dashboard](/thehive/images/user-guides/analyst-corner/dashboard/download-a-dashboard.png)
+    ![Download a dashboard](../../../images/user-guides/analyst-corner/dashboard/download-a-dashboard.png)
 
 4. Hover below the widget title and select **Download as PNG** or **Download as CSV**.
 
-    ![Download widget dashboard](/thehive/images/user-guides/analyst-corner/dashboard/download-widget-dashboard.gif)
+    ![Download widget dashboard](../../../images/user-guides/analyst-corner/dashboard/download-widget-dashboard.gif)
 
 <h2>Next steps</h2>
 

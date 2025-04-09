@@ -9,7 +9,7 @@ Refer to [`Configure Alert Details`](../../cases/cases-description/configure-pap
 
 1. In the right pane of the window, enter **Comments** if any. 
 1. Click the **Comment** button. 
-1. Add Tags. (Refer to [`Add tags`](../../cases/tags/add-tags.md)).
+1. Add Tags. (Refer to [`Add tags`](../../cases/tags/add-remove-tags.md)).
 1. Enter the **Description** using [TheHive-flavored Markdown syntax](../../../thehive-flavored-markdown.md) for formatting. 
 1. Add **Custom fields**. (Refer to [`Add custom fields`](../../cases/custom-fields/add-custom-fields.md))
 1. Click **Add** to enter the respective business unit and location details. 
