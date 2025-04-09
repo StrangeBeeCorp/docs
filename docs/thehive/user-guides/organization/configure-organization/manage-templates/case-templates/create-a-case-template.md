@@ -51,7 +51,7 @@ To import an existing case template from another organization or TheHive instanc
     **- Severity**  
     The default severity level for cases.
     
-    **- [Tags](../../../../analyst-corner/cases/tags/add-tags.md)**  
+    **- [Tags](../../../../analyst-corner/cases/tags/add-remove-tags.md)**  
     One or more tags for labeling cases.
     
     **Description \***  

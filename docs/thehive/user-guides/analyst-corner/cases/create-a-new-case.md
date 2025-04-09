@@ -46,7 +46,7 @@ Several options are offered to create a case in TheHive:
 
     The PAP level for the case. It guides analysts on how they can use case data.
 
-    **- [Tags](../../analyst-corner/cases/tags/add-tags.md)**  
+    **- [Tags](../../analyst-corner/cases/tags/add-remove-tags.md)**  
 
     Relevant tags for labeling the case.
 

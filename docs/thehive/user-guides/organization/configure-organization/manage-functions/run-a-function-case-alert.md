@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for manually running a [function](
 
 2. Select the :fontawesome-solid-gear: button.
 
-    ![Responders button](/thehive/images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
+    ![Responders button](../../../../images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
 
 3. Select the **Functions** tab.
 
