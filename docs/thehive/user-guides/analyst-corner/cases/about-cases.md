@@ -122,7 +122,7 @@ When you set a case to restricted visibility:
 
 * For authorized users: The restricted case appears in linked elements, case lists, search results, and dashboards. Authorized users can be assigned to the case.
 
-!!! warning "Notification behavior"
+!!! warning "Notifications behavior"
     A case with restricted visibility still triggers [configured notifications](../../organization/configure-organization/manage-notifications/about-notifications.md), regardless of who can view the case.
 
 !!! warning "Audit logs behavior"
