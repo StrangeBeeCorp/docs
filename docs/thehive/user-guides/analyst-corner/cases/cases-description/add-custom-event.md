@@ -14,4 +14,4 @@ A new window opens.
 1. Select **End date**.
 1. Click the **Add** button.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-add-custom-event.png" alt="cases list add custom event" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases-description-add-custom-event.png" alt="cases list add custom event" width="500" height="500"/>

@@ -17,11 +17,11 @@ If you want to know more about the KPIs available in TheHive, refer to the [Abou
 
 1. Go to the **Organization** view from the sidebar menu.
 
-    ![Organization view](../../images/user-guides/organization-view.png)
+    ![Organization view](../../images/user-guides/organization/configure-organization/organization-view.png)
 
 2. Select the **UI Configuration** tab.
 
-    ![UI configuration](../../images/user-guides/organization-view-ui-configuration.png)
+    ![UI configuration](../../images/user-guides/organization/configure-organization/manage-ui-configuration/organization-view-ui-configuration.png)
 
 3. Move through the **Time metrics** section.
 
