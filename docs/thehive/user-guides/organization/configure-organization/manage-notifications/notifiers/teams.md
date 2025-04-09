@@ -165,7 +165,7 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
   
     Used with the trigger *CaseCreated*, this template will create a card like this in Microsoft Teams:
 
-    ![MS Teams card](/thehive/images/user-guides/organization/notifications/organization-notifications-teams-2.png)
+    ![MS Teams card](../../../../../images/user-guides/organization/notifications/organization-notifications-teams-2.png)
 
     ---
 

@@ -19,5 +19,4 @@ This topic provides step-by-step instructions for renaming a [custom tag](about-
 * [Change the Color of a Custom Tag](change-the-color-of-a-custom-tag.md)
 * [View Custom Tag Statistics](view-custom-tag-statistics.md)
 * [Delete a Custom Tag](delete-a-custom-tag.md)
-* [Add Tags](../../../analyst-corner/cases/tags/add-tags.md)
-* [Remove Tags](../../../analyst-corner/cases/tags/remove-tags.md)
+* [Add or Remove Tags](../../../analyst-corner/cases/tags/add-remove-tags.md)
