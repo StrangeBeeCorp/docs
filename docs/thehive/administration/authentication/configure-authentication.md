@@ -88,7 +88,8 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **- OAuth 2.0 authentication (deprecated)**
 
-    {!includes/oauth20-deprecation.md!}
+    !!! warning "Deprecated"
+        The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](openid.md) instead.
 
     Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
