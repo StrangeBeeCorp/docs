@@ -32,7 +32,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 7. Drag available [widgets](widgets-case-report-templates.md) to position them as needed.
 
-    ![Drag widgets](../../../../../images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
+    ![Drag widgets](../../../../../images/user-guides/organization/configure-organization/manage-templates/drag-and-drop-widgets.gif)
 
 8. Enter the [required information for the widget](widgets-case-report-templates.md).
 
