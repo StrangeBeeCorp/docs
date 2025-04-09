@@ -1,0 +1,2 @@
+!!! warning "Prerequisites"
+    These steps assume that you have already followed the instructions to [configure the authentication settings](/thehive/administration/authentication/configure-authentication/).

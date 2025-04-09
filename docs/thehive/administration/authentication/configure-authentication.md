@@ -86,17 +86,19 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     For more information, see the [Configure an Active Directory Authentication Provider](ad.md) and [Configure an LDAP Authentication Provider](ldap.md) topics.
 
-    **- OAuth 2.0 authentication**
+    **- OAuth 2.0 authentication (deprecated)**
+
+    {!includes/oauth20-deprecation.md!}
 
     Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
     For more information, see the [Configure an OAuth 2.0 Authentication Provider](oauth2.md) topic.
 
-    **- SAML authentication**
+    **- SSO authentication**
 
-    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
+    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
 
-    For more information, see the [Configure a SAML Authentication Provider](saml.md) topic.
+    For more information, see the [Configure a SAML Authentication Provider](saml.md) and [Configure an OpenID Authentication Provider](openid.md) topics.
 
     ---
 
@@ -111,4 +113,5 @@ This topic provides step-by-step instructions for configuring authentication in 
 * [Configure an LDAP Authentication Provider](ldap.md)
 * [Configure an OAuth 2.0 Authentication Provider](oauth2.md)
 * [Configure a SAML Authentication Provider](saml.md)
+* [Configure an OpenID Authentication Provider](openid.md)
 * [Configure SSL](ssl.md)
