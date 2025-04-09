@@ -243,23 +243,23 @@ Sample code here...
 
 ### Syntax
 
-    ![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization-view.png)
+    ![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization/configure-organization/organization-view.png)
     ![Cortex](https://docs.strangebee.com/cortex/user-guides/images/update.png "Cortex")
 
     Similar to links, images can also use footnote-style syntax:
     ![Alt text][id]
 
     With a reference later in the document to define the URL location:
-    [id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
+    [id]: https://docs.strangebee.com/thehive/images/user-guides/organization/configure-organization/organization-view.png  "Organization view"
 
 ### Rendering
 
-![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization-view.png)
+![TheHive](https://docs.strangebee.com/thehive/images/user-guides/organization/configure-organization/organization-view.png)
 ![Cortex](https://docs.strangebee.com/cortex/user-guides/images/update.png "Cortex")
 
 ![Alt text][id]
 
-[id]: https://docs.strangebee.com/thehive/images/user-guides/organization-view.png  "Organization view"
+[id]: https://docs.strangebee.com/thehive/images/user-guides/organization/configure-organization/organization-view.png  "Organization view"
 
 <h2>Next steps</h2>
 

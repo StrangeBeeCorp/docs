@@ -1,3 +1,3 @@
 Select the **Pages** tab.
 
-    ![Pages tab](/thehive/images/user-guides/pages-tab.png)
+    ![Pages tab](/thehive/images/user-guides/cases/pages-tab.png)

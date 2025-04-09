@@ -14,11 +14,11 @@ This topic provides step-by-step instructions for adding a local Microsoft Teams
 
     2. Select :fontawesome-solid-ellipsis:.
 
-        ![Microsoft select app](../../../../images/user-guides/organization/notifications/microsoft-teams.png)
+        ![Microsoft select app](../../../../images/user-guides/organization/configure-organization/manage-notifications/microsoft-teams.png)
 
     3. Select the **Workflows** application.
 
-        ![Workflows app](../../../../images/user-guides/organization/notifications/workflows-app.png)
+        ![Workflows app](../../../../images/user-guides/organization/configure-organization/manage-notifications/workflows-app.png)
 
     4. In the **Workflows** application, select **New flow**.
 
