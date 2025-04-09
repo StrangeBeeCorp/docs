@@ -2,7 +2,7 @@
 
 You can make use of any of the available actions.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/cases-description-actions.png" alt="start task" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/cases-description-actions.png" alt="start task" width="500" height="500"/>
 
 ## Flag/Unflag
 
@@ -10,7 +10,7 @@ You can make use of any of the available actions.
 
 A pop-up message appears
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/case-flag-unflag-popup.png" alt="start task" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/case-flag-unflag-popup.png" alt="start task" width="500" height="500"/>
 
 
 

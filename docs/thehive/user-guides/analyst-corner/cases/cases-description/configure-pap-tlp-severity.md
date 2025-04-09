@@ -9,18 +9,18 @@ TLP defines the confidentiality of information. PAP is the level of exposure of 
 
 1. Select **TLP**, (White/Green/Amber/Red) from the list.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/configure-tlp.png" alt="TLP" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/configure-tlp.png" alt="TLP" width="500" height="500"/>
 
 
 ## Configure PAP (Level of exposure of information)
 
 1. Select **PAP**, (White/Green/Amber/Red) from the list.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/configure-pap.png" alt="PAP" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/configure-pap.png" alt="PAP" width="500" height="500"/>
 
 
 ## Configure Severity (Severity of information)
 
 1. Select **Severity**, (Low/Medium/High/Critical) from the list.
 
-<img src="/thehive/images/user-guides/analyst-corner/cases-description/configure-severity.png" alt="Severity" width="500" height="500"/>
+<img src="/thehive/images/user-guides/analyst-corner/configure-severity.png" alt="Severity" width="500" height="500"/>
