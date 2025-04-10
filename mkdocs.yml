@@ -143,7 +143,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md'
-            'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md'
+            'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/create-case-from-archive.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/create-case-from-misp.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
@@ -309,8 +309,7 @@ nav:
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
       - 'Key Performance Indicators':
-          - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
-          - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md
+          - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
           - 'Hide KPIs': thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md
           - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
           - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
