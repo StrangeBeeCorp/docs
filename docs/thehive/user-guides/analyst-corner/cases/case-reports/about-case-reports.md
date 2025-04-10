@@ -1,6 +1,6 @@
 # About Case Report
 
-<!-- md:version 5.4 --> <!-- md:license Platinum -->
+<!-- md:license Platinum -->
 
 A case report is available for each individual [case](../about-cases.md) and displays key data from the case.
 
