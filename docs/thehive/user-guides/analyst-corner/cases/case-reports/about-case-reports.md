@@ -13,7 +13,7 @@ This topic provides an overview of case reports and their usage in TheHive.
 
 When displaying a report, users select [a case report template](../../../organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md), which determines both the data displayed and its presentation.
 
-Users have access to the default template and all [additional case report templates that have been created](../../../organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md).
+Users have access to the default template and all [additional case report templates created](../../../organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md).
 
 ## Formats
 

@@ -10,7 +10,9 @@ This topic provides step-by-step instructions for saving and downloading a [case
 
 1. [Locate the case](../search-for-cases/find-a-case.md).
 
-2. Select the **Report** tab.
+2. In the case description, select the **Report** tab.
+
+    ![Case report tab](/thehive/images/user-guides/analyst-corner/cases/report-tab.png)
 
 3. In the right pane, under the **General** section, select the template you want to apply, the format, and the maximum number of elements displayed per widget.
 
@@ -22,9 +24,10 @@ This topic provides step-by-step instructions for saving and downloading a [case
 
 5. Check the preview to ensure everything is correct.
 
-6. Select **Save and download**.
+6. Select **Save and download**. 
 
-    This action downloads the file to your computer and also saves it in the **Attachments** tab. Any user can then access and download it from there.
+    !!! info "Saved files access"
+        This action downloads the file to your computer and also saves it in the **Attachments** tab. Any user can then access and download it from there.
 
 <h2>Next steps</h2>
 
