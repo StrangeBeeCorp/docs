@@ -162,6 +162,8 @@ plugins:
             'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
             'thehive/administration/misp.md': 'thehive/administration/misp-integration/about-misp-integration.md'
             'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
+            'thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
 
 extra:
   generator: false
