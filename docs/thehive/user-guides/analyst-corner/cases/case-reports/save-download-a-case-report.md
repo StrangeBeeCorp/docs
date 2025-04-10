@@ -1,8 +1,12 @@
 # How to Save and Download a Case Report
 
-<!-- md:license Platinum -->
+<!-- md:version 5.4 --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for saving and downloading a [case report](about-case-reports.md) in TheHive.
+
+This is useful if you need to report to your management and provide a follow-up on a case investigation.
+
+{!includes/other-reports-cases-from-case-reports.md!}
 
 {!includes/access-manage-case-reports.md!}
 

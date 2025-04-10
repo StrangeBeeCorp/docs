@@ -1,13 +1,12 @@
 # About Case Report
 
-<!-- md:license Platinum -->
+<!-- md:version 5.4 --> <!-- md:license Platinum -->
 
 A case report is available for each individual [case](../about-cases.md) and displays key data from the case.
 
 This topic provides an overview of case reports and their usage in TheHive.
 
-!!! tip "Multiple cases reporting"
-    To generate reports for multiple cases at once, refer to the [About Dashboards](../../dashboard/about-dashboards.md) topic.
+{!includes/other-reports-cases-from-case-reports.md!}
 
 ## Templates
 
