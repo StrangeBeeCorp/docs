@@ -242,6 +242,11 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/tags/add-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md': 'thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md': 'thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/delete-custom-event-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md'
 
 extra:
   generator: false
