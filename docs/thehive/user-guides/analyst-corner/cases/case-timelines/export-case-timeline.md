@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for exporting a [case timeline](ab
 
 3. Select the **Export to JSON** symbol to export the case timeline in JSON format.
 
-    ![Export case timeline](/thehive/images/user-guides/analyst-corner/export-case-timeline-button.png)
+    ![Export case timeline](/thehive/images/user-guides/analyst-corner/cases/export-case-timeline-button.png)
 
 <h2>Next steps</h2>
 
