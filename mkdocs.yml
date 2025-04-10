@@ -554,8 +554,8 @@ nav:
             - 'Export a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md
             - 'Delete a Case Timeline': thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/delete-custom-event-timeline.md
           - 'Case Reports':
-            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md
-            - 'Download a Case Report': thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md
+            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
+            - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md

@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-A case report is available for each individual case and displays key data from the case.
+A case report is available for each individual [case](../about-cases.md) and displays key data from the case.
 
 This topic provides an overview of case reports and their usage in TheHive.
 
@@ -13,9 +13,11 @@ This topic provides an overview of case reports and their usage in TheHive.
 
 When displaying a report, users select [a case report template](../../../organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md), which determines both the data displayed and its presentation.
 
+Users have access to the default template and all [additional case report templates that have been created](../../../organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md).
+
 ## Formats
 
-Several formats are available for downloading case reports:
+Three formats are available for downloading case reports:
 
 * HTML
 * Markdown
