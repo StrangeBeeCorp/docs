@@ -240,6 +240,8 @@ plugins:
             'thehive/administration/email-intake-connector.md': 'thehive/administration/email-intake-connector/about-email-intake-connectors.md'
             'thehive/user-guides/analyst-corner/cases/tags/remove-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
             'thehive/user-guides/analyst-corner/cases/tags/add-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md': 'thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md': 'thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md'
 
 extra:
   generator: false
