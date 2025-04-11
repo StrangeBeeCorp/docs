@@ -85,3 +85,5 @@ Pages widget configuration includes:
 
 * [About Case Report Templates](about-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)
