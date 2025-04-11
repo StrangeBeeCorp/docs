@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for measuring alert management per
 
 You can measure alert management performance [for all alerts in your organization](#measure-the-performance-of-all-alerts-in-your-organization) or [a specific case](#measure-the-performance-of-a-specific-alert).
 
-If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
+If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
 
 !!! info "Automated actions"
     If alerts are created or updated through automated actions (API, functions, or external services), some indicators may be identical or very close in value, especially if multiple operations occur within the same second.
