@@ -6,6 +6,8 @@ Case timelines provide a chronological view of all events that occurred during t
 
 This topic explains the components of case timelines in TheHive.
 
+{!includes/other-reports-cases-from-case-timelines.md!}
+
 ## Components
 
 Case timelines consist of all types of events that have occurred in a case, including:
@@ -14,7 +16,7 @@ Case timelines consist of all types of events that have occurred in a case, incl
 * Case creation
 * Investigation start
 * Task completion
-* Flagged [task logs](../../../tasks/about-task-logs.md)
+* Flagged [task logs](../../tasks/about-task-logs.md)
 * IoC sightings
 * MITRE ATT&CK patterns
 
