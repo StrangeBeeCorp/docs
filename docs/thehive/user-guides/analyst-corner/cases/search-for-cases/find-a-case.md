@@ -5,7 +5,7 @@ This topic provides step-by-step instructions for using various methods to searc
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 
 !!! tip "Can't find a case?"
-    <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
+    <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
 
 ## Method 1: Enter a case number search box
 
@@ -93,7 +93,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
 * [View Attachments](../cases-description/attachments.md)
-* [View a Case Timeline](../cases-description/case-timelines/view-case-timeline.md)
+* [View a Case Timeline](../case-timelines/view-case-timeline.md)
 * [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
 * [Run Responders on Case](../cases-description/run-responders.md)
 * [Run Analyzers on Case](../cases-description/run-analyzer.md)

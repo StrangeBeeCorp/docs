@@ -47,3 +47,4 @@ This topic provides step-by-step instructions for creating a [case report templa
 <h2>Next steps</h2>
 
 * [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)
