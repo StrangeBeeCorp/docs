@@ -2,13 +2,13 @@
 
 <!-- md:license Platinum -->
 
-Case report templates generate reports in a predefined format, available from case descriptions.
+Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
 
 This topic provides an overview of case report templates and their usage in TheHive.
 
 ## Benefits
 
-Use case reports to:
+Use case report templates to:
 
 * Highlight key details for faster security actions
 * Enhance better collaboration and decision-making
@@ -38,3 +38,4 @@ Once created, case report templates are automatically available to all users in 
 * [Create a Case Report Template](create-a-case-report-template.md)
 * [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
 * [Delete a Case Report Template](delete-a-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)

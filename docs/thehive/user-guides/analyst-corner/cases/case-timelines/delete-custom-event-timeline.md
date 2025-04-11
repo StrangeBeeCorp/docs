@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for deleting a custom event from a
 
 <h2>Procedure</h2>
 
-1. [Find the case](../../search-for-cases/find-a-case.md) where you want to remove the custom event from the timeline.
+1. [Find the case](../search-for-cases/find-a-case.md) where you want to remove the custom event from the timeline.
 
 2. {!includes/case-timeline-tab-go-to.md!}
 
