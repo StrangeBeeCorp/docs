@@ -6,7 +6,7 @@ By default, all indicators are displayed in case and alert descriptions.
 
 Since version 5.4, you can hide some or all indicators if they're not useful or could be misleading for your organization.
 
-If you want to know more about the KPIs available in TheHive, refer to the [About Key Performance Indicators](about-key-performance-indicators.md) topic.
+If you want to know more about the KPIs available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
 
 !!! warning "Required permissions for hiding KPIs"
     Only users with an admin-type profile that has the `manageConfig` permission can hide KPIs in case and alert descriptions in TheHive.
