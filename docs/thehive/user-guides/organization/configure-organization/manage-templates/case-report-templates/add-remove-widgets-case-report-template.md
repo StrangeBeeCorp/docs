@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for adding or removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
+This topic provides step-by-step instructions for adding and removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
 
 {!includes/access-manage-case-report-templates.md!}
 
@@ -47,3 +47,4 @@ This topic provides step-by-step instructions for adding or removing widgets in 
 <h2>Next steps</h2>
 
 * [Delete a Case Report Template](delete-a-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)

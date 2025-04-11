@@ -26,7 +26,7 @@
       #}
 
       ## Authentication configuration
-      #username = ""
+      #user = ""
       #password = ""
 
       ## SSL configuration

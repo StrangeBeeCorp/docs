@@ -56,7 +56,9 @@ Displays case activity in a chronological list format.
 Timeline widget configuration includes:
 
 * A title for the timeline
-* A selection of multiple parameters, allowing you to choose from alerts, case events, tasks, task logs, sighted IOCs, TTPs, and [custom events](../../../../analyst-corner/cases/cases-description/add-custom-event.md)
+* A selection of multiple parameters, allowing you to choose from alerts, case events, tasks, task logs, sighted IOCs, and TTPs
+* [Custom events](../../../../analyst-corner/cases/case-timelines/add-custom-event-timeline.md)  
+<!-- md:version 5.5 --> You can choose if you want to display custom events with or without their descriptions.
 
 ## Comments widget
 
@@ -85,3 +87,5 @@ Pages widget configuration includes:
 
 * [About Case Report Templates](about-case-report-templates.md)
 * [Create a Case Report Template](create-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)
