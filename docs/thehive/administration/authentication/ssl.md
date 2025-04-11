@@ -52,3 +52,4 @@ This guide provides configuration instructions for different environments:
 * [Configure an LDAP Authentication Provider](ldap.md)
 * [Configure an OAuth 2.0 Authentication Provider](oauth2.md)
 * [Configure a SAML Authentication Provider](saml.md)
+* [Configure an OpenID Authentication Provider](openid.md)
