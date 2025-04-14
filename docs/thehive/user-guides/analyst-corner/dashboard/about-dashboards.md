@@ -45,7 +45,7 @@ You can also hide data in some widgets by selecting the corresponding item in th
 
 Organizing dashboards into groups makes them easier to find and use. Use the **Show items as group** button available on the dashboards list to organize dashboards by type.
 
-{!includes/filters-sorts-views.md!}
+You can also apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate specific dashboards. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
 
 ## Permissions
 

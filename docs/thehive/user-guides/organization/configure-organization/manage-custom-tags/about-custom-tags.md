@@ -21,8 +21,6 @@ Custom tags can be created:
 
 ## Actions
 
-{!includes/filters-sorts-views.md!}
-
 * Create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
 
     !!! tip "Consistent naming"

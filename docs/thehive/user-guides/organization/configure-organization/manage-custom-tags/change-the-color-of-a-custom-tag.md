@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for changing the color of a [custo
 
 2. {!includes/custom-tags-tab-go-to.md!}
 
-3. Select :fontawesome-solid-pen: in the **Color** column.
+3. Select :fontawesome-solid-pen: in the **Color** column for the custom tag you want to update.
 
     {!includes/filters-sorts-views.md!}
 
