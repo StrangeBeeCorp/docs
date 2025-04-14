@@ -8,6 +8,8 @@ This is the default behavior of TheHive. The application stores usernames and pa
 
 <h2>Procedure</h2>
 
+{!includes/prerequisites-authentication-providers.md!}
+
 1. {!includes/platform-management-view-go-to.md!}
 
 2. {!includes/authentication-tab-go-to.md!}
