@@ -21,8 +21,7 @@ Custom tags can be created:
 
 ## Actions
 
-!!! tip "Applying filters and views"
-    You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to custom tags to help find them. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
+{!includes/filters-sorts-views.md!}
 
 * Create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
 

@@ -12,6 +12,8 @@ This topic provides step-by-step instructions for deleting a [custom tag](about-
 
 3. Select :fontawesome-solid-ellipsis: next to the custom tag to delete.
 
+    {!includes/filters-sorts-views.md!}
+
 4. Select **Delete**.
 
 5. Select **OK**.

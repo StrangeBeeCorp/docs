@@ -12,6 +12,8 @@ This topic provides step-by-step instructions for changing the color of a [custo
 
 3. Select :fontawesome-solid-pen: in the **Color** column.
 
+    {!includes/filters-sorts-views.md!}
+
 4. Enter the hex color code, or select :fontawesome-solid-fill-drip: to open the color picker.
 
 5. Select :fontawesome-solid-check:.
