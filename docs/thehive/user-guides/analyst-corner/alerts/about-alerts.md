@@ -43,7 +43,7 @@ Alerts can't be closed if any required [custom fields](../../../administration/c
 
 ## Statistics
 
-[Predefined statistics in dashboards](../about-statistics.md) are available from the alerts list. For custom statistics and dashboards, refer to the [About Dashboards](../analyst-corner/dashboard/about-dashboards.md) topic.
+[Predefined statistics in dashboards](../about-statistics.md) are available from the alerts list. For custom statistics and dashboards, refer to the [About Dashboards](../dashboard/about-dashboards.md) topic.
 
 <h2>Next steps</h2>
 

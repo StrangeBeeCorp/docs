@@ -141,7 +141,7 @@ The list of authorized users includes all users who had access to any of the res
 
 ## Statistics
 
-[Predefined statistics in dashboards](../about-statistics.md) are available from the cases list. For custom statistics and dashboards, refer to the [About Dashboards](../analyst-corner/dashboard/about-dashboards.md) topic.
+[Predefined statistics in dashboards](../about-statistics.md) are available from the cases list. For custom statistics and dashboards, refer to the [About Dashboards](../dashboard/about-dashboards.md) topic.
 
 <h2>Next steps</h2>
 
