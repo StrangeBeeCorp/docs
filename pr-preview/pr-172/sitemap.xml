@@ -385,6 +385,10 @@
          <lastmod>2025-04-14</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/prerequisites-authentication-providers/</loc>
+         <lastmod>2025-04-14</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/preview-rendering-content/</loc>
          <lastmod>2025-04-14</lastmod>
     </url>
@@ -610,6 +614,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/oauth2/</loc>
+         <lastmod>2025-04-14</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/authentication/openid/</loc>
          <lastmod>2025-04-14</lastmod>
     </url>
     <url>
