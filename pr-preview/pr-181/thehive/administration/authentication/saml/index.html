@@ -14,7 +14,7 @@
         <link rel="prev" href="../oauth2/">
       
       
-        <link rel="next" href="../ssl/">
+        <link rel="next" href="../openid/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.ico">
@@ -2753,7 +2753,7 @@
   
   
   <span class="md-ellipsis">
-    OAUTH 2.0
+    OAUTH 2.0 (Deprecated)
     
   </span>
   
@@ -2792,6 +2792,29 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenID
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -10746,8 +10769,11 @@
 <h2>Procedure</h2>
 
 <div class="admonition warning">
-<p class="admonition-title">Prerequisite</p>
-<p>Users must have an existing account in TheHive's local database to authenticate successfully.</p>
+<p class="admonition-title">Prerequisites</p>
+<ul>
+<li>Users must have an existing account in TheHive's local database to authenticate successfully.  </li>
+<li>These steps assume that you have already followed the instructions to <a href="/thehive/administration/authentication/configure-authentication/">configure the authentication settings</a>.</li>
+</ul>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Login flow with multiple SAML providers</p>
@@ -10765,23 +10791,44 @@
 <hr>
 </li>
 <li>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Version 5.4 and earlier</label><label for="__tabbed_1_2">Since version 5.5</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
 <p>Select <strong>SAML authentication</strong> in the <strong>Authentication providers</strong> section.</p>
-<hr>
 </li>
 <li>
 <p>In the <strong>SAML authentication</strong> drawer, turn on the <strong>Enable SAML</strong> toggle.</p>
-<hr>
 </li>
 <li>
 <p>Select <strong>Add a provider</strong> or select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h144v144c0 17.7 14.3 32 32 32s32-14.3 32-32V288h144c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span>.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Select <strong>SSO authentication</strong> in the <strong>Authentication providers</strong> section.</p>
+</li>
+<li>
+<p>In the <strong>SSO authentication</strong> drawer, turn on the <strong>Enable SSO</strong> toggle.</p>
+</li>
+<li>
+<p>Select <strong>Add a provider</strong> or select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h144v144c0 17.7 14.3 32 32 32s32-14.3 32-32V288h144c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span>. Then select <em>SAML</em> from the dropdown list.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <hr>
 </li>
 <li>
 <p>Enter the following information:</p>
-<p><strong>- Name</strong></p>
-<p>Enter a recognizable name for the identity provider (IdP) in TheHive.</p>
+<p><strong>- Name *</strong></p>
+<p>A recognizable name for the identity provider (IdP) in TheHive.</p>
 <p>Example: <em>Microsoft Entra ID</em></p>
-<p><strong>- Identity provider metadata type</strong></p>
+<p><strong>- Identity provider metadata type *</strong></p>
 <p>Select how TheHive retrieves configuration information for the IdP—either from an XML file or a URL.</p>
 <ul>
 <li>
@@ -10792,17 +10839,18 @@
 <p>If you choose <em>xml</em>, paste the XML metadata content directly into the field.</p>
 <p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;md:</span><span class="w"> </span><span class="err">EntityDescriptor</span><span class="w"> </span><span class="na">entityID=</span><span class="s">"http://www.okta.com/exknhwsd2uAGUSK66696"</span><span class="w">               </span><span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:metadata"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;md:</span><span class="w"> </span><span class="err">EntityDescriptor</span><span class="w"> </span><span class="na">entityID=</span><span class="s">"http://www.okta.com/&lt;entity-id&gt;"</span><span class="w">               </span><span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:metadata"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;md:IDPSSODescriptor</span><span class="w"> </span><span class="na">WantAuthnRequestsSigned=</span><span class="s">"false"</span><span class="w"> </span><span class="na">protocolSupportEnumeration=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:protocol"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;md:KeyDescriptor</span><span class="w"> </span><span class="na">use=</span><span class="s">"signing"</span><span class="nt">&gt;</span>
 <span class="w">            </span><span class="nt">&lt;ds:KeyInfo</span><span class="w"> </span><span class="na">xmlns:ds=</span><span class="s">"http://www.w3.org/2000/09/xmldsig#"</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="cm">&lt;!-- Replace with your key information --&gt;</span>
 </code></pre></div>
 </li>
 </ul>
 <p><strong>- User login attribute</strong></p>
-<p>Enter the name of the attribute from the IdP that contains the user's login information (such as email or username).</p>
-<p><strong>- Maximum authentication life time</strong></p>
-<p>Enter the maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.</p>
+<p>The name of the attribute from the IdP that contains the user's login information (such as email or username).</p>
+<p><strong>- Maximum authentication life time *</strong></p>
+<p>The maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.</p>
 <p>If you're unsure of the value set in your IdP, we recommend setting it to <em>90 days</em>, as this is the default for most IdPs.</p>
 </li>
 </ol>

@@ -2761,7 +2761,7 @@
   
   
   <span class="md-ellipsis">
-    OAUTH 2.0
+    OAUTH 2.0 (Deprecated)
     
   </span>
   
@@ -2785,6 +2785,29 @@
   
   <span class="md-ellipsis">
     SAML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenID
     
   </span>
   
@@ -10801,12 +10824,16 @@ A Platinum license is required to configure Active Directory, OAuth 2.0, and SAM
 </div>
 <p>Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.</p>
 <p>For more information, see the <a href="../ad/">Configure an Active Directory Authentication Provider</a> and <a href="../ldap/">Configure an LDAP Authentication Provider</a> topics.</p>
-<p><strong>- OAuth 2.0 authentication</strong></p>
+<p><strong>- OAuth 2.0 authentication (deprecated)</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated</p>
+<p>The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the <a href="../openid/">OpenID authentication provider</a> instead.</p>
+</div>
 <p>Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.</p>
 <p>For more information, see the <a href="../oauth2/">Configure an OAuth 2.0 Authentication Provider</a> topic.</p>
-<p><strong>- SAML authentication</strong></p>
-<p>Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.</p>
-<p>For more information, see the <a href="../saml/">Configure a SAML Authentication Provider</a> topic.</p>
+<p><strong>- SSO authentication</strong></p>
+<p>Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.</p>
+<p>For more information, see the <a href="../saml/">Configure a SAML Authentication Provider</a> and <a href="../openid/">Configure an OpenID Authentication Provider</a> topics.</p>
 <hr>
 </li>
 <li>
@@ -10822,6 +10849,7 @@ A Platinum license is required to configure Active Directory, OAuth 2.0, and SAM
 <li><a href="../ldap/">Configure an LDAP Authentication Provider</a></li>
 <li><a href="../oauth2/">Configure an OAuth 2.0 Authentication Provider</a></li>
 <li><a href="../saml/">Configure a SAML Authentication Provider</a></li>
+<li><a href="../openid/">Configure an OpenID Authentication Provider</a></li>
 <li><a href="../ssl/">Configure SSL</a></li>
 </ul></div>
 

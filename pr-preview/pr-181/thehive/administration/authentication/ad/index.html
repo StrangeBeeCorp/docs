@@ -2763,7 +2763,7 @@
   
   
   <span class="md-ellipsis">
-    OAUTH 2.0
+    OAUTH 2.0 (Deprecated)
     
   </span>
   
@@ -2787,6 +2787,29 @@
   
   <span class="md-ellipsis">
     SAML
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenID
     
   </span>
   
@@ -10746,13 +10769,20 @@
 <h2>Procedure</h2>
 
 <div class="admonition info">
-<p class="admonition-title">Prerequisite</p>
+<p class="admonition-title">Local account</p>
 <p>Users must have an existing account in TheHive's local database to authenticate successfully. <a href="../../ldap-server/">Configure the LDAP servers</a> in TheHive to automate account creation.</p>
 <p>User data is synchronized periodically:<br>
 - New LDAP users are automatically created in TheHive.<br>
 - Removed users become inactive.<br>
 - Organization membership and user profiles are assigned based on LDAP group membership.  </p>
 <p>The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Prerequisites</p>
+<ul>
+<li>Users must have an existing account in TheHive's local database to authenticate successfully.  </li>
+<li>These steps assume that you have already followed the instructions to <a href="/thehive/administration/authentication/configure-authentication/">configure the authentication settings</a>.</li>
+</ul>
 </div>
 <ol>
 <li>
