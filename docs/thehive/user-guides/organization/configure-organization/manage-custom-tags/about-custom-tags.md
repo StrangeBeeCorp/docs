@@ -21,12 +21,15 @@ Custom tags can be created:
 
 ## Actions
 
-* You can create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
+!!! tip "Applying filters and views"
+    You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to custom tags to help find them. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
+
+* Create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
 
     !!! tip "Consistent naming"
         Tag usage must be consistent, as TheHive doesn't enforce standardization. For example, tags with different formatting, such as *Phishing* and *phishing*, are treated as separate tags.
 
-* You can manage custom tags by:
+* Manage custom tags by:
 
     * [Changing the color of a custom tag](change-the-color-of-a-custom-tag.md)
     * [Renaming a custom tag](rename-a-custom-tag.md)
@@ -35,7 +38,7 @@ Custom tags can be created:
     !!! warning "Changes applied everywhere"
         Modifying or deleting a custom tag applies to all instances of that tag across cases, alerts, and observables within the organization.
 
-* You can also [view the number of times a custom tag appears](view-custom-tag-statistics.md) in cases, case templates, alerts, and observables. This helps with cleanup and maintaining consistent naming.
+* [View the number of times a custom tag appears](view-custom-tag-statistics.md) in cases, case templates, alerts, and observables. This helps with cleanup and maintaining consistent naming.
 
 ## Permissions
 
