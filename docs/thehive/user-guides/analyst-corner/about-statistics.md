@@ -4,7 +4,7 @@ Predefined statistics are available in TheHive for cases, alerts, and observable
 
 For custom statistics and dashboards, refer to the [About Dashboards](../analyst-corner/dashboard/about-dashboards.md) topic.
 
-    Image
+![Statistics](../../images/user-guides/analyst-corner/statistics.png)
 
 ## Available statistics
 
