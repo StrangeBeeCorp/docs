@@ -20,6 +20,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 3. {!includes/search-results.md!}
 
+!!! tip "Show tasks per group"
+    You can display tasks per group to classify them by type, making them easier to find.
+
 ---
 
 ## Method 2: Filters in the Tasks view
