@@ -11,6 +11,8 @@ This topic provides step-by-step instructions for deleting a [dashboard](about-d
 
 2. Select :fontawesome-solid-ellipsis: next to dashboard you want to delete.
 
+    {!includes/filters-sorts-views.md!}
+
 3. Select **Delete**.
 
 4. Select **OK**.

@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Alerts](overview-search-methods-alert.md) topic.
 
+!!! tip "Can't find an alert?"
+    Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new alerts in lists.
+
 ## Method 1: Similar alerts
 
 *Use this method if you want to find one or more alerts similar to a known alert and need to perform actions on them simultaneously.*
@@ -29,6 +32,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 

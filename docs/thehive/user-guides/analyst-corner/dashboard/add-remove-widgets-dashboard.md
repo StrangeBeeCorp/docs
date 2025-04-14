@@ -11,6 +11,8 @@ This topic provides step-by-step instructions for adding or removing [widgets](w
 
 2. On the dashboards list, select the name of your dashboard.
 
+    {!includes/filters-sorts-views.md!}
+
 3. Select :fontawesome-solid-pen:.
 
 4. Drag available [widgets](widgets-dashboards.md) to position them as needed.
@@ -26,6 +28,8 @@ This topic provides step-by-step instructions for adding or removing [widgets](w
 1. {!includes/dashboards-view-go-to.md!}
 
 2. On the dashboards list, select the name of your dashboard.
+
+    {!includes/filters-sorts-views.md!}
 
 3. Select :fontawesome-solid-pen:.
 

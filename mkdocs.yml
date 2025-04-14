@@ -89,7 +89,7 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
-            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
+            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
@@ -97,9 +97,9 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-users/add-delete-user.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-users/lock.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/organization/configure-organization/manage-users/manage-views.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-users/preview.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/organization/configure-organization/manage-users/sort.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
             'thehive/user-guides/organisation/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
             'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md'
             'thehive/user-guides/organisation/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
@@ -124,7 +124,7 @@ plugins:
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
             'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
             'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md'
-            'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md'
+            'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md'
             'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
@@ -145,7 +145,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md'
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
-            'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
+            'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/cases-description/observables.md'
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
@@ -210,7 +210,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
             'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
-            'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
             'thehive/user-guides/organization/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
             'thehive/user-guides/analyst-corner/tasks/index.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
@@ -250,6 +250,10 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-users/sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
 
 extra:
   generator: false
@@ -501,7 +505,6 @@ nav:
           - 'Search for Alerts': 
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md
           - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
           - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md
           - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md
@@ -534,7 +537,6 @@ nav:
           - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
           - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
@@ -598,6 +600,11 @@ nav:
           - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
           - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
+        - 'About Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
+        - 'About Views': thehive/user-guides/analyst-corner/about-views.md
+        - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
+        - 'About Statistics': thehive/user-guides/analyst-corner/about-statistics.md
+        - 'About the Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':

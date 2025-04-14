@@ -12,6 +12,8 @@ This topic provides step-by-step instructions for renaming a [custom tag](about-
 
 3. Select the name of the custom tag you want to change.
 
+    {!includes/filters-sorts-views.md!}
+
 4. Select :fontawesome-solid-check:.
 
 <h2>Next steps</h2>
