@@ -41,6 +41,10 @@ Alerts can be [closed](../alerts/close-an-alert.md) when they are not worth esca
 
 Alerts can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
 
+## Statistics
+
+[Predefined statistics in dashboards](../about-statistics.md) are available from the alerts list. For custom statistics and dashboards, refer to the [About Dashboards](../analyst-corner/dashboard/about-dashboards.md) topic.
+
 <h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
