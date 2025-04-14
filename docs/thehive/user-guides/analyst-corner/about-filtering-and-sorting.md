@@ -10,7 +10,7 @@ Filtering in TheHive allows you to refine displayed lists across various views.
 
 To apply filters, turn on the **Filters** toggle at the top right of the page to access filtering options and manually enter filter values.
 
-![Filters toggle](../../images/user-guides/analyst-corner/cases/find-a-case-filters-toggle.png)
+![Filters](../../images/user-guides/analyst-corner/filters.png)
 
 If you prefer not to enter values manually, you can use these quicker alternatives when available:
 
@@ -18,7 +18,7 @@ If you prefer not to enter values manually, you can use these quicker alternativ
 
     Select the **Quick filters** dropdown to access predefined filters. All users have access to these filters and can't modify them.
 
-    ![Quick filters](../../images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
+    ![Quick filters](../../images/user-guides/analyst-corner/quick-filters.png)
 
 * Selecting values directly from a list
 

@@ -5,7 +5,8 @@ This topic provides step-by-step instructions for using various methods to searc
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
 !!! tip "Can't find a task?"
-    <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
+    - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new tasks in lists.
+    - <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
 
 ## Method 1: Tasks tab in cases descriptions
 
@@ -18,6 +19,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+!!! tip "Show tasks per group"
+    You can display tasks per group to classify them by type, making them easier to find.
 
 ---
 
@@ -32,6 +36,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 
