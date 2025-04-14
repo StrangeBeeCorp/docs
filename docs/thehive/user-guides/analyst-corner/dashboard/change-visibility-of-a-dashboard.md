@@ -11,6 +11,8 @@ This topic provides step-by-step instructions for changing the visibility of a [
 
 2. Select :fontawesome-solid-ellipsis: next to the relevant dashboard.
 
+    {!includes/filters-sorts-views.md!}
+
 3. Select **Edit**.
 
 4. Select the new visibility you want to apply to your dashboard. Either private or shared with the entire organization.

@@ -3,7 +3,8 @@
 This topic provides step-by-step instructions for searching an [observable](../cases-description/observables.md) in TheHive.
 
 !!! tip "Can't find an observable?"
-    <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables won't appear in the list, search results, or dashboards.
+    - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new observables in lists.
+    - <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables won't appear in the list, search results, or dashboards.
 
 ## Method 1: Observables tab in cases and alerts descriptions
 

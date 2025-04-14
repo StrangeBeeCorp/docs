@@ -12,6 +12,8 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
 2. On the dashboards list, select the name of your dashboard.
 
+    {!includes/filters-sorts-views.md!}
+
 3. Select the **Export** symbol at the top right of the page to export the entire dashboard.
 
     ![Download a dashboard](../../../images/user-guides/analyst-corner/dashboard/download-a-dashboard.png)

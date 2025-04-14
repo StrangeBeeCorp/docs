@@ -5,7 +5,8 @@ This topic provides step-by-step instructions for using various methods to searc
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 
 !!! tip "Can't find a case?"
-    <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
+    - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new cases in lists.
+    - <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
 
 ## Method 1: Enter a case number search box
 
@@ -46,6 +47,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 

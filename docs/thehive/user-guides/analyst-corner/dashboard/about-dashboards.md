@@ -35,15 +35,17 @@ Only the dashboard owner can [change its visibility](change-visibility-of-a-dash
 * For shared dashboards, the default owner is the creator.
 * For private dashboards, the owner is the creator.
 
-## Group
-
-Organizing dashboards by groups makes them easier to find and use.
-
 ## Data interactions
 
 In some widgets, you can access detailed data directly from the dashboards by selecting a value. This action opens the **Global search** view with predefined filters applied.
 
 You can also hide data in some widgets by selecting the corresponding item in the legend.
+
+## Finding a dashboard
+
+Organizing dashboards into groups makes them easier to find and use. Use the **Show items as group** button available on the dashboards list to organize dashboards by type.
+
+You can also apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate specific dashboards. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
 
 ## Permissions
 
