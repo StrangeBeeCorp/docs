@@ -247,17 +247,23 @@ nav:
       - 'Backup & Restore Operations': 
         - 'Overview':  thehive/operations/backup-restore/overview.md
         - 'Backup Process':
-            - 'Physical Server':  thehive/operations/backup-restore/backup/physical-server.md
-            - 'Virtual Server':  thehive/operations/backup-restore/backup/virtual-server.md
-            - 'Docker Compose':  thehive/operations/backup-restore/backup/docker-compose.md
-            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/backup/cloud.md
-            - 'Hot backups': thehive/operations/backup-restore/backup/hot-backup.md
+          - 'Cold Backup':
+            - 'Physical Server':  thehive/operations/backup-restore/backup/cold-backup/physical-server.md
+            - 'Virtual Server':  thehive/operations/backup-restore/backup/cold-backup/virtual-server.md
+            - 'Docker Compose':  thehive/operations/backup-restore/backup/cold-backup/docker-compose.md
+            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/backup/cold-backup/cloud.md
+          - 'Hot Backup':
+            - 'Standalone Server': thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md
+            - 'Cluster': thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster.md
         - 'Restore Process':
+          - 'Cold Restore':
             - 'Physical Server':  thehive/operations/backup-restore/restore/physical-server.md
             - 'Virtual Server':  thehive/operations/backup-restore/restore/virtual-server.md
             - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
-            - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
-            - 'Restore hot backups': thehive/operations/backup-restore/restore/restore-hot-backup.md
+            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
+          - 'Hot Restore':
+            - 'Standalone Server': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md
+            - 'Cluster': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster.md
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring.md
