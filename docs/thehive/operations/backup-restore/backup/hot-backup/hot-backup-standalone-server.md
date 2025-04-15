@@ -76,6 +76,8 @@ db.janusgraph {
 
 <!-- to complete -->
 
+For additional details, refer to the [official Cassandra documentation](https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html).
+
 ### Ready-to-use scripts
 
 <!-- to complete -->
@@ -123,6 +125,9 @@ Make sure the cluster health is green before initiating the backup.
 <!-- to complete -->
 
 <!-- + write option when using Elasticsearch for audit log storage -->
+
+For additional details, refer to the [official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html).
+
 
 ### Ready-to-use scripts
 
