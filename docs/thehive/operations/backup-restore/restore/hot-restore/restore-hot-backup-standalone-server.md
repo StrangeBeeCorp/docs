@@ -53,4 +53,4 @@ Whether using local file system storage or Network File System (NFS), restore th
 
 <h2>Next steps</h2>
 
-* [Perform a Hot Backup on a Standalone Server](../../backup/hot-backup-standalone-server.md)
+* [Perform a Hot Backup on a Standalone Server](../../backup/hot-backup/hot-backup-standalone-server.md)

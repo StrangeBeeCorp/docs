@@ -147,4 +147,4 @@ Test the backup process in a staging or test environment to ensure scripts and c
 
 <h2>Next steps</h2>
 
-* [Restore a Hot Backup on a Standalone Server](../../restore/restore-hot-backup-standalone-server.md)
+* [Restore a Hot Backup on a Standalone Server](../../restore/hot-restore/restore-hot-backup-standalone-server.md)

@@ -6,9 +6,9 @@ Restoring your application stack on physical servers is a process that involves 
 
 Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services. This guide assumes that:
 
-* You are restoring from [a cold backup](../backup/physical-server.md), where services were stopped during the backup process to maintain data consistency.
+* You are restoring from [a cold backup](../../backup/cold-backup/physical-server.md), where services were stopped during the backup process to maintain data consistency.
 * The server environment matches the original configuration (e.g., paths, software versions, and dependencies).
-* The backup was created following the [Backup Procedure for Physical Servers](../backup/physical-server.md).
+* The backup was created following the [Backup Procedure for Physical Servers](../../backup/cold-backup/physical-server.md).
 
 When performing a restore, you will:
 

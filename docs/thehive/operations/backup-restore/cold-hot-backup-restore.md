@@ -27,9 +27,9 @@ How you proceed with cold backup and restore depends on your infrastructure and 
 
 For example, with AWS EC2, where data, indexes, and files are stored on dedicated volumes, taking daily snapshots can be completed in just a few minutes, including tasks like stopping and restarting services.
 
-* Physical servers: [Back up](./backup/physical-server.md) / [Restore](./restore/physical-server.md)
-* Virtual servers: [Back up](./backup/virtual-server.md) / [Restore](./restore/virtual-server.md)
-* Containerized environments (Docker Compose): [Back up](./backup/docker-compose.md) / [Restore](./restore/docker-compose.md)
+* Physical servers: [Back up](../backup-restore/backup/cold-backup/physical-server.md) / [Restore](../backup-restore/restore/cold-restore/physical-server.md)
+* Virtual servers: [Back up](../backup-restore/backup/cold-backup/virtual-server.md) / [Restore](../backup-restore/restore/cold-restore/virtual-server.md)
+* Containerized environments (Docker Compose): [Back up](../backup-restore/backup/cold-backup/docker-compose.md) / [Restore](../backup-restore/restore/cold-restore/docker-compose.md)
 
 ### Hot backup and restore procedures
 
@@ -37,7 +37,7 @@ Hot backup and restore can be suitable for production environments where service
 
 The approach to hot backup and restore depends on whether you have a standalone server or a three-node cluster.
 
-* Standalone server: [Back up](../backup-restore/backup/hot-backup-standalone-server.md) / [Restore](../backup-restore/restore/restore-hot-backup-standalone-server.md)
-* Three-node cluster: [Back up](../backup-restore/backup/hot-backup-cluster.md) / [Restore](../backup-restore/restore/restore-hot-backup-cluster.md)
+* Standalone server: [Back up](../backup-restore/backup/hot-backup/hot-backup-standalone-server.md) / [Restore](../backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md)
+* Three-node cluster: [Back up](../backup-restore/backup/hot-backup/hot-backup-cluster.md) / [Restore](../backup-restore/restore/hot-restore/restore-hot-backup-cluster.md)
 
 <h2>Next steps</h2>

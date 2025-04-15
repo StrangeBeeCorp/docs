@@ -16,10 +16,10 @@ When performing a backup on physical servers, it’s essential to:
 
 This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.
 
-This process and example below assume you have followed our [step-by-step guide](./../../../installation/step-by-step-installation-guide.md) to install the application stack.
+This process and example below assume you have followed our [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
 
 !!! Note
-    Before proceeding, ensure you have read the general [Backup and Restore Overview](../overview.md) to understand the core principles of backup strategies.
+    Before proceeding, ensure you have read the general [Backup and Restore Overview](../../cold-hot-backup-restore.md) to understand the core principles of backup strategies.
 
 ---
 ## Step-by-step instructions

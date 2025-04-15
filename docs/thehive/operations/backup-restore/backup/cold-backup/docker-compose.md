@@ -1,7 +1,7 @@
 # Backup a stack run with Docker Compose
 
 !!! Note
-    This solution assumes you are following our _[Running with Docker](./../../../installation/docker.md)_ guide to run your application stack.
+    This solution assumes you are following our _[Running with Docker](../../../../installation/docker.md)_ guide to run your application stack.
 
 
 ---
@@ -23,7 +23,7 @@ Before starting, ensure:
 * Administrative privileges to stop and start Docker Compose services.
 * Familiarity with the locations of your mapped volumes and data directories.
 
-This step-by-step procedure ensures a safe and consistent backup of your Docker Compose stack, enabling quick recovery in case of an issue or migration to a new environment. For more details on restoring these backups, refer to the [restore procedure for Docker Compose](../restore/docker-compose.md).
+This step-by-step procedure ensures a safe and consistent backup of your Docker Compose stack, enabling quick recovery in case of an issue or migration to a new environment. For more details on restoring these backups, refer to the [restore procedure for Docker Compose](../../restore/cold-restore/docker-compose.md).
 
 
 

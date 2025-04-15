@@ -245,7 +245,7 @@ nav:
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
       - 'Backup & Restore Operations': 
-        - 'Overview':  thehive/operations/backup-restore/overview.md
+        - 'Cold vs. Hot Backups and Restores':  thehive/operations/backup-restore/cold-hot-backup-restore.md
         - 'Backup Process':
           - 'Cold Backup':
             - 'Physical Server':  thehive/operations/backup-restore/backup/cold-backup/physical-server.md
@@ -257,10 +257,10 @@ nav:
             - 'Cluster': thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster.md
         - 'Restore Process':
           - 'Cold Restore':
-            - 'Physical Server':  thehive/operations/backup-restore/restore/physical-server.md
-            - 'Virtual Server':  thehive/operations/backup-restore/restore/virtual-server.md
-            - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
-            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
+            - 'Physical Server':  thehive/operations/backup-restore/restore/cold-restore/physical-server.md
+            - 'Virtual Server':  thehive/operations/backup-restore/restore/cold-restore/virtual-server.md
+            - 'Docker Compose':  thehive/operations/backup-restore/restore/cold-restore/docker-compose.md
+            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cold-restore/cloud.md
           - 'Hot Restore':
             - 'Standalone Server': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md
             - 'Cluster': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster.md
