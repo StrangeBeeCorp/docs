@@ -1,0 +1,2 @@
+!!! danger "Think twice before proceeding with hot backup and restore"
+    Before proceeding, read the [Cold vs. Hot Backups and Restores](/thehive/operations/backup-restore/cold-hot-backup-restore/) topic to understand the implications of hot backup and restore and ensure they aligns with your organization's requirements and needs. Keep in mind that while the hot backup option eliminates downtime, data integrity can't be guaranteed.
