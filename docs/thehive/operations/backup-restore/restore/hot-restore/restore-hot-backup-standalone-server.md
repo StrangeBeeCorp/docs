@@ -49,8 +49,8 @@ For additional details, refer to the [official Elasticsearch documentation](http
 
 ## Step 3: Restore a backup for file storage
 
-Whether using local file system storage or Network File System (NFS), restore the saved files to the destination folder or bucket used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.
+Whether using local file system storage or Network File System (NFS), restore the saved files to the destination folder used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.
 
 <h2>Next steps</h2>
 
-* [Perform a Hot Backup on a Standalone Server](../backup/hot-backup-standalone-server.md)
+* [Perform a Hot Backup on a Standalone Server](../../backup/hot-backup-standalone-server.md)

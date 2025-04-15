@@ -4,7 +4,7 @@ This topic compares cold and hot backup and restore options in TheHive, helping 
 
 ## TheHive infrastructure challenges
 
-TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/step-by-step-installation-guide.md#fontawesome-solid-database-apache-cassandra), [Elasticsearch as the indexing engine as well as audit log storage (available since version 5.5)](../../installation/step-by-step-installation-guide.md#fontawesome-solid-list-elasticsearch), and [files stored either locally, using an Network File System (NFS), or in Minio S3 object storage](../../installation/step-by-step-installation-guide.md#fontawesome-solid-folder-tree-file-storage). This setup requires careful attention to ensure consistency across the data, index, and files for successful backups. Any inconsistency between these components can lead to restoration failures.
+TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/step-by-step-installation-guide.md#fontawesome-solid-database-apache-cassandra), [Elasticsearch as the indexing engine as well as audit log storage (available since version 5.5)](../../installation/step-by-step-installation-guide.md#fontawesome-solid-list-elasticsearch), and [files stored either locally, using an Network File System (NFS), or in MinIO S3 object storage](../../installation/step-by-step-installation-guide.md#fontawesome-solid-folder-tree-file-storage). This setup requires careful attention to ensure consistency across the data, index, and files for successful backups. Any inconsistency between these components can lead to restoration failures.
 
 ## Cold vs. hot backup and restore comparison
 

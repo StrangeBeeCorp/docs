@@ -112,13 +112,17 @@ For shared file systems:
 
 #### Ensure cluster health is green
 
-Make sure the cluster health is green before initiating the backup.
+Make sure the cluster health is green before initiating the backup. This confirms that the local Elasticsearch instance is functioning properly and that the data is fully replicated.
+
+To check the health of your Elasticsearch instance, use the following command:
 
 !!! Example ""
 
     ```bash
     curl -X GET "localhost:9200/_cluster/health?pretty"
     ```
+
+The response should show `"status": "green"`, indicating that the Elasticsearch instance is healthy and ready for the backup process.
 
 ### Procedure
 
@@ -135,7 +139,7 @@ For additional details, refer to the [official Elasticsearch documentation](http
 
 ## Perform a backup on file storage
 
-Whether using local file system storage or Network File System (NFS), copy the contents of the folder or bucket.
+Whether using local file system storage or Network File System (NFS), copy the contents of the folder.
 
 ## Test the backup process
 
@@ -143,4 +147,4 @@ Test the backup process in a staging or test environment to ensure scripts and c
 
 <h2>Next steps</h2>
 
-* [Restore a Hot Backup on a Standalone Server](../restore/restore-hot-backup-standalone-server.md)
+* [Restore a Hot Backup on a Standalone Server](../../restore/restore-hot-backup-standalone-server.md)
