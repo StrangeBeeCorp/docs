@@ -3,6 +3,7 @@
     
     - `listAudit`
     - `listAuditFromObject`
+    - `getAudit`
     
     Instead, use the following API calls:
     
