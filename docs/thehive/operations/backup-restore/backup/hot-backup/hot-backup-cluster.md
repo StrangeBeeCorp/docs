@@ -4,20 +4,17 @@ This topic provides step-by-step instructions for performing a hot backup on a c
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
+{!includes/data-consistency-hot-backup.md!}
+
 The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
 * [Indexing backup (with optional audit logs management since version 5.5)](#create-elasticsearch-snapshots)
 * [File storage backup](#perform-a-backup-on-file-storage)
 
-!!! warning "Data consistency"
-    Perform these instructions simultaneously, ideally triggered by a cron job, to ensure proper alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
-
-{!includes/backup-requirement.md!}
+## Prerequisites
 
 {!includes/adapting-instructions.md!}
-
-## Prerequisites
 
 ### Install required tools
 

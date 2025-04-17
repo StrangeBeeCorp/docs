@@ -1,0 +1,2 @@
+!!! warning "Data consistency"
+    Perform these instructions simultaneously, ideally triggered by a cron job, to ensure proper alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues.

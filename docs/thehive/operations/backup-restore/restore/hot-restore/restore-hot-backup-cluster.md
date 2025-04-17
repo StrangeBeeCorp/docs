@@ -4,14 +4,13 @@ This topic provides step-by-step instructions for restoring a hot backup on a cl
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
+{!includes/data-consistency-hot-restore.md!}
+
 The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 1. [Database restore](#step-1-restore-cassandra-snapshots)
 2. [Indexing backup (with optional audit logs management since version 5.5)](#step-2-restore-elasticsearch-snapshots)
 3. [File storage restore](#step-3-restore-a-backup-for-file-storage)
-
-!!! warning "Data consistency"
-    Perform the restore process for Apache Cassandra, Elasticsearch, and file storage in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.
 
 {!includes/adapting-instructions.md!}
 
@@ -51,6 +50,10 @@ For additional details, refer to the [official Elasticsearch documentation](http
 ## Step 3: Restore a backup for file storage
 
 Whether using Network File System (NFS) or MinIO S3 object storage, restore the saved files to the destination folder or bucket used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders or buckets in the destination.
+
+## Step 4: Test the restore process
+
+Periodically validate restoration procedures in test environments to confirm the integrity of the backup data.
 
 <h2>Next steps</h2>
 
