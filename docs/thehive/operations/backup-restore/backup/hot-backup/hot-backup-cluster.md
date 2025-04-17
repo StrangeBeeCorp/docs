@@ -9,7 +9,7 @@ This topic provides step-by-step instructions for performing a hot backup on a c
 The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
-* [Indexing backup (with optional audit logs management since version 5.5)](#create-elasticsearch-snapshots)
+* [Indexing backup (with optional audit logs storage since version 5.5)](#create-elasticsearch-snapshots)
 * [File storage backup](#perform-a-backup-on-file-storage)
 
 ## Prerequisites

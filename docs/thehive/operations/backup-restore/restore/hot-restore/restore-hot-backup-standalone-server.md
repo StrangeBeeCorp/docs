@@ -9,7 +9,7 @@ This topic provides step-by-step instructions for restoring a hot backup on a st
 The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.
 
 1. [Database restore](#step-1-restore-cassandra-snapshots)
-2. [Indexing backup (with optional audit logs management since version 5.5)](#step-2-restore-elasticsearch-snapshots)
+2. [Indexing backup (with optional audit logs storage since version 5.5)](#step-2-restore-elasticsearch-snapshots)
 3. [File storage restore](#step-3-restore-a-backup-for-file-storage)
 
 {!includes/adapting-instructions.md!}
