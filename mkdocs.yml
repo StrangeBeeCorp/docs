@@ -164,6 +164,15 @@ plugins:
             'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
             'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
+            'thehive/operations/backup-restore/backup/docker-compose.md': 'thehive/operations/backup-restore/backup/cold-backup/docker-compose.md'
+            'thehive/operations/backup-restore/backup/physical-server.md': 'thehive/operations/backup-restore/backup/cold-backup/physical-server.md'
+            'thehive/operations/backup-restore/backup/virtual-server.md': 'thehive/operations/backup-restore/backup/cold-backup/virtual-server.md'
+            'thehive/operations/backup-restore/backup/hot-backup.md': 'thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md'
+            'thehive/operations/backup-restore/overview.md': 'thehive/operations/backup-restore/cold-hot-backup-restore.md'
+            'thehive/operations/backup-restore/restore/docker-compose.md': 'thehive/operations/backup-restore/restore/cold-restore/docker-compose.md'
+            'thehive/operations/backup-restore/restore/physical-server.md': 'thehive/operations/backup-restore/restore/cold-restore/physical-server.md'
+            'thehive/operations/backup-restore/restore/virtual-server.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
+            'thehive/operations/backup-restore/restore/restore-hot-backup.md': 'thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md'
 
 extra:
   generator: false
