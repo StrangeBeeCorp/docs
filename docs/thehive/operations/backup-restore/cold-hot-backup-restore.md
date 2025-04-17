@@ -6,7 +6,7 @@ This topic compares cold and hot backup and restore options in TheHive, helping 
 
 * A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime.
 
-* A hot backup and restore allows TheHive to remain running while the backup is taken. This reduces downtime but may not guarantee data integrity across all architecture components.
+* A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components.
 
 ## TheHive infrastructure challenges
 
@@ -23,17 +23,17 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 ## Available backup and restore procedures
 
-!!! warning "Testing responsabilities"
-    The responsibility for implementing and testing these processes lies with you. Validate them in a controlled environment before using them in production. We aren't liable for data loss, downtime, or failures due to incorrect configurations or restoration issues.
+!!! warning "Testing responsibilities"
+    The responsibility for implementing and testing these processes lies with you. Validate them in a controlled environment before using them in production. TheHive isn't liable for data loss, downtime, or failures due to incorrect configurations or restoration issues.
 
 !!! note "Full backups only"
     These procedures focus exclusively on methods for creating full backups and don't cover incremental backup strategies.
 
 ### Cold backup and restore procedures
 
-How you proceed with cold backup and restore depends on your infrastructure and orchestration setup, whether you're using physical servers, virtual servers, Docker, Kubernetes, or cloud solutions like AWS EC2.
+How you proceed with cold backup and restore depends on your infrastructure and orchestration setup. This could involve physical servers, virtual servers, Docker, Kubernetes, or cloud solutions like AWS EC2.
 
-For example, with AWS EC2, where data, indexes, and files are stored on dedicated volumes, taking daily snapshots can be completed in just a few minutes, including tasks like stopping and restarting services.
+For example, with AWS EC2, data, indexes, and files are stored on dedicated volumes. Taking daily snapshots can be completed in just a few minutes, including tasks like stopping and restarting services.
 
 * Physical servers: [Back up](../backup-restore/backup/cold-backup/physical-server.md) / [Restore](../backup-restore/restore/cold-restore/physical-server.md)
 * Virtual servers: [Back up](../backup-restore/backup/cold-backup/virtual-server.md) / [Restore](../backup-restore/restore/cold-restore/virtual-server.md)

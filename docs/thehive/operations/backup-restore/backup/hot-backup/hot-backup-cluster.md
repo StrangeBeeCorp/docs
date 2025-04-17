@@ -11,7 +11,7 @@ The process requires backing up data from all three components: Apache Cassandra
 * [File storage backup](#perform-a-backup-on-file-storage)
 
 !!! warning "Data consistency"
-    These instructions should be performed simultaneously, ideally triggered by a cron job, to ensure alignment between Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
+    Perform these instructions simultaneously, ideally triggered by a cron job, to ensure proper alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
 
 {!includes/backup-requirement.md!}
 
@@ -21,7 +21,7 @@ The process requires backing up data from all three components: Apache Cassandra
 
 ### Install required tools
 
-Before performing a hot backup, ensure the following tools are installed on your system:
+Before performing a hot backup, install the following tools on your system:
 
 * [Cassandra nodetool](https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html): For creating database snapshots
 * tar/[bzip2](https://gitlab.com/bzip2/bzip2/): For archiving and compressing backup files
@@ -44,13 +44,13 @@ Configure a repository for Elasticsearch snapshots. Ensure that the repository i
 
 #### File storage location
 
-Locate the folder where TheHive stores files. This will be backed up alongside the database and indices. If using a Network File System (NFS), the location is generally defined in the *application.conf* file under the `storage.localfs.location` attribute.
+Locate the folder where TheHive stores files, which is backed up with the database and indices. If using a Network File System (NFS), the location is defined in the *application.conf* file under the `storage.localfs.location` attribute.
 
 <!-- + add MinIO option -->
 
 ### Ensure data replication across all three nodes
 
-Before proceeding with the backup, confirm that 100% of your data is replicated across all nodes. This ensures the snapshot procedure is simplified, allowing snapshots to be taken from just one node.
+Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
 
 ### Perform preliminary checks
 
@@ -60,10 +60,10 @@ Perform a preliminary check on the system to identify any data corruption or inc
 
 ### Prerequisites
 
-To back up or export the database from Cassandra, the following information is required:
+To back up or export the database from Cassandra, gather the following information:
 
 * Cassandra admin password
-* Keyspace used by TheHive (default: `thehive`). This can be found in the `application.conf` configuration file, under the `db.janusgraph.storage` attribute, within `storage`, `cql`, and `keyspace` settings.
+* Keyspace used by TheHive (default: `thehive`). Find this in the `application.conf` configuration file, under the `db.janusgraph.storage` attribute, within `storage`, `cql`, and `keyspace` settings.
 
 ```yaml 
 db.janusgraph {
