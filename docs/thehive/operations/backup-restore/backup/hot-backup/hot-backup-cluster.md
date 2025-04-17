@@ -1,17 +1,19 @@
-# How to Perform a Hot Backup on a Three-Node Cluster
+# How to Perform a Hot Backup on a Cluster
 
-This topic provides step-by-step instructions for performing a hot backup on a three-node cluster in TheHive.
+This topic provides step-by-step instructions for performing a hot backup on a cluster in TheHive.
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
-The instructions are divided into 3 sections:
+The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
-* [Indexing and audit logs backup](#create-elasticsearch-snapshots)
+* [Indexing backup (with optional audit logs management since version 5.5)](#create-elasticsearch-snapshots)
 * [File storage backup](#perform-a-backup-on-file-storage)
 
 !!! warning "Data consistency"
-    These instructions should be performed simultaneously, ideally triggered by a cron job, to ensure alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
+    These instructions should be performed simultaneously, ideally triggered by a cron job, to ensure alignment between Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
+
+{!includes/backup-requirement.md!}
 
 {!includes/adapting-instructions.md!}
 
@@ -42,7 +44,7 @@ Configure a repository for Elasticsearch snapshots. Ensure that the repository i
 
 #### File storage location
 
-Locate the folder where TheHive stores files. This will be backed up alongside the database and indices. If using a local filesystem, the location is generally defined in the *application.conf* file under the `storage.localfs.location` attribute.
+Locate the folder where TheHive stores files. This will be backed up alongside the database and indices. If using a Network File System (NFS), the location is generally defined in the *application.conf* file under the `storage.localfs.location` attribute.
 
 <!-- + add MinIO option -->
 
@@ -135,14 +137,13 @@ The response should show `"status": "green"`, indicating that the Elasticsearch 
 
 For additional details, refer to the [official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html).
 
-
 ### Ready-to-use scripts
 
 <!-- to complete -->
 
 ## Perform a backup on file storage
 
-Whether using local file system storage or MinIO S3 object storage, copy the contents of the folder or bucket.
+Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder or bucket.
 
 ## Test the backup process
 
@@ -150,4 +151,4 @@ Test the backup process in a staging or test environment to ensure scripts and c
 
 <h2>Next steps</h2>
 
-* [Restore a Hot Backup on a Three-Node Cluster](../../restore/hot-restore/restore-hot-backup-cluster.md)
+* [Restore a Hot Backup on a Cluster](../../restore/hot-restore/restore-hot-backup-cluster.md)

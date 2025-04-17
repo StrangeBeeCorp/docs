@@ -4,14 +4,16 @@ This topic provides step-by-step instructions for performing a hot backup on a s
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
-The instructions are divided into 3 sections:
+The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
-* [Indexing and audit logs backup](#create-elasticsearch-snapshots)
+* [Indexing backup (with optional audit logs management since version 5.5)](#create-elasticsearch-snapshots)
 * [File storage backup](#perform-a-backup-on-file-storage)
 
 !!! warning "Data consistency"
     These instructions should be performed simultaneously, ideally triggered by a cron job, to ensure alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues. However, full data integrity can't be guaranteed with hot backups.
+
+{!includes/backup-requirement.md!}
 
 {!includes/adapting-instructions.md!}
 
@@ -131,7 +133,6 @@ The response should show `"status": "green"`, indicating that the Elasticsearch 
 <!-- + write option when using Elasticsearch for audit log storage -->
 
 For additional details, refer to the [official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html).
-
 
 ### Ready-to-use scripts
 

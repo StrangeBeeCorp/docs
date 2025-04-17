@@ -1,17 +1,17 @@
-# How to Restore a Hot Backup on a Three-Node Cluster
+# How to Restore a Hot Backup on a Cluster
 
-This topic provides step-by-step instructions for restoring a hot backup on a three-node cluster in TheHive.
+This topic provides step-by-step instructions for restoring a hot backup on a cluster in TheHive.
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
-The instructions are divided into 3 sections:
+The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 1. [Database restore](#step-1-restore-cassandra-snapshots)
-2. [Indexing and audit logs restore](#step-2-restore-elasticsearch-snapshots)
+2. [Indexing backup (with optional audit logs management since version 5.5)](#step-2-restore-elasticsearch-snapshots)
 3. [File storage restore](#step-3-restore-a-backup-for-file-storage)
 
 !!! warning "Data consistency"
-    The restore process for Apache Cassandra, Elasticsearch, and file storage should be done in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.
+    The restore process for Cassandra, Elasticsearch, and file storage should be done in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.
 
 {!includes/adapting-instructions.md!}
 
@@ -50,8 +50,8 @@ For additional details, refer to the [official Elasticsearch documentation](http
 
 ## Step 3: Restore a backup for file storage
 
-Whether using local file system storage or MinIO S3 object storage, restore the saved files to the destination folder or bucket used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders or buckets in the destination.
+Whether using Network File System (NFS) or MinIO S3 object storage, restore the saved files to the destination folder or bucket used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders or buckets in the destination.
 
 <h2>Next steps</h2>
 
-* [Perform a Hot Backup on a Three-Node Cluster](../../backup/hot-backup/hot-backup-cluster.md)
+* [Perform a Hot Backup on a Cluster](../../backup/hot-backup/hot-backup-cluster.md)
