@@ -1,17 +1,18 @@
-# Restore virtual server
+# Backup Virtual server
 
 !!! Note
-    This process and example below assume you have followed our [step-by-step guide](./../../../installation/docker.md) to install the application stack.
+    This process and example below assume you have followed our [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
+
 
 Using virtual servers allow more solutions to perform backup and restore operations.
 
 ---
-## 1st solution: Restore data folders from a backup
+## First solution: Backup data folders
 
-Assuming you are using our cold [backup](../backup/physical-server.md) guide to backup your data, use scripts to restore the configuration, data, and logs from each application in your stack. Refer to the cold [restore](./physical-server.md) guide for detailed instructions.
+Similar to using a physical server, use scripts to back up the configuration, data, and logs from each application in your stack, storing them in a folder that can be archived elsewhere. Refer to the cold [backup](./physical-server.md) guides for detailed instructions.
 
 ---
-## 2nd solution: Leverage the capabilities of the hypervisor
+## Second solution: Leverage the capabilities of the hypervisor
 
 Hypervisors often come with the capacity to create a snapshot volumes and entire virtual machine. We recommend creating snapshots of volumes containing data and files after stopping TheHive, Cassandra and Elasticsearch applications. 
 

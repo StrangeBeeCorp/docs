@@ -1,52 +1,52 @@
-# Backup a stack run with Docker Compose
-
-!!! Note
-    This solution assumes you are following our _[Running with Docker](./../../../installation/docker.md)_ guide to run your application stack.
-
-
----
+# For Physical Servers
+  
 ## Introduction
 
-The backup procedure is designed to capture the state of your application stack in three simple steps:
+Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.
 
-1. Stop all services to ensure data consistency and prevent any changes during the backup process.
-2. Copy volumes and mapped directories on the host machine, which contain your data, configurations, and logs.
-3. Restart the services to resume normal operations after the backup is complete.
+When performing a backup on physical servers, it’s essential to:
 
+1. Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.
+2. Ensure file permissions are adequate for the backup process.
+3. Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
+4. Validate the backup to ensure it can be restored without issues.
 
 ---
 ## Prerequisites
 
-Before starting, ensure:
+This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.
 
-* You have sufficient storage space for the backup.
-* Administrative privileges to stop and start Docker Compose services.
-* Familiarity with the locations of your mapped volumes and data directories.
+This process and example below assume you have followed our [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
 
-This step-by-step procedure ensures a safe and consistent backup of your Docker Compose stack, enabling quick recovery in case of an issue or migration to a new environment. For more details on restoring these backups, refer to the [restore procedure for Docker Compose](../restore/docker-compose.md).
-
-
+!!! Note
+    Before proceeding, ensure you have read the general [Backup and Restore Overview](../../cold-hot-backup-restore.md) to understand the core principles of backup strategies.
 
 ---
 ## Step-by-step instructions
 
-### Stop the services
+### Stop the services in this order
+
+1. TheHive
+2. Elasticsearch
+3. Cassandra
 
 !!! Example ""
 
     ```bash
-    docker compose down 
+    systemctl stop thehive
+    systemctl stop elasticsearch
+    systemctl stop cassandra
     ```
 
 ### Copy files in a backup folder
 
-For example, on the host server, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
+For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
 
 !!! Example ""
 
     ```bash
     #!/bin/bash
-
+    
     ## ============================================================
     ## BACKUP SCRIPT FOR THEHIVE APPLICATION STACK
     ## ============================================================
@@ -74,23 +74,22 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     ## USAGE:
     ## 1. Update the variables at the start of the script to reflect your setup:
     ##    - BACKUP_ROOT_FOLDER: Root folder where backups will be stored.
-    ##    - BACKUP_TO_RESTORE: Name of the backup folder to restore.
     ## 2. Run the script using the following command:
     ##    `bash ./scripts/backup.sh`
     ##
     ## ADDITIONAL RESOURCES:
     ## Refer to the official documentation for detailed instructions and 
-    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/
+    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/backup/physical-server/
     ##
     ## WARNING:
-    ## - This script stops Nginx, Elasticsearch, Cassandra, and TheHive services, 
+    ## - This script stops Elasticsearch, Cassandra, and TheHive services, 
     ##   performs the backup, and then restarts the services.
     ## - Do not modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
     ## ============================================================
-
+    ##
     # Display help message
     if [[ "$1" == "--help" || "$1" == "-h" ]]
     then
@@ -132,7 +131,7 @@ For example, on the host server, create a folder on a dedicated NFS volume named
 
     if [[ -z "$2" ]]
     then
-        read -p "Enter the backup root folder [default: ./backup]: " BACKUP_ROOT_FOLDER
+    read -p "Enter the backup root folder [default: ./backup]: " BACKUP_ROOT_FOLDER
         BACKUP_ROOT_FOLDER=${BACKUP_ROOT_FOLDER:-"./backup"}
     else
         BACKUP_ROOT_FOLDER="$2"
@@ -142,60 +141,59 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     DATE="$(date +"%Y%m%d-%H%M%z" | sed 's/+/-/')"
     BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
 
-
-    ## Stop services
-    docker compose -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml stop
-
+    # Define the log file and start logging
+    LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
+    exec &> >(tee -a "$LOG_FILE")
+    
     ## Create the backup directory
     mkdir -p "${BACKUP_FOLDER}"  || { echo "Creating backup folder failed"; exit 1; }
     echo "Created backup folder: ${BACKUP_FOLDER}"
 
-    ## Define the log file and start logging
-    LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
-    exec &> >(tee -a "$LOG_FILE")
-
-
-
     ## Prepare folders tree
-    mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch,nginx,certificates}
+    mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch}/{config,data,logs}
     echo "Created folder structure under ${BACKUP_FOLDER}"
 
-    ## Copy TheHive data
+    # Copy TheHive data
     echo "Starting TheHive backup..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/thehive/ ${BACKUP_FOLDER}/thehive || { echo "TheHive backup failed"; exit 1; }
+    rsync -aW --no-compress /etc/thehive/ ${BACKUP_FOLDER}/thehive/config || { echo "TheHive config backup failed"; exit 1; }
+    rsync -aW --no-compress /opt/thp/thehive/files/ ${BACKUP_FOLDER}/thehive/data || { echo "TheHive data backup failed"; exit 1; }
+    rsync -aW --no-compress /var/log/thehive/ ${BACKUP_FOLDER}/thehive/logs || { echo "TheHive logs backup failed"; exit 1; }
     echo "TheHive backup completed."
 
-    ## Copy Casssandra data
+    # Copy Casssandra data
     echo "Starting Cassandra backup..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/cassandra/ ${BACKUP_FOLDER}/cassandra || { echo "Cassandra backup failed"; exit 1; }
+    rsync -aW --no-compress /etc/cassandra/ ${BACKUP_FOLDER}/cassandra/config || { echo "Cassandra config backup failed"; exit 1; }
+    rsync -aW --no-compress /var/lib/cassandra/ ${BACKUP_FOLDER}/cassandra/data || { echo "Cassandra data backup failed"; exit 1; }
+    rsync -aW --no-compress /var/log/cassandra/ ${BACKUP_FOLDER}/cassandra/logs || { echo "Cassandra logs backup failed"; exit 1; }
     echo "Cassandra backup completed."
 
-    ## Copy Elasticsearch data
+    # Copy Elasticsearch data
     echo "Starting Elasticsearch backup..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch || { echo "Elasticsearch config backup failed"; exit 1; }
+    rsync -aW --no-compress /etc/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/config || { echo "Elasticsearch config backup failed"; exit 1; }
+    rsync -aW --no-compress /var/lib/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/data || { echo "Elasticsearch data backup failed"; exit 1; }
+    rsync -aW --no-compress /var/log/elasticsearch/ ${BACKUP_FOLDER}/elasticsearch/logs || { echo "Elasticsearch logs backup failed"; exit 1; }
     echo "Elasticsearch backup completed."
-
-    ## Copy Nginx certificates
-    echo "Starting backup of Nginx and certificates..."
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/nginx/ ${BACKUP_FOLDER}/nginx || { echo " Backup of Nginx failed"; exit 1; }
-    rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/certificates/ ${BACKUP_FOLDER}/certificates || { echo " Backup of Nginx and certificates failed"; exit 1; }
-    echo "Backup of certificates completed."
-
-    ## Restart services
-    echo "Restarting services..."
-    docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml
-
-
 
     echo "Backup process completed at: $(date)"
     ```
+
+
+### Start services in this order
+
+1. Elasticsearch
+2. Cassandra
+3. TheHive
+
+!!! Example ""
+
+    ```bash
+    systemctl start thehive
+    systemctl start elasticsearch
+    systemctl start cassandra
+    ```
+
 
 ---
 ## Validation
 
 check the backup folder and verify the data has been well copied.
-
----
-!!! Tip
-    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to the appropriate documentation for detailed instructions [here](https://github.com/StrangeBeeCorp/docker).
-    * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.
