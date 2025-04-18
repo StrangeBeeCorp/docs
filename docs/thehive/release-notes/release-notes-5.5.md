@@ -12,7 +12,7 @@
 
 #### Private cases: Restrict access to sensitive cases
 
-You can now [restrict case access](../user-guides/analyst-corner/cases/about-cases.md#case-visibility) to designated team members and managers, enhancing data security.
+You can now [restrict access to sensitive cases](../user-guides/analyst-corner/cases/about-cases.md#case-visibility) to designated team members and managers.
 
 #### Alert feeders
 
@@ -24,7 +24,7 @@ You can now [link cases](../user-guides/analyst-corner/cases/about-cases.md#link
 
 #### Table widget in dashboard
 
-The [table widget](../user-guides/analyst-corner/dashboard/widgets-dashboards.md#table-widget) displays a list of entities (cases, alerts, or tasks) in a tabular format. You can customize the columns, apply advanced filters, and select sorting options. This is typically used to view action-required cases directly on a dashboard.
+The [table widget](../user-guides/analyst-corner/dashboard/widgets-dashboards.md#table-widget) displays a list of entities (cases, alerts, or tasks) in a tabular format. You can customize the columns, apply advanced filters, and select sorting options. This can be used to view action-required cases directly on a dashboard.
 
 #### New Markdown content formatting options
 
@@ -36,7 +36,7 @@ You now have access to three new improvements in [the Markdown formatting option
 
 #### New OpenID SSO provider
 
-TheHive now supports integration with an OpenID authentication provider, offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.
+TheHive now supports integration with an [OpenID authentication provider](../administration/authentication/openid.md), offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.
 
 #### Hide predefined statuses
 
@@ -44,11 +44,11 @@ You can now [hide predefined statuses](../administration/status/change-visibilit
 
 #### MS Graph API for email intakes
 
-A new connector is available for email intakes. The Microsoft 365 Graph API connector uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.
+The [Microsoft 365 Graph API connector](../administration/email-intake-connector/connect-a-mailbox.md) is now available for email intakes. It uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.
 
 #### Case report templates: Display the description of custom events
 
-You can now hide or show the description of custom events in the timeline widget report.
+You can now hide or show the description of custom events in the [timeline widget](../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md#timeline-widget) within case reports.
 
 ### Improvements
 
@@ -62,7 +62,7 @@ The display of custom fields has been improved for better consistency and intuit
 
 #### Images in descriptions
 
-You can now display full-size images by dropping them directly into the descriptions of [cases](../user-guides/analyst-corner/cases/create-a-new-case.md#create-an-empty-case), [alerts](../user-guides/analyst-corner/alerts/enrich-alert-details.md), and [task logs](../user-guides/analyst-corner/tasks/create-a-task-log.md). This improvement complements the existing attachment system, which displays images as attachments.
+You can now display full-size images by dropping them directly into the descriptions of cases, alerts, and task logs. This improvement complements the existing attachment system, which displays images as attachments.
 
 #### Status visibility in the Tasks tab of cases
 
