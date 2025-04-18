@@ -92,3 +92,33 @@ The observable creation routes in alerts and cases have been optimized, making t
 * Case export to MISP: Fixed an issue with attachments when exporting a case to MISP.
 * Merged alert audits: Fixed a regression introduced in [version 5.4.8](release-notes-5.4.md) related to the JSON audit object of merged alerts. In the audit, the `object.*` field refers to the merged alert, while the `context.*` object refers to the case where the alert has been merged.
 * Notification form: Improved the performance of the filteredEvent input.
+
+### Documentation updates
+
+#### Administration
+
+* Authentication
+* Organizations
+* Cortex server connection
+* Email intake connectors
+* MISP integration
+* Custom fields
+* Taxonomies
+* Case and alert statuses
+
+#### Configure organization
+
+* Notifications and endpoints
+* Functions
+* Templates
+* Custom tags
+
+#### Analyst's corner
+
+* Closing alerts and cases
+* Merging cases
+* Task and task logs
+* Case reports
+* Case timelines
+* Dashboards
+* Knowledge Base
