@@ -14,9 +14,7 @@ This is useful if you want to automatically retrieve data at a defined frequency
 
     ---
 
-2. Select the **Connectors** tab.
-
-    Image
+2. {!includes/connectors-tab-organization-go-to.md!}
 
     ---
 

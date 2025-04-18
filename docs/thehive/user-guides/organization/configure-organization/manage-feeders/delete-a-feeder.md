@@ -13,9 +13,7 @@ This topic provides step-by-step instructions for deleting an [alert feeder](abo
 
 1. {!includes/organization-view-go-to.md!}
 
-2. Select the **Connectors** tab.
-
-    Image
+2. {!includes/connectors-tab-organization-go-to.md!}
 
 3. Select :fontawesome-solid-ellipsis: next to the alert feeder you want to delete.
 

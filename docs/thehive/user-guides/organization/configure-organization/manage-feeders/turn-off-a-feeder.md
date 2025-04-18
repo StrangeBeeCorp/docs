@@ -10,9 +10,7 @@ This topic provides step-by-step instructions for turning off an [alert feeder](
 
 1. {!includes/organization-view-go-to.md!}
 
-2. Select the **Connectors** tab.
-
-    Image
+2. {!includes/connectors-tab-organization-go-to.md!}
 
 3. Select the alert feeder you want to edit, or select :fontawesome-solid-ellipsis: next to the alert feeder and then select **Edit**.
 
