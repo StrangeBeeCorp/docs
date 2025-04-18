@@ -29,7 +29,7 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
     !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
-    **- [Custom fields](../cases/add-custom-fields.md)**  
+    **- [Custom fields](../cases/custom-fields/add-custom-fields.md)**  
 
     Custom fields for the alert, with or without predefined values.
 

@@ -22,7 +22,7 @@ You can [customize these default dashboards](add-remove-widgets-dashboard.md) an
 
 ## Scope
 
-Dashboards are at the organization level and cannot be shared between organizations.
+Dashboards are at the organization level and can't be shared between organizations.
 
 However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-import-a-dashboard.md#export-a-dashboard) and [importing](export-import-a-dashboard.md#import-a-dashboard) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
 

@@ -60,7 +60,7 @@ To import an existing case template from another organization or TheHive instanc
     **- [Tasks](../../../../analyst-corner/cases/add-tasks-to-a-case.md)**  
     One or more tasks for cases.
     
-    **- [Custom fields](../../../../analyst-corner/cases/add-custom-fields.md)**  
+    **- [Custom fields](../../../../analyst-corner/cases/custom-fields/add-custom-fields.md)**  
     One or more custom fields for cases, with or without predefined values.
     
     **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  

@@ -2,7 +2,7 @@
 
 <!-- md:version 5.1 --> <!-- md:license Platinum -->
 
-A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it cannot access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
+A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it can't access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
 It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
 

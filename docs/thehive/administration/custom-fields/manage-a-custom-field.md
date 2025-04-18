@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for managing [custom fields](../cu
 
 ## Set a custom field as mandatory or optional
 
-You must set a custom field as mandatory if it is used in dashboards or any automation workflow.
+It is recommended to set a custom field as mandatory if it is used in dashboards or any automation workflow.
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -22,7 +22,7 @@ You must set a custom field as mandatory if it is used in dashboards or any auto
 
 ## Enter predefined values into a custom field
 
-For the string, integer, and float types, you can define predefined values. If you choose to do this, users will only be able to select from the predefined values you specify. This helps maintain data consistency for reporting purposes.
+For the string, integer, and float types, you can define predefined values. If you choose to do this, users are only able to select from the predefined values you specify. This helps maintain data consistency for reporting purposes.
 
 1. {!includes/entities-management-view-go-to.md!}
 
@@ -36,7 +36,7 @@ For the string, integer, and float types, you can define predefined values. If y
 
 6. Select **Confirm custom field edition**.
 
-## Assign custom fields to the same group in bulk
+## Assign multiple custom fields to the same group
 
 1. {!includes/entities-management-view-go-to.md!}
 

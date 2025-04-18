@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for adding a custom event to a [ca
 4. In the **Add custom event** drawer, enter the following information:
 
     !!! warning "Modification not possible"
-        Once you create a custom event, you cannot modify it. To make changes, you must [delete](delete-custom-event-timeline.md) it and create a new one.
+        Once you create a custom event, you can't modify it. To make changes, you must [delete](delete-custom-event-timeline.md) it and create a new one.
 
     **- Title**
 

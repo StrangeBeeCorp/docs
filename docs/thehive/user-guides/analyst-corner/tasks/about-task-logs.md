@@ -4,9 +4,7 @@ This topic explains what task logs are and how they're used in TheHive.
 
 ## Definition
 
-A task log is where analysts record their actions, observations, and decisions in response to a [task](about-tasks.md).
-
-In TheHive, a task log is also referred to as an activity.
+A task log—also referred to as an activity—is where analysts record their actions, observations, and decisions in response to a [task](about-tasks.md).
 
 ## Sources
 

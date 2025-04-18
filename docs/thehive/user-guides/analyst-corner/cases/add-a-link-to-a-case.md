@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 -->
 
-This topic provides step-by-step instructions for adding a link to a [case](../cases/about-cases.md#linking-elements) in TheHive.
+This topic provides step-by-step instructions for adding a [link to a case](../cases/about-cases.md#linking-elements) in TheHive.
 
 The link can point to another TheHive case or to an external resource.
 

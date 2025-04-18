@@ -62,7 +62,7 @@ Several options are offered to create a case in TheHive:
 
     Tasks for the case.
 
-    **- [Custom fields](../cases/add-custom-fields.md)**  
+    **- [Custom fields](../cases/custom-fields/add-custom-fields.md)**  
 
     Custom fields for the case, with or without predefined values.
 
@@ -132,7 +132,7 @@ Several options are offered to create a case in TheHive:
 
     Tasks for the case.
 
-    **- [Custom fields](../cases/add-custom-fields.md)**  
+    **- [Custom fields](../cases/custom-fields/add-custom-fields.md)**  
     
     Custom fields for the case, with or without predefined values.
 
@@ -170,4 +170,4 @@ The creation of cases through detection tools is managed directly via the [API](
 
 * [Apply a Case Template](apply-a-case-template.md)
 * [Add Tasks to a Case](add-tasks-to-a-case.md)
-* [Add Custom Fields](add-custom-fields.md)
+* [Add Custom Fields](../cases/custom-fields/add-custom-fields.md)
