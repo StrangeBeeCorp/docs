@@ -2745,7 +2745,7 @@
   
   
   <span class="md-ellipsis">
-    OAUTH 2.0 (Deprecated)
+    OAUTH 2.0
     
   </span>
   
@@ -10966,34 +10966,19 @@
 <h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h3>
 <p>Restricted case visibility allows you to control who can view a case by limiting access to specific team members and managers. This feature helps protect sensitive information and reduce the risk of unauthorized access.</p>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
-<p>By default, cases created through the user interface are visible to all users in the organization. </p>
+<p>By default, cases created through the user interface are visible to all users in the organization.</p>
 <p>You can <a href="../restrict-visibility-case/">restrict visibility</a> to a specific group of users to secure sensitive cases and later <a href="../restore-visibility-case/">restore visibility</a> if needed. </p>
 <p>The case assignee and the user performing the action always have access and can't be removed.</p>
-<p>You can create cases with restricted visibility directly <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Case">using the API</a>.</p>
 <h3 id="expected-behavior">Expected behavior<a class="headerlink" href="#expected-behavior" title="Permanent link">#</a></h3>
-<p>When you set a case to restricted visibility:</p>
-<ul>
-<li>
-<p>For unauthorized users: The restricted case doesn't appear in linked elements, case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.</p>
-</li>
-<li>
-<p>For authorized users: The restricted case appears in linked elements, case lists, search results, and dashboards. Authorized users can be assigned to the case.</p>
-</li>
-</ul>
+<p>When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in <a href="../../alerts/alerts-description/new-case-from-selection/">alerts linked to the restricted cases</a> with a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"></path></svg></span> symbol. </p>
+<p>All related elements, including observables, tasks, and attachments, are also hidden. </p>
+<p>Unauthorized users can't be assigned to the case.</p>
 <div class="admonition info">
 <p class="admonition-title">Notification behavior</p>
 <p>A case with restricted visibility still triggers <a href="../../../organization/configure-organization/manage-notifications/about-notifications/">configured notifications</a>, regardless of who can view the case.</p>
 </div>
 <h4 id="indicators">Indicators<a class="headerlink" href="#indicators" title="Permanent link">#</a></h4>
-<p>A restricted case is identifiable as follows:</p>
-<ul>
-<li>
-<p>For unauthorized users: The restricted case is hidden from linked elements, case lists, search results, and dashboards, but it still appears in <a href="../../alerts/alerts-description/new-case-from-selection/">an alert linked to the restricted case</a>. In such an alert, a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"></path></svg></span> symbol appears alongside the case number inside an orange warning box.</p>
-</li>
-<li>
-<p>For authorized users: The restricted case is marked with a <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"></path></svg></span> symbol in the case description, case list, and linked elements. The background color is also orange for easy recognition.</p>
-</li>
-</ul>
+<p>For authorized users, a restricted case is identifiable by the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"></path></svg></span> symbol in case descriptions, case lists, and linked elements, with an orange background color.</p>
 <h3 id="merging-a-restricted-case">Merging a restricted case<a class="headerlink" href="#merging-a-restricted-case" title="Permanent link">#</a></h3>
 <p>If you <a href="../merge-cases/">merge one or more restricted cases with visible cases</a>, the newly created merged case automatically inherits restricted visibility.</p>
 <p>The list of authorized users includes all users who had access to any of the restricted cases involved in the merge.</p>
