@@ -10831,13 +10831,13 @@
 <h2 id="550-april-22-2025">5.5.0 - April 22, 2025<a class="headerlink" href="#550-april-22-2025" title="Permanent link">#</a></h2>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
 <h4 id="private-cases-restrict-access-to-sensitive-cases">Private cases: Restrict access to sensitive cases<a class="headerlink" href="#private-cases-restrict-access-to-sensitive-cases" title="Permanent link">#</a></h4>
-<p>You can now <a href="../../user-guides/analyst-corner/cases/about-cases/#case-visibility">restrict case access</a> to designated team members and managers, enhancing data security.</p>
+<p>You can now <a href="../../user-guides/analyst-corner/cases/about-cases/#case-visibility">restrict access to sensitive cases</a> to designated team members and managers.</p>
 <h4 id="alert-feeders">Alert feeders<a class="headerlink" href="#alert-feeders" title="Permanent link">#</a></h4>
 <p>An <a href="../../user-guides/organization/configure-organization/manage-feeders/about-feeders/">alert feeder</a> is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive's public API.</p>
 <h4 id="case-links-link-external-or-internal-elements-to-a-case">Case links: Link external or internal elements to a case<a class="headerlink" href="#case-links-link-external-or-internal-elements-to-a-case" title="Permanent link">#</a></h4>
 <p>You can now <a href="../../user-guides/analyst-corner/cases/about-cases/#linking-elements">link cases</a> to each other and to external URLs, offering a comprehensive view of related information directly within the <strong>General</strong> tab. Additionally, when you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL associated with the alert is added as an external link.</p>
 <h4 id="table-widget-in-dashboard">Table widget in dashboard<a class="headerlink" href="#table-widget-in-dashboard" title="Permanent link">#</a></h4>
-<p>The <a href="../../user-guides/analyst-corner/dashboard/widgets-dashboards/#table-widget">table widget</a> displays a list of entities (cases, alerts, or tasks) in a tabular format. You can customize the columns, apply advanced filters, and select sorting options. This is typically used to view action-required cases directly on a dashboard.</p>
+<p>The <a href="../../user-guides/analyst-corner/dashboard/widgets-dashboards/#table-widget">table widget</a> displays a list of entities (cases, alerts, or tasks) in a tabular format. You can customize the columns, apply advanced filters, and select sorting options. This can be used to view action-required cases directly on a dashboard.</p>
 <h4 id="new-markdown-content-formatting-options">New Markdown content formatting options<a class="headerlink" href="#new-markdown-content-formatting-options" title="Permanent link">#</a></h4>
 <p>You now have access to three new improvements in <a href="../../user-guides/thehive-flavored-markdown/">the Markdown formatting options</a>:</p>
 <ul>
@@ -10846,20 +10846,20 @@
 <li>Admonition blocks of types error, warning, success, or info</li>
 </ul>
 <h4 id="new-openid-sso-provider">New OpenID SSO provider<a class="headerlink" href="#new-openid-sso-provider" title="Permanent link">#</a></h4>
-<p>TheHive now supports integration with an OpenID authentication provider, offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.</p>
+<p>TheHive now supports integration with an <a href="../../administration/authentication/openid/">OpenID authentication provider</a>, offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.</p>
 <h4 id="hide-predefined-statuses">Hide predefined statuses<a class="headerlink" href="#hide-predefined-statuses" title="Permanent link">#</a></h4>
 <p>You can now <a href="../../administration/status/change-visibility-of-a-status/">hide predefined statuses</a> for cases and alerts, allowing users to see only the custom statuses you’ve created. This provides a cleaner, more organized status list, displaying only relevant information for an improved user experience.</p>
 <h4 id="ms-graph-api-for-email-intakes">MS Graph API for email intakes<a class="headerlink" href="#ms-graph-api-for-email-intakes" title="Permanent link">#</a></h4>
-<p>A new connector is available for email intakes. The Microsoft 365 Graph API connector uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.</p>
+<p>The <a href="../../administration/email-intake-connector/connect-a-mailbox/">Microsoft 365 Graph API connector</a> is now available for email intakes. It uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.</p>
 <h4 id="case-report-templates-display-the-description-of-custom-events">Case report templates: Display the description of custom events<a class="headerlink" href="#case-report-templates-display-the-description-of-custom-events" title="Permanent link">#</a></h4>
-<p>You can now hide or show the description of custom events in the timeline widget report.</p>
+<p>You can now hide or show the description of custom events in the <a href="../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/#timeline-widget">timeline widget</a> within case reports.</p>
 <h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
 <h4 id="taxonomy-drawer">Taxonomy drawer<a class="headerlink" href="#taxonomy-drawer" title="Permanent link">#</a></h4>
 <p>The taxonomies component has been redesigned to provide an improved user experience.</p>
 <h4 id="better-user-experience-for-custom-fields">Better user experience for custom fields<a class="headerlink" href="#better-user-experience-for-custom-fields" title="Permanent link">#</a></h4>
 <p>The display of custom fields has been improved for better consistency and intuitiveness, making data entry and management more efficient while reducing errors.</p>
 <h4 id="images-in-descriptions">Images in descriptions<a class="headerlink" href="#images-in-descriptions" title="Permanent link">#</a></h4>
-<p>You can now display full-size images by dropping them directly into the descriptions of <a href="../../user-guides/analyst-corner/cases/create-a-new-case/#create-an-empty-case">cases</a>, <a href="../../user-guides/analyst-corner/alerts/enrich-alert-details/">alerts</a>, and <a href="../../user-guides/analyst-corner/tasks/create-a-task-log/">task logs</a>. This improvement complements the existing attachment system, which displays images as attachments.</p>
+<p>You can now display full-size images by dropping them directly into the descriptions of cases, alerts, and task logs. This improvement complements the existing attachment system, which displays images as attachments.</p>
 <h4 id="status-visibility-in-the-tasks-tab-of-cases">Status visibility in the Tasks tab of cases<a class="headerlink" href="#status-visibility-in-the-tasks-tab-of-cases" title="Permanent link">#</a></h4>
 <p>The status of tasks is now clearly visible in each row of the <strong>Tasks</strong> tab in cases, enabling quick identification without needing to open the details.</p>
 <h4 id="public-api-observable-route-optimization">Public API observable route optimization<a class="headerlink" href="#public-api-observable-route-optimization" title="Permanent link">#</a></h4>
