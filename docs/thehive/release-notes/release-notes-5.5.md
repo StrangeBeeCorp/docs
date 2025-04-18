@@ -6,13 +6,13 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
-## 5.5.0 - April 3, 2025
+## 5.5.0 - April 22, 2025
 
 ### New features
 
 #### Private cases: Restrict access to sensitive cases
 
-You can now allow authorized users to [restrict case access](../user-guides/analyst-corner/cases/about-cases.md#case-visibility) to designated team members and managers, enhancing data security.
+You can now [restrict case access](../user-guides/analyst-corner/cases/about-cases.md#case-visibility) to designated team members and managers, enhancing data security.
 
 #### Alert feeders
 
