@@ -22,11 +22,11 @@ This topic provides step-by-step instructions for adding new and existing users 
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png) 
 
-2. Select the organization to add the user to, then select :fontawesome-regular-square-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
+2. Select the organization to add the user to, then select :fontawesome-solid-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
 
 3. In the **Adding a user** drawer, enter:
 
-    **Type \***
+    **- Type \***
 
     The user type you want to create.
 
@@ -34,19 +34,19 @@ This topic provides step-by-step instructions for adding new and existing users 
         - *Normal*: Allows the user to access TheHive through the user interface.  
         - *Service*: Allows the user to access TheHive through the API.
 
-    **Login \***
+    **- Login \***
 
     The login used for the user to sign in. It can be an email address or another identifier, depending on [your authentication configuration](../authentication/configure-authentication.md).
 
-    **Name \***
+    **- Name \***
 
     The user's display name.
 
-    **Profile \***
+    **- Profile \***
 
     Pick a [permission profile](../../administration/profiles.md) for the user from the dropdown list.
 
-4. Select **Confirm**, or **Save and add another** if you want to add another new user.
+4. Select **Confirm**.
 
 5. In the users list, hover over the user you just created and select :fontawesome-solid-eye:.
 
@@ -60,7 +60,7 @@ This topic provides step-by-step instructions for adding new and existing users 
 
 10. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

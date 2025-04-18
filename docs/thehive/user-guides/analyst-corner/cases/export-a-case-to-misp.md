@@ -12,7 +12,7 @@ Only observables marked as IOCs will be exported in the case. Once exported to M
 !!! warning "MISP actions required"
     The event created in MISP is not published by default. You must review it and update its status in MISP to publish it.
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the case](../cases/search-for-cases/find-a-case.md) you want to export.
 
@@ -24,6 +24,6 @@ Only observables marked as IOCs will be exported in the case. Once exported to M
 
 4. Select **Export**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create a Case](create-a-new-case.md)

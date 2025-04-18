@@ -4,6 +4,10 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Cases](overview-search-methods-case.md) topic.
 
+!!! tip "Can't find a case?"
+    - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new cases in lists.
+    - <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
+
 ## Method 1: Enter a case number search box
 
 *Use this method if you already know the case number you're looking for.*
@@ -44,6 +48,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 3. {!includes/search-results.md!}
 
+{!includes/views-filters-sorts.md!}
+
 ---
 
 ## Method 4: Global Search feature
@@ -60,22 +66,37 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
     {!includes/global-search-all-elements.md!}
 
-3. {!includes/global-search-search-box.md!}
+3. Enter the keywords you want to search for in the search box displayed by default.
+
+    !!! tip "<!-- md:version 5.4.7 --> Wildcard character"
+        You can use the wildcard character *\** to broaden your searches.
+
+        The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.
+        
+        Examples of use cases:  
+        - Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain.  
+        - IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.  
+        - URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
+
+        Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions on Cases](../cases-description/actions.md)
+* [Merge Cases](../merge-cases.md)
+* [Restrict Case Visibility](../restrict-visibility-case.md)
+* [Restore Case Visibility](../restore-visibility-case.md)
 * [View a Case](../cases-description/general.md)
-* [Adding to a Case (Tags/Tasks/Custom Field Values)](../../cases/adding_to_a_case.md)
-* [View Tasks](../cases-description/tasks.md)
+* [Add Tasks to a Case](../add-tasks-to-a-case.md)
+* [Add Custom Fields](../custom-fields/add-custom-fields.md)
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
 * [View Attachments](../cases-description/attachments.md)
-* [View Timeline](../cases-description/timeline.md)
-* [View Pages](../cases-description/pages.md)
+* [View a Case Timeline](../case-timelines/view-case-timeline.md)
+* [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
 * [Run Responders on Case](../cases-description/run-responders.md)
 * [Run Analyzers on Case](../cases-description/run-analyzer.md)

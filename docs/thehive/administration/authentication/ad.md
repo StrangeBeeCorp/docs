@@ -1,22 +1,24 @@
 # How to Configure an Active Directory Authentication Provider
 
-This topic provides step-by-step instructions for configuring an Active Directory (AD) authentication provider in TheHive.
+<!-- md:license Platinum -->
 
-{!includes/license-required-authentication.md!}
+This topic provides step-by-step instructions for configuring an Active Directory (AD) authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
-!!! info "Prerequisite"
+!!! info "Local account"
     Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
 
     User data is synchronized periodically:  
     - New LDAP users are automatically created in TheHive.  
-    - Removed users are disabled.  
+    - Removed users become inactive.  
     - Organization membership and user profiles are assigned based on LDAP group membership.  
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
+
+{!includes/prerequisites-authentication-providers.md!}
 
 1. {!includes/platform-management-view-go-to.md!}
 
@@ -40,17 +42,17 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 6. Enter the following information:
 
-    **The addresses of the domain controllers**
+    **- The addresses of the domain controllers**
 
     The IP addresses or host names of the domain controllers responsible for handling authentication requests within the network.
 
-    **The Windows domain name**
+    **- The Windows domain name**
 
     The name of the Windows domain that manages user accounts and permissions. This is typically the NetBIOS name used within the Windows network.
 
     Example: *DOMAIN*
 
-    **The DNS domain name**
+    **- The DNS domain name**
 
     The fully qualified domain name (FQDN) associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
 
@@ -68,7 +70,7 @@ This topic provides step-by-step instructions for configuring an Active Director
 
 8. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
 * [Configure SSL](ssl.md)

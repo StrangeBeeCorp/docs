@@ -8,7 +8,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Organizations** view
 
@@ -33,7 +33,7 @@ Link organizations to enable data sharing and define the applicable sharing rule
 
 6. Select **Confirm**.
     
-## Next steps
+<h2>Next steps</h2>
 
 * [Share a Case with Other Organizations](../../user-guides/analyst-corner/cases/share-a-case.md)
 * [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)

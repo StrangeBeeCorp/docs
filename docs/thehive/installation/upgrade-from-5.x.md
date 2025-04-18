@@ -2,6 +2,9 @@
 
 > **Important:** Starting with version 5.4, our web framework has been upgraded to Play3/Pekko. Depending on your TheHive installation and configuration, certain updates may be required in your configuration files. Refer to the [configuration guide](../configuration/pekko.md) for details.
 
+!!! info "Cortex support"
+    <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
+
 ---
 
 ## Important Considerations

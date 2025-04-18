@@ -15,7 +15,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 1. Go to the **Dashboards** view from the sidebar menu.
 
-    ![Measure case management performance](../../images/user-guides/measure-case-management-performance.png)
+    ![Measure case management performance](../../images/user-guides/kpis/measure-case-management-performance.png)
 
 2. Select a dashboard related to alerts.
 
@@ -33,10 +33,10 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 2. In the alert description, move through the **Time metrics** section in the left pane.
 
-    ![Alert description metrics](../../images/user-guides/alert-description-metrics.png)
+    ![Alert description metrics](../../images/user-guides/kpis/alert-description-metrics.png)
 
 3. Review the available indicators for your alert.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Measure Case Performance](measure-case-management-performance.md)

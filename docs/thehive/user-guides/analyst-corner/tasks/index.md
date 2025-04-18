@@ -1,1 +1,0 @@
-[Preview task details](preview-task-details)

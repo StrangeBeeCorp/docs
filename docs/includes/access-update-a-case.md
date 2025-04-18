@@ -1,2 +1,2 @@
-!!! warning "Required permissions for updating a case"
+!!! warning "Required permissions"
     Only users with the `manageCase/update` permission can update a case in TheHive.

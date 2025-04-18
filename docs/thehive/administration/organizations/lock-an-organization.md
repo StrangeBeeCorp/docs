@@ -9,7 +9,7 @@ Locking an organization is useful when you want to prevent users from logging in
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Organizations** view.
 
@@ -21,7 +21,7 @@ Locking an organization is useful when you want to prevent users from logging in
 
 3. Select **OK** or **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create an Organization](create-an-organization.md)
 * [Link an Organization](link-an-organization.md)

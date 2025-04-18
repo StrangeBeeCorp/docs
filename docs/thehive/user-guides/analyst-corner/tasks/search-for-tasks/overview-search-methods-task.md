@@ -14,5 +14,5 @@ Use this guide to choose the most effective method for your needs.
 | [Filters in the Tasks view](find-a-task.md#method-2-filters-in-the-tasks-view) | Multiple | Multiple | No | If you need to search for one or more tasks without requiring simultaneous actions. |
 | [Global Search feature](find-a-task.md#method-3-global-search-feature) | Advanced | Multiple | No | If you need to conduct advanced searches for one or more tasks without requiring simultaneous actions. |
 
-## Next steps
+<h2>Next steps</h2>
 * [How to Find an Task](find-a-task.md)

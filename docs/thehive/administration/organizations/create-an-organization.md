@@ -7,25 +7,29 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. Go to the **Organizations** view from the sidebar menu.
 
     ![Organizations view](../../images/administration-guides/manage-organizations-organizations-view.png)
 
-2. Select :fontawesome-regular-square-plus:.
+    ---
+
+2. Select :fontawesome-solid-plus:.
+
+    ---
 
 3. In the **Adding an organization** drawer, enter:
 
-    **Name \***
+    **- Name \***
 
     The name of your new organization.
 
-    **Description \***
+    **- Description \***
 
     The description of your new organization.
 
-    **Tasks sharing rule \***
+    **- Tasks sharing rule \***
 
     How tasks linked to a case are handled when the case is shared with another organization.
 
@@ -33,7 +37,7 @@ This topic provides step-by-step instructions for creating an [organization](abo
         - *manual* (default): Tasks aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/tasks/share-a-task.md).  
         - *autoShare*: Tasks are shared automatically.
 
-    **Observables sharing rule \***
+    **- Observables sharing rule \***
 
     How observables linked to a case are handled when the case is shared with another organization.
 
@@ -43,11 +47,15 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
+    ---
+
 4. Select **Confirm**.
+
+    ---
 
 5. Optional: In the **Organizations** view, locate your new organization, hover over it, select :fontawesome-solid-eye:, select the default organization logo to modify it, and upload an image to set it as the new logo for your organization.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Add Users to an Organization](add-users-to-an-organization.md)
 * [Link an Organization](link-an-organization.md)

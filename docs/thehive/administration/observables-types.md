@@ -6,7 +6,7 @@ Observable types are configured in the Administrators space: open *Entities Mana
 
 
 ## Create a new Observable Type
-Click the :fontawesome-regular-square-plus: button to create a new *Observable Type*.
+Click the :fontawesome-solid-plus: button to create a new *Observable Type*.
 
 ![](../images/administration-guides/observable-types-1.png)
 

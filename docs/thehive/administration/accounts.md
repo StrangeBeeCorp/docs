@@ -25,7 +25,7 @@ These accounts are designed for automation tasks within the application, such as
 
 To create a new account, follow these steps:
 
-1. Click the :fontawesome-regular-square-plus: button to add an account.
+1. Click the :fontawesome-solid-plus: button to add an account.
 
    ![Account creation image](../images/administration-guides/accounts-2.png)
 

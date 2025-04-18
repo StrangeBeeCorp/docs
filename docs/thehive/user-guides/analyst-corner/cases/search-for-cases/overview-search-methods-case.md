@@ -15,5 +15,5 @@ Use this guide to choose the most effective method for your needs.
 | [Filters in the Cases view](find-a-case.md#method-3-filters-in-the-cases-view) | Multiple | Multiple | Yes | If you want to find one or more cases to perform actions on them simultaneously. |
 | [Global Search feature](find-a-case.md#method-4-global-search-feature) | Advanced | Multiple | No | If you need to conduct advanced searches for one or more cases without requiring simultaneous actions. |
 
-## Next steps
+<h2>Next steps</h2>
 * [How to Find a Case](find-a-case.md)

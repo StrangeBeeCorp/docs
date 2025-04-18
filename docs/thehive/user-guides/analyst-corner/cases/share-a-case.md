@@ -9,7 +9,7 @@ To learn more about how sharing rules function and interact, refer to the [About
 
 {!includes/access-manage-case-sharing.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. [Locate the case you want to share](../../analyst-corner/cases/search-for-cases/find-a-case.md).
 
@@ -40,7 +40,7 @@ To learn more about how sharing rules function and interact, refer to the [About
 
 8. Select **Confirm**.
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Share a Task with Other Organizations](../tasks/share-a-task.md)
 * [Share an Observable with Other Organizations](share-an-observable.md)

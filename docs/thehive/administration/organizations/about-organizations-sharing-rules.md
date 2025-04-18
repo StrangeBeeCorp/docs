@@ -53,7 +53,7 @@ Follow these step-by-step instructions to learn how to:
 | *supervised* | New cases are automatically shared without their linked tasks and observables.| New cases are automatically shared with their linked tasks and observables. |
 | *notify* | New cases are automatically shared without their linked tasks and observables. | New cases are automatically shared with their linked tasks and observables. |
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Link an Organization](link-an-organization.md)
 * [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)

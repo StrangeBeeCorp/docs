@@ -9,7 +9,7 @@
 In your organization, click on _Organization_ in the menu on the left to access the list of users. The first tab is _Users_.
 
 <figure markdown>
-  ![List of user accounts](../../images/user-guides/organization/organization-list-users.png){ width="600" }
+  ![List of user accounts](../../images/user-guides/organization/configure-organization/manage-users/organization-list-users.png){ width="600" }
   <figcaption>List of user accounts</figcaption>
 </figure>
 
@@ -18,7 +18,7 @@ In your organization, click on _Organization_ in the menu on the left to access 
 To access detailed information about a user, click the _Preview_ button
 
 <figure markdown>
-  ![User information](../../images/user-guides/organization/organization-user-details.png){ width="450" }
+  ![User information](../../images/user-guides/organization/configure-organization/manage-users/organization-user-details.png){ width="450" }
   <figcaption>User information</figcaption>
 </figure>
 
@@ -55,7 +55,7 @@ Password
   : Create or update the password of the user
 
 Reset Password
-  : If the application is configured with a [SMTP server](/thehive/administration/smtp.md), send an email with a magic link to the user. link is active for a short time period.
+  : If the application is configured with a [SMTP server](../../administration/smtp.md), send an email with a magic link to the user. link is active for a short time period.
 
 Sessions
   : List of opened interactive sessions. Click delete to close a session
@@ -65,7 +65,7 @@ Sessions
 
 *org-admin* users or users with the role `manageUser` in their profile can add users in the current organization. 
 
-Click the :fontawesome-regular-square-plus: button to add an account in the current organization, and follow *[create an account](../../administration/accounts.md#creating-an-account)* and *[update an account](../../administration/accounts.md#updating-an-account)* guides.
+Click the :fontawesome-solid-plus: button to add an account in the current organization, and follow *[create an account](../../administration/accounts.md#creating-an-account)* and *[update an account](../../administration/accounts.md#updating-an-account)* guides.
 
 ## User management
 

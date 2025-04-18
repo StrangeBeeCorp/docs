@@ -20,7 +20,7 @@ You can assign a user to one or more organizations.
 
 {!includes/administrator-access-manage-organizations.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Create an Organization](create-an-organization.md)
 * [Add Users to an Organization](add-users-to-an-organization.md)

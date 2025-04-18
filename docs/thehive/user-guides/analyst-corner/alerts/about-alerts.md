@@ -15,11 +15,13 @@ Alerts are reviewed, triaged, and transformed into [cases](../cases/about-cases.
 
 An alert can be created from the following sources:
 
-* Detection tools such as SIEM, IDS, EDR, or firewalls connected to TheHive
+* Detection tools, such as SIEM, IDS, EDR, and firewalls, that push data to TheHive
+
+* <!-- md:version 5.5 --> External systems from which TheHive retrieves data using [alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md)
 
 * Threat intelligence platforms like [MISP](../../../administration/misp-integration/about-misp-integration.md) connected to TheHive
 
-* [Email servers](../../../administration/email-intake-connector.md) connected to TheHive
+* [Email servers](../../../administration/email-intake-connector/about-email-intake-connectors.md) from which TheHive retrieves data.
 
 ## Key components
 
@@ -29,8 +31,23 @@ In TheHive, an alert includes the following elements:
 
 * [TTPs](../alerts/alerts-description/view-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
-## Next steps
+## Closing alerts
+
+{!includes/access-close-alerts.md!}
+
+Alerts can be [closed](../alerts/close-an-alert.md) when they are not worth escalating into a new case or an existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
+
+### Custom fields completion
+
+Alerts can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
+
+## Statistics
+
+[Predefined statistics in dashboards](../about-statistics.md) are available from the alerts list. For custom statistics and dashboards, refer to the [About Dashboards](../dashboard/about-dashboards.md) topic.
+
+<h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Close an Alert](close-an-alert.md)
