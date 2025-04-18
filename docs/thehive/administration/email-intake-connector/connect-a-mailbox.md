@@ -2,22 +2,34 @@
 
 This topic provides step-by-step instructions for connecting a [mailbox](about-email-intake-connectors.md) in TheHive.
 
+This is useful when your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
+
 {!includes/administrator-access-manage-email-intake-connectors.md!}
 
 <h2>Procedure</h2>
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/connectors-tab-go-to.md!}
 
+    ---
+
 3. {!includes/email-intake-tab-go-to.md!}
+
+    ---
 
 4. Enter the time interval between refresh attempts. This setting applies to all connected mailboxes.
 
     !!! info "Manual refresh"
-        If needed, you can also [manually trigger an email fetch](fetch-emails.md) for a mailbox. 
+        If needed, you can also [manually trigger an email fetch](fetch-emails.md) for a mailbox.
+
+    ---
 
 5. Select :fontawesome-solid-plus:.
+
+    ---
 
 6. Configure your email intake connector by following these steps. IMAP configuration is required if your email provider is neither Google nor Microsoft.
 
@@ -440,6 +452,8 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
             The password associated with your account.
 
+    ---
+
 7. In the **Settings** section, enter the following information:
 
     **- Organization**
@@ -453,6 +467,8 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
     **- Action in mailbox**
 
     The action to perform in the mailbox when receiving an email.
+
+    ---
 
 8. <!-- md:version 5.5 --> In the **Alert properties** section, enter the following information:
 
@@ -468,7 +484,11 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
     The tags to apply to the alerts created through the email intake connector.
 
+    ---
+
 9. Select **Test connection** to verify your connection.
+
+    ---
 
 10. Select **Confirm**.
 

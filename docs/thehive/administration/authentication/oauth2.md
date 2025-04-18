@@ -1,4 +1,4 @@
-# How to Configure an OAuth 2.0 Authentication Provider (Deprecated)
+# How to Configure an OAuth 2.0 Authentication Provider
 
 <!-- md:license Platinum -->
 
@@ -6,8 +6,8 @@ This topic provides step-by-step instructions for configuring an OAuth 2.0 authe
 
 By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google.
 
-!!! warning "Deprecated"
-    The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](openid.md) instead.
+!!! warning "Deprecated since version 5.5"
+    <!-- md:version 5.5 --> The OAuth 2.0 authentication provider is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](openid.md) instead.
 
 {!includes/access-authentication.md!}
 

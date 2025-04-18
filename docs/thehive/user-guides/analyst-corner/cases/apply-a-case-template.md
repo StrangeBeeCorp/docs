@@ -23,4 +23,4 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 <h2>Next steps</h2>
 
 * [Add Tasks to a Case](add-tasks-to-a-case.md)
-* [Add Custom Fields](add-custom-fields.md)
+* [Add Custom Fields](../cases/custom-fields/add-custom-fields.md)

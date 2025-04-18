@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for adding a local Mattermost [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
+{!includes/local-global-endpoints.md!}
+
 {!includes/access-endpoints.md!}
 
 <h2>Procedure</h2>

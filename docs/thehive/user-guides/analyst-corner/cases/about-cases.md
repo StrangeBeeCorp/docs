@@ -106,32 +106,26 @@ Restricted case visibility allows you to control who can view a case by limiting
 
 ### Configuration
 
-By default, cases created through the user interface are visible to all users in the organization. 
+By default, cases created through the user interface are visible to all users in the organization.
 
 You can [restrict visibility](restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restore visibility](restore-visibility-case.md) if needed. 
 
 The case assignee and the user performing the action always have access and can't be removed.
 
-You can create cases with restricted visibility directly [using the API](https://docs.strangebee.com/thehive/api-docs/#tag/Case).
-
 ### Expected behavior
 
-When you set a case to restricted visibility:
+When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in [alerts linked to the restricted cases](../alerts/alerts-description/new-case-from-selection.md) with a :fontawesome-solid-lock: symbol. 
 
-* For unauthorized users: The restricted case doesn't appear in linked elements, case lists, search results, or dashboards. All related elements, including observables, tasks, and attachments, are also hidden. Unauthorized users can't be assigned to the case.
+All related elements, including observables, tasks, and attachments, are also hidden. 
 
-* For authorized users: The restricted case appears in linked elements, case lists, search results, and dashboards. Authorized users can be assigned to the case.
+Unauthorized users can't be assigned to the case.
 
 !!! info "Notification behavior"
     A case with restricted visibility still triggers [configured notifications](../../organization/configure-organization/manage-notifications/about-notifications.md), regardless of who can view the case.
 
 #### Indicators
 
-A restricted case is identifiable as follows:
-
-* For unauthorized users: The restricted case is hidden from linked elements, case lists, search results, and dashboards, but it still appears in [an alert linked to the restricted case](../alerts/alerts-description/new-case-from-selection.md). In such an alert, a :fontawesome-solid-lock: symbol appears alongside the case number inside an orange warning box.
-
-* For authorized users: The restricted case is marked with a :fontawesome-solid-lock: symbol in the case description, case list, and linked elements. The background color is also orange for easy recognition.
+For authorized users, a restricted case is identifiable by the :fontawesome-solid-lock: symbol in case descriptions, case lists, and linked elements, with an orange background color.
 
 ### Merging a restricted case
 

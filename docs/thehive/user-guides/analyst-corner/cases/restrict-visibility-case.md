@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for restricting the visibility of a [case](../cases/about-cases.md#case-visibility) in TheHive.
+This topic provides step-by-step instructions for restricting the [visibility of a case](../cases/about-cases.md#case-visibility) in TheHive.
 
 {!includes/access-manage-visibility-cases.md!}
 
