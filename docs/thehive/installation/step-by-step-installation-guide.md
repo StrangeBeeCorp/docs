@@ -362,7 +362,7 @@ For additional configuration options, refer to:
 
 [Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. TheHive uses it to manage data indices efficiently.
 
-[Badge version 5.5] Elasticsearch can also replace Apache Cassandra (JanusGraph) for storing audit logs.
+<!-- md:version 5.5 --> Elasticsearch can also replace Apache Cassandra (JanusGraph) for storing audit logs.
 
 !!! note "Elasticsearch support"
     Starting from version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x. If you want to use Elasticsearch to store your audit logs, ensure that you are using Elasticsearch 7.17 or later.
@@ -514,7 +514,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
     - Similar to data and files, include indexes in the backup policy to ensure their preservation.
     - Remove and re-create indexes as needed.
 
-**12. [Badge version 5.5] Optional: Configure audit log storage:**
+**12. <!-- md:version 5.5 --> Optional: Configure audit log storage:**
 
 By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch. Elasticsearch offers better performance, reduced latency, and advanced search capabilities, making it ideal for managing and retrieving large amounts of audit data.
 

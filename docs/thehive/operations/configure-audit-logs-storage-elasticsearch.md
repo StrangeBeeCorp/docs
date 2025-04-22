@@ -1,6 +1,6 @@
 # How to Configure Audit Log Storage in Elasticsearch
 
-[Badge version 5.5]
+<!-- md:version 5.5 -->
 
 You can choose to store audit logs in either Apache Cassandra via JanusGraph or in [Elasticsearch](https://www.elastic.co/enterprise-search) in TheHive.
 
