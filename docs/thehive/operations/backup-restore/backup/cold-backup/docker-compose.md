@@ -4,8 +4,6 @@ This topic provides step-by-step instructions for performing a cold backup of a 
 
 {!includes/implications-cold-backup-restore.md!}
 
-{!includes/adapting-instructions.md!}
-
 {!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites

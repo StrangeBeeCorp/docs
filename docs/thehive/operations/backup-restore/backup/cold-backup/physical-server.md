@@ -6,8 +6,6 @@ Unlike virtualized or containerized environments, physical servers require direc
 
 {!includes/implications-cold-backup-restore.md!}
 
-{!includes/adapting-instructions.md!}
-
 {!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites

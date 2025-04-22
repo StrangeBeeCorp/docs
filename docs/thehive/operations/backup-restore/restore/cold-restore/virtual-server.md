@@ -6,8 +6,6 @@ Using virtual servers provides more flexibility in performing backup and restore
 
 {!includes/implications-cold-backup-restore.md!}
 
-{!includes/adapting-instructions.md!}
-
 {!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites

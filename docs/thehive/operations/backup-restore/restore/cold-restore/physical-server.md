@@ -8,8 +8,6 @@ Unlike virtual or containerized environments, restoring on physical servers requ
 
 {!includes/implications-cold-backup-restore.md!}
 
-{!includes/adapting-instructions.md!}
-
 {!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites
