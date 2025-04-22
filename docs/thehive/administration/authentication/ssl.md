@@ -44,7 +44,7 @@ This guide provides configuration instructions for different environments:
     docker restart <your-thehive-container>
     ```
 
-## Next steps
+<h2>Next steps</h2>
 
 * [How to Configure Authentication](configure-authentication.md)
 * [Configure a Local Authentication Provider](local.md)
@@ -52,3 +52,4 @@ This guide provides configuration instructions for different environments:
 * [Configure an LDAP Authentication Provider](ldap.md)
 * [Configure an OAuth 2.0 Authentication Provider](oauth2.md)
 * [Configure a SAML Authentication Provider](saml.md)
+* [Configure an OpenID Authentication Provider](openid.md)
