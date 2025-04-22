@@ -11025,7 +11025,9 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Audit logs behavior</p>
-<p>When visibility is restricted on a case, all associated <a href="../../../organization/about-audit-logs/">audit logs</a>, including those created earlier, immediately become private.</p>
+<p>When visibility is restricted on a case:<br>
+- If you're using the default configuration with Apache Cassandra (JanusGraph) to store your audit logs, all associated <a href="../../../organization/about-audit-logs/">audit logs</a>, including those created earlier, immediately become private.<br>
+- If you're using <a href="../../../../operations/configure-audit-logs-storage-elasticsearch/">Elasticsearch to store your audit logs</a>, all associated <a href="../../../organization/about-audit-logs/">audit logs</a> remain public. Audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case.</p>
 </div>
 <h4 id="indicators">Indicators<a class="headerlink" href="#indicators" title="Permanent link">#</a></h4>
 <p>For authorized users, a restricted case is identifiable by the <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 144v48h160v-48c0-44.2-35.8-80-80-80s-80 35.8-80 80m-64 48v-48C80 64.5 144.5 0 224 0s144 64.5 144 144v48h16c35.3 0 64 28.7 64 64v192c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V256c0-35.3 28.7-64 64-64z"></path></svg></span> symbol in case descriptions, case lists, and linked elements, with an orange background color.</p>

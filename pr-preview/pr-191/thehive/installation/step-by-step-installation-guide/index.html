@@ -11364,11 +11364,11 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="codehilite"><pre><span></span><code><span class="n">Set</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="err">`</span><span class="n">path</span><span class="o">.</span><span class="n">logs</span><span class="err">`</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="err">`</span><span class="n">path</span><span class="o">.</span><span class="n">data</span><span class="err">`</span><span class="w"> </span><span class="n">parameters</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">desired</span><span class="w"> </span><span class="n">directories</span><span class="p">,</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="err">`</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">elasticsearch</span><span class="err">`</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="err">`</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">elasticsearch</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="n">respectively</span><span class="o">.</span>
 </code></pre></div>
 
-<p><strong>7. Optional: Configure X-Pack security:</strong></p>
+<p><strong>7. (Optional) Configure X-Pack security:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="s1">'re not using X-Pack security, ensure that `xpack.security.enabled` is set to `false`.</span>
 </code></pre></div>
 
-<p><strong>8. Optional: Configure script allowed types:</strong></p>
+<p><strong>8. (Optional) Configure script allowed types:</strong></p>
 <div class="codehilite"><pre><span></span><code><span class="nx">If</span><span class="w"> </span><span class="nx">needed</span><span class="p">,</span><span class="w"> </span><span class="nx">set</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="err">`</span><span class="nx">script</span><span class="p">.</span><span class="nx">allowed_types</span><span class="err">`</span><span class="w"> </span><span class="nx">parameter</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">specify</span><span class="w"> </span><span class="nx">allowed</span><span class="w"> </span><span class="nx">script</span><span class="w"> </span><span class="nx">types</span><span class="p">.</span>
 </code></pre></div>
 
@@ -11413,19 +11413,27 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>Remove and re-create indexes as needed.</li>
 </ul>
 </div>
-<p><strong>12. <span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Optional: Configure audit log storage:</strong></p>
-<p>By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch. Elasticsearch offers better performance, reduced latency, and advanced search capabilities, making it ideal for managing and retrieving large amounts of audit data.</p>
+<p><strong>12. <span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> (Optional) Configure audit log storage:</strong></p>
+<p>By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch. </p>
+<p>Elasticsearch offers better performance, reduced latency, and advanced search capabilities, making it ideal for managing and retrieving large amounts of audit data.</p>
+<div class="admonition warning">
+<p class="admonition-title">Audit logs visibility</p>
+<ul>
+<li>With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if <a href="../../user-guides/analyst-corner/cases/restrict-visibility-case/">you set restricted visibility for a case</a>, audit logs remain visible to all users.</li>
+<li>With the default configuration using Apache Cassandra (JanusGraph), audit logs immediately become private if the visibility of the associated case is restricted. This means that even if audit logs were originally public, they will be hidden from all users <a href="../../user-guides/analyst-corner/cases/restrict-visibility-case/">once the case visibility is restricted</a>.</li>
+</ul>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Prerequisites</p>
 <p>Regularly <a href="https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore">back up your Elasticsearch indices</a> to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.</p>
 </div>
-<p>a. Activate audit log storage</p>
+<p>a. Activate audit log storage.</p>
 <p>To activate audit log storage in Elasticsearch, update your TheHive configuration file with the following settings:</p>
 <div class="highlight"><pre><span></span><code><span class="err">audi</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="err">s</span><span class="kc">t</span><span class="err">orage</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">elas</span><span class="kc">t</span><span class="err">icsearch</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>b. Configure index template and Index Lifecycle Management (ILM)</p>
+<p>b. Configure index template and Index Lifecycle Management (ILM).</p>
 <p>Configure the default index template and Index Lifecycle Management (ILM) for <code>thehive-audits</code> using the following settings:</p>
 <ul>
 <li><code>index-name</code></li>
