@@ -4,6 +4,10 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
+!!! tip "Can't find a task?"
+    - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new tasks in lists.
+    - <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
+
 ## Method 1: Tasks tab in cases descriptions
 
 *Use this method if you want to find one or more tasks related to a case and want to perform actions on them simultaneously.*
@@ -15,6 +19,9 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+!!! tip "Show tasks per group"
+    You can display tasks per group to classify them by type, making them easier to find.
 
 ---
 
@@ -29,6 +36,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 
@@ -46,13 +55,30 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
     {!includes/global-search-all-elements.md!}
 
-3. {!includes/global-search-search-box.md!}
+3. Enter the keywords you want to search for in the search box displayed by default.
+
+    !!! tip "<!-- md:version 5.4.7 --> Wildcard character"
+        You can use the wildcard character *\** to broaden your searches.
+
+        The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.
+        
+        Examples of use cases:  
+        - Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain.  
+        - IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.  
+        - URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
+
+        Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
-* [Actions on Tasks](../preview-task-details/actions.md)
-* [Run Responders From Task](../preview-task-details/run-responders.md)
+* [Create a Task](../create-a-task.md)
+* [Share a Task](../share-a-task.md)
+* [Change a Task Status](../change-task-status.md)
+* [Manage Tasks](../manage-a-task.md)
+* [Delete a Task](../delete-a-task.md)
+* [Create a Task Log](../create-a-task-log.md)
+* [Run Responders](../../tasks/preview-task-details/run-responders.md)

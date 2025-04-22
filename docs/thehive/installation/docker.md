@@ -4,6 +4,9 @@ TheHive fully supports Docker, allowing users to quickly deploy and manage their
 
 We provides and maintain several setup profiles for TheHive and Cortex available on GitHub. This guide will walk you through choose the right profile and setting up TheHive using Docker.
 
+!!! info "Cortex support"
+    <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
+
 ---
 
 ## Prerequisites
