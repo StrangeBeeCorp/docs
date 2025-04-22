@@ -84,7 +84,7 @@ The migration tool for TheHive offers a comprehensive set of options to facilita
 - `-u, --es-uri http://ip1:port,ip2:port`: Specifies the Elasticsearch URIs for TheHive 3.
 - `-x, --es-index <index>`: Specifies the Elasticsearch index name for TheHive 3.
 - `-x, --es-index-version <index>`: Specifies the version number for the Elasticsearch index name (default: autodetect).
-- `-a, --es-keepalive <duration>`: Specifies the Elasticsearch keepalive duration.
+- `-a, --es-keep-alive <duration>`: Specifies the Elasticsearch keep-alive duration, which defines how long the scroll context remains active between requests. The value must include a unit, such as `2s` for 2 seconds, `3m` for 3 minutes, or `4h` for 4 hours.
 - `-p, --es-pagesize <value>`: Specifies the page size for Elasticsearch queries.
 - `-s, --es-single-type <bool>`: Specifies whether Elasticsearch uses a single type.
 - `-y, --transaction-pagesize <value>`: Specifies the page size for each transaction.

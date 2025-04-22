@@ -17,7 +17,7 @@ Cortex has been tested and is supported on the following operating systems:
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
-## Installation Guide
+## Installation guide
 
 !!! Tip "Too much in a hurry to read ? "
 
@@ -44,7 +44,7 @@ For deploying Cortex on a Kubernetes cluster, refer to our detailed [Kubernetes 
 
 The [following Guide](step-by-step-guide.md) let you **prepare**, **install** and **configure** Cortex and its prerequisites for Debian and RPM packages based Operating Systems, as well as for other systems and using our binary packages. 
 
-## Configuration Guides
+## Configuration guides
 
 The configuration of Cortex is in files stored in the `/etc/cortex` folder:
     

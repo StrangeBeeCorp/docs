@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for using various methods to searc
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Alerts](overview-search-methods-alert.md) topic.
 
+!!! tip "Can't find an alert?"
+    Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new alerts in lists.
+
 ## Method 1: Similar alerts
 
 *Use this method if you want to find one or more alerts similar to a known alert and need to perform actions on them simultaneously.*
@@ -30,6 +33,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 3. {!includes/search-results.md!}
 
+{!includes/views-filters-sorts.md!}
+
 ---
 
 ## Method 3: Global Search feature
@@ -46,13 +51,25 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
     {!includes/global-search-all-elements.md!}
 
-3. {!includes/global-search-search-box.md!}
+3. Enter the keywords you want to search for in the search box displayed by default.
+
+    !!! tip "<!-- md:version 5.4.7 --> Wildcard character"
+        You can use the wildcard character *\** to broaden your searches.
+
+        The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.
+        
+        Examples of use cases:  
+        - Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain.  
+        - IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.  
+        - URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
+
+        Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}
 
-## Next steps
+<h2>Next steps</h2>
 
 * [Actions](../alerts-description/actions.md)
 * [Merge Alerts](../alerts-description/merge-alerts.md)

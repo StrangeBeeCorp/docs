@@ -1,4 +1,4 @@
-# Release Notes of 5.4 series
+# Release Notes of 5.4 Series
 
 !!! warning
     Backend framework upgraded to Pekko/Play3
@@ -19,6 +19,13 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.9 - March 25, 2025
+
+### Fixes
+
+* Resolved a potential deadlock when invoking functions, depending on the cache state (related to the Query API).
+* Eliminated redundant `/status` API calls triggered on each keystroke in the user creation form.
+
 ## 5.4.8 - February 24, 2025
 
 ### Fixes
@@ -34,6 +41,14 @@
 * Fixed an issue preventing scrolling in the case template selection menu when creating a case from templates.
 * Added more detailed error messages for issues related to attached file storage.
 * Fixed an issue with Email Intake synchronization when TheHive is configured in a cluster environment.
+
+### Known issues
+
+Last update: April 3, 2025
+
+#### Merged alert audits
+
+A regression related to the JSON audit object of merged alerts was introduced. This has been fixed in [version 5.5](release-notes-5.5.md).
 
 ## 5.4.7 - 16th of January 2025
 
@@ -98,7 +113,7 @@
 ### Improvements
 
 #### Microsoft teams Notifier Update
-Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organization/notifications/teams.md).
+Updated the Microsoft Teams notifier to use Power Automate as Microsoft has deprecated the webhook used previously. A guide to updating your notifier is available [here](../user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md).
 #### Cases/Alerts status visibility
 Added a colored background to the stage icon in status components for better visibility in case and alert lists.
 #### License Check Improvements

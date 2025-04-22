@@ -35,8 +35,15 @@ theme:
     code: Source Code Pro
   favicon: assets/images/favicon.ico
 
+watch:
+  - ./overrides/
+
 extra_css:
   - assets/stylesheets/extra.css
+  - assets/stylesheets/badge.css
+
+hooks:
+  - ./overrides/hooks/shortcodes.py
 
 plugins:
   - search
@@ -69,9 +76,9 @@ plugins:
             'thehive/user-guides/analyst-corner/search//search-scope-by/tasks.md': 'thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md'
             'thehive/administration/custom-fields.md': 'thehive/administration/custom-fields/about-custom-fields.md'
             'thehive/user-guides/analyst-corner/task/about-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
             'thehive/administration/organisation-links.md': 'thehive/administration/organizations/link-an-organization.md'
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
@@ -81,43 +88,43 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
-            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md'
-            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md'
-            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/manage_notification.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/supported-notifiers.md'
-            'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/triggering-events.md'
+            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organisation/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
             'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-users/add-delete-user.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-users/lock.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/organization/configure-organization/manage-users/manage-views.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-users/preview.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/organization/configure-organization/manage-users/sort.md'
-            'thehive/user-guides/organisation/custom-tags.md': 'thehive/user-guides/organization/custom-tags.md'
-            'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/functions.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/organisation/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md'
             'thehive/user-guides/organisation/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
-            'thehive/user-guides/organisation/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
-            'thehive/user-guides/organisation/notifications/analyzers.md': 'thehive/user-guides/organization/notifications/analyzers.md'
-            'thehive/user-guides/organisation/notifications/email-to-addr.md': 'thehive/user-guides/organization/notifications/email-to-addr.md'
-            'thehive/user-guides/organisation/notifications/email-to-users.md': 'thehive/user-guides/organization/notifications/email-to-users.md'
-            'thehive/user-guides/organisation/notifications/endpoints.md': 'thehive/user-guides/organization/notifications/endpoints.md'
-            'thehive/user-guides/organisation/notifications/filteredevents.md': 'thehive/user-guides/organization/notifications/filteredevents.md'
-            'thehive/user-guides/organisation/notifications/http-request.md': 'thehive/user-guides/organization/notifications/http-request.md'
-            'thehive/user-guides/organisation/notifications/introduction.md': 'thehive/user-guides/organization/notifications/introduction.md'
-            'thehive/user-guides/organisation/notifications/kafka.md': 'thehive/user-guides/organization/notifications/kafka.md'
-            'thehive/user-guides/organisation/notifications/mattermost.md': 'thehive/user-guides/organization/notifications/mattermost.md'
-            'thehive/user-guides/organisation/notifications/redis.md': 'thehive/user-guides/organization/notifications/redis.md'
-            'thehive/user-guides/organisation/notifications/responders.md': 'thehive/user-guides/organization/notifications/responders.md'
-            'thehive/user-guides/organisation/notifications/slack.md': 'thehive/user-guides/organization/notifications/slack.md'
-            'thehive/user-guides/organisation/notifications/teams.md': 'thehive/user-guides/organization/notifications/teams.md'
-            'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/notifications/webhook.md'
+            'thehive/user-guides/organisation/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organisation/notifications/analyzers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md'
+            'thehive/user-guides/organisation/notifications/email-to-addr.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md'
+            'thehive/user-guides/organisation/notifications/email-to-users.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md'
+            'thehive/user-guides/organisation/notifications/endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organisation/notifications/filteredevents.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
+            'thehive/user-guides/organisation/notifications/http-request.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md'
+            'thehive/user-guides/organisation/notifications/introduction.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organisation/notifications/kafka.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md'
+            'thehive/user-guides/organisation/notifications/mattermost.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md'
+            'thehive/user-guides/organisation/notifications/redis.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md'
+            'thehive/user-guides/organisation/notifications/responders.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md'
+            'thehive/user-guides/organisation/notifications/slack.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md'
+            'thehive/user-guides/organisation/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
+            'thehive/user-guides/organisation/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
             'thehive/user-guides/organisation/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md'
-            'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
+            'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
             'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
             'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md'
-            'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md'
+            'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md'
             'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
@@ -130,20 +137,20 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/about-a-case-list.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
             'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md'
-            'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md'
-            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md'
+            'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
+            'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
-            'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md'
-            'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md'
+            'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md'
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
-            'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md'
+            'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/cases-description/observables.md'
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md'
-            'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md'
+            'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/create-case-from-archive.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/create-case-from-misp.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
@@ -151,14 +158,102 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/create-empty-case.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/organization/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/organization/manage-endpoints/about-endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
-            'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md'
-            'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md'
+            'thehive/user-guides/organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organization/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organization/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organization/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/analyst-corner/cases/export-a-case.md': 'thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md'
             'thehive/user-guides/organization/configure-organization/manage-templates/report-templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/administration/authentication/general.md': 'thehive/administration/authentication/configure-authentication.md'
-            'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'
+            'thehive/how-to/authentication.md': 'thehive/administration/authentication/configure-authentication.md'            
+            'thehive/setup/installation/upgrade-from-4.x.md': 'thehive/installation/upgrade-from-4.x.md'
+            'thehive/administration/misp.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/how-to/misp-integration.md': 'thehive/administration/misp-integration/about-misp-integration.md'
+            'thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
+            'thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
+            'thehive/how-to/knowledge-base.md': 'thehive/user-guides/knowledge-base/about-knowledge-base.md'
+            'thehive/how-to/markdown.md': 'thehive/user-guides/thehive-flavored-markdown.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
+            'thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organization/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md'
+            'thehive/user-guides/organization/functions.md': 'thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md'
+            'thehive/user-guides/organization/notifications/analyzers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md'
+            'thehive/user-guides/organization/notifications/email-to-addr.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md'
+            'thehive/user-guides/organization/notifications/email-to-users.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md'
+            'thehive/user-guides/organization/notifications/endpoints.md': 'thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md'
+            'thehive/user-guides/organization/notifications/filteredevents.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
+            'thehive/user-guides/organization/notifications/http-request.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md'
+            'thehive/user-guides/organization/notifications/introduction.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/user-guides/organization/notifications/kafka.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md'
+            'thehive/user-guides/organization/notifications/mattermost.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md'
+            'thehive/user-guides/organization/notifications/redis.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md'
+            'thehive/user-guides/organization/notifications/responders.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md'
+            'thehive/user-guides/organization/notifications/slack.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md'
+            'thehive/user-guides/organization/notifications/teams.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md'
+            'thehive/user-guides/organization/notifications/webhook.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md'
+            'thehive/how-to/notifications.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
+            'thehive/how-to/dashboards.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/Filter-and-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/pages.md': 'thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md'
+            'thehive/user-guides/analyst-corner/dashboard/about-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/filter-sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md'                        
+            'thehive/administration/cortex.md': 'thehive/administration/cortex/about-cortex.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
+            'thehive/administration/alert-status.md': 'thehive/administration/status/about-statuses.md'
+            'thehive/administration/case-status.md': 'thehive/administration/status/about-statuses.md'
+            'thehive/administration/taxonomies.md': 'thehive/administration/taxonomies/about-taxonomies.md'
+            'thehive/user-guides/analyst-corner/cases/adding_to_a_case.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-custom-tags/update.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md'
+            'thehive/user-guides/organization/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
+            'thehive/user-guides/analyst-corner/tasks/index.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/manage-views.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/administration/cortex/edit-cortex-connection-settings.md': 'thehive/administration/cortex/add-a-cortex-server.md'
+            'thehive/administration/custom-fields/edit-a-custom-field.md': 'thehive/administration/custom-fields/manage-a-custom-field.md'
+            'thehive/administration/misp-integration/edit-a-misp-server.md': 'thehive/administration/misp-integration/connect-a-misp-server.md'
+            'thehive/user-guides/analyst-corner/dashboard/edit-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard.md'
+            'thehive/user-guides/analyst-corner/dashboard/export-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md'
+            'thehive/user-guides/analyst-corner/dashboard/view-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/about-dashboards.md'
+            'thehive/user-guides/analyst-corner/dashboard/import-a-dashboard.md': 'thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md'
+            'thehive/user-guides/analyst-corner/tasks/edit-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
+            'thehive/user-guides/analyst-corner/tasks/edit-a-task.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/flag-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/pin-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/analyst-corner/tasks/start-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
+            'thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md'
+            'thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md': 'thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md'
+            'thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md'
+            'thehive/user-guides/organization/configure-organization/manage-notifications/edit-a-notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/edit-a-case-page-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/edit-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
+            'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md'
+            'thehive/administration/email-intake-connector.md': 'thehive/administration/email-intake-connector/about-email-intake-connectors.md'
+            'thehive/user-guides/analyst-corner/cases/tags/remove-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
+            'thehive/user-guides/analyst-corner/cases/tags/add-tags.md': 'thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/about-case-reports.md': 'thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-reports/download-a-case-report.md': 'thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/about-case-timelines.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/add-custom-event-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/delete-custom-event-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/export-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/case-timelines/view-case-timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
+            'thehive/user-guides/organization/configure-organization/manage-users/sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
 
 extra:
   generator: false
@@ -181,6 +276,7 @@ markdown_extensions:
   - toc:
       permalink: "#"
       title: On this page
+      toc_depth: 2
   - footnotes
   - attr_list
   - md_in_html
@@ -223,16 +319,16 @@ nav:
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
       - 'Archives': thehive/download/archives.md
     - 'Configuration':
-      - 'Database & Index Configuration': thehive/configuration/database.md
-      - 'File Storage Configuration': thehive/configuration/file-storage.md
-      - 'Connectors Configuration': thehive/configuration/connectors.md
-      - 'Akka Configuration': thehive/configuration/akka.md
-      - 'Pekko Configuration (TheHive 5.4+)': thehive/configuration/pekko.md
-      - 'Logs Configuration': thehive/configuration/logs.md
-      - 'Proxy Configuration': thehive/configuration/proxy.md
-      - 'Secrets Configuration': thehive/configuration/secret.md
-      - 'SSL Configuration': thehive/configuration/ssl.md
-      - 'Service Configuration': thehive/configuration/service.md
+      - 'Database & Index': thehive/configuration/database.md
+      - 'File Storage': thehive/configuration/file-storage.md
+      - 'Connectors': thehive/configuration/connectors.md
+      - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
+      - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
+      - 'Logs': thehive/configuration/logs.md
+      - 'Proxy': thehive/configuration/proxy.md
+      - 'Secrets': thehive/configuration/secret.md
+      - 'SSL': thehive/configuration/ssl.md
+      - 'Service': thehive/configuration/service.md
       - 'Compliance':
         - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
     - 'Operations':
@@ -270,9 +366,19 @@ nav:
       - 'Platform Management':
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
-        - 'Cortex Integration': thehive/administration/cortex.md
-        - 'MISP Integration': thehive/administration/misp.md
-        - 'Email Intake Connector': thehive/administration/email-intake-connector.md
+        - 'Cortex Integration': 
+          - 'About Cortex': thehive/administration/cortex/about-cortex.md
+          - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
+          - 'Remove a Cortex Server': thehive/administration/cortex/remove-a-cortex-server.md
+        - 'MISP Integration':
+          - 'About MISP Integration': thehive/administration/misp-integration/about-misp-integration.md
+          - 'Connect a MISP Server': thehive/administration/misp-integration/connect-a-misp-server.md
+          - 'Delete a MISP Server Connection': thehive/administration/misp-integration/delete-a-misp-server.md
+        - 'Email Intake Connectors':
+          - 'About Email Intake Connectors': thehive/administration/email-intake-connector/about-email-intake-connectors.md
+          - 'Connect a Mailbox': thehive/administration/email-intake-connector/connect-a-mailbox.md
+          - 'Manually Fetch Emails': thehive/administration/email-intake-connector/fetch-emails.md
+          - 'Delete a Mailbox Connection': thehive/administration/email-intake-connector/delete-a-mailbox-connection.md
         - 'Authentication Settings':
           - 'Configure Authentication': thehive/administration/authentication/configure-authentication.md
           - 'Configure Providers': 
@@ -281,29 +387,46 @@ nav:
             - 'LDAP': thehive/administration/authentication/ldap.md
             - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
             - 'SAML': thehive/administration/authentication/saml.md
+            - 'OpenID': thehive/administration/authentication/openid.md
           - 'Configure SSL': thehive/administration/authentication/ssl.md
           - 'SMTP Configuration': thehive/administration/smtp.md
+        - 'Add a Global Endpoint': thehive/administration/add-a-global-endpoint.md
       - 'Entities Management':
         - 'Profiles': thehive/administration/profiles.md
         - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
+          - 'Manage Custom Fields': thehive/administration/custom-fields/manage-a-custom-field.md
+          - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types': thehive/administration/observables-types.md
-        - 'Case Status': thehive/administration/case-status.md
-        - 'Alert Status': thehive/administration/alert-status.md
+        - 'Statuses':
+          - 'About Statuses': thehive/administration/status/about-statuses.md
+          - 'Create a Status': thehive/administration/status/create-a-status.md
+          - 'Change a Status Visibility': thehive/administration/status/change-visibility-of-a-status.md
+          - 'Change a Color Visibility': thehive/administration/status/change-color-of-a-status.md
+          - 'Delete a Status': thehive/administration/status/delete-a-status.md
         - 'Analyzers Templates': thehive/administration/analyzers-templates.md
-        - 'Taxonomies': thehive/administration/taxonomies.md
+        - 'Taxonomies':
+          - 'About Taxonomies': thehive/administration/taxonomies/about-taxonomies.md
+          - 'Add a Custom Taxonomy': thehive/administration/taxonomies/add-a-custom-taxonomy.md
+          - 'Update MISP Taxonomies': thehive/administration/taxonomies/update-misp-taxonomies.md
+          - 'Activate or Deactivate a Taxonomy': thehive/administration/taxonomies/activate-deactivate-a-taxonomy.md
+          - 'Delete a Taxonomy': thehive/administration/taxonomies/delete-a-taxonomy.md
         - 'Att&ck Patterns': thehive/administration/attack-patterns.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
-        - 'Notification Configuration': thehive/how-to/notifications.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
-        # - 'Markdown Usage Guide': thehive/how-to/markdown.md
     - 'User Guides':
       - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
+      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Knowledge Base':
+          - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
+          - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
+          - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
+          - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
+          - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
-          - 'About KPIs': thehive/user-guides/key-performance-indicators/about-key-performance-indicators.md
-          - 'KPIs Formulas': thehive/user-guides/key-performance-indicators/key-performance-indicators-formulas.md
+          - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
           - 'Hide KPIs': thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md
           - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
           - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
@@ -313,33 +436,68 @@ nav:
           - 'Case Templates':
             - 'About Case Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md
             - 'Create a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md
-            - 'Edit a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/edit-a-case-template.md
             - 'Delete a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template.md
-            - 'Export a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-a-case-template.md
-            - 'Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/import-a-case-template.md
-          - 'Page Templates':
-            - 'Page Templates Management': thehive/user-guides/organization/configure-organization/manage-templates/page-templates/page-templates.md
+            - 'Export or Import a Case Template': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template.md
+          - 'Case Page Templates':
+            - 'About Page Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md
+            - 'Create a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template.md
+            - 'Delete a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template.md
+            - 'Export a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template.md
+            - 'Import a Page Template': thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template.md
           - 'Case Report Templates':
             - 'About Case Report Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md
-            - 'About Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-widgets.md
+            - 'Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates.md
             - 'Create a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template.md
-            - 'Edit a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/edit-a-case-report-template.md
+            - 'Add or Remove Widgets': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template.md
             - 'Delete a Case Report Template': thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template.md
-        - 'Custom Tags': thehive/user-guides/organization/custom-tags.md
+        - 'Custom Tags': 
+          - 'About Custom Tags': thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md
+          - 'Change the Color of a Custom Tag': thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag.md
+          - 'Rename a Custom Tag': thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md
+          - 'Delete a Custom Tag': thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag.md
+          - 'View Custom Tag Statistics': thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics.md
         - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
         - 'Notifications & Endpoints':
-          - 'Introduction to Notifications & Endpoints': thehive/user-guides/organization/notifications/introduction.md
+          - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
+          - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md
+          - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
+          - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
+          - 'Variable Usage Examples': thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples.md
           - 'Notifier Configuration':
-            - 'Mattermost Configuration': thehive/user-guides/organization/notifications/mattermost.md
-            - 'MS Teams Configuration': thehive/user-guides/organization/notifications/teams.md
-            - 'Slack Configuration': thehive/user-guides/organization/notifications/slack.md
-            - 'Kafka Configuration': thehive/user-guides/organization/notifications/kafka.md
-            - 'Redis Configuration': thehive/user-guides/organization/notifications/redis.md
-          - 'Filtered Events Setup': thehive/user-guides/organization/notifications/filteredevents.md
-        - 'Endpoints':
-          - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
-          - 'Add Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/add_endpoints.md
-        - 'Functions': thehive/user-guides/organization/functions.md
+            - 'EmailToUser': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
+            - 'EmailToAddr': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
+            - 'HttpRequest': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request.md
+            - 'Mattermost': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost.md
+            - 'Slack': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md
+            - 'Teams': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md
+            - 'Webhook': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md
+            - 'Kafka': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka.md
+            - 'Redis': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis.md
+            - 'RunAnalyzer': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md
+            - 'RunResponder': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders.md
+            - 'Function': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function.md
+          - 'Filtered Event Setup':
+            - 'Write a FilteredEvent Trigger': thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md
+            - 'Operators': thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators.md
+          - 'Endpoints':
+            - 'About Endpoints': thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md
+            - 'Add a Local HttpRequest Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint.md
+            - 'Add a Local Mattermost Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint.md
+            - 'Add a Local Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
+            - 'Add a Local Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
+            - 'Add a Local Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
+        - 'Functions': 
+          - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
+          - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
+          - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
+          - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
+          - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
+        - 'Alert Feeders': 
+          - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
+          - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
+          - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md
+          - 'Delete an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder.md
         - 'Attachments': thehive/user-guides/organization/attachments.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
@@ -347,10 +505,11 @@ nav:
           - 'Search for Alerts': 
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/alerts/alerts-description/manage-views.md
           - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
           - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md
           - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md
+          - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
+          - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
           - 'Create a Case from Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md
           - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/alerts-description/general.md 
           - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
@@ -359,6 +518,14 @@ nav:
           - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
+          - 'Tags':
+            - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
+          - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
+          - 'Custom Fields':
+            - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
+            - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
+            - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
         - 'Cases Management':
           - 'About Cases': thehive/user-guides/analyst-corner/cases/about-cases.md
           - 'Search for Cases': 
@@ -370,37 +537,74 @@ nav:
           - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
           - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
-          - 'Manage Views': thehive/user-guides/analyst-corner/cases/cases-description/manage-views.md
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
-          - 'Adding to a Case (Tags/Tasks/Custom Field Values)': thehive/user-guides/analyst-corner/cases/adding_to_a_case.md
+          - 'Custom Fields':
+            - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
+            - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
+            - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
+          - 'Link Elements in Cases':
+            - 'Add a Link to a Case': thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md
+            - 'Remove a Link from a Case': thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case.md
+            - 'View Links in a Case': thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md
+          - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
+          - 'Tags':
+            - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
+            - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
+          - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
+          - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
           - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
-          - 'View Tasks': thehive/user-guides/analyst-corner/cases/cases-description/tasks.md
           - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
-          - 'View Timeline': thehive/user-guides/analyst-corner/cases/cases-description/timeline.md
-          - 'View Pages': thehive/user-guides/analyst-corner/cases/cases-description/pages.md
+          - 'Case Timelines':
+            - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md
+            - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md
+            - 'View a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md
+            - 'Export a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline.md
+            - 'Delete a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline.md
+          - 'Case Reports':
+            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
+            - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
+          - 'Manage Case Visibility':
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
+          - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
-          - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
-          - 'Search for Tasks': 
-            - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
-            - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
+          - 'Tasks':
+            - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
+            - 'Create a Task': thehive/user-guides/analyst-corner/tasks/create-a-task.md
+            - 'Change a Task Status': thehive/user-guides/analyst-corner/tasks/change-task-status.md
+            - 'Manage Tasks': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
+            - 'Delete a Task': thehive/user-guides/analyst-corner/tasks/delete-a-task.md
+            - 'Search for Tasks': 
+              - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
+              - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
+            - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
+            - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+          - 'Task Logs':
+            - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
+            - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
+            - 'Delete a Task Log': thehive/user-guides/analyst-corner/tasks/delete-a-task-log.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Preview Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/Preview-tasks.md
-          - 'Actions on Tasks': thehive/user-guides/analyst-corner/tasks/preview-task-details/actions.md
-          - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
-          - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
-        - 'Dashboard Usage':
-          - 'About Dashboard': thehive/user-guides/analyst-corner/dashboard/about-dashboard.md
-          - 'Manage Dashboard': thehive/user-guides/analyst-corner/dashboard/manage-dashboard.md
-          - 'Manage View': thehive/user-guides/analyst-corner/dashboard/manage-views.md
-          - 'Filter and Sort': thehive/user-guides/analyst-corner/dashboard/filter-sort.md
+        - 'Dashboards':
+          - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
+          - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md
+          - 'Create a Dashboard': thehive/user-guides/analyst-corner/dashboard/create-a-dashboard.md
+          - 'Add or Remove Widgets': thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard.md
+          - 'Delete a Dashboard': thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard.md
+          - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
+          - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
+          - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
+        - 'About Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
+        - 'About Views': thehive/user-guides/analyst-corner/about-views.md
+        - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
+        - 'About Statistics': thehive/user-guides/analyst-corner/about-statistics.md
+        - 'About the Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
         - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':
@@ -413,6 +617,7 @@ nav:
       - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
       - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
       - 'Release Notes for Version 5.4': thehive/release-notes/release-notes-5.4.md
+      - 'Release Notes for Version 5.5': thehive/release-notes/release-notes-5.5.md
   - Cortex: 
     - cortex/index.md
     - 'Download':

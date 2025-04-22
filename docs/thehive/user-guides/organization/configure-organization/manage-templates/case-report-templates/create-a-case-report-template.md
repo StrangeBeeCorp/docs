@@ -1,10 +1,12 @@
 # How to Create a Case Report Template
 
+<!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for creating a [case report template](about-case-report-templates.md) in TheHive.
 
 {!includes/access-manage-case-report-templates.md!}
 
-## Procedure
+<h2>Procedure</h2>
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -14,25 +16,25 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 4. Two options are available:
 
-    * Create a case report template from scratch by selecting :fontawesome-regular-square-plus:.
+    * Create a case report template from scratch by selecting :fontawesome-solid-plus:.
 
     * Duplicate an existing case report template by selecting :fontawesome-solid-ellipsis: next to the case report template you want to duplicate, then select **Duplicate**.
 
 5. In the drawer, enter the following fields:
 
-    **Title \***  
+    **- Title \***  
     The title users will see when selecting reports in case descriptions.
 
-    **Description**  
+    **- Description**  
     A brief summary of your case report template, outlining its purpose and contents.
 
 6. Select **Add report template** or **Edit report template**. 
 
-7. Drag available [widgets](about-widgets.md) to position them as needed.
+7. Drag available [widgets](widgets-case-report-templates.md) to position them as needed.
 
-    ![Drag widgets](/thehive/images/user-guides/organization/configure-organization/drag-and-drop-widgets.gif)
+    ![Drag widgets](../../../../../images/user-guides/organization/configure-organization/manage-templates/drag-and-drop-widgets.gif)
 
-8. Enter the [required information for the widget](about-widgets.md).
+8. Enter the [required information for the widget](widgets-case-report-templates.md).
 
 9. Select **Confirm**.
 
@@ -42,6 +44,7 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 12. Select :fontawesome-solid-floppy-disk: to save your case report template.
 
-## Next steps
+<h2>Next steps</h2>
 
-* [Edit a Case Report Template](edit-a-case-report-template.md)
+* [Add or Remove Widgets in a Case Report Template](add-remove-widgets-case-report-template.md)
+* [Save and Download a Case Report](../../../../analyst-corner/cases/case-reports/save-download-a-case-report.md)

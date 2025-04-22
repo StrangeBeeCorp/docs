@@ -1,4 +1,4 @@
-# Release Notes of 5.0 series
+# Release Notes of 5.0 Series
 
 ## 5.0.26 - 27th February 2023
 

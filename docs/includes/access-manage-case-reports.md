@@ -1,2 +1,2 @@
-    !!! warning "Required permissions for managing case reports"
-        Only users with the `manageCaseReport` permission can manage case templates in TheHive.
+!!! warning "Required permissions"
+    Only users with the `manageCaseReport` permission can save and download case reports in TheHive.
