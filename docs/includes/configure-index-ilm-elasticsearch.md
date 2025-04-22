@@ -15,7 +15,7 @@ The index template ensures consistent storage and indexing of audit logs.
 
 Default index template:
 
-```bash
+```json
 {
   "index": {
     "lifecycle": {
@@ -33,7 +33,7 @@ ILM manages the storage, rollover, and deletion of audit logs over time, optimiz
 
 Default ILM:
 
-```bash
+```json
 {
   "policy": {
     "phases": {
@@ -55,7 +55,7 @@ Default ILM:
 
     - Index template:
 
-    ```bash
+    ```json
     audit {
         storage = elasticsearch
         elasticsearch {
@@ -70,7 +70,7 @@ Default ILM:
 
     - ILM:
 
-    ```bash
+    ```json
     {
         "policy": {
             "phases": {
