@@ -1,2 +1,2 @@
 !!! note "Cold vs. hot backups and restores"
-    Before proceeding, ensure you fully understand [the implications of performing a cold backup and restore](/thehive/operations/backup-restore/cold-hot-backup-restore/). Though it requires downtime, it is the recommended approach for ensuring data integrity.
+    Before proceeding, ensure you fully understand [the implications of performing a cold backup and restore](/thehive/operations/backup-restore/cold-hot-backup-restore/). This process requires stopping services but ensures data integrity.
