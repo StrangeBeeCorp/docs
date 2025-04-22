@@ -2,10 +2,15 @@
 
 This topic provides step-by-step instructions for performing a cold backup of a stack running with Docker Compose for TheHive.
 
-!!! note "Prerequisite"
-    This solution assumes you are following our [Running TheHive with Docker](../../../../installation/docker.md) guide to run your application stack.
+{!includes/implications-cold-backup-restore.md!}
+
+{!includes/adapting-instructions.md!}
+
+{!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites
+
+This solution assumes you are following our [Running TheHive with Docker](../../../../installation/docker.md) guide to run your application stack.
 
 Before starting, ensure you have:
 
@@ -189,4 +194,3 @@ Use `docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml` to resta
 <h2>Next steps</h2>
 
 * [Restore a Cold Backup for a Stack Running with Docker Compose](../../restore/cold-restore/docker-compose.md)
-* [Cold vs. Hot Backups and Restores](../../cold-hot-backup-restore.md)

@@ -6,6 +6,8 @@ This topic provides step-by-step instructions for performing a hot backup on a c
 
 {!includes/data-consistency-hot-backup.md!}
 
+{!includes/backup-restore-best-practices.md!}
+
 The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
@@ -141,10 +143,6 @@ For additional details, refer to the [official Elasticsearch documentation](http
 ## Perform a backup on file storage
 
 Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder or bucket.
-
-## Test the backup process
-
-Test the backup process in a staging or test environment to ensure scripts and configurations work as expected. Periodically validate restoration procedures in test environments to confirm the integrity of the backup data.
 
 <h2>Next steps</h2>
 

@@ -1,30 +1,27 @@
-# Restore physical server
+# How to Restore a Cold Backup on a Physical Server
 
-## Introduction
+This topic provides step-by-step instructions for restoring a cold backup on a physical server for TheHive.
 
 Restoring your application stack on physical servers is a process that involves recovering configuration files, data, and logs from a previously created backup. This procedure ensures the application is returned to a consistent and operational state.
 
-Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services. This guide assumes that:
+Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services.
 
-* You are restoring from [a cold backup](../../backup/cold-backup/physical-server.md), where services were stopped during the backup process to maintain data consistency.
-* The server environment matches the original configuration (e.g., paths, software versions, and dependencies).
-* The backup was created following the [Backup Procedure for Physical Servers](../../backup/cold-backup/physical-server.md).
+{!includes/implications-cold-backup-restore.md!}
 
-When performing a restore, you will:
+{!includes/adapting-instructions.md!}
 
-1. Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.
-2. Restore the configuration, data, and log files from the backup.
-3. Restart services and verify that the system is functioning as expected.
+{!includes/backup-restore-best-practices.md!}
 
-!!! Warning
-    * Always test the restoration process in a non-production or test environment before applying it to a live system.
-    * Ensure you have a current backup before starting the restore operation, as any errors during restoration could lead to data loss.
-    * This guide provides general instructions; adapt them to your specific server configuration.
+## Prerequisites
 
----
-## Step-by-step instructions
+This guide assumes that:
 
-### Ensure all services are stopped
+* You are restoring from a cold backup created using the procedures outlined in the [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md) topic, where services were stopped during the backup process to ensure data consistency.
+* The server environment matches the original configuration (for example, paths, software versions, and dependencies).
+
+## Step 1: Stop the services
+
+Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.
 
 !!! Example ""
 
@@ -194,4 +191,8 @@ Ensure permissions are correctly setup before running services.
 ---
 ## Validation
 
-Open you browser, connect to TheHive, and check your data has been restored correctly. 
+Open you browser, connect to TheHive, and check your data has been restored correctly.
+
+<h2>Next steps</h2>
+
+* [Restore a Cold Backup on a Physical Server](../../restore/cold-restore/physical-server.md)

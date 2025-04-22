@@ -1,10 +1,14 @@
 # How to Perform a Cold Backup on a Physical Server
 
 This topic provides step-by-step instructions for performing a cold backup on a physical server for TheHive.
-  
-## Introduction
 
-Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.
+Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups.
+
+{!includes/implications-cold-backup-restore.md!}
+
+{!includes/adapting-instructions.md!}
+
+{!includes/backup-restore-best-practices.md!}
 
 ## Prerequisites
 
@@ -12,15 +16,9 @@ This guide assumes you have direct access to the server via SSH or other adminis
 
 This process and example below assume you have followed our [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
 
-!!! Note
-    Before proceeding, ensure you have read the general [Backup and Restore Overview](../../cold-hot-backup-restore.md) to understand the core principles of backup strategies.
+## Step 1: Stop the services
 
----
-## Step-by-step instructions
-
-### Stop the services in this order
-
-Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.
+Stop services in this order to avoid data corruption.
 
 1. TheHive
 2. Elasticsearch
@@ -34,11 +32,11 @@ Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption
     systemctl stop cassandra
     ```
 
-### Copy files in a backup folder
+## Step 2: Copy files in a backup folder
 
 Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
 
-For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
+For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions.
 
 !!! Example ""
 
@@ -82,7 +80,7 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     ## WARNING:
     ## - This script stops Elasticsearch, Cassandra, and TheHive services, 
     ##   performs the backup, and then restarts the services.
-    ## - Do not modify the rest of the script unless necessary.
+    ## - Don't modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
@@ -158,7 +156,7 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     rsync -aW --no-compress /var/log/thehive/ ${BACKUP_FOLDER}/thehive/logs || { echo "TheHive logs backup failed"; exit 1; }
     echo "TheHive backup completed."
 
-    # Copy Casssandra data
+    # Copy Cassandra data
     echo "Starting Cassandra backup..."
     rsync -aW --no-compress /etc/cassandra/ ${BACKUP_FOLDER}/cassandra/config || { echo "Cassandra config backup failed"; exit 1; }
     rsync -aW --no-compress /var/lib/cassandra/ ${BACKUP_FOLDER}/cassandra/data || { echo "Cassandra data backup failed"; exit 1; }
@@ -175,8 +173,9 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     echo "Backup process completed at: $(date)"
     ```
 
+## Step 3: Restart all services
 
-### Start services in this order
+Restart services in this order:
 
 1. Elasticsearch
 2. Cassandra
@@ -190,15 +189,10 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     systemctl start cassandra
     ```
 
+## Step 4: Validate the backup
 
----
-## Validation
-
-Validate the backup to ensure it can be restored without issues.
-
-Check the backup folder and verify the data has been well copied.
+Check the backup folder and verify that the data has been copied correctly.
 
 <h2>Next steps</h2>
 
-* [Restore a Cold Backup for a Stack Running with Docker Compose](../../restore/cold-restore/docker-compose.md)
-* [Cold vs. Hot Backups and Restores](../../cold-hot-backup-restore.md)
+* [Restore a Cold Backup on a Physical Server](../../restore/cold-restore/physical-server.md)
