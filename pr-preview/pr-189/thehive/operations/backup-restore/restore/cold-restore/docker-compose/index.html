@@ -11098,9 +11098,9 @@
 </ul>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<p>This process assumes you are using <a href="https://github.com/StrangeBeeCorp/docker">one of our Docker Compose profiles</a> and have already created a backup using the <a href="../../../backup/cold-backup/docker-compose/">Perform a Cold Backup for a Stack Running with Docker Compose</a> topic.</p>
+<p>This process assumes you are using <a href="https://github.com/StrangeBeeCorp/docker">one of the Docker Compose profiles</a> and have already created a backup using the <a href="../../../backup/cold-backup/docker-compose/">Perform a Cold Backup for a Stack Running with Docker Compose</a> topic.</p>
 <h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
-<p>Stop all services to ensure data consistency and prevent any changes during the backup process.</p>
+<p>Stop all services to ensure data consistency and prevent any changes during the restore process.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
 </code></pre></div>
@@ -11245,7 +11245,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 </code></pre></div>
 </div>
 <h2 id="step-4-validate-the-restore">Step 4: Validate the restore<a class="headerlink" href="#step-4-validate-the-restore" title="Permanent link">#</a></h2>
-<p>Check the target data folders and verify that the restored data has been copied correctly. Ensure that all files and configurations match the backup and that no data corruption or missing files occurred during the restore process.</p>
+<p>Open you browser, connect to TheHive, and check your data has been restored correctly.</p>
 <h3 id="step-5-restart-all-services">Step 5: Restart all services<a class="headerlink" href="#step-5-restart-all-services" title="Permanent link">#</a></h3>
 <p>Use <code>docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml</code> to restart all services with the command line.</p>
 <h2>Next steps</h2>

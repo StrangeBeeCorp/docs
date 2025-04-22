@@ -11081,11 +11081,11 @@
 </ul>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<p>This process and example below assume you have followed our <a href="../../../../../installation/step-by-step-installation-guide/">step-by-step guide</a> to install the application stack.</p>
+<p>This process and example below assume you have followed the <a href="../../../../../installation/step-by-step-installation-guide/">step-by-step guide</a> to install the application stack.</p>
 <h2 id="first-option-back-up-data-folders">First option: Back up data folders<a class="headerlink" href="#first-option-back-up-data-folders" title="Permanent link">#</a></h2>
-<p>Similar to using a physical server, use scripts to back up the configuration, data, and logs from each application in your stack, storing them in a folder that can be archived elsewhere. Refer to the <a href="../physical-server/">Perform a Cold Backup on a Physical Server</a> guide for detailed instructions.</p>
+<p>Similar to using a physical server, use scripts to back up the configuration, data, and logs from each application in your stack. Store the backups in a folder that can be archived elsewhere. Refer to the <a href="../physical-server/">Perform a Cold Backup on a Physical Server</a> guide for detailed instructions.</p>
 <h2 id="second-option-leverage-the-capabilities-of-the-hypervisor">Second option: Leverage the capabilities of the hypervisor<a class="headerlink" href="#second-option-leverage-the-capabilities-of-the-hypervisor" title="Permanent link">#</a></h2>
-<p>Hypervisors often come with the capacity to create a snapshot volumes and entire virtual machine. It is recommended to create snapshots of volumes containing data and files after stopping TheHive, Cassandra and Elasticsearch applications. </p>
+<p>Hypervisors often come with the capacity to create a snapshot volumes and entire virtual machine. Create snapshots of volumes containing data and files after stopping TheHive, Cassandra and Elasticsearch applications. </p>
 <p>For the restore process, begin by restoring the snapshots created with the hypervisor. This allows you to quickly revert to a previous state, ensuring that both the system configuration and application data are restored to their exact state at the time of the snapshot. Be sure to follow any additional procedures specific to your hypervisor to ensure the snapshots are properly applied and that the system operates as expected after the restore.</p>
 <h2>Next steps</h2>
 

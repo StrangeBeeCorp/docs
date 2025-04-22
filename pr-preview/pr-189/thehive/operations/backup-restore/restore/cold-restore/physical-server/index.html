@@ -11102,11 +11102,11 @@
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>This guide assumes that:</p>
 <ul>
-<li>You are restoring from a cold backup created using the procedures outlined in the <a href="../../../backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a> topic, where services were stopped during the backup process to ensure data consistency.</li>
+<li>You are restoring from a cold backup created using the procedures outlined in the <a href="../../../backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a> guide, where services were stopped during the backup process to ensure data consistency.</li>
 <li>The server environment matches the original configuration (for example, paths, software versions, and dependencies).</li>
 </ul>
 <h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
-<p>Ensure all services are stopped before running the restoration process.</p>
+<p>Stop all services to ensure data consistency and prevent any changes during the restore process.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
 systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
