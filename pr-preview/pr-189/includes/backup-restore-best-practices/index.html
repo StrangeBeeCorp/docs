@@ -8,25 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/thehive/operations/backup-restore/restore/cold-restore/physical-server/">
+        <link rel="canonical" href="https://docs.strangebee.com/includes/backup-restore-best-practices/">
       
       
-        <link rel="prev" href="../../../backup/hot-backup/hot-backup-cluster/">
       
       
-        <link rel="next" href="../virtual-server/">
-      
-      
-      <link rel="icon" href="../../../../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
     
     
       
-        <title>Physical Server - TheHive 5 Documentation</title>
+        <title>Backup restore best practices - TheHive 5 Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
       
       
 
@@ -45,11 +41,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../../assets/stylesheets/badge.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/badge.css">
     
-    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -128,7 +124,7 @@
 </script>
 
 
-   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -137,7 +133,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -147,11 +143,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#how-to-restore-a-cold-backup-on-a-physical-server" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -165,9 +156,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
       
-  <img src="../../../../../../assets/images/strangebee.svg" alt="logo">
+  <img src="../../assets/images/strangebee.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -184,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Physical Server
+              Backup restore best practices
             
           </span>
         </div>
@@ -258,7 +249,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -275,13 +266,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../../overview/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../thehive/overview/" class="md-tabs__link">
           
   
   
@@ -301,7 +290,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../cortex/" class="md-tabs__link">
+        <a href="../../cortex/" class="md-tabs__link">
           
   
   
@@ -340,7 +329,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../../resources/" class="md-tabs__link">
+        <a href="../../resources/" class="md-tabs__link">
           
   
   
@@ -382,9 +371,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
       
-  <img src="../../../../../../assets/images/strangebee.svg" alt="logo">
+  <img src="../../assets/images/strangebee.svg" alt="logo">
 
     </a>
     TheHive 5 Documentation
@@ -399,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -418,29 +407,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -453,7 +437,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             TheHive
@@ -467,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../overview/" class="md-nav__link">
+      <a href="../../thehive/overview/" class="md-nav__link">
         
   
   
@@ -490,7 +474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../download/" class="md-nav__link">
+      <a href="../../thehive/download/" class="md-nav__link">
         
   
   
@@ -554,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/system-requirements/" class="md-nav__link">
+      <a href="../../thehive/installation/system-requirements/" class="md-nav__link">
         
   
   
@@ -577,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/automated-installation-script/" class="md-nav__link">
+      <a href="../../thehive/installation/automated-installation-script/" class="md-nav__link">
         
   
   
@@ -600,7 +584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/step-by-step-installation-guide/" class="md-nav__link">
+      <a href="../../thehive/installation/step-by-step-installation-guide/" class="md-nav__link">
         
   
   
@@ -623,7 +607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/deploying-a-cluster/" class="md-nav__link">
+      <a href="../../thehive/installation/deploying-a-cluster/" class="md-nav__link">
         
   
   
@@ -646,7 +630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/docker/" class="md-nav__link">
+      <a href="../../thehive/installation/docker/" class="md-nav__link">
         
   
   
@@ -669,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/kubernetes/" class="md-nav__link">
+      <a href="../../thehive/installation/kubernetes/" class="md-nav__link">
         
   
   
@@ -692,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/activate-license/" class="md-nav__link">
+      <a href="../../thehive/installation/activate-license/" class="md-nav__link">
         
   
   
@@ -756,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/upgrade-from-5.x/" class="md-nav__link">
+      <a href="../../thehive/installation/upgrade-from-5.x/" class="md-nav__link">
         
   
   
@@ -779,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/upgrade-from-4.x/" class="md-nav__link">
+      <a href="../../thehive/installation/upgrade-from-4.x/" class="md-nav__link">
         
   
   
@@ -802,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../installation/migration/" class="md-nav__link">
+      <a href="../../thehive/installation/migration/" class="md-nav__link">
         
   
   
@@ -833,7 +817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../download/archives/" class="md-nav__link">
+      <a href="../../thehive/download/archives/" class="md-nav__link">
         
   
   
@@ -905,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/database/" class="md-nav__link">
+      <a href="../../thehive/configuration/database/" class="md-nav__link">
         
   
   
@@ -928,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/file-storage/" class="md-nav__link">
+      <a href="../../thehive/configuration/file-storage/" class="md-nav__link">
         
   
   
@@ -951,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/connectors/" class="md-nav__link">
+      <a href="../../thehive/configuration/connectors/" class="md-nav__link">
         
   
   
@@ -974,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/akka/" class="md-nav__link">
+      <a href="../../thehive/configuration/akka/" class="md-nav__link">
         
   
   
@@ -997,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/pekko/" class="md-nav__link">
+      <a href="../../thehive/configuration/pekko/" class="md-nav__link">
         
   
   
@@ -1020,7 +1004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/logs/" class="md-nav__link">
+      <a href="../../thehive/configuration/logs/" class="md-nav__link">
         
   
   
@@ -1043,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/proxy/" class="md-nav__link">
+      <a href="../../thehive/configuration/proxy/" class="md-nav__link">
         
   
   
@@ -1066,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/secret/" class="md-nav__link">
+      <a href="../../thehive/configuration/secret/" class="md-nav__link">
         
   
   
@@ -1089,7 +1073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../thehive/configuration/ssl/" class="md-nav__link">
         
   
   
@@ -1112,7 +1096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/service/" class="md-nav__link">
+      <a href="../../thehive/configuration/service/" class="md-nav__link">
         
   
   
@@ -1176,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/gdpr/" class="md-nav__link">
+      <a href="../../thehive/configuration/gdpr/" class="md-nav__link">
         
   
   
@@ -1212,8 +1196,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1224,11 +1206,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -1244,7 +1226,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Operations
@@ -1258,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cassandra-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/cassandra-cluster/" class="md-nav__link">
         
   
   
@@ -1281,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cassandra-security/" class="md-nav__link">
+      <a href="../../thehive/operations/cassandra-security/" class="md-nav__link">
         
   
   
@@ -1304,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../minio-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/minio-cluster/" class="md-nav__link">
         
   
   
@@ -1324,8 +1306,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1336,11 +1316,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4" >
         
           
           <label class="md-nav__link" for="__nav_2_5_4" id="__nav_2_5_4_label" tabindex="0">
@@ -1356,7 +1336,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5_4">
             <span class="md-nav__icon md-icon"></span>
             Backup & Restore Operations
@@ -1370,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../cold-hot-backup-restore/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/cold-hot-backup-restore/" class="md-nav__link">
         
   
   
@@ -1475,7 +1455,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/cold-backup/physical-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/cold-backup/physical-server/" class="md-nav__link">
         
   
   
@@ -1498,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/cold-backup/virtual-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/cold-backup/virtual-server/" class="md-nav__link">
         
   
   
@@ -1521,7 +1501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/cold-backup/docker-compose/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/cold-backup/docker-compose/" class="md-nav__link">
         
   
   
@@ -1593,7 +1573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/hot-backup/hot-backup-standalone-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server/" class="md-nav__link">
         
   
   
@@ -1616,7 +1596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backup/hot-backup/hot-backup-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster/" class="md-nav__link">
         
   
   
@@ -1652,8 +1632,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1664,11 +1642,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4_3" >
         
           
           <label class="md-nav__link" for="__nav_2_5_4_3" id="__nav_2_5_4_3_label" tabindex="0">
@@ -1684,7 +1662,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_4_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_5_4_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5_4_3">
             <span class="md-nav__icon md-icon"></span>
             Restore Process
@@ -1695,8 +1673,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1707,11 +1683,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4_3_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_4_3_1" >
         
           
           <label class="md-nav__link" for="__nav_2_5_4_3_1" id="__nav_2_5_4_3_1_label" tabindex="0">
@@ -1727,7 +1703,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_5_4_3_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_5_4_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5_4_3_1">
             <span class="md-nav__icon md-icon"></span>
             Cold Restore
@@ -1738,32 +1714,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Physical Server
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../thehive/operations/backup-restore/restore/cold-restore/physical-server/" class="md-nav__link">
         
   
   
@@ -1774,55 +1728,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prerequisites
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-stop-the-services" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 1: Stop the services
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validation
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1835,7 +1740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../virtual-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/cold-restore/virtual-server/" class="md-nav__link">
         
   
   
@@ -1858,7 +1763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../docker-compose/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/cold-restore/docker-compose/" class="md-nav__link">
         
   
   
@@ -1930,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hot-restore/restore-hot-backup-standalone-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server/" class="md-nav__link">
         
   
   
@@ -1953,7 +1858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hot-restore/restore-hot-backup-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster/" class="md-nav__link">
         
   
   
@@ -2000,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../change-index/" class="md-nav__link">
+      <a href="../../thehive/operations/change-index/" class="md-nav__link">
         
   
   
@@ -2023,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../troubleshooting/" class="md-nav__link">
+      <a href="../../thehive/operations/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2046,7 +1951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../monitoring/" class="md-nav__link">
+      <a href="../../thehive/operations/monitoring/" class="md-nav__link">
         
   
   
@@ -2118,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/first-start/" class="md-nav__link">
+      <a href="../../thehive/administration/first-start/" class="md-nav__link">
         
   
   
@@ -2182,7 +2087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/about-organizations/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/about-organizations/" class="md-nav__link">
         
   
   
@@ -2205,7 +2110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
         
   
   
@@ -2228,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/create-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/create-an-organization/" class="md-nav__link">
         
   
   
@@ -2251,7 +2156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/add-users-to-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/add-users-to-an-organization/" class="md-nav__link">
         
   
   
@@ -2274,7 +2179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/link-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/link-an-organization/" class="md-nav__link">
         
   
   
@@ -2297,7 +2202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/organizations/lock-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/lock-an-organization/" class="md-nav__link">
         
   
   
@@ -2369,7 +2274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/accounts/" class="md-nav__link">
+      <a href="../../thehive/administration/accounts/" class="md-nav__link">
         
   
   
@@ -2441,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/branding/" class="md-nav__link">
+      <a href="../../thehive/administration/branding/" class="md-nav__link">
         
   
   
@@ -2464,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/license/" class="md-nav__link">
+      <a href="../../thehive/administration/license/" class="md-nav__link">
         
   
   
@@ -2528,7 +2433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/cortex/about-cortex/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/about-cortex/" class="md-nav__link">
         
   
   
@@ -2551,7 +2456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/cortex/add-a-cortex-server/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/add-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -2574,7 +2479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/cortex/remove-a-cortex-server/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/remove-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -2646,7 +2551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/misp-integration/about-misp-integration/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/about-misp-integration/" class="md-nav__link">
         
   
   
@@ -2669,7 +2574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
         
   
   
@@ -2692,7 +2597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
         
   
   
@@ -2764,7 +2669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
         
   
   
@@ -2787,7 +2692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
         
   
   
@@ -2810,7 +2715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/email-intake-connector/fetch-emails/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/fetch-emails/" class="md-nav__link">
         
   
   
@@ -2833,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
         
   
   
@@ -2905,7 +2810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/configure-authentication/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/configure-authentication/" class="md-nav__link">
         
   
   
@@ -2969,7 +2874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/local/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/local/" class="md-nav__link">
         
   
   
@@ -2992,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/ad/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/ad/" class="md-nav__link">
         
   
   
@@ -3015,7 +2920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/ldap/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/ldap/" class="md-nav__link">
         
   
   
@@ -3038,7 +2943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/oauth2/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/oauth2/" class="md-nav__link">
         
   
   
@@ -3061,7 +2966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/saml/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/saml/" class="md-nav__link">
         
   
   
@@ -3084,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/openid/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/openid/" class="md-nav__link">
         
   
   
@@ -3115,7 +3020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/ssl/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/ssl/" class="md-nav__link">
         
   
   
@@ -3138,7 +3043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/smtp/" class="md-nav__link">
+      <a href="../../thehive/administration/smtp/" class="md-nav__link">
         
   
   
@@ -3169,7 +3074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/add-a-global-endpoint/" class="md-nav__link">
+      <a href="../../thehive/administration/add-a-global-endpoint/" class="md-nav__link">
         
   
   
@@ -3241,7 +3146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/profiles/" class="md-nav__link">
+      <a href="../../thehive/administration/profiles/" class="md-nav__link">
         
   
   
@@ -3305,7 +3210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/custom-fields/about-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/about-custom-fields/" class="md-nav__link">
         
   
   
@@ -3328,7 +3233,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/custom-fields/create-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/create-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3351,7 +3256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3374,7 +3279,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3405,7 +3310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/observables-types/" class="md-nav__link">
+      <a href="../../thehive/administration/observables-types/" class="md-nav__link">
         
   
   
@@ -3469,7 +3374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/status/about-statuses/" class="md-nav__link">
+      <a href="../../thehive/administration/status/about-statuses/" class="md-nav__link">
         
   
   
@@ -3492,7 +3397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/status/create-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/create-a-status/" class="md-nav__link">
         
   
   
@@ -3515,7 +3420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/status/change-visibility-of-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/change-visibility-of-a-status/" class="md-nav__link">
         
   
   
@@ -3538,7 +3443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/status/change-color-of-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/change-color-of-a-status/" class="md-nav__link">
         
   
   
@@ -3561,7 +3466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/status/delete-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/delete-a-status/" class="md-nav__link">
         
   
   
@@ -3592,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/analyzers-templates/" class="md-nav__link">
+      <a href="../../thehive/administration/analyzers-templates/" class="md-nav__link">
         
   
   
@@ -3656,7 +3561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/taxonomies/about-taxonomies/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/about-taxonomies/" class="md-nav__link">
         
   
   
@@ -3679,7 +3584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
         
   
   
@@ -3702,7 +3607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
         
   
   
@@ -3725,7 +3630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -3748,7 +3653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -3779,7 +3684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../administration/attack-patterns/" class="md-nav__link">
+      <a href="../../thehive/administration/attack-patterns/" class="md-nav__link">
         
   
   
@@ -3851,7 +3756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../how-to/fail2ban/" class="md-nav__link">
+      <a href="../../thehive/how-to/fail2ban/" class="md-nav__link">
         
   
   
@@ -3874,7 +3779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../how-to/splunk-integration/" class="md-nav__link">
+      <a href="../../thehive/how-to/splunk-integration/" class="md-nav__link">
         
   
   
@@ -3954,7 +3859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/forgot-password/" class="md-nav__link">
+      <a href="../../thehive/user-guides/forgot-password/" class="md-nav__link">
         
   
   
@@ -3977,7 +3882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/thehive-flavored-markdown/" class="md-nav__link">
+      <a href="../../thehive/user-guides/thehive-flavored-markdown/" class="md-nav__link">
         
   
   
@@ -4041,7 +3946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/knowledge-base/about-knowledge-base/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/about-knowledge-base/" class="md-nav__link">
         
   
   
@@ -4064,7 +3969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4087,7 +3992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4110,7 +4015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4133,7 +4038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4205,7 +4110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/key-performance-indicators/key-performance-indicators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -4228,7 +4133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/key-performance-indicators/hide-key-performance-indicators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/hide-key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -4251,7 +4156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
         
   
   
@@ -4274,7 +4179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
         
   
   
@@ -4346,7 +4251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/accounts/" class="md-nav__link">
         
   
   
@@ -4451,7 +4356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/" class="md-nav__link">
         
   
   
@@ -4474,7 +4379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
         
   
   
@@ -4497,7 +4402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
         
   
   
@@ -4520,7 +4425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
         
   
   
@@ -4592,7 +4497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
         
   
   
@@ -4615,7 +4520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -4638,7 +4543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -4661,7 +4566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -4684,7 +4589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -4756,7 +4661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
         
   
   
@@ -4779,7 +4684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
         
   
   
@@ -4802,7 +4707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -4825,7 +4730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
         
   
   
@@ -4848,7 +4753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -4928,7 +4833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/" class="md-nav__link">
         
   
   
@@ -4951,7 +4856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -4974,7 +4879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -4997,7 +4902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -5020,7 +4925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
         
   
   
@@ -5051,7 +4956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/ui-configuration/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/ui-configuration/" class="md-nav__link">
         
   
   
@@ -5115,7 +5020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/about-notifications/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications/" class="md-nav__link">
         
   
   
@@ -5138,7 +5043,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/create-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification/" class="md-nav__link">
         
   
   
@@ -5161,7 +5066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/" class="md-nav__link">
         
   
   
@@ -5184,7 +5089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/delete-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification/" class="md-nav__link">
         
   
   
@@ -5207,7 +5112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/" class="md-nav__link">
         
   
   
@@ -5271,7 +5176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/" class="md-nav__link">
         
   
   
@@ -5294,7 +5199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
         
   
   
@@ -5317,7 +5222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/" class="md-nav__link">
         
   
   
@@ -5340,7 +5245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/" class="md-nav__link">
         
   
   
@@ -5363,7 +5268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/slack/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack/" class="md-nav__link">
         
   
   
@@ -5386,7 +5291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/teams/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams/" class="md-nav__link">
         
   
   
@@ -5409,7 +5314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/" class="md-nav__link">
         
   
   
@@ -5432,7 +5337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/" class="md-nav__link">
         
   
   
@@ -5455,7 +5360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/redis/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis/" class="md-nav__link">
         
   
   
@@ -5478,7 +5383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/" class="md-nav__link">
         
   
   
@@ -5501,7 +5406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders/" class="md-nav__link">
         
   
   
@@ -5524,7 +5429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/notifiers/function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function/" class="md-nav__link">
         
   
   
@@ -5596,7 +5501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
         
   
   
@@ -5619,7 +5524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
         
   
   
@@ -5691,7 +5596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/about-endpoints/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints/" class="md-nav__link">
         
   
   
@@ -5714,7 +5619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
         
   
   
@@ -5737,7 +5642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
         
   
   
@@ -5760,7 +5665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/" class="md-nav__link">
         
   
   
@@ -5783,7 +5688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/" class="md-nav__link">
         
   
   
@@ -5806,7 +5711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
         
   
   
@@ -5886,7 +5791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/about-functions/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/about-functions/" class="md-nav__link">
         
   
   
@@ -5909,7 +5814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/create-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/create-a-function/" class="md-nav__link">
         
   
   
@@ -5932,7 +5837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/delete-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function/" class="md-nav__link">
         
   
   
@@ -5955,7 +5860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/revoke-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function/" class="md-nav__link">
         
   
   
@@ -5978,7 +5883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
         
   
   
@@ -6001,7 +5906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
         
   
   
@@ -6073,7 +5978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-feeders/about-feeders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders/" class="md-nav__link">
         
   
   
@@ -6096,7 +6001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-feeders/create-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder/" class="md-nav__link">
         
   
   
@@ -6119,7 +6024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/" class="md-nav__link">
         
   
   
@@ -6142,7 +6047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/" class="md-nav__link">
         
   
   
@@ -6173,7 +6078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/organization/attachments/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/attachments/" class="md-nav__link">
         
   
   
@@ -6286,7 +6191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/about-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/about-alerts/" class="md-nav__link">
         
   
   
@@ -6350,7 +6255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
         
   
   
@@ -6373,7 +6278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
         
   
   
@@ -6404,7 +6309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/preview-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts/" class="md-nav__link">
         
   
   
@@ -6427,7 +6332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/actions/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/actions/" class="md-nav__link">
         
   
   
@@ -6450,7 +6355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/merge-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts/" class="md-nav__link">
         
   
   
@@ -6473,7 +6378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/change-status-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/change-status-alert/" class="md-nav__link">
         
   
   
@@ -6496,7 +6401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
         
   
   
@@ -6519,7 +6424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection/" class="md-nav__link">
         
   
   
@@ -6542,7 +6447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/general/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/general/" class="md-nav__link">
         
   
   
@@ -6565,7 +6470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/run-responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders/" class="md-nav__link">
         
   
   
@@ -6588,7 +6493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/view-responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders/" class="md-nav__link">
         
   
   
@@ -6611,7 +6516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts/" class="md-nav__link">
         
   
   
@@ -6634,7 +6539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/view-similar-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases/" class="md-nav__link">
         
   
   
@@ -6657,7 +6562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/view-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps/" class="md-nav__link">
         
   
   
@@ -6680,7 +6585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/alerts-description/view-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables/" class="md-nav__link">
         
   
   
@@ -6744,7 +6649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -6767,7 +6672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -6798,7 +6703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
         
   
   
@@ -6862,7 +6767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -6885,7 +6790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -6908,7 +6813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -6988,7 +6893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/about-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/about-cases/" class="md-nav__link">
         
   
   
@@ -7052,7 +6957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
         
   
   
@@ -7075,7 +6980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
         
   
   
@@ -7098,7 +7003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
         
   
   
@@ -7121,7 +7026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
         
   
   
@@ -7152,7 +7057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/create-a-new-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/create-a-new-case/" class="md-nav__link">
         
   
   
@@ -7175,7 +7080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
         
   
   
@@ -7198,7 +7103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
         
   
   
@@ -7221,7 +7126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
         
   
   
@@ -7244,7 +7149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/preview-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/preview-cases/" class="md-nav__link">
         
   
   
@@ -7267,7 +7172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/actions/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/actions/" class="md-nav__link">
         
   
   
@@ -7290,7 +7195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/general/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/general/" class="md-nav__link">
         
   
   
@@ -7354,7 +7259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -7377,7 +7282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -7400,7 +7305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -7472,7 +7377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/add-a-link-to-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case/" class="md-nav__link">
         
   
   
@@ -7495,7 +7400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/remove-a-link-from-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case/" class="md-nav__link">
         
   
   
@@ -7518,7 +7423,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/view-links-in-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/view-links-in-a-case/" class="md-nav__link">
         
   
   
@@ -7549,7 +7454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/change-status-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/change-status-case/" class="md-nav__link">
         
   
   
@@ -7613,7 +7518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -7636,7 +7541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -7667,7 +7572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
         
   
   
@@ -7690,7 +7595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/merge-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/merge-cases/" class="md-nav__link">
         
   
   
@@ -7713,7 +7618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/share-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/share-a-case/" class="md-nav__link">
         
   
   
@@ -7736,7 +7641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
         
   
   
@@ -7759,7 +7664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/observables/" class="md-nav__link">
         
   
   
@@ -7782,7 +7687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/ttps/" class="md-nav__link">
         
   
   
@@ -7805,7 +7710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/attachments/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/attachments/" class="md-nav__link">
         
   
   
@@ -7869,7 +7774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
         
   
   
@@ -7892,7 +7797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -7915,7 +7820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
         
   
   
@@ -7938,7 +7843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
         
   
   
@@ -7961,7 +7866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -8033,7 +7938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
         
   
   
@@ -8056,7 +7961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
         
   
   
@@ -8128,7 +8033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/restrict-visibility-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/restrict-visibility-case/" class="md-nav__link">
         
   
   
@@ -8151,7 +8056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/restore-visibility-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/restore-visibility-case/" class="md-nav__link">
         
   
   
@@ -8182,7 +8087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/run-responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/run-responders/" class="md-nav__link">
         
   
   
@@ -8205,7 +8110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/cases-description/run-analyzer/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer/" class="md-nav__link">
         
   
   
@@ -8228,7 +8133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/cases/close-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/close-a-case/" class="md-nav__link">
         
   
   
@@ -8341,7 +8246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/about-tasks/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/about-tasks/" class="md-nav__link">
         
   
   
@@ -8364,7 +8269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/create-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/create-a-task/" class="md-nav__link">
         
   
   
@@ -8387,7 +8292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/change-task-status/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/change-task-status/" class="md-nav__link">
         
   
   
@@ -8410,7 +8315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/manage-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/manage-a-task/" class="md-nav__link">
         
   
   
@@ -8433,7 +8338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/delete-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/delete-a-task/" class="md-nav__link">
         
   
   
@@ -8497,7 +8402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
         
   
   
@@ -8520,7 +8425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
         
   
   
@@ -8551,7 +8456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/preview-task-details/run-responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders/" class="md-nav__link">
         
   
   
@@ -8574,7 +8479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/share-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/share-a-task/" class="md-nav__link">
         
   
   
@@ -8646,7 +8551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/about-task-logs/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/about-task-logs/" class="md-nav__link">
         
   
   
@@ -8669,7 +8574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
         
   
   
@@ -8692,7 +8597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
         
   
   
@@ -8715,7 +8620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
         
   
   
@@ -8795,7 +8700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
         
   
   
@@ -8818,7 +8723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
         
   
   
@@ -8841,7 +8746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
         
   
   
@@ -8864,7 +8769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
         
   
   
@@ -8887,7 +8792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
         
   
   
@@ -8910,7 +8815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
         
   
   
@@ -8933,7 +8838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
         
   
   
@@ -8956,7 +8861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
         
   
   
@@ -8987,7 +8892,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
         
   
   
@@ -9010,7 +8915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/about-views/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-views/" class="md-nav__link">
         
   
   
@@ -9033,7 +8938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/about-autorefresh/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-autorefresh/" class="md-nav__link">
         
   
   
@@ -9056,7 +8961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/about-statistics/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-statistics/" class="md-nav__link">
         
   
   
@@ -9079,7 +8984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/about-live-feed/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-live-feed/" class="md-nav__link">
         
   
   
@@ -9102,7 +9007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../user-guides/analyst-corner/theme/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/theme/" class="md-nav__link">
         
   
   
@@ -9182,7 +9087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../api-docs/" class="md-nav__link">
+      <a href="../../thehive/api-docs/" class="md-nav__link">
         
   
   
@@ -9277,7 +9182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.0/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.0/" class="md-nav__link">
         
   
   
@@ -9300,7 +9205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.1/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.1/" class="md-nav__link">
         
   
   
@@ -9323,7 +9228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.2/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.2/" class="md-nav__link">
         
   
   
@@ -9346,7 +9251,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.3/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.3/" class="md-nav__link">
         
   
   
@@ -9369,7 +9274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.4/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.4/" class="md-nav__link">
         
   
   
@@ -9392,7 +9297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../release-notes/release-notes-5.5/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.5/" class="md-nav__link">
         
   
   
@@ -9471,7 +9376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/" class="md-nav__link">
+      <a href="../../cortex/" class="md-nav__link">
         
   
   
@@ -9535,7 +9440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/download/" class="md-nav__link">
+      <a href="../../cortex/download/" class="md-nav__link">
         
   
   
@@ -9607,7 +9512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/authentication/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/authentication/" class="md-nav__link">
         
   
   
@@ -9630,7 +9535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/secret/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/secret/" class="md-nav__link">
         
   
   
@@ -9653,7 +9558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/advanced-configuration/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/advanced-configuration/" class="md-nav__link">
         
   
   
@@ -9676,7 +9581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/ssl/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/ssl/" class="md-nav__link">
         
   
   
@@ -9699,7 +9604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
         
   
   
@@ -9722,7 +9627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/" class="md-nav__link">
         
   
   
@@ -9745,7 +9650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/analyzers-responders/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/analyzers-responders/" class="md-nav__link">
         
   
   
@@ -9768,7 +9673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/run-cortex-with-docker/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/run-cortex-with-docker/" class="md-nav__link">
         
   
   
@@ -9791,7 +9696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/proxy-settings/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/proxy-settings/" class="md-nav__link">
         
   
   
@@ -9814,7 +9719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/docker/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/docker/" class="md-nav__link">
         
   
   
@@ -9837,7 +9742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/installation-and-configuration/database/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/database/" class="md-nav__link">
         
   
   
@@ -9909,7 +9814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/user-guides/first-start/" class="md-nav__link">
+      <a href="../../cortex/user-guides/first-start/" class="md-nav__link">
         
   
   
@@ -9932,7 +9837,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/user-guides/roles/" class="md-nav__link">
+      <a href="../../cortex/user-guides/roles/" class="md-nav__link">
         
   
   
@@ -10004,7 +9909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/operations/backup-restore/" class="md-nav__link">
+      <a href="../../cortex/operations/backup-restore/" class="md-nav__link">
         
   
   
@@ -10027,7 +9932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/operations/input-output/" class="md-nav__link">
+      <a href="../../cortex/operations/input-output/" class="md-nav__link">
         
   
   
@@ -10050,7 +9955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
+      <a href="../../cortex/operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
         
   
   
@@ -10122,7 +10027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/api/api-guide/" class="md-nav__link">
+      <a href="../../cortex/api/api-guide/" class="md-nav__link">
         
   
   
@@ -10145,7 +10050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/api/how-to-create-an-analyzer/" class="md-nav__link">
+      <a href="../../cortex/api/how-to-create-an-analyzer/" class="md-nav__link">
         
   
   
@@ -10168,7 +10073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../cortex/api/how-to-create-a-responder/" class="md-nav__link">
+      <a href="../../cortex/api/how-to-create-a-responder/" class="md-nav__link">
         
   
   
@@ -10269,7 +10174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   
@@ -10292,7 +10197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/templates/" class="md-nav__link">
+      <a href="../../resources/templates/" class="md-nav__link">
         
   
   
@@ -10356,7 +10261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/demo/" class="md-nav__link">
+      <a href="../../resources/demo/" class="md-nav__link">
         
   
   
@@ -10379,7 +10284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../resources/howto-vm-demo/" class="md-nav__link">
         
   
   
@@ -10492,7 +10397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/" class="md-nav__link">
         
   
   
@@ -10515,7 +10420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/thehive/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/thehive/" class="md-nav__link">
         
   
   
@@ -10538,7 +10443,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/cortex/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/cortex/" class="md-nav__link">
         
   
   
@@ -10561,7 +10466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
         
   
   
@@ -10584,7 +10489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
         
   
   
@@ -10607,7 +10512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -10679,7 +10584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/" class="md-nav__link">
         
   
   
@@ -10702,7 +10607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/thehive/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/thehive/" class="md-nav__link">
         
   
   
@@ -10725,7 +10630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/cortex/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/cortex/" class="md-nav__link">
         
   
   
@@ -10748,7 +10653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
         
   
   
@@ -10771,7 +10676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
         
   
   
@@ -10794,7 +10699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -10817,7 +10722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
         
   
   
@@ -10938,7 +10843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/thehive4py/" class="md-nav__link">
+      <a href="../../resources/thehive4py/" class="md-nav__link">
         
   
   
@@ -10961,7 +10866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/cortex4py/" class="md-nav__link">
+      <a href="../../resources/cortex4py/" class="md-nav__link">
         
   
   
@@ -10984,7 +10889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/cortexutils/" class="md-nav__link">
+      <a href="../../resources/cortexutils/" class="md-nav__link">
         
   
   
@@ -11023,7 +10928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/security/" class="md-nav__link">
+      <a href="../../resources/security/" class="md-nav__link">
         
   
   
@@ -11062,18 +10967,8 @@
 
 
 
-<div><h1 id="how-to-restore-a-cold-backup-on-a-physical-server">How to Restore a Cold Backup on a Physical Server<a class="headerlink" href="#how-to-restore-a-cold-backup-on-a-physical-server" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for restoring a cold backup on a physical server for TheHive.</p>
-<p>Restoring your application stack on physical servers is a process that involves recovering configuration files, data, and logs from a previously created backup. This procedure ensures the application is returned to a consistent and operational state.</p>
-<p>Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services.</p>
-<div class="admonition note">
-<p class="admonition-title">Cold vs. hot backups and restores</p>
-<p>Before proceeding, ensure you fully understand <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">the implications of performing a cold backup and restore</a>. It is the recommended approach for ensuring data integrity, though it requires downtime.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Adapting instructions</p>
-<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
-</div>
+  <h1>Backup restore best practices</h1>
+
 <div class="admonition tip">
 <p class="admonition-title">Best practices for safe backup and restore</p>
 <ul>
@@ -11081,174 +10976,6 @@
 <li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
 </ul>
 </div>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<p>This guide assumes that:</p>
-<ul>
-<li>You are restoring from a cold backup created using the procedures outlined in the <a href="../../../backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a> topic, where services were stopped during the backup process to ensure data consistency.</li>
-<li>The server environment matches the original configuration (for example, paths, software versions, and dependencies).</li>
-</ul>
-<h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
-<p>Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
-systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
-systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
-</code></pre></div>
-</div>
-<h3 id="check-all-data-folders-are-empty">Check all data folders are empty<a class="headerlink" href="#check-all-data-folders-are-empty" title="Permanent link">#</a></h3>
-<p>Ensure <code>/var/lib/cassandra/</code> and <code>/var/lib/elasticsearch/</code> are empty.</p>
-<h3 id="copy-files-from-the-backup-folder">Copy files from the backup folder<a class="headerlink" href="#copy-files-from-the-backup-folder" title="Permanent link">#</a></h3>
-<p>For example, with a dedicated NFS volume and a folder named <code>/opt/backup</code>  copy all files preserving their permissions</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
-
-<span class="c1">## ============================================================</span>
-<span class="c1">## RESTORE SCRIPT FOR THEHIVE APPLICATION STACK</span>
-<span class="c1">## ============================================================</span>
-<span class="c1">## PURPOSE:</span>
-<span class="c1">## This script restores a backup of TheHive application stack, </span>
-<span class="c1">## including its configuration, data, and logs. It is designed to </span>
-<span class="c1">## recover from backups created using the associated backup script.</span>
-<span class="c1">##</span>
-<span class="c1">## IMPORTANT:</span>
-<span class="c1">## - A backup is highly recommended before running a restore operation. </span>
-<span class="c1">##   This ensures you can revert to the current state if anything goes wrong.</span>
-<span class="c1">## - Ensure that the target data folders are empty before running this script. </span>
-<span class="c1">##   Pre-existing files can cause conflicts or data corruption during the restore process.</span>
-<span class="c1">## - This script must be run with sufficient permissions to overwrite </span>
-<span class="c1">##   application data and modify service configurations.</span>
-<span class="c1">## - Ensure the backup folder path is correct and contains all required </span>
-<span class="c1">##   files and data.</span>
-<span class="c1">##</span>
-<span class="c1">## DISCLAIMER:</span>
-<span class="c1">## - Users are strongly advised to test this script in a non-production </span>
-<span class="c1">##   environment to ensure it works as expected with their specific </span>
-<span class="c1">##   infrastructure and application stack before using it in production.</span>
-<span class="c1">## - The maintainers of this script are not responsible for any data loss, </span>
-<span class="c1">##   corruption, or issues arising from the use of this script during your </span>
-<span class="c1">##   backup or restore processes. Proceed at your own risk.</span>
-<span class="c1">##</span>
-<span class="c1">## USAGE:</span>
-<span class="c1">## 1. Update the variables at the start of the script to reflect your setup:</span>
-<span class="c1">##    - BACKUP_ROOT_FOLDER: Path to the root directory of your backups.</span>
-<span class="c1">##    - BACKUP_TO_RESTORE: Name of the backup folder to restore.</span>
-<span class="c1">## 2. Run the script using the following command:</span>
-<span class="c1">##    `bash ./scripts/restore.sh`</span>
-<span class="c1">##</span>
-<span class="c1">## ADDITIONAL RESOURCES:</span>
-<span class="c1">## Refer to the official documentation for detailed instructions and </span>
-<span class="c1">## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/</span>
-<span class="c1">##</span>
-<span class="c1">## WARNING:</span>
-<span class="c1">## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.</span>
-<span class="c1">## - This script will overwrite existing data. Use it with caution.</span>
-<span class="c1">## - Do not modify the rest of the script unless necessary.</span>
-<span class="c1">##</span>
-<span class="c1">## ============================================================</span>
-<span class="c1">## DO NOT MODIFY ANYTHING BELOW THIS LINE</span>
-<span class="c1">## ============================================================</span>
-<span class="c1"># Display help message</span>
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"--help"</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"-h"</span><span class="w"> </span><span class="o">]]</span>
-<span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Usage: </span><span class="nv">$0</span><span class="s2"> [DOCKER_COMPOSE_PATH] [BACKUP_FOLDER]"</span>
-<span class="w">    </span><span class="nb">echo</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"This script restores a backup of application data, including configurations, files, and logs."</span>
-<span class="w">    </span><span class="nb">echo</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Options:"</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  DOCKER_COMPOSE_PATH  Optional. Specify the path of the folder with the docker-compose.yml."</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"                      If not provided, you will be prompted for a folder, with a default of '.'."</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  BACKUP_FOLDER  Optional. Specify the folder containing the data to restore."</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"                      If not provided, you will be prompted for a folder or exit; no default folder is used."</span>
-<span class="w">    </span><span class="nb">echo</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Examples:"</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  </span><span class="nv">$0</span><span class="s2"> /path/to/docker-compose-folder /path/to/backup-folder  restores backup stored in the specified folder."</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"  </span><span class="nv">$0</span><span class="s2">                 Prompt for docker compose folder and backup folder to restore."</span>
-<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">0</span>
-<span class="k">fi</span>
-
-<span class="c1">## Checks if the first argument is provided.</span>
-<span class="c1">## If it is, the script uses it as the value for BACKUP_ROOT_FOLDER</span>
-<span class="c1">## If no argument is passed, the script prompts the user to enter a value</span>
-<span class="c1">## </span>
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span>
-<span class="k">then</span>
-<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Enter the folder path including your docker compose file [default: ./]: "</span><span class="w"> </span>DOCKER_COMPOSE_PATH
-<span class="w">    </span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="k">:-</span><span class="s2">"."</span><span class="si">}</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
-<span class="k">fi</span>
-
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span><span class="s2">/docker-compose.yml"</span><span class="w"> </span><span class="o">]]</span>
-<span class="k">then</span>
-<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Path to your docker compose file: </span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span><span class="s2">/docker-compose.yml"</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Docker compose file not found in </span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span><span class="s2">"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-<span class="k">fi</span>
-
-
-<span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span>
-<span class="k">then</span>
-<span class="w">    </span><span class="nb">read</span><span class="w"> </span>-p<span class="w"> </span><span class="s2">"Enter the backup root folder [default: None]: "</span><span class="w"> </span>BACKUP_FOLDER
-<span class="w">    </span><span class="o">[[</span><span class="w"> </span>-z<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"No backup folder specified, exiting."</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<span class="k">else</span>
-<span class="w">    </span><span class="nv">BACKUP_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="nv">$2</span><span class="s2">"</span>
-<span class="k">fi</span>
-
-<span class="c1">## Check if the backup folder to restore exists, else exit</span>
-<span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Backup folder not found, exiting"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
-
-<span class="c1"># Define the log file and start logging. Log file is stored in the current folder</span>
-<span class="nv">DATE</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">"%Y%m%d-%H%M%z"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/+/-/'</span><span class="k">)</span><span class="s2">"</span>
-<span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_ROOT_FOLDER</span><span class="si">}</span><span class="s2">/restore_log_</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">.log"</span>
-<span class="nb">exec</span><span class="w"> </span><span class="p">&amp;</span>&gt;<span class="w"> </span>&gt;<span class="o">(</span>tee<span class="w"> </span>-a<span class="w"> </span><span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span><span class="o">)</span>
-
-<span class="c1"># Log the start time</span>
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoration process started at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
-
-<span class="c1"># Check backup backup folder exists</span>
-<span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Backup folder not found"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
-
-<span class="c1"># Copy TheHive data</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/config/<span class="w"> </span>/etc/thehive<span class="w">  </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive config restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/data/<span class="w"> </span>/opt/thp/thehive/files<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/logs/<span class="w"> </span>/var/log/thehive<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive logs restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
-<span class="c1"># Copy Casssandra data</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/config/<span class="w"> </span>/etc/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra config restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/data/<span class="w"> </span>/var/lib/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/logs/<span class="w"> </span>/var/log/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra logs restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
-<span class="c1"># Copy Elasticsearch data</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/elasticsearch/config/<span class="w"> </span>/etc/elasticsearch<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Elasticsearch config restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/elasticsearch/data/<span class="w"> </span>/var/lib/elasticsearch<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Elasticsearch data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/elasticsearch/logs/<span class="w"> </span>/var/log/elasticsearch<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Elasticsearch logs restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
-<span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoration process completed at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span><span class="w"> </span>
-</code></pre></div>
-</div>
-<p>Ensure permissions are correctly setup before running services. </p>
-<h3 id="start-services-in-this-order">Start services in this order<a class="headerlink" href="#start-services-in-this-order" title="Permanent link">#</a></h3>
-<ol>
-<li>Elasticsearch</li>
-<li>Cassandra</li>
-<li>TheHive</li>
-</ol>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>start<span class="w"> </span>thehive
-systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
-systemctl<span class="w"> </span>start<span class="w"> </span>cassandra
-</code></pre></div>
-</div>
-<hr>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">#</a></h2>
-<p>Open you browser, connect to TheHive, and check your data has been restored correctly.</p>
-<h2>Next steps</h2>
-
-<ul>
-<li><a href="./">Restore a Cold Backup on a Physical Server</a></li>
-</ul></div>
 
 
 
@@ -11369,10 +11096,10 @@ systemctl<span class="w"> </span>start<span class="w"> </span>cassandra
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

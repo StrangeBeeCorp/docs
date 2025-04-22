@@ -1960,15 +1960,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#step-4-test-the-restore-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Test the restore process
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -11081,6 +11072,13 @@
 <p class="admonition-title">Data consistency</p>
 <p>Perform the restore process for Apache Cassandra, Elasticsearch, and file storage in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Best practices for safe backup and restore</p>
+<ul>
+<li>Always test the backup and restore process in a non-production or test environment before applying it to a live system to ensure the process works as expected.</li>
+<li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
+</ul>
+</div>
 <p>The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.</p>
 <ol>
 <li><a href="#step-1-restore-cassandra-snapshots">Database restore</a></li>
@@ -11117,8 +11115,6 @@
 
 <h2 id="step-3-restore-a-backup-for-file-storage">Step 3: Restore a backup for file storage<a class="headerlink" href="#step-3-restore-a-backup-for-file-storage" title="Permanent link">#</a></h2>
 <p>Whether using Network File System (NFS) or MinIO S3 object storage, restore the saved files to the destination folder or bucket used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders or buckets in the destination.</p>
-<h2 id="step-4-test-the-restore-process">Step 4: Test the restore process<a class="headerlink" href="#step-4-test-the-restore-process" title="Permanent link">#</a></h2>
-<p>Periodically validate restoration procedures in test environments to confirm the integrity of the backup data.</p>
 <h2>Next steps</h2>
 
 <ul>

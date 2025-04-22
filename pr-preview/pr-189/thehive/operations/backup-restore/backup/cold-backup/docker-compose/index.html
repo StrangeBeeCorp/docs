@@ -11083,10 +11083,22 @@
 <div><h1 id="how-to-perform-a-cold-backup-for-a-stack-running-with-docker-compose">How to Perform a Cold Backup for a Stack Running with Docker Compose<a class="headerlink" href="#how-to-perform-a-cold-backup-for-a-stack-running-with-docker-compose" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for performing a cold backup of a stack running with Docker Compose for TheHive.</p>
 <div class="admonition note">
-<p class="admonition-title">Prerequisite</p>
-<p>This solution assumes you are following our <a href="../../../../../installation/docker/">Running TheHive with Docker</a> guide to run your application stack.</p>
+<p class="admonition-title">Cold vs. hot backups and restores</p>
+<p>Before proceeding, ensure you fully understand <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">the implications of performing a cold backup and restore</a>. It is the recommended approach for ensuring data integrity, though it requires downtime.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Adapting instructions</p>
+<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Best practices for safe backup and restore</p>
+<ul>
+<li>Always test the backup and restore process in a non-production or test environment before applying it to a live system to ensure the process works as expected.</li>
+<li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
+</ul>
 </div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>This solution assumes you are following our <a href="../../../../../installation/docker/">Running TheHive with Docker</a> guide to run your application stack.</p>
 <p>Before starting, ensure you have:</p>
 <ul>
 <li>Sufficient storage space for the backup.</li>
@@ -11259,7 +11271,6 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 
 <ul>
 <li><a href="../../../restore/cold-restore/docker-compose/">Restore a Cold Backup for a Stack Running with Docker Compose</a></li>
-<li><a href="../../../cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a></li>
 </ul></div>
 
 

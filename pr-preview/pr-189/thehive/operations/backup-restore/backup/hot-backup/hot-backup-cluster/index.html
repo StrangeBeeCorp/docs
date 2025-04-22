@@ -1707,15 +1707,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#test-the-backup-process" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test the backup process
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -11090,6 +11081,13 @@
 <p class="admonition-title">Data consistency</p>
 <p>Perform these instructions simultaneously, ideally triggered by a cron job, to ensure proper alignment between Apache Cassandra, Elasticsearch, and file storage. Snapshots must be taken concurrently to maintain consistency and avoid restoration issues.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Best practices for safe backup and restore</p>
+<ul>
+<li>Always test the backup and restore process in a non-production or test environment before applying it to a live system to ensure the process works as expected.</li>
+<li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
+</ul>
+</div>
 <p>The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.</p>
 <ul>
 <li><a href="#create-cassandra-snapshots">Database backup</a></li>
@@ -11190,8 +11188,6 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span
 
 <h2 id="perform-a-backup-on-file-storage">Perform a backup on file storage<a class="headerlink" href="#perform-a-backup-on-file-storage" title="Permanent link">#</a></h2>
 <p>Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder or bucket.</p>
-<h2 id="test-the-backup-process">Test the backup process<a class="headerlink" href="#test-the-backup-process" title="Permanent link">#</a></h2>
-<p>Test the backup process in a staging or test environment to ensure scripts and configurations work as expected. Periodically validate restoration procedures in test environments to confirm the integrity of the backup data.</p>
 <h2>Next steps</h2>
 
 <ul>

@@ -1531,15 +1531,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       Prerequisites
@@ -1549,18 +1540,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step-instructions" class="md-nav__link">
+  <a href="#step-1-stop-the-services" class="md-nav__link">
     <span class="md-ellipsis">
-      Step-by-step instructions
+      Step 1: Stop the services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
+  <a href="#step-2-copy-files-in-a-backup-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Validation
+      Step 2: Copy files in a backup folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-restart-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Restart all services
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-validate-the-backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Validate the backup
     </span>
   </a>
   
@@ -11073,19 +11082,27 @@
 
 <div><h1 id="how-to-perform-a-cold-backup-on-a-physical-server">How to Perform a Cold Backup on a Physical Server<a class="headerlink" href="#how-to-perform-a-cold-backup-on-a-physical-server" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for performing a cold backup on a physical server for TheHive.</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
-<p>Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.</p>
+<p>Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups.</p>
+<div class="admonition note">
+<p class="admonition-title">Cold vs. hot backups and restores</p>
+<p>Before proceeding, ensure you fully understand <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">the implications of performing a cold backup and restore</a>. It is the recommended approach for ensuring data integrity, though it requires downtime.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Adapting instructions</p>
+<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Best practices for safe backup and restore</p>
+<ul>
+<li>Always test the backup and restore process in a non-production or test environment before applying it to a live system to ensure the process works as expected.</li>
+<li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
+</ul>
+</div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.</p>
 <p>This process and example below assume you have followed our <a href="../../../../../installation/step-by-step-installation-guide/">step-by-step guide</a> to install the application stack.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Before proceeding, ensure you have read the general <a href="../../../cold-hot-backup-restore/">Backup and Restore Overview</a> to understand the core principles of backup strategies.</p>
-</div>
-<hr>
-<h2 id="step-by-step-instructions">Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">#</a></h2>
-<h3 id="stop-the-services-in-this-order">Stop the services in this order<a class="headerlink" href="#stop-the-services-in-this-order" title="Permanent link">#</a></h3>
-<p>Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.</p>
+<h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
+<p>Stop services in this order to avoid data corruption.</p>
 <ol>
 <li>TheHive</li>
 <li>Elasticsearch</li>
@@ -11097,9 +11114,9 @@ systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
 systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 </code></pre></div>
 </div>
-<h3 id="copy-files-in-a-backup-folder">Copy files in a backup folder<a class="headerlink" href="#copy-files-in-a-backup-folder" title="Permanent link">#</a></h3>
+<h2 id="step-2-copy-files-in-a-backup-folder">Step 2: Copy files in a backup folder<a class="headerlink" href="#step-2-copy-files-in-a-backup-folder" title="Permanent link">#</a></h2>
 <p>Use tools like rsync to copy data, configuration files, and logs to a designated backup location.</p>
-<p>For example, create a folder on a dedicated NFS volume named <code>/opt/backups</code> and copy all files preserving their permissions</p>
+<p>For example, create a folder on a dedicated NFS volume named <code>/opt/backups</code> and copy all files preserving their permissions.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -11140,7 +11157,7 @@ systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 <span class="c1">## WARNING:</span>
 <span class="c1">## - This script stops Elasticsearch, Cassandra, and TheHive services, </span>
 <span class="c1">##   performs the backup, and then restarts the services.</span>
-<span class="c1">## - Do not modify the rest of the script unless necessary.</span>
+<span class="c1">## - Don't modify the rest of the script unless necessary.</span>
 <span class="c1">##</span>
 <span class="c1">## ============================================================</span>
 <span class="c1">## DO NOT MODIFY ANYTHING BELOW THIS LINE</span>
@@ -11216,7 +11233,7 @@ rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span>/var/log/thehive/<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/logs<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive logs backup failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive backup completed."</span>
 
-<span class="c1"># Copy Casssandra data</span>
+<span class="c1"># Copy Cassandra data</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Starting Cassandra backup..."</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span>/etc/cassandra/<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/config<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra config backup failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span>/var/lib/cassandra/<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/data<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data backup failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
@@ -11233,7 +11250,8 @@ rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Backup process completed at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 </div>
-<h3 id="start-services-in-this-order">Start services in this order<a class="headerlink" href="#start-services-in-this-order" title="Permanent link">#</a></h3>
+<h2 id="step-3-restart-all-services">Step 3: Restart all services<a class="headerlink" href="#step-3-restart-all-services" title="Permanent link">#</a></h2>
+<p>Restart services in this order:</p>
 <ol>
 <li>Elasticsearch</li>
 <li>Cassandra</li>
@@ -11245,15 +11263,12 @@ systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
 systemctl<span class="w"> </span>start<span class="w"> </span>cassandra
 </code></pre></div>
 </div>
-<hr>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">#</a></h2>
-<p>Validate the backup to ensure it can be restored without issues.</p>
-<p>Check the backup folder and verify the data has been well copied.</p>
+<h2 id="step-4-validate-the-backup">Step 4: Validate the backup<a class="headerlink" href="#step-4-validate-the-backup" title="Permanent link">#</a></h2>
+<p>Check the backup folder and verify that the data has been copied correctly.</p>
 <h2>Next steps</h2>
 
 <ul>
-<li><a href="../../../restore/cold-restore/docker-compose/">Restore a Cold Backup for a Stack Running with Docker Compose</a></li>
-<li><a href="../../../cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a></li>
+<li><a href="../../../restore/cold-restore/physical-server/">Restore a Cold Backup on a Physical Server</a></li>
 </ul></div>
 
 
