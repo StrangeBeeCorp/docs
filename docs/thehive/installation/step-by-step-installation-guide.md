@@ -519,7 +519,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch. Elasticsearch offers better performance, reduced latency, and advanced search capabilities, making it ideal for managing and retrieving large amounts of audit data.
 
 !!! warning "Prerequisites"
-    Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure that audit logs can be recovered in case of an incident. This is critical for maintaining the integrity and availability of your data.
+    Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
 
 1. Activate audit log storage
 

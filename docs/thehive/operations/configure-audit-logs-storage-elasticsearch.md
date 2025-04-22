@@ -2,9 +2,9 @@
 
 [Badge version 5.5]
 
-TheHive allows you to choose between storing audit logs in Apache Cassandra via JanusGraph or in [Elasticsearch](https://www.elastic.co/enterprise-search).
+You can choose to store audit logs in either Apache Cassandra via JanusGraph or in [Elasticsearch](https://www.elastic.co/enterprise-search) in TheHive.
 
-This topic provides step-by-step instructions for configuring TheHive's audit log storage in Elasticsearch, including the option to migrate historical logs from JanusGraph.
+This topic provides step-by-step instructions for configuring TheHive's audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
 
 !!! info "Reasons to consider Elasticsearch"
     Elasticsearch is better suited for managing large volumes of audit logs. It enhances performance by efficiently handling data, reducing latency, and offering advanced search capabilities. If your organization generates a significant amount of audit logs, migrating to Elasticsearch can improve both data management and retrieval.
@@ -23,7 +23,7 @@ Make sure you're using Elasticsearch version 7.17 or later to guarantee compatib
 
 ### Back up Elasticsearch indices
 
-Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure that audit logs can be recovered in case of an incident. This is critical for maintaining the integrity and availability of your data.
+Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
 
 ## Step 1: Activate audit log storage in Elasticsearch
 
@@ -40,15 +40,15 @@ TheHive provides a script to assist with migrating historical audit logs from Ja
 !!! warning "JanusGraph audit log deletion"
     By default, when migrating audit logs from JanusGraph to Elasticsearch, the logs are deleted from JanusGraph. If you wish to keep the audit logs in JanusGraph while migrating to Elasticsearch, you can prevent their deletion by using a specific option.
 
-Run the migrateAudits tool:
+Run the `migrateAudits` script:
 
-* If TheHive is manually installed on a server:
+* If you installed TheHive on a server:
 
 ``` bash
 ./migrateAudits --audit-from-date <date> -c </etc/thehive/application.conf>
 ```
 
-* If TheHive is deployed with a Docker image:
+* If you deployed TheHive with a Docker image:
 
 ``` bash
 docker run --network host --rm -ti -v </path/to/your/application.conf>:/etc/thehive/application.conf:ro -v </path/to/your/logback.xml>:/etc/thehive/logback.xml:ro strangebee/thehive:5.5.0-1-SNAPSHOT  migrateAudits -Dlogback.configurationFile=/etc/thehive/logback.xml -- --audit-from-date <date> -c /etc/thehive/application.conf
