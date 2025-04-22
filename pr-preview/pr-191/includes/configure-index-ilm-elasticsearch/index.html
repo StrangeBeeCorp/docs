@@ -7835,33 +7835,33 @@
 <h4 id="index-template">Index template<a class="headerlink" href="#index-template" title="Permanent link">#</a></h4>
 <p>The index template ensures consistent storage and indexing of audit logs.</p>
 <p>Default index template:</p>
-<div class="highlight"><pre><span></span><code><span class="o">{</span>
-<span class="w">  </span><span class="s2">"index"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">"lifecycle"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">"name"</span>:<span class="w"> </span><span class="s2">"thehive-audits"</span>
-<span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="s2">"number_of_shards"</span>:<span class="w"> </span><span class="s2">"1"</span>,
-<span class="w">    </span><span class="s2">"number_of_replicas"</span>:<span class="w"> </span><span class="s2">"1"</span>
-<span class="w">  </span><span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"index"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"lifecycle"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"thehive-audits"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"number_of_shards"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"number_of_replicas"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <h4 id="ilm">ILM<a class="headerlink" href="#ilm" title="Permanent link">#</a></h4>
 <p>ILM manages the storage, rollover, and deletion of audit logs over time, optimizing long-term storage.</p>
 <p>Default ILM:</p>
-<div class="highlight"><pre><span></span><code><span class="o">{</span>
-<span class="w">  </span><span class="s2">"policy"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">"phases"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">      </span><span class="s2">"hot"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">"min_age"</span>:<span class="w"> </span><span class="s2">"0ms"</span>,
-<span class="w">        </span><span class="s2">"actions"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">          </span><span class="s2">"set_priority"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">"priority"</span>:<span class="w"> </span><span class="m">100</span>
-<span class="w">          </span><span class="o">}</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">      </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">  </span><span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"phases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"hot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"min_age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0ms"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"set_priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
@@ -7869,46 +7869,46 @@
 <ul>
 <li>Index template:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>audit<span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="nv">storage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>elasticsearch
-<span class="w">    </span>elasticsearch<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span>hot.rollover<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="nv">maxAge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>1d
-<span class="w">            </span><span class="nv">maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>1g
-<span class="w">        </span><span class="o">}</span>
-<span class="w">        </span>delete.minAge<span class="w"> </span><span class="o">=</span><span class="w"> </span>7d
-<span class="w">    </span><span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">audi</span><span class="kc">t</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">s</span><span class="kc">t</span><span class="err">orage</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">elas</span><span class="kc">t</span><span class="err">icsearch</span>
+<span class="w">    </span><span class="err">elas</span><span class="kc">t</span><span class="err">icsearch</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">ho</span><span class="kc">t</span><span class="err">.rollover</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="err">maxAge</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="err">d</span>
+<span class="w">            </span><span class="err">maxSize</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">1</span><span class="err">g</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="err">dele</span><span class="kc">te</span><span class="err">.mi</span><span class="kc">n</span><span class="err">Age</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">7</span><span class="err">d</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <ul>
 <li>ILM:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="o">{</span>
-<span class="w">    </span><span class="s2">"policy"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">"phases"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="s2">"hot"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                </span><span class="s2">"min_age"</span>:<span class="w"> </span><span class="s2">"0ms"</span>,
-<span class="w">                </span><span class="s2">"actions"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                    </span><span class="s2">"set_priority"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                        </span><span class="s2">"priority"</span>:<span class="w"> </span><span class="m">100</span>
-<span class="w">                    </span><span class="o">}</span>,
-<span class="w">                    </span><span class="s2">"rollover"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                        </span><span class="s2">"max_primary_shard_size"</span>:<span class="w"> </span><span class="s2">"1gb"</span>,
-<span class="w">                        </span><span class="s2">"max_age"</span>:<span class="w"> </span><span class="s2">"1d"</span>
-<span class="w">                    </span><span class="o">}</span>
-<span class="w">                </span><span class="o">}</span>
-<span class="w">            </span><span class="o">}</span>,
-<span class="w">            </span><span class="s2">"delete"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                </span><span class="s2">"min_age"</span>:<span class="w"> </span><span class="s2">"7d"</span>,
-<span class="w">                </span><span class="s2">"actions"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                    </span><span class="s2">"delete"</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">                        </span><span class="s2">"delete_searchable_snapshot"</span>:<span class="w"> </span><span class="nb">true</span>
-<span class="w">                    </span><span class="o">}</span>
-<span class="w">                </span><span class="o">}</span>
-<span class="w">            </span><span class="o">}</span>
-<span class="w">        </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="o">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"policy"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"phases"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"hot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"min_age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0ms"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"set_priority"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">"rollover"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"max_primary_shard_size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1gb"</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">"max_age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1d"</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">"delete"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">"min_age"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"actions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"delete"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"delete_searchable_snapshot"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 </div>
 <div class="admonition warning">
