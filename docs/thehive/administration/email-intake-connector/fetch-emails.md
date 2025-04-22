@@ -14,7 +14,9 @@ This is useful if you want to manually fetch emails more quickly than the config
 
 3. {!includes/email-intake-tab-go-to.md!}
 
-4. Select :fontawesome-solid-ellipsis: next to the connector and select **Fetch emails**.
+4. Select :fontawesome-solid-ellipsis: next to the connector.
+
+5. Select **Fetch emails**.
 
 <h2>Next steps</h2>
 

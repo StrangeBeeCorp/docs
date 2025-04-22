@@ -1,6 +1,6 @@
 # How to Merge Cases
 
-This topic provides step-by-step instructions for merging [cases](../cases/about-cases.md) in TheHive.
+This topic provides step-by-step instructions for [merging cases](../cases/about-cases.md#merging-cases) in TheHive.
 
 {!includes/access-merge-cases.md!}
 

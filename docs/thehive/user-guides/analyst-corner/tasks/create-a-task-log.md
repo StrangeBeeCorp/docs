@@ -25,8 +25,6 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
     !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
-      GIF
-
 6. Select **Confirm**.
 
 <h2>Next steps</h2>

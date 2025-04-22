@@ -7,7 +7,8 @@ This topic explains what Cortex is and the benefits of using it with TheHive.
 !!! info "Not connected by default"
     By default, TheHive isn't connected to any Cortex server.
 
-{!includes/cortex-support-thehive-55.md!}
+!!! info "Cortex support"
+    <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
 
 ## Cortex features
 
@@ -33,7 +34,7 @@ Cortex offers the following features:
 !!! info "Multiple Cortex instances"
     You can connect one or more Cortex instances to TheHive.
 
-Connect TheHive to Cortex to gather intelligence on observables with analyzers and automate actions using responders:
+[Connect TheHive to Cortex](add-a-cortex-server.md) to gather intelligence on observables with analyzers and automate actions using responders:
 
 * Analyzers enrich observables with detailed, contextual intelligence.
 * Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response.

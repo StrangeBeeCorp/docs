@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 -->
 
-This topic provides step-by-step instructions for removing a link from a [case](../cases/about-cases.md#linking-elements) in TheHive.
+This topic provides step-by-step instructions for removing a [link from a case](../cases/about-cases.md#linking-elements) in TheHive.
 
 {!includes/access-manage-case-links.md!}
 

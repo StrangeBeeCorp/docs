@@ -57,7 +57,7 @@ It automatically processes incoming emails, extracts relevant information, and c
 | `description` | Description | The content of the email. |
 
 !!! info "Modification restrictions"
-    You can only change the prefilled data for the `tags`, `source`, and `type` fields. Changes to other fields are not allowed.
+    You can only change the prefilled data for the `tags`, `source`, and `type` fields. Changes to other fields aren't allowed.
 
 ### Observables
 

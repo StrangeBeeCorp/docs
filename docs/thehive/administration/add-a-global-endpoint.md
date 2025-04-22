@@ -1,6 +1,8 @@
 # How to Add a Global Endpoint
 
-This topic provides step-by-step instructions for adding a global endpoint(../manage-endpoints/about-endpoints.md) in TheHive.
+This topic provides step-by-step instructions for adding a global [endpoint](../user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md) in TheHive.
+
+Once created, this global endpoint becomes available to all organizations you choose to share it with.
 
 {!includes/administrator-access-global-endpoints.md!}
 
@@ -23,6 +25,8 @@ This topic provides step-by-step instructions for adding a global endpoint(../ma
     * [Add a Local Webhook Endpoint](../user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md)
 
 6. Use the **Choose the filter on TheHive organizations** dropdown to select the organizations to share your global endpoint with.
+
+7. Select **Confirm**.
 
 <h2>Next steps</h2>
 

@@ -11,8 +11,7 @@ The Knowledge Base is organized into pages, which you can create at two levels:
 * Organization level: Share information that's relevant across the entire organization.
 * Case level: Document details specific to individual cases.
 
-!!! note "Temporary vs. permanent knowledge"
-    Case-level pages are intended for temporary documentation, useful during investigations but not necessarily retained long-term, and they cannot be searched. In contrast, organization-level pages store knowledge that should be preserved for future reference. If you need to retain information from case pages, you must manually copy the content to an organization-level page.
+{!includes/temporary-permanent-knowledge.md!}
 
 ## Templates
 

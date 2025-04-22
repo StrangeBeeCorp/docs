@@ -5,7 +5,8 @@ This topic provides step-by-step instructions for adding a [Cortex](about-cortex
 !!! info "Requirements"
     Before adding a Cortex server, you must install and configure Cortex. For instructions, refer to the [Installation and Configuration Guides](../../../cortex/installation-and-configuration/index.md).
 
-{!includes/cortex-support-thehive-55.md!}
+!!! info "Cortex support"
+    <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
 
 {!includes/administrator-access-manage-cortex-connection.md!}
 

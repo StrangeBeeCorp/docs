@@ -12,9 +12,11 @@ This topic provides step-by-step instructions for deleting a [mailbox connection
 
 3. {!includes/email-intake-tab-go-to.md!}
 
-4. Select :fontawesome-solid-ellipsis: next to the connector you want to delete and select **Delete**.
+4. Select :fontawesome-solid-ellipsis: next to the connector you want to delete.
 
-5. Select **OK**.
+5. Select **Delete**.
+
+6. Select **OK**.
 
 <h2>Next steps</h2>
 

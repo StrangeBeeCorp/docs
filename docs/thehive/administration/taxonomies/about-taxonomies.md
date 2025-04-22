@@ -10,8 +10,8 @@ Taxonomies can be created in two ways:
 
 * From MISP: [MISP taxonomies](https://github.com/MISP/misp-taxonomies) are imported by default when you install TheHive.
 
-!!! warning "Manual activation required"
-    By default, MISP taxonomies aren't activated, so you can't add their tags to cases, alerts, or observables. You must [activate them manually](activate-deactivate-a-taxonomy.md).
+    !!! warning "Manual activation required"
+        By default, MISP taxonomies aren't activated. You must [activate them manually](activate-deactivate-a-taxonomy.md).
 
 * From custom files: You can [import custom taxonomies](add-a-custom-taxonomy.md) as needed.
 

@@ -8,7 +8,7 @@ This topic provides an overview of the scope and usage of alert feeders in TheHi
 
 ## How alert feeders work
 
-Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [a function](../manage-functions/about-functions.md). Each alert feeder supports only one function.
+Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [a function](#feeder-functions). Each alert feeder supports only one function.
 
 Alert feeders don't perform bi-directional synchronization.
 

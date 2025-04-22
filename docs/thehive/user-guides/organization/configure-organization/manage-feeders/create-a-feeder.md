@@ -2,9 +2,9 @@
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive.
+This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive, with an example for [Airtable](#airtable-example).
 
-You can also find an example of [how to configure an Airtable alert feeder](#airtable-example).
+This is useful if you want to automatically retrieve data at a defined frequency from an external service via an HTTP API call and convert it into alerts in TheHive.
 
 {!includes/access-feeders.md!}
 
@@ -14,9 +14,7 @@ You can also find an example of [how to configure an Airtable alert feeder](#air
 
     ---
 
-2. Select the **Connectors** tab.
-
-    Image
+2. {!includes/connectors-tab-organization-go-to.md!}
 
     ---
 
