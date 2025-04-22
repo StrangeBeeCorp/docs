@@ -11,6 +11,9 @@ This topic provides step-by-step instructions for configuring TheHive's audit lo
 !!! info "Reasons to consider Elasticsearch"
     Elasticsearch is better suited for managing large volumes of audit logs. It enhances performance by efficiently handling data, reducing latency, and offering advanced search capabilities. If your organization generates a significant amount of audit logs, migrating to Elasticsearch can improve both data management and retrieval.
 
+!!! warning "Audit logs visibility"
+    With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if [you set restricted visibility for a case](../user-guides/analyst-corner/cases/restrict-visibility-case.md), audit logs remain visible to all users.
+
 !!! warning "No rollback possible"
     Since TheHive can only use one audit storage system at a time, when you switch to Elasticsearch, the audit logs stored in JanusGraph become unavailable. TheHive doesn't support transferring audit logs back from Elasticsearch to JanusGraph. 
 
