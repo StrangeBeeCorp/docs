@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://docs.strangebee.com/thehive/release-notes/release-notes-5.5/">
       
       
+        <link rel="prev" href="../release-notes-5.4/">
+      
+      
+        <link rel="next" href="../../../cortex/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Release Notes of 5.5 Series - TheHive 5 Documentation</title>
+        <title>Release Notes for Version 5.5 - TheHive 5 Documentation</title>
       
     
     
@@ -180,7 +184,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Release Notes of 5.5 Series
+              Release Notes for Version 5.5
             
           </span>
         </div>
@@ -271,10 +275,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -412,24 +418,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -442,7 +453,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             TheHive
@@ -8924,6 +8935,8 @@
                 
   
   
+    
+  
   
   
     
@@ -8934,11 +8947,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
         
           
           <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
@@ -8954,7 +8967,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Release Notes
@@ -9071,6 +9084,82 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Release Notes for Version 5.5
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Release Notes for Version 5.5
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#550-april-22-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.0 - April 22, 2025
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -10730,7 +10819,101 @@
 
 
 
-<h1 id="release-notes-of-55-series">Release Notes of 5.5 Series<a class="headerlink" href="#release-notes-of-55-series" title="Permanent link">#</a></h1>
+<div><h1 id="release-notes-of-55-series">Release Notes of 5.5 Series<a class="headerlink" href="#release-notes-of-55-series" title="Permanent link">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Cortex support</p>
+<p>Version 5.5 no longer supports Cortex versions earlier than 3.1.5 (released on June 22, 2022).</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Public API v0 deprecation</p>
+<p>Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.</p>
+</div>
+<h2 id="550-april-22-2025">5.5.0 - April 22, 2025<a class="headerlink" href="#550-april-22-2025" title="Permanent link">#</a></h2>
+<h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
+<h4 id="private-cases-restrict-access-to-sensitive-cases">Private cases: Restrict access to sensitive cases<a class="headerlink" href="#private-cases-restrict-access-to-sensitive-cases" title="Permanent link">#</a></h4>
+<p>You can now <a href="../../user-guides/analyst-corner/cases/about-cases/#case-visibility">restrict access to sensitive cases</a> to designated team members and managers.</p>
+<h4 id="alert-feeders">Alert feeders<a class="headerlink" href="#alert-feeders" title="Permanent link">#</a></h4>
+<p>An <a href="../../user-guides/organization/configure-organization/manage-feeders/about-feeders/">alert feeder</a> is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive's public API.</p>
+<h4 id="case-links-link-external-or-internal-elements-to-a-case">Case links: Link external or internal elements to a case<a class="headerlink" href="#case-links-link-external-or-internal-elements-to-a-case" title="Permanent link">#</a></h4>
+<p>You can now <a href="../../user-guides/analyst-corner/cases/about-cases/#linking-elements">link cases</a> to each other and to external URLs, offering a comprehensive view of related information directly within the <strong>General</strong> tab. Additionally, when you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL associated with the alert is added as an external link.</p>
+<h4 id="table-widget-in-dashboard">Table widget in dashboard<a class="headerlink" href="#table-widget-in-dashboard" title="Permanent link">#</a></h4>
+<p>The <a href="../../user-guides/analyst-corner/dashboard/widgets-dashboards/#table-widget">table widget</a> displays a list of entities (cases, alerts, or tasks) in a tabular format. You can customize the columns, apply advanced filters, and select sorting options. This can be used to view action-required cases directly on a dashboard.</p>
+<h4 id="new-markdown-content-formatting-options">New Markdown content formatting options<a class="headerlink" href="#new-markdown-content-formatting-options" title="Permanent link">#</a></h4>
+<p>You now have access to three new improvements in <a href="../../user-guides/thehive-flavored-markdown/">the Markdown formatting options</a>:</p>
+<ul>
+<li>The ability to use the <code>&lt;br /&gt;</code>, <code>&lt;br/&gt;</code>, or <code>&lt;br&gt;</code> HTML tags to break lines within table cells</li>
+<li>Code blocks with syntax highlighting</li>
+<li>Admonition blocks of types error, warning, success, or info</li>
+</ul>
+<h4 id="new-openid-sso-provider">New OpenID SSO provider<a class="headerlink" href="#new-openid-sso-provider" title="Permanent link">#</a></h4>
+<p>TheHive now supports integration with an <a href="../../administration/authentication/openid/">OpenID authentication provider</a>, offering users Single Sign-On (SSO) access. While authentication via SAML and OAuth 2.0 was previously supported, OpenID, built on the OAuth2 authorization layer, simplifies the authentication process.</p>
+<h4 id="hide-predefined-statuses">Hide predefined statuses<a class="headerlink" href="#hide-predefined-statuses" title="Permanent link">#</a></h4>
+<p>You can now <a href="../../administration/status/change-visibility-of-a-status/">hide predefined statuses</a> for cases and alerts, allowing users to see only the custom statuses you’ve created. This provides a cleaner, more organized status list, displaying only relevant information for an improved user experience.</p>
+<h4 id="ms-graph-api-for-email-intakes">MS Graph API for email intakes<a class="headerlink" href="#ms-graph-api-for-email-intakes" title="Permanent link">#</a></h4>
+<p>The <a href="../../administration/email-intake-connector/connect-a-mailbox/">Microsoft 365 Graph API connector</a> is now available for email intakes. It uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.</p>
+<h4 id="case-report-templates-display-the-description-of-custom-events">Case report templates: Display the description of custom events<a class="headerlink" href="#case-report-templates-display-the-description-of-custom-events" title="Permanent link">#</a></h4>
+<p>You can now hide or show the description of custom events in the <a href="../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/#timeline-widget">timeline widget</a> within case reports.</p>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h4 id="taxonomy-drawer">Taxonomy drawer<a class="headerlink" href="#taxonomy-drawer" title="Permanent link">#</a></h4>
+<p>The taxonomies component has been redesigned to provide an improved user experience.</p>
+<h4 id="better-user-experience-for-custom-fields">Better user experience for custom fields<a class="headerlink" href="#better-user-experience-for-custom-fields" title="Permanent link">#</a></h4>
+<p>The display of custom fields has been improved for better consistency and intuitiveness, making data entry and management more efficient while reducing errors.</p>
+<h4 id="images-in-descriptions">Images in descriptions<a class="headerlink" href="#images-in-descriptions" title="Permanent link">#</a></h4>
+<p>You can now display full-size images by dropping them directly into the descriptions of cases, alerts, and task logs. This improvement complements the existing attachment system, which displays images as attachments.</p>
+<h4 id="status-visibility-in-the-tasks-tab-of-cases">Status visibility in the Tasks tab of cases<a class="headerlink" href="#status-visibility-in-the-tasks-tab-of-cases" title="Permanent link">#</a></h4>
+<p>The status of tasks is now clearly visible in each row of the <strong>Tasks</strong> tab in cases, enabling quick identification without needing to open the details.</p>
+<h4 id="public-api-observable-route-optimization">Public API observable route optimization<a class="headerlink" href="#public-api-observable-route-optimization" title="Permanent link">#</a></h4>
+<p>The observable creation routes in alerts and cases have been optimized, making the creation of dozens of observables five times faster.</p>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h4 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">#</a></h4>
+<h5 id="dark-mode">Dark Mode<a class="headerlink" href="#dark-mode" title="Permanent link">#</a></h5>
+<ul>
+<li>Corrected rendering of tag colors in report analyzers.</li>
+<li>Fixed color display for failure messages on dashboards.</li>
+</ul>
+<h4 id="others">Others<a class="headerlink" href="#others" title="Permanent link">#</a></h4>
+<ul>
+<li>MISP server connection: Improved by trimming the server URL.</li>
+<li>Attachment tab on cases: Fixed the counter to display the correct number. Filtering and sorting of attachments now work correctly.</li>
+<li>Case and alert closure: Added the ability to input multiple values in custom fields.</li>
+<li>Dashboards: <ul>
+<li>Selecting <em>Audit</em> in the <strong>Entity</strong> field is no longer allowed for any widget. Previously created widgets remain unaffected.</li>
+<li>Fixed an issue when using a date-type custom field as the date field in the widget.</li>
+</ul>
+</li>
+<li>Case export to MISP: Fixed an issue with attachments when exporting a case to MISP.</li>
+<li>Merged alert audits: Fixed a regression introduced in <a href="../release-notes-5.4/">version 5.4.8</a> related to the JSON audit object of merged alerts. In the audit, the <code>object.*</code> field refers to the merged alert, while the <code>context.*</code> object refers to the case where the alert has been merged.</li>
+<li>Notification form: Improved the performance of the filteredEvent input.</li>
+</ul>
+<h3 id="documentation-updates">Documentation updates<a class="headerlink" href="#documentation-updates" title="Permanent link">#</a></h3>
+<h4 id="administration">Administration<a class="headerlink" href="#administration" title="Permanent link">#</a></h4>
+<ul>
+<li>Authentication</li>
+<li>Organizations</li>
+<li>Cortex server connection</li>
+<li>Email intake connectors</li>
+<li>MISP integration</li>
+<li>Custom fields</li>
+<li>Taxonomies</li>
+<li>Case and alert statuses</li>
+</ul>
+<h4 id="configure-organization">Configure organization<a class="headerlink" href="#configure-organization" title="Permanent link">#</a></h4>
+<ul>
+<li>Notifications and endpoints</li>
+<li>Functions</li>
+<li>Templates</li>
+<li>Custom tags</li>
+</ul>
+<h4 id="analysts-corner">Analyst's corner<a class="headerlink" href="#analysts-corner" title="Permanent link">#</a></h4>
+<ul>
+<li>Closing alerts and cases</li>
+<li>Merging cases</li>
+<li>Task and task logs</li>
+<li>Case reports</li>
+<li>Case timelines</li>
+<li>Dashboards</li>
+<li>Knowledge Base</li>
+</ul></div>
 
 
 
