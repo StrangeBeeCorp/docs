@@ -10,11 +10,11 @@ This topic provides step-by-step instructions for restoring a cold backup of a s
 
 ## Prerequisites
 
-This process assumes you are using [one of our Docker Compose profiles](https://github.com/StrangeBeeCorp/docker) and have already created a backup using the [Perform a Cold Backup for a Stack Running with Docker Compose](../../backup/cold-backup/docker-compose.md) topic.
+This process assumes you are using [one of the Docker Compose profiles](https://github.com/StrangeBeeCorp/docker) and have already created a backup using the [Perform a Cold Backup for a Stack Running with Docker Compose](../../backup/cold-backup/docker-compose.md) topic.
 
 ## Step 1: Stop the services
 
-Stop all services to ensure data consistency and prevent any changes during the backup process.
+Stop all services to ensure data consistency and prevent any changes during the restore process.
 
 !!! Example ""
 
@@ -169,7 +169,7 @@ Before restoring data, ensure that you have identified the correct backup archiv
 
 ## Step 4: Validate the restore
 
-Check the target data folders and verify that the restored data has been copied correctly. Ensure that all files and configurations match the backup and that no data corruption or missing files occurred during the restore process.
+Open you browser, connect to TheHive, and check your data has been restored correctly.
 
 ### Step 5: Restart all services
 

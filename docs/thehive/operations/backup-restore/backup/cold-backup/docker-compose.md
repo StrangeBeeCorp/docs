@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for performing a cold backup of a 
 
 ## Prerequisites
 
-This solution assumes you are following our [Running TheHive with Docker](../../../../installation/docker.md) guide to run your application stack.
+This solution assumes you are following the [Running TheHive with Docker](../../../../installation/docker.md) guide to run your application stack.
 
 Before starting, ensure you have:
 
@@ -37,8 +37,8 @@ Copy volumes and mapped directories on the host machine, which contain your data
 For example, on the host server, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions.
 
 !!! tip "Tips"
-    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to [the GitHub repository for using Docker Compose environments](https://github.com/StrangeBeeCorp/docker) for detailed instructions.
-    * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.
+    * [Docker Compose profiles](https://github.com/StrangeBeeCorp/docker) include a comprehensive backup script, including all necessary housekeeping actions.
+    * You can also review the backup script for `prod1-thehive` directly on the [Docker Compose profiles GitHub repository](https://github.com/StrangeBeeCorp/docker).
 
 !!! Example ""
 

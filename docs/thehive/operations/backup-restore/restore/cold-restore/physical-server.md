@@ -16,12 +16,12 @@ Unlike virtual or containerized environments, restoring on physical servers requ
 
 This guide assumes that:
 
-* You are restoring from a cold backup created using the procedures outlined in the [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md) topic, where services were stopped during the backup process to ensure data consistency.
+* You are restoring from a cold backup created using the procedures outlined in the [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md) guide, where services were stopped during the backup process to ensure data consistency.
 * The server environment matches the original configuration (for example, paths, software versions, and dependencies).
 
 ## Step 1: Stop the services
 
-Ensure all services are stopped before running the restoration process.
+Stop all services to ensure data consistency and prevent any changes during the restore process.
 
 !!! Example ""
 

@@ -14,11 +14,11 @@ Unlike virtualized or containerized environments, physical servers require direc
 
 This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.
 
-This process and example below assume you have followed our [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
+This process and example below assume you have followed the [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
 
 ## Step 1: Stop the services
 
-Stop services in this order to avoid data corruption.
+Stop services in this order to avoid data corruption:
 
 1. TheHive
 2. Elasticsearch
