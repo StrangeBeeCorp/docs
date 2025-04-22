@@ -1811,9 +1811,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#validation" class="md-nav__link">
+  <a href="#step-2-check-all-data-folders-are-empty" class="md-nav__link">
     <span class="md-ellipsis">
-      Validation
+      Step 2: Check all data folders are empty
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-copy-files-from-the-backup-folder" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Copy files from the backup folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-validate-the-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5: Validate the restore
     </span>
   </a>
   
@@ -11088,17 +11106,17 @@
 <li>The server environment matches the original configuration (for example, paths, software versions, and dependencies).</li>
 </ul>
 <h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
-<p>Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.</p>
+<p>Ensure all services are stopped before running the restoration process.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
 systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
 systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 </code></pre></div>
 </div>
-<h3 id="check-all-data-folders-are-empty">Check all data folders are empty<a class="headerlink" href="#check-all-data-folders-are-empty" title="Permanent link">#</a></h3>
+<h2 id="step-2-check-all-data-folders-are-empty">Step 2: Check all data folders are empty<a class="headerlink" href="#step-2-check-all-data-folders-are-empty" title="Permanent link">#</a></h2>
 <p>Ensure <code>/var/lib/cassandra/</code> and <code>/var/lib/elasticsearch/</code> are empty.</p>
-<h3 id="copy-files-from-the-backup-folder">Copy files from the backup folder<a class="headerlink" href="#copy-files-from-the-backup-folder" title="Permanent link">#</a></h3>
-<p>For example, with a dedicated NFS volume and a folder named <code>/opt/backup</code>  copy all files preserving their permissions</p>
+<h2 id="step-3-copy-files-from-the-backup-folder">Step 3: Copy files from the backup folder<a class="headerlink" href="#step-3-copy-files-from-the-backup-folder" title="Permanent link">#</a></h2>
+<p>For example, with a dedicated NFS volume and a folder named <code>/opt/backup</code>  copy all files preserving their permissions.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -11142,7 +11160,7 @@ systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 <span class="c1">## WARNING:</span>
 <span class="c1">## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.</span>
 <span class="c1">## - This script will overwrite existing data. Use it with caution.</span>
-<span class="c1">## - Do not modify the rest of the script unless necessary.</span>
+<span class="c1">## - Don't modify the rest of the script unless necessary.</span>
 <span class="c1">##</span>
 <span class="c1">## ============================================================</span>
 <span class="c1">## DO NOT MODIFY ANYTHING BELOW THIS LINE</span>
@@ -11215,7 +11233,7 @@ rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/data/<span class="w"> </span>/opt/thp/thehive/files<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/logs/<span class="w"> </span>/var/log/thehive<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive logs restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 
-<span class="c1"># Copy Casssandra data</span>
+<span class="c1"># Copy Cassandra data</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/config/<span class="w"> </span>/etc/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra config restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/data/<span class="w"> </span>/var/lib/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/logs/<span class="w"> </span>/var/log/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra logs restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
@@ -11229,7 +11247,8 @@ rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class
 </code></pre></div>
 </div>
 <p>Ensure permissions are correctly setup before running services. </p>
-<h3 id="start-services-in-this-order">Start services in this order<a class="headerlink" href="#start-services-in-this-order" title="Permanent link">#</a></h3>
+<h3 id="step-4-restart-all-services">Step 4: Restart all services<a class="headerlink" href="#step-4-restart-all-services" title="Permanent link">#</a></h3>
+<p>Restart services in this order:</p>
 <ol>
 <li>Elasticsearch</li>
 <li>Cassandra</li>
@@ -11241,13 +11260,12 @@ systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
 systemctl<span class="w"> </span>start<span class="w"> </span>cassandra
 </code></pre></div>
 </div>
-<hr>
-<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">#</a></h2>
+<h2 id="step-5-validate-the-restore">Step 5: Validate the restore<a class="headerlink" href="#step-5-validate-the-restore" title="Permanent link">#</a></h2>
 <p>Open you browser, connect to TheHive, and check your data has been restored correctly.</p>
 <h2>Next steps</h2>
 
 <ul>
-<li><a href="./">Restore a Cold Backup on a Physical Server</a></li>
+<li><a href="../../../backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a></li>
 </ul></div>
 
 

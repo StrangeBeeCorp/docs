@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restore-virtual-server" class="md-skip">
+        <a href="#how-to-restore-a-cold-backup-on-a-virtual-server" class="md-skip">
           Skip to content
         </a>
       
@@ -1816,18 +1816,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1st-solution-restore-data-folders-from-a-backup" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
-      1st solution: Restore data folders from a backup
+      Prerequisites
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2nd-solution-leverage-the-capabilities-of-the-hypervisor" class="md-nav__link">
+  <a href="#first-option-restore-data-folders-from-a-backup" class="md-nav__link">
     <span class="md-ellipsis">
-      2nd solution: Leverage the capabilities of the hypervisor
+      First option: Restore data folders from a backup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#second-option-leverage-the-capabilities-of-the-hypervisor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Second option: Leverage the capabilities of the hypervisor
     </span>
   </a>
   
@@ -11053,19 +11062,36 @@
 
 
 
-<div><h1 id="restore-virtual-server">Restore virtual server<a class="headerlink" href="#restore-virtual-server" title="Permanent link">#</a></h1>
+<div><h1 id="how-to-restore-a-cold-backup-on-a-virtual-server">How to Restore a Cold Backup on a Virtual Server<a class="headerlink" href="#how-to-restore-a-cold-backup-on-a-virtual-server" title="Permanent link">#</a></h1>
+<p>This topic provides step-by-step instructions for restoring a cold backup on a virtual server for TheHive.</p>
+<p>Using virtual servers provides more flexibility in performing backup and restore operations.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This process and example below assume you have followed our <a href="../../../../../installation/docker/">step-by-step guide</a> to install the application stack.</p>
+<p class="admonition-title">Cold vs. hot backups and restores</p>
+<p>Before proceeding, ensure you fully understand <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">the implications of performing a cold backup and restore</a>. It is the recommended approach for ensuring data integrity, though it requires downtime.</p>
 </div>
-<p>Using virtual servers allow more solutions to perform backup and restore operations.</p>
-<hr>
-<h2 id="1st-solution-restore-data-folders-from-a-backup">1st solution: Restore data folders from a backup<a class="headerlink" href="#1st-solution-restore-data-folders-from-a-backup" title="Permanent link">#</a></h2>
-<p>Assuming you are using our cold <a href="../../../backup/cold-backup/physical-server/">backup</a> guide to backup your data, use scripts to restore the configuration, data, and logs from each application in your stack. Refer to the cold <a href="../physical-server/">restore</a> guide for detailed instructions.</p>
-<hr>
-<h2 id="2nd-solution-leverage-the-capabilities-of-the-hypervisor">2nd solution: Leverage the capabilities of the hypervisor<a class="headerlink" href="#2nd-solution-leverage-the-capabilities-of-the-hypervisor" title="Permanent link">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Adapting instructions</p>
+<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Best practices for safe backup and restore</p>
+<ul>
+<li>Always test the backup and restore process in a non-production or test environment before applying it to a live system to ensure the process works as expected.</li>
+<li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
+</ul>
+</div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>This process and example below assume you have followed our <a href="../../../../../installation/step-by-step-installation-guide/">step-by-step guide</a> to install the application stack.</p>
+<h2 id="first-option-restore-data-folders-from-a-backup">First option: Restore data folders from a backup<a class="headerlink" href="#first-option-restore-data-folders-from-a-backup" title="Permanent link">#</a></h2>
+<p>Assuming you are using our <a href="../../../backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a> guide to backup your data, use scripts to restore the configuration, data, and logs from each application in your stack. Refer to the <a href="../physical-server/">Restore a Cold Backup on a Physical Server</a> guide for detailed instructions.</p>
+<h2 id="second-option-leverage-the-capabilities-of-the-hypervisor">Second option: Leverage the capabilities of the hypervisor<a class="headerlink" href="#second-option-leverage-the-capabilities-of-the-hypervisor" title="Permanent link">#</a></h2>
 <p>Hypervisors often come with the capacity to create a snapshot volumes and entire virtual machine. We recommend creating snapshots of volumes containing data and files after stopping TheHive, Cassandra and Elasticsearch applications. </p>
-<p>For the restore process, begin by restoring the snapshots created with the hypervisor. This allows you to quickly revert to a previous state, ensuring that both the system configuration and application data are restored to their exact state at the time of the snapshot. Be sure to follow any additional procedures specific to your hypervisor to ensure the snapshots are properly applied and that the system operates as expected after the restore.</p></div>
+<p>For the restore process, begin by restoring the snapshots created with the hypervisor. This allows you to quickly revert to a previous state, ensuring that both the system configuration and application data are restored to their exact state at the time of the snapshot. Be sure to follow any additional procedures specific to your hypervisor to ensure the snapshots are properly applied and that the system operates as expected after the restore.</p>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../../backup/cold-backup/virtual-server/">Perform a Cold Backup on a Virtual Server</a></li>
+</ul></div>
 
 
 
