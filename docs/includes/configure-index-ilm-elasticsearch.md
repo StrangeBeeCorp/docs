@@ -9,7 +9,7 @@ Configure the default index template and Index Lifecycle Management (ILM) for `t
 * `hot.rollover.maxSize`
 * `delete.minAge`
 
-### Index template
+#### Index template
 
 The index template ensures consistent storage and indexing of audit logs.
 
@@ -27,7 +27,7 @@ Default index template:
 }
 ```
 
-### ILM
+#### ILM
 
 ILM manages the storage, rollover, and deletion of audit logs over time, optimizing long-term storage.
 
@@ -50,7 +50,7 @@ Default ILM:
 }
 ```
 
-!!! example "Configure rollover and retention"
+!!! example "Example"
     To create a new index every day or when it reaches 1 GB, and retain it for 7 days, use the following configuration:
 
     - Index template:

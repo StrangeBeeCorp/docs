@@ -362,7 +362,7 @@ For additional configuration options, refer to:
 
 [Elasticsearch](https://www.elastic.co/elasticsearch) is a robust data indexing and search engine. TheHive uses it to manage data indices efficiently.
 
-[Badge version 5.5] Elasticsearch can also replace Apache Cassandra and JanusGraph for storing audit logs.
+[Badge version 5.5] Elasticsearch can also replace Apache Cassandra (JanusGraph) for storing audit logs.
 
 !!! note "Elasticsearch support"
     Starting from version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x. If you want to use Elasticsearch to store your audit logs, ensure that you are using Elasticsearch 7.17 or later.
@@ -521,13 +521,13 @@ By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. Howeve
 !!! warning "Prerequisites"
     Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
 
-1. Activate audit log storage
+a. Activate audit log storage
 
-    {!includes/activate-audit-log-storage-elasticsearch.md!}
+{!includes/activate-audit-log-storage-elasticsearch.md!}
 
-2. Configure index template and Index Lifecycle Management (ILM)
+b. Configure index template and Index Lifecycle Management (ILM)
 
-    {!includes/configure-index-ilm-elasticsearch.md!}
+{!includes/configure-index-ilm-elasticsearch.md!}
 
 ### Start the service
 
