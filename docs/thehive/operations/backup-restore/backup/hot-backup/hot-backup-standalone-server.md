@@ -1,6 +1,6 @@
 # How to Perform a Hot Backup on a Standalone Server
 
-This topic provides step-by-step instructions for performing a hot backup on a standalone server in TheHive.
+This topic provides step-by-step instructions for performing a hot backup on a standalone server for TheHive.
 
 {!includes/prerequisites-hot-backup-restore.md!}
 

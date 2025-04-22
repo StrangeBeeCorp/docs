@@ -1,36 +1,23 @@
-# Backup a stack run with Docker Compose
+# How to Perform a Cold Backup for a Stack Running with Docker Compose
 
-!!! Note
-    This solution assumes you are following our _[Running with Docker](../../../../installation/docker.md)_ guide to run your application stack.
+This topic provides step-by-step instructions for performing a cold backup of a stack running with Docker Compose for TheHive.
 
+!!! note "Prerequisite"
+    This solution assumes you are following our [Running TheHive with Docker](../../../../installation/docker.md) guide to run your application stack.
 
----
-## Introduction
-
-The backup procedure is designed to capture the state of your application stack in three simple steps:
-
-1. Stop all services to ensure data consistency and prevent any changes during the backup process.
-2. Copy volumes and mapped directories on the host machine, which contain your data, configurations, and logs.
-3. Restart the services to resume normal operations after the backup is complete.
-
-
----
 ## Prerequisites
 
-Before starting, ensure:
+Before starting, ensure you have:
 
-* You have sufficient storage space for the backup.
+* Sufficient storage space for the backup.
 * Administrative privileges to stop and start Docker Compose services.
 * Familiarity with the locations of your mapped volumes and data directories.
 
 This step-by-step procedure ensures a safe and consistent backup of your Docker Compose stack, enabling quick recovery in case of an issue or migration to a new environment. For more details on restoring these backups, refer to the [restore procedure for Docker Compose](../../restore/cold-restore/docker-compose.md).
 
+## Step 1: Stop the services
 
-
----
-## Step-by-step instructions
-
-### Stop the services
+Stop all services to ensure data consistency and prevent any changes during the backup process.
 
 !!! Example ""
 
@@ -38,9 +25,15 @@ This step-by-step procedure ensures a safe and consistent backup of your Docker 
     docker compose down 
     ```
 
-### Copy files in a backup folder
+## Step 2: Copy files in a backup folder
 
-For example, on the host server, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
+Copy volumes and mapped directories on the host machine, which contain your data, configurations, and logs.
+
+For example, on the host server, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions.
+
+!!! tip "Tips"
+    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to [the GitHub repository for using Docker Compose environments](https://github.com/StrangeBeeCorp/docker) for detailed instructions.
+    * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.
 
 !!! Example ""
 
@@ -80,12 +73,12 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     ##
     ## ADDITIONAL RESOURCES:
     ## Refer to the official documentation for detailed instructions and 
-    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/
+    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/backup/cold-backup/docker-compose.md.
     ##
     ## WARNING:
     ## - This script stops Nginx, Elasticsearch, Cassandra, and TheHive services, 
     ##   performs the backup, and then restarts the services.
-    ## - Do not modify the rest of the script unless necessary.
+    ## - Don't modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
@@ -142,7 +135,6 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     DATE="$(date +"%Y%m%d-%H%M%z" | sed 's/+/-/')"
     BACKUP_FOLDER="${BACKUP_ROOT_FOLDER}/${DATE}"
 
-
     ## Stop services
     docker compose -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml stop
 
@@ -154,8 +146,6 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     LOG_FILE="${BACKUP_ROOT_FOLDER}/backup_log_${DATE}.log"
     exec &> >(tee -a "$LOG_FILE")
 
-
-
     ## Prepare folders tree
     mkdir -p ${BACKUP_FOLDER}/{thehive,cassandra,elasticsearch,nginx,certificates}
     echo "Created folder structure under ${BACKUP_FOLDER}"
@@ -165,7 +155,7 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/thehive/ ${BACKUP_FOLDER}/thehive || { echo "TheHive backup failed"; exit 1; }
     echo "TheHive backup completed."
 
-    ## Copy Casssandra data
+    ## Copy Cassandra data
     echo "Starting Cassandra backup..."
     rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/cassandra/ ${BACKUP_FOLDER}/cassandra || { echo "Cassandra backup failed"; exit 1; }
     echo "Cassandra backup completed."
@@ -185,17 +175,18 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     echo "Restarting services..."
     docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml
 
-
-
     echo "Backup process completed at: $(date)"
     ```
 
----
-## Validation
+## Step 3: Validate the backup
 
-check the backup folder and verify the data has been well copied.
+Check the backup folder and verify that the data has been copied correctly.
 
----
-!!! Tip
-    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to the appropriate documentation for detailed instructions [here](https://github.com/StrangeBeeCorp/docker).
-    * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.
+## Step 4: Restart all services
+
+Use `docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml` to restart all services with the command line.
+
+<h2>Next steps</h2>
+
+* [Restore a Cold Backup for a Stack Running with Docker Compose](../../restore/cold-restore/docker-compose.md)
+* [Cold vs. Hot Backups and Restores](../../cold-hot-backup-restore.md)

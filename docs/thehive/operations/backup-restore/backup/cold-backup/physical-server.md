@@ -1,17 +1,11 @@
-# For Physical Servers
+# How to Perform a Cold Backup on a Physical Server
+
+This topic provides step-by-step instructions for performing a cold backup on a physical server for TheHive.
   
 ## Introduction
 
 Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.
 
-When performing a backup on physical servers, it’s essential to:
-
-1. Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.
-2. Ensure file permissions are adequate for the backup process.
-3. Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
-4. Validate the backup to ensure it can be restored without issues.
-
----
 ## Prerequisites
 
 This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.
@@ -26,6 +20,8 @@ This process and example below assume you have followed our [step-by-step guide]
 
 ### Stop the services in this order
 
+Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.
+
 1. TheHive
 2. Elasticsearch
 3. Cassandra
@@ -39,6 +35,8 @@ This process and example below assume you have followed our [step-by-step guide]
     ```
 
 ### Copy files in a backup folder
+
+Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
 
 For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
 
@@ -196,4 +194,11 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
 ---
 ## Validation
 
-check the backup folder and verify the data has been well copied.
+Validate the backup to ensure it can be restored without issues.
+
+Check the backup folder and verify the data has been well copied.
+
+<h2>Next steps</h2>
+
+* [Restore a Cold Backup for a Stack Running with Docker Compose](../../restore/cold-restore/docker-compose.md)
+* [Cold vs. Hot Backups and Restores](../../cold-hot-backup-restore.md)

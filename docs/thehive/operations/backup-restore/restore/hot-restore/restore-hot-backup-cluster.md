@@ -1,6 +1,6 @@
 # How to Restore a Hot Backup on a Cluster
 
-This topic provides step-by-step instructions for restoring a hot backup on a cluster in TheHive.
+This topic provides step-by-step instructions for restoring a hot backup on a cluster for TheHive.
 
 {!includes/prerequisites-hot-backup-restore.md!}
 
