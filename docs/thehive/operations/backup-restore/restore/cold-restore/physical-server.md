@@ -21,7 +21,7 @@ This guide assumes that:
 
 ## Step 1: Stop the services
 
-Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.
+Ensure all services are stopped before running the restoration process.
 
 !!! Example ""
 
@@ -31,15 +31,13 @@ Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before
     systemctl stop cassandra
     ```
 
-
-### Check all data folders are empty
+## Step 2: Check all data folders are empty
 
 Ensure `/var/lib/cassandra/` and `/var/lib/elasticsearch/` are empty.
 
+## Step 3: Copy files from the backup folder
 
-### Copy files from the backup folder
-
-For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy all files preserving their permissions
+For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy all files preserving their permissions.
 
 !!! Example ""
 
@@ -86,7 +84,7 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
     ## WARNING:
     ## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.
     ## - This script will overwrite existing data. Use it with caution.
-    ## - Do not modify the rest of the script unless necessary.
+    ## - Don't modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
@@ -159,7 +157,7 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
     rsync -aW --no-compress ${BACKUP_FOLDER}/thehive/data/ /opt/thp/thehive/files || { echo "TheHive data restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/thehive/logs/ /var/log/thehive || { echo "TheHive logs restore failed"; exit 1; }
 
-    # Copy Casssandra data
+    # Copy Cassandra data
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/config/ /etc/cassandra || { echo "Cassandra config restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/data/ /var/lib/cassandra || { echo "Cassandra data restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/logs/ /var/log/cassandra || { echo "Cassandra logs restore failed"; exit 1; }
@@ -174,7 +172,9 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
 
 Ensure permissions are correctly setup before running services. 
 
-### Start services in this order
+### Step 4: Restart all services
+
+Restart services in this order:
 
 1. Elasticsearch
 2. Cassandra
@@ -188,11 +188,10 @@ Ensure permissions are correctly setup before running services.
     systemctl start cassandra
     ```
 
----
-## Validation
+## Step 5: Validate the restore
 
 Open you browser, connect to TheHive, and check your data has been restored correctly.
 
 <h2>Next steps</h2>
 
-* [Restore a Cold Backup on a Physical Server](../../restore/cold-restore/physical-server.md)
+* [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md)
