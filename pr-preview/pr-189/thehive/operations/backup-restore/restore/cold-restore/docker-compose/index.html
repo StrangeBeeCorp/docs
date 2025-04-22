@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restore-a-stack-run-with-docker-compose" class="md-skip">
+        <a href="#how-to-restore-a-cold-backup-for-a-stack-running-with-docker-compose" class="md-skip">
           Skip to content
         </a>
       
@@ -1839,27 +1839,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ensure-all-services-are-stopped" class="md-nav__link">
+  <a href="#step-1-stop-the-services" class="md-nav__link">
     <span class="md-ellipsis">
-      Ensure all services are stopped
+      Step 1: Stop the services
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ensure-all-data-folder-are-empty-before-running-the-restore-process" class="md-nav__link">
+  <a href="#step-2-ensure-all-data-folder-are-empty" class="md-nav__link">
     <span class="md-ellipsis">
-      Ensure all data folder are empty before running the restore process
+      Step 2: Ensure all data folder are empty
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#choose-the-archive-to-restore-from-the-backup-folder" class="md-nav__link">
+  <a href="#step-3-choose-the-archive-to-restore-from-the-backup-folder" class="md-nav__link">
     <span class="md-ellipsis">
-      Choose the archive to restore from the backup folder
+      Step 3: Choose the archive to restore from the backup folder
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-validate-the-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Validate the restore
     </span>
   </a>
   
@@ -11062,21 +11071,22 @@
 
 
 
-<div><h1 id="restore-a-stack-run-with-docker-compose">Restore a stack run with Docker Compose<a class="headerlink" href="#restore-a-stack-run-with-docker-compose" title="Permanent link">#</a></h1>
+<div><h1 id="how-to-restore-a-cold-backup-for-a-stack-running-with-docker-compose">How to Restore a Cold Backup for a Stack Running with Docker Compose<a class="headerlink" href="#how-to-restore-a-cold-backup-for-a-stack-running-with-docker-compose" title="Permanent link">#</a></h1>
+<p>This topic provides step-by-step instructions for restoring a cold backup of a stack running with Docker Compose for TheHive.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This process assumes you are using <a href="https://github.com/StrangeBeeCorp/docker">one of our Docker Compose profiles</a>, and you have already created backup using the previously outlined backup procedure.</p>
+<p class="admonition-title">Prerequisite</p>
+<p>This process assumes you are using <a href="https://github.com/StrangeBeeCorp/docker">one of our Docker Compose profiles</a> and have already created a backup using the <a href="../../../backup/cold-backup/docker-compose/">Perform a Cold Backup for a Stack Running with Docker Compose</a> topic.</p>
 </div>
-<p>Restore data that has been saved following the previous backup process.</p>
-<h2 id="ensure-all-services-are-stopped">Ensure all services are stopped<a class="headerlink" href="#ensure-all-services-are-stopped" title="Permanent link">#</a></h2>
+<h2 id="step-1-stop-the-services">Step 1: Stop the services<a class="headerlink" href="#step-1-stop-the-services" title="Permanent link">#</a></h2>
+<p>Stop all services to ensure data consistency and prevent any changes during the backup process.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
 </code></pre></div>
 </div>
-<h2 id="ensure-all-data-folder-are-empty-before-running-the-restore-process">Ensure all data folder are empty before running the restore process<a class="headerlink" href="#ensure-all-data-folder-are-empty-before-running-the-restore-process" title="Permanent link">#</a></h2>
-<p>A backup is highly recommended before running a restore operation; this ensures you can revert to the current state if anything goes wrong.</p>
-<p>Ensure that the target data folders are empty before running this script. Indeed, pre-existing files can cause conflicts or data corruption during the restore process.</p>
-<h2 id="choose-the-archive-to-restore-from-the-backup-folder">Choose the archive to restore from the backup folder<a class="headerlink" href="#choose-the-archive-to-restore-from-the-backup-folder" title="Permanent link">#</a></h2>
+<h2 id="step-2-ensure-all-data-folder-are-empty">Step 2: Ensure all data folder are empty<a class="headerlink" href="#step-2-ensure-all-data-folder-are-empty" title="Permanent link">#</a></h2>
+<p>Make sure the target data folders are empty before running this script, as pre-existing files can cause conflicts or data corruption during the restore process.</p>
+<h2 id="step-3-choose-the-archive-to-restore-from-the-backup-folder">Step 3: Choose the archive to restore from the backup folder<a class="headerlink" href="#step-3-choose-the-archive-to-restore-from-the-backup-folder" title="Permanent link">#</a></h2>
+<p>Before restoring data, ensure that you have identified the correct backup archive to restore from.</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
@@ -11115,7 +11125,7 @@
 <span class="c1">##</span>
 <span class="c1">## ADDITIONAL RESOURCES:</span>
 <span class="c1">## Refer to the official documentation for detailed instructions and </span>
-<span class="c1">## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/</span>
+<span class="c1">## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/.</span>
 <span class="c1">##</span>
 <span class="c1">## WARNING:</span>
 <span class="c1">## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.</span>
@@ -11175,7 +11185,6 @@
 <span class="c1">## Check if the backup folder to restore exists, else exit</span>
 <span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="w"> </span><span class="o">]]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Backup folder not found, exiting"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 
-
 <span class="c1"># Define the log file and start logging. Log file is stored in the current folder</span>
 <span class="nv">DATE</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">"%Y%m%d-%H%M%z"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/+/-/'</span><span class="k">)</span><span class="s2">"</span>
 <span class="nv">LOG_FILE</span><span class="o">=</span><span class="s2">"./restore_log_</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">.log"</span>
@@ -11184,23 +11193,20 @@
 <span class="c1"># Log the start time</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoration process started at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
 
-<span class="c1">## Exit if docker compose is running</span>
+<span class="c1">## Exit if Docker Compose is running</span>
 docker<span class="w"> </span>compose<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-q<span class="w"> </span><span class="s2">"Up"</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Docker Compose services are running. Exiting. Stop services and remove data before retoring data"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
 
 <span class="c1"># Copy TheHive data</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoring TheHive data and configuration..."</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/thehive/<span class="w"> </span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span>/thehive<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive config restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
 
-<span class="c1"># Copy Casssandra data</span>
+<span class="c1"># Copy Cassandra data</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoring Cassandra data ..."</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/cassandra/<span class="w"> </span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span>/cassandra<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
 
 <span class="c1"># Copy Elasticsearch data</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoring Elasticsearch data ..."</span>
 rsync<span class="w"> </span>-aW<span class="w"> </span>--no-compress<span class="w"> </span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span>/elasticsearch/<span class="w"> </span><span class="si">${</span><span class="nv">DOCKER_COMPOSE_PATH</span><span class="si">}</span>/elasticsearch<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Elasticsearch data restore failed"</span><span class="p">;</span><span class="w"> </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span><span class="p">;</span><span class="w"> </span><span class="o">}</span>
-
 
 <span class="c1"># Copy Nginx certificates</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoring Nginx data and configuration..."</span>
@@ -11216,8 +11222,16 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoration process completed at: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 </div>
-<h3 id="restart-all-services">Restart all services<a class="headerlink" href="#restart-all-services" title="Permanent link">#</a></h3>
-<p>The script above restarts all services with the command line <code>docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml</code>. </p></div>
+<h2 id="step-4-validate-the-restore">Step 4: Validate the restore<a class="headerlink" href="#step-4-validate-the-restore" title="Permanent link">#</a></h2>
+<p>Check the target data folders and verify that the restored data has been copied correctly. Ensure that all files and configurations match the backup and that no data corruption or missing files occurred during the restore process.</p>
+<h3 id="step-5-restart-all-services">Step 5: Restart all services<a class="headerlink" href="#step-5-restart-all-services" title="Permanent link">#</a></h3>
+<p>Use <code>docker compose up -d -f ${DOCKER_COMPOSE_PATH}/docker-compose.yml</code> to restart all services with the command line.</p>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../../backup/cold-backup/docker-compose/">Perform a Cold Backup for a Stack Running with Docker Compose</a></li>
+<li><a href="../../../cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a></li>
+</ul></div>
 
 
 

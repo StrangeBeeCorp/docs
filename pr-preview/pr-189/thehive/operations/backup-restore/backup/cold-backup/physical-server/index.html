@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#for-physical-servers" class="md-skip">
+        <a href="#how-to-perform-a-cold-backup-on-a-physical-server" class="md-skip">
           Skip to content
         </a>
       
@@ -11071,17 +11071,10 @@
 
 
 
-<div><h1 id="for-physical-servers">For Physical Servers<a class="headerlink" href="#for-physical-servers" title="Permanent link">#</a></h1>
+<div><h1 id="how-to-perform-a-cold-backup-on-a-physical-server">How to Perform a Cold Backup on a Physical Server<a class="headerlink" href="#how-to-perform-a-cold-backup-on-a-physical-server" title="Permanent link">#</a></h1>
+<p>This topic provides step-by-step instructions for performing a cold backup on a physical server for TheHive.</p>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">#</a></h2>
 <p>Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.</p>
-<p>When performing a backup on physical servers, it’s essential to:</p>
-<ol>
-<li>Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.</li>
-<li>Ensure file permissions are adequate for the backup process.</li>
-<li>Use tools like rsync to copy data, configuration files, and logs to a designated backup location.</li>
-<li>Validate the backup to ensure it can be restored without issues.</li>
-</ol>
-<hr>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.</p>
 <p>This process and example below assume you have followed our <a href="../../../../../installation/step-by-step-installation-guide/">step-by-step guide</a> to install the application stack.</p>
@@ -11092,6 +11085,7 @@
 <hr>
 <h2 id="step-by-step-instructions">Step-by-step instructions<a class="headerlink" href="#step-by-step-instructions" title="Permanent link">#</a></h2>
 <h3 id="stop-the-services-in-this-order">Stop the services in this order<a class="headerlink" href="#stop-the-services-in-this-order" title="Permanent link">#</a></h3>
+<p>Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.</p>
 <ol>
 <li>TheHive</li>
 <li>Elasticsearch</li>
@@ -11104,6 +11098,7 @@ systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 </code></pre></div>
 </div>
 <h3 id="copy-files-in-a-backup-folder">Copy files in a backup folder<a class="headerlink" href="#copy-files-in-a-backup-folder" title="Permanent link">#</a></h3>
+<p>Use tools like rsync to copy data, configuration files, and logs to a designated backup location.</p>
 <p>For example, create a folder on a dedicated NFS volume named <code>/opt/backups</code> and copy all files preserving their permissions</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
@@ -11252,7 +11247,14 @@ systemctl<span class="w"> </span>start<span class="w"> </span>cassandra
 </div>
 <hr>
 <h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">#</a></h2>
-<p>check the backup folder and verify the data has been well copied.</p></div>
+<p>Validate the backup to ensure it can be restored without issues.</p>
+<p>Check the backup folder and verify the data has been well copied.</p>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../../restore/cold-restore/docker-compose/">Restore a Cold Backup for a Stack Running with Docker Compose</a></li>
+<li><a href="../../../cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a></li>
+</ul></div>
 
 
 
