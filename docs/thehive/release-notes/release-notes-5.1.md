@@ -1,4 +1,4 @@
-# Release Notes of 5.1 series
+# Release Notes of 5.1 Series
 
 !!! danger
     The 5.1 release comes with some changes on the database schema that can't be reversed. Please make sure to make a backup of your database before upgrading.
@@ -328,7 +328,7 @@
 
 - Functions (Beta)
 
-    See [dedicated page](../user-guides/organization/functions.md) for more information (requires platinum license)
+    See [dedicated page](../user-guides/organization/configure-organization/manage-functions/about-functions.md) for more information (requires platinum license)
 
 ### Other features
 

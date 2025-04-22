@@ -1,2 +1,0 @@
-# Run Responders on events
-

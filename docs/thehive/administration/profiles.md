@@ -27,7 +27,7 @@ All profiles, except for the *admin* profile, can be customized or deleted.
 
 ### Adding a Profile
 
-1. Navigate to the Profiles tab on the *Entities Management* page and click the :fontawesome-regular-square-plus: button.
+1. Navigate to the Profiles tab on the *Entities Management* page and click the :fontawesome-solid-plus: button.
 2. Select the type of profile to create and assign the associated permissions.
 
 The **Add a Profile** window will open.
