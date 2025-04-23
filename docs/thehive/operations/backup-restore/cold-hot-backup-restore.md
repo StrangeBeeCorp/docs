@@ -16,10 +16,10 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 ## Cold vs. hot backup and restore comparison
 
-| Type | Complexity | TheHive state       | Data integrity | Recovery time | Tools                  | Use case |
-| -----| ---------- | --------------------| ---------------| --------------| -----------------------| --------|
-| **Cold** | Medium     | Application stopped | Guaranteed      | Long        | Usual tools            | Want to ensure data integrity |
-| **Hot** | High       | Application running | Not guaranteed  | Fast        | Service-specific tools | Can't afford any downtime |
+| Type | Complexity | TheHive state       | Data integrity | Tools                  | Use case |
+| -----| ---------- | --------------------| ---------------| -----------------------| --------|
+| **Cold** | Medium     | Application stopped | Guaranteed      | Usual tools            | Want to ensure data integrity |
+| **Hot** | High       | Application running | Not guaranteed  | Service-specific tools | Can't afford any downtime |
 
 ## Available backup and restore procedures
 
@@ -33,7 +33,7 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 How you proceed with cold backup and restore depends on your infrastructure and orchestration setup. This could involve physical servers, virtual servers, Docker, Kubernetes, or cloud solutions like AWS EC2.
 
-For example, with AWS EC2, data, indexes, and files are stored on dedicated volumes. Taking daily snapshots can be completed in just a few minutes, including tasks like stopping and restarting services.
+For example, with AWS EC2, data, indexes, and files can be stored on dedicated volumes. In such cases, taking daily snapshots of these volumes can be a simple and efficient backup strategy, typically completed within minutes—including the necessary service stop and restart operations.
 
 * Physical servers: [Back up](../backup-restore/backup/cold-backup/physical-server.md) / [Restore](../backup-restore/restore/cold-restore/physical-server.md)
 * Virtual servers: [Back up](../backup-restore/backup/cold-backup/virtual-server.md) / [Restore](../backup-restore/restore/cold-restore/virtual-server.md)
