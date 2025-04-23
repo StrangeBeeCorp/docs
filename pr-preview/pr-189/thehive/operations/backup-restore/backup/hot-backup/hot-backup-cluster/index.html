@@ -11179,6 +11179,25 @@ chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span
 </div>
 <p>The response should show <code>"status": "green"</code>, indicating that the Elasticsearch cluster is healthy and ready for the backup process.</p>
 <h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Backup storage</p>
+<p>Elasticsearch offers several options for storing backups. In this procedure and in the provided scripts, a dedicated folder with a predefined folder structure is used. </p>
+<p>For example:
+</p><div class="highlight"><pre><span></span><code> /opt/thehive-backups
+└── thehive-backup-20250421-1530-node01
+    ├── cassandra
+    ├── elasticsearch
+    └── files
+</code></pre></div>
+<strong>Backup folder configuration:</strong>
+<p></p><div class="highlight"><pre><span></span><code><span class="nv">BACKUP_ROOT_FOLDER</span><span class="o">=</span><span class="s2">"/opt/thehive-backups"</span>
+<span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">"%Y%m%d-%H%M"</span><span class="k">)</span>
+<span class="nv">HOST</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
+<span class="nv">BACKUP_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_ROOT_FOLDER</span><span class="si">}</span><span class="s2">/thehive-backup-</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">HOST</span><span class="si">}</span><span class="s2">"</span>
+<span class="nv">BACKUP_FILENAME</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="s2">/thehive-backup-</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">HOST</span><span class="si">}</span><span class="s2">.tar.bz2"</span>
+</code></pre></div>
+After creating the backup archive <code>${BACKUP_FILENAME}</code>, store the archive in external storage solutions, such as a Network File System (NFS), AWS S3, Azure Blob Storage, or Google Cloud Storage.
+</div>
 <!-- to complete -->
 
 <!-- + write option when using Elasticsearch for audit log storage -->
