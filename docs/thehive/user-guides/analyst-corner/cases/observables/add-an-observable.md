@@ -8,9 +8,15 @@ This topic provides step-by-step instructions for adding an [observable](../../u
 
 1. [Locate the case](../search-for-cases/find-a-case.md) or [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to add the observable.
 
+    ---
+
 2. {!includes/observables-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-solid-plus:.
+
+    ---
 
 4. In the **Adding an observable** drawer, enter the following information:
 
@@ -52,6 +58,8 @@ This topic provides step-by-step instructions for adding an [observable](../../u
     **- Description**
 
     A description of the observable using [TheHive-flavored Markdown syntax](../../../thehive-flavored-markdown.md).
+
+    ---
 
 5. Select **Confirm**.
 
