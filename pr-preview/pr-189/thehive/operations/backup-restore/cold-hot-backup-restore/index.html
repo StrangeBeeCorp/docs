@@ -11086,7 +11086,6 @@
 <th>Complexity</th>
 <th>TheHive state</th>
 <th>Data integrity</th>
-<th>Recovery time</th>
 <th>Tools</th>
 <th>Use case</th>
 </tr>
@@ -11097,7 +11096,6 @@
 <td>Medium</td>
 <td>Application stopped</td>
 <td>Guaranteed</td>
-<td>Long</td>
 <td>Usual tools</td>
 <td>Want to ensure data integrity</td>
 </tr>
@@ -11106,7 +11104,6 @@
 <td>High</td>
 <td>Application running</td>
 <td>Not guaranteed</td>
-<td>Fast</td>
 <td>Service-specific tools</td>
 <td>Can't afford any downtime</td>
 </tr>
@@ -11123,7 +11120,7 @@
 </div>
 <h3 id="cold-backup-and-restore-procedures">Cold backup and restore procedures<a class="headerlink" href="#cold-backup-and-restore-procedures" title="Permanent link">#</a></h3>
 <p>How you proceed with cold backup and restore depends on your infrastructure and orchestration setup. This could involve physical servers, virtual servers, Docker, Kubernetes, or cloud solutions like AWS EC2.</p>
-<p>For example, with AWS EC2, data, indexes, and files are stored on dedicated volumes. Taking daily snapshots can be completed in just a few minutes, including tasks like stopping and restarting services.</p>
+<p>For example, with AWS EC2, data, indexes, and files can be stored on dedicated volumes. In such cases, taking daily snapshots of these volumes can be a simple and efficient backup strategy, typically completed within minutes—including the necessary service stop and restart operations.</p>
 <ul>
 <li>Physical servers: <a href="../backup/cold-backup/physical-server/">Back up</a> / <a href="../restore/cold-restore/physical-server/">Restore</a></li>
 <li>Virtual servers: <a href="../backup/cold-backup/virtual-server/">Back up</a> / <a href="../restore/cold-restore/virtual-server/">Restore</a></li>
