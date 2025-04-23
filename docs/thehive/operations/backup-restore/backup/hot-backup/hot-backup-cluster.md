@@ -131,6 +131,8 @@ The response should show `"status": "green"`, indicating that the Elasticsearch 
 
 ### Procedure
 
+{!includes/backup-storage.md!}
+
 <!-- to complete -->
 
 <!-- + write option when using Elasticsearch for audit log storage -->
