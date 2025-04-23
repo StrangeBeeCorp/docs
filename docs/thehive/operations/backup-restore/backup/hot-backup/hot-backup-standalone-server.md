@@ -56,6 +56,7 @@ Perform a preliminary check on the system to identify any data corruption or inc
 To back up or export the database from Cassandra, gather the following information:
 
 * Cassandra admin password
+* SSL and authentication details to connect to Cassandra
 * Keyspace used by TheHive (default: `thehive`). Find this in the `application.conf` configuration file, under the `db.janusgraph.storage` attribute, within `storage`, `cql`, and `keyspace` settings.
 
 ```yaml 
