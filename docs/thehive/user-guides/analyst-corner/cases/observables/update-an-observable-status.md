@@ -1,0 +1,3 @@
+IOC
+Sighted
+Ignore similarity

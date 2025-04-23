@@ -1,6 +1,6 @@
 # How to Find an Observable
 
-This topic provides step-by-step instructions for searching an [observable](../cases-description/observables.md) in TheHive.
+This topic provides step-by-step instructions for searching an [observable](../observables/about-observables.md) in TheHive.
 
 !!! tip "Can't find an observable?"
     - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new observables in lists.
@@ -17,6 +17,8 @@ This topic provides step-by-step instructions for searching an [observable](../c
 2. {!includes/apply-filters-light.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 

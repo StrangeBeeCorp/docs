@@ -44,3 +44,7 @@ This topic provides step-by-step instructions for adding and removing [tags](abo
 3. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Add a Link to a Case](../add-a-link-to-a-case.md)
+* [Add Tasks to a Case](../add-tasks-to-a-case.md)
+* [Add Custom Fields](../custom-fields/add-custom-fields.md)

@@ -33,37 +33,48 @@ To import an existing case template from another organization or TheHive instanc
 
 5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
-    **Prefix**  
+    **- Prefix**  
+
     A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting. Add a hyphen (*-*) after the prefix to clearly separate it from the case title.
         
     **- Name \***  
+
     The name of the case template. This name identifies the case template in the API.
     
     **- Display name**  
+
     The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
-    The TLP level for the case. It guides analysts on how they can share case information.
+
+    The TLP level for the case. It indicates how the case information can be shared with others.
     
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
-    The PAP level for the case. It guides analysts on how they can use case data.
+
+    The PAP level for the case. It defines the permitted actions that can be taken with the case data.
     
     **- Severity**  
+
     The default severity level for cases.
     
     **- [Tags](../../../../analyst-corner/cases/tags/add-remove-tags.md)**  
+
     One or more tags for labeling cases.
     
     **Description \***  
+
     A description for cases using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
     
     **- [Tasks](../../../../analyst-corner/cases/add-tasks-to-a-case.md)**  
+
     One or more tasks for cases.
     
     **- [Custom fields](../../../../analyst-corner/cases/custom-fields/add-custom-fields.md)**  
+
     One or more custom fields for cases, with or without predefined values.
     
     **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
+    
     A page template to document cases.
 
     ---
