@@ -11120,6 +11120,39 @@
 <p>Locate the folder where TheHive stores files, which is backed up with the database and indices. If using a local filesystem or Network File System (NFS), the location is defined in the <em>application.conf</em> file under the <code>storage.localfs.location</code> attribute.</p>
 <h3 id="perform-preliminary-checks">Perform preliminary checks<a class="headerlink" href="#perform-preliminary-checks" title="Permanent link">#</a></h3>
 <p>Perform a preliminary check on the system to identify any data corruption or inconsistencies. Resolve any issues before proceeding with the backup.</p>
+<h4 id="check-service-status">Check service status<a class="headerlink" href="#check-service-status" title="Permanent link">#</a></h4>
+<p>Ensure Cassandra, Elasticsearch, and TheHive are running:</p>
+<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>thehive
+systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
+systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+</code></pre></div>
+<h4 id="check-cassandra-and-elasticsearch-health">Check Cassandra and Elasticsearch health<a class="headerlink" href="#check-cassandra-and-elasticsearch-health" title="Permanent link">#</a></h4>
+<p>For Cassandra, verify the status and check for issues:</p>
+<div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>status
+</code></pre></div>
+<p>For Elasticsearch, ensure the cluster health is green:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"localhost:9200/_cluster/health?pretty"</span>
+</code></pre></div>
+<h4 id="review-system-logs">Review system logs<a class="headerlink" href="#review-system-logs" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>thehive
+journalctl<span class="w"> </span>-u<span class="w"> </span>cassandra
+journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
+</code></pre></div>
+<h4 id="resolve-any-data-inconsistencies">Resolve any data inconsistencies<a class="headerlink" href="#resolve-any-data-inconsistencies" title="Permanent link">#</a></h4>
+<h5 id="for-cassandra">For Cassandra<a class="headerlink" href="#for-cassandra" title="Permanent link">#</a></h5>
+<p>Run a repair on the local node to synchronize its data:</p>
+<div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>repair<span class="w"> </span>thehive
+</code></pre></div>
+<p>Check for corrupt SSTables and clean up if necessary:</p>
+<div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>scrub
+</code></pre></div>
+<h5 id="for-elasticsearch">For Elasticsearch<a class="headerlink" href="#for-elasticsearch" title="Permanent link">#</a></h5>
+<p>Check and fix any index corruption by forcing a merge:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_forcemerge?max_num_segments=1"</span>
+</code></pre></div>
+<p>If corruption persists, reindex the affected data:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_reindex"</span>
+</code></pre></div>
 <h2 id="create-cassandra-snapshots">Create Cassandra snapshots<a class="headerlink" href="#create-cassandra-snapshots" title="Permanent link">#</a></h2>
 <h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">#</a></h3>
 <p>To back up or export the database from Cassandra, gather the following information:</p>
@@ -11167,14 +11200,6 @@
 chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span><span class="w"> </span>/path/to/backups
 </code></pre></div>
 </div>
-<h4 id="ensure-cluster-health-is-green">Ensure cluster health is green<a class="headerlink" href="#ensure-cluster-health-is-green" title="Permanent link">#</a></h4>
-<p>Make sure the cluster health is green before initiating the backup. This confirms that the local Elasticsearch instance is functioning properly and that the data is fully replicated.</p>
-<p>To check the health of your Elasticsearch instance, use the following command:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"localhost:9200/_cluster/health?pretty"</span>
-</code></pre></div>
-</div>
-<p>The response should show <code>"status": "green"</code>, indicating that the Elasticsearch instance is healthy and ready for the backup process.</p>
 <h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Backup storage</p>
