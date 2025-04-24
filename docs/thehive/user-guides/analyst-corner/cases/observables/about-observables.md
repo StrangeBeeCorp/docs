@@ -46,5 +46,5 @@ You can choose to [ignore similarity for contextual observables](update-status-o
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Download an Observable File](download-an-observable-file.md)
-* [Update an Observable Status](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

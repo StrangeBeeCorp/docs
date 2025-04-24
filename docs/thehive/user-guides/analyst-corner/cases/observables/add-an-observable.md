@@ -1,6 +1,6 @@
 # How to Add an Observable
 
-This topic provides step-by-step instructions for adding an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) to a case or an alert in TheHive.
+This topic provides step-by-step instructions for adding an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) to a case or alert in TheHive.
 
 {!includes/access-manage-observables.md!}
 
@@ -23,6 +23,9 @@ This topic provides step-by-step instructions for adding an [observable](../../u
     **- Type**
 
     The type of the observable determines which analyzers are available and whether a value or an attachment is required.
+
+    !!! tip "Can't find an observable type?"
+        If you can't find the type you need, it might not exist yet, or someone may have deleted it. Contact someone with admin-level permissions to [create or restore it](../../../../administration/observable-types/create-an-observable-type.md).
 
     **- Value/attachment**
 
@@ -73,5 +76,5 @@ This topic provides step-by-step instructions for adding an [observable](../../u
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Download an Observable File](download-an-observable-file.md)
-* [Update an Observable Status](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
