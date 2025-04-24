@@ -47,7 +47,7 @@ Locate the folder where TheHive stores files, which is backed up with the databa
 
 ### Perform preliminary checks
 
-Perform a preliminary check on the system to identify any data corruption or inconsistencies. Resolve any issues before proceeding with the backup.
+{!includes/preliminary-checks-hot-backup.md!}
 
 ## Create Cassandra snapshots
 
@@ -111,20 +111,6 @@ For shared file systems:
     chown -R elasticsearch:elasticsearch /path/to/backups
     chmod -R 770 /path/to/backups
     ```
-
-#### Ensure cluster health is green
-
-Make sure the cluster health is green before initiating the backup. This confirms that the local Elasticsearch instance is functioning properly and that the data is fully replicated.
-
-To check the health of your Elasticsearch instance, use the following command:
-
-!!! Example ""
-
-    ```bash
-    curl -X GET "localhost:9200/_cluster/health?pretty"
-    ```
-
-The response should show `"status": "green"`, indicating that the Elasticsearch instance is healthy and ready for the backup process.
 
 ### Procedure
 

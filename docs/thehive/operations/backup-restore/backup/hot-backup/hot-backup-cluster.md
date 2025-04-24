@@ -47,6 +47,10 @@ Locate the folder where TheHive stores files, which is backed up with the databa
 
 <!-- + add MinIO option -->
 
+### Perform preliminary checks
+
+{!includes/preliminary-checks-hot-backup.md!}
+
 ### Replicate data across all three nodes
 
 !!! warning "Data replication requirement"
@@ -88,12 +92,6 @@ Follow these steps:
     nodetool repair
     ```
 
-    You can also repair a specific keyspace:
-
-    ```bash
-    nodetool repair thehive
-    ```
-
 4. Verify data replication
 
     Check for any replication issues:
@@ -103,10 +101,6 @@ Follow these steps:
     ```
 
     Look for any replication errors or inconsistencies.
-
-### Perform preliminary checks
-
-Perform a preliminary check on the system to identify any data corruption or inconsistencies. Resolve any issues before proceeding with the backup.
 
 ## Create Cassandra snapshots
 
@@ -170,17 +164,6 @@ For shared file systems:
     chown -R elasticsearch:elasticsearch /path/to/backups
     chmod -R 770 /path/to/backups
     ```
-
-#### Ensure cluster health is green
-
-Make sure the cluster health is green before initiating the backup. This confirms that all nodes in the cluster are functioning properly, and data replication is fully operational.
-
-!!! Example ""
-
-    ```bash
-    curl -X GET "localhost:9200/_cluster/health?pretty"
-    ```
-The response should show `"status": "green"`, indicating that the Elasticsearch cluster is healthy and ready for the backup process.
 
 ### Procedure
 
