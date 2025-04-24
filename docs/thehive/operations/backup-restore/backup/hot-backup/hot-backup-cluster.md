@@ -58,49 +58,45 @@ Locate the folder where TheHive stores files, which is backed up with the databa
 
 Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
 
-Follow these steps:
+#### Verify replication factor
 
-1. Verify replication factor
+Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in `cqlsh`:
 
-    Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in `cqlsh`:
+```sql
+DESCRIBE KEYSPACE thehive;
+```
 
-    ```sql
-    DESCRIBE KEYSPACE thehive;
-    ```
+If needed, adjust the replication factor:
 
-    If needed, adjust the replication factor:
+```sql
+ALTER KEYSPACE thehive WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 };
+```
 
-    ```sql
-    ALTER KEYSPACE thehive WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 };
-    ```
+#### Check cluster status
 
-2. Check cluster status
+Ensure all nodes are up and running:
 
-    Ensure all nodes are up and running:
+```bash
+nodetool status
+```
 
-    ```bash
-    nodetool status
-    ```
+Nodes should be marked as `UN` (Up/Normal).
 
-    Nodes should be marked as `UN` (Up/Normal).
+#### Run `nodetool repair`
 
-3. Run `nodetool repair`
+Run a repair to ensure data consistency across all nodes:
 
-    Run a repair to ensure data consistency across all nodes:
+```bash
+nodetool repair
+```
 
-    ```bash
-    nodetool repair
-    ```
+#### Verify data replication
 
-4. Verify data replication
+Check for any replication issues:
 
-    Check for any replication issues:
-
-    ```bash
-    nodetool netstats
-    ```
-
-    Look for any replication errors or inconsistencies.
+```bash
+nodetool netstats
+```
 
 ## Create Cassandra snapshots
 
