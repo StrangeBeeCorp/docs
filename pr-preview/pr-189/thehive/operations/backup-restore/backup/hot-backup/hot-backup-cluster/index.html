@@ -11161,38 +11161,26 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 <p>If this requirement isn't met, cluster restoration may fail, and integrity issues could arise. It is your responsibility to ensure data replication across all nodes before proceeding.</p>
 </div>
 <p>Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.</p>
-<p>Follow these steps:</p>
-<ol>
-<li>
-<p>Verify replication factor</p>
+<h4 id="verify-replication-factor">Verify replication factor<a class="headerlink" href="#verify-replication-factor" title="Permanent link">#</a></h4>
 <p>Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in <code>cqlsh</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">thehive</span><span class="p">;</span>
 </code></pre></div>
 <p>If needed, adjust the replication factor:</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">thehive</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">REPLICATION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="w"> </span><span class="s1">'class'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s1">'NetworkTopologyStrategy'</span><span class="p">,</span><span class="w"> </span><span class="s1">'datacenter1'</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
 </code></pre></div>
-</li>
-<li>
-<p>Check cluster status</p>
+<h4 id="check-cluster-status">Check cluster status<a class="headerlink" href="#check-cluster-status" title="Permanent link">#</a></h4>
 <p>Ensure all nodes are up and running:</p>
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>status
 </code></pre></div>
 <p>Nodes should be marked as <code>UN</code> (Up/Normal).</p>
-</li>
-<li>
-<p>Run <code>nodetool repair</code></p>
+<h4 id="run-nodetool-repair">Run <code>nodetool repair</code><a class="headerlink" href="#run-nodetool-repair" title="Permanent link">#</a></h4>
 <p>Run a repair to ensure data consistency across all nodes:</p>
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>repair
 </code></pre></div>
-</li>
-<li>
-<p>Verify data replication</p>
+<h4 id="verify-data-replication">Verify data replication<a class="headerlink" href="#verify-data-replication" title="Permanent link">#</a></h4>
 <p>Check for any replication issues:</p>
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>netstats
 </code></pre></div>
-<p>Look for any replication errors or inconsistencies.</p>
-</li>
-</ol>
 <h2 id="create-cassandra-snapshots">Create Cassandra snapshots<a class="headerlink" href="#create-cassandra-snapshots" title="Permanent link">#</a></h2>
 <h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">#</a></h3>
 <p>To back up or export the database from Cassandra, gather the following information:</p>
