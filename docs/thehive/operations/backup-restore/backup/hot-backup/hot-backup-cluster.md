@@ -47,9 +47,59 @@ Locate the folder where TheHive stores files, which is backed up with the databa
 
 <!-- + add MinIO option -->
 
-### Ensure data replication across all three nodes
+### Replicate data across all three nodes
 
 Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
+
+Follow these steps:
+
+1. Verify replication factor
+
+    Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in `cqlsh`:
+
+    ```sql
+    DESCRIBE KEYSPACE thehive;
+    ```
+
+    If needed, adjust the replication factor:
+
+    ```sql
+    ALTER KEYSPACE thehive WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 };
+    ```
+
+2. Check cluster status
+
+    Ensure all nodes are up and running:
+
+    ```bash
+    nodetool status
+    ```
+
+    Nodes should be marked as `UN` (Up/Normal).
+
+3. Run `nodetool repair`
+
+    Run a repair to ensure data consistency across all nodes:
+
+    ```bash
+    nodetool repair
+    ```
+
+    You can also repair a specific keyspace:
+
+    ```bash
+    nodetool repair thehive
+    ```
+
+4. Verify data replication
+
+    Check for any replication issues:
+
+    ```bash
+    nodetool netstats
+    ```
+
+    Look for any replication errors or inconsistencies.
 
 ### Perform preliminary checks
 
