@@ -11121,6 +11121,10 @@
 <!-- + add MinIO option -->
 
 <h3 id="replicate-data-across-all-three-nodes">Replicate data across all three nodes<a class="headerlink" href="#replicate-data-across-all-three-nodes" title="Permanent link">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Data replication requirement</p>
+<p>If this requirement isn't met, cluster restoration may fail, and integrity issues could arise. It is your responsibility to ensure data replication across all nodes before proceeding.</p>
+</div>
 <p>Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.</p>
 <p>Follow these steps:</p>
 <ol>
