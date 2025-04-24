@@ -1,6 +1,6 @@
-# How to Update Multiple Observables
+# How to Edit Multiple Observables
 
-This topic provides step-by-step instructions for updating multiple [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) in bulk in TheHive.
+This topic provides step-by-step instructions for performing bulk edits on multiple [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) in TheHive.
 
 {!includes/access-manage-observables.md!}
 
@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for updating multiple [observables
 
 4. Select :fontawesome-solid-pen:.
 
-5. Update the values as needed.
+5. In the **Edit several observables** drawer, update the values as needed.
 
 6. Select **Submit**.
 
@@ -23,10 +23,8 @@ This topic provides step-by-step instructions for updating multiple [observables
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
 * [Pin or Unpin an Observable](pin-unpin-an-observable.md)
-* [Export a List of Observables](export-list-observables.md)
-* [Copy Observable Data](copy-observable-data.md)
+* [Export Data from Observables](export-data-observables.md)
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
-* [Download an Observable File](download-an-observable-file.md)
 * [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

@@ -8,23 +8,19 @@ This topic provides step-by-step instructions for removing an [observable](../..
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to remove.
 
-2. {!includes/observables-tab-go-to.md!}
+2. In the observable details, select :fontawesome-solid-ellipsis: at the top right of the page.
 
-3. Select :fontawesome-solid-ellipsis: next to the observable you want to remove.
+3. Select **Delete**.
 
-4. Select **Delete**.
-
-5. Select **OK**.
+4. Select **OK**.
 
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin or Unpin an Observable](pin-unpin-an-observable.md)
-* [Export a List of Observables](export-list-observables.md)
-* [Copy Observable Data](copy-observable-data.md)
+* [Export Data from Observables](export-data-observables.md)
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
-* [Download an Observable File](download-an-observable-file.md)
 * [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

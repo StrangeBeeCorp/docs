@@ -13,13 +13,9 @@ You should mark an observable as sighted once it has been detected or observed i
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
 
-2. {!includes/observables-tab-go-to.md!}
+2. In the observable details, turn on the **Sighted** toggle.
 
-3. Select the observable you want to update.
-
-4. In the observable details, turn on the **Sighted** toggle.
-
-5. Select **Save**.
+3. Select **Save**.
 
 ## Mark an observable as indicator of compromise (IOC)
 
@@ -27,13 +23,9 @@ You should mark an observable as an indicator of compromise (IOC) once it is ide
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
 
-2. {!includes/observables-tab-go-to.md!}
+2. In the observable details, turn on the **IOC** toggle.
 
-3. Select the observable you want to update.
-
-4. In the observable details, turn on the **IOC** toggle.
-
-5. Select **Save**.
+3. Select **Save**.
 
 ## Exclude an observable from the similarity check for alerts and cases
 
@@ -41,13 +33,9 @@ Similar alerts and cases are detected based on shared observables. You can choos
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
 
-2. {!includes/observables-tab-go-to.md!}
+2. In the observable details, turn on the **Ignore similarity** toggle.
 
-3. Select the observable you want to update.
-
-4. In the observable details, turn on the **Ignore similarity** toggle.
-
-5. Select **Save**.
+3. Select **Save**.
 
 <h2>Next steps</h2>
 
@@ -55,9 +43,7 @@ Similar alerts and cases are detected based on shared observables. You can choos
 * [Remove an Observable](remove-an-observable.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin or Unpin an Observable](pin-unpin-an-observable.md)
-* [Export a List of Observables](export-list-observables.md)
-* [Copy Observable Data](copy-observable-data.md)
+* [Export Data from Observables](export-data-observables.md)
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
-* [Download an Observable File](download-an-observable-file.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
