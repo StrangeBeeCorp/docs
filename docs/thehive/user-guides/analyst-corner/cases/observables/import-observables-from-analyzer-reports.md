@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for importing [observables](../../
 
 Analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
 
+{!includes/access-manage-observables.md!}
+
 <h2>Procedure</h2>
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran the analyzer.
