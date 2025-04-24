@@ -49,6 +49,9 @@ Locate the folder where TheHive stores files, which is backed up with the databa
 
 ### Replicate data across all three nodes
 
+!!! warning "Data replication requirement"
+    If this requirement isn't met, cluster restoration may fail, and integrity issues could arise. It is your responsibility to ensure data replication across all nodes before proceeding.
+
 Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
 
 Follow these steps:
