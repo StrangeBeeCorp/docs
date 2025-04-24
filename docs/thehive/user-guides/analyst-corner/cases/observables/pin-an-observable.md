@@ -14,8 +14,6 @@ Pinning an observable allows you to access it from the **Observables** tab withi
 
 4. Select **Pin**.
 
-    GIF
-
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)

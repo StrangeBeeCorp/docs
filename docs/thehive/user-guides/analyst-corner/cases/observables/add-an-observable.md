@@ -76,3 +76,4 @@ This topic provides step-by-step instructions for adding an [observable](../../u
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
+* [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)

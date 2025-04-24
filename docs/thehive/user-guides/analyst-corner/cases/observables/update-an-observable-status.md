@@ -4,8 +4,7 @@ This topic provides step-by-step instructions for updating the status of an [obs
 
 {!includes/access-manage-observables.md!}
 
-!!! tip "Bulk updates"
-    You can edit multiple observables at once to update their status. Follow the instructions in the [Edit Multiple Observables](edit-multiple-observables.md) topic.
+{!includes/bulk-updates-observables.md!}
 
 ## Mark an observable as sighted
 
@@ -27,16 +26,6 @@ You should mark an observable as an indicator of compromise (IOC) once it is ide
 
 3. Select **Save**.
 
-## Exclude an observable from the similarity check for alerts and cases
-
-Similar alerts and cases are detected based on shared observables. You can choose to [ignore similarity for contextual observables](update-status-of-an-observable.md), such as the company domain name, or for observables that aren't related to any potential threat.
-
-1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
-
-2. In the observable details, turn on the **Ignore similarity** toggle.
-
-3. Select **Save**.
-
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
@@ -47,3 +36,4 @@ Similar alerts and cases are detected based on shared observables. You can choos
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
+* [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)
