@@ -56,6 +56,13 @@ This topic provides step-by-step instructions for searching an [observable](../o
 
 <h2>Next steps</h2>
 
-* [View Observables](../../alerts/alerts-description/view-observables.md)
+* [Remove an Observable](remove-an-observable.md)
+* [Update the Status of an Observable](update-status-of-an-observable.md)
+* [Edit Multiple Observables](edit-multiple-observables.md)
+* [Pin an Observable](pin-an-observable.md)
+* [Export Data from Observables](export-data-observables.md)
+* [Run Analyzers on an Observable](run-analyzers-on-observables.md)
+* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
 
 

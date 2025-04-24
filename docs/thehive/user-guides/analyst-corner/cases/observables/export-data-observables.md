@@ -2,9 +2,23 @@
 
 This topic provides step-by-step instructions for exporting data from [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) in an case or alert in TheHive.
 
-## Download an observable file
+## Download an observable attachment
 
-## Copy data of an observable
+1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
+
+2. In the observable details, select :fontawesome-solid-ellipsis:.
+
+3. Select **Download**.
+
+4. Memorize the password and select **OK**.
+
+## Copy data from an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
+
+2. In the observable details, select :fontawesome-solid-ellipsis:.
+
+3. Select **Copy data**.
 
 ## Export a list of observables
 
@@ -24,11 +38,9 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
+* [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
-* [Pin or Unpin an Observable](pin-unpin-an-observable.md)
-* [Copy Observable Data](copy-observable-data.md)
+* [Pin an Observable](pin-an-observable.md)
 * [Run Analyzers on an Observable](run-analyzers-on-observables.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
-* [Download an Observable File](download-an-observable-file.md)
-* [Update the Status of an Observable](update-status-of-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
