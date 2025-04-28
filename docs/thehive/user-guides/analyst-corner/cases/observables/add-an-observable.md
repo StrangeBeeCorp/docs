@@ -34,7 +34,7 @@ This topic provides step-by-step instructions for adding an [observable](about-o
     * One or more values: To enter multiple values, place each value on a separate line and turn on the **One observable per line** toggle.
     * A file: Hashed automatically and available for download from the observable details.
 
-    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp)**
+    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***
 
     The TLP level for the observable. It indicates how you can share the observable's information with others.
 

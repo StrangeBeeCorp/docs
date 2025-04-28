@@ -2,6 +2,14 @@
 
 This topic provides step-by-step instructions for exporting data from [observables](about-observables.md) in an case or alert in TheHive.
 
+## Copy data from an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
+
+2. In the observable details, select :fontawesome-solid-ellipsis:.
+
+3. Select **Copy data**.
+
 ## Download an observable attachment
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
@@ -11,14 +19,6 @@ This topic provides step-by-step instructions for exporting data from [observabl
 3. Select **Download**.
 
 4. Memorize the password and select **OK**.
-
-## Copy data from an observable
-
-1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
-
-2. In the observable details, select :fontawesome-solid-ellipsis:.
-
-3. Select **Copy data**.
 
 ## Export a list of observables
 

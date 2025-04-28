@@ -1,2 +1,2 @@
 !!! tip "Bulk updates"
-    You can edit multiple observables at once. Follow the instructions in the [Edit Multiple Observables](/thehive/user-guides/analyst-corner/observables/edit-multiple-observables/) topic.
+    You can edit multiple observables at once. Follow the instructions in the [Edit Multiple Observables](/thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/) topic.
