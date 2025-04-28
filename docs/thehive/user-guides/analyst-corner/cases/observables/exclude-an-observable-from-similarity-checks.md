@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for excluding an [observable](../.
 
 {!includes/bulk-updates-observables.md!}
 
-Similar alerts and cases are detected based on shared observables. You can choose to [ignore similarity for contextual observables](update-status-of-an-observable.md), such as the company domain name, or for observables that aren't related to any potential threat.
+[Similar alerts and cases](../find-similar-alerts-cases.md) are detected based on shared observables. You can choose to [ignore similarity for contextual observables](update-status-of-an-observable.md), such as the company domain name, or for observables that aren't related to any potential threat.
 
 <h2>Procedure</h2>
 

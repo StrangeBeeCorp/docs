@@ -28,11 +28,13 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Open a case, an alert, or a task, and select the **Similar cases** tab.
 
-    ![Similar cases](../../../../images/user-guides/analyst-corner/cases/find-a-case-similar-cases.png)
+    ![Similar cases](../../../../images/user-guides/analyst-corner/cases/similar-cases.png)
 
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+For more information, see the [Find Similar Alerts and Cases](../find-similar-alerts-cases.md) topic.
 
 ---
 

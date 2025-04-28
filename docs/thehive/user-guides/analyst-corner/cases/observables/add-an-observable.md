@@ -52,7 +52,7 @@ This topic provides step-by-step instructions for adding an [observable](../../u
 
     **- Ignore similarity**
 
-    Turn on the toggle of you don't want to include the observable in the algorithm used to identify similar alerts and cases based on observables. This can be useful for contextual observables, such as the company domain name, or for observables that aren't related to any potential threat.
+    Turn on the toggle of you don't want to include the observable in the algorithm used to identify [similar alerts and cases](../find-similar-alerts-cases.md) based on observables. This can be useful for contextual observables, such as the company domain name, or for observables that aren't related to any potential threat.
 
     **- [Tags](../tags/add-remove-tags.md)**  
     
