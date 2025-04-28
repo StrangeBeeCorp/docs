@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
     **- Type**
 
-    The type of an observable determines which analyzers are available and whether it requires a value or an attachment.
+    The type of an observable determines which analyzers are available and whether it requires a value or an attachment. You can't change an observable’s type between one requiring a value and one requiring an attachment once it’s created.
 
     !!! tip "Can't find an observable type?"
         If you can't find the type you need, it might not exist yet, or someone may have deleted it. Contact someone with admin-level permissions to [create or restore it](../../../../administration/observable-types/create-an-observable-type.md).
@@ -33,6 +33,8 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
     * One or more values: To enter multiple values, place each value on a separate line and turn on the **One observable per line** toggle.
     * A file: Hashed automatically and available for download from the observable details.
+
+    You can't change an observable's value or file once it's created.
 
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***
 
