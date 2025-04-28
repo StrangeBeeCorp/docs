@@ -184,6 +184,7 @@ Sample code here...
     ``` python
     print("Hello, bees!")
     ```
+    See [the Highlight.js documentation](https://highlightjs.readthedocs.io/en/latest/supported-languages.html?highlight=languages) for a list of supported languages.
 
 ## Tables
 
