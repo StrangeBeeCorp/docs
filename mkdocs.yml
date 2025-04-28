@@ -257,6 +257,11 @@ plugins:
             'thehive/setup/installation/migration.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.x.md': 'thehive/installation/upgrade-from-5.x.md'
+            'thehive/administration/observables-types.md': 'thehive/administration/observable-types/create-an-observable-type.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
 
 extra:
   generator: false
