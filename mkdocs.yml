@@ -402,8 +402,8 @@ nav:
           - 'Manage Custom Fields': thehive/administration/custom-fields/manage-a-custom-field.md
           - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types':
-          - 'Create an Observable Type': thehive/administration/observables-types/create-an-observable-type.md
-          - 'Delete an Observable Type': thehive/administration/observables-types/delete-an-observable-type.md
+          - 'Create an Observable Type': thehive/administration/observable-types/create-an-observable-type.md
+          - 'Delete an Observable Type': thehive/administration/observable-types/delete-an-observable-type.md
         - 'Statuses':
           - 'About Statuses': thehive/administration/status/about-statuses.md
           - 'Create a Status': thehive/administration/status/create-a-status.md
