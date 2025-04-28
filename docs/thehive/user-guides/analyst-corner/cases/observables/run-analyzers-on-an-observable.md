@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
 
-Analyzers enrich observables with detailed, contextual intelligence. The available analyzers are determined by the type of the observable.
+Analyzers enrich observables with detailed, contextual intelligence. The type of each observable determines which analyzers are available.
 
 <h2>Procedure</h2>
 

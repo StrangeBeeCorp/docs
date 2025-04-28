@@ -22,7 +22,7 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
     **- Type**
 
-    The type of the observable determines which analyzers are available and whether a value or an attachment is required.
+    The type of an observable determines which analyzers are available and whether it requires a value or an attachment.
 
     !!! tip "Can't find an observable type?"
         If you can't find the type you need, it might not exist yet, or someone may have deleted it. Contact someone with admin-level permissions to [create or restore it](../../../../administration/observable-types/create-an-observable-type.md).
@@ -31,24 +31,24 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
     Depending on the type of the observable, provide:
 
-    * One or more values: If you want to enter multiple values, ensure each value is on a separate line and the **One observable per line** toggle is turned on.
-    * A file: The file will be hashed and can be downloaded from the observable details if needed.
+    * One or more values: To enter multiple values, place each value on a separate line and turn on the **One observable per line** toggle.
+    * A file: Hashed automatically and available for download from the observable details.
 
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp)**
 
-    The TLP level for the observable. It indicates how the observable information can be shared with others.
+    The TLP level for the observable. It indicates how you can share the observable's information with others.
 
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***
 
-    The PAP level for the observable. It defines the permitted actions that can be taken with the observable data.
+    The PAP level for the observable. It specifies which actions you can take with the observable data.
 
     **- Is IOC**
 
-    Turn on the toggle if the observable is identified as being linked to suspicious or malicious activity.
+    Turn on the toggle if you recognize the observable as related to suspicious or malicious activity.
 
     **- Has been sighted**
 
-    Turn on the toggle if the observable has been detected or observed in the environment.
+    Turn on the toggle when you detect or observe the observable in your environment.
 
     **- Ignore similarity**
 

@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for updating the status of an [obs
 
 ## Mark an observable as sighted
 
-You should mark an observable as sighted once it has been detected or observed in the environment.
+Mark an observable as sighted when you detect or observe it in your environment.
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
 
@@ -18,7 +18,7 @@ You should mark an observable as sighted once it has been detected or observed i
 
 ## Mark an observable as indicator of compromise (IOC)
 
-You should mark an observable as an indicator of compromise (IOC) once it is identified as being linked to suspicious or malicious activity.
+Mark an observable as an indicator of compromise (IOC) if you recognize it as related to suspicious or malicious activity.
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to update.
 

@@ -1,6 +1,6 @@
 # About Observables
 
-Observables are data points that represent specific events or properties within a system, monitored for signs of suspicious activity. These can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors, as well as measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
+Observables are data points that represent specific events or properties within a system, monitored for signs of suspicious activity. These can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors. They can also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
 
 This topic provides an overview of the main characteristics of observables in TheHive.
 
@@ -23,17 +23,21 @@ Users can add one or more values to a single observable in TheHive, but they can
 
 ### Indicator of compromise (IOC)
 
-An observable can be marked as an indicator of compromise (IOC) once it is identified as being linked to suspicious or malicious activity.
+An observable can be [marked as an indicator of compromise (IOC)](update-an-observable-status.md#mark-an-observable-as-indicator-of-compromise-ioc) once it's identified as being linked to suspicious or malicious activity.
 
 ### Sighted
 
-An observable can be marked as sighted once it has been detected or observed in the environment.
+An observable can be [marked as sighted](update-an-observable-status.md#mark-an-observable-as-sighted) once it has been detected or observed in the environment.
 
 ## Similar alerts and cases
 
 Similar alerts and cases are detected based on shared observables.
 
 You can choose to [ignore similarity for contextual observables](exclude-an-observable-from-similarity-checks.md), such as the company domain name, or for observables that aren't related to any potential threat.
+
+## Permissions
+
+{!includes/access-manage-observables.md!}
 
 <h2>Next steps</h2>
 
