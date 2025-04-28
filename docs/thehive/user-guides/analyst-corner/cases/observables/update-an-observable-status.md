@@ -1,6 +1,6 @@
 # How to Update the Status of an Observable
 
-This topic provides step-by-step instructions for updating the status of an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) in TheHive.
+This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
 
 {!includes/access-manage-observables.md!}
 
@@ -33,7 +33,7 @@ You should mark an observable as an indicator of compromise (IOC) once it is ide
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-observables.md)
+* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)

@@ -1,6 +1,6 @@
 # How to Edit Multiple Observables
 
-This topic provides step-by-step instructions for performing bulk edits on multiple [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) in TheHive.
+This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
 
 {!includes/access-manage-observables.md!}
 
@@ -22,9 +22,9 @@ This topic provides step-by-step instructions for performing bulk edits on multi
 
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
-* [Update the Status of an Observable](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-an-observable-status.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-observables.md)
+* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

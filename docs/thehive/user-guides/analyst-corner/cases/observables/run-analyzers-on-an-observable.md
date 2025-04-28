@@ -1,6 +1,6 @@
 # How to Run Analyzers on an Observable
 
-This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) in TheHive.
+This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
 
 Analyzers enrich observables with detailed, contextual intelligence. The available analyzers are determined by the type of the observable.
 
@@ -23,7 +23,7 @@ Analyzers enrich observables with detailed, contextual intelligence. The availab
 
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
-* [Update the Status of an Observable](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)

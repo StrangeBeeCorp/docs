@@ -1,6 +1,6 @@
 # How to Export Data from Observables
 
-This topic provides step-by-step instructions for exporting data from [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) in an case or alert in TheHive.
+This topic provides step-by-step instructions for exporting data from [observables](about-observables.md) in an case or alert in TheHive.
 
 ## Download an observable attachment
 
@@ -38,9 +38,9 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
-* [Update the Status of an Observable](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
-* [Run Analyzers on an Observable](run-analyzers-on-observables.md)
+* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

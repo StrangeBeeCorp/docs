@@ -1,6 +1,6 @@
 # How to Import Observables from Analyzer Reports
 
-This topic provides step-by-step instructions for importing [observables](../../user-guides/analyst-corner/cases/observables/about-observables.md) from [analyzer reports](../../../../administration/cortex/about-cortex.md) in TheHive.
+This topic provides step-by-step instructions for importing [observables](about-observables.md) from [analyzer reports](../../../../administration/cortex/about-cortex.md) in TheHive.
 
 Analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
 
@@ -24,10 +24,10 @@ Analyzers enrich observables with detailed contextual intelligence, generating a
 
 * [Add an Observable](add-an-observable.md)
 * [Remove an Observable](remove-an-observable.md)
-* [Update the Status of an Observable](update-status-of-an-observable.md)
+* [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-observables.md)
+* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
 * [Run Responders on an Observable](run-responders-on-an-observable.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)
