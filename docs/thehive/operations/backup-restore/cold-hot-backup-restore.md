@@ -4,9 +4,9 @@ This topic compares cold and hot backup and restore options in TheHive, helping 
 
 ## Definitions
 
-A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime.
+A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime. It's only available for standalone servers, not for cluster deployments.
 
-A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components.
+A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. It's available for both standalone servers and cluster deployments.
 
 ## TheHive infrastructure challenges
 
@@ -16,10 +16,10 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 ## Cold vs. hot backup and restore comparison
 
-| Type | Complexity | TheHive state       | Data integrity | Tools                  | Use case |
-| -----| ---------- | --------------------| ---------------| -----------------------| --------|
-| **Cold** | Medium     | Application stopped | Guaranteed      | Usual tools            | Want to ensure data integrity |
-| **Hot** | High       | Application running | Not guaranteed  | Service-specific tools | Can't afford any downtime |
+| Type | Complexity | TheHive state       | Data integrity | Tools                  | Supported environment | Use case |
+| -----| ---------- | --------------------| ---------------| -----------------------| --------| --------|
+| **Cold** | Medium     | Application stopped | Guaranteed      | Usual tools            | Standalone servers only| Want to ensure data integrity |
+| **Hot** | High       | Application running | Not guaranteed  | Service-specific tools | Standalone servers and clusters | Can't afford any downtime |
 
 ## Available backup and restore procedures
 

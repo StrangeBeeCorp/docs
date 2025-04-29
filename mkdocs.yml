@@ -354,7 +354,6 @@ nav:
             - 'Physical Server':  thehive/operations/backup-restore/backup/cold-backup/physical-server.md
             - 'Virtual Server':  thehive/operations/backup-restore/backup/cold-backup/virtual-server.md
             - 'Docker Compose':  thehive/operations/backup-restore/backup/cold-backup/docker-compose.md
-            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/backup/cold-backup/cloud.md
           - 'Hot Backup':
             - 'Standalone Server': thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md
             - 'Cluster': thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster.md
@@ -363,7 +362,6 @@ nav:
             - 'Physical Server':  thehive/operations/backup-restore/restore/cold-restore/physical-server.md
             - 'Virtual Server':  thehive/operations/backup-restore/restore/cold-restore/virtual-server.md
             - 'Docker Compose':  thehive/operations/backup-restore/restore/cold-restore/docker-compose.md
-            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cold-restore/cloud.md
           - 'Hot Restore':
             - 'Standalone Server': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md
             - 'Cluster': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster.md
