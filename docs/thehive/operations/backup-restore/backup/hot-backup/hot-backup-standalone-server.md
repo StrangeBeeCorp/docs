@@ -108,8 +108,8 @@ For shared file systems:
 !!! Example ""
 
     ```bash
-    chown -R elasticsearch:elasticsearch /path/to/backups
-    chmod -R 770 /path/to/backups
+    chown -R elasticsearch:elasticsearch </path/to/backups>
+    chmod -R 770 </path/to/backups>
     ```
 
 ### Procedure

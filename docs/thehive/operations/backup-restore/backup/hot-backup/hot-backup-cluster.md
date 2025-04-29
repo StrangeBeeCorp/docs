@@ -69,7 +69,7 @@ DESCRIBE KEYSPACE thehive;
 If needed, adjust the replication factor:
 
 ```sql
-ALTER KEYSPACE thehive WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 };
+ALTER KEYSPACE thehive WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', '<datacenter_name>' : 3 };
 ```
 
 #### Check cluster status
@@ -157,8 +157,8 @@ For shared file systems:
 !!! Example ""
 
     ```bash
-    chown -R elasticsearch:elasticsearch /path/to/backups
-    chmod -R 770 /path/to/backups
+    chown -R elasticsearch:elasticsearch </path/to/backups>
+    chmod -R 770 </path/to/backups>
     ```
 
 ### Procedure
