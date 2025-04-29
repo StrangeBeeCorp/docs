@@ -6,7 +6,7 @@ This topic compares cold and hot backup and restore options in TheHive, helping 
 
 A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime. This option is available for standalone servers only, not for clusters.
 
-A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. It's available for both standalone servers and clusters.
+A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. This option is available for both standalone servers and clusters.
 
 ## TheHive infrastructure challenges
 
