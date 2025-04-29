@@ -1,212 +1,154 @@
 # How to Deploy TheHive on Kubernetes
 
-This topic provides 
+This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the offical TheHive Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
-To deploy TheHive on Kubernetes, you can use the Docker image. For detailed instructions on how to use the Docker image, please refer to the [**docker image documentation**](./docker.md)
+!!! warning "License"
+    To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license. The Community license supports only a single node.
 
-## Important Considerations
+## Step 1: Deploy TheHive using Helm
 
-- While this setup is suitable for testing TheHive, it's recommended to enhance the data stores (Elasticsearch, Cassandra, and Minio) for production use by setting up clustering and storage volumes. Refer to the respective documentation for instructions on deploying on Kubernetes for production use.
+TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
-- The volumes used in this configuration are `emptyDir`s, which means the data will be lost when a pod is restarted. If you want to persist your data, update the volume description accordingly.
+!!! warning "Prerequisites"
+    Make sure you have:
+    - A running Kubernetes cluster (version 1.23.0 or later). 
+    - [Helm](https://helm.sh/) installed (version 3.8.0 or later).
 
-- To deploy multiple nodes, you will need to update your license as only one node is included in the Community License.
+1. Add the TheHive Helm repository
 
----
+  ```bash
+  helm repo add strangebee https://strangebeecorp.github.io/helm-charts
+  ```
 
-## Deploying TheHive
+2. Update your local Helm repositories
 
-You can download the Kubernetes configuration file [**here**](./assets/kubernetes.yml). This configuration will deploy the following components:
+  ```bash
+  helm repo update
+  ```
 
-- 1 instance of TheHive
-- 1 instance of Cassandra
-- 1 instance of Elasticsearch
-- 1 instance of Minio
+3. Install TheHive
 
-You can initiate the deployment by executing the following command:
+  Create a release using the TheHive Helm chart.
+
+  ```bash
+  helm install <release_name> strangebee/thehive
+  ```
+
+  For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
+
+!!! info "Dependencies"
+      The TheHive Helm chart relies on the following charts by default:
+      - [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database
+      - [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index
+      - [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
+
+!!! note "Upgrades"
+    To upgrade your release to the latest version of TheHive Helm chart, run:
+    ```bash
+    helm upgrade <release_name> strangebee/thehive
+    ```
+    For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/).
+
+## Step 2: Customize the Helm chart
+
+For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure each dependency carefully before deploying to production.
+
+Use the following command to view all available configuration options for the TheHive Helm chart:
 
 ```bash
-kubectl apply -f kubernetes.yml
+helm show values strangebee/thehive
 ```
 
-This command will create a namespace named ``thehive`` and deploy the instances within it.
+For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing).
 
----
+You can also review the available options for each dependency.
 
-## Kubernetes Configuration
+### Pods resources
 
-In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the pekko discovery method with the [**Kubernetes API**](https://pekko.apache.org/docs/pekko-management/current/discovery/kubernetes.html).
+Resources allocated to pods are optimized for production use. If you need to adjust these values, especially memory limits, make sure you update the `JVM_OPTS` environment variable accordingly to avoid OOM (out of memory) crashes.
 
-To enable this functionality, you need:
+```bash
+# JVM_OPTS variable for TheHive
+thehive:
+  jvmOpts: "-Xms2g -Xmx2g -Xmn300m"
 
-- A service account with permissions to connect to the Kubernetes API
-- Configuration to instruct TheHive to use the Kubernetes API for discovering other nodes
+# JVM_OPTS variable for Cassandra dependency chart
+cassandra:
+  jvm:
+    extraOpts: "-Xms2g -Xmx2g -Xmn200m"
+    maxHeapSize: "2g"
+    newHeapSize: "200m"
 
-&nbsp;
-
-### Role-Based Access Control (RBAC)
-
-Create a ServiceAccount named thehive with the necessary permissions to access the running pods:
-
-```yaml
----
-#
-# Create a role, `pod-reader`, that can list pods and
-# bind the default service account in the namespace
-# that the binding is deployed to to that role.
-#
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: pod-reader
-rules:
-  - apiGroups: [""] # "" indicates the core API group
-    resources: ["pods"]
-    verbs: ["get", "watch", "list"]
----
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: thehive
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: read-pods
-subjects:
-  - kind: ServiceAccount
-    name: thehive
-roleRef:
-  kind: Role
-  name: pod-reader
-  apiGroup: rbac.authorization.k8s.io
+# JVM_OPTS variable for Elasticsearch dependency chart
+elasticsearch:
+  master:
+    heapSize: "2g"
+    extraEnvVars:
+      - name: JVM_OPTS
+        value: "-Xms2g -Xmx2g -Xmn200m"
 ```
 
-&nbsp;
+Refer to the official [Cassandra](https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html) and [Elasticsearch](https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments) documentation to learn how to optimize these values.
 
-### Deployment
+### StorageClasses
 
-In your pod/deployment specification, specify the created service account. Also, ensure to add a label and a ``POD_IP`` environment variable.
+By default, this chart uses your cluster's default `StorageClass` to create persistent volumes (PVs).
 
-```yaml
-metadata:
-  labels:
-    app: thehive
-spec:
-  serviceAccountName: thehive
-  containers:
-  - name: thehive
-    image: ...
-    env:
-      # Make sure that the container can know its own IP
-      - name: POD_IP
-        valueFrom:
-          fieldRef:
-            fieldPath: status.podIP
+!!! danger "Backup reminder"
+    Regularly back up your PVs to prevent data loss.
+
+If you want to modify it, ensure that the StorageClass you use:
+
+* Is regularly backed up—tools like [Velero](https://velero.io/) can help automate this process
+* Has an appropriate `reclaimPolicy` to minimize the risk of data loss
+
+To configure `StorageClasses` according to your needs, refer to the relevant CSI drivers for your infrastructur—for example, the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.
+
+### Cassandra
+
+This chart deploys two Cassandra pods to store TheHive's data.
+
+You can review the [Bitnami Cassandra Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) for available configuration options.
+
+### Elasticsearch
+
+By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
+
+You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.
+
+### Object storage
+
+To support multiple replicas of TheHive, this chart defines an object storage in the configuration and deploys a single instance of MinIO.
+
+For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:
+
+* AWS S3
+* Google Cloud Storage
+
+Network shared filesystems, like NFS, are supported but can be more complex to implement and may offer lower performance.
+
+### Cortex
+
+No Cortex server is defined by default in TheHive configuration.
+
+There are two main ways to add Cortex servers to TheHive:
+
+* Add them directly through TheHive interface.
+* Define them in the Helm chart’s `values.yaml` file.
+
+For the second method, here is an example configuration:
+
+```bash
+cortex:
+  enabled: true
+  protocol: "http"
+  hostnames:
+    - "cortex.default.svc" # Assuming Cortex is deployed in the "default" namespace
+  port: 9001
+  api_keys:
+    - "<cortex_api_key>" # Or even better, use an existing secret using the parameters below
+  #k8sSecretName: ""
+  #k8sSecretKey: "api-keys"
 ```
 
-&nbsp;
-
-### Configuration
-
-#### Using Docker Entrypoint
-
-If you use the Docker entry point, include the ``--kubernetes`` flag. Additionally, you can use the following options:
-
-```
---kubernetes-pod-label-selector <selector>  | Selector to use to select other pods running the app (default app=thehive)
---cluster-min-nodes-count <count>           | Minimum number of nodes to form a cluster (default to 1)
-```
-
-&nbsp;
-
-#### Using Custom application.conf
-
-If you use your own application.conf file, add the following configurations:
-
-```hocon
-pekko.remote.artery.canonical.hostname = ${?POD_IP}
-singleInstance = false
-pekko.management {
-  cluster.bootstrap {
-    contact-point-discovery {
-      discovery-method = kubernetes-api
-      # Set the minimum number of pods to form a cluster
-      required-contact-point-nr = 1
-    }
-  }
-}
-pekko.extensions += "pekko.management.cluster.bootstrap.ClusterBootstrap"
-
-pekko.discovery {
-  kubernetes-api {
-    # Set here the pod selector to use for thehive pods
-    pod-label-selector = "thehive"
-  }
-}
-```
-
-&nbsp;
-
-#### Pod Probes
-
-You can use the following probes to ensure the application starts and runs correctly. It's recommended to enable these probes after validating the correct start of the application.
-
-!!! Tip
-    When applying a large migration, deactivate these probes as the HTTP server will not start until the migration is complete.
-    
-    ```yaml
-    startupProbe:
-        httpGet:
-            path: /api/v1/status/public
-            port: 9000
-        failureThreshold: 30
-        periodSeconds: 10
-    livenessProbe:
-        httpGet:
-            path: /api/v1/status/public
-            port: 9000
-        periodSeconds: 10
-    ```
-
----
-
-## Cleanup
-
-To delete all resources belonging to the ``thehive`` namespace, use the following command:
-
-```
-kubectl delete namespace thehive
-```
-
----
-
-## Troubleshooting
-
-Below are some common issues that may arise when running TheHive with Docker:
-
-- **Example 1**: Error during Database Initialization
-
-    If your logs contain the following lines:
-
-    !!! Example ""
-
-        ```yaml
-        [error] o.t.s.m.Database [|] ***********************************************************************
-        [error] o.t.s.m.Database [|] * Database initialization has failed. Restart application to retry it *
-        [error] o.t.s.m.Database [|] ***********************************************************************
-        ```
-
-    This indicates that an error occurred when attempting to create the database schema. Beneath these lines, you should find additional details regarding the cause of the error.
-
-    **Resolution**:
-
-    1. Cassandra / Elasticsearch Unavailability: Ensure that both databases are running correctly and that TheHive can establish connections to them.
-
-        You can try starting both databases in the Kubernetes cluster before initiating TheHive by setting TheHive deployment to ``replicas: 0``.
-
-    2. Invalid Data in Cassandra / Elasticsearch: Elasticsearch acts as an index for Cassandra, and if the data between the two becomes unsynchronized, errors may occur when accessing the data.
-
-        If this is the first setup of the cluster, consider deleting both database volumes/data and restarting both the databases and TheHive.
-
-&nbsp;
+<h2>Next steps</h2>
