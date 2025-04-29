@@ -1,12 +1,14 @@
-# Cold vs. Hot Backups and Restores
+# Cold vs. Hot Backup and Restore
 
 This topic compares cold and hot backup and restore options in TheHive, helping you make the best decision based on your organization's needs and requirements.
 
 ## Definitions
 
-A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime. This option is available for standalone servers only, not for clusters.
+A cold backup involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime. This option is available for standalone servers only, not for clusters.
 
-A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. This option is available for both standalone servers and clusters.
+A hot backup keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. This option is available for both standalone servers and clusters.
+
+Both cold restore and hot restore require shutting down TheHive to complete the restoration process.
 
 ## TheHive infrastructure challenges
 
@@ -16,7 +18,7 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 ## Cold vs. hot backup and restore comparison
 
-| Type | Complexity | TheHive state       | Data integrity | Tools                  | Supported environment | Use case |
+| Type | Complexity | TheHive state during backup  | Data integrity | Tools                  | Supported environment | Use case |
 | -----| ---------- | --------------------| ---------------| -----------------------| --------| --------|
 | **Cold** | Medium     | Application stopped | Guaranteed      | Usual tools            | Standalone servers only| Want to ensure data integrity |
 | **Hot** | High       | Application running | Not guaranteed  | Service-specific tools | Standalone servers and clusters | Can't afford any downtime |
