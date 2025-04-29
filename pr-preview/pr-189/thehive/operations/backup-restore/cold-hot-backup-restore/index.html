@@ -11070,8 +11070,8 @@
 <div><h1 id="cold-vs-hot-backups-and-restores">Cold vs. Hot Backups and Restores<a class="headerlink" href="#cold-vs-hot-backups-and-restores" title="Permanent link">#</a></h1>
 <p>This topic compares cold and hot backup and restore options in TheHive, helping you make the best decision based on your organization's needs and requirements.</p>
 <h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">#</a></h2>
-<p>A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime.</p>
-<p>A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components.</p>
+<p>A cold backup and restore involves shutting down TheHive and its architecture components to back up all data. This method ensures that the data is consistent and intact, but requires downtime. It's only available for standalone servers, not for cluster deployments.</p>
+<p>A hot backup and restore keeps TheHive running while it takes the backup. This reduces downtime but may not guarantee data integrity across all architecture components. It's available for both standalone servers and cluster deployments.</p>
 <h2 id="thehive-infrastructure-challenges">TheHive infrastructure challenges<a class="headerlink" href="#thehive-infrastructure-challenges" title="Permanent link">#</a></h2>
 <div class="admonition danger">
 <p class="admonition-title">Backup requirement</p>
@@ -11087,6 +11087,7 @@
 <th>TheHive state</th>
 <th>Data integrity</th>
 <th>Tools</th>
+<th>Supported environment</th>
 <th>Use case</th>
 </tr>
 </thead>
@@ -11097,6 +11098,7 @@
 <td>Application stopped</td>
 <td>Guaranteed</td>
 <td>Usual tools</td>
+<td>Standalone servers only</td>
 <td>Want to ensure data integrity</td>
 </tr>
 <tr>
@@ -11105,6 +11107,7 @@
 <td>Application running</td>
 <td>Not guaranteed</td>
 <td>Service-specific tools</td>
+<td>Standalone servers and clusters</td>
 <td>Can't afford any downtime</td>
 </tr>
 </tbody>
