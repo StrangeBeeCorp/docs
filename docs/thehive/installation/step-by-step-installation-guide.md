@@ -615,47 +615,36 @@ This section provides detailed instructions for installing and configuring TheHi
 
 TheHive package repository provides all required packages. Support is provided for Debian and RPM packages, and binary packages in ZIP format. All packages are signed using TheHive GPG key [`562CBC1C`](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
 
-=== "DEB"
-
-    For Debian systems, use the following command:
-
-    !!! Example ""
-        ```bash
-        wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-        ```
-    
-=== "RPM"
-
-    For RPM-based systems, follow these steps:
-
-    !!! Example ""
-        ```bash
-        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-        ```
-
-
 Install TheHive package by using the following commands:
 
-
 === "DEB"
 
-    !!! Example ""
-        ```bash
-        echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.4 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
-        sudo apt-get update
-        sudo apt-get install -y thehive
-        ```
+    1. Import the DEB repository key.
+
+        !!! Example ""
+            ```bash
+            wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+            ```
+    
+    2. Add the DEB repository and install TheHive.
+
+        !!! Example ""
+            ```bash
+            echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.4 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
+            sudo apt-get update
+            sudo apt-get install -y thehive
+            ```
 
 === "RPM"
 
-    1. Import the RPM repository key:
+    1. Import the RPM repository key.
 
         !!! Example ""
             ```bash
             sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             ```
 
-    2. Create and edit the file `/etc/yum.repos.d/strangebee.repo`:
+    2. Create and edit the file `/etc/yum.repos.d/strangebee.repo`.
 
         !!! Example ""
             ```bash title="/etc/yum.repos.d/strangebee.repo"
@@ -668,11 +657,22 @@ Install TheHive package by using the following commands:
             gpgcheck=1
             ```
 
-    3. Then install the package using `yum`:
+    3. Install TheHive.
+
+        You can use either `yum` or `dnf` depending on your distribution:
+
+        * With `yum`:
+
+        !!! Example "" 
+            ```bash 
+            sudo yum install thehive
+            ```
+
+        * With `dnf` (recommended for newer systems like RHEL 8, CentOS 8, or Fedora):
 
         !!! Example ""
-            ```bash
-            sudo yum install thehive
+            ```bash 
+            sudo dnf install thehive
             ```
 
 === "Other installation methods"
