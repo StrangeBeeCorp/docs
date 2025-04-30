@@ -6,6 +6,36 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.1 - April 30, 2025
+
+### Security fixes
+
+This update includes four patches addressing vulnerabilities that haven't been exploited in the wild. Further details will be provided in an upcoming security bulletin, in line with our responsible disclosure policy.
+
+### Improvements
+
+#### Tasks
+
+You can now sort tasks by their due dates.
+
+### Fixes
+
+#### Dashboards
+
+* Bar widget: The `_total` field no longer appears when data is stacked.
+* Table widget: Fixed an issue with filter configuration, and corrected two issues affecting the maximum number of elements.
+
+#### Filters
+
+* Fixed incorrect handling of the hyphen character (`-`) with certain search and filter operators.
+* Fixed an issue where the filter form was wiped when a new alert arrived.
+* Fixed the "Owned by my organization" quick filter, which wasn't working as expected.
+
+#### Others
+
+* Improved performance of TheHive when handling a high number of analyses coming from Cortex.
+* Fixed a display issue in the timeline tab.
+
 ## 5.5.0 - April 22, 2025
 
 ### New features

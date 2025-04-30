@@ -21,7 +21,7 @@
 ## 5.3.11 - April 24, 2025
 
 ### Security fixes
-- This update includes four patches addressing vulnerabilities that have not been exploited in the wild. Further details will be provided in an upcoming security bulletin, in line with our responsible disclosure policy.
+- This update includes four patches addressing vulnerabilities that haven't been exploited in the wild. Further details will be provided in an upcoming security bulletin, in line with our responsible disclosure policy.
     
 ## 5.3.10 - 9th of January 2025
 
