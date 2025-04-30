@@ -14,7 +14,7 @@ To create a new user account and assign it to an organization, see [Create a Use
 
 2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
-3. In the drawer, go to the **Organizations** section, select the organizations to assign the user account to, and choose their [permission profile](../../administration/profiles.md).
+3. In the drawer, go to the **Organizations** section, select the organizations to assign the user account to, and choose a [permission profile](../../administration/profiles.md).
 
 4. Select **Confirm**.
 
