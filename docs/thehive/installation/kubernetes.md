@@ -37,9 +37,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
   For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
 
 !!! info "Dependencies"
-    The TheHive Helm chart relies on the following charts by default:
-    - [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database
-    - [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index
+    The TheHive Helm chart relies on the following charts by default:  
+    - [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database  
+    - [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index  
     - [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
 
 !!! note "Upgrades"
@@ -97,7 +97,7 @@ If you want to modify it, ensure that the StorageClass you use:
 * Is regularly backed up to prevent data loss—tools like [Velero](https://velero.io/) can help automate this process
 * Has an appropriate `reclaimPolicy` to minimize the risk of data loss
 
-To configure `StorageClasses` according to your needs, refer to the relevant CSI drivers for your infrastructur—for example, the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.
+To configure `StorageClasses` based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.
 
 ### Cassandra
 
@@ -150,4 +150,4 @@ cortex:
 
 * [Monitoring TheHive](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)
-* [Perform a Cold Backup ]()
+* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/docker-compose.md)
