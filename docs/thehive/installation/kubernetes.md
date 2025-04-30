@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the TheHive Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
-!!! warning "License"
+!!! info "License"
     The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license.
 
 ## Step 1: Deploy TheHive using Helm
@@ -10,31 +10,29 @@ This topic provides step-by-step instructions for deploying TheHive on a Kuberne
 TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
 !!! warning "Prerequisites"
-    Make sure you have:
+    Make sure you have:  
     - A running Kubernetes cluster (version 1.23.0 or later)  
     - [Helm](https://helm.sh/) installed (version 3.8.0 or later)
 
 1. Add the TheHive Helm repository
 
-  ```bash
-  helm repo add strangebee https://strangebeecorp.github.io/helm-charts
-  ```
+    ```bash
+    helm repo add strangebee https://strangebeecorp.github.io/helm-charts
+    ```
 
 2. Update your local Helm repositories
 
-  ```bash
-  helm repo update
-  ```
+    ```bash
+    helm repo update
+    ```
 
-3. Install TheHive
+3. Create a release using the TheHive Helm chart
 
-  Create a release using the TheHive Helm chart.
+    ```bash
+    helm install <release_name> strangebee/thehive
+    ```
 
-  ```bash
-  helm install <release_name> strangebee/thehive
-  ```
-
-  For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
+    For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
 
 !!! info "Dependencies"
     The TheHive Helm chart relies on the following charts by default:  
