@@ -14,17 +14,9 @@ This update includes four patches addressing vulnerabilities that haven't been e
 
 ### Improvements
 
-#### Functions
-
-TheHive functions now allow you to trigger analyzers and responders directly.
-
 #### Tasks
 
 You can now sort tasks by their due dates.
-
-#### Docker image
-
-A new entry point is now available to configure a certificate authority.
 
 ### Fixes
 
