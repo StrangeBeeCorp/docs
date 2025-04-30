@@ -34,7 +34,6 @@ You can now sort tasks by their due dates.
 #### Others
 
 * Improved performance of TheHive when handling a high number of analyses coming from Cortex.
-* Corrected a problem in the order of events in the live feed.
 * Fixed a display issue in the timeline tab.
 
 ## 5.5.0 - April 22, 2025
