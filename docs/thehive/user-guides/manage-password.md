@@ -1,0 +1,2 @@
+Change password
+Forgot password

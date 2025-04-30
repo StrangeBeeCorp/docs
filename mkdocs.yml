@@ -361,7 +361,7 @@ nav:
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
         - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
         - 'Create an Organization': thehive/administration/organizations/create-an-organization.md
-        - 'Add Users to an Organization': thehive/administration/organizations/add-users-to-an-organization.md
+        - 'Add an Existing User Account to an Organization': thehive/administration/organizations/add-an-existing-user-account-to-an-organization.md
         - 'Link an Organization': thehive/administration/organizations/link-an-organization.md
         - 'Lock an Organization': thehive/administration/organizations/lock-an-organization.md
       - 'Manage Accounts':
