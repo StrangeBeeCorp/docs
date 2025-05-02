@@ -6,9 +6,11 @@ To create a new user account and assign it to an organization, see [Create a Use
 
 To permanently delete a user account from all organizations, see [Delete a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md).
 
-{!includes/administrator-access-manage-organizations.md!}
-
 <h2>Procedure</h2>
+
+### As an administrator
+
+{!includes/administrator-access-manage-organizations.md!}
 
 1. {!includes/users-view-go-to.md!}
 
@@ -20,6 +22,29 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 !!! tip "Remove multiple user accounts in bulk from an organization"
     To remove multiple user accounts from an organization, go to the **Organizations** view and select the target organization. Select :fontawesome-regular-square: next to each account, then choose :fontawesome-solid-trash: and confirm with **OK**.
+
+### As an organization administrator
+
+{!includes/access-manage-user-accounts.md!}
+
+!!! info "Adding existing users not supported"
+    As an organization administrator, you can remove an existing user from an organization, but you can’t add one—only create a new user account. To add an existing user, ask someone with an admin-type profile.
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/users-tab-go-to.md!}
+
+3. Select :fontawesome-solid-ellipsis: next to the user account you want to remove from the organization.
+
+4. Select **Delete**.
+
+    !!! warning "User account may be deleted"
+        Removing a user account from an organization automatically deletes the account if it isn't assigned to any other organization.
+
+5. Select **OK**.
+
+!!! tip "Remove multiple user accounts in bulk from an organization"
+    To remove multiple user accounts from an organization, select :fontawesome-regular-square: next to each account, then choose :fontawesome-solid-trash: and confirm with **OK**.
 
 <h2>Next steps</h2>
 

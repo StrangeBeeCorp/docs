@@ -8,14 +8,12 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 1. {!includes/users-view-go-to.md!}
 
-2. Select :fontawesome-solid-ellipsis: next to the user account you want to lock.
+2. Select **Export list** to export all user accounts. To export a specific selection of user accounts, select :fontawesome-regular-square: next to the user accounts you want to export, then select **Export selection**.
 
     !!! tip "Can't find a user account?"
         You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
 
-3. Select **Lock**.
-
-4. Select **OK**.
+3. 
 
 ## Export a list of user accounts at the organization level
 
