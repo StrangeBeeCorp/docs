@@ -6,54 +6,6 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
 {!includes/access-manage-user-accounts.md!}
 
-## Reset a user account password
-
-### As an administrator
-
-1. {!includes/users-view-go-to.md!}
-
-2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
-
-3. In the drawer, select **Reset password**.
-
-The user gets an email asking them to choose a new password.
-
-### As an organization administrator
-
-1. {!includes/organization-view-go-to.md!}
-
-2. {!includes/users-tab-go-to.md!}
-
-3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
-
-4. In the drawer, select **Reset password**.
-
-The user gets an email asking them to choose a new password.
-
-## Edit a user account permission profile
-
-### As an administrator
-
-1. {!includes/users-view-go-to.md!}
-
-2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
-
-3. In the drawer, move through the **Organizations** section and update the permission profile for the relevant organizations.
-
-4. Select **Confirm**.
-
-### As an organization administrator
-
-1. {!includes/organization-view-go-to.md!}
-
-2. {!includes/users-tab-go-to.md!}
-
-3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
-
-4. In the drawer, move through the **Organizations** section and update the permission profile for the relevant organizations.
-
-5. Select **Confirm**.
-
 ## Change a user account avatar
 
 ### As an administrator
@@ -81,6 +33,30 @@ The user gets an email asking them to choose a new password.
 5. Select a new image in PNG or JPG format. The file must be smaller than 500 KB.
 
 6. Select **Confirm**.
+
+## Edit a user account permission profile
+
+### As an administrator
+
+1. {!includes/users-view-go-to.md!}
+
+2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
+
+3. In the drawer, move through the **Organizations** section and update the permission profile for the relevant organizations.
+
+4. Select **Confirm**.
+
+### As an organization administrator
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/users-tab-go-to.md!}
+
+3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
+
+4. In the drawer, move through the **Organizations** section and update the permission profile for the relevant organizations.
+
+5. Select **Confirm**.
 
 ## Manage a user account API key
 
@@ -129,6 +105,30 @@ The user gets an email asking them to choose a new password.
 4. Move through the **Sessions** section.
 
 5. Select **Delete** next to the session you want to delete.
+
+## Reset a user account password
+
+### As an administrator
+
+1. {!includes/users-view-go-to.md!}
+
+2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
+
+3. In the drawer, select **Reset password**.
+
+The user gets an email asking them to choose a new password.
+
+### As an organization administrator
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/users-tab-go-to.md!}
+
+3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
+
+4. In the drawer, select **Reset password**.
+
+The user gets an email asking them to choose a new password.
 
 <h2>Next steps</h2>
 
