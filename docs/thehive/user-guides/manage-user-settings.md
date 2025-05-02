@@ -73,3 +73,9 @@ Use this procedure to add an extra layer of security to your account.
 4. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Log Out of your Account](log-out.md)
+* [Switch Organizations](switch-organization.md)
+* [Change your Account Theme](change-account-theme.md)
+* [Manage your Password](manage-password.md)
+* [View your Account Profile and Permissions](view-permissions.md)

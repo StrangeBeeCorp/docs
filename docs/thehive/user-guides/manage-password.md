@@ -31,3 +31,9 @@ Use this procedure to change your current password.
 5. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Log Out of your Account](log-out.md)
+* [Switch Organizations](switch-organization.md)
+* [Change your Account Theme](change-account-theme.md)
+* [Manage your Account Settings](manage-user-settings.md)
+* [View your Account Profile and Permissions](view-permissions.md)

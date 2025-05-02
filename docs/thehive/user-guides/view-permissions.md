@@ -18,3 +18,9 @@ This topic provides step-by-step instructions for viewing the [profile and permi
 If you need additional permissions, contact someone with admin-level permissions to [update your current profile with new permissions](../administration/profiles.md#manage-profiles).
 
 <h2>Next steps</h2>
+
+* [Log Out of your Account](log-out.md)
+* [Switch Organizations](switch-organization.md)
+* [Change your Account Theme](change-account-theme.md)
+* [Manage your Password](manage-password.md)
+* [Manage your Account Settings](manage-user-settings.md)

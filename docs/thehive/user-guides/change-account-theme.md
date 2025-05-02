@@ -17,3 +17,9 @@ This topic provides step-by-step instructions for changing the user interface th
     * System: Matches the theme of your operating system or browser settings automatically.
 
 <h2>Next steps</h2>
+
+* [Log Out of your Account](log-out.md)
+* [Switch Organizations](switch-organization.md)
+* [Manage your Password](manage-password.md)
+* [Manage your Account Settings](manage-user-settings.md)
+* [View your Account Profile and Permissions](view-permissions.md)
