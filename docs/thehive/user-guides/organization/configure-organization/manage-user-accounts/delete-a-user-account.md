@@ -17,8 +17,7 @@ To remove a user account from a specific organization without deleting it, see [
 
 2. Hover over the user account you want to delete and select :fontawesome-solid-eye:.
 
-    !!! tip "Can't find a user account?"
-        You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
+    {!includes/find-a-user-account.md!}
 
 3. In the drawer, select **Delete user**.
 

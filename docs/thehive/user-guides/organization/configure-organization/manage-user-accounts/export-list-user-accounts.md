@@ -24,6 +24,8 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 3. {!includes/export-list-user-accounts.md!}
 
+    {!includes/find-a-user-account.md!}
+
 4. In the **Export users to file** drawer, select your preferred formatting options.
 
 5. Select **Export to file**.

@@ -10,6 +10,8 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
     2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
+        {!includes/find-a-user-account.md!}
+
 === "As an organization administrator"
 
     {!includes/access-manage-user-accounts.md!}
@@ -19,6 +21,8 @@ This topic provides step-by-step instructions for managing [user accounts](about
     2. {!includes/users-tab-go-to.md!}
 
     3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
+
+        {!includes/find-a-user-account.md!}
 
 ## Manage a user account email
 
