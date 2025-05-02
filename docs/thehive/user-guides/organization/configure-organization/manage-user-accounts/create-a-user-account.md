@@ -8,9 +8,7 @@ This topic provides step-by-step instructions for creating a [user account](abou
 
 {!includes/administrator-access-manage-user-accounts.md!}
 
-1. Go to the **Organizations** view from the sidebar menu.
-
-    ![Organizations view](../../../../images/administration-guides/manage-organizations-organizations-view.png) 
+1. {!includes/organizations-view-go-to.md!}
 
 2. Select the organization to add the user account to, then select :fontawesome-solid-plus:. Alternatively, hover over the organization, select :fontawesome-solid-eye:, and select **Add** in the **Users** section.
 
@@ -42,13 +40,9 @@ This topic provides step-by-step instructions for creating a [user account](abou
 
 {!includes/access-manage-user-accounts.md!}
 
-1. Go to the **Organization** view from the sidebar menu.
+1. {!includes/organization-view-go-to.md!}
 
-    ![Organization view](../../../../images/user-guides/organization/configure-organization/organization-view.png)
-
-2. Select the **Users** tab.
-
-    ![Organization users tab](../../../../images/user-guides/organization/configure-organization/manage-users/organization-users-tab.png)
+2. {!includes/users-tab-go-to.md!}
 
 3. Select :fontawesome-solid-plus:.
 
@@ -80,9 +74,7 @@ This topic provides step-by-step instructions for creating a [user account](abou
 
 {!includes/administrator-access-manage-user-accounts.md!}
 
-1. Go to the **Users** view from the sidebar menu.
-
-    ![Users view](../../../../images/administration-guides/users-view.png)
+1. {!includes/users-view-go-to.md!}
 
 2. Select :fontawesome-solid-plus:.
 
@@ -120,3 +112,4 @@ This topic provides step-by-step instructions for creating a [user account](abou
 * [Lock a User Account](lock-a-user-account.md)
 * [Export a List of User Accounts](export-list-user-accounts.md)
 * [Manage User Accounts](manage-user-accounts.md)
+* [Add or Remove an Existing User Account from an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md)
