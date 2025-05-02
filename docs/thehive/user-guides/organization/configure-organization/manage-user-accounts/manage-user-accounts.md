@@ -26,7 +26,7 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
 ## Manage a user account email
 
-Use this field when the login isn’t an email address or when you want to set a different email. The email is used for notifications and password reset links.
+Use this field when the login isn’t an email address or when you want to set a different email. The email address is used to send notifications and password-related information to the user.
 
 Update the email address and select **Confirm**.
 

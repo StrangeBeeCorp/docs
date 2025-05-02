@@ -1,7 +1,4 @@
-
 # Profiles
-
-
 
 ## Introduction
 

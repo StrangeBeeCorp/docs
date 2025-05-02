@@ -1,8 +1,8 @@
-# How to Manage my Password
+# How to Manage your Password
 
 This topic provides step-by-step instructions for managing the password of your [user account](about-user-accounts.md) in TheHive.
 
-## Reset my password
+## Reset your password
 
 Use this procedure if you’ve forgotten your password and need to create a new one.
 
@@ -16,7 +16,7 @@ Use this procedure if you’ve forgotten your password and need to create a new 
 
 You will receive an email with a link to set a new password. The link is valid for a limited time.
 
-## Edit my password
+## Edit your password
 
 Use this procedure to change your current password.
 
