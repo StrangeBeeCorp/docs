@@ -1,6 +1,6 @@
-# How to Change the User Interface Theme
+# How to Change my Account Theme
 
-This topic provides step-by-step instructions for changing the user interface theme of a [user account](about-user-accounts.md) in TheHive.
+This topic provides step-by-step instructions for changing the user interface theme of your [user account](about-user-accounts.md) in TheHive.
 
 <h2>Procedure</h2>
 

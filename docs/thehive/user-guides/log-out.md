@@ -1,6 +1,6 @@
-# How to Log Out of a User Account
+# How to Log Out of my Account
 
-This topic provides step-by-step instructions for logging out of a [user account](about-user-accounts.md) in TheHive.
+This topic provides step-by-step instructions for logging out of your [user account](about-user-accounts.md) in TheHive.
 
 <h2>Procedure</h2>
 

@@ -22,6 +22,12 @@ Use this procedure to change your current password.
 
 1. {!includes/user-symbol-go-to.md!}
 
-2. Select 
+2. Select **Settings**.
+
+3. Select the **Password** tab.
+
+4. Enter your current and new password.
+
+5. Select **Confirm**.
 
 <h2>Next steps</h2>
