@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for creating an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
 
-This is useful if you want to extend the predefined list of observable types with custom ones.
+Use this procedure to extend the predefined list of observable types with custom ones.
 
 {!includes/administrator-access-manage-observable-types.md!}
 
