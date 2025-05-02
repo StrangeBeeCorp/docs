@@ -4,7 +4,7 @@
 
 6. Optional: Select the default user account avatar to modify it, then upload a new image. Only PNG and JPG formats are supported.
 
-7. Optional: If the login isn't an email, add an email address in the **Email** field. This address is used for notifications and password resets.
+7. Optional: If the login isn't an email, add an email address in the **Email** field. This address is used to send notifications and password-related information to the user.
 
 8. Optional: Select **Create** to generate an API key.
 

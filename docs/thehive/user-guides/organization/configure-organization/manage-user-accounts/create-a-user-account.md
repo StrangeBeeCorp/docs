@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for creating a [user account](about-user-accounts.md) in TheHive.
 
+To add an existing user account to an organization, see [Add or Remove an Existing User Account from an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
+
 ## Create a user account for an organization
 
 ### As an administrator
