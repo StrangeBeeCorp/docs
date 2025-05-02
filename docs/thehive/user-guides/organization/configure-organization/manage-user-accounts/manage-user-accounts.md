@@ -44,13 +44,13 @@ Move through the **API key** section and select **Renew**, **Reveal**, or **Revo
 
 ## Delete a user account session
 
-Move through the **Sessions** section and select **Delete** next to the session you want to delete.
+Move through the **Sessions** section and select **Delete** next to the session you want to delete. The user is logged out of the TheHive interface.
 
 ## Edit a user account password
 
 The password edit feature is available only if an [SMTP server](../../../../administration/smtp.md) is configured.
 
-Move through the **Password** section and select **Edit password**. You must send the new password to the user via a secure channel.
+Move through the **Password** section and select **Edit password**. Select **Confirm** to apply the change. You must send the new password to the user via a secure channel.
 
 ## Reset a user account password
 

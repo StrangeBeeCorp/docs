@@ -1,4 +1,6 @@
-# I forgot my password
+# How to Reset my Password
+
+I forgot my password
 
 If TheHive is connected to a SMTP server, as a user, you can change your password.
 
