@@ -8,14 +8,25 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 1. {!includes/users-view-go-to.md!}
 
-2. Select **Export list** to export all user accounts. To export a specific selection of user accounts, select :fontawesome-regular-square: next to the user accounts you want to export, then select **Export selection**.
+2. {!includes/export-list-user-accounts.md!}
 
-    !!! tip "Can't find a user account?"
-        You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
+3. In the **Export users to file** drawer, select your preferred formatting options.
 
-3. 
+4. Select **Export to file**.
 
-## Export a list of user accounts at the organization level
+## Export a list of user accounts for an organization
+
+{!includes/access-manage-user-accounts.md!}
+
+1. {!includes/organization-view-go-to.md!}
+
+2. {!includes/users-tab-go-to.md!}
+
+3. {!includes/export-list-user-accounts.md!}
+
+4. In the **Export users to file** drawer, select your preferred formatting options.
+
+5. Select **Export to file**.
 
 <h2>Next steps</h2>
 
