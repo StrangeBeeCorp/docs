@@ -10997,11 +10997,9 @@
 
 <div><h1 id="file-storage-configuration">File Storage Configuration<a class="headerlink" href="#file-storage-configuration" title="Permanent link">#</a></h1>
 <p>TheHive offers flexible configurations for file storage, accommodating both local and distributed filesystem setups.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Local or NFS</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Local or NFS</label><label for="__tabbed_1_2">Min.IO</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p>To configure TheHive to use a local or NFS (Network File System) storage:</p>
 <div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Create</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">dedicated</span><span class="w"> </span><span class="n">folder</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">files</span><span class="p">,</span><span class="w"> </span><span class="n">ensuring</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">owned</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">user</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="n">thehive</span><span class="p">:</span><span class="n">thehive</span><span class="mf">.</span>
 
@@ -11024,11 +11022,8 @@
 <span class="w">    </span><span class="err">```</span>
 </code></pre></div>
 
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Min.IO</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p>For Min.IO integration with TheHive, follow these steps:</p>
 <div class="codehilite"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Install</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">Min</span><span class="mf">.</span><span class="n">IO</span><span class="w"> </span><span class="n">cluster</span><span class="mf">.</span><span class="w"> </span><span class="n">Follow</span><span class="w"> </span><span class="err">[</span><span class="o">**</span><span class="n">these</span><span class="w"> </span><span class="kr">step</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="kr">step</span><span class="o">**</span><span class="err">]</span><span class="p">(</span><span class="mf">..</span><span class="o">/</span><span class="n">installation</span><span class="o">/</span><span class="mf">3</span><span class="o">-</span><span class="n">node</span><span class="o">-</span><span class="n">cluster</span><span class="mf">.</span><span class="n">md</span><span class="err">#</span><span class="n">minio</span><span class="o">-</span><span class="n">setup</span><span class="p">)</span><span class="w"> </span><span class="n">instructions</span><span class="mf">.</span>
 <span class="mf">2.</span><span class="w"> </span><span class="n">Configure</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">TheHive</span><span class="w"> </span><span class="n">accordingly</span><span class="p">:</span>
@@ -11077,7 +11072,9 @@
 <span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="kd">def</span><span class="n">ault</span><span class="w"> </span><span class="n">region</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">it</span><span class="err">'</span><span class="n">s</span><span class="w"> </span><span class="n">optional</span><span class="w"> </span><span class="kr">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">specified</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">MinIO</span><span class="w"> </span><span class="n">configuration</span><span class="mf">.</span>
 </code></pre></div>
 
-<p> </p></div>
+</div>
+</div>
+</div></div>
 
 
 

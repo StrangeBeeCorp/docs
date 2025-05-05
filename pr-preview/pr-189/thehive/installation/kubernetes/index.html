@@ -149,7 +149,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploy-on-kubernetes" class="md-skip">
+        <a href="#how-to-deploy-thehive-on-kubernetes" class="md-skip">
           Skip to content
         </a>
       
@@ -723,45 +723,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-considerations" class="md-nav__link">
+  <a href="#quick-start-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Considerations
+      Quick start deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying-thehive" class="md-nav__link">
+  <a href="#advanced-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Deploying TheHive
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kubernetes Configuration
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cleanup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cleanup
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting
+      Advanced configuration
     </span>
   </a>
   
@@ -11074,177 +11047,129 @@
 
 
 
-<div><h1 id="deploy-on-kubernetes">Deploy on Kubernetes<a class="headerlink" href="#deploy-on-kubernetes" title="Permanent link">#</a></h1>
-<p>To deploy TheHive on Kubernetes, you can utilize the Docker image. For detailed instructions on how to use the Docker image, please refer to the <a href="../docker/"><strong>docker image documentation</strong></a></p>
-<hr>
-<h2 id="important-considerations">Important Considerations<a class="headerlink" href="#important-considerations" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p>While this setup is suitable for testing TheHive, it's recommended to enhance the data stores (Elasticsearch, Cassandra, and Minio) for production use by setting up clustering and storage volumes. Refer to the respective documentation for instructions on deploying on Kubernetes for production use.</p>
-</li>
-<li>
-<p>The volumes used in this configuration are <code>emptyDir</code>s, which means the data will be lost when a pod is restarted. If you want to persist your data, update the volume description accordingly.</p>
-</li>
-<li>
-<p>To deploy multiple nodes, you will need to update your license as only one node is included in the Community License.</p>
-</li>
-</ul>
-<hr>
-<h2 id="deploying-thehive">Deploying TheHive<a class="headerlink" href="#deploying-thehive" title="Permanent link">#</a></h2>
-<p>You can download the Kubernetes configuration file <a href="../assets/kubernetes.yml"><strong>here</strong></a>. This configuration will deploy the following components:</p>
-<ul>
-<li>1 instance of TheHive</li>
-<li>1 instance of Cassandra</li>
-<li>1 instance of Elasticsearch</li>
-<li>1 instance of Minio</li>
-</ul>
-<p>You can initiate the deployment by executing the following command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>kubernetes.yml
-</code></pre></div>
-<p>This command will create a namespace named <code>thehive</code> and deploy the instances within it.</p>
-<hr>
-<h2 id="kubernetes-configuration">Kubernetes Configuration<a class="headerlink" href="#kubernetes-configuration" title="Permanent link">#</a></h2>
-<p>In a Kubernetes environment with multiple TheHive pods, the application needs to form a cluster between its nodes. To achieve this, it utilizes the pekko discovery method with the <a href="https://pekko.apache.org/docs/pekko-management/current/discovery/kubernetes.html"><strong>Kubernetes API</strong></a>.</p>
-<p>To enable this functionality, you need:</p>
-<ul>
-<li>A service account with permissions to connect to the Kubernetes API</li>
-<li>Configuration to instruct TheHive to use the Kubernetes API for discovering other nodes</li>
-</ul>
-<p> </p>
-<h3 id="role-based-access-control-rbac">Role-Based Access Control (RBAC)<a class="headerlink" href="#role-based-access-control-rbac" title="Permanent link">#</a></h3>
-<p>Create a ServiceAccount named thehive with the necessary permissions to access the running pods:</p>
-<div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="c1">#</span>
-<span class="c1"># Create a role, `pod-reader`, that can list pods and</span>
-<span class="c1"># bind the default service account in the namespace</span>
-<span class="c1"># that the binding is deployed to to that role.</span>
-<span class="c1">#</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-reader</span>
-<span class="nt">rules</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># "" indicates the core API group</span>
-<span class="w">    </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"pods"</span><span class="p p-Indicator">]</span>
-<span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">]</span>
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="nn">---</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RoleBinding</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read-pods</span>
-<span class="nt">subjects</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="nt">roleRef</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod-reader</span>
-<span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span>
-</code></pre></div>
-<p> </p>
-<h3 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">#</a></h3>
-<p>In your pod/deployment specification, specify the created service account. Also, ensure to add a label and a <code>POD_IP</code> environment variable.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="w">  </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">      </span><span class="c1"># Make sure that the container can know its own IP</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POD_IP</span>
-<span class="w">        </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">fieldRef</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">fieldPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status.podIP</span>
-</code></pre></div>
-<p> </p>
-<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h3>
-<h4 id="using-docker-entrypoint">Using Docker Entrypoint<a class="headerlink" href="#using-docker-entrypoint" title="Permanent link">#</a></h4>
-<p>If you use the Docker entry point, include the <code>--kubernetes</code> flag. Additionally, you can use the following options:</p>
-<div class="highlight"><pre><span></span><code>--kubernetes-pod-label-selector &lt;selector&gt;  | Selector to use to select other pods running the app (default app=thehive)
---cluster-min-nodes-count &lt;count&gt;           | Minimum number of nodes to form a cluster (default to 1)
-</code></pre></div>
-<p> </p>
-<h4 id="using-custom-applicationconf">Using Custom application.conf<a class="headerlink" href="#using-custom-applicationconf" title="Permanent link">#</a></h4>
-<p>If you use your own application.conf file, add the following configurations:</p>
-<div class="highlight"><pre><span></span><code>pekko.remote.artery.canonical.hostname = ${?POD_IP}
-singleInstance = false
-pekko.management {
-  cluster.bootstrap {
-    contact-point-discovery {
-      discovery-method = kubernetes-api
-      # Set the minimum number of pods to form a cluster
-      required-contact-point-nr = 1
-    }
-  }
-}
-pekko.extensions += "pekko.management.cluster.bootstrap.ClusterBootstrap"
-
-pekko.discovery {
-  kubernetes-api {
-    # Set here the pod selector to use for thehive pods
-    pod-label-selector = "thehive"
-  }
-}
-</code></pre></div>
-<p> </p>
-<h4 id="pod-probes">Pod Probes<a class="headerlink" href="#pod-probes" title="Permanent link">#</a></h4>
-<p>You can use the following probes to ensure the application starts and runs correctly. It's recommended to enable these probes after validating the correct start of the application.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>When applying a large migration, deactivate these probes as the HTTP server will not start until the migration is complete.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">startupProbe</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">httpGet</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/api/v1/status/public</span>
-<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9000</span>
-<span class="w">    </span><span class="nt">failureThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span>
-<span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-<span class="nt">livenessProbe</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">httpGet</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/api/v1/status/public</span>
-<span class="w">        </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9000</span>
-<span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
-</code></pre></div>
+<div><h1 id="how-to-deploy-thehive-on-kubernetes">How to Deploy TheHive on Kubernetes<a class="headerlink" href="#how-to-deploy-thehive-on-kubernetes" title="Permanent link">#</a></h1>
+<p>This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">the TheHive Helm chart</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">License</p>
+<p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license. A fresh deployment of TheHive on an empty database includes a two-week Platinum trial, allowing you to test multi-node setups.</p>
 </div>
-<hr>
-<h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">#</a></h2>
-<p>To delete all resources belonging to the <code>thehive</code> namespace, use the following command:</p>
-<div class="highlight"><pre><span></span><code>kubectl delete namespace thehive
-</code></pre></div>
-<hr>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
-<p>Below are some common issues that may arise when running TheHive with Docker:</p>
-<ul>
-<li>
-<p><strong>Example 1</strong>: Error during Database Initialization</p>
-<p>If your logs contain the following lines:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">error</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">o.t.s.m.Database [|] ***********************************************************************</span>
-<span class="l l-Scalar l-Scalar-Plain">[error] o.t.s.m.Database [|] * Database initialization has failed. Restart application to retry it *</span>
-<span class="l l-Scalar l-Scalar-Plain">[error] o.t.s.m.Database [|] ***********************************************************************</span>
-</code></pre></div>
+<h2 id="quick-start-deployment">Quick start deployment<a class="headerlink" href="#quick-start-deployment" title="Permanent link">#</a></h2>
+<p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Prerequisites</p>
+<p>Make sure you have:<br>
+- A running Kubernetes cluster (version 1.23.0 or later)<br>
+- <a href="https://helm.sh/">Helm</a> installed (version 3.8.0 or later)</p>
 </div>
-<p>This indicates that an error occurred when attempting to create the database schema. Beneath these lines, you should find additional details regarding the cause of the error.</p>
-<p><strong>Resolution</strong>:</p>
 <ol>
 <li>
-<p>Cassandra / Elasticsearch Unavailability: Ensure that both databases are running correctly and that TheHive can establish connections to them.</p>
-<p>You can try starting both databases in the Kubernetes cluster before initiating TheHive by setting TheHive deployment to <code>replicas: 0</code>.</p>
+<p>Add the TheHive Helm repository</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>strangebee<span class="w"> </span>https://strangebeecorp.github.io/helm-charts
+</code></pre></div>
 </li>
 <li>
-<p>Invalid Data in Cassandra / Elasticsearch: Elasticsearch acts as an index for Cassandra, and if the data between the two becomes unsynchronized, errors may occur when accessing the data.</p>
-<p>If this is the first setup of the cluster, consider deleting both database volumes/data and restarting both the databases and TheHive.</p>
+<p>Update your local Helm repositories</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>update
+</code></pre></div>
+</li>
+<li>
+<p>Create a release using the TheHive Helm chart</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/thehive
+</code></pre></div>
+<p>For more options, see <a href="https://helm.sh/docs/helm/helm_install/">the Helm documentation for installation</a>.</p>
 </li>
 </ol>
-</li>
+<div class="admonition info">
+<p class="admonition-title">Dependencies</p>
+<p>The TheHive Helm chart relies on the following charts by default:<br>
+- <a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Apache Cassandra</a> - used as the database<br>
+- <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a> - used as the search index<br>
+- <a href="https://github.com/minio/minio/tree/master/helm/minio">MinIO Community Helm Chart</a> - used as S3-compatible object storage</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Upgrades</p>
+<p>To upgrade your release to the latest version of TheHive Helm chart, run:
+</p><div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/thehive
+</code></pre></div>
+For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/">the Helm upgrade documentation</a>.
+</div>
+<h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h2>
+<p>For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.</p>
+<p>Use the following command to view all available configuration options for the TheHive Helm chart:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/thehive
+</code></pre></div>
+<p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">the dedicated Helm documentation</a>. You can also review the available options for each dependency.</p>
+<h3 id="pods-resources">Pods resources<a class="headerlink" href="#pods-resources" title="Permanent link">#</a></h3>
+<p>Resources allocated to pods are optimized for production use. If you need to adjust these values, especially memory limits, make sure you update the <code>JVM_OPTS</code> environment variable accordingly to avoid OOM (out of memory) crashes.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># JVM_OPTS variable for TheHive</span>
+thehive:
+<span class="w">  </span>jvmOpts:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn300m"</span>
+
+<span class="c1"># JVM_OPTS variable for Cassandra dependency chart</span>
+cassandra:
+<span class="w">  </span>jvm:
+<span class="w">    </span>extraOpts:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn200m"</span>
+<span class="w">    </span>maxHeapSize:<span class="w"> </span><span class="s2">"2g"</span>
+<span class="w">    </span>newHeapSize:<span class="w"> </span><span class="s2">"200m"</span>
+
+<span class="c1"># JVM_OPTS variable for Elasticsearch dependency chart</span>
+elasticsearch:
+<span class="w">  </span>master:
+<span class="w">    </span>heapSize:<span class="w"> </span><span class="s2">"2g"</span>
+<span class="w">    </span>extraEnvVars:
+<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>JVM_OPTS
+<span class="w">        </span>value:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn200m"</span>
+</code></pre></div>
+<p>Refer to the official <a href="https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html">Cassandra</a> and <a href="https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments">Elasticsearch</a> documentation to learn how to optimize these values.</p>
+<h3 id="storageclasses">StorageClasses<a class="headerlink" href="#storageclasses" title="Permanent link">#</a></h3>
+<p>By default, this chart uses your cluster's default <code>StorageClass</code> to create persistent volumes (PVs).</p>
+<p>You can customize the <code>StorageClass</code> to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:</p>
+<ul>
+<li>It is regularly backed up to prevent data loss. Tools like <a href="https://velero.io/">Velero</a> can help automate this process.</li>
+<li>It has an appropriate <code>reclaimPolicy</code> to minimize the risk of data loss when volumes are deleted or released.</li>
+<li>It provides sufficient performance to ensure reliable operation of databases and applications.</li>
 </ul>
-<p> </p></div>
+<p>To configure <code>StorageClasses</code> based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.</p>
+<h3 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h3>
+<p>This chart deploys two Cassandra pods to store TheHive's data.</p>
+<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Cassandra Helm chart</a> for available configuration options.</p>
+<h3 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h3>
+<p>By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
+<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
+<h3 id="object-storage">Object storage<a class="headerlink" href="#object-storage" title="Permanent link">#</a></h3>
+<p>To support multiple replicas of TheHive, this chart defines an <a href="../../configuration/file-storage/">object storage</a> in the configuration and deploys a single instance of MinIO.</p>
+<p>For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:</p>
+<ul>
+<li>AWS S3</li>
+<li>Google Cloud Storage</li>
+</ul>
+<p>Network shared filesystems, like NFS, are supported but can be more complex to implement and may offer lower performance.</p>
+<h3 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h3>
+<p>No Cortex server is defined by default in TheHive configuration.</p>
+<p>There are two main ways to add Cortex servers to TheHive:</p>
+<ul>
+<li><a href="../../administration/cortex/add-a-cortex-server/">Add them directly through TheHive interface</a>.</li>
+<li>Define them in the Helm chart’s <code>values.yaml</code> file.</li>
+</ul>
+<p>For the second method, here's an example configuration:</p>
+<div class="highlight"><pre><span></span><code>cortex:
+<span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
+<span class="w">  </span>protocol:<span class="w"> </span><span class="s2">"http"</span>
+<span class="w">  </span>hostnames:
+<span class="w">    </span>-<span class="w"> </span><span class="s2">"cortex.default.svc"</span><span class="w"> </span><span class="c1"># Assuming Cortex is deployed in the "default" namespace</span>
+<span class="w">  </span>port:<span class="w"> </span><span class="m">9001</span>
+<span class="w">  </span>api_keys:
+<span class="w">    </span>-<span class="w"> </span><span class="s2">"&lt;cortex_api_key&gt;"</span><span class="w"> </span><span class="c1"># Or even better, use an existing secret using the parameters below</span>
+<span class="w">  </span><span class="c1">#k8sSecretName: ""</span>
+<span class="w">  </span><span class="c1">#k8sSecretKey: "api-keys"</span>
+</code></pre></div>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../operations/monitoring/">Monitoring TheHive</a></li>
+<li><a href="../../operations/troubleshooting/">Troubleshooting</a></li>
+<li><a href="../operations/backup-restore/backup/docker-compose.md">Perform a Cold Backup for a Stack Running with Docker Compose</a></li>
+</ul></div>
 
 
 
