@@ -2,8 +2,7 @@
 
 This topic provides step-by-step instructions for creating an [organization](about-organizations.md) in TheHive.
 
-!!! info "License"
-    The number of organizations you can create depends on your TheHive license.
+{!includes/license-organizations.md!}
 
 {!includes/administrator-access-manage-organizations.md!}
 

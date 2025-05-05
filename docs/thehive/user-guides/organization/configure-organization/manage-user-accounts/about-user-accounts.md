@@ -2,6 +2,8 @@
 
 This topic explains how user accounts are managed in TheHive.
 
+{!includes/license-user-accounts.md!}
+
 ## Types
 
 <!-- md:version 5.0 --> 

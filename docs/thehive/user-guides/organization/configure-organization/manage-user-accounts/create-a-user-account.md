@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for creating a [user account](abou
 
 To add an existing user account to an organization, see [Add or Remove an Existing User Account from an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
 
+{!includes/license-user-accounts.md!}
+
 ## Create a user account for an organization
 
 ### As an administrator
