@@ -32,7 +32,7 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 <h2>Next steps</h2>
 
-* [Create a User Account](add-a-user-account.md)
+* [Create a User Account](create-a-user-account.md)
 * [Delete a User Account](delete-a-user-account.md)
 * [Lock a User Account](lock-a-user-account.md)
 * [Manage User Accounts](manage-user-accounts.md)

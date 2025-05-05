@@ -38,7 +38,7 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 4. Select **Delete**.
 
-    !!! warning "User account may be deleted"
+    !!! warning "Possible deletion"
         Removing a user account from an organization automatically deletes the account if it isn't assigned to any other organization.
 
 5. Select **OK**.

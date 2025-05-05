@@ -100,7 +100,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     **- Organizations \***
 
-    Select one or more organizations to assign to the user account. To specify which organization is selected by default when the user signs in to TheHive, select **Set as default**.
+    Select one or more organizations to assign to the user account. To set the default organization the user accesses when signing in to TheHive, select **Set as default**.
 
     For each organization, select a [permission profile](../../../../administration/profiles.md) for the user account from the dropdown list.
 

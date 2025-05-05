@@ -14,7 +14,7 @@ By default, organizations are isolated and can't see or share data with each oth
 
 You can assign a user to one or more organizations.
 
-[When assigning a user to an organization](add-users-to-an-organization.md), the system suggests only [permission profiles](../../administration/profiles.md) that match the organization's type (Admin or Non-Admin).
+[When assigning a user to an organization](add-remove-an-existing-user-account-from-an-organization.md), the system suggests only [permission profiles](../../administration/profiles.md) that match the organization's type (Admin or Non-Admin).
 
 ## Permissions
 
@@ -23,6 +23,6 @@ You can assign a user to one or more organizations.
 <h2>Next steps</h2>
 
 * [Create an Organization](create-an-organization.md)
-* [Add Users to an Organization](add-users-to-an-organization.md)
+* [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

@@ -36,7 +36,7 @@ Select the avatar, then select a new image in PNG or JPG format. The file must b
 
 ## Check whether a user account has activated multi-factor authentication (MFA)
 
-Move through the **MFA** section. If *Yes* is displayed, the user has activated multi-factor authentication.
+Move through the **MFA** section. If the user has activated multi-factor authentication, *Yes* appears.
 
 ## Edit a user account permission profile
 
@@ -48,7 +48,7 @@ Move through the **API key** section and select **Renew**, **Reveal**, or **Revo
 
 ## Delete a user account session
 
-Move through the **Sessions** section and select **Delete** next to the session you want to delete. The user is logged out of the TheHive interface.
+Move through the **Sessions** section and select **Delete** next to the session you want to delete. This logs the user out of the TheHive interface.
 
 ## Edit a user account password
 
@@ -64,7 +64,7 @@ Move through the **Password** section and select **Reset password**. The user ge
 
 <h2>Next steps</h2>
 
-* [Create a User Account](add-a-user-account.md)
+* [Create a User Account](create-a-user-account.md)
 * [Delete a User Account](delete-a-user-account.md)
 * [Lock a User Account](lock-a-user-account.md)
 * [Export a List of User Accounts](export-list-user-accounts.md)

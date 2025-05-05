@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for deleting a [user account](abou
 
 To lock a user account without deleting it, see [Lock a User Account](lock-a-user-account.md).
 
-To remove a user account from a specific organization without deleting it, see [Add or Remove an Existing User Account to an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-to-an-organization.md).
+To remove a user account from a specific organization without deleting it, see [Add or Remove an Existing User Account to an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
 
 {!includes/administrator-access-manage-user-accounts.md!}
 
@@ -28,7 +28,7 @@ To remove a user account from a specific organization without deleting it, see [
 
 <h2>Next steps</h2>
 
-* [Create a User Account](add-a-user-account.md)
+* [Create a User Account](create-a-user-account.md)
 * [Lock a User Account](lock-a-user-account.md)
 * [Export a List of User Accounts](export-list-user-accounts.md)
 * [Manage User Accounts](manage-user-accounts.md)

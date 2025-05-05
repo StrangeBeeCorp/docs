@@ -84,7 +84,7 @@ plugins:
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/analyst-corner/organizations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/organisation/attachments.md': 'thehive/user-guides/organization/attachments.md'
-            'thehive/user-guides/organisation/accounts.md': 'thehive/user-guides/organization/accounts.md'
+            'thehive/user-guides/organisation/accounts.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md'
             'thehive/user-guides/organisation/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md'
             'thehive/user-guides/organisation/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
@@ -95,10 +95,10 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
             'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-users/add-delete-user.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-users/lock.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
-            'thehive/user-guides/organisation/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-users/preview.md'
+            'thehive/user-guides/organisation/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/sort.md': 'thehive/user-guides/analyst-corner/about-filtering-and-sorting.md'
             'thehive/user-guides/organisation/custom-tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
             'thehive/user-guides/organisation/functions.md': 'thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md'
@@ -361,11 +361,16 @@ nav:
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
         - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
         - 'Create an Organization': thehive/administration/organizations/create-an-organization.md
-        - 'Add an Existing User Account to an Organization': thehive/administration/organizations/add-an-existing-user-account-to-an-organization.md
         - 'Link an Organization': thehive/administration/organizations/link-an-organization.md
         - 'Lock an Organization': thehive/administration/organizations/lock-an-organization.md
-      - 'Manage Accounts':
-        - 'Account Creation/Update Guide': thehive/administration/accounts.md
+      - 'User Accounts':
+        - 'About User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md
+        - 'Create a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md
+        - 'Manage User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts.md
+        - 'Add or Remove An Existing User Account from an Organization': thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization.md
+        - 'Delete a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md
+        - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
+        - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
       - 'Platform Management':
         - 'Branding Guide': thehive/administration/branding.md
         - 'License Management': thehive/administration/license.md
@@ -420,7 +425,13 @@ nav:
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
     - 'User Guides':
-      - 'Forgot Password Guide': thehive/user-guides/forgot-password.md
+      - 'Account Management':
+        - 'Manage your Account Settings': thehive/user-guides/manage-user-settings.md
+        - 'Manage your Password': thehive/user-guides/manage-password.md
+        - 'Change your Account Theme': thehive/user-guides/change-account-theme.md
+        - 'View your Account Profile and Permissions': thehive/user-guides/view-permissions.md
+        - 'Switch Between Organizations': thehive/user-guides/switch-organizations.md
+        - 'Log Out of your Account': thehive/user-guides/log-out.md
       - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
       - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
@@ -434,7 +445,13 @@ nav:
           - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
           - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
       - 'Organization Administration':
-        - 'User': thehive/user-guides/organization/accounts.md
+        - 'User Accounts':
+          - 'About User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md
+          - 'Create a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md
+          - 'Manage User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts.md
+          - 'Add or Remove An Existing User Account from an Organization': thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization.md
+          - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
+          - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
         - 'Templates':
           - 'Case Templates':
             - 'About Case Templates': thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md

@@ -1,6 +1,6 @@
 # How to Manage your Account Settings
 
-This topic provides step-by-step instructions for managing the settings of your [user account](about-user-accounts.md) in TheHive.
+This topic provides step-by-step instructions for managing the settings of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
 
 ## Edit your avatar
 
@@ -75,7 +75,7 @@ Use this procedure to add an extra layer of security to your account.
 <h2>Next steps</h2>
 
 * [Log Out of your Account](log-out.md)
-* [Switch Organizations](switch-organization.md)
+* [Switch Organizations](switch-organizations.md)
 * [Change your Account Theme](change-account-theme.md)
 * [Manage your Password](manage-password.md)
 * [View your Account Profile and Permissions](view-permissions.md)

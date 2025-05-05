@@ -14,7 +14,7 @@ TheHive supports two types of user accounts:
 
 ## Organizations
 
-Each use account belongs to one or more [organizations](../../../../administration/organizations/about-organizations.md). If a user is linked to multiple organizations, they can [switch between them at any time](../../../switch-organization.md).
+Each use account belongs to one or more [organizations](../../../../administration/organizations/about-organizations.md). If a user is linked to multiple organizations, they can [switch between them at any time](../../../switch-organizations.md).
 
 ## Profiles
 
@@ -28,7 +28,7 @@ Each user account is assigned a [profile](../../../../administration/profiles.md
 
 <h2>Next steps</h2>
 
-* [Create a User Account](add-a-user-account.md)
+* [Create a User Account](create-a-user-account.md)
 * [Delete a User Account](delete-a-user-account.md)
 * [Lock a User Account](lock-a-user-account.md)
 * [Export a List of User Accounts](export-list-user-accounts.md)

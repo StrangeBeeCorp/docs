@@ -1,6 +1,6 @@
 # How to View your Account Profile and Permissions
 
-This topic provides step-by-step instructions for viewing the [profile and permissions](../administration/profiles.md) of your [user account](about-user-accounts.md) in TheHive.
+This topic provides step-by-step instructions for viewing the [profile and permissions](../administration/profiles.md) of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
 
 !!! note "Profile and permissions per organization"
     Keep in mind that your profile and its associated permissions depend on the organization you are currently using.
@@ -20,7 +20,7 @@ If you need additional permissions, contact someone with admin-level permissions
 <h2>Next steps</h2>
 
 * [Log Out of your Account](log-out.md)
-* [Switch Organizations](switch-organization.md)
+* [Switch Organizations](switch-organizations.md)
 * [Change your Account Theme](change-account-theme.md)
 * [Manage your Password](manage-password.md)
 * [Manage your Account Settings](manage-user-settings.md)

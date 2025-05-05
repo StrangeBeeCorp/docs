@@ -1,6 +1,6 @@
 # How to Manage your Password
 
-This topic provides step-by-step instructions for managing the password of your [user account](about-user-accounts.md) in TheHive.
+This topic provides step-by-step instructions for managing the password of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
 
 ## Reset your password
 
@@ -33,7 +33,7 @@ Use this procedure to change your current password.
 <h2>Next steps</h2>
 
 * [Log Out of your Account](log-out.md)
-* [Switch Organizations](switch-organization.md)
+* [Switch Organizations](switch-organizations.md)
 * [Change your Account Theme](change-account-theme.md)
 * [Manage your Account Settings](manage-user-settings.md)
 * [View your Account Profile and Permissions](view-permissions.md)
