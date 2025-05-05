@@ -28,11 +28,13 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Open a case, an alert, or a task, and select the **Similar cases** tab.
 
-    ![Similar cases](../../../../images/user-guides/analyst-corner/cases/find-a-case-similar-cases.png)
+    ![Similar cases](../../../../images/user-guides/analyst-corner/cases/similar-cases.png)
 
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+For more information, see the [Find Similar Alerts and Cases](../find-similar-alerts-cases.md) topic.
 
 ---
 
@@ -93,7 +95,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [View a Case](../cases-description/general.md)
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
 * [Add Custom Fields](../custom-fields/add-custom-fields.md)
-* [View Observables](../cases-description/observables.md)
+* [Find Similar Alerts or Cases](../find-similar-alerts-cases.md)
 * [View TTPs](../cases-description/ttps.md)
 * [View Attachments](../cases-description/attachments.md)
 * [View a Case Timeline](../case-timelines/view-case-timeline.md)

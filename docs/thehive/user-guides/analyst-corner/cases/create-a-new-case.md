@@ -39,11 +39,11 @@ Several options are offered to create a case in TheHive:
 
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
 
-    The TLP level for the case. It guides analysts on how they can share case information.
+    The TLP level for the observable. It indicates how you can share the observable's information with others.
     
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
 
-    The PAP level for the case. It guides analysts on how they can use case data.
+    The PAP level for the observable. It specifies which actions you can take with the observable data.
 
     **- [Tags](../../analyst-corner/cases/tags/add-remove-tags.md)**  
 

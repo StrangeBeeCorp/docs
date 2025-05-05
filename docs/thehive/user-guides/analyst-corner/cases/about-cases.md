@@ -30,7 +30,7 @@ In TheHive, you can create a case from the following sources:
 
 In TheHive, a case includes the following elements:
 
-* [Observables](../cases/cases-description/observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
+* [Observables](../cases/observables/about-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 
 * [Tasks](../tasks/about-tasks.md): Actions assigned to analysts to analyze, assess, and mitigate threats.
 
