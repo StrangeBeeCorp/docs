@@ -723,18 +723,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-deploy-thehive-using-helm" class="md-nav__link">
+  <a href="#quick-start-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Deploy TheHive using Helm
+      Quick start deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-customize-the-helm-chart" class="md-nav__link">
+  <a href="#advanced-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Customize the Helm chart
+      Advanced configuration
     </span>
   </a>
   
@@ -10832,9 +10832,9 @@
 <p>This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">the TheHive Helm chart</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">License</p>
-<p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license.</p>
+<p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license. A fresh deployment of TheHive on an empty database includes a two-week Platinum trial, allowing you to test multi-node setups.</p>
 </div>
-<h2 id="step-1-deploy-thehive-using-helm">Step 1: Deploy TheHive using Helm<a class="headerlink" href="#step-1-deploy-thehive-using-helm" title="Permanent link">#</a></h2>
+<h2 id="quick-start-deployment">Quick start deployment<a class="headerlink" href="#quick-start-deployment" title="Permanent link">#</a></h2>
 <p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Prerequisites</p>
@@ -10874,8 +10874,8 @@
 </code></pre></div>
 For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/">the Helm upgrade documentation</a>.
 </div>
-<h2 id="step-2-customize-the-helm-chart">Step 2: Customize the Helm chart<a class="headerlink" href="#step-2-customize-the-helm-chart" title="Permanent link">#</a></h2>
-<p>For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure each dependency carefully before deploying to production.</p>
+<h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h2>
+<p>For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.</p>
 <p>Use the following command to view all available configuration options for the TheHive Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/thehive
 </code></pre></div>
@@ -10904,10 +10904,11 @@ elasticsearch:
 <p>Refer to the official <a href="https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html">Cassandra</a> and <a href="https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments">Elasticsearch</a> documentation to learn how to optimize these values.</p>
 <h3 id="storageclasses">StorageClasses<a class="headerlink" href="#storageclasses" title="Permanent link">#</a></h3>
 <p>By default, this chart uses your cluster's default <code>StorageClass</code> to create persistent volumes (PVs).</p>
-<p>If you want to modify it, ensure that the StorageClass you use:</p>
+<p>You can customize the <code>StorageClass</code> to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:</p>
 <ul>
-<li>Is regularly backed up to prevent data loss—tools like <a href="https://velero.io/">Velero</a> can help automate this process</li>
-<li>Has an appropriate <code>reclaimPolicy</code> to minimize the risk of data loss</li>
+<li>It is regularly backed up to prevent data loss. Tools like <a href="https://velero.io/">Velero</a> can help automate this process.</li>
+<li>It has an appropriate <code>reclaimPolicy</code> to minimize the risk of data loss when volumes are deleted or released.</li>
+<li>It provides sufficient performance to ensure reliable operation of databases and applications.</li>
 </ul>
 <p>To configure <code>StorageClasses</code> based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.</p>
 <h3 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h3>
@@ -10917,7 +10918,7 @@ elasticsearch:
 <p>By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <h3 id="object-storage">Object storage<a class="headerlink" href="#object-storage" title="Permanent link">#</a></h3>
-<p>To support multiple replicas of TheHive, this chart defines an object storage in the configuration and deploys a single instance of MinIO.</p>
+<p>To support multiple replicas of TheHive, this chart defines an <a href="../../configuration/file-storage/">object storage</a> in the configuration and deploys a single instance of MinIO.</p>
 <p>For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:</p>
 <ul>
 <li>AWS S3</li>
@@ -10928,7 +10929,7 @@ elasticsearch:
 <p>No Cortex server is defined by default in TheHive configuration.</p>
 <p>There are two main ways to add Cortex servers to TheHive:</p>
 <ul>
-<li>Add them directly through TheHive interface.</li>
+<li><a href="../../administration/cortex/add-a-cortex-server/">Add them directly through TheHive interface</a>.</li>
 <li>Define them in the Helm chart’s <code>values.yaml</code> file.</li>
 </ul>
 <p>For the second method, here's an example configuration:</p>
