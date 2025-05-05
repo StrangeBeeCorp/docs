@@ -21,10 +21,10 @@ To remove a user account from a specific organization without deleting it, see [
 
 3. In the drawer, select **Delete user**.
 
-4. Select **OK**.
+    !!! tip "Delete multiple user accounts in bulk"
+        To delete multiple user accounts, select :fontawesome-regular-square: next to each account you want to delete. Then select :fontawesome-solid-trash: and confirm with **OK**.
 
-!!! tip "Delete multiple user accounts in bulk"
-    To delete multiple user accounts, select :fontawesome-regular-square: next to each account you want to delete. Then select :fontawesome-solid-trash: and confirm with **OK**.
+4. Select **OK**.
 
 <h2>Next steps</h2>
 

@@ -20,9 +20,10 @@ To remove a user account from a specific organization without deleting it, see [
 
 3. Select **Lock**.
 
+    {!includes/lock-multiple-user-accounts-bulk.md!}
+
 4. Select **OK**.
 
-{!includes/lock-multiple-user-accounts-bulk.md!}
 
 ### As an organization administrator
 
@@ -39,9 +40,9 @@ To remove a user account from a specific organization without deleting it, see [
 
 4. Select **Lock**.
 
-5. Select **OK**.
+    {!includes/lock-multiple-user-accounts-bulk.md!}
 
-{!includes/lock-multiple-user-accounts-bulk.md!}
+5. Select **OK**.
 
 <h2>Next steps</h2>
 

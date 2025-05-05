@@ -4,25 +4,35 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
 === "As an administrator"
 
-    {!includes/administrator-access-manage-user-accounts.md!}
+    !!! warning "Required permissions"
+        Only users with the `manageUser` permission can manage user accounts at the organization level in TheHive.
 
-    1. {!includes/users-view-go-to.md!}
+    1. Go to the **Users** view from the sidebar menu.
+
+        ![Users view](/thehive/images/administration-guides/users-view.png)
 
     2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
-        {!includes/find-a-user-account.md!}
+        !!! tip "Can't find a user account?"
+            You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
 
 === "As an organization administrator"
 
-    {!includes/access-manage-user-accounts.md!}
+    !!! warning "Required permissions"
+        Only users with an admin-type profile that has the `manageUser` permission can manage user accounts at the client level in TheHive.
 
-    1. {!includes/organization-view-go-to.md!}
+    1. Go to the **Organization** view from the sidebar menu.
 
-    2. {!includes/users-tab-go-to.md!}
+        ![Organization view](/thehive/images/user-guides/organization/configure-organization/organization-view.png)
+
+    2. Select the **Users** tab.
+
+        ![Organization users tab](/thehive/images/user-guides/organization/configure-organization/manage-users/organization-users-tab.png)
 
     3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
-        {!includes/find-a-user-account.md!}
+        !!! tip "Can't find a user account?"
+            You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
 
 ## Manage a user account email
 

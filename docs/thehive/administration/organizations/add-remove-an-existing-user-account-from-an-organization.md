@@ -10,7 +10,7 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 ### As an administrator
 
-{!includes/administrator-access-manage-organizations.md!}
+{!includes/administrator-access-manage-user-accounts.md!}
 
 1. {!includes/users-view-go-to.md!}
 
@@ -18,17 +18,17 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 3. In the drawer, go to the **Organizations** section. Select the organizations to assign to the user account, and choose a [permission profile](../../administration/profiles.md) for each one. To remove access, deselect the corresponding organizations.
 
-4. Select **Confirm**.
+    !!! tip "Remove multiple user accounts in bulk from an organization"
+        To remove multiple user accounts from an organization, go to the **Organizations** view and select the target organization. Select :fontawesome-regular-square: next to each account, then choose :fontawesome-solid-trash: and confirm with **OK**.
 
-!!! tip "Remove multiple user accounts in bulk from an organization"
-    To remove multiple user accounts from an organization, go to the **Organizations** view and select the target organization. Select :fontawesome-regular-square: next to each account, then choose :fontawesome-solid-trash: and confirm with **OK**.
+4. Select **Confirm**.
 
 ### As an organization administrator
 
 {!includes/access-manage-user-accounts.md!}
 
 !!! info "Adding existing users not supported"
-    As an organization administrator, you can remove an existing user from an organization, but you can’t add one—[only create a new user account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md#as-an-organization-administrator). To add an existing user, ask someone with an admin-type profile.
+    As an organization administrator, you can remove an existing user from an organization or [create a new user account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md#as-an-organization-administrator), but you can't add an existing user. To do so, ask someone with an admin-type profile.
 
 1. {!includes/organization-view-go-to.md!}
 
