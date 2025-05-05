@@ -1,2 +1,2 @@
 !!! info "License"
-    The number of user accounts you can create depends on your TheHive license. Only unlocked user accounts of type normal count toward the license limit. User accounts of type service and those with non-licensed permissions are not limited.
+    The number of user accounts you can create depends on your TheHive license. Only unlocked user accounts of type normal count toward the license limit. User accounts of type service and those with non-licensed permissions aren't limited.
