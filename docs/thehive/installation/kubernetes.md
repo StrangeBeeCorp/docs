@@ -3,9 +3,9 @@
 This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the TheHive Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
 !!! info "License"
-    The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license.
+    The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license. A fresh deployment of TheHive on an empty database includes a two-week Platinum trial, allowing you to test multi-node setups.
 
-## Step 1: Deploy TheHive using Helm
+## Quick start deployment
 
 TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
@@ -47,9 +47,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     ```
     For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/).
 
-## Step 2: Customize the Helm chart
+## Advanced configuration
 
-For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure each dependency carefully before deploying to production.
+For convenience, the TheHive Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.
 
 Use the following command to view all available configuration options for the TheHive Helm chart:
 
@@ -90,10 +90,11 @@ Refer to the official [Cassandra](https://cassandra.apache.org/doc/latest/cassan
 
 By default, this chart uses your cluster's default `StorageClass` to create persistent volumes (PVs).
 
-If you want to modify it, ensure that the StorageClass you use:
+You can customize the `StorageClass` to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:
 
-* Is regularly backed up to prevent data loss—tools like [Velero](https://velero.io/) can help automate this process
-* Has an appropriate `reclaimPolicy` to minimize the risk of data loss
+* It is regularly backed up to prevent data loss. Tools like [Velero](https://velero.io/) can help automate this process.
+* It has an appropriate `reclaimPolicy` to minimize the risk of data loss when volumes are deleted or released.
+* It provides sufficient performance to ensure reliable operation of databases and applications.
 
 To configure `StorageClasses` based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for GCP.
 
@@ -111,7 +112,7 @@ You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami
 
 ### Object storage
 
-To support multiple replicas of TheHive, this chart defines an object storage in the configuration and deploys a single instance of MinIO.
+To support multiple replicas of TheHive, this chart defines an [object storage](../configuration/file-storage.md) in the configuration and deploys a single instance of MinIO.
 
 For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:
 
@@ -126,7 +127,7 @@ No Cortex server is defined by default in TheHive configuration.
 
 There are two main ways to add Cortex servers to TheHive:
 
-* Add them directly through TheHive interface.
+* [Add them directly through TheHive interface](../administration/cortex/add-a-cortex-server.md).
 * Define them in the Helm chart’s `values.yaml` file.
 
 For the second method, here's an example configuration:
