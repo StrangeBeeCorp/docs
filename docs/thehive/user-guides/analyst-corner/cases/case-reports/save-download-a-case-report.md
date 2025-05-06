@@ -4,7 +4,7 @@
 
 This topic provides step-by-step instructions for saving and downloading a [case report](about-case-reports.md) in TheHive.
 
-This is useful if you need to report to your management and provide a follow-up on a case investigation.
+Use this procedure to report to your management and provide a follow-up on a case investigation.
 
 {!includes/other-reports-cases-from-case-reports.md!}
 

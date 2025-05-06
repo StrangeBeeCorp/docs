@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for exporting and importing a [das
 
 ## Export a dashboard
 
-This is useful if you want to share a dashboard with another organization or TheHive instance.
+Use this procedure to share a dashboard with another organization or TheHive instance.
 
 1. {!includes/dashboards-view-go-to.md!}
 
@@ -20,7 +20,7 @@ This is useful if you want to share a dashboard with another organization or The
 
 ## Import a dashboard
 
-This is useful if you want to use a dashboard from another organization or TheHive instance.
+Use this procedure to use a dashboard from another organization or TheHive instance.
 
 1. {!includes/dashboards-view-go-to.md!}
 
