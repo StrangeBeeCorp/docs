@@ -50,7 +50,7 @@ Move through the **MFA** section. If the user has activated multi-factor authent
 
 ## Edit a user account permission profile
 
-Move through the **Organizations** section and update the permission profile for the relevant organizations. Select **Confirm** to apply the change.
+Move through the **Organizations** section and update the [permission profile](../../../../administration/profiles/about-profiles.md) for the relevant organizations. Select **Confirm** to apply the change.
 
 ## Manage a user account API key
 

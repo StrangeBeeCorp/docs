@@ -20,7 +20,7 @@ Each use account belongs to one or more [organizations](../../../../administrati
 
 ## Profiles
 
-Each user account is assigned a [profile](../../../../administration/profiles.md). Profiles define the set of permissions available to the user.
+Each user account is assigned a [profile](../../../../administration/profiles/about-profiles.md). Profiles define the set of permissions available to the user.
 
 ## Permissions
 

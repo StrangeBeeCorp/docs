@@ -40,7 +40,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     **- Profile \***
 
-    Select a [permission profile](../../../../administration/profiles.md) for the user account from the dropdown list.
+    Select a [permission profile](../../../../administration/profiles/about-profiles.md) for the user account from the dropdown list.
 
     ---
 

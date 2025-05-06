@@ -10,13 +10,13 @@ TheHive includes a default Admin organization for users with administrator-type 
 
 Non-Admin organizations manage operations on cases, alerts, and tasks.
 
-By default, organizations are isolated and can't see or share data with each other. To enable data sharing, users with the [necessary permissions](#permissions) must [link organizations](link-an-organization.md).
+By default, organizations are isolated and can't see or share data with each other. To enable data sharing, users with the necessary permissions must [link organizations](link-an-organization.md).
 
 ## Organizations and users
 
-You can assign a user to one or more organizations.
+A user can belong to one or more organizations. A profile is assigned for each organization, defining the user's set of permissions within that organization.
 
-[When assigning a user to an organization](add-remove-an-existing-user-account-from-an-organization.md), the system suggests only [permission profiles](../../administration/profiles.md) that match the organization's type (Admin or Non-Admin).
+[When assigning a user to an organization](add-remove-an-existing-user-account-from-an-organization.md), the system suggests only [permission profiles](../../administration/profiles/about-profiles.md) that match the organization's type (Admin or Non-Admin).
 
 ## Permissions
 

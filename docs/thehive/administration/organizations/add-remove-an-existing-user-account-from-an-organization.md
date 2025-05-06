@@ -16,7 +16,7 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
-3. In the drawer, go to the **Organizations** section. Select the organizations to assign to the user account, and choose a [permission profile](../../administration/profiles.md) for each one. To remove access, deselect the corresponding organizations.
+3. In the drawer, go to the **Organizations** section. Select the organizations to assign to the user account, and choose a [permission profile](../../administration/profiles/about-profiles.md) for each one. To remove access, deselect the corresponding organizations.
 
     !!! tip "Remove multiple user accounts in bulk from an organization"
         To remove multiple user accounts from an organization, go to the **Organizations** view and select the target organization. Select :fontawesome-regular-square: next to each account, then choose :fontawesome-solid-trash: and confirm with **OK**.
