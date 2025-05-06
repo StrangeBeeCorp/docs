@@ -114,7 +114,7 @@ The case assignee and the user performing the action always have access and can'
 
 ### Expected behavior
 
-When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in [alerts linked to the restricted cases](../alerts/alerts-description/new-case-from-selection.md) with a :fontawesome-solid-lock: symbol. 
+When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in alerts linked to the restricted cases with a :fontawesome-solid-lock: symbol. 
 
 All related elements, including observables, tasks, and attachments, are also hidden. 
 

@@ -24,5 +24,6 @@ This topic provides step-by-step instructions for changing the [status](../../..
 <h2>Next steps</h2>
 
 * [Actions](../alerts/alerts-description/actions.md)
-* [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Merge an Alert into an Existing Case](merge-an-alert-into-an-existing-case.md)
+* [Import an Alert into a New Case](../cases/create-a-new-case.md#create-a-case-from-an-alert)
 * [Run Responders](../alerts/alerts-description/run-responders.md)

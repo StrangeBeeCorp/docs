@@ -144,12 +144,14 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an [alert](../alerts/about-alerts.md)
 
+During triage, import an alert into a new case if it requires a separate investigation. If an investigation is already ongoing, [merge the alert into an existing case](../alerts/merge-an-alert-into-an-existing-case.md).
+
 {!includes/access-create-case-from-alert.md!}
 
 !!! info "Data transfer"
     When creating a case from an alert, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case. The alert is also linked to the case.
 
-1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
+1. [Locate the alert you want to import into a case](../alerts/search-for-alerts/find-an-alert.md).
 
 2. In the alert description, select **Create case from alert**.
 
