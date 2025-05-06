@@ -265,6 +265,7 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md'
             'thehive/user-guides/organization/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md'
             'thehive/user-guides/organization/configure-organization/manage-users/preview.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md'
+            'thehive/administration/profiles.md': 'thehive/administration/profiles/about-profiles.md'
 
 extra:
   generator: false
