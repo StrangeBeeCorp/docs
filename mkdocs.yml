@@ -408,7 +408,11 @@ nav:
           - 'SMTP Configuration': thehive/administration/smtp.md
         - 'Add a Global Endpoint': thehive/administration/add-a-global-endpoint.md
       - 'Entities Management':
-        - 'Profiles': thehive/administration/profiles.md
+        - 'Profiles':
+          - 'About Profiles': thehive/administration/profiles/about-profiles.md
+          - 'Create a Profile': thehive/administration/profiles/create-a-profile.md
+          - 'Add or Remove Permissions from a Profile': thehive/administration/profiles/add-remove-permissions-from-a-profile.md
+          - 'Delete a Profile': thehive/administration/profiles/delete-a-profile.md
         - 'Custom Fields': 
           - 'About Custom Fields': thehive/administration/custom-fields/about-custom-fields.md
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md

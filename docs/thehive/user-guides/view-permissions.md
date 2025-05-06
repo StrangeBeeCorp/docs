@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for viewing the [profile and permi
 
 4. In the **Permissions list** section, check the permissions associated to this profile.
 
-If you need additional permissions, contact someone with admin-level permissions to [update your current profile with new permissions](../administration/profiles.md#manage-profiles).
+If you need additional permissions, contact someone with admin-level permissions to [update your current profile with new permissions](../administration/profiles/add-remove-permissions-from-a-profile.md).
 
 <h2>Next steps</h2>
 

@@ -82,7 +82,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     **- Profile \***
 
-    Select a [permission profile](../../../../administration/profiles.md) for the user account from the dropdown list.
+    Select a [permission profile](../../../../administration/profiles/about-profiles.md) for the user account from the dropdown list.
 
     ---
 
@@ -122,7 +122,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     Select one or more organizations to assign to the user account. To set the default organization the user accesses when signing in to TheHive, select **Set as default**.
 
-    For each organization, select a [permission profile](../../../../administration/profiles.md) for the user account from the dropdown list.
+    For each organization, select a [permission profile](../../../../administration/profiles/about-profiles.md) for the user account from the dropdown list.
 
     <!-- md:version 5.4.3 --> Profiles that require a Gold or Platinum license are labeled *License required*.
 
