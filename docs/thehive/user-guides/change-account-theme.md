@@ -1,6 +1,13 @@
 # How to Change your Account Theme
 
-This topic provides step-by-step instructions for changing the user interface theme of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
+<!-- md:version 5.4 -->
+
+TheHive uses the light theme by default for all users.
+
+This topic provides step-by-step instructions for changing the user interface theme of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive. 
+
+!!! info "Persistent preferences"
+    Theme preferences are stored locally. If you access TheHive from another device or browser, you'll need to set your preferred theme again.
 
 <h2>Procedure</h2>
 
@@ -14,7 +21,7 @@ This topic provides step-by-step instructions for changing the user interface th
 
     * Dark: Uses a dark background with light text to reduce eye strain in low-light environments.
 
-    * System: Matches the theme of your operating system or browser settings automatically.
+    * System: Matches the theme of your operating system settings automatically.
 
 <h2>Next steps</h2>
 
