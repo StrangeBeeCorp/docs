@@ -5,7 +5,7 @@
 This topic provides step-by-step instructions for adding and removing permissions from a [profile](about-profiles.md) in TheHive.
 
 !!! note "Predefined profiles"
-    You can't modify the predefined admin, org-admin, and read-only profiles.
+    You can't modify the predefined Admin, Org-Admin, and Read-Only profiles.
 
 {!includes/administrator-access-manage-profiles.md!}
 

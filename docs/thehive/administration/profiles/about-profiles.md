@@ -21,14 +21,14 @@ Permissions follow the format `manageEntity`, where `Entity` represents a specif
 
 TheHive includes a set of predefined profiles:
 
-* analyst
-* admin
-* org-admin
-* read-only
+* Analyst
+* Admin
+* Org-admin
+* Read-only
 
 These profiles can't be modified or deleted—except for the analyst profile.
 
-<!-- md:license Gold --> <!-- md:license Platinum --> With a paid license, this set can be extended by [creating custom profiles](create-a-profile.md) tailored to specific needs.
+<!-- md:license Gold --> <!-- md:license Platinum --> This set can be extended by [creating custom profiles](create-a-profile.md) tailored to specific needs.
 
 ## Licensed vs. unlicensed profiles
 

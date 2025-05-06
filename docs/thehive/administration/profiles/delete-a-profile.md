@@ -4,8 +4,8 @@
 
 This topic provides step-by-step instructions for deleting a [permission profile](about-profiles.md) in TheHive.
 
-!!! tip "Can't delete a profile?"
-    You can’t delete a profile that's currently assigned to a user account, or any of the predefined admin, org-admin, or read-only profiles.
+!!! info "Deletion rules"
+    You can’t delete a profile that's currently assigned to a user account, or any of the predefined Admin, Org-Admin, or Read-Only profiles.
 
 {!includes/administrator-access-manage-profiles.md!}
 
