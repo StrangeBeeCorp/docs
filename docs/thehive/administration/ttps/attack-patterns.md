@@ -1,13 +1,4 @@
-# Att&ck patterns
 
-The Att&ck patterns configuration is available in the Administrators space: open *Entities Management*, then click on *Att&ck Patterns* tab.
-
-
-## Introduction
-
-By default, TheHive comes with [Enterprise ATT&CK patterns](https://attack.mitre.org/matrices/enterprise/) from MITRE. This is installed during the installation process, and de catalog name *Enterprise Attack* is created with all of the related techniques.
-
-![](../images/administration-guides/attack-patterns-1.png)
 
 ## View patterns
 
