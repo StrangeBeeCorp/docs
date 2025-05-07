@@ -32,5 +32,5 @@ Close an alert if it doesn't require escalation into a new or existing case for 
 
 <h2>Next steps</h2>
 
-* [Import an Alert into a New Case](../cases/create-a-new-case.md#create-a-case-from-an-alert)
+* [Merge an Alert into a New Case](merge-an-alert-into-a-new-case.md)
 * [Merge an Alert into an Existing Case](merge-an-alert-into-an-existing-case.md)

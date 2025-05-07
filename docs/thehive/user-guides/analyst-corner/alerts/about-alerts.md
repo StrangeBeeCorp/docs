@@ -37,7 +37,7 @@ In TheHive, an alert includes the following elements:
 
 {!includes/access-merge-alerts.md!}
 
-Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [merged into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert) if they represent a new investigation to start.
+Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [merged into a new case](merge-an-alert-into-a-new-case.md) if they represent a new investigation to start.
 
 Both actions automatically create [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
 
@@ -58,6 +58,6 @@ Alerts can't be closed if any required [custom fields](../../../administration/c
 <h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
-* [Import an Alert into a New Case](../cases/create-a-new-case.md#create-a-case-from-an-alert)
+* [Merge an Alert into a New Case](merge-an-alert-into-a-new-case.md)
 * [Merge an Alert into an Existing Case](merge-an-alert-into-an-existing-case.md)
 * [Close an Alert](close-an-alert.md)

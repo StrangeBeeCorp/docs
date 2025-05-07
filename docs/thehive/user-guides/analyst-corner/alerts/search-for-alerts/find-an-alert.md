@@ -73,7 +73,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 * [Actions](../alerts-description/actions.md)
 * [Merge an Alert into an Existing Case](../merge-an-alert-into-an-existing-case.md)
-* [Import an Alert into a New Case](../../cases/create-a-new-case.md#create-a-case-from-an-alert)
+* [Merge an Alert into a New Case](../merge-an-alert-into-a-new-case.md)
 * [Preview Alerts](../alerts-description/preview-alerts.md)
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)

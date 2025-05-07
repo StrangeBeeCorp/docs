@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for merging an [alert](about-alert
 
 During triage, merge an alert into an existing case if it needs further investigation and a similar case has already been created.
 
-If it requires a separate investigation, [merge the alert into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert).
+If it requires a separate investigation, [merge the alert into a new case](merge-an-alert-into-a-new-case.md).
 
 {!includes/access-create-case-from-alert.md!}
 
