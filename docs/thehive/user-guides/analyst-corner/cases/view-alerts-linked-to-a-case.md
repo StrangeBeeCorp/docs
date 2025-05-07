@@ -10,6 +10,8 @@ An alert is automatically linked to a case when you [merge it into a new case](.
 
 2. {!includes/linked-alerts-tab-go-to.md!}
 
+    {!includes/filters-sorts-views.md!}
+
 <h2>Next steps</h2>
 
 * [Unlink an Alert and a Case](../alerts/unlink-alert-case.md)

@@ -12,6 +12,8 @@ An alert is automatically linked to a case when you [merge it into a new case](m
 
 3. Select :fontawesome-solid-ellipsis: next to the alert you want to unlink.
 
+    {!includes/filters-sorts-views.md!}
+
 4. Select **Unlink**.
 
 5. Select **OK**.
