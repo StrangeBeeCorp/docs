@@ -16,6 +16,9 @@ If an investigation is already ongoing, [merge the alert into an existing case](
 
 <h2>Procedure</h2>
 
+!!! tip "Bulk merge"
+    To merge multiple alerts into a new case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **New case from selection** at the top of the screen. This action merges all the selected alerts into a single case.
+
 1. [Locate the alert you want to merge into a new case](./search-for-alerts/find-an-alert.md).
 
 2. In the alert description, select **Create case from alert**.
@@ -28,9 +31,6 @@ If an investigation is already ongoing, [merge the alert into an existing case](
 
     * [Create an empty case](../cases/create-a-new-case.md#create-an-empty-case)
     * [Create a case from a template](../cases/create-a-new-case.md#create-a-case-from-a-template)
-
-!!! tip "Bulk merge"
-    To merge multiple alerts into a new case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **New case from selection** at the top of the screen. This action merges all the selected alerts into a single case.
 
 <h2>Next steps</h2>
 
