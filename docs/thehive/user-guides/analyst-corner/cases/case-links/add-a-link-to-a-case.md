@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for adding a [link to a case](../a
 The link can point to another TheHive case or to an external resource.
 
 !!! info "Not applicable to alert links"
-    This procedure doesn't apply to alert links that are automatically created when [merging an alert into a new case](../../alerts/merge-an-alert-into-a-new-case.md) or [merging it into an existing one](../../alerts/merge-an-alert-into-an-existing-case.md).
+    This procedure doesn't apply to alert links that are automatically created when [merging an alert into a new case](../../alerts/merge-an-alert-into-a-new-case.md) or [an existing one](../../alerts/merge-an-alert-into-an-existing-case.md).
 
 {!includes/access-manage-case-links.md!}
 

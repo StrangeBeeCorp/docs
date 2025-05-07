@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for viewing links in a [case](../a
 Links can point to other TheHive cases or to external resources.
 
 !!! info "Not applicable to alert links"
-    This procedure doesn't apply to alert links that are automatically created when [merging an alert into a new case](../../alerts/merge-an-alert-into-a-new-case.md) or [merging it into an existing one](../../alerts/merge-an-alert-into-an-existing-case.md). Refer to [View Alerts Linked to a Case](../view-alerts-linked-to-a-case.md) to see alerts linked to a case.
+    This procedure doesn't apply to alert links that are automatically created when [merging an alert into a new case](../../alerts/merge-an-alert-into-a-new-case.md) or [an existing one](../../alerts/merge-an-alert-into-an-existing-case.md). Refer to [View Alerts Linked to a Case](../view-alerts-linked-to-a-case.md) to see alerts linked to a case.
 
 <h2>Procedure</h2>
 

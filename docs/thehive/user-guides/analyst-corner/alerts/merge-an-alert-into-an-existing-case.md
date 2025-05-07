@@ -6,15 +6,15 @@ During triage, merge an alert into an existing case if it needs further investig
 
 If it requires a separate investigation, [merge the alert into a new case](merge-an-alert-into-a-new-case.md).
 
-{!includes/access-create-case-from-alert.md!}
-
-<h2>Procedure</h2>
-
 !!! info "Data transfer"
     When merging an alert into an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
 !!! note "Link to case"
     Merging an alert into an existing case automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
+
+{!includes/access-create-case-from-alert.md!}
+
+<h2>Procedure</h2>
 
 1. [Locate the alert you want to merge into a case](./search-for-alerts/find-an-alert.md).
 

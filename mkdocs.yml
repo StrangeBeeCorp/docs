@@ -513,7 +513,7 @@ nav:
           - 'Merge an Alert into a Case':
             - 'Merge an Alert into an Existing Case': thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-an-existing-case.md
             - 'Merge an Alert into a New Case': thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-a-new-case.md
-          - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
+            - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
           - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/alerts-description/general.md 

@@ -2,7 +2,9 @@
 
 This topic provides step-by-step instructions for merging an [alert](about-alerts.md) into a new [case](../cases/about-cases.md) in TheHive.
 
-During triage, merge an alert into a new case if it needs further investigation and no case exists yet. If an investigation is already ongoing, [merge the alert into an existing case](merge-an-alert-into-an-existing-case.md).
+During triage, merge an alert into a new case if it needs further investigation and no case exists yet. 
+
+If an investigation is already ongoing, [merge the alert into an existing case](merge-an-alert-into-an-existing-case.md).
 
 !!! info "Data transfer"
     When merging an alert into a new case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
