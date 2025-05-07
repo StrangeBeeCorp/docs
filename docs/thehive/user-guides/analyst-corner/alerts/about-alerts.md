@@ -39,13 +39,15 @@ In TheHive, an alert includes the following elements:
 
 Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [imported into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert) if they represent a new investigation to start.
 
+Both actions automatically create [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
+
 ### Closing alerts
 
 {!includes/access-close-alerts.md!}
 
 Alerts can be [closed](../alerts/close-an-alert.md) when they are not worth escalating into a new case or an existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 
-### Custom fields completion
+#### Custom fields completion
 
 Alerts can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
 

@@ -4,6 +4,9 @@
 
 This topic provides step-by-step instructions for removing a [link from a case](../cases/about-cases.md#linking-elements) in TheHive.
 
+!!! info "Not applicable to alert links"
+    This procedure doesn't apply to alert links that are automatically created when [importing an alert into a new case](../create-a-new-case.md#create-a-case-from-an-alert) or [merging it into an existing one](../../alerts/merge-an-alert-into-an-existing-case.md). To unlink an alert and a case, refer to [Unlink an Alert and a Case](../../alerts/unlink-alert-case.md).
+
 {!includes/access-manage-case-links.md!}
 
 <h2>Procedure</h2>

@@ -2,13 +2,19 @@
 
 This topic provides step-by-step instructions for merging an [alert](about-alerts.md) into an existing [case](../cases/about-cases.md) in TheHive.
 
-During triage, merge an alert into an existing case if a similar investigation is already ongoing.
+During triage, merge an alert into an existing case if it needs further investigation and a similar case has already been created.
 
 If it requires a separate investigation, [import the alert into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert).
 
 {!includes/access-create-case-from-alert.md!}
 
 <h2>Procedure</h2>
+
+!!! info "Data transfer"
+    When merging an alert into an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
+
+!!! note "Link to case"
+    This procedure automatically links the alert to the case.
 
 1. [Locate the alert you want to merge into a case](./search-for-alerts/find-an-alert.md).
 
@@ -20,6 +26,12 @@ If it requires a separate investigation, [import the alert into a new case](../c
 
 4. Select **Merge**.
 
+!!! tip "Bulk merge"
+    To merge multiple alerts into an existing case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **Merge selection into case** at the top of the screen. This action merges all the selected alerts into a single case.
+
 <h2>Next steps</h2>
 
-* []()
+* [Add Tasks to a Case](../cases/add-tasks-to-a-case.md)
+* [Add a Link to a Case](../cases/add-a-link-to-a-case.md)
+* [Change a Case Status](../cases/change-status-case.md)
+* [Restrict Case Visibility](../cases/restrict-visibility-case.md)
