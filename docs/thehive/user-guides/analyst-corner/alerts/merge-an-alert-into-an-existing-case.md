@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for merging an [alert](about-alert
 
 During triage, merge an alert into an existing case if it needs further investigation and a similar case has already been created.
 
-If it requires a separate investigation, [import the alert into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert).
+If it requires a separate investigation, [merge the alert into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert).
 
 {!includes/access-create-case-from-alert.md!}
 
@@ -14,7 +14,7 @@ If it requires a separate investigation, [import the alert into a new case](../c
     When merging an alert into an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
 !!! note "Link to case"
-    This procedure automatically links the alert to the case.
+    This procedure automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
 
 1. [Locate the alert you want to merge into a case](./search-for-alerts/find-an-alert.md).
 
@@ -32,6 +32,6 @@ If it requires a separate investigation, [import the alert into a new case](../c
 <h2>Next steps</h2>
 
 * [Add Tasks to a Case](../cases/add-tasks-to-a-case.md)
-* [Add a Link to a Case](../cases/add-a-link-to-a-case.md)
+* [Add a Link to a Case](../cases/case-links/add-a-link-to-a-case.md)
 * [Change a Case Status](../cases/change-status-case.md)
 * [Restrict Case Visibility](../cases/restrict-visibility-case.md)

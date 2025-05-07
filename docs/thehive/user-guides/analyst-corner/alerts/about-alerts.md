@@ -37,7 +37,7 @@ In TheHive, an alert includes the following elements:
 
 {!includes/access-merge-alerts.md!}
 
-Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [imported into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert) if they represent a new investigation to start.
+Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [merged into a new case](../cases/create-a-new-case.md#create-a-case-from-an-alert) if they represent a new investigation to start.
 
 Both actions automatically create [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
 

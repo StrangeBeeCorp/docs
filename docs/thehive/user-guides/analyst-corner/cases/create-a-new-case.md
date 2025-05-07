@@ -144,17 +144,17 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an [alert](../alerts/about-alerts.md)
 
-During triage, import an alert into a new case if it needs further investigation and no case exists yet. If an investigation is already ongoing, [merge the alert into an existing case](../alerts/merge-an-alert-into-an-existing-case.md).
+During triage, merge an alert into a new case if it needs further investigation and no case exists yet. If an investigation is already ongoing, [merge the alert into an existing case](../alerts/merge-an-alert-into-an-existing-case.md).
 
 !!! info "Data transfer"
     When creating a case from an alert, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
 !!! note "Link to case"
-    This procedure automatically links the alert to the case.
+    This procedure automatically [links the alert to the case](view-alerts-linked-to-a-case.md).
 
 {!includes/access-create-case-from-alert.md!}
 
-1. [Locate the alert you want to import into a case](../alerts/search-for-alerts/find-an-alert.md).
+1. [Locate the alert you want to merge into a new case](../alerts/search-for-alerts/find-an-alert.md).
 
 2. In the alert description, select **Create case from alert**.
 
@@ -167,7 +167,7 @@ During triage, import an alert into a new case if it needs further investigation
     * [Create an empty case](#create-an-empty-case)
     * [Create a case from a template](#create-a-case-from-a-template)
 
-!!! tip "Bulk import"
+!!! tip "Bulk merge"
     To create a case from multiple alerts, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **New case from selection** at the top of the screen. This action creates a single case that includes all selected alerts.
 
 ## Create a case from a detection tool

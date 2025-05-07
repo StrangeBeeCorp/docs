@@ -2,16 +2,16 @@
 
 <!-- md:version 5.5 -->
 
-This topic provides step-by-step instructions for viewing links in a [case](../cases/about-cases.md#linking-elements) in TheHive.
+This topic provides step-by-step instructions for viewing links in a [case](../about-cases.md#linking-elements) in TheHive.
 
 Links can point to other TheHive cases or to external resources.
 
 !!! info "Not applicable to alert links"
-    This procedure doesn't apply to alert links that are automatically created when [importing an alert into a new case](../create-a-new-case.md#create-a-case-from-an-alert) or [merging it into an existing one](../../alerts/merge-an-alert-into-an-existing-case.md). Refer to [View Alerts Linked to a Case](../view-alerts-linked-to-a-case.md) to see alerts linked to a case.
+    This procedure doesn't apply to alert links that are automatically created when [merging an alert into a new case](../create-a-new-case.md#create-a-case-from-an-alert) or [merging it into an existing one](../../alerts/merge-an-alert-into-an-existing-case.md). Refer to [View Alerts Linked to a Case](../view-alerts-linked-to-a-case.md) to see alerts linked to a case.
 
 <h2>Procedure</h2>
 
-1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to view links.
+1. [Find the case](../search-for-cases/find-a-case.md) where you want to view links.
 
 2. {!includes/linked-elements-section.md!}
 
