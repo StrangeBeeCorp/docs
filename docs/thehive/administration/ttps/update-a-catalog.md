@@ -16,10 +16,14 @@ The default and additional MITRE catalogs aren't updated automatically. Use this
 
 3. Select **Import MITRE ATT&CK patterns**.
 
-4. Enter a name of the catalog.
+4. Enter a unique name for the catalog. You can’t use a name that’s already taken.
 
 5. Drop a JSON file from the available MITRE ATT&CK matrices.
 
 6. Select **Import**.
 
 <h2>Next steps</h2>
+
+* [Add a Catalog](add-a-catalog.md)
+* [Remove a Catalog](remove-a-catalog.md)
+* [View Techniques in a Catalog](view-techniques-in-a-catalog.md)

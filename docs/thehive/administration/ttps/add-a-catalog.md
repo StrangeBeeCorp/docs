@@ -16,7 +16,7 @@ Use this procedure to add more MITRE catalogs than the [default one included in 
 
 3. Select **Import MITRE ATT&CK patterns**.
 
-4. Enter a name of the catalog.
+4. Enter a unique name for the catalog. You can’t use a name that’s already taken.
 
 5. Drop a JSON file from the available MITRE ATT&CK matrices.
 
