@@ -14,7 +14,7 @@ If it requires a separate investigation, [merge the alert into a new case](../ca
     When merging an alert into an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
 !!! note "Link to case"
-    This procedure automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
+    Merging an alert into an existing case automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
 
 1. [Locate the alert you want to merge into a case](./search-for-alerts/find-an-alert.md).
 
