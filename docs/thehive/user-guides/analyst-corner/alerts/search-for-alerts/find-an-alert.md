@@ -72,8 +72,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 <h2>Next steps</h2>
 
 * [Actions](../alerts-description/actions.md)
-* [Merge Alerts](../alerts-description/merge-alerts.md)
-* [New Case From Selection](../alerts-description/new-case-from-selection.md)
+* [Merge an Alert into an Existing Case](../merge-an-alert-into-an-existing-case.md)
+* [Merge an Alert into a New Case](../merge-an-alert-into-a-new-case.md)
 * [Preview Alerts](../alerts-description/preview-alerts.md)
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)

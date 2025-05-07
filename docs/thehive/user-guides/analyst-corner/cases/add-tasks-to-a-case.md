@@ -52,7 +52,7 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
 <h2>Next steps</h2>
 
-* [Add a Link to a Case](add-a-link-to-a-case.md)
+* [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
 * [Apply a Case Template](apply-a-case-template.md)
 * [Merge Cases](merge-cases.md)
 * [Restrict Case Visibility](restrict-visibility-case.md)
