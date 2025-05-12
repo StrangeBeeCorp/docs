@@ -16,21 +16,21 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 4. In the **Add TTP** drawer, enter the following information:
 
-   **-Catalog \***
+    **-Catalog \***
 
-   The MITRE catalog to use. By default, the Enterprise Attack catalog is installed with TheHive and includes all standard techniques. [Additional catalogs can be added](../../../../administration/ttps/add-a-catalog.md).
+    The MITRE catalog to use. By default, the Enterprise Attack catalog is installed with TheHive and includes all standard techniques. [Additional catalogs can be added](../../../../administration/ttps/add-a-catalog.md).
 
-   **-Occur date \***
+    **-Occur date \***
 
-   The date when the attack occurred.
+    The date when the attack occurred.
 
-   **-Technique \***
+    **-Technique \***
 
-   The technique used in the attack—describing how the attacker achieved their objective.
+    The technique used in the attack—describing how the attacker achieved their objective.
 
-   **-Procedure**
-   
-   Turn on the toggle to add a detailed description of how the technique was carried out—the specific procedure used.
+    **-Procedure**
+    
+    Turn on the toggle to add a detailed description of how the technique was carried out—the specific procedure used.
 
 5. Select **Confirm**.
 

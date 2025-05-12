@@ -20,7 +20,7 @@ You can [update this catalog](../../../../administration/ttps/update-a-catalog.m
 
 ## Actions
 
-In TheHive, you can [add TTPs](add-ttps.md) to both alerts and cases.
+In TheHive, you can [add](add-ttps.md) or [remove](remove-ttps.md) TTPs from both alerts and cases.
 
 ## Permissions
 
