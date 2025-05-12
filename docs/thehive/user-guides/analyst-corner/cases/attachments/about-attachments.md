@@ -1,6 +1,6 @@
 # About Attachments
 
-Attachments are files linked to an organization, case, or alert.
+Attachments are files linked to an organization, case, or alert. They store supporting materials—such as images, documents, or reports—that provide context or evidence.
 
 This topic explains how attachments are managed in TheHive.
 

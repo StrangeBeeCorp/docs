@@ -12,7 +12,7 @@ Use this procedure to add attachments in addition to those automatically saved w
 
 2. {!includes/attachments-tab-case-go-to.md!}
 
-3. Go to the **Cases**, **Tasks**, or **Reports** tab and select :fontawesome-solid-plus:.
+3. Go to the **Cases** or **Reports** tab and select :fontawesome-solid-plus:.
 
 4. In the **Add attachment** drawer, drop a file or select it from your computer.
 
