@@ -36,3 +36,4 @@ In TheHive, you can [add](add-ttps.md) or [remove](remove-ttps.md) TTPs from bot
 * [View Techniques in a Catalog](../../../../administration/ttps/view-techniques-in-a-catalog.md)
 * [Add TTPs](add-ttps.md)
 * [Remove TTPs](remove-ttps.md)
+* [Export TTPs](export-ttps.md)

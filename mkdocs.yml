@@ -530,6 +530,7 @@ nav:
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
+            - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
             - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
           - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
           - 'Tags':
@@ -574,6 +575,7 @@ nav:
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
+            - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
             - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
           - 'Case Timelines':

@@ -14,7 +14,10 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 3. Select :fontawesome-solid-ellipsis: next to the TTP you want to remove.
 
-    
+    {!includes/filters-sorts-views.md!}
+
+    !!! info "Bulk remove"
+        To remove TTPs in bulk, select :fontawesome-regular-square: to each TTP you want to remove, then :fontawesome-solid-trash: at the top of the screen.
 
 4. Select **Delete**.
 
@@ -23,3 +26,4 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 <h2>Next steps</h2>
 
 * [Add TTPs](add-ttps.md)
+* [Export TTPs](export-ttps.md)

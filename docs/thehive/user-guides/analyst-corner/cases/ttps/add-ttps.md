@@ -36,4 +36,5 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 <h2>Next steps</h2>
 
+* [Export TTPs](export-ttps.md)
 * [Remove TTPs](remove-ttps.md)
