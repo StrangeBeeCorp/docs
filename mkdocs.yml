@@ -257,6 +257,9 @@ plugins:
             'thehive/setup/installation/migration.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.x.md': 'thehive/installation/upgrade-from-5.x.md'
+            'thehive/administration/attack-patterns.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
 
 extra:
   generator: false
