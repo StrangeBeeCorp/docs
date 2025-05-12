@@ -80,4 +80,4 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [View Observables](../alerts-description/view-observables.md)
 * [View Similar Alerts](../alerts-description/view-similar-alerts.md)
 * [View Similar Cases](../alerts-description/view-similar-cases.md)
-* [View TTPs](../alerts-description/view-ttps.md)
+* [Add TTPs](../../cases/ttps/add-ttps.md)

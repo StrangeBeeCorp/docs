@@ -1,4 +1,4 @@
-# About Tactics, Techniques and Procedures (TTPs)
+# About Tactics, Techniques and Procedures
 
 Tactics, techniques and procedures (TTPs) describe the behaviors and methods commonly used by specific threat actors or groups.
 
@@ -6,11 +6,11 @@ This topic provides a general overview of TTPs usage in TheHive.
 
 ## Definitions
 
-Tactics describe the goals of threat actors—what they are trying to achieve.
+Tactics describe the goals of threat actors—what they're trying to achieve.
 
-Techniques explain how those goals are accomplished.
+Techniques show how they achieve those goals.
 
-Procedures are the specific implementations of techniques.
+Procedures detail how they implement the techniques in practice.
 
 ## MITRE ATT&CK framework
 

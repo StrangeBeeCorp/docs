@@ -1,6 +1,6 @@
-# How to Remove a Tactics, Techniques and Procedures (TTPs) Catalog
+# How to Remove a Tactics, Techniques and Procedures Catalog
 
-This topic provides step-by-step instructions for removing a [Tactics, Techniques and Procedures (TTPs)](about-ttps.md) catalog in TheHive.
+This topic provides step-by-step instructions for removing a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 

@@ -1,6 +1,6 @@
-# How to Update a Tactics, Techniques and Procedures (TTPs) Catalog
+# How to Update a Tactics, Techniques and Procedures Catalog
 
-This topic provides step-by-step instructions for updating a [Tactics, Techniques and Procedures (TTPs)](about-ttps.md) catalog in TheHive.
+This topic provides step-by-step instructions for updating a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
@@ -14,11 +14,11 @@ The default and additional MITRE catalogs aren't updated automatically. Use this
 
 2. {!includes/attack-patterns-tab-go-to.md!}
 
-3. Select **Import MITRE ATT&CK patterns**.
+3. In the **Import MITRE ATT&CK patterns** drawer, select **Import MITRE ATT&CK patterns**.
 
-4. Enter a unique name for the catalog. You can’t use a name that’s already taken.
+4. Select the existing catalog you want to update.
 
-5. Drop a JSON file from the available MITRE ATT&CK matrices.
+5. Drop a JSON file from the latest version of the [Enterprise ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json?version=TheHive-5.4.10-1-SNAPSHOT) and [Mobile ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/mobile-attack/mobile-attack.json?version=TheHive-5.4.10-1-SNAPSHOT) MITRE matrices.
 
 6. Select **Import**.
 

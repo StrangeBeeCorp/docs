@@ -1,4 +1,4 @@
-# How to Add Tactics, Techniques and Procedures (TTPs)
+# How to Add Tactics, Techniques and Procedures
 
 This topic provides step-by-step instructions for adding [tactics, techniques and procedures (TTPs)](about-ttps.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
@@ -26,11 +26,11 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
    **-Technique \***
 
-   The technique used in the attack—describing how the attacker's objective was achieved.
+   The technique used in the attack—describing how the attacker achieved their objective.
 
    **-Procedure**
    
-   Turn on the toogle to add a detailed description of how the technique was carried out—the specific procedure used.
+   Turn on the toggle to add a detailed description of how the technique was carried out—the specific procedure used.
 
 5. Select **Confirm**.
 

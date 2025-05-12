@@ -20,7 +20,7 @@ In the right pane of the window, there is an option to **Add** the following:
 
 1. [Add Task](../add-tasks-to-a-case.md).
 1. [Add Observable](../cases-description/observables.md#add-observables).
-1. [Add TTP](../cases-description/ttps.md#add-ttp).
+1. [Add TTP](../ttps/add-ttps.md).
 
 At the bottom of the window, there is an option to **Add** the following: 
 

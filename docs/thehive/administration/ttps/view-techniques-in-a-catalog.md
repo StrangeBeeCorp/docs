@@ -1,6 +1,6 @@
-# How to View Techniques in TTPs Catalogs
+# How to View Techniques in Tactics, Techniques and Procedures Catalogs
 
-This topic provides step-by-step instructions for viewing techniques in a [TTPs](about-ttps.md) catalog in TheHive.
+This topic provides step-by-step instructions for viewing techniques in a [TTPs](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
@@ -14,7 +14,7 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 3. Select the concerned catalog.
 
-4. Select **Preview** to view the details of a technique.
+4. Hover over a technique and select **Preview** to view its details.
 
     {!includes/filters-sorts-views.md!}
 

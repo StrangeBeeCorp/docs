@@ -1,4 +1,4 @@
-# How to Remove Tactics, Techniques and Procedures (TTPs)
+# How to Remove Tactics, Techniques and Procedures
 
 This topic provides step-by-step instructions for removing [tactics, techniques and procedures (TTPs)](about-ttps.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

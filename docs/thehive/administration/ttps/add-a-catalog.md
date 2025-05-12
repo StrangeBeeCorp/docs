@@ -1,6 +1,6 @@
-# How to Add a Tactics, Techniques and Procedures (TTPs) Catalog
+# How to Add a Tactics, Techniques and Procedures Catalog
 
-This topic provides step-by-step instructions for adding a [Tactics, Techniques and Procedures (TTPs)](about-ttps.md) catalog in TheHive.
+This topic provides step-by-step instructions for adding a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
@@ -16,11 +16,14 @@ Use this procedure to add more MITRE catalogs than the [default one included in 
 
 3. Select **Import MITRE ATT&CK patterns**.
 
-4. Enter a unique name for the catalog. You can’t use a name that’s already taken.
+4. In the **Import MITRE ATT&CK patterns** drawer, enter a unique name for the catalog. You can’t use a name that’s already taken.
 
-5. Drop a JSON file from the available MITRE ATT&CK matrices.
+5. Drop a JSON file.
 
 6. Select **Import**.
+
+    !!! info "Hang tight"
+        It may take a few seconds to add a TTPs catalog.
 
 <h2>Next steps</h2>
 
