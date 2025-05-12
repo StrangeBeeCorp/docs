@@ -22,12 +22,17 @@ Attachments can be manually added to alerts.
 
 ## Formats
 
-All formats are accepted.
-
-## Actions
+Attachments are supported in any file format.
 
 ## Permissions
 
+{!includes/access-manage-attachments.md!}
 
+Once added, attachments can be viewed or downloaded by any user.
 
 <h2>Next steps</h2>
+
+* [Add an Attachment to an Organization](../../../organization/configure-organization/manage-attachments/add-an-attachment-organization.md)
+* [Remove an Attachment from an Organization](../../../organization/configure-organization/manage-attachments/remove-an-attachment-organization.md)
+* [Copy the URL of an Attachment in an Organization](../../../organization/configure-organization/manage-attachments/copy-url-of-an-attachment-organization.md)
+* [Download an Attachment from an Organization](../../../organization/configure-organization/manage-attachments/download-an-attachment-organization.md)
