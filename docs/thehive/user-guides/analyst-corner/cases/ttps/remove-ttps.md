@@ -14,6 +14,8 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 3. Select :fontawesome-solid-ellipsis: next to the TTP you want to remove.
 
+    
+
 4. Select **Delete**.
 
 5. Select **OK**.
