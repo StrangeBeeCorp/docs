@@ -257,6 +257,10 @@ plugins:
             'thehive/setup/installation/migration.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.x.md': 'thehive/installation/upgrade-from-5.x.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md'
+            'thehive/user-guides/organization/attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
+            'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
+            'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
 
 extra:
   generator: false
