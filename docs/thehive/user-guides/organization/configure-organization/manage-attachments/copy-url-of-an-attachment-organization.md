@@ -12,7 +12,9 @@ To copy the URL of an attachment in a case or an alert, see [Copy the URL of an 
 
 2. {!includes/attachments-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis: next to the attachment you want to copy the URL for.
+3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
+
+    {!includes/filters.md!}
 
 4. Select **Copy URL**.
 

@@ -95,7 +95,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [Add Custom Fields](../custom-fields/add-custom-fields.md)
 * [View Observables](../cases-description/observables.md)
 * [View TTPs](../cases-description/ttps.md)
-* [View Attachments](../cases-description/attachments.md)
+* [Add an Attachment](../attachments/add-an-attachment-case-alert.md)
 * [View a Case Timeline](../case-timelines/view-case-timeline.md)
 * [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
 * [Run Responders on Case](../cases-description/run-responders.md)

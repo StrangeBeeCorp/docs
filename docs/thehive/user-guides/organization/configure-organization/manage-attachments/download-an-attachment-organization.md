@@ -12,7 +12,9 @@ To download an attachment from a case or an alert, see [Download an Attachment f
 
 2. {!includes/attachments-tab-go-to.md!}
 
-3. Select :fontawesome-solid-ellipsis: next to the attachment you want to copy the URL for.
+3. Select :fontawesome-solid-ellipsis: next to the attachment you want to download.
+
+    {!includes/filters.md!}
 
 4. Select **Download**.
 

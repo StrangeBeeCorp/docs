@@ -14,6 +14,8 @@ To remove an attachment from a case or an alert, see [Remove an Attachment from 
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment you want to remove.
 
+    {!includes/filters.md!}
+
 4. Select **Remove**.
 
 5. Select **OK**.
