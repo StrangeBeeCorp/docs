@@ -4,8 +4,6 @@ This topic provides step-by-step instructions for closing an [alert](about-alert
 
 Close an alert if it doesn't require escalation into a new or existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 
-This automatically updates the alert’s status to one associated with the *Closed* stage. To assign a different status within the same stage, see [Change an Alert Status](change-status-alert.md).
-
 {!includes/access-close-alerts.md!}
 
 <h2>Procedure</h2>
