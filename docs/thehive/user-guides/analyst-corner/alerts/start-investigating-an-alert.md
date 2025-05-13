@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for starting the investigation of an [alert](about-alerts.md) in TheHive.
 
-Use this procedure to begin the triage process for an alert. This automatically updates the alert’s status to one associated with the *In progress* stage. To assign a different status within the same stage, see [Change an Alert Status](change-status-alert.md).
+Use this procedure to begin the triage process for an alert.
 
 <h2>Procedure</h2>
 
