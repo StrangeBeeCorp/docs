@@ -80,4 +80,4 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)
 * [Find Similar Alerts or Cases](../../cases/find-similar-alerts-cases.md)
-* [View TTPs](../alerts-description/view-ttps.md)
+* [Add TTPs](../../cases/ttps/add-ttps.md)

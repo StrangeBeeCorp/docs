@@ -133,7 +133,7 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
-            'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md'
+            'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/analyst-corner/cases-list/about-a-case-list.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
             'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md'
@@ -149,7 +149,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
-            'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md'
+            'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/create-case-from-archive.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
@@ -262,6 +262,9 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
+            'thehive/administration/attack-patterns.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case.md'
@@ -427,7 +430,12 @@ nav:
           - 'Update MISP Taxonomies': thehive/administration/taxonomies/update-misp-taxonomies.md
           - 'Activate or Deactivate a Taxonomy': thehive/administration/taxonomies/activate-deactivate-a-taxonomy.md
           - 'Delete a Taxonomy': thehive/administration/taxonomies/delete-a-taxonomy.md
-        - 'Att&ck Patterns': thehive/administration/attack-patterns.md
+        - 'TTPs':
+          - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
+          - 'Add a Catalog': thehive/administration/ttps/add-a-catalog.md
+          - 'Update a Catalog': thehive/administration/ttps/update-a-catalog.md
+          - 'Remove a Catalog': thehive/administration/ttps/remove-a-catalog.md
+          - 'View Techniques': thehive/administration/ttps/view-techniques-in-a-catalog.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
@@ -547,7 +555,11 @@ nav:
             - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
             - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
-          - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
+          - 'TTPs':
+            - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
+            - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
+            - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
+            - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
@@ -602,7 +614,11 @@ nav:
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
-          - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
+          - 'TTPs':
+            - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
+            - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
+            - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
+            - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
           - 'Case Timelines':
             - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md

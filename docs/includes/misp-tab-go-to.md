@@ -1,3 +1,3 @@
 Select the **MISP** tab.
 
-    ![MISP tab](../../images/administration-guides/misp-tab.png)
+    ![MISP tab](/thehive/images/administration-guides/misp-tab.png)

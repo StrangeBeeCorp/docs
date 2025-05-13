@@ -29,7 +29,7 @@ In TheHive, an alert includes the following elements:
 
 * [Observables](../cases/observables/about-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 
-* [TTPs](../alerts/alerts-description/view-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
+* [TTPs](../cases/ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
 ## Triage outcomes
 
