@@ -83,10 +83,10 @@ plugins:
             'thehive/administration/organisation-links.md': 'thehive/administration/organizations/link-an-organization.md'
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/analyst-corner/organizations.md': 'thehive/administration/organizations/about-organizations.md'
-            'thehive/user-guides/organisation/attachments.md': 'thehive/user-guides/organization/attachments.md'
+            'thehive/user-guides/organisation/attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
             'thehive/user-guides/organisation/accounts.md': 'thehive/user-guides/organization/accounts.md'
-            'thehive/user-guides/organisation/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md'
-            'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md'
+            'thehive/user-guides/organisation/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
+            'thehive/user-guides/organisation/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md'
             'thehive/user-guides/organisation/configure-organization/manage-case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/about_custom_tags.md': 'thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags.md'
             'thehive/user-guides/organisation/configure-organization/manage-custom-tags/manage_views.md': 'thehive/user-guides/analyst-corner/about-views.md'
@@ -142,7 +142,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
-            'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md'
+            'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
@@ -265,6 +265,10 @@ plugins:
             'thehive/administration/attack-patterns.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md'
+            'thehive/user-guides/organization/attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
+            'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
+            'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/merge-an-alert-into-a-new-case.md'
             'thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case.md'
@@ -521,7 +525,12 @@ nav:
           - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
           - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md
           - 'Delete an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder.md
-        - 'Attachments': thehive/user-guides/organization/attachments.md
+        - 'Attachments':
+          - 'About Attachments': thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md
+          - 'Add an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md
+          - 'Remove an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization.md
+          - 'Download an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization.md
+          - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
@@ -560,6 +569,12 @@ nav:
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
             - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
             - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
+          - 'Attachments':
+            - 'About Attachments': thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md
+            - 'Add an Attachment': thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md
+            - 'Remove an Attachment': thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert.md
+            - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
+            - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
@@ -619,7 +634,12 @@ nav:
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
             - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
             - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
-          - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
+          - 'Attachments':
+            - 'About Attachments': thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md
+            - 'Add an Attachment': thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md
+            - 'Remove an Attachment': thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert.md
+            - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
+            - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
           - 'Case Timelines':
             - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md
             - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md
