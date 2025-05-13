@@ -1,6 +1,6 @@
 # How to Find an Observable
 
-This topic provides step-by-step instructions for searching an [observable](../cases-description/observables.md) in TheHive.
+This topic provides step-by-step instructions for searching an [observable](../observables/about-observables.md) in TheHive.
 
 !!! tip "Can't find an observable?"
     - Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new observables in lists.
@@ -17,6 +17,8 @@ This topic provides step-by-step instructions for searching an [observable](../c
 2. {!includes/apply-filters-light.md!}
 
 3. {!includes/search-results.md!}
+
+{!includes/views-filters-sorts.md!}
 
 ---
 
@@ -54,6 +56,11 @@ This topic provides step-by-step instructions for searching an [observable](../c
 
 <h2>Next steps</h2>
 
-* [View Observables](../../alerts/alerts-description/view-observables.md)
-
-
+* [Remove an Observable](../observables/remove-an-observable.md)
+* [Update the Status of an Observable](../observables/update-an-observable-status.md)
+* [Edit Multiple Observables](../observables/edit-multiple-observables.md)
+* [Pin an Observable](../observables/pin-an-observable.md)
+* [Export Data from Observables](../observables/export-data-observables.md)
+* [Run Analyzers on an Observable](../observables/run-analyzers-on-an-observable.md)
+* [Run Responders on an Observable](../observables/run-responders-on-an-observable.md)
+* [Import Observables from Analyzer Reports](../observables/import-observables-from-analyzer-reports.md)
