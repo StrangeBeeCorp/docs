@@ -6,6 +6,12 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.2 - May 13, 2025
+
+### Performance fixes
+
+Fixed a performance issue introduced by the new [case links feature](#case-links-link-external-or-internal-elements-to-a-case) that could cause significant slowdowns in environments with large data volumes.
+
 ## 5.5.1 - April 30, 2025
 
 ### Security fixes
