@@ -96,7 +96,7 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
 * [Add Custom Fields](../custom-fields/add-custom-fields.md)
 * [Find Similar Alerts or Cases](../find-similar-alerts-cases.md)
-* [View TTPs](../cases-description/ttps.md)
+* [Add TTPs](../ttps/add-ttps.md)
 * [View Attachments](../cases-description/attachments.md)
 * [View a Case Timeline](../case-timelines/view-case-timeline.md)
 * [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
