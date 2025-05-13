@@ -137,6 +137,10 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-attachments/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-manage-case-links/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -257,6 +261,18 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/attachments-tab-alert-go-to/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/attachments-tab-case-go-to/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/attachments-tab-go-to/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/attack-patterns-tab-go-to/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -346,6 +362,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/filters-sorts-views/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/filters/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -1205,6 +1225,26 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/about-attachments/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -1234,10 +1274,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/actions/</loc>
-         <lastmod>2025-05-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/attachments/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -1485,19 +1521,23 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/attachments/</loc>
-         <lastmod>2025-05-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/ui-configuration/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
