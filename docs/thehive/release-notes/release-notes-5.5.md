@@ -6,6 +6,30 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.2 - May 13, 2025
+
+### Performance fixes
+
+Fixed a performance issue introduced by the new [case links feature](#case-links-link-external-or-internal-elements-to-a-case) that could cause significant slowdowns in environments with large data volumes.
+
+### Other fixes
+
+#### Case reports
+
+Fixed an issue where images uploaded in the case description weren't displayed in generated HTML and Word reports.
+
+#### Attachments for shared cases
+
+Fixed an issue where attachment files weren't visible in shared cases.
+
+#### Public API
+
+Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.
+
+### Improvements
+
+Analyzers and responders can now be triggered directly from a TheHive function, enabling greater automation capabilities.
+
 ## 5.5.1 - April 30, 2025
 
 ### Security fixes
