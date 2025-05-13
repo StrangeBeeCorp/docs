@@ -525,7 +525,7 @@ nav:
           - 'Add an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md
           - 'Remove an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization.md
           - 'Download an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization.md
-          - 'Copy the URL of an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/copy-url-of-an-attachment-organization.md
+          - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
@@ -567,7 +567,7 @@ nav:
             - 'Add an Attachment': thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md
             - 'Remove an Attachment': thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert.md
             - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
-            - 'Copy the URL of an Attachment': thehive/user-guides/analyst-corner/cases/attachments/copy-url-of-an-attachment-case-alert.md
+            - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
@@ -629,7 +629,7 @@ nav:
             - 'Add an Attachment': thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md
             - 'Remove an Attachment': thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert.md
             - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
-            - 'Copy the URL of an Attachment': thehive/user-guides/analyst-corner/cases/attachments/copy-url-of-an-attachment-case-alert.md
+            - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
           - 'Case Timelines':
             - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md
             - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md
