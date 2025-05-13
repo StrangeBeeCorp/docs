@@ -36,8 +36,8 @@ Cortex offers the following features:
 
 [Connect TheHive to Cortex](add-a-cortex-server.md) to gather intelligence on observables with analyzers and automate actions using responders:
 
-* Analyzers enrich observables with detailed, contextual intelligence.
-* Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response.
+* Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results.
+* Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response, generating a report with the results.
 
 ## Permissions
 
@@ -47,3 +47,4 @@ Cortex offers the following features:
 
 * [Add a Cortex Server](add-a-cortex-server.md)
 * [Remove a Cortex Server](remove-a-cortex-server.md)
+* [Manage Analyzer Templates](../../administration/analyzers-templates.md)

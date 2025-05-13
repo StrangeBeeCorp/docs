@@ -19,7 +19,7 @@ You can see details like the id, created by, created at date, updated date, TLP,
 In the right pane of the window, there is an option to **Add** the following: 
 
 1. [Add Task](../add-tasks-to-a-case.md).
-1. [Add Observable](../cases-description/observables.md#add-observables).
+1. [Add Observable](../observables/add-an-observable.md).
 1. [Add TTP](../cases-description/ttps.md#add-ttp).
 
 At the bottom of the window, there is an option to **Add** the following: 
