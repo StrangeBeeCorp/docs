@@ -14,9 +14,17 @@ Fixed a performance issue introduced by the new [case links feature](#case-links
 
 ### Other fixes
 
-* Case reports: Fixed an issue where images uploaded in the case description weren't displayed in generated HTML and Word reports.
-* Attachments for shared cases: Fixed an issue where attachment files weren't visible in shared cases.
-* Public API: Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.
+#### Case reports
+
+Fixed an issue where images uploaded in the case description weren't displayed in generated HTML and Word reports.
+
+#### Attachments for shared cases
+
+Fixed an issue where attachment files weren't visible in shared cases.
+
+#### Public API
+
+Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.
 
 ### Improvements
 
