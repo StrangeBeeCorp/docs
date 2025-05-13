@@ -12,6 +12,9 @@
 
 ### Security fixes
 - This update includes four patches addressing vulnerabilities that haven't been exploited in the wild. Further details will be provided in an upcoming security bulletin, in line with our responsible disclosure policy.
+- JSON endpoints now strictly validate the `Content-Type` header. Requests must explicitly include `Content-Type: application/json`. If not, the server returns a `400 Bad Request` response.
+    - A temporary compatibility mode is available to support legacy clients or scripts that don't set the `Content-Type` header properly. To enable it, add the following line to your `application.conf` file: `ignoreCSRFProtection = false`.
+    - After enabling compatibility mode, update all clients to send `Content-Type: application/json`. Once all clients are updated, remove this override to re-enable full validation.
     
 ## 5.2.15 - 9th of January 2025
 
