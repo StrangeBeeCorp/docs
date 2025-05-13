@@ -707,7 +707,6 @@ nav:
         - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
         - 'About Statistics': thehive/user-guides/analyst-corner/about-statistics.md
         - 'About the Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
-        - 'Choose Your Theme': thehive/user-guides/analyst-corner/theme.md
           
     - 'API':
       - 'API Documentation': thehive/api-docs/
