@@ -1,6 +1,8 @@
 # About Observables
 
-Observables are data points that represent specific events or properties within a system, monitored for signs of suspicious activity. These can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors. They can also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
+Observables are data points that can be directly observed and represent specific events or properties within a system. They are monitored for signs of suspicious or malicious activity. 
+
+Observables can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors. They can also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
 
 This topic provides an overview of the main characteristics of observables in TheHive.
 
@@ -31,9 +33,9 @@ An observable can be [marked as sighted](update-an-observable-status.md#mark-an-
 
 ## Similar alerts and cases
 
-Similar alerts and cases are detected based on shared observables.
+Observables are key to correlating malicious activity across different alerts and cases. TheHive uses observables to identify patterns and surface related alerts and cases in the [**Similar alerts** and **Similar cases** tabs](../find-similar-alerts-cases.md).
 
-You can choose to [ignore similarity for contextual observables](exclude-an-observable-from-similarity-checks.md), such as the company domain name, or for observables that aren't related to any potential threat.
+If certain observables—like the company's domain name—aren’t meaningful for threat correlation, you can choose to [exclude them from similarity checks](exclude-an-observable-from-similarity-checks.md).
 
 ## Permissions
 
