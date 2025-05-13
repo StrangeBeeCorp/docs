@@ -33,5 +33,5 @@ Use this procedure to add attachments in addition to those automatically saved w
 <h2>Next steps</h2>
 
 * [Remove an Attachment from a Case or an Alert](remove-an-attachment-case-alert.md)
-* [Copy the URL of an Attachment in a Case or an Alert](copy-url-of-an-attachment-case-alert.md)
+* [Share an Attachment from a Case or an Alert](share-an-attachment-case-alert.md)
 * [Download an Attachment from a Case or an Alert](download-an-attachment-case-alert.md)

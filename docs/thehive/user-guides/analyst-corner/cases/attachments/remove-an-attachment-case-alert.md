@@ -37,5 +37,5 @@ Use this procedure to remove attachments you added manually or that were previou
 <h2>Next steps</h2>
 
 * [Add an Attachment to a Case or an Alert](add-an-attachment-case-alert.md)
-* [Copy the URL of an Attachment in a Case or an Alert](copy-url-of-an-attachment-case-alert.md)
+* [Share an Attachment from a Case or an Alert](share-an-attachment-case-alert.md)
 * [Download an Attachment from a Case or an Alert](download-an-attachment-case-alert.md)

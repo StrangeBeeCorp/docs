@@ -1,8 +1,8 @@
-# How to Copy the URL of an Attachment in a Case or an Alert
+# How to Share an Attachment from a Case or an Alert
 
-This topic provides step-by-step instructions for copying the URL of an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) in a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
-## Copy the URL of an attachment in a case
+## Share an attachment from a case
 
 1. [Locate the case](../search-for-cases/find-a-case.md) where you want to remove an attachment.
 
@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for copying the URL of an [attachm
 
 4. Select **Copy URL**.
 
-## Copy the URL of an attachment in an alert
+## Share an attachment from an alert
 
 1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to remove an attachment.
 

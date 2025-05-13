@@ -36,9 +36,9 @@ Once added, attachments can be viewed or downloaded by any user.
 
 * [Add an Attachment to an Organization](../../../organization/configure-organization/manage-attachments/add-an-attachment-organization.md)
 * [Remove an Attachment from an Organization](../../../organization/configure-organization/manage-attachments/remove-an-attachment-organization.md)
-* [Copy the URL of an Attachment in an Organization](../../../organization/configure-organization/manage-attachments/copy-url-of-an-attachment-organization.md)
+* [Share an Attachment from an Organization](../../../organization/configure-organization/manage-attachments/share-an-attachment-organization.md)
 * [Download an Attachment from an Organization](../../../organization/configure-organization/manage-attachments/download-an-attachment-organization.md)
 * [Add an Attachment to a Case or an Alert](add-an-attachment-case-alert.md)
 * [Remove an Attachment from a Case or an Alert](remove-an-attachment-case-alert.md)
-* [Copy the URL of an Attachment in a Case or an Alert](copy-url-of-an-attachment-case-alert.md)
+* [Share an Attachment from a Case or an Alert](share-an-attachment-case-alert.md)
 * [Download an Attachment from a Case or an Alert](download-an-attachment-case-alert.md)

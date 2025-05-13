@@ -30,4 +30,4 @@ This topic provides step-by-step instructions for downloading an [attachment](..
 
 * [Add an Attachment to a Case or an Alert](add-an-attachment-case-alert.md)
 * [Remove an Attachment from a Case or an Alert](remove-an-attachment-case-alert.md)
-* [Copy the URL of an Attachment in a Case or an Alert](copy-url-of-an-attachment-case-alert.md)
+* [Share an Attachment from a Case or an Alert](share-an-attachment-case-alert.md)

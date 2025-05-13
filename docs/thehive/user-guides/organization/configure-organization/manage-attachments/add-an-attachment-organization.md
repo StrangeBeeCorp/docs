@@ -21,5 +21,5 @@ To add an attachment to a case or an alert, see [Add an Attachment to a Case or 
 <h2>Next steps</h2>
 
 * [Remove an Attachment from an Organization](remove-an-attachment-organization.md)
-* [Copy the URL of an Attachment in an Organization](copy-url-of-an-attachment-organization.md)
+* [Share an Attachment from an Organization](share-an-attachment-organization.md)
 * [Download an Attachment from an Organization](download-an-attachment-organization.md)

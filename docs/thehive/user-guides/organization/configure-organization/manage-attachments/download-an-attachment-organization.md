@@ -22,4 +22,4 @@ To download an attachment from a case or an alert, see [Download an Attachment f
 
 * [Add an Attachment to an Organization](add-an-attachment-organization.md)
 * [Remove an Attachment from an Organization](remove-an-attachment-organization.md)
-* [Copy the URL of an Attachment in an Organization](copy-url-of-an-attachment-organization.md)
+* [Share an Attachment from an Organization](share-an-attachment-organization.md)

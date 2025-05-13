@@ -1,8 +1,8 @@
-# How to Copy the URL of an Attachment in an Organization
+# How to Share an Attachment from an Organization
 
-This topic provides step-by-step instructions for copying the URL of an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) in an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
+This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
 
-To copy the URL of an attachment in a case or an alert, see [Copy the URL of an Attachment in a Case or an Alert](../../../analyst-corner/cases/attachments/copy-url-of-an-attachment-case-alert.md).
+To share an attachment from a case or an alert, see [Share an Attachment from a Case or an Alert](../../../analyst-corner/cases/attachments/share-an-attachment-case-alert.md).
 
 {!includes/access-manage-attachments.md!}
 
