@@ -13,11 +13,13 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 1. Open a case, an alert, or a task, and select the **Similar alerts** tab.
 
-    ![Similar alerts](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-similar-alerts.png)
+    ![Similar alerts](../../../../images/user-guides/analyst-corner/cases/similar-alerts.png)
 
 2. {!includes/apply-filters.md!}
 
 3. {!includes/search-results.md!}
+
+For more information, see the [Find Similar Alerts and Cases](../../cases/find-similar-alerts-cases.md) topic.
 
 ---
 
@@ -77,7 +79,5 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 * [Preview Alerts](../alerts-description/preview-alerts.md)
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)
-* [View Observables](../alerts-description/view-observables.md)
-* [View Similar Alerts](../alerts-description/view-similar-alerts.md)
-* [View Similar Cases](../alerts-description/view-similar-cases.md)
+* [Find Similar Alerts or Cases](../../cases/find-similar-alerts-cases.md)
 * [View TTPs](../alerts-description/view-ttps.md)

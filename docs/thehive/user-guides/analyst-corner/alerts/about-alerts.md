@@ -27,7 +27,7 @@ An alert can be created from the following sources:
 
 In TheHive, an alert includes the following elements:
 
-* [Observables](../alerts/alerts-description/view-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
+* [Observables](../cases/observables/about-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 
 * [TTPs](../alerts/alerts-description/view-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 

@@ -15,7 +15,7 @@ This page is a step by step installation and configuration guide to get a Cortex
     === "RPM"
 
         ```bash
-        yum install pkg-install gnupg chkconfig python3-pip git 
+        yum install gnupg chkconfig python3-pip git
         ```
 
 ## Java Virtual Machine
