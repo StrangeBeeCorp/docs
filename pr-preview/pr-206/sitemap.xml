@@ -189,6 +189,10 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-ttps/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-update-a-case/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -237,11 +241,19 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-ttps/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/apply-filters-light/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/apply-filters/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/attack-patterns-tab-go-to/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -485,6 +497,10 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/ttps-tab-go-to/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/units-time-to/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -594,10 +610,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/analyzers-templates/</loc>
-         <lastmod>2025-05-13</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/administration/attack-patterns/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -782,6 +794,22 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/update-misp-taxonomies/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/ttps/add-a-catalog/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/ttps/remove-a-catalog/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/ttps/update-a-catalog/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/ttps/view-techniques-in-a-catalog/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
@@ -1089,10 +1117,6 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps/</loc>
-         <lastmod>2025-05-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -1225,10 +1249,6 @@
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/ttps/</loc>
-         <lastmod>2025-05-13</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
@@ -1306,6 +1326,22 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/about-ttps/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/add-ttps/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/export-ttps/</loc>
+         <lastmod>2025-05-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/remove-ttps/</loc>
          <lastmod>2025-05-13</lastmod>
     </url>
     <url>
