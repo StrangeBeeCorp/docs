@@ -122,7 +122,7 @@ plugins:
             'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
-            'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
+            'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md'
             'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md'
@@ -533,7 +533,7 @@ nav:
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
           - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
-          - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md
+          - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Merge Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md
           - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md

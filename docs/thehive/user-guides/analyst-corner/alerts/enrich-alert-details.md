@@ -41,6 +41,6 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 
 * [Change an Alert Status](change-status-alert.md)
 * [Close an Alert](close-an-alert.md)
-* [Actions](../alerts/alerts-description/actions.md)
+* [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
 * [Run Responders](../alerts/alerts-description/run-responders.md)

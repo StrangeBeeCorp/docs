@@ -73,7 +73,7 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 
 <h2>Next steps</h2>
 
-* [Actions](../alerts-description/actions.md)
+* [Start Investigating an Alert](../start-investigating-an-alert.md)
 * [Merge Alerts](../alerts-description/merge-alerts.md)
 * [New Case From Selection](../alerts-description/new-case-from-selection.md)
 * [Preview Alerts](../alerts-description/preview-alerts.md)
