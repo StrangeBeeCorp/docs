@@ -7,7 +7,7 @@ An alert is automatically linked to a case when you [create a case from an alert
 !!! info "Data transfer"
     When unlinking an alert and a case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, remains in the case.
 
-<h2>Procedure</h2>
+## From a case
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to unlink alerts.
 
@@ -20,6 +20,16 @@ An alert is automatically linked to a case when you [create a case from an alert
 4. Select **Unlink**.
 
 5. Select **OK**.
+
+## From an alert
+
+1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to unlink.
+
+2. In the alert description, select **Unlink**.
+
+    ![Unlink alert symbol](../../../images/user-guides/analyst-corner/alerts/unlink-alert.png)
+
+3. Select **OK**.
 
 <h2>Next steps</h2>
 
