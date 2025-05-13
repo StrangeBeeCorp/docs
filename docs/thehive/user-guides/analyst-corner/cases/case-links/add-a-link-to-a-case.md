@@ -2,15 +2,18 @@
 
 <!-- md:version 5.5 -->
 
-This topic provides step-by-step instructions for adding a [link to a case](../cases/about-cases.md#linking-elements) in TheHive.
+This topic provides step-by-step instructions for adding a [link to a case](../about-cases.md#linking-elements) in TheHive.
 
 The link can point to another TheHive case or to an external resource.
+
+!!! info "Not applicable to alert links"
+    This procedure doesn't apply to alert links that are automatically created when [creating a case from an alert](../../alerts/create-a-case-from-an-alert.md) or [adding an alert to an existing case](../../alerts/add-an-alert-to-an-existing-case.md).
 
 {!includes/access-manage-case-links.md!}
 
 <h2>Procedure</h2>
 
-1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to add the link.
+1. [Find the case](../search-for-cases/find-a-case.md) where you want to add the link.
 
 2. {!includes/linked-elements-section.md!}
 

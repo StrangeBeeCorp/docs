@@ -17,7 +17,7 @@ Each status is associated with:
 * A stage: TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. Stages are hard-coded and can't be modified, deleted, or extended.
 
     !!! info "Imported stage"
-        The *Imported* stage isn't available for selection in the interface. It is linked to an *Imported* status that is applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/alerts-description/merge-alerts.md) or [a new case](../../user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md).
+        The *Imported* stage isn't available for selection in the interface. It is linked to an *Imported* status that is applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [merged into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md).
 
 * <!-- md:version 5.5 --> A visibility: The status is either displayed or hidden in TheHive interface.
 
