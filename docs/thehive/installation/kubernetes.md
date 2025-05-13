@@ -149,4 +149,4 @@ cortex:
 
 * [Monitoring TheHive](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)
-* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/docker-compose.md)
+* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/cold-backup/docker-compose.md)
