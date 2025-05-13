@@ -1,23 +1,23 @@
-# How to Merge an Alert into a New Case
+# How to Create a Case from an Alert
 
-This topic provides step-by-step instructions for merging an [alert](about-alerts.md) into a new [case](../cases/about-cases.md) in TheHive.
+This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) from an [alert](about-alerts.md) in TheHive.
 
-During triage, merge an alert into a new case if it needs further investigation and no case exists yet. 
+During triage, create a case from an alert if it needs further investigation and no case exists yet. 
 
-If an investigation is already ongoing, [merge the alert into an existing case](merge-an-alert-into-an-existing-case.md).
+If an investigation is already ongoing, [add the alert to an existing case](add-an-alert-to-an-existing-case.md).
 
 !!! info "Data transfer"
-    When merging an alert into a new case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
+    When creating a case from an alert, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
 !!! note "Link to case"
-    Merging an alert into a new case automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
+    Creating a case from an alert automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
 
 {!includes/access-create-case-from-alert.md!}
 
 <h2>Procedure</h2>
 
 !!! tip "Bulk merge"
-    To merge multiple alerts into a new case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **New case from selection** at the top of the screen. This action merges all the selected alerts into a single case.
+    To create a case from multiple alerts, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **New case from selection** at the top of the screen. This action merges all the selected alerts into a single case.
 
 1. [Locate the alert you want to merge into a new case](./search-for-alerts/find-an-alert.md).
 

@@ -35,13 +35,21 @@ In TheHive, an alert includes the following elements:
 
 ## Triage outcomes
 
-### Merging alerts
+### Creating cases from alerts
 
 {!includes/access-merge-alerts.md!}
 
-Alerts can be [merged into an existing case](merge-an-alert-into-an-existing-case.md) if they relate to an ongoing investigation, or [into a new case](merge-an-alert-into-a-new-case.md) if they start a new one.
+[Create cases from alerts](create-a-case-from-an-alert.md) when further investigation is needed and no related investigation is already in progress.
 
-Both actions automatically create [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
+This action automatically creates [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
+
+### Adding alerts to existing cases
+
+{!includes/access-merge-alerts.md!}
+
+[Add alerts to existing cases](add-an-alert-to-an-existing-case.md) if they are related to an ongoing investigation.
+
+This action automatically creates [a link between the alert and the case](../cases/view-alerts-linked-to-a-case.md).
 
 ### Closing alerts
 
@@ -60,6 +68,6 @@ Alerts can't be closed if any required [custom fields](../../../administration/c
 <h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
-* [Merge an Alert into a New Case](merge-an-alert-into-a-new-case.md)
-* [Merge an Alert into an Existing Case](merge-an-alert-into-an-existing-case.md)
+* [Create a Case from an Alert](create-a-case-from-an-alert.md)
+* [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
 * [Close an Alert](close-an-alert.md)

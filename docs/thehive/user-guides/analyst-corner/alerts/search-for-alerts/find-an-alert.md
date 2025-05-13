@@ -74,8 +74,8 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 <h2>Next steps</h2>
 
 * [Actions](../alerts-description/actions.md)
-* [Merge an Alert into an Existing Case](../merge-an-alert-into-an-existing-case.md)
-* [Merge an Alert into a New Case](../merge-an-alert-into-a-new-case.md)
+* [Add an Alert to an Existing Case](../add-an-alert-to-an-existing-case.md)
+* [Create a Case from an Alert](../create-a-case-from-an-alert.md)
 * [Preview Alerts](../alerts-description/preview-alerts.md)
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)

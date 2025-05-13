@@ -144,7 +144,7 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from an alert
 
-Refer to the [Merge an Alert into a New Case](../alerts/merge-an-alert-into-a-new-case.md) topic for instructions.
+Refer to the [Create a Case from an Alert](../alerts/create-a-case-from-an-alert.md) topic for instructions.
 
 ## Create a case from a detection tool
 

@@ -42,6 +42,6 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 * [Change an Alert Status](change-status-alert.md)
 * [Close an Alert](close-an-alert.md)
 * [Actions](../alerts/alerts-description/actions.md)
-* [Merge an Alert into an Existing Case](merge-an-alert-into-an-existing-case.md)
-* [Merge an Alert into a New Case](merge-an-alert-into-a-new-case.md)
+* [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
+* [Create a Case from an Alert](create-a-case-from-an-alert.md)
 * [Run Responders](../alerts/alerts-description/run-responders.md)

@@ -60,7 +60,7 @@ Merging also impacts:
 {!includes/access-manage-case-links.md!}
 
 !!! info "Alerts as linked elements"
-    You can't add an alert to the linked elements. An alert link is automatically added to a case when you [merge an alert into a new case](../alerts/merge-an-alert-into-a-new-case.md) or [merge it into an existing one](../alerts/merge-an-alert-into-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
+    You can't add an alert to the linked elements. An alert link is automatically added to a case when you [create a case from an alert](../alerts/create-a-case-from-an-alert.md) or [add an alert to an existing case](../alerts/add-an-alert-to-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
 
 Cases can be linked to other TheHive cases or external resources. These links enhance traceability and help visualize relationships between related incidents.
 
