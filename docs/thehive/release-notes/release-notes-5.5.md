@@ -12,6 +12,16 @@
 
 Fixed a performance issue introduced by the new [case links feature](#case-links-link-external-or-internal-elements-to-a-case) that could cause significant slowdowns in environments with large data volumes.
 
+### Other fixes
+
+* Case reports: Fixed an issue where images uploaded in the case description weren't displayed in generated HTML and Word reports.
+* Attachments for shared cases: Fixed an issue where attachment files weren't visible in shared cases.
+* Public API: Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.
+
+### Improvements
+
+Analyzers and responders can now be triggered directly from a TheHive function, enabling greater automation capabilities.
+
 ## 5.5.1 - April 30, 2025
 
 ### Security fixes
