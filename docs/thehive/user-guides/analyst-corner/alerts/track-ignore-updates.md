@@ -6,6 +6,8 @@ By default, notifications
 
 <h2>Next steps</h2>
 
+* [Change an Alert Status](change-status-alert.md)
+
 ## Track/Ignore New Updates
 
 1. Click the **Track New Updates** option to track an alert.

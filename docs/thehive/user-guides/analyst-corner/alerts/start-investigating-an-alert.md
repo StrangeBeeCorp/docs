@@ -15,3 +15,5 @@ Use this procedure to begin the triage process for an alert.
 3. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Change an Alert Status](change-status-alert.md)
