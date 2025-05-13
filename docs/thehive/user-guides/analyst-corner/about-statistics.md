@@ -1,6 +1,6 @@
 # About Statistics
 
-Predefined statistics are available in TheHive for [cases](../analyst-corner/cases/about-cases.md), [alerts](../analyst-corner/alerts/about-alerts.md), and [observables](../analyst-corner/cases/cases-description/observables.md) lists.
+Predefined statistics are available in TheHive for [cases](../analyst-corner/cases/about-cases.md), [alerts](../analyst-corner/alerts/about-alerts.md), and [observables](../analyst-corner/cases/observables/about-observables.md) lists.
 
 ![Statistics](../../images/user-guides/analyst-corner/statistics.png)
 

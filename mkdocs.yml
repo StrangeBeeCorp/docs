@@ -129,10 +129,10 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection.md'
             'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md'
-            'thehive/user-guides/analyst-corner/alerts/view-observables.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md'
+            'thehive/user-guides/analyst-corner/alerts/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
             'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md'
-            'thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md'
-            'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md'
+            'thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
+            'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md'
             'thehive/user-guides/analyst-corner/cases-list/about-a-case-list.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
@@ -146,7 +146,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
-            'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/cases-description/observables.md'
+            'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
             'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/cases-description/ttps.md'
@@ -257,6 +257,11 @@ plugins:
             'thehive/setup/installation/migration.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/setup/installation/upgrade-from-5.x.md': 'thehive/installation/upgrade-from-5.x.md'
+            'thehive/administration/observables-types.md': 'thehive/administration/observable-types/create-an-observable-type.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
 
 extra:
   generator: false
@@ -402,7 +407,9 @@ nav:
           - 'Create a Custom Field': thehive/administration/custom-fields/create-a-custom-field.md
           - 'Manage Custom Fields': thehive/administration/custom-fields/manage-a-custom-field.md
           - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
-        - 'Observable Types': thehive/administration/observables-types.md
+        - 'Observable Types':
+          - 'Create an Observable Type': thehive/administration/observable-types/create-an-observable-type.md
+          - 'Delete an Observable Type': thehive/administration/observable-types/delete-an-observable-type.md
         - 'Statuses':
           - 'About Statuses': thehive/administration/status/about-statuses.md
           - 'Create a Status': thehive/administration/status/create-a-status.md
@@ -518,10 +525,23 @@ nav:
           - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/alerts-description/general.md 
           - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
           - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
-          - 'View Similar Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-alerts.md
-          - 'View Similar Cases': thehive/user-guides/analyst-corner/alerts/alerts-description/view-similar-cases.md
+          - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
+          - 'Observables' :
+            - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
+            - 'Add an Observable' : thehive/user-guides/analyst-corner/cases/observables/add-an-observable.md
+            - 'Update the Status of an Observable' : thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status.md
+            - 'Edit Multiple Observables' : thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables.md
+            - 'Exclude an Observable From Similarity Checks' : thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks.md
+            - 'Remove an Observable' : thehive/user-guides/analyst-corner/cases/observables/remove-an-observable.md
+            - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
+            - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
+            - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
+            - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
+            - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
+            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
+            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'View TTPs': thehive/user-guides/analyst-corner/alerts/alerts-description/view-ttps.md
-          - 'View Observables': thehive/user-guides/analyst-corner/alerts/alerts-description/view-observables.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
@@ -535,8 +555,6 @@ nav:
           - 'Search for Cases': 
             - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
             - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
-            - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
-            - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
           - 'Create a Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
           - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
           - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
@@ -544,6 +562,22 @@ nav:
           - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
           - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
           - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
+          - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
+          - 'Observables' :
+            - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
+            - 'Add an Observable' : thehive/user-guides/analyst-corner/cases/observables/add-an-observable.md
+            - 'Update the Status of an Observable' : thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status.md
+            - 'Edit Multiple Observables' : thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables.md
+            - 'Exclude an Observable From Similarity Checks' : thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks.md
+            - 'Remove an Observable' : thehive/user-guides/analyst-corner/cases/observables/remove-an-observable.md
+            - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
+            - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
+            - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
+            - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
+            - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
+            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
+            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
@@ -559,8 +593,6 @@ nav:
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
           - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
-          - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
-          - 'View Observables': thehive/user-guides/analyst-corner/cases/cases-description/observables.md
           - 'View TTPs': thehive/user-guides/analyst-corner/cases/cases-description/ttps.md
           - 'View Attachments': thehive/user-guides/analyst-corner/cases/cases-description/attachments.md
           - 'Case Timelines':

@@ -1,6 +1,6 @@
 # About Tags
 
-Tags allow you to assign labels to [cases](../about-cases.md), [alerts](../../alerts/about-alerts.md), and [observables](../cases-description/observables.md) in TheHive.
+Tags allow you to assign labels to [cases](../about-cases.md), [alerts](../../alerts/about-alerts.md), and [observables](../observables/about-observables.md) in TheHive.
 
 This topic helps you understand how tags work.
 
