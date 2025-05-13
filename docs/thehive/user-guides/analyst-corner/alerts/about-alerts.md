@@ -31,6 +31,8 @@ In TheHive, an alert includes the following elements:
 
 * [TTPs](../cases/ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
+* [Attachments](../cases/attachments/about-attachments.md): Files attached to an alert. When you add an image to an alert description or summary, it’s automatically saved in the [**Attachments** tab of the alert](../cases/attachments/about-attachments.md#alerts). Attachments can also be [added manually](../cases/attachments/add-an-attachment-case-alert.md).
+
 ## Closing alerts
 
 {!includes/access-close-alerts.md!}

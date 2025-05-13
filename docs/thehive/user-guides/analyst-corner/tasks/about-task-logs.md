@@ -36,6 +36,8 @@ Tasks logs can include actions such as:
 
 Task logs can include text using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md) or images.
 
+When you add an image to a task log, it's automatically saved in the [**Attachments** tab of the case](../cases/attachments/about-attachments.md#cases).
+
 ## Permissions
 
 {!includes/access-manage-tasks.md!}
