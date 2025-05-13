@@ -30,7 +30,7 @@ Before proceeding with the upgrade, ensure to back up the following components:
 - Index
 - Files
 
-For detailed instructions on how to perform backups, refer to our [**backup and restore guide**](../operations/backup-restore/overview.md).
+For detailed instructions on how to perform backups, refer to our [**backup and restore guide**](../operations/backup-restore/cold-hot-backup-restore.md).
 
 &nbsp;
 
