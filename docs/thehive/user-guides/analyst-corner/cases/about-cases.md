@@ -34,7 +34,7 @@ In TheHive, a case includes the following elements:
 
 * [Tasks](../tasks/about-tasks.md): Actions assigned to analysts to analyze, assess, and mitigate threats.
 
-* [TTPs](../cases/cases-description/ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
+* [TTPs](./ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
 * [Attachments](./attachments/about-attachments.md): Files attached to a case. When you add an image to a case description, summary, or task log, it’s automatically saved in the [**Attachments** tab of the case](../cases/attachments/about-attachments.md#cases). Attachments can also be [added manually](./attachments/add-an-attachment-case-alert.md).
 
