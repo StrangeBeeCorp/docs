@@ -31,4 +31,5 @@ Similarity checks between cases and alerts are based on [observables](../cases/o
 <h2>Next steps</h2>
 
 * [Merge Cases](merge-cases.md)
-* [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Merge an Alert into a New Case](../alerts/merge-an-alert-into-a-new-case.md)
+* [Merge an Alert into an Existing Case](../alerts/merge-an-alert-into-an-existing-case.md)
