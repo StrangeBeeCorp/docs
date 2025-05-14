@@ -1,0 +1,2 @@
+    !!! info "Licensed vs. unlicensed permissions"
+        Permissions are divided into two categories to help you identify which ones require a paid license. If a profile includes at least one licensed permission, it is marked as license required when [assigning a user to an organization](/thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/).

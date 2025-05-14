@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for updating MISP [taxonomies](about-taxonomies.md) in TheHive.
 
-This is useful when you need to update the MISP taxonomies included with your TheHive installation.
+Use this procedure to update the MISP taxonomies included with your TheHive installation.
 
 {!includes/administrator-access-manage-taxonomies.md!}
 

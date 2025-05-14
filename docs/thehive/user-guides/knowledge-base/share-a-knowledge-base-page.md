@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for sharing a [Knowledge Base](about-knowledge-base.md) page.
 
-This is useful for sharing a case page with your teammates through a messaging tool, for instance.
+Use this procedure to share a case page with your teammates through a messaging tool, for instance.
 
 !!! warning "Available only for case-level pages"
     Sharing is only available for pages at the case level.
