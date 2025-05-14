@@ -42,5 +42,6 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 * [Change an Alert Status](change-status-alert.md)
 * [Close an Alert](close-an-alert.md)
 * [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
 * [Run Responders](../alerts/alerts-description/run-responders.md)

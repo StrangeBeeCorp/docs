@@ -21,12 +21,12 @@ Each status is associated with:
 
 * <!-- md:version 5.5 --> A visibility: The status is either displayed or hidden in TheHive interface.
 
-* A color: The color should help users easily recognize the status.
+* A color: The color helps users easily recognize the status.
 
 ## Behavior
 
 !!! info "Alert status restrictions"
-    You can't switch back to a status linked to the *New* or *In progress* stage if the alert is currently in a status linked to the *Closed* stage. The same restriction applies when trying to switch from *In progress* back to *New*.
+    You can't switch back to a status linked to the *New* or *In progress* stage if the alert is currently in a status linked to the *Closed* stage—unless you have permission to [reopen a closed alert](../../user-guides/analyst-corner/alerts/reopen-an-alert.md). The same restriction applies when trying to switch from *In progress* back to *New*.
 
 * Statuses linked to the *In progress* stage are available at any time for cases, but only [when starting the investigation of an alert](../../user-guides/analyst-corner/alerts/start-investigating-an-alert.md) for alerts.
 

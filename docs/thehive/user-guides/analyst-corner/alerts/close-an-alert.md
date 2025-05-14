@@ -35,3 +35,4 @@ Close an alert if it doesn't require escalation into a new or existing case for 
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
 * [Change an Alert Status](change-status-alert.md)
+* [Reopen an Alert](reopen-an-alert.md)

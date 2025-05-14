@@ -74,6 +74,7 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 <h2>Next steps</h2>
 
 * [Start Investigating an Alert](../start-investigating-an-alert.md)
+* [Ignore Alert Updates from MISP](../ignore-alert-updates-misp.md)
 * [Merge Alerts](../alerts-description/merge-alerts.md)
 * [New Case From Selection](../alerts-description/new-case-from-selection.md)
 * [Preview Alerts](../alerts-description/preview-alerts.md)
@@ -81,3 +82,5 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 * [View Responders](../alerts-description/view-responders.md)
 * [Find Similar Alerts or Cases](../../cases/find-similar-alerts-cases.md)
 * [Add TTPs](../../cases/ttps/add-ttps.md)
+* [Close an Alert](../close-an-alert.md)
+* [Reopen an Alert](../reopen-an-alert.md)

@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for connecting a [MISP server](abo
 
 This is useful if you want to automatically retrieve filtered MISP events as alerts in TheHive or [manually export observables marked as IOCs from cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md).
 
+By default, udpates are automatically synchronized between TheHive and MISP.
+
 You can configure multiple MISP servers in TheHive.
 
 To manually import a MISP event as a case in TheHive, refer to [How to Create a New Case](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event).
