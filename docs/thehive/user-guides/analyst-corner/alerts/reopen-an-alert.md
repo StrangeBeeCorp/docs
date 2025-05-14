@@ -10,11 +10,13 @@ Use this procedure to reopen a closed alert and change its [status](../../../adm
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to reopen.
 
-2. In the alert description, select **Restart** to update the [status](change-status-alert.md) for the alert, complete the analysis, and assign it to someone else if needed.
+2. In the alert description, select **Restart**.
 
     ![Reopen an alert](../../../images/user-guides/analyst-corner/alerts/reopen-an-alert.png)
 
-3. Select **Confirm**.
+3. In the **Change the alert status** drawer, update the [status](change-status-alert.md) for the alert, complete the analysis, and assign it to someone else if needed.
+
+4. Select **Confirm**.
 
 <h2>Next steps</h2>
 

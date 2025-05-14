@@ -2,6 +2,9 @@
 
 This topic provides step-by-step instructions for enriching [alert](about-alerts.md) details in TheHive.
 
+!!! info "Status update"
+    When you enrich a new alert, its status automatically changes from one linked to the *New* stage to one linked to the *In progress* stage. To choose a different status within the *In progress* stage, see [Change an Alert Status](change-status-alert.md).
+
 {!includes/access-update-an-alert.md!}
 
 <h2>Procedure</h2>
