@@ -2,8 +2,6 @@
 
 This topic provides step-by-step instructions for starting the investigation of an [alert](about-alerts.md) in TheHive.
 
-Use this procedure to begin the triage process for an alert.
-
 <h2>Procedure</h2>
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to start investigating.
