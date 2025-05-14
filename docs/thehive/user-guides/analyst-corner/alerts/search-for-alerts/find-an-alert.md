@@ -74,6 +74,7 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 <h2>Next steps</h2>
 
 * [Start Investigating an Alert](../start-investigating-an-alert.md)
+* [Assign an Alert](../assign-an-alert.md)
 * [Ignore Alert Updates from MISP](../ignore-alert-updates-misp.md)
 * [Merge Alerts](../alerts-description/merge-alerts.md)
 * [New Case From Selection](../alerts-description/new-case-from-selection.md)

@@ -23,3 +23,4 @@ Use this procedure to turn off automatic updates for specific alerts.
 
 * [Change an Alert Status](change-status-alert.md)
 * [Start Investigating an Alert](start-investigating-an-alert.md)
+* [Assign an Alert](assign-an-alert.md)

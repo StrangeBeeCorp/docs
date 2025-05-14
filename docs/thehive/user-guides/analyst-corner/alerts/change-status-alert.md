@@ -24,6 +24,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 <h2>Next steps</h2>
 
 * [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Assign an Alert](assign-an-alert.md)
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
 * [Run Responders](../alerts/alerts-description/run-responders.md)
