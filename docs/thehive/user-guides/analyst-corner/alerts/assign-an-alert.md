@@ -18,6 +18,8 @@ This topic provides step-by-step instructions for assigning an [alert](about-ale
 
 2. In the alert description, select an assignee in the left pane.
 
+    ![Assignee alert](../../../images/user-guides/analyst-corner/alerts/alert-assignee.png)
+
 3. Select **Save**.
 
 <h2>Next steps</h2>
