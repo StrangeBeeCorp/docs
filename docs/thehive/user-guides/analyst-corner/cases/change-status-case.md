@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 1. Find [the case](../cases/search-for-cases/find-a-case.md) you want to update.
 
-2. In the case description, move through the **Status** section in the left panel.
+2. In the case description, move through the **Status** section in the left pane.
 
     ![Status](../../../images/user-guides/analyst-corner/cases/change-status-case.png)
 

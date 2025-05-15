@@ -39,6 +39,8 @@ In TheHive, an alert includes the following elements:
 
 Alerts can be [closed](../alerts/close-an-alert.md) when they are not worth escalating into a new case or an existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 
+If needed, a closed alert can be [reopened](reopen-an-alert.md).
+
 ### Custom fields completion
 
 Alerts can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
@@ -50,6 +52,12 @@ Alerts can't be closed if any required [custom fields](../../../administration/c
 <h2>Next steps</h2>
 
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
+* [Enrich Alert Details](./enrich-alert-details.md)
+* [Assign an Alert](./assign-an-alert.md)
+* [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
+* [Change an Alert Status](change-status-alert.md)
 * [New Case from Selection](../alerts/alerts-description/new-case-from-selection.md)
 * [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
 * [Close an Alert](close-an-alert.md)
+* [Reopen an Alert](reopen-an-alert.md)

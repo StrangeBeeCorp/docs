@@ -27,7 +27,7 @@ Add **Custom fields** (Refer to [`Add custom fields`](../../cases/custom-fields/
 
 <img src="/thehive/images/user-guides/analyst-corner/alerts/action-button.png" alt="actions button" width="500" height="500"/>
 
-You can click the [`Actions Button` ](../alerts-description/actions.md) to start, close, track/ignore new updates, unlink the alerts or to [`Run Responders`](../alerts-description/run-responders.md). 
+You can click the [`Actions Button`](../start-investigating-an-alert.md) to start, close, track/ignore new updates, unlink the alerts or to [`Run Responders`](../alerts-description/run-responders.md). 
 
 
 
