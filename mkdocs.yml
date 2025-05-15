@@ -269,6 +269,8 @@ plugins:
             'thehive/user-guides/organization/attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
             'thehive/user-guides/organization/configure-organization/manage-attachments/about-attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
             'thehive/user-guides/organization/configure-organization/manage-attachments/update-attachments.md': 'thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
 
 extra:
   generator: false
