@@ -217,7 +217,7 @@ This topic lists all available objects for functions in TheHive.
 - `cortex.createAction({ "responderId": "id", "objectId": "inputId", "objectType": "type"})`: Launches a Cortex responder action with `responderId` as the full ID of the responder to run, `objectId` as of ID of the object to act on, and `objectType` as its type, such as case, alert, or task.
 
     !!! tip "Responder ID"
-        To get the responder id, use the [`GET /api/v1/connector/cortex/responder/` API endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders).
+        To get the responder ID, use the [`GET /api/v1/connector/cortex/responder/` API endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders).
 
     !!! example "Example"
         ```json
