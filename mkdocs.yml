@@ -122,8 +122,8 @@ plugins:
             'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
             'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
-            'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md'
-            'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md'
+            'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
+            'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md'
@@ -284,6 +284,8 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case.md'
             'thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case.md'
             'thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
 
 extra:
   generator: false
@@ -570,13 +572,15 @@ nav:
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
           - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
-          - 'Actions on Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md
+          - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Create a Case from an Alert': thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md
           - 'Add an Alert to an Existing Case': thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md
           - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
-          - 'View Alert Details': thehive/user-guides/analyst-corner/alerts/alerts-description/general.md 
+          - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
+          - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
+          - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
           - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
           - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
@@ -609,11 +613,12 @@ nav:
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
-          - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
+          - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
+          - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
           - 'About Cases': thehive/user-guides/analyst-corner/cases/about-cases.md
           - 'Search for Cases': 
