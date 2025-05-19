@@ -5,7 +5,7 @@
 This topic provides step-by-step instructions for configuring the Microsoft Teams [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Microsoft Teams notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
+    The Microsoft Teams notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  

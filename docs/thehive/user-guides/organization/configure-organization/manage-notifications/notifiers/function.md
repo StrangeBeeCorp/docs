@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for configuring the Function [noti
 To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
 
 !!! note "Notifier availability"
-    The Function notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers: 
+    The Function notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *FilteredEvent*  
     - *ActionFinished*  
     - *CaseClosed*  

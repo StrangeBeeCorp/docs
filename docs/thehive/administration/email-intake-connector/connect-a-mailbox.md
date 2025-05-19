@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for connecting a [mailbox](about-email-intake-connectors.md) in TheHive.
 
-This is useful when your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
+Use this procedure if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
 
 {!includes/administrator-access-manage-email-intake-connectors.md!}
 
