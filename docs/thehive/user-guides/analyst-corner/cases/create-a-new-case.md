@@ -142,25 +142,9 @@ Several options are offered to create a case in TheHive:
 
 4. Select **Confirm**.
 
-## Create a case from an [alert](../alerts/about-alerts.md)
+## Create a case from an alert
 
-{!includes/access-create-case-from-alert.md!}
-
-!!! info "Data transfer"
-    When creating a case from an alert, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case. The alert is also linked to the case.
-
-1. [Locate the alert you want to convert into a case](../alerts/search-for-alerts/find-an-alert.md).
-
-2. In the alert description, select **Create case from alert**.
-
-    ![Create case from alert](/thehive/images/user-guides/analyst-corner/cases/create-case-from-alert.png)
-
-3. In the **Create case** drawer, select either **Empty case** or **From template**.
-
-4. Follow the instructions provided in the related sections:
-
-    * [Create an empty case](#create-an-empty-case)
-    * [Create a case from a template](#create-a-case-from-a-template)
+Refer to the [Create a Case from an Alert](../alerts/create-a-case-from-an-alert.md) topic for instructions.
 
 ## Create a case from a detection tool
 
