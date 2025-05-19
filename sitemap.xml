@@ -93,6 +93,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-assign-alerts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-authentication/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -134,6 +138,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/access-knowledge-base/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-alert-updates-misp/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -198,6 +206,14 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/access-notifications/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-reopen-alerts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-start-alerts/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -266,6 +282,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-manage-user-accounts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/alerts-view-go-to/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1189,6 +1209,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/assign-an-alert/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/change-status-alert/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -1205,15 +1229,19 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/reopen-an-alert/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/unlink-alert-case/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/actions/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/general/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
