@@ -34,7 +34,7 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 * *AlertAssigned*: Triggered when an alert is assigned to a user
 * *AlertClosed*: Triggered when [an alert is closed](../../../analyst-corner/alerts/close-an-alert.md)
 * *AlertCreated*: Triggered when [a new alert is created](../../../analyst-corner/alerts/about-alerts.md#sources)
-* *AlertImported*: Triggered when an alert is imported, meaning [a case is created from an alert](../../../analyst-corner/cases/create-a-new-case.md#create-a-case-from-an-alert) or an alert is merged into an existing case.
+* *AlertImported*: Triggered when an alert is imported—either by [merging it into a new case](../../../analyst-corner/alerts/create-a-case-from-an-alert.md) or [into an existing one](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md).
 
 #### Triggers on observables
 
