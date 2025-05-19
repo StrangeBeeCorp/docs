@@ -189,6 +189,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-merge-alerts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-merge-cases/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -198,6 +202,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/access-ttps/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/access-unlink-alert-from-alert/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -426,6 +434,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/licensed-unlicensed-permissions/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/linked-alerts-tab-go-to/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1181,6 +1193,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/change-status-alert/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -1189,7 +1205,15 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/enrich-alert-details/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/unlink-alert-case/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1198,14 +1222,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/general/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/merge-alerts/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/new-case-from-selection/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1230,10 +1246,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/add-a-link-to-a-case/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1273,10 +1285,6 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/remove-a-link-from-a-case/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/restore-visibility-case/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -1293,7 +1301,7 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/view-links-in-a-case/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1314,6 +1322,18 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
