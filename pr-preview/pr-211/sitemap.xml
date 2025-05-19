@@ -181,6 +181,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/access-manage-user-accounts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/access-manage-visibility-cases/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -237,6 +241,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-profiles/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-manage-statuses/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -246,6 +254,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-manage-ttps/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/administrator-access-manage-user-accounts/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -317,6 +329,10 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/create-a-user-account/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/custom-fields-formats/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -353,11 +369,19 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/export-list-user-accounts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/filters-sorts-views/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/filters/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/find-a-user-account/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -393,11 +417,27 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/license-organizations/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/license-user-accounts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/licensed-unlicensed-permissions/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/linked-elements-section/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/local-global-endpoints/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/lock-multiple-user-accounts-bulk/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -422,6 +462,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/organization-view-go-to/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/organizations-view-go-to/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -529,6 +573,18 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/user-symbol-go-to/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/users-tab-go-to/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/users-view-go-to/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/views-filters-sorts/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -621,10 +677,6 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/administration/accounts/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/administration/add-a-global-endpoint/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -646,10 +698,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/license/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/administration/profiles/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -761,7 +809,7 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/administration/organizations/add-users-to-an-organization/</loc>
+         <loc>https://docs.strangebee.com/thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -774,6 +822,22 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/lock-an-organization/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/profiles/about-profiles/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/profiles/add-remove-permissions-from-a-profile/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/profiles/create-a-profile/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/profiles/delete-a-profile/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -894,10 +958,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/how-to/splunk-integration/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/how-to/user-management/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1045,11 +1105,31 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/forgot-password/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/change-account-theme/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/log-out/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/manage-password/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/manage-user-settings/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/switch-organizations/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/thehive-flavored-markdown/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/view-permissions/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1094,10 +1174,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/sign-in-as-an-admin/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/theme/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
@@ -1513,10 +1589,6 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/accounts/</loc>
-         <lastmod>2025-05-19</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/ui-configuration/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
@@ -1757,15 +1829,27 @@
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-users/add-delete-user/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-users/lock/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-users/preview/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/</loc>
+         <lastmod>2025-05-19</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/</loc>
          <lastmod>2025-05-19</lastmod>
     </url>
 </urlset>
