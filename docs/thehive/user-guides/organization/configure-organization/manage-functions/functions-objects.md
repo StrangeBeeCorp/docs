@@ -9,8 +9,8 @@ This topic lists all available objects for functions in TheHive.
 
 ## User
 
-- `userId: string` : The login identifier of the user executing the function.
-- `userName: string`: The display name of the user executing the function.
+- `userId: string` : Returns the login identifier of the user executing the function.
+- `userName: string`: Returns the display name of the user executing the function.
 
 ## HTTP request
 
