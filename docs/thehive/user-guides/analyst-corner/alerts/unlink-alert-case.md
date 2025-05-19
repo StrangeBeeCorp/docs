@@ -4,6 +4,9 @@ This topic provides step-by-step instructions for unlinking an [alert](about-ale
 
 An alert is automatically linked to a case when you [create a case from an alert](create-a-case-from-an-alert.md) or [add an alert to an existing case](add-an-alert-to-an-existing-case.md).
 
+!!! note "Status update"
+    When you unlink an alert from a case, its [status](../../../administration/status/about-statuses.md) automatically changes to one associated with the *New* stage, regardless of its previous status.
+
 !!! info "Data transfer"
     When unlinking an alert and a case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, remains in the case.
 
@@ -22,6 +25,8 @@ An alert is automatically linked to a case when you [create a case from an alert
 5. Select **OK**.
 
 ## From an alert
+
+{!includes/access-unlink-alert-from-alert.md!}
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to unlink.
 
