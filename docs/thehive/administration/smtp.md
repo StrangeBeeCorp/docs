@@ -29,4 +29,4 @@ Define additional security parameters, if required:
 
 
 ## I forgot my password
-Learn how to request a magic link with the [I forgot my password](./../user-guides/forgot-password.md) button.
+Learn how to request a magic link with the [I forgot my password](../user-guides/manage-password.md#reset-your-password) button.

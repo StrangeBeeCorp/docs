@@ -4,7 +4,7 @@
 
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) visibility for cases and alerts in TheHive.
 
-This is useful if you want to hide [TheHive’s predefined statuses](about-statuses.md#predefined-statuses), so users only use the custom statuses you have created. 
+Use this procedure if you want to hide [TheHive’s predefined statuses](about-statuses.md#predefined-statuses), so users only use the custom statuses you have created. 
 
 !!! note "No impact on API"
     Changing the visibility of a status doesn't affect [the API](https://docs.strangebee.com/thehive/api-docs/). All statuses remain available through the API.

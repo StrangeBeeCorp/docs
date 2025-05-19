@@ -25,4 +25,4 @@ Locking an organization is useful when you want to prevent users from logging in
 
 * [Create an Organization](create-an-organization.md)
 * [Link an Organization](link-an-organization.md)
-* [Add Users to an Organization](add-users-to-an-organization.md)
+* [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
