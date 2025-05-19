@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for manually triggering email fetch in a [mailbox](about-email-intake-connectors.md) in TheHive.
 
-This is useful if you want to manually fetch emails more quickly than the configured refresh interval.
+Use this procedure to manually fetch emails before the next scheduled refresh.
 
 {!includes/administrator-access-manage-email-intake-connectors.md!}
 

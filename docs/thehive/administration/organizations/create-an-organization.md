@@ -2,8 +2,7 @@
 
 This topic provides step-by-step instructions for creating an [organization](about-organizations.md) in TheHive.
 
-!!! info "License"
-    The number of organizations you can create depends on your TheHive license.
+{!includes/license-organizations.md!}
 
 {!includes/administrator-access-manage-organizations.md!}
 
@@ -57,6 +56,6 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
 <h2>Next steps</h2>
 
-* [Add Users to an Organization](add-users-to-an-organization.md)
+* [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)
