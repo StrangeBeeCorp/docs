@@ -1,4 +1,4 @@
-# API v0 deprecation notice
+# API v0 Deprecation Notice
 
 This topic explains the deprecation of API v0 in TheHive and why you should upgrade to API v1.
 

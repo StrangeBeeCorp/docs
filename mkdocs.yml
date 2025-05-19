@@ -377,6 +377,9 @@ nav:
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring.md
+      - 'API v0 Depreciation':
+        - 'API v0 Depreciation Notice': thehive/operations/end-API-v0/API-v0-depreciation-notice.md
+        - 'Upgrade from API v0 to API v1': thehive/operations/end-API-v0/upgrade-from-API-v0-to-API-v1.md
     - 'Administration Guides':
       - 'TheHive - First Start': thehive/administration/first-start.md
       - 'Organizations':
