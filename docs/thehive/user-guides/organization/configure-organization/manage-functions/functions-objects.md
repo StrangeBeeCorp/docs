@@ -7,12 +7,12 @@ This topic lists all available objects for functions in TheHive.
 
     For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/).
 
-### User
+## User
 
 - `userId: string` : The login identifier of the user executing the function.
 - `userName: string`: The display name of the user executing the function.
 
-### HTTP request
+## HTTP request
 
 - `request.queryString() : Record<string, string[]>`: Returns a dictionary of query string parameters formatted as a key-value map.
 - `request.getQueryString(key: string): string | null`: Retrieves the value associated with a specific query string key. Returns `null` if the key does not exist.
@@ -21,11 +21,11 @@ This topic lists all available objects for functions in TheHive.
 - `request.contentType: string`: Retrieves the `Content-Type` header value from the request.
 - `request.remoteAddress()`: Returns the IP address of the client making the request.
 
-### Query
+## Query
 
 - `query.execute(query: any[])`: Executes a database query.
 
-### Alert
+## Alert
 
 - `alert.create(input: InputCreateAlert): OutputAlert`: Creates a new alert.
 - `alert.get(id: string): OutputAlert`: Retrieves an alert by its ID.
@@ -41,7 +41,7 @@ This topic lists all available objects for functions in TheHive.
 - `alert.bulkUpdate(input: {ids: string[]} & InputUpdateAlert): void`: Updates multiple alerts at once.
 - `alert.find(query: any[]): OutputAlert[]`: Searches for alerts matching the given query.
 
-### Case
+## Case
 
 !!! info "Caze"
     Since `case` is a reserved keyword is Java, the API uses `caze`.
@@ -58,7 +58,7 @@ This topic lists all available objects for functions in TheHive.
 - `caze.bulkApplyCaseTemplate(update: {ids: string[]} & InputApplyCaseTemplate): void`: Applies a case template to multiple cases.
 - `caze.find(query: any[]): OutputCase[]`: Searches for cases based on a query.
 
-### Tasks
+## Tasks
 
 - `task.get(id: string): OutputTask`: Retrieves a task by its ID.
 - `task.update(idOrName: string, update: Partial<OutputTask>): void`: Updates a task.
@@ -70,7 +70,7 @@ This topic lists all available objects for functions in TheHive.
 - `task.createInCase(caseId: string, task: InputTask): OutputTask`: Creates a new task within a case.
 - `task.bulkUpdate(update: {ids: string[]} & Partial<OutputTask>): void`: Updates multiple tasks at once.
 
-### Log
+## Log
 
 - `log.create(taskId: string, log: InputCreateLog): OutputLog`: Creates a log entry for a task.
 - `log.update(logId: string, update: InputUpdateLog): void`: Updates a log entry.
@@ -78,7 +78,7 @@ This topic lists all available objects for functions in TheHive.
 - `log.deleteAttachment(logId: string, attachmentId: string): void`: Removes an attachment from a log entry.
 - `log.find(query: any[]): OutputLog[]`: Searches for logs matching the given query.
 
-### Observable
+## Observable
 
 - `observable.createInCase(caseId: string, observable: InputObservable): OutputObservable`: Creates an observable within a case.
 - `observable.createInAlert(alertId: string, observable: InputObservable): OutputObservable)`: Creates an observable within an alert.
@@ -89,14 +89,14 @@ This topic lists all available objects for functions in TheHive.
 - `observable.find(query: any[]): OutputObservable[]`: Searches for observables.
 - `observable.updateAllTypes(fromType: string, toType: String): void`: Changes the type of all observables from one type to another.
 
-### Observable type
+## Observable type
 
 - `observableType.get(id: string): OutputObservableType`: Retrieves an observable type by its ID.
 - `observableType.delete(id: string): void`: Deletes an observable type by its ID.
 - `observableType.create(ot: InputObservableType)`: Creates a new observable type.
 - `observableType.find(query: any[]): OutputObservableType[]`: Searches for observable types matching the given query.
 
-### CustomField
+## CustomField
 
 - `customField.list(): OutputCustomField[]`: Returns a list of all custom fields.
 - `customField.update(idOrName: string, update: Partial<OutputCustomField>): void`: Updates a custom field by its ID or name.
@@ -104,7 +104,7 @@ This topic lists all available objects for functions in TheHive.
 - `customField.create(cf: InputCustomField): OutputCustomField`: Creates a new custom field.
 - `customField.find(query: any[]): OutputCustomField[]`: Searches for custom fields matching the query criteria.
 
-### Case template
+## Case template
 
 - `caseTemplate.get(idOrName: string): OutputCaseTemplate`: Retrieves a case template by its ID or name.
 - `caseTemplate.update(idOrName: string, update: Partial<InputCaseTemplate>): void`: Updates a case template.
@@ -112,7 +112,7 @@ This topic lists all available objects for functions in TheHive.
 - `caseTemplate.create(template: InputCaseTemplate): OutputCaseTemplate`: Creates a new case template.
 - `caseTemplate.find(query: any[]): OutputCaseTemplate[]`: Searches for case templates matching the query.
 
-### Procedure
+## Procedure
 
 - `procedure.bulkCreateInCase(caseId: string, input: {procedures: InputProcedure[]}): OutputProcedure[]`: Creates multiple procedures within a case.
 - `procedure.bulkCreateInAlert(alertId: string, input: {procedures: InputProcedure[]}): OutputProcedure[]`: Creates multiple procedures within an alert.
@@ -122,21 +122,21 @@ This topic lists all available objects for functions in TheHive.
 - `procedure.delete(id: string): void`: Deletes a procedure.
 - `procedure.find(query: any[])`: Searches for procedures based on the query.
 
-### Case status
+## Case status
 
 - `caseStatus.create(input: InputCreateCaseStatus): OutputCaseStatus`: Creates a new case status.
 - `caseStatus.update(idOrName: string, update: InputUpdateCaseStatus): void`: Updates a case status.
 - `caseStatus.delete(idOrName: string): void`: Deletes a case status.
 - `caseStatus.find(query: any[]): OutputCaseStatus[]`: Searches for case statuses.
 
-### Alert status
+## Alert status
 
 - `alertStatus.create(input: InputCreateAlertStatus): OutputAlerttatus`: Creates a new alert status.
 - `alertStatus.update(idOrName: string, update: InputUpdateAlertStatus): void`: Updates an alert status.
 - `alertStatus.delete(idOrName: string): void`: Deletes an alert status.
 - `alertStatus.find(query: any[]): OutputAlerttatus[]`: Searches for alert statuses.
 
-### Comment
+## Comment
 
 - `comment.createInCase(caseId: string, comment: InputCreateComment): OutputComment`: Adds a comment to a case.
 - `comment.createInAlert(alertId:: string, comment: InputCreateComment): OutputComment`: Adds a comment to an alert.
@@ -144,7 +144,7 @@ This topic lists all available objects for functions in TheHive.
 - `comment.delete(id: string): void`: Deletes a comment.
 - `comment.find(query: any[]): OutputComment[]`: Searches for comments.
 
-### Share
+## Share
 
 - `share.setCaseShares(caseId: string, input: InputCreateShares): OutputShare[]`: Sets sharing permissions for a case.
 - `share.removeSharesFromCase(caseId: string, input: InputRemoveShares): void`: Revokes sharing permissions from a case.
@@ -160,7 +160,7 @@ This topic lists all available objects for functions in TheHive.
 - `share.shareObservable(observableId: string, input: InputCreateShare): OutputShare`: Shares an observable with specified permissions.
 - `share.updateShare(shareId: string, update: InputUpdateShare): void`: Updates the sharing settings of a shared item.
 
-### Organization
+## Organization
 
 - `organisation.get(orgIdOrName: string): OutputOrganisation`: Retrieves details of an organization by ID or name.
 - `organisation.create(org: InputCreateOrganisation): OutputOrganisation`: Creates a new organization.
@@ -172,7 +172,7 @@ This topic lists all available objects for functions in TheHive.
 - `organisation.unlink(orgA: string, orgB: string): void`: Removes the link between two organizations.
 - `organisation.find(query: any[]): OutputOrganisation[]`: Searches for organizations based on query criteria.
 
-### Profile
+## Profile
 
 - `profile.get(idOrName: string): OutputProfile`: Retrieves a profile by ID or name.
 - `profile.update(profileIdOrName: string, update: InputUpdateProfile): void`: Updates a user profile.
@@ -180,19 +180,47 @@ This topic lists all available objects for functions in TheHive.
 - `profile.create(profile: InputCreateProfile): OutputProfile`: Creates a new user profile.
 - `profile.find(query: any[]): OutputProfile[]`: Searches for user profiles based on query criteria.
 
-### Custom event
+## Custom event
 
 - `customEvent.createInCase(caseId: string, input: InputCreateCustomEvent): OutputCustomEvent`: Creates a custom event within a case.
 - `customEvent.update(id: string, update: InputUpdateCustomEvent): void`: Updates an existing custom event.
 - `customEvent.delete(id: string): void`: Deletes a custom event.
 - `customEvent.find(query: any[]): OutputCustomEvent[]`: Searches for custom events based on query parameters.
 
-### Function
+## Function
 
 - `function.create(function: InputCreateFunction): OutputFunction`: Creates a new function.
 - `function.update(functionIdOrName: string, update: InputUpdateFunction): void`: Updates an existing function.
 - `function.delete(functionIdOrName: string): void`: Deletes a function.
 - `function.find(query: any[]): OutputFunction`: Searches for functions based on query parameters.
+
+## Cortex
+
+<!-- md:version 5.5.2 -->
+
+### Execute an analyzer
+
+`cortex.createJob({ "analyzerId": "analyzerFullName", "artifactId": observableId, "cortexId": "cortexConnectorName"})`:  Launches a Cortex analyzer job with `analyzerId` as the full name of the analyzer to run (for example, *EmlParser_2_1*), `artifactId` as the ID of the observable to analyze, and `cortexId` as the name of the Cortex connector to use.
+
+!!! example ""
+    context.cortex.createJob(
+        {
+            "analyzerId": "EmlParser_2_1",
+            "artifactId": ~7577792576,
+            "cortexId": "Cluster 1"
+        });
+
+### Execute a responder
+
+`cortex.createAction({ "responderId": "id", "objectId": inputId, "objectType": "type"})`: Launches a Cortex responder action with `responderId` as the full ID of the responder to run (for example, *cfbe6c77cc30dea5efe680cc622e3bd6*), `objectId` as of ID of the object to act on, and `objectType` as its type, such as case, alert, or task.
+
+!!! example ""
+    context.cortex.createAction(
+        {
+            "responderId": "cfbe6c77cc30dea5efe680cc622e3bd6",
+            "objectId": ~8683597912,
+            "objectType": "alert"
+        });
 
 <h2>Next steps</h2>
 
