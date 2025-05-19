@@ -202,25 +202,29 @@ This topic lists all available objects for functions in TheHive.
 
 `cortex.createJob({ "analyzerId": "analyzerFullName", "artifactId": observableId, "cortexId": "cortexConnectorName"})`:  Launches a Cortex analyzer job with `analyzerId` as the full name of the analyzer to run (for example, *EmlParser_2_1*), `artifactId` as the ID of the observable to analyze, and `cortexId` as the name of the Cortex connector to use.
 
-!!! example ""
+!!! example "Example"
+    ```json
     context.cortex.createJob(
         {
             "analyzerId": "EmlParser_2_1",
             "artifactId": ~7577792576,
             "cortexId": "Cluster 1"
         });
+    ```
 
 ### Execute a responder
 
 `cortex.createAction({ "responderId": "id", "objectId": inputId, "objectType": "type"})`: Launches a Cortex responder action with `responderId` as the full ID of the responder to run (for example, *cfbe6c77cc30dea5efe680cc622e3bd6*), `objectId` as of ID of the object to act on, and `objectType` as its type, such as case, alert, or task.
 
-!!! example ""
+!!! example "Example"
+    ```json
     context.cortex.createAction(
         {
             "responderId": "cfbe6c77cc30dea5efe680cc622e3bd6",
             "objectId": ~8683597912,
             "objectType": "alert"
         });
+    ```
 
 <h2>Next steps</h2>
 
