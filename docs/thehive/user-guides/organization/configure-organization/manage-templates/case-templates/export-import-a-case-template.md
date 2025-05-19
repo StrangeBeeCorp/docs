@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for exporting and importing a [cas
 
 ## Export a case template
 
-This is useful if you want to share a case template with another organization or TheHive instance.
+Use this procedure to share a case template with another organization or TheHive instance.
 
 1. {!includes/organization-view-go-to.md!}
 
@@ -29,7 +29,7 @@ This is useful if you want to share a case template with another organization or
 
 ## Import a case template
 
-This is useful if you want to use a case template from another organization or TheHive instance.
+Use this procedure to use a case template from another organization or TheHive instance.
 
 1. {!includes/organization-view-go-to.md!}
 
