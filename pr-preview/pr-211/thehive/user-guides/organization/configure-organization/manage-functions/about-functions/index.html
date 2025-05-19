@@ -13273,16 +13273,16 @@
 <p>Below are the different types of functions supported in TheHive:</p>
 <ul>
 <li>
-<p><strong>API</strong>: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the <a href="../functions-objects/">Functions Objects</a> topic. To execute the function, you must first <a href="../revoke-a-function/">revoke it via an HTTP call</a>.</p>
+<p><strong>API</strong>: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the <a href="../functions-objects/">Functions Objects</a> topic. To execute the function, you must <a href="../revoke-a-function/">revoke it via an HTTP call</a>.</p>
 </li>
 <li>
 <p><strong>Notification</strong>: <a href="../../manage-notifications/notifiers/function/">These functions act as notifiers</a> and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.</p>
 </li>
 <li>
-<p><strong>Action: Case</strong>: Users manually trigger these functions within the context of a specific case. To execute the function, they must <a href="../run-a-function-case-alert/">run it manually</a>.</p>
+<p><strong>Action: Case</strong>: Trigger these functions manually within the context of a specific case. To execute the function, you must <a href="../run-a-function-case-alert/">run it manually</a>.</p>
 </li>
 <li>
-<p><strong>Action: Alert</strong>: Users manually trigger these functions within the context of a specific alert. To execute the function, they must <a href="../run-a-function-case-alert/">run it manually</a>.</p>
+<p><strong>Action: Alert</strong>: Trigger these functions manually within the context of a specific alert. To execute the function, you must <a href="../run-a-function-case-alert/">run it manually</a>.</p>
 </li>
 <li>
 <p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> <strong>Feeder</strong>: A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, <a href="../../manage-feeders/create-a-feeder/">create an alert feeder with a function</a>. The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.</p>
