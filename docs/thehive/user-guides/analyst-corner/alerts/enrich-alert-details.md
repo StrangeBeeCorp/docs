@@ -47,5 +47,6 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 * [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
 * [Assign an Alert](assign-an-alert.md)
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
-* [Merge Alerts](../alerts/alerts-description/merge-alerts.md)
+* [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
+* [Create a Case from an Alert](create-a-case-from-an-alert.md)
 * [Run Responders](../alerts/alerts-description/run-responders.md)
