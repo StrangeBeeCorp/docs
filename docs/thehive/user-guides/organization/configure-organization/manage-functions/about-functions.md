@@ -71,13 +71,13 @@ The function type defines the scope in which you can execute the function.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions Objects](functions-objects.md) topic. To execute the function, you must first [revoke it via an HTTP call](revoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions Objects](functions-objects.md) topic. To execute the function, you must [revoke it via an HTTP call](revoke-a-function.md).
 
 * **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 
-* **Action: Case**: Users manually trigger these functions within the context of a specific case. To execute the function, they must [run it manually](run-a-function-case-alert.md).
+* **Action: Case**: Trigger these functions manually within the context of a specific case. To execute the function, you must [run it manually](run-a-function-case-alert.md).
 
-* **Action: Alert**: Users manually trigger these functions within the context of a specific alert. To execute the function, they must [run it manually](run-a-function-case-alert.md).
+* **Action: Alert**: Trigger these functions manually within the context of a specific alert. To execute the function, you must [run it manually](run-a-function-case-alert.md).
 
 * <!-- md:version 5.5 --> **Feeder**: A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
 
