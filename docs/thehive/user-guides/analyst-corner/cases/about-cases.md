@@ -60,7 +60,7 @@ Merging also impacts:
 {!includes/access-manage-case-links.md!}
 
 !!! info "Alerts as linked elements"
-    You can't add an alert to the linked elements. To view alerts linked to a case, select the dedicated **Linked alerts** tab.
+    You can't add an alert to the linked elements. An alert link is automatically added to a case when you [create a case from an alert](../alerts/create-a-case-from-an-alert.md) or [add an alert to an existing case](../alerts/add-an-alert-to-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
 
 Cases can be linked to other TheHive cases or external resources. These links enhance traceability and help visualize relationships between related incidents.
 
@@ -78,7 +78,7 @@ Case links aren't included in case exports, reports, or dashboards.
 
 ### Actions
 
-You can [add](add-a-link-to-a-case.md) or [remove](remove-a-link-from-a-case.md) a link in a case, but you can’t modify it after it’s added.
+You can [add](./case-links/add-a-link-to-a-case.md) or [remove](./case-links/remove-a-link-from-a-case.md) a link in a case, but you can’t modify it after it’s added.
 
 ### Merging cases with links
 
@@ -116,7 +116,7 @@ The case assignee and the user performing the action always have access and can'
 
 ### Expected behavior
 
-When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in [alerts linked to the restricted cases](../alerts/alerts-description/new-case-from-selection.md) with a :fontawesome-solid-lock: symbol. 
+When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in alerts linked to the restricted cases with a :fontawesome-solid-lock: symbol. 
 
 All related elements, including observables, tasks, and attachments, are also hidden. 
 
@@ -151,7 +151,7 @@ The list of authorized users includes all users who had access to any of the res
 * [Merge Cases](../cases/merge-cases.md)
 * [Restrict Case Visibility](restrict-visibility-case.md)
 * [Restore Case Visibility](restore-visibility-case.md)
-* [Add a Link to a Case](add-a-link-to-a-case.md)
-* [Remove a Link from a Case](remove-a-link-from-a-case.md)
-* [View Links in a Case](view-links-in-a-case.md)
+* [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
+* [Remove a Link from a Case](./case-links/remove-a-link-from-a-case.md)
+* [View Links in a Case](./case-links/view-links-in-a-case.md)
 * [Close a Case](close-a-case.md)
