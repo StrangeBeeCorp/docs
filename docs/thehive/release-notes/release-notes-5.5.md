@@ -28,7 +28,7 @@ Fixed incorrect HTTP response code returned when a merge operation failed due to
 
 ### Improvements
 
-Analyzers and responders can now be triggered directly from a TheHive function, enabling greater automation capabilities.
+Analyzers and responders can now be triggered directly [from a TheHive function](../user-guides/organization/configure-organization/manage-functions/functions-objects.md#cortex), enabling greater automation capabilities.
 
 ## 5.5.1 - April 30, 2025
 
