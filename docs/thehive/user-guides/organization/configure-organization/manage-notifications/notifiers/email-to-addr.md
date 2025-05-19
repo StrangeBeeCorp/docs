@@ -3,7 +3,7 @@
 This topic provides step-by-step instructions for configuring the EmailerToAddr [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The EmailerToAddr notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers: 
+    The EmailerToAddr notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *AnyEvent*  
     - *FilteredEvent*  
     - *CaseClosed*  
