@@ -1,8 +1,3 @@
----
-hide:
-  - toc
----
-
 # TheHive-Flavored Markdown Syntax Reference
 
 This topic provides a reference for TheHive-flavored Markdown syntax.
@@ -10,19 +5,6 @@ This topic provides a reference for TheHive-flavored Markdown syntax.
 Markdown is a lightweight markup language designed to format plain text using simple syntax. It allows users to create structured documents, including headings, lists, links, and code blocks, without relying on complex formatting tools.
 
 TheHive uses a customized version of Markdown, known as TheHive-flavored Markdown. This tailored syntax extends the standard Markdown features to support additional formatting options and functionalities specific to TheHive.
-
-## Table of contents
-
-1. [`Headings`](#headings)
-2. [`Horizontal rules`](#horizontal-rules)
-3. [`Emphasis`](#emphasis)
-4. [`Admonition blocks`](#admonition-blocks)
-5. [`Blockquotes`](#blockquotes)
-6. [`Lists`](#lists)
-7. [`Code`](#code)
-8. [`Tables`](#tables)
-9. [`Links`](#links)
-10. [`Images`](#images)
 
 ## Headings
 
@@ -37,12 +19,7 @@ TheHive uses a customized version of Markdown, known as TheHive-flavored Markdow
 
 ### Rendering
 
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
+![Rendering headings Markdown](../images/user-guides/rendering-headings-markdown.png)
 
 ## Horizontal rules
 
