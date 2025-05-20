@@ -12,6 +12,8 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs t
 
 2. In the observable details, select :fontawesome-solid-ellipsis:.
 
+    Image
+
 3. Select **Responders**.
 
 4. In the **Run actions on current observable** drawer, select the responders you want to run.

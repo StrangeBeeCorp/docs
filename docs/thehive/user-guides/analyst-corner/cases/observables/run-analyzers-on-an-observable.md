@@ -10,6 +10,8 @@ Analyzers enrich observables with detailed, contextual intelligence. The type of
 
 2. In the observable details, select :fontawesome-solid-ellipsis:.
 
+    Image
+
 3. Select **Run analyzers**.
 
 4. In the **Analyzer** drawer, select the analyzers you want to run.
