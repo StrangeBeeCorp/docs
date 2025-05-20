@@ -1,6 +1,6 @@
 # Date Field Definitions for Alerts and Cases
 
-This topic defines each date field used in alerts and cases.
+This topic defines each date field used in alerts and cases in TheHive.
 
 ## Date field definitions for alerts
 
