@@ -31,4 +31,3 @@ This topic defines each date field used in alerts and cases.
 * [Key Performance Indicators](./key-performance-indicators/key-performance-indicators.md)
 * [Measure Case Performance](./key-performance-indicators/measure-case-management-performance.md)
 * [Measure Alert Performance](./key-performance-indicators/measure-alert-management-performance.md)
-
