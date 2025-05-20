@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # TheHive-Flavored Markdown Syntax Reference
 
 This topic provides a reference for TheHive-flavored Markdown syntax.
