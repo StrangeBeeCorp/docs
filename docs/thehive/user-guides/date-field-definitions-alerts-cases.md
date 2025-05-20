@@ -24,7 +24,7 @@ This topic defines each date field used in alerts and cases in TheHive.
 | `newDate`       | The first time the case entered a status linked to the *New* stage. |
 | <code style="white-space: nowrap;">inProgressDate</code>       | The first time the case entered a status linked to the *In progress* stage.   |
 | `closedDate`       | The first time the case entered a status linked to the *Closed* stage because the investigation was completed. |
-| `endDate`       | The time the event actually ended. By default, this corresponds to the last time the case entered a status linked to the *Closed* stage. You can modify this value via the API to reflect the actual end time of the incident. We may add UI support for editing this field in a future version. |
+| `endDate`       | The time the event actually ended. By default, this corresponds to the last time the case entered a status linked to the *Closed* stage. You can modify this value via the API to reflect the actual end time of the incident. |
 
 <h2>Next steps</h2>
 
