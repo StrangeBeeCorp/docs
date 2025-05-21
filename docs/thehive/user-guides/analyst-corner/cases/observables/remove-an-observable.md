@@ -8,7 +8,9 @@ This topic provides step-by-step instructions for removing an [observable](about
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to remove.
 
-2. In the observable details, select :fontawesome-solid-ellipsis: at the top right of the page.
+2. In the observable, select :fontawesome-solid-ellipsis:.
+
+    ![Observable actions](../../../../images/user-guides/analyst-corner/cases/observable-actions.png)
 
 3. Select **Delete**.
 

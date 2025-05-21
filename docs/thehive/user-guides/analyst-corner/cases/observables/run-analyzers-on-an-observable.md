@@ -10,9 +10,9 @@ Analyzers enrich observables with detailed, contextual intelligence, generating 
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the analyzers.
 
-2. In the observable details, select :fontawesome-solid-ellipsis:.
+2. In the observable, select :fontawesome-solid-ellipsis:.
 
-    ![Analyzer responder access](../../../../images/user-guides/analyst-corner/cases/analyzer-responder-access.png)
+    ![Observable actions](../../../../images/user-guides/analyst-corner/cases/observable-actions.png)
 
 3. Select **Run analyzers**.
 

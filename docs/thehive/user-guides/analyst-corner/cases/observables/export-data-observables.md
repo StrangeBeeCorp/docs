@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
 
-2. In the observable details, select :fontawesome-solid-ellipsis:.
+2. In the observable, select :fontawesome-solid-ellipsis:.
 
 3. Select **Copy data**.
 
@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) you want to download.
 
-2. In the observable details, select :fontawesome-solid-ellipsis:.
+2. In the observable, select :fontawesome-solid-ellipsis:.
 
 3. Select **Download**.
 
