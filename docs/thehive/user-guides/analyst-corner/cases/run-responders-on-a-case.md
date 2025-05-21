@@ -6,6 +6,9 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 Run a responder on a case to take actions such as closing an external ticket or executing a predefined response within TheHive.
 
+!!! note "Observables not included"
+    Running a responder on a case doesn't run it on the observables linked to the case. To run responders on an observable, see [Run Responders and Review Reports for an Observable](./observables/run-responders-on-an-observable.md).
+
 ## Run responders on a case
 
 1. [Locate the alert](./search-for-cases/find-a-case.md) on which you want to run responders.
