@@ -10,7 +10,7 @@ Analyzers enrich observables with detailed, contextual intelligence. The type of
 
 2. In the observable details, select :fontawesome-solid-ellipsis:.
 
-    Image
+    ![Analyzer responder access](../../../../images/user-guides/analyst-corner/cases/analyzer-responder-access.png)
 
 3. Select **Run analyzers**.
 

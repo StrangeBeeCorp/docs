@@ -12,7 +12,7 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs t
 
 2. In the observable details, select :fontawesome-solid-ellipsis:.
 
-    Image
+    ![Analyzer responder access](../../../../images/user-guides/analyst-corner/cases/analyzer-responder-access.png)
 
 3. Select **Responders**.
 
