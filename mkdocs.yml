@@ -580,7 +580,7 @@ nav:
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
-          - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
+          - 'Run Responders on an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
@@ -687,8 +687,7 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
-          - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
-          - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
+          - 'Run Responders on a Case': thehive/user-guides/analyst-corner/alerts/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
           - 'Tasks':
@@ -700,13 +699,14 @@ nav:
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
-            - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
+            - 'Run Responders on a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
             - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
             - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
             - 'Delete a Task Log': thehive/user-guides/analyst-corner/tasks/delete-a-task-log.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
+            - 'Run Responders on a Task Log': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log.md
         - 'Dashboards':
           - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md

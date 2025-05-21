@@ -41,6 +41,6 @@ This topic provides step-by-step instructions for exporting data from [observabl
 * [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
-* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
-* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Run Analyzers and Review Reports for an Observable](run-analyzers-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

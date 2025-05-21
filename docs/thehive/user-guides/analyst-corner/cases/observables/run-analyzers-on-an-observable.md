@@ -8,7 +8,7 @@ Analyzers enrich observables with detailed, contextual intelligence, generating 
 
 ## Run analyzers on an observable
 
-1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the analyzers.
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run analyzers.
 
 2. In the observable, select :fontawesome-solid-ellipsis:.
 
@@ -29,6 +29,8 @@ Analyzers enrich observables with detailed, contextual intelligence, generating 
 
 2. In the observable details, move through the **Reports** section to select a report, or move through the **Analyzers** section and select any green item in the **Last analysis** column.
 
+    ![Analyzer reports](../../../../images/user-guides/analyst-corner/cases/analyzer-reports.png)
+
 3. Optional: Import observables from reports. See [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md) for detailed instructions.
 
 <h2>Next steps</h2>
@@ -39,6 +41,6 @@ Analyzers enrich observables with detailed, contextual intelligence, generating 
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)
