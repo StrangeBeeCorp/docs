@@ -580,7 +580,7 @@ nav:
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
-          - 'Run Responders on an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
+          - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
             - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
@@ -596,7 +596,7 @@ nav:
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
             - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
-            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
+            - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
@@ -644,7 +644,7 @@ nav:
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
             - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
-            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
+            - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
@@ -686,7 +686,7 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
-          - 'Run Responders on a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
+          - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
           - 'Tasks':
@@ -698,14 +698,14 @@ nav:
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
-            - 'Run Responders on a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
+            - 'Run Responders and Review Reports for a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
             - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
             - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
             - 'Delete a Task Log': thehive/user-guides/analyst-corner/tasks/delete-a-task-log.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
-            - 'Run Responders on a Task Log': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log.md
+            - 'Run Responders and Review Reports for a Task Log': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log.md
         - 'Dashboards':
           - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md

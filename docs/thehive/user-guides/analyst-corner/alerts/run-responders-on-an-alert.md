@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) and reviewing responder reports in TheHive.
 
-Responders execute response actions on cases, alerts, observables, tasks, and task logs.
+Responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 Run a responder on an alert to take actions such as closing an external ticket or executing a predefined response within TheHive.
 
@@ -12,7 +12,7 @@ Run a responder on an alert to take actions such as closing an external ticket o
 
 2. In the alert, select **Responders**.
 
-    ![Responders button](../../../images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
+    ![Responders button](../../../images/user-guides/analyst-corner/alerts/responders-button-alert.png)
 
 3. In the **Run actions on current alert** drawer, select the responders you want to run.
 

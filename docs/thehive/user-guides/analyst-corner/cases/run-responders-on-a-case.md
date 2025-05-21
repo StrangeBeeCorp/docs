@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on a [case](about-cases.md) and reviewing responder reports in TheHive.
 
-Responders execute response actions on cases, alerts, observables, tasks, and task logs.
+Responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 Run a responder on a case to take actions such as closing an external ticket or executing a predefined response within TheHive.
 
