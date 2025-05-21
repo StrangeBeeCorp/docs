@@ -1,6 +1,6 @@
 # How to Run Responders and Review Reports for a Task
 
-This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on a [task](about-tasks.md) and reviewing responder reports in TheHive.
+This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on a [task](about-tasks.md) and reviewing responder reports in TheHive.
 
 Responders execute response actions on cases, alerts, observables, tasks, and task logs.
 
@@ -32,3 +32,5 @@ Run a responder on a task to take actions such as summarizing task logs.
 
 <h2>Next steps</h2>
 
+* [Manage a Task](manage-a-task.md)
+* [Run Responders and Review Reports for a Task Log](run-responders-on-a-task-log.md)

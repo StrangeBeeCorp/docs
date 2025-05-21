@@ -79,7 +79,7 @@ plugins:
             'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md'
             'thehive/administration/organisation-links.md': 'thehive/administration/organizations/link-an-organization.md'
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/analyst-corner/organizations.md': 'thehive/administration/organizations/about-organizations.md'
@@ -128,9 +128,9 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
-            'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md'
+            'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
-            'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md'
+            'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
@@ -147,8 +147,8 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
-            'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
-            'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
+            'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
+            'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
@@ -581,7 +581,6 @@ nav:
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
           - 'Run Responders on an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
-          - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
             - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
@@ -687,7 +686,7 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
-          - 'Run Responders on a Case': thehive/user-guides/analyst-corner/alerts/run-responders-on-a-case.md
+          - 'Run Responders on a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
           - 'Tasks':

@@ -1,6 +1,6 @@
 # How to Run Responders and Review Reports for an Alert
 
-This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) and reviewing responder reports in TheHive.
+This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) and reviewing responder reports in TheHive.
 
 Responders execute response actions on cases, alerts, observables, tasks, and task logs.
 
@@ -30,4 +30,8 @@ Run a responder on an alert to take actions such as closing an external ticket o
 
 <h2>Next steps</h2>
 
-* [Enrich ]()
+* [Enrich Alert Details](enrich-alert-details.md)
+* [Change an Alert Status](change-status-alert.md)
+* [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
+* [Create a Case from an Alert](create-a-case-from-an-alert.md)
+* [Close an Alert](close-an-alert.md)
