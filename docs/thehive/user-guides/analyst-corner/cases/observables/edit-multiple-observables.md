@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for performing bulk edits on multi
 
 3. Select :fontawesome-regular-square: next to the observables you want to update.
 
-4. Select :fontawesome-solid-pen:.
+4. Select :fontawesome-solid-pen: above the list.
 
 5. In the **Edit several observables** drawer, update the values as needed.
 

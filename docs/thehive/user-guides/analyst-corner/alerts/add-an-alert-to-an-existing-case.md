@@ -17,7 +17,7 @@ If it requires a separate investigation, [create a case from the alert](create-a
 <h2>Procedure</h2>
 
 !!! tip "Bulk merge"
-    To add multiple alerts to an existing case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **Merge selection into case** at the top of the screen. This action merges all the selected alerts into a single case.
+    To add multiple alerts to an existing case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **Merge selection into case** above the list. This action merges all the selected alerts into a single case.
 
 1. [Locate the alert you want to merge into an existing case](./search-for-alerts/find-an-alert.md).
 

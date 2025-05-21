@@ -8,6 +8,9 @@ Analyzers enrich observables with detailed, contextual intelligence, generating 
 
 ## Run analyzers on an observable
 
+!!! tip "Bulk run"
+    To run analyzers on multiple observables, go to the **Observable** tab in a case or alert and select :fontawesome-regular-square: next to each observable you want to include. Then select **Run analyzers** above the list.
+
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run analyzers.
 
 2. In the observable, select :fontawesome-solid-ellipsis:.
