@@ -286,6 +286,11 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md': 'thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md'
 
 extra:
   generator: false
@@ -594,7 +599,7 @@ nav:
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
-            - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Run Analyzers and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
             - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'TTPs':
