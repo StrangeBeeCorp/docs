@@ -18,7 +18,7 @@ Run a responder on a task log to take actions such as improving its readability 
 
 3. Select **Responders**.
 
-3. In the **Run actions on current tasklog** drawer, select the responders you want to run.
+3. In the **Run actions on current task log** drawer, select the responders you want to run.
 
 4. Select **Launch actions**.
 
