@@ -595,7 +595,7 @@ nav:
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
-            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
             - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'TTPs':
@@ -643,7 +643,7 @@ nav:
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
-            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
             - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'Custom Fields':

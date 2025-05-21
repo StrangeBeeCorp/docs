@@ -1,10 +1,12 @@
-# How to Run Analyzers on an Observable
+# How to Run Analyzers and Review Reports for an Observable
 
-This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
+This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing analyzer reports in TheHive.
 
-Analyzers enrich observables with detailed, contextual intelligence. The type of each observable determines which analyzers are available.
+Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results. The type of each observable determines which analyzers are available.
 
-<h2>Procedure</h2>
+{!includes/access-manage-observables.md!}
+
+## Run analyzers on an observable
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the analyzers.
 
@@ -20,6 +22,14 @@ Analyzers enrich observables with detailed, contextual intelligence. The type of
         If you can't find the analyzer you need, it might not be available for this observable type. Contact someone with admin-level permissions on Cortex to [change the types associated with the analyzer](../../../../../cortex/api/how-to-create-an-analyzer.md).
 
 5. Select **Run selected analyzers**.
+
+## Review analyzer reports for an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran analyzers.
+
+2. In the observable details, move through the **Reports** section to select a report, or move through the **Analyzers** section and select any green item in the **Last analysis** column.
+
+3. Optional: Import observables from reports. See [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md) for detailed instructions.
 
 <h2>Next steps</h2>
 

@@ -21,7 +21,7 @@ If it requires a separate investigation, [create a case from the alert](create-a
 
 1. [Locate the alert you want to merge into an existing case](./search-for-alerts/find-an-alert.md).
 
-2. In the alert description, select **Merge alert into case**.
+2. In the alert, select **Merge alert into case**.
 
     ![Merge alert into case](/thehive/images/user-guides/analyst-corner/alerts/merge-alert-into-case.png)
 

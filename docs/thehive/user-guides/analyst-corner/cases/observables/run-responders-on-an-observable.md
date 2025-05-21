@@ -1,12 +1,12 @@
-# How to Run Responders on an Observable
+# How to Run Responders and Review Reports for an Observable
 
-This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
+This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing responder reports in TheHive.
 
-Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response.
+Responders execute response actions on cases, alerts, observables, tasks, and task logs—such as blocking an IP address, disabling a user account, or notifying a third-party system.
 
 {!includes/access-manage-observables.md!}
 
-<h2>Procedure</h2>
+## Run responders on an observable
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the responders.
 
@@ -21,6 +21,12 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs t
 5. Select **Launch actions**.
 
 6. Select **Confirm**.
+
+## Review responder reports for an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran responders.
+
+2. In the observable details, move through the **Responder reports** section to check the status of the executed responders.
 
 <h2>Next steps</h2>
 

@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 1. Find [the alert](../alerts/search-for-alerts/find-an-alert.md) you want to update.
 
-2. In the alert description, move through the **Status** section in the left pane.
+2. In the alert, move through the **Status** section in the left pane.
 
     ![Status](../../../images/user-guides/analyst-corner/alerts/change-status-alert.png)
 
