@@ -654,6 +654,7 @@ nav:
             - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
             - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
+          - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
