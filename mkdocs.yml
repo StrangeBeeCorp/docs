@@ -713,6 +713,7 @@ nav:
           - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
           - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
+        - 'Detail View vs. Preview': thehive/user-guides/analyst-corner/preview-vs-detail-view.md
         - 'About Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
         - 'About Views': thehive/user-guides/analyst-corner/about-views.md
         - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
