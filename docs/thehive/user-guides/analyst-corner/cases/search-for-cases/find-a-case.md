@@ -88,11 +88,9 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
 <h2>Next steps</h2>
 
-* [Actions on Cases](../cases-description/actions.md)
 * [Merge Cases](../merge-cases.md)
 * [Restrict Case Visibility](../case-visibility/restrict-visibility-case.md)
 * [Restore Case Visibility](../case-visibility/restore-visibility-case.md)
-* [View a Case](../cases-description/general.md)
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
 * [Add Custom Fields](../custom-fields/add-custom-fields.md)
 * [Find Similar Alerts or Cases](../find-similar-alerts-cases.md)

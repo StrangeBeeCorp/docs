@@ -26,4 +26,3 @@ This topic provides step-by-step instructions for changing the [status](../../..
 * [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
 * [Apply a Case Template](apply-a-case-template.md)
 * [Share a Case](share-a-case.md)
-* [Actions](../cases/cases-description/actions.md)
