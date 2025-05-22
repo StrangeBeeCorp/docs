@@ -109,7 +109,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
 
 ## :fontawesome-solid-database: Apache Cassandra
 
-[Apache Cassandra](https://cassandra.apache.org) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.
+[Apache Cassandra](https://cassandra.apache.org) is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra version 4.1.x.
 
 !!! info "Upgrading from Cassandra 3.x"
     This guide targets fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, refer to the [Upgrade from TheHive 4.x](./upgrade-from-4.x.md) topic.
@@ -131,7 +131,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
         
         !!! Example ""
             ```bash
-            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
+            echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 41x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
             ```
 
     2. Once the repository references are added, update your package index and install Cassandra using the following command:
@@ -157,7 +157,7 @@ Ensure that all dependencies are successfully installed before proceeding with t
             ```bash
             [cassandra]
             name=Apache Cassandra
-            baseurl=https://redhat.cassandra.apache.org/40x/
+            baseurl=https://redhat.cassandra.apache.org/41x/
             gpgcheck=1
             repo_gpgcheck=1
             gpgkey=https://downloads.apache.org/cassandra/KEYS

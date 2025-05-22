@@ -3,7 +3,7 @@
 #
 #
 # This script installs:
-# - Cassandra 4.0.x
+# - Cassandra 4.1.x
 # - Elasticsearch 7.x
 # - TheHive 5.x
 # 
@@ -27,7 +27,7 @@ HEADER="---
 THeHive installation script for Linux using RPM packages
 
 Following softwares will be installed:
- - Cassandra 4.0.x
+ - Cassandra 4.1.x
  - Elasticsearch 7.x
  - TheHive 5.x
  
@@ -162,7 +162,7 @@ sudo rpm --import https://downloads.apache.org/cassandra/KEYS
 cat <<EOF | sudo tee  -a /etc/yum.repos.d/cassandra.repo > /dev/null
 [cassandra]
 name=Apache Cassandra
-baseurl=https://downloads.apache.org/cassandra/redhat/40x/
+baseurl=https://downloads.apache.org/cassandra/redhat/41x/
 gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://downloads.apache.org/cassandra/KEYS
