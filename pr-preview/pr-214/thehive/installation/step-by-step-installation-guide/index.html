@@ -13243,7 +13243,7 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 </div>
 <hr>
 <h2 id="apache-cassandra"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0s224 35.8 224 80m-54.8 134.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3M0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432z"></path></svg></span> Apache Cassandra<a class="headerlink" href="#apache-cassandra" title="Permanent link">#</a></h2>
-<p><a href="https://cassandra.apache.org">Apache Cassandra</a> is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra's latest stable release, version 4.0.x.</p>
+<p><a href="https://cassandra.apache.org">Apache Cassandra</a> is a highly scalable and robust database system. TheHive is fully compatible with Apache Cassandra version 4.1.x.</p>
 <div class="admonition info">
 <p class="admonition-title">Upgrading from Cassandra 3.x</p>
 <p>This guide targets fresh installations. If you're currently using Cassandra 3.x and planning an upgrade, refer to the <a href="../upgrade-from-4.x/">Upgrade from TheHive 4.x</a> topic.</p>
@@ -13266,7 +13266,7 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 <li>Add the repository to your system by appending the following line to the <code>/etc/apt/sources.list.d/cassandra.sources.list</code> file. This file may not exist, and you may need to create it.</li>
 </ul>
 <div class="admonition example">
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 40x main"</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/apt/sources.list.d/cassandra.sources.list<span class="w"> </span>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://debian.cassandra.apache.org 41x main"</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/apt/sources.list.d/cassandra.sources.list<span class="w"> </span>
 </code></pre></div>
 </div>
 </li>
@@ -13294,7 +13294,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code><span class="o">[</span>cassandra<span class="o">]</span>
 <span class="nv">name</span><span class="o">=</span>Apache<span class="w"> </span>Cassandra
-<span class="nv">baseurl</span><span class="o">=</span>https://redhat.cassandra.apache.org/40x/
+<span class="nv">baseurl</span><span class="o">=</span>https://redhat.cassandra.apache.org/41x/
 <span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">repo_gpgcheck</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">gpgkey</span><span class="o">=</span>https://downloads.apache.org/cassandra/KEYS
