@@ -198,7 +198,7 @@ This topic lists all available objects for functions in TheHive.
 
 <!-- md:version 5.5.2 -->
 
-### Execute an analyzer
+### Analyzer
 
 - `cortex.createJob({ "analyzerId": "analyzerFullName", "artifactId": "observableId", "cortexId": "cortexConnectorName"})`:  Launches a Cortex analyzer job with `analyzerId` as the full name of the analyzer to run, `artifactId` as the ID of the observable to analyze, and `cortexId` as the name of the Cortex connector to use.
 
@@ -212,7 +212,7 @@ This topic lists all available objects for functions in TheHive.
             });
         ```
 
-### Execute a responder
+### Responder
 
 - `cortex.createAction({ "responderId": "id", "objectId": "inputId", "objectType": "type"})`: Launches a Cortex responder action with `responderId` as the full ID of the responder to run, `objectId` as of ID of the object to act on, and `objectType` as its type, such as case, alert, or task.
 
