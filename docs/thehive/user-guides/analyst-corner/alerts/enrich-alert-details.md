@@ -49,4 +49,4 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
 * [Create a Case from an Alert](create-a-case-from-an-alert.md)
-* [Run Responders](../alerts/alerts-description/run-responders.md)
+* [Run Responders and Review Reports for an Alert](../alerts/run-responders-on-an-alert.md)

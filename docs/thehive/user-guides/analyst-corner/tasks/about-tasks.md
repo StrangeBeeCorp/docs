@@ -58,4 +58,4 @@ In TheHive, you can make important tasks stand out using the following options:
 * [Manage Tasks](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)
 * [Create a Task Log](../tasks/create-a-task-log.md)
-* [Run Responders](../tasks/preview-task-details/run-responders.md)
+* [Run Responders and Review Reports for a Task](../tasks/run-responders-on-a-task.md)

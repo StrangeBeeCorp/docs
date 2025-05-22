@@ -61,6 +61,6 @@ This topic provides step-by-step instructions for searching an [observable](../o
 * [Edit Multiple Observables](../observables/edit-multiple-observables.md)
 * [Pin an Observable](../observables/pin-an-observable.md)
 * [Export Data from Observables](../observables/export-data-observables.md)
-* [Run Analyzers on an Observable](../observables/run-analyzers-on-an-observable.md)
-* [Run Responders on an Observable](../observables/run-responders-on-an-observable.md)
+* [Run Analyzers and Review Reports for an Observable](../observables/run-analyzers-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](../observables/run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](../observables/import-observables-from-analyzer-reports.md)

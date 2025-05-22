@@ -10,7 +10,7 @@ Close an alert if it doesn't require escalation into a new or existing case for 
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) you want to close.
 
-2. In the alert description, select :fontawesome-solid-xmark:.
+2. In the alert, select :fontawesome-solid-xmark:.
 
     ![Close an alert](../../../images/user-guides/analyst-corner/alerts/close-an-alert.png)
 

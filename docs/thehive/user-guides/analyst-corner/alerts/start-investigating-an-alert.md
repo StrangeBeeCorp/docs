@@ -10,7 +10,7 @@ Use this procedure to start investigating a new alert and change its [status](..
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to start investigating.
 
-2. In the alert description, select **Start**.
+2. In the alert, select **Start**.
 
     ![Start investigating an alert](../../../images/user-guides/analyst-corner/alerts/start-an-alert.png)
 

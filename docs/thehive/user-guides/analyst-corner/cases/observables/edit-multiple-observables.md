@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for performing bulk edits on multi
 
 3. Select :fontawesome-regular-square: next to the observables you want to update.
 
-4. Select :fontawesome-solid-pen:.
+4. Select :fontawesome-solid-pen: above the list.
 
 5. In the **Edit several observables** drawer, update the values as needed.
 
@@ -25,6 +25,6 @@ This topic provides step-by-step instructions for performing bulk edits on multi
 * [Update the Status of an Observable](update-an-observable-status.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
-* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Run Analyzers and Review Reports for an Observable](run-analyzers-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)

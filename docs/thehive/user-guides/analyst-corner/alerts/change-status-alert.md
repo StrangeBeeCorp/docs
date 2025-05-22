@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 1. Find [the alert](../alerts/search-for-alerts/find-an-alert.md) you want to update.
 
-2. In the alert description, move through the **Status** section in the left pane.
+2. In the alert, move through the **Status** section in the left pane.
 
     ![Status](../../../images/user-guides/analyst-corner/alerts/change-status-alert.png)
 
@@ -28,4 +28,4 @@ This topic provides step-by-step instructions for changing the [status](../../..
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
 * [Create a Case from an Alert](create-a-case-from-an-alert.md)
-* [Run Responders](../alerts/alerts-description/run-responders.md)
+* [Run Responders and Review Reports for an Alert](../alerts/run-responders-on-an-alert.md)

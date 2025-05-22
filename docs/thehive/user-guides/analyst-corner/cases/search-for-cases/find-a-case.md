@@ -100,5 +100,4 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 * [Add an Attachment](../attachments/add-an-attachment-case-alert.md)
 * [View a Case Timeline](../case-timelines/view-case-timeline.md)
 * [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
-* [Run Responders on Case](../cases-description/run-responders.md)
-* [Run Analyzers on Case](../cases-description/run-analyzer.md)
+* [Run Responders and Review Reports for a Case](../run-responders-on-a-case.md)

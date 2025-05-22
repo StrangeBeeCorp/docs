@@ -10,15 +10,15 @@ This topic provides step-by-step instructions for manually running a [function](
 
 1. [Locate the case](../../../analyst-corner/cases/search-for-cases/find-a-case.md) or [alert](../../../analyst-corner/alerts/search-for-alerts/find-an-alert.md) on which you want to run the function.
 
-2. Select the :fontawesome-solid-gear: button.
+2. In the case or alert, select the :fontawesome-solid-gear: button.
 
     ![Responders button](../../../../images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
 
-3. Select the **Functions** tab.
+3. In the drawer, select the **Functions** tab.
 
 4. Select one or more functions to run.
 
-5. Select **Launch action(s)**.
+5. Select **Launch actions**.
 
 <h2>Next steps</h2>
 

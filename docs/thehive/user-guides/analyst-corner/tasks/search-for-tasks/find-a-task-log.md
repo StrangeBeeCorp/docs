@@ -40,4 +40,4 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 <h2>Next steps</h2>
 
 * [Delete a Task Log](../delete-a-task-log.md)
-* [Run Responders](../../tasks/preview-task-details/run-responders.md)
+* [Run Responders and Review Reports for a Task Log](../../tasks/run-responders-on-a-task-log.md)

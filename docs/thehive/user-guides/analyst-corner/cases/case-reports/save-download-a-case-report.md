@@ -14,7 +14,7 @@ Use this procedure to report to your management and provide a follow-up on a cas
 
 1. [Locate the case](../search-for-cases/find-a-case.md).
 
-2. In the case description, select the **Report** tab.
+2. In the case, select the **Report** tab.
 
     ![Case report tab](/thehive/images/user-guides/analyst-corner/cases/report-tab.png)
 

@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for [merging cases](../cases/about
 
 1. [Find the two cases](../cases/search-for-cases/find-a-case.md) that you want to merge.
 
-2. In the case description of one of the cases, select the **Merge** button.
+2. In one of the cases, select the **Merge** button.
 
     ![Merge button](../../../images/user-guides/analyst-corner/cases/merge-button.png)
 

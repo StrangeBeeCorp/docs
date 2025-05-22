@@ -13,7 +13,7 @@ Close the case when the investigation is complete.
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) you want to close.
 
-2. In the case description, select :fontawesome-solid-xmark:.
+2. In the case, select :fontawesome-solid-xmark:.
 
     ![Close a case](../../../images/user-guides/analyst-corner/cases/close-a-case.png)
 

@@ -1,16 +1,20 @@
-# How to Run Responders on an Observable
+# How to Run Responders and Review Reports for an Observable
 
-This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
+This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing responder reports in TheHive.
 
-Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response.
+Responders execute actions on cases, alerts, observables, tasks, and task logs.
+
+Run a responder on an observable to take actions such as blocking an IP address on the firewall or a URL on the proxy.
 
 {!includes/access-manage-observables.md!}
 
-<h2>Procedure</h2>
+## Run responders on an observable
 
-1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the responders.
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run responders.
 
-2. In the observable details, select :fontawesome-solid-ellipsis:.
+2. In the observable, select :fontawesome-solid-ellipsis:.
+
+    ![Observable actions](../../../../images/user-guides/analyst-corner/cases/observable-actions.png)
 
 3. Select **Responders**.
 
@@ -20,6 +24,14 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs t
 
 6. Select **Confirm**.
 
+## Review responder reports for an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran responders.
+
+2. In the observable details, move through the **Responder reports** section to check the status of the executed responders.
+
+    ![Responder reports](../../../../images/user-guides/analyst-corner/cases/responder-reports-observable.png)
+
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
@@ -28,6 +40,6 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs t
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
+* [Run Analyzers and Review Reports for an Observable](run-analyzers-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)

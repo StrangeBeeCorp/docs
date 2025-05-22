@@ -42,6 +42,6 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
 
 <h2>Next steps</h2>
 
-* [Run Analyzers on Case](../cases-description/run-analyzer.md)
-* [Run Responders on Case](../cases-description/run-responders.md)
-
+* [Run Analyzers and Review Reports for an Observable](../observables/run-analyzers-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](../observables/run-responders-on-an-observable.md)
+* [Run Responders and Review Reports for a Case](../run-responders-on-a-case.md)

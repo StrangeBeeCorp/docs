@@ -11,7 +11,7 @@ This topic provides step-by-step instructions for exporting an archived [case](.
 
 1. [Locate the case you want to export](../cases/search-for-cases/find-a-case.md).
 
-2. In the case description, select the **Export** button.
+2. In the case, select the **Export** button.
 
     ![Export a case](/thehive/images/user-guides/analyst-corner/cases/export-a-case.png)
 
