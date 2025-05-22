@@ -90,8 +90,8 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
 * [Actions on Cases](../cases-description/actions.md)
 * [Merge Cases](../merge-cases.md)
-* [Restrict Case Visibility](../restrict-visibility-case.md)
-* [Restore Case Visibility](../restore-visibility-case.md)
+* [Restrict Case Visibility](../case-visibility/restrict-visibility-case.md)
+* [Restore Case Visibility](../case-visibility/restore-visibility-case.md)
 * [View a Case](../cases-description/general.md)
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
 * [Add Custom Fields](../custom-fields/add-custom-fields.md)

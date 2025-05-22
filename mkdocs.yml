@@ -685,8 +685,8 @@ nav:
             - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
             - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
           - 'Manage Case Visibility':
-            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
-            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
