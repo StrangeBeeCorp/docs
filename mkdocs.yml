@@ -686,6 +686,7 @@ nav:
           - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
           - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
+          - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
         - 'Tasks Management':
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
