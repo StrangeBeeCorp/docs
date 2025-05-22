@@ -1,6 +1,6 @@
-# Preview vs. Detail View
+# Detail View vs. Preview
 
-This topic explains the difference between preview and detail views in TheHive for [cases](../user-guides/analyst-corner/cases/about-cases.md), [alerts](../user-guides/analyst-corner/alerts/about-alerts.md), [tasks](../user-guides/analyst-corner/tasks/about-tasks.md), [observables](../user-guides/analyst-corner/cases/observables/about-observables.md), [TTPs](../administration/ttps/view-techniques-in-a-catalog.md), [user accounts](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md), and [organizations](../administration/organizations/about-organizations.md)—so you know when to use each and what to expect from both.
+This topic explains the difference between preview and detail views in TheHive for [cases](./cases/about-cases.md), [alerts](./alerts/about-alerts.md), [tasks](./tasks/about-tasks.md), [observables](./cases/observables/about-observables.md), [TTPs](../../administration/ttps/view-techniques-in-a-catalog.md), [user accounts](../organization/configure-organization/manage-user-accounts/about-user-accounts.md), and [organizations](../../administration/organizations/about-organizations.md)—so you know when to use each and what to expect from both.
 
 ## What's the difference?
 
@@ -25,6 +25,6 @@ A preview appears when you hover over an item and select the :fontawesome-solid-
 
 <h2>Next steps</h2>
 
-* [About Autorefresh](./analyst-corner/about-autorefresh.md)
-* [About Filtering and Sorting](./analyst-corner/about-filtering-and-sorting.md)
-* [About Views](./analyst-corner/about-views.md)
+* [About Autorefresh](about-autorefresh.md)
+* [About Filtering and Sorting](about-filtering-and-sorting.md)
+* [About Views](about-views.md)
