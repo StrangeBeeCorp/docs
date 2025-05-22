@@ -465,6 +465,8 @@ nav:
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
     - 'User Guides':
+      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Date Field Definitions': thehive/user-guides/date-field-definitions-alerts-cases.md
       - 'Account Management':
         - 'Manage your Account Settings': thehive/user-guides/manage-user-settings.md
         - 'Manage your Password': thehive/user-guides/manage-password.md
@@ -472,7 +474,6 @@ nav:
         - 'View your Account Profile and Permissions': thehive/user-guides/view-permissions.md
         - 'Switch Between Organizations': thehive/user-guides/switch-organizations.md
         - 'Log Out of your Account': thehive/user-guides/log-out.md
-      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
       - 'Knowledge Base':
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
           - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md

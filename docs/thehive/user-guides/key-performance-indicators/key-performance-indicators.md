@@ -48,19 +48,20 @@ The time it takes for your security team to fully resolve an incident after its 
 
 | KPI | Formula | In case description | In alert description |
 |-----------|------------------|-------------------|--------------------|
-| Time to resolve (TTR) | = end of the incident date - date of status *In Progress* | = `case.endDate` - `min(alert.inProgress, case.inProgress)` | not applicable |
+| Time to resolve (TTR) | = end of the incident date - date of status *In Progress* | = `case.endDate` - `min(alert.inProgressDate, case.inProgressDate)` | not applicable |
 
 !!! note "handlingDuration"
     The `handlingDuration` field is available for cases and alerts in the API. The calculation is based on the difference between the end of the case date or the alert merge into case date, and the incident creation date in TheHive.  
 
-    This field is a relic from older TheHive versions and can be slow to calculate. It is recommended to use the time to resolve metric instead.
+    This field is a relic from older TheHive versions and can be slow to calculate. It's recommended to use the time to resolve metric instead.
 
 ---
 
 For more information on these KPIs, consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
 
-## Next steps
+<h2>Next steps</h2>
 
+* [Date Field Definitions for Alerts and Cases](../date-field-definitions-alerts-cases.md)
 * [Hide Key Performance Indicators](hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)
 * [Measure Alert Performance](measure-alert-management-performance.md)
