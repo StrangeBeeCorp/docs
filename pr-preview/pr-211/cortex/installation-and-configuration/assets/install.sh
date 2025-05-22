@@ -57,7 +57,7 @@ Maintained by: ©StrangeBee - https://www.strangebee.com
 
 THEHIVE="---
 Following softwares are being installed & configured:
-  - Cassandra 4.0.x
+  - Cassandra 4.1.x
   - Elasticsearch 7.x
   - TheHive 5.x
 
