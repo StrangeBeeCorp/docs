@@ -4,6 +4,8 @@ This topic provides step-by-step instructions for finding similar alerts and cas
 
 Similarity checks between cases and alerts are based on [observables](../cases/observables/about-observables.md#similar-alerts-and-cases).
 
+Use this procedure to identify similar cases or to correlate alerts with other alerts or with ongoing cases.
+
 ## Find similar alerts
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) or [case](../cases/search-for-cases/find-a-case.md) you want to compare for similarity.
