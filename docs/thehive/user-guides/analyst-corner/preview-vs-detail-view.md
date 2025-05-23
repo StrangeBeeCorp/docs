@@ -2,7 +2,7 @@
 
 This topic explains the difference between preview and detail views in TheHive for [cases](./cases/about-cases.md), [alerts](./alerts/about-alerts.md), [tasks](./tasks/about-tasks.md), [observables](./cases/observables/about-observables.md), [TTPs](../../administration/ttps/view-techniques-in-a-catalog.md), [user accounts](../organization/configure-organization/manage-user-accounts/about-user-accounts.md), and [organizations](../../administration/organizations/about-organizations.md)—so you know when to use each and what to expect from both.
 
-## What's the difference?
+## What's the difference
 
 A detail view appears when you select an item. It opens a full page showing all available information and actions.
 
