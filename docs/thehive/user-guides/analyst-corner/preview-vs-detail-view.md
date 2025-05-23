@@ -6,11 +6,11 @@ This topic explains the difference between preview and detail views in TheHive f
 
 A detail view appears when you select an item. It opens a full page showing all available information and actions.
 
-![Detail view case](../images/user-guides/detail-view.gif)
+![Detail view case](../../images/user-guides/detail-view.gif)
 
 A preview appears when you hover over an item and select the :fontawesome-solid-eye: button. It opens a drawer with a summary—without leaving your current view. If needed, you can access the full detail view directly from the preview.
 
-![Preview case](../images/user-guides/preview.gif)
+![Preview case](../../images/user-guides/preview.gif)
 
 ## Choosing between preview and detail view
 
