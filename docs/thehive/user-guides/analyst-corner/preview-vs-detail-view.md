@@ -12,7 +12,7 @@ A preview appears when you hover over an item and select the :fontawesome-solid-
 
 ![Preview case](../../images/user-guides/preview.gif)
 
-## Choosing between preview and detail view
+## Choosing between detail view and preview
 
 | Feature            | Detail View | Preview |
 |--------------------|:-----------:|:-------:|

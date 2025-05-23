@@ -2,7 +2,9 @@
 
 This topic provides step-by-step instructions for flagging a [case](about-cases.md) in TheHive.
 
-Use this procedure to flag a case and highlight it for all users in your organization. Flagged cases appear at the top of the case list.
+Use this procedure to highlight a case for all users in your organization. Flagged cases appear at the top of the case list.
+
+{!includes/access-flag-cases.md!}
 
 <h2>Procedure</h2>
 
