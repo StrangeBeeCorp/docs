@@ -78,7 +78,6 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 * [Ignore Alert Updates from MISP](../ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](../add-an-alert-to-an-existing-case.md)
 * [Create a Case from an Alert](../create-a-case-from-an-alert.md)
-* [Preview Alerts](../alerts-description/preview-alerts.md)
 * [Run Responders](../alerts-description/run-responders.md)
 * [View Responders](../alerts-description/view-responders.md)
 * [Find Similar Alerts or Cases](../../cases/find-similar-alerts-cases.md)

@@ -37,4 +37,4 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 * [Add Tasks to a Case](../cases/add-tasks-to-a-case.md)
 * [Add a Link to a Case](../cases/case-links/add-a-link-to-a-case.md)
 * [Change a Case Status](../cases/change-status-case.md)
-* [Restrict Case Visibility](../cases/restrict-visibility-case.md)
+* [Restrict Case Visibility](../cases/case-visibility/restrict-visibility-case.md)

@@ -36,13 +36,13 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
     You can't change an observable's value or file once it's created.
 
-    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***
+    **- TLP (traffic light protocol) \***
 
-    The TLP level for the observable. It indicates how you can share the observable's information with others.
+    The TLP level for the observable. It indicates how you can share the observable's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
 
-    **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***
+    **- PAP (permissible actions protocol) \***
 
-    The PAP level for the observable. It specifies which actions you can take with the observable data.
+    The PAP level for the observable. It specifies which actions you can take with the observable data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
 
     **- Is IOC**
 

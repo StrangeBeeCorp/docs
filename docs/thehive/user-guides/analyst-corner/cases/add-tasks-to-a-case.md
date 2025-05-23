@@ -55,6 +55,6 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 * [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
 * [Apply a Case Template](apply-a-case-template.md)
 * [Merge Cases](merge-cases.md)
-* [Restrict Case Visibility](restrict-visibility-case.md)
+* [Restrict Case Visibility](./case-visibility/restrict-visibility-case.md)
 * [Share a Case](share-a-case.md)
 
