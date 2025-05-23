@@ -57,6 +57,11 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - htmlproofer:
+      enabled: !ENV [ENABLED_HTMLPROOFER, false]
+      raise_error_after_finish: True
+      validate_external_urls: False
+      skip_downloads: True
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/overview/index.md'
