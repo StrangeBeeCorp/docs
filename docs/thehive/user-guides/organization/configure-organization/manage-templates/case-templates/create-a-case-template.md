@@ -45,13 +45,13 @@ To import an existing case template from another organization or TheHive instanc
 
     The name that appears when users select this template [to create a new case](../../../../analyst-corner/cases/create-a-new-case.md) or [to apply it to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md). If you don't specify a display name, the case template name is used.
     
-    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    **- TLP (traffic light protocol) \***  
 
-    The TLP level for the observable. It indicates how you can share the observable's information with others.
+    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values. 
     
-    **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    **- PAP (permissible actions protocol) \***  
 
-    The PAP level for the observable. It specifies which actions you can take with the observable data.
+    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
     
     **- Severity**  
 

@@ -23,6 +23,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 <h2>Next steps</h2>
 
+* [Change Case Classification Settings](change-case-classification-settings.md)
 * [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
 * [Apply a Case Template](apply-a-case-template.md)
 * [Share a Case](share-a-case.md)

@@ -31,19 +31,20 @@ Several options are offered to create a case in TheHive:
     The title of the case.
 
     **Date \***  
+    
     The start date and time of the case. It indicates when the incident occured. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators.md).
 
     **- Severity \***  
 
     The severity level for the case.
 
-    **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
+    **- TLP (traffic light protocol) \***  
 
-    The TLP level for the observable. It indicates how you can share the observable's information with others.
+    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
     
-    **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
+    **- PAP (permissible actions protocol) \***  
 
-    The PAP level for the observable. It specifies which actions you can take with the observable data.
+    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
 
     **- [Tags](../../analyst-corner/cases/tags/add-remove-tags.md)**  
 
