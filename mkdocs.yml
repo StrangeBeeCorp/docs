@@ -286,6 +286,13 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
+            'thehive/user-guides/analyst-corner/cases/restore-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md'
+            'thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/actions.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
 
 extra:
   generator: false
