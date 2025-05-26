@@ -21,11 +21,11 @@
 
 ## 5.4.10 - April 24, 2025
 
-Last update: May 14, 2025
+Last update: May 26, 2025
 
 ### Security fixes
 
-* This update includes four patches addressing vulnerabilities that haven't been exploited in the wild. Further details are provided in our [security bulletin](https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025), in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md).
+* This update includes four patches addressing vulnerabilities identified as [CVE-2025-48738](https://nvd.nist.gov/vuln/detail/CVE-2025-48738), [CVE-2025-48739](https://nvd.nist.gov/vuln/detail/CVE-2025-48739), [CVE-2025-48740](https://nvd.nist.gov/vuln/detail/CVE-2025-48740), and [CVE-2025-48741](https://nvd.nist.gov/vuln/detail/CVE-2025-48741). None have been exploited in the wild. Further details are provided in our [security bulletin](https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025), in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md).
 * JSON endpoints now strictly validate the `Content-Type` header. Requests must explicitly include `Content-Type: application/json`. If not, the server returns a `400 Bad Request` response.
     * A temporary compatibility mode is available to support legacy clients or scripts that don't set the `Content-Type` header properly. To enable it, add the following line to your `application.conf` file: `ignoreCSRFProtection = true`.
     * After enabling compatibility mode, update all clients to send `Content-Type: application/json`. Once all clients are updated, remove this override to re-enable full validation.
