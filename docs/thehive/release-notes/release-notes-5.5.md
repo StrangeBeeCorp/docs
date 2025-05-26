@@ -32,7 +32,7 @@ Analyzers and responders can now be triggered directly [from a TheHive function]
 
 ## 5.5.1 - April 30, 2025
 
-Last update: May 14, 2025
+Last update: May 26, 2025
 
 ### Security fixes
 
