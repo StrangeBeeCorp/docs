@@ -1,6 +1,6 @@
 # About User Accounts
 
-This topic explains how user accounts are managed in TheHive.
+This topic explains how user accounts work in TheHive.
 
 {!includes/license-user-accounts.md!}
 
