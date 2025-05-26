@@ -2,7 +2,7 @@
 
 Audit logs in TheHive record all user actions, ensuring full traceability of activities performed within the platform.
 
-Users can view a graphical representation of audit logs in the **History** tab, accessible in case and alert descriptions.
+A graphical representation of audit logs appears in the **History** tab within case and alert descriptions.
 
 This document explains the purpose, usage, and benefits of audit logs in TheHive.
 
@@ -12,8 +12,8 @@ Audit logs provide critical insights into system activity and security.
 
 Their key use cases include:
 
-* Workflow automation: Logs can be sent to an orchestration system to trigger automated workflows.
-* Security monitoring: Logs can be forwarded to a Security Information and Event Management (SIEM) system to detect suspicious or abnormal behaviors.
+* Workflow automation: Logs send to an orchestration system to trigger automated workflows.
+* Security monitoring: Logs forward to a Security Information and Event Management (SIEM) system to detect suspicious or abnormal behaviors.
 * Activity traceability: The **History** tab records all actions on cases and alerts for accountability and compliance.
 
 ## Main audit fields
@@ -35,7 +35,7 @@ Audit logs in TheHive include the following key fields:
 
 ## Anatomy of an audit
 
-An audit entry is represented as a JSON object with the following structure:
+An audit entry uses a JSON object structured as follows:
 
 ```json
 {
