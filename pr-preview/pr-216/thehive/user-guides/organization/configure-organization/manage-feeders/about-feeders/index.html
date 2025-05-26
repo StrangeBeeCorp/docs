@@ -13094,7 +13094,7 @@
 <p>Alert feeders enable TheHive to retrieve data from external systems on a schedule, eliminating the need for external tools to push data.</p>
 <p>This topic provides an overview of the scope and usage of alert feeders in TheHive.</p>
 <h2 id="how-alert-feeders-work">How alert feeders work<a class="headerlink" href="#how-alert-feeders-work" title="Permanent link">#</a></h2>
-<p>Alert feeders allow your organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using <a href="#feeder-functions">a function</a>. Each alert feeder supports only one function.</p>
+<p>Alert feeders allow an organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using <a href="#feeder-functions">a function</a>. Each alert feeder supports only one function.</p>
 <p>Alert feeders don't perform bi-directional synchronization.</p>
 <p>In addition to alerts, alert feeders can also generate cases and tasks</p>
 <h2 id="feeder-functions">Feeder functions<a class="headerlink" href="#feeder-functions" title="Permanent link">#</a></h2>
@@ -13103,9 +13103,9 @@
 <p>Feeder function examples are available in <a href="https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples/Alert%20Feeder%20Functions">a dedicated GitHub repository</a>.</p>
 </div>
 <p>A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts.</p>
-<p>Don't manually create an feeder function as a standalone function, because you can't link it to an alert feeder. Instead, <a href="../create-a-feeder/">create it directly within the alert feeder</a>. Once created, the function is automatically added to the <a href="../../manage-functions/about-functions/">functions list</a> with the type <em>feeder</em>. </p>
-<p>You can then modify it either <a href="../../manage-functions/about-functions/">from the functions list</a> or the alert feeder configuration.</p>
-<p>When you delete an alert feeder, the associated function remains. To remove the function, follow the steps in <a href="../../manage-functions/delete-a-function/">Delete a Function</a>.</p>
+<p>Avoid creating a feeder function as a standalone function, as it can't link to an alert feeder. Instead, <a href="../create-a-feeder/">create it directly within the alert feeder</a>. After creation, the function automatically appears in the <a href="../../manage-functions/about-functions/">functions list</a> with the type <em>feeder</em>. </p>
+<p>Modify the function either <a href="../../manage-functions/about-functions/">from the functions list</a> or within the alert feeder configuration.</p>
+<p>Deleting an alert feeder doesn't remove its associated function. To remove the function, follow the steps in <a href="../../manage-functions/delete-a-function/">Delete a Function</a>.</p>
 <h2 id="authentication-modes">Authentication modes<a class="headerlink" href="#authentication-modes" title="Permanent link">#</a></h2>
 <p>Currently, alert feeders support the following four authentication methods:</p>
 <ul>
@@ -13115,7 +13115,7 @@
 <li>Bearer</li>
 </ul>
 <h2 id="example-integrations">Example integrations<a class="headerlink" href="#example-integrations" title="Permanent link">#</a></h2>
-<p>You can use an alert feeder to integrate any external system that exposes a public REST API with <a href="#authentication-modes">supported authentication modes</a> and supports synchronous data retrieval into TheHive, including:</p>
+<p>Use an alert feeder to integrate any external system that exposes a public REST API with <a href="#authentication-modes">supported authentication modes</a> and supports synchronous data retrieval into TheHive, including:</p>
 <ul>
 <li>Jira</li>
 <li>Airtable</li>
