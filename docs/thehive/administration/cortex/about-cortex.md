@@ -28,11 +28,11 @@ Cortex offers the following features:
 
 ## Connecting Cortex to TheHive
 
-!!! warning "Establishing a connection with Cortex"
-    To connect to Cortex, you need an account and an API key on a Cortex server.
+!!! warning "Cortex connection requirements"
+    Establishing a connection with Cortex requires an existing account and a valid API key on a Cortex server.
 
-!!! info "Multiple Cortex instances"
-    You can connect one or more Cortex instances to TheHive.
+!!! info "Support for multiple Cortex instances"
+    TheHive supports connecting to one or more Cortex instances simultaneously.
 
 [Connect TheHive to Cortex](add-a-cortex-server.md) to gather intelligence on observables with analyzers and automate actions using responders:
 

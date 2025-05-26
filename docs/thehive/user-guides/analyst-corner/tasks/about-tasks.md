@@ -7,11 +7,11 @@ This topic explains tasks, their components, and their behavior in TheHive.
 A task represents one or more actions, called [task logs](../tasks/about-task-logs.md)—also referred to as activities—that must be completed within a [case](../cases/about-cases.md).
 
 * Tasks can be mandatory or optional.
-* Tasks are organized into groups for better structure and management.
+* Tasks organize into groups to improve structure and management.
 
 ## Sources
 
-Tasks can be created manually or automatically through [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md).
+Create tasks manually or automatically using [alert feeders](../../organization/configure-organization/manage-feeders/about-feeders.md).
 
 ## Statuses
 
@@ -24,26 +24,26 @@ The following task statuses are available in TheHive:
 
 Task statuses are hard-coded. They can't be modified, deleted, or extended.
 
-Mandatory tasks can’t be marked as *Completed* unless at least [one task log has been created](create-a-task-log.md).
+Marking mandatory tasks as *Completed* requires [creating at least one task log](create-a-task-log.md).
 
 ## Behavior
 
 ### Requiring actions on a task
 
-You can require users in any of your organizations to take action on a task. However, once the action is completed, the task's status remains unchanged. This is useful when you need input or assistance from someone in another team or business unit without affecting the task’s workflow.
+Require users in any organization to take action on a task. After completion, the task's status remains unchanged. This approach facilitates input or assistance from other teams or business units without impacting the task’s workflow.
 
 ### Highlighting important tasks
 
-In TheHive, you can make important tasks stand out using the following options:
+TheHive provides the following options to highlight important tasks:
 
 * [Pin a task](manage-a-task.md#pin-a-task): Pin a task to access it from the **Tasks** tab within a case.
-* [Flag a task](manage-a-task.md#flag-a-task): Flag a task to highlight it for all users in your organization, making it more visible in the task list.
+* [Flag a task](manage-a-task.md#flag-a-task): Flag a task to highlight it for all users in an organization, making it more visible in the task list.
 
 ### Closing a case with open tasks
 
-* When you [close a case](../cases/close-a-case.md), all associated tasks are automatically closed, even if some non-mandatory tasks are still incomplete or unassigned.
+* [Closing a case](../cases/close-a-case.md) automatically closes all associated tasks, even if some non-mandatory tasks remain incomplete or unassigned.
 
-* However, if any mandatory tasks aren't completed, you won't be able to close the case.
+* However, the case can't be closed if any mandatory tasks remain incomplete.
 
 ## Permissions
 

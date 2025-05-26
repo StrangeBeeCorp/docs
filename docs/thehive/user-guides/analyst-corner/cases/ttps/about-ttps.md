@@ -16,11 +16,11 @@ Procedures detail how they implement the techniques in practice.
 
 By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/). It's installed during setup, and a catalog named Enterprise Attack is created with all the techniques.
 
-You can [update this catalog](../../../../administration/ttps/update-a-catalog.md) or [add others](../../../../administration/ttps/add-a-catalog.md).
+[This catalog can be updated](../../../../administration/ttps/update-a-catalog.md) or supplemented by [adding others](../../../../administration/ttps/add-a-catalog.md).
 
 ## Actions
 
-In TheHive, you can [add](add-ttps.md) or [remove](remove-ttps.md) TTPs from both alerts and cases.
+[Add](add-ttps.md) or [remove](remove-ttps.md) TTPs from both alerts and cases.
 
 ## Permissions
 

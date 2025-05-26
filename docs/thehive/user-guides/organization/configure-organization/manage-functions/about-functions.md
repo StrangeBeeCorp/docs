@@ -6,10 +6,10 @@ A function in TheHive is a controlled JavaScript code block that must be written
 
 It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
 
-For example, you can use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
+For example, use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! tip "Contribute!"
-    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). You can contribute by sharing functions you’ve written.
+    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). Contributions of user-written functions are welcome.
 
 This topic provides details on the different types and uses of functions in TheHive.
 
@@ -33,7 +33,7 @@ Various sources can trigger functions in TheHive:
 
 ## Common use cases
 
-You can use functions in TheHive to automate workflows, process data, and enhance case management.
+Functions in TheHive automate workflows, process data, and enhance case management.
 
 Below are some common use cases, each with a link to the corresponding JavaScript function:
 
@@ -64,22 +64,22 @@ Ingesting Splunk alerts and converting them into TheHive alerts: [Code](https://
 
 ## Function types
 
-The function type defines the scope in which you can execute the function.
+The function type defines the scope in which the function can execute.
 
 !!! note "Multiple types allowed"
     A function can have one or multiple types.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. You can find a list of available objects in the [Functions Objects](functions-objects.md) topic. To execute the function, you must [revoke it via an HTTP call](revoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. A list of available objects appears in the [Functions Objects](functions-objects.md) topic. Execute the function by [revoking it via an HTTP call](revoke-a-function.md).
 
 * **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 
-* **Action: Case**: Trigger these functions manually within the context of a specific case. To execute the function, you must [run it manually](run-a-function-case-alert.md).
+* **Action: Case**: Trigger these functions manually within the context of a specific case. Execute the function by [running it manually](run-a-function-case-alert.md).
 
-* **Action: Alert**: Trigger these functions manually within the context of a specific alert. To execute the function, you must [run it manually](run-a-function-case-alert.md).
+* **Action: Alert**: Trigger these functions manually within the context of a specific alert. Execute the function by [running it manually](run-a-function-case-alert.md).
 
-* <!-- md:version 5.5 --> **Feeder**: A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. You should not manually create functions of the feeder type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function will be automatically added to the list of functions. From there, you can update it, and any changes will be reflected in the alert feeder, and vice-versa.
+* <!-- md:version 5.5 --> **Feeder**: A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts. Avoid manually creating functions of the *feeder* type. Instead, [create an alert feeder with a function](../manage-feeders/create-a-feeder.md). The function automatically appears in the functions list. Updates to the function reflect in the alert feeder, and changes in the alert feeder update the function accordingly.
 
 ## Function modes
 
