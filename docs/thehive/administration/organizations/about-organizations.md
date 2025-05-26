@@ -2,6 +2,8 @@
 
 Organizations are the customers or tenants, such as separate divisions or business units, that use TheHive independently.
 
+This topic explains how organizations function within TheHive.
+
 {!includes/license-organizations.md!}
 
 ## Default setup

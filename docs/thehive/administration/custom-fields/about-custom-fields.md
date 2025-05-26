@@ -1,12 +1,12 @@
 # About Custom Fields
 
-Custom fields let you add additional information beyond the default fields in [cases](../../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md).
+Custom fields provide a way to extend the default set of fields available in [cases](../../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md), allowing additional, organization-specific information to be recorded.
 
 This topic provides a general overview of custom field usage in TheHive.
 
 ## Use cases
 
-In TheHive, custom fields are used to:
+In TheHive, custom fields add structure and flexibility to cases and alerts in the following ways:
 
 * Provide context to cases or alerts, such as the geographic location of an incident or its severity level
 * Support organizational alignment by specifying the relevant business unit or team
@@ -23,14 +23,14 @@ Custom fields support the following types:
 
 ## Expected values
 
-The values you can enter in custom fields fall into two categories:
+Custom fields support two types of input values:
 
-* Free text: Users can manually enter any value.
-* Dropdown list: Users choose from predefined options.
+* Free text: Accepts manually entered values without restrictions.
+* Dropdown list: Offers a predefined set of selectable options.
 
 ## Completion rules
 
-Custom fields can be either optional or mandatory. You must complete all mandatory custom fields before [closing a case](../../user-guides/analyst-corner/cases/close-a-case.md) or [an alert](../../user-guides/analyst-corner/alerts/close-an-alert.md).
+Custom fields can be configured as either optional or mandatory. Mandatory fields must be completed before a [case](../../user-guides/analyst-corner/cases/close-a-case.md) or an [alert](../../user-guides/analyst-corner/alerts/close-an-alert.md) can be closed.
 
 ## Permissions
 

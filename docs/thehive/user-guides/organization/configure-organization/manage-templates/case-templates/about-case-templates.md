@@ -17,17 +17,17 @@ Use case templates to:
 
 Base case templates on the threat category to maximize effectiveness and ensure continuous improvement.
 
-You can create a case from a case template when [initiating a new case](../../../../analyst-corner/cases/create-a-new-case.md).
+Create a case from a case template when [initiating a new case](../../../../analyst-corner/cases/create-a-new-case.md).
 
-You can also [apply a case template to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md).
+[Apply a case template to an existing case](../../../../analyst-corner/cases/apply-a-case-template.md) as needed.
 
 ## Permissions
 
 {!includes/access-manage-case-templates.md!}
 
-Once created, case templates are automatically available to all users in your organization.
+Once created, case templates are automatically available to all users in the organization.
 
-If you need to share a case template with another organization or TheHive instance, you can [export it](export-import-a-case-template.md#export-a-case-template) and [import it](export-import-a-case-template.md#import-a-case-template).
+To share a case template with another organization or TheHive instance, use the [export](export-import-a-case-template.md#export-a-case-template) and [import](export-import-a-case-template.md#import-a-case-template) features.
 
 <h2>Next steps</h2>
 

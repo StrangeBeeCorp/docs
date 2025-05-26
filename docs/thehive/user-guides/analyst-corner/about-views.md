@@ -1,29 +1,31 @@
 # About Views
 
-Views are a feature that allows you to save [filters and sorting](about-filtering-and-sorting.md) applied to a list in TheHive.
+Views save [filters and sorting](about-filtering-and-sorting.md) applied to a list in TheHive.
+
+This topic explains how views function in TheHive.
 
 ## Default view
 
-A *Default* view with no filters or sorting is always available. You can't modify or delete it.
+A *Default* view without filters or sorting is always available. Modifying or deleting this view isn't permitted.
 
 ## Saving views
 
-When you apply a new filter or sorting, an asterisk (*\**) appears next to the view name:
+Applying a new filter or sorting displays an asterisk (*\**) next to the view name:
 
-* To save the changes in the current view, select **Save view**.
-* To save the changes as a new view, select **Save view as**.
+* Select **Save view** to save changes to the current view.
+* Select **Save view as** to save changes as a new view.
 
 ## Actions
 
-You can switch views by selecting the view name in the top left of the screen.
+Switching views occurs by selecting the view name in the top-left corner of the screen.
 
 ![Switch views](../../images/user-guides/analyst-corner/views.png)
 
-To delete existing views, select **Manage views**.
+Deleting existing views requires selecting **Manage views**.
 
 ![Manage views](../../images/user-guides/analyst-corner/manage-views.png)
 
-You can't rename an existing view.
+Renaming existing views isn't supported.
 
 ## Scope
 

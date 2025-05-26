@@ -1,6 +1,6 @@
 # About Profiles
 
-Profiles are assigned to user accounts for each organization. Each profile is linked to a specific set of permissions that control what the user can do within that organization.
+A profile is assigned to each user account within an organization and determines the permissions available to that user in that context.
 
 This topic provides a general overview of how profiles work in TheHive.
 
@@ -39,7 +39,7 @@ TheHive separates permissions into two types for organization-type profiles:
 * Licensed: Consume a Gold or Platinum license
 * Unlicensed: Don't affect license usage
 
-The following permissions are considered unlicensed:
+These permissions don't require a license:
 
 * `manageDashboard`
 * `manageUser`
@@ -48,7 +48,7 @@ The following permissions are considered unlicensed:
 
 When [creating or editing a profile](create-a-profile.md), licensed permissions are clearly marked to help identify which ones affect license usage. When [assigning a user to an organization](../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md), profiles that include at least one licensed permission are also marked accordingly.
 
-All permissions in administration-type profiles are treated as unlicensed.
+All permissions included in administration-type profiles don't require a license.
 
 ## Permissions
 

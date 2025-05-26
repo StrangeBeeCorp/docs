@@ -2,6 +2,8 @@
 
 The Live Feed is a feature that displays the latest key events from the [audit logs](../organization/about-audit-logs.md).
 
+This topic explains what the Live Feed covers.
+
 ![Live Feed button](../../images/user-guides/analyst-corner/live-feed-button.png)
 
 ![Live Feed drawer](../../images/user-guides/analyst-corner/live-feed-drawer.png)
@@ -18,7 +20,7 @@ When viewing a case description, alert description, task details, or observable 
 
 ## Limits
 
-For performance reasons, the Live Feed is limited to the last 10 events and the past one day.
+For performance reasons, the Live Feed displays only the last 10 events from the past 24 hours.
 
 <h2>Next steps</h2>
 
