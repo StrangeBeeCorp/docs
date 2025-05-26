@@ -1,6 +1,6 @@
 # How to Export Data from Observables
 
-This topic provides step-by-step instructions for exporting data from [observables](about-observables.md) in an case or alert in TheHive.
+This topic provides step-by-step instructions for exporting data from [observables](about-observables.md) in a case or alert in TheHive.
 
 ## Copy data from an observable
 
@@ -26,7 +26,9 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 2. {!includes/observables-tab-go-to.md!}
 
-3. Select **Export list** to export all observables. To export a specific selection of observables, select :fontawesome-regular-square: next to the observables you want to export, then select **Export selection**.
+3. Select **Export list** to export all observables displayed in the tab, reflecting the applied [filters and sorting](../../about-filtering-and-sorting.md). To export a specific selection of observables, select :fontawesome-regular-square: next to the observables you want to export, then select **Export selection**.
+
+    ![Export list observables](../../../../images/user-guides/analyst-corner/cases/export-list-observables.png)
 
 4. In the **Export observable to file** drawer, select your preferred formatting options.
 
