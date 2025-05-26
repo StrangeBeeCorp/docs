@@ -2,6 +2,9 @@
 
 This topic defines each date field used in alerts and cases in TheHive.
 
+!!! note "Stages and statuses"
+    Some of those dates are based on the stage of alerts and cases. To learn more about how statuses and stages interact, see [About Statuses](../administration/status/about-statuses.md).
+
 ## Date field definitions for alerts
 
 | API field |  Definition        |
