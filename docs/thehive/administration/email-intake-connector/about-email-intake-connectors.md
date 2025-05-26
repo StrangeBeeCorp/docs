@@ -2,18 +2,18 @@
 
 This topic explains what email intake connectors are in TheHive.
 
-Email intake connectors are useful when your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
+Organizations that receive alert data by email can use email intake connectors to automate the creation of alerts in TheHive.
 
 ## Usage
 
-Email intake connectors integrate mailboxes that receive cybersecurity alerts. 
+Email intake connectors integrate mailboxes that receive alerts. 
 
 It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.
 
 !!! tip "Parsing emails"
-    The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing and extraction of potential observables, you must [create a notification](../../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md) triggered by [a FilteredEvent](../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md) that [runs the *EmlParser* analyzer](../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md).
+    The content of the email itself isn't automatically parsed when creating the alert. To enable observable extraction, a [notification](../../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md) must trigger [a FilteredEvent](../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md) that [runs the *EmlParser* analyzer](../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md).
 
-    Below is an example of the FilteredEvent trigger you can use:
+    Below is an example of the FilteredEvent trigger:
 
     ```json
     {
@@ -57,7 +57,7 @@ It automatically processes incoming emails, extracts relevant information, and c
 | `description` | Description | The content of the email. |
 
 !!! info "Modification restrictions"
-    You can only change the prefilled data for the `tags`, `source`, and `type` fields. Changes to other fields aren't allowed.
+    Only the prefilled values for the `tags`, `source`, and `type` fields allow modification. Changes to other fields aren't allowed.
 
 ### Observables
 

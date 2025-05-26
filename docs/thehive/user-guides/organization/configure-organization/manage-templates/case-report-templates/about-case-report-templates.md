@@ -22,15 +22,15 @@ Use case report templates to:
 
 ## Structure
 
-Every case report template includes a default header and footer section, which you can customize with content and case variables. You can't move or delete these sections, but they won't appear in the case report if left empty.
+Every case report template includes default header and footer sections customizable with content and case variables. These sections can't be moved or deleted but remain hidden in the case report if left empty.
 
-You can add [widgets](widgets-case-report-templates.md) between these sections to display case data. You can rearrange the order of widgets at any time.
+Add [widgets](widgets-case-report-templates.md) between these sections to display case data. The order of widgets can be rearranged at any time.
 
 ## Permissions
 
 {!includes/access-manage-case-report-templates.md!}
 
-Once created, case report templates are automatically available to all users in your organization within case descriptions.
+Once created, case report templates are automatically available to all users in the organization within case descriptions.
 
 <h2>Next steps</h2>
 

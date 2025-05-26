@@ -1,8 +1,8 @@
 # About Tags
 
-Tags allow you to assign labels to [cases](../about-cases.md), [alerts](../../alerts/about-alerts.md), and [observables](../observables/about-observables.md) in TheHive.
+Tags assign labels to [cases](../about-cases.md), [alerts](../../alerts/about-alerts.md), and [observables](../observables/about-observables.md) in TheHive.
 
-This topic helps you understand how tags work.
+This topic explains how tags function.
 
 ## Sources
 
