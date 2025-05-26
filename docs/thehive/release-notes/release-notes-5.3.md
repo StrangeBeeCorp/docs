@@ -20,7 +20,7 @@
 
 ## 5.3.11 - April 24, 2025
 
-Last update: May 14, 2025
+Last update: May 26, 2025
 
 ### Security fixes
 
