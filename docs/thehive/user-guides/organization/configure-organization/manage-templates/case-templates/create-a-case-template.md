@@ -47,11 +47,11 @@ To import an existing case template from another organization or TheHive instanc
     
     **- [TLP](https://www.misp-project.org/taxonomies.html#_tlp) \***  
 
-    The TLP level for the observable. It indicates how you can share the observable's information with others.
+    The TLP level for the case. It indicates how you can share the case's information with others.
     
     **- [PAP](https://www.misp-project.org/taxonomies.html#_pap) \***  
 
-    The PAP level for the observable. It specifies which actions you can take with the observable data.
+    The PAP level for the case. It specifies which actions you can take with the case data.
     
     **- Severity**  
 

@@ -8,7 +8,7 @@ A case is a structured entity used to track, investigate, and respond to securit
 
 ## Sources
 
-In TheHive, you can create a case from the following sources:
+TheHive supports creating cases from the following sources:
 
 * [Manual entry](../cases/create-a-new-case.md#create-an-empty-case): Cases created through direct input by users.
 
@@ -24,7 +24,7 @@ In TheHive, you can create a case from the following sources:
 
 * [Alerts](../cases/create-a-new-case.md#create-a-case-from-an-alert): Cases generated from alerts received via connected detection tools (SIEM, EDR, IDS, or firewalls), threat intelligence platforms (like MISP), or [email servers](../../../administration/email-intake-connector/about-email-intake-connectors.md).
 
-* [Detection tools](../cases/create-a-new-case.md#create-a-case-from-a-detection-tool) (SIEM, EDR, IDS, or firewalls): Cases created automatically by trusted detection tools, when you prefer to manage alert triage within the tool or trust it to generate mostly true positives.
+* [Detection tools](../cases/create-a-new-case.md#create-a-case-from-a-detection-tool) (SIEM, EDR, IDS, or firewalls): Cases created automatically by trusted detection tools, used when alert triage is managed within the tool or when the tool generates mostly true positives.
 
 ## Key components
 
@@ -36,13 +36,13 @@ In TheHive, a case includes the following elements:
 
 * [TTPs](./ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
 
-* [Attachments](./attachments/about-attachments.md): Files attached to a case. When you add an image to a case description, summary, or task log, it’s automatically saved in the [**Attachments** tab of the case](../cases/attachments/about-attachments.md#cases). Attachments can also be [added manually](./attachments/add-an-attachment-case-alert.md).
+* [Attachments](./attachments/about-attachments.md): Files attached to a case. Adding an image to a case description, summary, or task log automatically saves it in the [**Attachments** tab of the case](../cases/attachments/about-attachments.md#cases). Attachments can also be [added manually](./attachments/add-an-attachment-case-alert.md).
 
 ## Merging cases
 
 {!includes/access-merge-cases.md!}
 
-Cases can be merged if they are similar or part of the same investigation, allowing you to centralize data. 
+Cases can be merged if they're similar or part of the same investigation, enabling data centralization. 
 
 To merge cases, they must belong to the same organization and share the same permission profile pairs. Merging consolidates two cases into a new one, combining their contents and deleting the originals.
 
@@ -60,13 +60,13 @@ Merging also impacts:
 {!includes/access-manage-case-links.md!}
 
 !!! info "Alerts as linked elements"
-    You can't add an alert to the linked elements. An alert link is automatically added to a case when you [create a case from an alert](../alerts/create-a-case-from-an-alert.md) or [add an alert to an existing case](../alerts/add-an-alert-to-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
+    Alerts can't be added to linked elements. An alert link is created automatically when a case is [created from an alert](../alerts/create-a-case-from-an-alert.md) or [an alert is added to an existing case](../alerts/add-an-alert-to-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
 
 Cases can be linked to other TheHive cases or external resources. These links enhance traceability and help visualize relationships between related incidents.
 
 ### Link categories
 
-Links must be categorized to reflect the type of relationship. If you don’t specify a category, *Internal link* is automatically applied when linking TheHive cases, and *External link* when linking external resources.
+Links require categorization to indicate the type of relationship. If no category is specified, *Internal link* applies automatically for links between TheHive cases, and *External link* applies for links to external resources.
 
 ### Link display
 
@@ -78,13 +78,13 @@ Case links aren't included in case exports, reports, or dashboards.
 
 ### Actions
 
-You can [add](./case-links/add-a-link-to-a-case.md) or [remove](./case-links/remove-a-link-from-a-case.md) a link in a case, but you can’t modify it after it’s added.
+Links can be [added](./case-links/add-a-link-to-a-case.md) or [removed](./case-links/remove-a-link-from-a-case.md) in a case, but can't be modified once added.
 
 ### Merging cases with links
 
-* When you merge cases, links from both cases are combined, and duplicates are removed based on the link and its type. Any links that point to the source merged cases are automatically removed.
+* Merging cases combines links from both cases and removes duplicates based on the link and its type. Links pointing to the source merged cases are automatically removed.
 
-* When you create a case from a MISP alert or merge a MISP alert into a case, the MISP URL linked to the alert is added as an external link with the *External alert link* type. This link remains even if you later unlink the alert from the case.
+* Creating a case from a MISP alert or merging a MISP alert into a case adds the MISP URL as an external link with the *External* alert link type. This link remains even if the alert is later unlinked from the case.
 
 ## Closing cases
 
@@ -94,7 +94,7 @@ Cases can be [closed](close-a-case.md) once the investigation is complete.
 
 ### Custom fields completion
 
-Cases can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) are left empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
+Cases can't be closed if any required [custom fields](../../../administration/custom-fields/about-custom-fields.md) remain empty. Users can add or update values in custom fields during the closing process. However, they can't remove custom fields themselves.
 
 ## Case visibility
 
@@ -104,21 +104,21 @@ Cases can't be closed if any required [custom fields](../../../administration/cu
 
 ### Usage
 
-Restricted case visibility allows you to control who can view a case by limiting access to specific team members and managers. This feature helps protect sensitive information and reduce the risk of unauthorized access.
+Restricted case visibility controls access by limiting case viewing to specific team members and managers. This feature protects sensitive information and reduces the risk of unauthorized access.
 
 ### Configuration
 
 By default, cases created through the user interface are visible to all users in the organization.
 
-You can [restrict visibility](restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restore visibility](restore-visibility-case.md) if needed. 
+[Visibility can be restricted](restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restored](restore-visibility-case.md) if necessary. 
 
 The case assignee and the user performing the action always have access and can't be removed.
 
 ### Expected behavior
 
-When you set a case to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, a restricted case can still appear in alerts linked to the restricted cases with a :fontawesome-solid-lock: symbol. 
+When a case is set to restricted visibility, it doesn't appear in linked elements, case lists, search results, or dashboards for unauthorized users. However, alerts linked to restricted cases still display, marked with a :fontawesome-solid-lock: symbol. 
 
-All related elements, including observables, tasks, and attachments, are also hidden. 
+All related elements, including observables, tasks, and attachments, remain hidden as well. 
 
 Unauthorized users can't be assigned to the case.
 
@@ -134,7 +134,7 @@ For authorized users, a restricted case is identifiable by the :fontawesome-soli
 
 ### Merging a restricted case
 
-If you [merge one or more restricted cases with visible cases](merge-cases.md), the newly created merged case automatically inherits restricted visibility.
+[Merging](merge-cases.md) one or more restricted cases with visible cases results in the merged case automatically inheriting restricted visibility.
 
 The list of authorized users includes all users who had access to any of the restricted cases involved in the merge.
 
