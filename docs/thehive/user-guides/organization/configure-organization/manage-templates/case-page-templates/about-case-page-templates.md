@@ -14,15 +14,15 @@ Use case page templates to:
 
 ## Usage
 
-You can use a case page template when [creating a Knowledge Base page at the case level](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
+Use a case page template when [creating a Knowledge Base page at the case level](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
 
 ## Permissions
 
 {!includes/access-manage-case-page-templates.md!}
 
-Once created, case page templates are automatically available to all users in your organization.
+Once created, case page templates are automatically available to all users within the organization.
 
-If you need to share a case page template with another organization or TheHive instance, you can [export it](export-a-case-page-template.md) and [import it](import-a-case-page-template.md).
+To share a case page template with another organization or TheHive instance, use the [export](export-a-case-page-template.md) and [import](import-a-case-page-template.md) features.
 
 <h2>Next steps</h2>
 
