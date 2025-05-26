@@ -10,22 +10,22 @@ This topic explains how sharing rules work and interact.
 
 Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.
 
-You must set global sharing rules:
+TheHive requires setting these rules:
 
 * For cases when [linking organizations](link-an-organization.md)
 * For tasks and observables when [creating an organization](create-an-organization.md)
 
 !!! info "Managing sharing rules for existing cases"
-    Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. To apply sharing rules to existing cases, you must configure them manually, [one case at a time](#local-sharing-rules).
+    Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. Applying sharing rules to existing cases requires manual configuration for each case. See [Local sharing rules](#local-sharing-rules) for details.
 
 ## Local sharing rules
 
-Local sharing rules let you customize sharing settings with linked organizations for both new and existing cases, including their related tasks and observables. They override the global sharing rules set at the organization level when linking organizations and creating organizations.
+Local sharing rules customize how cases—and their associated tasks and observables—are shared with linked organizations. They apply to both new and existing cases and override global sharing rules defined when linking and creating organizations.
 
 Local sharing rules are useful in the following scenarios:
 
-* You have defined [global sharing rules](#global-sharing-rules) for newly created cases but want to apply the same rules to an existing case.
-* You need to apply different sharing rules to one or more cases instead of following the global sharing rules.
+* [Global sharing rules](#global-sharing-rules) are already defined for newly created cases, but the same rules need to apply to an existing case.
+* One or more cases require different sharing settings that don't follow the global sharing rules.
 
 {!includes/access-manage-case-sharing.md!}
 
@@ -36,9 +36,7 @@ Follow these step-by-step instructions to see:
 
 ## Manual sharing of tasks and observables in a shared case
 
-You can manually share tasks and observables in a shared case. 
-
-This is useful when task and observable sharing rules are set to *manual*, ensuring that users share only the relevant tasks and observables.
+Manual sharing allows selective sharing of tasks and observables within a shared case. This approach is useful when task and observable sharing rules are set to manual, enabling users to share only the content that is relevant.
 
 Follow these step-by-step instructions to learn how to:
 

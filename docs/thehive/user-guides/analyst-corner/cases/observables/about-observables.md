@@ -1,8 +1,8 @@
 # About Observables
 
-Observables are data points that can be directly observed and represent specific events or properties within a system. They are monitored for signs of suspicious or malicious activity. 
+Observables are data points that represent specific events or properties within a system and can be directly observed. They serve as indicators monitored for signs of suspicious or malicious activity.
 
-Observables can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors. They can also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
+Observables include stateful properties like IP addresses, domain names, file MD5 hashes, and system behaviors. They also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
 
 This topic provides an overview of the main characteristics of observables in TheHive.
 
@@ -10,11 +10,11 @@ This topic provides an overview of the main characteristics of observables in Th
 
 An observable type defines the category or classification of an observable in TheHive. While TheHive includes a predefined set of types, this list can be [expanded with custom types](../../../../administration/observable-types/create-an-observable-type.md) to meet specific needs.
 
-The available [analyzers](../../../../../cortex/api/how-to-create-an-analyzer.md) for an observable are based on its type.
+Available [analyzers](../../../../../cortex/api/how-to-create-an-analyzer.md) depend on the observable’s type.
 
 ## Data
 
-A piece of data can be:
+Data can take the following forms:
 
 * For types that don't require attachments: values entered into a text area.
 * For types that require attachments: a file, which is hashed.
@@ -35,7 +35,7 @@ An observable can be [marked as sighted](update-an-observable-status.md#mark-an-
 
 Observables are key to identifying similar cases and correlating malicious activity across different alerts and cases. TheHive uses observables to detect patterns and surface related items in the [**Similar alerts** and **Similar cases** tabs](../find-similar-alerts-cases.md). Similarity checks apply between cases and cases, alerts and alerts, and between alerts and cases.
 
-If certain observables—like the company's domain name—aren’t meaningful for threat correlation, you can [exclude them from similarity checks](exclude-an-observable-from-similarity-checks.md).
+Observables that lack relevance for threat correlation, such as the company’s domain name, can be [excluded from similarity checks](exclude-an-observable-from-similarity-checks.md).
 
 ### Rules for similarity
 
