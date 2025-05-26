@@ -62,6 +62,9 @@
     
     
     
+
+
+
 <meta name="robots" content="index" />
 
 <!-- Open graph  -->
@@ -122,6 +125,9 @@
     }
   }
 </script>
+
+<!-- Google site verification -->
+<meta name="google-site-verification" content="OwK13WB3foDY_sewo_rglGx4a5f4eSunDAkGav9CMls">
 
 
    <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -13025,14 +13031,14 @@
 
 <div><h1 id="about-audit-logs">About Audit Logs<a class="headerlink" href="#about-audit-logs" title="Permanent link">#</a></h1>
 <p>Audit logs in TheHive record all user actions, ensuring full traceability of activities performed within the platform.</p>
-<p>Users can view a graphical representation of audit logs in the <strong>History</strong> tab, accessible in case and alert descriptions.</p>
+<p>A graphical representation of audit logs appears in the <strong>History</strong> tab within case and alert descriptions.</p>
 <p>This document explains the purpose, usage, and benefits of audit logs in TheHive.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
 <p>Audit logs provide critical insights into system activity and security. </p>
 <p>Their key use cases include:</p>
 <ul>
-<li>Workflow automation: Logs can be sent to an orchestration system to trigger automated workflows.</li>
-<li>Security monitoring: Logs can be forwarded to a Security Information and Event Management (SIEM) system to detect suspicious or abnormal behaviors.</li>
+<li>Workflow automation: Logs send to an orchestration system to trigger automated workflows.</li>
+<li>Security monitoring: Logs forward to a Security Information and Event Management (SIEM) system to detect suspicious or abnormal behaviors.</li>
 <li>Activity traceability: The <strong>History</strong> tab records all actions on cases and alerts for accountability and compliance.</li>
 </ul>
 <h2 id="main-audit-fields">Main audit fields<a class="headerlink" href="#main-audit-fields" title="Permanent link">#</a></h2>
@@ -13052,7 +13058,7 @@
 <li><code>organisation</code>: Details about the organization where the action occurred.</li>
 </ul>
 <h2 id="anatomy-of-an-audit">Anatomy of an audit<a class="headerlink" href="#anatomy-of-an-audit" title="Permanent link">#</a></h2>
-<p>An audit entry is represented as a JSON object with the following structure:</p>
+<p>An audit entry uses a JSON object structured as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327684328"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>

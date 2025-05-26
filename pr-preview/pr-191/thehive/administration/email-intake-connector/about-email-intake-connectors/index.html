@@ -66,6 +66,9 @@
     
     
     
+
+
+
 <meta name="robots" content="index" />
 
 <!-- Open graph  -->
@@ -126,6 +129,9 @@
     }
   }
 </script>
+
+<!-- Google site verification -->
+<meta name="google-site-verification" content="OwK13WB3foDY_sewo_rglGx4a5f4eSunDAkGav9CMls">
 
 
    <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -13122,14 +13128,14 @@
 
 <div><h1 id="about-email-intake-connectors">About Email Intake Connectors<a class="headerlink" href="#about-email-intake-connectors" title="Permanent link">#</a></h1>
 <p>This topic explains what email intake connectors are in TheHive.</p>
-<p>Email intake connectors are useful when your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.</p>
+<p>Organizations that receive alert data by email can use email intake connectors to automate the creation of alerts in TheHive.</p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<p>Email intake connectors integrate mailboxes that receive cybersecurity alerts. </p>
+<p>Email intake connectors integrate mailboxes that receive alerts. </p>
 <p>It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.</p>
 <div class="admonition tip">
 <p class="admonition-title">Parsing emails</p>
-<p>The content of the email itself isn't automatically parsed when creating the alert. To enable automatic parsing and extraction of potential observables, you must <a href="../../../user-guides/organization/configure-organization/manage-notifications/create-a-notification/">create a notification</a> triggered by <a href="../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/">a FilteredEvent</a> that <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/">runs the <em>EmlParser</em> analyzer</a>.</p>
-<p>Below is an example of the FilteredEvent trigger you can use:</p>
+<p>The content of the email itself isn't automatically parsed when creating the alert. To enable observable extraction, a <a href="../../../user-guides/organization/configure-organization/manage-notifications/create-a-notification/">notification</a> must trigger <a href="../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/">a FilteredEvent</a> that <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/">runs the <em>EmlParser</em> analyzer</a>.</p>
+<p>Below is an example of the FilteredEvent trigger:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -13226,7 +13232,7 @@
 </table>
 <div class="admonition info">
 <p class="admonition-title">Modification restrictions</p>
-<p>You can only change the prefilled data for the <code>tags</code>, <code>source</code>, and <code>type</code> fields. Changes to other fields aren't allowed.</p>
+<p>Only the prefilled values for the <code>tags</code>, <code>source</code>, and <code>type</code> fields allow modification. Changes to other fields aren't allowed.</p>
 </div>
 <h3 id="observables">Observables<a class="headerlink" href="#observables" title="Permanent link">#</a></h3>
 <table>

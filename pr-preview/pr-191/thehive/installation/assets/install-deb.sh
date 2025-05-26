@@ -3,7 +3,7 @@
 #
 #
 # This script installs:
-# - Cassandra 4.0.x
+# - Cassandra 4.1.x
 # - Elasticsearch 7.x
 # - TheHive 5.x
 # 
@@ -27,7 +27,7 @@ HEADER="---
 THeHive installation script for Linux using DEB packages
 
 Following softwares will be installed:
- - Cassandra 4.0.x
+ - Cassandra 4.1.x
  - Elasticsearch 7.x
  - TheHive 5.x
  
@@ -162,7 +162,7 @@ sudo update-java-alternatives --jre-headless -s java-1.11.0-openjdk-amd64
 
 ## CASSANDRA INSTALLATION 
 wget -qO -  https://downloads.apache.org/cassandra/KEYS | sudo gpg --dearmor  -o /usr/share/keyrings/cassandra-archive.gpg
-echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 40x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
+echo "deb [signed-by=/usr/share/keyrings/cassandra-archive.gpg] https://downloads.apache.org/cassandra/debian 41x main" |  sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list 
 apt-install cassandra
 
 ## CASSANDRA CONFIGURATION
