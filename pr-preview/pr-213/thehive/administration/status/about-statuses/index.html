@@ -13128,13 +13128,13 @@
 
 <div><h1 id="about-statuses">About Statuses<a class="headerlink" href="#about-statuses" title="Permanent link">#</a></h1>
 <p>The status represents the current state of a <a href="../../../user-guides/analyst-corner/cases/about-cases/">case</a> or <a href="../../../user-guides/analyst-corner/alerts/about-alerts/">alert</a>.</p>
-<p>This article explains how statuses works in TheHive.</p>
+<p>This topic explains how statuses works in TheHive.</p>
 <div class="admonition info">
 <p class="admonition-title">Task statuses</p>
 <p>This page doesn't cover task statuses, which are hard-coded in TheHive. They can't be modified, deleted, or extended.</p>
 </div>
 <h2 id="predefined-statuses">Predefined statuses<a class="headerlink" href="#predefined-statuses" title="Permanent link">#</a></h2>
-<p>TheHive includes a set of predefined statuses. You can <a href="../change-color-of-a-status/">change their color</a> or <a href="../change-visibility-of-a-status/">hide them</a> to guide users toward using the <a href="../create-a-status/">custom statuses you have created</a>.</p>
+<p>TheHive includes a set of predefined statuses. Administrators can <a href="../change-color-of-a-status/">change their color</a>, or <a href="../change-visibility-of-a-status/">hide them</a> to encourage the use of <a href="../create-a-status/">custom statuses</a>.</p>
 <h2 id="attributes">Attributes<a class="headerlink" href="#attributes" title="Permanent link">#</a></h2>
 <p>Each status is associated with:</p>
 <ul>
@@ -13142,7 +13142,7 @@
 <p>A stage: TheHive includes four predefined stages—<em>New</em>, <em>Imported</em>, <em>In progress</em>, and <em>Closed</em>. Stages are hard-coded and can't be modified, deleted, or extended.</p>
 <div class="admonition info">
 <p class="admonition-title">Imported stage</p>
-<p>The <em>Imported</em> stage isn't available for selection in the interface. It is linked to an <em>Imported</em> status that is applied when an alert is <a href="../../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/">merged into an existing case</a> or <a href="../../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">merged into a new case</a>.</p>
+<p>The <em>Imported</em> stage and status aren't available for selection in the interface. The <em>Imported</em> status is automatically applied when an alert is <a href="../../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/">merged into an existing case</a> or <a href="../../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">merged into a new case</a>.</p>
 </div>
 </li>
 <li>
@@ -13155,14 +13155,14 @@
 <h2 id="behavior">Behavior<a class="headerlink" href="#behavior" title="Permanent link">#</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Alert status restrictions</p>
-<p>You can't switch back to a status linked to the <em>New</em> or <em>In progress</em> stage if the alert is currently in a status linked to the <em>Closed</em> stage—unless you have permission to <a href="../../../user-guides/analyst-corner/alerts/reopen-an-alert/">reopen a closed alert</a>. The same restriction applies when trying to switch from <em>In progress</em> back to <em>New</em>.</p>
+<p>Alerts in a status linked to the <em>Closed</em> stage can't return to a <em>New</em> or <em>In progress</em> stage unless the user has permission to <a href="../../../user-guides/analyst-corner/alerts/reopen-an-alert/">reopen a closed alert</a>. The same restriction applies when trying to switch from <em>In progress</em> back to <em>New</em>.</p>
 </div>
 <ul>
 <li>
 <p>Statuses linked to the <em>In progress</em> stage are available at any time for cases, but only <a href="../../../user-guides/analyst-corner/alerts/start-investigating-an-alert/">when starting the investigation of an alert</a> or <a href="../../../user-guides/analyst-corner/alerts/reopen-an-alert/">reopening a closed alert</a> for alerts.</p>
 </li>
 <li>
-<p>Statuses linked to the <em>Closed</em> stage can only be selected when <a href="../../../user-guides/analyst-corner/cases/close-a-case/">closing a case</a> or <a href="../../../user-guides/analyst-corner/alerts/close-an-alert/">closing an alert</a>.</p>
+<p>Statuses linked to the <em>Closed</em> stage are available only when <a href="../../../user-guides/analyst-corner/cases/close-a-case/">closing a case</a> or <a href="../../../user-guides/analyst-corner/alerts/close-an-alert/">closing an alert</a>.</p>
 </li>
 </ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>

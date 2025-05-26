@@ -13207,10 +13207,10 @@
 <p>An <a href="../../installation/upgrade-from-5.x/">upgrade guide</a> is available to help you migrate from TheHive 5.x</p>
 </div>
 <h2 id="5410-april-24-2025">5.4.10 - April 24, 2025<a class="headerlink" href="#5410-april-24-2025" title="Permanent link">#</a></h2>
-<p>Last update: May 14, 2025</p>
+<p>Last update: May 26, 2025</p>
 <h3 id="security-fixes">Security fixes<a class="headerlink" href="#security-fixes" title="Permanent link">#</a></h3>
 <ul>
-<li>This update includes four patches addressing vulnerabilities that haven't been exploited in the wild. Further details are provided in our <a href="https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025">security bulletin</a>, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md">Responsible Vulnerability Disclosure Policy</a>.</li>
+<li>This update includes four patches addressing vulnerabilities identified as <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48738">CVE-2025-48738</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48739">CVE-2025-48739</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48740">CVE-2025-48740</a>, and <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48741">CVE-2025-48741</a>. None have been exploited in the wild. Further details are provided in our <a href="https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025">security bulletin</a>, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md">Responsible Vulnerability Disclosure Policy</a>.</li>
 <li>JSON endpoints now strictly validate the <code>Content-Type</code> header. Requests must explicitly include <code>Content-Type: application/json</code>. If not, the server returns a <code>400 Bad Request</code> response.<ul>
 <li>A temporary compatibility mode is available to support legacy clients or scripts that don't set the <code>Content-Type</code> header properly. To enable it, add the following line to your <code>application.conf</code> file: <code>ignoreCSRFProtection = true</code>.</li>
 <li>After enabling compatibility mode, update all clients to send <code>Content-Type: application/json</code>. Once all clients are updated, remove this override to re-enable full validation.</li>

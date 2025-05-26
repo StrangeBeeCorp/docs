@@ -13227,14 +13227,14 @@
 
 
 <div><h1 id="about-observables">About Observables<a class="headerlink" href="#about-observables" title="Permanent link">#</a></h1>
-<p>Observables are data points that can be directly observed and represent specific events or properties within a system. They are monitored for signs of suspicious or malicious activity. </p>
-<p>Observables can include stateful properties like IP addresses, domain names, file MD5 hashes, or system behaviors. They can also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.</p>
+<p>Observables are data points that represent specific events or properties within a system and can be directly observed. They serve as indicators monitored for signs of suspicious or malicious activity.</p>
+<p>Observables include stateful properties like IP addresses, domain names, file MD5 hashes, and system behaviors. They also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.</p>
 <p>This topic provides an overview of the main characteristics of observables in TheHive.</p>
 <h2 id="type">Type<a class="headerlink" href="#type" title="Permanent link">#</a></h2>
 <p>An observable type defines the category or classification of an observable in TheHive. While TheHive includes a predefined set of types, this list can be <a href="../../../../../administration/observable-types/create-an-observable-type/">expanded with custom types</a> to meet specific needs.</p>
-<p>The available <a href="../../../../../../cortex/api/how-to-create-an-analyzer/">analyzers</a> for an observable are based on its type.</p>
+<p>Available <a href="../../../../../../cortex/api/how-to-create-an-analyzer/">analyzers</a> depend on the observable’s type.</p>
 <h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">#</a></h2>
-<p>A piece of data can be:</p>
+<p>Data can take the following forms:</p>
 <ul>
 <li>For types that don't require attachments: values entered into a text area.</li>
 <li>For types that require attachments: a file, which is hashed.</li>
@@ -13247,7 +13247,7 @@
 <p>An observable can be <a href="../update-an-observable-status/#mark-an-observable-as-sighted">marked as sighted</a> once it has been detected or observed in the environment.</p>
 <h2 id="similar-alerts-and-cases">Similar alerts and cases<a class="headerlink" href="#similar-alerts-and-cases" title="Permanent link">#</a></h2>
 <p>Observables are key to correlating malicious activity across different alerts and cases. TheHive uses observables to identify patterns and surface related alerts and cases in the <a href="../../find-similar-alerts-cases/"><strong>Similar alerts</strong> and <strong>Similar cases</strong> tabs</a>.</p>
-<p>If certain observables—like the company's domain name—aren’t meaningful for threat correlation, you can choose to <a href="../exclude-an-observable-from-similarity-checks/">exclude them from similarity checks</a>.</p>
+<p>Observables that lack relevance for threat correlation, such as the company’s domain name, can be <a href="../exclude-an-observable-from-similarity-checks/">excluded from similarity checks</a>.</p>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
