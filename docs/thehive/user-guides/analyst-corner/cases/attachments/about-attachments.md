@@ -2,7 +2,7 @@
 
 Attachments are files linked to an organization, case, or alert. They store supporting materials—such as images, documents, or reports—that provide context or evidence.
 
-This topic explains how attachments are managed in TheHive.
+This topic explains how attachments work in TheHive.
 
 ## Where to add attachments
 
@@ -12,25 +12,25 @@ Attachments can be manually added to organizations.
 
 ### Cases
 
-Attachments can be added to cases. Case reports, images in case descriptions, summaries, and task logs, are automatically saved as attachments. You can also manually add files to the case or reports tabs.
+Attachments can be added to cases. Case reports, images in case descriptions, summaries, and task logs, are automatically saved as attachments. Files can also be added manually to the case or reports tabs.
 
 Removing an image from a description, summary, or task log doesn't automatically remove it from the list of attachments.
 
 ### Alerts
 
-Attachments can be added to alerts. Images in case descriptions and summaries are automatically saved as attachments. You can also manually add files.
+Attachments can be added to alerts. Images in case descriptions and summaries are automatically saved as attachments. Files can also be added manually.
 
 Removing an image from a description or summary doesn't automatically remove it from the list of attachments.
 
 ## Format
 
-Attachments are supported in any file format.
+Any file format is supported for attachments.
 
 ## Permissions
 
 {!includes/access-manage-attachments.md!}
 
-Once added, attachments can be viewed or downloaded by any user.
+Adding an attachment grants all users permission to view or download it.
 
 <h2>Next steps</h2>
 

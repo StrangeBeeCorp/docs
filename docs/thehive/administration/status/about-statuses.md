@@ -2,7 +2,7 @@
 
 The status represents the current state of a [case](../../user-guides/analyst-corner/cases/about-cases.md) or [alert](../../user-guides/analyst-corner/alerts/about-alerts.md).
 
-This article explains how statuses works in TheHive.
+This topic explains how statuses works in TheHive.
 
 {!includes/task-statuses-excluded.md!}
 
