@@ -9,7 +9,7 @@ This topic describes dashboards in the context of TheHive, including their funct
 
 ## Configuration
 
-Dashboards consist of [widgets](widgets-dashboards.md) that you can drag into place.
+Dashboards consist of [widgets](widgets-dashboards.md) that can be dragged into place.
 
 TheHive includes four default dashboards: 
 
@@ -18,13 +18,13 @@ TheHive includes four default dashboards:
 * Observables statistics
 * TTPs statistics
 
-You can [customize these default dashboards](add-remove-widgets-dashboard.md) and [create new ones from scratch](create-a-dashboard.md).
+[Customize these default dashboards](add-remove-widgets-dashboard.md) and [create new ones from scratch](create-a-dashboard.md).
 
 ## Scope
 
 Dashboards are at the organization level and can't be shared between organizations.
 
-However, you can manually share dashboards between organizations or TheHive instances by [exporting](export-import-a-dashboard.md#export-a-dashboard) and [importing](export-import-a-dashboard.md#import-a-dashboard) them. These dashboards will remain independent and unlinked. This can be useful if you want to use a template instead of starting from scratch.
+However, dashboards can be manually shared between organizations or TheHive instances by [exporting](export-import-a-dashboard.md#export-a-dashboard) and [importing](export-import-a-dashboard.md#import-a-dashboard). These dashboards remain independent and unlinked, providing a useful template for starting without building from scratch.
 
 ## Visibility
 
@@ -37,15 +37,15 @@ Only the dashboard owner can [change its visibility](change-visibility-of-a-dash
 
 ## Data interactions
 
-In some widgets, you can access detailed data directly from the dashboards by selecting a value. This action opens the **Global search** view with predefined filters applied.
+Some widgets allow accessing detailed data directly from dashboards by selecting a value. This action opens the **Global search** view with predefined filters applied.
 
-You can also hide data in some widgets by selecting the corresponding item in the legend.
+Data in certain widgets can also be hidden by selecting the corresponding item in the legend.
 
 ## Finding a dashboard
 
 Organizing dashboards into groups makes them easier to find and use. Use the **Show items as group** button available on the dashboards list to organize dashboards by type.
 
-You can also apply [filters and sorting](../../analyst-corner/about-filtering-and-sorting.md) to help locate specific dashboards. These preferences can be saved using [views](../../analyst-corner/about-views.md).
+Apply [filters and sorting](../../analyst-corner/about-filtering-and-sorting.md) to help locate specific dashboards. These preferences can be saved using [views](../../analyst-corner/about-views.md).
 
 ## Permissions
 
