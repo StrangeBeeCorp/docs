@@ -1,28 +1,28 @@
 # About Taxonomies
 
-Taxonomies are catalogs of structured tags managed in TheHive. They're [one of the tag categories](../../user-guides/analyst-corner/cases/tags/about-tags.md) that can be added to cases, alerts, or observables.
+Taxonomies are catalogs of structured tags managed in TheHive. They belong to [one of the tag categories](../../user-guides/analyst-corner/cases/tags/about-tags.md) available for cases, alerts, or observables.
 
 This topic explains how taxonomies work.
 
 ## Sources
 
-Taxonomies can be created in two ways:
+TheHive supports two ways to create taxonomies:
 
-* From MISP: [MISP taxonomies](https://github.com/MISP/misp-taxonomies) are imported by default when you install TheHive.
+* From MISP: TheHive imports [MISP taxonomies](https://github.com/MISP/misp-taxonomies) by default during installation.
 
     !!! warning "Manual activation required"
-        By default, MISP taxonomies aren't activated. You must [activate them manually](activate-deactivate-a-taxonomy.md).
+        By default, MISP taxonomies aren't activated. Administrators must [activate them manually](activate-deactivate-a-taxonomy.md).
 
-* From custom files: You can [import custom taxonomies](add-a-custom-taxonomy.md) as needed.
+* From custom files: Administrators can [import custom taxonomies](add-a-custom-taxonomy.md) as needed.
 
 ## Actions
 
 !!! info "MISP taxonomy upgrades"
-    TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html) available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. To update them, you must perform [a manual update](update-misp-taxonomies.md).
+    TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html) available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. Updating them requires performing [a manual update](update-misp-taxonomies.md).
 
-You can't modify taxonomies or their tags. 
+TheHive doesn't allow modifying taxonomies or their tags. 
 
-However, you can:
+However, administrators can:
 
 * [Deactivate taxonomies](activate-deactivate-a-taxonomy.md)
 * [Delete taxonomies](delete-a-taxonomy.md)

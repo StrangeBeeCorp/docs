@@ -1,12 +1,12 @@
 # About the Knowledge Base
 
-The Knowledge Base in TheHive allows you to create and share valuable information with your team. You can document lessons learned, write reports, record meeting notes, or share any content that helps improve collaboration and knowledge sharing.
+The Knowledge Base in TheHive enables the creation and sharing of valuable information within a team. It supports documenting lessons learned, writing reports, recording meeting notes, and sharing content that enhances collaboration and knowledge sharing.
 
-This topic explains how to use the Knowledge Base to support teamwork and ensure that important information is accessible to your team.
+This topic describes how the Knowledge Base supports teamwork and ensures important information remains available to the team.
 
 ## Structure
 
-The Knowledge Base is organized into pages, which you can create at two levels:
+The Knowledge Base organizes content into pages, which can be created at two levels:
 
 * Organization level: Share information that's relevant across the entire organization.
 * Case level: Document details specific to individual cases.
@@ -25,7 +25,7 @@ Knowledge Base pages use [TheHive-flavored Markdown syntax](../thehive-flavored-
 
 {!includes/access-knowledge-base.md!}
 
-After a page is created at the organization level, it's visible to all users. At the case level, it's visible only to users with access to the case.
+Pages created at the organization level are visible to all users. Pages created at the case level are visible only to users with access to that case.
 
 <h2>Next steps</h2>
 

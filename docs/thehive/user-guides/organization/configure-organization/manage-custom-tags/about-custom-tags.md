@@ -8,7 +8,7 @@ This topic explains how custom tags work.
 
 ## Scope
 
-Custom tags are specific to a single organization and can't be shared between organizations or TheHive instances. You can include sensitive data in tags without the risk of data leakage outside the organization.
+Custom tags are specific to a single organization and can't be shared between organizations or TheHive instances. Tags can contain sensitive data without risking exposure outside the organization.
 
 ## Sources
 
@@ -21,7 +21,7 @@ Custom tags can be created:
 
 ## Actions
 
-* Create custom tags by adding them directly to cases, alerts, and observables. You can't add a custom tag that already exists in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if the taxonomy is deactivated.
+* Create custom tags by adding them directly to cases, alerts, and observables. Custom tags can't duplicate tags already present in a [taxonomy](../../../../administration/taxonomies/about-taxonomies.md), even if that taxonomy is deactivated.
 
     !!! tip "Consistent naming"
         Tag usage must be consistent, as TheHive doesn't enforce standardization. For example, tags with different formatting, such as *Phishing* and *phishing*, are treated as separate tags.
