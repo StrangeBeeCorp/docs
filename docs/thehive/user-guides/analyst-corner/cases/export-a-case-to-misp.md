@@ -10,7 +10,7 @@ Only observables marked as IOCs will be exported in the case. Once exported to M
     The MISP server you want to share your case with must be [configured with either the *Import and export* or *Export only* purpose](../../../administration/misp-integration/connect-a-misp-server.md).
 
 !!! warning "MISP actions required"
-    The event created in MISP is not published by default. You must review it and update its status in MISP to publish it.
+    The event created in MISP isn't published by default. You must review it and update its status in MISP to publish it.
 
 <h2>Procedure</h2>
 
