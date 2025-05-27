@@ -557,7 +557,6 @@ nav:
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
-          - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
         - 'Alert Feeders': 
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
@@ -586,6 +585,7 @@ nav:
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
+          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
@@ -692,6 +692,7 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
+          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':

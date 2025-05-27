@@ -9,6 +9,9 @@ Run a responder on an alert to take actions such as closing an external ticket o
 !!! note "Observables not included"
     Running a responder on an alert doesn't run it on the observables linked to the alert. To run responders on an observable, see [Run Responders and Review Reports for an Observable](../cases/observables/run-responders-on-an-observable.md).
 
+!!! tip "Running functions on an alert"
+    <!-- md:version 5.4 --> Did you know it’s possible to run functions on alerts just like running responders? See [Run a Function on a Case or an Alert](../../organization/configure-organization/manage-functions/run-a-function-case-alert.md) for detailed instructions.
+
 ## Run responders on an alert
 
 1. [Locate the alert](./search-for-alerts/find-an-alert.md) on which you want to run responders.

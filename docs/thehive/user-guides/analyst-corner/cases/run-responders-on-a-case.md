@@ -9,6 +9,9 @@ Run a responder on a case to take actions such as closing an external ticket or 
 !!! note "Observables not included"
     Running a responder on a case doesn't run it on the observables linked to the case. To run responders on an observable, see [Run Responders and Review Reports for an Observable](./observables/run-responders-on-an-observable.md).
 
+!!! tip "Running functions on a case"
+    <!-- md:version 5.4 --> Did you know it’s possible to run functions on cases just like running responders? See [Run a Function on a Case or an Alert](../../organization/configure-organization/manage-functions/run-a-function-case-alert.md) for detailed instructions.
+
 ## Run responders on a case
 
 1. [Locate the alert](./search-for-cases/find-a-case.md) on which you want to run responders.
