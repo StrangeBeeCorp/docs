@@ -15,7 +15,7 @@ Use this procedure to turn off automatic updates for specific alerts.
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to exclude from automatic updates.
 
-2. In the alert description, select **Ignore new updates**.
+2. In the alert, select **Ignore new updates**.
 
     ![Ignore MISP updates](../../../images/user-guides/analyst-corner/alerts/alert-ignore-misp-updates.png)
 
