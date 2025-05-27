@@ -31,5 +31,5 @@ This topic provides step-by-step instructions for [merging cases](../cases/about
 
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
 * [Create a Case](../cases/create-a-new-case.md)
-* [Restrict Case Visibility](restrict-visibility-case.md)
-* [Restore Case Visibility](restore-visibility-case.md)
+* [Restrict Case Visibility](./case-visibility/restrict-visibility-case.md)
+* [Restore Case Visibility](./case-visibility/restore-visibility-case.md)
