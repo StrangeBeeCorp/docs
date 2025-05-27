@@ -345,6 +345,10 @@
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/cases-view-go-to/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/certificate-authority/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
@@ -402,10 +406,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/entities-management-view-go-to/</loc>
-         <lastmod>2025-05-27</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/includes/export-list-user-accounts/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -578,6 +578,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/tasks-tab-go-to/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/tasks-view-go-to/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -1245,11 +1249,19 @@
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/export-list-of-alerts/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/reopen-an-alert/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -1262,14 +1274,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts/</loc>
-         <lastmod>2025-05-27</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders/</loc>
-         <lastmod>2025-05-27</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -1313,6 +1317,10 @@
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/export-list-of-cases/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
@@ -1326,6 +1334,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/restrict-visibility-case/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/run-responders-on-a-case/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -1414,14 +1426,6 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/preview-cases/</loc>
-         <lastmod>2025-05-27</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer/</loc>
-         <lastmod>2025-05-27</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/cases-description/run-responders/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
@@ -1581,15 +1585,23 @@
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/export-list-of-tasks/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/manage-a-task/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/share-a-task/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders/</loc>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task/</loc>
+         <lastmod>2025-05-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/share-a-task/</loc>
          <lastmod>2025-05-27</lastmod>
     </url>
     <url>
