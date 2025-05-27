@@ -589,6 +589,7 @@ nav:
           - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
+          - 'Export a List of Alerts': thehive/user-guides/analyst-corner/alerts/export-list-of-alerts.md
           - 'Observables' :
             - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
             - 'Add an Observable' : thehive/user-guides/analyst-corner/cases/observables/add-an-observable.md
@@ -630,6 +631,7 @@ nav:
             - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
             - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
           - 'Create a Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
+          - 'Export a List of Cases': thehive/user-guides/analyst-corner/cases/export-list-of-cases.md
           - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
           - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
@@ -702,6 +704,7 @@ nav:
             - 'Create a Task': thehive/user-guides/analyst-corner/tasks/create-a-task.md
             - 'Change a Task Status': thehive/user-guides/analyst-corner/tasks/change-task-status.md
             - 'Manage Tasks': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
+            - 'Export a List of Tasks': thehive/user-guides/analyst-corner/tasks/export-list-of-tasks.md
             - 'Delete a Task': thehive/user-guides/analyst-corner/tasks/delete-a-task.md
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md

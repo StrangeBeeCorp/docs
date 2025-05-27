@@ -1,2 +1,2 @@
     !!! tip "Applying filters and views"
-        You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/). These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
+        Apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) and save preferences using [views](/thehive/user-guides/analyst-corner/about-views/).
