@@ -1,4 +1,4 @@
-# How to Delete a Mailbox
+# How to Delete a Mailbox Connection
 
 This topic provides step-by-step instructions for deleting a [mailbox connection](about-email-intake-connectors.md) in TheHive.
 
