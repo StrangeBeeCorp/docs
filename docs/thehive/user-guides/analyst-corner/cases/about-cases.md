@@ -110,7 +110,7 @@ Restricted case visibility controls access by limiting case viewing to specific 
 
 By default, cases created through the user interface are visible to all users in the organization.
 
-[Visibility can be restricted](restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restored](restore-visibility-case.md) if necessary. 
+[Visibility can be restricted](./case-visibility/restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restored](./case-visibility/restore-visibility-case.md) if necessary. 
 
 The case assignee and the user performing the action always have access and can't be removed.
 
@@ -149,8 +149,8 @@ The list of authorized users includes all users who had access to any of the res
 * [Find a Case](../cases/search-for-cases/find-a-case.md)
 * [Create a Case](../cases/create-a-new-case.md)
 * [Merge Cases](../cases/merge-cases.md)
-* [Restrict Case Visibility](restrict-visibility-case.md)
-* [Restore Case Visibility](restore-visibility-case.md)
+* [Restrict Case Visibility](./case-visibility/restrict-visibility-case.md)
+* [Restore Case Visibility](./case-visibility/restore-visibility-case.md)
 * [Add a Link to a Case](./case-links/add-a-link-to-a-case.md)
 * [Remove a Link from a Case](./case-links/remove-a-link-from-a-case.md)
 * [View Links in a Case](./case-links/view-links-in-a-case.md)

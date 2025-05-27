@@ -57,6 +57,11 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - htmlproofer:
+      enabled: !ENV [ENABLED_HTMLPROOFER, false]
+      raise_error_after_finish: True
+      validate_external_urls: False
+      skip_downloads: True
   - redirects:
         redirect_maps:
             'thehive/index.md': 'thehive/overview/index.md'
@@ -127,7 +132,7 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md'
-            'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
+            'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
             'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
@@ -135,16 +140,16 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/analyst-corner/cases-list/about-a-case-list.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
-            'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/cases-description/actions.md'
-            'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md'
+            'thehive/user-guides/analyst-corner/cases-list/actions.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/analyst-corner/cases-list/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/tasks.md': 'thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md'
             'thehive/user-guides/analyst-corner/cases-list/timeline.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md'
             'thehive/user-guides/analyst-corner/cases/about-a-case.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
-            'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md'
-            'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
+            'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
+            'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
             'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
@@ -291,6 +296,13 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md': 'thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md'
             'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
+            'thehive/user-guides/analyst-corner/cases/restore-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md'
+            'thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/actions.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
 
 extra:
   generator: false
@@ -576,7 +588,6 @@ nav:
           - 'Search for Alerts': 
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
-          - 'Preview Alerts': thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Create a Case from an Alert': thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md
           - 'Add an Alert to an Existing Case': thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md
@@ -635,9 +646,6 @@ nav:
           - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
           - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
-          - 'Preview Cases': thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md
-          - 'Actions on Cases': thehive/user-guides/analyst-corner/cases/cases-description/actions.md
-          - 'View a Case': thehive/user-guides/analyst-corner/cases/cases-description/general.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
             - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
@@ -666,6 +674,8 @@ nav:
             - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
             - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
+          - 'Change Case Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md
+          - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
@@ -693,11 +703,12 @@ nav:
             - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
             - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
           - 'Manage Case Visibility':
-            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
-            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
           - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
+          - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
         - 'Tasks Management':
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
@@ -726,6 +737,7 @@ nav:
           - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
           - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
+        - 'Detail View vs. Preview': thehive/user-guides/analyst-corner/preview-vs-detail-view.md
         - 'About Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
         - 'About Views': thehive/user-guides/analyst-corner/about-views.md
         - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md

@@ -24,17 +24,17 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### Triggers on cases
 
-* *CaseClosed*: Triggered when [a case is closed](../../../analyst-corner/cases/close-a-case.md)
-* *CaseCreated*: Triggered when [a new case is created](../../../analyst-corner/cases/create-a-new-case.md)
-* *CaseFlagged*: Triggered when [a case is flagged](../../../analyst-corner/cases/cases-description/actions.md#flagunflag)
-* *CaseShared*: Triggered when [a case is shared](../../../analyst-corner/cases/share-a-case.md)
+* *CaseClosed*: Triggered when a case is closed
+* *CaseCreated*: Triggered when a new case is created
+* *CaseFlagged*: Triggered when a case is flagged
+* *CaseShared*: Triggered when a case is shared
 
 #### Triggers on alerts
 
 * *AlertAssigned*: Triggered when an alert is assigned to a user
-* *AlertClosed*: Triggered when [an alert is closed](../../../analyst-corner/alerts/close-an-alert.md)
-* *AlertCreated*: Triggered when [a new alert is created](../../../analyst-corner/alerts/about-alerts.md#sources)
-* *AlertImported*: Triggered when an alert is imported—either by [merging it into a new case](../../../analyst-corner/alerts/create-a-case-from-an-alert.md) or [into an existing one](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md).
+* *AlertClosed*: Triggered when an alert is closed
+* *AlertCreated*: Triggered when a new alert is created
+* *AlertImported*: Triggered when an alert is imported—either by merging it into a new case or into an existing one
 
 #### Triggers on observables
 
@@ -44,7 +44,7 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### Triggers on tasks
 
-* *LoginMyTask*: Triggered when [a new log is added to a task](../../../analyst-corner/tasks/create-a-task-log.md)
+* *LoginMyTask*: Triggered when a new log is added to a task
 * *TaskAssigned*: Triggered when a task is assigned to a user or the assignee is updated
 * *TaskClosed*: Triggered when a task is closed
 * *TaskMandatory*: Triggered when a task is made mandatory

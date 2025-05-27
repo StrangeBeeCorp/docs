@@ -12,3 +12,4 @@ mkdocs-glightbox
 mkdocs-video
 markdown-include
 mkdocs-exclude-search
+mkdocs-htmlproofer-plugin
