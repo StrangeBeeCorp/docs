@@ -6,6 +6,20 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.3 - June 2, 2025
+
+### Regression fixes
+
+* Markdown: Resolved a regression affecting table formatting in Markdown content.
+* Description fields: Corrected an issue causing some description fields to display in editing mode by default.
+* Custom fields: Fixed a display problem when custom fields contained more than 12 options.
+
+### Other fixes
+
+* Live Feed: Addressed a redirection issue related to attachment actions within the Live Feed.
+* Case reports: Corrected image export issues in case descriptions within generated HTML reports.
+* Email Intake: Fixed a problem handling duplicated email message-IDs.
+
 ## 5.5.2 - May 13, 2025
 
 ### Performance fixes
