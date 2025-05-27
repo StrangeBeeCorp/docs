@@ -79,7 +79,7 @@ plugins:
             'thehive/user-guides/analyst-corner/task/preview-task-details/Preview-tasks.md': 'thehive/user-guides/analyst-corner/tasks/about-tasks.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/create-a-task-log.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task-log.md'
             'thehive/user-guides/analyst-corner/task/preview-task-details/actions.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
-            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md'
+            'thehive/user-guides/analyst-corner/task/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md'
             'thehive/administration/organisation-links.md': 'thehive/administration/organizations/link-an-organization.md'
             'thehive/administration/organisations.md': 'thehive/administration/organizations/about-organizations.md'
             'thehive/user-guides/analyst-corner/organizations.md': 'thehive/administration/organizations/about-organizations.md'
@@ -128,9 +128,9 @@ plugins:
             'thehive/user-guides/analyst-corner/alerts/merge-alerts.md': 'thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md'
             'thehive/user-guides/analyst-corner/alerts/new-case-from-selection.md': 'thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/preview-alerts.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/preview-alerts.md'
-            'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md'
+            'thehive/user-guides/analyst-corner/alerts/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/view-observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
-            'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md'
+            'thehive/user-guides/analyst-corner/alerts/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-alerts.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-similar-cases.md': 'thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md'
             'thehive/user-guides/analyst-corner/alerts/view-ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
@@ -147,8 +147,8 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/cases-description/general.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
-            'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md'
-            'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md'
+            'thehive/user-guides/analyst-corner/cases-list/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
+            'thehive/user-guides/analyst-corner/cases-list/run-responders.md': 'thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md'
             'thehive/user-guides/analyst-corner/cases-list/ttps.md': 'thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md'
             'thehive/user-guides/indicators.md': 'thehive/user-guides/key-performance-indicators/key-performance-indicators.md'
             'thehive/how-to/case-management.md': 'thehive/user-guides/analyst-corner/cases/create-a-new-case.md'
@@ -286,6 +286,11 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/view-links-in-a-case.md': 'thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/alerts-description/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
+            'thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md': 'thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md': 'thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md': 'thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md'
+            'thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md': 'thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md'
 
 extra:
   generator: false
@@ -552,7 +557,6 @@ nav:
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
-          - 'Run a Function': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
         - 'Alert Feeders': 
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
@@ -581,8 +585,8 @@ nav:
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
-          - 'Run Responders on Alert': thehive/user-guides/analyst-corner/alerts/alerts-description/run-responders.md
-          - 'View Responders': thehive/user-guides/analyst-corner/alerts/alerts-description/view-responders.md
+          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
             - 'About Observables' : thehive/user-guides/analyst-corner/cases/observables/about-observables.md
@@ -596,9 +600,9 @@ nav:
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
-            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Run Analyzers and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
-            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
+            - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
@@ -644,9 +648,9 @@ nav:
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
-            - 'Run Analysers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
+            - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
             - 'Import Observables from Analyzer Reports' : thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports.md
-            - 'Run Responders on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
+            - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'Custom Fields':
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
@@ -688,8 +692,8 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/restore-visibility-case.md
-          - 'Run Responders on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-responders.md
-          - 'Run Analyzers on Case': thehive/user-guides/analyst-corner/cases/cases-description/run-analyzer.md
+          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
         - 'Tasks Management':
           - 'Tasks':
@@ -701,13 +705,14 @@ nav:
             - 'Search for Tasks': 
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
-            - 'Run Responders from Task': thehive/user-guides/analyst-corner/tasks/preview-task-details/run-responders.md
+            - 'Run Responders and Review Reports for a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
             - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
             - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
             - 'Delete a Task Log': thehive/user-guides/analyst-corner/tasks/delete-a-task-log.md
             - 'Find a Task Log': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log.md
+            - 'Run Responders and Review Reports for a Task Log': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log.md
         - 'Dashboards':
           - 'About Dashboards': thehive/user-guides/analyst-corner/dashboard/about-dashboards.md
           - 'Widgets': thehive/user-guides/analyst-corner/dashboard/widgets-dashboards.md

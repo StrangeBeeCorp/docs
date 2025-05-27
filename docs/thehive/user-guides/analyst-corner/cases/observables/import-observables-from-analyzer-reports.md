@@ -28,6 +28,6 @@ Analyzers enrich observables with detailed contextual intelligence, generating a
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Analyzers on an Observable](run-analyzers-on-an-observable.md)
-* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Run Analyzers and Review Reports for an Observable](run-analyzers-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](run-responders-on-an-observable.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)

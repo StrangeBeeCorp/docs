@@ -1,14 +1,21 @@
-# How to Run Analyzers on an Observable
+# How to Run Analyzers and Review Reports for an Observable
 
-This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive.
+This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing analyzer reports in TheHive.
 
-Analyzers enrich observables with detailed, contextual intelligence. The type of each observable determines which analyzers are available.
+Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results. The type of each observable determines which analyzers are available.
 
-<h2>Procedure</h2>
+{!includes/access-manage-observables.md!}
 
-1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run the analyzers.
+## Run analyzers on an observable
 
-2. In the observable details, select :fontawesome-solid-ellipsis:.
+!!! tip "Bulk run"
+    To run analyzers on multiple observables, go to the **Observables** tab in a case or alert and select :fontawesome-regular-square: next to each observable you want to include. Then select **Run analyzers** above the list.
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run analyzers.
+
+2. In the observable, select :fontawesome-solid-ellipsis:.
+
+    ![Observable actions](../../../../images/user-guides/analyst-corner/cases/observable-actions.png)
 
 3. Select **Run analyzers**.
 
@@ -19,6 +26,16 @@ Analyzers enrich observables with detailed, contextual intelligence. The type of
 
 5. Select **Run selected analyzers**.
 
+## Review analyzer reports for an observable
+
+1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran analyzers.
+
+2. In the observable details, move through the **Reports** section to select a report, or move through the **Analyzers** section and select any green item in the **Last analysis** column.
+
+    ![Analyzer reports](../../../../images/user-guides/analyst-corner/cases/analyzer-reports.png)
+
+3. Optional: Import observables from reports. See [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md) for detailed instructions.
+
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
@@ -27,6 +44,6 @@ Analyzers enrich observables with detailed, contextual intelligence. The type of
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)
-* [Run Responders on an Observable](run-responders-on-an-observable.md)
+* [Run Responders and Review Reports for an Observable](run-responders-on-an-observable.md)
 * [Import Observables from Analyzer Reports](import-observables-from-analyzer-reports.md)
 * [Exclude an Observable from Similarity Checks](exclude-an-observable-from-similarity-checks.md)
