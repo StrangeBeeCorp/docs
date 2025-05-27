@@ -1,1 +1,0 @@
-Select **Export list** to export all user accounts. To export a specific selection of user accounts, select :fontawesome-regular-square: next to the user accounts you want to export, then select **Export selection**.
