@@ -13341,8 +13341,15 @@
 <h3 id="sighted">Sighted<a class="headerlink" href="#sighted" title="Permanent link">#</a></h3>
 <p>An observable can be <a href="../update-an-observable-status/#mark-an-observable-as-sighted">marked as sighted</a> once it has been detected or observed in the environment.</p>
 <h2 id="similar-alerts-and-cases">Similar alerts and cases<a class="headerlink" href="#similar-alerts-and-cases" title="Permanent link">#</a></h2>
-<p>Observables are key to correlating malicious activity across different alerts and cases. TheHive uses observables to identify patterns and surface related alerts and cases in the <a href="../../find-similar-alerts-cases/"><strong>Similar alerts</strong> and <strong>Similar cases</strong> tabs</a>.</p>
+<p>Observables are key to identifying similar cases and correlating malicious activity across different alerts and cases. TheHive uses observables to detect patterns and surface related items in the <a href="../../find-similar-alerts-cases/"><strong>Similar alerts</strong> and <strong>Similar cases</strong> tabs</a>. Similarity checks apply between cases and cases, alerts and alerts, and between alerts and cases.</p>
 <p>Observables that lack relevance for threat correlation, such as the company’s domain name, can be <a href="../exclude-an-observable-from-similarity-checks/">excluded from similarity checks</a>.</p>
+<h3 id="rules-for-similarity">Rules for similarity<a class="headerlink" href="#rules-for-similarity" title="Permanent link">#</a></h3>
+<p>Cases and alerts are considered similar if all the following conditions are met:</p>
+<ul>
+<li>At least one observable not excluded from similarity checks shares the same value, such as an identical file name or IP address.</li>
+<li>The related cases and alerts belong to the same organization or to <a href="../../../../../administration/organizations/about-organizations-sharing-rules/">linked organizations</a>.</li>
+<li>Alerts don't have the status <em>Imported</em>. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.</li>
+</ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
