@@ -6485,29 +6485,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Run a Function
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
         
   
@@ -7261,12 +7238,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../alerts/alerts-description/run-responders/" class="md-nav__link">
+      <a href="../../../../organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Run Responders on Alert
+    Run a Function on a Case or an Alert
     
   </span>
   
@@ -7284,12 +7261,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../alerts/alerts-description/view-responders/" class="md-nav__link">
+      <a href="../../../alerts/run-responders-on-an-alert/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    View Responders
+    Run Responders and Review Reports for an Alert
     
   </span>
   
@@ -7718,7 +7695,7 @@
   
   
   <span class="md-ellipsis">
-    Run Analysers on an Observable
+    Run Analyzers and Review Reports for an Observable
     
   </span>
   
@@ -7764,7 +7741,7 @@
   
   
   <span class="md-ellipsis">
-    Run Responders on an Observable
+    Run Responders and Review Reports for an Observable
     
   </span>
   
@@ -9028,7 +9005,7 @@
   
   
   <span class="md-ellipsis">
-    Run Analysers on an Observable
+    Run Analyzers and Review Reports for an Observable
     
   </span>
   
@@ -9074,7 +9051,7 @@
   
   
   <span class="md-ellipsis">
-    Run Responders on an Observable
+    Run Responders and Review Reports for an Observable
     
   </span>
   
@@ -10323,12 +10300,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cases-description/run-responders/" class="md-nav__link">
+      <a href="../../../../organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Run Responders on Case
+    Run a Function on a Case or an Alert
     
   </span>
   
@@ -10346,12 +10323,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cases-description/run-analyzer/" class="md-nav__link">
+      <a href="../../run-responders-on-a-case/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Run Analyzers on Case
+    Run Responders and Review Reports for a Case
     
   </span>
   
@@ -10715,12 +10692,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tasks/preview-task-details/run-responders/" class="md-nav__link">
+      <a href="../../../tasks/run-responders-on-a-task/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Run Responders from Task
+    Run Responders and Review Reports for a Task
     
   </span>
   
@@ -10885,6 +10862,29 @@
   
   <span class="md-ellipsis">
     Find a Task Log
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/run-responders-on-a-task-log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run Responders and Review Reports for a Task Log
     
   </span>
   
@@ -13246,8 +13246,15 @@
 <h3 id="sighted">Sighted<a class="headerlink" href="#sighted" title="Permanent link">#</a></h3>
 <p>An observable can be <a href="../update-an-observable-status/#mark-an-observable-as-sighted">marked as sighted</a> once it has been detected or observed in the environment.</p>
 <h2 id="similar-alerts-and-cases">Similar alerts and cases<a class="headerlink" href="#similar-alerts-and-cases" title="Permanent link">#</a></h2>
-<p>Observables are key to correlating malicious activity across different alerts and cases. TheHive uses observables to identify patterns and surface related alerts and cases in the <a href="../../find-similar-alerts-cases/"><strong>Similar alerts</strong> and <strong>Similar cases</strong> tabs</a>.</p>
+<p>Observables are key to identifying similar cases and correlating malicious activity across different alerts and cases. TheHive uses observables to detect patterns and surface related items in the <a href="../../find-similar-alerts-cases/"><strong>Similar alerts</strong> and <strong>Similar cases</strong> tabs</a>. Similarity checks apply between cases and cases, alerts and alerts, and between alerts and cases.</p>
 <p>Observables that lack relevance for threat correlation, such as the company’s domain name, can be <a href="../exclude-an-observable-from-similarity-checks/">excluded from similarity checks</a>.</p>
+<h3 id="rules-for-similarity">Rules for similarity<a class="headerlink" href="#rules-for-similarity" title="Permanent link">#</a></h3>
+<p>Cases and alerts are considered similar if all the following conditions are met:</p>
+<ul>
+<li>At least one observable not excluded from similarity checks shares the same value, such as an identical file name or IP address.</li>
+<li>The related cases and alerts belong to the same organization or to <a href="../../../../../administration/organizations/about-organizations-sharing-rules/">linked organizations</a>.</li>
+<li>Alerts don't have the status <em>Imported</em>. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.</li>
+</ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
@@ -13262,8 +13269,8 @@
 <li><a href="../edit-multiple-observables/">Edit Multiple Observables</a></li>
 <li><a href="../pin-an-observable/">Pin an Observable</a></li>
 <li><a href="../export-data-observables/">Export Data from Observables</a></li>
-<li><a href="../run-analyzers-on-an-observable/">Run Analyzers on an Observable</a></li>
-<li><a href="../run-responders-on-an-observable/">Run Responders on an Observable</a></li>
+<li><a href="../run-analyzers-on-an-observable/">Run Analyzers and Review Reports for an Observable</a></li>
+<li><a href="../run-responders-on-an-observable/">Run Responders and Review Reports for an Observable</a></li>
 <li><a href="../import-observables-from-analyzer-reports/">Import Observables from Analyzer Reports</a></li>
 <li><a href="../exclude-an-observable-from-similarity-checks/">Exclude an Observable from Similarity Checks</a></li>
 </ul></div>
