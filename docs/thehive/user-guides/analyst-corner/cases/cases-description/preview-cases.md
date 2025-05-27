@@ -37,9 +37,9 @@ At the bottom of the window, there is an option to **Add** the following:
 
 <img src="/thehive/images/user-guides/analyst-corner/cases-description-actions.png" alt="actions button" width="500" height="500"/>
 
-You can click the [`Actions Button` ](../cases-description/actions.md) to Flag/unflag, close, or to [`Run Responders`](../cases-description/run-responders.md). 
+You can click the [`Actions Button` ](../cases-description/actions.md) to Flag/unflag, close, or to [`Run Responders`](../run-responders-on-a-case.md). 
 
-and to [`Run Analyzer](../cases-description/run-analyzer.md). 
+and to [`Run Analyzer](../observables/run-analyzers-on-an-observable.md). 
 
 
 ## Case Details 
