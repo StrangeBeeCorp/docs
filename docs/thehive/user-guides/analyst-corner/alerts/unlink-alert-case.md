@@ -30,7 +30,7 @@ An alert is automatically linked to a case when you [create a case from an alert
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to unlink.
 
-2. In the alert description, select **Unlink**.
+2. In the alert, select **Unlink**.
 
     ![Unlink alert symbol](../../../images/user-guides/analyst-corner/alerts/unlink-alert.png)
 

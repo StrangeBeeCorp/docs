@@ -21,7 +21,7 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 
 1. [Locate the alert you want to merge into a new case](./search-for-alerts/find-an-alert.md).
 
-2. In the alert description, select **Create case from alert**.
+2. In the alert, select **Create case from alert**.
 
     ![Create case from alert](/thehive/images/user-guides/analyst-corner/cases/create-case-from-alert.png)
 

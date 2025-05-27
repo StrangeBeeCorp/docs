@@ -35,7 +35,7 @@ Two options are available to measure a case's performance:
 
 1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
 
-2. In the case description, move through the **Time metrics** section in the left pane.
+2. In the case, move through the **Time metrics** section in the left pane.
 
     ![Case description metrics](../../images/user-guides/kpis/case-description-metrics.png)
 
