@@ -2,7 +2,7 @@
 
 This topic lists the available operators for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
 
-## Operators
+<h2>Operators</h2>
 
 You can use the following operators to filter events.
 
@@ -137,6 +137,9 @@ This operator searches within strings or arrays of strings.
 ```json
 { "_contains": { "foo": "LOW" } }
 ```
+
+!!! warning "Deprecation"
+    The `_contains` operator is deprecated. Use [`_eq`](#comparison-operators) to search for exact values in arrays or [`_like`](#string-operators) to search for substrings.
 
 * `_has`: Checks if a field is present
 
