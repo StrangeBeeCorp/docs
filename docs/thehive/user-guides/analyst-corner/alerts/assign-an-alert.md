@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for assigning an [alert](about-ale
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to assign.
 
-2. In the alert description, select an assignee in the left pane.
+2. In the alert, select an assignee in the left pane.
 
     ![Assignee alert](../../../images/user-guides/analyst-corner/alerts/alert-assignee.png)
 
