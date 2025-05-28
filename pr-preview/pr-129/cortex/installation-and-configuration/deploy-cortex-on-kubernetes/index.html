@@ -11970,27 +11970,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-set-up-persistentvolume-persistentvolumeclaim-and-a-service-account-using-the-strangebee-helm-chart" class="md-nav__link">
+  <a href="#step-2-configure-persistentvolume-persistentvolumeclaim-service-account-and-deployment-for-cortex" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Set up PersistentVolume, PersistentVolumeClaim and a service account using the StrangeBee Helm chart
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-edit-your-cortex-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 3: Edit your Cortex deployment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-verify-the-deployment-and-service-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      Step 4: Verify the deployment and service account
+      Step 2: Configure PersistentVolume, PersistentVolumeClaim, service account, and deployment for Cortex
     </span>
   </a>
   
@@ -13234,7 +13216,7 @@
 
 <div><h1 id="how-to-deploy-cortex-on-kubernetes">How to Deploy Cortex on Kubernetes<a class="headerlink" href="#how-to-deploy-cortex-on-kubernetes" title="Permanent link">#</a></h1>
 <p>Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup simplifies the management of large workloads.</p>
-<p>This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts">the StrangeBee Helm chart</a>.</p>
+<p>This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts">the StrangeBee Helm chart repository</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Prerequisites</p>
 <p>Make sure you have:<br>
@@ -13248,7 +13230,7 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">Why a shared filesystem</p>
-<p>When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. A shared filesystem allows these jobs to share input data, store and retrieve results, ensure consistency across pods, and enable concurrent access.</p>
+<p>When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. Without a shared filesystem accessible by both the Cortex pod and these analyzer and responder pods, they can't access the data they need to operate, causing the jobs to fail.</p>
 <p>Kubernetes supports several methods for sharing filesystems between pods, including:<br>
 - <a href="https://kubernetes.io/docs/concepts/storage/volumes/#nfs">PersistentVolume (PV) using an NFS server</a><br>
 - Dedicated storage solutions like <a href="https://longhorn.io/">Longhorn</a> or <a href="https://rook.io/">Rook</a></p>
@@ -13260,7 +13242,7 @@
 <li>Analyzers may use different uid:gid, such as <code>1000:1000</code> or <code>0:0</code> if running as root.</li>
 </ul>
 <p>To prevent permission errors when reading or writing files on the shared filesystem, <a href="https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html">configure the NFS server</a> with the <code>all_squash</code> parameter. This ensures all filesystem operations use uid:gid <code>65534:65534</code>, regardless of the user's actual UID and GID.</p>
-<h2 id="step-2-set-up-persistentvolume-persistentvolumeclaim-and-a-service-account-using-the-strangebee-helm-chart">Step 2: Set up PersistentVolume, PersistentVolumeClaim and a service account using the StrangeBee Helm chart<a class="headerlink" href="#step-2-set-up-persistentvolume-persistentvolumeclaim-and-a-service-account-using-the-strangebee-helm-chart" title="Permanent link">#</a></h2>
+<h2 id="step-2-configure-persistentvolume-persistentvolumeclaim-service-account-and-deployment-for-cortex">Step 2: Configure PersistentVolume, PersistentVolumeClaim, service account, and deployment for Cortex<a class="headerlink" href="#step-2-configure-persistentvolume-persistentvolumeclaim-service-account-and-deployment-for-cortex" title="Permanent link">#</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Definitions</p>
 <ul>
@@ -13269,7 +13251,11 @@
 <li>A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.</li>
 </ul>
 </div>
-<p>Use the StrangeBee Helm chart to automate the creation of the PV, PVC, and SA during deployment.</p>
+<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and SA during deployment.</p>
+<div class="admonition note">
+<p class="admonition-title">Using an existing PersistentVolume</p>
+<p>The <code>cortex</code> Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.</p>
+</div>
 <h3 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">#</a></h3>
 <ol>
 <li>
@@ -13283,7 +13269,7 @@
 </code></pre></div>
 </li>
 <li>
-<p>Create a release using the StrangeBee Helm chart</p>
+<p>Create a release using the <code>cortex</code> Helm chart</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/cortex
 </code></pre></div>
 </li>
@@ -13295,18 +13281,18 @@
 <p>For more options, see <a href="https://helm.sh/docs/helm/helm_install/">the Helm documentation for installation</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Dependency</p>
-<p>The StrangeBee Helm chart relies on the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a> by default as the search index.</p>
+<p>The <code>cortex</code> Helm chart relies on the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a> by default as the search index.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Upgrades</p>
-<p>To upgrade your release to the latest version of StrangeBee Helm chart, run:
+<p>To upgrade your release to the latest version of the <code>cortex</code> Helm chart, run:
 </p><div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/cortex
 </code></pre></div>
 For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/">the Helm upgrade documentation</a>.
 </div>
 <h3 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h3>
-<p>For convenience, the StrangeBee Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both Cortex and its dependency before deploying to production.</p>
-<p>Use the following command to view all available configuration options for the StrangeBee Helm chart:</p>
+<p>For convenience, the <code>cortex</code> Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both Cortex and its dependency before deploying to production.</p>
+<p>Use the following command to view all available configuration options for the <code>cortex</code> Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/cortex
 </code></pre></div>
 <p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">the dedicated Helm documentation</a>. You can also review the available options for the dependency.</p>
@@ -13315,8 +13301,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <p class="admonition-title">Shared storage requirement</p>
 <p>Cortex requires a shared PVC with <code>ReadWriteMany</code> access mode to allow multiple pods to read and write data simultaneously—essential for job inputs and outputs.</p>
 </div>
-<p>By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports <code>ReadWriteMany</code> to avoid deployment issues.</p>
-<p>Target a StorageClass in your cluster compatible with this access mode. </p>
+<p>By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports <code>ReadWriteMany</code> to avoid deployment issues or target a StorageClass in your cluster compatible with this access mode.</p>
 <p>Common solutions include:</p>
 <ul>
 <li>Running an NFS server reachable from your cluster and creating a PV targeting it</li>
@@ -13333,61 +13318,12 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <div class="admonition note">
 <p class="admonition-title">Same Elasticsearch instance for both TheHive and Cortex</p>
-<p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both TheHive and Cortex pods. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
+<p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
 </div>
 <h4 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h4>
 <p>See <a href="../../../thehive/administration/cortex/add-a-cortex-server/">Add a Cortex Server</a> for detailed instructions.</p>
 <p>When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.</p>
 <div class="highlight"><pre><span></span><code>http://cortex.&lt;namespace&gt;.svc:9001
-</code></pre></div>
-<h2 id="step-3-edit-your-cortex-deployment">Step 3: Edit your Cortex deployment<a class="headerlink" href="#step-3-edit-your-cortex-deployment" title="Permanent link">#</a></h2>
-<p>Edit your Cortex deployment manifest to configure how Cortex runs within your Kubernetes cluster. This configuration connects Cortex to the shared filesystem by mounting the PVC, enabling Cortex to access and store job data.</p>
-<div class="admonition warning">
-<p class="admonition-title">Partial deployment manifest</p>
-<p>The following manifest is only a snippet of the full deployment. It highlights the relevant parameters, and you should integrate them into your complete deployment configuration.</p>
-</div>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"> </span><span class="c1"># Number of pods to run</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app.kubernetes.io/name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app.kubernetes.io/name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex</span>
-<span class="w">          </span><span class="c1"># Command configuration can also be set using environment variables or an application.conf file</span>
-<span class="w">          </span><span class="nt">command</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/opt/cortex/entrypoint</span>
-<span class="w">            </span><span class="c1"># Directory for storing job data, should match the mountPath defined below</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--job-directory</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/cortex-jobs</span>
-<span class="w">            </span><span class="c1"># Reference the name of the ReadWriteMany PVC you created</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">--kubernetes-job-pvc</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-shared-fs-claim</span>
-<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
-<span class="w">            </span><span class="c1"># Must match the name defined in the volumes section</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-job-pvc</span>
-<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/tmp/cortex-jobs</span>
-<span class="w">          </span><span class="c1"># (...)</span>
-<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-job-pvc</span>
-<span class="w">          </span><span class="nt">persistentVolumeClaim</span><span class="p">:</span>
-<span class="w">            </span><span class="c1"># Reference the previously defined PVC</span>
-<span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-shared-fs-claim</span>
-</code></pre></div>
-<h2 id="step-4-verify-the-deployment-and-service-account">Step 4: Verify the deployment and service account<a class="headerlink" href="#step-4-verify-the-deployment-and-service-account" title="Permanent link">#</a></h2>
-<p>Run the following command to ensure the deployment is running with the correct SA:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>cortex<span class="w"> </span>-o<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.serviceAccountName}'</span>
-</code></pre></div>
-<p>Verify the PVC is bound:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pvc<span class="w"> </span>cortex-shared-fs-claim
 </code></pre></div>
 <h2 id="example-deploy-cortex-using-aws-efs">Example: Deploy Cortex using AWS EFS<a class="headerlink" href="#example-deploy-cortex-using-aws-efs" title="Permanent link">#</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
@@ -13424,15 +13360,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 </code></pre></div>
 <h3 id="2-create-a-pvc-using-the-efs-storageclass">2. Create a PVC using the EFS StorageClass<a class="headerlink" href="#2-create-a-pvc-using-the-efs-storageclass" title="Permanent link">#</a></h3>
 <p>Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.</p>
-<p>Define the PVC as follows:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolumeClaim</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-shared-fs-claim</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efs-sc</span><span class="w"> </span><span class="c1"># References the EFS StorageClass</span>
-<span class="w">  </span><span class="c1"># (...)</span>
-</code></pre></div>
+<p>Use the <code>cortex</code> Helm chart to configure <a href="https://github.com/StrangeBeeCorp/helm-charts/blob/cortex-initial-helm-chart/cortex-charts/cortex/values.yaml#L67-L79">the correct storageClass value in the chart’s settings</a>, and the PVC will be created automatically during deployment.</p>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="../analyzers-responders/">Analyzers &amp; Responders</a></li>
