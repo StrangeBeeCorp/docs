@@ -2,7 +2,7 @@
 
 Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup simplifies the management of large workloads.
 
-This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster using [the StrangeBee Helm chart](https://github.com/StrangeBeeCorp/helm-charts).
+This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
 
 !!! warning "Prerequisites"
     Make sure you have:  
@@ -15,7 +15,7 @@ This guide provides step-by-step instructions for deploying Cortex on a Kubernet
     Improperly configured shared filesystems can cause errors when running jobs with Cortex.
 
 !!! info "Why a shared filesystem"
-    When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. A shared filesystem allows these jobs to share input data, store and retrieve results, ensure consistency across pods, and enable concurrent access.
+    When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. Without a shared filesystem accessible by both the Cortex pod and these analyzer and responder pods, they can't access the data they need to operate, causing the jobs to fail.
 
     Kubernetes supports several methods for sharing filesystems between pods, including:  
     - [PersistentVolume (PV) using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)  
@@ -30,14 +30,17 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 
 To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html) with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
-## Step 2: Set up PersistentVolume, PersistentVolumeClaim and a service account using the StrangeBee Helm chart
+## Step 2: Configure PersistentVolume, PersistentVolumeClaim, service account, and deployment for Cortex
 
 !!! info "Definitions"
     - A [PersistentVolume (PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) represents a piece of storage provisioned by an administrator or dynamically provisioned using storage classes. When using an NFS server, the PV allows multiple pods to access shared storage concurrently.  
     - A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV or dynamically creates one, specifying the required storage capacity.  
     - A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.
 
-Use the StrangeBee Helm chart to automate the creation of the PV, PVC, and SA during deployment.
+Use the `cortex` Helm chart to automate the creation of the PV, PVC, and SA during deployment.
+
+!!! note "Using an existing PersistentVolume"
+    The `cortex` Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.
 
 ### Quick start
 
@@ -53,7 +56,7 @@ Use the StrangeBee Helm chart to automate the creation of the PV, PVC, and SA du
     helm repo update
     ```
 
-3. Create a release using the StrangeBee Helm chart
+3. Create a release using the `cortex` Helm chart
 
     ```bash
     helm install <release_name> strangebee/cortex
@@ -65,10 +68,10 @@ Use the StrangeBee Helm chart to automate the creation of the PV, PVC, and SA du
 For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
 
 !!! info "Dependency"
-    The StrangeBee Helm chart relies on the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) by default as the search index.
+    The `cortex` Helm chart relies on the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) by default as the search index.
 
 !!! note "Upgrades"
-    To upgrade your release to the latest version of StrangeBee Helm chart, run:
+    To upgrade your release to the latest version of the `cortex` Helm chart, run:
     ```bash
     helm upgrade <release_name> strangebee/cortex
     ```
@@ -76,9 +79,9 @@ For more options, see [the Helm documentation for installation](https://helm.sh/
 
 ### Advanced configuration
 
-For convenience, the StrangeBee Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both Cortex and its dependency before deploying to production.
+For convenience, the `cortex` Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both Cortex and its dependency before deploying to production.
 
-Use the following command to view all available configuration options for the StrangeBee Helm chart:
+Use the following command to view all available configuration options for the `cortex` Helm chart:
 
 ```bash
 helm show values strangebee/cortex
@@ -91,9 +94,7 @@ For more information on customization, see [the dedicated Helm documentation](ht
 !!! warning "Shared storage requirement"
     Cortex requires a shared PVC with `ReadWriteMany` access mode to allow multiple pods to read and write data simultaneously—essential for job inputs and outputs.
 
-By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports `ReadWriteMany` to avoid deployment issues.
-
-Target a StorageClass in your cluster compatible with this access mode. 
+By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports `ReadWriteMany` to avoid deployment issues or target a StorageClass in your cluster compatible with this access mode.
 
 Common solutions include:
 
@@ -113,7 +114,7 @@ By default, this chart deploys an Elasticsearch cluster with two nodes, both mas
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
-    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both TheHive and Cortex pods. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
+    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
 #### Cortex server in TheHive
 
@@ -123,65 +124,6 @@ When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex se
 
 ```bash
 http://cortex.<namespace>.svc:9001
-```
-
-## Step 3: Edit your Cortex deployment
-
-Edit your Cortex deployment manifest to configure how Cortex runs within your Kubernetes cluster. This configuration connects Cortex to the shared filesystem by mounting the PVC, enabling Cortex to access and store job data.
-
-!!! warning "Partial deployment manifest"
-    The following manifest is only a snippet of the full deployment. It highlights the relevant parameters, and you should integrate them into your complete deployment configuration.
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: cortex
-spec:
-  replicas: 1 # Number of pods to run
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: cortex
-  template:
-    metadata:
-      labels:
-        app.kubernetes.io/name: cortex
-    spec:
-      containers:
-        - name: cortex
-          # Command configuration can also be set using environment variables or an application.conf file
-          command:
-            - /opt/cortex/entrypoint
-            # Directory for storing job data, should match the mountPath defined below
-            - --job-directory
-            - /tmp/cortex-jobs
-            # Reference the name of the ReadWriteMany PVC you created
-            - --kubernetes-job-pvc
-            - cortex-shared-fs-claim
-          volumeMounts:
-            # Must match the name defined in the volumes section
-            - name: cortex-job-pvc
-              mountPath: /tmp/cortex-jobs
-          # (...)
-      volumes:
-        - name: cortex-job-pvc
-          persistentVolumeClaim:
-            # Reference the previously defined PVC
-            claimName: cortex-shared-fs-claim
-```
-
-## Step 4: Verify the deployment and service account
-
-Run the following command to ensure the deployment is running with the correct SA:
-
-```bash
-kubectl get deployment cortex -o=jsonpath='{.spec.template.spec.serviceAccountName}'
-```
-
-Verify the PVC is bound:
-
-```bash
-kubectl get pvc cortex-shared-fs-claim
 ```
 
 ## Example: Deploy Cortex using AWS EFS
@@ -224,17 +166,7 @@ parameters:
 
 Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.
 
-Define the PVC as follows:
-
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: cortex-shared-fs-claim
-spec:
-  storageClassName: efs-sc # References the EFS StorageClass
-  # (...)
-```
+Use the `cortex` Helm chart to configure [the correct storageClass value in the chart’s settings](https://github.com/StrangeBeeCorp/helm-charts/blob/cortex-initial-helm-chart/cortex-charts/cortex/values.yaml#L67-L79), and the PVC will be created automatically during deployment.
 
 ## Next steps
 

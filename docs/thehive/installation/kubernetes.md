@@ -1,6 +1,6 @@
 # How to Deploy TheHive on Kubernetes
 
-This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the StrangeBee Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
+This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
 
 !!! info "License"
     The Community license supports only a single node. To deploy multiple TheHive nodes, you must upgrade to a Gold or Platinum license. A fresh deployment of TheHive on an empty database includes a two-week Platinum trial, allowing you to test multi-node setups.
@@ -26,7 +26,7 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     helm repo update
     ```
 
-3. Create a release using the StrangeBee Helm chart
+3. Create a release using the `thehive` Helm chart
 
     ```bash
     helm install <release_name> strangebee/thehive
@@ -35,13 +35,13 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
 
 !!! info "Dependencies"
-    The StrangeBee Helm chart relies on the following charts by default:  
+    The `thehive` Helm chart relies on the following charts by default:  
     - [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database  
     - [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index  
     - [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
 
 !!! note "Upgrades"
-    To upgrade your release to the latest version of StrangeBee Helm chart, run:
+    To upgrade your release to the latest version of the `thehive` Helm chart, run:
     ```bash
     helm upgrade <release_name> strangebee/thehive
     ```
@@ -49,9 +49,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
 
 ## Advanced configuration
 
-For convenience, the StrangeBee Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.
+For convenience, the `thehive` Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.
 
-Use the following command to view all available configuration options for the StrangeBee Helm chart:
+Use the following command to view all available configuration options for the `thehive` Helm chart:
 
 ```bash
 helm show values strangebee/thehive
@@ -111,7 +111,7 @@ By default, this chart deploys an Elasticsearch cluster with two nodes, both mas
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
-    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both TheHive and Cortex pods. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
+    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
 ### Object storage
 
@@ -148,7 +148,7 @@ cortex:
   #k8sSecretKey: "api-keys"
 ```
 
-When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.
+When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.
 
 ```bash
 http://cortex.<namespace>.svc:9001
