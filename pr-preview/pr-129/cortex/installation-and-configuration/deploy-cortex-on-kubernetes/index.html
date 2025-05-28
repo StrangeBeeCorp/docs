@@ -13225,6 +13225,9 @@
 <li>
 <p><a href="#set-up-a-kubernetes-service-account">Set up a Kubernetes service account (SA)</a> with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders</p>
 </li>
+<li>
+<p><a href="#verify-the-deployment-and-service-account">Verify the deployment and service account</a> to confirm that Cortex uses the correct service account and that the persistent volume claim (PVC) for the shared filesystem is properly bound</p>
+</li>
 </ul>
 <h2 id="configure-a-shared-filesystem">Configure a shared filesystem<a class="headerlink" href="#configure-a-shared-filesystem" title="Permanent link">#</a></h2>
 <div class="admonition warning">
@@ -13237,7 +13240,7 @@
 <li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#nfs">PersistentVolume (PV) using an NFS server</a></li>
 <li>Dedicated storage solutions like <a href="https://longhorn.io/">Longhorn</a> or <a href="https://rook.io/">Rook</a></li>
 </ul>
-<p>This guide focuses on configuring a PV using an NFS server, with an example for <a href="https://aws.amazon.com/efs/">AWS Elastic File System (EFS)</a>.</p>
+<p>This guide focuses on configuring a PV using an NFS server, with an example for <a href="#example-deploy-cortex-on-kubernetes-using-aws-efs">AWS Elastic File System (EFS)</a>.</p>
 <h3 id="step-1-ensure-all-users-can-access-files-on-the-shared-filesystem">Step 1: Ensure all users can access files on the shared filesystem<a class="headerlink" href="#step-1-ensure-all-users-can-access-files-on-the-shared-filesystem" title="Permanent link">#</a></h3>
 <p>At runtime, Cortex and its jobs run on different pods and may use different user IDs (UIDs) and group IDs (GIDs):</p>
 <ul>
@@ -13258,7 +13261,7 @@
 </div>
 </li>
 <li>
-<p>Create a PersistentVolume manifest.</p>
+<p>Create a PV manifest.</p>
 <p>This manifest indicates how pods should connect to your NFS server:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolume</span>
@@ -13336,7 +13339,7 @@
 <span class="w">            </span><span class="c1"># Reference the previously defined PVC</span>
 <span class="w">            </span><span class="nt">claimName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex-shared-fs-claim</span>
 </code></pre></div>
-<h3 id="example-deploy-cortex-on-kubernetes-using-aws-efs">Example: Deploy Cortex on Kubernetes using AWS EFS<a class="headerlink" href="#example-deploy-cortex-on-kubernetes-using-aws-efs" title="Permanent link">#</a></h3>
+<h3 id="example-configure-a-shared-filesystem-using-aws-efs">Example: Configure a shared filesystem using AWS EFS<a class="headerlink" href="#example-configure-a-shared-filesystem-using-aws-efs" title="Permanent link">#</a></h3>
 <h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
 <p>Before setting up the PV for AWS EFS, complete the following steps:</p>
 <ol>
@@ -13441,7 +13444,7 @@
 <span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cortex</span>
 </code></pre></div>
 <h2 id="verify-the-deployment-and-service-account">Verify the deployment and service account<a class="headerlink" href="#verify-the-deployment-and-service-account" title="Permanent link">#</a></h2>
-<p>Run the following command to ensure the deployment is running with the correct service account (SA):</p>
+<p>Run the following command to ensure the deployment is running with the correct SA:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>cortex<span class="w"> </span>-o<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.serviceAccountName}'</span>
 </code></pre></div>
 <p>Verify the PVC is bound:</p>
