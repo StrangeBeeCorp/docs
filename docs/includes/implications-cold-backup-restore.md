@@ -1,0 +1,2 @@
+!!! note "Cold vs. hot backups and restores"
+    Before proceeding, ensure you fully understand [the implications of performing a cold backup and restore](/thehive/operations/backup-restore/cold-hot-backup-restore/). This process requires stopping all services to ensure data integrity and is available only for standalone servers.
