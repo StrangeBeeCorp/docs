@@ -10,6 +10,8 @@ You will learn how to:
 
 * [Set up a Kubernetes service account (SA)](#set-up-a-kubernetes-service-account) with the necessary permissions for Cortex to communicate with the Kubernetes API and create jobs for running analyzers and responders
 
+* [Verify the deployment and service account](#verify-the-deployment-and-service-account) to confirm that Cortex uses the correct service account and that the persistent volume claim (PVC) for the shared filesystem is properly bound
+
 ## Configure a shared filesystem
 
 !!! warning "Configuration errors"
@@ -22,7 +24,7 @@ Kubernetes supports several methods for sharing filesystems between pods, includ
 * [PersistentVolume (PV) using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)
 * Dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
 
-This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](https://aws.amazon.com/efs/).
+This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](#example-deploy-cortex-on-kubernetes-using-aws-efs).
 
 ### Step 1: Ensure all users can access files on the shared filesystem
 
@@ -46,7 +48,7 @@ To define a PV for your NFS server:
     !!! note "Using a different storage solution?"
         If you're using another storage system, create a ReadWriteMany PV following your tool’s documentation, then continue with the next step.
 
-2. Create a PersistentVolume manifest.
+2. Create a PV manifest.
 
     This manifest indicates how pods should connect to your NFS server:
 
@@ -134,7 +136,7 @@ spec:
             claimName: cortex-shared-fs-claim
 ```
 
-### Example: Deploy Cortex on Kubernetes using AWS EFS
+### Example: Configure a shared filesystem using AWS EFS
 
 #### Prerequisites
 
@@ -261,7 +263,7 @@ spec:
 
 ## Verify the deployment and service account
 
-Run the following command to ensure the deployment is running with the correct service account (SA):
+Run the following command to ensure the deployment is running with the correct SA:
 
 ```bash
 kubectl get deployment cortex -o=jsonpath='{.spec.template.spec.serviceAccountName}'
