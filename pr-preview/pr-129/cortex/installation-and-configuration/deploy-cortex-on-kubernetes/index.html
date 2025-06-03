@@ -13328,15 +13328,15 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <h2 id="example-deploy-cortex-using-aws-efs">Example: Deploy Cortex using AWS EFS<a class="headerlink" href="#example-deploy-cortex-using-aws-efs" title="Permanent link">#</a></h2>
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
 <p>Before setting up the PV for AWS EFS, complete the following steps:</p>
-<ol>
+<ul>
 <li><a href="https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html">Create an Identity and Access Management (IAM) role</a> to allow the EFS CSI driver to interact with EFS.</li>
 <li>Install the EFS CSI driver on your Kubernetes cluster using one of the following methods:<ul>
 <li><a href="https://www.eksworkshop.com/docs/fundamentals/storage/efs/efs-csi-driver">EKS add-ons</a> (recommended)</li>
-<li><a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&amp;expanded=true">Official Helm Chart</a></li>
+<li><a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&amp;expanded=true">Official Helm chart</a></li>
 </ul>
 </li>
 <li><a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md">Create an EFS filesystem</a> and note the associated EFS filesystem ID.</li>
-</ol>
+</ul>
 <h3 id="1-create-a-storageclass-for-efs">1. Create a StorageClass for EFS<a class="headerlink" href="#1-create-a-storageclass-for-efs" title="Permanent link">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Reference example</p>
