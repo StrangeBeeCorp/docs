@@ -1,2 +1,0 @@
-!!! note "Adapting instructions"
-    The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.

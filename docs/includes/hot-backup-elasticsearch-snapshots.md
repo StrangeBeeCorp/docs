@@ -84,8 +84,6 @@ echo "ElasticSearch backup done! Keep the following backup archive safe:"
 echo "${GENERAL_ARCHIVE_PATH}/${SNAPSHOT_NAME}.tar"
 ```
 
-<!-- + write option when using Elasticsearch for audit log storage -->
-
 !!! info "Where to find the backup archive?"
     After running the script, the backup archive is available at `/mnt/backup` with a `elasticsearch_` prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
 

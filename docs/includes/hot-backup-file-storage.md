@@ -1,5 +1,3 @@
-Whether using local file system storage or Network File System (NFS), copy the contents of the folder using the following script:
-
 !!! warning "Script restrictions"
     This script works only when file storage is managed directly on a machine. It doesn't support deployments using Docker or Kubernetes.
 

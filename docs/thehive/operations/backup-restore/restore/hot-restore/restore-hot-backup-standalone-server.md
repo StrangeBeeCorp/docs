@@ -2,55 +2,31 @@
 
 This topic provides step-by-step instructions for restoring a hot backup on a standalone server for TheHive.
 
-{!includes/prerequisites-hot-backup-restore.md!}
-
-{!includes/data-consistency-hot-restore.md!}
+{!includes/hot-restore-application-stopped.md!}
 
 {!includes/backup-restore-best-practices.md!}
 
 The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.
 
-1. [Database restore](#step-1-restore-cassandra-snapshots)
-2. [Indexing backup (with optional audit logs storage since version 5.5)](#step-2-restore-elasticsearch-snapshots)
-3. [File storage restore](#step-3-restore-a-backup-for-file-storage)
+* [Database restore](#step-1-restore-cassandra-snapshots)
+* [Indexing backup](#step-2-restore-elasticsearch-snapshots)
+* [File storage restore](#step-3-restore-a-backup-for-file-storage)
 
-{!includes/adapting-instructions.md!}
+These procedures assume you have completed the steps in [Perform a Hot Backup on a Standalone Server](../../backup/hot-backup/hot-backup-standalone-server.md) and have stopped your TheHive application. Ensure that paths are consistent between the backup and restore procedures.
 
-## Step 1: Restore Cassandra snapshots
+## Restore Cassandra snapshots
 
-### Prerequisites
+{!includes/hot-restore-cassandra-snapshots.md!}
 
-To successfully restore TheHive's database, ensure the following conditions are met:
+## Restore Elasticsearch snapshots
 
-* A backup of the database: `${SNAPSHOT}_${SNAPSHOT_DATE}.tbz`.
-* The keyspace to restore must not already exist in the database, or it will be overwritten.
-* TheHive application must not be running during the restore process.
+{!includes/hot-restore-elasticsearch-snapshots.md!}
 
-### Procedure
-
-<!-- to complete -->
-
-For additional details, refer to the [official Cassandra documentation](https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html).
-
-### Ready-to-use scripts
-
-<!-- to complete -->
-
-## Step 2: Restore Elasticsearch snapshots
-
-### Procedure
-
-<!-- to complete -->
-
-For additional details, refer to the [official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html).
-
-### Ready-to-use scripts
-
-<!-- to complete -->
-
-## Step 3: Restore a backup for file storage
+## Restore a backup for file storage
 
 Whether using local file system storage or Network File System (NFS), restore the saved files to the destination folder used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.
+
+{!includes/hot-restore-file-storage.md!}
 
 <h2>Next steps</h2>
 

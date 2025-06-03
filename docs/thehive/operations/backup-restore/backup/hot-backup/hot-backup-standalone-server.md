@@ -11,12 +11,10 @@ This topic provides step-by-step instructions for performing a hot backup on a s
 The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
-* [Indexing backup (with optional audit logs storage since version 5.5)](#create-elasticsearch-snapshots)
+* [Indexing backup](#create-elasticsearch-snapshots)
 * [File storage backup](#perform-a-backup-on-file-storage)
 
 ## Prerequisites
-
-{!includes/adapting-instructions.md!}
 
 ### Install required tools
 
@@ -39,6 +37,8 @@ The process requires backing up data from all three components: Apache Cassandra
 {!includes/hot-backup-elasticsearch-snapshots.md!}
 
 ## Perform a backup on file storage
+
+Whether using local file system storage or Network File System (NFS), copy the contents of the folder using the following script:
 
 {!includes/hot-backup-file-storage.md!}
 

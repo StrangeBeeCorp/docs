@@ -1,2 +1,0 @@
-!!! warning "Data consistency"
-    Perform the restore process for Apache Cassandra, Elasticsearch, and file storage in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.
