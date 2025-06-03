@@ -232,5 +232,5 @@ This topic lists all available objects for functions in TheHive.
 <h2>Next steps</h2>
 
 * [Create a Function](create-a-function.md)
-* [Revoke a Function](revoke-a-function.md)
+* [Invoke a Function](invoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)

@@ -22,5 +22,5 @@ This topic provides step-by-step instructions for manually running a [function](
 
 <h2>Next steps</h2>
 
-* [Revoke a Function](revoke-a-function.md)
+* [Invoke a Function](invoke-a-function.md)
 * [Delete a Function](delete-a-function.md)
