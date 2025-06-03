@@ -1,4 +1,4 @@
-# How to Deploy Cortex on Kubernetes
+# Deploy Cortex on Kubernetes
 
 Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup simplifies the management of large workloads.
 
