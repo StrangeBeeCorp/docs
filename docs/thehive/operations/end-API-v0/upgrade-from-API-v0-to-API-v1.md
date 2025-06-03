@@ -1,6 +1,6 @@
 # How to Upgrade from API v0 to API v1
 
-This topic provides step-by-step instructions for upgrading from API v0 to API v1, in response to the [API v0 deprecation](API-v0-depreciation-notice.md) in TheHive.
+This topic provides step-by-step instructions for upgrading from API v0 to API v1, in response to the [API v0 deprecation](API-v0-deprecation-notice.md) in TheHive.
 
 !!! info "Are you concerned?"
     
@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for upgrading from API v0 to API v
 
     You might trigger these calls directly or through automation—such as analyzers, responders, scripts, or connectors.
 
-    If you're unsure, see the [API v0 Deprecation Notice](API-v0-depreciation-notice.md) for tests you can run to verify your setup.
+    If you're unsure, see the [API v0 Deprecation Notice](API-v0-deprecation-notice.md) for tests you can run to verify your setup.
 
 ## Update the API routes to use API v1
 
