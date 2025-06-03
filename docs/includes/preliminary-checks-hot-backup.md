@@ -21,7 +21,7 @@ nodetool status
 For Elasticsearch, ensure the cluster health is green:
 
 ```bash
-curl -X GET "localhost:9200/_cluster/health?pretty"
+curl -X GET "http://127.0.0.1:9200/_cluster/health?pretty"
 ```
 
 #### Review system logs
@@ -53,11 +53,11 @@ nodetool scrub
 Check and fix any index corruption by forcing a merge:
 
 ```bash
-curl -X POST "localhost:9200/_forcemerge?max_num_segments=1"
+curl -X POST "http://127.0.0.1:9200/_forcemerge?max_num_segments=1"
 ```
 
 If corruption persists, reindex the affected data:
 
 ```bash
-curl -X POST "localhost:9200/_reindex"
+curl -X POST "http://127.0.0.1:9200/_reindex"
 ```

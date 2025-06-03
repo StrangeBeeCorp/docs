@@ -18,10 +18,10 @@ TheHive is built on an architecture that includes [Apache Cassandra as the datab
 
 ## Cold vs. hot backup and restore comparison
 
-| Type | Complexity | TheHive state during backup  | Data integrity | Tools                  | Supported environment | Use case |
-| -----| ---------- | --------------------| ---------------| -----------------------| --------| --------|
-| **Cold** | Medium     | Application stopped | Guaranteed      | Usual tools            | Standalone servers only| Want to ensure data integrity |
-| **Hot** | High       | Application running | Not guaranteed  | Service-specific tools | Standalone servers and clusters | Can't afford any downtime |
+| Type | Complexity | TheHive backup state  | TheHive restore state | Data integrity | Tools                  | Supported environment | Use case |
+| -----| ---------- | --------------------| ---------------| ---------------| -----------------------| --------| --------|
+| **Cold** | Medium     | Application stopped | Application stopped | Guaranteed      | Usual tools            | Standalone servers only| Want to ensure data integrity |
+| **Hot** | High       | Application running | Application stopped | Not guaranteed  | Service-specific tools | Standalone servers and clusters | Can't afford any downtime |
 
 ## Available backup and restore procedures
 
