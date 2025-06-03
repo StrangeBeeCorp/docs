@@ -303,6 +303,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
+            'thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function.md'
 
 extra:
   generator: false
@@ -571,7 +572,7 @@ nav:
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
-          - 'Revoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md
+          - 'Invoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function.md
           - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
         - 'Alert Feeders': 
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
@@ -773,6 +774,7 @@ nav:
       -  ./cortex/installation-and-configuration/proxy-settings.md
       -  ./cortex/installation-and-configuration/docker.md
       -  ./cortex/installation-and-configuration/database.md
+      -  ./cortex/installation-and-configuration/deploy-cortex-on-kubernetes.md
     - 'User Guides':  
       - 'First start' : 'cortex/user-guides/first-start.md'
       - 'User roles' : 'cortex/user-guides/roles.md'

@@ -1,8 +1,8 @@
-# How to Revoke a Function
+# How to Invoke a Function
 
 <!-- md:version 5.1 --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for revoking a [function](about-functions.md) in TheHive.
+This topic provides step-by-step instructions for invoking a [function](about-functions.md) in TheHive.
 
 {!includes/access-functions.md!}
 
@@ -12,7 +12,7 @@ This topic provides step-by-step instructions for revoking a [function](about-fu
 
 2. {!includes/functions-tab-go-to.md!}
 
-3. Select the function you want to revoke, or select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select the function you want to invoke, or select :fontawesome-solid-ellipsis: and then **Edit**.
 
 4. Select the **How to call the function** section.
 
