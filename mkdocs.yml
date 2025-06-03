@@ -771,6 +771,7 @@ nav:
       -  ./cortex/installation-and-configuration/proxy-settings.md
       -  ./cortex/installation-and-configuration/docker.md
       -  ./cortex/installation-and-configuration/database.md
+      -  ./cortex/installation-and-configuration/deploy-cortex-on-kubernetes.md
     - 'User Guides':  
       - 'First start' : 'cortex/user-guides/first-start.md'
       - 'User roles' : 'cortex/user-guides/roles.md'
