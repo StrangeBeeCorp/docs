@@ -13479,7 +13479,7 @@
 </ul>
 <h3 id="configure-systems">Configure systems<a class="headerlink" href="#configure-systems" title="Permanent link">#</a></h3>
 <h4 id="cassandra-keyspace">Cassandra keyspace<a class="headerlink" href="#cassandra-keyspace" title="Permanent link">#</a></h4>
-<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. If you followed the <a href="/thehive/installation/step-by-step-installation-guide/">step by step installation guide</a>, this keyspace should be named <code>thehive</code>. This name is also used in the <a href="#create-cassandra-snapshots">scripts provided to create Cassandra snapshots</a>.</p>
+<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. If you followed the <a href="/thehive/installation/step-by-step-installation-guide/">step by step installation guide</a>, this keyspace should be named <code>thehive</code>. This name is also used in the scripts provided to create Cassandra snapshots.</p>
 <h4 id="elasticsearch-repository">Elasticsearch repository<a class="headerlink" href="#elasticsearch-repository" title="Permanent link">#</a></h4>
 <p>This repository is used to create snapshots with timestamped names.</p>
 <ol>
@@ -13735,7 +13735,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 </div>
 <p>For more details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
 <h2 id="perform-a-backup-on-file-storage">Perform a backup on file storage<a class="headerlink" href="#perform-a-backup-on-file-storage" title="Permanent link">#</a></h2>
-<p>Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder using the following script:</p>
+<p>This procedure applies only to Network File System (NFS) storage. It doesn't apply to MinIO S3 object storage. Use the following script to copy the contents of the NFS folder:</p>
 <div class="admonition warning">
 <p class="admonition-title">Script restrictions</p>
 <p>This script works only when file storage is managed directly on a machine. It doesn't support deployments using Docker or Kubernetes.</p>
