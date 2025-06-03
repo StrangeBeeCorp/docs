@@ -13445,24 +13445,52 @@
 <p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
 </div>
 <h3 id="install-required-tools">Install required tools<a class="headerlink" href="#install-required-tools" title="Permanent link">#</a></h3>
-<p>Before performing a hot backup, install the following tools on your system:</p>
+<p>Before performing a hot backup, ensure the following tools are available on your system:</p>
 <ul>
-<li><a href="https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html">Cassandra nodetool</a>: For creating database snapshots</li>
-<li>tar/<a href="https://gitlab.com/bzip2/bzip2/">bzip2</a>: For archiving and compressing backup files</li>
-<li><a href="https://github.com/RsyncProject/rsync">rsync</a>: For transferring file storage data</li>
+<li><a href="https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html">Cassandra nodetool</a>: Command-line tool for managing Cassandra clusters, used for creating database snapshots</li>
+<li><a href="https://www.gnu.org/software/tar/manual/html_node/index.html">tar</a>: Utility for archiving backup files</li>
+<li><a href="https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html">cqlsh</a>: Command-line interface for executing CQL queries against the Cassandra database</li>
+<li><a href="https://curl.se/">curl</a>: Tool for transferring data with URLs, useful for interacting with the Elasticsearch API</li>
+<li><a href="https://jqlang.org/">jq</a>: Lightweight command-line JSON processor for parsing and manipulating JSON data in scripts</li>
 </ul>
-<p>Install any missing tools using package managers such as apt or yum:</p>
+<p>If any tools are missing, install them using your package manager, for example:</p>
 <ul>
-<li><code>apt install bzip2</code> for DEB-based operating systems</li>
-<li><code>yum install bzip2</code> for RPM-based operating systems</li>
+<li><code>apt install jq</code> for DEB-based operating systems</li>
+<li><code>yum install jq</code> for RPM-based operating systems</li>
 </ul>
 <h3 id="configure-systems">Configure systems<a class="headerlink" href="#configure-systems" title="Permanent link">#</a></h3>
 <h4 id="cassandra-keyspace">Cassandra keyspace<a class="headerlink" href="#cassandra-keyspace" title="Permanent link">#</a></h4>
-<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute.</p>
+<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. If you followed the <a href="../../../../../installation/step-by-step-installation-guide/">step by step installation guide</a>, this keyspace should be named <code>thehive</code>. This name is also used in the <a href="#create-cassandra-snapshots">scripts provided to create Cassandra snapshots</a>.</p>
 <h4 id="elasticsearch-repository">Elasticsearch repository<a class="headerlink" href="#elasticsearch-repository" title="Permanent link">#</a></h4>
-<p>Configure a repository for Elasticsearch snapshots. Ensure that the repository is both accessible and writable by Elasticsearch.</p>
+<p>This repository is used to create snapshots with timestamped names.</p>
+<ol>
+<li>Configure the repository path by adding the <code>path.repo</code> parameter in the <code>elasticsearch.yml</code> file:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="nt">path.repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/backup</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Restart Elasticsearch to apply the configuration changes.</p>
+</li>
+<li>
+<p>Register the repository named <code>thehive_repository</code> by sending the following request:</p>
+</li>
+</ol>
+<p></p><div class="highlight"><pre><span></span><code><span class="err">PUT http://127.0.0.1:9200/_snapshot/thehive_repository</span>
+<span class="err">{</span>
+<span class="err">  "type": "fs",</span>
+<span class="err">  "settings": {</span>
+<span class="err">    "location": "/mnt/backup"</span>
+<span class="err">  }</span>
+<span class="err">}</span>
+</code></pre></div>
+  A successful response looks like this:
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"acknowledged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">}</span>
+</code></pre></div>
 <h4 id="file-storage-location">File storage location<a class="headerlink" href="#file-storage-location" title="Permanent link">#</a></h4>
-<p>Locate the folder where TheHive stores files, which is backed up with the database and indices. If using a Network File System (NFS), the location is defined in the <em>application.conf</em> file under the <code>storage.localfs.location</code> attribute.</p>
+<p>Locate the folder where TheHive stores files, which is backed up with the database and indices. If using a local filesystem or Network File System (NFS), the location is defined in the <em>application.conf</em> file under the <code>storage.localfs.location</code> attribute.</p>
 <!-- + add MinIO option -->
 
 <h3 id="perform-preliminary-checks">Perform preliminary checks<a class="headerlink" href="#perform-preliminary-checks" title="Permanent link">#</a></h3>
@@ -13478,7 +13506,7 @@ systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>status
 </code></pre></div>
 <p>For Elasticsearch, ensure the cluster health is green:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"localhost:9200/_cluster/health?pretty"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_cluster/health?pretty"</span>
 </code></pre></div>
 <h4 id="review-system-logs">Review system logs<a class="headerlink" href="#review-system-logs" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>thehive
@@ -13495,10 +13523,10 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 </code></pre></div>
 <h5 id="for-elasticsearch">For Elasticsearch<a class="headerlink" href="#for-elasticsearch" title="Permanent link">#</a></h5>
 <p>Check and fix any index corruption by forcing a merge:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_forcemerge?max_num_segments=1"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_forcemerge?max_num_segments=1"</span>
 </code></pre></div>
 <p>If corruption persists, reindex the affected data:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_reindex"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_reindex"</span>
 </code></pre></div>
 <h3 id="replicate-data-across-all-three-nodes">Replicate data across all three nodes<a class="headerlink" href="#replicate-data-across-all-three-nodes" title="Permanent link">#</a></h3>
 <div class="admonition warning">
@@ -13527,82 +13555,203 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>netstats
 </code></pre></div>
 <h2 id="create-cassandra-snapshots">Create Cassandra snapshots<a class="headerlink" href="#create-cassandra-snapshots" title="Permanent link">#</a></h2>
-<h3 id="prerequisites_1">Prerequisites<a class="headerlink" href="#prerequisites_1" title="Permanent link">#</a></h3>
-<p>To back up or export the database from Cassandra, gather the following information:</p>
+<p>Before creating Cassandra snapshots, gather the following information:</p>
 <ul>
-<li>Cassandra admin password</li>
-<li>SSL and authentication details to connect to Cassandra</li>
-<li>Keyspace used by TheHive (default: <code>thehive</code>). Find this in the <code>application.conf</code> configuration file, under the <code>db.janusgraph.storage</code> attribute, within <code>storage</code>, <code>cql</code>, and <code>keyspace</code> settings.</li>
+<li>Cassandra administrator password</li>
+<li>SSL certificates and authentication details required to connect securely to Cassandra</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">backend</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cql</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"127.0.0.1"</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cql {</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">cluster-name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thp</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">keyspace</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="w">        </span><span class="err">}</span>
-<span class="w w-Error">    </span><span class="err">}</span>
-<span class="err">}</span>
+<p>Then, use the following script:</p>
+<div class="admonition warning">
+<p class="admonition-title">Script restrictions</p>
+<p>This script works only when Cassandra runs directly on a machine. It doesn't support deployments using Docker or Kubernetes.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Keyspace name</p>
+<p>Before running this script, update the keyspace name to match your environment. The keyspace is typically defined in the <code>application.conf</code> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. The script uses <code>thehive</code> by default.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Cassandra variables</span>
+<span class="nv">CASSANDRA_KEYSPACE</span><span class="o">=</span>thehive
+<span class="nv">CASSANDRA_DATA_FOLDER</span><span class="o">=</span>/var/lib/cassandra
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+<span class="nv">SNAPSHOT_NAME</span><span class="o">=</span><span class="s2">"cassandra_</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%Hh%Mm%Ss<span class="k">)</span><span class="s2">"</span>
+<span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Perform a snapshot of the keyspace</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Starting snapshot </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2"> for keyspace </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span>
+nodetool<span class="w"> </span>snapshot<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>
+
+<span class="c1"># Make sure the snapshot folder exists and its subcontent permissions are correct</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span>
+chown<span class="w"> </span>-R<span class="w"> </span>cassandra:cassandra<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Snapshot of all </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> tables will be stored inside </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Save the cql schema of the keyspace</span>
+cqlsh<span class="w"> </span>-e<span class="w"> </span><span class="s2">"DESCRIBE KEYSPACE </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"The keyspace cql definition for </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> is stored in this file: </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
+
+<span class="c1"># For each table folder in the keyspace folder of the snapshot</span>
+<span class="k">for</span><span class="w"> </span>TABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_DATA_FOLDER</span><span class="si">}</span>/data/<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="c1"># Folder where the snapshot files are stored</span>
+<span class="w">    </span><span class="nv">TABLE_SNAPSHOT_FOLDER</span><span class="o">=</span><span class="si">${</span><span class="nv">CASSANDRA_DATA_FOLDER</span><span class="si">}</span>/data/<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>/snapshots/<span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="w">    </span><span class="c1"># Create a folder for each table</span>
+<span class="w">    </span>mkdir<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>
+<span class="w">    </span>chown<span class="w"> </span>-R<span class="w"> </span>cassandra:cassandra<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>
+
+<span class="w">    </span><span class="c1"># Copy the snapshot files to the proper table folder</span>
+<span class="w">    </span><span class="c1"># Snapshots files are hardlinks,</span>
+<span class="w">    </span><span class="c1"># so we use --remove-destination to make sure the files are actually copied and not just linked</span>
+<span class="w">    </span>cp<span class="w"> </span>-p<span class="w"> </span>--remove-destination<span class="w"> </span><span class="si">${</span><span class="nv">TABLE_SNAPSHOT_FOLDER</span><span class="si">}</span>/*<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>
+<span class="k">done</span>
+
+<span class="c1"># Delete Cassandra snapshot once it's backed up</span>
+nodetool<span class="w"> </span>clearsnapshot<span class="w"> </span>-t<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+
+<span class="c1"># Create a ".tar" archive with the folder containing the backed up Cassandra data</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>
+tar<span class="w"> </span>cf<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>.tar<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Remove the folder once the archive is created</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Display the location of the Cassandra archive</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra backup done! Keep the following backup archive safe:"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">.tar"</span>
 </code></pre></div>
-<!-- + write option when using Elasticsearch for audit log storage -->
-
-<h3 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">#</a></h3>
-<!-- to complete -->
-
-<p>For additional details, refer to the <a href="https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html">official Cassandra documentation</a>.</p>
-<h3 id="ready-to-use-scripts">Ready-to-use scripts<a class="headerlink" href="#ready-to-use-scripts" title="Permanent link">#</a></h3>
-<!-- to complete -->
-
+<div class="admonition info">
+<p class="admonition-title">Where to find the backup archive?</p>
+<p>After running the script, the backup archive is available at <code>/mnt/backup</code> with a <code>cassandra_</code> prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.</p>
+</div>
+<p>For more details, refer to the <a href="https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html">official Cassandra documentation</a>.</p>
 <h2 id="create-elasticsearch-snapshots">Create Elasticsearch snapshots<a class="headerlink" href="#create-elasticsearch-snapshots" title="Permanent link">#</a></h2>
-<h3 id="prerequisites_2">Prerequisites<a class="headerlink" href="#prerequisites_2" title="Permanent link">#</a></h3>
-<h4 id="configure-snapshot-repository">Configure snapshot repository<a class="headerlink" href="#configure-snapshot-repository" title="Permanent link">#</a></h4>
-<p>Elasticsearch requires a snapshot repository to store backups. Common options include:</p>
-<ul>
-<li>Shared file systems</li>
-<li>AWS S3 buckets</li>
-<li>Azure Blob Storage</li>
-<li>Google Cloud Storage</li>
-</ul>
-<p>Set up the repository before taking snapshots.</p>
-<h4 id="assign-necessary-permissions">Assign necessary permissions<a class="headerlink" href="#assign-necessary-permissions" title="Permanent link">#</a></h4>
-<p>Elasticsearch must have the appropriate permissions to write to the snapshot repository.</p>
+<p>Before creating Elasticsearch snapshots, ensure Elasticsearch has the appropriate permissions to write to the snapshot repository.</p>
 <p>For shared file systems:</p>
 <div class="admonition example">
-<div class="highlight"><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>&lt;/path/to/backups&gt;
-chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span><span class="w"> </span>&lt;/path/to/backups&gt;
+<div class="highlight"><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>&lt;/mnt/backup&gt;
+chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span><span class="w"> </span>&lt;/mnt/backup&gt;
 </code></pre></div>
 </div>
-<h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Backup storage</p>
-<p>Elasticsearch offers several options for storing backups. In this procedure and in the provided scripts, a dedicated folder with a predefined folder structure is used. </p>
-<p>For example:
-</p><div class="highlight"><pre><span></span><code> /opt/thehive-backups
-└── thehive-backup-20250421-1530-node01
-    ├── cassandra
-    ├── elasticsearch
-    └── files
-</code></pre></div>
-<strong>Backup folder configuration:</strong>
-<p></p><div class="highlight"><pre><span></span><code><span class="nv">BACKUP_ROOT_FOLDER</span><span class="o">=</span><span class="s2">"/opt/thehive-backups"</span>
-<span class="nv">DATE</span><span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+<span class="s2">"%Y%m%d-%H%M"</span><span class="k">)</span>
-<span class="nv">HOST</span><span class="o">=</span><span class="k">$(</span>hostname<span class="k">)</span>
-<span class="nv">BACKUP_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_ROOT_FOLDER</span><span class="si">}</span><span class="s2">/thehive-backup-</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">HOST</span><span class="si">}</span><span class="s2">"</span>
-<span class="nv">BACKUP_FILENAME</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">BACKUP_FOLDER</span><span class="si">}</span><span class="s2">/thehive-backup-</span><span class="si">${</span><span class="nv">DATE</span><span class="si">}</span><span class="s2">-</span><span class="si">${</span><span class="nv">HOST</span><span class="si">}</span><span class="s2">.tar.bz2"</span>
-</code></pre></div>
-After creating the backup archive <code>${BACKUP_FILENAME}</code>, store the archive in external storage solutions, such as a Network File System (NFS), AWS S3, Azure Blob Storage, or Google Cloud Storage.
+<p>Then, use the following script:</p>
+<div class="admonition warning">
+<p class="admonition-title">Script restrictions</p>
+<p>This script works only when Elasticsearch runs directly on a machine. It doesn't support deployments using Docker or Kubernetes.</p>
 </div>
-<!-- to complete -->
+<div class="admonition note">
+<p class="admonition-title">Default values</p>
+<p>Before running this script:
+- Update the snapshot repository name to match your environment. The default name in the script is <code>thehive_repository</code>.
+- Verify that the index name matches the one used in the script, which defaults to <code>thehive_global</code>. This name may differ if you have rebuilt or customized the index.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
+<span class="c1"># Elasticsearch variables</span>
+<span class="nv">ELASTICSEARCH_API_URL</span><span class="o">=</span><span class="s1">'http://127.0.0.1:9200'</span>
+<span class="nv">ELASTICSEARCH_SNAPSHOT_REPOSITORY</span><span class="o">=</span>thehive_repository
+<span class="nv">ELASTICSEARCH_INDEX</span><span class="o">=</span>thehive_global
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+<span class="nv">SNAPSHOT_NAME</span><span class="o">=</span><span class="s2">"elasticsearch_</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%Hh%Mm%Ss<span class="k">)</span><span class="s2">"</span>
+
+<span class="c1"># Creating the backup folder if needed</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Check if the snapshot repository is correctly registered</span>
+<span class="nv">repository_config</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_API_URL</span><span class="si">}</span><span class="s2">/_snapshot"</span><span class="k">)</span>
+<span class="nv">repository_ok</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'has("'</span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_REPOSITORY</span><span class="si">}</span><span class="s1">'")'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="si">${</span><span class="nv">repository_config</span><span class="si">}</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span>!<span class="w"> </span><span class="si">${</span><span class="nv">repository_ok</span><span class="si">}</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Abort, no snapshot repository registered in ElasticSearch"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Set the repository folder 'path.repo'"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"in an environment variable"</span>
+<span class="w">  </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"or in elasticsearch.yml"</span>
+<span class="w">  </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+
+<span class="c1"># Starting the snapshot</span>
+<span class="nv">create_snapshot</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_API_URL</span><span class="si">}</span><span class="s2">/_snapshot/thehive_repository/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{"indices":"'</span><span class="si">${</span><span class="nv">ELASTICSEARCH_INDEX</span><span class="si">}</span><span class="s1">'", "ignore_unavailable":true, "include_global_state":false}'</span><span class="k">)</span>
+
+<span class="c1"># Verify that the snapshot started correctly</span>
+<span class="nv">create_started</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'.accepted == true'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="si">${</span><span class="nv">create_snapshot</span><span class="si">}</span><span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="si">${</span><span class="nv">create_started</span><span class="si">}</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span>
+<span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Couldn't start the snapshot"</span>
+<span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<span class="k">fi</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Snapshot started"</span>
+
+<span class="c1"># Verify that the snapshot is finshed</span>
+<span class="nv">state</span><span class="o">=</span><span class="s2">"NONE"</span>
+<span class="k">while</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">state</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">"\"SUCCESS\""</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Snapshot in progress, waiting 5 seconds before checking status again..."</span>
+<span class="w">    </span>sleep<span class="w"> </span><span class="m">5</span>
+<span class="w">    </span><span class="nv">snapshot_list</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_API_URL</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_REPOSITORY</span><span class="si">}</span><span class="s2">/*?verbose=false"</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">state</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'.snapshots[] | select(.snapshot == "'</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s1">'").state'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="si">${</span><span class="nv">snapshot_list</span><span class="si">}</span><span class="k">)</span>
+<span class="k">done</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Snapshot finished"</span>
+
+<span class="c1"># Print the snapshot short informations</span>
+<span class="nv">final_state</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'.snapshots[] | select(.snapshot == "'</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s1">'")'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="si">${</span><span class="nv">snapshot_list</span><span class="si">}</span><span class="k">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">final_state</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>--color-output<span class="w"> </span>.
+
+<span class="c1"># Create a ".tar" archive with the folder containing the backed up Elasticsearch index</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>
+tar<span class="w"> </span>cf<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>.tar<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Remove the folder once the archive is created</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Display the location of the Elasticsearch archive</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"ElasticSearch backup done! Keep the following backup archive safe:"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">.tar"</span>
+</code></pre></div>
 <!-- + write option when using Elasticsearch for audit log storage -->
 
-<p>For additional details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
-<h3 id="ready-to-use-scripts_1">Ready-to-use scripts<a class="headerlink" href="#ready-to-use-scripts_1" title="Permanent link">#</a></h3>
-<!-- to complete -->
-
+<div class="admonition info">
+<p class="admonition-title">Where to find the backup archive?</p>
+<p>After running the script, the backup archive is available at <code>/mnt/backup</code> with a <code>elasticsearch_</code> prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.</p>
+</div>
+<p>For more details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
 <h2 id="perform-a-backup-on-file-storage">Perform a backup on file storage<a class="headerlink" href="#perform-a-backup-on-file-storage" title="Permanent link">#</a></h2>
-<p>Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder or bucket.</p>
+<p>Whether using local file system storage or Network File System (NFS), copy the contents of the folder using the following script:</p>
+<div class="admonition warning">
+<p class="admonition-title">Script restrictions</p>
+<p>This script works only when file storage is managed directly on a machine. It doesn't support deployments using Docker or Kubernetes.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># TheHive attachment variables</span>
+<span class="nv">ATTACHMENT_FOLDER</span><span class="o">=</span>/opt/thp/thehive/files
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+<span class="nv">SNAPSHOT_NAME</span><span class="o">=</span><span class="s2">"files_</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%Hh%Mm%Ss<span class="k">)</span><span class="s2">"</span>
+<span class="nv">ATTACHMENT_ARCHIVE_PATH</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Copy all TheHive attachment</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_FOLDER</span><span class="si">}</span>/*<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_ARCHIVE_PATH</span><span class="si">}</span>/
+
+<span class="c1"># Create a ".tar" archive with the folder containing the backed up attachment files</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>
+tar<span class="w"> </span>cf<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>.tar<span class="w"> </span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Remove the folder once the archive is created</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span>
+
+<span class="c1"># Display the location of the attachment archive</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"TheHive attachment files backup done! Keep the following backup archive safe:"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">.tar"</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Where to find the backup archive?</p>
+<p>After running the script, the backup archive is available at <code>/mnt/backup</code> with a <code>files_</code> prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.</p>
+</div>
 <h2>Next steps</h2>
 
 <ul>

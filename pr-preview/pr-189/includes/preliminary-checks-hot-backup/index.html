@@ -13326,7 +13326,7 @@ systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>status
 </code></pre></div>
 <p>For Elasticsearch, ensure the cluster health is green:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"localhost:9200/_cluster/health?pretty"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_cluster/health?pretty"</span>
 </code></pre></div>
 <h4 id="review-system-logs">Review system logs<a class="headerlink" href="#review-system-logs" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>thehive
@@ -13343,10 +13343,10 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 </code></pre></div>
 <h5 id="for-elasticsearch">For Elasticsearch<a class="headerlink" href="#for-elasticsearch" title="Permanent link">#</a></h5>
 <p>Check and fix any index corruption by forcing a merge:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_forcemerge?max_num_segments=1"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_forcemerge?max_num_segments=1"</span>
 </code></pre></div>
 <p>If corruption persists, reindex the affected data:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"localhost:9200/_reindex"</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_reindex"</span>
 </code></pre></div></div>
 
 
