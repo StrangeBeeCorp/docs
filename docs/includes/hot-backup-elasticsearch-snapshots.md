@@ -16,8 +16,9 @@ Then, use the following script:
 
 !!! note "Default values"
     Before running this script:
-    - Update the snapshot repository name to match your environment. The default name in the script is `thehive_repository`.
-    - Verify that the index name matches the one used in the script, which defaults to `thehive_global`. This name may differ if you have rebuilt or customized the index.
+
+    * Update the snapshot repository name to match your environment. The default name in the script is `thehive_repository`.
+    * Verify that the index name matches the one used in the script, which defaults to `thehive_global`. This name may differ if you have rebuilt or customized the index.
 
 ```bash
 #!/bin/bash
