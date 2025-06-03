@@ -8,9 +8,9 @@ This topic provides step-by-step instructions for restoring a hot backup on a st
 
 The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.
 
-* [Database restore](#step-1-restore-cassandra-snapshots)
-* [Indexing backup](#step-2-restore-elasticsearch-snapshots)
-* [File storage restore](#step-3-restore-a-backup-for-file-storage)
+* [Database restore](#restore-cassandra-snapshots)
+* [Indexing backup](#restore-elasticsearch-snapshots)
+* [File storage restore](#restore-a-backup-for-file-storage)
 
 These procedures assume you have completed the steps in [Perform a Hot Backup on a Standalone Server](../../backup/hot-backup/hot-backup-standalone-server.md) and have stopped your TheHive application. Ensure that paths are consistent between the backup and restore procedures.
 

@@ -1,6 +1,6 @@
 #### Cassandra keyspace
 
-Identify the keyspace used by TheHive. This is typically defined in the *application.conf* file under the `db.janusgraph.storage.cql.keyspace` attribute. If you followed the [step by step installation guide](/thehive/installation/step-by-step-installation-guide/), this keyspace should be named `thehive`. This name is also used in the [scripts provided to create Cassandra snapshots](#create-cassandra-snapshots).
+Identify the keyspace used by TheHive. This is typically defined in the *application.conf* file under the `db.janusgraph.storage.cql.keyspace` attribute. If you followed the [step by step installation guide](/thehive/installation/step-by-step-installation-guide/), this keyspace should be named `thehive`. This name is also used in the scripts provided to create Cassandra snapshots.
 
 #### Elasticsearch repository
 

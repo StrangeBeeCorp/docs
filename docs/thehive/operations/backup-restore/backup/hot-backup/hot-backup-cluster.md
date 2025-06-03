@@ -87,7 +87,7 @@ nodetool netstats
 
 ## Perform a backup on file storage
 
-Whether using Network File System (NFS) or MinIO S3 object storage, copy the contents of the folder using the following script:
+This procedure applies only to Network File System (NFS) storage. It doesn't apply to MinIO S3 object storage. Use the following script to copy the contents of the NFS folder:
 
 {!includes/hot-backup-file-storage.md!}
 
