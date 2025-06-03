@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/includes/data-consistency-hot-restore/">
+        <link rel="canonical" href="https://docs.strangebee.com/includes/hot-restore-cassandra-snapshots/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Data consistency hot restore - TheHive 5 Documentation</title>
+        <title>Hot restore cassandra snapshots - TheHive 5 Documentation</title>
       
     
     
@@ -181,7 +181,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data consistency hot restore
+              Hot restore cassandra snapshots
             
           </span>
         </div>
@@ -11977,7 +11977,7 @@
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -12093,6 +12093,29 @@
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -13312,12 +13335,60 @@
 
 
 
-  <h1>Data consistency hot restore</h1>
+  <h1>Hot restore cassandra snapshots</h1>
 
-<div class="admonition warning">
-<p class="admonition-title">Data consistency</p>
-<p>Perform the restore process for Apache Cassandra, Elasticsearch, and file storage in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.</p>
-</div>
+<div><p>To restore Cassandra snapshots, run the following script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># Cassandra variables</span>
+<span class="nv">CASSANDRA_KEYSPACE</span><span class="o">=</span>thehive
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+
+<span class="c1"># Look for the latest archived Cassandra snapshot</span>
+<span class="nv">CASSANDRA_BACKUP_LIST</span><span class="o">=(</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/cassandra_????????_??h??m??s.tar<span class="o">)</span>
+<span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_BACKUP_LIST</span><span class="p">[-1]</span><span class="si">}</span><span class="k">)</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest Cassandra backup archive found is </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Extract the latest archive</span>
+<span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">'.'</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+tar<span class="w"> </span>xvf<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest Cassandra backup archive extracted in </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Go inside the Cassandra snapshot recently extracted</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>
+
+<span class="c1"># Check if Cassandra already has an existing keyspace</span>
+cqlsh<span class="w"> </span>-e<span class="w"> </span><span class="s2">"DESCRIBE KEYSPACE </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/target_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
+
+<span class="k">if</span><span class="w"> </span>cmp<span class="w"> </span>--silent<span class="w"> </span>--<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/target_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Existing </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace definition is identical to the one in the backup, no need to drop and recreate it"</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Existing </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace definition does not match the one in the backup, dropping it"</span>
+<span class="w">    </span>cqlsh<span class="w"> </span>--request-timeout<span class="o">=</span><span class="m">120</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"DROP KEYSPACE IF EXISTS </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">;"</span>
+<span class="w">    </span>sleep<span class="w"> </span>5s
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Creating </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace using the definition from the backup"</span>
+<span class="w">    </span>cqlsh<span class="w"> </span>--request-timeout<span class="o">=</span><span class="m">120</span><span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>/create_keyspace_<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>.cql
+<span class="k">fi</span>
+
+<span class="c1"># Create the tables and load related data</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>
+<span class="k">for</span><span class="w"> </span>TABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">TABLE_BASENAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">TABLE_NAME</span><span class="o">=</span><span class="si">${</span><span class="nv">TABLE_BASENAME</span><span class="p">%%-*</span><span class="si">}</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Importing </span><span class="si">${</span><span class="nv">TABLE_NAME</span><span class="si">}</span><span class="s2"> table and related data"</span>
+<span class="w">    </span>nodetool<span class="w"> </span>import<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">TABLE_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data restoration done!"</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>
+</code></pre></div>
+<p>For additional details, refer to the <a href="https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html">official Cassandra documentation</a>.</p></div>
 
 
 

@@ -12081,7 +12081,7 @@
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -12197,6 +12197,29 @@
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -13419,8 +13442,8 @@
 <div><h1 id="how-to-perform-a-hot-backup-on-a-standalone-server">How to Perform a Hot Backup on a Standalone Server<a class="headerlink" href="#how-to-perform-a-hot-backup-on-a-standalone-server" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for performing a hot backup on a standalone server for TheHive.</p>
 <div class="admonition danger">
-<p class="admonition-title">Think twice before proceeding with hot backup and restore</p>
-<p>Before proceeding, read the <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a> topic to understand the implications of hot backup and restore and ensure they aligns with your organization's requirements and needs. Keep in mind that while the hot backup option eliminates downtime, data integrity can't be guaranteed.</p>
+<p class="admonition-title">Think twice before proceeding with hot backup</p>
+<p>Before proceeding, read the <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a> topic to understand the implications of hot backup and ensure they aligns with your organization's requirements and needs. Keep in mind that while the hot backup option eliminates downtime, data integrity can't be guaranteed.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Data consistency</p>
@@ -13436,14 +13459,10 @@
 <p>The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.</p>
 <ul>
 <li><a href="#create-cassandra-snapshots">Database backup</a></li>
-<li><a href="#create-elasticsearch-snapshots">Indexing backup (with optional audit logs storage since version 5.5)</a></li>
+<li><a href="#create-elasticsearch-snapshots">Indexing backup</a></li>
 <li><a href="#perform-a-backup-on-file-storage">File storage backup</a></li>
 </ul>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Adapting instructions</p>
-<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
-</div>
 <h3 id="install-required-tools">Install required tools<a class="headerlink" href="#install-required-tools" title="Permanent link">#</a></h3>
 <p>Before performing a hot backup, ensure the following tools are available on your system:</p>
 <ul>
@@ -13460,7 +13479,7 @@
 </ul>
 <h3 id="configure-systems">Configure systems<a class="headerlink" href="#configure-systems" title="Permanent link">#</a></h3>
 <h4 id="cassandra-keyspace">Cassandra keyspace<a class="headerlink" href="#cassandra-keyspace" title="Permanent link">#</a></h4>
-<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. If you followed the <a href="../../../../../installation/step-by-step-installation-guide/">step by step installation guide</a>, this keyspace should be named <code>thehive</code>. This name is also used in the <a href="#create-cassandra-snapshots">scripts provided to create Cassandra snapshots</a>.</p>
+<p>Identify the keyspace used by TheHive. This is typically defined in the <em>application.conf</em> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. If you followed the <a href="/thehive/installation/step-by-step-installation-guide/">step by step installation guide</a>, this keyspace should be named <code>thehive</code>. This name is also used in the <a href="#create-cassandra-snapshots">scripts provided to create Cassandra snapshots</a>.</p>
 <h4 id="elasticsearch-repository">Elasticsearch repository<a class="headerlink" href="#elasticsearch-repository" title="Permanent link">#</a></h4>
 <p>This repository is used to create snapshots with timestamped names.</p>
 <ol>
@@ -13682,8 +13701,6 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"ElasticSearch backup done! Keep the following backup archive safe:"</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">.tar"</span>
 </code></pre></div>
-<!-- + write option when using Elasticsearch for audit log storage -->
-
 <div class="admonition info">
 <p class="admonition-title">Where to find the backup archive?</p>
 <p>After running the script, the backup archive is available at <code>/mnt/backup</code> with a <code>elasticsearch_</code> prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.</p>

@@ -1917,27 +1917,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-1-restore-cassandra-snapshots" class="md-nav__link">
+  <a href="#restore-cassandra-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 1: Restore Cassandra snapshots
+      Restore Cassandra snapshots
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-restore-elasticsearch-snapshots" class="md-nav__link">
+  <a href="#restore-elasticsearch-snapshots" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Restore Elasticsearch snapshots
+      Restore Elasticsearch snapshots
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-restore-a-backup-for-file-storage" class="md-nav__link">
+  <a href="#restore-a-backup-for-file-storage" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 3: Restore a backup for file storage
+      Restore a backup for file storage
     </span>
   </a>
   
@@ -12072,7 +12072,7 @@
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -12188,6 +12188,29 @@
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -13409,13 +13432,9 @@
 
 <div><h1 id="how-to-restore-a-hot-backup-on-a-standalone-server">How to Restore a Hot Backup on a Standalone Server<a class="headerlink" href="#how-to-restore-a-hot-backup-on-a-standalone-server" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for restoring a hot backup on a standalone server for TheHive.</p>
-<div class="admonition danger">
-<p class="admonition-title">Think twice before proceeding with hot backup and restore</p>
-<p>Before proceeding, read the <a href="/thehive/operations/backup-restore/cold-hot-backup-restore/">Cold vs. Hot Backups and Restores</a> topic to understand the implications of hot backup and restore and ensure they aligns with your organization's requirements and needs. Keep in mind that while the hot backup option eliminates downtime, data integrity can't be guaranteed.</p>
-</div>
 <div class="admonition warning">
-<p class="admonition-title">Data consistency</p>
-<p>Perform the restore process for Apache Cassandra, Elasticsearch, and file storage in sequence to ensure data consistency. Ensure each system is fully restored before proceeding to the next. While hot backups may not guarantee full data integrity, following the correct order minimizes risks.</p>
+<p class="admonition-title">Shutdown required</p>
+<p>Performing a restore from a hot backup requires stopping the application.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Best practices for safe backup and restore</p>
@@ -13425,40 +13444,139 @@
 </ul>
 </div>
 <p>The process requires backing up data from all three components: Apache Cassandra, Elasticsearch and file storage.</p>
-<ol>
-<li><a href="#step-1-restore-cassandra-snapshots">Database restore</a></li>
-<li><a href="#step-2-restore-elasticsearch-snapshots">Indexing backup (with optional audit logs storage since version 5.5)</a></li>
-<li><a href="#step-3-restore-a-backup-for-file-storage">File storage restore</a></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Adapting instructions</p>
-<p>The provided instructions are examples that must be customized to fit your infrastructure and application stack. For example, folder paths may vary depending on whether you are using physical servers, virtual servers, or containerized environments to run the services.</p>
-</div>
-<h2 id="step-1-restore-cassandra-snapshots">Step 1: Restore Cassandra snapshots<a class="headerlink" href="#step-1-restore-cassandra-snapshots" title="Permanent link">#</a></h2>
-<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h3>
-<p>To successfully restore TheHive's database, ensure the following conditions are met:</p>
 <ul>
-<li>A backup of the database: <code>${SNAPSHOT}_${SNAPSHOT_DATE}.tbz</code>.</li>
-<li>The keyspace to restore must not already exist in the database, or it will be overwritten.</li>
-<li>TheHive application must not be running during the restore process.</li>
+<li><a href="#step-1-restore-cassandra-snapshots">Database restore</a></li>
+<li><a href="#step-2-restore-elasticsearch-snapshots">Indexing backup</a></li>
+<li><a href="#step-3-restore-a-backup-for-file-storage">File storage restore</a></li>
 </ul>
-<h3 id="procedure">Procedure<a class="headerlink" href="#procedure" title="Permanent link">#</a></h3>
-<!-- to complete -->
+<p>These procedures assume you have completed the steps in <a href="../../../backup/hot-backup/hot-backup-standalone-server/">Perform a Hot Backup on a Standalone Server</a> and have stopped your TheHive application. Ensure that paths are consistent between the backup and restore procedures.</p>
+<h2 id="restore-cassandra-snapshots">Restore Cassandra snapshots<a class="headerlink" href="#restore-cassandra-snapshots" title="Permanent link">#</a></h2>
+<p>To restore Cassandra snapshots, run the following script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
+<span class="c1"># Cassandra variables</span>
+<span class="nv">CASSANDRA_KEYSPACE</span><span class="o">=</span>thehive
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+
+<span class="c1"># Look for the latest archived Cassandra snapshot</span>
+<span class="nv">CASSANDRA_BACKUP_LIST</span><span class="o">=(</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/cassandra_????????_??h??m??s.tar<span class="o">)</span>
+<span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_BACKUP_LIST</span><span class="p">[-1]</span><span class="si">}</span><span class="k">)</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest Cassandra backup archive found is </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Extract the latest archive</span>
+<span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">'.'</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+tar<span class="w"> </span>xvf<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest Cassandra backup archive extracted in </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Go inside the Cassandra snapshot recently extracted</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>
+
+<span class="c1"># Check if Cassandra already has an existing keyspace</span>
+cqlsh<span class="w"> </span>-e<span class="w"> </span><span class="s2">"DESCRIBE KEYSPACE </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/target_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
+
+<span class="k">if</span><span class="w"> </span>cmp<span class="w"> </span>--silent<span class="w"> </span>--<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">/target_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Existing </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace definition is identical to the one in the backup, no need to drop and recreate it"</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Existing </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace definition does not match the one in the backup, dropping it"</span>
+<span class="w">    </span>cqlsh<span class="w"> </span>--request-timeout<span class="o">=</span><span class="m">120</span><span class="w"> </span>-e<span class="w"> </span><span class="s2">"DROP KEYSPACE IF EXISTS </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">;"</span>
+<span class="w">    </span>sleep<span class="w"> </span>5s
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Creating </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> keyspace using the definition from the backup"</span>
+<span class="w">    </span>cqlsh<span class="w"> </span>--request-timeout<span class="o">=</span><span class="m">120</span><span class="w"> </span>-f<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>/create_keyspace_<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>.cql
+<span class="k">fi</span>
+
+<span class="c1"># Create the tables and load related data</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>
+<span class="k">for</span><span class="w"> </span>TABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="nv">TABLE_BASENAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span><span class="k">)</span>
+<span class="w">    </span><span class="nv">TABLE_NAME</span><span class="o">=</span><span class="si">${</span><span class="nv">TABLE_BASENAME</span><span class="p">%%-*</span><span class="si">}</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Importing </span><span class="si">${</span><span class="nv">TABLE_NAME</span><span class="si">}</span><span class="s2"> table and related data"</span>
+<span class="w">    </span>nodetool<span class="w"> </span>import<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">TABLE_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>/<span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span>/<span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">""</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Cassandra data restoration done!"</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_FOLDER</span><span class="si">}</span>
+</code></pre></div>
 <p>For additional details, refer to the <a href="https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html">official Cassandra documentation</a>.</p>
-<h3 id="ready-to-use-scripts">Ready-to-use scripts<a class="headerlink" href="#ready-to-use-scripts" title="Permanent link">#</a></h3>
-<!-- to complete -->
+<h2 id="restore-elasticsearch-snapshots">Restore Elasticsearch snapshots<a class="headerlink" href="#restore-elasticsearch-snapshots" title="Permanent link">#</a></h2>
+<p>To restore Elasticsearch snapshots, run the following script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
-<h2 id="step-2-restore-elasticsearch-snapshots">Step 2: Restore Elasticsearch snapshots<a class="headerlink" href="#step-2-restore-elasticsearch-snapshots" title="Permanent link">#</a></h2>
-<h3 id="procedure_1">Procedure<a class="headerlink" href="#procedure_1" title="Permanent link">#</a></h3>
-<!-- to complete -->
+<span class="c1"># ElasticSearch variables</span>
+<span class="nv">ELASTICSEARCH_API_URL</span><span class="o">=</span><span class="s1">'http://127.0.0.1:9200'</span>
+<span class="nv">ELASTICSEARCH_SNAPSHOT_REPOSITORY</span><span class="o">=</span>thehive_repository
+<span class="nv">ELASTICSEARCH_INDEX</span><span class="o">=</span>thehive_global
 
+<span class="c1"># Look for the latest archived ElasticSearch snapshot</span>
+<span class="nv">ELASTICSEARCH_BACKUP_LIST</span><span class="o">=(</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/elasticsearch_????????_??h??m??s.tar<span class="o">)</span>
+<span class="nv">ELASTICSEARCH_LATEST_BACKUP_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">ELASTICSEARCH_BACKUP_LIST</span><span class="p">[-1]</span><span class="si">}</span><span class="k">)</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest ElasticSearch backup archive found is </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Extract the latest archive</span>
+<span class="nv">ELASTICSEARCH_SNAPSHOT_NAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">ELASTICSEARCH_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">'.'</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nv">ELASTICSEARCH_SNAPSHOT_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+tar<span class="w"> </span>xvf<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest ElasticSearch backup archive extracted in </span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Delete an existing ElasticSearch index</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Trying to delete the existing ElasticSearch index"</span>
+<span class="nv">delete_index</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>-X<span class="w"> </span>DELETE<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_API_URL</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_INDEX</span><span class="si">}</span><span class="s2">/"</span><span class="k">)</span>
+
+<span class="nv">ack_delete</span><span class="o">=</span><span class="k">$(</span>jq<span class="w"> </span><span class="s1">'.acknowledged == true'</span><span class="w"> </span><span class="o">&lt;&lt;&lt;</span><span class="w"> </span>delete_index<span class="k">)</span>
+<span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span>delete_index<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="w"> </span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Couldn't delete </span><span class="si">${</span><span class="nv">ELASTICSEARCH_INDEX</span><span class="si">}</span><span class="s2"> index, maybe it was already deleted"</span>
+<span class="k">else</span>
+<span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"Existing </span><span class="si">${</span><span class="nv">ELASTICSEARCH_INDEX</span><span class="si">}</span><span class="s2"> index deleted"</span>
+<span class="k">fi</span>
+
+<span class="c1"># Restoring the extracted snapshot</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Restoring </span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2"> snapshot"</span>
+<span class="nv">restore_status</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-L<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">ELASTICSEARCH_API_URL</span><span class="si">}</span><span class="s2">/_snapshot/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_REPOSITORY</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/_restore?wait_for_completion=true"</span><span class="k">)</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"ElasticSearch data restoration done!"</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">ELASTICSEARCH_SNAPSHOT_FOLDER</span><span class="si">}</span>
+</code></pre></div>
 <p>For additional details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
-<h3 id="ready-to-use-scripts_1">Ready-to-use scripts<a class="headerlink" href="#ready-to-use-scripts_1" title="Permanent link">#</a></h3>
-<!-- to complete -->
-
-<h2 id="step-3-restore-a-backup-for-file-storage">Step 3: Restore a backup for file storage<a class="headerlink" href="#step-3-restore-a-backup-for-file-storage" title="Permanent link">#</a></h2>
+<h2 id="restore-a-backup-for-file-storage">Restore a backup for file storage<a class="headerlink" href="#restore-a-backup-for-file-storage" title="Permanent link">#</a></h2>
 <p>Whether using local file system storage or Network File System (NFS), restore the saved files to the destination folder used by TheHive. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.</p>
+<p>To restore a backup for file storage, run the following script:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1"># TheHive attachment variables</span>
+<span class="nv">ATTACHMENT_FOLDER</span><span class="o">=</span>/opt/thp/thehive/files
+
+<span class="c1"># Backup variables</span>
+<span class="nv">GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup
+
+<span class="c1"># Look for the latest archived attachment files snapshot</span>
+<span class="nv">ATTACHMENT_BACKUP_LIST</span><span class="o">=(</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span>/files_????????_??h??m??s.tar<span class="o">)</span>
+<span class="nv">ATTACHMENT_LATEST_BACKUP_NAME</span><span class="o">=</span><span class="k">$(</span>basename<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_BACKUP_LIST</span><span class="p">[-1]</span><span class="si">}</span><span class="k">)</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest attachment files backup archive found is </span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ATTACHMENT_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Extract the latest archive</span>
+<span class="nv">ATTACHMENT_SNAPSHOT_NAME</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d<span class="w"> </span><span class="s1">'.'</span><span class="w"> </span>-f<span class="w"> </span><span class="m">1</span><span class="k">)</span>
+<span class="nv">ATTACHMENT_SNAPSHOT_FOLDER</span><span class="o">=</span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ATTACHMENT_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">"</span>
+
+tar<span class="w"> </span>xvf<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">ATTACHMENT_LATEST_BACKUP_NAME</span><span class="si">}</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Latest attachment files backup archive extracted in </span><span class="si">${</span><span class="nv">ATTACHMENT_SNAPSHOT_FOLDER</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># Clean existing TheHive attachment files</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_FOLDER</span><span class="si">}</span>/*
+
+<span class="c1"># Copy the attachment files from the backup</span>
+cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_SNAPSHOT_FOLDER</span><span class="si">}</span>/*<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_FOLDER</span><span class="si">}</span>/
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"attachment files data restoration done!"</span>
+rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_SNAPSHOT_FOLDER</span><span class="si">}</span>
+</code></pre></div>
 <h2>Next steps</h2>
 
 <ul>

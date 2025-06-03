@@ -49,6 +49,10 @@
          <lastmod>2025-06-03</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/cortex/installation-and-configuration/deploy-cortex-on-kubernetes/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/docker/</loc>
          <lastmod>2025-06-03</lastmod>
     </url>
@@ -249,10 +253,6 @@
          <lastmod>2025-06-03</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/includes/adapting-instructions/</loc>
-         <lastmod>2025-06-03</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/includes/administrator-access-global-endpoints/</loc>
          <lastmod>2025-06-03</lastmod>
     </url>
@@ -417,10 +417,6 @@
          <lastmod>2025-06-03</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/includes/data-consistency-hot-restore/</loc>
-         <lastmod>2025-06-03</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/includes/email-intake-tab-go-to/</loc>
          <lastmod>2025-06-03</lastmod>
     </url>
@@ -490,6 +486,22 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/hot-backup-required-tools/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/hot-restore-application-stopped/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/hot-restore-cassandra-snapshots/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/hot-restore-elasticsearch-snapshots/</loc>
+         <lastmod>2025-06-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/hot-restore-file-storage/</loc>
          <lastmod>2025-06-03</lastmod>
     </url>
     <url>

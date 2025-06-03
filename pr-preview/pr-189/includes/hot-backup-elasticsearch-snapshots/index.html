@@ -11977,7 +11977,7 @@
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -12093,6 +12093,29 @@
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -13395,8 +13418,6 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"ElasticSearch backup done! Keep the following backup archive safe:"</span>
 <span class="nb">echo</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">.tar"</span>
 </code></pre></div>
-<!-- + write option when using Elasticsearch for audit log storage -->
-
 <div class="admonition info">
 <p class="admonition-title">Where to find the backup archive?</p>
 <p>After running the script, the backup archive is available at <code>/mnt/backup</code> with a <code>elasticsearch_</code> prefix. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.</p>

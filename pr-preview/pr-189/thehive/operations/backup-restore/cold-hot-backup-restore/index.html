@@ -12077,7 +12077,7 @@
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -12193,6 +12193,29 @@
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -13423,7 +13446,7 @@
 <p class="admonition-title">Backup requirement</p>
 <p>All three components—Apache Cassandra, Elasticsearch, and file storage—must be backed up to ensure proper recovery.</p>
 </div>
-<p>TheHive is built on an architecture that includes <a href="../../../installation/step-by-step-installation-guide/#apache-cassandra">Apache Cassandra as the database</a>, <a href="../../../installation/step-by-step-installation-guide/#elasticsearch">Elasticsearch as the indexing engine, and optionally as audit log storage (since version 5.5)</a>, and <a href="../../../installation/step-by-step-installation-guide/#file-storage">files stored either locally, using an Network File System (NFS), or in MinIO S3 object storage</a>. This setup requires careful attention to ensure consistency across the data, index, and files for successful backups. Any inconsistency between them could result in restoration failures.</p>
+<p>TheHive is built on an architecture that includes <a href="../../../installation/step-by-step-installation-guide/#apache-cassandra">Apache Cassandra as the database</a>, <a href="../../../installation/step-by-step-installation-guide/#elasticsearch">Elasticsearch as the indexing engine</a>, and <a href="../../../installation/step-by-step-installation-guide/#file-storage">files stored either locally, using an Network File System (NFS), or in MinIO S3 object storage</a>. This setup requires careful attention to ensure consistency across the data, index, and files for successful backups. Any inconsistency between them could result in restoration failures.</p>
 <h2 id="cold-vs-hot-backup-and-restore-comparison">Cold vs. hot backup and restore comparison<a class="headerlink" href="#cold-vs-hot-backup-and-restore-comparison" title="Permanent link">#</a></h2>
 <table>
 <thead>
