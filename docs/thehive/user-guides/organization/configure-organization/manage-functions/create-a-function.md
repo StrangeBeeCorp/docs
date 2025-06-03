@@ -52,6 +52,6 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
 <h2>Next steps</h2>
 
-* [Revoke a Function](revoke-a-function.md)
+* [Invoke a Function](invoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
 * [Delete a Function](delete-a-function.md)
