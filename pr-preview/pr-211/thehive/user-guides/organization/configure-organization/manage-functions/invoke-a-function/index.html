@@ -8,25 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/thehive/operations/end-API-v0/API-v0-depreciation-notice/">
+        <link rel="canonical" href="https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function/">
       
       
-        <link rel="prev" href="../../monitoring/">
+        <link rel="prev" href="../delete-a-function/">
       
       
-        <link rel="next" href="../upgrade-from-API-v0-to-API-v1/">
+        <link rel="next" href="../functions-objects/">
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../../../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>API v0 Depreciation Notice - TheHive 5 Documentation</title>
+        <title>Invoke a Function - TheHive 5 Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -45,11 +45,11 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/badge.css">
+      <link rel="stylesheet" href="../../../../../../assets/stylesheets/badge.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -134,7 +134,7 @@
 <meta name="google-site-verification" content="OwK13WB3foDY_sewo_rglGx4a5f4eSunDAkGav9CMls">
 
 
-   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -143,7 +143,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -155,7 +155,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#api-v0-deprecation-notice" class="md-skip">
+        <a href="#how-to-invoke-a-function" class="md-skip">
           Skip to content
         </a>
       
@@ -171,9 +171,9 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../../../../../.." title="TheHive 5 Documentation" class="md-header__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/images/strangebee.svg" alt="logo">
+  <img src="../../../../../../assets/images/strangebee.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -190,7 +190,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API v0 Depreciation Notice
+              Invoke a Function
             
           </span>
         </div>
@@ -264,7 +264,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../../../../.." class="md-tabs__link">
         
   
   
@@ -287,7 +287,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../overview/" class="md-tabs__link">
+        <a href="../../../../../overview/" class="md-tabs__link">
           
   
   
@@ -307,7 +307,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../cortex/" class="md-tabs__link">
+        <a href="../../../../../../cortex/" class="md-tabs__link">
           
   
   
@@ -346,7 +346,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../resources/" class="md-tabs__link">
+        <a href="../../../../../../resources/" class="md-tabs__link">
           
   
   
@@ -388,9 +388,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../../../../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
       
-  <img src="../../../../assets/images/strangebee.svg" alt="logo">
+  <img src="../../../../../../assets/images/strangebee.svg" alt="logo">
 
     </a>
     TheHive 5 Documentation
@@ -405,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../../../../.." class="md-nav__link">
         
   
   
@@ -473,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../overview/" class="md-nav__link">
+      <a href="../../../../../overview/" class="md-nav__link">
         
   
   
@@ -496,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/" class="md-nav__link">
+      <a href="../../../../../download/" class="md-nav__link">
         
   
   
@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/system-requirements/" class="md-nav__link">
+      <a href="../../../../../installation/system-requirements/" class="md-nav__link">
         
   
   
@@ -583,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/automated-installation-script/" class="md-nav__link">
+      <a href="../../../../../installation/automated-installation-script/" class="md-nav__link">
         
   
   
@@ -606,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/step-by-step-installation-guide/" class="md-nav__link">
+      <a href="../../../../../installation/step-by-step-installation-guide/" class="md-nav__link">
         
   
   
@@ -629,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/deploying-a-cluster/" class="md-nav__link">
+      <a href="../../../../../installation/deploying-a-cluster/" class="md-nav__link">
         
   
   
@@ -652,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/docker/" class="md-nav__link">
+      <a href="../../../../../installation/docker/" class="md-nav__link">
         
   
   
@@ -675,7 +675,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/kubernetes/" class="md-nav__link">
+      <a href="../../../../../installation/kubernetes/" class="md-nav__link">
         
   
   
@@ -698,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/activate-license/" class="md-nav__link">
+      <a href="../../../../../installation/activate-license/" class="md-nav__link">
         
   
   
@@ -762,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/upgrade-from-5.x/" class="md-nav__link">
+      <a href="../../../../../installation/upgrade-from-5.x/" class="md-nav__link">
         
   
   
@@ -785,7 +785,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/upgrade-from-4.x/" class="md-nav__link">
+      <a href="../../../../../installation/upgrade-from-4.x/" class="md-nav__link">
         
   
   
@@ -808,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../installation/migration/" class="md-nav__link">
+      <a href="../../../../../installation/migration/" class="md-nav__link">
         
   
   
@@ -839,7 +839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../download/archives/" class="md-nav__link">
+      <a href="../../../../../download/archives/" class="md-nav__link">
         
   
   
@@ -911,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/database/" class="md-nav__link">
+      <a href="../../../../../configuration/database/" class="md-nav__link">
         
   
   
@@ -934,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/file-storage/" class="md-nav__link">
+      <a href="../../../../../configuration/file-storage/" class="md-nav__link">
         
   
   
@@ -957,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/connectors/" class="md-nav__link">
+      <a href="../../../../../configuration/connectors/" class="md-nav__link">
         
   
   
@@ -980,7 +980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/akka/" class="md-nav__link">
+      <a href="../../../../../configuration/akka/" class="md-nav__link">
         
   
   
@@ -1003,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/pekko/" class="md-nav__link">
+      <a href="../../../../../configuration/pekko/" class="md-nav__link">
         
   
   
@@ -1026,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/logs/" class="md-nav__link">
+      <a href="../../../../../configuration/logs/" class="md-nav__link">
         
   
   
@@ -1049,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/proxy/" class="md-nav__link">
+      <a href="../../../../../configuration/proxy/" class="md-nav__link">
         
   
   
@@ -1072,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/secret/" class="md-nav__link">
+      <a href="../../../../../configuration/secret/" class="md-nav__link">
         
   
   
@@ -1095,7 +1095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../../../configuration/ssl/" class="md-nav__link">
         
   
   
@@ -1118,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/service/" class="md-nav__link">
+      <a href="../../../../../configuration/service/" class="md-nav__link">
         
   
   
@@ -1182,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/gdpr/" class="md-nav__link">
+      <a href="../../../../../configuration/gdpr/" class="md-nav__link">
         
   
   
@@ -1218,8 +1218,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1230,11 +1228,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -1250,7 +1248,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Operations
@@ -1264,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cassandra-cluster/" class="md-nav__link">
+      <a href="../../../../../operations/cassandra-cluster/" class="md-nav__link">
         
   
   
@@ -1287,7 +1285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cassandra-security/" class="md-nav__link">
+      <a href="../../../../../operations/cassandra-security/" class="md-nav__link">
         
   
   
@@ -1310,7 +1308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../minio-cluster/" class="md-nav__link">
+      <a href="../../../../../operations/minio-cluster/" class="md-nav__link">
         
   
   
@@ -1374,7 +1372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/overview/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/overview/" class="md-nav__link">
         
   
   
@@ -1438,7 +1436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/backup/physical-server/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/backup/physical-server/" class="md-nav__link">
         
   
   
@@ -1461,7 +1459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/backup/virtual-server/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/backup/virtual-server/" class="md-nav__link">
         
   
   
@@ -1484,7 +1482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/backup/docker-compose/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/backup/docker-compose/" class="md-nav__link">
         
   
   
@@ -1507,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/backup/hot-backup/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/backup/hot-backup/" class="md-nav__link">
         
   
   
@@ -1579,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/restore/physical-server/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/restore/physical-server/" class="md-nav__link">
         
   
   
@@ -1602,7 +1600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/restore/virtual-server/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/restore/virtual-server/" class="md-nav__link">
         
   
   
@@ -1625,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/restore/docker-compose/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/restore/docker-compose/" class="md-nav__link">
         
   
   
@@ -1648,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/restore/cloud/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/restore/cloud/" class="md-nav__link">
         
   
   
@@ -1671,7 +1669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../backup-restore/restore/restore-hot-backup/" class="md-nav__link">
+      <a href="../../../../../operations/backup-restore/restore/restore-hot-backup/" class="md-nav__link">
         
   
   
@@ -1710,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../change-index/" class="md-nav__link">
+      <a href="../../../../../operations/change-index/" class="md-nav__link">
         
   
   
@@ -1733,7 +1731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
+      <a href="../../../../../operations/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1756,7 +1754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../monitoring/" class="md-nav__link">
+      <a href="../../../../../operations/monitoring/" class="md-nav__link">
         
   
   
@@ -1776,8 +1774,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1788,11 +1784,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_8" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_8" >
         
           
           <label class="md-nav__link" for="__nav_2_5_8" id="__nav_2_5_8_label" tabindex="0">
@@ -1800,7 +1796,7 @@
   
   
   <span class="md-ellipsis">
-    API v0 Depreciation
+    API v0 Deprecation
     
   </span>
   
@@ -1808,10 +1804,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_8_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_8_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5_8">
             <span class="md-nav__icon md-icon"></span>
-            API v0 Depreciation
+            API v0 Deprecation
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1819,100 +1815,20 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    API v0 Depreciation Notice
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../../operations/end-API-v0/API-v0-deprecation-notice/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    API v0 Depreciation Notice
+    API v0 Deprecation Notice
     
   </span>
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-api-v0-is-being-deprecated" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why API v0 is being deprecated
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#who-is-affected" class="md-nav__link">
-    <span class="md-ellipsis">
-      Who is affected
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#timeline" class="md-nav__link">
-    <span class="md-ellipsis">
-      Timeline
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-should-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      What you should do
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1925,7 +1841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../upgrade-from-API-v0-to-API-v1/" class="md-nav__link">
+      <a href="../../../../../operations/end-API-v0/upgrade-from-API-v0-to-API-v1/" class="md-nav__link">
         
   
   
@@ -2005,7 +1921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/first-start/" class="md-nav__link">
+      <a href="../../../../../administration/first-start/" class="md-nav__link">
         
   
   
@@ -2069,7 +1985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/about-organizations/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/about-organizations/" class="md-nav__link">
         
   
   
@@ -2092,7 +2008,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
         
   
   
@@ -2115,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/create-an-organization/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/create-an-organization/" class="md-nav__link">
         
   
   
@@ -2138,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/link-an-organization/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/link-an-organization/" class="md-nav__link">
         
   
   
@@ -2161,7 +2077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/lock-an-organization/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/lock-an-organization/" class="md-nav__link">
         
   
   
@@ -2233,7 +2149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/about-user-accounts/" class="md-nav__link">
         
   
   
@@ -2256,7 +2172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
+      <a href="../../manage-user-accounts/create-a-user-account/" class="md-nav__link">
         
   
   
@@ -2279,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/manage-user-accounts/" class="md-nav__link">
         
   
   
@@ -2302,7 +2218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
         
   
   
@@ -2325,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/" class="md-nav__link">
+      <a href="../../manage-user-accounts/delete-a-user-account/" class="md-nav__link">
         
   
   
@@ -2348,7 +2264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
+      <a href="../../manage-user-accounts/lock-a-user-account/" class="md-nav__link">
         
   
   
@@ -2371,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
         
   
   
@@ -2443,7 +2359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/branding/" class="md-nav__link">
+      <a href="../../../../../administration/branding/" class="md-nav__link">
         
   
   
@@ -2466,7 +2382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/license/" class="md-nav__link">
+      <a href="../../../../../administration/license/" class="md-nav__link">
         
   
   
@@ -2530,7 +2446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/cortex/about-cortex/" class="md-nav__link">
+      <a href="../../../../../administration/cortex/about-cortex/" class="md-nav__link">
         
   
   
@@ -2553,7 +2469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/cortex/add-a-cortex-server/" class="md-nav__link">
+      <a href="../../../../../administration/cortex/add-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -2576,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/cortex/remove-a-cortex-server/" class="md-nav__link">
+      <a href="../../../../../administration/cortex/remove-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -2648,7 +2564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/misp-integration/about-misp-integration/" class="md-nav__link">
+      <a href="../../../../../administration/misp-integration/about-misp-integration/" class="md-nav__link">
         
   
   
@@ -2671,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
+      <a href="../../../../../administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
         
   
   
@@ -2694,7 +2610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
+      <a href="../../../../../administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
         
   
   
@@ -2766,7 +2682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
+      <a href="../../../../../administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
         
   
   
@@ -2789,7 +2705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
+      <a href="../../../../../administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
         
   
   
@@ -2812,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/email-intake-connector/fetch-emails/" class="md-nav__link">
+      <a href="../../../../../administration/email-intake-connector/fetch-emails/" class="md-nav__link">
         
   
   
@@ -2835,7 +2751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
+      <a href="../../../../../administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
         
   
   
@@ -2907,7 +2823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/configure-authentication/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/configure-authentication/" class="md-nav__link">
         
   
   
@@ -2971,7 +2887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/local/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/local/" class="md-nav__link">
         
   
   
@@ -2994,7 +2910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/ad/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/ad/" class="md-nav__link">
         
   
   
@@ -3017,7 +2933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/ldap/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/ldap/" class="md-nav__link">
         
   
   
@@ -3040,7 +2956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/oauth2/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/oauth2/" class="md-nav__link">
         
   
   
@@ -3063,7 +2979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/saml/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/saml/" class="md-nav__link">
         
   
   
@@ -3086,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/openid/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/openid/" class="md-nav__link">
         
   
   
@@ -3117,7 +3033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/authentication/ssl/" class="md-nav__link">
+      <a href="../../../../../administration/authentication/ssl/" class="md-nav__link">
         
   
   
@@ -3140,7 +3056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/smtp/" class="md-nav__link">
+      <a href="../../../../../administration/smtp/" class="md-nav__link">
         
   
   
@@ -3171,7 +3087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/add-a-global-endpoint/" class="md-nav__link">
+      <a href="../../../../../administration/add-a-global-endpoint/" class="md-nav__link">
         
   
   
@@ -3284,7 +3200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/profiles/about-profiles/" class="md-nav__link">
+      <a href="../../../../../administration/profiles/about-profiles/" class="md-nav__link">
         
   
   
@@ -3307,7 +3223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/profiles/create-a-profile/" class="md-nav__link">
+      <a href="../../../../../administration/profiles/create-a-profile/" class="md-nav__link">
         
   
   
@@ -3330,7 +3246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/profiles/add-remove-permissions-from-a-profile/" class="md-nav__link">
+      <a href="../../../../../administration/profiles/add-remove-permissions-from-a-profile/" class="md-nav__link">
         
   
   
@@ -3353,7 +3269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/profiles/delete-a-profile/" class="md-nav__link">
+      <a href="../../../../../administration/profiles/delete-a-profile/" class="md-nav__link">
         
   
   
@@ -3425,7 +3341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/custom-fields/about-custom-fields/" class="md-nav__link">
+      <a href="../../../../../administration/custom-fields/about-custom-fields/" class="md-nav__link">
         
   
   
@@ -3448,7 +3364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/custom-fields/create-a-custom-field/" class="md-nav__link">
+      <a href="../../../../../administration/custom-fields/create-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3471,7 +3387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
+      <a href="../../../../../administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3494,7 +3410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
+      <a href="../../../../../administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
         
   
   
@@ -3566,7 +3482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/observable-types/create-an-observable-type/" class="md-nav__link">
+      <a href="../../../../../administration/observable-types/create-an-observable-type/" class="md-nav__link">
         
   
   
@@ -3589,7 +3505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/observable-types/delete-an-observable-type/" class="md-nav__link">
+      <a href="../../../../../administration/observable-types/delete-an-observable-type/" class="md-nav__link">
         
   
   
@@ -3661,7 +3577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/status/about-statuses/" class="md-nav__link">
+      <a href="../../../../../administration/status/about-statuses/" class="md-nav__link">
         
   
   
@@ -3684,7 +3600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/status/create-a-status/" class="md-nav__link">
+      <a href="../../../../../administration/status/create-a-status/" class="md-nav__link">
         
   
   
@@ -3707,7 +3623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/status/change-visibility-of-a-status/" class="md-nav__link">
+      <a href="../../../../../administration/status/change-visibility-of-a-status/" class="md-nav__link">
         
   
   
@@ -3730,7 +3646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/status/change-color-of-a-status/" class="md-nav__link">
+      <a href="../../../../../administration/status/change-color-of-a-status/" class="md-nav__link">
         
   
   
@@ -3753,7 +3669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/status/delete-a-status/" class="md-nav__link">
+      <a href="../../../../../administration/status/delete-a-status/" class="md-nav__link">
         
   
   
@@ -3784,7 +3700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/analyzers-templates/" class="md-nav__link">
+      <a href="../../../../../administration/analyzers-templates/" class="md-nav__link">
         
   
   
@@ -3848,7 +3764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/taxonomies/about-taxonomies/" class="md-nav__link">
+      <a href="../../../../../administration/taxonomies/about-taxonomies/" class="md-nav__link">
         
   
   
@@ -3871,7 +3787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
+      <a href="../../../../../administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
         
   
   
@@ -3894,7 +3810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
+      <a href="../../../../../administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
         
   
   
@@ -3917,7 +3833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
+      <a href="../../../../../administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -3940,7 +3856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
+      <a href="../../../../../administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -4012,7 +3928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -4035,7 +3951,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/ttps/add-a-catalog/" class="md-nav__link">
+      <a href="../../../../../administration/ttps/add-a-catalog/" class="md-nav__link">
         
   
   
@@ -4058,7 +3974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/ttps/update-a-catalog/" class="md-nav__link">
+      <a href="../../../../../administration/ttps/update-a-catalog/" class="md-nav__link">
         
   
   
@@ -4081,7 +3997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/ttps/remove-a-catalog/" class="md-nav__link">
+      <a href="../../../../../administration/ttps/remove-a-catalog/" class="md-nav__link">
         
   
   
@@ -4104,7 +4020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/ttps/view-techniques-in-a-catalog/" class="md-nav__link">
+      <a href="../../../../../administration/ttps/view-techniques-in-a-catalog/" class="md-nav__link">
         
   
   
@@ -4184,7 +4100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to/fail2ban/" class="md-nav__link">
+      <a href="../../../../../how-to/fail2ban/" class="md-nav__link">
         
   
   
@@ -4207,7 +4123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../how-to/splunk-integration/" class="md-nav__link">
+      <a href="../../../../../how-to/splunk-integration/" class="md-nav__link">
         
   
   
@@ -4243,6 +4159,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4253,11 +4171,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
@@ -4273,7 +4191,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7">
             <span class="md-nav__icon md-icon"></span>
             User Guides
@@ -4287,7 +4205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/thehive-flavored-markdown/" class="md-nav__link">
+      <a href="../../../../thehive-flavored-markdown/" class="md-nav__link">
         
   
   
@@ -4310,7 +4228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/date-field-definitions-alerts-cases/" class="md-nav__link">
+      <a href="../../../../date-field-definitions-alerts-cases/" class="md-nav__link">
         
   
   
@@ -4374,7 +4292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/manage-user-settings/" class="md-nav__link">
+      <a href="../../../../manage-user-settings/" class="md-nav__link">
         
   
   
@@ -4397,7 +4315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/manage-password/" class="md-nav__link">
+      <a href="../../../../manage-password/" class="md-nav__link">
         
   
   
@@ -4420,7 +4338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/change-account-theme/" class="md-nav__link">
+      <a href="../../../../change-account-theme/" class="md-nav__link">
         
   
   
@@ -4443,7 +4361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/view-permissions/" class="md-nav__link">
+      <a href="../../../../view-permissions/" class="md-nav__link">
         
   
   
@@ -4466,7 +4384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/switch-organizations/" class="md-nav__link">
+      <a href="../../../../switch-organizations/" class="md-nav__link">
         
   
   
@@ -4489,7 +4407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/log-out/" class="md-nav__link">
+      <a href="../../../../log-out/" class="md-nav__link">
         
   
   
@@ -4561,7 +4479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/knowledge-base/about-knowledge-base/" class="md-nav__link">
+      <a href="../../../../knowledge-base/about-knowledge-base/" class="md-nav__link">
         
   
   
@@ -4584,7 +4502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../../../knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4607,7 +4525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../../../knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4630,7 +4548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../../../knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4653,7 +4571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../../../knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -4725,7 +4643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/key-performance-indicators/key-performance-indicators/" class="md-nav__link">
+      <a href="../../../../key-performance-indicators/key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -4748,7 +4666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/key-performance-indicators/hide-key-performance-indicators/" class="md-nav__link">
+      <a href="../../../../key-performance-indicators/hide-key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -4771,7 +4689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
+      <a href="../../../../key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
         
   
   
@@ -4794,7 +4712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
+      <a href="../../../../key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
         
   
   
@@ -4822,6 +4740,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4832,11 +4752,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7_6" id="__nav_2_7_6_label" tabindex="0">
@@ -4852,7 +4772,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7_6">
             <span class="md-nav__icon md-icon"></span>
             Organization Administration
@@ -4907,7 +4827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/about-user-accounts/" class="md-nav__link">
         
   
   
@@ -4930,7 +4850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
+      <a href="../../manage-user-accounts/create-a-user-account/" class="md-nav__link">
         
   
   
@@ -4953,7 +4873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/manage-user-accounts/" class="md-nav__link">
         
   
   
@@ -4976,7 +4896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
+      <a href="../../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
         
   
   
@@ -4999,7 +4919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
+      <a href="../../manage-user-accounts/lock-a-user-account/" class="md-nav__link">
         
   
   
@@ -5022,7 +4942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
+      <a href="../../manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
         
   
   
@@ -5135,7 +5055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/" class="md-nav__link">
+      <a href="../../manage-templates/case-templates/about-case-templates/" class="md-nav__link">
         
   
   
@@ -5158,7 +5078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
         
   
   
@@ -5181,7 +5101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
         
   
   
@@ -5204,7 +5124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
         
   
   
@@ -5276,7 +5196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
+      <a href="../../manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
         
   
   
@@ -5299,7 +5219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -5322,7 +5242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -5345,7 +5265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -5368,7 +5288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -5440,7 +5360,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
+      <a href="../../manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
         
   
   
@@ -5463,7 +5383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
+      <a href="../../manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
         
   
   
@@ -5486,7 +5406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -5509,7 +5429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
         
   
   
@@ -5532,7 +5452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
+      <a href="../../manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -5612,7 +5532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/" class="md-nav__link">
+      <a href="../../manage-custom-tags/about-custom-tags/" class="md-nav__link">
         
   
   
@@ -5635,7 +5555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
+      <a href="../../manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -5658,7 +5578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
+      <a href="../../manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -5681,7 +5601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
+      <a href="../../manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -5704,7 +5624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
+      <a href="../../manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
         
   
   
@@ -5735,7 +5655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/ui-configuration/" class="md-nav__link">
+      <a href="../../../ui-configuration/" class="md-nav__link">
         
   
   
@@ -5799,7 +5719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/about-notifications/" class="md-nav__link">
+      <a href="../../manage-notifications/about-notifications/" class="md-nav__link">
         
   
   
@@ -5822,7 +5742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/create-a-notification/" class="md-nav__link">
+      <a href="../../manage-notifications/create-a-notification/" class="md-nav__link">
         
   
   
@@ -5845,7 +5765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/" class="md-nav__link">
+      <a href="../../manage-notifications/turn-off-a-notification/" class="md-nav__link">
         
   
   
@@ -5868,7 +5788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/delete-a-notification/" class="md-nav__link">
+      <a href="../../manage-notifications/delete-a-notification/" class="md-nav__link">
         
   
   
@@ -5891,7 +5811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/" class="md-nav__link">
+      <a href="../../manage-notifications/variable-usage-examples/" class="md-nav__link">
         
   
   
@@ -5955,7 +5875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/email-to-users/" class="md-nav__link">
         
   
   
@@ -5978,7 +5898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
         
   
   
@@ -6001,7 +5921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/http-request/" class="md-nav__link">
         
   
   
@@ -6024,7 +5944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/mattermost/" class="md-nav__link">
         
   
   
@@ -6047,7 +5967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/slack/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/slack/" class="md-nav__link">
         
   
   
@@ -6070,7 +5990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/teams/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/teams/" class="md-nav__link">
         
   
   
@@ -6093,7 +6013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/webhook/" class="md-nav__link">
         
   
   
@@ -6116,7 +6036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/kafka/" class="md-nav__link">
         
   
   
@@ -6139,7 +6059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/redis/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/redis/" class="md-nav__link">
         
   
   
@@ -6162,7 +6082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/analyzers/" class="md-nav__link">
         
   
   
@@ -6185,7 +6105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/responders/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/responders/" class="md-nav__link">
         
   
   
@@ -6208,7 +6128,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/notifiers/function/" class="md-nav__link">
+      <a href="../../manage-notifications/notifiers/function/" class="md-nav__link">
         
   
   
@@ -6280,7 +6200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
+      <a href="../../manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
         
   
   
@@ -6303,7 +6223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
+      <a href="../../manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
         
   
   
@@ -6375,7 +6295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/about-endpoints/" class="md-nav__link">
+      <a href="../../manage-endpoints/about-endpoints/" class="md-nav__link">
         
   
   
@@ -6398,7 +6318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
+      <a href="../../manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
         
   
   
@@ -6421,7 +6341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
+      <a href="../../manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
         
   
   
@@ -6444,7 +6364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/" class="md-nav__link">
+      <a href="../../manage-endpoints/add-slack-endpoint/" class="md-nav__link">
         
   
   
@@ -6467,7 +6387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/" class="md-nav__link">
+      <a href="../../manage-endpoints/add-teams-endpoint/" class="md-nav__link">
         
   
   
@@ -6490,7 +6410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
+      <a href="../../manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
         
   
   
@@ -6526,6 +6446,8 @@
                 
   
   
+    
+  
   
   
     
@@ -6536,11 +6458,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_6_6" checked>
         
           
           <label class="md-nav__link" for="__nav_2_7_6_6" id="__nav_2_7_6_6_label" tabindex="0">
@@ -6556,7 +6478,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_7_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_7_6_6">
             <span class="md-nav__icon md-icon"></span>
             Functions
@@ -6570,7 +6492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/about-functions/" class="md-nav__link">
+      <a href="../about-functions/" class="md-nav__link">
         
   
   
@@ -6593,7 +6515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/create-a-function/" class="md-nav__link">
+      <a href="../create-a-function/" class="md-nav__link">
         
   
   
@@ -6616,7 +6538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/delete-a-function/" class="md-nav__link">
+      <a href="../delete-a-function/" class="md-nav__link">
         
   
   
@@ -6636,20 +6558,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/revoke-a-function/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Revoke a Function
+    Invoke a Function
     
   </span>
   
 
       </a>
+      
     </li>
   
 
@@ -6662,7 +6594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
+      <a href="../functions-objects/" class="md-nav__link">
         
   
   
@@ -6734,7 +6666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-feeders/about-feeders/" class="md-nav__link">
+      <a href="../../manage-feeders/about-feeders/" class="md-nav__link">
         
   
   
@@ -6757,7 +6689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-feeders/create-a-feeder/" class="md-nav__link">
+      <a href="../../manage-feeders/create-a-feeder/" class="md-nav__link">
         
   
   
@@ -6780,7 +6712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/" class="md-nav__link">
+      <a href="../../manage-feeders/turn-off-a-feeder/" class="md-nav__link">
         
   
   
@@ -6803,7 +6735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/" class="md-nav__link">
+      <a href="../../manage-feeders/delete-a-feeder/" class="md-nav__link">
         
   
   
@@ -6875,7 +6807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -6898,7 +6830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization/" class="md-nav__link">
+      <a href="../../manage-attachments/add-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -6921,7 +6853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization/" class="md-nav__link">
+      <a href="../../manage-attachments/remove-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -6944,7 +6876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization/" class="md-nav__link">
+      <a href="../../manage-attachments/download-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -6967,7 +6899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization/" class="md-nav__link">
+      <a href="../../manage-attachments/share-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -7088,7 +7020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/about-alerts/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/about-alerts/" class="md-nav__link">
         
   
   
@@ -7152,7 +7084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
         
   
   
@@ -7175,7 +7107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
         
   
   
@@ -7206,7 +7138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
         
   
   
@@ -7229,7 +7161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/create-a-case-from-an-alert/" class="md-nav__link">
         
   
   
@@ -7252,7 +7184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/add-an-alert-to-an-existing-case/" class="md-nav__link">
         
   
   
@@ -7275,7 +7207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
         
   
   
@@ -7298,7 +7230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/change-status-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/change-status-alert/" class="md-nav__link">
         
   
   
@@ -7321,7 +7253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
         
   
   
@@ -7344,7 +7276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/ignore-alert-updates-misp/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/ignore-alert-updates-misp/" class="md-nav__link">
         
   
   
@@ -7367,7 +7299,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
         
   
   
@@ -7390,7 +7322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/assign-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/assign-an-alert/" class="md-nav__link">
         
   
   
@@ -7413,7 +7345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
+      <a href="../run-a-function-case-alert/" class="md-nav__link">
         
   
   
@@ -7436,7 +7368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/run-responders-on-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/run-responders-on-an-alert/" class="md-nav__link">
         
   
   
@@ -7459,7 +7391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
         
   
   
@@ -7482,7 +7414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/export-list-of-alerts/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/export-list-of-alerts/" class="md-nav__link">
         
   
   
@@ -7546,7 +7478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/about-observables/" class="md-nav__link">
         
   
   
@@ -7569,7 +7501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
         
   
   
@@ -7592,7 +7524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
         
   
   
@@ -7615,7 +7547,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
         
   
   
@@ -7638,7 +7570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
         
   
   
@@ -7661,7 +7593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
         
   
   
@@ -7684,7 +7616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
         
   
   
@@ -7707,7 +7639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
         
   
   
@@ -7730,7 +7662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/share-an-observable/" class="md-nav__link">
         
   
   
@@ -7753,7 +7685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
         
   
   
@@ -7776,7 +7708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
         
   
   
@@ -7799,7 +7731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
         
   
   
@@ -7822,7 +7754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
         
   
   
@@ -7845,7 +7777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
         
   
   
@@ -7917,7 +7849,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -7940,7 +7872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
         
   
   
@@ -7963,7 +7895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
         
   
   
@@ -7986,7 +7918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
         
   
   
@@ -8058,7 +7990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -8081,7 +8013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -8104,7 +8036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -8127,7 +8059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -8150,7 +8082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -8222,7 +8154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -8245,7 +8177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -8317,7 +8249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -8340,7 +8272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -8363,7 +8295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -8394,7 +8326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/close-an-alert/" class="md-nav__link">
         
   
   
@@ -8417,7 +8349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/reopen-an-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/reopen-an-alert/" class="md-nav__link">
         
   
   
@@ -8489,7 +8421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/about-cases/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/about-cases/" class="md-nav__link">
         
   
   
@@ -8553,7 +8485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
         
   
   
@@ -8576,7 +8508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
         
   
   
@@ -8607,7 +8539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/create-a-new-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/create-a-new-case/" class="md-nav__link">
         
   
   
@@ -8630,7 +8562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/export-list-of-cases/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/export-list-of-cases/" class="md-nav__link">
         
   
   
@@ -8653,7 +8585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
         
   
   
@@ -8676,7 +8608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
         
   
   
@@ -8699,7 +8631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
         
   
   
@@ -8722,7 +8654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
         
   
   
@@ -8786,7 +8718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/about-observables/" class="md-nav__link">
         
   
   
@@ -8809,7 +8741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
         
   
   
@@ -8832,7 +8764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
         
   
   
@@ -8855,7 +8787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
         
   
   
@@ -8878,7 +8810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
         
   
   
@@ -8901,7 +8833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
         
   
   
@@ -8924,7 +8856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
         
   
   
@@ -8947,7 +8879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
         
   
   
@@ -8970,7 +8902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/share-an-observable/" class="md-nav__link">
         
   
   
@@ -8993,7 +8925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
         
   
   
@@ -9016,7 +8948,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
         
   
   
@@ -9039,7 +8971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
         
   
   
@@ -9062,7 +8994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
         
   
   
@@ -9085,7 +9017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
         
   
   
@@ -9157,7 +9089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -9180,7 +9112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -9203,7 +9135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -9275,7 +9207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-links/add-a-link-to-a-case/" class="md-nav__link">
         
   
   
@@ -9298,7 +9230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-links/remove-a-link-from-a-case/" class="md-nav__link">
         
   
   
@@ -9321,7 +9253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-links/view-links-in-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-links/view-links-in-a-case/" class="md-nav__link">
         
   
   
@@ -9393,7 +9325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/view-alerts-linked-to-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/view-alerts-linked-to-a-case/" class="md-nav__link">
         
   
   
@@ -9416,7 +9348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
         
   
   
@@ -9447,7 +9379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/change-status-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/change-status-case/" class="md-nav__link">
         
   
   
@@ -9470,7 +9402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/change-case-classification-settings/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/change-case-classification-settings/" class="md-nav__link">
         
   
   
@@ -9493,7 +9425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/flag-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/flag-a-case/" class="md-nav__link">
         
   
   
@@ -9557,7 +9489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -9580,7 +9512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -9611,7 +9543,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
         
   
   
@@ -9634,7 +9566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/merge-cases/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/merge-cases/" class="md-nav__link">
         
   
   
@@ -9657,7 +9589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/share-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/share-a-case/" class="md-nav__link">
         
   
   
@@ -9721,7 +9653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -9744,7 +9676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
         
   
   
@@ -9767,7 +9699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
         
   
   
@@ -9790,7 +9722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
         
   
   
@@ -9862,7 +9794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -9885,7 +9817,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -9908,7 +9840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -9931,7 +9863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -9954,7 +9886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -10026,7 +9958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
         
   
   
@@ -10049,7 +9981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -10072,7 +10004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
         
   
   
@@ -10095,7 +10027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
         
   
   
@@ -10118,7 +10050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -10190,7 +10122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
         
   
   
@@ -10213,7 +10145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
         
   
   
@@ -10285,7 +10217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-visibility/restrict-visibility-case/" class="md-nav__link">
         
   
   
@@ -10308,7 +10240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/case-visibility/restore-visibility-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-visibility/restore-visibility-case/" class="md-nav__link">
         
   
   
@@ -10339,7 +10271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
+      <a href="../run-a-function-case-alert/" class="md-nav__link">
         
   
   
@@ -10362,7 +10294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/run-responders-on-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/run-responders-on-a-case/" class="md-nav__link">
         
   
   
@@ -10385,7 +10317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/close-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/close-a-case/" class="md-nav__link">
         
   
   
@@ -10408,7 +10340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/reopen-a-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/reopen-a-case/" class="md-nav__link">
         
   
   
@@ -10521,7 +10453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/about-tasks/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/about-tasks/" class="md-nav__link">
         
   
   
@@ -10544,7 +10476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/create-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/create-a-task/" class="md-nav__link">
         
   
   
@@ -10567,7 +10499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/change-task-status/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/change-task-status/" class="md-nav__link">
         
   
   
@@ -10590,7 +10522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/manage-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/manage-a-task/" class="md-nav__link">
         
   
   
@@ -10613,7 +10545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/export-list-of-tasks/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/export-list-of-tasks/" class="md-nav__link">
         
   
   
@@ -10636,7 +10568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/delete-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/delete-a-task/" class="md-nav__link">
         
   
   
@@ -10700,7 +10632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
         
   
   
@@ -10723,7 +10655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
         
   
   
@@ -10754,7 +10686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/run-responders-on-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/run-responders-on-a-task/" class="md-nav__link">
         
   
   
@@ -10777,7 +10709,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/share-a-task/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/share-a-task/" class="md-nav__link">
         
   
   
@@ -10849,7 +10781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/about-task-logs/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/about-task-logs/" class="md-nav__link">
         
   
   
@@ -10872,7 +10804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
         
   
   
@@ -10895,7 +10827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
         
   
   
@@ -10918,7 +10850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
         
   
   
@@ -10941,7 +10873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/tasks/run-responders-on-a-task-log/" class="md-nav__link">
+      <a href="../../../../analyst-corner/tasks/run-responders-on-a-task-log/" class="md-nav__link">
         
   
   
@@ -11021,7 +10953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
         
   
   
@@ -11044,7 +10976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
         
   
   
@@ -11067,7 +10999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
         
   
   
@@ -11090,7 +11022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
         
   
   
@@ -11113,7 +11045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
         
   
   
@@ -11136,7 +11068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
         
   
   
@@ -11159,7 +11091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
         
   
   
@@ -11182,7 +11114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
+      <a href="../../../../analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
         
   
   
@@ -11213,7 +11145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/preview-vs-detail-view/" class="md-nav__link">
+      <a href="../../../../analyst-corner/preview-vs-detail-view/" class="md-nav__link">
         
   
   
@@ -11236,7 +11168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
+      <a href="../../../../analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
         
   
   
@@ -11259,7 +11191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/about-views/" class="md-nav__link">
+      <a href="../../../../analyst-corner/about-views/" class="md-nav__link">
         
   
   
@@ -11282,7 +11214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/about-autorefresh/" class="md-nav__link">
+      <a href="../../../../analyst-corner/about-autorefresh/" class="md-nav__link">
         
   
   
@@ -11305,7 +11237,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/about-statistics/" class="md-nav__link">
+      <a href="../../../../analyst-corner/about-statistics/" class="md-nav__link">
         
   
   
@@ -11328,7 +11260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/about-live-feed/" class="md-nav__link">
+      <a href="../../../../analyst-corner/about-live-feed/" class="md-nav__link">
         
   
   
@@ -11408,7 +11340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../api-docs/" class="md-nav__link">
+      <a href="../../../../../api-docs/" class="md-nav__link">
         
   
   
@@ -11503,7 +11435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.0/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.0/" class="md-nav__link">
         
   
   
@@ -11526,7 +11458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.1/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.1/" class="md-nav__link">
         
   
   
@@ -11549,7 +11481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.2/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.2/" class="md-nav__link">
         
   
   
@@ -11572,7 +11504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.3/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.3/" class="md-nav__link">
         
   
   
@@ -11595,7 +11527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.4/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.4/" class="md-nav__link">
         
   
   
@@ -11618,7 +11550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../release-notes/release-notes-5.5/" class="md-nav__link">
+      <a href="../../../../../release-notes/release-notes-5.5/" class="md-nav__link">
         
   
   
@@ -11697,7 +11629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/" class="md-nav__link">
+      <a href="../../../../../../cortex/" class="md-nav__link">
         
   
   
@@ -11761,7 +11693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/download/" class="md-nav__link">
+      <a href="../../../../../../cortex/download/" class="md-nav__link">
         
   
   
@@ -11833,7 +11765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/authentication/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/authentication/" class="md-nav__link">
         
   
   
@@ -11856,7 +11788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/secret/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/secret/" class="md-nav__link">
         
   
   
@@ -11879,7 +11811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/advanced-configuration/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/advanced-configuration/" class="md-nav__link">
         
   
   
@@ -11902,7 +11834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/ssl/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/ssl/" class="md-nav__link">
         
   
   
@@ -11925,7 +11857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
         
   
   
@@ -11948,12 +11880,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Installation &amp; configuration guides
+    Installation and Configuration Guides
     
   </span>
   
@@ -11971,7 +11903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/analyzers-responders/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/analyzers-responders/" class="md-nav__link">
         
   
   
@@ -11994,7 +11926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/run-cortex-with-docker/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/run-cortex-with-docker/" class="md-nav__link">
         
   
   
@@ -12017,7 +11949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/proxy-settings/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/proxy-settings/" class="md-nav__link">
         
   
   
@@ -12040,7 +11972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/docker/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/docker/" class="md-nav__link">
         
   
   
@@ -12063,12 +11995,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/installation-and-configuration/database/" class="md-nav__link">
+      <a href="../../../../../../cortex/installation-and-configuration/database/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     Database configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deploy Cortex on Kubernetes
     
   </span>
   
@@ -12135,7 +12090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/user-guides/first-start/" class="md-nav__link">
+      <a href="../../../../../../cortex/user-guides/first-start/" class="md-nav__link">
         
   
   
@@ -12158,7 +12113,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/user-guides/roles/" class="md-nav__link">
+      <a href="../../../../../../cortex/user-guides/roles/" class="md-nav__link">
         
   
   
@@ -12230,7 +12185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/operations/backup-restore/" class="md-nav__link">
+      <a href="../../../../../../cortex/operations/backup-restore/" class="md-nav__link">
         
   
   
@@ -12253,7 +12208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/operations/input-output/" class="md-nav__link">
+      <a href="../../../../../../cortex/operations/input-output/" class="md-nav__link">
         
   
   
@@ -12276,7 +12231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
+      <a href="../../../../../../cortex/operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
         
   
   
@@ -12348,7 +12303,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/api/api-guide/" class="md-nav__link">
+      <a href="../../../../../../cortex/api/api-guide/" class="md-nav__link">
         
   
   
@@ -12371,7 +12326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/api/how-to-create-an-analyzer/" class="md-nav__link">
+      <a href="../../../../../../cortex/api/how-to-create-an-analyzer/" class="md-nav__link">
         
   
   
@@ -12394,7 +12349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../cortex/api/how-to-create-a-responder/" class="md-nav__link">
+      <a href="../../../../../../cortex/api/how-to-create-a-responder/" class="md-nav__link">
         
   
   
@@ -12495,7 +12450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/" class="md-nav__link">
+      <a href="../../../../../../resources/" class="md-nav__link">
         
   
   
@@ -12518,7 +12473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/templates/" class="md-nav__link">
+      <a href="../../../../../../resources/templates/" class="md-nav__link">
         
   
   
@@ -12582,7 +12537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/demo/" class="md-nav__link">
+      <a href="../../../../../../resources/demo/" class="md-nav__link">
         
   
   
@@ -12605,7 +12560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../../../../resources/howto-vm-demo/" class="md-nav__link">
         
   
   
@@ -12718,7 +12673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/" class="md-nav__link">
         
   
   
@@ -12741,7 +12696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/thehive/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/thehive/" class="md-nav__link">
         
   
   
@@ -12764,7 +12719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/cortex/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/cortex/" class="md-nav__link">
         
   
   
@@ -12787,7 +12742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
         
   
   
@@ -12810,7 +12765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
         
   
   
@@ -12833,7 +12788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -12905,7 +12860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/" class="md-nav__link">
         
   
   
@@ -12928,7 +12883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/thehive/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/thehive/" class="md-nav__link">
         
   
   
@@ -12951,7 +12906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/cortex/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/cortex/" class="md-nav__link">
         
   
   
@@ -12974,7 +12929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
         
   
   
@@ -12997,7 +12952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
         
   
   
@@ -13020,7 +12975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -13043,7 +12998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
+      <a href="../../../../../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
         
   
   
@@ -13164,7 +13119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/thehive4py/" class="md-nav__link">
+      <a href="../../../../../../resources/thehive4py/" class="md-nav__link">
         
   
   
@@ -13187,7 +13142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/cortex4py/" class="md-nav__link">
+      <a href="../../../../../../resources/cortex4py/" class="md-nav__link">
         
   
   
@@ -13210,7 +13165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/cortexutils/" class="md-nav__link">
+      <a href="../../../../../../resources/cortexutils/" class="md-nav__link">
         
   
   
@@ -13249,7 +13204,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../resources/security/" class="md-nav__link">
+      <a href="../../../../../../resources/security/" class="md-nav__link">
         
   
   
@@ -13288,28 +13243,60 @@
 
 
 
-<div><h1 id="api-v0-deprecation-notice">API v0 Deprecation Notice<a class="headerlink" href="#api-v0-deprecation-notice" title="Permanent link">#</a></h1>
-<p>This topic explains the deprecation of API v0 in TheHive and why you should upgrade to API v1.</p>
-<h2 id="why-api-v0-is-being-deprecated">Why API v0 is being deprecated<a class="headerlink" href="#why-api-v0-is-being-deprecated" title="Permanent link">#</a></h2>
-<p>API v0 is the original version of TheHive's API. It doesn't include many of the enhancements, performance improvements, and security features introduced in API v1.</p>
-<p>Deprecating API v0 simplifies the codebase and enables continued development of a faster, more secure, and more capable TheHive platform.</p>
-<h2 id="who-is-affected">Who is affected<a class="headerlink" href="#who-is-affected" title="Permanent link">#</a></h2>
-<p>You are affected by this deprecation if any of the following apply:</p>
+<div><h1 id="how-to-invoke-a-function">How to Invoke a Function<a class="headerlink" href="#how-to-invoke-a-function" title="Permanent link">#</a></h1>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.1/#5.1" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.1/#5.1">5.1</a></span></span> <span class="mdx-badge"><span class="mdx-badge__icon"><a href="" title="#' 'License type"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M9 10a3.04 3.04 0 0 1 3-3 3.04 3.04 0 0 1 3 3 3.04 3.04 0 0 1-3 3 3.04 3.04 0 0 1-3-3m3 9 4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"></path></svg></span></a></span><span class="mdx-badge__text">Platinum</span></span></p>
+<p>This topic provides step-by-step instructions for invoking a <a href="../about-functions/">function</a> in TheHive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Required permissions</p>
 <ul>
-<li>You call API endpoints that include <code>/v0/</code> or don't specify a version.</li>
-<li>You use the TH4PY Python client version 1.8, which relies on API v0.</li>
+<li>Only users with the <code>manageFunction/create</code> permission can create a function in TheHive.</li>
+<li>Only users with the <code>manageFunction/invoke</code> permission can invoke a function in TheHive.</li>
+<li>Only users with the <code>manageAction</code> permission can run a function in TheHive.</li>
 </ul>
-<p>These calls may occur directly or through automation, such as analyzers, responders, scripts, or connectors.</p>
-<p>If you're unsure, run the following tests to check your setup:</p>
-<h2 id="timeline">Timeline<a class="headerlink" href="#timeline" title="Permanent link">#</a></h2>
+</div>
+<h2>Procedure</h2>
+
+<ol>
+<li>
+<p>Go to the <strong>Organization</strong> view from the sidebar menu.</p>
+<p><a class="glightbox" href="/thehive/images/user-guides/organization/configure-organization/organization-view.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Organization view" src="/thehive/images/user-guides/organization/configure-organization/organization-view.png"></a></p>
+</li>
+<li>
+<p>Select the <strong>Functions</strong> tab.</p>
+<p><a class="glightbox" href="/thehive/images/user-guides/organization/configure-organization/manage-functions/functions-tab.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Functions tab" src="/thehive/images/user-guides/organization/configure-organization/manage-functions/functions-tab.png"></a></p>
+</li>
+<li>
+<p>Select the function you want to invoke, or select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M8 256a56 56 0 1 1 112 0 56 56 0 1 1-112 0m160 0a56 56 0 1 1 112 0 56 56 0 1 1-112 0m216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112"></path></svg></span> and then <strong>Edit</strong>.</p>
+</li>
+<li>
+<p>Select the <strong>How to call the function</strong> section.</p>
+</li>
+<li>
+<p>Copy the cURL or Python command example to use in your HTTP call.</p>
+</li>
+</ol>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer $API_KEY'</span><span class="w"> </span>https://&lt;thehive_url&gt;/api/v1/function/&lt;function_name&gt;<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span>--data<span class="w"> </span><span class="s1">'</span>
+<span class="s1">{</span>
+<span class="s1">    "eventId": "d9ec98b1-410f-40eb-8634-cfe189749da6",</span>
+<span class="s1">    "date": "2021-06-05T12:45:36.698Z",</span>
+<span class="s1">    "title": "An intrusion was detected",</span>
+<span class="s1">    "details": "An intrusion was detected on the server 10.10.43.2",</span>
+<span class="s1">    "data": [</span>
+<span class="s1">        {"kind": "ip", "value": "10.10.43.2", "name": "server-ip" },</span>
+<span class="s1">        {"kind": "name", "value": "root", "name": "login" },</span>
+<span class="s1">        {"kind": "ip", "value": "92.43.123.1", "name": "origin" }</span>
+<span class="s1">    ]</span>
+<span class="s1">}</span>
+<span class="s1">'</span>
+</code></pre></div>
+<p>TheHive processes your input (the body of the HTTP call) using the function definition and executes the function accordingly. It then responds to the HTTP call with the data returned by the function.    </p>
+</div>
+<h2>Next steps</h2>
+
 <ul>
-<li>July 1, 2025: TH4PY v2.1, which uses API v1, becomes the officially supported version.</li>
-<li>TheHive 5.6 release: API v0 will be disabled by default. A configuration option will be available to temporarily re-enable it if needed.</li>
-<li>TheHive 5.7 release: API v0 will be deleted and will no longer be available.</li>
-</ul>
-<h2 id="what-you-should-do">What you should do<a class="headerlink" href="#what-you-should-do" title="Permanent link">#</a></h2>
-<p>See <a href="../upgrade-from-API-v0-to-API-v1/">Upgrade from API v0 to API v1</a> for detailed instructions.</p>
-<h2>Next steps</h2></div>
+<li><a href="../create-a-function/">Create a Function</a></li>
+</ul></div>
 
 
 
@@ -13430,10 +13417,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../../../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../../../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
