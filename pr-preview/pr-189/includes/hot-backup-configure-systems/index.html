@@ -13352,15 +13352,16 @@
 </li>
 <li>
 <p>Register the repository named <code>thehive_repository</code> by sending the following request:</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="err">PUT http://127.0.0.1:9200/_snapshot/thehive_repository</span>
-<span class="err">{</span>
-<span class="err">  "type": "fs",</span>
-<span class="err">  "settings": {</span>
-<span class="err">    "location": "/mnt/backup"</span>
-<span class="err">  }</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X PUT "http://127.0.0.1:9200/_snapshot/thehive_repository" \</span>
+<span class="err">  -H "Content-Type: application/json" \</span>
+<span class="err">  -d '{</span>
+<span class="err">    "type": "fs",</span>
+<span class="err">    "settings": {</span>
+<span class="err">      "location": "/mnt/backup"</span>
+<span class="err">    }</span>
+<span class="err">  }'</span>
 </code></pre></div>
-A successful response looks like this:
+<p>A successful response looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"acknowledged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>

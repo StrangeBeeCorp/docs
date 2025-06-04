@@ -13456,7 +13456,7 @@
 <li>Ensure you have an up-to-date backup before starting the restore operation, as errors during the restoration could lead to data loss.</li>
 </ul>
 </div>
-<p>The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.</p>
+<p>The process involves backing up three components: Apache Cassandra, Elasticsearch—both distributed across three nodes—and file storage.</p>
 <ul>
 <li><a href="#create-cassandra-snapshots">Database backup</a></li>
 <li><a href="#create-elasticsearch-snapshots">Indexing backup</a></li>
@@ -13493,15 +13493,16 @@
 </li>
 <li>
 <p>Register the repository named <code>thehive_repository</code> by sending the following request:</p>
-<p></p><div class="highlight"><pre><span></span><code><span class="err">PUT http://127.0.0.1:9200/_snapshot/thehive_repository</span>
-<span class="err">{</span>
-<span class="err">  "type": "fs",</span>
-<span class="err">  "settings": {</span>
-<span class="err">    "location": "/mnt/backup"</span>
-<span class="err">  }</span>
-<span class="err">}</span>
+<div class="highlight"><pre><span></span><code><span class="err">curl -X PUT "http://127.0.0.1:9200/_snapshot/thehive_repository" \</span>
+<span class="err">  -H "Content-Type: application/json" \</span>
+<span class="err">  -d '{</span>
+<span class="err">    "type": "fs",</span>
+<span class="err">    "settings": {</span>
+<span class="err">      "location": "/mnt/backup"</span>
+<span class="err">    }</span>
+<span class="err">  }'</span>
 </code></pre></div>
-A successful response looks like this:
+<p>A successful response looks like this:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"acknowledged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
 <span class="p">}</span>
@@ -13547,14 +13548,14 @@ journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 <p>If corruption persists, reindex the affected data:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_reindex"</span>
 </code></pre></div>
-<h3 id="replicate-data-across-all-three-nodes">Replicate data across all three nodes<a class="headerlink" href="#replicate-data-across-all-three-nodes" title="Permanent link">#</a></h3>
+<h3 id="replicate-cassandra-and-elasticsearch-data-across-all-three-nodes">Replicate Cassandra and Elasticsearch data across all three nodes<a class="headerlink" href="#replicate-cassandra-and-elasticsearch-data-across-all-three-nodes" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Data replication requirement</p>
 <p>If this requirement isn't met, cluster restoration may fail, and integrity issues could arise. It's your responsibility to ensure data replication across all nodes before proceeding.</p>
 </div>
-<p>Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.</p>
+<p>Before proceeding with the backup, replicate 100% of your Cassandra and Elasticsearch data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.</p>
 <h4 id="verify-replication-factor">Verify replication factor<a class="headerlink" href="#verify-replication-factor" title="Permanent link">#</a></h4>
-<p>Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in <code>cqlsh</code>:</p>
+<p>Check the replication factor for your keyspace. It should be set to <em>3</em> for a three-node cluster. Use the following command in <code>cqlsh</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">DESCRIBE</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">thehive</span><span class="p">;</span>
 </code></pre></div>
 <p>If needed, adjust the replication factor:</p>
@@ -13651,8 +13652,8 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 <p>Before creating Elasticsearch snapshots, ensure Elasticsearch has the appropriate permissions to write to the snapshot repository.</p>
 <p>For shared file systems:</p>
 <div class="admonition example">
-<div class="highlight"><pre><span></span><code>chown<span class="w"> </span>-R<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>&lt;/mnt/backup&gt;
-chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">770</span><span class="w"> </span>&lt;/mnt/backup&gt;
+<div class="highlight"><pre><span></span><code>chown<span class="w"> </span>elasticsearch:elasticsearch<span class="w"> </span>&lt;/mnt/backup&gt;
+chmod<span class="w"> </span><span class="m">770</span><span class="w"> </span>&lt;/mnt/backup&gt;
 </code></pre></div>
 </div>
 <p>Then, use the following script:</p>
