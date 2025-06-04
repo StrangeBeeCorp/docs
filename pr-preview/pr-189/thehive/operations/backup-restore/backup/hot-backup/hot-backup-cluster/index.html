@@ -13511,8 +13511,6 @@
 </ol>
 <h4 id="file-storage-location">File storage location<a class="headerlink" href="#file-storage-location" title="Permanent link">#</a></h4>
 <p>Locate the folder where TheHive stores files, which is backed up with the database and indices. If using a local filesystem or Network File System (NFS), the location is defined in the <em>application.conf</em> file under the <code>storage.localfs.location</code> attribute.</p>
-<!-- + add MinIO option -->
-
 <h3 id="perform-preliminary-checks">Perform preliminary checks<a class="headerlink" href="#perform-preliminary-checks" title="Permanent link">#</a></h3>
 <p>Perform a preliminary check on the system to identify any data corruption or inconsistencies. Resolve any issues before proceeding with the backup.</p>
 <h4 id="check-service-status">Check service status<a class="headerlink" href="#check-service-status" title="Permanent link">#</a></h4>
@@ -13738,7 +13736,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 </div>
 <p>For more details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
 <h2 id="perform-a-backup-on-file-storage">Perform a backup on file storage<a class="headerlink" href="#perform-a-backup-on-file-storage" title="Permanent link">#</a></h2>
-<p>This procedure applies only to Network File System (NFS) storage. It doesn't apply to MinIO S3 object storage. Use the following script to copy the contents of the NFS folder:</p>
+<p>This procedure applies only to Network File System (NFS) storage. It doesn't apply to S3-compatible object storage as MinIO. Use the following script to copy the contents of the NFS folder:</p>
 <div class="admonition warning">
 <p class="admonition-title">Script restrictions</p>
 <p>This script works only when file storage is managed directly on a machine. It doesn't support deployments using Docker or Kubernetes.</p>

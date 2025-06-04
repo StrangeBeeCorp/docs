@@ -13546,7 +13546,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><
 </code></pre></div>
 <p>For additional details, refer to the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html">official Elasticsearch documentation</a>.</p>
 <h2 id="restore-a-backup-for-file-storage">Restore a backup for file storage<a class="headerlink" href="#restore-a-backup-for-file-storage" title="Permanent link">#</a></h2>
-<p>This procedure applies only to Network File System (NFS) storage and doesn't apply to MinIO S3 object storage. Restore the saved files to the destination folder used by TheHive on NFS. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.</p>
+<p>This procedure applies only to Network File System (NFS) storage and doesn't apply to S3-compatible object storage as MinIO. Restore the saved files to the destination folder used by TheHive on NFS. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.</p>
 <p>To restore a backup for file storage, run the following script:</p>
 <div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
