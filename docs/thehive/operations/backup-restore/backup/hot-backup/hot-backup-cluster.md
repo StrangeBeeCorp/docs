@@ -24,8 +24,6 @@ The process involves backing up three components: Apache Cassandra, Elasticsearc
 
 {!includes/hot-backup-configure-systems.md!}
 
-<!-- + add MinIO option -->
-
 ### Perform preliminary checks
 
 {!includes/preliminary-checks-hot-backup.md!}
@@ -87,7 +85,7 @@ nodetool netstats
 
 ## Perform a backup on file storage
 
-This procedure applies only to Network File System (NFS) storage. It doesn't apply to MinIO S3 object storage. Use the following script to copy the contents of the NFS folder:
+This procedure applies only to Network File System (NFS) storage. It doesn't apply to S3-compatible object storage as MinIO. Use the following script to copy the contents of the NFS folder:
 
 {!includes/hot-backup-file-storage.md!}
 

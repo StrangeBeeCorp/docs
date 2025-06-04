@@ -26,7 +26,7 @@ These procedures assume you have completed the steps in [Perform a Hot Backup on
 
 ## Restore a backup for file storage
 
-This procedure applies only to Network File System (NFS) storage and doesn't apply to MinIO S3 object storage. Restore the saved files to the destination folder used by TheHive on NFS. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.
+This procedure applies only to Network File System (NFS) storage and doesn't apply to S3-compatible object storage as MinIO. Restore the saved files to the destination folder used by TheHive on NFS. Ensure the account running TheHive has the necessary permissions to create files and folders in the destination.
 
 {!includes/hot-restore-file-storage.md!}
 
