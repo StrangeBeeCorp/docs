@@ -16,15 +16,17 @@ This repository is used to create snapshots with timestamped names.
 
 3. Register the repository named `thehive_repository` by sending the following request:
 
-    ```http 
-    PUT http://127.0.0.1:9200/_snapshot/thehive_repository
-    {
-      "type": "fs",
-      "settings": {
-        "location": "/mnt/backup"
-      }
-    }
+    ```http
+    curl -X PUT "http://127.0.0.1:9200/_snapshot/thehive_repository" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "type": "fs",
+        "settings": {
+          "location": "/mnt/backup"
+        }
+      }'
     ```
+    
     A successful response looks like this:
 
     ```json

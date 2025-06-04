@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for restoring a hot backup on a cl
 
 {!includes/backup-restore-best-practices.md!}
 
-The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
+The process involves restoring data from three components: Apache Cassandra, Elasticsearch—both distributed across three nodes—and file storage.
 
 * [Database restore](#restore-cassandra-snapshots)
 * [Indexing backup](#restore-elasticsearch-snapshots)

@@ -5,8 +5,8 @@ For shared file systems:
 !!! Example ""
 
     ```bash
-    chown -R elasticsearch:elasticsearch </mnt/backup>
-    chmod -R 770 </mnt/backup>
+    chown elasticsearch:elasticsearch </mnt/backup>
+    chmod 770 </mnt/backup>
     ```
 
 Then, use the following script:

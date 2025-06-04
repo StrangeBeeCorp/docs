@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for performing a hot backup on a c
 
 {!includes/backup-restore-best-practices.md!}
 
-The process requires backing up data from all three components: Apache Cassandra distributed across three nodes, Elasticsearch and file storage.
+The process involves backing up three components: Apache Cassandra, Elasticsearch—both distributed across three nodes—and file storage.
 
 * [Database backup](#create-cassandra-snapshots)
 * [Indexing backup](#create-elasticsearch-snapshots)
@@ -30,16 +30,16 @@ The process requires backing up data from all three components: Apache Cassandra
 
 {!includes/preliminary-checks-hot-backup.md!}
 
-### Replicate data across all three nodes
+### Replicate Cassandra and Elasticsearch data across all three nodes
 
 !!! warning "Data replication requirement"
     If this requirement isn't met, cluster restoration may fail, and integrity issues could arise. It's your responsibility to ensure data replication across all nodes before proceeding.
 
-Before proceeding with the backup, replicate 100% of your data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
+Before proceeding with the backup, replicate 100% of your Cassandra and Elasticsearch data across all nodes. This simplifies the snapshot procedure, allowing snapshots to be taken from just one node.
 
 #### Verify replication factor
 
-Check the replication factor for your keyspace. It should be set to 3 for a three-node cluster. Use the following command in `cqlsh`:
+Check the replication factor for your keyspace. It should be set to *3* for a three-node cluster. Use the following command in `cqlsh`:
 
 ```sql
 DESCRIBE KEYSPACE thehive;

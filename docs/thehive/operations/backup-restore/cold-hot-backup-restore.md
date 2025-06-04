@@ -14,7 +14,7 @@ Both cold restore and hot restore require shutting down TheHive to complete the 
 
 {!includes/backup-requirement.md!}
 
-TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/step-by-step-installation-guide.md#apache-cassandra), [Elasticsearch as the indexing engine](../../installation/step-by-step-installation-guide.md#elasticsearch), and [files stored either locally, using an Network File System (NFS), or in MinIO S3 object storage](../../installation/step-by-step-installation-guide.md#file-storage). This setup requires careful attention to ensure consistency across the data, index, and files for successful backups. Any inconsistency between them could result in restoration failures.
+TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/step-by-step-installation-guide.md#apache-cassandra), [Elasticsearch as the indexing engine](../../installation/step-by-step-installation-guide.md#elasticsearch), and [file storage managed either locally, via a Network File System (NFS), or using S3-compatible object storage as MinIO](../../installation/step-by-step-installation-guide.md#file-storage). This architecture requires careful coordination to maintain consistency across the database, index, and file storage during backups. Any mismatch between these components can lead to restoration failures.
 
 ## Cold vs. hot backup and restore comparison
 
