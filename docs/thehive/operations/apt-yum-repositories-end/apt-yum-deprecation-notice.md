@@ -8,7 +8,7 @@ Starting August 1, 2025, TheHive and Cortex will no longer be distributed via AP
 
 Over time, several incidents have affected the availability of packages in our APT and YUM repositories, leading to unexpected downtime for users relying on these installation methods.
 
-To address these issues and enhance reliability, we are transitioning to a unified, highly available distribution system. This new system supports all package formats (.deb and .rpm) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions.
+To address these issues and enhance reliability, we are transitioning to a unified, highly available distribution system. This new system supports all package formats (.deb and .rpm) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions. Our site uses HTTPS, and every package comes with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and [GPG](https://www.gnupg.org/) signature.
 
 Key benefits include:
 
@@ -18,7 +18,7 @@ Key benefits include:
 
 ## Who is affected
 
-This change applies to users deploying TheHive and Cortex on-premises via package installations. It doesn't affect those using the SaaS solution or running TheHive and Cortex through Docker deployments.
+This change applies to users deploying TheHive and Cortex on-premises on Linux distributions via package installations. It doesn't affect those using the SaaS solution or running TheHive and Cortex through Docker deployments.
 
 ## Timeline
 
