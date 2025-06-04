@@ -75,6 +75,25 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
         sudo rpm -ivh thehive-x.y.z.rpm
         ```
 
-4. Tidy up.
+4. Remove the old repository to avoid stale configurations.
+
+    === "Debian-based systems"
+
+        ```bash
+        sudo rm /etc/apt/sources.list.d/strangebee.list
+        sudo apt update
+        ```
+
+    === "RHEL-based systems"
+
+        ```bash
+        sudo yum-config-manager --disable strangebee
+        ```
+
+        Optionally, remove the repository file:
+
+        ```bash
+        sudo rm /etc/yum.repos.d/strangebee.repo
+        ```
 
 <h2>Next steps</h2>
