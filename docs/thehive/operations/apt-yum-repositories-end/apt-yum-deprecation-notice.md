@@ -27,7 +27,7 @@ This change applies to users deploying TheHive and Cortex on-premises via packag
 
 ## What you should do
 
-If you are a new user, follow the updated instructions in the dedicated step-by-step installation guides.
+If you are a new user, follow the updated instructions in [TheHive](../../installation/step-by-step-installation-guide.md) and [Cortex](../../../cortex/installation-and-configuration/step-by-step-guide.md) step-by-step installation guides.
 
 If you currently install or update TheHive and Cortex using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`, switch to manual package downloads and installations. See [Switch to Manual Download and Installation](switch-to-manual-download-installation.md) for detailed instructions. Continuing with the current installation will allow the application to run but will prevent it from receiving updates.
 
