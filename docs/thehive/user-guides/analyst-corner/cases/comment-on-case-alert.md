@@ -14,7 +14,7 @@ Use this procedure to provide feedback or leave notes for your team.
 
 2. In the right pane of the screen, enter a comment.
 
-    ![Commment on a case or alert](../../../images/user-guides/analyst-corner/cases/comment-case-alert.png)
+    ![Comment on a case or alert](../../../images/user-guides/analyst-corner/cases/comment-case-alert.png)
 
 3. Select :fontawesome-solid-paper-plane:.
 

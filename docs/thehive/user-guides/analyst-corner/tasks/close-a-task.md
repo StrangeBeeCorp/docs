@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for closing a [task](about-tasks.md) in TheHive.
 
-Use this procedure to mark the task as *Completed*. For mandatory tasks, [create at least one task log](create-a-task-log.md) before closing. You can continue recording logs even after the task is closed.
+Use this procedure to mark the task as *Completed*. For mandatory tasks, [create at least one task log](create-a-task-log.md) before closing. You can continue recording logs even after closing the task.
 
 {!includes/access-manage-tasks.md!}
 
