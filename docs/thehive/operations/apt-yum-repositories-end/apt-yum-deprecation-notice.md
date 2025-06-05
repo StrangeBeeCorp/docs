@@ -22,8 +22,8 @@ This change applies to users deploying TheHive and Cortex on-premises on Linux d
 
 ## Timeline
 
-* Manual download and installation become available starting July 1, 2025.
-* APT and YUM repositories become unavailable starting August 1, 2025.
+* Manual download and installation become available starting July 10, 2025.
+* APT and YUM repositories become unavailable starting July 31, 2025.
 
 ## What you should do
 
