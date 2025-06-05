@@ -716,6 +716,7 @@ nav:
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
             - 'Create a Task': thehive/user-guides/analyst-corner/tasks/create-a-task.md
+            - 'Start a Task': thehive/user-guides/analyst-corner/tasks/start-a-task.md
             - 'Change a Task Status': thehive/user-guides/analyst-corner/tasks/change-task-status.md
             - 'Manage Tasks': thehive/user-guides/analyst-corner/tasks/manage-a-task.md
             - 'Export a List of Tasks': thehive/user-guides/analyst-corner/tasks/export-list-of-tasks.md
@@ -725,6 +726,7 @@ nav:
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
             - 'Run Responders and Review Reports for a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
             - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+            - 'Close a Task': thehive/user-guides/analyst-corner/tasks/close-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
             - 'Create a Task Log': thehive/user-guides/analyst-corner/tasks/create-a-task-log.md
