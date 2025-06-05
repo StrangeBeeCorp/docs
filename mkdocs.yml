@@ -303,6 +303,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/cases-description/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function.md'
+            'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md': 'thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md'
 
 extra:
   generator: false
