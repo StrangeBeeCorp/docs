@@ -234,7 +234,6 @@ plugins:
             'thehive/user-guides/analyst-corner/tasks/edit-a-task.md': 'thehive/user-guides/analyst-corner/tasks/create-a-task.md'
             'thehive/user-guides/analyst-corner/tasks/flag-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
             'thehive/user-guides/analyst-corner/tasks/pin-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
-            'thehive/user-guides/analyst-corner/tasks/start-a-task.md': 'thehive/user-guides/analyst-corner/tasks/manage-a-task.md'
             'thehive/user-guides/knowledge-base/edit-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md'
             'thehive/user-guides/organization/configure-organization/manage-feeders/edit-a-feeder.md': 'thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md'
             'thehive/user-guides/organization/configure-organization/manage-functions/edit-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md'

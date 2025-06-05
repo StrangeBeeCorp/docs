@@ -12,6 +12,8 @@ Use this procedure to indicate that you have started working on a task. This act
 
 2. In the task details, select :fontawesome-solid-ellipsis:.
 
+    ![Task actions](../../../images/user-guides/analyst-corner/tasks/task-actions.png)
+
 3. Select **Start**.
 
 <h2>Next steps</h2>
