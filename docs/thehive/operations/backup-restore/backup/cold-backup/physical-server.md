@@ -1,30 +1,22 @@
-# For Physical Servers
-  
-## Introduction
+# How to Perform a Cold Backup on a Physical Server
 
-Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups. This procedure focuses on cold backups, where services are stopped to ensure the integrity and consistency of the data, indices, and logs.
+This topic provides step-by-step instructions for performing a cold backup on a physical server for TheHive.
 
-When performing a backup on physical servers, it’s essential to:
+Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups.
 
-1. Stop services (e.g., Elasticsearch, Cassandra, TheHive) to avoid data corruption.
-2. Ensure file permissions are adequate for the backup process.
-3. Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
-4. Validate the backup to ensure it can be restored without issues.
+{!includes/implications-cold-backup-restore.md!}
 
----
+{!includes/backup-restore-best-practices.md!}
+
 ## Prerequisites
 
 This guide assumes you have direct access to the server via SSH or other administrative tools and sufficient disk space to store backups. By following this procedure, you can create a consistent backup that can be securely archived or transferred for disaster recovery purposes.
 
-This process and example below assume you have followed our [step-by-step guide](./../../../installation/step-by-step-installation-guide.md) to install the application stack.
+This process and example below assume you have followed the [step-by-step guide](../../../../installation/step-by-step-installation-guide.md) to install the application stack.
 
-!!! Note
-    Before proceeding, ensure you have read the general [Backup and Restore Overview](../overview.md) to understand the core principles of backup strategies.
+## Step 1: Stop the services
 
----
-## Step-by-step instructions
-
-### Stop the services in this order
+Stop services in this order to avoid data corruption:
 
 1. TheHive
 2. Elasticsearch
@@ -38,9 +30,11 @@ This process and example below assume you have followed our [step-by-step guide]
     systemctl stop cassandra
     ```
 
-### Copy files in a backup folder
+## Step 2: Copy files in a backup folder
 
-For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions
+Use tools like rsync to copy data, configuration files, and logs to a designated backup location.
+
+For example, create a folder on a dedicated NFS volume named `/opt/backups` and copy all files preserving their permissions.
 
 !!! Example ""
 
@@ -84,7 +78,7 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     ## WARNING:
     ## - This script stops Elasticsearch, Cassandra, and TheHive services, 
     ##   performs the backup, and then restarts the services.
-    ## - Do not modify the rest of the script unless necessary.
+    ## - Don't modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
@@ -160,7 +154,7 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     rsync -aW --no-compress /var/log/thehive/ ${BACKUP_FOLDER}/thehive/logs || { echo "TheHive logs backup failed"; exit 1; }
     echo "TheHive backup completed."
 
-    # Copy Casssandra data
+    # Copy Cassandra data
     echo "Starting Cassandra backup..."
     rsync -aW --no-compress /etc/cassandra/ ${BACKUP_FOLDER}/cassandra/config || { echo "Cassandra config backup failed"; exit 1; }
     rsync -aW --no-compress /var/lib/cassandra/ ${BACKUP_FOLDER}/cassandra/data || { echo "Cassandra data backup failed"; exit 1; }
@@ -177,8 +171,9 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     echo "Backup process completed at: $(date)"
     ```
 
+## Step 3: Restart all services
 
-### Start services in this order
+Restart services in this order:
 
 1. Elasticsearch
 2. Cassandra
@@ -192,8 +187,10 @@ For example, create a folder on a dedicated NFS volume named `/opt/backups` and 
     systemctl start cassandra
     ```
 
+## Step 4: Validate the backup
 
----
-## Validation
+Check the backup folder and verify that the data has been copied correctly.
 
-check the backup folder and verify the data has been well copied.
+<h2>Next steps</h2>
+
+* [Restore a Cold Backup on a Physical Server](../../restore/cold-restore/physical-server.md)
