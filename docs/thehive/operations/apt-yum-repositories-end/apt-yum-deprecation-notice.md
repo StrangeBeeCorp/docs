@@ -2,7 +2,7 @@
 
 This topic explains the deprecation of APT and YUM repositories for TheHive and Cortex installations and upgrades.
 
-Starting August 1, 2025, TheHive and Cortex will no longer be distributed via APT and YUM packages. Instead, installation and upgrades will be performed through direct downloads using tools like cURL or Wget followed by manual installation.
+Starting July 31, 2025, TheHive and Cortex will no longer be distributed via APT and YUM packages. Instead, installation and upgrades will be performed through direct downloads using tools like cURL or Wget followed by manual installation.
 
 ## Why APT and YUM repositories are being deprecated
 
