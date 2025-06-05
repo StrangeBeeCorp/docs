@@ -399,6 +399,9 @@ nav:
             - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
             - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
             - 'Restore hot backups': thehive/operations/backup-restore/restore/restore-hot-backup.md
+      - 'End of APT and YUM repositories':
+        - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
+        - 'Switch to Manual Download and Installation': thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation.md
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring.md
