@@ -26,7 +26,7 @@ Use this procedure to provide feedback or leave notes for your team.
 * [Add an Observable](./observables/add-an-observable.md)
 * [Add or Remove Tags](./tags/add-remove-tags.md)
 * [Add Tactics, Techniques and Procedures](./ttps/add-ttps.md)
-* [Change Case Classification Settings](change-case-classification-settings.md)
+* [Change Case or Alert Classification Settings](change-case-alert-classification-settings.md)
 * [Change a Case Status](change-status-case.md)
 * [Flag a Case](flag-a-case.md)
 * [Assign an Alert](../alerts/assign-an-alert.md)

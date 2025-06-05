@@ -148,7 +148,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases-list/add-custom-event.md': 'thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md'
             'thehive/user-guides/analyst-corner/cases-list/add-custom-fields.md': 'thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md'
             'thehive/user-guides/analyst-corner/cases-list/attachments.md': 'thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md'
-            'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
+            'thehive/user-guides/analyst-corner/cases-list/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md'
             'thehive/user-guides/analyst-corner/cases-list/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases-list/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
             'thehive/user-guides/analyst-corner/cases-list/observables.md': 'thehive/user-guides/analyst-corner/cases/observables/about-observables.md'
@@ -300,7 +300,7 @@ plugins:
             'thehive/user-guides/analyst-corner/cases/restore-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md'
             'thehive/user-guides/analyst-corner/cases/restrict-visibility-case.md': 'thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/actions.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
-            'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md'
+            'thehive/user-guides/analyst-corner/cases/cases-description/configure-pap-tlp-severity.md': 'thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/general.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/analyst-corner/cases/cases-description/preview-cases.md': 'thehive/user-guides/analyst-corner/cases/about-cases.md'
             'thehive/user-guides/organization/configure-organization/manage-functions/revoke-a-function.md': 'thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function.md'
@@ -593,11 +593,12 @@ nav:
           - 'Add an Alert to an Existing Case': thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md
           - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
+          - 'Change Alert Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
-          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run a Function on an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Export a List of Alerts': thehive/user-guides/analyst-corner/alerts/export-list-of-alerts.md
@@ -634,6 +635,7 @@ nav:
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
+          - 'Comment on Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
@@ -674,7 +676,7 @@ nav:
             - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
             - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
-          - 'Change Case Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-classification-settings.md
+          - 'Change Case Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
           - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
@@ -705,8 +707,9 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
-          - 'Run a Function on a Case or an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run a Function on a Case': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
+          - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
           - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
         - 'Tasks Management':
