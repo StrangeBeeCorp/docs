@@ -4,16 +4,6 @@ This topic provides step-by-step instructions for managing a [task](about-tasks.
 
 {!includes/access-manage-tasks.md!}
 
-## Start a task
-
-Starting a case automatically changes the status of a task to *In Progress*.
-
-1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to start.
-
-2. In the task details, select :fontawesome-solid-ellipsis:.
-
-3. Select **Start**.
-
 ## Set a task as mandatory or optional
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to update.

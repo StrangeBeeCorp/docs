@@ -3,7 +3,7 @@
 TheHive requires HTML templates to diplay Analyzers reports. 
 
 ## Install or update templates of public Analyzers
-
+    
 1. As Administrator, go to _Entities Management_ menu, and _Analyzer templates_
 
     ![](../images/administration-guides/analyzer-templates.png)
