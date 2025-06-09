@@ -37,7 +37,7 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
         2. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
 
-        3. Select **Add a provider** or select :fontawesome-solid-plus:. Then select *SAML* from the dropdown list.
+        3. Select **Add a provider** or select :fontawesome-solid-plus:. Then select **SAML** from the dropdown list.
 
     ---
 

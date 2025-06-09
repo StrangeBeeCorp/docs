@@ -25,9 +25,9 @@ Link organizations to enable data sharing and define the applicable sharing rule
 5. Choose the case-sharing rules between the organizations in both directions using the **Choose a link type** dropdown lists.
 
     Options are the followings:  
-    - *default*: Cases aren't automatically shared with the other organization. Users must [share them manually](../../user-guides/analyst-corner/cases/share-a-case.md).  
-    - *supervised*: Cases are automatically shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.  
-    - *notify*: Cases are automatically shared with the other organization with a read-only permission profile.
+    - **default**: Cases aren't automatically shared with the other organization. Users must [share them manually](../../user-guides/analyst-corner/cases/share-a-case.md).  
+    - **supervised**: Cases are automatically shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.  
+    - **notify**: Cases are automatically shared with the other organization with a read-only permission profile.
 
     To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
