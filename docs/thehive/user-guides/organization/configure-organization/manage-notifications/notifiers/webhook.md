@@ -1,9 +1,9 @@
 # How to Configure the Webhook Notifier
 
-This topic provides step-by-step instructions for configuring the webhook [notifier](../about-notifications.md#notifiers) in TheHive.
+This topic provides step-by-step instructions for configuring the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The webhook notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
+    The *Webhook* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *AnyEvent*  
     - *FilteredEvent*  
     - *ActionFinished*  
@@ -31,7 +31,7 @@ This topic provides step-by-step instructions for configuring the webhook [notif
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
-4. Select the *Webhook* notifier.
+4. Select the **Webhook** notifier.
 
 5. In the **Webhook** drawer, select an existing endpoint.
 

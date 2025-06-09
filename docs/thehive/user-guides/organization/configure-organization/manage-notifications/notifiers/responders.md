@@ -2,10 +2,10 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the RunResponder [notifier](../about-notifications.md#notifiers) in TheHive.
+This topic provides step-by-step instructions for configuring the *RunResponder* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The RunResponder notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
+    The *RunResponder* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
     - *FilteredEvent*  
     - *ActionFinished*  
     - *CaseClosed*  
@@ -31,7 +31,7 @@ This topic provides step-by-step instructions for configuring the RunResponder [
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
-4. Select the *RunResponder* notifier.
+4. Select the **RunResponder** notifier.
 
 5. Select the responders you want to run.
 
