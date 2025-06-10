@@ -169,8 +169,9 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Field that contains the id of the user in user info | "email"                                     |
         
         !!! note "GitHub configuration"
-            - Generate the `CLIENT_ID` and `CLIENT_SECRET` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers).
-            - Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile) for this configuration to work correctly.
+
+            * Generate the `CLIENT_ID` and `CLIENT_SECRET` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers).
+            * Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile) for this configuration to work correctly.
 
     === "Microsoft 365" 
 
@@ -206,9 +207,10 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
         | Field that contains the id of the user in user info | "email"                                          |
         
         !!! note "Google configuration"
-            - Generate the `CLIENT_ID` and `CLIENT_SECRET` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
-            - Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
-            - Refer to [Google's OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
+
+            * Generate the `CLIENT_ID` and `CLIENT_SECRET` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
+            * Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
+            * Refer to [Google's OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
 
 <h2>Next steps</h2>
 

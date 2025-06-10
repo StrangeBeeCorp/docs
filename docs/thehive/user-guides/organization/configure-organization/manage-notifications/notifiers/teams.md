@@ -2,26 +2,27 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the Microsoft Teams [notifier](../about-notifications.md#notifiers) in TheHive.
+This topic provides step-by-step instructions for configuring the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The Microsoft Teams notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
-    - *AnyEvent*  
-    - *FilteredEvent*  
-    - *ActionFinished*  
-    - *CaseClosed*  
-    - *CaseCreated*  
-    - *CaseFlagged*  
-    - *CaseShared*  
-    - *AlertClosed*  
-    - *AlertCreated*  
-    - *AlertImported*  
-    - *JobFinished*  
-    - *AlertObservableCreated*  
-    - *CaseObservableCreated*  
-    - *ObservableCreated*  
-    - *TaskClosed*  
-    - *TaskMandatory*
+    The *Microsoft Teams* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
+
+    * *AnyEvent*  
+    * *FilteredEvent*  
+    * *ActionFinished*  
+    * *CaseClosed*  
+    * *CaseCreated*  
+    * *CaseFlagged*  
+    * *CaseShared*  
+    * *AlertClosed*  
+    * *AlertCreated*  
+    * *AlertImported*  
+    * *JobFinished*  
+    * *AlertObservableCreated*  
+    * *CaseObservableCreated*  
+    * *ObservableCreated*  
+    * *TaskClosed*  
+    * *TaskMandatory*
 
 {!includes/access-notifications.md!}
 
@@ -39,7 +40,7 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
 
     ---
 
-4. Select the *Teams* notifier.
+4. Select the **Teams** notifier.
 
     ---
 
@@ -69,10 +70,11 @@ This topic provides step-by-step instructions for configuring the Microsoft Team
         * Formatting date and time in notifications requires using dedicated [Java patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html).
 
         #### Format other custom data from TheHive
-        Few data custom to TheHive can be properly displayed using custom string handlers together with `object` data in notifications:  
-        - `tlpLabel` to display the TLP value (example: `{{tlpLabel object.tlp}}`)  
-        - `papLabel` to display the PAP value (example: `{{papLabel object.pap}}`)  
-        - `severityLabel` to display the severity value (example: `{{severityLabel object.severity}}`)
+        Few data custom to TheHive can be properly displayed using custom string handlers together with `object` data in notifications:
+
+        * `tlpLabel` to display the TLP value (example: `{{tlpLabel object.tlp}}`)
+        * `papLabel` to display the PAP value (example: `{{papLabel object.pap}}`)
+        * `severityLabel` to display the severity value (example: `{{severityLabel object.severity}}`)
 
     !!! example "Adaptive Card template used to display notifications when a new case is created"
 

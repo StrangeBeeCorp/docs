@@ -11,10 +11,11 @@ This topic provides step-by-step instructions for configuring an Lightweight Dir
 !!! info "Local account"
     Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
 
-    User data is synchronized periodically:  
-    - New LDAP users are automatically created in TheHive.  
-    - Removed users become inactive.  
-    - Organization membership and user profiles are assigned based on LDAP group membership.  
+    User data is synchronized periodically:
+
+    * New LDAP users are automatically created in TheHive.
+    * Removed users become inactive.
+    * Organization membership and user profiles are assigned based on LDAP group membership.
 
     The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
 
