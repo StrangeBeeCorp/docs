@@ -3,23 +3,24 @@
 This topic provides step-by-step instructions for configuring the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The *Webhook* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
-    - *AnyEvent*  
-    - *FilteredEvent*  
-    - *ActionFinished*  
-    - *CaseClosed*  
-    - *CaseCreated*  
-    - *CaseFlagged*  
-    - *CaseShared*  
-    - *AlertClosed*  
-    - *AlertCreated*  
-    - *AlertImported*  
-    - *JobFinished*  
-    - *AlertObservableCreated*  
-    - *CaseObservableCreated*  
-    - *ObservableCreated*  
-    - *TaskClosed*  
-    - *TaskMandatory*
+    The *Webhook* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
+
+    * *AnyEvent*  
+    * *FilteredEvent*  
+    * *ActionFinished*  
+    * *CaseClosed*  
+    * *CaseCreated*  
+    * *CaseFlagged*  
+    * *CaseShared*  
+    * *AlertClosed*  
+    * *AlertCreated*  
+    * *AlertImported*  
+    * *JobFinished*  
+    * *AlertObservableCreated*  
+    * *CaseObservableCreated*  
+    * *ObservableCreated*  
+    * *TaskClosed*  
+    * *TaskMandatory*
 
 {!includes/access-notifications.md!}
 
