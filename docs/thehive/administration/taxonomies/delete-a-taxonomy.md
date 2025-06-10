@@ -21,5 +21,5 @@ This topic provides step-by-step instructions for deleting a [taxonomy](about-ta
 
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
 * [Update MISP Taxonomies](update-misp-taxonomies.md)
-* [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Activate or Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Add or Remove Tags](../../user-guides/analyst-corner/cases/tags/add-remove-tags.md)

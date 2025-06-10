@@ -36,8 +36,9 @@ Ensure that all dependencies are successfully installed before proceeding with t
 ## :fontawesome-brands-java: Java Virtual Machine
  
 !!! danger "Java support"
-    - For security and long-term support, you must use [Amazon Corretto](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
-    - Java version 8 is no longer supported.
+
+    * For security and long-term support, you must use [Amazon Corretto](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
+    * Java version 8 is no longer supported.
 
 === "DEB"
 
@@ -510,9 +511,10 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
     ```
 
 !!! info "Index creation and management in TheHive"
-    - Index creation occurs during TheHive's initial startup, which may take some time to complete.
-    - Similar to data and files, include indexes in the backup policy to ensure their preservation.
-    - Remove and re-create indexes as needed.
+
+    * Index creation occurs during TheHive's initial startup, which may take some time to complete.
+    * Similar to data and files, include indexes in the backup policy to ensure their preservation.
+    * Remove and re-create indexes as needed.
 
 **12. <!-- md:version 5.5 --> (Optional) Configure audit log storage:**
 
@@ -731,9 +733,9 @@ The setup provided with binary packages is tailored for a standalone installatio
 
 The following configurations are necessary for successful initiation of TheHive:
 
-- Secret key configuration
-- Database configuration
-- File storage configuration
+* Secret key configuration
+* Database configuration
+* File storage configuration
 
 #### Secret key configuration
 
