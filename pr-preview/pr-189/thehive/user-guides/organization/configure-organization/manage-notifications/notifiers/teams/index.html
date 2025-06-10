@@ -13420,23 +13420,25 @@
 <p>This topic provides step-by-step instructions for configuring the <em>Microsoft Teams</em> <a href="../../about-notifications/#notifiers">notifier</a> in TheHive.</p>
 <div class="admonition note">
 <p class="admonition-title">Notifier availability</p>
-<p>The <em>Microsoft Teams</em> notifier is available only when you turn off the <strong>Send notification to every user in the organization</strong> toggle and use one of the following triggers:<br>
-- <em>AnyEvent</em><br>
-- <em>FilteredEvent</em><br>
-- <em>ActionFinished</em><br>
-- <em>CaseClosed</em><br>
-- <em>CaseCreated</em><br>
-- <em>CaseFlagged</em><br>
-- <em>CaseShared</em><br>
-- <em>AlertClosed</em><br>
-- <em>AlertCreated</em><br>
-- <em>AlertImported</em><br>
-- <em>JobFinished</em><br>
-- <em>AlertObservableCreated</em><br>
-- <em>CaseObservableCreated</em><br>
-- <em>ObservableCreated</em><br>
-- <em>TaskClosed</em><br>
-- <em>TaskMandatory</em></p>
+<p>The <em>Microsoft Teams</em> notifier is available only when you turn off the <strong>Send notification to every user in the organization</strong> toggle and use one of the following triggers:</p>
+<ul>
+<li><em>AnyEvent</em>  </li>
+<li><em>FilteredEvent</em>  </li>
+<li><em>ActionFinished</em>  </li>
+<li><em>CaseClosed</em>  </li>
+<li><em>CaseCreated</em>  </li>
+<li><em>CaseFlagged</em>  </li>
+<li><em>CaseShared</em>  </li>
+<li><em>AlertClosed</em>  </li>
+<li><em>AlertCreated</em>  </li>
+<li><em>AlertImported</em>  </li>
+<li><em>JobFinished</em>  </li>
+<li><em>AlertObservableCreated</em>  </li>
+<li><em>CaseObservableCreated</em>  </li>
+<li><em>ObservableCreated</em>  </li>
+<li><em>TaskClosed</em>  </li>
+<li><em>TaskMandatory</em></li>
+</ul>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
@@ -13482,10 +13484,12 @@
 <li>Formatting date and time in notifications requires using dedicated <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html">Java patterns</a>.</li>
 </ul>
 <h4 id="format-other-custom-data-from-thehive">Format other custom data from TheHive<a class="headerlink" href="#format-other-custom-data-from-thehive" title="Permanent link">#</a></h4>
-<p>Few data custom to TheHive can be properly displayed using custom string handlers together with <code>object</code> data in notifications:<br>
-- <code>tlpLabel</code> to display the TLP value (example: <code>{{tlpLabel object.tlp}}</code>)<br>
-- <code>papLabel</code> to display the PAP value (example: <code>{{papLabel object.pap}}</code>)<br>
-- <code>severityLabel</code> to display the severity value (example: <code>{{severityLabel object.severity}}</code>)</p>
+<p>Few data custom to TheHive can be properly displayed using custom string handlers together with <code>object</code> data in notifications:</p>
+<ul>
+<li><code>tlpLabel</code> to display the TLP value (example: <code>{{tlpLabel object.tlp}}</code>)</li>
+<li><code>papLabel</code> to display the PAP value (example: <code>{{papLabel object.pap}}</code>)</li>
+<li><code>severityLabel</code> to display the severity value (example: <code>{{severityLabel object.severity}}</code>)</li>
+</ul>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Adaptive Card template used to display notifications when a new case is created</p>
