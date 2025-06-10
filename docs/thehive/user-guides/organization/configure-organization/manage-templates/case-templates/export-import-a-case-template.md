@@ -5,9 +5,10 @@ This topic provides step-by-step instructions for exporting and importing a [cas
 !!! info "Share and discover case templates"
     Contribute to and find case templates in our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates).  
     
-    Before submitting your pull request:  
-    - Remove any sensitive information.  
-    - Exclude custom fields.  
+    Before submitting your pull request:
+
+    * Remove any sensitive information.
+    * Exclude custom fields.
     
     Each contribution is reviewed by StrangeBee before being published.
 
