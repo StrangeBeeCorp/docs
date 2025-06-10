@@ -33,7 +33,7 @@ This topic provides step-by-step instructions for configuring an OpenID authenti
 
     ---
 
-6. Select *OpenID* from the dropdown list.
+6. Select **OpenID** from the dropdown list.
 
     ---
 

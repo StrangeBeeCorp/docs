@@ -32,17 +32,19 @@ This topic provides step-by-step instructions for creating an [organization](abo
 
     How tasks linked to a case are handled when the case is shared with another organization.
 
-    Pick an option from the dropdown list:  
-        - *manual* (default): Tasks aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/tasks/share-a-task.md).  
-        - *autoShare*: Tasks are shared automatically.
+    Pick an option from the dropdown list:
+
+    * **manual** (default): Tasks aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/tasks/share-a-task.md).
+    * **autoShare**: Tasks are shared automatically.
 
     **- Observables sharing rule \***
 
     How observables linked to a case are handled when the case is shared with another organization.
 
-    Pick an option from the dropdown list:  
-        - *manual* (default): Observables aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/cases/share-an-observable.md).  
-        - *autoShare*: Observables are shared automatically.
+    Pick an option from the dropdown list:
+
+    * **manual** (default): Observables aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/cases/share-an-observable.md).
+    * **autoShare**: Observables are shared automatically.
 
     To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 

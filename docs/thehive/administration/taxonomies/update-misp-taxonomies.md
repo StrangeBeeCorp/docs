@@ -23,6 +23,6 @@ Use this procedure to update the MISP taxonomies included with your TheHive inst
 <h2>Next steps</h2>
 
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
-* [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Activate or Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Delete a Taxonomy](delete-a-taxonomy.md)
 * [Add or Remove Tags](../../user-guides/analyst-corner/cases/tags/add-remove-tags.md)

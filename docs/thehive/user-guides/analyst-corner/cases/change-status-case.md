@@ -15,9 +15,10 @@ This topic provides step-by-step instructions for changing the [status](../../..
 3. Select the new status from the dropdown list.
 
     !!! tip "Can't find a status?"
-        If you can't find the status you need, it may be due to one of the following reasons:  
-        - The status isn't available from the case description page. Statuses linked to the *Closed* stage are available only when [closing a case](../cases/close-a-case.md).  
-        - The status doesn't exist yet, or someone may have deleted or hidden it. Contact someone with admin-level permissions to [create it](../../../administration/status/create-a-status.md) or [restore it](../../../administration/status/change-visibility-of-a-status.md).
+        If you can't find the status you need, it may be due to one of the following reasons:
+
+        * The status isn't available from the case description page. Statuses linked to the *Closed* stage are available only when [closing a case](../cases/close-a-case.md).
+        * The status doesn't exist yet, or someone may have deleted or hidden it. Contact someone with admin-level permissions to [create it](../../../administration/status/create-a-status.md) or [restore it](../../../administration/status/change-visibility-of-a-status.md).
 
 4. Select **Save**.
 

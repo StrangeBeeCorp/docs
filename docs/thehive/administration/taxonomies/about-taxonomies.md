@@ -35,7 +35,7 @@ Once created, tags from activated taxonomies are available to add to cases, aler
 
 <h2>Next steps</h2>
 
-* [Activate Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Activate or Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
 * [Update MISP Taxonomies](update-misp-taxonomies.md)
 * [Delete a Taxonomy](delete-a-taxonomy.md)
