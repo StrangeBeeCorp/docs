@@ -7,25 +7,26 @@ This topic provides step-by-step instructions for configuring the *Function* [no
 To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
 
 !!! note "Notifier availability"
-    The *Function* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
-    - *FilteredEvent*  
-    - *ActionFinished*  
-    - *CaseClosed*  
-    - *CaseCreated*  
-    - *CaseFlagged*  
-    - *CaseShared*  
-    - *AlertAssigned*  
-    - *AlertClosed*  
-    - *AlertCreated*  
-    - *AlertImported*  
-    - *JobFinished*  
-    - *AlertObservableCreated*  
-    - *CaseObservableCreated*  
-    - *ObservableCreated* 
-    - *LogInMyTask*  
-    - *TaskAssigned*  
-    - *TaskClosed*  
-    - *TaskMandatory*
+    The *Function* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
+
+    * *FilteredEvent*  
+    * *ActionFinished*  
+    * *CaseClosed*  
+    * *CaseCreated*  
+    * *CaseFlagged*  
+    * *CaseShared*  
+    * *AlertAssigned*  
+    * *AlertClosed*  
+    * *AlertCreated*  
+    * *AlertImported*  
+    * *JobFinished*  
+    * *AlertObservableCreated*  
+    * *CaseObservableCreated*  
+    * *ObservableCreated* 
+    * *LogInMyTask*  
+    * *TaskAssigned*  
+    * *TaskClosed*  
+    * *TaskMandatory*
 
 {!includes/access-notifications.md!}
 

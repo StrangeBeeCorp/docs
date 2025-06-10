@@ -149,10 +149,11 @@ Use this procedure if your organization receives alerts via email and you want t
     === "Microsoft 365"
         <!-- md:license Platinum -->
         !!! warning "Prerequisites"
-            You must have:  
-            - Administrator access to Microsoft 365.  
-            - PowerShell installed and properly configured.  
-            - A shared mailbox already created in Microsoft 365.
+            You must have:
+
+            * Administrator access to Microsoft 365
+            * PowerShell installed and properly configured
+            * A shared mailbox already created in Microsoft 365
 
         #### Step 1: Create a mail-enabled security group
 
@@ -276,10 +277,11 @@ Use this procedure if your organization receives alerts via email and you want t
         Microsoft Graph API is the recommended standard API for all interactions with Microsoft services.
 
         !!! warning "Prerequisites"
-            You must have:  
-            - Administrator access to Microsoft 365.  
-            - PowerShell installed and properly configured.  
-            - A shared mailbox already created in Microsoft 365.
+            You must have:
+
+            * Administrator access to Microsoft 365
+            * PowerShell installed and properly configured
+            * A shared mailbox already created in Microsoft 365
 
         #### Step 1: Create a mail-enabled security group
 

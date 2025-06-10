@@ -10,9 +10,10 @@ This topic provides step-by-step instructions for deploying TheHive on a Kuberne
 TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
 
 !!! warning "Prerequisites"
-    Make sure you have:  
-    - A running Kubernetes cluster (version 1.23.0 or later)  
-    - [Helm](https://helm.sh/) installed (version 3.8.0 or later)
+    Make sure you have:
+
+    * A running Kubernetes cluster (version 1.23.0 or later)
+    * [Helm](https://helm.sh/) installed (version 3.8.0 or later)
 
 1. Add the StrangeBee Helm repository
 
@@ -35,10 +36,11 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
 
 !!! info "Dependencies"
-    The `thehive` Helm chart relies on the following charts by default:  
-    - [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database  
-    - [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index  
-    - [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
+    The `thehive` Helm chart relies on the following charts by default:
+
+    * [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database
+    * [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index
+    * [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
 
 !!! note "Upgrades"
     To upgrade your release to the latest version of the `thehive` Helm chart, run:
