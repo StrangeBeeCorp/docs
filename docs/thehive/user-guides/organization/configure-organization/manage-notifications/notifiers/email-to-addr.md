@@ -1,20 +1,21 @@
 # How to Configure the EmailerToAddr Notifier
 
-This topic provides step-by-step instructions for configuring the EmailerToAddr [notifier](../about-notifications.md#notifiers) in TheHive.
+This topic provides step-by-step instructions for configuring the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
-    The EmailerToAddr notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  
-    - *AnyEvent*  
-    - *FilteredEvent*  
-    - *CaseClosed*  
-    - *CaseCreated*  
-    - *CaseFlagged*  
-    - *CaseShared*  
-    - *AlertClosed*  
-    - *AlertCreated*  
-    - *AlertImported*  
-    - *TaskClosed*  
-    - *TaskMandatory*
+    The *EmailerToAddr* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
+
+    * *AnyEvent*  
+    * *FilteredEvent*  
+    * *CaseClosed*  
+    * *CaseCreated*  
+    * *CaseFlagged*  
+    * *CaseShared*  
+    * *AlertClosed*  
+    * *AlertCreated*  
+    * *AlertImported*  
+    * *TaskClosed*  
+    * *TaskMandatory*
 
 {!includes/requirements-email-notifiers.md!}
 
@@ -28,7 +29,7 @@ This topic provides step-by-step instructions for configuring the EmailerToAddr 
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
-4. Select the *EmailerToAddr* notifier.
+4. Select the **EmailerToAddr** notifier.
 
 5. In the **EmailerToAddr** drawer, enter the following information:
 

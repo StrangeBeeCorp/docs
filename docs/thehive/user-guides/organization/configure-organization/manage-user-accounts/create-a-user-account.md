@@ -26,9 +26,10 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     The user account type you want to create.
 
-    Pick an option from the dropdown list:   
-        - *Normal*: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.  
-        - *Service*: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    Pick an option from the dropdown list:
+
+    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
 
     **- Login \***
 
@@ -68,9 +69,10 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     The user account type you want to create.
 
-    Pick an option from the dropdown list:   
-        - *Normal*: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.  
-        - *Service*: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    Pick an option from the dropdown list:
+
+    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
 
     **- Login \***
 
@@ -106,9 +108,10 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     The user account type you want to create.
 
-    Pick an option from the dropdown list:   
-        - *Normal*: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.  
-        - *Service*: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    Pick an option from the dropdown list:
+
+    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
 
     **- Login \***
 

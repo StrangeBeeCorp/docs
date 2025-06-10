@@ -10,11 +10,11 @@ This topic explains when an endpoint is required in TheHive.
 
 Endpoints are required in TheHive to configure the following notifiers:
 
-* [HttpRequest notifier](../manage-notifications/notifiers/http-request.md)
-* [Mattermost notifier](../manage-notifications/notifiers/mattermost.md)
-* [Slack notifier](../manage-notifications/notifiers/slack.md)
-* [Teams notifier](../manage-notifications/notifiers/teams.md)
-* [Webhook notifier](../manage-notifications/notifiers/webhook.md)
+* [*HttpRequest* notifier](../manage-notifications/notifiers/http-request.md)
+* [*Mattermost* notifier](../manage-notifications/notifiers/mattermost.md)
+* [*Slack* notifier](../manage-notifications/notifiers/slack.md)
+* [*Teams* notifier](../manage-notifications/notifiers/teams.md)
+* [*Webhook* notifier](../manage-notifications/notifiers/webhook.md)
 
 <h2>Next steps</h2>
 
