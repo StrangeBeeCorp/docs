@@ -8522,6 +8522,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../../user-guides/organization/about-audit-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Audit Logs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../../user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
         
   
@@ -10371,6 +10394,29 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../../../user-guides/organization/about-audit-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About Audit Logs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -10383,10 +10429,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_7_2_24" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_7_2_25" >
         
           
-          <label class="md-nav__link" for="__nav_2_7_7_2_24" id="__nav_2_7_7_2_24_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_7_7_2_25" id="__nav_2_7_7_2_25_label" tabindex="0">
             
   
   
@@ -10399,8 +10445,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_7_7_2_24_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_7_7_2_24">
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_7_7_2_25_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_7_2_25">
             <span class="md-nav__icon md-icon"></span>
             Manage Case Visibility
           </label>
@@ -13523,9 +13569,12 @@ systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 <p>For Cassandra, verify the status and check for issues:</p>
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>status
 </code></pre></div>
+<p>Nodes should be marked as <code>UN</code> (Up/Normal).</p>
 <p>For Elasticsearch, ensure the cluster health is green:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_cluster/health?pretty"</span>
 </code></pre></div>
+<p>Status <code>green</code> means the cluster is healthy and fully functional. Other statuses include <code>yellow</code>, indicating some replicas are missing but data is still available, and <code>red</code>, indicating some data is unavailable.</p>
+<p>If you notice any data inconsistencies, refer to the section titled <a href="#resolve-any-data-inconsistencies">Resolve any data inconsistencies</a>.</p>
 <h4 id="review-system-logs">Review system logs<a class="headerlink" href="#review-system-logs" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code>journalctl<span class="w"> </span>-u<span class="w"> </span>thehive
 journalctl<span class="w"> </span>-u<span class="w"> </span>cassandra
