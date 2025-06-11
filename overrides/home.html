@@ -1,239 +1,942 @@
-{% extends "main.html" %} {% block tabs %} {{ super() }}
-<section class="tx-container">
-	<div class="md-grid md-typeset">
-		<div class="tx-hero">
-			<div class="tx-hero__image">
-				<img src="assets/images/hero-thehive.png" draggable="false" />
-			</div>
-			<div class="tx-hero__content">
-				<h1>TheHive Technical Documentation</h1>
-				<p><b>Learn how to install, configure, and maintain</b> TheHive for analysts.</p>
-				<a href="thehive/overview/" title="Setup Guides" class="md-button md-button--primary">
-					Getting Started
-				</a>
-				<a
-					href="thehive/download/"
-					title="{{ lang.t('source.link.title') }}"
-					class="md-button">
-					Download TheHive
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs</title>
+</head>
+<body>
+    <div class="paint-filter">
+        <svg width="0" height="0" class="absolute hidden" color-interpolation-filters="sRGB">
+            <filter id="liquid-block-5">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="liquid-block-5"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="liquid-block-5" operator="atop"></feComposite>
+                <feBlend in="SourceGraphic" in2="liquid-block-5"></feBlend>
+            </filter>      
+        </svg>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+        @font-face{
+            font-family: 'Bauziet';
+            font-weight: 600;
+            font-style: normal;
+            src: url('/fonts/Bauziet SemiBold.woff') format('woff');
+            font-display: swap;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 1vw;
+        }
+        body {
+            margin: 0;
+        }
+        .paint-filter {
+            display: none;
+        }
+        .pad {
+            padding-left: 1.67rem;
+            padding-right: 1.67rem;    
+        }
+        .pad2 {
+            padding-left: 8.33rem;
+            padding-right: 8.33rem;
+        }
+        .img-frame {
+            flex-shrink: 0;
+        }
+        .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+        .text-decor {
+            display: inline-block;
+        }
+        .text-decor span {
+            background: #e8efff;
+        }
+        .text-decor::before, .text-decor::after {
+            content: '';
+            display: inline-block;
+            background-image: url('/assets/images/icons/text-decor.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 0.36458rem;
+            height: 2.65625rem;
+        }
+        .text-decor::before {
+            margin-bottom: -0.5rem;
+        }
+        .text-decor::after {
+            margin-bottom: -0.75rem;
+            transform: rotate(180deg);
+        }
+        .btn {  
+            filter: url(#liquid-block-5); 
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            gap: 0;
+            border: none;
+            outline: none;
+            background: none;
+            cursor: pointer;
+            text-decoration: none;
+            --size: 3.22917rem; 
+            --font-size: 0.9375rem; 
 
-<!-- <section class="th-container featuresSection">
-	<h2 class="section__title">Features</h2>
+            --icon-end: 15%;
+            --icon-start: -10%;
+            --icon-rotate: 45deg; 
+        }
+        .btn .txt {
+            font-family: 'Poppins';
+            color: var(--color);
+            font-size: var(--font-size);
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal; 
+            flex-grow: 1;
 
-	<ul class="feature__grid">
-		<li class="feature__card">
-			<p class="feature__title">Alert management</p>
+            background: var(--bg);
+            height: var(--size);        
 
-			<p class="feature__content">
-				Go through your dedicated and detailed Alert page, make comments, identify similar
-				Alerts, define custom statuses and fields. Then decide whether or not they should be
-				escalated to investigations or to incident response.
-			</p>
-		</li>
+            padding: 0 1.25rem;
+            border-radius: var(--size);
 
-		<li class="feature__card">
-			<p class="feature__title">Case management</p>
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
-			<p class="feature__content">
-				Create cases and associated tasks and observables. Identify similar cases and
-				alerts, define the PAP (Permissible Actions Protocol) level on each Observable, or
-				improve your Incident Response process using a simple yet powerful template engine.
-			</p>
-		</li>
+            white-space: nowrap;
+        }
 
-		<li class="feature__card">
-			<p class="feature__title">Multi Tenant Environments</p>
+        .btn .icon {
+            will-change: transform;
+            display: inline-block;
+            width: var(--size);
+            height: var(--size);
+            border-radius: var(--size);
 
-			<p class="feature__content">
-				Define the different organizations and teams and get them to work in a dedicated or
-				collaborative mode: tenants' cases can be isolated or investigated by users from
-				different organizations based on customizable roles and permissions.
-			</p>
-		</li>
+            background: var(--bg);
+            position: relative;
+            transition: transform .3s ease;
+            transform-origin: center;
+            transform: translateX(var(--icon-start));
+            flex-shrink: 0;
 
-		<li class="feature__card">
-			<p class="feature__title">Advanced User management</p>
+        }
+        .btn .icon::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
 
-			<p class="feature__content">
-				Define and customize user profiles, assign them to users within their organizations
-				and synchronise them via LDAP or AD.
-			</p>
-		</li>
+            width: 1.25rem;
+            height: 1.25rem; 
 
-		<li class="feature__card">
-			<p class="feature__title">Notifications Framework</p>
+            mask-image: url('/assets/images/icons/link-arrow.svg');
+            mask-position: center;
+            mask-size: contain;
+            mask-repeat: no-repeat;
 
-			<p class="feature__content">
-				Define notification rules to invoke Webhooks, send emails, Slack and Mattermost
-				messages or call custom HTTP requests.
-			</p>
-		</li>
+            background: var(--color);
+        }
 
-		<li class="feature__card">
-			<p class="feature__title">Metrics and dashboards</p>
-
-			<p class="feature__content">
-				Compile and correlate statistics on cases, tasks, observables, metrics and more to
-				generate useful KPIs and MBOs with our dynamic dashboard engine.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">Comprehensive APIs</p>
-
-			<p class="feature__content">
-				Get full access to documentated APIs to implement workflows or develop any automated
-				scripts using TheHive data.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">MISP Integration</p>
-
-			<p class="feature__content">
-				Get shared Indicators of compromise quickly imported and ready to use or share yours
-				easily with your communities by connecting TheHive with MISP.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">MITRE ATT&CK Integration</p>
-
-			<p class="feature__content">
-				Import all of the MITRE ATT&CK Framework TTPs to TheHive Alert management. Import
-				Tactics and Techniques of a particular Case or Alert or simply export them to a MISP
-				event.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">Case Reporting</p>
-
-			<p class="feature__content">
-				Conclude an incident with the creation of a thorough and meticulously documented
-				report, available in either markdown or PDF file format. Customize report templates
-				based on the specific content needed and the intended recipients of the document.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">Knowledge Base</p>
-
-			<p class="feature__content">
-				Effortlessly centralize and access all your well-established policies, procedures,
-				best practices, and guidance within the in-app 'wiki', providing invaluable support
-				during the high-pressure moments of incident response.
-			</p>
-		</li>
-
-		<li class="feature__card">
-			<p class="feature__title">Timeline</p>
-
-			<p class="feature__content">
-				For each case, obtain a well-organized synopsis of the incident's progression,
-				tracing it from its initial detection through to the resolution and recovery phases.
-				You can opt to display a detailed timeline specifically focused on the sequence of
-				events related to the cyberattack or alternatively, present a comprehensive view of
-				the entire incident response process.
-			</p>
-		</li>
-	</ul>
-</section> -->
-
-<section class="th-container featuresSection">
-    <h2 class="section__title">Features</h2>
-
-    <ul class="feature__grid">
-        <li class="feature__card">
-            <p class="feature__title">Alert Management</p>
-            <p class="feature__content">
-                Efficiently manage alerts with a dedicated and detailed Alert page. Make comments, identify similar alerts, define custom statuses and fields, and decide on escalation to investigations or incident response.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Case Management</p>
-            <p class="feature__content">
-                Streamline case creation with associated tasks and observables. Identify related cases and alerts, set PAP (Permissible Actions Protocol) levels on each Observable, and enhance Incident Response using a flexible template engine.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Multi-Tenant Environments</p>
-            <p class="feature__content">
-                Define organizations and teams for collaborative work. Customize permissions and roles to isolate or share cases between organizations.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Advanced User Management</p>
-            <p class="feature__content">
-                Customize user profiles and assignments within organizations. Synchronize users via LDAP or AD for streamlined management.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Notifications Framework</p>
-            <p class="feature__content">
-                Set up notification rules to trigger webhooks, emails, Slack/Mattermost messages, or custom HTTP requests based on specified events.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Metrics and Dashboards</p>
-            <p class="feature__content">
-                Utilize dynamic dashboarding to compile and correlate case statistics, tasks, observables, and metrics for generating KPIs and MBOs.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Comprehensive APIs</p>
-            <p class="feature__content">
-                Access fully documented APIs for implementing workflows and developing automated scripts using TheHive data.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">MISP Integration</p>
-            <p class="feature__content">
-                Seamlessly import and share Indicators of Compromise with MISP. Collaborate by connecting TheHive with MISP to enhance threat intelligence sharing.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">MITRE ATT&CK Integration</p>
-            <p class="feature__content">
-                Incorporate MITRE ATT&CK Framework TTPs into alert management. Import tactics and techniques into cases or alerts, or export to MISP events for broader threat analysis.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Case Reporting</p>
-            <p class="feature__content">
-                Generate detailed incident reports in markdown, DOCX or PDF format. Customize report templates based on content requirements and target audience.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Knowledge Base</p>
-            <p class="feature__content">
-                Centralize policies, procedures, best practices, and guidance within the in-app 'wiki' for quick access and support during incident response.
-            </p>
-        </li>
-
-        <li class="feature__card">
-            <p class="feature__title">Timeline</p>
-            <p class="feature__content">
-                Track incident progression with a comprehensive timeline view. Capture events from detection to resolution, providing insights into the incident response process.
-            </p>
-        </li>
-    </ul>
-</section>
+        .btn:hover .icon {
+            transform: translateX(var(--icon-end)) rotate(var(--icon-rotate));
+        }
+        .btn.primary {
+            --bg: #1969FF;
+            --color: #fff;
+        }
+        .btn.secondary {
+            --bg: #FFC72C;
+            --color: #011635;
+        }
+        @media (max-width: 460px) {
+            .pad {
+                padding-left: 4.27rem;
+                padding-right: 4.27rem;    
+            }
+            .pad2 {
+                padding-left: 4.27rem;
+                padding-right: 4.27rem;    
+            }
+            .text-decor::before, .text-decor::after {
+                width: 1.6rem;
+                height: 9.33333rem;
+            }
+            .text-decor::before {
+                margin-bottom: -2.25rem;
+            }
+            .text-decor::after {
+                margin-bottom: -3.5rem;
+            }
+            .btn {
+                --size: 16.53333rem;
+                --font-size: 4.8rem;  
+            }
+            .btn .txt {
+                padding-left: 6.25rem;
+                padding-right: 6.25rem;
+            }
+            .btn .icon {
+                display: none;
+            }
+        }
 
 
-{% endblock %} {% block content %}{% endblock %} {% block footer %}{% endblock %}
+        section.docs-hero {
+            padding-top: 5.5rem;
+        }
+        section.docs-hero .content {
+            border-radius: 1.67rem;
+            background: #F5F6F7;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            padding-top: 3.75rem;
+        }
+        section.docs-hero .content::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-image: radial-gradient(#d5deed 0.1rem, transparent 0.1rem);
+            background-size: 1rem 1rem; 
+            pointer-events: none; 
+            z-index: -1; 
+        }
+        section.docs-hero .content > .img-frame {
+            width: 14.70255rem;
+            height: 12.21411rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        section.docs-hero .content .img-frame.left {
+            left: 5.1rem;
+        }
+        section.docs-hero .content .img-frame.right {
+            right: 1.79rem;
+        }
+        section.docs-hero .content .img-frame.mobile {
+            display: none;
+        }
+        section.docs-hero .content .group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 1.67rem;
+            margin-bottom: 2.71rem;
+            position: relative;
+            z-index: 1;
+        }
+        section.docs-hero .content .group .img-frame {
+            width: 5.20833rem;
+            height: 5.20833rem;
+        }
+        section.docs-hero .content .group .title {
+            color: #011635;
+            text-align: center;
+            font-family: 'Bauziet';
+            font-size: 2.5rem;
+            line-height: 120%;
+            letter-spacing: -0.00625rem;
+            margin: 0;
+        }
+        section.docs-hero .content .group .subtitle {
+            color: #011635;
+            text-align: center;
+            font-family: 'Poppins';
+            font-size: 1.04167rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 144%; 
+            margin: 0;
+        }
+        section.docs-hero .content .substract {
+            padding: 1.67rem;
+            padding-bottom: 0;
+            border-radius: 3.2812rem;
+            background: #fff;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            position: relative;    
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: .83rem;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        section.docs-hero .content .substract::before,
+        section.docs-hero .content .substract::after {
+            content: '';
+            bottom: -1px;
+            mask-image: url('/assets/images/mask/substract.png');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: right bottom;
+
+            position: absolute;
+            background: #fff;
+
+            width: 1.25rem;
+            height: 2.08333rem; 
+        }
+        section.docs-hero .content .substract::before {
+            right: calc(-1px + 100%);
+        }
+        section.docs-hero .content .substract::after {
+            left: calc(-1px + 100%);
+            transform: scaleX(-1);
+        }
+        @media (max-width: 460px) {
+            section.docs-hero {
+                padding-top: 11.2rem;
+            }
+            section.docs-hero .content {
+                border-radius: 8.53rem;
+                padding-top: 26.67rem;
+            }
+            section.docs-hero .content::before {
+                background-image: radial-gradient(#d5deed 0.35rem, transparent 0.35rem);
+                background-size: 3rem 3rem; 
+            }
+            section.docs-hero .content > .img-frame {
+                width: 79.036rem;
+                height: 42.56133rem;
+                top: 3.5rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            section.docs-hero .content .img-frame.left,
+            section.docs-hero .content .img-frame.right {
+                display: none;
+            }
+            section.docs-hero .content .img-frame.mobile {
+                display: block;
+            }
+            section.docs-hero .content .group {
+                row-gap: 6.4rem;
+                margin-bottom: 16rem;
+            }
+            section.docs-hero .content .group .img-frame {
+                width: 23.46667rem;
+                height: 23.46667rem;
+            }
+            section.docs-hero .content .group .title {
+                font-size: 7.46667rem;
+            }
+            section.docs-hero .content .group .subtitle {
+                font-size: 4.26667rem;
+            }
+            section.docs-hero .content .substract {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 3.2rem;
+                gap: 3.2rem;
+                border-top-left-radius: 8.53333rem;
+                border-top-right-radius: 8.53333rem;
+            }
+            section.docs-hero .content .substract::before,
+            section.docs-hero .content .substract::after {
+                width: 7.73333rem;
+                height: 12.26667rem; 
+                mask-image: url('/assets/images/mask/substract-m.png');
+            }
+        }
+
+
+        section.docs-main {
+            padding-top: 6.25rem;
+            padding-bottom: 2rem;
+        }
+        section.docs-main .content .section-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 0.83rem;
+        }
+        section.docs-main .content .section-title .title {
+            color: #011635;
+            text-align: center;
+            font-family: 'Bauziet';
+            font-size: 1.875rem;
+            line-height: 121%;
+            letter-spacing: -0.00469rem;
+            margin: 0;
+        }
+        section.docs-main .content .section-title .subtitle {
+            color: #011635;
+            text-align: center;
+            font-family: 'Poppins';
+            font-size: 1.04167rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; 
+            margin: 0;
+        }
+        section.docs-main .content .anchor-wrapper {
+            position: sticky;
+            top: 1rem;
+            z-index: 10;
+            margin-bottom: -3.85rem;
+        }
+        section.docs-main .content .anchor-wrapper .anchor {
+            display: flex;
+            align-items: center;
+            column-gap: 0.83rem;
+            border-radius: 5.20833rem;
+            background: #1969FF;
+            padding: 0.625rem 0.83333rem 0.625rem 1.25rem;
+            width: fit-content;
+            margin: 0 auto;
+        }
+        section.docs-main .content .anchor-wrapper .anchor .text {
+            color: #FFF;
+            font-family: 'Poppins';
+            font-size: 0.83333rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 148%; 
+        }
+        section.docs-main .content .anchor-wrapper .anchor .group {
+            display: flex;
+            column-gap: 0.42rem;
+        }
+        section.docs-main .content .anchor-wrapper .anchor .group a {
+            color: #011635;
+            font-family: 'Poppins';
+            font-size: 0.83333rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 144%;
+            padding: 0.54688rem 0.625rem;
+            border-radius: 1.66667rem;
+            background: #FFF;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        section.docs-main .content .anchor-wrapper .anchor .group a:hover {
+            background: #EBECEF;
+        }
+        section.docs-main .content .block {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            row-gap: 10.42rem;
+            margin-top: 2.08rem;
+        }
+        section.docs-main .content .block .item {
+            display: flex;
+            column-gap: 1.25rem;
+        }
+        section.docs-main .content .block .item .anchor-item {
+            display: block;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-6rem);
+        }
+        section.docs-main .content .block .item .name {
+            flex-shrink: 0;
+            position: relative;
+            padding: 2.34rem 1.67rem 1.67rem 2.34rem;
+            border-radius: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            row-gap: 1rem;
+            min-height: 18.91667rem;
+            max-width: 15.58333rem;
+            height: fit-content;
+            background: #FFC72C;
+        }
+        section.docs-main .content .block .item .name::before {
+            content: '';
+            mask-image: url('/assets/images/mask/card.svg');
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: right top;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            width: 9.30583rem;
+            height: 4.84375rem;
+            background: #fff;
+        }
+        section.docs-main .content .block .item .name .img-frame {
+            height: 6.97917rem;
+        }
+        section.docs-main .content .block .item .name .text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 0.83rem;
+        }
+        section.docs-main .content .block .item .name .text .title {
+            color: #011635;
+            font-family: 'Bauziet';
+            font-size: 1.875rem;
+            line-height: 121%;
+            letter-spacing: -0.00469rem;
+            margin: 0;
+        }
+        section.docs-main .content .block .item .name .text .subtitle {
+            color: #011635;
+            font-family: 'Poppins';
+            font-size: 1.04167rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%; 
+            margin: 0;
+        }
+        section.docs-main .content .block .item .data {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+        section.docs-main .content .block .item .data .group {
+            border-radius: 1.66667rem;
+            padding: 1.66667rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            row-gap: 1.66667rem;
+            background: #F5F6F7;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        section.docs-main .content .block .item .data .group::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background-image: radial-gradient(#d5deed 0.1rem, transparent 0.1rem);
+            background-size: 1rem 1rem; 
+            pointer-events: none; 
+            z-index: -1; 
+        }
+        section.docs-main .content .block .item .data .group .title {
+            color: #011635;
+            font-family: 'Bauziet';
+            font-size: 1.45833rem;
+            line-height: 100%; 
+            letter-spacing: -0.00365rem;
+            margin: 0;
+        }
+        section.docs-main .content .block .item .data .group .title.text-decor::after,
+        section.docs-main .content .block .item .data .group .title.text-decor::before {
+            width: 0.3125rem;
+            height: 2.03125rem;
+        }
+        section.docs-main .content .block .item .data .group .title.text-decor::before {
+            margin-bottom: -0.75rem;
+            transform: translateY(-0.3rem);
+        }
+        section.docs-main .content .block .item .data .group .title.text-decor::after {
+            margin-bottom: -0.9rem;
+        }
+        section.docs-main .content .block .item .data .group .list {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            row-gap: 0.21rem;
+        }
+        section.docs-main .content .block .item .data .group .list a {
+            color: #011635;
+            font-family: 'Poppins';
+            font-size: 0.83333rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 148%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            column-gap: 0.62rem;
+            padding: 0.83333rem;
+            border-radius: 0.83333rem;
+            background: #FFF;
+        }
+        section.docs-main .content .block .item .data .group .list a::before {
+            content: '';
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-image: url('/assets/images/icons/doc.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            flex-shrink: 0;
+            opacity: 0.45;
+            transition: opacity 0.3s ease;
+        }
+        section.docs-main .content .block .item .data .group .list a::after {
+            content: '';
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            background-image: url('/assets/images/icons/link-arrow.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            margin-left: auto;
+            flex-shrink: 0;
+            opacity: 0.3;
+            transition: opacity 0.3s ease;
+        }
+        section.docs-main .content .block .item .data .group .list a:hover::before,
+        section.docs-main .content .block .item .data .group .list a:hover::after {
+            opacity: 1;
+        }
+        @media (max-width: 460px) {
+            section.docs-main {
+                padding-top: 21.33rem;
+                padding-bottom: 10rem;
+            }
+            section.docs-main .content .section-title {
+                row-gap: 4.27rem;
+            }
+            section.docs-main .content .section-title .title {
+                font-size: 6.4rem;
+            }
+            section.docs-main .content .section-title .subtitle {
+                font-size: 4.26667rem;
+            }
+            section.docs-main .content .anchor-wrapper {
+                top: 0;
+                margin: 0 -4.27rem -6.4rem;
+                overflow-y: auto;
+                border-radius: 0rem 0rem 8.53333rem 8.53333rem;
+            }
+            section.docs-main .content .anchor-wrapper .anchor {
+                padding: 6.4rem 4.26667rem;
+                border-radius: 0;
+                background: #fff;
+            }
+            section.docs-main .content .anchor-wrapper .anchor .text {
+                display: none;
+            }
+            section.docs-main .content .anchor-wrapper .anchor .group {
+                column-gap: 2.13rem;
+            }
+            section.docs-main .content .anchor-wrapper .anchor .group a {
+                color: #fff;
+                font-size: 3.73333rem;
+                padding: 2.8rem 4.8rem;
+                border-radius: 8.53333rem;
+                background: #1969FF;
+            }
+            section.docs-main .content .anchor-wrapper .anchor .group a:hover {
+                background: #1969FF;
+            }
+            section.docs-main .content .block {
+                row-gap: 21.33rem;
+                margin-top: 8.53rem;
+            }
+            section.docs-main .content .block .item {
+                flex-direction: column;
+                align-items: stretch;
+                row-gap: 3.2rem;
+            }
+            section.docs-main .content .block .item .anchor-item {
+                transform: translateY(-25rem);
+            }
+            section.docs-main .content .block .item .name {
+                padding: 6.19rem 4.27rem 6.4rem 6.19rem;
+                border-radius: 4.27rem;
+                min-height: initial;
+                max-width: initial;
+                row-gap: 2.13rem;
+            }
+            section.docs-main .content .block .item .name::before {
+                mask-image: url('/assets/images/mask/card-mob.svg');
+                width: 57.176rem;
+                height: 18.3832rem;
+            }
+            section.docs-main .content .block .item .name .img-frame {
+                height: 20.1rem;
+            }
+            section.docs-main .content .block .item .name .img-frame img {
+                object-position: left;
+            }
+            section.docs-main .content .block .item .name .text {
+                row-gap: 3.2rem;
+            }
+            section.docs-main .content .block .item .name .text .title {
+                font-size: 6.4rem;
+            }
+            section.docs-main .content .block .item .name .text .subtitle {
+                font-size: 4.26667rem;
+            }
+            section.docs-main .content .block .item .data {
+                grid-template-columns: 1fr;
+                gap: 3.2rem;
+            }
+            section.docs-main .content .block .item .data .group {
+                border-radius: 8.53333rem;
+                padding: 6.4rem 4.26667rem 4.26667rem 4.26667rem;
+                row-gap: 5.333rem;
+            }
+            section.docs-main .content .block .item .data .group::before {
+                background-image: radial-gradient(#d5deed 0.35rem, transparent 0.35rem);
+                background-size: 3rem 3rem; 
+            }
+            section.docs-main .content .block .item .data .group .title {
+                font-size: 5.33333rem;
+            }
+            section.docs-main .content .block .item .data .group .title.text-decor::after,
+            section.docs-main .content .block .item .data .group .title.text-decor::before {
+                width: 1.6rem;
+                height: 7.5rem;
+            }
+            section.docs-main .content .block .item .data .group .title.text-decor::before {
+                margin-bottom: -1.65rem;
+                transform: none;
+            }
+            section.docs-main .content .block .item .data .group .title.text-decor::after {
+                margin-bottom: -3.65rem;
+            }
+            section.docs-main .content .block .item .data .group .list {
+                row-gap: 1.07rem;
+            }
+            section.docs-main .content .block .item .data .group .list a {
+                font-size: 3.73333rem;
+                column-gap: 3.2rem;
+                padding: 4.26667rem;
+                border-radius: 4.26667rem;
+            }
+            section.docs-main .content .block .item .data .group .list a::before,
+            section.docs-main .content .block .item .data .group .list a::after {
+                width: 6.4rem;
+                height: 6.4rem;
+            }
+        }
+    </style>
+    <section class="pad docs-hero">
+        <div class="content">
+            <div class="img-frame left"><img src="/assets/images/hero-decor-l.png" alt=""></div>
+            <div class="img-frame right"><img src="/assets/images/hero-decor-r.png" alt=""></div>
+            <div class="img-frame mobile"><img src="/assets/images/hero-decor-mob.png" alt=""></div>
+            <div class="group">
+                <div class="img-frame"><img src="/assets/images/thehive-logo.svg" alt=""></div>
+                <h1 class="title">TheHive Technical <div class="text-decor"><span>Documentation</span></div></h1>
+                <div class="subtitle">Learn how to install, configure, and maintain TheHive for analysts.</div>
+            </div>
+            <div class="substract">
+                <a href="https://docs.strangebee.com/thehive/overview/" class="btn secondary">
+                    <div class="txt">Get started</div>
+                    <div class="icon"></div>
+                </a>
+                <a href="https://docs.strangebee.com/thehive/download/" class="btn primary">
+                    <div class="txt">Download TheHive</div>
+                    <div class="icon"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="pad2 docs-main">
+        <div class="content">
+            <div class="section-title">
+                <h3 class="title">Explore TheHive like a pro</h3>
+                <p class="subtitle">Your go-to guide for mastering installation, configuration, and daily use of TheHive platform.</p>
+            </div>
+            <div class="block">
+                <div class="anchor-wrapper">
+                    <div class="anchor">
+                        <div class="text">I’m an :</div>
+                        <div class="group">
+                            <a href="#analyst">Analyst</a>
+                            <a href="#manager">Manager</a>
+                            <a href="#devSecOps">DevSecOps</a>
+                            <a href="#infraEngineer">Infra Engineer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="anchor-item" id="analyst"></div>
+                    <div class="name">
+                        <div class="img-frame"><img src="/assets/images/docs-analyst.png" alt=""></div>
+                        <div class="text">
+                            <h3 class="title">I’m an Analyst</h3>
+                            <p class="subtitle">I want to triage alerts and investigate cases.</p>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Triage alerts</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Investigate cases</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="anchor-item" id="manager"></div>
+                    <div class="name">
+                        <div class="img-frame"><img src="/assets/images/docs-manager.png" alt=""></div>
+                        <div class="text">
+                            <h3 class="title">I’m a Manager</h3>
+                            <p class="subtitle">I want to standardize and secure data, and track my team’s activity.</p>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Standardize and secure data</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Track team activity</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="anchor-item" id="devSecOps"></div>
+                    <div class="name">
+                        <div class="img-frame"><img src="/assets/images/docs-devSecOps.png" alt=""></div>
+                        <div class="text">
+                            <h3 class="title">I’m an DevSecOps</h3>
+                            <p class="subtitle">I want to automate tasks, manage integrations, and streanline data enrichment.</p>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Genetate alerts in TheHive</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Automate repetitive tasks</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="anchor-item" id="infraEngineer"></div>
+                    <div class="name">
+                        <div class="img-frame"><img src="/assets/images/docs-infraEngineer.png" alt=""></div>
+                        <div class="text">
+                            <h3 class="title">I’m an Infra Engineer</h3>
+                            <p class="subtitle">I want to automate tasks, manage integrations, and streanline data enrichment.</p>
+                        </div>
+                    </div>
+                    <div class="data">
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Install and configurate TheHive</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Configurate organizations</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Maintain TheHive</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <h4 class="title text-decor"><span>Use the API</span></h4>
+                            <div class="list">
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                                <a href="#">Track progress of mandatory tasks and save task logs</a>
+                                <a href="#">Run analyzers on observables and trigger responders</a>
+                                <a href="#">Add observables</a>
+                                <a href="#">Create custom alert views based on filters</a>
+                                <a href="#">Access case details quickly</a>
+                                <a href="#">Update TLP and PAP as needed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
