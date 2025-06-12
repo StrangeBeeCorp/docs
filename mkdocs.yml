@@ -496,7 +496,6 @@ nav:
           - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
           - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
           - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
-          - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
           - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
           - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
@@ -712,6 +711,11 @@ nav:
           - 'Run a Function on a Case': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
+          - 'Case Pages':
+            - 'Create a Page': thehive/user-guides/knowledge-base/create-a-case-page.md
+            - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-case-page.md
+            - 'Share a Page': thehive/user-guides/knowledge-base/share-a-case-page.md
+            - 'View a Page': thehive/user-guides/knowledge-base/view-a-case-page.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
           - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
         - 'Tasks Management':
