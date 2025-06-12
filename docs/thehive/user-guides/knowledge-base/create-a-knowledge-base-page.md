@@ -7,6 +7,8 @@ Instructions vary depending on whether you want to create a page at the:
 * [Organization level](#create-a-page-at-the-organization-level)  
 * [Case level](#create-a-page-at-the-case-level)
 
+Use these procedures to document important content to share with your team, such as lessons learned, reports, and meeting notes.
+
 {!includes/temporary-permanent-knowledge.md!}
 
 {!includes/access-knowledge-base.md!}
