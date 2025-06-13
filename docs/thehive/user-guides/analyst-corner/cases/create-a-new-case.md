@@ -3,17 +3,12 @@
 This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) in TheHive.
 
 Several options are offered to create a case in TheHive:
-
+  
 * [Create an empty case](#create-an-empty-case)
-
 * [Create a case from a template](#create-a-case-from-a-template)
-
 * [Create a case from an archived case](#create-a-case-from-an-archived-case)
-
 * [Create a case from a MISP event](#create-a-case-from-a-misp-event)
-
 * [Create a case from an alert](#create-a-case-from-an-alert)
-
 * [Create a case from a detection tool](#create-a-case-from-a-detection-tool)
 
 {!includes/access-create-a-case.md!}
@@ -23,6 +18,9 @@ Several options are offered to create a case in TheHive:
 1. {!includes/create-a-case.md!}
 
 2. In the **Create case** drawer, select **Empty case**.
+
+    !!! tip "Can't find the empty case option?"
+        If you don’t see the empty case option, your organization has likely [hidden it](../../organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases.md) to ensure cases are created only from templates, archived cases, or MISP for better standardization.
 
 3. Enter the following fields:
 
@@ -114,7 +112,7 @@ Several options are offered to create a case in TheHive:
 
 4. Select **Confirm**.
 
-## Create a case from a MISP event
+## Create a case from a [MISP event](../../../administration/misp-integration/about-misp-integration.md)
 
 !!! info "Data transfer"
     When creating a case from a MISP event, data from the event, such as observables, is automatically transferred to the case.

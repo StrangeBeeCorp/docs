@@ -11,17 +11,13 @@ You can hide some or all indicators if they're not useful or could be misleading
 If you want to know more about the KPIs available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
 
 !!! warning "Required permissions"
-    Only users with the `manageConfig` permission can hide KPIs in case and alert descriptions in TheHive.
+    Only users with the `manageConfig` permission can hide KPIs in cases and alerts in TheHive.
 
 <h2>Procedure</h2>
 
-1. Go to the **Organization** view from the sidebar menu.
+1. {!includes/organization-view-go-to.md!}
 
-    ![Organization view](../../images/user-guides/organization/configure-organization/organization-view.png)
-
-2. Select the **UI Configuration** tab.
-
-    ![UI configuration](../../images/user-guides/organization/configure-organization/manage-ui-configuration/organization-view-ui-configuration.png)
+2. {!includes/ui-configuration-tab-go-to.md!}
 
 3. Move through the **Time metrics** section.
 
