@@ -404,6 +404,7 @@ nav:
           - 'Hot Backup':
             - 'Standalone Server': thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md
             - 'Cluster': thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster.md
+            - 'Resolve Data Inconsistencies': thehive/operations/backup-restore/backup/hot-backup/hot-backup-resolve-data-inconsistencies.md
         - 'Restore Process':
           - 'Cold Restore':
             - 'Physical Server':  thehive/operations/backup-restore/restore/cold-restore/physical-server.md
