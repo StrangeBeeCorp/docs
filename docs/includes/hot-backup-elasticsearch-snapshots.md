@@ -1,25 +1,3 @@
-Before creating Elasticsearch snapshots, ensure Elasticsearch has the appropriate permissions to write to the snapshot repository.
-
-For shared file systems:
-
-!!! Example ""
-
-    ```bash
-    chown elasticsearch:elasticsearch </mnt/backup>
-    chmod 770 </mnt/backup>
-    ```
-
-Then, use the following script:
-
-!!! warning "Script restrictions"
-    This script works only when Elasticsearch runs directly on a machine. It doesn't support deployments using Docker or Kubernetes.
-
-!!! note "Default values"
-    Before running this script:
-
-    * Update the snapshot repository name to match your environment. The default name in the script is `thehive_repository`.
-    * Verify that the index name matches the one used in the script, which defaults to `thehive_global`. This name may differ if you have rebuilt or customized the index.
-
 ```bash
 #!/bin/bash
 

@@ -81,6 +81,34 @@ nodetool netstats
 
 ## Create Elasticsearch snapshots
 
+Before creating Elasticsearch snapshots, ensure Elasticsearch has the appropriate permissions to write to the snapshot repository.
+
+For shared file systems:
+
+!!! Example ""
+
+    ```bash
+    chown elasticsearch:elasticsearch </mnt/backup>
+    chmod 770 </mnt/backup>
+    ```
+
+Then, use the following script:
+
+!!! warning "Script requirements"
+    This script works only when Elasticsearch runs directly on a machine. It doesn't support deployments using Docker or Kubernetes.
+
+    Before running the script on a cluster setup:
+
+    * Ensure that `/mnt/backup` is mounted on a network-shared volume accessible by all cluster nodes.
+    * Edit the `elasticsearch.yml` configuration file to add the `path.repo` setting pointing to the snapshot repository path.
+    * Perform a rolling restart of all Elasticsearch nodes to apply the configuration changes.
+
+!!! note "Default values"
+    Before running this script:
+
+    * Update the snapshot repository name to match your environment. The default name in the script is `thehive_repository`.
+    * Verify that the index name matches the one used in the script, which defaults to `thehive_global`. This name may differ if you have rebuilt or customized the index.
+
 {!includes/hot-backup-elasticsearch-snapshots.md!}
 
 ## Perform a backup on file storage
