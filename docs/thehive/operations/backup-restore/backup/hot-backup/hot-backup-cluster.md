@@ -102,6 +102,8 @@ Then, use the following script:
     * Ensure that `/mnt/backup` is mounted on a network-shared volume accessible by all cluster nodes.
     * Edit the `elasticsearch.yml` configuration file to add the `path.repo` setting pointing to the snapshot repository path.
     * Perform a rolling restart of all Elasticsearch nodes to apply the configuration changes.
+    
+    For step-by-step details, see the [official Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/8.18/snapshots-filesystem-repository.html).
 
 !!! note "Default values"
     Before running this script:
