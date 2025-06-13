@@ -13695,21 +13695,7 @@ systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 journalctl<span class="w"> </span>-u<span class="w"> </span>cassandra
 journalctl<span class="w"> </span>-u<span class="w"> </span>elasticsearch
 </code></pre></div>
-<h4 id="resolve-any-data-inconsistencies">Resolve any data inconsistencies<a class="headerlink" href="#resolve-any-data-inconsistencies" title="Permanent link">#</a></h4>
-<h5 id="for-cassandra">For Cassandra<a class="headerlink" href="#for-cassandra" title="Permanent link">#</a></h5>
-<p>Run a repair on the local node to synchronize its data:</p>
-<div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>repair<span class="w"> </span>thehive
-</code></pre></div>
-<p>Check for corrupt SSTables and clean up if necessary:</p>
-<div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>scrub
-</code></pre></div>
-<h5 id="for-elasticsearch">For Elasticsearch<a class="headerlink" href="#for-elasticsearch" title="Permanent link">#</a></h5>
-<p>Check and fix any index corruption by forcing a merge:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_forcemerge?max_num_segments=1"</span>
-</code></pre></div>
-<p>If corruption persists, reindex the affected data:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://127.0.0.1:9200/_reindex"</span>
-</code></pre></div>
+<p>If you encounter any data inconsistencies, refer to <a href="/thehive/operations/backup-restore/backup/hot-backup/hot-backup-resolve-data-inconsistencies/">Resolve Data Inconsistencies</a> for assistance.</p>
 <h2 id="create-cassandra-snapshots">Create Cassandra snapshots<a class="headerlink" href="#create-cassandra-snapshots" title="Permanent link">#</a></h2>
 <p>Before creating Cassandra snapshots, gather the following information:</p>
 <ul>
