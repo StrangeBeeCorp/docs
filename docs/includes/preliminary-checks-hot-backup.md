@@ -38,32 +38,4 @@ journalctl -u cassandra
 journalctl -u elasticsearch
 ```
 
-#### Resolve any data inconsistencies
-
-##### For Cassandra
-
-Run a repair on the local node to synchronize its data:
-
-```bash
-nodetool repair thehive
-```
-
-Check for corrupt SSTables and clean up if necessary:
-
-```bash
-nodetool scrub
-```
-
-##### For Elasticsearch
-
-Check and fix any index corruption by forcing a merge:
-
-```bash
-curl -X POST "http://127.0.0.1:9200/_forcemerge?max_num_segments=1"
-```
-
-If corruption persists, reindex the affected data:
-
-```bash
-curl -X POST "http://127.0.0.1:9200/_reindex"
-```
+If you encounter any data inconsistencies, refer to [Resolve Data Inconsistencies](/thehive/operations/backup-restore/backup/hot-backup/hot-backup-resolve-data-inconsistencies/) for assistance.
