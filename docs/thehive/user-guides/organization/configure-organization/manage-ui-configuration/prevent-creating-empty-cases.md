@@ -23,4 +23,4 @@ By default, the empty case option is available. Use this procedure to require us
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Select Similar Cases and Alerts Filters](select-similar-cases-alerts-filters.md)
 * [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)
-* [Hide Key Performance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](hide-key-performance-indicators.md)

@@ -25,4 +25,4 @@ By default, it's possible to merge alerts into a closed case. Use this procedure
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
 * [Select Similar Cases and Alerts Filters](select-similar-cases-alerts-filters.md)
-* [Hide Key Performance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](hide-key-performance-indicators.md)

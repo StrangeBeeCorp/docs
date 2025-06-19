@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for removing the **All periods** o
 
 Use this procedure to improve application performance by preventing users to select the **All periods** option.
 
-To learn how to change the display period for dashboards, see [Set the Dashboard Display Period](../../../analyst-corner/dashboard/set-dashboard-display-period.md).
+To learn how to change the display period for dashboards, see [Set a Dashboard Display Period](../../../analyst-corner/dashboard/set-dashboard-display-period.md).
 
 !!! warning "Required permissions"
     Only users with the `manageConfig` permission can remove the **All periods** option in TheHive.
@@ -25,4 +25,4 @@ To learn how to change the display period for dashboards, see [Set the Dashboard
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
 * [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)
 * [Select Similar Cases and Alerts Filters](select-similar-cases-alerts-filters.md)
-* [Hide Key Performance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](hide-key-performance-indicators.md)

@@ -23,4 +23,4 @@ The **Similar cases** and **Similar alerts** tabs display cases and alerts that 
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
 * [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)
-* [Hide Key Performance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](hide-key-performance-indicators.md)

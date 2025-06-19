@@ -62,6 +62,6 @@ For more information on these KPIs, consult this [SecurityScorecard blog post](h
 <h2>Next steps</h2>
 
 * [Date Field Definitions for Alerts and Cases](../date-field-definitions-alerts-cases.md)
-* [Hide Key Performance Indicators](hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)
 * [Measure Alert Performance](measure-alert-management-performance.md)

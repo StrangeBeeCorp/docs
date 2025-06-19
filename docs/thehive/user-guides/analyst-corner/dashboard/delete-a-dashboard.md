@@ -25,5 +25,5 @@ This topic provides step-by-step instructions for deleting a [dashboard](about-d
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Export or Import a Dashboard](export-import-a-dashboard.md)
 * [Adjust Dashboard Refresh Frequency](adjust-dashboard-refresh-frequency.md)
-* [Set the Dashboard Display Period](set-dashboard-display-period.md)
+* [Set a Dashboard Display Period](set-dashboard-display-period.md)
 * [Download a Dashboard](download-a-dashboard.md)
