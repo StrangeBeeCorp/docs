@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for deactivating the ability to [merge alerts into closed cases](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md) in TheHive.
 
-A closed case is defined as a case with a [status](../../../../administration/status/about-statuses.md) associated with the *Closed* stage.
+A closed case is one with a [status](../../../../administration/status/about-statuses.md) assigned to the *Closed* stage.
 
 By default, it's possible to merge alerts into a closed case. Use this procedure to restrict merging alerts into cases statuses linked to the *New* or *In progress* stages.
 
