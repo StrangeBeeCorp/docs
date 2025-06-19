@@ -29,3 +29,8 @@ If you want to know more about the KPIs available in TheHive, refer to the [Key 
 
 * [Measure Case Management Performance](measure-case-management-performance.md)
 * [Measure Alert Management Performance](measure-alert-management-performance.md)
+* [Pause Dashboard Refresh](../organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh.md)
+* [Remove the All Periods Option in a Dashboard](../organization/configure-organization/manage-ui-configuration/remove-all-periods-option.md)
+* [Prevent Users from Creating Empty Cases](../organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases.md)
+* [Prevent Users from Merging Alerts into Closed Cases](../organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases.md)
+* [Select Similar Cases and Alerts Filters](../organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters.md)

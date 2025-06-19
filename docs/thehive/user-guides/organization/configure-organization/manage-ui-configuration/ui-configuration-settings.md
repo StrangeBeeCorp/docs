@@ -18,3 +18,9 @@ This topic provides a list of all UI configuration settings available at the org
 | Hide time to resolve <!-- md:version 5.4 -->  | Hides the default [time to resolve](../../../key-performance-indicators/key-performance-indicators.md#time-to-resolve-ttr) indicator on cases and alerts when it's not useful or could be misleading for your organization. See [Hide Key Permormance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md) for detailed instructions. |
 
 <h2>Next steps</h2>
+
+* [Manage User Accounts](../manage-user-accounts/manage-user-accounts.md)
+* [Rename a Custom Tag](../manage-custom-tags/rename-a-custom-tag.md)
+* [Create a Case Page Template](../manage-templates/case-page-templates/create-a-case-page-template.md)
+* [Create a Case Report Template](../manage-templates/case-report-templates/create-a-case-report-template.md)
+* [Create a Case Template](../manage-templates/case-templates/create-a-case-template.md)

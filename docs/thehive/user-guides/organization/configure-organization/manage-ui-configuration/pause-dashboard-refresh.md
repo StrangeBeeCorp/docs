@@ -20,3 +20,9 @@ To reduce the refresh frequency while keeping it enabled, see [Adjust Dashboard 
 4. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
+* [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
+* [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)
+* [Select Similar Cases and Alerts Filters](select-similar-cases-alerts-filters.md)
+* [Hide Key Performance Indicators](../../../key-performance-indicators/hide-key-performance-indicators.md)
