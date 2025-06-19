@@ -4,7 +4,9 @@
 
 TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
 
-These KPIs are displayed by default on all cases and alerts in TheHive. You can also integrate them into dashboards and case reports.
+These KPIs are displayed by default on all cases and alerts in TheHive. However, you can [hide some or all indicators](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md) if they're not useful or may be misleading for your organization.
+
+You can also include these KPIs in dashboards and case reports.
 
 This topic defines each of these indicators.
 
@@ -62,6 +64,6 @@ For more information on these KPIs, consult this [SecurityScorecard blog post](h
 <h2>Next steps</h2>
 
 * [Date Field Definitions for Alerts and Cases](../date-field-definitions-alerts-cases.md)
-* [Hide Key Performance Indicators](hide-key-performance-indicators.md)
+* [Hide Key Performance Indicators](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)
 * [Measure Alert Performance](measure-alert-management-performance.md)

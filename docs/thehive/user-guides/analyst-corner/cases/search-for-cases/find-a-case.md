@@ -27,6 +27,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.*
 
+{!includes/similar-cases-alerts-filters.md!}
+
 1. Open a case, an alert, or a task, and select the **Similar cases** tab.
 
     ![Similar cases](../../../../images/user-guides/analyst-corner/cases/similar-cases.png)
