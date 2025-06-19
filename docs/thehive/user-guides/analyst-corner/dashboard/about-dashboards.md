@@ -61,5 +61,6 @@ Every user has read access to the dashboards within their organization and can e
 * [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Export or Import a Dashboard](export-import-a-dashboard.md)
+* [Adjust Dashboard Refresh Frequency](adjust-dashboard-refresh-frequency.md)
 * [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)
