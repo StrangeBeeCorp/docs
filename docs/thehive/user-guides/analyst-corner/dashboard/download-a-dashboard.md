@@ -29,4 +29,5 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 * [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Adjust Dashboard Refresh Frequency](adjust-dashboard-refresh-frequency.md)
+* [Set the Dashboard Display Period](set-dashboard-display-period.md)
 * [Delete a Dashboard](delete-a-dashboard.md)
