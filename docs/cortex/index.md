@@ -78,4 +78,3 @@ Information, news and updates are regularly posted on several communication chan
 
 ![StrangeBee](./images/strangebee.png){: align=left width=120 }
 Since 2018, Cortex is fully developped and maintained by [StrangeBee](https://www.strangebee.com). Should you need specific assistance, be aware that StrangeBee also provides professional services and support.
-

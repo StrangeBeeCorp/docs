@@ -6,7 +6,7 @@ Comments are visible to all organizations that share the case or alert.
 
 Use this procedure to provide feedback or leave notes for your team.
 
-{!includes/access-comment-on-cases-alerts.md!}
+{!includes/access-comment-cases-alerts.md!}
 
 <h2>Procedure</h2>
 
