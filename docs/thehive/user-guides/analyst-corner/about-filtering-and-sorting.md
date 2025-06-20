@@ -2,8 +2,8 @@
 
 This topic explains how filtering and sorting work in TheHive.
 
-!!! note "Beta feature available"
-    <!-- md:version 5.5.4 --> A beta feature is available to test a new UI for filters and views, designed to improve usability and enhance the user experience. Currently, this feature applies only to lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+!!! info "Beta feature available for filters and views"
+    <!-- md:version 5.5.4 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
 
 ## Filtering elements
 
