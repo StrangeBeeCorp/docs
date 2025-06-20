@@ -27,4 +27,4 @@ A preview appears when you hover over an item and select the :fontawesome-solid-
 
 * [About Autorefresh](about-autorefresh.md)
 * [About Filtering and Sorting](about-filtering-and-sorting.md)
-* [About Views](about-views.md)
+* [About Views](./views/about-views.md)

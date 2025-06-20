@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for adding an [observable](about-observables.md) to a case or alert in TheHive.
 
+Observables are data points that represent specific events or properties within a system and can be directly observed. They serve as indicators monitored for signs of suspicious or malicious activity.
+
 {!includes/access-manage-observables.md!}
 
 <h2>Procedure</h2>

@@ -1,2 +1,0 @@
-!!! note "Temporary vs. permanent knowledge"
-    Case-level pages are intended for temporary documentation, useful during investigations but not necessarily retained long-term, and they can't be searched. In contrast, organization-level pages store knowledge that should be preserved for future reference. If you need to retain information from case pages, you must manually copy the content to an organization-level page.

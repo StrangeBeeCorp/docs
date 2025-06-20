@@ -45,7 +45,7 @@ Data in certain widgets can also be hidden by selecting the corresponding item i
 
 Organizing dashboards into groups makes them easier to find and use. Use the **Show items as group** button available on the dashboards list to organize dashboards by type.
 
-Apply [filters and sorting](../../analyst-corner/about-filtering-and-sorting.md) to help locate specific dashboards. These preferences can be saved using [views](../../analyst-corner/about-views.md).
+Apply [filters and sorting](../../analyst-corner/about-filtering-and-sorting.md) to help locate specific dashboards. These preferences can be saved using [views](../views/about-views.md).
 
 ## Permissions
 
