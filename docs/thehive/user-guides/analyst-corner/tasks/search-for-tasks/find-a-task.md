@@ -19,6 +19,11 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. {!includes/apply-filters.md!}
 
+    {!includes/views-filters-sorts.md!}
+
+    !!! info "Beta feature available for filters and views"
+        <!-- md:version 5.5.4 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+
 3. {!includes/search-results.md!}
 
 !!! tip "Show tasks per group"
@@ -36,9 +41,12 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 2. {!includes/apply-filters.md!}
 
-3. {!includes/search-results.md!}
+    {!includes/views-filters-sorts.md!}
 
-{!includes/views-filters-sorts.md!}
+    !!! info "Beta feature available for filters and views"
+        <!-- md:version 5.5.4 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+
+3. {!includes/search-results.md!}
 
 ---
 
