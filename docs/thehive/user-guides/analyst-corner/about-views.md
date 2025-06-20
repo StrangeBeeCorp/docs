@@ -4,6 +4,9 @@ Views save [filters and sorting](about-filtering-and-sorting.md) applied to a li
 
 This topic explains how views function in TheHive.
 
+!!! note "Beta feature available"
+    <!-- md:version 5.5.4 --> A beta feature is available to test a new UI for filters and views, designed to improve usability and enhance the user experience. Currently, this feature applies only to lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+
 ## Default view
 
 A *Default* view without filters or sorting is always available. Modifying or deleting this view isn't permitted.

@@ -72,6 +72,28 @@ Use this procedure to add an extra layer of security to your account.
 
 4. Select **Confirm**.
 
+## Activate the beta of filters and views
+
+<!-- md:version 5.5.4 -->
+
+A beta feature is available to test a new UI for [filters](./analyst-corner/about-filtering-and-sorting.md) and [views](./analyst-corner/about-views.md), designed to improve usability and enhance the user experience. Currently, this feature applies only to lists of cases, alerts, tasks, and observables.
+
+!!! note "Views persistence"
+    This beta feature is intended for one-time testing only:
+
+    * When you activate the beta for the first time, views from the current version are automatically copied to the beta. However, if you deactivate and then reactivate the beta, views will not be copied again.
+    * Views you create while using the beta will not be retained in version 5.6 and will be lost if you deactivate the beta.
+
+1. {!includes/user-symbol-go-to.md!}
+
+2. Select **Settings**.
+
+3. In the **Options** tab, turn on the **Use the new beta filters view** toggle.
+
+    ![Beta filters views](../images/user-guides/beta-filters-views.png)
+
+4. Select **Confirm**.
+
 <h2>Next steps</h2>
 
 * [Log Out of your Account](log-out.md)
