@@ -695,6 +695,9 @@ Install TheHive package by using the following commands:
 
 The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
 
+!!! danger "Configuring baseURL"
+    Correct baseURL configuration is essential for TheHive. If misconfigured, Single Sign-On (SSO) doesn't work.
+
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
     [..]
@@ -706,7 +709,6 @@ The setup provided with binary packages is tailored for a standalone installatio
 
     1. :fontawesome-solid-laptop: Define the scheme, hostname, and port for accessing the application
     2. :fontawesome-brands-safari: Indicate if a custom path is being used (default is /)
-
 
 The following configurations are necessary for successful initiation of TheHive:
 
