@@ -696,7 +696,9 @@ Install TheHive package by using the following commands:
 The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
 
 !!! danger "Configuring baseURL"
-    Correct baseURL configuration is essential for TheHive. If misconfigured, Single Sign-On (SSO) doesn't work.
+    Correct baseURL configuration is essential for TheHive. Make sure the baseURL exactly matches the URL users use to access TheHive, including the protocol and any path segments.
+
+    Incorrect configuration causes Single Sign-On (SSO) to fail.
 
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
