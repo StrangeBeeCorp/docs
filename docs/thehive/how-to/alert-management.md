@@ -32,3 +32,5 @@ Observables from the alert can be further analyzed either by the analysts or by 
 ![Alert observable analyzers](../images/how-to/alert-management/alert_observable_jobs.png)
 
 Finally, depending on the analyst investigation, an alert can be closed (marked as "False Positive", "Duplicate", "Ignored" or an other custom status) or a case can be created to pursue the investigation.
+
+
