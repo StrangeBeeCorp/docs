@@ -5,17 +5,17 @@ title: Home
 <div>
   <figure align="center">
     <img src="./images/cortex-logo.png"width="600"/>  
-    <figcaption>Cortex : Installation, operation and user guides</>
+    <figcaption>Cortex : Installation, operation and user guides</figcaption>
   </figure>
 </div>
 <div>
   <p align="center">
-    <a href="https://chat.thehive-project.org" target"_blank"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true&logo=discord" alt="Discord"></a>
-    <a href="https://chat.thehive-project.org" target"_blank">
+    <a href="https://chat.thehive-project.org" target="_blank"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true&logo=discord" alt="Discord"></a>
+    <a href="https://chat.thehive-project.org" target="_blank">
       <img src="https://img.shields.io/discord/779945042039144498" alt="Discord">
     </a>
-    <a href="./LICENSE" target"_blank"><img src="https://img.shields.io/github/license/TheHive-Project/Cortex" alt="License"></a>
-    <a href><img src="https://img.shields.io/github/v/release/thehive-project/Cortex?style=flat&logo=git-lfs" alt="Version"></a>          
+    <a href="./LICENSE" target="_blank"><img src="https://img.shields.io/github/license/TheHive-Project/Cortex" alt="License"></a>
+    <img src="https://img.shields.io/github/v/release/thehive-project/Cortex?style=flat&logo=git-lfs" alt="Version">         
   </p>
 </div>
 
@@ -51,7 +51,7 @@ Many features are included with Cortex:
 ## Installation and configuration guides
 [This documentation](./installation-and-configuration/index.md) contains step-by-step installation instructions for Cortex for different operating systems as well as corresponding binary archives. 
 
-All aspects of the configuration are aslo detailled in a dedicated section.
+All aspects of the configuration are also detailed in a dedicated section.
 s
 ## User guides
 The [first connection](user-guides/first-start.md) to the application requires several actions. 
@@ -78,4 +78,3 @@ Information, news and updates are regularly posted on several communication chan
 
 ![StrangeBee](./images/strangebee.png){: align=left width=120 }
 Since 2018, Cortex is fully developped and maintained by [StrangeBee](https://www.strangebee.com). Should you need specific assistance, be aware that StrangeBee also provides professional services and support.
-
