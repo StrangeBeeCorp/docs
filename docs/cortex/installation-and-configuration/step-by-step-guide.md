@@ -196,7 +196,7 @@ Cortex is available in Debian, RPM, and binary (zip archive) formats. All packag
 Ensure your system is up to date before installing Cortex. Run the following commands:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo tee /usr/share/keyrings/thehive-project.gpg > /dev/null
+curl -sSL https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg > /dev/null
 ```
 
 Add the repository to your system:
