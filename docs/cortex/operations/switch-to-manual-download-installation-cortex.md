@@ -1,14 +1,15 @@
-# How to Switch to Manual Download and Installation for TheHive and Cortex
+# How to Switch to Manual Download and Installation for Cortex
 
-This topic provides step-by-step instructions for switching from APT and YUM repositories to a manual process for installing and upgrading TheHive and Cortex, following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-notice.md).
+This topic provides step-by-step instructions for switching from APT and YUM repositories to a manual process for installing and upgrading Cortex, following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-notice.md).
+
+For instructions on performing the same process for TheHive, see [Switch to Manual Download and Installation for TheHive](../../../cortex/operations/switch-to-manual-download-installation-thehive.md).
 
 !!! info "Are you concerned?"
-    
-    Use this procedure if you currently install or update TheHive and Cortex on-premises on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
+    Use this procedure if you currently install or update Cortex on-premises on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
 
-    You aren't affected if you use the SaaS solution or run TheHive and Cortex through Docker deployments.
+    You aren't affected if you use the SaaS solution or run Cortex through Docker deployments.
 
-    If you are a new user, follow the updated instructions in [TheHive](../../installation/step-by-step-installation-guide.md) and [Cortex](../../../cortex/installation-and-configuration/step-by-step-guide.md) step-by-step installation guides.
+    If you are a new user, follow the updated instructions in the [step-by-step installation guide](../installation-and-configuration/step-by-step-guide.md)
 
 !!! warning "Prerequisites"
     Before starting this procedure, check that you have installed the following tools:
@@ -24,21 +25,21 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
     === "Debian-based systems (Ubuntu, Debian)"
 
         ```bash
-        wget https://download.strangebee.com/thehive-x.y.z.deb
+        wget https://cortex.download.strangebee.com/cortex-x.y.z.deb
         ```
 
         ```bash
-        curl -O https://download.strangebee.com/thehive-x.y.z.deb
+        curl -O https://cortex.download.strangebee.com/cortex-x.y.z.deb
         ```
 
     === "RHEL-based systems (CentOS, Fedora, Rocky Linux)"
 
         ```bash
-        wget https://download.strangebee.com/thehive-x.y.z.rpm
+        wget https://cortex.download.strangebee.com/cortex-x.y.z.rpm
         ```
 
         ```bash
-        curl -O https://download.strangebee.com/thehive-x.y.z.rpm
+        curl -O https://cortex.download.strangebee.com/cortex-x.y.z.rpm
         ```
 
 2. Verify the downloaded package.
@@ -46,13 +47,13 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
     * Match the SHA256 checksum against the value provided alongside the package link.
 
     ```bash
-    sha256sum thehive-latest.deb
+    sha256sum cortex-latest.deb
     ```
 
     * Verify the GPG signature using the public key available at XXX.
 
     ```bash
-    gpg --verify thehive-latest.deb.sig thehive-latest.deb
+    gpg --verify cortex-latest.deb.sig cortex-latest.deb
     ```
 
 3. Install the package.
@@ -60,7 +61,7 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
     === "Debian-based systems"
 
         ```bash
-        sudo dpkg -i thehive-x.y.z.deb
+        sudo dpkg -i cortex-x.y.z.deb
         ```
 
         Then, resolve any missing dependencies:
@@ -72,7 +73,7 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
     === "RHEL-based systems"
 
         ```bash
-        sudo rpm -ivh thehive-x.y.z.rpm
+        sudo rpm -ivh cortex-x.y.z.rpm
         ```
 
 4. Remove the old repository to avoid stale configurations.
