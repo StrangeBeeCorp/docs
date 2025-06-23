@@ -34,4 +34,5 @@ If you currently install or update TheHive and Cortex using `apt-get install`, `
 
 <h2>Next steps</h2>
 
-* [Switch to Manual Download and Installation](switch-to-manual-download-installation.md)
+* [Switch to Manual Download and Installation for TheHive](switch-to-manual-download-installation-thehive.md)
+* [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md)
