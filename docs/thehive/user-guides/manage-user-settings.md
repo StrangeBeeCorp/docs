@@ -74,7 +74,7 @@ Use this procedure to add an extra layer of security to your account.
 
 ## Activate the beta of filters and views
 
-<!-- md:version 5.5.4 -->
+<!-- md:version 5.5.5 -->
 
 A beta feature to enhance user experience for [filters](./analyst-corner/about-filtering-and-sorting.md) and [views](./analyst-corner/about-views.md) is available for testing on lists of cases, alerts, tasks, and observables.
 
