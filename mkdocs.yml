@@ -312,6 +312,7 @@ plugins:
 
 extra:
   generator: false
+
   social:
     - icon: fontawesome/brands/linkedin
       link: "https://www.linkedin.com/company/strangebee"
@@ -323,9 +324,44 @@ extra:
       link: "https://chat.thehive-project.org"
     - icon: fontawesome/brands/youtube
       link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
-  analytics:
-    provider: google
-    property: G-W7W9113BRP
+
+  header:
+    logo: '/assets/images/StrangeBee_Landscape.svg'
+  
+  footer:
+    logo: '/assets/images/StrangeBee_Footer.svg'
+    text: 'Empowering incident responders worldwide'
+    links:
+      - text: "link 1"
+        url: '#'        
+      - text: "link 2"
+        url: '#'
+        
+    groups:
+      - name: "group 1"
+        link:
+          text: 'View all features'
+          url: '#'
+        links:
+          - text: "link 1"
+            url: '#'
+            tag: 'On-prem'
+          - text: "link 2"
+            url: '#'
+      - name: "group 2"
+        link:
+          text: 'View all features'
+          url: '#'
+        links:
+          - text: "link 1"
+            url: '#'
+            tag: 'On-prem'
+          - text: "link 2"
+            url: '#'
+
+    analytics:
+      provider: google
+      property: G-W7W9113BRP
 
 markdown_extensions:
   - toc:
