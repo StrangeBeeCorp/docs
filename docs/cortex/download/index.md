@@ -11,7 +11,7 @@ Cortex is available in multiple binary package formats, making installation flex
 Before adding the repository, import TheHive project's GPG key for package verification:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project-archive-keyring.gpg
+curl -sSL https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg
 ```
 
 ### Step 2: Add TheHive Project Repository  

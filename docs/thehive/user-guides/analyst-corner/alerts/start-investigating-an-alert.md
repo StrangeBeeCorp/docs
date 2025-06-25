@@ -14,7 +14,7 @@ Use this procedure to start investigating a new alert and change its [status](..
 
     ![Start investigating an alert](../../../images/user-guides/analyst-corner/alerts/start-an-alert.png)
 
-3. In the **Change the alert status** drawer, update the [status](change-status-alert.md) for the alert, write an initial analysis, and assign it to someone else if needed.
+3. In the **Change the alert status** drawer, update the status for the alert, write an initial analysis, and assign it to someone else if needed.
 
 4. Select **Confirm**.
 
