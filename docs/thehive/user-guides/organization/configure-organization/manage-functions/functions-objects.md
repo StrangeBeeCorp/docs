@@ -57,6 +57,7 @@ This topic lists all available objects for functions in TheHive.
 * `caze.bulkUpdate(update: {ids: string[]} & InputUpdateCase): void `: Updates multiple cases simultaneously.
 * `caze.bulkApplyCaseTemplate(update: {ids: string[]} & InputApplyCaseTemplate): void`: Applies a case template to multiple cases.
 * `caze.find(query: any[]): OutputCase[]`: Searches for cases based on a query.
+* `caze.manageCaseAccess(idOrNumber: string, accessDetails: { users: string[], _kind: "UserAccessKind" } | { _kind: "OrganisationAccessKind" }): void`: Sets the access level for a case. Use `UserAccessKind` to restrict access to specific users. The user list must include at least the case assignee and the user making the request. Use `OrganisationAccessKind` to make the case public to the organization.
 
 ## Tasks
 
