@@ -18,7 +18,7 @@ Fixed a regression where the `creationDate` field wasn't automatically set to th
 
 ### Improvements
 
-* Functions: Added the ability to switch a case to restricted mode using a function.
+* Functions: Added the ability to [switch a case to restricted mode using a function](../user-guides/organization/configure-organization/manage-functions/functions-objects.md#case).
 * Docker image: Introduced a new entry point to support custom certificate authority (CA) handling
 
 ### Other fixes
