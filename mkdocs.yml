@@ -359,9 +359,9 @@ extra:
           - text: "link 2"
             url: '#'
 
-    analytics:
-      provider: google
-      property: G-W7W9113BRP
+  analytics:
+    provider: google
+    property: G-W7W9113BRP
 
 markdown_extensions:
   - toc:
