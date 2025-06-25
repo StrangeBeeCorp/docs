@@ -8,10 +8,6 @@
 
 ## 5.5.4 - June 25, 2025
 
-### Security fixes
-
-Removed an unused dependency that presented a security vulnerability.
-
 ### Regression fixes
 
 Fixed a regression where the `creationDate` field wasn't automatically set to the current date when creating a new case.
