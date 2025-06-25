@@ -1,4 +1,4 @@
-copyright: Copyright 2025 StrangeBee. All rights reserved.
+copyright: Copyright 2025 StrangeBee. All rights reserved.111
 site_name: TheHive 5 Documentation
 site_url: https://docs.strangebee.com
 theme:
@@ -41,6 +41,10 @@ watch:
 extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/badge.css
+  - assets/stylesheets/front.css
+
+extra_javascript:
+  - assets/js/main.js
 
 hooks:
   - ./overrides/hooks/shortcodes.py
@@ -312,7 +316,6 @@ plugins:
 
 extra:
   generator: false
-
   social:
     - icon: fontawesome/brands/linkedin
       link: "https://www.linkedin.com/company/strangebee"
@@ -324,7 +327,7 @@ extra:
       link: "https://chat.thehive-project.org"
     - icon: fontawesome/brands/youtube
       link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
-
+  
   header:
     logo: '/assets/images/StrangeBee_Landscape.svg'
   
@@ -358,7 +361,7 @@ extra:
             tag: 'On-prem'
           - text: "link 2"
             url: '#'
-
+  
   analytics:
     provider: google
     property: G-W7W9113BRP
