@@ -3,7 +3,6 @@
 #   - navigation
 #   - toc
 template: home.html
----
 
 hero:
   title: 'TheHive technical *documentation*'
