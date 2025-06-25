@@ -6,6 +6,25 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.4 - June 25, 2025
+
+### Regression fixes
+
+Fixed a regression where the `creationDate` field wasn't automatically set to the current date when creating a new case.
+
+### Improvements
+
+* Functions: Added the ability to [switch a case to restricted mode using a function](../user-guides/organization/configure-organization/manage-functions/functions-objects.md#case).
+* Docker image: Introduced a new entry point to support custom certificate authority (CA) handling
+
+### Other fixes
+
+* Alert status: Fixed a display issue with the import date in alert status.
+* Restricted cases: Resolved a bug affecting similarity checks for restricted cases.
+* Case links: Fixed duplication issues when importing multiple alerts containing identical links.
+* Description field: Improved visibility of the resize button in Chrome-based browsers.
+* Filters: Fixed sorting issue in the case list when using the `title` field.
+
 ## 5.5.3 - June 2, 2025
 
 ### Regression fixes
