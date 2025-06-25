@@ -1,0 +1,33 @@
+<footer class="footer pad">
+        <div class="content">
+            <div class="head">
+                <div class="img-frame logo"><img src="{{ config.extra.footer.logo }}" alt="StrangeBee"></div>
+                <div class="info flex-col-str">
+                    <div class="text">{{ config.extra.footer.text }}</div>
+                </div>
+                <div class="links">
+                    {% for gr in config.extra.footer.groups %}
+                    <div class="pan flex-col-str" data-marker>
+                        <span data-mark>{{ gr.name }}</span>
+                        <div class="list flex-col-str">
+                            <div>
+                              {% for lnk in gr.links %}<a href="{{ lnk.url }}">{{ lnk.text }}{% if lnk.tag %} <b>{{ lnk.tag }}</b>{% endif %}</a>{% endfor %}
+                            </div>
+                            {% if gr.link %}<a href="{{ gr.link.url }}" class="has-icon-end">{{ gr.link.text }}</a>{% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="foot">
+                <div class="copy">{{ config.copyright }}</div>
+                <div class="links">
+                  {% for lnk in config.extra.footer.links %}
+                  {% if not loop.first %}<i></i>{% endif %}
+                  <a href="{{ lnk.url }}">{{ lnk.text }}</a>
+                  {% endfor %}           
+                </div>
+                <a rel="nofollow" href="https://amprisedesign.com" class="amprise-identity" target="_blank">Website made by <b>AmpriseDesign.com</b></a>
+            </div>
+        </div>
+    </footer>    
