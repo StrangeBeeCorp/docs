@@ -6,17 +6,17 @@ Use this procedure before granting access to other users.
 
 ## Step 1: Log in with the default credentials
 
-=== "On-premises"
+=== "TheHive On-prem"
 
     !!! warning "Requirements"
         This procedure assumes that you have already installed TheHive using the [step-by-step installation guide](../installation/step-by-step-installation-guide.md) and that TheHive is up and running.
 
-    1. Launch your web browser.
+    1. Open your web browser.
 
     2. Browse to `http://<your-server-address>:9000/`.
 
-        !!! tip "Don't know your server address?"
-            Check the `application.conf` configuration file for the `application.baseUrl` value.
+        !!! tip "Not sure of your server address?"
+            Check the `application.conf` configuration file for the `application.baseUrl` setting.
 
     3. Enter the default credentials.
 
@@ -25,9 +25,17 @@ Use this procedure before granting access to other users.
 
     4. Select **Let me in**.
 
-=== "SaaS"
+=== "TheHive Cloud Platform"
 
-    XXX
+    1. Check the email you received for the address and default credentials to use.
+
+    2. Open your web browser.
+
+    3. Browse to the address.
+
+    4. Enter the default credentials.
+
+    5. Select **Let me in**.
 
 ## Step 2: Change your password
 
@@ -38,7 +46,7 @@ For detailed instructions, see [Edit your password](../user-guides/manage-passwo
 
 ## (Optional) Step 3: Activate your license
 
-!!! note "On-premises users only"
+!!! note "TheHive On-prem users only"
     License activation is only required for on-premises deployments. SaaS users aren't affected.
 
 Installing TheHive On-prem includes a 14-day Platinum trial license with two users and one organization. If you complete the setup within this period, the license is already activated, and no further action is needed.
