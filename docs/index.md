@@ -175,10 +175,6 @@ sections:
           links: 
             - text: 'Complete the initial login'
               url: '/thehive/administration/first-start/'
-            - text: 'Change the default admin password'
-              url: '/thehive/administration/first-start/'
-            - text: 'Create organizations and define sharing rules'
-              url: '/thehive/administration/organizations/create-an-organization/'
             - text: 'Assign users with the right permissions'
               url: '/thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/'
             - text: 'Set up LDAP integration'
