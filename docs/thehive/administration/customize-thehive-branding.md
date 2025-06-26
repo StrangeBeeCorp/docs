@@ -66,3 +66,5 @@ Use this procedure to personalize the application with your brand name and logo.
 4. Select **Confirm**.
 
 <h2>Next steps</h2>
+
+* [Change a Status Color](./status/change-color-of-a-status.md)
