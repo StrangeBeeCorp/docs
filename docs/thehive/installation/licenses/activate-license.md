@@ -1,15 +1,6 @@
 # Activating TheHive License
 
 
-
-### 1. Retrieve the Challenge from Your TheHive Instance
-
-Open your TheHive instance in a new browser tab, navigate to **Admin > Platform Management > License Management**, and click **"Update the current license"** to display the challenge.
-
-![](../images/installation/update-license-button.png)
-
-&nbsp;
-
 ### 2. Generate Your License Key
 
 Copy the **Challenge** from TheHive, return to the StrangeBee License Portal, and paste it into the corresponding field on the license request page. Submit the form to generate your license key.
