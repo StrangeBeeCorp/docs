@@ -64,7 +64,7 @@ Limitations if trial
 
 ### Customize entities
 
-Profiles, custom fields, observable types, case and alert statuses, analyzer templates, taxonomies, and attack patterns.
+Profiles, custom fields, observable types, case and alert statuses, taxonomies, and attack patterns.
 
 <h2>Next steps</h2>
 
@@ -73,5 +73,3 @@ Profiles, custom fields, observable types, case and alert statuses, analyzer tem
 * [Add a Cortex Server](./cortex/add-a-cortex-server.md)
 * [Connect a Mailbox](./email-intake-connector/connect-a-mailbox.md)
 * [Create a Profile](./profiles/create-a-profile.md)
-* [Create a Custom Field](./custom-fields/create-a-custom-field.md)
-* [Create an Observable Type](./observable-types/create-an-observable-type.md)

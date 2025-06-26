@@ -36,3 +36,5 @@ The Community license is free and includes essential features to help you get st
     ![Get a Community license](../images/installation/get-a-community-license.png)
 
 <h2>Next steps</h2>
+
+* [Activate or Update a License](license.md)

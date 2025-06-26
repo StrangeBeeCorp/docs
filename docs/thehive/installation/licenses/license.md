@@ -54,3 +54,17 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 ![Video activate a TheHive license](../../images/installation/activate-license.mp4)
 
 <h2>Next steps</h2>
+
+* [Configure Authentication](./authentication/configure-authentication.md)
+* [Connect a MISP Server](./misp-integration/connect-a-misp-server.md)
+* [Add a Cortex Server](./cortex/add-a-cortex-server.md)
+* [Connect an SMTP Server](../../administration/smtp.md)
+* [Create an Organization](../../administration/organizations/create-an-organization.md)
+* [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md)
+* [Connect a Mailbox](./email-intake-connector/connect-a-mailbox.md)
+* [Create a Profile](./profiles/create-a-profile.md)
+* [Create a Custom Field](../../administration/custom-fields/create-a-custom-field.md)
+* [Create an Observable Type](../../administration/observable-types/create-an-observable-type.md)
+* [Create a Status](../../administration/status/create-a-status.md)
+* [Activate or Deactivate a Taxonomy](../../administration/taxonomies/activate-deactivate-a-taxonomy.md)
+* [Add a Tactics, Techniques and Procedures Catalog](../../administration/ttps/add-a-catalog.md)

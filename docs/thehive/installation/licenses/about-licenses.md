@@ -30,3 +30,6 @@ Each license type has specific [quotas](https://strangebee.com/thehive-pricing-o
 Check the pricing details and the full list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing-on-prem/).
 
 <h2>Next steps</h2>
+
+* [Request a Community License](request-a-community-license.md)
+* [Activate or Update a License](license.md)
