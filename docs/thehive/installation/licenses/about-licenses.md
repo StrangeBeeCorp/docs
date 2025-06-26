@@ -6,7 +6,7 @@ This topic presents the different types of licenses available for TheHive.
     Since Cortex is a fully open-source project, no license is required to use it.
 
 !!! tip "Platinum trial"
-    <!-- md:version 5.3 --> Installing TheHive On-prem includes a 14-day Platinum trial license. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
+    <!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
 
 !!! warning "Upgrading with Community license"
     If you're upgrading to TheHive version 5.3 or later from a TheHive 5.x Community edition, be sure to [request a Community license on the StrangeBee license portal](../../installation/licenses/request-a-community-license.md). Without this registration, your interface is limited to read-only mode.
