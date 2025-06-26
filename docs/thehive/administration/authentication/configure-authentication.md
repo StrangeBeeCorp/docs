@@ -61,7 +61,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 5. Select the authentication providers you want to configure.
 
     !!! warning "Paid license required"
-        A paid license is required to configure authentication providers other than the local database managed by TheHive.  
+        A [paid license](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
         A Platinum license is required to configure Active Directory, OAuth 2.0, and SAML authentication.
 
     **- Local authentication**

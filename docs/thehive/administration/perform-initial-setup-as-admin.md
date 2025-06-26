@@ -27,31 +27,29 @@ Use this procedure before granting access to other users.
 
 === "TheHive Cloud Platform"
 
-    1. Check the email you received for the address and default credentials to use.
+    1. Locate the email you received containing your URL and default credentials.
 
-    2. Open your web browser.
+    2. Open the provided URL in your browser.
 
-    3. Browse to the address.
+    3. Enter the default credentials.
 
-    4. Enter the default credentials.
-
-    5. Select **Let me in**.
+    4. Select **Let me in**.
 
 ## Step 2: Change your password
 
 !!! danger "Critical security risk"
-    Change the default password immediately after your first login to protect your TheHive instance. Default credentials are publicly known, and leaving them unchanged allows unauthorized access, risking sensitive data and system integrity.
+    Change the default password immediately after your first login to protect your TheHive instance. Default credentials for TheHive On-prem are publicly known, so leaving them unchanged allows unauthorized access, risking sensitive data and system integrity.
 
 For detailed instructions, see [Edit your password](../user-guides/manage-password.md#edit-your-password).
 
 ## (Optional) Step 3: Activate your license
 
 !!! note "TheHive On-prem users only"
-    License activation is only required for on-premises deployments. SaaS users aren't affected.
+    License activation is only necessary for on-premises deployments. TheHive Cloud Platform users aren't affected since the Platinum license is activated automatically.
 
-Installing TheHive On-prem includes a 14-day Platinum trial license with two users and one organization. If you complete the setup within this period, the license is already activated, and no further action is needed.
+<!-- md:version 5.3 --> Installing TheHive On-prem includes a 14-day Platinum trial license. If you complete the setup within this period, the license is already activated, and no further action is needed. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
 
-Only proceed with this step if your trial period has expired and you have acquired a valid license to activate, or if you want to activate a valid license immediately.
+Only proceed with this step if your trial period has expired and you have acquired a [valid license](../installation/licenses/about-licenses.md) to activate, or if you want to activate a valid license immediately.
 
 ## Step 4: Configure TheHive
 
