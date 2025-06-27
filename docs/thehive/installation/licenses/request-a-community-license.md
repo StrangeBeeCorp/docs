@@ -14,7 +14,7 @@ The Community license is free and includes essential features to help you get st
 
 1. Go to the [StrangeBee license portal registration page](https://portal.apps.strangebee.com/account/register){target=_blank}.
 
-    ![StrangeBee license portal registration page](../images/installation/strangebee-license-portal.png)
+    ![StrangeBee license portal registration page](../../images/installation/strangebee-license-portal.png)
 
 2. Create an account using your professional email address.
 
@@ -29,11 +29,11 @@ The Community license is free and includes essential features to help you get st
 
 6. Select **Request a Community license**.
 
-    ![Request a Community license](../images/installation/request-a-community-license.png)
+    ![Request a Community license](../../images/installation/request-a-community-license.png)
 
 7. In the drawer, select **Get a Community license**.
 
-    ![Get a Community license](../images/installation/get-a-community-license.png)
+    ![Get a Community license](../../images/installation/get-a-community-license.png)
 
 <h2>Next steps</h2>
 

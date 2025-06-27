@@ -48,13 +48,13 @@ For detailed instructions, see [Edit your Password](../user-guides/manage-passwo
 
 Only proceed with this step if your trial period has expired and you have acquired a [valid license](../installation/licenses/about-licenses.md) to activate, or if you want to activate a valid license immediately.
 
-For detailed instructions, see [Activate a License](../installation/licenses/activate-a-license.md).
+For detailed instructions, see [Activate a License](../installation/licenses/license.md).
 
 ## Step 4: Configure TheHive
 
 ### Configure an SMTP server
 
-See [Configure an SMTP server](configure-smtp-server.md) for detailed instructions.
+See [Configure an SMTP server](./smtp/configure-smtp-server.md) for detailed instructions.
 
 ### Create organizations
 
@@ -78,7 +78,7 @@ Customize the following elements for all your organizations:
 * [Create a custom field](./custom-fields/create-a-custom-field.md)
 * [Create an observable type](./observable-types/create-an-observable-type.md)
 * [Create a case or alert status](./status/create-a-status.md)
-* [Import analyzer templates](import-analyzer-templates.md)
+* [Import analyzer templates](./analyzer-templates/import-analyzer-templates.md)
 * [Activate a taxonomy](./taxonomies/activate-deactivate-a-taxonomy.md)
 * [Add a TTPs catalog](./ttps/add-a-catalog.md)
 
