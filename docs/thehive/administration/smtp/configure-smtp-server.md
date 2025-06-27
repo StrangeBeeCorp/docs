@@ -16,7 +16,7 @@ Use this procedure to enable sending [email notifications to specific users](../
 
     **- Server name or IP address \***
 
-    The hostname or IP address of your SMTP server.
+    The host name or IP address of your SMTP server.
 
     **- Port \***
 

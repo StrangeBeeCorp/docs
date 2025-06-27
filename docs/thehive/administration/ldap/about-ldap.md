@@ -2,11 +2,11 @@
 
 This topic explains what Lightweight Directory Access Protocol (LDAP) is and how it's used in TheHive.
 
-## What is LDAP
+## What's LDAP
 
-Lightweight Directory Access Protocol (LDAP) is a standard protocol used to access and manage directory information services over a network. It is commonly used for centralized authentication and user management.
+Lightweight Directory Access Protocol (LDAP) is a standard protocol used to access and manage directory information services over a network. It's commonly used for centralized authentication and user management.
 
-Active Directory (AD) is Microsoft’s implementation of directory services that uses LDAP as one of its core protocols, providing a comprehensive solution for identity and access management in Windows environments.
+Active Directory (AD) is Microsoft’s implementation of directory services. It uses LDAP as one of its core protocols, providing a comprehensive solution for identity and access management in Windows environments.
 
 ## Benefits of using an LDAP server
 

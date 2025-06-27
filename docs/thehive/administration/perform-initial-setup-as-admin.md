@@ -44,7 +44,7 @@ For detailed instructions, see [Edit your Password](../user-guides/manage-passwo
 
 ## (Optional) Step 3: Activate your license
 
-<!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. If you complete the setup within this period, the license is already activated, and no further action is needed. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
+<!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. If you complete the setup within this period, the license is already activated, and you don’t need to take further action. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
 
 Only proceed with this step if your trial period has expired and you have acquired a [valid license](../installation/licenses/about-licenses.md) to activate, or if you want to activate a valid license immediately.
 

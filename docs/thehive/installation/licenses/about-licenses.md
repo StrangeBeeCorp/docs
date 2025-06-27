@@ -3,7 +3,7 @@
 This topic presents the different types of licenses available for TheHive.
 
 !!! info "Cortex"
-    Since Cortex is a fully open-source project, no license is required to use it.
+    Since Cortex is a fully open-source project, you don't need a license to use it.
 
 !!! tip "Platinum trial"
     <!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.

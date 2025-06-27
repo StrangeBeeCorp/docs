@@ -10,7 +10,7 @@ Use this procedure to define templates for reports generated after [running an a
 
 1. {!includes/entities-management-view-go-to.md!}
 
-2. {!includes/analyzer-templates-go-to.md!}
+2. {!includes/analyzer-templates-tab-go-to.md!}
 
 3. Select **Import templates archive**.
 

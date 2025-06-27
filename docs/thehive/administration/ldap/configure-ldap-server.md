@@ -22,9 +22,9 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
     A descriptive name to identify this LDAP configuration within TheHive.
 
-    **- Servers hostname or IP address \***
+    **- Servers host name or IP address \***
 
-    The address of the LDAP server you want to connect to, either a hostname or an IP address.
+    The address of the LDAP server you want to connect to, either a host  name or an IP address.
 
     Example: *ldap.domain.local*
 

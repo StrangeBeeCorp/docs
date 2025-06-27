@@ -10,12 +10,12 @@ Use this procedure to customize templates for reports generated after [running a
 
 1. {!includes/entities-management-view-go-to.md!}
 
-2. {!includes/analyzer-templates-go-to.md!}
+2. {!includes/analyzer-templates-tab-go-to.md!}
 
 3. Select :fontawesome-solid-ellipsis: next to the analyzer template you want to customize.
 
     !!! tip "Can't find an analyzer template?"
-        Analyzer templates are displayed only if the corresponding analyzer is activated in Cortex and accessible from TheHive.
+        Analyzer templates are displayed only if the corresponding analyzer is activated in Cortex and available from TheHive.
 
 4. Select **Edit**.
 
