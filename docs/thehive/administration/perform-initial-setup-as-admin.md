@@ -35,7 +35,7 @@ Use this procedure before granting access to other users.
 
     4. Select **Let me in**.
 
-## Step 2: Change your password
+## Step 2: Change your default password
 
 !!! danger "Critical security risk"
     Change the default password immediately after your first login to protect your TheHive instance. Leaving them unchanged allows unauthorized access, risking sensitive data and system integrity.
@@ -52,21 +52,34 @@ For detailed instructions, see [Activate a License](../installation/licenses/act
 
 ## Step 4: Configure TheHive
 
-### Connect a SMTP server
+### Connect an SMTP server
 
-See [Connect a SMTP server](smtp.md) for detailed instructions.
+See [Connect an SMTP server](smtp.md) for detailed instructions.
 
 ### Create organizations
 
-Limitations if trial
+!!! note "Trial limitation"
+    During the Platinum trial period, you can create up to two organizations.
+
+See [Create an Organization](./organizations/create-an-organization.md) for detailed instructions.
 
 ### Create users
 
-Limitations if trial
+!!! note "Trial limitation"
+    During the Platinum trial period, you can create up to five users.
+
+See [Create a User Account](../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md) for detailed instructions.
 
 ### Customize entities
 
-Profiles, custom fields, observable types, case and alert statuses, taxonomies, and attack patterns.
+Customize the following elements for all your organizations:
+
+* [Create a profile](./profiles/create-a-profile.md)
+* [Create a custom field](./custom-fields/create-a-custom-field.md)
+* [Create an observable type](./observable-types/create-an-observable-type.md)
+* [Create a case or alert status](./status/create-a-status.md)
+* [Activate a taxonomy](./taxonomies/activate-deactivate-a-taxonomy.md)
+* [Add a TTPs catalog](./ttps/add-a-catalog.md)
 
 <h2>Next steps</h2>
 
@@ -74,4 +87,3 @@ Profiles, custom fields, observable types, case and alert statuses, taxonomies, 
 * [Connect a MISP Server](./misp-integration/connect-a-misp-server.md)
 * [Add a Cortex Server](./cortex/add-a-cortex-server.md)
 * [Connect a Mailbox](./email-intake-connector/connect-a-mailbox.md)
-* [Create a Profile](./profiles/create-a-profile.md)
