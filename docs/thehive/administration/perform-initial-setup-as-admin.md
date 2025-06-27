@@ -52,9 +52,9 @@ For detailed instructions, see [Activate a License](../installation/licenses/act
 
 ## Step 4: Configure TheHive
 
-### Connect an SMTP server
+### Configure an SMTP server
 
-See [Connect an SMTP server](smtp.md) for detailed instructions.
+See [Configure an SMTP server](configure-smtp-server.md) for detailed instructions.
 
 ### Create organizations
 

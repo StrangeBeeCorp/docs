@@ -58,7 +58,7 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 * [Configure Authentication](./authentication/configure-authentication.md)
 * [Connect a MISP Server](./misp-integration/connect-a-misp-server.md)
 * [Add a Cortex Server](./cortex/add-a-cortex-server.md)
-* [Connect an SMTP Server](../../administration/smtp.md)
+* [Configure an SMTP Server](../../administration/configure-smtp-server.md)
 * [Create an Organization](../../administration/organizations/create-an-organization.md)
 * [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md)
 * [Connect a Mailbox](./email-intake-connector/connect-a-mailbox.md)
