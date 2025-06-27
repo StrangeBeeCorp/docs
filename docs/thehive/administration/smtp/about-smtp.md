@@ -22,6 +22,10 @@ Using an SMTP server:
 * [Email notifications to all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md)
 * [Emails for password resets and edits](../../user-guides/manage-password.md)
 
+## Permissions
+
+{!includes/administrator-access-configure-smtp.md!}
+
 <h2>Next steps</h2>
 
 * [Configure an SMTP Server](configure-smtp-server.md)

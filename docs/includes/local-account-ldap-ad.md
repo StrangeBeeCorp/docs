@@ -1,0 +1,2 @@
+!!! info "Local account"
+    Users must have an existing account in TheHive's local database to authenticate successfully. [Configure an LDAP server](/thehive/administration/ldap/configure-ldap-server/) to automate account creation, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.
