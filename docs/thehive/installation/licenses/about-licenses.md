@@ -11,6 +11,8 @@ This topic presents the different types of licenses available for TheHive.
 !!! warning "Upgrading with Community license"
     If you're upgrading to TheHive version 5.3 or later from a TheHive 5.x Community edition, be sure to [request a Community license on the StrangeBee license portal](../../installation/licenses/request-a-community-license.md). Without this registration, your interface is limited to read-only mode.
 
+## Terms and quotas
+
 Each license includes validation and expiration dates.
 
 Each license type has specific [quotas](https://strangebee.com/thehive-pricing-on-prem/) for:
@@ -18,14 +20,16 @@ Each license type has specific [quotas](https://strangebee.com/thehive-pricing-o
 * Number of users: Only unlocked user accounts of type Normal count toward the license limit. User accounts of type Service and those with unlicensed permissions aren't limited.
 * Number of organizations: Only unlocked organizations count toward the license limit.
 * Number of instances
-* Number of Cortex servers you can connect
-* Number of MISP servers you can connect
+* Number of Cortex servers
+* Number of MISP servers
 
-| License     | Solution availability       | Purpose | Pricing |
+## Types and pricing
+
+| License type    | Supported solution       | Purpose | Pricing |
 | :---------- | :---------------------      |  :---------------------      | :---------------------      |
-| <!-- md:license Community -->   |  On-prem                    | Essential features to get started with TheHive or for users with basic needs. | Free |
-| <!-- md:license Gold -->       |  On-prem                    | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. | Requires purchase by [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/)|
-| <!-- md:license Platinum -->    |  On-prem and Cloud Platform | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. | Requires purchase by [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/) |
+| Community   |  On-prem                    | Essential features to get started with TheHive or for users with basic needs. | Free |
+| Gold       |  On-prem                    | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. | Requires purchase by [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/)|
+| Platinum    |  On-prem and Cloud Platform | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. | Requires purchase by [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/) |
 
 Check the pricing details and the full list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing-on-prem/).
 

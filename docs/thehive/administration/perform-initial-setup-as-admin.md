@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for performing the initial login and setup as an administrator in TheHive.
 
-Use this procedure before granting access to other users.
+Use this procedure at first start, before granting access to other users.
 
 ## Step 1: Log in with the default credentials
 
@@ -40,7 +40,7 @@ Use this procedure before granting access to other users.
 !!! danger "Critical security risk"
     Change the default password immediately after your first login to protect your TheHive instance. Leaving them unchanged allows unauthorized access, risking sensitive data and system integrity.
 
-For detailed instructions, see [Edit your Password](../user-guides/manage-password.md#edit-your-password).
+See [Edit your Password](../user-guides/manage-password.md#edit-your-password) for detailed instructions.
 
 ## (Optional) Step 3: Activate your license
 
@@ -48,7 +48,7 @@ For detailed instructions, see [Edit your Password](../user-guides/manage-passwo
 
 Only proceed with this step if your trial period has expired and you have acquired a [valid license](../installation/licenses/about-licenses.md) to activate, or if you want to activate a valid license immediately.
 
-For detailed instructions, see [Activate a License](../installation/licenses/license.md).
+See [Activate a License](../installation/licenses/license.md) for detailed instructions.
 
 ## Step 4: Configure TheHive
 
@@ -74,13 +74,13 @@ See [Create a User Account](../user-guides/organization/configure-organization/m
 
 Customize the following elements for all your organizations:
 
-* [Create a profile](./profiles/create-a-profile.md)
-* [Create a custom field](./custom-fields/create-a-custom-field.md)
-* [Create an observable type](./observable-types/create-an-observable-type.md)
-* [Create a case or alert status](./status/create-a-status.md)
-* [Import analyzer templates](./analyzer-templates/import-analyzer-templates.md)
-* [Activate a taxonomy](./taxonomies/activate-deactivate-a-taxonomy.md)
-* [Add a TTPs catalog](./ttps/add-a-catalog.md)
+* [Profiles](./profiles/create-a-profile.md)
+* [Custom fields](./custom-fields/create-a-custom-field.md)
+* [Observable types](./observable-types/create-an-observable-type.md)
+* [Case and alert statuses](./status/create-a-status.md)
+* [Analyzer templates](./analyzer-templates/import-analyzer-templates.md)
+* [Taxonomies](./taxonomies/activate-deactivate-a-taxonomy.md)
+* [TTPs](./ttps/add-a-catalog.md)
 
 <h2>Next steps</h2>
 

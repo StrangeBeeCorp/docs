@@ -16,7 +16,7 @@ Use this procedure to personalize the application with your brand name and logo.
 
 2. {!includes/branding-tab-go-to.md!}
 
-3. Enter a new title.
+3. Enter a new title in the **Title** field.
 
 4. Select **Confirm**.
 
@@ -31,6 +31,7 @@ Use this procedure to personalize the application with your brand name and logo.
 3. Select a login page logo.
 
     Accepted formats: JPEG, JPG, and PNG.
+
     Recommended size: 200x200 pixels.
 
 4. Select **Confirm**.
@@ -46,6 +47,7 @@ Use this procedure to personalize the application with your brand name and logo.
 3. Select a navigation bar logo.
 
     Accepted formats: JPEG, JPG, and PNG.
+
     Recommended size: 84x84 pixels.
 
 4. Select **Confirm**.
@@ -61,6 +63,7 @@ Use this procedure to personalize the application with your brand name and logo.
 3. Select a favicon.
 
     Accepted formats: JPEG, JPG, PNG, and ICO.
+    
     Recommended size: 42x42 pixels.
 
 4. Select **Confirm**.
