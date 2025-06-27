@@ -55,7 +55,9 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 
 3. Select **Activate the license key**.
 
-![Video activate a TheHive license](../../images/installation/activate-license.mp4)
+<video width="600" controls>
+  <source id=mp4 src="/thehive/images/administration-guides/activate-license.mp4" type="video/mp4">
+</video>
 
 <h2>Next steps</h2>
 

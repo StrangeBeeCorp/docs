@@ -10,7 +10,11 @@ Use this procedure to enable sending [email notifications to specific users](../
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/smtp-tab-go-to.md!}
+
+    ---
 
 3. In the **Server settings** section, enter the following information:
 
@@ -26,6 +30,8 @@ Use this procedure to enable sending [email notifications to specific users](../
 
     The email address that appears as the sender of the emails.
 
+    ---
+
 4. In the **Security and authentication settings** section, enter the following information:
 
     **- Connection security \***
@@ -40,9 +46,15 @@ Use this procedure to enable sending [email notifications to specific users](../
 
     The corresponding password for the SMTP username.
 
+    ---
+
 5. Select **Test SMTP configuration** to verify the connection settings. You should receive an email confirming the result of the test.
 
+    ---
+
 6. In the **Reset Password** section, set the token expiration duration to control how long password reset tokens stay valid before they expire. This limits the time users have to complete a password reset and helps keep your system secure.
+
+    ---
 
 7. Select **Confirm**.
 

@@ -12,9 +12,15 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
 1. {!includes/platform-management-view-go-to.md!}
 
+    ---
+
 2. {!includes/ldap-tab-go-to.md!}
 
+    ---
+
 3. Select :fontawesome-solid-plus: or **Add LDAP server**.
+
+    ---
 
 4. In the **LDAP configuration** drawer, enter the following information under the **General settings** section:
 
@@ -64,6 +70,8 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
     The number of entries retrieved per page during LDAP queries, useful for handling large directories efficiently.
 
+    ---
+
 5. Enter the following information under the **Map of LDAP attributes** section:
 
     **- Login \***
@@ -108,7 +116,11 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
     The LDAP attribute indicating the [user account type](../../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md#types), which can be either *normal* or *service*.
 
+    ---
+
 6. Select **Add map group field** under the **Groups mapping** section.
+
+    ---
 
 7. Enter the following information:
 
@@ -129,6 +141,8 @@ Use this procedure to periodically synchronize your local TheHive database with 
     The permission profile in TheHive assigned to user accounts belonging to the LDAP group.
 
     Example: *org-admin*
+
+    ---
 
 8. Select **Confirm**.
 
