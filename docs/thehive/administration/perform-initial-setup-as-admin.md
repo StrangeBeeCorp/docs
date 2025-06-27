@@ -78,6 +78,7 @@ Customize the following elements for all your organizations:
 * [Create a custom field](./custom-fields/create-a-custom-field.md)
 * [Create an observable type](./observable-types/create-an-observable-type.md)
 * [Create a case or alert status](./status/create-a-status.md)
+* [Import analyzer templates](import-analyzer-templates.md)
 * [Activate a taxonomy](./taxonomies/activate-deactivate-a-taxonomy.md)
 * [Add a TTPs catalog](./ttps/add-a-catalog.md)
 

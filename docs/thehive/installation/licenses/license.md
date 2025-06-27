@@ -70,5 +70,6 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 * [Create a Custom Field](../../administration/custom-fields/create-a-custom-field.md)
 * [Create an Observable Type](../../administration/observable-types/create-an-observable-type.md)
 * [Create a Status](../../administration/status/create-a-status.md)
+* [Import Analyzer Templates](../../administration/import-analyzer-templates.md)
 * [Activate or Deactivate a Taxonomy](../../administration/taxonomies/activate-deactivate-a-taxonomy.md)
 * [Add a Tactics, Techniques and Procedures Catalog](../../administration/ttps/add-a-catalog.md)
