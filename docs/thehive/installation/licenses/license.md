@@ -33,7 +33,11 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 
 2. Select the **Licenses** tab.
 
+    ![Licenses tab](../../images/installation/licenses-tab.png)
+
 3. Select **Activate** or **View details** for your product.
+
+    ![Activate or View details](../../images/installation/activate-view-details-license.png)
 
 4. Paste the challenge into the **License key activation challenge** field.
 
