@@ -13,6 +13,9 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 !!! info "Requirements"
     Before proceeding with these instructions, ensure you have [a MISP API key](https://www.circl.lu/doc/misp/automation/#automation-api). You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
 
+!!! note "Multiple MISP servers"
+    TheHive supports connecting multiple MISP servers only with a paid license.
+
 {!includes/upgrade-misp.md!}
 
 {!includes/administrator-access-manage-misp-servers.md!}

@@ -1,5 +1,7 @@
 # How to Delete a Status
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for deleting a [status](about-statuses.md) for cases and alerts in TheHive.
 
 !!! info "Deletion conditions"
