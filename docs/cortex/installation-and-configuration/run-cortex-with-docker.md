@@ -1,6 +1,6 @@
 # How to Run Cortex with Docker
 
-This topic provides step-by-step instructions for running Cortex with Docker.
+This topic provides step-by-step instructions for running Cortex with Docker or Podman.
 
 ## Prerequisites and alternatives
 
@@ -50,16 +50,18 @@ Cortex uses Docker to run analyzers and responders. When running Cortex inside a
  * Grant Cortex access to the Docker or Podman service (recommended approach)
  * Start a Docker service inside the Cortex Docker container
 
-## Running Cortex with the host Docker Service
+## Running Cortex with Docker
+
+### Using the host Docker service
 
 To allow Cortex to use the Docker service, you must bind the Docker socket into the Cortex container. Since Cortex shares job files with analyzers, you also need to bind a shared folder between Cortex and the analyzers.
 
 !!! Example ""
     ```
-    docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
+    docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume <host-job-dir>:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory <container-job-dir> --docker-job-directory <host-job-dir>
     ```
 
-Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `/var/run/cortex/jobs` stores temporary job files on the host, and `/tmp/cortex-jobs` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are accessible to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
+Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `<host-job-dir>` stores temporary job files on the host, and `<container-job-dir>` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are accessible to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
 
 On Windows, Docker service is accessible through the named pipe `\\.\pipe\docker_engine`. The command changes accordingly:
 
@@ -68,7 +70,7 @@ On Windows, Docker service is accessible through the named pipe `\\.\pipe\docker
     docker run --volume //./pipe/docker_engine://./pipe/docker_engine --volume C:\\CORTEX\\JOBS:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory C:\\CORTEX\\JOBS
     ```
 
-## Running Docker inside Cortex container (Docker-in-Docker)
+### Running Docker inside Cortex container (Docker-in-Docker)
 
 You can also run a Docker service inside the Cortex container itself—essentially Docker within Docker—by using the `--start-docker` parameter. Note that the container must be started in privileged mode.
 
@@ -79,7 +81,7 @@ You can also run a Docker service inside the Cortex container itself—essential
 
 In this mode, you don’t need to bind any job directories since the Docker daemon runs inside the container.
 
-## Using Docker Compose to start Cortex and Elasticsearch
+### Using Docker Compose to start Cortex and Elasticsearch
 
 Cortex requires Elasticsearch to run. You can use [Docker Compose](https://docs.docker.com/compose/install/) to start both services together, or install and configure Elasticsearch manually.
 
@@ -176,7 +178,7 @@ By default, the Podman socket is expected to be accessible at `/run/podman/podma
       --name cortex \
       -p 9001:9001 \
       docker.io/thehiveproject/cortex:3.1.7 \
-      --es-uri http://$<elasticsearch-ip>:9200 \
+      --es-uri http://<elasticsearch-ip>:9200 \
       --start-docker
     ```
 

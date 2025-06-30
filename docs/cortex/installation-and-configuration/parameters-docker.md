@@ -4,7 +4,7 @@ This topic lists the available Docker-related configuration options for Cortex.
 
 For step-by-step instructions on running Cortex with Docker or Podman, see [How to Run Cortex with Docker](run-cortex-with-docker.md).
 
-## Docker Container configuration options
+## Docker container configuration options
 
 - `docker.container.capAdd` (array of strings): Add Linux capabilities to the container.
 - `docker.container.capDrop` (array of strings): Remove Linux capabilities from the container.
@@ -41,7 +41,7 @@ Available URLs for dockerized analyzers:
  * [analyzers.json](https://download.thehive-project.org/analyzers.json): Updated with each new release.
  * [analyzers-devel.json](https://download.thehive-project.org/analyzers-devel.json): Updated on every commit (development builds).
 
-Available URLs for responders:
+Available URLs for dockerized responders:
 
   * [responders-stable.json](https://download.thehive-project.org/responders-stable.json): Stable responders (no updates once used).
   * [responders.json](https://download.thehive-project.org/responders.json): Updated with each new release.
