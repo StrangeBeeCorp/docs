@@ -62,7 +62,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     !!! warning "Paid license required"
         A [paid license](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
-        A Platinum license is required to configure Active Directory, OAuth 2.0, and SAML authentication.
+        A Platinum license is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
 
     **- Local authentication**
 
@@ -82,7 +82,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     **- OAuth 2.0 authentication (deprecated)**
 
     !!! warning "Deprecated"
-        The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](openid.md) instead.
+        The OAuth 2.0 is deprecated and will be removed in a future release. It's recommended to use the [OpenID authentication provider](openid.md) instead.
 
     Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
