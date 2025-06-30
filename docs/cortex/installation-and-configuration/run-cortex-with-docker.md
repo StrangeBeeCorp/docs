@@ -58,7 +58,7 @@ To allow Cortex to use the Docker service, you must bind the Docker socket into 
 
 !!! Example ""
     ```
-    docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume <host-job-dir>:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory <container-job-dir> --docker-job-directory <host-job-dir>
+    docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
     ```
 
 Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `<host-job-dir>` stores temporary job files on the host, and `<container-job-dir>` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are accessible to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
