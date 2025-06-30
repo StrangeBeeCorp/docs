@@ -309,6 +309,13 @@ plugins:
             'thehive/user-guides/analyst-corner/getting-started.md': 'thehive/overview/index.md'
             'thehive/user-guides/analyst-corner/introduction.md': 'thehive/overview/index.md'
             'thehive/user-guides/analyst-corner/sign-in-as-an-admin.md': 'thehive/overview/index.md'
+            'thehive/administration/analyzers-templates.md': 'thehive/administration/analyzer-templates/about-analyzer-templates.md'
+            'thehive/administration/branding.md': 'thehive/administration/customize-thehive-branding.md'
+            'thehive/administration/first-start.md': 'thehive/administration/perform-initial-setup-as-admin.md'
+            'thehive/administration/ldap-server.md': 'thehive/administration/ldap/configure-ldap-server.md'
+            'thehive/administration/license.md': 'thehive/installation/licenses/license.md'
+            'thehive/administration/smtp.md': 'thehive/administration/smtp/configure-smtp-server.md'
+            'thehive/installation/activate-license.md': 'thehive/installation/licenses/license.md'
 
 extra:
   generator: false
@@ -367,7 +374,10 @@ nav:
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md
-      - 'Activating TheHive License': thehive/installation/activate-license.md
+      - 'Licenses':
+        - 'About Licenses': thehive/installation/licenses/about-licenses.md
+        - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md
+        - 'Activate or Update a License': thehive/installation/licenses/license.md
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
@@ -411,7 +421,7 @@ nav:
         - 'API v0 Deprecation Notice': thehive/operations/end-API-v0/API-v0-deprecation-notice.md
         - 'Upgrade from API v0 to API v1': thehive/operations/end-API-v0/upgrade-from-API-v0-to-API-v1.md
     - 'Administration Guides':
-      - 'TheHive - First Start': thehive/administration/first-start.md
+      - 'First Start': thehive/administration/perform-initial-setup-as-admin.md
       - 'Organizations':
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
         - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
@@ -427,8 +437,11 @@ nav:
         - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
         - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
       - 'Platform Management':
-        - 'Branding Guide': thehive/administration/branding.md
-        - 'License Management': thehive/administration/license.md
+        - 'Customize Branding': thehive/administration/customize-thehive-branding.md
+        - 'Licenses':
+          - 'About Licenses': thehive/installation/licenses/about-licenses.md
+          - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md
+          - 'Activate or Update a License': thehive/installation/licenses/license.md
         - 'Cortex Integration': 
           - 'About Cortex': thehive/administration/cortex/about-cortex.md
           - 'Add a Cortex Server': thehive/administration/cortex/add-a-cortex-server.md
@@ -452,7 +465,12 @@ nav:
             - 'SAML': thehive/administration/authentication/saml.md
             - 'OpenID': thehive/administration/authentication/openid.md
           - 'Configure SSL': thehive/administration/authentication/ssl.md
-          - 'SMTP Configuration': thehive/administration/smtp.md
+        - 'Configure SMTP':
+          - 'About SMTP': thehive/administration/smtp/about-smtp.md
+          - 'Configure an SMTP Server': thehive/administration/smtp/configure-smtp-server.md
+        - 'Configure LDAP':
+          - 'About LDAP': thehive/administration/ldap/about-ldap.md
+          - 'Configure an LDAP Server': thehive/administration/ldap/configure-ldap-server.md
         - 'Add a Global Endpoint': thehive/administration/add-a-global-endpoint.md
       - 'Entities Management':
         - 'Profiles':
@@ -474,7 +492,10 @@ nav:
           - 'Change a Status Visibility': thehive/administration/status/change-visibility-of-a-status.md
           - 'Change a Color Visibility': thehive/administration/status/change-color-of-a-status.md
           - 'Delete a Status': thehive/administration/status/delete-a-status.md
-        - 'Analyzers Templates': thehive/administration/analyzers-templates.md
+        - 'Analyzer Templates':
+          - 'About Analyzer Templates': thehive/administration/analyzer-templates/about-analyzer-templates.md
+          - 'Import Analyzer Templates': thehive/administration/analyzer-templates/import-analyzer-templates.md
+          - 'Customize an Analyzer Template': thehive/administration/analyzer-templates/customize-an-analyzer-template.md
         - 'Taxonomies':
           - 'About Taxonomies': thehive/administration/taxonomies/about-taxonomies.md
           - 'Add a Custom Taxonomy': thehive/administration/taxonomies/add-a-custom-taxonomy.md
