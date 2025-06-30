@@ -61,8 +61,8 @@ This topic provides step-by-step instructions for configuring authentication in 
 5. Select the authentication providers you want to configure.
 
     !!! warning "Paid license required"
-        A paid license is required to configure authentication providers other than the local database managed by TheHive.  
-        A Platinum license is required to configure Active Directory, OAuth 2.0, and SAML authentication.
+        A [paid license](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
+        A Platinum license is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
 
     **- Local authentication**
 
@@ -73,15 +73,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     **- Directories authentication**
 
     !!! info "Prerequisite"
-        Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
-    
-        User data is synchronized periodically:
-
-        * New LDAP users are automatically created in TheHive.
-        * Removed users become inactive.
-        * Organization membership and user profiles are assigned based on LDAP group membership.
-    
-        The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
+        Users must have an existing account in TheHive's local database to authenticate successfully. [Configure an LDAP server](../../administration/ldap/configure-ldap-server.md) to automate account creation, updates, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.
 
     Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
 
@@ -90,7 +82,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     **- OAuth 2.0 authentication (deprecated)**
 
     !!! warning "Deprecated"
-        The OAuth 2.0 is deprecated and will be removed in a future release. It is recommended to use the [OpenID authentication provider](openid.md) instead.
+        The OAuth 2.0 is deprecated and will be removed in a future release. It's recommended to use the [OpenID authentication provider](openid.md) instead.
 
     Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
