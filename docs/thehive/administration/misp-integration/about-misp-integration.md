@@ -19,6 +19,9 @@ TheHive integrates with MISP in several ways:
 * [Manual import of MISP events into TheHive as cases](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event)
 * [Manual export of cases to MISP as events](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md) for sharing observables marked as IOCs with the community
 
+!!! note "Multiple MISP servers"
+    TheHive supports connecting multiple MISP servers only with a paid license.
+
 ## Permissions
 
 {!includes/administrator-access-manage-misp-servers.md!}
