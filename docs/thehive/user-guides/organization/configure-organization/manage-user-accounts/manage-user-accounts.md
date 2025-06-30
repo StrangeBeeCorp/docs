@@ -62,13 +62,13 @@ Move through the **Sessions** section and select **Delete** next to the session 
 
 ## Edit a user account password
 
-The password edit feature is available only if an [SMTP server](../../../../administration/smtp.md) is configured.
+The password edit feature is available only if an [SMTP server](../../../../administration/smtp/configure-smtp-server.md) is configured.
 
 Move through the **Password** section and select **Edit password**. Select **Confirm** to apply the change. You must send the new password to the user via a secure channel.
 
 ## Reset a user account password
 
-The password reset feature is available only if an [SMTP server](../../../../administration/smtp.md) is configured.
+The password reset feature is available only if an [SMTP server](../../../../administration/smtp/configure-smtp-server.md) is configured.
 
 Move through the **Password** section and select **Reset password**. The user gets an email asking them to choose a new password. The link is only valid for a limited time.
 
