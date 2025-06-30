@@ -6,13 +6,15 @@ Similarity checks between cases and alerts are based on [observables](../cases/o
 
 Use this procedure to identify similar cases or to correlate alerts with other alerts or with ongoing cases.
 
+{!includes/similar-cases-alerts-filters.md!}
+
 ## Find similar alerts
 
 1. [Find the alert](../alerts/search-for-alerts/find-an-alert.md) or [case](../cases/search-for-cases/find-a-case.md) you want to compare for similarity.
 
 2. Select the **Similar alerts** tab.
 
-    ![Similar alerts](/thehive/images/user-guides/analyst-corner/cases/similar-alerts.png)
+    ![Similar alerts](../../../images/user-guides/analyst-corner/cases/similar-alerts.png)
 
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
@@ -24,7 +26,7 @@ Use this procedure to identify similar cases or to correlate alerts with other a
 
 2. Select the **Similar cases** tab.
 
-    ![Similar cases](/thehive/images/user-guides/analyst-corner/cases/similar-cases.png)
+    ![Similar cases](../../../images/user-guides/analyst-corner/cases/similar-cases.png)
 
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
