@@ -28759,6 +28759,8 @@ components:
           maxLength: 1048576
         startDate:
           type: integer
+          description: The `startDate` field for `InputCreateObservable` object is
+            mapped on `_createdDate` field. This field should not be used.
           format: datetime_ms
           example: 1640000000000
         attachment:
