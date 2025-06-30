@@ -100,7 +100,7 @@ Several options are offered to create a case in TheHive:
 
     **- Attachment \***  
 
-    Drop a THAR file direclty into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
+    Drop a THAR file directly into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
 
     **- Password \***  
 
@@ -125,7 +125,7 @@ Several options are offered to create a case in TheHive:
 
     **- Attachment \***
 
-    Drop a JSON file direclty into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
+    Drop a JSON file directly into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
 
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
 
