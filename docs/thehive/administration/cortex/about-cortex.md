@@ -47,4 +47,5 @@ Cortex offers the following features:
 
 * [Add a Cortex Server](add-a-cortex-server.md)
 * [Remove a Cortex Server](remove-a-cortex-server.md)
-* [Manage Analyzer Templates](../../administration/analyzers-templates.md)
+* [Import Analyzer Templates](../../administration/analyzer-templates/import-analyzer-templates.md)
+* [Customize an Analyzer Template](../../administration/analyzer-templates/customize-an-analyzer-template.md)
