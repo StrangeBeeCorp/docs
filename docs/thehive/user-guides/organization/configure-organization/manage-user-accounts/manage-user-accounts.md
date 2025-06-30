@@ -9,12 +9,12 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
     1. Go to the **Users** view from the sidebar menu.
 
-        ![Users view](/thehive/images/administration-guides/users-view.png)
+        ![Users view](../../../../images/administration-guides/users-view.png)
 
     2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
         !!! tip "Can't find a user account?"
-            You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
+            You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](../../../analyst-corner/about-views.md).
 
 === "As an organization administrator"
 
@@ -23,16 +23,16 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
     1. Go to the **Organization** view from the sidebar menu.
 
-        ![Organization view](/thehive/images/user-guides/organization/configure-organization/organization-view.png)
+        ![Organization view](../../../../images/user-guides/organization/configure-organization/organization-view.png)
 
     2. Select the **Users** tab.
 
-        ![Organization users tab](/thehive/images/user-guides/organization/configure-organization/manage-users/organization-users-tab.png)
+        ![Organization users tab](../../../../images/user-guides/organization/configure-organization/manage-users/organization-users-tab.png)
 
     3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
         !!! tip "Can't find a user account?"
-            You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
+            You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
 
 ## Manage a user account email
 
