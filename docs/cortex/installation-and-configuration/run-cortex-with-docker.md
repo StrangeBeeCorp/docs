@@ -18,7 +18,7 @@ By default, the Docker image generates a Cortex configuration file with the foll
 
 You can customize the behavior of the Cortex Docker image using environment variables or command-line parameters:
 
-| Parameter            | Env variable         | Description                                       |
+| Parameter            | Environment variable         | Description                                       |
 |----------------------|----------------------|---------------------------------------------------|
 | `--no-config`        | `no_config=1`        | Don't configure Cortex                           |
 | `--no-config-secret` | `no_config_secret=1` | Don't add the random secret to the configuration |
@@ -34,7 +34,7 @@ You can customize the behavior of the Cortex Docker image using environment vari
 | `--start-docker` | `start_docker=1` | Start an internal Docker daemon inside the container to run analyzers/responders
 | `--daemon-user <user>` | `daemon_user=<user>` | Run Cortex using this user
 
-For detailed information on all Docker parameters and advanced configuration options, see [Parameters for Docker](parameters-docker.md).
+The command-line parameters and environment variables documented here are used to customize Cortex when the container starts. These are converted into settings inside the `application.conf` configuration file, whose available options and structure are documented separately in [Parameters for Docker](parameters-docker.md).
 
 ## Overriding configuration with a custom file
 
@@ -102,7 +102,7 @@ In this mode, you don’t need to bind any job directories since the Docker daem
 
 ### Using Docker Compose to start Cortex and Elasticsearch
 
-Cortex requires Elasticsearch to run. You can use [Docker Compose](https://docs.docker.com/compose/install/) to start both services together, or install and configure Elasticsearch manually.
+Cortex requires Elasticsearch to run. You can use [Docker Compose](https://github.com/StrangeBeeCorp/docker) to start both services together, or install and configure Elasticsearch manually.
 
 Docker Compose enables you to launch multiple containers and link them.
 

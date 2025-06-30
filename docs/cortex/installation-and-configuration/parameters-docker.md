@@ -1,8 +1,8 @@
 # Parameters for Docker
 
-This topic lists the available Docker-related configuration options for Cortex.
+This topic lists the configuration keys available in Cortex’s `application.conf` file that control Docker-related behavior. These settings are usually set indirectly by providing command-line parameters or environment variables when running the Cortex Docker container, as described in [How to Run Cortex with Docker](run-cortex-with-docker.md#customizing-cortex-docker-image-behavior). The container entrypoint translates those inputs into this configuration file.
 
-For step-by-step instructions on running Cortex with Docker or Podman, see [How to Run Cortex with Docker](run-cortex-with-docker.md).
+Use this reference to understand and fine-tune the internal configuration options that govern how Cortex interacts with Docker containers, resource limits, networking, and registry authentication.
 
 ## Docker container configuration options
 
@@ -21,6 +21,13 @@ For step-by-step instructions on running Cortex with Docker or Podman, see [How 
 * `docker.container.memorySwappiness` (integer, 0-100): Adjust container’s memory swappiness behavior.
 * `docker.container.networkMode` (string): Network mode for the container.
 * `docker.container.privileged` (boolean): Grant extended privileges to the container.
+* `docker.host` (string): Docker socket URL by Cortex to launch job containers.
+* `docker.tlsVerify` (boolean): Turn on or turn off TLS certificate verification for the Docker socket.
+* `docker.certPath` (string): Path to the TLS certificate for verifying the Docker socket.
+* `docker.registry.user` (string): Username for Docker registry authentication.
+* `docker.registry.password` (string): Password for Docker registry authentication.
+* `docker.registry.email` (string): Email address used for Docker registry authentication
+* `docker.registry.url` (string): URL of the Docker registry to authenticate with.
 * `job.directory` (string): Directory inside the container where Cortex shares input/output data with analyzers and responders.
 * `job.dockerDirectory` (string): Corresponding host directory for sharing job data with analyzers and responders.
 
