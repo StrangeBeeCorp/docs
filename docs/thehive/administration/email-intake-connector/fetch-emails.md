@@ -1,5 +1,7 @@
 # How to Manually Trigger Email Fetch in a Mailbox
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for manually triggering email fetch in a [mailbox](about-email-intake-connectors.md) in TheHive.
 
 Use this procedure to manually fetch emails before the next scheduled refresh.
