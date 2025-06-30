@@ -1,23 +1,14 @@
-# How to Configure an Active Directory Authentication Provider
+# How to Configure an AD Authentication Provider
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring an Active Directory (AD) authentication provider in TheHive.
+This topic provides step-by-step instructions for configuring an [Active Directory (AD)](../ldap/about-ldap.md) authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 
 <h2>Procedure</h2>
 
-!!! info "Local account"
-    Users must have an existing account in TheHive's local database to authenticate successfully. [Configure the LDAP servers](../../administration/ldap-server.md) in TheHive to automate account creation.
-
-    User data is synchronized periodically:
-
-    * New LDAP users are automatically created in TheHive.
-    * Removed users become inactive.
-    * Organization membership and user profiles are assigned based on LDAP group membership.
-
-    The configuration must include a mapping of LDAP groups to corresponding organizations and profiles.
+{!includes/local-account-ldap-ad.md!}
 
 {!includes/prerequisites-authentication-providers.md!}
 

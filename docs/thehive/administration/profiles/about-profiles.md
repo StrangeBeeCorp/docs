@@ -36,7 +36,7 @@ These profiles can't be modified or deleted—except for the analyst profile.
 
 TheHive separates permissions into two types for organization-type profiles:
 
-* Licensed: Consume a Gold or Platinum license
+* Licensed: Consume a [license](../../installation/licenses/about-licenses.md)
 * Unlicensed: Don't affect license usage
 
 These permissions don't require a license:
