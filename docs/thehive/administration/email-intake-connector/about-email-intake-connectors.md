@@ -1,5 +1,7 @@
 # About Email Intake Connectors
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 This topic explains what email intake connectors are in TheHive.
 
 Organizations that receive alert data by email can use email intake connectors to automate the creation of alerts in TheHive.
