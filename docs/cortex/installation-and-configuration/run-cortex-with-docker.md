@@ -150,9 +150,10 @@ For Cortex to interact with Podman, it requires access to the [Podman socket](ht
 
 You can check whether the Podman socket service is running on your system with this command:
 
-```shell
-systemctl status podman.socket
-```
+!!! Example ""
+    ```shell
+    systemctl status podman.socket
+    ```
 
 By default, the Podman socket resides at `/run/podman/podman.sock`. This path may vary depending on your system configuration.
 
