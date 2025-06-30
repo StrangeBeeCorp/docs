@@ -11,6 +11,8 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you want to find one or more alerts similar to a known alert and need to perform actions on them simultaneously.*
 
+{!includes/similar-cases-alerts-filters.md!}
+
 1. Open a case, an alert, or a task, and select the **Similar alerts** tab.
 
     ![Similar alerts](../../../../images/user-guides/analyst-corner/cases/similar-alerts.png)
