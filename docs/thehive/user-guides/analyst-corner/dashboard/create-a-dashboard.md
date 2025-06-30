@@ -46,5 +46,7 @@ If you want to use a dashboard from another organization or TheHive instance as 
 * [Add or Remove Widgets in a Dashboard](add-remove-widgets-dashboard.md)
 * [Change the Visibility of a Dashboard](change-visibility-of-a-dashboard.md)
 * [Export or Import a Dashboard](export-import-a-dashboard.md)
+* [Adjust Dashboard Refresh Frequency](adjust-dashboard-refresh-frequency.md)
+* [Set a Dashboard Display Period](set-dashboard-display-period.md)
 * [Download a Dashboard](download-a-dashboard.md)
 * [Delete a Dashboard](delete-a-dashboard.md)

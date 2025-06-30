@@ -99,7 +99,7 @@ plugins:
             'thehive/user-guides/organisation/configure-organization/manage-notifications/manage_notification.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/supported-notifiers.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md'
             'thehive/user-guides/organisation/configure-organization/manage-notifications/triggering-events.md': 'thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md'
-            'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md'
+            'thehive/user-guides/organisation/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/add-delete-user.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/lock.md': 'thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md'
             'thehive/user-guides/organisation/configure-organization/manage-users/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
@@ -126,7 +126,7 @@ plugins:
             'thehive/user-guides/organisation/templates/case-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md'
             'thehive/user-guides/organisation/templates/page-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md'
             'thehive/user-guides/organisation/templates/report-templates.md': 'thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates.md'
-            'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/ui-configuration.md'
+            'thehive/user-guides/organisation/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/analyst-corner/alerts/actions.md': 'thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md'
             'thehive/user-guides/analyst-corner/alerts/general.md': 'thehive/user-guides/analyst-corner/alerts/about-alerts.md'
             'thehive/user-guides/analyst-corner/alerts/manage-views.md': 'thehive/user-guides/analyst-corner/about-views.md'
@@ -316,6 +316,9 @@ plugins:
             'thehive/administration/license.md': 'thehive/installation/licenses/license.md'
             'thehive/administration/smtp.md': 'thehive/administration/smtp/configure-smtp-server.md'
             'thehive/installation/activate-license.md': 'thehive/installation/licenses/license.md'
+            'thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md'
+            'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
+            'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
 
 extra:
@@ -527,7 +530,6 @@ nav:
           - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
           - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
-          - 'Hide KPIs': thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md
           - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
           - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
       - 'Organization Administration':
@@ -562,7 +564,14 @@ nav:
           - 'Rename a Custom Tag': thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag.md
           - 'Delete a Custom Tag': thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag.md
           - 'View Custom Tag Statistics': thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics.md
-        - 'UI Configuration': thehive/user-guides/organization/ui-configuration.md
+        - 'UI Configuration':
+          - 'UI Configuration Settings': thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md
+          - 'Prevent Users from Creating Empty Cases': thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases.md
+          - 'Prevent Users from Merging Alerts into Closed Cases': thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases.md
+          - 'Select Similar Cases and Alerts Filters': thehive/user-guides/organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters.md
+          - 'Pause Dashboard Refresh': thehive/user-guides/organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh.md
+          - 'Remove the All Periods Option in a Dashboard': thehive/user-guides/organization/configure-organization/manage-ui-configuration/remove-all-periods-option.md
+          - 'Hide KPIs': thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md
         - 'Notifications & Endpoints':
           - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
           - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md
@@ -769,6 +778,8 @@ nav:
           - 'Add or Remove Widgets': thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard.md
           - 'Delete a Dashboard': thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard.md
           - 'Change Visibility of a Dashboard': thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard.md
+          - 'Adjust Dashboard Refresh Frequency': thehive/user-guides/analyst-corner/dashboard/adjust-dashboard-refresh-frequency.md
+          - 'Set a Dashboard Display Period': thehive/user-guides/analyst-corner/dashboard/set-dashboard-display-period.md
           - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
         - 'Detail View vs. Preview': thehive/user-guides/analyst-corner/preview-vs-detail-view.md
