@@ -4,7 +4,7 @@
 
 This topic explains what Cortex is and the benefits of using it with TheHive.
 
-!!! info "Not connected by default"
+!!! note "Not connected by default"
     By default, TheHive isn't connected to any Cortex server.
 
 !!! info "Cortex support"
@@ -32,7 +32,7 @@ Cortex offers the following features:
     Establishing a connection with Cortex requires an existing account and a valid API key on a Cortex server.
 
 !!! info "Support for multiple Cortex instances"
-    TheHive supports connecting to one or more Cortex instances simultaneously.
+    TheHive supports connecting to one or more Cortex instances simultaneously. Connecting to multiple instances requires a paid license.
 
 [Connect TheHive to Cortex](add-a-cortex-server.md) to gather intelligence on observables with analyzers and automate actions using responders:
 

@@ -1,5 +1,7 @@
 # How to Connect a Mailbox
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for connecting a [mailbox](about-email-intake-connectors.md) in TheHive.
 
 Use this procedure if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.

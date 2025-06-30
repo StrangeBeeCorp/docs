@@ -1,5 +1,7 @@
 # How to Create a Status
 
+<!-- md:license Gold --> <!-- md:license Platinum -->
+
 This topic provides step-by-step instructions for creating a [status](about-statuses.md) for cases and alerts in TheHive.
 
 Use this procedure to add custom statuses in addition to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
