@@ -1,4 +1,4 @@
-# How to Run Cortex with Docker
+# Run Cortex with Docker
 
 This topic provides step-by-step instructions for running Cortex with Docker or Podman.
 
@@ -10,13 +10,13 @@ To run the Docker image, you need [Docker](https://www.docker.com/)—no surpris
 
 By default, the Docker image generates a Cortex configuration file with the following settings:
 
-* The Elasticsearch URI is set by resolving the host name `elasticsearch`.
-* The official locations for [analyzers](https://download.thehive-project.org/analyzers.json) and [responders](https://download.thehive-project.org/responders.json) are used.
-* A generated secret is included to secure user sessions.
+* It sets the Elasticsearch URI by resolving the host name `elasticsearch`.
+* It uses the official locations for [analyzers](https://download.thehive-project.org/analyzers.json) and [responders](https://download.thehive-project.org/responders.json).
+* It includes a generated secret to secure user sessions.
 
 ## Customizing Cortex Docker image behavior
 
-The behavior of the Cortex Docker image can be customized using environment variables or command-line parameters:
+You can customize the behavior of the Cortex Docker image using environment variables or command-line parameters:
 
 | Parameter            | Env variable         | Description                                       |
 |----------------------|----------------------|---------------------------------------------------|
@@ -38,7 +38,7 @@ For detailed information on all Docker parameters and advanced configuration opt
 
 ## Overriding configuration with a custom file
 
-At the end of the generated configuration, the file `/etc/cortex/application.conf` is included. This allows you to override any setting by mounting your own `application.conf` file to this path.
+The generated configuration includes the file `/etc/cortex/application.conf` at the end. You can override any setting by mounting your own `application.conf` file to this path.
 
 !!! Example ""
     ```
@@ -49,6 +49,25 @@ Cortex uses Docker to run analyzers and responders. When running Cortex inside a
 
 * Grant Cortex access to the Docker or Podman service (recommended approach)
 * Start a Docker service inside the Cortex Docker container
+
+If your environment requires Docker registry authentication, add the following section to your Cortex `application.conf` file:
+
+!!! Example ""
+    ```
+    docker {
+      host = "<docker-host-url>"
+      tlsVerify = true 
+      certPath = "/path/to/ca/certificates"
+      registry {
+        user = "<registry-username>"
+        password = "<registry-password>"
+        email = "<registry-email>"
+        url = "https://index.docker.io/v1/"
+      }
+    }
+    ```
+
+Usually, only the `registry` section needs configuration unless you connect to a remote Docker daemon.
 
 ## Running Cortex with Docker
 
@@ -61,7 +80,7 @@ To allow Cortex to use the Docker service, you must bind the Docker socket into 
     docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
     ```
 
-Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `<host-job-dir>` stores temporary job files on the host, and `<container-job-dir>` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are accessible to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
+Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `/var/run/cortex/jobs` stores temporary job files on the host, and `/tmp/cortex-jobs` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are available to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
 
 On Windows, Docker service is accessible through the named pipe `\\.\pipe\docker_engine`. The command changes accordingly:
 
@@ -72,7 +91,7 @@ On Windows, Docker service is accessible through the named pipe `\\.\pipe\docker
 
 ### Running Docker inside Cortex container (Docker-in-Docker)
 
-You can also run a Docker service inside the Cortex container itself—essentially Docker within Docker—by using the `--start-docker` parameter. Note that the container must be started in privileged mode.
+You can also run a Docker service inside the Cortex container itself—essentially Docker within Docker—by using the `--start-docker` parameter. Note that you must start the container in privileged mode.
 
 !!! Example ""
     ```
@@ -85,7 +104,7 @@ In this mode, you don’t need to bind any job directories since the Docker daem
 
 Cortex requires Elasticsearch to run. You can use [Docker Compose](https://docs.docker.com/compose/install/) to start both services together, or install and configure Elasticsearch manually.
 
-Docker Compose enables you to launch multiple containers and link them seamlessly.
+Docker Compose enables you to launch multiple containers and link them.
 
 The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml) file starts Elasticsearch and Cortex:
 
@@ -116,15 +135,16 @@ The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Pro
           - "0.0.0.0:9001:9001"
     ```
 
-Place this [Docker Compose file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml) and the corresponding [.env file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env) in an empty folder, then run `docker-compose up`. Cortex is accessible on port 9001/tcp by default, which you can customize in the compose file.
+Place this [Docker Compose file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml) and the corresponding [.env file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env) in an empty folder, then run `docker-compose up`. Cortex is available on port 9001/tcp by default, which you can customize in the compose file.
 
 !!! Tip "Advanced configuration"
-    For advanced configuration, visit [our Docker Templates repository](https://github.com/TheHive-Project/Docker-Templates).
+    For advanced configuration, visit [the StrangeBee Docker Templates repository](https://github.com/TheHive-Project/Docker-Templates).
 
 ## Running Cortex with Podman
 
-Like Docker, Podman can run the Cortex container image as well as its analyzers.
-The examples below assume you run the containers in rootful mode.
+Podman is an open-source container engine designed as a drop-in replacement for Docker. It allows you to run containers without requiring a daemon and can run in rootless mode for improved security.
+
+Like Docker, Podman can run the Cortex container image as well as its analyzers. The examples below assume you run the containers in rootful mode.
 
 For Cortex to interact with Podman, it requires access to the [Podman socket](https://docs.podman.io/en/latest/markdown/podman-system-service.1.html). On some systems, Podman automatically installs and enables this socket service.
 
@@ -134,7 +154,7 @@ You can check whether the Podman socket service is running on your system with t
 systemctl status podman.socket
 ```
 
-By default, the Podman socket is expected to be accessible at `/run/podman/podman.sock`. This path may vary depending on your system configuration.
+By default, the Podman socket resides at `/run/podman/podman.sock`. This path may vary depending on your system configuration.
 
 !!! Example "Cortex uses Podman service"
 

@@ -781,7 +781,7 @@ nav:
       -  ./cortex/installation-and-configuration/analyzers-responders.md
       -  ./cortex/installation-and-configuration/run-cortex-with-docker.md
       -  ./cortex/installation-and-configuration/proxy-settings.md
-      -  ./cortex/installation-and-configuration/docker.md
+      -  ./cortex/installation-and-configuration/parameters-docker.md
       -  ./cortex/installation-and-configuration/database.md
       -  ./cortex/installation-and-configuration/deploy-cortex-on-kubernetes.md
     - 'User Guides':  
