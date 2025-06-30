@@ -1,0 +1,2 @@
+!!! tip "Filters"
+    [Select the filters](/thehive/user-guides/organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters/) you want to apply on the **Similar cases** and **Similar alerts** tabs to find what you need faster.

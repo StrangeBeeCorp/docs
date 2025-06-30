@@ -27,6 +27,9 @@ If it requires a separate investigation, [create a case from the alert](create-a
 
 3. In the **Merge alerts into case** drawer, search for the case by title or case number.
 
+    !!! note "Closed cases"
+        If you’re unable to find closed cases, it means your organization has [deactivated merging alerts into closed cases](../../organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases.md).
+
 4. Select **Merge**.
 
 <h2>Next steps</h2>
