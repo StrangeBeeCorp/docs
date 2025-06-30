@@ -309,6 +309,7 @@ plugins:
             'thehive/user-guides/analyst-corner/getting-started.md': 'thehive/overview/index.md'
             'thehive/user-guides/analyst-corner/introduction.md': 'thehive/overview/index.md'
             'thehive/user-guides/analyst-corner/sign-in-as-an-admin.md': 'thehive/overview/index.md'
+            'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
 
 extra:
   generator: false
