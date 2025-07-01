@@ -30,7 +30,8 @@ When available, these quicker alternatives provide filtering options without man
 
 Filters are combined using the `AND` operator, meaning all selected conditions must be met.
 
-{!includes/elasticsearch-limitation.md!}
+!!! info "Elasticsearch limitation"
+    When searching or filtering text values using partial words, be mindful of capitalization, as Elasticsearch treats these searches as case sensitive.
 
 ### Saving filters
 
