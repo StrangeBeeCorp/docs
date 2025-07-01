@@ -12,9 +12,9 @@ This topic provides step-by-step instructions for configuring TheHive's audit lo
     Elasticsearch is better suited for managing large volumes of audit logs. It enhances performance by efficiently handling data, reducing latency, and offering advanced search capabilities. If your organization generates a significant amount of audit logs, migrating to Elasticsearch can improve both data management and retrieval.
 
 !!! warning "Audit logs visibility"
-    With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if [you set restricted visibility for a case](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md), audit logs remain visible to all users.
+    With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if [you set restricted visibility for a case](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md), audit logs remain visible to all users who originally had access.
 
-!!! warning "No rollback possible"
+!!! danger "No rollback possible"
     Since TheHive can only use one audit storage system at a time, when you switch to Elasticsearch, the audit logs stored in JanusGraph become unavailable. TheHive doesn't support transferring audit logs back from Elasticsearch to JanusGraph. 
 
 !!! note "New installations"
@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for configuring TheHive's audit lo
 
 ### Use Elasticsearch 7.17 or later
 
-Make sure you're using Elasticsearch version 7.17 or later to guarantee compatibility with TheHive's audit log storage.
+Make sure you're using Elasticsearch version 7.17 or later to guarantee compatibility with TheHive's audit log storage. OpenSearch isn't supported for audit logs.
 
 ### Back up Elasticsearch indices
 
@@ -34,7 +34,7 @@ Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deplo
 
 {!includes/activate-audit-log-storage-elasticsearch.md!}
 
-## Step 2: Configure index template and Index Lifecycle Management (ILM)
+## (Optional) Step 2: Configure index template and Index Lifecycle Management (ILM)
 
 {!includes/configure-index-ilm-elasticsearch.md!}
 

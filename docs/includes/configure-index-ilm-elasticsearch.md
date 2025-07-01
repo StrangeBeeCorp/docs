@@ -9,6 +9,9 @@ Configure the default index template and Index Lifecycle Management (ILM) for `t
 * `hot.rollover.maxSize`
 * `delete.minAge`
 
+!!! warning "Index name"
+    The index name shouldn't be the same as the one used in JanusGraph. If you don’t configure a specific name, TheHive uses the JanusGraph index name appended with the suffix `-audits`.
+
 #### Index template
 
 The index template ensures consistent storage and indexing of audit logs.
@@ -29,9 +32,9 @@ Default index template:
 
 #### ILM
 
-ILM manages the storage, rollover, and deletion of audit logs over time, optimizing long-term storage.
+TheHive automatically generates an Index Lifecycle Management (ILM) policy based on your configuration settings. ILM manages the storage, rollover, and deletion of audit logs over time to optimize long-term storage.
 
-Default ILM:
+Default generated ILM:
 
 ```json
 {
@@ -68,7 +71,7 @@ Default ILM:
     }
     ```
 
-    - ILM:
+    - The generated ILM:
 
     ```json
     {
@@ -100,14 +103,16 @@ Default ILM:
     ```
 
 !!! warning "API calls changes"
-    After migrating to Elasticsearch, the following API calls no longer work with audit logs stored in Elasticsearch:
+    After migrating to Elasticsearch, the following Query API calls no longer work with audit logs stored in Elasticsearch:
     
-    - `listAudit`
-    - `listAuditFromObject`
-    - `getAudit`
+    * `listAudit`
+    * `listAuditFromObject`
+    * `getAudit`
     
-    Instead, use the following API calls:
+    Instead, use the following API endpoints:
     
-    - `list`
-    - `count`
-    - `get`
+    * `/api/v1/audit/list`
+    * `/api/v1/audit/count`
+    * `/api/v1/audit/$ID`
+  
+    These API calls are currently available but not yet officially documented and may change in future releases.
