@@ -112,7 +112,9 @@ Several options are offered to create a case in TheHive:
 
 4. Select **Confirm**.
 
-## Create a case from a [MISP event](../../../administration/misp-integration/about-misp-integration.md)
+## Create a case from a MISP event
+
+See [About MISP Integration](../../../administration/misp-integration/about-misp-integration.md) to learn about how MISP integrates with TheHive.
 
 !!! info "Data transfer"
     When creating a case from a MISP event, data from the event, such as observables, is automatically transferred to the case.
