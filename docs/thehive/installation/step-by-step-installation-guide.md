@@ -524,7 +524,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 
 !!! warning "Audit logs visibility"
     - With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if [you set restricted visibility for a case](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md), audit logs remain visible to all users who originally had access.
-    - With the default configuration using Apache Cassandra (JanusGraph), audit logs immediately become private if the visibility of the associated case is restricted. This means that even if audit logs were originally public, they will be hidden from all users [once the case visibility is restricted](../user-guides/analyst-corner/cases/restrict-visibility-case.md).
+    - With the default configuration using Apache Cassandra (JanusGraph), audit logs immediately become private if the visibility of the associated case is restricted. This means that even if audit logs were originally public, they will be hidden from all users [once the case visibility is restricted](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md).
 
 !!! warning "Prerequisites"
     Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
