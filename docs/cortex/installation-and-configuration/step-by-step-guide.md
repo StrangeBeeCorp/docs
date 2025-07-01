@@ -276,7 +276,7 @@ Following settings are required to start Cortex successfully:
 
 Advanced configuration settings might be added to run the application successfully: 
 
-- [Specific Docker parameters](docker.md)
+- [Specific Docker parameters](parameters-docker.md)
 - [Proxy settings](proxy-settings.md)
 - [SSL configuration](ssl.md)
 
