@@ -50,6 +50,7 @@ plugins:
   - exclude-search:
       exclude:
         - includes/*
+        - thehive/operations/configure-audit-logs-storage-elasticsearch.md
   - awesome-pages
   - glightbox
   - mkdocs-video:
@@ -413,6 +414,7 @@ nav:
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
+      # - 'Configure Audit Log Storage in Elasticsearch': thehive/operations/configure-audit-logs-storage-elasticsearch.md
       - 'Backup & Restore Operations': 
         - 'Cold vs. Hot Backups and Restores':  thehive/operations/backup-restore/cold-hot-backup-restore.md
         - 'Backup Process':
