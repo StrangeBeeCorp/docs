@@ -34,6 +34,8 @@ A task log is a recorded history of actions, updates, or decisions taken on a sp
 
         Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
+    {!includes/elasticsearch-limitation.md!}
+
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}

@@ -86,6 +86,8 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
         Other advanced search options, such as Boolean and phrase searches, are not currently supported.
 
+    {!includes/elasticsearch-limitation.md!}
+
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}

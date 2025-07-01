@@ -30,6 +30,8 @@ When available, these quicker alternatives provide filtering options without man
 
 Filters are combined using the `AND` operator, meaning all selected conditions must be met.
 
+{!includes/elasticsearch-limitation.md!}
+
 ### Saving filters
 
 Applied filters can be saved in [a view](about-views.md) to avoid reapplying them repeatedly. Selecting the saved view applies the filters automatically.

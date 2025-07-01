@@ -1,0 +1,2 @@
+!!! info "Elasticsearch limitation"
+    When searching text values, be mindful of capitalization because Elasticsearch treats searches as case sensitive. This may prevent matches on partial words or terms with different capitalization.
