@@ -405,7 +405,7 @@ nav:
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
-      - # 'Configure Audit Log Storage in Elasticsearch': thehive/operations/configure-audit-logs-storage-elasticsearch.md
+      # - 'Configure Audit Log Storage in Elasticsearch': thehive/operations/configure-audit-logs-storage-elasticsearch.md
       - 'Backup & Restore Operations': 
         - 'Overview':  thehive/operations/backup-restore/overview.md
         - 'Backup Process':

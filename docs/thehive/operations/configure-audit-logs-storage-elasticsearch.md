@@ -2,23 +2,20 @@
 
 <!-- md:version 5.5 -->
 
-You can choose to store audit logs in either Apache Cassandra via JanusGraph or in [Elasticsearch](https://www.elastic.co/enterprise-search) in TheHive.
-
-By default, TheHive stores audit logs in Apache Cassandra via JanusGraph.
+By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to [Elasticsearch](https://www.elastic.co/enterprise-search).
 
 This topic provides step-by-step instructions for configuring TheHive's audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
+
+For new installations, refer to the [Step-by-Step Guide](../installation/step-by-step-installation-guide.md#fontawesome-solid-list-elasticsearch) for instructions.
 
 !!! info "Reasons to consider Elasticsearch"
     Elasticsearch is better suited for managing large volumes of audit logs. It enhances performance by efficiently handling data, reducing latency, and offering advanced search capabilities. If your organization generates a significant amount of audit logs, migrating to Elasticsearch can improve both data management and retrieval.
 
+!!! danger "No rollback possible"
+    Since TheHive can only use one audit storage system at a time, when you switch to Elasticsearch, the audit logs stored in JanusGraph become unavailable. TheHive doesn't support transferring audit logs back from Elasticsearch to JanusGraph.
+
 !!! warning "Audit logs visibility"
     With Elasticsearch, audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case. This means that even if [you set restricted visibility for a case](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md), audit logs remain visible to all users who originally had access.
-
-!!! danger "No rollback possible"
-    Since TheHive can only use one audit storage system at a time, when you switch to Elasticsearch, the audit logs stored in JanusGraph become unavailable. TheHive doesn't support transferring audit logs back from Elasticsearch to JanusGraph. 
-
-!!! note "New installations"
-    For new installations, refer to the [Step-by-Step Guide](../installation/step-by-step-installation-guide.md) for instructions.
 
 ## Prerequisites
 
