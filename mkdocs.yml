@@ -323,6 +323,7 @@ plugins:
             'thehive/user-guides/key-performance-indicators/hide-key-performance-indicators.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md'
             'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
+            'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
 
 extra:
   generator: false
@@ -860,7 +861,7 @@ nav:
       -  ./cortex/installation-and-configuration/analyzers-responders.md
       -  ./cortex/installation-and-configuration/run-cortex-with-docker.md
       -  ./cortex/installation-and-configuration/proxy-settings.md
-      -  ./cortex/installation-and-configuration/docker.md
+      -  ./cortex/installation-and-configuration/parameters-docker.md
       -  ./cortex/installation-and-configuration/database.md
       -  ./cortex/installation-and-configuration/deploy-cortex-on-kubernetes.md
     - 'User Guides':  
