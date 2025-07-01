@@ -1,6 +1,6 @@
 # Parameters for Docker
 
-This topic lists the configuration keys available in Cortex’s `application.conf` file that control Docker-related behavior. These settings are usually set indirectly by providing command-line parameters or environment variables when running the Cortex Docker container, as described in [How to Run Cortex with Docker](run-cortex-with-docker.md#customizing-cortex-docker-image-behavior). The container entrypoint translates those inputs into this configuration file.
+This topic lists the configuration keys available in Cortex’s `application.conf` file that control Docker-related behavior. These settings are usually set indirectly by [providing command-line parameters or environment variables when running the Cortex Docker container](run-cortex-with-docker.md#customizing-cortex-docker-image-behavior). The container entrypoint translates those inputs into this configuration file.
 
 Use this reference to understand and fine-tune the internal configuration options that govern how Cortex interacts with Docker containers, resource limits, networking, and registry authentication.
 
@@ -39,8 +39,8 @@ In the Cortex configuration file, update `analyzer.urls` and `responder.urls` to
 
 These settings accept:
 
-* A path to a directory containing worker definitions.
-* A path or URL (http/https) to a JSON file containing all worker definitions merged in one array.
+* A path to a directory containing worker definitions
+* A path or URL (http/https) to a JSON file containing all worker definitions merged in one array
 
 Available URLs for dockerized analyzers:
 

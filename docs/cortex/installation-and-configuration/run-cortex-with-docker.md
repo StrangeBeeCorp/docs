@@ -157,7 +157,7 @@ You can check whether the Podman socket service is running on your system with t
 
 By default, the Podman socket resides at `/run/podman/podman.sock`. This path may vary depending on your system configuration.
 
-!!! Example "Cortex uses Podman service"
+!!! Example "Configuring Cortex to run analyzers with Podman"
 
     To allow Cortex to run analyzers with Podman, mount the Podman socket inside the container at `/var/run/docker.sock`:
 
@@ -205,4 +205,4 @@ By default, the Podman socket resides at `/run/podman/podman.sock`. This path ma
 
 <h2>Next steps</h2>
 
-* [Parameters for Docker](parameters-docker.md).
+* [Parameters for Docker](parameters-docker.md)
