@@ -1,72 +1,112 @@
-### Docker
-To use the Docker image, you must use [Docker](https://www.docker.com/) (courtesy of Captain Obvious). Alternatively, it's also possible to run the image using [Podman](https://podman.io/).
+# Run Cortex with Docker
 
-By default, the docker image generate a configuration file for Cortex with:
- - the Elasticsearch uri is determined by resolving the host name "elasticsearch",
- - the [analyzers](https://download.thehive-project.org/analyzers.json) and [responders](https://download.thehive-project.org/responders.json) official location,
- - a generated secret (used to protect the user sessions).
-The behaviour of the Cortex Docker image can be customized using environment variables or parameters:
+This topic provides step-by-step instructions for running Cortex with Docker or Podman.
 
-| Parameter            | Env variable         | Description                                       |
+## Prerequisites and alternatives
+
+To run the Docker image, you need [Docker](https://www.docker.com/)—no surprises there. Alternatively, you can also use [Podman](https://podman.io/) as a compatible option.
+
+## Default configuration of the Cortex Docker image
+
+By default, the Docker image generates a Cortex configuration file with the following settings:
+
+* It sets the Elasticsearch URI by resolving the host name `elasticsearch`.
+* It uses the official locations for [analyzers](https://download.thehive-project.org/analyzers.json) and [responders](https://download.thehive-project.org/responders.json).
+* It includes a generated secret to secure user sessions.
+
+## Customizing Cortex Docker image behavior
+
+You can customize the behavior of the Cortex Docker image using environment variables or command-line parameters:
+
+| Parameter            | Environment variable         | Description                                       |
 |----------------------|----------------------|---------------------------------------------------|
-| `--no-config`        | `no_config=1`        | Do not configure Cortex                           |
-| `--no-config-secret` | `no_config_secret=1` | Do not add the random secret to the configuration |
-| `--no-config-es` | `no_config_es=1` | do not add elasticsearch hosts to configuration
-| `--es-uri <uri>` | `es_uri=<uri>` | use this string to configure elasticsearch hosts (format: http(s)://host:port,host:port(/prefix)?querystring)
-| `--es-hostname <host>` | `es_hostname=host` | resolve this hostname to find elasticsearch instances
-| `--secret <secret>` | `secret=<secret>` | secret to secure sessions
-| `--show-secret` | `show_secret=1` | show the generated secret
-| `--job-directory <dir>` | `job_directory=<dir>` | use this directory to store job files
-| `--docker-job-directory <dir>` | `docker_job_directory=<dir>` | indicate the job directory in the host (not inside container)
-| `--analyzer-url <url>` | `analyzer_urls=<url>,<url>,...` | where analyzers are located (url or path)
-| `--responder-url <url>` | `responder_urls=<url>,<url>,...` | where responders are located (url or path)
-| `--start-docker` | `start_docker=1` | start an internal docker (inside container) to run analyzers/responders
-| `--daemon-user <user>` | `daemon_user=<user>` | run cortex using this user
+| `--no-config`        | `no_config=1`        | Don't configure Cortex                           |
+| `--no-config-secret` | `no_config_secret=1` | Don't add the random secret to the configuration |
+| `--no-config-es` | `no_config_es=1` | Don't add Elasticsearch hosts to the configuration
+| `--es-uri <uri>` | `es_uri=<uri>` | Configure Elasticsearch hosts with this string (format: http(s)://host:port,host:port(/prefix)?querystring)
+| `--es-hostname <host>` | `es_hostname=host` | Resolve this host name to locate Elasticsearch instances
+| `--secret <secret>` | `secret=<secret>` | Secret used to secure sessions
+| `--show-secret` | `show_secret=1` | Display the generated secret
+| `--job-directory <dir>` | `job_directory=<dir>` | Directory to store job files
+| `--docker-job-directory <dir>` | `docker_job_directory=<dir>` | Host directory corresponding to the job directory (outside the container)
+| `--analyzer-url <url>` | `analyzer_urls=<url>,<url>,...` | URLs or paths where analyzers are located
+| `--responder-url <url>` | `responder_urls=<url>,<url>,...` | URLs or paths where responders are located
+| `--start-docker` | `start_docker=1` | Start an internal Docker daemon inside the container to run analyzers/responders
+| `--daemon-user <user>` | `daemon_user=<user>` | Run Cortex using this user
 
-At the end of the generated configuration, the file `/etc/cortex/application.conf` is included. Thus you can override any setting by binding your own `application.conf` into this file:
+The command-line parameters and environment variables documented here are used to customize Cortex when the container starts. These are converted into settings inside the `application.conf` configuration file, whose available options and structure are documented separately in [Parameters for Docker](parameters-docker.md).
+
+## Overriding configuration with a custom file
+
+The generated configuration includes the file `/etc/cortex/application.conf` at the end. You can override any setting by mounting your own `application.conf` file to this path.
 
 !!! Example ""
     ```
-    docker run --volume /path/to/my/application.conf:/etc/cortex/application.conf thehiveproject/cortex:latest --es-uri http://elasticsearch.local:9200
+    docker run --volume /path/to/my/application.conf:/etc/cortex/application.conf thehiveproject/cortex:latest --es-uri http://<elasticsearch-host>:9200
     ```
 
-Cortex uses docker to run analyzers and responders. If you run Cortex inside a docker, you can:
+Cortex uses Docker to run analyzers and responders. When running Cortex inside a Docker container, you can:
 
- - give Cortex access to docker service or podman service (recommended solution)
- - start a docker service inside Cortex docker container
+* Grant Cortex access to the Docker or Podman service (recommended approach)
+* Start a Docker service inside the Cortex Docker container
 
-#### Cortex uses main docker service
-In order to use docker service the docker socket must be bound into Cortex container. Moreover, as Cortex shares files with analyzers, a folder must be bound between them.
+If your environment requires Docker registry authentication, add the following section to your Cortex `application.conf` file:
+
+!!! Example ""
+    ```
+    docker {
+      host = "<docker-host-url>"
+      tlsVerify = true 
+      certPath = "/path/to/ca/certificates"
+      registry {
+        user = "<registry-username>"
+        password = "<registry-password>"
+        email = "<registry-email>"
+        url = "https://index.docker.io/v1/"
+      }
+    }
+    ```
+
+Usually, only the `registry` section needs configuration unless you connect to a remote Docker daemon.
+
+## Running Cortex with Docker
+
+### Using the host Docker service
+
+To allow Cortex to use the Docker service, you must bind the Docker socket into the Cortex container. Since Cortex shares job files with analyzers, you also need to bind a shared folder between Cortex and the analyzers.
 
 !!! Example ""
     ```
     docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
     ```
 
-Cortex can instantiate docker container by using the docker socket `/var/run/docker.sock`. The folder `/var/run/cortex/jobs` is used to store temporary file of jobs. The folder `/tmp/cortex-jobs` is job folder inside the docker. In order to make job file visible to analyzer docker, Cortex needs to know both folders (parameters `--job-directory` and `-docker-job-directory`). On most cases, job directories are the same and `--docker-job-directory` can be omitted.
+Cortex creates Docker containers via the Docker socket `/var/run/docker.sock`. The directory `/var/run/cortex/jobs` stores temporary job files on the host, and `/tmp/cortex-jobs` is the corresponding path inside the container. Cortex requires both paths via `--job-directory` (inside container) and `--docker-job-directory` (host path) so job files are available to analyzers. Usually, when host and container paths are the same, `--docker-job-directory` can be omitted.
 
-If you run Cortex in Windows, the docker service is accessible through the named pipe `\\.\pipe\docker_engine`. The command becomes
+On Windows, Docker service is accessible through the named pipe `\\.\pipe\docker_engine`. The command changes accordingly:
 
 !!! Example ""
     ```
     docker run --volume //./pipe/docker_engine://./pipe/docker_engine --volume C:\\CORTEX\\JOBS:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory C:\\CORTEX\\JOBS
     ```
 
-#### Docker in docker (docker-ception)
-You can also run docker service inside Cortex container, a docker in a docker with `--start-docker` parameter. The container must be run in privileged mode.
+### Running Docker inside Cortex container (Docker-in-Docker)
+
+You can also run a Docker service inside the Cortex container itself—essentially Docker within Docker—by using the `--start-docker` parameter. Note that you must start the container in privileged mode.
 
 !!! Example ""
     ```
     docker run --privileged thehiveproject/cortex:latest --start-docker
     ```
-In this case you don't need to bind job directory.
 
-#### Use Docker-compose
-Cortex requires Elasticsearch to run. You can use `docker-compose` to start them together in Docker or install and configure Elasticsearch manually.
-[Docker-compose](https://docs.docker.com/compose/install/) can start multiple dockers and link them together.
+In this mode, you don’t need to bind any job directories since the Docker daemon runs inside the container.
 
-The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml)
-file starts Elasticsearch and Cortex:
+### Using Docker Compose to start Cortex and Elasticsearch
+
+Cortex requires Elasticsearch to run. You can use [Docker Compose](https://github.com/StrangeBeeCorp/docker) to start both services together, or install and configure Elasticsearch manually.
+
+Docker Compose enables you to launch multiple containers and link them.
+
+The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml) file starts Elasticsearch and Cortex:
 
 !!! Example ""
     ```
@@ -95,26 +135,31 @@ file starts Elasticsearch and Cortex:
           - "0.0.0.0:9001:9001"
     ```
 
-Put this [docker-compose file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml) and [.env](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env) in an empty folder and run `docker-compose up`. Cortex is exposed on 9001/tcp port. These ports can be changed by modifying the `docker-compose` file.
+Place this [Docker Compose file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml) and the corresponding [.env file](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env) in an empty folder, then run `docker-compose up`. Cortex is available on port 9001/tcp by default, which you can customize in the compose file.
 
-!!! Tip "For advanced configuration, visit [our Docker Templates repository](https://github.com/TheHive-Project/Docker-Templates)"
+!!! Tip "Advanced configuration"
+    For advanced configuration, visit [the StrangeBee Docker Templates repository](https://github.com/TheHive-Project/Docker-Templates).
 
-#### Cortex with podman
+## Running Cortex with Podman
 
-Like docker, podman will be able to run the container image of cortex and of its analyzers.
-The examples below assume that the containers are run as **rootful**.
+Podman is an open-source container engine designed as a drop-in replacement for Docker. It allows you to run containers without requiring a daemon and can run in rootless mode for improved security.
 
-For Cortex to interact with podman, it needs to use the [podman socket](https://docs.podman.io/en/latest/markdown/podman-system-service.1.html). On some systems, podman will automatically install and enable this service. You can check this on your system with:
+Like Docker, Podman can run the Cortex container image as well as its analyzers. The examples below assume you run the containers in rootful mode.
 
-```shell
-systemctl status podman.socket
-```
+For Cortex to interact with Podman, it requires access to the [Podman socket](https://docs.podman.io/en/latest/markdown/podman-system-service.1.html). On some systems, Podman automatically installs and enables this socket service.
 
-Here we assume that the podman socket is accessible on `/run/podman/podman.sock`. This may change based on your system.
+You can check whether the Podman socket service is running on your system with this command:
 
-!!! Example "Cortex uses podman service"
+!!! Example ""
+    ```shell
+    systemctl status podman.socket
+    ```
 
-    You need to mount the podman socket inside the container to `/var/run/docker.sock`
+By default, the Podman socket resides at `/run/podman/podman.sock`. This path may vary depending on your system configuration.
+
+!!! Example "Configuring Cortex to run analyzers with Podman"
+
+    To allow Cortex to run analyzers with Podman, mount the Podman socket inside the container at `/var/run/docker.sock`:
 
     ```shell
     podman run \
@@ -126,25 +171,26 @@ Here we assume that the podman socket is accessible on `/run/podman/podman.sock`
       docker.io/thehiveproject/cortex:3.1.7 \
       --job-directory /tmp/cortex-jobs \
       --docker-job-directory /var/run/cortex/jobs \
-      --es-uri http://$ES_IP:9200
+      --es-uri http://<elasticsearch-ip>:9200
     ```
 
-    With this configuration, Cortex analyzers will be run by podman.
+    With this setup, Cortex will use Podman to run analyzers inside the container.
 
 !!! Warning "Image not found"
 
-    Podman may have trouble pulling cortex neurons images from the regular docker registry. You may have to add docker.io as an unqualified registry.
-    To do this, add this line to your config `/etc/containers/registries.conf`:
+    Podman may encounter issues pulling Cortex analyzer images from the default Docker registry. To fix this, add `docker.io` as an unqualified registry in your Podman configuration.
+
+    Edit `/etc/containers/registries.conf` and add:
 
     ```
     unqualified-search-registries = ['docker.io']
     ```
 
-    Then restart the podman socket service too
+    After making this change, restart the Podman socket service to apply the update.
 
-!!! Example "Docker in podman"
+!!! Example "Docker in Podman"
 
-    By running with the flag `--privileged`, it is possible to start docker inside a podman container
+    You can run Docker inside a Podman container by using the `--privileged` flag:
 
     ```shell
     podman run \
@@ -153,6 +199,10 @@ Here we assume that the podman socket is accessible on `/run/podman/podman.sock`
       --name cortex \
       -p 9001:9001 \
       docker.io/thehiveproject/cortex:3.1.7 \
-      --es-uri http://$ES_IP:9200
+      --es-uri http://<elasticsearch-ip>:9200 \
       --start-docker
     ```
+
+<h2>Next steps</h2>
+
+* [Parameters for Docker](parameters-docker.md)
