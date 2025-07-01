@@ -126,7 +126,9 @@ Unauthorized users can't be assigned to the case.
     A case with restricted visibility still triggers [configured notifications](../../organization/configure-organization/manage-notifications/about-notifications.md), regardless of who can view the case.
 
 !!! warning "Audit logs behavior"
-    When visibility is restricted on a case, all associated [audit logs](../../organization/about-audit-logs.md), including those created earlier, immediately become private.
+    When visibility is restricted on a case:  
+    - If you're using the default configuration with Apache Cassandra (JanusGraph) to store your audit logs, all associated [audit logs](../../organization/about-audit-logs.md), including those created earlier, immediately become private.  
+    - If you're using [Elasticsearch to store your audit logs](../../../operations/configure-audit-logs-storage-elasticsearch.md), all associated [audit logs](../../organization/about-audit-logs.md) remain public. Audit logs retain the visibility they had at the time of creation, regardless of the current visibility of the case.
 
 #### Indicators
 
