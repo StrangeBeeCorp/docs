@@ -1,1 +1,0 @@
-Select **Preview** to vizualize the rendering of your content.

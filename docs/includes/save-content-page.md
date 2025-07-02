@@ -1,1 +1,0 @@
-Select :fontawesome-solid-floppy-disk: to save your page.

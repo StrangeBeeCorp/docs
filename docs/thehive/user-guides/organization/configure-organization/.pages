@@ -1,9 +1,0 @@
-Title: Configure organization
-nav:
-  - 'manage-users'
-  - 'manage-case-templates.md'
-  - 'manage-custom-tags'
-  - 'manage-ui-configuration'
-  - 'manage-notifications'
-  - 'manage-endpoints'
-  - 'manage-attachments'

@@ -1,2 +1,0 @@
-!!! note "Available variables"
-        You can use variables in certain fields by selecting **Add variable**. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.

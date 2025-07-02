@@ -1,1 +1,0 @@
-Once created, this endpoint is available solely for your organization. To create an endpoint for multiple organizations, refer to the [Add a Global Endpoint](/thehive/administration/add-a-global-endpoint/) topic.

@@ -1,1 +1,0 @@
-Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
