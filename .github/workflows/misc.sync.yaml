@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - main
-      - fix/ci/misc.sync
 
 jobs:
   sync:
@@ -22,9 +21,8 @@ jobs:
           PUBLIC_ORG_NAME: strangebeecorp
         run: |
           git remote add public https:///${{ env.PUBLIC_ORG_NAME }}:${{ secrets.PUBLIC_DOCS_TOKEN }}@github.com/${{ env.PUBLIC_ORG_NAME }}/docs
-          git fetch origin main
-          git fetch public main
+          git fetch --all
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git checkout origin/main
+          git checkout --track origin/main
           git push --force public main
