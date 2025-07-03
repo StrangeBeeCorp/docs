@@ -24,5 +24,6 @@ jobs:
           git fetch --all
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git checkout main
-          git push --force public main
+          git checkout public main
+          git pull --rebase origin main
+	  git push -f public main
