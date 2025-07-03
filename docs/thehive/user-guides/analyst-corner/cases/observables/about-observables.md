@@ -43,7 +43,7 @@ Cases and alerts are considered similar if all the following conditions are met:
 
 * At least one observable not excluded from similarity checks shares the same value, such as an identical file name or IP address.
 * The related cases and alerts belong to the same organization or to [linked organizations](../../../../administration/organizations/about-organizations-sharing-rules.md).
-* Alerts don't have the status *Imported*. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.
+* Alerts don't have the status *Imported*. Alerts that have been merged into a case are no longer included in similarity checks—but the case is. 
 
 ## Permissions
 
