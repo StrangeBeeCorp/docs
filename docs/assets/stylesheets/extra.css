@@ -3,7 +3,7 @@
 @forward "./components/";
 html {
   scroll-behavior: smooth;
-  font-size: 21px; }
+  font-size: 22px; }
   @media (max-width: 1220px) {
     html {
       font-size: 20px; } }
