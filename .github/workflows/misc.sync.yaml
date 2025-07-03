@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - fix/ci/misc.sync
 
 jobs:
   sync:
@@ -20,7 +21,10 @@ jobs:
         env:
           PUBLIC_ORG_NAME: strangebeecorp
         run: |
+          git remote add public https:///${{ env.PUBLIC_ORG_NAME }}:${{ secrets.PUBLIC_DOCS_TOKEN }}@github.com/${{ env.PUBLIC_ORG_NAME }}/docs
+          git fetch origin main
+          git fetch public main
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git remote add private_docs_repo https:///${{ env.PUBLIC_ORG_NAME }}:${{ secrets.PUBLIC_DOCS_TOKEN }}@github.com/${{ env.PUBLIC_ORG_NAME }}/docs
-          git push --force private_docs_repo main
+          git checkout origin/main
+          git push --force public main
