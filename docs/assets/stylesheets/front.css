@@ -345,7 +345,7 @@ section.docs-hero .content::before {
 }
 
 section.docs-hero .content>.img-frame {
-     width: 20rem;
+    width: 20rem;
     height: 21.32rem;
     position: absolute;
     top: 50%;
