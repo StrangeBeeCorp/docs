@@ -14897,6 +14897,11 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 </div>
 <h3 id="configuration_2">Configuration<a class="headerlink" href="#configuration_2" title="Permanent link">#</a></h3>
 <p>The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:</p>
+<div class="admonition danger">
+<p class="admonition-title">Configuring baseURL</p>
+<p>Correct baseURL configuration is essential for TheHive. Make sure the baseURL exactly matches the URL users use to access TheHive, including the protocol and any path segments.</p>
+<p>Incorrect configuration causes Single Sign-On (SSO) to fail.</p>
+</div>
 <div class="admonition example">
 <div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">..</span><span class="p p-Indicator">]</span>
 <span class="c1"># Service configuration</span>
