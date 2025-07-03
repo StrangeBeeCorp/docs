@@ -70,7 +70,7 @@ Move through the **Password** section and select **Edit password**. Select **Con
 
 The password reset feature is available only if an [SMTP server](../../../../administration/smtp/configure-smtp-server.md) is configured.
 
-Move through the **Password** section and select **Reset password**. The user gets an email asking them to choose a new password. The link is only valid for a limited time.
+Move through the **Password** section and select **Reset password**. The user gets an email asking them to choose a new password. The link is only valid for a limited time. 
 
 <h2>Next steps</h2>
 
