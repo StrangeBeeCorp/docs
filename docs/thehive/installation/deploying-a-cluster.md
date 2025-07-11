@@ -2,13 +2,13 @@
 
 !!! Note
     - This documentation applies to TheHive versions 5.4 and later. For earlier versions, [please refer to the Akka Configuration](../configuration/akka.md).
-    - This documentation applies for a fresh installationm for a new instance.
+    - This documentation applies for a fresh installation for a new instance.
 
 This guide presents configuration examples for setting up a fault-tolerant cluster for TheHive. Each cluster comprises three active nodes, featuring:
 
 - Cassandra for the database
 - Elasticsearch for the indexing engine
-- NFS (recommanded), or S3 file storage (for example MINIO)
+- NFS (recommended), or S3 file storage (for example MINIO)
 - TheHive
 - Haproxy (to demonstrate load balancing)
 - Keepalived (to demonstrate virtual IP setup)
@@ -164,7 +164,7 @@ To initialize the database, perform the following steps:
 
     !!! Info "to prevent security issue, the cassandra default user will be removed from the base."
 
-2. **Configure the system authentification replication**: Before creating a new users, you have to modify the default replication factor for the keyspace system_auth using the following cql command:
+2. **Configure the system authentication replication**: Before creating a new users, you have to modify the default replication factor for the keyspace system_auth using the following cql command:
 
     !!! Example ""
         ```sql
@@ -494,7 +494,7 @@ To set up a shared file storage for TheHive in a clustered environment, several 
 ## TheHive Setup
 ![](../images/installation/thehive-cluster.png){ align=left width=100 }
 
-TheHive utilizes the pekko toolkit to effectively manage clusters and enhance scalability. pekko facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
+TheHive utilizes the Pekko toolkit to effectively manage clusters and enhance scalability. Pekko facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
 
 !!! Note
     Apache Pekko is a toolkit designed for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.
@@ -507,7 +507,7 @@ TheHive utilizes the pekko toolkit to effectively manage clusters and enhance sc
 
 ### Configuration
 #### Cluster
-When configuring TheHive for a clustered environment, it's essential to configure pekko to ensure efficient management of the cluster by the application.
+When configuring TheHive for a clustered environment, it's essential to configure Pekko to ensure efficient management of the cluster by the application.
 
 In this guide, we assume that node 1 serves as the master node. Begin by configuring the ``pekko`` component in the ``/etc/thehive/application.conf`` file of each node as follows:
 
