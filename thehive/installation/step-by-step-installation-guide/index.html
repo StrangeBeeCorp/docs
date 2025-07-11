@@ -14805,7 +14805,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>elasticsearch<span cl
 <li>
 <p>Add the DEB repository and install TheHive.</p>
 <div class="admonition example">
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.4 main'</span><span class="w"> </span><span class="p">|</span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/apt/sources.list.d/strangebee.list
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s1">'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.5 main'</span><span class="w"> </span><span class="p">|</span>sudo<span class="w"> </span>tee<span class="w"> </span>-a<span class="w"> </span>/etc/apt/sources.list.d/strangebee.list
 sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>thehive
 </code></pre></div>
@@ -14829,7 +14829,7 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w
 <span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">priority</span><span class="o">=</span><span class="m">1</span>
 <span class="nv">name</span><span class="o">=</span>StrangeBee<span class="w"> </span>RPM<span class="w"> </span>repository
-<span class="nv">baseurl</span><span class="o">=</span>https://rpm.strangebee.com/thehive-5.4/noarch/
+<span class="nv">baseurl</span><span class="o">=</span>https://rpm.strangebee.com/thehive-5.5/noarch/
 <span class="nv">gpgkey</span><span class="o">=</span>https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
 <span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
 </code></pre></div>
