@@ -6,6 +6,23 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.5 - July 10, 2025
+
+### Regression fixes
+
+* Case start date: Corrected an issue where the start date was incorrectly set after case creation.
+* Tags: Fixed custom tag auto-completion problems when editing cases or configuring filters.
+
+### Improvements
+
+Optimized audit JSON rendering to improve overall application performance and reduce CPU usage.
+
+### Other fixes
+
+* Dashboards: Resolved display issues with donut and bar widgets when using custom fields or statuses as categories.
+* Metrics: Fixed inaccurate calculations in dashboard widgets that use metric-per-unit fields (such as TimeToDetectInHour and TimeToQualifyInDay).
+* Case links: Improved conversion of external alert links into case links to prevent display errors caused by improperly formatted URLs.
+
 ## 5.5.4 - June 25, 2025
 
 ### Regression fixes
@@ -15,7 +32,7 @@ Fixed a regression where the `creationDate` field wasn't automatically set to th
 ### Improvements
 
 * Functions: Added the ability to [switch a case to restricted mode using a function](../user-guides/organization/configure-organization/manage-functions/functions-objects.md#case).
-* Docker image: Introduced a new entry point to support custom certificate authority (CA) handling
+* Docker image: Introduced [a new entry point to support custom certificate authority (CA) handling](../../cortex/installation-and-configuration/run-cortex-with-docker.md#overriding-configuration-with-a-custom-file).
 
 ### Other fixes
 

@@ -12,6 +12,8 @@ Analyzers enrich observables with detailed contextual intelligence, generating a
 
 2. In the observable details, select the relevant report in the **Reports** section.
 
+    ![Reports section](../../../../images/user-guides/analyst-corner/cases/observable-analyzer-reports.png)
+
 3. In the **Analysis report** drawer, under the **Observables extracted from analysis report** section, select :fontawesome-regular-square: next to the observables you want to import.
 
 4. Select **Import observables**.

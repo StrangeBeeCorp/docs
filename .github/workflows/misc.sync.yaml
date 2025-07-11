@@ -1,0 +1,30 @@
+name: misc.sync
+on:
+  # Run manually a sync between current repo / develop and public repo develop
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    if: github.repository != 'strangebeecorp/docs'
+    permissions:
+      actions: read
+      contents: write
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: Push to public Docs repo
+        env:
+          PUBLIC_ORG_NAME: strangebeecorp
+        run: |
+          git init -b main
+          git remote add public https:///${{ env.PUBLIC_ORG_NAME }}:${{ secrets.PUBLIC_DOCS_TOKEN }}@github.com/${{ env.PUBLIC_ORG_NAME }}/docs
+          git remote add origin https:///${{ secrets.PRIVATE_ORG_NAME }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ secrets.PRIVATE_ORG_NAME }}/docs
+          git fetch --all
+          
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout --track origin/main
+          git push -f public main

@@ -633,7 +633,7 @@ Install TheHive package by using the following commands:
 
         !!! Example ""
             ```bash
-            echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.4 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
+            echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.5 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
             sudo apt-get update
             sudo apt-get install -y thehive
             ```
@@ -655,7 +655,7 @@ Install TheHive package by using the following commands:
             enabled=1
             priority=1
             name=StrangeBee RPM repository
-            baseurl=https://rpm.strangebee.com/thehive-5.4/noarch/
+            baseurl=https://rpm.strangebee.com/thehive-5.5/noarch/
             gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
             gpgcheck=1
             ```
@@ -719,6 +719,11 @@ Install TheHive package by using the following commands:
 
 The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
 
+!!! danger "Configuring baseURL"
+    Correct baseURL configuration is essential for TheHive. Make sure the baseURL exactly matches the URL users use to access TheHive, including the protocol and any path segments.
+
+    Incorrect configuration causes Single Sign-On (SSO) to fail.
+
 !!! Example ""
     ```yaml title="/etc/thehive/application.conf"
     [..]
@@ -730,7 +735,6 @@ The setup provided with binary packages is tailored for a standalone installatio
 
     1. :fontawesome-solid-laptop: Define the scheme, hostname, and port for accessing the application
     2. :fontawesome-brands-safari: Indicate if a custom path is being used (default is /)
-
 
 The following configurations are necessary for successful initiation of TheHive:
 

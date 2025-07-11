@@ -127,7 +127,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     For each organization, select a [permission profile](../../../../administration/profiles/about-profiles.md) for the user account from the dropdown list.
 
-    <!-- md:version 5.4.3 --> Profiles that require a [Gold or Platinum license](../../../../installation/licenses/about-licenses.md) are labeled *License required*.
+    <!-- md:version 5.4.3 --> Profiles that require a [Gold or Platinum license](../../../../installation/licenses/about-licenses.md) are labeled *License required*. 
 
     ---
 
