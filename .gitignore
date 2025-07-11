@@ -2,3 +2,4 @@ venv
 site
 **/.history
 **/.DS_Store
+.vscode/settings.json
