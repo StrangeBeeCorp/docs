@@ -18,7 +18,7 @@ Key benefits include:
 
 ## Who is affected
 
-This change applies to users deploying TheHive and Cortex on-premises on Linux distributions via package installations. It doesn't affect those using the SaaS solution or running TheHive and Cortex through Docker deployments.
+This change applies to users deploying TheHive On-Prem and Cortex on Linux distributions via package installations. It doesn't affect those using the TheHive Cloud Platform or running TheHive and Cortex through Docker deployments.
 
 ## Timeline
 

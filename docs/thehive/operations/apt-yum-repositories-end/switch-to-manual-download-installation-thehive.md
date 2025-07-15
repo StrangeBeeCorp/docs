@@ -5,11 +5,11 @@ This topic provides step-by-step instructions for switching from APT and YUM rep
 For instructions on performing the same process for Cortex, see [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md).
 
 !!! info "Are you concerned?"
-    Use this procedure if you currently install or update TheHive on-premises on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
+    Use this procedure if you currently install or update TheHive On-Prem on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
 
-    You aren't affected if you use the SaaS solution or run TheHive through Docker deployments.
+    You aren't affected if you use the TheHive Cloud Platform or run TheHive through Docker deployments.
 
-    If you are a new user, follow the updated instructions in the [step-by-step installation guide](../../installation/step-by-step-installation-guide.md).
+    If you are a new user, follow the instructions in the [step-by-step installation guide](../../installation/step-by-step-installation-guide.md).
 
 !!! warning "Prerequisites"
     Before starting this procedure, check that you have installed the following tools:
@@ -82,7 +82,7 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 
         ```bash
         sudo rm /etc/apt/sources.list.d/strangebee.list
-        sudo apt update
+        sudo apt-get update
         ```
 
     === "RHEL-based systems"

@@ -71,7 +71,7 @@ For manual installation, download the latest Cortex release as a ZIP archive:
 
 🔗 **[Download Cortex ZIP](https://download.thehive-project.org/cortex-latest.zip)**  
 
-After downloading, extract the archive:  
+After downloading, extract the archive:
 
 ```bash
 unzip cortex-latest.zip -d cortex
