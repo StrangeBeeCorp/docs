@@ -1,4 +1,4 @@
-# How to Configure the RunAnalyzer Notifier
+# How to Configure the RunResponder Notifier
 
 <!-- md:license Platinum -->
 
