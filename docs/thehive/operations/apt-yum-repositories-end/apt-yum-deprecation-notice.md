@@ -26,6 +26,7 @@ This change applies to users deploying TheHive On-Prem and Cortex on Linux distr
 
 * APT and YUM repositories are unavailable starting July 31, 2025.
 * The domain https://download.thehive-project.org/ becomes unavailable starting XXX.
+* The domain https://archives.strangebee.com/ becomes unavailable starting XXX.
 
 ## What you should do
 

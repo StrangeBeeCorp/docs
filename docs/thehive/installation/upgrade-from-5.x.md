@@ -7,13 +7,13 @@
 
 ---
 
-## Important Considerations
+## Important considerations
 
 Before proceeding with the upgrade, please keep the following points in mind:
 
 1. **Database Backup**: We strongly recommend performing a full database backup before upgrading. For detailed instructions on how to perform a backup, please refer to the backup instructions.
 
-2. **Downgrade Limitation**: Once upgraded to TheHive 5.5, your instance cannot be downgraded. This means reverting to a previous version of TheHive 5 will require restoring your data from the backup.
+2. **Downgrade Limitation**: Once upgraded to TheHive 5.5, your instance can't be downgraded. This means reverting to a previous version of TheHive 5 will require restoring your data from the backup.
 
 3. When upgrading an existing TheHive 5.x instance, the first application launch will trigger a database evolution, including schema and data updates. This operation may take some time depending on your database size.
 
@@ -27,58 +27,11 @@ This guide provides step-by-step instructions for upgrading an existing TheHive 
 
 ---
 
-## Upgrade Instructions
+## Upgrade instructions
 
-TheHive 5.x deliverables are hosted in distinct package repositories. Depending on your installation method, follow the instructions below:
+TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-
-=== "DEB Package (Debian/Ubuntu)"
-
-    1. (Optional) Install the package repository signature key, if not already installed:
-
-        ```bash
-        wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-        ```
-
-    2. Edit the file ``/etc/apt/sources.list.d/strangebee.list`` and adjust the repository address as follows:
-
-        ```bash
-        deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.5 main
-        ``` 
-
-    3. Install TheHive package:
-
-        ```bash
-        sudo apt-get update
-        sudo apt-get install -y thehive 
-        ``` 
-
-=== "RPM Package (Red Hat/CentOS)"
-
-    1. (Optional) Install the package repository signature key, if not already installed:
-
-        ```bash
-        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-        ```
-
-    2. Edit the file ``/etc/yum.repos.d/strangebee.repo`` and adjust the repository address as follows:
-
-        ```bash
-        [thehive]
-        enabled=1
-        priority=1
-        name=StrangeBee RPM repository
-        baseurl=https://rpm.strangebee.com/thehive-5.5/noarch
-        gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-        gpgcheck=1
-        ``` 
-
-    3. Then install the package using yum:
-
-        ```bash
-        sudo yum update
-        sudo yum install thehive 
-        ``` 
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
 === "Docker"
 
@@ -89,7 +42,7 @@ TheHive 5.x deliverables are hosted in distinct package repositories. Depending 
 
 ---
 
-### Health Checks
+### Health checks
 
 If you have health checks on the application HTTP interface, they should be disabled during the upgrade process. Otherwise, the orchestrator may kill TheHive during the update process.
 
