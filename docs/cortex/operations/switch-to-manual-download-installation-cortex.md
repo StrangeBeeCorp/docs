@@ -24,14 +24,14 @@ For instructions on performing the same process for TheHive, see [Switch to Manu
 
 4. Remove the old repository to avoid stale configurations.
 
-    === "Debian-based systems"
+    === "DEB"
 
         ```bash
         sudo rm /etc/apt/sources.list.d/strangebee.list
         sudo apt-get update
         ```
 
-    === "RHEL-based systems"
+    === "RPM"
 
         a. Disable the repository.
 

@@ -2,7 +2,7 @@
 
 This topic explains the deprecation of APT and YUM repositories for TheHive and Cortex installations and upgrades.
 
-Starting July 31, 2025, TheHive and Cortex are no longer distributed via APT and YUM repositories. Instead, installation and upgrades require manually downloading RPM and DEB packages using tools like cURL or Wget, followed by manual installation.
+Starting July 31, 2025, TheHive and Cortex are no longer distributed via APT and YUM repositories. Instead, installation and upgrades require manually downloading DEB and RPM packages using tools like cURL or Wget, followed by manual installation.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
@@ -26,7 +26,6 @@ This change applies to users deploying TheHive On-Prem and Cortex on Linux distr
 
 * APT and YUM repositories are unavailable starting July 31, 2025.
 * The domain https://download.thehive-project.org/ becomes unavailable starting XXX.
-* The domain https://archives.strangebee.com/ becomes unavailable starting XXX.
 
 ## What you should do
 

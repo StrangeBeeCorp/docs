@@ -622,9 +622,46 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 {!includes/manual-download-installation-thehive.md!}
 
+#### Other installation methods
+
+If you prefer a binary package, follow these steps:
+
+1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
+
+    !!! Example ""
+        ```bash
+        cd /opt
+        wget https://archives.strangebee.com/zip/thehive-latest.zip
+        unzip thehive-latest.zip
+        sudo ln -s thehive-x.x.x thehive
+        ```
+
+2. Prepare the system. It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
+
+    !!! Example ""
+        ```bash
+        sudo addgroup thehive
+        sudo adduser --system thehive
+        sudo chown -R thehive:thehive /opt/thehive
+        sudo mkdir /etc/thehive
+        sudo touch /etc/thehive/application.conf
+        sudo chown root:thehive /etc/thehive
+        sudo chgrp thehive /etc/thehive/application.conf
+        sudo chmod 640 /etc/thehive/application.conf
+        ```
+
+3. Copy the systemd script in `/etc/systemd/system/thehive.service`.
+
+    !!! Example ""
+        ```bash
+        cd /tmp
+        wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
+        sudo cp thehive.service /etc/systemd/system/thehive.service
+        ```
+
 ### Configuration
 
-The setup provided with packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
+The setup provided with binary packages is tailored for a standalone installation, with all components hosted on the same server. At this point, it's crucial to fine-tune the following parameters as necessary:
 
 !!! danger "Configuring baseURL"
     Correct baseURL configuration is essential for TheHive. Make sure the baseURL exactly matches the URL users use to access TheHive, including the protocol and any path segments.

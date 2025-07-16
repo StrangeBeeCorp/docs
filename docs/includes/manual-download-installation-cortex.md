@@ -1,6 +1,6 @@
 1. Download the package along with its SHA256 checksum and signature files, as well as the analyzers and responders files.
 
-    === "Debian-based systems (Ubuntu, Debian)"
+    === "DEB"
 
         * Using Wget:
 
@@ -42,7 +42,7 @@
         curl -O https://catalogs.download.strangebee.com/responders.json
         ```
 
-    === "RHEL-based systems (CentOS, Fedora, Rocky Linux)"
+    === "RPM"
 
         * Using Wget:
 
@@ -86,7 +86,7 @@
 
 2. Verify the integrity of the downloaded package.
 
-    === "Debian-based systems"
+    === "DEB"
 
        * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -126,7 +126,7 @@
 
        d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
 
-    === "RHEL-based systems"
+    === "RPM"
 
        * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -168,7 +168,7 @@
 
 3. Install the package.
 
-    === "Debian-based systems"
+    === "DEB"
 
         * Using `dpkg`:
 
@@ -188,7 +188,7 @@
         sudo apt-get install ./cortex-<full_version>.deb
         ```
 
-    === "RHEL-based systems"
+    === "RPM"
 
         * Using `rpm`:
 
