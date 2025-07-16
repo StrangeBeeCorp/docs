@@ -33,6 +33,8 @@ TheHive packages are distributed as RPM and DEB files available for direct downl
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
+{!includes/manual-download-installation-thehive.md!}
+
 === "Docker"
 
     Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named ``strangebee/thehive:5.5``
