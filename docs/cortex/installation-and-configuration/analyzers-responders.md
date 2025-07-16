@@ -14,8 +14,8 @@
 
 To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet: 
 
-- To download public catalogs from _download.thehive-project.org_ 
-- To download Docker images from _hub.docker.com_  ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons)).
+- To download public catalogs from [catalogs.download.strangebee.com](catalogs.download.strangebee.com)
+- To download Docker images from _hub.docker.com_  ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons))
 
 
 !!! Example ""
@@ -25,7 +25,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://download.thehive-project.org/analyzers.json"
+        "https://catalogs.download.strangebee.com/json/analyzers.json"
       ]
 
       fork-join-executor {
@@ -41,7 +41,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     responder {
       # Directory that holds responders
       urls = [
-        "https://download.thehive-project.org/responders.json"
+        "https://catalogs.download.strangebee.com/json/responders.json"
       ]
 
       fork-join-executor {
@@ -167,7 +167,7 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://download.thehive-project.org/analyzers.json",
+        "https://catalogs.download.strangebee.com/json/analyzers.json",
         "/opt/Custom-Analyzers/analyzers" 
       ]
 
@@ -184,8 +184,8 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     responder {
       # Directory that holds responders
       urls = [
-        "https://download.thehive-project.org/responders.json",
-        "/opt/Custom-Analyzers/responders" 
+        "https://catalogs.download.strangebee.com/json/responders.json",
+        "/opt/Custom-Analyzers/responders"
       ]
 
       fork-join-executor {

@@ -11,7 +11,7 @@ To run the Docker image, you need [Docker](https://www.docker.com/)—no surpris
 By default, the Docker image generates a Cortex configuration file with the following settings:
 
 * It sets the Elasticsearch URI by resolving the host name `elasticsearch`.
-* It uses the official locations for [analyzers](https://download.thehive-project.org/analyzers.json) and [responders](https://download.thehive-project.org/responders.json).
+* It uses the official locations for [analyzers](https://catalogs.download.strangebee.com/json/analyzers.json) and [responders](https://catalogs.download.strangebee.com/json/responders.json).
 * It includes a generated secret to secure user sessions.
 
 ## Customizing Cortex Docker image behavior

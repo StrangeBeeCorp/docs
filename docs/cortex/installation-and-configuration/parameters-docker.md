@@ -44,15 +44,15 @@ These settings accept:
 
 Available URLs for dockerized analyzers:
 
-* [analyzers-stable.json](https://download.thehive-project.org/analyzers-stable.json): Stable analyzers (no updates once used).
-* [analyzers.json](https://download.thehive-project.org/analyzers.json): Updated with each new release.
-* [analyzers-devel.json](https://download.thehive-project.org/analyzers-devel.json): Updated on every commit (development builds).
+* [analyzers-stable.json](https://catalogs.download.strangebee.com/json/analyzers-stable.json): Stable analyzers (no updates once used).
+* [analyzers.json](https://catalogs.download.strangebee.com/json/analyzers.json): Updated with each new release.
+* [analyzers-devel.json](https://catalogs.download.strangebee.com/json/analyzers-devel.json): Updated on every commit (development builds).
 
 Available URLs for dockerized responders:
 
-* [responders-stable.json](https://download.thehive-project.org/responders-stable.json): Stable responders (no updates once used).
-* [responders.json](https://download.thehive-project.org/responders.json): Updated with each new release.
-* [responders-devel.json](https://download.thehive-project.org/responders-devel.json): Updated on every commit (development builds).
+* [responders-stable.json](https://catalogs.download.strangebee.com/json/responders-stable.json): Stable responders (no updates once used).
+* [responders.json](https://catalogs.download.strangebee.com/json/responders.json): Updated with each new release.
+* [responders-devel.json](https://catalogs.download.strangebee.com/json/responders-devel.json): Updated on every commit (development builds).
 
 <h2>Next steps</h2>
 
