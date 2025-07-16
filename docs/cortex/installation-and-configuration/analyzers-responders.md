@@ -9,7 +9,6 @@
     sudo usermod -G docker cortex
     ```
 
-
 ### Configure Cortex
 
 To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet: 
