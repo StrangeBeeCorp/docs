@@ -93,8 +93,6 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         The installation requires Java 11, so refer to your system documentation to install it.
 
-
-
 ## Elasticsearch
 
 !!! Example ""

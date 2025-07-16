@@ -476,7 +476,7 @@ After successfully starting the service, follow these steps to update the config
   sudo systemctl restart thehive
   ```
 
-??? Abstract "I'm using a cluster"
+??? Abstract "Using a cluster?"
     If you're deploying TheHive in a cluster, you can proceed to install and start TheHive on all other nodes following similar steps.
 
 ---
@@ -511,7 +511,7 @@ During the update, few logs can be seen in TheHive `application.log` file.
     :    _No license found. This is a normal behavior during the upgrade from versions 4 to 5_
 
     ```
-    INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+    [INFO] from play.core.server.AkkaHttpServer in main [|] Listening for HTTP on /0:0:0:0:0:0:0:0:9000
     ```
     :    _The service is available. Users/Administrators can log in_
 
