@@ -14,66 +14,204 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 !!! warning "Prerequisites"
     Before starting this procedure, check that you have installed the following tools:
 
-    * [Wget](https://www.gnu.org/software/wget/) to download package files (.deb or .rpm)
+    * [Wget](https://www.gnu.org/software/wget/) or [cURL](https://curl.se/download.html) to download package files
     * [GPG](https://www.gnupg.org/) to verify the package’s GPG signature
     * [sha256sum](https://linux.die.net/man/1/sha256sum) to check the SHA256 checksum of the downloaded package
 
 <h2>Procedure</h2>
 
-1. Download the package.
+1. Download the package along with its SHA256 checksum and signature files.
 
     === "Debian-based systems (Ubuntu, Debian)"
 
-        ```bash
-        wget https://thehive.download.strangebee.com/thehive-x.y.z.deb
-        ```
+        * Using Wget:
 
         ```bash
-        curl -O https://thehive.download.strangebee.com/thehive-x.y.z.deb
+        wget https://thehive.download.strangebee.com/<major.minor_version>/DEB/thehive-<full_version>.deb
+        wget https://thehive.download.strangebee.com/<major.minor_version>/SHA256/thehive-<full_version>.deb.sha256
+        wget https://thehive.download.strangebee.com/<major.minor_version>/ASC/thehive-<full_version>.deb.asc
+        ```
+
+        Example:
+
+        ```bash
+        wget https://thehive.download.strangebee.com/5.5/DEB/thehive-5.5.5.deb
+        wget https://thehive.download.strangebee.com/5.5/SHA256/thehive-5.5.5.deb.sha256
+        wget https://thehive.download.strangebee.com/5.5/ASC/thehive-5.5.5.deb.asc
+        ```
+
+        * Using cURL:
+
+        ```bash
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/DEB/thehive-<full_version>.deb
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/SHA256/thehive-<full_version>.deb.sha256
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/ASC/thehive-<full_version>.deb.asc
+        ```
+
+        Example:
+        
+        ```bash
+        curl -O https://thehive.download.strangebee.com/5.5/DEB/thehive-5.5.5.deb
+        curl -O https://thehive.download.strangebee.com/5.5/SHA256/thehive-5.5.5.deb.sha256
+        curl -O https://thehive.download.strangebee.com/5.5/ASC/thehive-5.5.5.deb.asc
         ```
 
     === "RHEL-based systems (CentOS, Fedora, Rocky Linux)"
 
-        ```bash
-        wget https://thehive.download.strangebee.com/thehive-x.y.z.rpm
-        ```
+        * Using Wget:
 
         ```bash
-        curl -O https://thehive.download.strangebee.com/thehive-x.y.z.rpm
+        wget https://thehive.download.strangebee.com/<major.minor_version>/RPM/thehive-<full_version>.rpm
+        wget https://thehive.download.strangebee.com/<major.minor_version>/SHA256/thehive-<full_version>.rpm.sha256
+        wget https://thehive.download.strangebee.com/<major.minor_version>/ASC/thehive-<full_version>.rpm.asc
         ```
 
-2. Verify the downloaded package.
+        Example:
 
-    * Match the SHA256 checksum against the value provided alongside the package link.
+        ```bash
+        wget https://thehive.download.strangebee.com/5.5/RPM/thehive-5.5.5.rpm
+        wget https://thehive.download.strangebee.com/5.5/SHA256/thehive-5.5.5.rpm.sha256
+        wget https://thehive.download.strangebee.com/5.5/ASC/thehive-5.5.5.rpm.asc
+        ```
 
-    ```bash
-    sha256sum thehive-latest.deb
-    ```
+        * Using cURL:
 
-    * Verify the GPG signature using the public key available at XXX.
+        ```bash
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/RPM/thehive-<full_version>.rpm
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/SHA256/thehive-<full_version>.rpm.sha256
+        curl -O https://thehive.download.strangebee.com/<major.minor_version>/ASC/thehive-<full_version>.rpm.asc
+        ```
 
-    ```bash
-    gpg --verify thehive-latest.deb.sig thehive-latest.deb
-    ```
+        Example:
+
+        ```bash
+        curl -O https://thehive.download.strangebee.com/5.5/RPM/thehive-5.5.5.rpm
+        curl -O https://thehive.download.strangebee.com/5.5/SHA256/thehive-5.5.5.rpm.sha256
+        curl -O https://thehive.download.strangebee.com/5.5/ASC/thehive-5.5.5.rpm.asc
+        ```
+
+2. Verify the integrity of the downloaded package.
+
+    === "Debian-based systems"
+
+       * Check the SHA256 checksum by comparing it with the provided value.
+
+        a. Generate the SHA256 checksum of your downloaded package.
+
+       ```bash
+       sha256sum thehive-<full_version>.deb
+       ```
+
+        b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
+
+        c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation.
+
+       * Verify the GPG signature using the public key.
+  
+        a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+
+        ```bash
+        wget https://keys.download.strangebee.com/strangebee.gpg
+        ```
+        
+        ```bash
+        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        ```
+
+        b. Import the key into your GPG keyring.
+
+        ```bash
+        gpg --import strangebee.gpg
+        ```
+
+        c. Verify the downloaded package signature.
+
+       ```bash
+       gpg --verify thehive-<full_version>.deb.asc thehive-<full_version>.deb
+       ```
+
+       d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
+
+    === "RHEL-based systems"
+
+       * Check the SHA256 checksum by comparing it with the provided value.
+
+        a. Generate the SHA256 checksum of your downloaded package.
+
+       ```bash
+       sha256sum thehive-<full_version>.rpm
+       ```
+
+        b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
+
+        c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation.
+
+       * Verify the GPG signature using the public key.
+  
+        a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+
+        ```bash
+        wget https://keys.download.strangebee.com/strangebee.gpg
+        ```
+        
+        ```bash
+        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        ```
+
+        b. Import the key into your GPG keyring.
+
+        ```bash
+        gpg --import strangebee.gpg
+        ```
+
+        c. Verify the downloaded package signature.
+
+       ```bash
+       gpg --verify thehive-<full_version>.rpm.asc thehive-<full_version>.rpm
+       ```
+
+       d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
 
 3. Install the package.
 
     === "Debian-based systems"
 
+        * Using `dpkg`:
+
         ```bash
-        sudo dpkg -i thehive-x.y.z.deb
+        sudo dpkg -i thehive-<full_version>.deb
         ```
 
-        Then, resolve any missing dependencies:
+        Fix any missing dependencies with `apt`:
 
         ```bash
         sudo apt-get install -f
         ```
 
-    === "RHEL-based systems"
+        * Using `apt`:
 
         ```bash
-        sudo rpm -ivh thehive-x.y.z.rpm
+        sudo apt install ./thehive-<full_version>.deb
+        ```
+
+    === "RHEL-based systems"
+
+        * Using `rpm`:
+
+        ```bash
+        sudo rpm -ivh thehive-<full_version>.rpm
+        ```
+
+        * Using `yum`:
+
+        ```bash
+        sudo yum localinstall thehive-<full_version>.rpm
+        ```
+
+        * Using `dnf`:
+
+        ```bash
+        sudo dnf install thehive-<full_version>.rpm
         ```
 
 4. Remove the old repository to avoid stale configurations.
@@ -87,11 +225,13 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 
     === "RHEL-based systems"
 
+        a. Disable the repository.
+
         ```bash
         sudo yum-config-manager --disable strangebee
         ```
 
-        Optionally, remove the repository file:
+        b. Optional: Remove the repository file.
 
         ```bash
         sudo rm /etc/yum.repos.d/strangebee.repo
