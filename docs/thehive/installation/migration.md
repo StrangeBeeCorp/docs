@@ -8,7 +8,7 @@ The migration tool is located in `/opt/thehive/bin/migrate`.
 
 ---
 
-## Supported Versions
+## Supported versions
 
 The migration tool facilitates the transition from both TheHive 3.4.x and 3.5.x versions.
 
@@ -44,11 +44,11 @@ This ensures that imported users from TheHive 3.x are formatted as `user@mydomai
 
 ---
 
-## Running the Migration
+## Running the migration
 
 Follow the steps below to execute the migration:
 
-1. Prepare, install, and configure TheHive v5.x as per [**the associated guides**](../index.md)
+1. Prepare, install, and configure TheHive v5.x as per [**the associated guide**](../installation/step-by-step-installation-guide.md)
 
 2. Ensure TheHive 5 is not running before initiating the migration for optimal performance.
 
@@ -68,7 +68,7 @@ Follow the steps below to execute the migration:
 
 &nbsp;
 
-### TheHive Migration Tool Options
+### TheHive migration tool options
 
 The migration tool for TheHive offers a comprehensive set of options to facilitate the migration process. Below is a detailed list of available options:
 
@@ -116,7 +116,7 @@ The migration tool for TheHive offers a comprehensive set of options to facilita
 
 &nbsp;
 
-#### Usage Examples
+#### Usage examples
 
 - Import Cases/Alerts not older than X days/hours.
 - Import Cases/Alerts with specific ID numbers.
@@ -125,7 +125,7 @@ The migration tool for TheHive offers a comprehensive set of options to facilita
 
 &nbsp;
 
-### Basic Migration Command
+### Basic migration command
 
 To migrate data to a new instance of TheHive, use the following command:
 
@@ -162,13 +162,13 @@ If your migration process has been interrupted or only a portion of the data has
 
 ---
 
-## Merging Multiple TheHive 3 Data into One TheHive 5 Instance
+## Merging multiple TheHive 3 data into one TheHive 5 instance
 
 The migration tool supports multiple executions to merge different TheHive 3 datasets into a single TheHive 5 instance. Each migration execution can specify a different target organization. To avoid conflicts in case numbers, where a case with the same number already exists, you can use the `--case-number-shift` parameter to adjust the case numbers accordingly.
 
 ---
 
-## Using Authentication on Cassandra
+## Using authentication on Cassandra
 
 If you're utilizing a dedicated account on Cassandra to access TheHive 4 data, ensure that the user has permissions to create keyspaces in the database.
 
@@ -178,7 +178,7 @@ GRANT CREATE on ALL KEYSPACES to username;
 
 ---
 
-## Migration Logs
+## Migration logs
 
 During the migration process, the tool generates logs to provide insights into the progress. By default, a log is generated approximately every 10 seconds, detailing various aspects of the migration, including the status of cases, alerts, and other entities.
 

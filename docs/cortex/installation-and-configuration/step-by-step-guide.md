@@ -6,7 +6,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 !!! Example "" 
 
-    === "Debian" 
+    === "DEB" 
 
         ```bash
         apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
@@ -99,7 +99,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 !!! Example ""
 
-    === "Debian"
+    === "DEB"
 
         ```bash
         wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
@@ -153,7 +153,7 @@ If using Docker images of Analyzers and Responders, Docker engine is required on
 
 !!! Example ""
 
-    === "Debian"
+    === "DEB"
 
         ```bash
         curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -178,76 +178,32 @@ If using Docker images of Analyzers and Responders, Docker engine is required on
         sudo dnf install -yq docker-ce docker-ce-cli containerd.io docker-compose-plugin
         ```
 
-
-# Cortex Installation and Configuration
+## Cortex installation and configuration
 
 This section provides step-by-step instructions to install Cortex and configure it properly.
 
-## Installation
+### Installation
 
-Cortex is available in Debian, RPM, and binary (zip archive) formats. All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY), with the following fingerprint:
+Cortex packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-```
-0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C
-```
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-### Debian-based installation
+{!includes/manual-download-installation-cortex.md!}
 
-Ensure your system is up to date before installing Cortex. Run the following commands:
+=== "Binary archive"
 
-```bash
-curl -sSL https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg
-```
+    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a pre-built binary archive.
 
-Add the repository to your system:
+    ```bash
+    wget cortex.download.strangebee.com/zip/cortex-<version>.zip
+    unzip cortex-<version>.zip -d /opt/cortex
+    cd /opt/cortex
+    chmod +x cortex
+    ```
 
-```bash
-echo "deb [arch=all signed-by=/usr/share/keyrings/thehive-project.gpg] https://deb.thehive-project.org release main" | sudo tee /etc/apt/sources.list.d/thehive-project.list
-```
+### Post-installation configuration
 
-Update the package list and install Cortex:
-
-```bash
-sudo apt update
-sudo apt install cortex
-```
-
-### RPM-based installation
-
-For RPM-based distributions (CentOS, RHEL, Fedora), create a new repository configuration file:
-
-```bash
-sudo tee /etc/yum.repos.d/thehive-project.repo <<EOL
-[cortex]
-enabled=1
-priority=1
-name=TheHive-Project RPM repository
-baseurl=https://rpm.thehive-project.org/release/noarch
-gpgkey=https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY
-gpgcheck=1
-EOL
-```
-
-Then, install Cortex:
-
-```bash
-sudo yum install cortex
-```
-
-### Binary installation
-
-For environments where package managers are not available, download and extract the Cortex binary package:
-
-```bash
-wget https://download.thehive-project.org/cortex-latest.zip
-unzip cortex-latest.zip -d /opt/cortex
-cd /opt/cortex
-chmod +x cortex
-```
-
-## Post-Installation configuration
-
-### Running Analyzers & Responders with Docker
+#### Running analyzers & responders with Docker
 
 If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensure the `cortex` service account has appropriate permissions to interact with Docker:
 
@@ -255,7 +211,7 @@ If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensur
 sudo usermod -a -G docker cortex
 ```
 
-### Verify installation
+#### Verify installation
 
 After installation, you can check if Cortex is properly installed by running:
 
@@ -265,7 +221,7 @@ cortex --version
 
 This should return the installed version of Cortex.
 
-### Configuration
+#### Configuration
 
 Following settings are required to start Cortex successfully:
 
@@ -280,7 +236,7 @@ Advanced configuration settings might be added to run the application successful
 - [Proxy settings](proxy-settings.md)
 - [SSL configuration](ssl.md)
 
-### Start Cortex service
+#### Start Cortex service
 
 !!! Warning
 

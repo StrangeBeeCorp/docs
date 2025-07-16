@@ -387,7 +387,6 @@ nav:
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
-      - 'Archives': thehive/download/archives.md
     - 'Configuration':
       - 'Database & Index': thehive/configuration/database.md
       - 'File Storage': thehive/configuration/file-storage.md

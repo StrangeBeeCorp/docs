@@ -404,49 +404,11 @@ db.janusgraph.forceDropAndRebuildIndex = true
 
 ### Installing TheHive
 
-If you're utilizing DEB packages for TheHive installation, follow these steps:
+TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-=== "DEB"
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-    1. **Update Repository Address**: Run the following commands to update the repository address:
-
-      ```bash
-      wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
-      sudo rm /etc/apt/sources.list.d/thehive-project.list ; echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.3 main' | sudo tee -a /etc/apt/sources.list.d/strangebee.list
-      ```
-
-    2. **Install the New Package**: Execute the following commands to update and install the new package. This will automatically remove the old package of thehive4:
-  
-      ```bash
-      sudo apt update
-      sudo apt install thehive
-      ```
-
-=== "RPM"
-
-    1. **Add Cassandra Repository Keys**: Import the Cassandra repository keys with the following command:
-
-        ```bash
-        sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-        ```
-
-    2. **Configure RPM Repository**: Create and edit the file /etc/yum.repos.d/strangebee.repo with the following content:
-
-        ```bash title="/etc/yum.repos.d/strangebee.repo"
-        [thehive]
-        enabled=1
-        priority=1
-        name=StrangeBee RPM repository
-        baseurl=https://rpm.strangebee.com/thehive-5.3/noarch
-        gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-        gpgcheck=1
-        ```
-
-    3. **Install TheHive Package**: Install the package using yum:
-
-        ```bash
-        sudo yum install thehive
-        ```
+{!includes/manual-download-installation-thehive.md!}
 
 <!-- During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
 

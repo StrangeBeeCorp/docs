@@ -53,11 +53,11 @@
         a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
         ```bash
-        wget https://keys.download.strangebee.com/strangebee.gpg
+        wget https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
         
         ```bash
-        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
 
         b. Import the key into your GPG keyring.
@@ -156,11 +156,11 @@
         a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
         ```bash
-        wget https://keys.download.strangebee.com/strangebee.gpg
+        wget https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
         
         ```bash
-        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
 
         b. Import the key into your GPG keyring.

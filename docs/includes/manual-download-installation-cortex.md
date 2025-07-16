@@ -1,6 +1,6 @@
 === "DEB"
 
-    1. Download the package along with its SHA256 checksum and signature files, as well as the analyzers and responders files.
+    1. Download the package along with its SHA256 checksum and signature files.
 
         * Using Wget:
 
@@ -8,8 +8,6 @@
         wget https://cortex.download.strangebee.com/<major.minor_version>/deb/cortex-<full_version>.deb
         wget https://cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.deb.sha256
         wget https://cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.deb.asc
-        wget https://catalogs.download.strangebee.com/analyzers.json
-        wget https://catalogs.download.strangebee.com/responders.json
         ```
 
         Example:
@@ -18,8 +16,6 @@
         wget https://cortex.download.strangebee.com/3.2/deb/cortex-3.2.1.deb
         wget https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.deb.sha256
         wget https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.deb.asc
-        wget https://catalogs.download.strangebee.com/analyzers.json
-        wget https://catalogs.download.strangebee.com/responders.json
         ```
 
         * Using cURL:
@@ -28,8 +24,6 @@
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/deb/cortex-<full_version>.deb
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.deb.sha256
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.deb.asc
-        curl -O https://catalogs.download.strangebee.com/analyzers.json
-        curl -O https://catalogs.download.strangebee.com/responders.json
         ```
 
         Example:
@@ -38,8 +32,6 @@
         curl -O https://cortex.download.strangebee.com/3.2/deb/cortex-3.2.1.deb
         curl -O https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.deb.sha256
         curl -O https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.deb.asc
-        curl -O https://catalogs.download.strangebee.com/analyzers.json
-        curl -O https://catalogs.download.strangebee.com/responders.json
         ```
 
     2. Verify the integrity of the downloaded package.
@@ -61,11 +53,11 @@
         a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
         ```bash
-        wget https://keys.download.strangebee.com/strangebee.gpg
+        wget https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
         
         ```bash
-        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
 
         b. Import the key into your GPG keyring.
@@ -111,7 +103,7 @@
 
 === "RPM"
 
-    1. Download the package along with its SHA256 checksum and signature files, as well as the analyzers and responders files.
+    1. Download the package along with its SHA256 checksum and signature files.
 
         * Using Wget:
 
@@ -119,8 +111,6 @@
         wget https://cortex.download.strangebee.com/<major.minor_version>/rpm/cortex-<full_version>.rpm
         wget https://cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.rpm.sha256
         wget https://cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.rpm.asc
-        wget https://catalogs.download.strangebee.com/analyzers.json
-        wget https://catalogs.download.strangebee.com/responders.json
         ```
 
         Example:
@@ -129,8 +119,6 @@
         wget https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1.rpm
         wget https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.rpm.sha256
         wget https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.rpm.asc
-        wget https://catalogs.download.strangebee.com/analyzers.json
-        wget https://catalogs.download.strangebee.com/responders.json
         ```
 
         * Using cURL:
@@ -139,8 +127,6 @@
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/rpm/cortex-<full_version>.rpm
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.rpm.sha256
         curl -O https://cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.rpm.asc
-        curl -O https://catalogs.download.strangebee.com/analyzers.json
-        curl -O https://catalogs.download.strangebee.com/responders.json
         ```
 
         Example:
@@ -149,8 +135,6 @@
         curl -O https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1.rpm
         curl -O https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.rpm.sha256
         curl -O https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.rpm.asc
-        curl -O https://catalogs.download.strangebee.com/analyzers.json
-        curl -O https://catalogs.download.strangebee.com/responders.json
         ```
 
     2. Verify the integrity of the downloaded package.
@@ -172,11 +156,11 @@
         a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
         ```bash
-        wget https://keys.download.strangebee.com/strangebee.gpg
+        wget https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
         
         ```bash
-        curl -O https://keys.download.strangebee.com/strangebee.gpg
+        curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
         ```
 
         b. Import the key into your GPG keyring.

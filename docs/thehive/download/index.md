@@ -5,42 +5,33 @@ hide:
 
 # Download TheHive
 
-TheHive is available in multiple binary package formats, allowing for seamless installation on various operating systems. Below are the available options for obtaining and installing TheHive on different platforms.
-
----
+TheHive is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it on traditional Linux systems, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links below.
 
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
-If you are running an operating system based on Debian/Ubuntu, TheHive can be installed by following the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
+If you use a Debian- or Ubuntu-based OS, follow the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration) to install and configure TheHive.
 
-&nbsp;
-
----
+!!! tip "DEB tab"
+    Select the DEB tab in the guide to ensure you use the correct commands.
 
 ## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-If you are running an operating system based on RedHat or Fedora, TheHive can be installed by following the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
+For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration) to install and configure TheHive.
 
-!!! Info "Note: Make sure to select the correct RPM tab when following the step-by-step instructions to ensure the proper commands are used."
+!!! tip "RPM tab"
+    Select the RPM tab in the guide to ensure you use the correct commands.
 
-&nbsp;
+## :material-folder-zip: Binary archive
 
----
+If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install TheHive by downloading a pre-built binary archive](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration).
+
+!!! tip "Binary archive tab"
+    Select the Binary archive tab in the guide to ensure you use the correct commands.
 
 ## :material-docker: Docker
 
-If you prefer using Docker, you can leverage pre-built Docker images available on Docker Hub for convenient deployment and containerization of TheHive. 
-
-The Docker image can be found on [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive), and [**instructions to run it can be found here**](../installation/docker.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
-
-&nbsp;
-
----
+Prefer containerized deployment? Use the official pre-built Docker images on [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive). Follow the [Docker deployment instructions](../installation/docker.md) to get started.
 
 ## :material-kubernetes: Kubernetes
 
-If you prefer using Kubernetes, you can leverage pre-built Docker images available on Docker Hub for convenient deployment and containerization of TheHive. 
-
-The Docker image can be found on [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive), and [**instructions to run it on Kubernetes can be found here**](../installation/kubernetes.md). These steps will guide you through the necessary configurations and prerequisites to get TheHive fully operational.
-
-&nbsp;
+For Kubernetes users, deploy TheHive with pre-built Docker images from [**TheHive Docker Hub**](https://hub.docker.com/r/strangebee/TheHive). Refer to the [Kubernetes deployment guide](../installation/kubernetes.md) for detailed instructions.

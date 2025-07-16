@@ -616,24 +616,24 @@ This section provides detailed instructions for installing and configuring TheHi
 
 ### Installation
 
-TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
+TheHive packages are distributed as RPM and DEB files, as well as binary archive packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
 {!includes/manual-download-installation-thehive.md!}
 
-=== "Other installation methods"
+=== "Binary archive"
 
-    If you prefer a binary package, follow these steps:
+    If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a pre-built binary archive.
 
     1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
 
         !!! Example ""
             ```bash
             cd /opt
-            wget thehive.download.strangebee.com/zip/thehive-<full_version>.zip
-            unzip thehive-<full_version>.zip
-            sudo ln -s thehive-<full_version> thehive
+            wget thehive.download.strangebee.com/zip/thehive-<version>.zip
+            unzip thehive-<version>.zip
+            sudo ln -s thehive-<version> thehive
             ```
 
     2. Prepare the system. It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
