@@ -25,8 +25,8 @@ For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**
 
 If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install Cortex by downloading a ZIP archive](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration).
 
-!!! tip "Zip archive tab"
-    Select the Zip archive tab in the guide to ensure you use the correct commands.
+!!! tip "ZIP archive tab"
+    Select the ZIP archive tab in the guide to ensure you use the correct commands.
 
 ## :material-docker: Docker
 
