@@ -24,7 +24,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://catalogs.download.strangebee.com/json/analyzers.json"
+        "https://catalogs.download.strangebee.com/latest/json/analyzers.json"
       ]
 
       fork-join-executor {
@@ -40,7 +40,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     responder {
       # Directory that holds responders
       urls = [
-        "https://catalogs.download.strangebee.com/json/responders.json"
+        "https://catalogs.download.strangebee.com/latest/json/responders.json"
       ]
 
       fork-join-executor {
@@ -166,7 +166,7 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://catalogs.download.strangebee.com/json/analyzers.json",
+        "https://catalogs.download.strangebee.com/latest/json/analyzers.json",
         "/opt/Custom-Analyzers/analyzers" 
       ]
 
@@ -183,7 +183,7 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     responder {
       # Directory that holds responders
       urls = [
-        "https://catalogs.download.strangebee.com/json/responders.json",
+        "https://catalogs.download.strangebee.com/latest/json/responders.json",
         "/opt/Custom-Analyzers/responders"
       ]
 
