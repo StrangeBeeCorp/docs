@@ -10,7 +10,7 @@ TheHive provides users with a streamlined installation process through the **aut
 To obtain and install TheHive via our automated installation script, execute the following command in your terminal:
 
 ```bash
-wget -q -O /tmp/install.sh https://archives.strangebee.com/scripts/install.sh ; sudo -v ; bash /tmp/install.sh
+wget -q -O /tmp/install.sh https://thehive.download.strangebee.com/scripts/install.sh ; sudo -v ; bash /tmp/install.sh
 ```
 
 This script streamlines the installation procedure, ensuring a successful setup provided that hardware requirements are met. It automates the process of fetching necessary components and configuring the system for optimal performance.

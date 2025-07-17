@@ -53,11 +53,11 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget https://keys.download.strangebee.com/gpg/strangebee.gpg
+            wget https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
+            curl -O https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
@@ -72,7 +72,7 @@
             gpg --verify cortex-<full_version>.deb.asc cortex-<full_version>.deb
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
 
     3. Install the package.
 
@@ -82,7 +82,7 @@
             sudo dpkg -i cortex-<full_version>.deb
             ```
 
-            Fix any missing dependencies with `apt`:
+            Fix any missing dependencies with `apt-get`:
 
             ```bash
             sudo apt-get install -f
@@ -156,11 +156,11 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget https://keys.download.strangebee.com/gpg/strangebee.gpg
+            wget https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
+            curl -O https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
@@ -175,7 +175,7 @@
             gpg --verify cortex-<full_version>.rpm.asc cortex-<full_version>.rpm
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
 
     3. Install the package.
 
@@ -188,7 +188,7 @@
         * Using `yum`:
 
             ```bash
-            sudo yum localinstall cortex-<full_version>.rpm
+            sudo yum install cortex-<full_version>.rpm
             ```
 
         * Using `dnf`:

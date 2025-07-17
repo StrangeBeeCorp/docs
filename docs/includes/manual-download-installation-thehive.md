@@ -5,33 +5,33 @@
         * Using Wget:
 
             ```bash
-            wget https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb
-            wget https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256
-            wget https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc
+            wget https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb -O <path>/thehive-<full_version>.deb
+            wget https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256 -O <path>/thehive-<full_version>.deb.sha256
+            wget https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc -O <path>/thehive-<full_version>.deb.asc
             ```
 
             Example:
 
             ```bash
-            wget https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb
-            wget https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256
-            wget https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc
+            wget https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb -O /tmp/thehive-5.5.5.deb
+            wget https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256 -O /tmp/thehive-5.5.5.deb.sha256
+            wget https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc -O /tmp/thehive-5.5.5.deb.asc
             ```
 
         * Using cURL:
 
             ```bash
-            curl -O https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb
-            curl -O https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256
-            curl -O https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc
+            curl -o <path>/thehive-<full_version>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb
+            curl -o <path>/thehive-<full_version>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256
+            curl -o <path>/thehive-<full_version>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc
             ```
 
             Example:
             
             ```bash
-            curl -O https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb
-            curl -O https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256
-            curl -O https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc
+            curl -o /tmp/thehive-5.5.5.deb https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb
+            curl -o /tmp/thehive-5.5.5.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256
+            curl -o /tmp/thehive-5.5.5.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc
             ```
         
     2. Verify the integrity of the downloaded package.
@@ -41,7 +41,7 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum thehive-<full_version>.deb
+            sha256sum <path>/thehive-<full_version>.deb
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -53,36 +53,36 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget https://keys.download.strangebee.com/gpg/strangebee.gpg
+            wget https://keys.download.strangebee.com/latest/gpg/strangebee.gpg -O <path>/strangebee.gpg
             ```
             
             ```bash
-            curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
+            curl -o <path>/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
 
             ```bash
-            gpg --import strangebee.gpg
+            gpg --import <path>/strangebee.gpg
             ```
 
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify thehive-<full_version>.deb.asc thehive-<full_version>.deb
+            gpg --verify <path>/thehive-<full_version>.deb.asc <path>/thehive-<full_version>.deb
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
 
     3. Install the package.
 
         * Using `dpkg`:
 
             ```bash
-            sudo dpkg -i thehive-<full_version>.deb
+            sudo dpkg -i <path>/thehive-<full_version>.deb
             ```
 
-            Fix any missing dependencies with `apt`:
+            Fix any missing dependencies with `apt-get`:
 
             ```bash
             sudo apt-get install -f
@@ -156,11 +156,11 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget https://keys.download.strangebee.com/gpg/strangebee.gpg
+            wget https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -O https://keys.download.strangebee.com/gpg/strangebee.gpg
+            curl -O https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
@@ -175,7 +175,7 @@
             gpg --verify thehive-<full_version>.rpm.asc thehive-<full_version>.rpm
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors such as `BAD signature` or `no public key`, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
 
     3. Install the package.
 
@@ -188,7 +188,7 @@
         * Using `yum`:
 
             ```bash
-            sudo yum localinstall thehive-<full_version>.rpm
+            sudo yum install thehive-<full_version>.rpm
             ```
 
         * Using `dnf`:

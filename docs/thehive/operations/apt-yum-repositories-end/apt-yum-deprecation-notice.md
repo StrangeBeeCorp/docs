@@ -10,7 +10,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 Over time, several incidents have affected the availability of packages in the APT and YUM repositories, leading to unexpected downtime for users relying on these installation methods.
 
-To address these issues and enhance reliability, StrangeBee is transitioning to a unified, highly available distribution system. This new system supports all package formats (.deb and .rpm) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions.
+To address these issues and enhance reliability, StrangeBee is transitioning to a unified, highly available distribution system. This new system supports all package formats (DEB and RPM) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions.
 
 Key benefits include:
 
@@ -21,12 +21,6 @@ Key benefits include:
 ## Who is affected
 
 This change applies to users deploying TheHive On-Prem and Cortex on Linux distributions via package installations. It doesn't affect those using the TheHive Cloud Platform or running TheHive and Cortex through Docker deployments.
-
-## Timeline
-
-* APT and YUM repositories are unavailable starting July 31, 2025.
-* The domain https://download.thehive-project.org/ becomes unavailable starting XXX.
-* The domain https://archives.strangebee.com/ becomes unavailable starting XXX.
 
 ## What you should do
 
