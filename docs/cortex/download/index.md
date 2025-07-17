@@ -21,12 +21,12 @@ For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**
 !!! tip "RPM tab"
     Select the RPM tab in the guide to ensure you use the correct commands.
 
-## :material-archive: Binary archive
+## :material-archive: ZIP archive
 
-If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install Cortex by downloading a pre-built binary archive](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration).
+If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install Cortex by downloading a ZIP archive](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration).
 
-!!! tip "Binary archive tab"
-    Select the Binary archive tab in the guide to ensure you use the correct commands.
+!!! tip "Zip archive tab"
+    Select the Zip archive tab in the guide to ensure you use the correct commands.
 
 ## :material-docker: Docker
 

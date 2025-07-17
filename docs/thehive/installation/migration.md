@@ -4,7 +4,7 @@ This documentation outlines the supported versions, prerequisites, configuration
 
 The migration from TheHive 3.x to TheHive 5.x involves transferring data stored in Elasticsearch. TheHive 5.x is provided with a tool to help you migrate your data.
 
-The migration tool is located in `/opt/thehive/bin/migrate`. 
+The migration tool is located in `/opt/thehive/bin/migrate`.
 
 ---
 
@@ -189,7 +189,7 @@ During the migration process, the tool generates logs to provide insights into t
 Please note that the numbers of observables, cases, and other entities are estimations and may not represent exact values due to the complexity of computation involved.
 
 !!! Info "Files from MISP imported with TheHive 2.13 and earlier"
-    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 5. 
+    It is important to notice that migrating Cases/Alerts containing MISP event that were imported with TheHive 2.13 (_Sept 2017_) or older will cause observable files not being imported in TheHive 5.
     
     Indeed, until this version, TheHive referenced the file to the `AttributeId` in MISP and was not automatically downloaded. It then could generate a log like this: 
 

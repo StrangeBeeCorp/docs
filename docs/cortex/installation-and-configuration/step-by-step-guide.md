@@ -1,6 +1,6 @@
 # Step-by-Step Guide
 
-This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
+This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from ZIP binary packages.
 
 ## Required packages
 
@@ -147,7 +147,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Docker
 
-If using Docker images of Analyzers and Responders, Docker engine is required on the Operating System: 
+If using Docker images of Analyzers and Responders, Docker engine is required on the Operating System:
 
 !!! Example ""
 
@@ -188,9 +188,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 {!includes/manual-download-installation-cortex.md!}
 
-=== "Binary archive"
+=== "ZIP archive"
 
-    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a pre-built binary archive.
+    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP archive.
 
     ```bash
     wget cortex.download.strangebee.com/zip/cortex-<version>.zip

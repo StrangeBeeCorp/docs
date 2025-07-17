@@ -21,12 +21,12 @@ For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**
 !!! tip "RPM tab"
     Select the RPM tab in the guide to ensure you use the correct commands.
 
-## :material-folder-zip: Binary archive
+## :material-folder-zip: ZIP archive
 
-If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install TheHive by downloading a pre-built binary archive](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration).
+If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install TheHive by downloading a ZIP archive](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration).
 
-!!! tip "Binary archive tab"
-    Select the Binary archive tab in the guide to ensure you use the correct commands.
+!!! tip "ZIP archive tab"
+    Select the ZIP archive tab in the guide to ensure you use the correct commands.
 
 ## :material-docker: Docker
 
