@@ -9,21 +9,21 @@ TheHive is distributed in various formats to suit different environments and dep
 
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
-If you use a Debian- or Ubuntu-based OS, follow the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration) to install and configure TheHive.
+If you use a Debian- or Ubuntu-based OS, follow the steps in the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md) to install and configure TheHive.
 
 !!! tip "DEB tab"
     Select the DEB tab in the guide to ensure you use the correct commands.
 
 ## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration) to install and configure TheHive.
+For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**](../installation/step-by-step-installation-guide.md) to install and configure TheHive.
 
 !!! tip "RPM tab"
     Select the RPM tab in the guide to ensure you use the correct commands.
 
 ## :material-folder-zip: ZIP archive
 
-If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install TheHive by downloading a ZIP archive](../installation/step-by-step-installation-guide.md#material-beehive-outline-thehive-installation-and-configuration).
+If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install TheHive by downloading a ZIP archive](../installation/step-by-step-installation-guide.md).
 
 !!! tip "ZIP archive tab"
     Select the ZIP archive tab in the guide to ensure you use the correct commands.

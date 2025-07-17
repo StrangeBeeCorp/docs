@@ -11,10 +11,10 @@
 
 ### Configure Cortex
 
-To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet: 
+To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet:
 
-- To download public catalogs from [catalogs.download.strangebee.com](catalogs.download.strangebee.com)
-- To download Docker images from _hub.docker.com_  ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons))
+- To download public catalogs from the [catalogs official website](https://catalogs.download.strangebee.com)
+- To download Docker images from _hub.docker.com_ ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons))
 
 
 !!! Example ""
