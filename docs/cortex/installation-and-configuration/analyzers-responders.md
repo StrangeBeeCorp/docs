@@ -57,7 +57,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
 
 ## Store & run programs on the host
 
-### Additionnal packages
+### Additional packages
 
 Some system packages are required to run Analyzers&Responders programs successfully: 
 
@@ -75,7 +75,7 @@ Some system packages are required to run Analyzers&Responders programs successfu
         sudo pip3 install -U pip setuptools
         ```
 
-### Clone the repository 
+### Clone the repository
 
 Once finished, clone the Cortex-analyzers repository in the directory of your choosing:
 

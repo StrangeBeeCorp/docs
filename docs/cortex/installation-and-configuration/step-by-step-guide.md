@@ -147,7 +147,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Docker
 
-If using Docker images of Analyzers and Responders, Docker engine is required on the Operating System:
+If using Docker images of analyzers and responders, Docker engine is required on the operating system:
 
 !!! Example ""
 
