@@ -46,7 +46,7 @@ As the trigger, select [*FilteredEvent*](../user-guides/organization/configure-o
 As the notifier, select [*EmailerToAddr*](../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md).
 
 !!! example "Email template example"
-    Hello,
+    Hello, 
 
     The following alert has been pending for a while and requires your priority review:
 
