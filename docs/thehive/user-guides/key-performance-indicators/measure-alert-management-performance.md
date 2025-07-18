@@ -1,4 +1,4 @@
-# How to Measure Alert Management Performance
+# Measure Alert Management Performance
 
 This topic provides step-by-step instructions for measuring alert management performance in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Configure an OAuth 2.0 Authentication Provider
+# Configure an OAuth 2.0 Authentication Provider
 
 <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to Configure the Redis Notifier
+# Configure the Redis Notifier
 
 <!-- md:license Platinum -->
 

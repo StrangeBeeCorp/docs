@@ -1,4 +1,4 @@
-# How to Configure the HttpRequest Notifier
+# Configure the HttpRequest Notifier
 
 <!-- md:license Platinum -->
 

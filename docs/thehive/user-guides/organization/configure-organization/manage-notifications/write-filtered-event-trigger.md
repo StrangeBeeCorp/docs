@@ -1,4 +1,4 @@
-# How to Write a FilteredEvent Trigger
+# Write a FilteredEvent Trigger
 
 This topic provides step-by-step instructions for writing a *FilteredEvent* [trigger](../manage-notifications/about-notifications.md#triggers) in TheHive.
 

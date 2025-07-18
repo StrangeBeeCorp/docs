@@ -1,4 +1,4 @@
-# How to Add or Remove Widgets in a Case Report Template
+# Add or Remove Widgets in a Case Report Template
 
 <!-- md:license Platinum -->
 

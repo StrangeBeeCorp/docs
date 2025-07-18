@@ -1,4 +1,4 @@
-# How to Delete a Notification
+# Delete a Notification
 
 This topic provides step-by-step instructions for deleting a [notification](about-notifications.md) in TheHive.
 

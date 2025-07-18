@@ -1,4 +1,4 @@
-# How to Write and Submit a Responder
+# Write and Submit a Responder
 
 ## Table of Contents
   * [Writing a Responder](#writing-a-responder)

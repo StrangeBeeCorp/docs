@@ -1,4 +1,4 @@
-# How to Add a Local Microsoft Teams Endpoint
+# Add a Local Microsoft Teams Endpoint
 
 This topic provides step-by-step instructions for adding a local *Microsoft Teams* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 

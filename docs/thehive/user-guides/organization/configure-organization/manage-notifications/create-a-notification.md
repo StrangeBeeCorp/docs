@@ -1,4 +1,4 @@
-# How to Create a Notification
+# Create a Notification
 
 This topic provides step-by-step instructions for creating a [notification](about-notifications.md) in TheHive.
 

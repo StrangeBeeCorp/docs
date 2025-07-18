@@ -1,4 +1,4 @@
-# How to Add a Local HttpRequest Endpoint
+# Add a Local HttpRequest Endpoint
 
 This topic provides step-by-step instructions for adding a local *HttpRequest* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 

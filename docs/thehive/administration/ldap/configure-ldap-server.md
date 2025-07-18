@@ -1,4 +1,4 @@
-# How to Configure an LDAP Server
+# Configure an LDAP Server
 
 <!-- md:license Platinum -->
 

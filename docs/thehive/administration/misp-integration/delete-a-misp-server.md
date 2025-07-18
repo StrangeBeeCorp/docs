@@ -1,4 +1,4 @@
-# How to Delete a MISP Server Connection
+# Delete a MISP Server Connection
 
 This topic provides step-by-step instructions for deleting a [MISP server connection](about-misp-integration.md) in TheHive.
 

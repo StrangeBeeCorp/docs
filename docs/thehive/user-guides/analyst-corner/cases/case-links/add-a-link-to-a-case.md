@@ -1,4 +1,4 @@
-# How to Add a Link to a Case
+# Add a Link to a Case
 
 <!-- md:version 5.5 -->
 

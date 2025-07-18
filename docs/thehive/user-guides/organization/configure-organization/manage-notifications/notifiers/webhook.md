@@ -1,4 +1,4 @@
-# How to Configure the Webhook Notifier
+# Configure the Webhook Notifier
 
 This topic provides step-by-step instructions for configuring the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive.
 

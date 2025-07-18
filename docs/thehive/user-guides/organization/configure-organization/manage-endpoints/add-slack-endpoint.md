@@ -1,4 +1,4 @@
-# How to Add a Local Slack Endpoint
+# Add a Local Slack Endpoint
 
 This topic provides step-by-step instructions for adding a local *Slack* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 

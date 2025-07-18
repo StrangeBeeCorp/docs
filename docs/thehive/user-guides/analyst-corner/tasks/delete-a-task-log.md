@@ -1,4 +1,4 @@
-# How to Delete a Task Log
+# Delete a Task Log
 
 This topic provides step-by-step instructions for deleting a [task log](about-task-logs.md) in TheHive.
 

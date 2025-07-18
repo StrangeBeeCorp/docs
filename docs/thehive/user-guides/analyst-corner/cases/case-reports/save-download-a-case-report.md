@@ -1,4 +1,4 @@
-# How to Save and Download a Case Report
+# Save and Download a Case Report
 
 <!-- md:version 5.4 --> <!-- md:license Platinum -->
 

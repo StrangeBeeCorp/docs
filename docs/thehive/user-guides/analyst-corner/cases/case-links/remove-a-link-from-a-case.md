@@ -1,4 +1,4 @@
-# How to Remove a Link from a Case
+# Remove a Link from a Case
 
 <!-- md:version 5.5 -->
 

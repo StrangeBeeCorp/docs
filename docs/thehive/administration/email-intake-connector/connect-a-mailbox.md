@@ -1,4 +1,4 @@
-# How to Connect a Mailbox
+# Connect a Mailbox
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

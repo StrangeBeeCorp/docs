@@ -1,4 +1,4 @@
-# How to Delete a Function
+# Delete a Function
 
 <!-- md:version 5.1 --> <!-- md:license Platinum -->
 

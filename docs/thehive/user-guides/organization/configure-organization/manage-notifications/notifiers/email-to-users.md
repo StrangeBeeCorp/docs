@@ -1,4 +1,4 @@
-# How to Configure the EmailerToUser Notifier
+# Configure the EmailerToUser Notifier
 
 This topic provides step-by-step instructions for configuring the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in TheHive.
 

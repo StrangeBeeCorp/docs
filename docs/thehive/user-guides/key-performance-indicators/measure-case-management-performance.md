@@ -1,4 +1,4 @@
-# How to Measure Case Management Performance
+# Measure Case Management Performance
 
 This topic provides step-by-step instructions for measuring case management performance in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Add an Attachment to an Organization
+# Add an Attachment to an Organization
 
 This topic provides step-by-step instructions for adding an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) to an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
 

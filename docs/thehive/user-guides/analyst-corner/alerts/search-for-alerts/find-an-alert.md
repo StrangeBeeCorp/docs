@@ -1,4 +1,4 @@
-# How to Find an Alert
+# Find an Alert
 
 This topic provides step-by-step instructions for using various methods to search for an [alert](../about-alerts.md) in TheHive.
 

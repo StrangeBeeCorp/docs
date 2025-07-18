@@ -1,4 +1,4 @@
-# How to Unlink an Alert and a Case
+# Unlink an Alert and a Case
 
 This topic provides step-by-step instructions for unlinking an [alert](about-alerts.md) and a [case](../cases/about-cases.md) in TheHive.
 

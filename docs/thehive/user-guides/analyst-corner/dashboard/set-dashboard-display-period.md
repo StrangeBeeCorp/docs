@@ -1,4 +1,4 @@
-# How to Set a Dashboard Display Period
+# Set a Dashboard Display Period
 
 This topic provides step-by-step instructions for setting a display period for a [dashboard](about-dashboards.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to View a Case Timeline
+# View a Case Timeline
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to Apply a Case Template
+# Apply a Case Template
 
 This topic provides step-by-step instructions for applying a [case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) to an existing case in TheHive.
 

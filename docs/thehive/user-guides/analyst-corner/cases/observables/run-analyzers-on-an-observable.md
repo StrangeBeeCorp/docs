@@ -1,4 +1,4 @@
-# How to Run Analyzers and Review Reports for an Observable
+# Run Analyzers and Review Reports for an Observable
 
 This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing analyzer reports in TheHive.
 

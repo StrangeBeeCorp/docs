@@ -1,4 +1,4 @@
-# How to Turn Off an Alert Feeder
+# Turn Off an Alert Feeder
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

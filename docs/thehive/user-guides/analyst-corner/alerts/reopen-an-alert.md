@@ -1,4 +1,4 @@
-# How to Reopen an Alert
+# Reopen an Alert
 
 This topic provides step-by-step instructions for reopening an [alert](about-alerts.md) in TheHive.
 
