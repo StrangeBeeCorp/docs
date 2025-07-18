@@ -43,7 +43,7 @@ This topic provides step-by-step instructions for configuring the *EmailerToAddr
 
     **- To**
 
-    The receiver's email address.
+    The recipient's email address.
 
     **- Template**
 
