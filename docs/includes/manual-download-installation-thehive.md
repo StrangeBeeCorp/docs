@@ -46,7 +46,7 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation.
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation and send an e-mail to security@strangebee.com.
 
           * Verify the GPG signature using the public key.
      
@@ -72,7 +72,7 @@
             gpg --verify /path/to/thehive-<full_version>.deb.asc /path/to/thehive-<full_version>.deb
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
 
     3. Install the package.
 
@@ -149,7 +149,7 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation.
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation and send an e-mail to security@strangebee.com.
 
           * Verify the GPG signature using the public key.
      
@@ -175,7 +175,7 @@
             gpg --verify /path/to/thehive-<full_version>.rpm.asc /path/to/thehive-<full_version>.rpm
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
 
     3. Install the package.
 

@@ -626,38 +626,108 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP archive.
 
-    1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
+    1. Download the binary package along with its SHA256 checksum and signature files. You can install TheHive anywhere on your filesystem.
+   
+        * Using Wget
 
-        !!! Example ""
             ```bash
-            cd /opt
-            wget thehive.download.strangebee.com/zip/thehive-<version>.zip
-            unzip thehive-<version>.zip
-            sudo ln -s thehive-<version> thehive
+            wget -O /path/to/thehive-<full_version>.zip thehive.download.strangebee.com/<major.minor_version>/zip/thehive-<full_version>.zip
+            wget -O /path/to/thehive-<full_version>.zip.sha256 thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.zip.sha256
+            wget -O /path/to/thehive-<full_version>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.zip.asc
             ```
 
-    2. Prepare the system. It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
+            Example:
 
-        !!! Example ""
             ```bash
-            sudo addgroup thehive
-            sudo adduser --system thehive
-            sudo chown -R thehive:thehive /opt/thehive
-            sudo mkdir /etc/thehive
-            sudo touch /etc/thehive/application.conf
-            sudo chown root:thehive /etc/thehive
-            sudo chgrp thehive /etc/thehive/application.conf
-            sudo chmod 640 /etc/thehive/application.conf
+            wget -O /opt/thehive-5.5.5.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5.zip
+            wget -O /opt/thehive-5.5.5.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.zip.sha256
+            wget -O /opt/thehive-5.5.5.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.zip.asc
             ```
 
-    3. Copy the systemd script in `/etc/systemd/system/thehive.service`.
+        * Using cURL
 
-        !!! Example ""
             ```bash
-            cd /tmp
-            wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
-            sudo cp thehive.service /etc/systemd/system/thehive.service
+            curl -o /path/to/thehive-<full_version>.zip thehive.download.strangebee.com/<major.minor_version>/zip/thehive-<full_version>.zip
+            curl -o /path/to/thehive-<full_version>.zip.sha256 thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.zip.sha256
+            curl -o /path/to/thehive-<full_version>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.zip.asc
             ```
+
+            Example:
+
+            ```bash
+            curl -o /opt/thehive-5.5.5.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5.zip
+            curl -o /opt/thehive-5.5.5.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.zip.sha256
+            curl -o /opt/thehive-5.5.5.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.zip.asc
+            ```
+
+    2. Verify the integrity of the downloaded package.
+
+        * Check the SHA256 checksum by comparing it with the provided value.
+
+            a. Generate the SHA256 checksum of your downloaded package.
+
+            ```bash
+            sha256sum /path/to/thehive-<full_version>.zip
+            ```
+
+            b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
+
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation and send an email to security@strangebee.com.
+
+          * Verify the GPG signature using the public key.
+     
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+
+            ```bash
+            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            ```
+            
+            ```bash
+            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            ```
+
+            b. Import the key into your GPG keyring.
+
+            ```bash
+            gpg --import /path/to/strangebee.gpg
+            ```
+
+            c. Verify the downloaded package signature.
+
+            ```bash
+            gpg --verify /path/to/thehive-<full_version>.zip.asc /path/to/thehive-<full_version>.zip
+            ```
+
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
+
+
+    3. Unzip the package.
+
+        ```bash
+        unzip /path/to/thehive-<full_version>.zip -d /path/to/
+        sudo ln -s /path/to/thehive-<full_version> /path/to/thehive
+        ```
+
+    4. Prepare the system by creating a dedicated, non-privileged user account to run TheHive. Ensure this user has permission to create log files in `/path/to/thehive/logs`.
+
+        ```bash
+        sudo addgroup thehive
+        sudo adduser --system thehive
+        sudo chown -R thehive:thehive /path/to/thehive
+        sudo mkdir /etc/thehive
+        sudo touch /etc/thehive/application.conf
+        sudo chown root:thehive /etc/thehive
+        sudo chgrp thehive /etc/thehive/application.conf
+        sudo chmod 640 /etc/thehive/application.conf
+        ```
+
+    5. Copy the systemd script into `/etc/systemd/system/thehive.service`.
+
+        ```bash
+        cd /tmp
+        wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
+        sudo cp thehive.service /etc/systemd/system/thehive.service
+        ```
 
 ### Configuration
 
