@@ -321,6 +321,7 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
+            'thehive/download/archives.md': 'thehive/download/index.md'
 
 extra:
   generator: false
