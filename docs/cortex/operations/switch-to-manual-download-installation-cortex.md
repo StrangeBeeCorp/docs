@@ -23,3 +23,5 @@ For instructions on performing the same process for TheHive, see [Switch to Manu
 {!includes/manual-download-installation-cortex.md!}
 
 <h2>Next steps</h2>
+
+* [Switch to Manual Download and Installation for TheHive](../../thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md)

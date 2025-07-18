@@ -23,3 +23,5 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 {!includes/manual-download-installation-thehive.md!}
 
 <h2>Next steps</h2>
+
+* [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md)
