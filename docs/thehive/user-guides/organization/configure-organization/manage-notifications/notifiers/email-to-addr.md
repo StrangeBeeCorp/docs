@@ -41,6 +41,10 @@ This topic provides step-by-step instructions for configuring the *EmailerToAddr
 
     The sender's email address.
 
+    **- To**
+
+    The receiver's email address.
+
     **- Template**
 
     The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
