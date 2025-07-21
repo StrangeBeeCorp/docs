@@ -1,4 +1,4 @@
-# How to Run Responders and Review Reports for an Alert
+# Run Responders and Review Reports for an Alert
 
 This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) and reviewing responder reports in TheHive.
 

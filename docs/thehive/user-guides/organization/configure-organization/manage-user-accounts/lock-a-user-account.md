@@ -1,4 +1,4 @@
-# How to Lock a User Account
+# Lock a User Account
 
 This topic provides step-by-step instructions for locking a [user account](about-user-accounts.md) in TheHive.
 

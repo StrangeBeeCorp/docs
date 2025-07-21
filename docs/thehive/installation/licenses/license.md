@@ -1,4 +1,4 @@
-# How to Activate or Update a License
+# Activate or Update a License
 
 This topic provides step-by-step instructions for activating or updating a [TheHive license](about-licenses.md), whether it’s a Community, Gold, or Platinum license.
 

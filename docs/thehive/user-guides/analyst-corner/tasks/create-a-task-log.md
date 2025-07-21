@@ -1,4 +1,4 @@
-# How to Create a Task Log
+# Create a Task Log
 
 This topic provides step-by-step instructions for creating a [task log](about-task-logs.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Configure Audit Log Storage in Elasticsearch
+# Configure Audit Log Storage in Elasticsearch
 
 <!-- md:version 5.5 -->
 

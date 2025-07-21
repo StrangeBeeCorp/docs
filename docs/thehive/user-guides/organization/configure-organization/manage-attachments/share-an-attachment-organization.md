@@ -1,4 +1,4 @@
-# How to Share an Attachment from an Organization
+# Share an Attachment from an Organization
 
 This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
 

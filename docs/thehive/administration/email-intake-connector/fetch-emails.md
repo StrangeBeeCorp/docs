@@ -1,4 +1,4 @@
-# How to Manually Trigger Email Fetch in a Mailbox
+# Manually Trigger Email Fetch in a Mailbox
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

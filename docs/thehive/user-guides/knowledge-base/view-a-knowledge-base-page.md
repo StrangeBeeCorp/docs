@@ -1,4 +1,4 @@
-# How to View a Knowledge Base Page
+# View a Knowledge Base Page
 
 This topic provides step-by-step instructions for viewing a [Knowledge Base](about-knowledge-base.md) page.
 

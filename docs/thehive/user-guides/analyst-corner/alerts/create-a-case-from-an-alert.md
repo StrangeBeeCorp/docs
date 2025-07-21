@@ -1,4 +1,4 @@
-# How to Create a Case from an Alert
+# Create a Case from an Alert
 
 This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) from an [alert](about-alerts.md) in TheHive.
 

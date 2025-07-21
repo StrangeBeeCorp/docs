@@ -1,4 +1,4 @@
-# How to Run Responders and Review Reports for a Case
+# Run Responders and Review Reports for a Case
 
 This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on a [case](about-cases.md) and reviewing responder reports in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Hide Key Performance Indicators
+# Hide Key Performance Indicators
 
 <!-- md:version 5.4 -->
 

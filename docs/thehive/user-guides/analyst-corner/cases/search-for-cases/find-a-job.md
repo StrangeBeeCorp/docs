@@ -1,4 +1,4 @@
-# How to Find a Job
+# Find a Job
 
 This topic provides step-by-step instructions for searching a job in TheHive.
 

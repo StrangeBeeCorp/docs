@@ -1,4 +1,4 @@
-# How to Create a Dashboard
+# Create a Dashboard
 
 This topic provides step-by-step instructions for creating a [dashboard](about-dashboards.md) in TheHive.
 

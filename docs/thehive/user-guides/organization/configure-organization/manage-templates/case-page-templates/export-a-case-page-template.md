@@ -1,4 +1,4 @@
-# How to Export a Case Page Template
+# Export a Case Page Template
 
 This topic provides step-by-step instructions for exporting a [case page template](about-case-page-templates.md) in TheHive.
 

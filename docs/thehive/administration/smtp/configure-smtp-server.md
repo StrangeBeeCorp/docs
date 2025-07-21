@@ -1,4 +1,4 @@
-# How to Configure an SMTP Server
+# Configure an SMTP Server
 
 This topic provides step-by-step instructions for configuring an [SMTP server](about-smtp.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to View Links in a Case
+# View Links in a Case
 
 <!-- md:version 5.5 -->
 

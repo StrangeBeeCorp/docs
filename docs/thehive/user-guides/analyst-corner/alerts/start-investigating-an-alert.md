@@ -1,4 +1,4 @@
-# How to Start Investigating an Alert
+# Start Investigating an Alert
 
 This topic provides step-by-step instructions for starting the investigation of an [alert](about-alerts.md) in TheHive.
 

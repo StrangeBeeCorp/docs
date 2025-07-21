@@ -1,4 +1,4 @@
-# How to Ignore Alert Updates from MISP
+# Ignore Alert Updates from MISP
 
 This topic provides step-by-step instructions for ignoring alert updates from [MISP](../../../administration/misp-integration/about-misp-integration.md) in TheHive.
 

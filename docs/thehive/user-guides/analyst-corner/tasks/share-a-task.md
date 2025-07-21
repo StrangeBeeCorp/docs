@@ -1,4 +1,4 @@
-# How to Share a Task with Other Organizations
+# Share a Task with Other Organizations
 
 This topic provides step-by-step instructions for [manually sharing a task in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
 

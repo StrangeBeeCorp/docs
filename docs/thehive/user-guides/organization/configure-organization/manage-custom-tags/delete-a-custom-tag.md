@@ -1,4 +1,4 @@
-# How to Delete a Custom Tag
+# Delete a Custom Tag
 
 This topic provides step-by-step instructions for deleting a [custom tag](about-custom-tags.md) in TheHive.
 

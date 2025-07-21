@@ -1,4 +1,4 @@
-# How to Add a Link to a Case
+# Add a Link to a Case
 
 <!-- md:version 5.5 -->
 
@@ -17,7 +17,7 @@ The link can point to another TheHive case or to an external resource.
 
 2. {!includes/linked-elements-section.md!}
 
-3. Select :fontawesome-solid-plus: or **Add a link**.
+3. Select :fontawesome-solid-plus:.
 
 4. Enter the following information:
 

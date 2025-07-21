@@ -1,4 +1,4 @@
-# How to Delete a Custom Event from a Case Timeline
+# Delete a Custom Event from a Case Timeline
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

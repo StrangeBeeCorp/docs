@@ -1,4 +1,4 @@
-# How to Update the Status of an Observable
+# Update the Status of an Observable
 
 This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
 

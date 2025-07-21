@@ -1,4 +1,4 @@
-# How to download the demo VM
+# download the demo VM
 
 ![](images/demo-virtual-machine.png)
 

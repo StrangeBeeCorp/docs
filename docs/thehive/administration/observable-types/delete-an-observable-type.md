@@ -1,4 +1,4 @@
-# How to Delete an Observable Type
+# Delete an Observable Type
 
 This topic provides step-by-step instructions for deleting an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
 
