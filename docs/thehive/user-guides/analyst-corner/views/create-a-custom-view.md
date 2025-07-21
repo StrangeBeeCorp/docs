@@ -1,4 +1,4 @@
-# How to Create a Custom View
+# Create a Custom View
 
 This topic provides step-by-step instructions for creating a custom [view](create-a-custom-view.md) in TheHive.
 

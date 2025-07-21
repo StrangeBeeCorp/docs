@@ -1,4 +1,4 @@
-# How to Share a Case Page
+# Share a Case Page
 
 This topic provides step-by-step instructions for sharing a [case page](about-knowledge-base.md).
 

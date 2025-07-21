@@ -1,4 +1,4 @@
-# How to Create a Case Page
+# Create a Case Page
 
 This topic provides step-by-step instructions for creating a [case page](about-case-pages.md) in TheHive.
 

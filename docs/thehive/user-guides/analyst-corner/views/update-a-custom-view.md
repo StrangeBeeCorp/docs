@@ -1,4 +1,4 @@
-# How to Update a Custom View
+# Update a Custom View
 
 This topic provides step-by-step instructions for updating a custom [view](create-a-custom-view.md) in TheHive.
 

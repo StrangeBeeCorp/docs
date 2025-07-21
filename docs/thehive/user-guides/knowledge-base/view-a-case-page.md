@@ -1,4 +1,4 @@
-# How to View a Case Page
+# View a Case Page
 
 This topic provides step-by-step instructions for viewing a [case page](about-case-pages.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Delete a Custom View
+# Delete a Custom View
 
 This topic provides step-by-step instructions for deleting a custom [view](create-a-custom-view.md) in TheHive.
 

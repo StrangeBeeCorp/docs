@@ -1,4 +1,4 @@
-# How to Delete a Case Page
+# Delete a Case Page
 
 This topic provides step-by-step instructions for deleting a [case page](about-case-pages.md) in TheHive.
 
