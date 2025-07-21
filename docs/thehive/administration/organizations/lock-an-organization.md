@@ -1,4 +1,4 @@
-# How to Lock an Organization
+# Lock an Organization
 
 This topic provides step-by-step instructions for locking an [organization](about-organizations.md) in TheHive.
 

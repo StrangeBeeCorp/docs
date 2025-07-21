@@ -1,4 +1,4 @@
-# How to Enrich Alert Details
+# Enrich Alert Details
 
 This topic provides step-by-step instructions for enriching [alert](about-alerts.md) details in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Pin an Observable
+# Pin an Observable
 
 This topic provides step-by-step instructions for pinning an [observable](about-observables.md) in an case or alert in TheHive.
 

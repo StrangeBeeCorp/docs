@@ -1,4 +1,4 @@
-# How to Configure the Function Notifier
+# Configure the Function Notifier
 
 <!-- md:license Platinum -->
 

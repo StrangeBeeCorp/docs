@@ -1,4 +1,4 @@
-# How to Select Similar Cases and Alerts Filters
+# Select Similar Cases and Alerts Filters
 
 This topic provides step-by-step instructions for selecting filters to apply on the [**Similar cases** and **Similar alerts** tabs](../../../analyst-corner/cases/observables/about-observables.md#similar-alerts-and-cases) in TheHive.
 

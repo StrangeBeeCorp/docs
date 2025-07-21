@@ -1,4 +1,4 @@
-# How to Configure an OpenID Authentication Provider
+# Configure an OpenID Authentication Provider
 
  <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

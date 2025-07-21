@@ -1,4 +1,4 @@
-# How to Add a Global Endpoint
+# Add a Global Endpoint
 
 This topic provides step-by-step instructions for adding a global [endpoint](../user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Create a Profile
+# Create a Profile
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to View Custom Tag Statistics
+# View Custom Tag Statistics
 
 This topic provides step-by-step instructions for viewing [custom tag](about-custom-tags.md) statistics in TheHive.
 

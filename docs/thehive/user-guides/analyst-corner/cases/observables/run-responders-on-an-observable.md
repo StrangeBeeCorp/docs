@@ -1,4 +1,4 @@
-# How to Run Responders and Review Reports for an Observable
+# Run Responders and Review Reports for an Observable
 
 This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing responder reports in TheHive.
 

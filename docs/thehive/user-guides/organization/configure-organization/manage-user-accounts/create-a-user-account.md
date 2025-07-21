@@ -1,4 +1,4 @@
-# How to Create a User Account
+# Create a User Account
 
 This topic provides step-by-step instructions for creating a [user account](about-user-accounts.md) in TheHive.
 

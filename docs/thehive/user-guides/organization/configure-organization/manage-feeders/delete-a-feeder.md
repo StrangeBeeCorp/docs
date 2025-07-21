@@ -1,4 +1,4 @@
-# How to Delete an Alert Feeder
+# Delete an Alert Feeder
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

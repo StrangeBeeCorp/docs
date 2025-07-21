@@ -1,4 +1,4 @@
-# How to Assign an Alert
+# Assign an Alert
 
 This topic provides step-by-step instructions for assigning an [alert](about-alerts.md) in TheHive.
 

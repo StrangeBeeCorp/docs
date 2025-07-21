@@ -1,4 +1,4 @@
-# How to Add an Alert to an Existing Case
+# Add an Alert to an Existing Case
 
 This topic provides step-by-step instructions for adding an [alert](about-alerts.md) to an existing [case](../cases/about-cases.md) in TheHive.
 

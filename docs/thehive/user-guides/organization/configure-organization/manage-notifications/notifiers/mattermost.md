@@ -1,4 +1,4 @@
-# How to Configure the Mattermost Notifier
+# Configure the Mattermost Notifier
 
 <!-- md:license Platinum -->
 

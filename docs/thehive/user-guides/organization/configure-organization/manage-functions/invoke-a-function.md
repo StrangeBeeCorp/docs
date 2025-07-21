@@ -1,4 +1,4 @@
-# How to Invoke a Function
+# Invoke a Function
 
 <!-- md:version 5.1 --> <!-- md:license Platinum -->
 

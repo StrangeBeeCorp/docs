@@ -1,4 +1,4 @@
-# How to Delete a Case Template
+# Delete a Case Template
 
 This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
 

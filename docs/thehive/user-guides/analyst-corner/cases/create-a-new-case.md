@@ -1,4 +1,4 @@
-# How to Create a Case
+# Create a Case
 
 This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) in TheHive.
 

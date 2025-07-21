@@ -1,4 +1,4 @@
-# How to Change a Task Status
+# Change a Task Status
 
 This topic provides step-by-step instructions for changing the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive.
 

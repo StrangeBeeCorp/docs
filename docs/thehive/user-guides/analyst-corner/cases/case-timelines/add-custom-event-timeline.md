@@ -1,4 +1,4 @@
-# How to Add a Custom Event to a Case Timeline
+# Add a Custom Event to a Case Timeline
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

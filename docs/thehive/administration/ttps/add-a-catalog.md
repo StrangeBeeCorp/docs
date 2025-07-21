@@ -1,4 +1,4 @@
-# How to Add a Tactics, Techniques and Procedures Catalog
+# Add a Tactics, Techniques and Procedures Catalog
 
 This topic provides step-by-step instructions for adding a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 

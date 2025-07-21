@@ -1,4 +1,4 @@
-# How to Import Observables from Analyzer Reports
+# Import Observables from Analyzer Reports
 
 This topic provides step-by-step instructions for importing [observables](about-observables.md) from [analyzer reports](../../../../administration/cortex/about-cortex.md) in TheHive.
 

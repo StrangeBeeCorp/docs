@@ -1,4 +1,4 @@
-# How to Configure SSL
+# Configure SSL
 
 This topic provides step-by-step instructions for configuring Secure Sockets Layer (SSL) in TheHive for [AD](ad.md), [LDAP](ldap.md), and [OAuth 2.0](oauth2.md) authentication providers.
 

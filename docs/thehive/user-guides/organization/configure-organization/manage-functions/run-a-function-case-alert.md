@@ -1,4 +1,4 @@
-# How to Manually Run a Function on a Case or an Alert
+# Manually Run a Function on a Case or an Alert
 
 <!-- md:version 5.4 --> <!-- md:license Platinum -->
 

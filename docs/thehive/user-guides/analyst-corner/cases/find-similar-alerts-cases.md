@@ -1,4 +1,4 @@
-# How to Find Similar Alerts or Cases
+# Find Similar Alerts or Cases
 
 This topic provides step-by-step instructions for finding similar alerts and cases in TheHive.
 

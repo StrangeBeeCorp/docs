@@ -1,4 +1,4 @@
-# How to Change a Case Status
+# Change a Case Status
 
 This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of a [case](about-cases.md) in TheHive.
 

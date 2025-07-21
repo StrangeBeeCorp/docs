@@ -1,4 +1,4 @@
-# How to Connect a MISP Server
+# Connect a MISP Server
 
 This topic provides step-by-step instructions for connecting a [MISP server](about-misp-integration.md) to TheHive.
 

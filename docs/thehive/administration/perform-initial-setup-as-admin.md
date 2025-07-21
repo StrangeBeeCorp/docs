@@ -1,4 +1,4 @@
-# How to Perform Initial Login and Setup as an Admin
+# Perform Initial Login and Setup as an Admin
 
 This topic provides step-by-step instructions for performing the initial login and setup as an administrator in TheHive.
 

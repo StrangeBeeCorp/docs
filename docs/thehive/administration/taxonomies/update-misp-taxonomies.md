@@ -1,4 +1,4 @@
-# How to Update MISP Taxonomies
+# Update MISP Taxonomies
 
 This topic provides step-by-step instructions for updating MISP [taxonomies](about-taxonomies.md) in TheHive.
 
