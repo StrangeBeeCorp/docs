@@ -757,6 +757,7 @@ nav:
           - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
           - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
+          - 'Delete a Case': thehive/user-guides/analyst-corner/cases/delete-a-case.md
         - 'Tasks Management':
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
