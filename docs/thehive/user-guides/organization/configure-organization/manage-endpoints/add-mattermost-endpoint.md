@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for adding a local *Mattermost* [e
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

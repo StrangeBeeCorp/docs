@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for creating a [notification](abou
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new notification**.
+3. Select :fontawesome-solid-plus:.
 
     ---
 
