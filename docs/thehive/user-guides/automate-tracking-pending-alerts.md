@@ -6,6 +6,9 @@ This topic provides step-by-step instructions for automating the tracking of pen
 
 Use this procedure to automatically highlight alerts that remain in the *New* status and unassigned for over four hours after creation, and notify the manager accordingly.
 
+!!! tip "Customize criteria for your needs"
+    The status and wait time criteria used to highlight pending alerts are examples. Adjust them as needed to fit your requirements.
+
 ## Step 1: Create a custom alert status named *TOREVIEW* to highlight pending alerts
 
 Follow the steps in [Create a Status](../administration/status/create-a-status.md).
