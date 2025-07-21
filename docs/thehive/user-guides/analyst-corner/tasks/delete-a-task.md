@@ -1,4 +1,4 @@
-# How to Delete a Task
+# Delete a Task
 
 This topic provides step-by-step instructions for deleting a [task](about-tasks.md) in TheHive.
 

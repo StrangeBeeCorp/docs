@@ -1,4 +1,4 @@
-# How to Find a Task
+# Find a Task
 
 This topic provides step-by-step instructions for using various methods to search for a [task](../about-tasks.md) in TheHive.
 

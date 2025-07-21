@@ -1,4 +1,4 @@
-# How to Reopen a Case
+# Reopen a Case
 
 This topic provides step-by-step instructions for reopening a [case](about-cases.md) in TheHive.
 

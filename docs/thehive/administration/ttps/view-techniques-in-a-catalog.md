@@ -1,4 +1,4 @@
-# How to View Techniques in Tactics, Techniques and Procedures Catalogs
+# View Techniques in Tactics, Techniques and Procedures Catalogs
 
 This topic provides step-by-step instructions for viewing techniques in a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 

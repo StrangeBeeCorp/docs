@@ -1,4 +1,4 @@
-# How to Configure the Kafka Notifier
+# Configure the Kafka Notifier
 
 <!-- md:license Platinum -->
 

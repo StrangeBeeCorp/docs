@@ -1,4 +1,4 @@
-# How to Add Tactics, Techniques and Procedures
+# Add Tactics, Techniques and Procedures
 
 This topic provides step-by-step instructions for adding [tactics, techniques and procedures (TTPs)](about-ttps.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

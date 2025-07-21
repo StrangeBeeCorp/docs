@@ -1,4 +1,4 @@
-# How to Create a Task
+# Create a Task
 
 This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
 

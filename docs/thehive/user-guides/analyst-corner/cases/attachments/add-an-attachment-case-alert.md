@@ -1,4 +1,4 @@
-# How to Add an Attachment to a Case or an Alert
+# Add an Attachment to a Case or an Alert
 
 This topic provides step-by-step instructions for adding an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

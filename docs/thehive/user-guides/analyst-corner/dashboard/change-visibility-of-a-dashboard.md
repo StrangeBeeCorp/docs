@@ -1,4 +1,4 @@
-# How to Change the Visibility of a Dashboard
+# Change the Visibility of a Dashboard
 
 This topic provides step-by-step instructions for changing the visibility of a [dashboard](about-dashboards.md) in TheHive.
 

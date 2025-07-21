@@ -1,4 +1,4 @@
-# How to Add a Custom Taxonomy
+# Add a Custom Taxonomy
 
 This topic provides step-by-step instructions for adding a custom [taxonomy](about-taxonomies.md) in TheHive.
 

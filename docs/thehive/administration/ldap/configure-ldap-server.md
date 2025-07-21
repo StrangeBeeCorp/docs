@@ -1,4 +1,4 @@
-# How to Configure an LDAP Server
+# Configure an LDAP Server
 
 <!-- md:license Platinum -->
 
@@ -18,7 +18,7 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add LDAP server**.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

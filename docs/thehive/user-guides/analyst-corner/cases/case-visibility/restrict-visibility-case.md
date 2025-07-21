@@ -1,4 +1,4 @@
-# How to Restrict Case Visibility
+# Restrict Case Visibility
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

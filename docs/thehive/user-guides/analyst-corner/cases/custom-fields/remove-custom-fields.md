@@ -1,4 +1,4 @@
-# How to Remove Custom Fields
+# Remove Custom Fields
 
 This topic provides step-by-step instructions for removing [custom fields](../../../../administration/custom-fields/about-custom-fields.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

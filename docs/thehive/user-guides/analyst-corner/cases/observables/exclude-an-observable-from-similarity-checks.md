@@ -1,4 +1,4 @@
-# How to Exclude an Observable from Similarity Checks
+# Exclude an Observable from Similarity Checks
 
 This topic provides step-by-step instructions for excluding an [observable](about-observables.md) from similarity checks in cases and alerts in TheHive.
 

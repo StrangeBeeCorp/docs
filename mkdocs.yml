@@ -623,6 +623,8 @@ nav:
           - 'Remove an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization.md
           - 'Download an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization.md
           - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
+      - 'Automation Hacks':
+        - 'Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
       - 'Analyst''s Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
