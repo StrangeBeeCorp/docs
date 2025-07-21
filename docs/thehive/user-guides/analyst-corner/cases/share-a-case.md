@@ -1,4 +1,4 @@
-# How to Share a Case with Other Organizations
+# Share a Case with Other Organizations
 
 This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) with [linked organizations](../../../administration/organizations/link-an-organization.md) for an existing case in TheHive.
 

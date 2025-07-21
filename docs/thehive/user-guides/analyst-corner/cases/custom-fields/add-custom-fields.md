@@ -1,4 +1,4 @@
-# How to Add Custom Fields
+# Add Custom Fields
 
 This topic provides step-by-step instructions for adding [custom fields](../../../../administration/custom-fields/about-custom-fields.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Configure the RunResponder Notifier
+# Configure the RunResponder Notifier
 
 <!-- md:license Platinum -->
 

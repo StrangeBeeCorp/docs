@@ -1,4 +1,4 @@
-# How to Delete a Profile
+# Delete a Profile
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

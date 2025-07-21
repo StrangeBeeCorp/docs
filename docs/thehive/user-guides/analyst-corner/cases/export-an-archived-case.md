@@ -1,4 +1,4 @@
-# How to Export an Archived Case
+# Export an Archived Case
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

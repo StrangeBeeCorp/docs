@@ -1,4 +1,4 @@
-# How to Close a Case
+# Close a Case
 
 This topic provides step-by-step instructions for closing a [case](about-cases.md) in TheHive.
 

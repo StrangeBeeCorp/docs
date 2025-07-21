@@ -1,4 +1,4 @@
-# How to Add a Local Webhook Endpoint
+# Add a Local Webhook Endpoint
 
 This topic provides step-by-step instructions for adding a local *Webhook* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for adding a local *Webhook* [endp
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new endpoint**.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

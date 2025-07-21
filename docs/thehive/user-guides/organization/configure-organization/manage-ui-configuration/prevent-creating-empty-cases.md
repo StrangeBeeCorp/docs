@@ -1,4 +1,4 @@
-# How to Prevent Users from Creating Empty Cases
+# Prevent Users from Creating Empty Cases
 
 This topic provides step-by-step instructions for hiding the empty case option when [creating a case](../../../analyst-corner/cases/create-a-new-case.md#) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Download a Dashboard
+# Download a Dashboard
 
 This topic provides step-by-step instructions for downloading a [dashboard](about-dashboards.md) in TheHive.
 

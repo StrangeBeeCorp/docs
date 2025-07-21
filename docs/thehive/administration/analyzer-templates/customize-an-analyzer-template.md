@@ -1,4 +1,4 @@
-# How to Customize an Analyzer Template
+# Customize an Analyzer Template
 
 This topic provides step-by-step instructions for customizing an [analyzer template](about-analyzer-templates.md) in TheHive.
 

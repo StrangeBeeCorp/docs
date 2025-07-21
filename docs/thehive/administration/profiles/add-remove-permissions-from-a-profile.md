@@ -1,4 +1,4 @@
-# How to Add or Remove Permissions from a Profile
+# Add or Remove Permissions from a Profile
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

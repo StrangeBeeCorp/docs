@@ -1,4 +1,4 @@
-# How to Switch Between Organizations
+# Switch Between Organizations
 
 This topic provides step-by-step instructions for switching between organizations in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Manage your Account Settings
+# Manage your Account Settings
 
 This topic provides step-by-step instructions for managing the settings of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
 

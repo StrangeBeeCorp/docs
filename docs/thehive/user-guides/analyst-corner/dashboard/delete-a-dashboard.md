@@ -1,4 +1,4 @@
-# How to Delete a Dashboard
+# Delete a Dashboard
 
 This topic provides step-by-step instructions for deleting a [dashboard](about-dashboards.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Create a Case Page Template
+# Create a Case Page Template
 
 This topic provides step-by-step instructions for creating a [case page template](about-case-page-templates.md) in TheHive.
 

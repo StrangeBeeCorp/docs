@@ -1,4 +1,4 @@
-# How to Deploy TheHive on Kubernetes
+# Deploy TheHive on Kubernetes
 
 This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
 

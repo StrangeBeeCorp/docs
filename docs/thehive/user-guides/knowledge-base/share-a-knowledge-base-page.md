@@ -1,4 +1,4 @@
-# How to Share a Knowledge Base Page
+# Share a Knowledge Base Page
 
 This topic provides step-by-step instructions for sharing a [Knowledge Base](about-knowledge-base.md) page.
 

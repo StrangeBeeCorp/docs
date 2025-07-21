@@ -1,4 +1,4 @@
-# How to Prevent Users from Merging Alerts into Closed Cases
+# Prevent Users from Merging Alerts into Closed Cases
 
 This topic provides step-by-step instructions for deactivating the ability to [merge alerts into closed cases](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md) in TheHive.
 

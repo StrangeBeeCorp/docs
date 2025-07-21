@@ -1,4 +1,4 @@
-# How to Change an Alert Status
+# Change an Alert Status
 
 This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of an alert in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Add an Observable
+# Add an Observable
 
 This topic provides step-by-step instructions for adding an [observable](about-observables.md) to a case or alert in TheHive.
 

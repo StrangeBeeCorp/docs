@@ -1,4 +1,4 @@
-# How to Edit Multiple Observables
+# Edit Multiple Observables
 
 This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
 

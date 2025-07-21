@@ -1,4 +1,4 @@
-# How to Configure an LDAP Authentication Provider
+# Configure an LDAP Authentication Provider
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to Run Responders and Review Reports for a Task Log
+# Run Responders and Review Reports for a Task Log
 
 This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on a [task log](about-task-logs.md) and reviewing responder reports in TheHive.
 

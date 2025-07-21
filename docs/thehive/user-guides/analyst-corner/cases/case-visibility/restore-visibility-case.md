@@ -1,4 +1,4 @@
-# How to Restore Case Visibility
+# Restore Case Visibility
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

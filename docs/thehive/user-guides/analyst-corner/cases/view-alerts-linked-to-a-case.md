@@ -1,4 +1,4 @@
-# How to View Alerts Linked to a Case
+# View Alerts Linked to a Case
 
 This topic provides step-by-step instructions for viewing alerts linked to a [case](../cases/about-cases.md) in TheHive.
 
