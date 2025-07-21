@@ -1,4 +1,4 @@
-# How to Export or Import a Case Template
+# Export or Import a Case Template
 
 This topic provides step-by-step instructions for exporting and importing a [case template](about-case-templates.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Configure the EmailerToAddr Notifier
+# Configure the EmailerToAddr Notifier
 
 This topic provides step-by-step instructions for configuring the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in TheHive.
 
@@ -40,6 +40,10 @@ This topic provides step-by-step instructions for configuring the *EmailerToAddr
     **- From**
 
     The sender's email address.
+
+    **- To**
+
+    The recipient's email address.
 
     **- Template**
 

@@ -1,4 +1,4 @@
-# How to Activate or Deactivate a Taxonomy
+# Activate or Deactivate a Taxonomy
 
 This topic provides step-by-step instructions for activating and deactivating a [taxonomy](about-taxonomies.md) in TheHive.
 

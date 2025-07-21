@@ -1,4 +1,4 @@
-# How to Flag a Case
+# Flag a Case
 
 This topic provides step-by-step instructions for flagging a [case](about-cases.md) in TheHive.
 

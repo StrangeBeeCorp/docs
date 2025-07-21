@@ -1,4 +1,4 @@
-# How to Write and Submit an Analyzer
+# Write and Submit an Analyzer
 
 ## Table of Contents
   * [Writing an Analyzer](#writing-an-analyzer)

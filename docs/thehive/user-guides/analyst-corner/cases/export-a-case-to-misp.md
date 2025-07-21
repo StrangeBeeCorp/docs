@@ -1,4 +1,4 @@
-# How to Export a Case to MISP
+# Export a Case to MISP
 
 This topic provides step-by-step instructions for manually exporting a [case](../cases/about-cases.md) to [MISP](https://www.misp-project.org/) in TheHive.
 

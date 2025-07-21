@@ -1,4 +1,4 @@
-# How to Create an Alert Feeder
+# Create an Alert Feeder
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to Create a Knowledge Base Page
+# Create a Knowledge Base Page
 
 This topic provides step-by-step instructions for creating a page in the TheHive [Knowledge Base](about-knowledge-base.md).
 

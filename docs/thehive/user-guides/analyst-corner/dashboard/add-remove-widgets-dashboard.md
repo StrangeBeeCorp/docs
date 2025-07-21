@@ -1,4 +1,4 @@
-# How to Add or Remove Widgets in a Dashboard
+# Add or Remove Widgets in a Dashboard
 
 This topic provides step-by-step instructions for adding or removing [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Add a Cortex Server
+# Add a Cortex Server
 
 This topic provides step-by-step instructions for adding a [Cortex](about-cortex.md) server in TheHive.
 

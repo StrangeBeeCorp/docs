@@ -1,4 +1,4 @@
-# How to Close a Task
+# Close a Task
 
 This topic provides step-by-step instructions for closing a [task](about-tasks.md) in TheHive.
 

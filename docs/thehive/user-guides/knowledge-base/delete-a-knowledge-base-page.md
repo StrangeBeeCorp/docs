@@ -1,4 +1,4 @@
-# How to Delete a Knowledge Base Page
+# Delete a Knowledge Base Page
 
 This topic provides step-by-step instructions for deleting a [Knowledge Base](about-knowledge-base.md) page in TheHive.
 

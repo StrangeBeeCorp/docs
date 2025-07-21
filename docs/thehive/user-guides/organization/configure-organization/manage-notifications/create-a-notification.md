@@ -1,4 +1,4 @@
-# How to Create a Notification
+# Create a Notification
 
 This topic provides step-by-step instructions for creating a [notification](about-notifications.md) in TheHive.
 
@@ -16,7 +16,7 @@ A notification triggers automated actions when specific events occur within an o
 
     ---
 
-3. Select :fontawesome-solid-plus: or **Add a new notification**.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

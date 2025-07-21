@@ -1,4 +1,4 @@
-# How to Adjust Dashboard Refresh Frequency
+# Adjust Dashboard Refresh Frequency
 
 This topic provides step-by-step instructions for adjusting [dashboard](about-dashboards.md) refresh frequency in TheHive.
 

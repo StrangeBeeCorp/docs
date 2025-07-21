@@ -1,4 +1,4 @@
-# How to Create an Organization
+# Create an Organization
 
 This topic provides step-by-step instructions for creating an [organization](about-organizations.md) in TheHive.
 

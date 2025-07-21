@@ -1,4 +1,4 @@
-# How to Delete a Mailbox Connection
+# Delete a Mailbox Connection
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

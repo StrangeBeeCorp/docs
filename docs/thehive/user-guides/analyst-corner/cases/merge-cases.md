@@ -1,4 +1,4 @@
-# How to Merge Cases
+# Merge Cases
 
 This topic provides step-by-step instructions for [merging cases](../cases/about-cases.md#merging-cases) in TheHive.
 

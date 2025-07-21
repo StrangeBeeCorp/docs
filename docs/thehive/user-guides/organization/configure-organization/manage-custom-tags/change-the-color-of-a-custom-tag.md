@@ -1,4 +1,4 @@
-# How to Change the Color of a Custom Tag
+# Change the Color of a Custom Tag
 
 This topic provides step-by-step instructions for changing the color of a [custom tag](about-custom-tags.md) in TheHive.
 

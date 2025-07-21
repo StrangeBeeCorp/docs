@@ -1,4 +1,4 @@
-# How to Import a Case Page Template
+# Import a Case Page Template
 
 This topic provides step-by-step instructions for importing a [case page template](about-case-page-templates.md) in TheHive.
 

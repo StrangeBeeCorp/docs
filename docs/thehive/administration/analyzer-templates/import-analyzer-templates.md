@@ -1,4 +1,4 @@
-# How to Import Analyzer Templates
+# Import Analyzer Templates
 
 This topic provides step-by-step instructions for importing [analyzer templates](about-analyzer-templates.md) in TheHive.
 

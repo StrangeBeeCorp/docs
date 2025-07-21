@@ -1,4 +1,4 @@
-# How to Manage User Accounts
+# Manage User Accounts
 
 This topic provides step-by-step instructions for managing [user accounts](about-user-accounts.md) in TheHive.
 

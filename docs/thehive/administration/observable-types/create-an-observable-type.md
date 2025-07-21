@@ -1,4 +1,4 @@
-# How to Create an Observable Type
+# Create an Observable Type
 
 This topic provides step-by-step instructions for creating an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
 

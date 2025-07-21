@@ -1,4 +1,4 @@
-# How to Turn Off a Notification
+# Turn Off a Notification
 
 This topic provides step-by-step instructions for turning off a [notification](about-notifications.md) in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Manage Custom Fields
+# Manage Custom Fields
 
 This topic provides step-by-step instructions for managing [custom fields](../custom-fields/about-custom-fields.md) in TheHive.
 

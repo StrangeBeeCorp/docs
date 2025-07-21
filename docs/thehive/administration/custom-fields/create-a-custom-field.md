@@ -1,4 +1,4 @@
-# How to Create a Custom Field
+# Create a Custom Field
 
 This topic provides step-by-step instructions for creating a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 

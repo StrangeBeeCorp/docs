@@ -1,4 +1,4 @@
-# How to Configure a SAML Authentication Provider
+# Configure a SAML Authentication Provider
 
 <!-- md:license Platinum -->
 

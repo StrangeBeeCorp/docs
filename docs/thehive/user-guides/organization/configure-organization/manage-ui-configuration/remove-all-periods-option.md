@@ -1,4 +1,4 @@
-# How to Remove the All Periods Option in a Dashboard
+# Remove the All Periods Option in a Dashboard
 
 This topic provides step-by-step instructions for removing the **All periods** option in a [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) in TheHive.
 

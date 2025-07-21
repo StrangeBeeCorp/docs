@@ -1,4 +1,4 @@
-# How to Find a Task Log
+# Find a Task Log
 
 This topic provides step-by-step instructions for searching a task log in TheHive.
 
