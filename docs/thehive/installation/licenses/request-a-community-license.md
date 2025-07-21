@@ -1,4 +1,4 @@
-# How to Request a Community License
+# Request a Community License
 
 This topic provides step-by-step instructions for requesting a [TheHive Community license](about-licenses.md).
 

@@ -1,4 +1,4 @@
-# How to Export a List of User Accounts
+# Export a List of User Accounts
 
 This topic provides step-by-step instructions for exporting a list of [user accounts](about-user-accounts.md) in TheHive.
 

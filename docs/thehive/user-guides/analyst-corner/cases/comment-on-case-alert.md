@@ -1,4 +1,4 @@
-# How to Comment on a Case or Alert
+# Comment on a Case or Alert
 
 This topic provides step-by-step instructions for adding comments to a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive.
 

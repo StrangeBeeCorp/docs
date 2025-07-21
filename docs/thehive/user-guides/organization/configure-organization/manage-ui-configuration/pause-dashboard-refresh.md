@@ -1,4 +1,4 @@
-# How to Pause Dashboard Refresh
+# Pause Dashboard Refresh
 
 This topic provides step-by-step instructions for pausing [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) refresh in TheHive.
 

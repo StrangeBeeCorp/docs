@@ -1,4 +1,4 @@
-# How to Export or Import a Dashboard
+# Export or Import a Dashboard
 
 This topic provides step-by-step instructions for exporting and importing a [dashboard](about-dashboards.md) in TheHive.
 

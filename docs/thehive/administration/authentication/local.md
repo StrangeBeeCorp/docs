@@ -1,4 +1,4 @@
-# How to Configure a Local Authentication Provider
+# Configure a Local Authentication Provider
 
 This topic provides step-by-step instructions for configuring a local authentication provider in TheHive.
 

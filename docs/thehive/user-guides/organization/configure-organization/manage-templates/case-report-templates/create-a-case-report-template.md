@@ -1,4 +1,4 @@
-# How to Create a Case Report Template
+# Create a Case Report Template
 
 <!-- md:license Platinum -->
 

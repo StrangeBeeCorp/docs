@@ -1,4 +1,4 @@
-# How to Change a Status Color
+# Change a Status Color
 
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) color for cases and alerts in TheHive.
 

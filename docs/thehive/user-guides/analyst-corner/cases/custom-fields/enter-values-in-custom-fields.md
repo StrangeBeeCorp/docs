@@ -1,4 +1,4 @@
-# How to Enter Values in Custom Fields
+# Enter Values in Custom Fields
 
 This topic provides step-by-step instructions for entering values in [custom fields](../../../../administration/custom-fields/about-custom-fields.md) in a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 

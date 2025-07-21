@@ -1,4 +1,4 @@
-# How to Configure Authentication
+# Configure Authentication
 
 This topic provides step-by-step instructions for configuring authentication in TheHive.
 

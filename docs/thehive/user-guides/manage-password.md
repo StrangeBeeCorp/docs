@@ -1,4 +1,4 @@
-# How to Manage your Password
+# Manage your Password
 
 This topic provides step-by-step instructions for managing the password of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
 

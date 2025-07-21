@@ -1,4 +1,4 @@
-# How to Create a Case Template
+# Create a Case Template
 
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 

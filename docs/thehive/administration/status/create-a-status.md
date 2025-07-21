@@ -1,4 +1,4 @@
-# How to Create a Status
+# Create a Status
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

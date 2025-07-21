@@ -1,4 +1,4 @@
-# How to Start a Task
+# Start a Task
 
 This topic provides step-by-step instructions for starting a [task](about-tasks.md) in TheHive.
 

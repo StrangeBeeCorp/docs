@@ -1,4 +1,4 @@
-# How to Close an Alert
+# Close an Alert
 
 This topic provides step-by-step instructions for closing an [alert](about-alerts.md) in TheHive.
 

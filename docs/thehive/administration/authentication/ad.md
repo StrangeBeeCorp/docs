@@ -1,4 +1,4 @@
-# How to Configure an AD Authentication Provider
+# Configure an AD Authentication Provider
 
 <!-- md:license Platinum -->
 

@@ -1,4 +1,4 @@
-# How to Customize TheHive Branding
+# Customize TheHive Branding
 
 <!-- md:license Platinum -->
 

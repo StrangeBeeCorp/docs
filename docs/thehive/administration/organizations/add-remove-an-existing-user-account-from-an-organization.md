@@ -1,4 +1,4 @@
-# How to Add or Remove an Existing User Account from an Organization
+# Add or Remove an Existing User Account from an Organization
 
 This topic provides step-by-step instructions for adding or removing an existing user account from an [organization](about-organizations.md) in TheHive.
 

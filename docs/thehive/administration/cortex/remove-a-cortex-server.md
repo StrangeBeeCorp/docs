@@ -1,4 +1,4 @@
-# How to Remove a Cortex Server
+# Remove a Cortex Server
 
 This topic provides step-by-step instructions for removing a [Cortex](about-cortex.md) server in TheHive.
 

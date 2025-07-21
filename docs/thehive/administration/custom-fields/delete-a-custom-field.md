@@ -1,4 +1,4 @@
-# How to Delete a Custom Field
+# Delete a Custom Field
 
 This topic provides step-by-step instructions for deleting a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 

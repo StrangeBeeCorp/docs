@@ -1,4 +1,4 @@
-# How to Link an Organization
+# Link an Organization
 
 This topic provides step-by-step instructions for linking an [organization](about-organizations.md) to another in TheHive.
 

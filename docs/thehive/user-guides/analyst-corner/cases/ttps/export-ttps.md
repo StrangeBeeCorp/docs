@@ -1,4 +1,4 @@
-# How to Export Tactics, Techniques and Procedures
+# Export Tactics, Techniques and Procedures
 
 This topic provides step-by-step instructions for exporting [tactics, techniques and procedures (TTPs)](about-ttps.md) from a case or an alert in TheHive.
 

@@ -1,4 +1,4 @@
-# How to Change a Status Visibility
+# Change a Status Visibility
 
 <!-- md:version 5.5 -->
 

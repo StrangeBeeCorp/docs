@@ -1,4 +1,4 @@
-# How to Find a Case
+# Find a Case
 
 This topic provides step-by-step instructions for using various methods to search for a [case](../about-cases.md) in TheHive.
 

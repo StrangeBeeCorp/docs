@@ -1,4 +1,4 @@
-# How to Delete a Taxonomy
+# Delete a Taxonomy
 
 This topic provides step-by-step instructions for deleting a [taxonomy](about-taxonomies.md) in TheHive.
 

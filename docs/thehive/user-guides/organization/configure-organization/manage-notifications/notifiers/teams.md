@@ -1,4 +1,4 @@
-# How to Configure the Microsoft Teams Notifier
+# Configure the Microsoft Teams Notifier
 
 <!-- md:license Platinum -->
 

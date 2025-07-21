@@ -1,4 +1,4 @@
-# How to Export a Case Timeline
+# Export a Case Timeline
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

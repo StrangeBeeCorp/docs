@@ -1,4 +1,4 @@
-# How to Delete a User Account
+# Delete a User Account
 
 This topic provides step-by-step instructions for deleting a [user account](about-user-accounts.md) in TheHive.
 

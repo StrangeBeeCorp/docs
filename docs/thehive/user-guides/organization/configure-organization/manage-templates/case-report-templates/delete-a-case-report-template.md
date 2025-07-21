@@ -1,4 +1,4 @@
-# How to Delete a Case Report Template
+# Delete a Case Report Template
 
 <!-- md:license Platinum -->
 

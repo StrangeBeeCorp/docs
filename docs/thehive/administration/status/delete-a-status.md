@@ -1,4 +1,4 @@
-# How to Delete a Status
+# Delete a Status
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 

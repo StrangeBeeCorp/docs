@@ -1,4 +1,4 @@
-# How to Configure the Slack Notifier
+# Configure the Slack Notifier
 
 <!-- md:license Platinum -->
 
