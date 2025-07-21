@@ -616,15 +616,15 @@ This section provides detailed instructions for installing and configuring TheHi
 
 ### Installation
 
-TheHive packages are distributed as RPM and DEB files, as well as ZIP archive packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
+TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
 {!includes/manual-download-installation-thehive.md!}
 
-=== "ZIP archive"
+=== "ZIP binary packages"
 
-    If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP archive.
+    If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP binary package.
 
     1. Download the binary package along with its SHA256 checksum and signature files. You can install TheHive anywhere on your filesystem.
    

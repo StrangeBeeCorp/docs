@@ -188,9 +188,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 {!includes/manual-download-installation-cortex.md!}
 
-=== "ZIP archive"
+=== "ZIP binary packages"
 
-    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP archive.
+    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP binary package.
 
     1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
    

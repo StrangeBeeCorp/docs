@@ -48,7 +48,7 @@ Many features are included with Cortex:
 * Cache: an analysis is not re-executed for the same observable if a given analyzer is called on that observable several times within a specific timespan (10 minutes by default, can be adjusted for each analyzer).
 
 ## Installation and configuration guides
-[This documentation](./installation-and-configuration/index.md) contains step-by-step installation instructions for Cortex for different operating systems as well as corresponding ZIP archives.
+[This documentation](./installation-and-configuration/index.md) contains step-by-step installation instructions for Cortex for different operating systems as well as corresponding ZIP binary packages.
 
 All aspects of the configuration are also detailed in a dedicated section.
 s
