@@ -193,6 +193,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
     If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP binary package.
 
     1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
+
+        !!! tip "Destination path"
+            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
    
         * Using Wget
 
@@ -238,7 +241,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation and send an email to security@strangebee.com.
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
      
@@ -264,10 +267,15 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             gpg --verify /path/to/cortex-<full_version>.zip.asc /path/to/cortex-<full_version>.zip
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
 
     3. Unzip the package.
+
+        !!! info "Unzip paths"
+            
+            * Replace `/path/to/thehive-<full_version>.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/path/to/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
         unzip /path/to/cortex-<full_version>.zip -d /path/to/

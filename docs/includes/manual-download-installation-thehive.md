@@ -2,6 +2,9 @@
 
     1. Download the package along with its SHA256 checksum and signature files.
 
+        !!! tip "Destination path"
+            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+
         * Using Wget:
 
             ```bash
@@ -46,7 +49,7 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation and send an e-mail to security@strangebee.com.
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
      
@@ -72,7 +75,7 @@
             gpg --verify /path/to/thehive-<full_version>.deb.asc /path/to/thehive-<full_version>.deb
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
     3. Install the package.
 
@@ -89,7 +92,7 @@
             ```
 
             !!! tip "Missing dependencies"
-                You might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Dependencies section of the installation guide](/thehive/installation/step-by-step-installation-guide/).
+                While using `dpkg`, you might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Dependencies section of the installation guide](/thehive/installation/step-by-step-installation-guide/).
 
     4. When switching from the previous repository-based installation, remove the old repository to avoid stale configurations.
 
@@ -104,6 +107,9 @@
 === "RPM"
 
     1. Download the package along with its SHA256 checksum and signature files.
+
+        !!! tip "Destination path"
+            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
 
         * Using Wget:
 
@@ -149,7 +155,7 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation and send an e-mail to security@strangebee.com.
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com)
 
           * Verify the GPG signature using the public key.
      
@@ -175,7 +181,7 @@
             gpg --verify /path/to/thehive-<full_version>.rpm.asc /path/to/thehive-<full_version>.rpm
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report this issue by sending an email to security@strangebee.com.
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
     3. Install the package.
 
@@ -198,7 +204,7 @@
             ```
 
             !!! tip "Missing dependencies"
-                You might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Dependencies section of the installation guide](/thehive/installation/step-by-step-installation-guide/).
+                While using `rpm`, you might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Dependencies section of the installation guide](/thehive/installation/step-by-step-installation-guide/).
 
     4. When switching from the previous repository-based installation, deactivate the old repository to avoid stale configurations.
 
@@ -215,4 +221,6 @@
 
             ```bash
             sudo rm /etc/yum.repos.d/strangebee.repo
+            sudo yum clean all
+            sudo yum makecache
             ```
