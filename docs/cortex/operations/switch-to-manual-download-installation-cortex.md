@@ -1,4 +1,4 @@
-# How to Switch to Manual Download and Installation for Cortex
+# Switch to Manual Download and Installation for Cortex
 
 This topic provides step-by-step instructions for switching from APT and YUM repositories to a manual process for installing and upgrading Cortex, following the [APT and YUM repositories deprecation notice](../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md).
 

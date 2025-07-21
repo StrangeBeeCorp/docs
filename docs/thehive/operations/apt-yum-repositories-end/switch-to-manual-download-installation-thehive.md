@@ -1,4 +1,4 @@
-# How to Switch to Manual Download and Installation for TheHive
+# Switch to Manual Download and Installation for TheHive
 
 This topic provides step-by-step instructions for switching from APT and YUM repositories to a manual process for installing and upgrading TheHive, following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-notice.md).
 
