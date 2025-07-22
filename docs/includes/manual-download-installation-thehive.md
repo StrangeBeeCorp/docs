@@ -8,33 +8,33 @@
         * Using Wget:
 
             ```bash
-            wget -O /path/to/thehive-<full_version>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb
-            wget -O /path/to/thehive-<full_version>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256
-            wget -O /path/to/thehive-<full_version>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc
+            wget -O /path/to/<file_name>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
+            wget -O /path/to/<file_name>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
+            wget -O /path/to/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
             Example:
 
             ```bash
-            wget -O /tmp/thehive-5.5.5.deb https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb
-            wget -O /tmp/thehive-5.5.5.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256
-            wget -O /tmp/thehive-5.5.5.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc
+            wget -O /tmp/thehive_5.5.5-1_all.deb https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.5-1_all.deb
+            wget -O /tmp/thehive_5.5.5-1_all.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.5-1_all.sha256
+            wget -O /tmp/thehive_5.5.5-1_all.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.5-1_all.deb.asc
             ```
 
         * Using cURL:
 
             ```bash
-            curl -o /path/to/thehive-<full_version>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/thehive-<full_version>.deb
-            curl -o /path/to/thehive-<full_version>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.deb.sha256
-            curl -o /path/to/thehive-<full_version>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.deb.asc
+            curl -o /path/to/<file_name>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
+            curl -o /path/to/<file_name>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
+            curl -o /path/to/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
             Example:
             
             ```bash
-            curl -o /tmp/thehive-5.5.5.deb https://thehive.download.strangebee.com/5.5/deb/thehive-5.5.5.deb
-            curl -o /tmp/thehive-5.5.5.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.deb.sha256
-            curl -o /tmp/thehive-5.5.5.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.deb.asc
+            curl -o /tmp/thehive_5.5.5-1_all.deb https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.5-1_all.deb
+            curl -o /tmp/thehive_5.5.5-1_all.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.5-1_all.deb.sha256
+            curl -o /tmp/thehive_5.5.5-1_all.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.5-1_all.deb.asc
             ```
         
     2. Verify the integrity of the downloaded package.
@@ -44,7 +44,7 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/thehive-<full_version>.deb
+            sha256sum /path/to/<file_name>.deb
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -72,7 +72,7 @@
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/thehive-<full_version>.deb.asc /path/to/thehive-<full_version>.deb
+            gpg --verify /path/to/<file_name>.deb.asc /path/to/<file_name>.deb
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -82,13 +82,13 @@
         * Using `apt-get` to manage dependencies automatically:
 
             ```bash
-            sudo apt-get install /path/to/thehive-<full_version>.deb
+            sudo apt-get install /path/to/<file_name>.deb
             ```
 
         * Using `dpkg`:
 
             ```bash
-            sudo dpkg -i /path/to/thehive-<full_version>.deb
+            sudo dpkg -i /path/to/<file_name>.deb
             ```
 
             !!! tip "Missing dependencies"
@@ -114,33 +114,33 @@
         * Using Wget:
 
             ```bash
-            wget -O /path/to/thehive-<full_version>.rpm https://thehive.download.strangebee.com/<major.minor_version>/rpm/thehive-<full_version>.rpm
-            wget -O /path/to/thehive-<full_version>.rpm.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.rpm.sha256
-            wget -O /path/to/thehive-<full_version>.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.rpm.asc
+            wget -O /path/to/<file_name>.rpm https://thehive.download.strangebee.com/<major.minor_version>/rpm/<file_name>.rpm
+            wget -O /path/to/<file_name>.rpm.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.rpm.sha256
+            wget -O /path/to/<file_name>.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.rpm.asc
             ```
 
             Example:
 
             ```bash
-            wget -O /tmp/thehive-5.5.5.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.5.rpm
-            wget -O /tmp/thehive-5.5.5.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.rpm.sha256
-            wget -O /tmp/thehive-5.5.5.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.rpm.asc
+            wget -O /tmp/thehive-5.5.5-1.noarch.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.5-1.noarch.rpm
+            wget -O /tmp/thehive-5.5.5-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.noarch.rpm.sha256
+            wget -O /tmp/thehive-5.5.5-1.noarch.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.noarch.rpm.asc
             ```
 
         * Using cURL:
 
             ```bash
-            curl -o /path/to/thehive-<full_version>.rpm https://thehive.download.strangebee.com/<major.minor_version>/rpm/thehive-<full_version>.rpm
-            curl -o /path/to/thehive-<full_version>.rpm.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/thehive-<full_version>.rpm.sha256
-            curl -o /path/to/thehive-<full_version>.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/thehive-<full_version>.rpm.asc
+            curl -o /path/to/<file_name>.rpm https://thehive.download.strangebee.com/<major.minor_version>/rpm/<file_name>.rpm
+            curl -o /path/to/<file_name>.rpm.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.rpm.sha256
+            curl -o /path/to/<file_name>.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.rpm.asc
             ```
 
             Example:
 
             ```bash
-            curl -o /tmp/thehive-5.5.5.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.5.rpm
-            curl -o /tmp/thehive-5.5.5.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5.rpm.sha256
-            curl -o /tmp/thehive-5.5.5.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5.rpm.asc
+            curl -o /tmp/thehive-5.5.5-1.noarch.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.5-1.noarch.rpm
+            curl -o /tmp/thehive-5.5.5-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.noarch.rpm.sha256
+            curl -o /tmp/thehive-5.5.5-1.noarch.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.noarch.rpm.asc
             ```
 
     2. Verify the integrity of the downloaded package.
@@ -150,7 +150,7 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/thehive-<full_version>.rpm
+            sha256sum /path/to/<file_name>.rpm
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -178,7 +178,7 @@
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/thehive-<full_version>.rpm.asc /path/to/thehive-<full_version>.rpm
+            gpg --verify /path/to/<file_name>.rpm.asc /path/to/<file_name>.rpm
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -188,19 +188,19 @@
         * Using `yum` to manage dependencies automatically:
 
             ```bash
-            sudo yum install /path/to/thehive-<full_version>.rpm
+            sudo yum install /path/to/<file_name>.rpm
             ```
 
         * Using `dnf` to manage dependencies automatically:
 
             ```bash
-            sudo dnf install /path/to/thehive-<full_version>.rpm
+            sudo dnf install /path/to/<file_name>.rpm
             ```
 
         * Using `rpm`:
 
             ```bash
-            sudo rpm -ivh /path/to/thehive-<full_version>.rpm
+            sudo rpm -ivh /path/to/<file_name>.rpm
             ```
 
             !!! tip "Missing dependencies"

@@ -200,33 +200,33 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Using Wget
 
             ```bash
-            wget -O /path/to/cortex-<full_version>.zip cortex.download.strangebee.com/<major.minor_version>/zip/cortex-<full_version>.zip
-            wget -O /path/to/cortex-<full_version>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.zip.sha256
-            wget -O /path/to/cortex-<full_version>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.zip.asc
+            wget -O /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            wget -O /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            wget -O /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
             Example:
 
             ```bash
-            wget -O /opt/cortex/cortex-3.2.1.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1.zip
-            wget -O /opt/cortex/cortex-3.2.1.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.zip.sha256
-            wget -O /opt/cortex/cortex-3.2.1.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.zip.asc
+            wget -O /opt/cortex/cortex-3.2.1+2.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1+2.zip
+            wget -O /opt/cortex/cortex-3.2.1+2.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1+2.zip.sha256
+            wget -O /opt/cortex/cortex-3.2.1+2.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1+2.zip.asc
             ```
 
         * Using cURL
 
             ```bash
-            curl -o /path/to/cortex-<full_version>.zip cortex.download.strangebee.com/<major.minor_version>/zip/cortex-<full_version>.zip
-            curl -o /path/to/cortex-<full_version>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/cortex-<full_version>.zip.sha256
-            curl -o /path/to/cortex-<full_version>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/cortex-<full_version>.zip.asc
+            curl -o /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            curl -o /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            curl -o /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
             Example:
 
             ```bash
-            curl -o /opt/cortex/cortex-3.2.1.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1.zip
-            curl -o /opt/cortex/cortex-3.2.1.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1.zip.sha256
-            curl -o /opt/cortex/cortex-3.2.1.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1.zip.asc
+            curl -o /opt/cortex/cortex-3.2.1+2.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1+2.zip
+            curl -o /opt/cortex/cortex-3.2.1+2.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1+2.zip.sha256
+            curl -o /opt/cortex/cortex-3.2.1+2.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1+2.zip.asc
             ```
 
     2. Verify the integrity of the downloaded package.
@@ -236,7 +236,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/cortex-<full_version>.zip
+            sha256sum /path/to/<file_name>.zip
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -264,7 +264,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/cortex-<full_version>.zip.asc /path/to/cortex-<full_version>.zip
+            gpg --verify /path/to/<file_name>.zip.asc /path/to/<file_name>.zip
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -274,12 +274,12 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
         !!! info "Unzip paths"
             
-            * Replace `/path/to/thehive-<full_version>.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/path/to/<file_name>.zip` with the full path to the ZIP file you downloaded.
             * Replace `/path/to/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
-        unzip /path/to/cortex-<full_version>.zip -d /path/to/
-        sudo ln -s /path/to/cortex-<full_version> /path/to/cortex
+        unzip /path/to/<file_name>.zip -d /path/to/
+        sudo ln -s /path/to/<file_name> /path/to/cortex
         ```
 
     4. Make the Cortex binary executable.
