@@ -222,5 +222,4 @@
             ```bash
             sudo rm /etc/yum.repos.d/strangebee.repo
             sudo yum clean all
-            sudo yum makecache
             ```
