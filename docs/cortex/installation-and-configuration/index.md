@@ -24,7 +24,7 @@ Cortex has been tested and is supported on the following operating systems:
     If you are using [one of the supported](#operating-systems) operating systems, use our all-in-one **installation script**: 
 
     ``` bash
-    wget -q -O /tmp/install.sh https://scripts.download.strangebee.com/latest/sh/install_script.sh ; sudo -v ; bash /tmp/install.sh
+    wget -q -O /tmp/install_script.sh https://scripts.download.strangebee.com/latest/sh/install_script.sh ; sudo -v ; bash /tmp/install_script.sh
     ```
 
     This script helps with the installation process on a fresh and [supported OS](#operating-systems); the program also run successfully if the conditions in terms of hardware requirements are met.
