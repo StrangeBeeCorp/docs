@@ -255,7 +255,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
             sudo systemctl enable cassandra
             ```
 
-    3. Optional: If the Cassandra service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    3. Optional: If the Cassandra service was started automatically before configuring it, stop it, remove existing data, and restart it once the configuration is updated. 
     
         Execute the following commands:
 
@@ -556,7 +556,7 @@ b. Optional: Configure index template and Index Lifecycle Management (ILM).
             sudo systemctl enable elasticsearch
             ```
 
-    3. Optional: If the Elasticsearch service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    3. Optional: If the Elasticsearch service was started automatically before configuring it, stop it, remove existing data, and restart it once the configuration is updated. 
     
         Execute the following commands:
  

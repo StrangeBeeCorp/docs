@@ -6,6 +6,39 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.6 - July 28, 2025
+
+### Beta feature: Improved filters and views
+
+A new beta feature is available to enhance the filtering and view experience across TheHive.
+
+Watch this [short demo video](https://strangebee.storylane.io/share/lylowjsgdcxb) to see it in action.
+
+Want to try it out? Follow the [instructions](../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views) to activate the beta in your user settings.
+
+### Bulk case and alert merge limit
+
+To improve platform stability, a merge limit has been introduced for alerts and cases.
+
+* You can now merge up to 50 alerts or cases in a single operation by default.
+* This limit can be customized via the `alert.maxMergeInCase` and `case.maxMergeInCase` settings in `application.conf`.
+
+Caution: Raising the limit may affect performance. Proceed with care.
+
+### Fixes
+
+* Email Intake: Fixed an issue that prevented file attachments from being handled correctly when using the MS365 GraphAPI connector.
+* SAML SSO authentication: Resolved a regression introduced in version 5.5.5 that affected SAML-based login.
+
+### Improvements
+
+* Case reports:
+
+    * Images added to task descriptions, template headers, and the case summary are now embedded in exported Word and PDF reports.
+    * Case reports using page templates can now be exported and imported.
+
+* Custom fields: Improved the display of long string values for enhanced readability in the UI.
+
 ## 5.5.5 - July 10, 2025
 
 ### Regression fixes

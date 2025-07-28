@@ -173,7 +173,7 @@ nodetool repair --full
 
     - Ensure that all nodes in the cluster are in an operational state (UN), indicating that they are up and running normally.
 
-    - Before proceeding with the installation, it's recommended to perform the following steps:
+    - Before proceeding with the installation, perform the following steps:
 
         **Stop Existing Nodes**: Stop all existing nodes of TheHive (4.x).
 
