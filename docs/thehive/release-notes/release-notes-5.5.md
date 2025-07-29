@@ -6,6 +6,12 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.7 - July 29, 2025
+
+### Regression fix
+
+Case search bar: Fixed a regression introduced in version 5.5.6 that affected the case search bar.
+
 ## 5.5.6 - July 28, 2025
 
 ### Beta feature: Improved filters and views
