@@ -1,12 +1,12 @@
 # Step-by-Step Guide
 
-This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from binary packages.
+This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from ZIP binary packages.
 
 ## Required packages
 
 !!! Example "" 
 
-    === "Debian" 
+    === "DEB" 
 
         ```bash
         apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
@@ -93,13 +93,11 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         The installation requires Java 11, so refer to your system documentation to install it.
 
-
-
 ## Elasticsearch
 
 !!! Example ""
 
-    === "Debian"
+    === "DEB"
 
         ```bash
         wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
@@ -149,11 +147,11 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Docker
 
-If using Docker images of Analyzers and Responders, Docker engine is required on the Operating System: 
+If using Docker images of analyzers and responders, Docker engine is required on the operating system:
 
 !!! Example ""
 
-    === "Debian"
+    === "DEB"
 
         ```bash
         curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -178,76 +176,122 @@ If using Docker images of Analyzers and Responders, Docker engine is required on
         sudo dnf install -yq docker-ce docker-ce-cli containerd.io docker-compose-plugin
         ```
 
-
-# Cortex Installation and Configuration
+## Cortex installation and configuration
 
 This section provides step-by-step instructions to install Cortex and configure it properly.
 
-## Installation
+### Installation
 
-Cortex is available in Debian, RPM, and binary (zip archive) formats. All packages are signed using our GPG key [562CBC1C](https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY), with the following fingerprint:
+Cortex packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-```
-0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C
-```
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-### Debian-based installation
+{!includes/manual-download-installation-cortex.md!}
 
-Ensure your system is up to date before installing Cortex. Run the following commands:
+=== "ZIP binary packages"
 
-```bash
-curl -sSL https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg
-```
+    If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP binary package.
 
-Add the repository to your system:
+    1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
 
-```bash
-echo "deb [arch=all signed-by=/usr/share/keyrings/thehive-project.gpg] https://deb.thehive-project.org release main" | sudo tee /etc/apt/sources.list.d/thehive-project.list
-```
+        !!! tip "Destination path"
+            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+   
+        * Using Wget
 
-Update the package list and install Cortex:
+            ```bash
+            wget -O /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            wget -O /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            wget -O /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
+            ```
 
-```bash
-sudo apt update
-sudo apt install cortex
-```
+            Example:
 
-### RPM-based installation
+            ```bash
+            wget -O /opt/cortex/cortex-3.2.1+2.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1+2.zip
+            wget -O /opt/cortex/cortex-3.2.1+2.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1+2.zip.sha256
+            wget -O /opt/cortex/cortex-3.2.1+2.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1+2.zip.asc
+            ```
 
-For RPM-based distributions (CentOS, RHEL, Fedora), create a new repository configuration file:
+        * Using cURL
 
-```bash
-sudo tee /etc/yum.repos.d/thehive-project.repo <<EOL
-[cortex]
-enabled=1
-priority=1
-name=TheHive-Project RPM repository
-baseurl=https://rpm.thehive-project.org/release/noarch
-gpgkey=https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY
-gpgcheck=1
-EOL
-```
+            ```bash
+            curl -o /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            curl -o /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            curl -o /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
+            ```
 
-Then, install Cortex:
+            Example:
 
-```bash
-sudo yum install cortex
-```
+            ```bash
+            curl -o /opt/cortex/cortex-3.2.1+2.zip https://cortex.download.strangebee.com/3.2/zip/cortex-3.2.1+2.zip
+            curl -o /opt/cortex/cortex-3.2.1+2.zip.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1+2.zip.sha256
+            curl -o /opt/cortex/cortex-3.2.1+2.zip.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1+2.zip.asc
+            ```
 
-### Binary installation
+    2. Verify the integrity of the downloaded package.
 
-For environments where package managers are not available, download and extract the Cortex binary package:
+        * Check the SHA256 checksum by comparing it with the provided value.
 
-```bash
-wget https://download.thehive-project.org/cortex-latest.zip
-unzip cortex-latest.zip -d /opt/cortex
-cd /opt/cortex
-chmod +x cortex
-```
+            a. Generate the SHA256 checksum of your downloaded package.
 
-## Post-Installation configuration
+            ```bash
+            sha256sum /path/to/<file_name>.zip
+            ```
 
-### Running Analyzers & Responders with Docker
+            b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
+
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
+
+          * Verify the GPG signature using the public key.
+     
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+
+            ```bash
+            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            ```
+            
+            ```bash
+            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            ```
+
+            b. Import the key into your GPG keyring.
+
+            ```bash
+            gpg --import /path/to/strangebee.gpg
+            ```
+
+            c. Verify the downloaded package signature.
+
+            ```bash
+            gpg --verify /path/to/<file_name>.zip.asc /path/to/<file_name>.zip
+            ```
+
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+
+
+    3. Unzip the package.
+
+        !!! info "Unzip paths"
+            
+            * Replace `/path/to/<file_name>.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/path/to/` after `-d` with the directory where you want to extract the contents of the archive.
+
+        ```bash
+        unzip /path/to/<file_name>.zip -d /path/to/
+        sudo ln -s /path/to/<file_name> /path/to/cortex
+        ```
+
+    4. Make the Cortex binary executable.
+
+        ```bash
+        cd /path/to/
+        chmod +x cortex
+        ```
+
+### Post-installation configuration
+
+#### Running analyzers & responders with Docker
 
 If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensure the `cortex` service account has appropriate permissions to interact with Docker:
 
@@ -255,7 +299,7 @@ If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensur
 sudo usermod -a -G docker cortex
 ```
 
-### Verify installation
+#### Verify installation
 
 After installation, you can check if Cortex is properly installed by running:
 
@@ -265,7 +309,7 @@ cortex --version
 
 This should return the installed version of Cortex.
 
-### Configuration
+#### Configuration
 
 Following settings are required to start Cortex successfully:
 
@@ -280,7 +324,7 @@ Advanced configuration settings might be added to run the application successful
 - [Proxy settings](proxy-settings.md)
 - [SSL configuration](ssl.md)
 
-### Start Cortex service
+#### Start Cortex service
 
 !!! Warning
 

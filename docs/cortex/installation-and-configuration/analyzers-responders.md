@@ -9,13 +9,12 @@
     sudo usermod -G docker cortex
     ```
 
-
 ### Configure Cortex
 
-To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet: 
+To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet:
 
-- To download public catalogs from _download.thehive-project.org_ 
-- To download Docker images from _hub.docker.com_  ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons)).
+- To download public catalogs from the [catalogs official website](https://catalogs.download.strangebee.com)
+- To download Docker images from _hub.docker.com_ ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons))
 
 
 !!! Example ""
@@ -25,7 +24,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://download.thehive-project.org/analyzers.json"
+        "https://catalogs.download.strangebee.com/latest/json/analyzers.json"
       ]
 
       fork-join-executor {
@@ -41,7 +40,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
     responder {
       # Directory that holds responders
       urls = [
-        "https://download.thehive-project.org/responders.json"
+        "https://catalogs.download.strangebee.com/latest/json/responders.json"
       ]
 
       fork-join-executor {
@@ -58,7 +57,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
 
 ## Store & run programs on the host
 
-### Additionnal packages
+### Additional packages
 
 Some system packages are required to run Analyzers&Responders programs successfully: 
 
@@ -76,7 +75,7 @@ Some system packages are required to run Analyzers&Responders programs successfu
         sudo pip3 install -U pip setuptools
         ```
 
-### Clone the repository 
+### Clone the repository
 
 Once finished, clone the Cortex-analyzers repository in the directory of your choosing:
 
@@ -167,7 +166,7 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     analyzer {
       # Directory that holds analyzers
       urls = [
-        "https://download.thehive-project.org/analyzers.json",
+        "https://catalogs.download.strangebee.com/latest/json/analyzers.json",
         "/opt/Custom-Analyzers/analyzers" 
       ]
 
@@ -184,8 +183,8 @@ Update `analyzer.urls` and `responders.urls` accordingly.
     responder {
       # Directory that holds responders
       urls = [
-        "https://download.thehive-project.org/responders.json",
-        "/opt/Custom-Analyzers/responders" 
+        "https://catalogs.download.strangebee.com/latest/json/responders.json",
+        "/opt/Custom-Analyzers/responders"
       ]
 
       fork-join-executor {

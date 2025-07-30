@@ -1,3 +1,4 @@
+---
 copyright: Copyright 2025 StrangeBee. All rights reserved.
 site_name: TheHive 5 Documentation
 site_url: https://docs.strangebee.com
@@ -321,6 +322,7 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
+            'thehive/download/archives.md': 'thehive/download/index.md'
 
 extra:
   generator: false
@@ -387,7 +389,6 @@ nav:
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
-      - 'Archives': thehive/download/archives.md
     - 'Configuration':
       - 'Database & Index': thehive/configuration/database.md
       - 'File Storage': thehive/configuration/file-storage.md
@@ -420,6 +421,9 @@ nav:
             - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
             - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
             - 'Restore hot backups': thehive/operations/backup-restore/restore/restore-hot-backup.md
+      - 'End of APT and YUM repositories':
+        - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
+        - 'Switch to Manual Download and Installation': thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Monitoring Setup': thehive/operations/monitoring.md
@@ -830,6 +834,9 @@ nav:
       -  'Backup & Restore': 'cortex/operations/backup-restore.md'
       -  'Analyzers/Responders input and output': 'cortex/operations/input-output.md'
       -  'Upgrade to Cortex 3.1': 'cortex/operations/upgrade_to_cortex_3_1_and_es7_x.md'
+      - 'End of APT and YUM repositories':
+        - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
+        - 'Switch to Manual Download and Installation': cortex/operations/switch-to-manual-download-installation-cortex.md
     - 'API':
       - 'API Guide': './cortex/api/api-guide.md'
       - 'How to create an Analyzer' : './cortex/api/how-to-create-an-analyzer.md'

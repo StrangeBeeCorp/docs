@@ -1,105 +1,37 @@
-# Downloading Cortex  
-
-Cortex is available in multiple binary package formats, making installation flexible across various operating systems. Choose the method that best suits your environment.
-
+---
+hide:
+  - toc
 ---
 
-## :material-debian: Debian / :material-ubuntu: Ubuntu Installation  
+# Download Cortex
 
-### Step 1: Import the GPG Key  
+Cortex is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it on traditional Linux systems, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links below.
 
-Before adding the repository, import TheHive project's GPG key for package verification:
+## :material-debian: Debian / :material-ubuntu: Ubuntu
 
-```bash
-curl -sSL https://raw.githubusercontent.com/TheHive-Project/Cortex/master/PGP-PUBLIC-KEY | sudo gpg --dearmor -o /usr/share/keyrings/thehive-project.gpg
-```
+If you use a Debian- or Ubuntu-based OS, follow the steps in the [**Step-by-Step Installation Guide**](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to install and configure Cortex.
 
-### Step 2: Add TheHive Project Repository  
+!!! tip "DEB tab"
+    Select the DEB tab in the guide to ensure you use the correct commands.
 
-Create a new repository configuration file:
+## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-```text
-# /etc/apt/sources.list.d/thehive-project.list
-deb [signed-by=/usr/share/keyrings/thehive-project-archive-keyring.gpg] https://deb.thehive-project.org release main
-```
+For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to install and configure Cortex.
 
-### Step 3: Update Package Lists and Install Cortex  
+!!! tip "RPM tab"
+    Select the RPM tab in the guide to ensure you use the correct commands.
 
-```bash
-sudo apt update
-sudo apt install cortex
-```
+## :material-archive: ZIP binary packages
 
----
+If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install Cortex by downloading a ZIP binary package](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration).
 
-## :material-redhat: Red Hat Enterprise Linux / :material-fedora: Fedora Installation  
+!!! tip "ZIP binary packages tab"
+    Select the ZIP binary packages tab in the guide to ensure you use the correct commands.
 
-### Step 1: Import the GPG Key  
+## :material-docker: Docker
 
-Run the following command to import TheHive project’s GPG key:
+Prefer containerized deployment? Use the official pre-built Docker images on [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex). Follow the [Docker deployment instructions](../installation-and-configuration/run-cortex-with-docker.md) to get started.
 
-```bash
-sudo rpm --import https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY
-```
+## :material-kubernetes: Kubernetes
 
-### Step 2: Add TheHive Project Repository  
-
-Create a repository configuration file:
-
-```text
-# /etc/yum.repos.d/thehive-project.repo
-[thehive-project]
-enabled=1
-priority=1
-name=TheHive-Project RPM repository
-baseurl=https://rpm.thehive-project.org/release/noarch
-gpgcheck=1
-```
-
-### Step 3: Install Cortex  
-
-```bash
-sudo dnf install cortex  # Fedora
-sudo yum install cortex  # RHEL-based systems
-```
-
----
-
-## :material-folder-zip: Download as a ZIP Archive  
-
-For manual installation, download the latest Cortex release as a ZIP archive:
-
-🔗 **[Download Cortex ZIP](https://download.thehive-project.org/cortex-latest.zip)**  
-
-After downloading, extract the archive:  
-
-```bash
-unzip cortex-latest.zip -d cortex
-cd cortex
-```
-
----
-
-## :material-docker: Docker Installation  
-
-Cortex is also available as a Docker image, simplifying deployment.
-
-### Step 1: Pull the Latest Cortex Image  
-
-```bash
-docker pull thehiveproject/cortex
-```
-
-### Step 2: Run Cortex  
-
-```bash
-docker run -d --name cortex -p 9001:9001 thehiveproject/cortex
-```
-
-🔗 **[View Cortex on Docker Hub](https://hub.docker.com/r/thehiveproject/cortex)**  
-
----
-
-## Archives  
-
-There are currently no archived versions of Cortex available.
+For Kubernetes users, deploy Cortex with pre-built Docker images from [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex). Refer to the [Kubernetes deployment guide](../installation-and-configuration/deploy-cortex-on-kubernetes.md) for detailed instructions.
