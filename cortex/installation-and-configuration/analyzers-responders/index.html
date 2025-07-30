@@ -922,29 +922,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../thehive/download/archives/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Archives
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1778,6 +1755,101 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_5" id="__nav_2_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    End of APT and YUM repositories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            End of APT and YUM repositories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecation Notice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch to Manual Download and Installation
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -12505,7 +12577,7 @@
   
   
   <span class="md-ellipsis">
-    Downloading Cortex
+    Download Cortex
     
   </span>
   
@@ -13122,6 +13194,101 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_4" id="__nav_3_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    End of APT and YUM repositories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            End of APT and YUM repositories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deprecation Notice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/switch-to-manual-download-installation-cortex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Switch to Manual Download and Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14132,17 +14299,17 @@
 </code></pre></div>
 </div>
 <h3 id="configure-cortex">Configure Cortex<a class="headerlink" href="#configure-cortex" title="Permanent link">#</a></h3>
-<p>To run Analyzers&amp;Responders with Docker images, Cortex should be able have access to Internet: </p>
+<p>To run Analyzers&amp;Responders with Docker images, Cortex should be able have access to Internet:</p>
 <ul>
-<li>To download public catalogs from <em>download.thehive-project.org</em> </li>
-<li>To download Docker images from <em>hub.docker.com</em>  (<a href="https://hub.docker.com/search?q=cortexneurons">https://hub.docker.com/search?q=cortexneurons</a>).</li>
+<li>To download public catalogs from the <a href="https://catalogs.download.strangebee.com">catalogs official website</a></li>
+<li>To download Docker images from <em>hub.docker.com</em> (<a href="https://hub.docker.com/search?q=cortexneurons">https://hub.docker.com/search?q=cortexneurons</a>)</li>
 </ul>
 <div class="admonition example">
 <div class="highlight"><span class="filename">/etc/cortex/application.conf</span><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">..</span><span class="p p-Indicator">]</span>
 <span class="l l-Scalar l-Scalar-Plain">analyzer {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Directory that holds analyzers</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">urls = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://download.thehive-project.org/analyzers.json"</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/analyzers.json"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
@@ -14158,7 +14325,7 @@
 <span class="l l-Scalar l-Scalar-Plain">responder {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Directory that holds responders</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">urls = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://download.thehive-project.org/responders.json"</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/responders.json"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
@@ -14174,7 +14341,7 @@
 </code></pre></div>
 </div>
 <h2 id="store-run-programs-on-the-host">Store &amp; run programs on the host<a class="headerlink" href="#store-run-programs-on-the-host" title="Permanent link">#</a></h2>
-<h3 id="additionnal-packages">Additionnal packages<a class="headerlink" href="#additionnal-packages" title="Permanent link">#</a></h3>
+<h3 id="additional-packages">Additional packages<a class="headerlink" href="#additional-packages" title="Permanent link">#</a></h3>
 <p>Some system packages are required to run Analyzers&amp;Responders programs successfully: </p>
 <div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Debian</label></div>
@@ -14257,7 +14424,7 @@ chown<span class="w"> </span>-R<span class="w"> </span>cortex:cortex<span class=
 <span class="l l-Scalar l-Scalar-Plain">analyzer {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Directory that holds analyzers</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">urls = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://download.thehive-project.org/analyzers.json",</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/analyzers.json",</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Custom-Analyzers/analyzers"</span><span class="w"> </span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
@@ -14274,8 +14441,8 @@ chown<span class="w"> </span>-R<span class="w"> </span>cortex:cortex<span class=
 <span class="l l-Scalar l-Scalar-Plain">responder {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Directory that holds responders</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">urls = [</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://download.thehive-project.org/responders.json",</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Custom-Analyzers/responders"</span><span class="w"> </span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/responders.json",</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Custom-Analyzers/responders"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
