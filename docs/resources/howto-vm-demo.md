@@ -20,8 +20,8 @@
     ![](images/virtualbox-port-forwarding-1.png)
     3. Add required port forwarding (update according to your needs) and save.
     ![](images/virtualbox-port-forwarding-2.png)
-    4. Start the VM and open the follwing url in your browser: http://127.0.0.1:8888
-    5. You might have to also adjust *Display* graphical controller and set it to `VMSVGA` before starting the VM. 
+    4. Start the VM and open the following URL in your browser: http://127.0.0.1:8888
+    5. You might have to also adjust *Display* graphical controller and set it to `VMSVGA` before starting the VM.
 
 
 ## Quick connect

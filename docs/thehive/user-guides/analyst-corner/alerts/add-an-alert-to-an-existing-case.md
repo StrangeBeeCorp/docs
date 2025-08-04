@@ -18,6 +18,8 @@ If it requires a separate investigation, [create a case from the alert](create-a
 
 !!! tip "Bulk merge"
     To add multiple alerts to an existing case, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select **Merge selection into case** above the list. This action merges all the selected alerts into a single case.
+    
+    By default, you can merge up to 50 alerts at once. You can change this limit using the `alert.maxMergeInCase` setting in the `application.conf` file. Proceed with caution: modifying this limit may affect platform stability.
 
 1. [Locate the alert you want to merge into an existing case](./search-for-alerts/find-an-alert.md).
 

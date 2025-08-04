@@ -11,7 +11,7 @@ We provides and maintain several setup profiles for TheHive and Cortex available
 
 ## Prerequisites
 
-#### Software Requirements
+#### Software requirements
 
 - **Docker Engine**: Version `v23.0.15` or later. [Installation instructions](https://docs.docker.com/engine/install/){target=_blank}
 - **Docker Compose Plugin**: Version `v2.20.2` or later. [Installation instructions](https://docs.docker.com/compose/install/){target=_blank}
@@ -20,7 +20,7 @@ We provides and maintain several setup profiles for TheHive and Cortex available
 
 &nbsp;
 
-#### Hardware Requirements
+#### Hardware requirements
 
 Hardware requirements will depend on the deployment profile being used. For example, for testing deployments, a CPU with 4 vCPUs and 8 GB RAM is recommended, while for high-performance deployments for TheHive on a dedicated server, a CPU with 8 vCPUs and 32 GB RAM is recommended. For more detailed requirements, please refer to the GitHub link provided below.
 
@@ -32,7 +32,7 @@ Basically, two hardware profiles are recommended to run the full stack for TheHi
 
 ---
 
-## Clone the Repository
+## Clone the repository
 
 Clone the [StrangeBee Docker repository](https://github.com/StrangeBeeCorp/docker.git) to your local machine:
 
@@ -44,7 +44,7 @@ git clone https://github.com/StrangeBeeCorp/docker.git
 
 ---
 
-## Deployment Profiles
+## Deployment profiles
 
 !!! Warning "**BEFORE** RUNNING ANY COMMAND"
     Please, read carefully the documentation related to the profile you want to use (the `README.md` files you'll find in the GitHub repository).
@@ -84,7 +84,7 @@ The application stack includes several utility scripts, one of which is the `ini
 
 Follow the steps below to initialize the environment.
 
-### Step 1: Run the Initialization Script
+### Step 1: Run the initialization script
 
 Execute the `init.sh` script to set up the necessary configurations:
 
@@ -106,7 +106,7 @@ docker compose up -d
 
 &nbsp;
 
-!!! Example "How to start quickly with prod1-thehive environment ?"
+!!! Example "How to start quickly with prod1-thehive environment?"
     1. Clone the repository
     2. Open prod1-thehive folder
     3. Initialize the environment
@@ -117,7 +117,7 @@ docker compose up -d
 
 ### Step 3: Access the application
 
-Open your browser, and navigate to: 
+Open your browser, and navigate to:
 
 * `https://HOSTNAME_OR_IP/thehive` to connect to TheHive if using the *testing* profile
 * `https://HOSTNAME_OR_IP/` to connect to TheHive if using the production profiles
@@ -128,7 +128,7 @@ Open your browser, and navigate to:
 
 ---
 
-## Additional Configuration
+## Additional configuration
 
 For more detailed information on the directory structure, services, scripts, and their respective functions, please refer to the `README.md` file located within each deployment profile:
 
@@ -138,7 +138,7 @@ For more detailed information on the directory structure, services, scripts, and
 
 ---
 
-## TheHive Docker Entrypoint Options
+## TheHive Docker entrypoint options
 
 To view a list of all supported options for the Docker entry point, use the -h flag:
 

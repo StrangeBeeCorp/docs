@@ -94,7 +94,7 @@ green  open   new_cortex_4    wRX6rhzXTuW_F2wLNxqVyg   5   0          0         
 green  open   cortex_4        Y5rDTO23RBC_n6pjFP0-Qw   5   0       8531            8       13mb           13mb
 ```
 
-### Proceed to Reindex 
+### Proceed to reindex
 
 Next operation lies in running the reindex command in the newly created index:
 
@@ -161,7 +161,7 @@ curl -XDELETE http://localhost:9200/cortex_4
 
 Run the same command for older indexes if exist (cortex_3, cortex_2....). Elasticsearch 7.x cannot run with index created with Elasticsearch 5.x.
 
-### Create an alias 
+### Create an alias
 
 Before stopping Elasticsearch service, let’s create an alias to keep index names in the future.  
 
@@ -221,80 +221,25 @@ thread_pool.search.queue_size: 100000
 thread_pool.write.queue_size: 10000    
 ```
 
-Now, upgrade Elasticsearch to version 7.x following the documentation for your Operating System, and ensure the service start successfully.
+Now, upgrade Elasticsearch to version 7.x following the documentation for your operating system, and ensure the service start successfully.
 
 ## Install or update to Cortex 3.1.0
 
-### DEB package
+{!includes/manual-download-installation-cortex.md!}
 
-If using Debian based Linux operating system, configure it to follow our beta repository:
+=== "Docker"
 
-```bash
-curl https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY | sudo apt-key add -
-echo 'deb https://deb.thehive-project.org release main' | sudo tee -a /etc/apt/sources.list.d/thehive-project.list
-sudo apt-get update
-```
-Then install it by running:
+    Docker images are also provided on Docker Hub.
 
-```bash
-sudo apt install cortex
-```
+    ```bash
+    docker pull thehiveproject/cortex:3.1.0-1
+    ```
 
-or
+    ⚠️  Starting from this version, Docker images don't contain analyzers anymore. _Analyzers__/__Responders_ and Cortex have different life-cycles, their update including their dependencies should not be correlated to Cortex update. 
 
-```bash
-sudo apt install cortex=3.1.0-1
-```
+    It is recommended to use Docker version of analyzers : this can be done by binding Docker service docket inside Cortex container (run with `-v /var/run/docker.sock:/var/run/docker.sock`).
 
-### RPM
-
-Setup your system to connect the RPM repository. Create and edit the file  `/etc/yum.repos.d/thehive-project.repo` :
-
-```
-[thehive-project]
-enabled=1
-priority=1
-name=TheHive-Project RPM repository
-baseurl=http://rpm.thehive-project.org/release/noarch
-gpgcheck=1
-```
-
-Then install it by running:
-
-```bash
-sudo yum install cortex
-```
-
-or 
-
-```bash
-sudo yum install cortex-3.1.0-1
-```
-
-### Install binaries
-
-```bash
-cd /opt
-wget https://download.thehive-project.org/cortex-3.1.0-1.zip
-unzip cortex-3.1.0-1.zip
-ln -s cortex-3.1.0-1 cortex
-```
-
-### Docker images
-
-Docker images are also provided on Dockerhub. 
-
-```bash
-docker pull thehiveproject/cortex:3.1.0-1
-```
-
-
-⚠️  Starting from this version, docker image doesn't contain analyzers anymore. _Analyzers__/__Responders_ and Cortex have different life-cycles, their update including their dependencies should not be correlated to Cortex update. 
-
-It is recommended to use docker version of analyzers : this can be done by binding docker service docket inside cortex container (run with `-v /var/run/docker.sock:/var/run/docker.sock`).
-
-
-### Update Database
+### Update database
 
 Connect to TheHive (and Cortex), the maintenance page should ask to update. 
 

@@ -16,6 +16,8 @@ Use this procedure to identify similar cases or to correlate alerts with other a
 
     ![Similar alerts](../../../images/user-guides/analyst-corner/cases/similar-alerts.png)
 
+    {!includes/filters-sorts-views.md!}
+
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
     {!includes/performance-optimization-matches.md!}
@@ -27,6 +29,8 @@ Use this procedure to identify similar cases or to correlate alerts with other a
 2. Select the **Similar cases** tab.
 
     ![Similar cases](../../../images/user-guides/analyst-corner/cases/similar-cases.png)
+
+    {!includes/filters-sorts-views.md!}
 
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
