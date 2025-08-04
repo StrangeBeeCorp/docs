@@ -16,9 +16,9 @@
             Example:
 
             ```bash
-            wget -O /tmp/thehive_5.5.7-1_all.deb https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.7-1_all.deb
-            wget -O /tmp/thehive_5.5.7-1_all.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.7-1_all.sha256
-            wget -O /tmp/thehive_5.5.7-1_all.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.7-1_all.deb.asc
+            wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/deb/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb
+            wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.sha256
+            wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc
             ```
 
         * Using cURL:
@@ -32,9 +32,9 @@
             Example:
             
             ```bash
-            curl -o /tmp/thehive_5.5.7-1_all.deb https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.7-1_all.deb
-            curl -o /tmp/thehive_5.5.7-1_all.deb.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.7-1_all.deb.sha256
-            curl -o /tmp/thehive_5.5.7-1_all.deb.asc https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.7-1_all.deb.asc
+            curl -o /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/deb/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb
+            curl -o /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256
+            curl -o /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc
             ```
         
     2. Verify the integrity of the downloaded package.
@@ -122,9 +122,9 @@
             Example:
 
             ```bash
-            wget -O /tmp/thehive-5.5.7-1.noarch.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.7-1.noarch.rpm
-            wget -O /tmp/thehive-5.5.7-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.noarch.rpm.sha256
-            wget -O /tmp/thehive-5.5.7-1.noarch.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.noarch.rpm.asc
+            wget -O /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/rpm/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm
+            wget -O /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.sha256
+            wget -O /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.asc
             ```
 
         * Using cURL:
@@ -138,9 +138,9 @@
             Example:
 
             ```bash
-            curl -o /tmp/thehive-5.5.7-1.noarch.rpm https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.7-1.noarch.rpm
-            curl -o /tmp/thehive-5.5.7-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.noarch.rpm.sha256
-            curl -o /tmp/thehive-5.5.7-1.noarch.rpm.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.noarch.rpm.asc
+            curl -o /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/rpm/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm
+            curl -o /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.sha256
+            curl -o /tmp/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive-{!includes/thehive-latest-version.md!lines=2}-1.noarch.rpm.asc
             ```
 
     2. Verify the integrity of the downloaded package.

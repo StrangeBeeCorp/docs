@@ -16,9 +16,9 @@
             Example:
 
             ```bash
-            wget -O /tmp/cortex_3.2.1+2_all.deb https://cortex.download.strangebee.com/3.2/deb/cortex_3.2.1+2_all.deb
-            wget -O /tmp/cortex_3.2.1+2_all.deb.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex_3.2.1+2_all.deb.sha256
-            wget -O /tmp/cortex_3.2.1+2_all.deb.asc https://cortex.download.strangebee.com/3.2/asc/cortex_3.2.1+2_all.deb.asc
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc
             ```
 
         * Using cURL:
@@ -32,9 +32,9 @@
             Example:
             
             ```bash
-            curl -o /tmp/cortex_3.2.1+2_all.deb https://cortex.download.strangebee.com/3.2/deb/cortex_3.2.1+2_all.deb
-            curl -o /tmp/cortex_3.2.1+2_all.deb.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex_3.2.1+2_all.deb.sha256
-            curl -o /tmp/cortex_3.2.1+2_all.deb.asc https://cortex.download.strangebee.com/3.2/asc/cortex_3.2.1+2_all.deb.asc
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc
             ```
 
     2. Verify the integrity of the downloaded package.
@@ -122,9 +122,9 @@
             Example:
 
             ```bash
-            wget -O /tmp/cortex-3.2.1-2.noarch.rpm https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1-2.noarch.rpm
-            wget -O /tmp/cortex-3.2.1-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1-2.noarch.rpm.sha256
-            wget -O /tmp/cortex-3.2.1-2.noarch.rpm.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1-2.noarch.rpm.asc
+            wget -O /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/rpm/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
+            wget -O /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256
+            wget -O /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc
             ```
 
         * Using cURL:
@@ -138,9 +138,9 @@
             Example:
 
             ```bash
-            curl -o /tmp/cortex-3.2.1-2.noarch.rpm https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1-2.noarch.rpm
-            curl -o /tmp/cortex-3.2.1-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1-2.noarch.rpm.sha256
-            curl -o /tmp/cortex-3.2.1-2.noarch.rpm.asc https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1-2.noarch.rpm.asc
+            curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/rpm/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
+            curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256
+            curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc
             ```
 
     2. Verify the integrity of the downloaded package.
