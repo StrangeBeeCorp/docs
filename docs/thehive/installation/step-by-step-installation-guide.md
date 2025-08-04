@@ -642,9 +642,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             Example:
 
             ```bash
-            wget -O /opt/thehive-5.5.5-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5-1.zip
-            wget -O /opt/thehive-5.5.5-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.zip.sha256
-            wget -O /opt/thehive-5.5.5-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.zip.asc
+            wget -O /opt/thehive-5.5.7-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.7-1.zip
+            wget -O /opt/thehive-5.5.7-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.zip.sha256
+            wget -O /opt/thehive-5.5.7-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.zip.asc
             ```
 
         * Using cURL
@@ -658,9 +658,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             Example:
 
             ```bash
-            curl -o /opt/thehive-5.5.5-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5-1.zip
-            curl -o /opt/thehive-5.5.5-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.zip.sha256
-            curl -o /opt/thehive-5.5.5-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.zip.asc
+            curl -o /opt/thehive-5.5.7-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.7-1.zip
+            curl -o /opt/thehive-5.5.7-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.zip.sha256
+            curl -o /opt/thehive-5.5.7-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.zip.asc
             ```
 
     2. Verify the integrity of the downloaded package.
