@@ -76,7 +76,7 @@ Use this procedure to add an extra layer of security to your account.
 
 <!-- md:version 5.5.6 -->
 
-A beta feature to enhance user experience for [filters](./analyst-corner/about-filtering-and-sorting.md) and [views](./analyst-corner/about-views.md) is available for testing on lists of cases, alerts, tasks, and observables.
+A beta feature to enhance user experience for [filters](./analyst-corner/about-filtering-and-sorting.md) and [views](./analyst-corner/views/about-views.md) is available for testing on lists of cases, alerts, tasks, and observables.
 
 !!! note "Views persistence"
     Use this beta feature for one-time testing only:
