@@ -1,6 +1,6 @@
 # Step-by-Step Guide
 
-This topic provides a comprehensive installation and configuration guide to set up a new instance of TheHive. It includes detailed instructions with examples for systems using DEB and RPM packages, and for installation from binary packages.
+This topic provides a comprehensive installation and configuration guide to set up a new instance of TheHive. It includes detailed instructions with examples for systems using DEB and RPM packages, and for installation from ZIP binary packages.
 
 !!! info "New instance only"
     This guide covers the installation process for setting up a new instance of TheHive only.
@@ -255,7 +255,7 @@ Configure Cassandra by modifying settings within the `/etc/cassandra/cassandra.y
             sudo systemctl enable cassandra
             ```
 
-    3. Optional: If the Cassandra service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    3. Optional: If the Cassandra service was started automatically before configuring it, stop it, remove existing data, and restart it once the configuration is updated. 
     
         Execute the following commands:
 
@@ -556,7 +556,7 @@ b. Optional: Configure index template and Index Lifecycle Management (ILM).
             sudo systemctl enable elasticsearch
             ```
 
-    3. Optional: If the Elasticsearch service was started automatically before configuring it, it's recommended to stop it, remove existing data, and restart it once the configuration is updated. 
+    3. Optional: If the Elasticsearch service was started automatically before configuring it, stop it, remove existing data, and restart it once the configuration is updated. 
     
         Execute the following commands:
  
@@ -616,104 +616,126 @@ This section provides detailed instructions for installing and configuring TheHi
 
 ### Installation
 
-TheHive package repository provides all required packages. Support is provided for Debian and RPM packages, and binary packages in ZIP format. All packages are signed using TheHive GPG key [`562CBC1C`](https://raw.githubusercontent.com/TheHive-Project/TheHive/master/PGP-PUBLIC-KEY) with the fingerprint `0CD5 AC59 DE5C 5A8E 0EE1 3849 3D99 BB18 562C BC1C`.
+TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
 
-Install TheHive package by using the following commands:
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-=== "DEB"
+{!includes/manual-download-installation-thehive.md!}
 
-    1. Import the DEB repository key.
+=== "ZIP binary packages"
 
-        !!! Example ""
+    If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP binary package.
+
+    1. Download the binary package along with its SHA256 checksum and signature files. You can install TheHive anywhere on your filesystem.
+
+        !!! tip "Destination path"
+            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+   
+        * Using Wget
+
             ```bash
-            wget -O- https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key | sudo gpg --dearmor -o /usr/share/keyrings/strangebee-archive-keyring.gpg
+            wget -O /path/to/<file_name>.zip thehive.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            wget -O /path/to/<file_name>.zip.sha256 thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            wget -O /path/to/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
-    
-    2. Add the DEB repository and install TheHive.
 
-        !!! Example ""
+            Example:
+
             ```bash
-            echo 'deb [arch=all signed-by=/usr/share/keyrings/strangebee-archive-keyring.gpg] https://deb.strangebee.com thehive-5.5 main' |sudo tee -a /etc/apt/sources.list.d/strangebee.list
-            sudo apt-get update
-            sudo apt-get install -y thehive
+            wget -O /opt/thehive-5.5.5-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5-1.zip
+            wget -O /opt/thehive-5.5.5-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.zip.sha256
+            wget -O /opt/thehive-5.5.5-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.zip.asc
             ```
 
-=== "RPM"
+        * Using cURL
 
-    1. Import the RPM repository key.
-
-        !!! Example ""
             ```bash
-            sudo rpm --import https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
+            curl -o /path/to/<file_name>.zip thehive.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            curl -o /path/to/<file_name>.zip.sha256 thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            curl -o /path/to/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-    2. Create and edit the file `/etc/yum.repos.d/strangebee.repo`.
+            Example:
 
-        !!! Example ""
-            ```bash title="/etc/yum.repos.d/strangebee.repo"
-            [thehive]
-            enabled=1
-            priority=1
-            name=StrangeBee RPM repository
-            baseurl=https://rpm.strangebee.com/thehive-5.5/noarch/
-            gpgkey=https://raw.githubusercontent.com/StrangeBeeCorp/Security/main/PGP%20keys/packages.key
-            gpgcheck=1
-            ```
-
-    3. Install TheHive.
-
-        You can use either `yum` or `dnf` depending on your distribution:
-
-        * With `yum`:
-
-        !!! Example "" 
-            ```bash 
-            sudo yum install thehive
-            ```
-
-        * With `dnf` (recommended for newer systems like RHEL 8, CentOS 8, or Fedora):
-
-        !!! Example ""
-            ```bash 
-            sudo dnf install thehive
-            ```
-
-=== "Other installation methods"
-
-    If you prefer a binary package, follow these steps:
-
-    1. Download and unzip the chosen binary package. TheHive files can be installed wherever you want on the filesystem. In this guide, we assume you have chosen to install them under `/opt`.
-
-        !!! Example ""
             ```bash
-            cd /opt
-            wget https://archives.strangebee.com/zip/thehive-latest.zip
-            unzip thehive-latest.zip
-            sudo ln -s thehive-x.x.x thehive
+            curl -o /opt/thehive-5.5.5-1.zip https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.5-1.zip
+            curl -o /opt/thehive-5.5.5-1.zip.sha256 https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.5-1.zip.sha256
+            curl -o /opt/thehive-5.5.5-1.zip.asc https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.5-1.zip.asc
             ```
 
-    2. Prepare the system. It is recommended to use a dedicated, non-privileged user account to start TheHive. If so, make sure that the chosen account can create log files in `/opt/thehive/logs`.
+    2. Verify the integrity of the downloaded package.
 
-        !!! Example ""
+        * Check the SHA256 checksum by comparing it with the provided value.
+
+            a. Generate the SHA256 checksum of your downloaded package.
+
             ```bash
-            sudo addgroup thehive
-            sudo adduser --system thehive
-            sudo chown -R thehive:thehive /opt/thehive
-            sudo mkdir /etc/thehive
-            sudo touch /etc/thehive/application.conf
-            sudo chown root:thehive /etc/thehive
-            sudo chgrp thehive /etc/thehive/application.conf
-            sudo chmod 640 /etc/thehive/application.conf
+            sha256sum /path/to/<file_name>.zip
             ```
 
-    3. Copy the systemd script in `/etc/systemd/system/thehive.service`.
+            b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
-        !!! Example ""
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
+
+          * Verify the GPG signature using the public key.
+     
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+
             ```bash
-            cd /tmp
-            wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
-            sudo cp thehive.service /etc/systemd/system/thehive.service
+            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
+            
+            ```bash
+            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            ```
+
+            b. Import the key into your GPG keyring.
+
+            ```bash
+            gpg --import /path/to/strangebee.gpg
+            ```
+
+            c. Verify the downloaded package signature.
+
+            ```bash
+            gpg --verify /path/to/<file_name>.zip.asc /path/to/<file_name>.zip
+            ```
+
+            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+
+
+    3. Unzip the package.
+
+        !!! info "Unzip paths"
+            
+            * Replace `/path/to/<file_name>.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/path/to/` after `-d` with the directory where you want to extract the contents of the archive.
+
+        ```bash
+        unzip /path/to/<file_name>.zip -d /path/to/
+        sudo ln -s /path/to/<file_name> /path/to/thehive
+        ```
+
+    4. Prepare the system by creating a dedicated, non-privileged user account to run TheHive. Ensure this user has permission to create log files in `/path/to/thehive/logs`.
+
+        ```bash
+        sudo addgroup thehive
+        sudo adduser --system thehive
+        sudo chown -R thehive:thehive /path/to/thehive
+        sudo mkdir /etc/thehive
+        sudo touch /etc/thehive/application.conf
+        sudo chown root:thehive /etc/thehive
+        sudo chgrp thehive /etc/thehive/application.conf
+        sudo chmod 640 /etc/thehive/application.conf
+        ```
+
+    5. Copy the systemd script into `/etc/systemd/system/thehive.service`.
+
+        ```bash
+        cd /tmp
+        wget https://raw.githubusercontent.com/TheHive-Project/TheHive/master/package/thehive.service
+        sudo cp thehive.service /etc/systemd/system/thehive.service
+        ```
 
 ### Configuration
 
@@ -853,7 +875,7 @@ The initial configuration file packaged with the software contains the following
     #
     # TheHive is strongly integrated with Cortex and MISP.
     # Both modules are enabled by default. If not used, each one can be disabled by
-    # ommenting the configuration line.
+    # commenting the configuration line.
     scalligraph.modules += org.thp.thehive.connector.cortex.CortexModule
     scalligraph.modules += org.thp.thehive.connector.misp.MispModule
     ```

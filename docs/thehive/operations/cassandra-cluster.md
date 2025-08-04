@@ -125,7 +125,7 @@ After modifying the keyspace replication, execute `nodetool repair -full` on eac
 
 
 
-It's recommended to increase the replication factor for system keyspaces to ensure high availability and reliability of critical Cassandra system data.
+Increase the replication factor for system keyspaces to ensure high availability and reliability of critical Cassandra system data.
 
 To view the current replication settings for all keyspaces in your cluster, use the following cqlsh query:
 

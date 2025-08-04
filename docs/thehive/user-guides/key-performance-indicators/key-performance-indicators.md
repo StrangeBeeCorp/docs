@@ -55,7 +55,7 @@ The time it takes for your security team to fully resolve an incident after its 
 !!! note "handlingDuration"
     The `handlingDuration` field is available for cases and alerts in the API. The calculation is based on the difference between the end of the case date or the alert merge into case date, and the incident creation date in TheHive.  
 
-    This field is a relic from older TheHive versions and can be slow to calculate. It's recommended to use the time to resolve metric instead.
+    This field is a relic from older TheHive versions and can be slow to calculate. Use the time to resolve metric instead.
 
 ---
 
