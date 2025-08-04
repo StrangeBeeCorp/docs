@@ -5,6 +5,9 @@ This topic provides step-by-step instructions for deleting a custom [view](creat
 !!! note "Default view"
     You can't delete the *Default* view.
 
+!!! info "Beta feature available for filters and views"
+    <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+
 <h2>Procedure</h2>
 
 1. Select the current view name followed by an asterisk (*\**).
