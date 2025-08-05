@@ -16,7 +16,7 @@ hero:
 
 sections:
   title: 'Learn how to install, configure, maintain and use TheHive and Cortex'
-  text: 'Follow our how-to guides to get the job done—fast and right.'
+  text: 'Follow our guides to get the job done—fast and right.'
   anchors: 'I’m an:'
   data:
     - title: 'I’m an Analyst'

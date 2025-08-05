@@ -348,34 +348,32 @@ extra:
   footer:
     logo: '/assets/images/StrangeBee_Footer.svg'
     text: 'Empowering incident responders worldwide'
-    links:
-      - text: "link 1"
-        url: '#'        
-      - text: "link 2"
-        url: '#'
-        
     groups:
-      - name: "group 1"
-        link:
-          text: 'View all features'
-          url: '#'
+      - name: "Company"
         links:
-          - text: "link 1"
-            url: '#'
-            tag: 'On-prem'
-          - text: "link 2"
-            url: '#'
-      - name: "group 2"
-        link:
-          text: 'View all features'
-          url: '#'
+          - text: "About us"
+            url: 'https://strangebee.com/about-strangebee/'
+          - text: "Services"
+            url: 'https://strangebee.com/services-by-strangebee/'
+          - text: "Contact us"
+            url: 'https://strangebee.com/contact-strangebee/'
+      - name: "Products"
         links:
-          - text: "link 1"
-            url: '#'
+          - text: "Request a demo"
+            url: 'https://strangebee.com/thehive-demo/'
+          - text: "Try TheHive"
             tag: 'On-prem'
-          - text: "link 2"
-            url: '#'
-  
+            url: 'https://strangebee.com/try-thehive/'
+          - text: "Try TheHive Cloud Platform"
+            tag: 'SaaS'
+            url: 'https://strangebee.com/try-thehive-cloud-platform/'
+      - name: "Resources"
+        links:
+          - text: "Blog"
+            url: 'https://strangebee.com/blog/'
+          - text: "Success stories"
+            url: 'https://strangebee.com/success-stories/'
+
   analytics:
     provider: google
     property: G-W7W9113BRP
