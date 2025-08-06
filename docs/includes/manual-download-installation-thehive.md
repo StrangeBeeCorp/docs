@@ -3,23 +3,24 @@
     1. Download the package along with its SHA256 checksum and signature files.
 
         !!! tip "Destination path"
-            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+            The examples below use `/tmp/` as the download path. Replace it with the full local directory path where you want to save the files.
 
         * Using Wget:
-
-            ```bash
-            wget -O /path/to/<file_name>.deb https://thehive.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
-            wget -O /path/to/<file_name>.deb.sha256 https://thehive.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
-            wget -O /path/to/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
-            ```
-
-            Example:
 
             ```bash
             wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/deb/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb
             wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.sha256
             wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc
             ```
+
+            To download a different version, use this format:
+
+            ```bash
+            wget -O /tmp/thehive_<full_version>-1_all.deb https://thehive.download.strangebee.com/<major.minor>/deb/thehive_<full_version>-1_all.deb
+```
+
+            * {!includes/thehive-latest-version.md!lines=2} with the full version number you are interested in.
+            * {!includes/thehive-latest-version.md!lines=1} with the major and minor version you are interested in.
 
         * Using cURL:
 
