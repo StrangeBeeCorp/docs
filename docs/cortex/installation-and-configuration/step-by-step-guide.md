@@ -208,9 +208,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             Example:
 
             ```bash
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.sha256
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.asc
+            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
+            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
+            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
             ```
 
         * Using cURL
@@ -224,9 +224,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             Example:
 
             ```bash
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.sha256
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}+2.zip.asc
+            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
+            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
+            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
             ```
 
     2. Verify the integrity of the downloaded package.
