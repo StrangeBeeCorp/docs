@@ -280,7 +280,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
         !!! info "Unzip paths"
             
-            * Replace `/opt/<file_name>.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip` with the full path to the ZIP file you downloaded.
             * Replace `/opt/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
