@@ -1,41 +1,48 @@
 === "DEB"
 
-    1. Download the package along with its SHA256 checksum and signature files.
+    !!! tip "Destination path"
+        The commands below use `/tmp/` as the download path. Replace it with the full local directory path where you want to save the files.
 
-        !!! tip "Destination path"
-            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+    1. Download the installation package along with its SHA256 checksum and signature files.
 
         * Using Wget:
 
             ```bash
-            wget -O /path/to/<file_name>.deb https://cortex.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
-            wget -O /path/to/<file_name>.deb.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
-            wget -O /path/to/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.sha256
+            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc
             ```
 
-            Example:
+            To download a specific version instead of the latest, use the following format:
 
             ```bash
-            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb
-            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256
-            wget -O /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc
+            wget -O /tmp/<file_name>.deb https://cortex.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
+            wget -O /tmp/<file_name>.deb.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
+            wget -O /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
+
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.1.8-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
 
         * Using cURL:
 
             ```bash
-            curl -o /path/to/<file_name>.deb https://cortex.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
-            curl -o /path/to/<file_name>.deb.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
-            curl -o /path/to/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.sha256
+            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc
             ```
 
-            Example:
-            
+            To download a specific version instead of the latest, use the following format:
+
             ```bash
-            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/deb/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb
-            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.sha256
-            curl -o /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex_{!includes/cortex-latest-version.md!lines=2}+2_all.deb.asc
+            curl -o /tmp/<file_name>.deb https://cortex.download.strangebee.com/<major.minor_version>/deb/<file_name>.deb
+            curl -o /tmp/<file_name>.deb.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.deb.sha256
+            curl -o /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
+
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.1.8-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            
 
     2. Verify the integrity of the downloaded package.
 
@@ -44,7 +51,7 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/<file_name>.deb
+            sha256sum /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -56,23 +63,23 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            curl -o /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
 
             ```bash
-            gpg --import /path/to/strangebee.gpg
+            gpg --import /tmp/strangebee.gpg
             ```
 
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/<file_name>.deb.asc /path/to/<file_name>.deb
+            gpg --verify /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -82,13 +89,13 @@
         * Using `apt-get` to manage dependencies automatically:
 
             ```bash
-            sudo apt-get install /path/to/<file_name>.deb
+            sudo apt-get install /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
 
         * Using `dpkg`:
 
             ```bash
-            sudo dpkg -i /path/to/<file_name>.deb
+            sudo dpkg -i /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
 
             !!! tip "Missing dependencies"
@@ -106,20 +113,12 @@
 
 === "RPM"
 
-    1. Download the package along with its SHA256 checksum and signature files.
+    !!! tip "Destination path"
+        The commands below use `/tmp/` as the download path. Replace it with the full local directory path where you want to save the files.
 
-        !!! tip "Destination path"
-            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+    1. Download the installation package along with its SHA256 checksum and signature files.
 
         * Using Wget:
-
-            ```bash
-            wget -O /path/to/<file_name>.rpm https://cortex.download.strangebee.com/<major.minor_version>/rpm/<file_name>.rpm
-            wget -O /path/to/<file_name>.rpm.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.rpm.sha256
-            wget -O /path/to/<file_name>.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.rpm.asc
-            ```
-
-            Example:
 
             ```bash
             wget -O /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/rpm/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
@@ -127,21 +126,35 @@
             wget -O /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc
             ```
 
-        * Using cURL:
+            To download a specific version instead of the latest, use the following format:
 
             ```bash
-            curl -o /path/to/<file_name>.rpm https://cortex.download.strangebee.com/<major.minor_version>/rpm/<file_name>.rpm
-            curl -o /path/to/<file_name>.rpm.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.rpm.sha256
-            curl -o /path/to/<file_name>.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.rpm.asc
+            wget -O /tmp/<file_name>.noarch.rpm https://cortex.download.strangebee.com/<major.minor_version>/rpm/<file_name>.noarch.rpm
+            wget -O /tmp/<file_name>.noarch.rpm.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.noarch.rpm.sha256
+            wget -O /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            Example:
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+
+        * Using cURL:
 
             ```bash
             curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/rpm/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256
             curl -o /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc
             ```
+
+            To download a specific version instead of the latest, use the following format:
+
+            ```bash
+            curl -o /tmp/<file_name>.noarch.rpm https://cortex.download.strangebee.com/<major.minor_version>/rpm/<file_name>.noarch.rpm
+            curl -o /tmp/<file_name>.noarch.rpm.sha256 https://cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.noarch.rpm.sha256
+            curl -o /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
+            ```
+
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
 
     2. Verify the integrity of the downloaded package.
 
@@ -150,7 +163,7 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/<file_name>.rpm
+            sha256sum /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -162,23 +175,23 @@
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            curl -o /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
 
             ```bash
-            gpg --import /path/to/strangebee.gpg
+            gpg --import /tmp/strangebee.gpg
             ```
 
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/<file_name>.rpm.asc /path/to/<file_name>.rpm
+            gpg --verify /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -188,19 +201,19 @@
         * Using `yum` to manage dependencies automatically:
 
             ```bash
-            sudo yum install /path/to/<file_name>.rpm
+            sudo yum install /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
         * Using `dnf` to manage dependencies automatically:
 
             ```bash
-            sudo dnf install /path/to/<file_name>.rpm
+            sudo dnf install /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
         * Using `rpm`:
 
             ```bash
-            sudo rpm -ivh /path/to/<file_name>.rpm
+            sudo rpm -ivh /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
             !!! tip "Missing dependencies"
