@@ -1,28 +1,38 @@
-# Automate Tracking of Pending Alerts
+# Tutorial: Automate Tracking of Pending Alerts
 
 <!-- md:version 5.5 --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for automating the tracking of pending [alerts](./analyst-corner/alerts/about-alerts.md) in TheHive.
+In this tutorial, we're going to set up an automation in TheHive to monitor [alerts](./analyst-corner/alerts/about-alerts.md) that stay in the *New* status and remain unassigned for too long.
 
-Use this procedure to automatically highlight alerts that remain in the *New* status and unassigned for over four hours after creation, and notify the manager accordingly.
+By the end, you'll have a working configuration that:
+
+* Detects alerts that remain unassigned and in *New* status for more than four hours
+* Flags them with a custom status to indicate they need review
+* Sends an email notification to the manager
+
+This helps ensure no alert gets left behind without action.
 
 !!! tip "Customize criteria for your needs"
-    The status and wait time criteria used to highlight pending alerts are examples. Adjust them as needed to fit your requirements.
+    The status and wait time criteria used in this tutorial are just a starting point. Feel free to adjust them based on your team’s triage and escalation practices.
 
-## Step 1: Create a custom alert status named *TOREVIEW* to highlight pending alerts
+## Step 1: Create a custom alert status to flag pending alerts
 
-Follow the steps in [Create a Status](../administration/status/create-a-status.md).
+To highlight alerts needing review, start by creating a new alert status in TheHive.
 
-!!! tip "Values to use for the TOREVIEW status"
+Follow the steps in [Create a Status](../administration/status/create-a-status.md), using the following values:
+
+!!! tip "Values to use for the new *TOREVIEW* status"
     | Field    | Value  |
     | -------- | ------- |
     | `Visibility` | *Display*     |
     | `Stage` | *New*     |
     | `Value`  | *TOREVIEW* |
 
-## Step 2: Create an email notification to alert managers whenever an alert status changes to *TOREVIEW*
+## Step 2: Set up an email notification for *TOREVIEW* alerts
 
-Follow the steps in [Create a Notification](../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md).
+Next, configure TheHive to send an email notification to the manager when an alert status changes to *TOREVIEW*.
+
+Follow the steps in [Create a Notification](../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md), using the following values:
 
 !!! tip "Values to use for the email notification"
     ### Trigger
@@ -69,23 +79,27 @@ Follow the steps in [Create a Notification](../user-guides/organization/configur
     You can access the full alert details here: https://<your-thehive-url>/alerts/{{audit.objectId}}/details
     ```
 
-!!! note "Test your notification"
-    To ensure your notification works correctly, manually change the status of an alert to *TOREVIEW*. This action should trigger an email to the configured recipient.
+To verify that your notification works as expected, manually change the status of an alert to *TOREVIEW*. This action should trigger an email to the configured recipient. If the email arrives, you're all set to move on to the final step!
 
-## Step 3: Create an alert feeder to automatically update the status of pending alerts with *TOREVIEW*
+## Step 3: Automate status updates using an alert feeder
 
-The alert feeder checks periodically alerts that remain in the *New* status and unassigned for over four hours after creation, and change their status to *TOREVIEW*.
+Create an alert feeder that automatically updates the status of unassigned new alerts older than four hours.
 
-Follow the steps in [Create an Alert Feeder](./organization/configure-organization/manage-feeders/create-a-feeder.md).
+This alert feeder will periodically:
+
+* Search for alerts that meet the criteria
+* Update their status to *TOREVIEW*
+
+Follow the steps in [Create an Alert Feeder](./organization/configure-organization/manage-feeders/create-a-feeder.md), using the following values:
 
 !!! tip "Values to use for the ChangePendingAlertStatus alert feeder"
     | Field    | Value  |
     | -------- | ------- |
     | `Method` | *GET*     |
-    | `URL` | *https://<your-thehive-url>/api/v1/status/public/*   |
+    | `URL` | *https://<thehive-url>/api/v1/status/public/*   |
     | `Authentication`  | *None* |
 
-    And use this function definition:
+    Use this function definition:
 
     ```javascript
     // Name: ChangePendingAlertStatus 
