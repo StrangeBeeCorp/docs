@@ -23,7 +23,7 @@ Hardware sizing depends on several factors:
 
 === "Docker deployments"
 
-    For Docker deployments, hardware requirements depend on the selected profile. These profiles define the expected performance level.
+    For Docker deployments, hardware requirements depend on the selected profile. Each profile defines a specific performance level.
 
     Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
 
@@ -41,7 +41,7 @@ Hardware sizing depends on several factors:
     Undefined heap settings may cause memory contention or out-of-memory errors.
 
 !!! info "Cluster deployments"
-    In cluster deployments, each node must meet the recommended per-service CPU and memory requirements independently.
+    In cluster deployments, each node must independently meet the recommended per-service CPU and memory requirements.
 
 ## Recommended operating systems
 
@@ -64,3 +64,6 @@ Hardware sizing depends on several factors:
 <h2>Next steps</h2>
 
 * [Step by Step Installation Guide](step-by-step-installation-guide.md)
+* [Running TheHive with Docker](docker.md)
+* [Deploy TheHive on Kubernetes](kubernetes.md)
+* [Setting up a Cluster with TheHive](deploying-a-cluster.md)
