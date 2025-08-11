@@ -23,7 +23,7 @@ Hardware sizing depends on several factors:
 
 === "Docker deployments"
 
-    For Docker deployments, hardware requirements depend on the selected profile. Each profile defines a specific performance level.
+    For Docker deployments, hardware requirements depend on the selected predefined profile. Each profile defines a specific performance level.
 
     Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
 
