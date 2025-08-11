@@ -1,4 +1,4 @@
-# Installation System Requirements
+# TheHive Installation System Requirements
 
 TheHive requires supported operating systems, along with sufficient hardware resources and data storage, to ensure stable and efficient operation.
 
