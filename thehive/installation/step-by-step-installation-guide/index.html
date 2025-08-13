@@ -15056,37 +15056,45 @@ sudo<span class="w"> </span>service<span class="w"> </span>elasticsearch<span cl
 <div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">DEB</label><label for="__tabbed_8_2">RPM</label><label for="__tabbed_8_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ol>
-<li>
-<p>Download the package along with its SHA256 checksum and signature files.</p>
 <div class="admonition tip">
 <p class="admonition-title">Destination path</p>
-<p>Replace <code>/path/to/</code> with the full local directory path where you want to save the downloaded files.</p>
+<p>The commands below use <code>/tmp/</code> as the download path. Replace it with the full local directory path where you want to save the files.</p>
 </div>
+<ol>
+<li>
+<p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.7-1_all.deb
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.7-1_all.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.7-1_all.deb.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive_5.4.10-1_all</code>. </li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.7-1_all.deb
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.7-1_all.deb.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.7-1_all.deb.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive_5.4.10-1_all</code>. </li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -15096,7 +15104,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.d
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
@@ -15104,15 +15112,15 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.d
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <p>b. Import the key into your GPG keyring.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/path/to/strangebee.gpg
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb.asc<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb
 </code></pre></div>
 <p>d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -15123,12 +15131,12 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.7-1_all.d
 <ul>
 <li>
 <p>Using <code>apt-get</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dpkg</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/thehive_5.5.7-1_all.deb
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Missing dependencies</p>
@@ -15150,37 +15158,45 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </ol>
 </div>
 <div class="tabbed-block">
-<ol>
-<li>
-<p>Download the package along with its SHA256 checksum and signature files.</p>
 <div class="admonition tip">
 <p class="admonition-title">Destination path</p>
-<p>Replace <code>/path/to/</code> with the full local directory path where you want to save the downloaded files.</p>
+<p>The commands below use <code>/tmp/</code> as the download path. Replace it with the full local directory path where you want to save the files.</p>
 </div>
+<ol>
+<li>
+<p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.rpm
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.rpm.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.rpm.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.7-1.noarch.rpm
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.noarch.rpm.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.noarch.rpm.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.noarch.rpm.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.noarch.rpm.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.4.10-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.rpm
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.rpm.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.rpm.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.7-1.noarch.rpm
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.noarch.rpm.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.noarch.rpm.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.noarch.rpm.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.noarch.rpm.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.4.10-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -15190,7 +15206,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarc
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a></p>
@@ -15198,15 +15214,15 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarc
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <p>b. Import the key into your GPG keyring.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/path/to/strangebee.gpg
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm.asc<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm
 </code></pre></div>
 <p>d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -15217,17 +15233,17 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.7-1.noarc
 <ul>
 <li>
 <p>Using <code>yum</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dnf</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>rpm</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/thehive-5.5.7-1.noarch.rpm
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Missing dependencies</p>
@@ -15260,37 +15276,45 @@ sudo yum clean all
 </div>
 <div class="tabbed-block">
 <p>If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP binary package.</p>
+<div class="admonition tip">
+<p class="admonition-title">Destination path</p>
+<p>The commands below use <code>/opt/</code> as the download path. Replace it with the full local directory path where you want to save the files.</p>
+</div>
 <ol>
 <li>
 <p>Download the binary package along with its SHA256 checksum and signature files. You can install TheHive anywhere on your filesystem.</p>
-<div class="admonition tip">
-<p class="admonition-title">Destination path</p>
-<p>Replace <code>/path/to/</code> with the full local directory path where you want to save the downloaded files.</p>
-</div>
 <ul>
 <li>
 <p>Using Wget</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.zip.sha256<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.zip.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.zip.asc<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.zip.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.7-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.7-1.zip
 wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.7-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.zip.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.7-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.zip.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip.sha256<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.zip.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip.asc<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.zip.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.4.10-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 <li>
 <p>Using cURL</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.zip.sha256<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.zip.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.zip.asc<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.zip.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.7-1.zip
 curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.7-1.zip.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.7-1.zip.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip.sha256<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.zip.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip.asc<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.zip.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.4.10-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.4</code>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -15300,7 +15324,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip.a
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/path/to/&lt;file_name&gt;.zip
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/opt/thehive-5.5.7-1.zip
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
@@ -15308,15 +15332,15 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip.a
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <p>b. Import the key into your GPG keyring.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/path/to/strangebee.gpg
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/opt/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/path/to/&lt;file_name&gt;.zip.asc<span class="w"> </span>/path/to/&lt;file_name&gt;.zip
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/opt/thehive-5.5.7-1.zip.asc<span class="w"> </span>/opt/thehive-5.5.7-1.zip
 </code></pre></div>
 <p>d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -15327,19 +15351,19 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.7-1.zip.a
 <div class="admonition info">
 <p class="admonition-title">Unzip paths</p>
 <ul>
-<li>Replace <code>/path/to/&lt;file_name&gt;.zip</code> with the full path to the ZIP file you downloaded.</li>
-<li>Replace <code>/path/to/</code> after <code>-d</code> with the directory where you want to extract the contents of the archive.</li>
+<li>Replace <code>/opt/thehive-5.5.7-1.zip</code> with the full path to the ZIP file you downloaded.</li>
+<li>Replace <code>/opt/</code> after <code>-d</code> with the directory where you want to extract the contents of the archive.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/path/to/&lt;file_name&gt;.zip<span class="w"> </span>-d<span class="w"> </span>/path/to/
-sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/path/to/&lt;file_name&gt;<span class="w"> </span>/path/to/thehive
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/opt/thehive-5.5.7-1.zip<span class="w"> </span>-d<span class="w"> </span>/opt/
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/thehive-5.5.7-1<span class="w"> </span>/opt/thehive
 </code></pre></div>
 </li>
 <li>
-<p>Prepare the system by creating a dedicated, non-privileged user account to run TheHive. Ensure this user has permission to create log files in <code>/path/to/thehive/logs</code>.</p>
+<p>Prepare the system by creating a dedicated, non-privileged user account to run TheHive. Ensure this user has permission to create log files in <code>/opt/thehive/logs</code>.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>addgroup<span class="w"> </span>thehive
 sudo<span class="w"> </span>adduser<span class="w"> </span>--system<span class="w"> </span>thehive
-sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>thehive:thehive<span class="w"> </span>/path/to/thehive
+sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>thehive:thehive<span class="w"> </span>/opt/thehive
 sudo<span class="w"> </span>mkdir<span class="w"> </span>/etc/thehive
 sudo<span class="w"> </span>touch<span class="w"> </span>/etc/thehive/application.conf
 sudo<span class="w"> </span>chown<span class="w"> </span>root:thehive<span class="w"> </span>/etc/thehive

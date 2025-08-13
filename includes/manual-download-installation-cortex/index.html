@@ -14206,37 +14206,45 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">DEB</label><label for="__tabbed_1_2">RPM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<ol>
-<li>
-<p>Download the package along with its SHA256 checksum and signature files.</p>
 <div class="admonition tip">
 <p class="admonition-title">Destination path</p>
-<p>Replace <code>/path/to/</code> with the full local directory path where you want to save the downloaded files.</p>
+<p>The commands below use <code>/tmp/</code> as the download path. Replace it with the full local directory path where you want to save the files.</p>
 </div>
+<ol>
+<li>
+<p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/3.2/deb/cortex_3.2.1-2_all.deb
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/3.2/sha256/cortex_3.2.1-2_all.deb.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/3.2/asc/cortex_3.2.1-2_all.deb.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.1.8-1_all</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.1</code>.</li>
+</ul>
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/3.2/deb/cortex_3.2.1-2_all.deb
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/3.2/sha256/cortex_3.2.1-2_all.deb.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/3.2/asc/cortex_3.2.1-2_all.deb.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.deb.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.1.8-1_all</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.1</code>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -14246,7 +14254,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.de
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
@@ -14254,15 +14262,15 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.de
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <p>b. Import the key into your GPG keyring.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/path/to/strangebee.gpg
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/path/to/&lt;file_name&gt;.deb.asc<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb.asc<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb
 </code></pre></div>
 <p>d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -14273,12 +14281,12 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_3.2.1-2_all.de
 <ul>
 <li>
 <p>Using <code>apt-get</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dpkg</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/path/to/&lt;file_name&gt;.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/cortex_3.2.1-2_all.deb
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Missing dependencies</p>
@@ -14300,37 +14308,45 @@ sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </ol>
 </div>
 <div class="tabbed-block">
-<ol>
-<li>
-<p>Download the package along with its SHA256 checksum and signature files.</p>
 <div class="admonition tip">
 <p class="admonition-title">Destination path</p>
-<p>Replace <code>/path/to/</code> with the full local directory path where you want to save the downloaded files.</p>
+<p>The commands below use <code>/tmp/</code> as the download path. Replace it with the full local directory path where you want to save the files.</p>
 </div>
+<ol>
+<li>
+<p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.rpm
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.rpm.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.rpm.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1-2.noarch.rpm
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1-2.noarch.rpm.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1-2.noarch.rpm.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.noarch.rpm.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.noarch.rpm.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.1.8-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.1</code>.</li>
+</ul>
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.rpm
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.rpm.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.rpm.asc
-</code></pre></div>
-<p>Example:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/3.2/rpm/cortex-3.2.1-2.noarch.rpm
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/3.2/sha256/cortex-3.2.1-2.noarch.rpm.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/3.2/asc/cortex-3.2.1-2.noarch.rpm.asc
 </code></pre></div>
+<p>To download a specific version instead of the latest, use the following format:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/sha256/&lt;file_name&gt;.noarch.rpm.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.noarch.rpm.asc
+</code></pre></div>
+<ul>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.1.8-1</code>.</li>
+<li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.1</code>.</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -14340,7 +14356,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
@@ -14348,15 +14364,15 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/path/to/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <p>b. Import the key into your GPG keyring.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/path/to/strangebee.gpg
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm.asc<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm.asc<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm
 </code></pre></div>
 <p>d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -14367,17 +14383,17 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch
 <ul>
 <li>
 <p>Using <code>yum</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dnf</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>rpm</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/path/to/&lt;file_name&gt;.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/cortex-3.2.1-2.noarch.rpm
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Missing dependencies</p>
