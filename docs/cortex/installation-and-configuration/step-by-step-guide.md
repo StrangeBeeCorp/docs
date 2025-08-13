@@ -192,20 +192,12 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install Cortex by downloading a ZIP binary package.
 
-    1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
+    !!! tip "Destination path"
+        The commands below use `/opt/` as the download path. Replace it with the full local directory path where you want to save the files.
 
-        !!! tip "Destination path"
-            Replace `/path/to/` with the full local directory path where you want to save the downloaded files.
+    1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
    
         * Using Wget
-
-            ```bash
-            wget -O /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
-            wget -O /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
-            wget -O /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
-            ```
-
-            Example:
 
             ```bash
             wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
@@ -213,21 +205,35 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
             ```
 
-        * Using cURL
+            To download a specific version instead of the latest, use the following format:
 
             ```bash
-            curl -o /path/to/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
-            curl -o /path/to/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
-            curl -o /path/to/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
+            wget -O /opt/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            wget -O /opt/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            wget -O /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            Example:
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+
+        * Using cURL
 
             ```bash
             curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
             curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
             curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
             ```
+
+            To download a specific version instead of the latest, use the following format:
+
+            ```bash
+            curl -o /opt/<file_name>.zip cortex.download.strangebee.com/<major.minor_version>/zip/<file_name>.zip
+            curl -o /opt/<file_name>.zip.sha256 cortex.download.strangebee.com/<major.minor_version>/sha256/<file_name>.zip.sha256
+            curl -o /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
+            ```
+
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
 
     2. Verify the integrity of the downloaded package.
 
@@ -236,7 +242,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /path/to/<file_name>.zip
+            sha256sum /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
@@ -248,23 +254,23 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
 
             ```bash
-            wget -O /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            wget -O /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
             
             ```bash
-            curl -o /path/to/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+            curl -o /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
             ```
 
             b. Import the key into your GPG keyring.
 
             ```bash
-            gpg --import /path/to/strangebee.gpg
+            gpg --import /opt/strangebee.gpg
             ```
 
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /path/to/<file_name>.zip.asc /path/to/<file_name>.zip
+            gpg --verify /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
             ```
 
             d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -274,18 +280,18 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
         !!! info "Unzip paths"
             
-            * Replace `/path/to/<file_name>.zip` with the full path to the ZIP file you downloaded.
-            * Replace `/path/to/` after `-d` with the directory where you want to extract the contents of the archive.
+            * Replace `/opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/opt/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
-        unzip /path/to/<file_name>.zip -d /path/to/
-        sudo ln -s /path/to/<file_name> /path/to/cortex
+        unzip /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip -d /opt/
+        sudo ln -s /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2 /opt/cortex
         ```
 
     4. Make the Cortex binary executable.
 
         ```bash
-        cd /path/to/
+        cd /opt/
         chmod +x cortex
         ```
 
