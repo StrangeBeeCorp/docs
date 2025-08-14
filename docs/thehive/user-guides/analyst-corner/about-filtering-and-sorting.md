@@ -34,7 +34,7 @@ When available, these quicker alternatives provide filtering options without man
 Filters are combined using the `AND` operator, meaning all selected conditions must be met.
 
 !!! info "Elasticsearch limitation"
-    When searching or filtering text values using partial words, be mindful of capitalization, as Elasticsearch treats these searches as case sensitive.
+    Partial-word searches and filters are case sensitive in Elasticsearch, so pay attention to capitalization.
 
 ### Saving filters
 
