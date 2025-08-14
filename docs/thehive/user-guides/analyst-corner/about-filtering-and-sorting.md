@@ -33,6 +33,9 @@ When available, these quicker alternatives provide filtering options without man
 
 Filters are combined using the `AND` operator, meaning all selected conditions must be met.
 
+!!! info "Case sensitivity"
+    Partial-word searches and filters are case sensitive in Elasticsearch, so capitalization matters.
+
 ### Saving filters
 
 Applied filters can be saved in [a view](./views/about-views.md) to avoid reapplying them repeatedly. Selecting the saved view applies the filters automatically.

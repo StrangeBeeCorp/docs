@@ -37,6 +37,8 @@ A job is a task initiated by Cortex to run an [analyzer](../../../../../cortex/i
     !!! warning "Unindexed fields"
         The `workerDefinition` field and the `operations[]` array aren't indexed for search.
 
+    {!includes/elasticsearch-limitation.md!}
+
 4. {!includes/global-search-additional-filters.md!}
 
 5. {!includes/search-results.md!}
