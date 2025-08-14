@@ -31,6 +31,8 @@ The link can point to another TheHive case or to an external resource.
 
     Search for the case by number or title, or paste an external URL.
 
+    {!includes/elasticsearch-limitation.md!}
+
 5. Select :fontawesome-solid-check:.
 
 <h2>Next steps</h2>
