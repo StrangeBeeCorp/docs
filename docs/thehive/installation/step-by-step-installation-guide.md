@@ -620,6 +620,13 @@ TheHive packages are distributed as RPM and DEB files, as well as ZIP binary pac
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
+!!! warning "Prerequisites"
+    Before starting this procedure, check that you have installed the following tools:
+
+    * [Wget](https://www.gnu.org/software/wget/) or [cURL](https://curl.se/download.html) to download package files
+    * [GPG](https://www.gnupg.org/) to verify the package’s GPG signature
+    * [sha256sum](https://linux.die.net/man/1/sha256sum) to check the SHA256 checksum of the downloaded package
+
 {!includes/manual-download-installation-thehive.md!}
 
 === "ZIP binary packages"
