@@ -50,7 +50,7 @@ Cortex uses Docker to run analyzers and responders. When running Cortex inside a
 * Grant Cortex access to the Docker or Podman service (recommended approach)
 * Start a Docker service inside the Cortex Docker container
 
-If your environment requires Docker registry authentication, add the following section to your Cortex `application.conf` file:
+If your environment requires Docker registry authentication, add the following block to your Cortex `application.conf` file:
 
 !!! Example ""
     ```
@@ -61,13 +61,19 @@ If your environment requires Docker registry authentication, add the following s
       registry {
         user = "<registry-username>"
         password = "<registry-password>"
-        email = "<registry-email>"
-        url = "https://index.docker.io/v1/"
       }
     }
     ```
 
-Usually, only the `registry` section needs configuration unless you connect to a remote Docker daemon.
+Only configure the `host`, `tlsVerify`, and `certPath` parameters if you're connecting to a remote Docker daemon. You don't need to set them for local Docker setups.
+
+Use the `registry` section only when you pull images from a private Docker registry that requires authentication.
+
+!!! warning "Registry behavior"
+
+    * Public registries like Docker Hub typically don’t need credentials. Adding authentication to public pulls may cause failures.
+    * Cortex supports only one registry credential set for all image pulls. It can't handle different credentials for different registries.
+    * The target registry is determined by the fully qualified image name, such as `harbor.example.com/project/image:tag`.
 
 ## Running Cortex with Docker
 
