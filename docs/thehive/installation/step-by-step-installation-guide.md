@@ -26,7 +26,7 @@ Before proceeding, install the following dependencies:
     2. Execute the following command to install the required dependencies:
 
         ```bash
-        yum install pkg-install gnupg chkconfig python3-pip git
+        yum install gnupg chkconfig python3-pip git
         ```
 
 Ensure that all dependencies are successfully installed before proceeding with the TheHive installation process.
