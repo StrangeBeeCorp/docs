@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -14418,7 +14418,7 @@
 <li>Grant Cortex access to the Docker or Podman service (recommended approach)</li>
 <li>Start a Docker service inside the Cortex Docker container</li>
 </ul>
-<p>If your environment requires Docker registry authentication, add the following section to your Cortex <code>application.conf</code> file:</p>
+<p>If your environment requires Docker registry authentication, add the following block to your Cortex <code>application.conf</code> file:</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>docker {
   host = "&lt;docker-host-url&gt;"
@@ -14427,13 +14427,20 @@
   registry {
     user = "&lt;registry-username&gt;"
     password = "&lt;registry-password&gt;"
-    email = "&lt;registry-email&gt;"
-    url = "https://index.docker.io/v1/"
   }
 }
 </code></pre></div>
 </div>
-<p>Usually, only the <code>registry</code> section needs configuration unless you connect to a remote Docker daemon.</p>
+<p>Only configure the <code>host</code>, <code>tlsVerify</code>, and <code>certPath</code> parameters if you're connecting to a remote Docker daemon. You don't need to set them for local Docker setups.</p>
+<p>Use the <code>registry</code> section only when you pull images from a private Docker registry that requires authentication.</p>
+<div class="admonition warning">
+<p class="admonition-title">Registry behavior</p>
+<ul>
+<li>Public registries like Docker Hub typically don’t need credentials. Adding authentication to public pulls may cause failures.</li>
+<li>Cortex supports only one registry credentials set for all image pulls. It can't handle different credentials for different registries.</li>
+<li>The target registry is determined by the fully qualified image name, such as <code>harbor.example.com/project/image:tag</code>.</li>
+</ul>
+</div>
 <h2 id="running-cortex-with-docker">Running Cortex with Docker<a class="headerlink" href="#running-cortex-with-docker" title="Permanent link">#</a></h2>
 <h3 id="using-the-host-docker-service">Using the host Docker service<a class="headerlink" href="#using-the-host-docker-service" title="Permanent link">#</a></h3>
 <p>To allow Cortex to use the Docker service, you must bind the Docker socket into the Cortex container. Since Cortex shares job files with analyzers, you also need to bind a shared folder between Cortex and the analyzers.</p>
@@ -14586,7 +14593,8 @@ services:
   
 </div>
       
-        <div class="md-social">
+        
+<div class="md-social">
   
     
     
