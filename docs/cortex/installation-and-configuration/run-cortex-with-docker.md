@@ -72,7 +72,7 @@ Use the `registry` section only when you pull images from a private Docker regis
 !!! warning "Registry behavior"
 
     * Public registries like Docker Hub typically don’t need credentials. Adding authentication to public pulls may cause failures.
-    * Cortex supports only one registry credential set for all image pulls. It can't handle different credentials for different registries.
+    * Cortex supports only one registry credentials set for all image pulls. It can't handle different credentials for different registries.
     * The target registry is determined by the fully qualified image name, such as `harbor.example.com/project/image:tag`.
 
 ## Running Cortex with Docker
