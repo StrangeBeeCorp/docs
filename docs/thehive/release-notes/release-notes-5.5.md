@@ -6,6 +6,34 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.8 - August 27, 2025
+
+### Fixes
+
+#### Dashboards
+
+* Radar widget: Fixed an issue preventing creation of new radar widgets.
+* Line widget: Adapted display for datasets with high-digit values.
+
+#### Images
+
+* Markdown rendering: Resolved a problem affecting image rendering when using Markdown syntax.
+* Case reports: Fixed an issue where footer images weren't correctly exported in HTML and Word report formats.
+
+### Other fixes
+
+* Reports and filters: Resolved an issue with boolean fields in case report template filters.
+* Global task list: Fixed a bug that broke the global task list in grouped view mode.
+* Login: Addressed latency experienced during the first login after application restart.
+* Notifications: Fixed missing event trigger when an analyzer is launched on an alert’s observable.
+* Dark mode: Corrected minor transition issue between light and dark themes.
+
+### Improvements
+
+* Markdown styling: Updated the visual style of quote characters for better readability.
+* Loading indicators: Introduced loading spinners on multiple pages to provide clearer feedback during page loads.
+* Email intake: The login field is no longer required to be an email address.
+
 ## 5.5.7 - July 29, 2025
 
 ### Regression fix
