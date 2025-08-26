@@ -18,6 +18,18 @@
                     </div>
                     {% endfor %}
                 </div>
+                <div class="soc-line">
+                    <div class="logo">
+                        {% for cr in config.extra.certificates %}
+                        <img src="{{ cr.logo }}" alt="{{ cr.name }}">
+                        {% endfor %}
+                    </div>
+                    <div class="socials">
+                        {% for lnk in config.extra.social %}
+                        <a href="{{ lnk.link }}">{% include ".icons/" ~ lnk.icon ~ ".svg" %}</a>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
             <div class="foot">
                 <div class="copy">{{ config.copyright }}</div>
@@ -29,4 +41,4 @@
                 </div>
             </div>
         </div>
-    </footer>    
+</footer>    

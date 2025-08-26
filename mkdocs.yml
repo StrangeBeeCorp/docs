@@ -341,6 +341,12 @@ extra:
       link: "https://chat.thehive-project.org"
     - icon: fontawesome/brands/youtube
       link: "https://www.youtube.com/channel/UCUmojqcxiG_LUbe62pR2Igg"
+
+  certificates:
+    - logo: '/assets/images/certificates/aicpa_soc.png'
+      name: ""
+    - logo: '/assets/images/certificates/ism_27001.png'
+      name: ""
   
   header:
     logo: '/assets/images/StrangeBee_Landscape.svg'

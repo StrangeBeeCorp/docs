@@ -3,7 +3,7 @@
 @forward "./components/";
 html {
   scroll-behavior: smooth;
-  font-size: 21px; }
+  font-size: 22px; }
   @media (max-width: 1220px) {
     html {
       font-size: 20px; } }
@@ -155,6 +155,57 @@ footer {
   @media (max-width: 480px) {
     footer {
       margin-top: 0rem; } }
+  footer .soc-line {
+    margin-top: 40px;
+    border-top: 1px solid #1E1E1E;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    @media (max-width: 768px) {
+      footer .soc-line {
+        border-top: unset;
+        padding-top: 0;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+        align-items: center; } }
+    footer .soc-line .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px; }
+      footer .soc-line .logo img {
+        width: auto;
+        height: 80px; }
+    footer .soc-line .socials {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 6px; }
+    footer .soc-line a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border-radius: 50%;
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      transition: filter .35s ease;
+      border: 1px solid #090909; }
+      @media (max-width: 1024px) {
+        footer .soc-line a {
+          width: 46px;
+          height: 46px; } }
+      footer .soc-line a svg {
+        width: 20px;
+        height: 20px; }
+      footer .soc-line a:hover {
+        filter: invert(1); }
 
 [data-md-toggle=search]:checked ~ .md-header .md-tabs {
   z-index: -1; }

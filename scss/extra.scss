@@ -237,6 +237,82 @@ footer {
     @media (max-width: $w-mob) {
         margin-top: 0rem;
     }
+
+    .soc-line {
+        margin-top: 40px;
+
+        border-top: 1px solid #1E1E1E;
+        padding-top: 40px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 1024px) {}
+
+        @media (max-width: 768px) {
+            border-top: unset;
+            padding-top: 0;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px;
+
+            img {
+                width: auto;
+                height: 80px;
+
+                @media (max-width: 1024px) {}
+            }
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 6px;
+
+            @media (max-width: 1024px) {}
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-radius: 50%;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+
+            transition: filter .35s ease;
+            border: 1px solid #090909;
+
+            @media (max-width: 1024px) {
+                width: 46px;
+                height: 46px;
+            }
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover {
+                filter: invert(1);
+            }
+        }
+    }
 }
 
 [data-md-toggle=search]:checked~.md-header {
