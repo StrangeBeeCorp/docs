@@ -17,9 +17,9 @@ hero:
 sections:
   title: 'Learn how to install, configure, maintain and use TheHive and Cortex'
   text: 'Follow our guides to get the job done—fast and right.'
-  anchors: 'I’m an:'
+  anchors: ''
   data:
-    - title: 'I’m an Analyst'
+    - title: 'Analyst corner'
       text: 'I want to triage alerts and investigate cases.'
       icon: assets/images/docs-analyst.png
       anchor:
@@ -74,7 +74,7 @@ sections:
             - text: 'Transfer key insights to the Knowledge Base'
               url: '/thehive/user-guides/knowledge-base/create-a-knowledge-base-page/'
 
-    - title: 'I’m a Manager'
+    - title: 'Manager corner'
       text: 'I want to standardize and secure data, and track my team’s activity.'
       icon: assets/images/docs-manager.png
       anchor:
@@ -114,7 +114,7 @@ sections:
             - text: 'Comment on cases and alerts to provide feedback'
               url: '/thehive/user-guides/analyst-corner/cases/comment-on-case-alert/'
 
-    - title: 'I’m a DevSecOps'
+    - title: 'DevSecOps corner'
       text: 'I want to automate tasks, manage integrations and streamline data enrichment.'
       icon: assets/images/docs-devSecOps.png
       anchor:
@@ -142,7 +142,7 @@ sections:
             - text: 'Configure responders to trigger automated response actions'
               url: '/cortex/api/how-to-create-a-responder/'
 
-    - title: 'I’m an Infra Engineer'
+    - title: 'Infra Engineer corner'
       text: 'I want to deploy, configure and maintain TheHive—and understand its API.'
       icon: assets/images/docs-infraEngineer.png
       anchor:
