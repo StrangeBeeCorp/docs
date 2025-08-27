@@ -12483,6 +12483,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#558-august-27-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.8 - August 27, 2025
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#557-july-29-2025" class="md-nav__link">
     <span class="md-ellipsis">
       5.5.7 - July 29, 2025
@@ -14344,6 +14353,32 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.</p>
 </div>
+<h2 id="558-august-27-2025">5.5.8 - August 27, 2025<a class="headerlink" href="#558-august-27-2025" title="Permanent link">#</a></h2>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h4 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">#</a></h4>
+<ul>
+<li>Radar widget: Fixed an issue preventing creation of new radar widgets.</li>
+<li>Line widget: Adapted display for datasets with high-digit values.</li>
+</ul>
+<h4 id="images">Images<a class="headerlink" href="#images" title="Permanent link">#</a></h4>
+<ul>
+<li>Markdown rendering: Resolved a problem affecting image rendering when using Markdown syntax.</li>
+<li>Case reports: Fixed an issue where footer images weren't correctly exported in HTML and Word report formats.</li>
+</ul>
+<h3 id="other-fixes">Other fixes<a class="headerlink" href="#other-fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Reports and filters: Resolved an issue with boolean fields in case report template filters.</li>
+<li>Global task list: Fixed a bug that broke the global task list in grouped view mode.</li>
+<li>Login: Addressed latency experienced during the first login after application restart.</li>
+<li>Notifications: Fixed missing event trigger when an analyzer is launched on an alert’s observable.</li>
+<li>Dark mode: Corrected minor transition issue between light and dark themes.</li>
+</ul>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<ul>
+<li>Markdown styling: Updated the visual style of quote characters for better readability.</li>
+<li>Loading indicators: Introduced loading spinners on multiple pages to provide clearer feedback during page loads.</li>
+<li>Email intake: The login field is no longer required to be an email address.</li>
+</ul>
 <h2 id="557-july-29-2025">5.5.7 - July 29, 2025<a class="headerlink" href="#557-july-29-2025" title="Permanent link">#</a></h2>
 <h3 id="regression-fix">Regression fix<a class="headerlink" href="#regression-fix" title="Permanent link">#</a></h3>
 <p>Case search bar: Fixed a regression introduced in version 5.5.6 that affected the case search bar.</p>
@@ -14359,12 +14394,12 @@
 <li>This limit can be customized via the <code>alert.maxMergeInCase</code> and <code>case.maxMergeInCase</code> settings in <code>application.conf</code>.</li>
 </ul>
 <p>Caution: Raising the limit may affect performance. Proceed with care.</p>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Email Intake: Fixed an issue that prevented file attachments from being handled correctly when using the MS365 GraphAPI connector.</li>
 <li>SAML SSO authentication: Resolved a regression introduced in version 5.5.5 that affected SAML-based login.</li>
 </ul>
-<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Case reports:</p>
@@ -14383,9 +14418,9 @@
 <li>Case start date: Corrected an issue where the start date was incorrectly set after case creation.</li>
 <li>Tags: Fixed custom tag auto-completion problems when editing cases or configuring filters.</li>
 </ul>
-<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
+<h3 id="improvements_2">Improvements<a class="headerlink" href="#improvements_2" title="Permanent link">#</a></h3>
 <p>Optimized audit JSON rendering to improve overall application performance and reduce CPU usage.</p>
-<h3 id="other-fixes">Other fixes<a class="headerlink" href="#other-fixes" title="Permanent link">#</a></h3>
+<h3 id="other-fixes_1">Other fixes<a class="headerlink" href="#other-fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Dashboards: Resolved display issues with donut and bar widgets when using custom fields or statuses as categories.</li>
 <li>Metrics: Fixed inaccurate calculations in dashboard widgets that use metric-per-unit fields (such as TimeToDetectInHour and TimeToQualifyInDay).</li>
@@ -14394,12 +14429,12 @@
 <h2 id="554-june-25-2025">5.5.4 - June 25, 2025<a class="headerlink" href="#554-june-25-2025" title="Permanent link">#</a></h2>
 <h3 id="regression-fixes_1">Regression fixes<a class="headerlink" href="#regression-fixes_1" title="Permanent link">#</a></h3>
 <p>Fixed a regression where the <code>creationDate</code> field wasn't automatically set to the current date when creating a new case.</p>
-<h3 id="improvements_2">Improvements<a class="headerlink" href="#improvements_2" title="Permanent link">#</a></h3>
+<h3 id="improvements_3">Improvements<a class="headerlink" href="#improvements_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Functions: Added the ability to <a href="../../user-guides/organization/configure-organization/manage-functions/functions-objects/#case">switch a case to restricted mode using a function</a>.</li>
 <li>Docker image: Introduced <a href="../../../cortex/installation-and-configuration/run-cortex-with-docker/#overriding-configuration-with-a-custom-file">a new entry point to support custom certificate authority (CA) handling</a>.</li>
 </ul>
-<h3 id="other-fixes_1">Other fixes<a class="headerlink" href="#other-fixes_1" title="Permanent link">#</a></h3>
+<h3 id="other-fixes_2">Other fixes<a class="headerlink" href="#other-fixes_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Alert status: Fixed a display issue with the import date in alert status.</li>
 <li>Restricted cases: Resolved a bug affecting similarity checks for restricted cases.</li>
@@ -14414,7 +14449,7 @@
 <li>Description fields: Corrected an issue causing some description fields to display in editing mode by default.</li>
 <li>Custom fields: Fixed a display problem when custom fields contained more than 12 options.</li>
 </ul>
-<h3 id="other-fixes_2">Other fixes<a class="headerlink" href="#other-fixes_2" title="Permanent link">#</a></h3>
+<h3 id="other-fixes_3">Other fixes<a class="headerlink" href="#other-fixes_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Live Feed: Addressed a redirection issue related to attachment actions within the Live Feed.</li>
 <li>Case reports: Corrected image export issues in case descriptions within generated HTML reports.</li>
@@ -14423,14 +14458,14 @@
 <h2 id="552-may-13-2025">5.5.2 - May 13, 2025<a class="headerlink" href="#552-may-13-2025" title="Permanent link">#</a></h2>
 <h3 id="performance-fixes">Performance fixes<a class="headerlink" href="#performance-fixes" title="Permanent link">#</a></h3>
 <p>Fixed a performance issue introduced by the new <a href="#case-links-link-external-or-internal-elements-to-a-case">case links feature</a> that could cause significant slowdowns in environments with large data volumes.</p>
-<h3 id="other-fixes_3">Other fixes<a class="headerlink" href="#other-fixes_3" title="Permanent link">#</a></h3>
+<h3 id="other-fixes_4">Other fixes<a class="headerlink" href="#other-fixes_4" title="Permanent link">#</a></h3>
 <h4 id="case-reports">Case reports<a class="headerlink" href="#case-reports" title="Permanent link">#</a></h4>
 <p>Fixed an issue where images uploaded in the case description weren't displayed in generated HTML and Word reports.</p>
 <h4 id="attachments-for-shared-cases">Attachments for shared cases<a class="headerlink" href="#attachments-for-shared-cases" title="Permanent link">#</a></h4>
 <p>Fixed an issue where attachment files weren't visible in shared cases.</p>
 <h4 id="public-api">Public API<a class="headerlink" href="#public-api" title="Permanent link">#</a></h4>
 <p>Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.</p>
-<h3 id="improvements_3">Improvements<a class="headerlink" href="#improvements_3" title="Permanent link">#</a></h3>
+<h3 id="improvements_4">Improvements<a class="headerlink" href="#improvements_4" title="Permanent link">#</a></h3>
 <p>Analyzers and responders can now be triggered directly <a href="../../user-guides/organization/configure-organization/manage-functions/functions-objects/#cortex">from a TheHive function</a>, enabling greater automation capabilities.</p>
 <h2 id="551-april-30-2025">5.5.1 - April 30, 2025<a class="headerlink" href="#551-april-30-2025" title="Permanent link">#</a></h2>
 <p>Last update: May 26, 2025</p>
@@ -14443,11 +14478,11 @@
 </ul>
 </li>
 </ul>
-<h3 id="improvements_4">Improvements<a class="headerlink" href="#improvements_4" title="Permanent link">#</a></h3>
+<h3 id="improvements_5">Improvements<a class="headerlink" href="#improvements_5" title="Permanent link">#</a></h3>
 <h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">#</a></h4>
 <p>You can now sort tasks by their due dates.</p>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
-<h4 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">#</a></h4>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h4 id="dashboards_1">Dashboards<a class="headerlink" href="#dashboards_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Bar widget: The <code>_total</code> field no longer appears when data is stacked.</li>
 <li>Table widget: Fixed an issue with filter configuration, and corrected two issues affecting the maximum number of elements.</li>
@@ -14488,7 +14523,7 @@
 <p>The <a href="../../administration/email-intake-connector/connect-a-mailbox/">Microsoft 365 Graph API connector</a> is now available for email intakes. It uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.</p>
 <h4 id="case-report-templates-display-the-description-of-custom-events">Case report templates: Display the description of custom events<a class="headerlink" href="#case-report-templates-display-the-description-of-custom-events" title="Permanent link">#</a></h4>
 <p>You can now hide or show the description of custom events in the <a href="../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/#timeline-widget">timeline widget</a> within case reports.</p>
-<h3 id="improvements_5">Improvements<a class="headerlink" href="#improvements_5" title="Permanent link">#</a></h3>
+<h3 id="improvements_6">Improvements<a class="headerlink" href="#improvements_6" title="Permanent link">#</a></h3>
 <h4 id="taxonomy-drawer">Taxonomy drawer<a class="headerlink" href="#taxonomy-drawer" title="Permanent link">#</a></h4>
 <p>The taxonomies component has been redesigned to provide an improved user experience.</p>
 <h4 id="better-user-experience-for-custom-fields">Better user experience for custom fields<a class="headerlink" href="#better-user-experience-for-custom-fields" title="Permanent link">#</a></h4>
@@ -14499,7 +14534,7 @@
 <p>The status of tasks is now clearly visible in each row of the <strong>Tasks</strong> tab in cases, enabling quick identification without needing to open the details.</p>
 <h4 id="public-api-observable-route-optimization">Public API observable route optimization<a class="headerlink" href="#public-api-observable-route-optimization" title="Permanent link">#</a></h4>
 <p>The observable creation routes in alerts and cases have been optimized, making the creation of dozens of observables five times faster.</p>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <h4 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">#</a></h4>
 <h5 id="dark-mode">Dark Mode<a class="headerlink" href="#dark-mode" title="Permanent link">#</a></h5>
 <ul>
