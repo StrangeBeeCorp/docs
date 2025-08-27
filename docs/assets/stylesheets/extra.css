@@ -3,7 +3,7 @@
 @forward "./components/";
 html {
   scroll-behavior: smooth;
-  font-size: 19px; }
+  font-size: 20px; }
   @media (max-width: 1220px) {
     html {
       font-size: 20px; } }
@@ -74,7 +74,7 @@ header.md-header {
       color: #000;
       text-align: center;
       font-family: 'Poppins';
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       font-style: normal;
       font-weight: 500;
       line-height: 144%;
