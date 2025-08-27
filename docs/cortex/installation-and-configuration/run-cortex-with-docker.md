@@ -123,7 +123,7 @@ The following [docker-compose.yml](https://raw.githubusercontent.com/TheHive-Pro
         volumes:
           - /path/to/data:/usr/share/elasticsearch/data
       cortex:
-        image: thehiveproject/cortex:{!includes/cortex-latest-version.md!lines=2}
+        image: thehiveproject/cortex:3.1.1
         environment:
           - job_directory=${job_directory}
         volumes:
@@ -168,7 +168,7 @@ By default, the Podman socket resides at `/run/podman/podman.sock`. This path ma
       -p 9001:9001 \
       -v /var/run/cortex/jobs:/tmp/cortex-jobs \
       -v /run/podman/podman.sock:/var/run/docker.sock \
-      docker.io/thehiveproject/cortex:{!includes/cortex-latest-version.md!lines=2} \
+      docker.io/thehiveproject/cortex:3.1.7 \
       --job-directory /tmp/cortex-jobs \
       --docker-job-directory /var/run/cortex/jobs \
       --es-uri http://<elasticsearch-ip>:9200
@@ -198,7 +198,7 @@ By default, the Podman socket resides at `/run/podman/podman.sock`. This path ma
       --rm \
       --name cortex \
       -p 9001:9001 \
-      docker.io/thehiveproject/cortex:{!includes/cortex-latest-version.md!lines=2} \
+      docker.io/thehiveproject/cortex:3.1.7 \
       --es-uri http://<elasticsearch-ip>:9200 \
       --start-docker
     ```
