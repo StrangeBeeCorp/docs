@@ -344,9 +344,7 @@ extra:
 
   certificates:
     - logo: '/assets/images/certificates/aicpa_soc.png'
-      name: ""
-    - logo: '/assets/images/certificates/ism_27001.png'
-      name: ""
+      name: "AICPA SOC certification"
   
   header:
     logo: '/assets/images/StrangeBee_Landscape.svg'
