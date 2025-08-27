@@ -75,8 +75,8 @@ TheHive database comes with several samples of data, like custom fields, [MISP t
 The VM runs Debian 11.
 The most recent VM includes:
 
-- TheHive **5.x** using a local BerkeleyDB and file storage, 
-- Cortex **3.1.x** , and Elasticsearch **7**
+- TheHive **{!includes/thehive-latest-version.md!lines=2}** using a local BerkeleyDB and file storage, 
+- Cortex **{!includes/cortex-latest-version.md!lines=2}** , and Elasticsearch **7**
 - TheHive4py
 - Cortex4py
 - Public Cortex Analyzers and Responders are running with Docker 
