@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v1-5.5.4-1
+  version: v1-5.5.8-1
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -22,7 +22,7 @@ tags:
   description: "\nA case is the main entity manipulated by TheHive. \nIt will centralize\
     \ all the information during the investigation of security incidents.\n\n**Note**:\
     \ For api calls, to refer to a case you can either use the `_id` or use the case\
-    \ `number`\n\n#### Queries\n- Initial Queries:\n  - `listCase`: list all the cases\
+    \ `number`\n\n### Queries\n- Initial Queries:\n  - `listCase`: list all the cases\
     \ visible by the user\n  - `getCase`: get a case by id or name - additional field\
     \ `idOrName`\n  - ~~`countCase`~~: count the cases visible by the user, returns\
     \ a number **(deprecated)**\n- Queries available on Cases:\n  - `observables`\n\
@@ -231,6 +231,64 @@ tags:
     - Extra data:
       - `pageTemplateHeaders`
 - name: Admin
+- name: Permission
+  description: |2
+
+    The permission is the unitary component of a profile.
+
+    The different permissions are :
+
+    For Case management:
+
+      - `manageCase/delete`
+      - `manageCase/update`
+      - `manageCase/merge`
+      - `manageCase/create`
+      - `manageCase/reopen`
+      - `manageCase/changeOwnership`
+
+    For Alert management:
+      - `manageAlert/update`
+      - `manageAlert/delete`
+      - `manageAlert/import`
+      - `manageAlert/reopen`
+      - `manageAlert/create`
+
+    For other actions:
+      - `manageCaseReport`
+      - `manageAnalyzerTemplate`
+      - `accessTheHiveFS`
+      - `managePlatform`
+      - `manageFunction/invoke`
+      - `manageCustomField`
+      - `manageCaseAccess/restrict`
+      - `manageOrganisation`
+      - `manageCustomEvent`
+      - `manageUser`
+      - `manageObservable`
+      - `manageShare`
+      - `manageProcedure`
+      - `manageKnowledgeBase`
+      - `manageProfile`
+      - `manageCaseTemplate`
+      - `managePageTemplate`
+      - `manageTag`
+      - `manageTaxonomy`
+      - `manageFunction/create`
+      - `manageObservableTemplate`
+      - `managePage`
+      - `manageTask`
+      - `manageConfig`
+      - `manageCaseReportTemplate`
+      - `manageComment`
+      - `managePattern`
+      - `manageDashboard`
+      - `manageAnalyse`
+      - `manageAction`
+
+    ### Queries
+    - Initial Queries:
+      - `list`: list all available permissions
 servers:
 - url: /
 paths:
@@ -1448,7 +1506,9 @@ paths:
     get:
       tags:
       - Case
-      operationId: Get linked cases
+      description: '**deprecated:** use the `similarCasesLight` query instead. ~Get
+        the similar cases of a given case, along with the observables.~'
+      operationId: Get similar cases
       parameters:
       - name: caseId
         in: path
@@ -1536,6 +1596,7 @@ paths:
                     type: string
                   message:
                     type: string
+      deprecated: true
       security:
       - Api Key: []
       - Basic: []
@@ -15570,6 +15631,95 @@ paths:
       - Session: []
       x-TheHive-permissions:
       - manageTaxonomy
+  /api/v1/permission:
+    get:
+      tags:
+      - Permission
+      description: List all permissions.
+      operationId: List permissions
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PermissionDesc'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                required:
+                - type
+                - message
+                type: object
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
   /api/v1/profile:
     post:
       tags:
@@ -18730,7 +18880,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OutputEntityDescription'
+                $ref: '#/components/schemas/EntityDescription'
         '400':
           description: BadRequest
           content:
@@ -18816,7 +18966,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Map_OutputEntityDescription'
+                $ref: '#/components/schemas/Map_EntityDescription'
         '400':
           description: BadRequest
           content:
@@ -27557,6 +27707,13 @@ components:
           exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
+    AnyIndexType:
+      type: string
+      enum:
+      - standard
+      - none
+      - fulltext
+      - fulltextOnly
     Auth:
       oneOf:
       - $ref: '#/components/schemas/BasicAuth'
@@ -27589,6 +27746,11 @@ components:
           type: string
           enum:
           - basic
+    BasicIndexType:
+      type: string
+      enum:
+      - standard
+      - none
     BearerAuth:
       required:
       - key
@@ -27603,6 +27765,34 @@ components:
           type: string
           enum:
           - bearer
+    BooleanPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - boolean
+    Cardinality:
+      type: string
+      enum:
+      - single
+      - option
+      - list
+      - set
     CaseReportTemplateDefinition:
       required:
       - i18n
@@ -27741,6 +27931,27 @@ components:
       - Private
       - Shared
       - Deleted
+    DatePropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - date
     Direction:
       type: string
       enum:
@@ -27759,6 +27970,60 @@ components:
       - office365
       - google-workspace
       - MSGraph365
+    EntityDescription:
+      required:
+      - label
+      - path
+      - initialQuery
+      - attributes
+      type: object
+      properties:
+        label:
+          type: string
+        path:
+          type: string
+        initialQuery:
+          type: string
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/PropertyDescription'
+    EnumerationPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - values
+      - labels
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        values:
+          oneOf:
+          - type: array
+            items:
+              type: integer
+              format: int32
+          - type: array
+            items:
+              type: string
+        labels:
+          type: array
+          items:
+            type: string
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - enumeration
     Error:
       required:
       - file
@@ -27846,6 +28111,27 @@ components:
       - $ref: '#/components/schemas/_not'
       - $ref: '#/components/schemas/_or'
       - $ref: '#/components/schemas/_startsWith'
+    FloatPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - float
     FooterWidget:
       required:
       - template
@@ -28688,12 +28974,18 @@ components:
             type: string
             description: The _id of the entity or its 'name' (depends of the entity)
             example: ~354
+          deprecated: true
         customFields:
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
             items:
               $ref: '#/components/schemas/InputCustomFieldValue'
+        pageTemplates:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputCreatePage'
+          description: Use this instead of pageTemplateIds
     InputCreateDashboard:
       required:
       - title
@@ -30887,6 +31179,27 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/InputEntry'
+    IntegerPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - integer
     Interval:
       required:
       - value
@@ -31003,6 +31316,10 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/Direction'
+    Map_EntityDescription:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/EntityDescription'
     Map_Int:
       type: object
       additionalProperties:
@@ -31016,10 +31333,6 @@ components:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/Map_Int'
-    Map_OutputEntityDescription:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/OutputEntityDescription'
     Map_OutputLicenseQuota:
       type: object
       additionalProperties:
@@ -32566,23 +32879,6 @@ components:
           type: string
         type:
           type: string
-    OutputEntityDescription:
-      required:
-      - label
-      - path
-      - initialQuery
-      type: object
-      properties:
-        label:
-          type: string
-        path:
-          type: string
-        initialQuery:
-          type: string
-        attributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/OutputPropertyDescription'
     OutputExportFieldsMapping:
       required:
       - fieldsByModel
@@ -33352,29 +33648,6 @@ components:
           type: boolean
         consumesLicense:
           type: boolean
-    OutputPropertyDescription:
-      required:
-      - name
-      - type
-      - aggregable
-      - indexType
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        values:
-          type: array
-          items: {}
-        labels:
-          type: array
-          items:
-            type: string
-        aggregable:
-          type: boolean
-        indexType:
-          type: string
     OutputPublicStatus:
       required:
       - sso
@@ -33834,6 +34107,48 @@ components:
           $ref: '#/components/schemas/Filter'
         _kind:
           $ref: '#/components/schemas/Kind'
+    PermissionDesc:
+      required:
+      - name
+      - label
+      - consumesLicense
+      type: object
+      properties:
+        name:
+          type: string
+        label:
+          type: string
+          description: The user-friendly name of the permission
+        consumesLicense:
+          type: boolean
+          description: '`true` if the permission requires a licence, `false` otherwise'
+        scope:
+          type: array
+          items:
+            type: string
+          description: The scope of the permission. Can be `admin`, `organisation`
+            or both
+    PropertyDescription:
+      oneOf:
+      - $ref: '#/components/schemas/BooleanPropertyDescription'
+      - $ref: '#/components/schemas/DatePropertyDescription'
+      - $ref: '#/components/schemas/EnumerationPropertyDescription'
+      - $ref: '#/components/schemas/FloatPropertyDescription'
+      - $ref: '#/components/schemas/IntegerPropertyDescription'
+      - $ref: '#/components/schemas/StringPropertyDescription'
+      - $ref: '#/components/schemas/UrlPropertyDescription'
+      - $ref: '#/components/schemas/UserPropertyDescription'
+      discriminator:
+        propertyName: type
+        mapping:
+          boolean: '#/components/schemas/BooleanPropertyDescription'
+          date: '#/components/schemas/DatePropertyDescription'
+          enumeration: '#/components/schemas/EnumerationPropertyDescription'
+          float: '#/components/schemas/FloatPropertyDescription'
+          integer: '#/components/schemas/IntegerPropertyDescription'
+          string: '#/components/schemas/StringPropertyDescription'
+          url: '#/components/schemas/UrlPropertyDescription'
+          user: '#/components/schemas/UserPropertyDescription'
     ProxyConfig:
       required:
       - state
@@ -33996,6 +34311,27 @@ components:
           type: string
         type:
           type: string
+    StringPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/AnyIndexType'
+        type:
+          type: string
+          enum:
+          - string
     TTPField:
       type: string
       enum:
@@ -34190,6 +34526,27 @@ components:
           type: string
         request:
           type: string
+    UrlPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/AnyIndexType'
+        type:
+          type: string
+          enum:
+          - url
     UserAccess:
       required:
       - users
@@ -34208,6 +34565,27 @@ components:
           type: string
           enum:
           - UserAccessKind
+    UserPropertyDescription:
+      required:
+      - name
+      - cardinality
+      - aggregable
+      - indexType
+      - type
+      type: object
+      properties:
+        name:
+          type: string
+        cardinality:
+          $ref: '#/components/schemas/Cardinality'
+        aggregable:
+          type: boolean
+        indexType:
+          $ref: '#/components/schemas/BasicIndexType'
+        type:
+          type: string
+          enum:
+          - user
     Widget:
       oneOf:
       - $ref: '#/components/schemas/AlertList'
@@ -34438,6 +34816,7 @@ x-tagGroups:
   - Organisation
   - User
   - Profile
+  - Permission
 - name: Entities
   tags:
   - CustomField
