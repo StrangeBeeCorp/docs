@@ -9,7 +9,7 @@
 
             ```bash
             wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/deb/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb
-            wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.sha256
+            wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.sha256
             wget -O /tmp/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive_{!includes/thehive-latest-version.md!lines=2}-1_all.deb.asc
             ```
 

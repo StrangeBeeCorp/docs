@@ -166,7 +166,7 @@ parameters:
 
 Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.
 
-Use the `cortex` Helm chart to configure [the correct storageClass value in the chart’s settings](https://github.com/StrangeBeeCorp/helm-charts/blob/cortex-initial-helm-chart/cortex-charts/cortex/values.yaml#L67-L79), and the PVC will be created automatically during deployment.
+Use the `cortex` Helm chart to configure the storageClass value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the [`values.yaml`](https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml) file and look for the `persistentVolumeClaim` section.
 
 ## Next steps
 

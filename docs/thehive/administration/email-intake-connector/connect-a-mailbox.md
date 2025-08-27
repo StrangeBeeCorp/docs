@@ -448,9 +448,9 @@ Use this procedure if your organization receives alerts via email and you want t
 
         4. In the **Authentication** section, enter the following information:
 
-            **- Email**
+            **- Login**
 
-            The email address associated with your account.
+            The email address or account username associated with your account.
 
             **- Password**
 
