@@ -18,7 +18,7 @@ The default and additional MITRE catalogs aren't updated automatically. Use this
 
 4. Select the existing catalog you want to update.
 
-5. Drop a JSON file from the latest version of the [Enterprise ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json?version=TheHive-5.4.10-1-SNAPSHOT) and [Mobile ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/mobile-attack/mobile-attack.json?version=TheHive-5.4.10-1-SNAPSHOT) MITRE matrices.
+5. Drop a JSON file from the latest version of the [Enterprise ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/enterprise-attack/enterprise-attack.json?version=TheHive-{!includes/thehive-latest-version.md!lines=2}-1-SNAPSHOT) and [Mobile ATT&CK](https://raw.githubusercontent.com/mitre/cti/master/mobile-attack/mobile-attack.json?version=TheHive-{!includes/thehive-latest-version.md!lines=2}-1-SNAPSHOT) MITRE matrices.
 
 6. Select **Import**.
 
