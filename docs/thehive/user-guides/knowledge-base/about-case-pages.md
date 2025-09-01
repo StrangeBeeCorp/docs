@@ -10,7 +10,7 @@ Case pages are intended for temporary documentation, useful during investigation
 
 ## Templates
 
-[Templates](../../user-guides/organization/configure-organization/manage-templates/case-page-templates/) are available for case pages.
+[Templates](../../user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md) are available for case pages.
 
 ## Flavored Markdown
 

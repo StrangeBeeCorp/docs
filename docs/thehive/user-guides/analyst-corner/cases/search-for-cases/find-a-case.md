@@ -106,5 +106,5 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 * [Add TTPs](../ttps/add-ttps.md)
 * [Add an Attachment](../attachments/add-an-attachment-case-alert.md)
 * [View a Case Timeline](../case-timelines/view-case-timeline.md)
-* [View a Knowledge Base Page](../../../../user-guides/knowledge-base/view-a-knowledge-base-page.md#view-a-page-at-the-case-level)
+* [View a Case Page](../../../../user-guides/knowledge-base/view-a-case-page.md)
 * [Run Responders and Review Reports for a Case](../run-responders-on-a-case.md)

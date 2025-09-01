@@ -32,7 +32,7 @@ This topic provides step-by-step instructions for managing [user accounts](about
     3. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
         !!! tip "Can't find a user account?"
-            You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/about-views/).
+            You can apply [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/views/about-views/).
 
 ## Manage a user account email
 
