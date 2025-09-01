@@ -13,14 +13,11 @@ Use this procedure at first start, before granting access to other users.
 
     1. Open your web browser.
 
-    2. Browse to `http://<your-server-address>:9000/`.
-
-        !!! tip "Not sure of your server address?"
-            Check the `application.conf` configuration file for the `application.baseUrl` setting.
+    2. Browse to the URL you configured in the `application.baseUrl` setting inside the `/etc/thehive/application.conf` file.
 
     3. Enter the username and default password.
 
-        Username: `admin@thehive.local`
+        Login: `admin@thehive.local`  
         Password: `secret`
 
     4. Select **Let me in**.
