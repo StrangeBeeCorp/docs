@@ -4,18 +4,13 @@ The Knowledge Base in TheHive enables the creation and sharing of valuable infor
 
 This topic describes how the Knowledge Base supports teamwork and ensures important information remains available to the team.
 
-## Structure
+## Organization-wide sharing
 
-The Knowledge Base organizes content into pages, which can be created at two levels:
+Knowledge Base pages are shared across the entire organization and accessible to all users.
 
-* Organization level: Share information that's relevant across the entire organization.
-* Case level: Document details specific to individual cases.
+## Permanent vs. temporary documentation
 
-{!includes/temporary-permanent-knowledge.md!}
-
-## Templates
-
-[Templates](../organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates.md) are available exclusively for case-level pages. Organization-level pages don't support templates.
+The Knowledge Base stores knowledge intended for long-term preservation and future reference. For temporary documentation—useful during active investigations but not meant to be retained permanently—use [case pages](about-case-pages.md) instead.
 
 ## Flavored Markdown
 
@@ -25,10 +20,8 @@ Knowledge Base pages use [TheHive-flavored Markdown syntax](../thehive-flavored-
 
 {!includes/access-knowledge-base.md!}
 
-Pages created at the organization level are visible to all users. Pages created at the case level are visible only to users with access to that case.
-
 <h2>Next steps</h2>
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
-* [Share a Knowledge Base Page](share-a-knowledge-base-page.md)
+* [View a Knowledge Base Page](view-a-knowledge-base-page.md)

@@ -38,7 +38,7 @@ Filters are combined using the `AND` operator, meaning all selected conditions m
 
 ### Saving filters
 
-Applied filters can be saved in [a view](about-views.md) to avoid reapplying them repeatedly. Selecting the saved view applies the filters automatically.
+Applied filters can be saved in [a view](./views/about-views.md) to avoid reapplying them repeatedly. Selecting the saved view applies the filters automatically.
 
 ## Sorting elements
 
@@ -56,8 +56,11 @@ Sorting applies to only one field at a time, as multiple-field sorting isn't sup
 
 ### Saving sorting
 
-Applied sorting can be saved in [a view](about-views.md) to avoid reapplying it repeatedly. Selecting the saved view applies the stored sorting automatically.
+Applied sorting can be saved in [a view](./views/about-views.md) to avoid reapplying it repeatedly. Selecting the saved view applies the stored sorting automatically.
 
 <h2>Next steps</h2>
 
-* [About Views](about-views.md)
+* [About Views](./views/about-views.md)
+* [Create a Custom View](./views/create-a-custom-view.md)
+* [Update a Custom View](./views/update-a-custom-view.md)
+* [Delete a Custom View](./views/delete-a-custom-view.md)

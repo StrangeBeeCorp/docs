@@ -21,4 +21,4 @@ This topic provides step-by-step instructions for deleting a [case page template
 <h2>Next steps</h2>
 
 * [Create a Case Page Template](create-a-case-page-template.md)
-* [Create a Knowledge Base Page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)
+* [Create a Case Page](../../../../knowledge-base/create-a-case-page.md)

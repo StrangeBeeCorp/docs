@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for creating a [case page template](about-case-page-templates.md) in TheHive.
 
+Case page templates streamline page creation within cases in TheHive by automatically prefilling content.
+
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Page Template](import-a-case-page-template.md) topic.
 
 {!includes/access-manage-case-page-templates.md!}
@@ -19,7 +21,7 @@ To import an existing case template from another organization or TheHive instanc
 5. In the **Adding a page template** drawer, enter the following fields:
 
     **Title**  
-    The case page template title. It's used to identify the template in the API and serves as the default page title when [creating a page based on the template](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
+    The case page template title. It's used to identify the template in the API and serves as the default page title when [creating a page based on the template](../../../../knowledge-base/create-a-case-page.md).
 
     **Category**  
     The default category the pages belongs to. Pages are visually grouped by category for easier navigation. If the category doesn't exist, it will be created automatically.
@@ -32,4 +34,4 @@ To import an existing case template from another organization or TheHive instanc
 <h2>Next steps</h2>
 
 * [Delete a Case Page Template](delete-a-case-page-template.md)
-* [Create a Knowledge Base Page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)
+* [Create a Case Page](../../../../knowledge-base/create-a-case-page.md)

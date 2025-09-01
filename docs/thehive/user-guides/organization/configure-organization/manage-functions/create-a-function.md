@@ -4,6 +4,8 @@
 
 This topic provides step-by-step instructions for creating a [function](about-functions.md) in TheHive.
 
+Functions automate workflows, process data, and enhance case management.
+
 {!includes/access-functions.md!}
 
 <h2>Procedure</h2>

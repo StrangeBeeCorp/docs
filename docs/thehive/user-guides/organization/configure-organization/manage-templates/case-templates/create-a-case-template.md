@@ -2,6 +2,8 @@
 
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
+Case templates streamline case creation by automatically filling predefined fields.
+
 !!! info "<!-- md:version 5.4 --> Duplicate an existing case template"
     You can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
 
@@ -73,7 +75,7 @@ To import an existing case template from another organization or TheHive instanc
 
     One or more custom fields for cases, with or without predefined values.
     
-    **- [Pages](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
+    **- [Pages](../../../../knowledge-base/create-a-case-page.md)**  
     
     A page template to document cases.
 

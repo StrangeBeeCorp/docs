@@ -1,6 +1,6 @@
 # About Case Page Templates
 
-Case page templates streamline page creation within cases in TheHive by automatically prefilling content.
+[Case page](../../../../knowledge-base/about-case-pages.md) templates streamline page creation within cases in TheHive by automatically prefilling content.
 
 This topic provides an overview of case page template usage in TheHive.
 
@@ -14,7 +14,7 @@ Use case page templates to:
 
 ## Usage
 
-Use a case page template when [creating a Knowledge Base page at the case level](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level).
+Use a case page template when [creating a case page](../../../../knowledge-base/create-a-case-page.md).
 
 ## Permissions
 

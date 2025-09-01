@@ -65,7 +65,7 @@ Several options are offered to create a case in TheHive:
 
     Custom fields for the case, with or without predefined values.
 
-    **- [Pages](../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)**  
+    **- [Pages](../../knowledge-base/create-a-case-page.md)**  
 
     Pages to document the case.
 

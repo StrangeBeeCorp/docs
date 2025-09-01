@@ -22,4 +22,4 @@ Use this procedure to use a case page template from another organization or TheH
 
 <h2>Next steps</h2>
 
-* [Create a Knowledge Base Page](../../../../knowledge-base/create-a-knowledge-base-page.md#create-a-page-at-the-case-level)
+* [Create a Case Page](../../../../knowledge-base/create-a-case-page.md)
