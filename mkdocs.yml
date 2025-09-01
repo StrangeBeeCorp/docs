@@ -327,6 +327,8 @@ plugins:
             'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
             'thehive/download/archives.md': 'thehive/download/index.md'
+            'thehive/user-guides/analyst-corner/about-views.md': 'thehive/user-guides/analyst-corner/views/about-views.md'
+            'thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/share-a-case-page.md'
 
 extra:
   generator: false
