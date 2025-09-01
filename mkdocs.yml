@@ -799,6 +799,7 @@ nav:
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
           - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Case Pages':
+            - 'About Case Pages': thehive/user-guides/knowledge-base/about-case-pages.md
             - 'Create a Page': thehive/user-guides/knowledge-base/create-a-case-page.md
             - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-case-page.md
             - 'Share a Page': thehive/user-guides/knowledge-base/share-a-case-page.md

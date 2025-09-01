@@ -10,7 +10,7 @@ Use this procedure to store knowledge that should be preserved for future refere
 
 1. {!includes/knowledge-base-view-go-to.md!}
 
-2. Select **Add a page** or :fontawesome-solid-plus:.
+2. Select :fontawesome-solid-plus:.
 
 3. In the **Add a page to the Knowledge Base** drawer, enter the following information:
 
