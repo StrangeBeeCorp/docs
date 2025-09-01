@@ -1,9 +1,9 @@
 # Resources
 
-In this section, you can find a collection of valuable resources regarding the applications. 
+In this section, you can find a collection of valuable resources regarding the applications.
 
 ## Demo virtual machine 
-Learn how to [download](./demo.md) and [use](./howto-vm-demo.md) our demo virtual Machine
+Learn how to [download](./demo.md) and [use](./howto-vm-demo.md) our demo virtual machine
 
 ## IaaS environment
 Your have your own cloud infrastruture and wish to manage and include TheHive and Cortex ; learn how to deploy our dedicated images by reading our usage instructions:

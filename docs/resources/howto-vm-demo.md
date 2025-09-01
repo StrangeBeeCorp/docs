@@ -1,6 +1,5 @@
 # Use the Demo Virtual Machine
 
-
 !!! Warning
     Ensure good performance by allocating a minimum of 6 GB of RAM to run this Virtual Machine flawlessly. Adjusting the allocation below this threshold may lead to potential complications.
 
