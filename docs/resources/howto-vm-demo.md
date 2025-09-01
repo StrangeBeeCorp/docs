@@ -9,7 +9,7 @@
 
 === "Using VMWare"
     1. Start the VM and follow the on-screen instructions.
-    2. In your browser, open the URL displayed by the VM: `http://<ip_address>`
+    2. In your browser, open the URL displayed by the VM.
 
 === "Using VirtualBox"
     1. During import, set the Guest OS type information.
@@ -18,7 +18,7 @@
     ![](images/virtualbox-port-forwarding-1.png)
     3. Add the required port forwarding rules (adjust as needed) and save.
     ![](images/virtualbox-port-forwarding-2.png)
-    4. Start the VM and open the following URL in your browser: http://127.0.0.1:8888
+    4. Start the VM and open the following URL in your browser: [http://127.0.0.1:8888](http://127.0.0.1:8888)
     5. If needed, adjust the Display settings and set the graphical controller to `VMSVGA` before starting the VM.
 
 ## Quick connect
@@ -41,7 +41,7 @@
     * Login: `thehive@thehive.local`
     * Password: `thehive1234`
 
-TheHive database comes with several samples of data, like [custom fields](../../thehive/administration/custom-fields/about-custom-fields.md), [MISP taxonomies](https://github.com/MISP/misp-taxonomies), [MITRE Att&ck](https://attack.mitre.org/) data, a [case template](../../thehive/user-guides/organization/configure-organization/manage-templates/about-case-templates.md) and an [alert](../../thehive/user-guides/analyst-corner/alerts/about-alerts.md).
+TheHive database comes with several samples of data, like [custom fields](../thehive/administration/custom-fields/about-custom-fields.md), [MISP taxonomies](https://github.com/MISP/misp-taxonomies), [MITRE Att&ck](https://attack.mitre.org/) data, a [case template](../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md) and an [alert](../thehive/user-guides/analyst-corner/alerts/about-alerts.md).
 
 ![](images/cortex-logo.png){ width="200" }
 

@@ -2,7 +2,7 @@
 
 A repository dedicated to the sharing of TheHive templates. Contributions are welcome!
 
-Discover cases, dashboards, and functions templates ready for TheHive.
+Discover case, dashboard, and function templates ready for TheHive.
 
 ![](images/thehive-alt.png){: align=left width=110}
 
@@ -15,8 +15,8 @@ Discover cases, dashboards, and functions templates ready for TheHive.
 
 * Sources: [https://github.com/StrangeBeeCorp/thehive-templates](https://github.com/StrangeBeeCorp/thehive-templates)
 * Documentation:
-  * [Case templates](../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md)
-  * [Dashboards](../../thehive/user-guides/analyst-corner/dashboard/about-dashboards.md)
-  * [Functions](../../thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md)
+    * [Case templates](../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md)
+    * [Dashboards](../thehive/user-guides/analyst-corner/dashboard/about-dashboards.md)
+    * [Functions](../thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md)
 
 If you'd like to contribute and share your templates with TheHive users community, feel free to create a [pull request on the GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/pulls).

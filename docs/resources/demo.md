@@ -1,8 +1,8 @@
 # Download the Demo Virtual Machine
 
-{!includes/vm-testing-only.md!}
-
 ![](images/demo-virtual-machine.png)
+
+{!includes/vm-testing-only.md!}
 
 Download the ready-to-use VM from [https://www.strangebee.com/tryit](https://www.strangebee.com/tryit).
 
