@@ -1,7 +1,6 @@
 # Download the Demo Virtual Machine
 
-!!! warning "For testing only"
-    This virtual machine (VM) is provided for testing purposes. It isn't recommended for production use.
+{!includes/vm-testing-only.md!}
 
 ![](images/demo-virtual-machine.png)
 
