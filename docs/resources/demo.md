@@ -4,7 +4,7 @@
 
 {!includes/vm-testing-only.md!}
 
-Download the ready-to-use VM from [https://www.strangebee.com/tryit](https://www.strangebee.com/tryit).
+Download the ready-to-use VM from the [StrangeBee website](https://www.strangebee.com/tryit).
 
 This VM is prepared and updated by StrangeBee and includes the latest versions of:
 

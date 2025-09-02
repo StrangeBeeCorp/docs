@@ -3,6 +3,9 @@
 !!! warning "Memory requirement"
     Allocate at least 6 GB of RAM to this virtual machine (VM) for stable performance. Assigning less may cause errors or degraded performance.
 
+!!! tip "Platinum trial"
+    The VM installation of TheHive with Cortex includes a 14-day Platinum trial license. After the trial ends, TheHive switches to read-only mode.
+
 ## Start the virtual machine
 
 ![](images/vm-start.png)
@@ -28,7 +31,7 @@
 ![](images/thehive-logo.png){ width="200" }
 
 !!! question "TheHive credentials"
-    This VM comes with two accounts in TheHive: 
+    This VM comes with two accounts in TheHive:
 
     Administrator:
 
@@ -64,11 +67,11 @@ TheHive database comes with several samples of data, like [custom fields](../the
 
 The VM runs Ubuntu 24.04 and includes:
 
-- TheHive {!includes/thehive-latest-version.md!lines=2}, with Cassandra, Elasticsearch, and local file storage
-- Cortex {!includes/cortex-latest-version.md!lines=2}, with Elasticsearch
-- TheHive4py
-- Cortex4py
-- Public Cortex analyzers and responders running in Docker
+* TheHive {!includes/thehive-latest-version.md!lines=2}, with Cassandra, Elasticsearch, and local file storage
+* Cortex {!includes/cortex-latest-version.md!lines=2}, with Elasticsearch
+* TheHive4py
+* Cortex4py
+* Public Cortex analyzers and responders running in Docker
 
 ### Configuration details
 
@@ -119,7 +122,7 @@ Cortex uses Elasticsearch as its database, which also runs as a Docker Compose c
 
 ## Operations
 
-### Virtual machine 
+### VM
 
 You can use the system account `thehive/thehive1234` to operate the VM.
 
@@ -153,16 +156,6 @@ After modifying Cortex configuration, restart the service.
     docker compose restart cortex
     ```
 
-### Check for updates
-
-To update TheHive and Cortex, run the following commands (this will stop running applications):
-
-!!! example ""
-    ```bash
-    cd /opt/thp
-    bash update.sh
-    ```
-
 ### Documentation
 
 You can find the full documentation for TheHive at [https://docs.strangebee.com](https://docs.strangebee.com).
@@ -171,7 +164,3 @@ You can find the full documentation for TheHive at [https://docs.strangebee.com]
 
 * TheHive service logs: `/opt/thp/thehive/log/application.log`
 * Cortex service logs: `/opt/thp/cortex/log/application.log`
-
-## Need help?
-
-Something doesn't work as expected? No worries, we got you covered. Join our community and contact us on [Discord](https://chat.thehive-project.org) to ask questions and get support.
