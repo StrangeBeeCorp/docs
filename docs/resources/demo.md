@@ -1,18 +1,14 @@
-# download the demo VM
+# Download the Demo Virtual Machine
 
 ![](images/demo-virtual-machine.png)
 
+{!includes/vm-testing-only.md!}
 
-A ready-to-use virtual machine can be downloaded at [https://www.strangebee.com/tryit](https://www.strangebee.com/tryit).
-This VM is prepared and updated by StrangeBee and is powered by the latest versions of:
+Download the ready-to-use VM from the [StrangeBee website](https://www.strangebee.com/tryit).
 
-- TheHive: Security Incident Response and Case management platform
-- Cortex: Extendable Analysis, Enrichment and Response automation framework
+This VM is prepared and updated by StrangeBee and includes the latest versions of:
 
+- TheHive: Security incident response and case management platform
+- Cortex: Extendable analysis, enrichment, and response automation framework
 
-!!! warning 
-    The VM is built **for testing purposes** and is **NOT RECOMMENDED for production**.
-
-
-!!! Note
-    Full documentation of this Virtual machine can be found [here](howto-vm-demo.md)
+For detailed instructions, see [Use the Demo Virtual Machine](howto-vm-demo.md).

@@ -1,92 +1,83 @@
 # Use the Demo Virtual Machine
 
+!!! warning "Memory requirement"
+    Allocate at least 6 GB of RAM to this virtual machine (VM) for stable performance. Assigning less may cause errors or degraded performance.
 
-!!! Warning
-    Ensure good performance by allocating a minimum of 6 GB of RAM to run this Virtual Machine flawlessly. Adjusting the allocation below this threshold may lead to potential complications.
+!!! tip "Platinum trial"
+    The VM installation of TheHive with Cortex includes a 14-day Platinum trial license. After the trial ends, TheHive switches to read-only mode.
 
-## Start the VM
+## Start the virtual machine
 
 ![](images/vm-start.png)
 
-
 === "Using VMWare"
-    1. Start the Virtual Machine, and follow the instructions.
-    2. Open the indicated url in your browser: http://IP-ADDRESS
+    1. Start the VM and follow the on-screen instructions.
+    2. In your browser, open the URL displayed by the VM.
 
 === "Using VirtualBox"
-    1. When importing, ensure to set Guest OS type information.
+    1. During import, set the Guest OS type information.
     ![](images/virtualbox-port-forwarding-3.png)
-    2. Once imported, update the network settings of the VM before starting it.
+    2. After import, update the network settings of the VM before starting it.
     ![](images/virtualbox-port-forwarding-1.png)
-    3. Add required port forwarding (update according to your needs) and save.
+    3. Add the required port forwarding rules (adjust as needed) and save.
     ![](images/virtualbox-port-forwarding-2.png)
-    4. Start the VM and open the following URL in your browser: http://127.0.0.1:8888
-    5. You might have to also adjust *Display* graphical controller and set it to `VMSVGA` before starting the VM.
-
+    4. Start the VM and open the following URL in your browser: [http://127.0.0.1:8888](http://127.0.0.1:8888)
+    5. If needed, adjust the Display settings and set the graphical controller to `VMSVGA` before starting the VM.
 
 ## Quick connect
 
-!!! Note "Following instructions are also shared in the web page coming with the virtual machine" 
-
+!!! note "Following instructions are also available on the web page displayed by the virtual machine" 
 
 ![](images/thehive-logo.png){ width="200" }
 
-
-!!! Question "TheHive Credentials"
-    This VM comes with 2 accounts in TheHive: 
+!!! question "TheHive credentials"
+    This VM comes with two accounts in TheHive:
 
     Administrator:
 
-    - Login: `admin@thehive.local`
-    - Password: `secret`
+    * Login: `admin@thehive.local`
+    * Password: `secret`
 
 
     A user named `thehive` has been created and is `org-admin` of the organization named `demo`: 
 
-    - Login: `thehive@thehive.local`
-    - Password: `thehive1234`
+    * Login: `thehive@thehive.local`
+    * Password: `thehive1234`
 
-
-TheHive database comes with several samples of data, like custom fields, [MISP taxonomies](https://github.com/MISP/misp-taxonomies), [MITRE Att&ck](https://attack.mitre.org/) data, a Case Template and an Alert. 
-
+TheHive database comes with several samples of data, like [custom fields](../thehive/administration/custom-fields/about-custom-fields.md), [MISP taxonomies](https://github.com/MISP/misp-taxonomies), [MITRE Att&ck](https://attack.mitre.org/) data, a [case template](../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md) and an [alert](../thehive/user-guides/analyst-corner/alerts/about-alerts.md).
 
 ![](images/cortex-logo.png){ width="200" }
 
-!!! Question "Cortex credentials"
+!!! question "Cortex credentials"
     This VM comes with 2 accounts in Cortex:
 
     Administrator: 
 
-    - Login: `admin`
-    - Password: `thehive1234` 
+    * Login: `admin`
+    * Password: `thehive1234` 
 
     An organization is also created with an `orgadmin` account: 
 
-    - Login: `thehive`
-    - Password: `thehive1234`
+    * Login: `thehive`
+    * Password: `thehive1234`
 
- 
-!!! Warning
-    The VM is solely intended to be used for testing purposes. **We strongly encourage you to refrain from using it in production.**
-
+{!includes/vm-testing-only.md!}
 
 ## Content
 
-The VM runs Debian 11.
-The most recent VM includes:
+The VM runs Ubuntu 24.04 and includes:
 
-- TheHive **5.x** using a local BerkeleyDB and file storage, 
-- Cortex **3.1.x** , and Elasticsearch **7**
-- TheHive4py
-- Cortex4py
-- Public Cortex Analyzers and Responders are running with Docker 
+* TheHive {!includes/thehive-latest-version.md!lines=2}, with Cassandra, Elasticsearch, and local file storage
+* Cortex {!includes/cortex-latest-version.md!lines=2}, with Elasticsearch
+* TheHive4py
+* Cortex4py
+* Public Cortex analyzers and responders running in Docker
 
 ### Configuration details
 
-Applications launched with Docker-compose, as docker containers with attached volumes in `/opt/thp`. 
+Applications are launched with Docker Compose as containers, with volumes attached under `/opt/thp`.
 
-
-!!! Example ""
+!!! example "Directory structure"
     ```
     .
     ├── cassandra
@@ -98,9 +89,10 @@ Applications launched with Docker-compose, as docker containers with attached vo
     ```
 
 #### TheHive
-TheHive is configured to use *Cassandra* as database and *Elasticsearch* to index data. Files are stored in a local path. 
 
-!!! Example ""
+TheHive is configured to use Cassandra as its database and Elasticsearch to index data. Files are stored locally on disk.
+
+!!! example "TheHive directory structure"
     ```
     thehive
     ├── config
@@ -108,15 +100,15 @@ TheHive is configured to use *Cassandra* as database and *Elasticsearch* to inde
     └── log
     ```
 
-- `config`: all configuration files for TheHive
-- `files`: files storage 
-- `log`: TheHive application logs 
-
+- `config`: configuration files
+- `files`: files storage
+- `log`: application logs
 
 ### Cortex
-Cortex uses *Elasticsearch* as database which is also run as a container with Docker-Compose. Dedicated volumes are configured: `/opt/thp/elasticsearch/data` to store data, and `/opt/thp/elasticsearch/log`, for logs.
 
-!!! Example ""
+Cortex uses Elasticsearch as its database, which also runs as a Docker Compose container. Dedicated volumes are configured for Elasticsearch: `/opt/thp/elasticsearch/data` to store data, and `/opt/thp/elasticsearch/log` for logs.
+
+!!! example "Cortex directory structure"
     ```
     cortex
     ├── config
@@ -124,63 +116,51 @@ Cortex uses *Elasticsearch* as database which is also run as a container with Do
     └── log
     ```
 
-- `config`: all configuration files for TheHive
-- `jobs`: shared volume for Analyzers and Responders jobs
-- `log`: Cortex application logs
-
+- `config`: Cortex configuration files
+- `jobs`: shared volume for analyzers and responders jobs
+- `log`: application logs
 
 ## Operations
 
-### Virtual Machine 
-A system user account `thehive/thehive1234` can be used to operate the VM.
+### VM
 
-All applications are run as docker containers, using docker-compose. The `docker-compose.yml` is in the folder `/opt/thp`. 
+You can use the system account `thehive/thehive1234` to operate the VM.
+
+All applications run as Docker containers managed with Docker Compose. The `docker-compose.yml` file is located in `/opt/thp`.
 
 ### TheHive 
-After each modification of TheHive configuration service should be restart.
 
-- Configuration file of TheHive is in `/opt/thp/thehive/config/application.conf`
+After modifying TheHive configuration, restart the service.
 
-- Service can be restart by running following commands:
+* Configuration file: `/opt/thp/thehive/config/application.conf`
+
+* Restart command:
  
-!!! Example ""
+!!! example ""
     ```bash
     cd /opt/thp
     docker compose restart thehive
     ```
 
 ### Cortex
-After each modification of Cortex configuration service should be restart.
 
-- Configuration file of TheHive is in `/opt/thp/cortex/config/application.conf`
+After modifying Cortex configuration, restart the service.
 
-- Service can be restart by running following commands:
+* Configuration file: `/opt/thp/cortex/config/application.conf`
 
-!!! Example ""
+* Restart command:
+
+!!! example ""
     ```bash
     cd /opt/thp
     docker compose restart cortex
     ```
 
-### Check for update
-Check for update for TheHive and Cortex by running following commands (this will stop running applications): 
-
-!!! Example ""
-    ```bash
-    cd /opt/thp
-    bash update.sh
-    ```
-
 ### Documentation
 
-- Documentation for TheHive 5 can be found there:  [https://docs.strangebee.com](https://docs.strangebee.com). 
-
+You can find the full documentation for TheHive at [https://docs.strangebee.com](https://docs.strangebee.com).
 
 ## Troubleshooting
-TheHive service logs are located in `/opt/thp/thehive/log/application.log`.
 
-Cortex service logs are located in `/opt/thp/cortex/log/application.log`.
-
-## Need Help?
-Something does not work as expected? No worries, we got you covered. Join our community and contact us on [Discord](https://chat.thehive-project.org)! 
-
+* TheHive service logs: `/opt/thp/thehive/log/application.log`
+* Cortex service logs: `/opt/thp/cortex/log/application.log`

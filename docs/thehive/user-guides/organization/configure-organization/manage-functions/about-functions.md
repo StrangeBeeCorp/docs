@@ -9,7 +9,7 @@ It accepts inputs from external sources, processes data, and interacts with TheH
 For example, use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! tip "Contribute!"
-    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). Contributions of user-written functions are welcome.
+    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). Contributions are welcome!
 
 This topic provides details on the different types and uses of functions in TheHive.
 
