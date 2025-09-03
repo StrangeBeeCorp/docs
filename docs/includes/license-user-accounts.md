@@ -3,7 +3,7 @@
 
     **Count toward the limit**:  
 
-    * Unlocked user accounts of type Normal with at least one licensed permission.  
+    * Unlocked user accounts of type Normal with at least one licensed permission  
 
     **Don't count**:  
     
