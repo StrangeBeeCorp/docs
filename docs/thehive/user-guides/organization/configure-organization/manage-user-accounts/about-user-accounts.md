@@ -16,7 +16,7 @@ TheHive supports two types of user accounts:
 
 ## Organizations
 
-Each use account belongs to one or more [organizations](../../../../administration/organizations/about-organizations.md). If a user is linked to multiple organizations, they can [switch between them at any time](../../../switch-organizations.md).
+Each user account belongs to one or more [organizations](../../../../administration/organizations/about-organizations.md). If a user is linked to multiple organizations, they can [switch between them at any time](../../../switch-organizations.md).
 
 ## Profiles
 
