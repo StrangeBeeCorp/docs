@@ -231,7 +231,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
 **API:**
 
-- **Cortex Responders:** Resolved an issue related to Cortex responders not triggering on TLP:RED (4) cases due to a compatibility issue with TheHive's switch to TLPv2 while Cortex was using TLPv1.
+- **Cortex Responders:** Resolved an issue related to Cortex responders not triggering on TLP:RED (4) cases due to a compatibility issue with TheHive switch to TLPv2 while Cortex was using TLPv1.
 
 **User Interface:**
 

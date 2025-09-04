@@ -273,7 +273,7 @@ It automates the detection and processing of suspicious elements such as links, 
 
 #### New timeline widget
 
-We've added a timeline widget to TheHive's Platinum case reports, allowing users to visually track attack and defense actions. This widget displays key events and indicators like IOCs and TTPs.
+We've added a timeline widget to TheHive Platinum case reports, allowing users to visually track attack and defense actions. This widget displays key events and indicators like IOCs and TTPs.
 
 Only admins can customize these reports, choosing elements like alerts and tasks to include. This customization ensures the timeline meets the specific needs of each report, making it easier for everyone, including non-technical staff, to understand the sequence of security events.
 

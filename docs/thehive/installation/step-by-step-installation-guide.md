@@ -512,7 +512,7 @@ You can configure Elasticsearch by modifying settings within the `/etc/elasticse
 
 !!! info "Index creation and management in TheHive"
 
-    * Index creation occurs during TheHive's initial startup, which may take some time to complete.
+    * Index creation occurs during TheHive initial startup, which may take some time to complete.
     * Similar to data and files, include indexes in the backup policy to ensure their preservation.
     * Remove and re-create indexes as needed.
 

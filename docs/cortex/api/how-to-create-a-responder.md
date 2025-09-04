@@ -192,7 +192,7 @@ action), it is the name of the responder's directory.
 If your responder performs several actions (i.e. comes in several flavors),
 you have to give a specific and meaningful name to each flavor.
 
-Each flavor's name appear in TheHive's responder list and in MISP when you
+Each flavor's name appear in TheHive responder list and in MISP when you
 use Cortex for attribute enrichment.
 
 #### version

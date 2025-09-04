@@ -105,7 +105,7 @@ analyzer's specific configuration provided by an `orgAdmin` users when the analy
 Let's take the **GetReport** flavor of the VirusTotal analyzer as an
 example again.
 
-#### Example: VirusTotal Get Report's Input
+#### Example: VirusTotal Get Report Input
 
 ```json
 {
@@ -163,7 +163,7 @@ action), it is the name of the analyzer's directory.
 If your analyzer performs several actions (i.e. comes in several flavors),
 you have to give a specific and meaningful name to each flavor.
 
-Each flavor's name appear in TheHive's analyzer list and in MISP when you
+Each flavor's name appear in TheHive analyzer list and in MISP when you
 use Cortex for attribute enrichment.
 
 #### version

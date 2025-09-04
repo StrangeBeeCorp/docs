@@ -40,9 +40,9 @@ Utilize Cortex and its analyzers and responders to gain insights, accelerate inv
 
 ## Architecture
 
-TheHive can be set up on either a single server or as a cluster (a group of servers) to accommodate different levels of growth requirements.  TheHive's architecture is highly modular, allowing each layer (TheHive application, database & indexing engine, and file storage) to be deployed independently as standalone nodes or as part of a clustered setup. This flexibility enables complex clustered architectures with virtual IP addresses and load balancers for optimal performance and scalability. 
+TheHive can be set up on either a single server or as a cluster (a group of servers) to accommodate different levels of growth requirements.  TheHive architecture is highly modular, allowing each layer (TheHive application, database & indexing engine, and file storage) to be deployed independently as standalone nodes or as part of a clustered setup. This flexibility enables complex clustered architectures with virtual IP addresses and load balancers for optimal performance and scalability. 
 
-The essential components of TheHive's setup include:
+The essential components of TheHive setup include:
 
 - :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html) for robust data storage, with support for version 4.x.
 - :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co), serving as a powerful indexing engine, with support for versions 7.x and 8.x.

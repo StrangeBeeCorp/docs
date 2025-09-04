@@ -210,7 +210,7 @@ By following this guide, you’ll learn how to integrate popular OAuth 2.0 provi
 
             * Generate the `CLIENT_ID` and `CLIENT_SECRET` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
             * Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
-            * Refer to [Google's OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
+            * Refer to [Google OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
 
 <h2>Next steps</h2>
 

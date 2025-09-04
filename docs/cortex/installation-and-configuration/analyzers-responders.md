@@ -69,7 +69,7 @@ Some system packages are required to run Analyzers&Responders programs successfu
         sudo apt install -y --no-install-recommends python3-pip python3-dev ssdeep libfuzzy-dev libfuzzy2 libimage-exiftool-perl libmagic1 build-essential git libssl-dev
         ```
 
-        You may need to install Python's `setuptools` and update pip/pip3:
+        You may need to install Python `setuptools` and update pip/pip3:
 
         ```bash
         sudo pip3 install -U pip setuptools

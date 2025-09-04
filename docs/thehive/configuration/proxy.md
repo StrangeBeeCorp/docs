@@ -2,7 +2,7 @@
 
 ## Global Application Proxy
 
-Proxy settings can be configured for the application. By default, the JVM's proxy settings are used, but it's possible to define specific configurations for individual HTTP clients.
+Proxy settings can be configured for the application. By default, the JVM proxy settings are used, but it's possible to define specific configurations for individual HTTP clients.
 
 &nbsp;
 

@@ -55,7 +55,7 @@ Here is a step-by-step guide to reviewing banned IP addresses on Fail2ban:
 
 1. Step 1: Check Fail2ban Status:
 
-    Use the following command to get an overview of Fail2ban's status and active jails:
+    Use the following command to get an overview of Fail2ban status and active jails:
 
     ```bash
     sudo fail2ban-client status

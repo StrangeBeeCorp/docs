@@ -178,7 +178,7 @@ Follow these steps to enable encryption between Cassandra clients (TheHive) and 
 
 5. **Configure TheHive to Use Encryption**
 
-    - Update TheHive's Cassandra client configuration to specify the location of the truststore (`ca.jks`) and provide any additional connection properties required for SSL/TLS encryption.
+    - Update TheHive Cassandra client configuration to specify the location of the truststore (`ca.jks`) and provide any additional connection properties required for SSL/TLS encryption.
 
     ```
     db.janusgraph {

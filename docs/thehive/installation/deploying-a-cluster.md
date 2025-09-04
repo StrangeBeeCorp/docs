@@ -499,7 +499,7 @@ TheHive utilizes the Pekko toolkit to effectively manage clusters and enhance sc
 !!! Note
     Apache Pekko is a toolkit designed for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.
     <br/>
-    Incorporating Pekko into TheHive's configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
+    Incorporating Pekko into TheHive configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
     <br/>
     Source: [**https://pekko.apache.org**](https://pekko.apache.org)
 

@@ -15,7 +15,7 @@ Specify the desired IP address and port based on your requirements.
 
 ## Setting a Context Path
 
-If you are using a reverse proxy and need to define a specific context path (e.g., `/thehive`), you must update TheHive's configuration accordingly:
+If you are using a reverse proxy and need to define a specific context path (e.g., `/thehive`), you must update TheHive configuration accordingly:
 
 !!! Example
     ```
@@ -41,7 +41,7 @@ This setting controls the refresh interval for long-polling requests.
 
 ## Using Web Proxy 
 
-If you are employing an NGINX reverse proxy in front of TheHive, note that NGINX does not differentiate between text data and file uploads. To ensure proper handling, set the `client_max_body_size` parameter in your NGINX configuration file to accommodate the larger value between the file upload size and the text size defined in TheHive's application.conf
+If you are employing an NGINX reverse proxy in front of TheHive, note that NGINX does not differentiate between text data and file uploads. To ensure proper handling, set the `client_max_body_size` parameter in your NGINX configuration file to accommodate the larger value between the file upload size and the text size defined in TheHive application.conf
 
 To configure `client_max_body_size`, follow these steps:
 

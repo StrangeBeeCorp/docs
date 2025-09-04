@@ -192,7 +192,7 @@ You can now [restrict access to sensitive cases](../user-guides/analyst-corner/c
 
 #### Alert feeders
 
-An [alert feeder](../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive's public API.
+An [alert feeder](../user-guides/organization/configure-organization/manage-feeders/about-feeders.md) is a connector that periodically requests data from an external HTTP REST API and converts it into an alert using a TheHive function. It enables data retrieval in pull mode from services that can't push or post data to TheHive public API.
 
 #### Case links: Link external or internal elements to a case
 

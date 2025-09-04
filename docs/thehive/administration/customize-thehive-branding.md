@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for customizing TheHive's branding.
+This topic provides step-by-step instructions for customizing TheHive branding.
 
 Use this procedure to personalize the application with your brand name and logo.
 

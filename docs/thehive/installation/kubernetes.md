@@ -102,7 +102,7 @@ To configure StorageClasses based on your needs, refer to the relevant CSI drive
 
 ### Cassandra
 
-This chart deploys two Cassandra pods to store TheHive's data.
+This chart deploys two Cassandra pods to store TheHive data.
 
 You can review the [Bitnami Cassandra Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) for available configuration options.
 

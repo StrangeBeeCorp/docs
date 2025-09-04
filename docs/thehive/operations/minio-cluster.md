@@ -4,7 +4,7 @@
 
 ## Replace a Disk
 
-If a disk in your MinIO cluster is faulty and needs to be replaced, you can perform this operation without downtime thanks to MinIO's support for hot-swapping disks:
+If a disk in your MinIO cluster is faulty and needs to be replaced, you can perform this operation without downtime thanks to MinIO support for hot-swapping disks:
 
 1. **Unmount the Faulty Disk**
    
@@ -89,7 +89,7 @@ In the event that a server within your MinIO cluster has crashed and cannot be r
 
 8. **Monitor Cluster Health**
 
-      - Use MinIO's monitoring tools (`mc admin top` or web-based console) to monitor the health and performance of the cluster with the new replacement node.
+      - Use MinIO monitoring tools (`mc admin top` or web-based console) to monitor the health and performance of the cluster with the new replacement node.
 
 By following these steps, you can safely replace a node in your MinIO cluster while maintaining data integrity and cluster stability. Ensure that all operations are performed during a maintenance window to minimize impact on production services.
 

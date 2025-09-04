@@ -73,7 +73,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     **- Directories authentication**
 
     !!! info "Prerequisite"
-        Users must have an existing account in TheHive's local database to authenticate successfully. [Configure an LDAP server](../../administration/ldap/configure-ldap-server.md) to automate account creation, updates, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.
+        Users must have an existing account in TheHive local database to authenticate successfully. [Configure an LDAP server](../../administration/ldap/configure-ldap-server.md) to automate account creation, updates, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.
 
     Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
 

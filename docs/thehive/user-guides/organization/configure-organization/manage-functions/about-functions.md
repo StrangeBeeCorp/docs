@@ -4,7 +4,7 @@
 
 A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it can't access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
-It accepts inputs from external sources, processes data, and interacts with TheHive's API to integrate external applications into its workflow.
+It accepts inputs from external sources, processes data, and interacts with TheHive API to integrate external applications into its workflow.
 
 For example, use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
@@ -71,7 +71,7 @@ The function type defines the scope in which the function can execute.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: An external service triggers these functions through TheHive's public API, enabling automated workflows from outside the platform. A list of available objects appears in the [Functions Objects](functions-objects.md) topic. Execute the function by [invoking it via an HTTP call](invoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive public API, enabling automated workflows from outside the platform. A list of available objects appears in the [Functions Objects](functions-objects.md) topic. Execute the function by [invoking it via an HTTP call](invoke-a-function.md).
 
 * **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 
