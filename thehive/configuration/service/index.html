@@ -14534,7 +14534,7 @@ http.port=9000
 <p>Specify the desired IP address and port based on your requirements.</p>
 <hr>
 <h2 id="setting-a-context-path">Setting a Context Path<a class="headerlink" href="#setting-a-context-path" title="Permanent link">#</a></h2>
-<p>If you are using a reverse proxy and need to define a specific context path (e.g., <code>/thehive</code>), you must update TheHive's configuration accordingly:</p>
+<p>If you are using a reverse proxy and need to define a specific context path (e.g., <code>/thehive</code>), you must update TheHive configuration accordingly:</p>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
 <div class="highlight"><pre><span></span><code>play.http.context: "/thehive"
@@ -14552,7 +14552,7 @@ http.port=9000
 <p>This setting controls the refresh interval for long-polling requests.</p>
 <hr>
 <h2 id="using-web-proxy">Using Web Proxy<a class="headerlink" href="#using-web-proxy" title="Permanent link">#</a></h2>
-<p>If you are employing an NGINX reverse proxy in front of TheHive, note that NGINX does not differentiate between text data and file uploads. To ensure proper handling, set the <code>client_max_body_size</code> parameter in your NGINX configuration file to accommodate the larger value between the file upload size and the text size defined in TheHive's application.conf</p>
+<p>If you are employing an NGINX reverse proxy in front of TheHive, note that NGINX does not differentiate between text data and file uploads. To ensure proper handling, set the <code>client_max_body_size</code> parameter in your NGINX configuration file to accommodate the larger value between the file upload size and the text size defined in TheHive application.conf</p>
 <p>To configure <code>client_max_body_size</code>, follow these steps:</p>
 <ol>
 <li>
