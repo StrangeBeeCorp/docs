@@ -469,7 +469,7 @@ nav:
         - 'Switch to Manual Download and Installation': thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
-      - 'Monitoring Setup': thehive/operations/monitoring.md
+      - 'Set Up Monitoring': thehive/operations/monitoring.md
     - 'Administration Guides':
       - 'First Start': thehive/administration/perform-initial-setup-as-admin.md
       - 'Organizations':
