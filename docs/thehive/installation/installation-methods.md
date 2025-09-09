@@ -4,7 +4,7 @@ TheHive can be installed on a single server or deployed in a clustered environme
 
 ## Single server installation
 
-Install TheHive and all required components on a single server. This configuration is ideal for testing environments, small teams, or production deployments that don't require high availability. See [the architecture overview](../overview/index.md#architecture) for details.
+Install TheHive and all required components on a single server. See [the architecture overview](../overview/index.md#architecture) for details.
 
 ### :material-debian: Debian / :material-ubuntu: Ubuntu
 
