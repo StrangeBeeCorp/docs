@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.strangebee.com/thehive/installation/kubernetes/">
       
       
-        <link rel="prev" href="../docker/">
+        <link rel="prev" href="../deploying-a-cluster/">
       
       
         <link rel="next" href="../licenses/about-licenses/">
@@ -19,7 +19,7 @@
     
     
       
-        <title>Kubernetes Deployment - TheHive 5 Documentation</title>
+        <title>Deploy on Kubernetes - TheHive 5 Documentation</title>
       
     
     
@@ -551,13 +551,54 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Single Server Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Single Server Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../installation-guide-linux-standalone-server/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Install TheHive on Linux
+    Install on Linux
     
   </span>
   
@@ -580,30 +621,7 @@
   
   
   <span class="md-ellipsis">
-    One-Command Install on Linux
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../deploying-a-cluster/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Deploying a Cluster
+    One-Command Install
     
   </span>
   
@@ -626,7 +644,81 @@
   
   
   <span class="md-ellipsis">
-    Running with Docker
+    Deploy with Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Cluster Deployment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Deployment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploying-a-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Set Up a Cluster on Linux
     
   </span>
   
@@ -658,7 +750,7 @@
   
   
   <span class="md-ellipsis">
-    Kubernetes Deployment
+    Deploy on Kubernetes
     
   </span>
   
@@ -671,7 +763,7 @@
   
   
   <span class="md-ellipsis">
-    Kubernetes Deployment
+    Deploy on Kubernetes
     
   </span>
   
@@ -696,18 +788,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#quick-start-deployment" class="md-nav__link">
+  <a href="#architecture-overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Quick start deployment
+      Architecture overview
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#advanced-configuration" class="md-nav__link">
+  <a href="#infrastructure-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Advanced configuration
+      Infrastructure requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-with-default-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deploy with default configuration
     </span>
   </a>
   
@@ -716,6 +817,14 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -740,10 +849,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5">
         
           
-          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
             
   
   
@@ -756,8 +865,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
             <span class="md-nav__icon md-icon"></span>
             Licenses
           </label>
@@ -858,10 +967,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6">
         
           
-          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
             
   
   
@@ -874,8 +983,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_6">
             <span class="md-nav__icon md-icon"></span>
             Version Upgrades
           </label>
@@ -14508,21 +14617,40 @@
 
 
 <h1 id="deploy-thehive-on-kubernetes">Deploy TheHive on Kubernetes<a class="headerlink" href="#deploy-thehive-on-kubernetes" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts">the StrangeBee Helm chart repository</a>.</p>
+<p>Deploy TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts">the StrangeBee Helm chart repository</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">License</p>
 <p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must <a href="../licenses/license/">upgrade to a Gold or Platinum license</a>. A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.</p>
 </div>
-<h2 id="quick-start-deployment">Quick start deployment<a class="headerlink" href="#quick-start-deployment" title="Permanent link">#</a></h2>
-<p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Prerequisites</p>
-<p>Make sure you have:</p>
+<div class="admonition danger">
+<p class="admonition-title">Dependency images</p>
+<p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/">Bitnami</a>.    </p>
+<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5 and Elasticsearch 9, which aren't compatible with TheHive.</p>
+<p>This has important consequences:</p>
 <ul>
-<li>A running Kubernetes cluster (version 1.23.0 or later)</li>
-<li><a href="https://helm.sh/">Helm</a> installed (version 3.8.0 or later)</li>
+<li>These legacy images won't receive security updates and will become increasingly vulnerable over time. You may continue to use them at your own risk, but they aren't production-ready.</li>
+<li>You can pay Bitnami for access to updated images and configure the Helm chart to reference them.</li>
+<li>Alternatively, you can deactivate the dependency Helm charts and bring your own Cassandra and Elasticsearch deployments.</li>
 </ul>
 </div>
+<h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
+<p>The default deployment includes:</p>
+<ul>
+<li>TheHive application pods</li>
+<li>A two-node Cassandra cluster for data storage</li>
+<li>A two-node Elasticsearch cluster for search indexing</li>
+<li>A MinIO instance for S3-compatible object storage</li>
+</ul>
+<h2 id="infrastructure-requirements">Infrastructure requirements<a class="headerlink" href="#infrastructure-requirements" title="Permanent link">#</a></h2>
+<ul>
+<li>Kubernetes cluster v1.23.0 or later</li>
+<li>Helm v3.8.0 or later</li>
+<li>Minimum resources per node: see <a href="../system-requirements/#hardware-requirements">TheHive Installation System Requirements</a></li>
+<li>StorageClass with dynamic provisioning</li>
+<li>Network policies allowing inter-pod communication</li>
+</ul>
+<h2 id="deploy-with-default-configuration">Deploy with default configuration<a class="headerlink" href="#deploy-with-default-configuration" title="Permanent link">#</a></h2>
+<p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a>. The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
 <ol>
 <li>
 <p>Add the StrangeBee Helm repository.</p>
@@ -14545,9 +14673,9 @@
 <p class="admonition-title">Dependencies</p>
 <p>The <code>thehive</code> Helm chart relies on the following charts by default:</p>
 <ul>
-<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Apache Cassandra</a> - used as the database</li>
-<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a> - used as the search index</li>
-<li><a href="https://github.com/minio/minio/tree/master/helm/minio">MinIO Community Helm Chart</a> - used as S3-compatible object storage</li>
+<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Apache Cassandra</a>-used as the database (uses legacy images by default)</li>
+<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a>-used as the search index (uses legacy images by default)</li>
+<li><a href="https://github.com/minio/minio/tree/master/helm/minio">MinIO Community Helm Chart</a>-used as S3-compatible object storage</li>
 </ul>
 </div>
 <div class="admonition note">
@@ -14557,36 +14685,36 @@
 </code></pre></div>
 For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/">the Helm upgrade documentation</a>.<p></p>
 </div>
-<h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h2>
-<p>For convenience, the <code>thehive</code> Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.</p>
+<h3 id="production-configuration">Production configuration<a class="headerlink" href="#production-configuration" title="Permanent link">#</a></h3>
+<p>The default <code>thehive</code> Helm chart bundles all dependencies for quick deployment but uses development-oriented configurations. Production deployments require adjustments to TheHive and its dependencies for security, performance, and reliability.</p>
 <p>Use the following command to view all available configuration options for the <code>thehive</code> Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/thehive
 </code></pre></div>
 <p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">the dedicated Helm documentation</a>. You can also review the available options for each dependency.</p>
-<h3 id="pods-resources">Pods resources<a class="headerlink" href="#pods-resources" title="Permanent link">#</a></h3>
-<p>Resources allocated to pods are optimized for production use. If you need to adjust these values, especially memory limits, make sure you update the <code>JVM_OPTS</code> environment variable accordingly to avoid out of memory (OOM) crashes.</p>
+<h4 id="resource-allocation">Resource allocation<a class="headerlink" href="#resource-allocation" title="Permanent link">#</a></h4>
+<p>Default pod resources are optimized for production workloads. If you need to adjust these values, especially memory limits, make sure you update the <code>JVM_OPTS</code> environment variable accordingly to avoid OOM crashes.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># JVM_OPTS variable for TheHive</span>
-thehive:
-<span class="w">  </span>jvmOpts:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn300m"</span>
+<span class="nt">thehive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jvmOpts</span><span class="p">:</span><span class="w"> </span><span class="s">"-Xms2g</span><span class="nv"> </span><span class="s">-Xmx2g</span><span class="nv"> </span><span class="s">-Xmn300m"</span>
 
 <span class="c1"># JVM_OPTS variable for Cassandra dependency chart</span>
-cassandra:
-<span class="w">  </span>jvm:
-<span class="w">    </span>extraOpts:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn200m"</span>
-<span class="w">    </span>maxHeapSize:<span class="w"> </span><span class="s2">"2g"</span>
-<span class="w">    </span>newHeapSize:<span class="w"> </span><span class="s2">"200m"</span>
+<span class="nt">cassandra</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">jvm</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">extraOpts</span><span class="p">:</span><span class="w"> </span><span class="s">"-Xms2g</span><span class="nv"> </span><span class="s">-Xmx2g</span><span class="nv"> </span><span class="s">-Xmn200m"</span>
+<span class="w">    </span><span class="nt">maxHeapSize</span><span class="p">:</span><span class="w"> </span><span class="s">"2g"</span>
+<span class="w">    </span><span class="nt">newHeapSize</span><span class="p">:</span><span class="w"> </span><span class="s">"200m"</span>
 
 <span class="c1"># JVM_OPTS variable for Elasticsearch dependency chart</span>
-elasticsearch:
-<span class="w">  </span>master:
-<span class="w">    </span>heapSize:<span class="w"> </span><span class="s2">"2g"</span>
-<span class="w">    </span>extraEnvVars:
-<span class="w">      </span>-<span class="w"> </span>name:<span class="w"> </span>JVM_OPTS
-<span class="w">        </span>value:<span class="w"> </span><span class="s2">"-Xms2g -Xmx2g -Xmn200m"</span>
+<span class="nt">elasticsearch</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">master</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">heapSize</span><span class="p">:</span><span class="w"> </span><span class="s">"2g"</span>
+<span class="w">    </span><span class="nt">extraEnvVars</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JVM_OPTS</span>
+<span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"-Xms2g</span><span class="nv"> </span><span class="s">-Xmx2g</span><span class="nv"> </span><span class="s">-Xmn200m"</span>
 </code></pre></div>
 <p>Refer to the official <a href="https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html">Cassandra</a> and <a href="https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments">Elasticsearch</a> documentation to learn how to optimize these values.</p>
-<h3 id="storageclasses">StorageClasses<a class="headerlink" href="#storageclasses" title="Permanent link">#</a></h3>
-<p>By default, this chart uses your cluster's default StorageClass to create persistent volumes (PVs).</p>
+<h4 id="storage-configuration">Storage configuration<a class="headerlink" href="#storage-configuration" title="Permanent link">#</a></h4>
+<p>By default, this chart uses your cluster's default StorageClass to create PVs.</p>
 <p>You can customize the StorageClass to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:</p>
 <ul>
 <li>It's regularly backed up to prevent data loss. Tools like <a href="https://velero.io/">Velero</a> can help automate this process.</li>
@@ -14594,17 +14722,17 @@ elasticsearch:
 <li>It provides sufficient performance to ensure reliable operation of databases and applications.</li>
 </ul>
 <p>To configure StorageClasses based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for Google Cloud Platform.</p>
-<h3 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h3>
+<h4 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h4>
 <p>This chart deploys two Cassandra pods to store TheHive data.</p>
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Cassandra Helm chart</a> for available configuration options.</p>
-<h3 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h3>
-<p>By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
+<h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
+<p>This chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <div class="admonition note">
 <p class="admonition-title">Same Elasticsearch instance for both TheHive and Cortex</p>
 <p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
 </div>
-<h3 id="object-storage">Object storage<a class="headerlink" href="#object-storage" title="Permanent link">#</a></h3>
+<h4 id="object-storage">Object storage<a class="headerlink" href="#object-storage" title="Permanent link">#</a></h4>
 <p>To support multiple replicas of TheHive, this chart defines an <a href="../../configuration/file-storage/">object storage</a> in the configuration and deploys a single instance of MinIO.</p>
 <p>For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:</p>
 <ul>
@@ -14612,7 +14740,7 @@ elasticsearch:
 <li>Google Cloud Storage</li>
 </ul>
 <p>Network shared filesystems, like NFS, are supported but can be more complex to implement and may offer lower performance.</p>
-<h3 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h3>
+<h4 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h4>
 <p>No Cortex server is defined by default in TheHive configuration.</p>
 <p>There are two main ways to add Cortex servers to TheHive:</p>
 <ul>
@@ -14620,18 +14748,18 @@ elasticsearch:
 <li>Define them in the Helm chart’s <code>values.yaml</code> file.</li>
 </ul>
 <p>For the second method, here's an example configuration:</p>
-<div class="highlight"><pre><span></span><code>cortex:
-<span class="w">  </span>enabled:<span class="w"> </span><span class="nb">true</span>
-<span class="w">  </span>protocol:<span class="w"> </span><span class="s2">"http"</span>
-<span class="w">  </span>hostnames:
-<span class="w">    </span>-<span class="w"> </span><span class="s2">"cortex.default.svc"</span><span class="w"> </span><span class="c1"># Assuming Cortex is deployed in the "default" namespace</span>
-<span class="w">  </span>port:<span class="w"> </span><span class="m">9001</span>
-<span class="w">  </span>api_keys:
-<span class="w">    </span>-<span class="w"> </span><span class="s2">"&lt;cortex_api_key&gt;"</span><span class="w"> </span><span class="c1"># Or even better, use an existing secret using the parameters below</span>
+<div class="highlight"><pre><span></span><code><span class="nt">cortex</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="s">"http"</span>
+<span class="w">  </span><span class="nt">hostnames</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"cortex.default.svc"</span><span class="w"> </span><span class="c1"># Assuming Cortex is deployed in the "default" namespace</span>
+<span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9001</span>
+<span class="w">  </span><span class="nt">api_keys</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"&lt;cortex_api_key&gt;"</span><span class="w"> </span><span class="c1"># Or even better, use an existing secret using the parameters below</span>
 <span class="w">  </span><span class="c1">#k8sSecretName: ""</span>
 <span class="w">  </span><span class="c1">#k8sSecretKey: "api-keys"</span>
 </code></pre></div>
-<p>When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.</p>
+<p>When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL:</p>
 <div class="highlight"><pre><span></span><code>http://cortex.&lt;namespace&gt;.svc:9001
 </code></pre></div>
 <h2>Next steps</h2>
@@ -14639,7 +14767,6 @@ elasticsearch:
 <ul>
 <li><a href="../../operations/monitoring/">Monitoring TheHive</a></li>
 <li><a href="../../operations/troubleshooting/">Troubleshooting</a></li>
-<li><a href="../../operations/backup-restore/backup/docker-compose/">Perform a Cold Backup for a Stack Running with Docker Compose</a></li>
 </ul>
 
 
