@@ -1,29 +1,35 @@
 # TheHive Installation Methods
 
-TheHive is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it on traditional Linux systems, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links in this page.
+TheHive can be installed on a single server or deployed in a clustered environment, depending on your infrastructure requirements. Choose the best approach for your use case.
 
-## :material-debian: Debian / :material-ubuntu: Ubuntu
+## Single server installation
 
-If you're using a Debian- or Ubuntu-based OS, follow the steps in the [installation guide](installation-guide-linux-standalone-server.md) using the **DEB** tab to install and configure TheHive.
+Install TheHive and all required components on a single server. This configuration is ideal for testing environments, small teams, or production deployments that don't require high availability. See [the architecture overview](../overview/index.md#architecture) for details.
 
-## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
+### :material-debian: Debian / :material-ubuntu: Ubuntu
 
-If you're using a RedHat or Fedora-based OS, follow the steps in the [installation guide](installation-guide-linux-standalone-server.md) using the **RPM** tab to install and configure TheHive.
+For Debian- or Ubuntu-based OS, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **DEB** tab to install and configure TheHive.
 
-## :material-folder-zip: ZIP binary packages
+### :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-If you prefer more control over where TheHive is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can install TheHive by downloading a ZIP binary package.
+For RedHat- or Fedora-based OS, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **RPM** tab to install and configure TheHive.
 
-Follow the steps in the [installation guide](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab to install and configure TheHive.
+### :material-folder-zip: ZIP binary packages
 
-## :material-docker: Docker
+For manual installation or environments without package managers, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab to install and configure TheHive.
 
-Prefer containerized deployment? Use [the official pre-built Docker images on TheHive Docker Hub](https://hub.docker.com/r/strangebee/TheHive).
+### :material-docker: Docker
 
-Follow the [Docker deployment instructions](../installation/docker.md) to get started.
+Deploy TheHive as a single container using [the official pre-built Docker images](https://hub.docker.com/r/strangebee/TheHive). See [Running TheHive with Docker](../installation/docker.md) for instructions.
 
-## :material-kubernetes: Kubernetes
+## Cluster deployment
 
-For Kubernetes users, deploy TheHive using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive). 
+Deploy TheHive and all required components across multiple nodes to achieve scalability and high availability. See [the architecture overview](../overview/index.md#architecture) for details.
 
-Refer to the [Kubernetes deployment guide](../installation/kubernetes.md) for detailed instructions.
+### :material-linux: Linux
+
+Configure a multi-node cluster with TheHive and its components running on dedicated hosts. See [Setting Up a Cluster with TheHive](deploying-a-cluster.md) for instructions.
+
+### :material-kubernetes: Kubernetes
+
+Deploy TheHive on Kubernetes using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive). See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.

@@ -1,19 +1,41 @@
 # Deploy TheHive on Kubernetes
 
-This topic provides step-by-step instructions for deploying TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
+Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
 
 !!! info "License"
     The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
 
-## Quick start deployment
+!!! danger "Dependency images"
+    The default Cassandra and Elasticsearch images used by the dependency Helm charts come from [Bitnami](https://bitnami.com/).    
+    
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications), StrangeBee Helm charts now reference the `bitnamilegacy` repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5 and Elasticsearch 9, which aren't compatible with TheHive.
 
-TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive).
+    This has important consequences:
 
-!!! warning "Prerequisites"
-    Make sure you have:
+    * These legacy images won't receive security updates and will become increasingly vulnerable over time. You may continue to use them at your own risk, but they aren't production-ready.
+    * You can pay Bitnami for access to updated images and configure the Helm chart to reference them.
+    * Alternatively, you can deactivate the dependency Helm charts and bring your own Cassandra and Elasticsearch deployments.
 
-    * A running Kubernetes cluster (version 1.23.0 or later)
-    * [Helm](https://helm.sh/) installed (version 3.8.0 or later)
+## Architecture overview
+
+The default deployment includes:
+
+* TheHive application pods
+* A two-node Cassandra cluster for data storage
+* A two-node Elasticsearch cluster for search indexing
+* A MinIO instance for S3-compatible object storage
+
+## Infrastructure requirements
+
+* Kubernetes cluster v1.23.0 or later
+* Helm v3.8.0 or later
+* Minimum resources per node: see [TheHive Installation System Requirements](system-requirements.md#hardware-requirements)
+* StorageClass with dynamic provisioning
+* Network policies allowing inter-pod communication
+
+## Deploy with default configuration
+
+TheHive provides an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive). The default configuration is designed for development environments and requires modifications for production use. See [Production configuration](#production-configuration) for required adjustments.
 
 1. Add the StrangeBee Helm repository.
 
@@ -38,9 +60,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
 !!! info "Dependencies"
     The `thehive` Helm chart relies on the following charts by default:
 
-    * [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) - used as the database
-    * [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) - used as the search index
-    * [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio) - used as S3-compatible object storage
+    * [Bitnami Apache Cassandra](https://github.com/bitnami/charts/tree/main/bitnami/cassandra)-used as the database (uses legacy images by default)
+    * [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch)-used as the search index (uses legacy images by default)
+    * [MinIO Community Helm Chart](https://github.com/minio/minio/tree/master/helm/minio)-used as S3-compatible object storage
 
 !!! note "Upgrades"
     To upgrade your release to the latest version of the `thehive` Helm chart, run:
@@ -49,9 +71,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     ```
     For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/).
 
-## Advanced configuration
+### Production configuration
 
-For convenience, the `thehive` Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both TheHive and its dependencies before deploying to production.
+The default `thehive` Helm chart bundles all dependencies for quick deployment but uses development-oriented configurations. Production deployments require adjustments to TheHive and its dependencies for security, performance, and reliability.
 
 Use the following command to view all available configuration options for the `thehive` Helm chart:
 
@@ -61,11 +83,11 @@ helm show values strangebee/thehive
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). You can also review the available options for each dependency.
 
-### Pods resources
+#### Resource allocation
 
-Resources allocated to pods are optimized for production use. If you need to adjust these values, especially memory limits, make sure you update the `JVM_OPTS` environment variable accordingly to avoid out of memory (OOM) crashes.
+Default pod resources are optimized for production workloads. If you need to adjust these values, especially memory limits, make sure you update the `JVM_OPTS` environment variable accordingly to avoid OOM crashes.
 
-```bash
+```yaml
 # JVM_OPTS variable for TheHive
 thehive:
   jvmOpts: "-Xms2g -Xmx2g -Xmn300m"
@@ -88,9 +110,9 @@ elasticsearch:
 
 Refer to the official [Cassandra](https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html) and [Elasticsearch](https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments) documentation to learn how to optimize these values.
 
-### StorageClasses
+#### Storage configuration
 
-By default, this chart uses your cluster's default StorageClass to create persistent volumes (PVs).
+By default, this chart uses your cluster's default StorageClass to create PVs.
 
 You can customize the StorageClass to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:
 
@@ -100,22 +122,22 @@ You can customize the StorageClass to suit your environment. In all cases, wheth
 
 To configure StorageClasses based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for Google Cloud Platform.
 
-### Cassandra
+#### Cassandra
 
 This chart deploys two Cassandra pods to store TheHive data.
 
 You can review the [Bitnami Cassandra Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/cassandra) for available configuration options.
 
-### Elasticsearch
+#### Elasticsearch
 
-By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
+This chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
 
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
     Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
-### Object storage
+#### Object storage
 
 To support multiple replicas of TheHive, this chart defines an [object storage](../configuration/file-storage.md) in the configuration and deploys a single instance of MinIO.
 
@@ -126,7 +148,7 @@ For production environments, use a managed object storage service to ensure opti
 
 Network shared filesystems, like NFS, are supported but can be more complex to implement and may offer lower performance.
 
-### Cortex server in TheHive
+#### Cortex server in TheHive
 
 No Cortex server is defined by default in TheHive configuration.
 
@@ -137,7 +159,7 @@ There are two main ways to add Cortex servers to TheHive:
 
 For the second method, here's an example configuration:
 
-```bash
+```yaml
 cortex:
   enabled: true
   protocol: "http"
@@ -150,7 +172,7 @@ cortex:
   #k8sSecretKey: "api-keys"
 ```
 
-When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.
+When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL:
 
 ```bash
 http://cortex.<namespace>.svc:9001
@@ -160,4 +182,3 @@ http://cortex.<namespace>.svc:9001
 
 * [Monitoring TheHive](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)
-* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/docker-compose.md)

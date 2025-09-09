@@ -1,13 +1,33 @@
 # Deploy Cortex on Kubernetes
 
-Deploying Cortex on Kubernetes improves scalability, reliability, and resource management. Kubernetes handles automated deployment, dynamic resource allocation, and isolated execution of analyzers and responders, boosting performance and security. This setup simplifies the management of large workloads.
+Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
 
-This guide provides step-by-step instructions for deploying Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
+!!! danger "Dependency image"
+    The default Elasticsearch image used by the dependency Helm chart comes from [Bitnami](https://bitnami.com/).  
 
-!!! warning "Prerequisites"
-    Make sure you have:  
-    - A running Kubernetes cluster (version 1.23.0 or later)  
-    - [Helm](https://helm.sh/) installed (version 3.8.0 or later)
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications), StrangeBee Helm charts now reference the `bitnamilegacy` repository for Elasticsearch. Bitnami latest public images ship Elasticsearch 9, which isn't compatible with Cortex.
+
+    This has important consequences:
+
+    * This legacy image won't receive security updates and will become increasingly vulnerable over time. You may continue to use it at your own risk, but it isn't production-ready.
+    * You can pay Bitnami for access to updated images and configure the Helm chart to reference them.
+    * Alternatively, you can deactivate the dependency Helm charts and bring your own Elasticsearch deployment.
+
+## Architecture overview
+
+The default deployment includes:
+
+* Cortex application pods
+* A two-node Elasticsearch cluster for search indexing
+* Shared storage for analyzer job data
+
+## Infrastructure requirements
+
+* Kubernetes cluster v1.23.0 or later
+* Helm v3.8.0 or later
+* Minimum resources per node: see [Cortex Installation System Requirements](../installation-and-configuration/index.md#hardware-requirements)
+* StorageClass supporting `ReadWriteMany` access mode
+* Network policies allowing inter-pod communication
 
 ## Step 1: Ensure all users can access files on the shared filesystem
 
@@ -17,9 +37,10 @@ This guide provides step-by-step instructions for deploying Cortex on a Kubernet
 !!! info "Why a shared filesystem"
     When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. Without a shared filesystem accessible by both the Cortex pod and these analyzer and responder pods, they can't access the data they need to operate, causing the jobs to fail.
 
-    Kubernetes supports several methods for sharing filesystems between pods, including:  
-    - [PersistentVolume (PV) using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)  
-    - Dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
+    Kubernetes supports several methods for sharing filesystems between pods, including:
+
+    * [PV using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)  
+    * Dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
 
     This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](#example-deploy-cortex-using-aws-efs).
 
@@ -30,19 +51,19 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 
 To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html) with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
-## Step 2: Configure PersistentVolume, PersistentVolumeClaim, service account, and deployment for Cortex
+## Step 2: Deploy Cortex
 
-!!! info "Definitions"
-    - A [PersistentVolume (PV)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) represents a piece of storage provisioned by an administrator or dynamically provisioned using storage classes. When using an NFS server, the PV allows multiple pods to access shared storage concurrently.  
-    - A [PersistentVolumeClaim (PVC)](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) is a request for storage by a pod. It connects to an existing PV or dynamically creates one, specifying the required storage capacity.  
-    - A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.
+### Deploy with default configuration
 
-Use the `cortex` Helm chart to automate the creation of the PV, PVC, and SA during deployment.
+!!! info "Service account"
+    A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.
 
-!!! note "Using an existing PersistentVolume"
+!!! note "Using an existing PV"
     The `cortex` Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.
 
-### Quick start
+Use the `cortex` Helm chart to automate the creation of the PV, PVC, and SA during deployment. 
+
+The default configuration is designed for development environments and requires modifications for production use. See [Production configuration](#production-configuration) for required adjustments.
 
 1. Add the StrangeBee Helm repository
 
@@ -77,9 +98,9 @@ For more options, see [the Helm documentation for installation](https://helm.sh/
     ```
     For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/).
 
-### Advanced configuration
+### Production configuration
 
-For convenience, the `cortex` Helm chart includes all required components out of the box. While this setup is suitable for a development environment, it's highly recommended to review and configure both Cortex and its dependency before deploying to production.
+The default `cortex` Helm chart bundles all dependencies for quick deployment but uses development-oriented configurations. Production deployments require adjustments to Cortex and its dependencies for security, performance, and reliability.
 
 Use the following command to view all available configuration options for the `cortex` Helm chart:
 
@@ -89,7 +110,7 @@ helm show values strangebee/cortex
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). You can also review the available options for the dependency.
 
-#### StorageClasses
+#### Storage configuration
 
 !!! warning "Shared storage requirement"
     Cortex requires a shared PVC with `ReadWriteMany` access mode to allow multiple pods to read and write data simultaneously—essential for job inputs and outputs.
@@ -126,9 +147,9 @@ When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex se
 http://cortex.<namespace>.svc:9001
 ```
 
-## Example: Deploy Cortex using AWS EFS
+### Example: Deploy Cortex using AWS EFS
 
-### Prerequisites
+#### Prerequisites
 
 Before setting up the PV for AWS EFS, complete the following steps:
 
@@ -138,7 +159,7 @@ Before setting up the PV for AWS EFS, complete the following steps:
     * [Official Helm chart](https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&expanded=true)
 * [Create an EFS filesystem](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) and note the associated EFS filesystem ID.
 
-### 1. Create a StorageClass for EFS
+#### 1. Create a StorageClass for EFS
 
 !!! note "Reference example"
     The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods).
@@ -162,7 +183,7 @@ parameters:
   subPathPattern: "${.PVC.namespace}/${.PVC.name}" # Optional subfolder structure inside the NFS filesystem
 ```
 
-### 2. Create a PVC using the EFS StorageClass
+#### 2. Create a PVC using the EFS StorageClass
 
 Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.
 
