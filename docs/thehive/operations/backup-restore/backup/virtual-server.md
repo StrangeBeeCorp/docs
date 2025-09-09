@@ -1,7 +1,7 @@
 # Backup Virtual server
 
 !!! Note
-    This process and example below assume you have followed our [step-by-step guide](./../../../installation/step-by-step-installation-guide.md) to install the application stack.
+    This process and example below assume you have followed our [installation guide](./../../../installation/installation-guide-linux-standalone-server.md) to install the application stack.
 
 
 Using virtual servers allow more solutions to perform backup and restore operations.

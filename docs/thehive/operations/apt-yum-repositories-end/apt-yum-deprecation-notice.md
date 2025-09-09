@@ -23,11 +23,11 @@ Key benefits include:
 
 ## Who is affected
 
-This change applies to users deploying TheHive On-Prem and Cortex on Linux distributions via package installations. It doesn't affect those using the TheHive Cloud Platform or running TheHive and Cortex through Docker deployments.
+This change applies to users deploying TheHive On-prem and Cortex on Linux distributions via package installations. It doesn't affect those using the TheHive Cloud Platform or running TheHive and Cortex through Docker deployments.
 
 ## What you should do
 
-If you are a new user, follow the instructions in [TheHive](../../installation/step-by-step-installation-guide.md) and [Cortex](../../../cortex/installation-and-configuration/step-by-step-guide.md) step-by-step installation guides.
+If you are a new user, follow the instructions in [TheHive](../../installation/installation-guide-linux-standalone-server.md) and [Cortex](../../../cortex/installation-and-configuration/step-by-step-guide.md) step-by-step installation guides.
 
 If you currently install or update TheHive and Cortex using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`, switch to manual package downloads and installations. For detailed instructions, see [Switch to Manual Download and Installation for TheHive](switch-to-manual-download-installation-thehive.md) and [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md). Continuing with the current installation lets the application run but blocks it from receiving updates.
 

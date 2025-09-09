@@ -285,7 +285,7 @@
 - Drop support for java 8
 
     Java 8 version is no longer supported by TheHive. Please update to java 11 at least
-    Our [setup guide](../installation/step-by-step-installation-guide.md) can help you on how to install a jvm
+    Our [setup guide](../installation/installation-guide-linux-standalone-server.md) can help you on how to install a jvm
 
 - Drop support for Lucene as index backend
 

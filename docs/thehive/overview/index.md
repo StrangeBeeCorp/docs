@@ -66,7 +66,7 @@ The essential components of TheHive setup include:
     - TheHive
     - Optional NGINX for managing HTTPS communications
 
-    For detailed installation instructions, refer to the [step-by-step installation guide](../installation/step-by-step-installation-guide.md).
+    For detailed installation instructions, refer to the [installation guide](../installation/installation-guide-linux-standalone-server.md).
 
 === "Cluster or Hybrid Architecture"
     TheHive and its associated applications offer flexibility in choosing the right setup based on specific requirements. This includes the ability to mix and match different nodes and applications within a cluster.

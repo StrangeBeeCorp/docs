@@ -15,19 +15,19 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     * A running Kubernetes cluster (version 1.23.0 or later)
     * [Helm](https://helm.sh/) installed (version 3.8.0 or later)
 
-1. Add the StrangeBee Helm repository
+1. Add the StrangeBee Helm repository.
 
     ```bash
     helm repo add strangebee https://strangebeecorp.github.io/helm-charts
     ```
 
-2. Update your local Helm repositories
+2. Update your local Helm repositories.
 
     ```bash
     helm repo update
     ```
 
-3. Create a release using the `thehive` Helm chart
+3. Create a release using the `thehive` Helm chart.
 
     ```bash
     helm install <release_name> strangebee/thehive

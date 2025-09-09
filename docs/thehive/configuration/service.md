@@ -1,6 +1,6 @@
 # Service Configuration
 
-## Listen Address & Port
+## Listen Address and Port
 
 By default, the application listens on `all network interfaces (0.0.0.0)` on `port 9000`. You can customize the listen address and port by editing the `application.conf` file as follows:
 

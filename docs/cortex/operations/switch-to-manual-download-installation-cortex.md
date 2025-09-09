@@ -11,16 +11,32 @@ For instructions on performing the same process for TheHive, see [Switch to Manu
 
     If you are a new user, follow the instructions in the [step-by-step installation guide](../installation-and-configuration/step-by-step-guide.md).
 
-!!! warning "Prerequisites"
-    Before starting this procedure, check that you have installed the following tools:
+!!! warning "Dependencies"
+    Before starting this procedure, run the following commands:
 
-    * [Wget](https://www.gnu.org/software/wget/) or [cURL](https://curl.se/download.html) to download package files
-    * [GPG](https://www.gnupg.org/) to verify the package’s GPG signature
-    * [sha256sum](https://linux.die.net/man/1/sha256sum) to check the SHA256 checksum of the downloaded package
+    ### For DEB-based systems:
+
+    ```bash
+    sudo apt update
+    sudo apt install wget curl gnupg coreutils
+    ```
+
+    ### For RPM-based systems:
+
+    ```bash
+    sudo yum update
+    sudo yum install wget curl gnupg coreutils
+    ```
 
 <h2>Procedure</h2>
 
+### Step 1: Manually install Cortex
+
 {!includes/manual-download-installation-cortex.md!}
+
+### Step 2: Remove the old repository
+
+{!includes/remove-old-repository.md!}
 
 <h2>Next steps</h2>
 

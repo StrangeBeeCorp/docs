@@ -47,7 +47,7 @@ When configuring a Cassandra cluster, we aim to establish a setup comprising thr
 &nbsp;
 
 ### Installation Instructions
-To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [**provided guide**](step-by-step-installation-guide.md#apache-cassandra).
+To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [**provided guide**](installation-guide-linux-standalone-server.md#step-31-install-cassandra).
 
 !!! Info "A ``node`` in this context refers to each server or machine designated to participate in the Cassandra cluster."
 
@@ -91,7 +91,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
     - **Network Interfaces**: Set up the appropriate network interfaces (Ensure to setup the right interface name).
     - **Endpoint Snitch**: Specify the snitch for determining network topology.
 
-    !!! Info "For detailed explanations of each parameter in the YAML file, refer to our article on Cassandra configuration which can be found [**in the following page**](step-by-step-installation-guide.md#configuration)."
+    !!! Info "For detailed explanations of each parameter in the YAML file, refer to our article on Cassandra configuration which can be found [**in the following page**](installation-guide-linux-standalone-server.md#step-32-configure-cassandra)."
 
 2. **Delete Cassandra Topology Properties File**: Remove the ``cassandra-topology.properties`` file to prevent any conflicts.
 
@@ -293,7 +293,7 @@ The following steps aim to enable encryption secure communication between a clie
 ![](../images/installation/elasticsearch-cluster.png){ align=center }
 
 ### Installation Instructions
-To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./step-by-step-installation-guide.md#elasticsearch) for each node.
+To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) for each node.
 
 &nbsp;
 
@@ -571,17 +571,19 @@ Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` wi
 
 #### File storage
 
+File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. These items are stored as-is.
 
 === "Using NFS file storage"
 
     All nodes should have access to the same file storage. So, ideally, all TheHive nodes should have a similar NFS mount point. Then, on each node:
 
-    1. Ensure thehive user has permissions on the destination folder:
+    1. Set ownership and permissions so that only the `thehive` user can read and write files.
 
         !!! Example ""
 
             ```bash
             chown -R thehive:thehive /opt/thp/thehive/files
+            sudo chmod 700 /opt/thp/thehive/files
             ```
 
     2. Update the _application.conf_ TheHive configuration file 

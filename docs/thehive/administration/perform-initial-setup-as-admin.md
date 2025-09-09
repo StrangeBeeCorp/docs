@@ -9,7 +9,7 @@ Use this procedure at first start, before granting access to other users.
 === "TheHive On-prem"
 
     !!! warning "Requirements"
-        This procedure assumes that you have already installed TheHive using the [step-by-step installation guide](../installation/step-by-step-installation-guide.md) and that TheHive is up and running.
+        This procedure assumes that you have already installed TheHive and that TheHive is up and running.
 
     1. Open your web browser.
 
@@ -39,13 +39,11 @@ Use this procedure at first start, before granting access to other users.
 
 See [Edit your Password](../user-guides/manage-password.md#edit-your-password) for detailed instructions.
 
-## (Optional) Step 3: Activate your license
+## (Optional) Step 3: Request and activate your license
 
-<!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. If you complete the setup within this period, the license is already activated, and you don’t need to take further action. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
+<!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. If you complete the setup within this period, the license is already activated, and you don’t need to take further action.
 
-Only proceed with this step if your trial period has expired and you have acquired a [valid license](../installation/licenses/about-licenses.md) to activate, or if you want to activate a valid license immediately.
-
-See [Activate a License](../installation/licenses/license.md) for detailed instructions.
+After this trial period, TheHive transitions to read-only mode. To maintain full functionality, request a free or paid license and activate it. For details, see [About Licenses](../installation/licenses/about-licenses.md).
 
 ## Step 4: Configure TheHive
 

@@ -9,13 +9,13 @@ This page is a step by step installation and configuration guide to get a Cortex
     === "DEB" 
 
         ```bash
-        apt install wget gnupg apt-transport-https git ca-certificates ca-certificates-java curl  software-properties-common python3-pip lsb_release
+        apt install wget curl gnupg coreutils apt-transport-https git ca-certificates ca-certificates-java software-properties-common python3-pip lsb-release unzip
         ``` 
 
     === "RPM"
 
         ```bash
-        yum install gnupg chkconfig python3-pip git
+        yum install wget curl gnupg2 coreutils chkconfig python3-pip git unzip
         ```
 
 ## Java Virtual Machine
@@ -186,13 +186,6 @@ Cortex packages are distributed as RPM and DEB files available for direct downlo
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-!!! warning "Prerequisites"
-    Before starting this procedure, check that you have installed the following tools:
-
-    * [Wget](https://www.gnu.org/software/wget/) or [cURL](https://curl.se/download.html) to download package files
-    * [GPG](https://www.gnupg.org/) to verify the package’s GPG signature
-    * [sha256sum](https://linux.die.net/man/1/sha256sum) to check the SHA256 checksum of the downloaded package
-
 {!includes/manual-download-installation-cortex.md!}
 
 === "ZIP binary packages"
@@ -254,6 +247,10 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
+            ```bash
+            cat /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
+            ```
+
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
@@ -280,7 +277,24 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             gpg --verify /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't unzip or install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            d. Expected result.
+
+            You should see output similar to:
+
+            ```
+            gpg: Good signature from "TheHive Project (TheHive release key) <support@thehive-project.org>"
+            ```
+
+            The key fingerprint must match: `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`
+
+            !!! info "Expected GPG warning"
+                ```
+                gpg: WARNING: This key is not certified with a trusted signature!
+                gpg:          There is no indication that the signature belongs to the owner.
+                ```
+                This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
+
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
 
     3. Unzip the package.

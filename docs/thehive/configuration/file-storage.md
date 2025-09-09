@@ -1,16 +1,19 @@
 # File Storage Configuration
 
+File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. These items are stored as-is.
+
 TheHive offers flexible configurations for file storage, accommodating both local and distributed filesystem setups.
 
 === "Local or NFS"
 
     To configure TheHive to use a local or NFS (Network File System) storage:
 
-        1. Create a dedicated folder named files, ensuring it is owned by the user and group thehive:thehive.
+        1. Create the storage directory and set appropriate ownership and permissions.
         
             ```bash
             mkdir /opt/thp/thehive/files
             chown thehive:thehive /opt/thp/thehive/files
+            sudo chmod 700 /opt/thp/thehive/files
             ```
 
         2. Configure TheHive accordingly in the YAML configuration file:

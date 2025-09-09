@@ -56,6 +56,10 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
+            ```bash
+            cat /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.sha256
+            ```
+
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
@@ -82,7 +86,24 @@
             gpg --verify /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb.asc /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            d. Expected result.
+
+            You should see output similar to:
+
+            ```
+            gpg: Good signature from "TheHive Project (TheHive release key) <support@thehive-project.org>"
+            ```
+
+            The key fingerprint must match: `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`
+
+            !!! info "Expected GPG warning"
+                ```
+                gpg: WARNING: This key is not certified with a trusted signature!
+                gpg:          There is no indication that the signature belongs to the owner.
+                ```
+                This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
+
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
     3. Install the package.
 
@@ -97,19 +118,6 @@
             ```bash
             sudo dpkg -i /tmp/cortex_{!includes/cortex-latest-version.md!lines=2}-2_all.deb
             ```
-
-            !!! tip "Missing dependencies"
-                While using `dpkg`, you might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Required packages section of the installation guide](/cortex/installation-and-configuration/step-by-step-guide/).
-
-    4. When switching from the previous repository-based installation, remove the old repository to avoid stale configurations.
-
-        !!! danger "Why you should remove the old repository"
-            Keeping the old repository configuration can cause your system to download outdated or conflicting packages during updates, potentially breaking your installation or causing unexpected behavior.
-
-        ```bash
-        sudo rm /etc/apt/sources.list.d/strangebee.list
-        sudo apt-get update
-        ```
 
 === "RPM"
 
@@ -168,6 +176,10 @@
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
+            ```bash
+            cat /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.sha256
+            ```
+
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
@@ -194,7 +206,24 @@
             gpg --verify /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm.asc /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
             ```
 
-            d. You should see a message stating indicating that the signature is valid and the package is authentic. If you see warnings or errors, don't install the package as its integrity or authenticity can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            d. Expected result.
+
+            You should see output similar to:
+
+            ```
+            gpg: Good signature from "TheHive Project (TheHive release key) <support@thehive-project.org>"
+            ```
+
+            The key fingerprint must match: `0CD5 AC59 DE5C 5A8E 0EE1  3849 3D99 BB18 562C BC1C`
+
+            !!! info "Expected GPG warning"
+                ```
+                gpg: WARNING: This key is not certified with a trusted signature!
+                gpg:          There is no indication that the signature belongs to the owner.
+                ```
+                This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
+
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
     3. Install the package.
 
@@ -214,25 +243,4 @@
 
             ```bash
             sudo rpm -ivh /tmp/cortex-{!includes/cortex-latest-version.md!lines=2}-2.noarch.rpm
-            ```
-
-            !!! tip "Missing dependencies"
-                While using `rpm`, you might encounter warnings about missing dependencies during installation. To resolve this, run the commands described in the [Required packages section of the installation guide](/cortex/installation-and-configuration/step-by-step-guide/).
-
-    4. When switching from the previous repository-based installation, deactivate the old repository to avoid stale configurations.
-
-        !!! danger "Why you should deactivate the old repository"
-            Keeping the old repository configuration can cause your system to download outdated or conflicting packages during updates, potentially breaking your installation or causing unexpected behavior.
-
-        a. Deactivate the repository.
-
-            ```bash
-            sudo yum-config-manager --disable strangebee
-            ```
-
-        b. Optional: Remove the repository file.
-
-            ```bash
-            sudo rm /etc/yum.repos.d/strangebee.repo
-            sudo yum clean all
             ```

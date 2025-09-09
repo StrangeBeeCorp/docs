@@ -4,7 +4,7 @@ TheHive requires supported operating systems, along with sufficient hardware res
 
 ## Hardware requirements
 
-Estimated resource recommendations are provided to offer guidance based on typical usage scenarios:
+Estimated resource recommendations are provided to offer guidance based on typical usage scenarios.
 
 !!! note "Hardware sizing guidance"
     The listed hardware values represent typical usage scenarios. However, hardware sizing for TheHive installation depends on several factors:
@@ -14,26 +14,32 @@ Estimated resource recommendations are provided to offer guidance based on typic
     * Performance expectations: Expected system responsiveness under typical and peak loads
     * Deployment method: Installation via Linux packages or Docker containers
 
-    Initial deployments can start with minimal configurations and be scaled based on observed performance. Hardware adjustments should be guided by ongoing monitoring of system resource utilization.
+    Initial deployments can start with minimal configurations and be scaled based on observed performance. Hardware adjustments should be guided by ongoing [monitoring of system resource utilization](../operations/monitoring.md).
 
-=== "Packages installation"
+=== "Linux installation"
 
     The following table lists recommended CPU and memory allocations per service when TheHive, Apache Cassandra, and Elasticsearch are hosted on a single machine, based on the number of concurrent users.
 
     | Number of concurrent users  | TheHive               | Cassandra             | Elasticsearch         |
     | ---------------- | --------------------- | --------------------- | --------------------- |
-    | :fontawesome-solid-user-group: < 10 | 3 CPUs / 4 GB RAM | 3 CPUs / 4 GB RAM | 3 CPUs / 4 GB RAM |
-    | :fontawesome-solid-user-group: < 20 | 3-4 CPUs / 6 GB RAM | 3-4 CPUs / 6 GB RAM | 3-4 CPUs / 6 GB RAM |
-    | :fontawesome-solid-user-group: < 50 | 4-6 CPUs / 8 GB RAM | 4-6 CPUs / 8 GB RAM | 4-6 CPUs / 8 GB RAM |
+    | :fontawesome-solid-user-group: < 10 | 3 CPU cores / 4 GB RAM | 3 CPU cores / 4 GB RAM | 3 CPU cores / 4 GB RAM |
+    | :fontawesome-solid-user-group: < 20 | 3-4 CPU cores / 6 GB RAM | 3-4 CPU cores / 6 GB RAM | 3-4 CPU cores / 6 GB RAM |
+    | :fontawesome-solid-user-group: < 50 | 4-6 CPU cores / 8 GB RAM | 4-6 CPU cores / 8 GB RAM | 4-6 CPU cores / 8 GB RAM |
 
-=== "Docker deployments"
+=== "Docker deployment"
 
     For Docker deployments, hardware requirements depend on the selected setup profile, with each profile defining a specific performance level.
 
     Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
 
+=== "Kubernetes deployment"
+
+    For Kubernetes deployments, refer to the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
+
 !!! warning "Elasticsearch heap size configuration"
-    Elasticsearch requires explicit heap size configuration in the `jvm.options` file. Heap allocation must not exceed 50% of the total system RAM. On a 12 GB RAM system, for example:
+    Elasticsearch requires explicit [heap size configuration in the `jvm.options` file](installation-guide-linux-standalone-server.md#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file). Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection).
+    
+    On a 12 GB RAM system, for example:
 
     ```
     -Xms6g
@@ -49,12 +55,12 @@ Estimated resource recommendations are provided to offer guidance based on typic
 
 The recommended storage requirements for TheHive vary based on the use case and data volume:
 
-* 100GB of storage is recommended for most use cases, primarily for storing application data such as alerts, cases, observables, and logs.
-* 150GB of storage is recommended for more intensive use cases with higher data volume or complex workflows.
+* 100 GB of storage is recommended for most use cases, primarily for storing application data such as alerts, cases, observables, and logs.
+* 150 GB of storage is recommended for more intensive use cases with higher data volume or complex workflows.
 
 ## Recommended operating systems
 
-=== "Packages installation"
+=== "Linux installation"
 
     TheHive is officially supported on the following Linux distributions:
 
@@ -66,13 +72,18 @@ The recommended storage requirements for TheHive vary based on the use case and 
 
     Other distributions or versions aren't tested or supported.
 
-=== "Docker deployments"
+=== "Docker deployment"
 
-    For containerized setups, an [official TheHive Docker image](https://hub.docker.com/r/strangebee/TheHive/tags) is available.
+    For containerized deployments, an [official TheHive Docker image](https://hub.docker.com/r/strangebee/TheHive/tags) is available on Docker Hub.
+
+=== "Kubernetes deployment"
+
+    For Kubernetes environments, an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive) is provided.
 
 <h2>Next steps</h2>
 
-* [Step by Step Installation Guide](step-by-step-installation-guide.md)
+* [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
+* [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
 * [Running TheHive with Docker](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
 * [Setting up a Cluster with TheHive](deploying-a-cluster.md)

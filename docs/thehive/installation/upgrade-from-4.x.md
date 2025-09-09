@@ -68,7 +68,7 @@ Ensure that you can log in as an admin user with a password in TheHive database.
     Please ensure that the instructions under this section are followed on all nodes of the cluster.
 
 
-Follow the [**installation process**](./step-by-step-installation-guide.md#java-virtual-machine) to install the required version of Java.
+Follow the [**installation process**](./installation-guide-linux-standalone-server.md#step-2-set-up-the-java-virtual-machine) to install the required version of Java.
 
 ---
 
@@ -77,7 +77,7 @@ Follow the [**installation process**](./step-by-step-installation-guide.md#java-
 ??? Abstract "I'm Using a Cluster"
     Elasticsearch is crucial for TheHive 5.x clusters. However, if an update isn't urgently required, focus on upgrading Cassandra first.
 
-Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [**installation process**](./step-by-step-installation-guide.md#elasticsearch) to install and configure the required version.
+Elasticsearch is mandatory for TheHive 5.x clusters. Follow the [**installation process**](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) to install and configure the required version.
 
 ---
 
@@ -98,7 +98,7 @@ Save the existing configuration file for Cassandra 3.x. It will be used later to
 
 ### Install Cassandra
 
-Follow the [**installation process**](./step-by-step-installation-guide.md#apache-cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
+Follow the [**installation process**](./installation-guide-linux-standalone-server.md#step-31-install-cassandra) to install the required version. During the installation process, replace existing configuration files as necessary.
 
 &nbsp;
 

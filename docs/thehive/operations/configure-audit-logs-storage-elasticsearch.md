@@ -6,7 +6,7 @@ By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. Howeve
 
 This topic provides step-by-step instructions for configuring TheHive audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
 
-For new installations, refer to the [Step-by-Step Guide](../installation/step-by-step-installation-guide.md) for instructions.
+For new installations, refer to the [installation guide](../installation/installation-guide-linux-standalone-server.md) for instructions.
 
 !!! info "Reasons to consider Elasticsearch"
     Elasticsearch is better suited for managing large volumes of audit logs. It enhances performance by efficiently handling data, reducing latency, and offering advanced search capabilities. If your organization generates a significant amount of audit logs, migrating to Elasticsearch can improve both data management and retrieval.
@@ -53,7 +53,7 @@ Run the `migrateAudits` script:
 * If you deployed TheHive with a Docker image:
 
   ``` bash
-  docker run --network host --rm -ti -v </path/to/your/application.conf>:/etc/thehive/application.conf:ro -v </path/to/your/logback.xml>:/etc/thehive/logback.xml:ro strangebee/thehive:5.5.0-1-SNAPSHOT  migrateAudits -Dlogback.configurationFile=/etc/thehive/logback.xml -- --audit-from-date <date> -c /etc/thehive/application.conf
+  docker run --network host --rm -ti -v </path/to/your/application.conf>:/etc/thehive/application.conf:ro -v </path/to/your/logback.xml>:/etc/thehive/logback.xml:ro strangebee/thehive:{!includes/thehive-latest-version.md!lines=2}-1-SNAPSHOT  migrateAudits -Dlogback.configurationFile=/etc/thehive/logback.xml -- --audit-from-date <date> -c /etc/thehive/application.conf
   ```
 
 Available options are:

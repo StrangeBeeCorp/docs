@@ -74,7 +74,7 @@ plugins:
             'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.4.md'
             'thehive/setup/index.md': 'thehive/overview/index.md'
-            'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/step-by-step-installation-guide.md'
+            'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
             'thehive/setup/installation/docker.md':  'thehive/installation/docker.md'
             'thehive/user-guides/analyst-corner/search/about-search.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md'
@@ -326,7 +326,10 @@ plugins:
             'thehive/user-guides/organization/configure-organization/manage-ui-configuration/about-ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'thehive/user-guides/organization/ui-configuration.md': 'thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings.md'
             'cortex/installation-and-configuration/docker.md': 'cortex/installation-and-configuration/parameters-docker.md'
-            'thehive/download/archives.md': 'thehive/download/index.md'
+            'thehive/download/archives.md': 'thehive/installation/installation-methods.md'
+            'thehive/download/index.md': 'thehive/installation/installation-methods.md'
+            'thehive/installation/automated-installation-script.md': 'thehive/installation/automated-installation-script-linux.md'
+            'thehive/installation/step-by-step-installation-guide.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/user-guides/analyst-corner/about-views.md': 'thehive/user-guides/analyst-corner/views/about-views.md'
             'thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/share-a-case-page.md'
 
@@ -416,11 +419,11 @@ nav:
   - Home: index.md
   - TheHive:
     - 'Overview': thehive/overview/index.md
-    - 'Download': thehive/download/index.md
     - 'Installation':
+      - 'Installation Methods': thehive/installation/installation-methods.md
       - 'System Requirements': thehive/installation/system-requirements.md
-      - 'Automated Installation Script': thehive/installation/automated-installation-script.md
-      - 'Step-by-Step Installation Guide': thehive/installation/step-by-step-installation-guide.md
+      - 'Install TheHive on Linux': thehive/installation/installation-guide-linux-standalone-server.md
+      - 'One-Command Install on Linux': thehive/installation/automated-installation-script-linux.md
       - 'Deploying a Cluster': thehive/installation/deploying-a-cluster.md
       - 'Running with Docker': thehive/installation/docker.md
       - 'Kubernetes Deployment': thehive/installation/kubernetes.md

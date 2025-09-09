@@ -1,4 +1,3 @@
-
 # Troubleshooting
 
 For some issues, additional information in logs is needed to troubleshoot and understand the root causes. To gather and share this information, please carefully read and follow these steps.

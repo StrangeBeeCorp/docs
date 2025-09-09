@@ -5,7 +5,7 @@ Lucene index support was removed starting from TheHive version 5.1. Follow this 
 
 ## Setup Your Elasticsearch Server
 
-Please refer to our [installation manual](../installation/step-by-step-installation-guide.md) or use your own server. Ensure that Elasticsearch is started.
+Please refer to our [installation manual](../installation/installation-guide-linux-standalone-server.md) or use your own server. Ensure that Elasticsearch is started.
 
 ## Update TheHive Configuration
 

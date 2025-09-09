@@ -48,7 +48,7 @@ This ensures that imported users from TheHive 3.x are formatted as `user@mydomai
 
 Follow the steps below to execute the migration:
 
-1. Prepare, install, and configure TheHive v5.x as per [**the associated guide**](../installation/step-by-step-installation-guide.md)
+1. Prepare, install, and configure TheHive v5.x as per [**the associated guide**](../installation/installation-guide-linux-standalone-server.md)
 
 2. Ensure TheHive 5 is not running before initiating the migration for optimal performance.
 

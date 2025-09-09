@@ -1,22 +1,40 @@
-Configure the default index template and Index Lifecycle Management (ILM) for `thehive-audits` using the following settings:
+Adjust the `application.conf` file to configure the index template and Index Lifecycle Management (ILM) policy for the `thehive-audits` index. These settings control how Elasticsearch stores, rolls over, and deletes audit logs.
 
-* `index-name`
-* `health-request-timeout`
-* `create.ext.number_of_replicas`
-* `create.ext.number_of_shards`
-* `request-timeout`
-* `hot.rollover.maxAge`
-* `hot.rollover.maxSize`
-* `delete.minAge`
+Supported configuration keys:
 
-!!! warning "Index name"
+* `index-name`: Name of the Elasticsearch index for audit logs (default: `thehive-audits`)
+* `health-request-timeout`: Timeout for checking cluster health
+* `create.ext.number_of_replicas`: Number of index replicas
+* `create.ext.number_of_shards`: Number of index shards
+* `request-timeout`: Timeout for Elasticsearch requests
+* `hot.rollover.maxAge`: Maximum age of an index before rollover
+* `hot.rollover.maxSize`: Maximum size of an index before rollover
+* `delete.minAge`: Minimum age before an index is deleted
+
+!!! example "Example"
+    To create a new index every day or when it reaches 1 GB, and retain it for 7 days, use the following configuration:
+
+    ```json
+    audit {
+        storage = elasticsearch
+        elasticsearch {
+            hot.rollover {
+                maxAge = 1d
+                maxSize = 1g
+            }
+            delete.minAge = 7d
+        }
+    }
+    ```
+
+!!! warning "Index name conflict"
     The index name shouldn't be the same as the one used in JanusGraph. If you don’t configure a specific name, TheHive uses the JanusGraph index name appended with the suffix `-audits`.
 
-#### Index template
+Based on the configuration above, TheHive automatically generates the index template and ILM policy when it first writes audit data to Elasticsearch.
 
-The index template ensures consistent storage and indexing of audit logs.
+##### Index template
 
-Default index template:
+Default generated index template:
 
 ```json
 {
@@ -30,9 +48,7 @@ Default index template:
 }
 ```
 
-#### ILM
-
-TheHive automatically generates an Index Lifecycle Management (ILM) policy based on your configuration settings. ILM manages the storage, rollover, and deletion of audit logs over time to optimize long-term storage.
+##### ILM
 
 Default generated ILM:
 
@@ -53,52 +69,35 @@ Default generated ILM:
 }
 ```
 
-!!! example "Example"
-    To create a new index every day or when it reaches 1 GB, and retain it for 7 days, use the following configuration:
-
-    - Index template:
-
-    ```json
-    audit {
-        storage = elasticsearch
-        elasticsearch {
-            hot.rollover {
-                maxAge = 1d
-                maxSize = 1g
-            }
-            delete.minAge = 7d
-        }
-    }
-    ```
-
-    - The generated ILM:
+!!! example "ILM generated from the example configuration"
+    Based on the example configuration, TheHive will generate the following ILM policy:
 
     ```json
     {
-        "policy": {
-            "phases": {
-                "hot": {
-                    "min_age": "0ms",
-                    "actions": {
-                        "set_priority": {
-                            "priority": 100
-                        },
-                        "rollover": {
-                            "max_primary_shard_size": "1gb",
-                            "max_age": "1d"
-                        }
-                    }
-                },
-                "delete": {
-                    "min_age": "7d",
-                    "actions": {
-                        "delete": {
-                            "delete_searchable_snapshot": true
-                        }
-                    }
-                }
-            }
-        }
+      "policy": {
+          "phases": {
+              "hot": {
+                  "min_age": "0ms",
+                  "actions": {
+                      "set_priority": {
+                          "priority": 100
+                      },
+                      "rollover": {
+                          "max_primary_shard_size": "1gb",
+                          "max_age": "1d"
+                      }
+                  }
+              },
+              "delete": {
+                  "min_age": "7d",
+                  "actions": {
+                      "delete": {
+                          "delete_searchable_snapshot": true
+                      }
+                  }
+              }
+          }
+      }
     }
     ```
 
