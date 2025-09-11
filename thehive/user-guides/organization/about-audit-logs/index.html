@@ -9096,27 +9096,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#key-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage
+      Key use cases
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main-audit-fields" class="md-nav__link">
+  <a href="#audit-log-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Main audit fields
+      Audit log structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anatomy-of-an-audit" class="md-nav__link">
+  <a href="#example-audit-entry" class="md-nav__link">
     <span class="md-ellipsis">
-      Anatomy of an audit
+      Example audit entry
     </span>
   </a>
   
@@ -11065,27 +11065,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usage" class="md-nav__link">
+  <a href="#key-use-cases" class="md-nav__link">
     <span class="md-ellipsis">
-      Usage
+      Key use cases
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#main-audit-fields" class="md-nav__link">
+  <a href="#audit-log-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Main audit fields
+      Audit log structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anatomy-of-an-audit" class="md-nav__link">
+  <a href="#example-audit-entry" class="md-nav__link">
     <span class="md-ellipsis">
-      Anatomy of an audit
+      Example audit entry
     </span>
   </a>
   
@@ -14691,40 +14691,53 @@
 
 <h1 id="about-audit-logs">About Audit Logs<a class="headerlink" href="#about-audit-logs" title="Permanent link">#</a></h1>
 <p>Audit logs in TheHive record all user actions, ensuring full traceability of activities performed within the platform.</p>
-<p>A graphical representation of audit logs appears in the <strong>History</strong> tab within case and alert descriptions.</p>
-<p>This document explains the purpose, usage, and benefits of audit logs in TheHive.</p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">#</a></h2>
-<p>Audit logs provide critical insights into system activity and security. </p>
-<p>Their key use cases include:</p>
+<p>Every create, update, delete, merge, and function invocation generates an audit entry that captures comprehensive details about the action, the user who performed it, and the affected objects.</p>
+<p>TheHive displays audit logs graphically in the <strong>History</strong> tab within case and alert descriptions.</p>
+<h2 id="key-use-cases">Key use cases<a class="headerlink" href="#key-use-cases" title="Permanent link">#</a></h2>
+<p>Audit logs provide critical insights into system activity and security that are usually used to:</p>
+<h3 id="workflow-automation">Workflow automation<a class="headerlink" href="#workflow-automation" title="Permanent link">#</a></h3>
+<p>Audit logs stream to orchestration platforms like SOAR systems, where specific events trigger automated response workflows. For example, when an analyst escalates a case severity, the audit log can automatically notify the incident response team.</p>
+<h3 id="security-monitoring">Security monitoring<a class="headerlink" href="#security-monitoring" title="Permanent link">#</a></h3>
+<p>Security teams forward audit logs to SIEM systems to detect anomalous behavior patterns. Unusual access patterns, privilege escalations, or bulk data modifications generate alerts for immediate investigation.</p>
+<h3 id="activity-traceability">Activity traceability<a class="headerlink" href="#activity-traceability" title="Permanent link">#</a></h3>
+<p>The <strong>History</strong> tab maintains a permanent record of all case and alert modifications. This immutable audit trail satisfies regulatory requirements and enables forensic analysis of incident handling procedures.</p>
+<h2 id="audit-log-structure">Audit log structure<a class="headerlink" href="#audit-log-structure" title="Permanent link">#</a></h2>
+<p>Each audit log entry contains fields that capture the complete context of an action:</p>
+<h3 id="core-identification-fields">Core identification fields<a class="headerlink" href="#core-identification-fields" title="Permanent link">#</a></h3>
 <ul>
-<li>Workflow automation: Logs send to an orchestration system to trigger automated workflows.</li>
-<li>Security monitoring: Logs forward to a Security Information and Event Management (SIEM) system to detect suspicious or abnormal behaviors.</li>
-<li>Activity traceability: The <strong>History</strong> tab records all actions on cases and alerts for accountability and compliance.</li>
+<li><code>_id</code>: Unique identifier of the audit log entry.</li>
+<li><code>_type</code>: Always contains the value <code>Audit</code>.</li>
+<li><code>_createdBy</code>: Email address of the user who performed the action.</li>
+<li><code>_createdAt</code>: Timestamp when the action occurred—Unix timestamp in milliseconds.</li>
 </ul>
-<h2 id="main-audit-fields">Main audit fields<a class="headerlink" href="#main-audit-fields" title="Permanent link">#</a></h2>
-<p>Audit logs in TheHive include the following key fields:</p>
+<h3 id="action-details">Action details<a class="headerlink" href="#action-details" title="Permanent link">#</a></h3>
 <ul>
-<li><code>_id</code>: Unique identifier of the audit log.</li>
-<li><code>_type</code>: Always set to <code>Audit</code>.</li>
-<li><code>_createdBy</code>: The user who performed the action.</li>
-<li><code>action</code>: The type of action performed, which can be <code>create</code>, <code>update</code>, <code>delete</code>, <code>merge</code> or <code>invoke</code> (for functions).</li>
-<li><code>requestId</code>: Identifier of the HTTP request that triggered the audit entry.</li>
-<li><code>details</code>: A JSON object containing the modifications made to the affected object.</li>
-<li><code>objectId</code>: The <code>_id</code> of the impacted object.</li>
-<li><code>objectType</code>: The <code>_type</code> of the impacted object.</li>
-<li><code>object</code>: The full description of the object after modifications.</li>
-<li><code>rootId</code>: The <code>_id</code> of the top-level object. For example, if a task is updated, this field stores the <code>_id</code> of the associated case.</li>
-<li><code>context</code>: The context of the audit entry, depending on the created or updated object.</li>
-<li><code>organisation</code>: Details about the organization where the action occurred.</li>
+<li><code>action</code>: Type of action performed, which can be <code>create</code>, <code>update</code>, <code>delete</code>, <code>merge</code> or <code>invoke</code> for functions.</li>
+<li><code>mainAction</code>: Boolean—<code>true</code> for the primary action; <code>false</code> for a derived event, for example when the action occurs in another organization that shares elements with this one.</li>
+<li><code>requestId</code>: Unique identifier of the HTTP request that triggered the audit entry.</li>
+<li><code>details</code>: JSON object containing only the modified fields and their new values.</li>
 </ul>
-<h2 id="anatomy-of-an-audit">Anatomy of an audit<a class="headerlink" href="#anatomy-of-an-audit" title="Permanent link">#</a></h2>
-<p>An audit entry uses a JSON object structured as follows:</p>
+<h3 id="object-information">Object information<a class="headerlink" href="#object-information" title="Permanent link">#</a></h3>
+<ul>
+<li><code>objectId</code>: The <code>_id</code> of the directly affected object.</li>
+<li><code>objectType</code>: The <code>_type</code> of the affected object.</li>
+<li><code>object</code>: Complete state of the object after the modification.</li>
+<li><code>rootId</code>: The <code>_id</code> of the parent object. For example, the case ID when a task is modified.</li>
+</ul>
+<h3 id="organizational-context">Organizational context<a class="headerlink" href="#organizational-context" title="Permanent link">#</a></h3>
+<ul>
+<li><code>context</code>: Full description of the parent object, providing complete situational awareness.</li>
+<li><code>organisation</code>: Organization receiving the audit event, which may differ from the performing organization in <a href="../../../administration/organizations/about-organizations-sharing-rules/">sharing scenarios</a>.</li>
+</ul>
+<h2 id="example-audit-entry">Example audit entry<a class="headerlink" href="#example-audit-entry" title="Permanent link">#</a></h2>
+<p>The following audit log shows a case status update from <em>New</em> to <em>InProgress</em>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327684328"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"director@movies.io"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999960</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"mainAction"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74dc37479904ebe7:3957d351:18a847d4266:-8000:109"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"rootId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -14736,12 +14749,12 @@
 <span class="w">  </span><span class="nt">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mia@movies.io"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"director@movies.io"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999230</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Behind themselves watch price take. I probably single service. Develop fear hotel real."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
@@ -14756,7 +14769,7 @@
 <span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mia@movies.io"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 <span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 <span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
@@ -14770,12 +14783,12 @@
 <span class="w">  </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mia@movies.io"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"director@movies.io"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999230</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Behind themselves watch price take. I probably single service. Develop fear hotel real."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
@@ -14790,7 +14803,7 @@
 <span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mia@movies.io"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 <span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 <span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
@@ -14803,7 +14816,7 @@
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4169864"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pulp Fiction"</span>
+<span class="w">    </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheOrganization"</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
