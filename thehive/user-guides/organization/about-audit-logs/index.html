@@ -9114,9 +9114,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-audit-entry" class="md-nav__link">
+  <a href="#example-audit-entries" class="md-nav__link">
     <span class="md-ellipsis">
-      Example audit entry
+      Example audit entries
     </span>
   </a>
   
@@ -11083,9 +11083,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-audit-entry" class="md-nav__link">
+  <a href="#example-audit-entries" class="md-nav__link">
     <span class="md-ellipsis">
-      Example audit entry
+      Example audit entries
     </span>
   </a>
   
@@ -14693,6 +14693,10 @@
 <p>Audit logs in TheHive record all user actions, ensuring full traceability of activities performed within the platform.</p>
 <p>Every create, update, delete, merge, and function invocation generates an audit entry that captures comprehensive details about the action, the user who performed it, and the affected objects.</p>
 <p>TheHive displays audit logs graphically in the <strong>History</strong> tab within case and alert descriptions.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tag and custom field changes</p>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.</p>
+</div>
 <h2 id="key-use-cases">Key use cases<a class="headerlink" href="#key-use-cases" title="Permanent link">#</a></h2>
 <p>Audit logs provide critical insights into system activity and security that are usually used to:</p>
 <h3 id="workflow-automation">Workflow automation<a class="headerlink" href="#workflow-automation" title="Permanent link">#</a></h3>
@@ -14729,8 +14733,8 @@
 <li><code>context</code>: Full description of the parent object, providing complete situational awareness.</li>
 <li><code>organisation</code>: Organization receiving the audit event, which may differ from the performing organization in <a href="../../../administration/organizations/about-organizations-sharing-rules/">sharing scenarios</a>.</li>
 </ul>
-<h2 id="example-audit-entry">Example audit entry<a class="headerlink" href="#example-audit-entry" title="Permanent link">#</a></h2>
-<p>The following audit log shows a case status update from <em>New</em> to <em>InProgress</em>:</p>
+<h2 id="example-audit-entries">Example audit entries<a class="headerlink" href="#example-audit-entries" title="Permanent link">#</a></h2>
+<h3 id="case-status-update-from-new-to-inprogress">Case status update from <em>New</em> to <em>InProgress</em><a class="headerlink" href="#case-status-update-from-new-to-inprogress" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327684328"</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>
@@ -14813,6 +14817,138 @@
 <span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1029163168</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290396841</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4169864"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheOrganization"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="custom-field-update-from-support-to-engineering">Custom field update from <em>Support</em> to <em>Engineering</em><a class="headerlink" href="#custom-field-update-from-support-to-engineering" title="Permanent link">#</a></h3>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327684328"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999960</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"mainAction"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74dc37479904ebe7:3957d351:18a847d4266:-8000:109"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"rootId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit:Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"customFieldChanges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valuesAdded"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"Engineering"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valuesRemoved"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"Support"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"objectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999230</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tagA"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit:Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441998841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">261233673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1029163168</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290396841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441999230</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"tagA"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit:Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"order"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441998841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">261233673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1029163168</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290396841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4169864"</span><span class="p">,</span>

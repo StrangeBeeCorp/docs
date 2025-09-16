@@ -14638,7 +14638,7 @@
 <p>Write your filter.</p>
 <div class="admonition tip">
 <p class="admonition-title">Operators</p>
-<p>To learn more about using operators, see the <a href="../filtered-event-trigger-operators/">About FilteredEvent Trigger Operators</a> topic.</p>
+<p>For details on the available operators, see <a href="../filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
 </div>
 <p>To access a specific field within a JSON object, use dot (<code>.</code>) notation to navigate through nested properties.</p>
 <p>For example <code>object.severity</code> retrieves the <code>severity</code>field from the following JSON structure:</p>
@@ -14648,6 +14648,10 @@
 <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tag and custom field changes</p>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.</p>
+</div>
 <hr>
 </li>
 <li>
@@ -14668,9 +14672,7 @@
 </li>
 </ol>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
-<ul>
-<li>An case severity has been updated to High or Critical:</li>
-</ul>
+<h3 id="case-severity-updated-to-high-or-critical">Case severity updated to High or Critical<a class="headerlink" href="#case-severity-updated-to-high-or-critical" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -14691,9 +14693,7 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>An alert has been closed without an assigned user:</li>
-</ul>
+<h3 id="alert-closed-without-an-assignee">Alert closed without an assignee<a class="headerlink" href="#alert-closed-without-an-assignee" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -14719,9 +14719,7 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>An observable was updated with a report from analyzer <code>Crt_sh_Transparency_Logs_1_0</code>:</li>
-</ul>
+<h3 id="observable-updated-with-a-report-from-analyzer-crt_sh_transparency_logs_1_0">Observable updated with a report from analyzer <code>Crt_sh_Transparency_Logs_1_0</code><a class="headerlink" href="#observable-updated-with-a-report-from-analyzer-crt_sh_transparency_logs_1_0" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -14740,9 +14738,7 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>The responder has finished:</li>
-</ul>
+<h3 id="responder-action-finished">Responder action finished<a class="headerlink" href="#responder-action-finished" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -14772,9 +14768,7 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>The case is updated with a status of <code>TruePositive</code> or <code>FalsePositive</code>, and the custom field <code>business-unit</code> is set to either <code>Sales</code> or <code>Marketing</code>:</li>
-</ul>
+<h3 id="case-status-updated-to-truepositive-or-falsepositive-with-the-custom-field-business-unit-set-to-sales-or-marketing">Case status updated to <code>TruePositive</code> or <code>FalsePositive</code>, with the custom field <code>business-unit</code> set to <code>Sales</code> or <code>Marketing</code><a class="headerlink" href="#case-status-updated-to-truepositive-or-falsepositive-with-the-custom-field-business-unit-set-to-sales-or-marketing" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -14818,9 +14812,34 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<ul>
-<li>Analyzer <code>EmlParser_2_1</code> completed with a success status:</li>
-</ul>
+<h3 id="custom-field-business-unit-updated-to-engineering">Custom field <code>business-unit</code> updated to <code>Engineering</code><a class="headerlink" href="#custom-field-business-unit-updated-to-engineering" title="Permanent link">#</a></h3>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_arrayMatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.customFieldChanges"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"_filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valuesAdded"</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="analyzer-emlparser_2_1-completed-successfully">Analyzer <code>EmlParser_2_1</code> completed successfully<a class="headerlink" href="#analyzer-emlparser_2_1-completed-successfully" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
