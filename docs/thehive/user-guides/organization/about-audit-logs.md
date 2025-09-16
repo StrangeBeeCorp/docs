@@ -6,6 +6,9 @@ Every create, update, delete, merge, and function invocation generates an audit 
 
 TheHive displays audit logs graphically in the **History** tab within case and alert descriptions.
 
+!!! tip "Tag and custom field changes"
+    <!-- md:version 5.5.9 --> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.
+
 ## Key use cases
 
 Audit logs provide critical insights into system activity and security that are usually used to:
@@ -52,9 +55,9 @@ Each audit log entry contains fields that capture the complete context of an act
 * `context`: Full description of the parent object, providing complete situational awareness.
 * `organisation`: Organization receiving the audit event, which may differ from the performing organization in [sharing scenarios](../../administration/organizations/about-organizations-sharing-rules.md).
 
-## Example audit entry
+## Example audit entries
 
-The following audit log shows a case status update from *New* to *InProgress*:
+### Case status update from *New* to *InProgress*
 
 ```json
 {
@@ -139,6 +142,142 @@ The following audit log shows a case status update from *New* to *InProgress*:
     "timeToTriage": 1029163168,
     "timeToAcknowledge": 1290396841,
     "customFieldValues": {}
+  },
+  "organisation": {
+    "organisationId": "~4169864",
+    "organisation": "TheOrganization"
+  }
+}
+```
+
+### Custom field update from *Support* to *Engineering*
+
+<!-- md:version 5.5.9 -->
+
+```json
+{
+  "_id": "~327684328",
+  "_type": "Audit",
+  "_createdBy": "alice@example.com",
+  "_createdAt": 1694441999960,
+  "action": "update",
+  "mainAction": true,
+  "requestId": "74dc37479904ebe7:3957d351:18a847d4266:-8000:109",
+  "rootId": "~327925760",
+  "details": {
+    "customFields": [
+      {
+        "_id": "business-unit:Engineering",
+        "name": "business-unit",
+        "type": "string",
+        "value": "Engineering",
+        "order": 0
+      }
+    ],
+    "customFieldChanges": [
+      {
+        "operation": "valuesAdded",
+        "name": "business-unit",
+        "values": [
+          "Engineering"
+        ]
+      },
+      {
+        "operation": "valuesRemoved",
+        "name": "business-unit",
+        "values": [
+          "Support"
+        ]
+      }
+    ]
+  },
+  "objectId": "~327925760",
+  "objectType": "Case",
+  "object": {
+    "_id": "~327925760",
+    "_type": "Case",
+    "_createdBy": "sami@example.com",
+    "_updatedBy": "alice@example.com",
+    "_createdAt": 1693412835689,
+    "_updatedAt": 1694441999230,
+    "number": 34,
+    "title": "Suspicious network activity detected",
+    "description": "***Description***",
+    "severity": 3,
+    "severityLabel": "HIGH",
+    "startDate": 1693151602000,
+    "tags": ["tagA"],
+    "flag": false,
+    "tlp": 2,
+    "tlpLabel": "AMBER",
+    "pap": 1,
+    "papLabel": "GREEN",
+    "status": "InProgress",
+    "stage": "InProgress",
+    "assignee": "sami@example.com",
+    "customFields": [
+      {
+        "_id": "business-unit:Engineering",
+        "name": "business-unit",
+        "type": "string",
+        "value": "Engineering",
+        "order": 0
+      }
+    ],
+    "userPermissions": [],
+    "extraData": {},
+    "newDate": 1693412835673,
+    "inProgressDate": 1694441998841,
+    "timeToDetect": 261233673,
+    "timeToTriage": 1029163168,
+    "timeToAcknowledge": 1290396841,
+    "customFieldValues": {
+      "business-unit": "Engineering"
+    }
+  },
+  "context": {
+    "_id": "~327925760",
+    "_type": "Case",
+    "_createdBy": "sami@example.com",
+    "_updatedBy": "alice@example.com",
+    "_createdAt": 1693412835689,
+    "_updatedAt": 1694441999230,
+    "number": 34,
+    "title": "Suspicious network activity detected",
+    "description": "***Description***",
+    "severity": 3,
+    "severityLabel": "HIGH",
+    "startDate": 1693151602000,
+    "tags": [
+      "tagA"
+    ],
+    "flag": false,
+    "tlp": 2,
+    "tlpLabel": "AMBER",
+    "pap": 1,
+    "papLabel": "GREEN",
+    "status": "InProgress",
+    "stage": "InProgress",
+    "assignee": "sami@example.com",
+    "customFields": [
+      {
+        "_id": "business-unit:Engineering",
+        "name": "business-unit",
+        "type": "string",
+        "value": "Engineering",
+        "order": 0
+      }
+    ],
+    "userPermissions": [],
+    "extraData": {},
+    "newDate": 1693412835673,
+    "inProgressDate": 1694441998841,
+    "timeToDetect": 261233673,
+    "timeToTriage": 1029163168,
+    "timeToAcknowledge": 1290396841,
+    "customFieldValues": {
+      "business-unit": "Engineering"
+    }
   },
   "organisation": {
     "organisationId": "~4169864",

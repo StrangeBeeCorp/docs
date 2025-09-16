@@ -30,7 +30,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 5. Write your filter.
 
     !!! tip "Operators"
-        To learn more about using operators, see the [About FilteredEvent Trigger Operators](filtered-event-trigger-operators.md) topic.
+        For details on the available operators, see [FilteredEvent Trigger Operators](filtered-event-trigger-operators.md).
 
     To access a specific field within a JSON object, use dot (`.`) notation to navigate through nested properties.
 
@@ -43,6 +43,9 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
     }
     }
     ```
+
+    !!! tip "Tag and custom field changes"
+        <!-- md:version 5.5.9 --> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.
 
     ---
 
@@ -61,7 +64,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 
 ## Examples
 
-* An case severity has been updated to High or Critical:
+### Case severity updated to High or Critical
 
 ```json
 {
@@ -85,7 +88,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 }
 ```
 
-* An alert has been closed without an assigned user:
+### Alert closed without an assignee
 
 ```json
 {
@@ -114,7 +117,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 }
 ```
 
-* An observable was updated with a report from analyzer `Crt_sh_Transparency_Logs_1_0`:
+### Observable updated with a report from analyzer `Crt_sh_Transparency_Logs_1_0`
 
 ```json
 {
@@ -136,7 +139,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 }
 ```
 
-* The responder has finished:
+### Responder action finished
 
 ```json
 {
@@ -169,7 +172,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 }
 ```
 
-* The case is updated with a status of `TruePositive` or `FalsePositive`, and the custom field `business-unit` is set to either `Sales` or `Marketing`:
+### Case status updated to `TruePositive` or `FalsePositive`, with the custom field `business-unit` set to `Sales` or `Marketing`
 
 ```json
 {
@@ -216,7 +219,38 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 }
 ```
 
-* Analyzer `EmlParser_2_1` completed with a success status:
+### Custom field `business-unit` updated to `Engineering`
+
+<!-- md:version 5.5.9 -->
+
+```json
+{
+    "_arrayMatch": {
+        "_field": "details.customFieldChanges",
+        "_filter": {
+            "_and": [
+                {
+                    "_eq": {
+                        "operation": "valuesAdded"
+                    }
+                },
+                {
+                    "_eq": {
+                        "name": "business-unit"
+                    }
+                },
+                {
+                    "_eq": {
+                        "value": "Engineering"
+                    }
+                }
+            ]
+        }
+    }
+}
+```
+
+### Analyzer `EmlParser_2_1` completed successfully
 
 ```json
 {

@@ -6,6 +6,37 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.9 - September 16, 2025
+
+### Fixes
+
+#### Email Intake
+
+Email preview rendering: Line breaks in alert description previews are now displayed correctly, improving readability of email content.
+
+#### Dashboards
+
+* Sorting: Fixed an issue where certain fields were incorrectly available for sorting data series.
+* Bar widget: Resolved a problem with the `_total` column display.
+* Donut widget: Corrected section color assignments that were occasionally mismatched in some configurations.
+
+### Improvements
+
+#### Audit logs
+
+Audit logs now capture [updates to tags and custom fields](../user-guides/organization/about-audit-logs.md#custom-field-update-from-support-to-engineering). This makes it possible to detect specific changes (additions, modifications, deletions) and [trigger notifications when such changes occur](../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md#custom-field-business-unit-updated-to-engineering).
+
+#### API documentation
+
+* Status lists: Added documentation for `listCaseStatus` and `listAlertStatus` queries, which return the available statuses for cases and alerts.
+* Custom fields: Clarified the two update modes for custom fields on a case, highlighting their differences.
+
+### Other improvements
+
+* Attachments: The attachment list now shows the username of the creator.
+* Alert Feeder: The maximum length of authentication keys has been increased to 1024 characters.
+* Notifications: The notifier list can now be sorted by notifier type.
+
 ## 5.5.8 - August 27, 2025
 
 ### Fixes
