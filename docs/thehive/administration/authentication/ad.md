@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring an [Active Directory (AD)](../ldap/about-ldap.md) authentication provider in TheHive.
+Configure an [AD](../ldap/about-ldap.md) authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 
@@ -46,17 +46,17 @@ This topic provides step-by-step instructions for configuring an [Active Directo
 
     **- The DNS domain name**
 
-    The fully qualified domain name (FQDN) associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the Domain Name System (DNS).
+    The FQDN associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the DNS.
 
     Example: *domain.local*
 
     ---
 
-7. To secure communication between TheHive and the domain controllers using Secure Sockets Layer (SSL) encryption, turn on the **Use SSL** toggle.
+7. To secure communication between TheHive and the domain controllers using SSL/TLS encryption, turn on the **Use SSL** toggle.
 
     This encrypts authentication requests and responses, protecting sensitive data from interception during transmission.
 
-    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+    For more information about configuring SSL/TLS, refer to [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md).
 
     ---
 
@@ -64,5 +64,5 @@ This topic provides step-by-step instructions for configuring an [Active Directo
 
 <h2>Next steps</h2>
 
-* [How to Configure Authentication](configure-authentication.md)
-* [Configure SSL](ssl.md)
+* [Configure Authentication](configure-authentication.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md)

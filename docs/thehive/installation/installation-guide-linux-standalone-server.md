@@ -47,7 +47,7 @@ Start by installing the necessary dependencies for TheHive.
 
 ---
 
-## Step 2: Set up the Java Virtual Machine
+## Step 2: Set up the Java virtual machine (JVM)
 
 TheHive requires Java to run its application server and to manage various processes.
 
@@ -690,7 +690,7 @@ For additional configuration options, refer to:
 
 2. Open the `/etc/elasticsearch/jvm.options.d/jvm.options` file using a text editor.
 
-3. In the `jvm.options` file, set the Java Virtual Machine (JVM) options.
+3. In the `jvm.options` file, set the Java virtual machine (JVM) options.
 
     The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.
 
@@ -1057,7 +1057,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 2. In the `application.conf` file, configure the service.
 
-    To ensure TheHive works correctly—especially with authentication mechanisms such as Single Sign-On (SSO)—configure the `application.baseUrl` and `play.http.context` parameters. If required, you can also adjust `http.address` and `http.port`.
+    To ensure TheHive works correctly—especially with authentication mechanisms such as SSO—configure the `application.baseUrl` and `play.http.context` parameters. If required, you can also adjust `http.address` and `http.port`.
 
     Default configuration:
 
@@ -1075,7 +1075,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     ##### Mandatory elements
 
-    * Protocol: Either `http` or `https`, depending on whether you [enabled SSL](../configuration/ssl.md).
+    * Protocol: Either `http` or `https`, depending on whether you [configured HTTPS using a reverse proxy](../configuration/ssl/configure-https-reverse-proxy.md).
     * Hostname: The DNS name or IP address that users enter in their browser.
 
     ##### Optional elements
@@ -1090,49 +1090,17 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Use `http.address` and `http.port` to control how the service listens on the host.
         * Use `application.baseUrl` to define the public URL that TheHive communicates to clients.
 
-        To customize the listen address and port, see [Service Configuration](../configuration/service.md#listen-address-and-port).
+        To customize the listen address and port, see [Service Configuration](../configuration/update-service-configuration.md#update-the-listen-address-and-port).
 
     #### play.http.context
 
     If TheHive is served under a subpath when running behind a reverse proxy, set `play.http.context` to the matching path segment.
     
-    For configuration details, see [Service Configuration](../configuration/service.md#setting-a-context-path).
+    For configuration details, see [Service Configuration](../configuration/update-service-configuration.md#set-a-context-path).
 
-    For additional guidance on proxy usage, see [Proxy Settings](../configuration/proxy.md).
+    For additional guidance on proxy usage, see [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
 
-    !!! example "Service configuration examples"
-
-        * Root domain:
-
-            Without explicit port:
-
-            ```yaml
-            application.baseUrl = "https://thehive.example.org"
-            play.http.context = "/"
-            ```
-
-            With explicit port:
-
-            ```yaml
-            application.baseUrl = "https://thehive.example.org:9000"
-            play.http.context = "/"
-            ```
-
-        * Custom path behind a reverse proxy:
-
-            Without explicit port:
-
-            ```yaml
-            application.baseUrl = "https://example.org/thehive"
-            play.http.context = "/thehive"
-            ```
-
-            With explicit port:
-
-            ```yaml
-            application.baseUrl = "https://example.org:9000/thehive"
-            play.http.context = "/thehive"
-            ```
+    {!includes/example-configuration-service.md!}
 
 3. Optional: Configure the secret key manually.
 
@@ -1248,11 +1216,11 @@ On a standalone server, these files are stored on the local filesystem. By defau
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
 
-By default, TheHive enables both the [Cortex](../administration/cortex/about-cortex.md) and [MISP](../administration/misp-integration/about-misp-integration.md) integration modules.
+By default, TheHive enables both the [Cortex](../administration/cortex/about-cortex.md) and the Malware Information Sharing Platform [MISP](../administration/misp-integration/about-misp-integration.md) integration modules.
 
 When you connect TheHive to Cortex, you can use analyzers to look up extra information about observables and get clear reports with the results. You can also use responders to take automatic actions on cases, alerts, or tasks to help with investigations and incident response.
 
-When you connect TheHive to MISP, you can bring in threat intelligence by importing MISP events as alerts or cases to support your investigations. You can also share your findings back to MISP by exporting observables marked as IOCs so other teams and communities can benefit.
+When you connect TheHive to MISP, you can bring in threat intelligence by importing MISP events as alerts or cases to support your investigations. You can also share your findings back to MISP by exporting observables marked as indicators of compromise (IOCs) so other teams and communities can benefit.
 
 If you don't plan to use either of these services, you can deactivate the corresponding module by uncommenting the related configuration line in the `application.conf` file.
 
@@ -1304,7 +1272,7 @@ scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
 
 For additional customization, see the Configuration and Operations sections of this documentation.
 
-To enable HTTPS, follow the instructions in [SSL Configuration](../configuration/ssl.md).
+To enable HTTPS, follow the instructions in [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
 
 ---
 
@@ -1326,9 +1294,8 @@ See the [Monitoring](../operations/monitoring.md) page for detailed instructions
 
 * [Database and Index Configuration](../configuration/database.md)
 * [Logs Configuration](../configuration/logs.md)
-* [Proxy Settings](../configuration/proxy.md)
-* [SSL Configuration](../configuration/ssl.md)
-* [Service Configuration](../configuration/service.md)
+* [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
 * [GDPR Compliance in TheHive 5.x](../configuration/gdpr.md)
 * [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
 * [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)

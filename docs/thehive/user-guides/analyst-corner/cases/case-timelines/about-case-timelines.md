@@ -17,7 +17,7 @@ Case timelines consist of all types of events that have occurred in a case, incl
 * Investigation start
 * Task completion
 * Flagged [task logs](../../tasks/about-task-logs.md)
-* IoC sightings
+* Indicator of compromise (IOC) sightings
 * MITRE ATT&CK patterns
 
 [Configure custom events](add-custom-event-timeline.md) to include additional entries in the timeline.

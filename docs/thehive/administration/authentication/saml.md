@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring a Security Assertion Markup Language (SAML) authentication provider in TheHive.
+Configure a SAML authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 
@@ -33,11 +33,11 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     === "Since version 5.5"
 
-        1. Select **SSO authentication** in the **Authentication providers** section.
+        4. Select **SSO authentication** in the **Authentication providers** section.
 
-        2. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
+        5. In the **SSO authentication** drawer, turn on the **Enable SSO** toggle.
 
-        3. Select **Add a provider** or select :fontawesome-solid-plus:. Then select **SAML** from the dropdown list.
+        6. Select **Add a provider** or select :fontawesome-solid-plus:. Then select **SAML** from the dropdown list.
 
     ---
 
@@ -45,7 +45,7 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
     **- Name \***
 
-    A recognizable name for the identity provider (IdP) in TheHive.
+    A recognizable name for the IdP in TheHive.
 
     Example: *Microsoft Entra ID*
 
@@ -82,4 +82,4 @@ This topic provides step-by-step instructions for configuring a Security Asserti
 
 <h2>Next steps</h2>
 
-* [How to Configure Authentication](configure-authentication.md)
+* [Configure Authentication](configure-authentication.md)

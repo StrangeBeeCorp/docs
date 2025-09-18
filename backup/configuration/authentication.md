@@ -78,7 +78,7 @@ Use Microsoft ActiveDirectory to authenticate the user. The configuration is:
 | `hosts`        | list of string  | the addresses of the domain controllers. If missing, the dnsDomain is used |
 | `winDomain`    | string          | the Windows domain name (`MYDOMAIN`) |
 | `dnsDomain`    | string          | the Windows domain name in DNS format (`mydomain.local`) |
-| `useSSL`       | boolean         | indicate if SSL must be used to connect to domain controller. The global trust store of the JVM is used to validate remote certificate (`JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks"`) |
+| `useSSL`       | boolean         | indicate if SSL must be used to connect to domain controller. The global truststore of the JVM is used to validate remote certificate (`JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks"`) |
 
 
 !!! Example
@@ -112,7 +112,7 @@ Use LDAP directory server to authenticate the user. The configuration is:
 | `bindPW`       | string          | password of the service account |
 | `baseDN`       | string          | DN where the users are located in |
 | `filter`       | string          | filter used to search the user. "{0}" is replaced by the user login. A valid filter is: `(&(uid={0})(objectClass=posixAccount))` |
-| `useSSL`       | boolean         | indicate if SSL must be used to connect to LDAP server. The global trust store of the JVM is used to validate remote certificate (`JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks"`) |
+| `useSSL`       | boolean         | indicate if SSL must be used to connect to LDAP server. The global truststore of the JVM is used to validate remote certificate (`JAVA_OPTS="-Djavax.net.ssl.trustStore=/path/to/truststore.jks"`) |
 
 
 !!! Example

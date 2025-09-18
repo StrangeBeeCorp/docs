@@ -16,7 +16,7 @@ Mark an observable as sighted when you detect or observe it in your environment.
 
 3. Select **Save**.
 
-## Mark an observable as indicator of compromise (IOC)
+## Mark an observable as indicator of compromise
 
 Mark an observable as an indicator of compromise (IOC) if you recognize it as related to suspicious or malicious activity.
 

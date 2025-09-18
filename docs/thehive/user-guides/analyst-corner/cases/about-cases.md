@@ -18,7 +18,7 @@ TheHive supports creating cases from the following sources:
 
 * [Archived cases](../cases/create-a-new-case.md#create-a-case-from-an-archived-case): Restored cases from previous investigations in TheHive.
 
-* [MISP event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases created by manually importing MISP events.
+* [Malware Information Sharing Platform (MISP) event files](../cases/create-a-new-case.md#create-a-case-from-a-misp-event): Cases created by manually importing MISP events.
 
 * <!-- md:version 5.5 --> [Alert feeders](../../../user-guides/organization/configure-organization/manage-feeders/about-feeders.md): Cases created from data retrieved from external systems using an alert feeder.
 

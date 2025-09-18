@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for adding a custom [taxonomy](about-taxonomies.md) in TheHive.
 
-Use this procedure if you want to add taxonomies other than the default imported MISP taxonomies.
+Use this procedure if you want to add taxonomies other than the default imported Malware Information Sharing Platform (MISP) taxonomies.
 
 {!includes/administrator-access-manage-taxonomies.md!}
 

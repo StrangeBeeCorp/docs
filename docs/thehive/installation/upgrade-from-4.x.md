@@ -68,7 +68,7 @@ Ensure that you can log in as an admin user with a password in TheHive database.
     Please ensure that the instructions under this section are followed on all nodes of the cluster.
 
 
-Follow the [**installation process**](./installation-guide-linux-standalone-server.md#step-2-set-up-the-java-virtual-machine) to install the required version of Java.
+Follow the [**installation process**](./installation-guide-linux-standalone-server.md#step-2-set-up-the-java-virtual-machine-jvm) to install the required version of Java.
 
 ---
 

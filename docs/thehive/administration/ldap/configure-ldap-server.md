@@ -2,7 +2,7 @@
 
 <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring an [Lightweight Directory Access Protocol (LDAP) server](about-ldap.md) in TheHive, including Microsoft’s Active Directory (AD).
+This topic provides step-by-step instructions for configuring an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active Directory (AD).
 
 Use this procedure to periodically synchronize your local TheHive database with LDAP, enabling automatic user account creation, updates, deletion, and assignment to [organizations](../organizations/about-organizations.md) and [permission profiles](../profiles/about-profiles.md) within TheHive.
 
@@ -30,7 +30,7 @@ Use this procedure to periodically synchronize your local TheHive database with 
 
     **- Servers host name or IP address \***
 
-    The address of the LDAP server you want to connect to, either a host  name or an IP address.
+    The address of the LDAP server you want to connect to, either a host name or an IP address.
 
     Example: *ldap.domain.local*
 

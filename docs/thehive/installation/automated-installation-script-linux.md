@@ -22,7 +22,7 @@ If you prefer a faster setup than going through [the complete installation guide
 
 2. Enter the number corresponding to the installation option you want to run.
 
-    * 1) **Setup proxy settings**: Configure the host to operate behind an HTTP proxy and integrate custom Certificate Authorities (CAs) if needed. This ensures secure and compatible communication with external services.
+    * 1) **Setup proxy settings**: Configure the host to operate behind an HTTP proxy and integrate custom certificate authorities (CAs) if needed. This ensures secure and compatible communication with external services.
     * 2) **Install TheHive**: Automatically install TheHive, including its required components and dependencies, using predefined and production-ready settings.
 
 3. Press **Enter**.
@@ -39,10 +39,9 @@ If you also want to use the script to install Cortex, refer to the [Cortex insta
 * [File Storage Configuration](../configuration/file-storage.md)
 * [TheHive Connectors](../configuration/connectors.md)
 * [Logs Configuration](../configuration/logs.md)
-* [Proxy Settings](../configuration/proxy.md)
 * [Secret Configuration File](../configuration/secret.md)
-* [SSL Configuration](../configuration/ssl.md)
-* [Service Configuration](../configuration/service.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
 * [GDPR Compliance in TheHive 5.x](../configuration/gdpr.md)
 * [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
 * [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)

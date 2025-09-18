@@ -1,6 +1,6 @@
 # TheHive Connectors
 
-TheHive comes with built-in connectors to seamlessly integrate with Cortex and MISP. 
+TheHive comes with built-in connectors to seamlessly integrate with Cortex and the Malware Information Sharing Platform (MISP).
 
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.

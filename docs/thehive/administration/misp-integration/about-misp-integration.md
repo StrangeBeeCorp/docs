@@ -1,6 +1,6 @@
 # About MISP Integration
 
-This topic explains how the malware information sharing platform (MISP) integrates with TheHive.
+This topic explains how the Malware Information Sharing Platform (MISP) integrates with TheHive.
 
 {!includes/upgrade-misp.md!}
 

@@ -1,6 +1,6 @@
 # Ignore Alert Updates from MISP
 
-This topic provides step-by-step instructions for ignoring alert updates from [MISP](../../../administration/misp-integration/about-misp-integration.md) in TheHive.
+This topic provides step-by-step instructions for ignoring alert updates from the Malware Information Sharing Platform [(MISP)](../../../administration/misp-integration/about-misp-integration.md) in TheHive.
 
 MISP is an open-source threat intelligence platform that integrates with TheHive to retrieve events from MISP servers and convert them into alerts. By default, TheHive automatically updates these alerts when the corresponding MISP events change, which may also update the alerts’ statuses.
 

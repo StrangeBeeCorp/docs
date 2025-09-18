@@ -172,7 +172,7 @@ cortex:
   #k8sSecretKey: "api-keys"
 ```
 
-When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL:
+When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service DNS as the server URL:
 
 ```bash
 http://cortex.<namespace>.svc:9001

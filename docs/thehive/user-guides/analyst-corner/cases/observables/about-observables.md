@@ -23,9 +23,9 @@ Users can add one or more values to a single observable in TheHive, but they can
 
 ## Statuses
 
-### Indicator of compromise (IOC)
+### Indicator of compromise
 
-An observable can be [marked as an indicator of compromise (IOC)](update-an-observable-status.md#mark-an-observable-as-indicator-of-compromise-ioc) once it's identified as being linked to suspicious or malicious activity.
+An observable can be [marked as an indicator of compromise (IOC)](update-an-observable-status.md#mark-an-observable-as-indicator-of-compromise) once it's identified as being linked to suspicious or malicious activity.
 
 ### Sighted
 

@@ -13,7 +13,7 @@ Analysts should create a task log whenever they perform or complete a meaningful
 ## Examples
 
 !!! warning "No observables allowed"
-    Task logs should never include observables. Doing so can make data unsearchable, disorganized, and prevent export to MISP. Additionally, links within task logs are clickable, which can be risky.
+    Task logs should never include observables. Doing so can make data unsearchable, disorganized, and prevent export to the Malware Information Sharing Platform (MISP). Additionally, links within task logs are clickable, which can be risky.
 
 Tasks logs can include actions such as:
 

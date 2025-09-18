@@ -33,7 +33,7 @@ Each license type has specific [quotas](https://strangebee.com/thehive-pricing-o
 * Number of organizations: Only unlocked organizations count toward the license limit.
 * Number of instances
 * Number of Cortex servers
-* Number of MISP servers
+* Number of Malware Information Sharing Platform (MISP) servers
 
 <h2>Next steps</h2>
 

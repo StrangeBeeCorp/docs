@@ -39,11 +39,11 @@ We recommend using a reverse proxy to manage SSL layer; for example, Nginx.
 ### Certificate manager
 Certificate manager is used to store client certificates and certificate authorities.
 
-#### Use custom Certificate Authorities
+#### Use custom certificate authorities
 
-The prefered way to use custom Certificate Authorities is to use the system configuration. 
+The prefered way to use custom certificate authorities is to use the system configuration. 
 
-If setting up a custom Certificate Authority (to connect web proxies, remote services like LPAPS server ...) is required globally in the application, the better solution consists of installing it on the OS and restarting Cortex. 
+If setting up a custom certificate authority (to connect web proxies, remote services like LPAPS server ...) is required globally in the application, the better solution consists of installing it on the OS and restarting Cortex. 
 
 !!! Example ""
 

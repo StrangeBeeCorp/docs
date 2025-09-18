@@ -141,7 +141,7 @@ You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami
 
 See [Add a Cortex Server](../../thehive/administration/cortex/add-a-cortex-server.md) for detailed instructions.
 
-When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL.
+When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service DNS as the server URL.
 
 ```bash
 http://cortex.<namespace>.svc:9001

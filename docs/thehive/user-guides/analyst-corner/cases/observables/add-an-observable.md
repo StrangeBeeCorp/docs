@@ -40,7 +40,7 @@ Observables are data points that represent specific events or properties within 
 
     **- TLP (traffic light protocol) \***
 
-    The TLP level for the observable. It indicates how you can share the observable's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
+    The TLP level for the observable. It indicates how you can share the observable's information with others. Refer to the [Malware Information Sharing Platform (MISP) taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
 
     **- PAP (permissible actions protocol) \***
 

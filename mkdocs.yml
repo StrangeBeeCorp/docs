@@ -75,7 +75,7 @@ plugins:
             'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.4.md'
             'thehive/setup/index.md': 'thehive/overview/index.md'
             'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/installation-guide-linux-standalone-server.md'
-            'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl.md'
+            'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/setup/installation/docker.md':  'thehive/installation/docker.md'
             'thehive/user-guides/analyst-corner/search/about-search.md': 'thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md'
             'thehive/user-guides/analyst-corner/search//search-scope-by/alerts.md': 'thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md'
@@ -332,6 +332,11 @@ plugins:
             'thehive/installation/step-by-step-installation-guide.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/user-guides/analyst-corner/about-views.md': 'thehive/user-guides/analyst-corner/views/about-views.md'
             'thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/share-a-case-page.md'
+            'thehive/administration/authentication/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
+            'thehive/configuration/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
+            'thehive/configuration/proxy.md': 'thehive/configuration/proxy-settings.md'
+            'thehive/configuration/service.md': 'thehive/configuration/update-service-configuration.md'
+
 
 extra:
   generator: false
@@ -444,10 +449,10 @@ nav:
       - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
       - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
       - 'Logs': thehive/configuration/logs.md
-      - 'Proxy': thehive/configuration/proxy.md
       - 'Secrets': thehive/configuration/secret.md
-      - 'SSL': thehive/configuration/ssl.md
-      - 'Service': thehive/configuration/service.md
+      - 'Configure JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
+      - 'Configure HTTPS Using a Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
+      - 'Update Service Configuration': thehive/configuration/update-service-configuration.md
       - 'Compliance':
         - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
     - 'Operations':
@@ -519,7 +524,6 @@ nav:
             - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
             - 'SAML': thehive/administration/authentication/saml.md
             - 'OpenID': thehive/administration/authentication/openid.md
-          - 'Configure SSL': thehive/administration/authentication/ssl.md
         - 'Configure SMTP':
           - 'About SMTP': thehive/administration/smtp/about-smtp.md
           - 'Configure an SMTP Server': thehive/administration/smtp/configure-smtp-server.md

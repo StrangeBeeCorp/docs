@@ -1,6 +1,6 @@
 # Configure Authentication
 
-This topic provides step-by-step instructions for configuring authentication in TheHive.
+Authentication in TheHive controls how users and services sign in. You can use the built-in local database, integrate with enterprise directories such as LDAP or AD, or enable SSO through SAML or OpenID providers. Additional options include API key authentication, basic authentication, HTTP header authentication, multi-factor authentication, and configurable session management.
 
 {!includes/access-authentication.md!}
 
@@ -50,7 +50,7 @@ This topic provides step-by-step instructions for configuring authentication in 
 
     **- Enable multi-factor authentication**
 
-    Enables multi-factor authentication (MFA), allowing users to activate it.
+    Enables MFA, allowing users to activate it.
 
     **- Default domain for user login**
 
@@ -75,7 +75,7 @@ This topic provides step-by-step instructions for configuring authentication in 
     !!! info "Prerequisite"
         Users must have an existing account in TheHive local database to authenticate successfully. [Configure an LDAP server](../../administration/ldap/configure-ldap-server.md) to automate account creation, updates, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.
 
-    Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
+    Authenticates users using an LDAP server or an AD service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.
 
     For more information, see the [Configure an Active Directory Authentication Provider](ad.md) and [Configure an LDAP Authentication Provider](ldap.md) topics.
 
@@ -84,13 +84,13 @@ This topic provides step-by-step instructions for configuring authentication in 
     !!! warning "Deprecated"
         The OAuth 2.0 is deprecated and will be removed in a future release. Use the [OpenID authentication provider](openid.md) instead.
 
-    Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
+    Enables SSO through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.
 
     For more information, see the [Configure an OAuth 2.0 Authentication Provider](oauth2.md) topic.
 
     **- SSO authentication**
 
-    Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
+    Enables SSO through one or more SAML providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.
 
     For more information, see the [Configure a SAML Authentication Provider](saml.md) and [Configure an OpenID Authentication Provider](openid.md) topics.
 
@@ -108,4 +108,4 @@ This topic provides step-by-step instructions for configuring authentication in 
 * [Configure an OAuth 2.0 Authentication Provider](oauth2.md)
 * [Configure a SAML Authentication Provider](saml.md)
 * [Configure an OpenID Authentication Provider](openid.md)
-* [Configure SSL](ssl.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md)

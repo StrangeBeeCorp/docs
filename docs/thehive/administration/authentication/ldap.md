@@ -2,7 +2,7 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring an [Lightweight Directory Access Protocol (LDAP)](../ldap/about-ldap.md) authentication provider in TheHive.
+Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
 {!includes/access-authentication.md!}
 
@@ -40,7 +40,7 @@ This topic provides step-by-step instructions for configuring an [Lightweight Di
 
 7. Turn on the **Auth-use SSL** toggle to encrypt communication between TheHive and the authentication provider.
 
-    For more information about configuring SSL, refer to the [Configure SSL](ssl.md) topic.
+    For more information about configuring SSL/TLS, refer to [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md).
 
     ---
 
@@ -74,5 +74,5 @@ This topic provides step-by-step instructions for configuring an [Lightweight Di
 
 <h2>Next steps</h2>
 
-* [How to Configure Authentication](configure-authentication.md)
-* [Configure SSL](ssl.md)
+* [Configure Authentication](configure-authentication.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md)

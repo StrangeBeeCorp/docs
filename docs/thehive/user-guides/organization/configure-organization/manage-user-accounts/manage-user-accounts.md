@@ -44,7 +44,7 @@ Update the email address and select **Confirm**.
 
 Select the avatar, then select a new image in PNG or JPG format. The file must be smaller than 500 KB. Select **Confirm** to apply the change.
 
-## Check whether a user account has activated multi-factor authentication (MFA)
+## Check whether a user account has activated multi-factor authentication
 
 Move through the **MFA** section. If the user has activated multi-factor authentication, *Yes* appears.
 

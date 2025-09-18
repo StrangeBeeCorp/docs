@@ -42,7 +42,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 4. Select **Confirm**.
 
-## Activate multi-factor authentication (MFA)
+## Activate multi-factor authentication
 
 Use this procedure to add an extra layer of security to your account.
 

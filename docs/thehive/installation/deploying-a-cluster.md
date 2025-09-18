@@ -343,7 +343,7 @@ For each node, update the configuration files located at `/etc/cassandra/elastic
 
 ### Custom JVM Options
 
-To customize Java Virtual Machine (JVM) options for Elasticsearch, create a JVM Options File named jvm.options in the directory ``/etc/elasticsearch/jvm.options.d/`` with the following lines:
+To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM Options File named jvm.options in the directory ``/etc/elasticsearch/jvm.options.d/`` with the following lines:
 
 !!! Example ""
 
