@@ -8590,29 +8590,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../add-ttps/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Add TTPs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../export-ttps/" class="md-nav__link">
         
   
@@ -8624,39 +8601,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Remove TTPs
-    
-  </span>
-  
-
-      </a>
-      
     </li>
   
 
@@ -14570,7 +14514,7 @@
 
 
 <h1 id="remove-tactics-techniques-and-procedures">Remove Tactics, Techniques and Procedures<a class="headerlink" href="#remove-tactics-techniques-and-procedures" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for removing <a href="../about-ttps/">tactics, techniques and procedures (TTPs)</a> from a <a href="../../about-cases/">case</a> or an <a href="../../../alerts/about-alerts/">alert</a> in TheHive.</p>
+<p>Remove <a href="../about-ttps/">tactics, techniques and procedures (TTPs)</a> from a <a href="../../about-cases/">case</a> in TheHive.</p>
 <p>TTPs describe the behaviors and methods commonly used by specific threat actors or groups.</p>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
@@ -14578,9 +14522,13 @@
 </div>
 <h2>Procedure</h2>
 
+<div class="admonition info">
+<p class="admonition-title">Bulk remove</p>
+<p>To remove TTPs in bulk, select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"></path></svg></span> to each TTP you want to remove, then <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M136.7 5.9 128 32H32C14.3 32 0 46.3 0 64s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96l-8.7-26.1C306.9-7.2 294.7-16 280.9-16H167.1c-13.8 0-26 8.8-30.4 21.9M416 144H32l21.1 323.1C54.7 492.4 75.7 512 101 512h246c25.3 0 46.3-19.6 47.9-44.9z"></path></svg></span> at the top of the screen.</p>
+</div>
 <ol>
 <li>
-<p><a href="../../search-for-cases/find-a-case/">Find the case</a> or <a href="../../../alerts/search-for-alerts/find-an-alert/">the alert</a> where you want to remove TTPs.</p>
+<p><a href="../../search-for-cases/find-a-case/">Find the case</a> where you want to remove TTPs.</p>
 </li>
 <li>
 <p>In the alert or case, select the <strong>TTPs</strong> tab.</p>
@@ -14591,10 +14539,6 @@
 <div class="admonition tip">
 <p class="admonition-title">Applying filters and views</p>
 <p>Apply <a href="/thehive/user-guides/analyst-corner/about-filtering-and-sorting/">filters and sorting</a> and save preferences using <a href="/thehive/user-guides/analyst-corner/views/about-views/">views</a>.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Bulk remove</p>
-<p>To remove TTPs in bulk, select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"></path></svg></span> to each TTP you want to remove, then <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M136.7 5.9 128 32H32C14.3 32 0 46.3 0 64s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96l-8.7-26.1C306.9-7.2 294.7-16 280.9-16H167.1c-13.8 0-26 8.8-30.4 21.9M416 144H32l21.1 323.1C54.7 492.4 75.7 512 101 512h246c25.3 0 46.3-19.6 47.9-44.9z"></path></svg></span> at the top of the screen.</p>
 </div>
 </li>
 <li>
