@@ -710,9 +710,7 @@ nav:
             - 'Run Responders and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable.md
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
-            - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
             - 'Export TTPs': thehive/user-guides/analyst-corner/cases/ttps/export-ttps.md
-            - 'Remove TTPs': thehive/user-guides/analyst-corner/cases/ttps/remove-ttps.md
           - 'Attachments':
             - 'About Attachments': thehive/user-guides/analyst-corner/cases/attachments/about-attachments.md
             - 'Add an Attachment': thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert.md

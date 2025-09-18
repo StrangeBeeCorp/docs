@@ -2,8 +2,6 @@
 
 Tactics, techniques and procedures (TTPs) describe the behaviors and methods commonly used by specific threat actors or groups.
 
-This topic provides a general overview of TTPs usage in TheHive.
-
 ## Definitions
 
 Tactics describe the goals of threat actors—what they're trying to achieve.
@@ -20,7 +18,7 @@ By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.
 
 ## Actions
 
-[Add](add-ttps.md) or [remove](remove-ttps.md) TTPs from both alerts and cases.
+[Add](add-ttps.md) or [remove](remove-ttps.md) TTPs from cases. You can also [export](export-ttps.md) TTPs from both cases and alerts.
 
 ## Permissions
 

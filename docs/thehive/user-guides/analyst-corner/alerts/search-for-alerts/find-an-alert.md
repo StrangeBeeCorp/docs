@@ -1,6 +1,6 @@
 # Find an Alert
 
-This topic provides step-by-step instructions for using various methods to search for an [alert](../about-alerts.md) in TheHive.
+Search for [alerts](../about-alerts.md) in TheHive using different methods depending on your needs—from quick searches to advanced filtering.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Alerts](overview-search-methods-alert.md) topic.
 
@@ -88,6 +88,5 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 * [Create a Case from an Alert](../create-a-case-from-an-alert.md)
 * [Run Responders and Review Reports for an Alert](../run-responders-on-an-alert.md)
 * [Find Similar Alerts or Cases](../../cases/find-similar-alerts-cases.md)
-* [Add TTPs](../../cases/ttps/add-ttps.md)
 * [Close an Alert](../close-an-alert.md)
 * [Reopen an Alert](../reopen-an-alert.md)

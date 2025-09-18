@@ -1,6 +1,6 @@
 # Export Tactics, Techniques and Procedures
 
-This topic provides step-by-step instructions for exporting [tactics, techniques and procedures (TTPs)](about-ttps.md) from a case or an alert in TheHive.
+Export [tactics, techniques and procedures (TTPs)](about-ttps.md) from a case or an alert in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 

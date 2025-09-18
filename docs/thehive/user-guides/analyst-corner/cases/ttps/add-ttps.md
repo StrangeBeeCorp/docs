@@ -1,6 +1,6 @@
 # Add Tactics, Techniques and Procedures
 
-This topic provides step-by-step instructions for adding [tactics, techniques and procedures (TTPs)](about-ttps.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+Add [tactics, techniques and procedures (TTPs)](about-ttps.md) to a [case](../about-cases.md) in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
@@ -8,7 +8,7 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 <h2>Procedure</h2>
 
-1. [Find the case](../search-for-cases/find-a-case.md) or [the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to add TTPs.
+1. [Find the case](../search-for-cases/find-a-case.md) where you want to add TTPs.
 
 2. {!includes/ttps-tab-go-to.md!}
 
