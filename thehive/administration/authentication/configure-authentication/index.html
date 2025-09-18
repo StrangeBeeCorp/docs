@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/service/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3269,29 +3269,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14512,7 +14489,7 @@
 
 
 <h1 id="configure-authentication">Configure Authentication<a class="headerlink" href="#configure-authentication" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for configuring authentication in TheHive.</p>
+<p>Authentication in TheHive controls how users and services sign in. You can use the built-in local database, integrate with enterprise directories such as LDAP or AD, or enable SSO through SAML or OpenID providers. Additional options include API key authentication, basic authentication, HTTP header authentication, multi-factor authentication, and configurable session management.</p>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
 <p>Only users with an admin-type profile that has the <code>managePlatform</code> permission can configure authentication in TheHive.</p>
@@ -14551,7 +14528,7 @@
 <p><strong>- Enable HTTP header authentication</strong></p>
 <p>Authenticates HTTP requests using a HTTP header that contains a user login. When enabled, you must provide the header name that the server will use to extract the login information from incoming requests.</p>
 <p><strong>- Enable multi-factor authentication</strong></p>
-<p>Enables multi-factor authentication (MFA), allowing users to activate it.</p>
+<p>Enables MFA, allowing users to activate it.</p>
 <p><strong>- Default domain for user login</strong></p>
 <p>By default, logins use email addresses. This feature lets users sign in without specifying the email domain. Instead of entering <em>user@example.com</em>, they only need to enter <em>user</em>.</p>
 <hr>
@@ -14571,17 +14548,17 @@ A Platinum license is required to configure Active Directory, OAuth 2.0, OpenID,
 <p class="admonition-title">Prerequisite</p>
 <p>Users must have an existing account in TheHive local database to authenticate successfully. <a href="../../ldap/configure-ldap-server/">Configure an LDAP server</a> to automate account creation, updates, deletion, and assignment of user accounts to organizations and permission profiles within TheHive.</p>
 </div>
-<p>Authenticates users using a Lightweight Directory Access Protocol (LDAP) server or an Active Directory (AD) service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.</p>
+<p>Authenticates users using an LDAP server or an AD service, such as Microsoft Active Directory or OpenLDAP. This allows integration with existing enterprise directories for centralized user management.</p>
 <p>For more information, see the <a href="../ad/">Configure an Active Directory Authentication Provider</a> and <a href="../ldap/">Configure an LDAP Authentication Provider</a> topics.</p>
 <p><strong>- OAuth 2.0 authentication (deprecated)</strong></p>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated</p>
 <p>The OAuth 2.0 is deprecated and will be removed in a future release. Use the <a href="../openid/">OpenID authentication provider</a> instead.</p>
 </div>
-<p>Enables single sign-on (SSO) through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.</p>
+<p>Enables SSO through an external OAuth 2.0 provider, such as Keycloak, Okta, GitHub, Microsoft 365, or Google. This simplifies authentication by allowing users to sign in using their existing credentials from supported platforms.</p>
 <p>For more information, see the <a href="../oauth2/">Configure an OAuth 2.0 Authentication Provider</a> topic.</p>
 <p><strong>- SSO authentication</strong></p>
-<p>Enables single sign-on (SSO) through one or more Security Assertion Markup Language (SAML) providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.</p>
+<p>Enables SSO through one or more SAML providers or OpenID providers, such as Okta or Microsoft Entra ID. This method supports secure, federated identity management for large organizations.</p>
 <p>For more information, see the <a href="../saml/">Configure a SAML Authentication Provider</a> and <a href="../openid/">Configure an OpenID Authentication Provider</a> topics.</p>
 <hr>
 </li>
@@ -14599,7 +14576,7 @@ A Platinum license is required to configure Active Directory, OAuth 2.0, OpenID,
 <li><a href="../oauth2/">Configure an OAuth 2.0 Authentication Provider</a></li>
 <li><a href="../saml/">Configure a SAML Authentication Provider</a></li>
 <li><a href="../openid/">Configure an OpenID Authentication Provider</a></li>
-<li><a href="../ssl/">Configure SSL</a></li>
+<li><a href="../../../configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a></li>
 </ul>
 
 

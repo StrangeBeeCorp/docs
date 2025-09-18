@@ -1170,29 +1170,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thehive/configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../thehive/configuration/secret/" class="md-nav__link">
         
   
@@ -1216,12 +1193,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thehive/configuration/ssl/" class="md-nav__link">
+      <a href="../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1239,12 +1216,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../thehive/configuration/service/" class="md-nav__link">
+      <a href="../../thehive/configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thehive/configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3237,29 +3237,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../thehive/administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14481,12 +14458,10 @@
 
   <h1>Certificate authority</h1>
 
-<p>Add a certificate authority.</p>
-<div class="codehilite"><pre><span></span><code><span class="n">For</span><span class="w"> </span><span class="n">more</span><span class="w"> </span><span class="n">information</span><span class="w"> </span><span class="n">about</span><span class="w"> </span><span class="n">configuring</span><span class="w"> </span><span class="n">SSL</span><span class="p">,</span><span class="w"> </span><span class="n">refer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="p">[</span><span class="n">Configure</span><span class="w"> </span><span class="n">SSL</span><span class="p">](</span><span class="o">/</span><span class="n">thehive</span><span class="o">/</span><span class="n">administration</span><span class="o">/</span><span class="n">authentication</span><span class="o">/</span><span class="n">ssl</span><span class="o">/</span><span class="p">)</span><span class="w"> </span><span class="n">topic</span><span class="p">.</span>
+<p>Add a certificate authority (CA).</p>
+<div class="codehilite"><pre><span></span><code>The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See [Configure JVM Trust for SSL/TLS Certificates](/thehive/configuration/ssl/configure-ssl-jvm/) for instructions.
 
-<span class="n">Use</span><span class="w"> </span><span class="n">certificates</span><span class="w"> </span><span class="n">only</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">trusted</span><span class="p">,</span><span class="w"> </span><span class="n">predefined</span><span class="w"> </span><span class="n">authorities</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">secure</span><span class="w"> </span><span class="n">connections</span><span class="p">.</span><span class="w"> </span><span class="n">Custom</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">authorities</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">not</span><span class="w"> </span><span class="n">allowed</span><span class="p">.</span>
-
-<span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">turn</span><span class="w"> </span><span class="n">off</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="o">**</span><span class="n">Don</span><span class="err">'</span><span class="n">t</span><span class="w"> </span><span class="n">check</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">authority</span><span class="o">**</span><span class="w"> </span><span class="n">toggle</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">bypass</span><span class="w"> </span><span class="n">certificate</span><span class="w"> </span><span class="n">validation</span><span class="p">,</span><span class="w"> </span><span class="n">but</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">isn</span><span class="err">'</span><span class="n">t</span><span class="w"> </span><span class="n">recommended</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">compromise</span><span class="w"> </span><span class="n">connection</span><span class="w"> </span><span class="n">security</span><span class="p">.</span>
+You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 </code></pre></div>
 
 

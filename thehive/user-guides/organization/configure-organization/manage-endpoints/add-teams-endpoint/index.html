@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../configuration/service/" class="md-nav__link">
+      <a href="../../../../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3253,29 +3253,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../../administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14623,9 +14600,8 @@
 <hr>
 </li>
 <li>
-<p>Add a certificate authority.</p>
-<p>For more information about configuring SSL, refer to the <a href="/thehive/administration/authentication/ssl/">Configure SSL</a> topic.</p>
-<p>Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.</p>
+<p>Add a certificate authority (CA).</p>
+<p>The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See <a href="/thehive/configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a> for instructions.</p>
 <p>You can turn off the <strong>Don't check certificate authority</strong> toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.</p>
 <hr>
 </li>

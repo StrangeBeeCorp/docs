@@ -656,9 +656,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-set-up-the-java-virtual-machine" class="md-nav__link">
+  <a href="#step-2-set-up-the-java-virtual-machine-jvm" class="md-nav__link">
     <span class="md-ellipsis">
-      Step 2: Set up the Java Virtual Machine
+      Step 2: Set up the Java virtual machine (JVM)
     </span>
   </a>
   
@@ -1306,29 +1306,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../configuration/secret/" class="md-nav__link">
         
   
@@ -1352,12 +1329,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/ssl/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1375,12 +1352,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/service/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3373,29 +3373,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14657,7 +14634,7 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </div>
 </div>
 <hr>
-<h2 id="step-2-set-up-the-java-virtual-machine">Step 2: Set up the Java Virtual Machine<a class="headerlink" href="#step-2-set-up-the-java-virtual-machine" title="Permanent link">#</a></h2>
+<h2 id="step-2-set-up-the-java-virtual-machine-jvm">Step 2: Set up the Java virtual machine (JVM)<a class="headerlink" href="#step-2-set-up-the-java-virtual-machine-jvm" title="Permanent link">#</a></h2>
 <p>TheHive requires Java to run its application server and to manage various processes.</p>
 <div class="admonition note">
 <p class="admonition-title">Java support</p>
@@ -15278,7 +15255,7 @@ xpack.security.enabled: true
 <p>Open the <code>/etc/elasticsearch/jvm.options.d/jvm.options</code> file using a text editor.</p>
 </li>
 <li>
-<p>In the <code>jvm.options</code> file, set the Java Virtual Machine (JVM) options.</p>
+<p>In the <code>jvm.options</code> file, set the Java virtual machine (JVM) options.</p>
 <p>The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Heap size configuration</p>
@@ -15805,7 +15782,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 </li>
 <li>
 <p>In the <code>application.conf</code> file, configure the service.</p>
-<p>To ensure TheHive works correctly—especially with authentication mechanisms such as Single Sign-On (SSO)—configure the <code>application.baseUrl</code> and <code>play.http.context</code> parameters. If required, you can also adjust <code>http.address</code> and <code>http.port</code>.</p>
+<p>To ensure TheHive works correctly—especially with authentication mechanisms such as SSO—configure the <code>application.baseUrl</code> and <code>play.http.context</code> parameters. If required, you can also adjust <code>http.address</code> and <code>http.port</code>.</p>
 <p>Default configuration:</p>
 <div class="highlight"><pre><span></span><code><span class="p p-Indicator">[</span><span class="nv">..</span><span class="p p-Indicator">]</span>
 <span class="c1"># Service configuration</span>
@@ -15817,7 +15794,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <p>Replace <code>http://localhost:9000</code> with the actual public URL that users will use to access TheHive.</p>
 <h5 id="mandatory-elements">Mandatory elements<a class="headerlink" href="#mandatory-elements" title="Permanent link">#</a></h5>
 <ul>
-<li>Protocol: Either <code>http</code> or <code>https</code>, depending on whether you <a href="../../configuration/ssl/">enabled SSL</a>.</li>
+<li>Protocol: Either <code>http</code> or <code>https</code>, depending on whether you <a href="../../configuration/ssl/configure-https-reverse-proxy/">configured HTTPS using a reverse proxy</a>.</li>
 <li>Hostname: The DNS name or IP address that users enter in their browser.</li>
 </ul>
 <h5 id="optional-elements">Optional elements<a class="headerlink" href="#optional-elements" title="Permanent link">#</a></h5>
@@ -15833,12 +15810,12 @@ These settings control how TheHive listens internally on the host and are indepe
 <li>Use <code>http.address</code> and <code>http.port</code> to control how the service listens on the host.</li>
 <li>Use <code>application.baseUrl</code> to define the public URL that TheHive communicates to clients.</li>
 </ul>
-<p>To customize the listen address and port, see <a href="../../configuration/service/#listen-address-and-port">Service Configuration</a>.</p>
+<p>To customize the listen address and port, see <a href="../../configuration/update-service-configuration/#update-the-listen-address-and-port">Service Configuration</a>.</p>
 </div>
 <h4 id="playhttpcontext">play.http.context<a class="headerlink" href="#playhttpcontext" title="Permanent link">#</a></h4>
 <p>If TheHive is served under a subpath when running behind a reverse proxy, set <code>play.http.context</code> to the matching path segment.</p>
-<p>For configuration details, see <a href="../../configuration/service/#setting-a-context-path">Service Configuration</a>.</p>
-<p>For additional guidance on proxy usage, see <a href="../../configuration/proxy/">Proxy Settings</a>.</p>
+<p>For configuration details, see <a href="../../configuration/update-service-configuration/#set-a-context-path">Service Configuration</a>.</p>
+<p>For additional guidance on proxy usage, see <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Service configuration examples</p>
 <ul>
@@ -16093,9 +16070,9 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 <p class="admonition-title">Cortex support</p>
 <p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Cortex 3.1.5 and earlier are no longer supported since version 5.5.</p>
 </div>
-<p>By default, TheHive enables both the <a href="../../administration/cortex/about-cortex/">Cortex</a> and <a href="../../administration/misp-integration/about-misp-integration/">MISP</a> integration modules.</p>
+<p>By default, TheHive enables both the <a href="../../administration/cortex/about-cortex/">Cortex</a> and the Malware Information Sharing Platform <a href="../../administration/misp-integration/about-misp-integration/">MISP</a> integration modules.</p>
 <p>When you connect TheHive to Cortex, you can use analyzers to look up extra information about observables and get clear reports with the results. You can also use responders to take automatic actions on cases, alerts, or tasks to help with investigations and incident response.</p>
-<p>When you connect TheHive to MISP, you can bring in threat intelligence by importing MISP events as alerts or cases to support your investigations. You can also share your findings back to MISP by exporting observables marked as IOCs so other teams and communities can benefit.</p>
+<p>When you connect TheHive to MISP, you can bring in threat intelligence by importing MISP events as alerts or cases to support your investigations. You can also share your findings back to MISP by exporting observables marked as indicators of compromise (IOCs) so other teams and communities can benefit.</p>
 <p>If you don't plan to use either of these services, you can deactivate the corresponding module by uncommenting the related configuration line in the <code>application.conf</code> file.</p>
 <ul>
 <li>To deactivate the Cortex module:</li>
@@ -16143,7 +16120,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <hr>
 <h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h2>
 <p>For additional customization, see the Configuration and Operations sections of this documentation.</p>
-<p>To enable HTTPS, follow the instructions in <a href="../../configuration/ssl/">SSL Configuration</a>.</p>
+<p>To enable HTTPS, follow the instructions in <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
 <hr>
 <h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">#</a></h2>
 <p>Choose between cold backups or hot backups depending on your operational requirements.  </p>
@@ -16157,9 +16134,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <ul>
 <li><a href="../../configuration/database/">Database and Index Configuration</a></li>
 <li><a href="../../configuration/logs/">Logs Configuration</a></li>
-<li><a href="../../configuration/proxy/">Proxy Settings</a></li>
-<li><a href="../../configuration/ssl/">SSL Configuration</a></li>
-<li><a href="../../configuration/service/">Service Configuration</a></li>
+<li><a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a></li>
+<li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
 <li><a href="../../configuration/gdpr/">GDPR Compliance in TheHive 5.x</a></li>
 <li><a href="../../operations/backup-restore/backup/hot-backup/">Hot Backups</a></li>
 <li><a href="../../operations/backup-restore/backup/physical-server/">Cold Backups for Physical Servers</a></li>

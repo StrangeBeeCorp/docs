@@ -1181,29 +1181,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../thehive/configuration/secret/" class="md-nav__link">
         
   
@@ -1227,12 +1204,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/ssl/" class="md-nav__link">
+      <a href="../../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1250,12 +1227,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/service/" class="md-nav__link">
+      <a href="../../../thehive/configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3248,29 +3248,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14716,7 +14693,7 @@
 <ul>
 <li>Public registries like Docker Hub typically don’t need credentials. Adding authentication to public pulls may cause failures.</li>
 <li>Cortex supports only one registry credentials set for all image pulls. It can't handle different credentials for different registries.</li>
-<li>The target registry is determined by the fully qualified image name, such as <code>harbor.example.com/project/image:tag</code>.</li>
+<li>The target registry is determined by the FQDN, such as <code>harbor.example.com/project/image:tag</code>.</li>
 </ul>
 </div>
 <h2 id="running-cortex-with-docker">Running Cortex with Docker<a class="headerlink" href="#running-cortex-with-docker" title="Permanent link">#</a></h2>

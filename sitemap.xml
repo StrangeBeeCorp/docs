@@ -473,6 +473,10 @@
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/example-configuration-service/</loc>
+         <lastmod>2025-09-18</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/filters-sorts-views/</loc>
          <lastmod>2025-09-18</lastmod>
     </url>
@@ -873,10 +877,6 @@
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/administration/authentication/ssl/</loc>
-         <lastmod>2025-09-18</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/administration/cortex/about-cortex/</loc>
          <lastmod>2025-09-18</lastmod>
     </url>
@@ -1081,7 +1081,7 @@
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/configuration/proxy/</loc>
+         <loc>https://docs.strangebee.com/thehive/configuration/proxy-settings/</loc>
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
@@ -1089,11 +1089,19 @@
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/configuration/service/</loc>
+         <loc>https://docs.strangebee.com/thehive/configuration/update-service-configuration/</loc>
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/configuration/ssl/</loc>
+         <loc>https://docs.strangebee.com/thehive/configuration/ssl/configure-https-reverse-proxy/</loc>
+         <lastmod>2025-09-18</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/configuration/ssl/configure-ssl-jvm/</loc>
+         <lastmod>2025-09-18</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/configuration/ssl/ssl-thehive-configuration-settings/</loc>
          <lastmod>2025-09-18</lastmod>
     </url>
     <url>

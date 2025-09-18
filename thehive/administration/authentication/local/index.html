@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/service/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3271,29 +3271,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14514,8 +14491,8 @@
 
 
 <h1 id="configure-a-local-authentication-provider">Configure a Local Authentication Provider<a class="headerlink" href="#configure-a-local-authentication-provider" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for configuring a local authentication provider in TheHive.</p>
-<p>This is the default behavior of TheHive. The application stores usernames and passwords in a local database managed by TheHive.</p>
+<p>Configure a local authentication provider in TheHive.</p>
+<p>By default, TheHive manages authentication with its own local database, where usernames and passwords are stored directly in the application.</p>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
 <p>Only users with an admin-type profile that has the <code>managePlatform</code> permission can configure authentication in TheHive.</p>
@@ -14565,7 +14542,7 @@
 <h2>Next steps</h2>
 
 <ul>
-<li><a href="../configure-authentication/">How to Configure Authentication</a></li>
+<li><a href="../configure-authentication/">Configure Authentication</a></li>
 </ul>
 
 

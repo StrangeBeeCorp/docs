@@ -1261,29 +1261,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../configuration/secret/" class="md-nav__link">
         
   
@@ -1307,12 +1284,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/ssl/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1330,12 +1307,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/service/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3328,29 +3328,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14713,7 +14690,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <span class="w">  </span><span class="c1">#k8sSecretName: ""</span>
 <span class="w">  </span><span class="c1">#k8sSecretKey: "api-keys"</span>
 </code></pre></div>
-<p>When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service Domain Name System (DNS) as the server URL:</p>
+<p>When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service DNS as the server URL:</p>
 <div class="highlight"><pre><span></span><code>http://cortex.&lt;namespace&gt;.svc:9001
 </code></pre></div>
 <h2>Next steps</h2>

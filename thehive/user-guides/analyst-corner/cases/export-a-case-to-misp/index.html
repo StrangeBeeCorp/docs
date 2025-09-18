@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../configuration/service/" class="md-nav__link">
+      <a href="../../../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3253,29 +3253,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14512,9 +14489,9 @@
 
 
 <h1 id="export-a-case-to-misp">Export a Case to MISP<a class="headerlink" href="#export-a-case-to-misp" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for manually exporting a <a href="../about-cases/">case</a> to <a href="https://www.misp-project.org/">MISP</a> in TheHive.</p>
+<p>This topic provides step-by-step instructions for manually exporting a <a href="../about-cases/">case</a> to the Malware Information Sharing Platform <a href="https://www.misp-project.org/">(MISP)</a> in TheHive.</p>
 <p>Use this procedure to share the results of your investigations with this open-source threat intelligence and sharing platform and contribute to the community.</p>
-<p>Only observables marked as IOCs will be exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.</p>
+<p>Only observables marked as indicators of compromise (IOCs) will be exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.</p>
 <div class="admonition info">
 <p class="admonition-title">Requirements</p>
 <p>The MISP server you want to share your case with must be <a href="../../../../administration/misp-integration/connect-a-misp-server/">configured with either the <em>Import and export</em> or <em>Export only</em> purpose</a>.</p>

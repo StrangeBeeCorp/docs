@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/ssl/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../configuration/service/" class="md-nav__link">
+      <a href="../../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3314,29 +3314,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14558,11 +14535,10 @@
 
 <h1 id="configure-an-oauth-20-authentication-provider">Configure an OAuth 2.0 Authentication Provider<a class="headerlink" href="#configure-an-oauth-20-authentication-provider" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="" title="#' 'License type"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 10a3.04 3.04 0 0 1 3-3 3.04 3.04 0 0 1 3 3 3.04 3.04 0 0 1-3 3 3.04 3.04 0 0 1-3-3m3 9 4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"></path></svg></span></a></span><span class="mdx-badge__text">Platinum</span></span></p>
-<p>This topic provides step-by-step instructions for configuring an OAuth 2.0 authentication provider in TheHive.</p>
-<p>By following this guide, you’ll learn how to integrate popular OAuth 2.0 providers—such as Keycloak, Okta, GitHub, Microsoft 365, and Google.</p>
+<p>Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—in TheHive.</p>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated since version 5.5</p>
-<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> The OAuth 2.0 authentication provider is deprecated and will be removed in a future release. It is recommended to use the <a href="../openid/">OpenID authentication provider</a> instead.</p>
+<p><span class="mdx-badge"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> The OAuth 2.0 authentication provider is deprecated and will be removed in a future release. It's recommended to use the <a href="../openid/">OpenID authentication provider</a> instead.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Required permissions</p>
@@ -14626,7 +14602,7 @@
 <p><strong>- User information URL</strong></p>
 <p>The endpoint that TheHive calls using the access token to retrieve user details (such as ID, email, or name).</p>
 <p><strong>- List of scope</strong></p>
-<p>Specifies the access permissions that TheHive requests from the OAuth 2.0 server. </p>
+<p>Specifies the access permissions that TheHive requests from the OAuth 2.0 server.</p>
 <p>Examples include:</p>
 <ul>
 <li><em>openid</em>: Access to basic user information</li>
@@ -14665,9 +14641,8 @@
 <hr>
 </li>
 <li>
-<p>Add a certificate authority.</p>
-<p>For more information about configuring SSL, refer to the <a href="/thehive/administration/authentication/ssl/">Configure SSL</a> topic.</p>
-<p>Use certificates only from trusted, predefined authorities for secure connections. Custom certificate authorities are not allowed.</p>
+<p>Add a certificate authority (CA).</p>
+<p>The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See <a href="/thehive/configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a> for instructions.</p>
 <p>You can turn off the <strong>Don't check certificate authority</strong> toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.</p>
 <hr>
 </li>
@@ -14694,15 +14669,15 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td>CLIENT_ID</td>
+<td><client_id></client_id></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td>CLIENT_SECRET</td>
+<td><client_secret></client_secret></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://THEHIVE_URL/api/ssoLogin</td>
+<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
 </tr>
 <tr>
 <td>Grant type</td>
@@ -14746,15 +14721,15 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td>CLIENT_ID</td>
+<td><client_id></client_id></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td>CLIENT_SECRET</td>
+<td><client_secret></client_secret></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>http://THEHIVE_URL/api/ssoLogin</td>
+<td>http://<thehive_url>/api/ssoLogin</thehive_url></td>
 </tr>
 <tr>
 <td>Grant type</td>
@@ -14798,15 +14773,15 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td>CLIENT_ID</td>
+<td><client_id></client_id></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td>CLIENT_SECRET</td>
+<td><client_secret></client_secret></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://THEHIVE_URL/api/ssoLogin</td>
+<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
 </tr>
 <tr>
 <td>Grant type</td>
@@ -14841,7 +14816,7 @@
 <div class="admonition note">
 <p class="admonition-title">GitHub configuration</p>
 <ul>
-<li>Generate the <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> in the OAuth Apps section at <a href="https://github.com/settings/developers">GitHub Developer Settings</a>.</li>
+<li>Generate the <code>&lt;client_id&gt;</code> and <code>&lt;client_secret&gt;</code> in the OAuth Apps section at <a href="https://github.com/settings/developers">GitHub Developer Settings</a>.</li>
 <li>Ensure users set a public email address in their profile at <a href="https://github.com/settings/profile">GitHub Profile Settings</a> for this configuration to work correctly.</li>
 </ul>
 </div>
@@ -14857,15 +14832,15 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td>CLIENT_ID</td>
+<td><client_id></client_id></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td>CLIENT_SECRET</td>
+<td><client_secret></client_secret></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://THEHIVE_URL/api/ssoLogin</td>
+<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
 </tr>
 <tr>
 <td>Grant type</td>
@@ -14873,7 +14848,7 @@
 </tr>
 <tr>
 <td>Authorization URL</td>
-<td>https://login.microsoftonline.com/TENANT/oauth2/v2.0/authorize</td>
+<td>https://login.microsoftonline.com/<tenant>/oauth2/v2.0/authorize</tenant></td>
 </tr>
 <tr>
 <td>Prefix of the authorization header</td>
@@ -14881,7 +14856,7 @@
 </tr>
 <tr>
 <td>Token URL</td>
-<td>https://login.microsoftonline.com/TENANT/oauth2/v2.0/token</td>
+<td>https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token</tenant></td>
 </tr>
 <tr>
 <td>User information URL</td>
@@ -14899,7 +14874,7 @@
 </table>
 <div class="admonition note">
 <p class="admonition-title">Microsoft configuration</p>
-<p>To generate the <code>CLIENT_ID</code>, <code>CLIENT_SECRET</code> and <code>TENANT</code>, register a new application in the <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps">Azure Active Directory App Registrations portal</a>.</p>
+<p>To generate the <code>&lt;client_id&gt;</code>, <code>&lt;client_secret&gt;</code> and <code>&lt;tenant&gt;</code>, register a new application in the <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps">Azure Active Directory App Registrations portal</a>.</p>
 </div>
 </div>
 <div class="tabbed-block">
@@ -14913,15 +14888,15 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td>CLIENT_ID</td>
+<td><client_id></client_id></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td>CLIENT_SECRET</td>
+<td><client_secret></client_secret></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://THEHIVE_URL/api/ssoLogin</td>
+<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
 </tr>
 <tr>
 <td>Grant type</td>
@@ -14956,7 +14931,7 @@
 <div class="admonition note">
 <p class="admonition-title">Google configuration</p>
 <ul>
-<li>Generate the <code>CLIENT_ID</code> and <code>CLIENT_SECRET</code> in the <strong>APIs &amp; Services &gt; Credentials</strong> section of the <a href="https://console.cloud.google.com/apis/credentials">Google Cloud Console</a>.</li>
+<li>Generate the <code>&lt;client_id&gt;</code> and <code>&lt;client_secret&gt;</code> in the <strong>APIs &amp; Services &gt; Credentials</strong> section of the <a href="https://console.cloud.google.com/apis/credentials">Google Cloud Console</a>.</li>
 <li>Follow the <a href="https://support.google.com/cloud/answer/6158849">Google OAuth 2.0 credentials guide</a> for step-by-step instructions.</li>
 <li>Refer to <a href="https://accounts.google.com/.well-known/openid-configuration">Google OpenID Connect configuration</a> for the latest authentication URLs.            </li>
 </ul>
@@ -14968,8 +14943,8 @@
 <h2>Next steps</h2>
 
 <ul>
-<li><a href="../configure-authentication/">How to Configure Authentication</a></li>
-<li><a href="../ssl/">Configure SSL</a></li>
+<li><a href="../configure-authentication/">Configure Authentication</a></li>
+<li><a href="../../../configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a></li>
 </ul>
 
 

@@ -1186,29 +1186,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/proxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Proxy
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../configuration/secret/" class="md-nav__link">
         
   
@@ -1232,12 +1209,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/ssl/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    SSL
+    Configure JVM SSL Trust
     
   </span>
   
@@ -1255,12 +1232,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/service/" class="md-nav__link">
+      <a href="../../configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Service
+    Configure HTTPS Using a Reverse Proxy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Update Service Configuration
     
   </span>
   
@@ -3335,29 +3335,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../administration/authentication/ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configure SSL
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -14719,7 +14696,7 @@ You should see a page full of metrics in Prometheus format.</p>
 <ul>
 <li><a href="https://grafana.com/grafana/dashboards/12317-api-dashboard/">Kamon 2.x - API Dashboard</a> <code>ID: 12317</code>: Shows API metrics like request throughput, response latency, and error rates.<br>
 Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.</li>
-<li><a href="https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/">Kamon 2.x - System Metrics Dashboard</a> <code>ID: 12315</code>: Displays CPU usage, memory consumption, JVM heap usage, and garbage collection stats.</li>
+<li><a href="https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/">Kamon 2.x - System Metrics Dashboard</a> <code>ID: 12315</code>: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.</li>
 <li><a href="https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/">Kamon 2.x - Akka Dashboard</a> <code>ID: 10776</code>: Shows Akka system information, actor metrics, and message processing times.</li>
 </ul>
 <p>For more options, browse the <a href="https://grafana.com/grafana/dashboards/?pg=docs-grafana-latest-dashboards-variables">Grafana dashboard library</a>.</p>
