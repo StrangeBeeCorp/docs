@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for sharing an [attachment](../../
 
 ## Share an attachment from a case
 
-1. [Locate the case](../search-for-cases/find-a-case.md) where you want to remove an attachment.
+1. [Locate the case](../search-for-cases/find-a-case.md) containing the attachment you want to share.
 
 2. {!includes/attachments-tab-case-go-to.md!}
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for sharing an [attachment](../../
 
 ## Share an attachment from an alert
 
-1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to remove an attachment.
+1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) containing the attachment you want to share.
 
 2. {!includes/attachments-tab-alert-go-to.md!}
 
