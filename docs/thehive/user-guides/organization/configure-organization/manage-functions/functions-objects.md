@@ -44,7 +44,7 @@ This topic lists all available objects for functions in TheHive.
 ## Case
 
 !!! info "Caze"
-    Since `case` is a reserved keyword is Java, the API uses `caze`.
+    Since `case` is a reserved keyword in Java, the API uses `caze`.
 
 * `caze.create(input: InputCreateCase): OutputCase`: Creates a new case.
 * `caze.get(idOrNumber: string): OutputCase`: Retrieves a case by its ID or case number.
