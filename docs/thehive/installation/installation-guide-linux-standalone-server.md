@@ -796,7 +796,7 @@ For additional configuration options, refer to:
     * Service not starting → Check `/var/log/elasticsearch/` for JVM errors or heap misconfiguration.
     * Memory issues → Ensure heap (`Xms`/`Xmx`) is no more than 50% of system RAM.
 
-### Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in [Step 4.2](#step-42-configure-elasticsearch))
+### Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in [Step 4.2](#step-42-configure-elasticsearch)) {#step-44-permissions}
 
 1. Optional: Create a `thehive` user.
 

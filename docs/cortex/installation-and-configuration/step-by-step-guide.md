@@ -4,7 +4,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Required packages
 
-!!! Example "" 
+!!! Example ""
 
     === "DEB" 
 
@@ -122,9 +122,9 @@ This page is a step by step installation and configuration guide to get a Cortex
         sudo yum install --enablerepo=elasticsearch elasticsearch
         ```
 
-### Configuration 
+### Configuration
 
-!!! Example "" 
+!!! Example "Example"
 
     ```yaml title="/etc/elasticsearch/elasticsearch.yml"
     http.host: 127.0.0.1
@@ -133,9 +133,11 @@ This page is a step by step installation and configuration guide to get a Cortex
     thread_pool.search.queue_size: 100000
     path.logs: "/var/log/elasticsearch"
     path.data: "/var/lib/elasticsearch"
-    xpack.security.enabled: false
+    xpack.security.enabled: <boolean>
     script.allowed_types: "inline,stored"
     ```
+
+    Set `<boolean>` to `false` to turn off authentication, or `true` to enable it.
 
     Adjust this file according to the amount of RAM available on your server: 
 
@@ -144,6 +146,8 @@ This page is a step by step installation and configuration guide to get a Cortex
     -Xms4g
     -Xmx4g
     ```
+
+If authentication is enabled, configure the credentials service after starting Elasticsearch, using the instructions in [Set a user with the right permissions](../../thehive/installation/installation-guide-linux-standalone-server.md#step-44-permissions).
 
 ## Docker
 
@@ -154,15 +158,17 @@ If using Docker images of analyzers and responders, Docker engine is required on
     === "DEB"
 
         ```bash
-        curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-        $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list
-        apt install docker-ce
+        . /etc/os-release
+        curl -fsSL https://download.docker.com/linux/${ID}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/${ID} ${VERSION_CODENAME:-$UBUNTU_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/docker.list
+        sudo apt update
+        sudo apt install docker-ce
         ```
 
     === "RPM"
         
         ```bash
+        . /etc/os-release
         sudo yum remove -yq docker \
                   docker-client \
                   docker-client-latest \
@@ -172,7 +178,7 @@ If using Docker images of analyzers and responders, Docker engine is required on
                   docker-logrotate \
                   docker-engine
         sudo dnf -yq install dnf-plugins-core
-        sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+        sudo dnf config-manager --add-repo https://download.docker.com/linux/${ID}/docker-ce.repo
         sudo dnf install -yq docker-ce docker-ce-cli containerd.io docker-compose-plugin
         ```
 

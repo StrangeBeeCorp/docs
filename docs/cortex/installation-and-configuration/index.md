@@ -35,7 +35,7 @@ Cortex has been tested and is supported on the following operating systems:
 
     1. Setup proxy settings ; will configure everything on the host to work with a HTTP proxy, and custom CA certificate.
     2. Install TheHive ; use this option to install TheHive 5 and its dependencies
-    3. Install Cortex and all its dependencies to run Analyzers & Responders as Docker Iiages
+    3. Install Cortex and all its dependencies to run Analyzers & Responders as Docker images
     4. Install Cortex and all its dependencies to run Analyzers & Responders on the host (Debian and Ubuntu **ONLY**)
 
 For each release, DEB, RPM and ZIP binary packages are built and provided.
@@ -86,7 +86,7 @@ _Analyzers_ & _Responders_ we publish also have their own [Docker images](https:
 
 There are several benefits to use Docker images of _Analyzers_ & _Responders_.
 
-* No need to worry about applications required or libraries, it just work
+* No need to worry about applications required or libraries, it just works
 * When requested, Cortex downloads the docker image of a program and instantiate a container running the program. When finished, the container is trashed and a new one is created the next time. No need to worry about the integrity of the program
 * This is simple to use and maintain
 
