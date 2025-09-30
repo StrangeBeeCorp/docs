@@ -24,9 +24,9 @@ This topic provides step-by-step instructions for adding a local *Microsoft Team
 
     4. In the **Workflows** application, select **New flow**.
 
-    5. Search for a template named *Post to a channel when a webhook request is received*.
+    5. In the template search bar, enter *Send webhook alerts to a channel*.
 
-    6. Select the template *Post to a channel when a webhook request is received*.
+    6. Select the template *Send webhook alerts to a channel*.
 
     7. Enter your flow name.
 
