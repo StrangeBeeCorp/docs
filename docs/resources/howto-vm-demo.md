@@ -61,14 +61,14 @@ TheHive database comes with several samples of data, like [custom fields](../the
     * Login: `thehive`
     * Password: `thehive1234`
 
-{!includes/vm-testing-only.md!}
+{% include-markdown "includes/vm-testing-only.md" %}
 
 ## Content
 
 The VM runs Ubuntu 24.04 and includes:
 
-* TheHive {!includes/thehive-latest-version.md!lines=2}, with Cassandra, Elasticsearch, and local file storage
-* Cortex {!includes/cortex-latest-version.md!lines=2}, with Elasticsearch
+* TheHive {% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}, with Cassandra, Elasticsearch, and local file storage
+* Cortex {% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}, with Elasticsearch
 * TheHive4py
 * Cortex4py
 * Public Cortex analyzers and responders running in Docker

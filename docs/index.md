@@ -92,7 +92,7 @@ sections:
             - text: 'Manage case and alert statuses'
               url: '/thehive/administration/status/create-a-status/'
             - text: 'Import analyzer templates'
-              url: '/thehive/administration/analyzers-templates/'
+              url: '/thehive/administration/analyzer-templates/import-analyzer-templates/'
             - text: 'Import attack patterns'
               url: '/thehive/administration/ttps/add-a-catalog/'
             - text: 'Restrict visibility for sensitive cases'
@@ -169,8 +169,6 @@ sections:
               url: '/thehive/installation/activate-license/'
             - text: 'Perform version upgrades'
               url: '/thehive/installation/upgrade-from-5.x/'
-            - text: 'Access archived versions'
-              url: '/thehive/download/archives/'
         - title: 'Configure organizations'
           links: 
             - text: 'Complete the initial login'

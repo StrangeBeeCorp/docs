@@ -47,7 +47,7 @@ Cases and alerts are considered similar if all the following conditions are met:
 
 ## Permissions
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Next steps</h2>
 

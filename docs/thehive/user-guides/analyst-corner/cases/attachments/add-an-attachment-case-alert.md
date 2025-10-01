@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for adding an [attachment](../../.
 
 Use this procedure to add attachments in addition to those automatically saved when you save case reports or add images to case or alert descriptions and summaries, or task logs.
 
-{!includes/access-manage-attachments.md!}
+{% include-markdown "includes/access-manage-attachments.md" %}
 
 ## Add an attachment to a case
 
 1. [Locate the case](../search-for-cases/find-a-case.md) where you want to add an attachment.
 
-2. {!includes/attachments-tab-case-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
 3. Go to the **Cases** or **Reports** tab and select :fontawesome-solid-plus:.
 
@@ -22,7 +22,7 @@ Use this procedure to add attachments in addition to those automatically saved w
 
 1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to add an attachment.
 
-2. {!includes/attachments-tab-alert-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-alert-go-to.md" %}
 
 3. Select :fontawesome-solid-plus:.
 

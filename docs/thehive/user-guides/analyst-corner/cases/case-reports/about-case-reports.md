@@ -6,7 +6,7 @@ A case report is available for each individual [case](../about-cases.md) and dis
 
 This topic provides an overview of case reports and their usage in TheHive.
 
-{!includes/other-reports-cases-from-case-reports.md!}
+{% include-markdown "includes/other-reports-cases-from-case-reports.md" %}
 
 ## Templates
 

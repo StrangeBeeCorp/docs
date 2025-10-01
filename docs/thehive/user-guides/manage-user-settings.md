@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 ## Edit your avatar
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -14,7 +14,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 ## Edit your name
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 ## Edit your email address
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -34,7 +34,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 ## Manage your API key
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -46,7 +46,7 @@ This topic provides step-by-step instructions for managing the settings of your 
 
 Use this procedure to add an extra layer of security to your account.
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -54,7 +54,7 @@ Use this procedure to add an extra layer of security to your account.
 
 ## Edit your homepage
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -64,7 +64,7 @@ Use this procedure to add an extra layer of security to your account.
 
 ## Edit the default date format
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 
@@ -84,7 +84,7 @@ A beta feature to enhance user experience for [filters](./analyst-corner/about-f
     * When you activate the beta for the first time, views from the current version are automatically copied to the beta. However, if you deactivate and then reactivate the beta, views won't be copied again.
     * Views you create while using the beta won't be retained in version 5.6 and will be lost if you deactivate the beta.
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 

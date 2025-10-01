@@ -4,17 +4,17 @@ This topic provides step-by-step instructions for removing an [attachment](../..
 
 Use this procedure to remove attachments you added manually or that were previously included in case or alert descriptions, summaries, or task logs.
 
-{!includes/access-manage-attachments.md!}
+{% include-markdown "includes/access-manage-attachments.md" %}
 
 ## Remove an attachment from a case
 
 1. [Locate the case](../search-for-cases/find-a-case.md) where you want to remove an attachment.
 
-2. {!includes/attachments-tab-case-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment you want to remove.
 
-    {!includes/filters.md!}
+    {% include-markdown "includes/filters.md" %}
 
 4. Select **Remove**.
 
@@ -24,11 +24,11 @@ Use this procedure to remove attachments you added manually or that were previou
 
 1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to remove an attachment.
 
-2. {!includes/attachments-tab-alert-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-alert-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment you want to remove.
 
-    {!includes/filters.md!}
+    {% include-markdown "includes/filters.md" %}
 
 4. Select **Remove**.
 

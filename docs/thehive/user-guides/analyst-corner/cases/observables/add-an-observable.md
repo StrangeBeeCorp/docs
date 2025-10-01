@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for adding an [observable](about-o
 
 Observables are data points that represent specific events or properties within a system and can be directly observed. They serve as indicators monitored for signs of suspicious or malicious activity.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Procedure</h2>
 
@@ -12,7 +12,7 @@ Observables are data points that represent specific events or properties within 
 
     ---
 
-2. {!includes/observables-tab-go-to.md!}
+2. {% include-markdown "includes/observables-tab-go-to.md" %}
 
     ---
 

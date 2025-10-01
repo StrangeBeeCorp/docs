@@ -41,7 +41,7 @@ Cortex offers the following features:
 
 ## Permissions
 
-{!includes/administrator-access-manage-cortex-connection.md!}
+{% include-markdown "includes/administrator-access-manage-cortex-connection.md" %}
 
 <h2>Next steps</h2>
 

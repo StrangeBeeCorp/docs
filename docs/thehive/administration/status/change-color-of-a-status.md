@@ -2,15 +2,15 @@
 
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) color for cases and alerts in TheHive.
 
-{!includes/task-statuses-excluded.md!}
+{% include-markdown "includes/task-statuses-excluded.md" %}
 
-{!includes/administrator-access-manage-statuses.md!}
+{% include-markdown "includes/administrator-access-manage-statuses.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/status-tab-go-to.md!}
+2. {% include-markdown "includes/status-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the status you want to edit.
 

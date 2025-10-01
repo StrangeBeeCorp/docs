@@ -2,15 +2,15 @@
 
 This topic provides step-by-step instructions for creating a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 
-{!includes/administrator-access-manage-custom-fields.md!}
+{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/custom-fields-tab-go-to.md!}
+2. {% include-markdown "includes/custom-fields-tab-go-to.md" %}
 
     ---
 
@@ -40,7 +40,7 @@ This topic provides step-by-step instructions for creating a [custom field](../c
 
     The type of data the custom field contains:
 
-    {!includes/custom-fields-formats.md!}
+    {% include-markdown "includes/custom-fields-formats.md" %}
 
     !!! info "Predefined values"
         For the string, integer, and float types, you can define predefined values by entering each value on a separate line in the **Options** field. If you choose to do this, users will only be able to select from the predefined values you specify. This helps maintain data consistency for reporting purposes.
@@ -50,6 +50,8 @@ This topic provides step-by-step instructions for creating a [custom field](../c
     Turn on the toggle to require users to enter a value in this custom field.
 
     Set a custom field as mandatory if you use it in dashboards or any automation workflow.
+
+    ---
 
 5. Select **Confirm custom field creation**.
 

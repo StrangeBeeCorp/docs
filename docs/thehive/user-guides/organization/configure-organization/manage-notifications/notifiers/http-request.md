@@ -24,15 +24,15 @@ This topic provides step-by-step instructions for configuring the *HttpRequest* 
     * *TaskClosed*  
     * *TaskMandatory*
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
     ---
 
@@ -64,9 +64,9 @@ This topic provides step-by-step instructions for configuring the *HttpRequest* 
 
     Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.
 
-    {!includes/notifications-variables.md!}
+    {% include-markdown "includes/notifications-variables.md" %}
     
-    {!includes/templates-notifications-helpers.md!}
+    {% include-markdown "includes/templates-notifications-helpers.md" %}
 
     ---
 
@@ -74,23 +74,23 @@ This topic provides step-by-step instructions for configuring the *HttpRequest* 
 
     ---
 
-7. {!includes/headers.md!}
+7. {% include-markdown "includes/headers.md" %}
 
     ---
 
-8. {!includes/authentication-type.md!}
+8. {% include-markdown "includes/authentication-type.md" %}
 
     ---
 
-9. {!includes/proxy-settings.md!}
+9. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-10. {!includes/certificate-authority.md!}
+10. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-11. {!includes/host-name-verification.md!}
+11. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

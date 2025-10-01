@@ -8,9 +8,9 @@ An alert is automatically linked to a case when you [create a case from an alert
 
 1. [Find the case](./search-for-cases/find-a-case.md) where you want to view linked alerts.
 
-2. {!includes/linked-alerts-tab-go-to.md!}
+2. {% include-markdown "includes/linked-alerts-tab-go-to.md" %}
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 <h2>Next steps</h2>
 

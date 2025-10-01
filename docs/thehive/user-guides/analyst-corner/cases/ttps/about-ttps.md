@@ -22,9 +22,9 @@ By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.
 
 ## Permissions
 
-{!includes/administrator-access-manage-ttps.md!}
+{% include-markdown "includes/administrator-access-manage-ttps.md" %}
 
-{!includes/access-ttps.md!}
+{% include-markdown "includes/access-ttps.md" %}
 
 <h2>Next steps</h2>
 

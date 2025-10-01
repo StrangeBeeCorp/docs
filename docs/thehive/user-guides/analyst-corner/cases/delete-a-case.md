@@ -7,7 +7,7 @@ Use this procedure to permanently delete a case. To close a case because it's a 
 !!! danger "Permanent action"
     Deleting a case is an irreversible action. Once deleted, no one—not even the StrangeBee Support team—can recover the case.
 
-{!includes/access-delete-cases.md!}
+{% include-markdown "includes/access-delete-cases.md" %}
 
 <h2>Procedure</h2>
 

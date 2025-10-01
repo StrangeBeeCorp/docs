@@ -2,9 +2,9 @@
 
 This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
-{!includes/bulk-updates-observables.md!}
+{% include-markdown "includes/bulk-updates-observables.md" %}
 
 ## Mark an observable as sighted
 

@@ -2,16 +2,15 @@
 
 This topic provides step-by-step instructions for changing the visibility of a [dashboard](about-dashboards.md) in TheHive.
 
-!!! warning "<!-- md:version 5.4 --> Required permissions"
-    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
+{% include-markdown "includes/access-manage-dashboards.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. Select :fontawesome-solid-ellipsis: next to the relevant dashboard.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select **Edit**.
 

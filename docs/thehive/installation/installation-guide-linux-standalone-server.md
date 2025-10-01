@@ -904,7 +904,7 @@ TheHive packages are distributed as RPM and DEB files, as well as ZIP binary pac
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-{!includes/manual-download-installation-thehive.md!}
+{% include-markdown "includes/manual-download-installation-thehive.md" %}
 
 === "ZIP binary packages"
 
@@ -918,9 +918,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Using Wget
 
             ```bash
-            wget -O /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/zip/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip
-            wget -O /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.sha256
-            wget -O /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.asc
+            wget -O /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
+            wget -O /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256 https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256
+            wget -O /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.asc https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -937,9 +937,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Using cURL
 
             ```bash
-            curl -o /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/zip/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip
-            curl -o /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.sha256 https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/sha256/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.sha256
-            curl -o /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.asc https://thehive.download.strangebee.com/{!includes/thehive-latest-version.md!lines=1}/asc/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.asc
+            curl -o /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
+            curl -o /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256 https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256
+            curl -o /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.asc https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -960,13 +960,13 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip
+            sha256sum /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
             ```bash
-            cat /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.sha256
+            cat /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256
             ```
 
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -992,7 +992,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip.asc /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip
+            gpg --verify /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.asc /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
             ```
 
             d. Expected result.
@@ -1019,12 +1019,12 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
         !!! info "Unzip paths"
             
-            * Replace `/opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip` with the full path to the ZIP file you downloaded.
             * Replace `/opt/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
-        unzip /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1.zip -d /opt/
-        sudo ln -s /opt/thehive-{!includes/thehive-latest-version.md!lines=2}-1 /opt/thehive
+        unzip /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip -d /opt/
+        sudo ln -s /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1 /opt/thehive
         ```
 
     4. Prepare the system by creating a dedicated, non-privileged user account to run TheHive. Ensure this user has permission to create log files in `/opt/thehive/logs`.
@@ -1100,7 +1100,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     For additional guidance on proxy usage, see [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
 
-    {!includes/example-configuration-service.md!}
+    {% include-markdown "includes/example-configuration-service.md" %}
 
 3. Optional: Configure the secret key manually.
 
@@ -1156,7 +1156,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     Replace `<thehive_role_password>` with the password set in [Step 3.6](#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32).
 
-    Replace `<password_thehive_user>` with the password set in [Step 4.4](#step-44-set-a-user-with-the-right-permissions-for-thehive-if-you-enabled-x-pack-security-in-step-42).
+    Replace `<password_thehive_user>` with the password set in [Step 4.4](#step-44-permissions).
 
     Replace `<cluster_name>` with the value you set in the `cassandra.yaml` configuration file.
 
@@ -1180,11 +1180,11 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 
 #### Activate audit log storage
 
-{!includes/activate-audit-log-storage-elasticsearch.md!}
+{% include-markdown "includes/activate-audit-log-storage-elasticsearch.md" %}
 
 #### Optional: Configure index template and Index Lifecycle Management (ILM)
 
-{!includes/configure-index-ilm-elasticsearch.md!}
+{% include-markdown "includes/configure-index-ilm-elasticsearch.md" %}
 
 ### Step 5.4: Create the file storage directory
 

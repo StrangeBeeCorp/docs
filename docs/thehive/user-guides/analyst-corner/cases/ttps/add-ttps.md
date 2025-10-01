@@ -4,13 +4,13 @@ Add [tactics, techniques and procedures (TTPs)](about-ttps.md) to a [case](../ab
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
-{!includes/access-ttps.md!}
+{% include-markdown "includes/access-ttps.md" %}
 
 <h2>Procedure</h2>
 
 1. [Find the case](../search-for-cases/find-a-case.md) where you want to add TTPs.
 
-2. {!includes/ttps-tab-go-to.md!}
+2. {% include-markdown "includes/ttps-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-plus:.
 

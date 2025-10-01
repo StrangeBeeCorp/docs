@@ -9,7 +9,7 @@ This is useful when observable sharing rules are set to *manual*, ensuring that 
 
 To learn more about how sharing rules function and interact, see the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
 
-{!includes/access-manage-case-sharing.md!}
+{% include-markdown "includes/access-manage-case-sharing.md" %}
 
 <h2>Procedure</h2>
 

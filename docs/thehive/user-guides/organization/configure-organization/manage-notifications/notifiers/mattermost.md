@@ -24,13 +24,13 @@ This topic provides step-by-step instructions for configuring the *Mattermost* [
     * *TaskClosed*  
     * *TaskMandatory*
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
@@ -56,9 +56,9 @@ This topic provides step-by-step instructions for configuring the *Mattermost* [
 
     The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text.
 
-    {!includes/notifications-variables.md!}
+    {% include-markdown "includes/notifications-variables.md" %}
     
-    {!includes/templates-notifications-helpers.md!}
+    {% include-markdown "includes/templates-notifications-helpers.md" %}
 
 6. Select **Confirm**.
 

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for reopening an [alert](about-ale
 
 Use this procedure to reopen a closed alert and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *Closed* stage to the *In progress* stage.
 
-{!includes/access-reopen-alerts.md!}
+{% include-markdown "includes/access-reopen-alerts.md" %}
 
 <h2>Procedure</h2>
 

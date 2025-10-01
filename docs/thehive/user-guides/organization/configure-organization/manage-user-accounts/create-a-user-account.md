@@ -4,15 +4,15 @@ This topic provides step-by-step instructions for creating a [user account](abou
 
 To add an existing user account to an organization, see [Add or Remove an Existing User Account from an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
 
-{!includes/license-user-accounts.md!}
+{% include-markdown "includes/license-user-accounts.md" %}
 
 ## Create a user account for an organization
 
 ### As an administrator
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-1. {!includes/organizations-view-go-to.md!}
+1. {% include-markdown "includes/organizations-view-go-to.md" %}
 
     ---
 
@@ -45,17 +45,17 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     ---
 
-{!includes/create-a-user-account.md!}
+{% include-markdown "includes/create-a-user-account.md" %}
 
 ### As an organization administrator
 
-{!includes/access-manage-user-accounts.md!}
+{% include-markdown "includes/access-manage-user-accounts.md" %}
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/users-tab-go-to.md!}
+2. {% include-markdown "includes/users-tab-go-to.md" %}
 
     ---
 
@@ -88,13 +88,13 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     ---
 
-{!includes/create-a-user-account.md!}
+{% include-markdown "includes/create-a-user-account.md" %}
 
 ## Create a user account for multiple organizations
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-1. {!includes/users-view-go-to.md!}
+1. {% include-markdown "includes/users-view-go-to.md" %}
 
     ---
 
@@ -131,7 +131,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     ---
 
-{!includes/create-a-user-account.md!}
+{% include-markdown "includes/create-a-user-account.md" %}
 
 <h2>Next steps</h2>
 

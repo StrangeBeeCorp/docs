@@ -9,9 +9,9 @@ By default, the empty case option is available. Use this procedure to require us
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/ui-configuration-tab-go-to.md!}
+2. {% include-markdown "includes/ui-configuration-tab-go-to.md" %}
 
 3. In the **Alert and case** section, turn on the **Hide empty case button** toggle.
 

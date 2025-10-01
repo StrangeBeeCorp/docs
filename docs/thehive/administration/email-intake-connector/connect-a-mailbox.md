@@ -6,19 +6,19 @@ This topic provides step-by-step instructions for connecting a [mailbox](about-e
 
 Use this procedure if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
 
-{!includes/administrator-access-manage-email-intake-connectors.md!}
+{% include-markdown "includes/administrator-access-manage-email-intake-connectors.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/connectors-tab-go-to.md!}
+2. {% include-markdown "includes/connectors-tab-go-to.md" %}
 
     ---
 
-3. {!includes/email-intake-tab-go-to.md!}
+3. {% include-markdown "includes/email-intake-tab-go-to.md" %}
 
     ---
 

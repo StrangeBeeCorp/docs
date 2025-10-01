@@ -18,7 +18,7 @@ Use a case page template when [creating a case page](../../../../knowledge-base/
 
 ## Permissions
 
-{!includes/access-manage-case-page-templates.md!}
+{% include-markdown "includes/access-manage-case-page-templates.md" %}
 
 Once created, case page templates are automatically available to all users within the organization.
 

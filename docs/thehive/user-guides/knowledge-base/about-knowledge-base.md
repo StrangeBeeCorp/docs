@@ -18,7 +18,7 @@ Knowledge Base pages use [TheHive-flavored Markdown syntax](../thehive-flavored-
 
 ## Permissions
 
-{!includes/access-knowledge-base.md!}
+{% include-markdown "includes/access-knowledge-base.md" %}
 
 <h2>Next steps</h2>
 

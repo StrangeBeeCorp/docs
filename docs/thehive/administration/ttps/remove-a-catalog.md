@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for removing a [Tactics, Technique
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
-{!includes/administrator-access-manage-ttps.md!}
+{% include-markdown "includes/administrator-access-manage-ttps.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/attack-patterns-tab-go-to.md!}
+2. {% include-markdown "includes/attack-patterns-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the catalog you want to remove.
 

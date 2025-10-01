@@ -27,7 +27,7 @@ Using an LDAP server:
 
 ## Permissions
 
-{!includes/administrator-access-configure-ldap.md!}
+{% include-markdown "includes/administrator-access-configure-ldap.md" %}
 
 <h2>Next steps</h2>
 

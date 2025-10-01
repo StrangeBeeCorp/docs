@@ -11,11 +11,11 @@ Several options are offered to create a case in TheHive:
 * [Create a case from an alert](#create-a-case-from-an-alert)
 * [Create a case from a detection tool](#create-a-case-from-a-detection-tool)
 
-{!includes/access-create-a-case.md!}
+{% include-markdown "includes/access-create-a-case.md" %}
 
 ## Create an empty case
 
-1. {!includes/create-a-case.md!}
+1. {% include-markdown "includes/create-a-case.md" %}
 
 2. In the **Create case** drawer, select **Empty case**.
 
@@ -80,7 +80,7 @@ Several options are offered to create a case in TheHive:
 
 ## Create a case from a template
 
-1. {!includes/create-a-case.md!}
+1. {% include-markdown "includes/create-a-case.md" %}
 
 2. In the **Create case** drawer, select a template from the dropdown list in the **From template** section.
 
@@ -92,7 +92,7 @@ Several options are offered to create a case in TheHive:
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-1. {!includes/create-a-case.md!}
+1. {% include-markdown "includes/create-a-case.md" %}
 
 2. In the **Create case** drawer, select **From archive (.thar)**.
 
@@ -119,7 +119,7 @@ See [About MISP Integration](../../../administration/misp-integration/about-misp
 !!! info "Data transfer"
     When creating a case from a MISP event, data from the event, such as observables, is automatically transferred to the case.
 
-1. {!includes/create-a-case.md!}
+1. {% include-markdown "includes/create-a-case.md" %}
 
 2. In the **Create case** drawer, select **From MISP (.json)**.
 

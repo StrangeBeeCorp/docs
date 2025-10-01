@@ -10,7 +10,7 @@ You can also include these KPIs in dashboards and case reports.
 
 This topic defines each of these indicators.
 
-{!includes/units-time-to.md!}
+{% include-markdown "includes/units-time-to.md" %}
 
 ## Time to detect (TTD)
 

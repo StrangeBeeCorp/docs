@@ -1,2 +1,2 @@
-    !!! tip "Lock multiple user accounts in bulk"
-        To lock multiple user accounts, select :fontawesome-regular-square: next to each account you want to lock. Then select :fontawesome-solid-lock: and confirm with **OK**.
+!!! tip "Lock multiple user accounts in bulk"
+    To lock multiple user accounts, select :fontawesome-regular-square: next to each account you want to lock. Then select :fontawesome-solid-lock: and confirm with **OK**.

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for starting a [task](about-tasks.
 
 Use this procedure to indicate that you have started working on a task. This action automatically changes the task status to *In progress*.
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Procedure</h2>
 

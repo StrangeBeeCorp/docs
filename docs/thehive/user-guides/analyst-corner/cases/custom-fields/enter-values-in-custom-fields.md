@@ -5,13 +5,13 @@ This topic provides step-by-step instructions for entering values in [custom fie
 !!! tip "Can't enter a value in a custom field?"
     If you can't enter the value you need in a custom field, the field may not be configured correctly. Contact someone with admin-level permissions to [update the configuration](../../../../administration/custom-fields/manage-a-custom-field.md).
 
-{!includes/access-manage-custom-fields.md!}
+{% include-markdown "includes/access-manage-custom-fields.md" %}
 
 <h2>Procedure</h2>
 
 1. Find the [case](../../cases/search-for-cases/find-a-case.md) or the [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to enter values in custom fields.
 
-2. {!includes/custom-fields-section-go-to.md!}
+2. {% include-markdown "includes/custom-fields-section-go-to.md" %}
 
 3. Enter a value under the custom field name. Depending on the configuration, the field will either accept free text or provide a dropdown list of options.
 

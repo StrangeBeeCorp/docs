@@ -7,7 +7,7 @@ Close the case when the investigation is complete.
 !!! info "Pending tasks"
     Closing a case also permanently closes all pending tasks. This action can't be undone.
 
-{!includes/access-close-cases.md!}
+{% include-markdown "includes/access-close-cases.md" %}
 
 <h2>Procedure</h2>
 

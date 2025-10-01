@@ -4,11 +4,11 @@
 
 This topic provides step-by-step instructions for creating a [permission profile](about-profiles.md) in TheHive.
 
-{!includes/administrator-access-manage-profiles.md!}
+{% include-markdown "includes/administrator-access-manage-profiles.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
 2. In the **Profiles** tab, select :fontawesome-solid-plus:.
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for creating a [permission profile
 
 4. Select the [profile type](about-profiles.md#profile-types) and the relevant [permissions](about-profiles.md#profile-permissions).
 
-    {!includes/licensed-unlicensed-permissions.md!}
+    {% include-markdown "includes/licensed-unlicensed-permissions.md" %}
 
 5. Select **Confirm profile creation**.
 

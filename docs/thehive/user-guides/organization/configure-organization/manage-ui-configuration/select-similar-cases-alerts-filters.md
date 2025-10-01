@@ -9,9 +9,9 @@ The **Similar cases** and **Similar alerts** tabs display cases and alerts that 
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/ui-configuration-tab-go-to.md!}
+2. {% include-markdown "includes/ui-configuration-tab-go-to.md" %}
 
 3. In the **Alert and case** section, select the filter you want to apply in the **Select the default filter of alert case similarity panel** dropdown list.
 

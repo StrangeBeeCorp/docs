@@ -4,7 +4,7 @@ Remove [tactics, techniques and procedures (TTPs)](about-ttps.md) from a [case](
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
-{!includes/access-ttps.md!}
+{% include-markdown "includes/access-ttps.md" %}
 
 <h2>Procedure</h2>
 
@@ -13,11 +13,11 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 1. [Find the case](../search-for-cases/find-a-case.md) where you want to remove TTPs.
 
-2. {!includes/ttps-tab-go-to.md!}
+2. {% include-markdown "includes/ttps-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the TTP you want to remove.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 4. Select **Delete**.
 

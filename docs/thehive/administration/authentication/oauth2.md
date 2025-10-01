@@ -7,17 +7,17 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
 !!! warning "Deprecated since version 5.5"
     <!-- md:version 5.5 --> The OAuth 2.0 authentication provider is deprecated and will be removed in a future release. It's recommended to use the [OpenID authentication provider](openid.md) instead.
 
-{!includes/access-authentication.md!}
+{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 
-{!includes/prerequisites-authentication-providers.md!}
+{% include-markdown "includes/prerequisites-authentication-providers.md" %}
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/authentication-tab-go-to.md!}
+2. {% include-markdown "includes/authentication-tab-go-to.md" %}
 
     ---
 
@@ -103,15 +103,15 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
 
     ---
 
-7. {!includes/proxy-settings.md!}
+7. {% include-markdown "includes/proxy-settings.md" %}
     
     ---
 
-8. {!includes/certificate-authority.md!}
+8. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-9. {!includes/host-name-verification.md!}
+9. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

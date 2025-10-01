@@ -4,9 +4,9 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 ## Export a list of user accounts at the client level
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-1. {!includes/users-view-go-to.md!}
+1. {% include-markdown "includes/users-view-go-to.md" %}
 
 2. Select **Export list** to export all displayed user accounts, reflecting the applied [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md). To export a specific selection of user accounts, select :fontawesome-regular-square: next to the user accounts you want to export, then select **Export selection**.
 
@@ -18,11 +18,11 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 ## Export a list of user accounts for an organization
 
-{!includes/access-manage-user-accounts.md!}
+{% include-markdown "includes/access-manage-user-accounts.md" %}
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/users-tab-go-to.md!}
+2. {% include-markdown "includes/users-tab-go-to.md" %}
 
 3. Select **Export list** to export all displayed user accounts, reflecting the applied [filters and sorting](../../../analyst-corner/about-filtering-and-sorting.md). To export a specific selection of user accounts, select :fontawesome-regular-square: next to the user accounts you want to export, then select **Export selection**.
 

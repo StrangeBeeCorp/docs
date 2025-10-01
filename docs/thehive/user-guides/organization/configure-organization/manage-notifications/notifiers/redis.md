@@ -24,18 +24,18 @@ This topic provides step-by-step instructions for configuring the *Redis* [notif
     * *TaskClosed*  
     * *TaskMandatory*
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
 !!! info "No endpoint required"
     An endpoint definition isn't required to send data to a Redis database.
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
     ---
 
@@ -73,17 +73,17 @@ This topic provides step-by-step instructions for configuring the *Redis* [notif
 
     The Redis database index to use. Redis allows multiple logical databases, and this field lets you specify which one to use.
     
-    {!includes/notifications-variables.md!}
+    {% include-markdown "includes/notifications-variables.md" %}
     
-    {!includes/templates-notifications-helpers.md!}
+    {% include-markdown "includes/templates-notifications-helpers.md" %}
 
     ---
 
 6. Turn on the **Enable SSL** toggle to encrypt the connection and secure data transmission between TheHive and the Redis server.
 
-    {!includes/certificate-authority.md!}
+    {% include-markdown "includes/certificate-authority.md" %}
 
-    {!includes/host-name-verification.md!}
+    {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

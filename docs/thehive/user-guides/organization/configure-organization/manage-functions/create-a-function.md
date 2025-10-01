@@ -6,15 +6,15 @@ This topic provides step-by-step instructions for creating a [function](about-fu
 
 Functions automate workflows, process data, and enhance case management.
 
-{!includes/access-functions.md!}
+{% include-markdown "includes/access-functions.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/functions-tab-go-to.md!}
+2. {% include-markdown "includes/functions-tab-go-to.md" %}
 
     ---
 
@@ -42,11 +42,11 @@ Functions automate workflows, process data, and enhance case management.
 
     **- Definition \***
 
-    {!includes/function-definition.md!}
+    {% include-markdown "includes/function-definition.md" %}
         
     ---
 
-5. {!includes/test-function.md!}
+5. {% include-markdown "includes/test-function.md" %}
 
     ---
 

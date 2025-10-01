@@ -20,7 +20,7 @@ You will receive an email with a link to set a new password. The link is valid f
 
 Use this procedure to change your current password.
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 

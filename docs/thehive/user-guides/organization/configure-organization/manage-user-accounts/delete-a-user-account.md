@@ -9,15 +9,15 @@ To lock a user account without deleting it, see [Lock a User Account](lock-a-use
 
 To remove a user account from a specific organization without deleting it, see [Add or Remove an Existing User Account to an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/users-view-go-to.md!}
+1. {% include-markdown "includes/users-view-go-to.md" %}
 
 2. Hover over the user account you want to delete and select :fontawesome-solid-eye:.
 
-    {!includes/find-a-user-account.md!}
+    {% include-markdown "includes/find-a-user-account.md" %}
 
 3. In the drawer, select **Delete user**.
 

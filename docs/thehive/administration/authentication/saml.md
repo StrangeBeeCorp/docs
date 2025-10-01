@@ -4,20 +4,20 @@
 
 Configure a SAML authentication provider in TheHive.
 
-{!includes/access-authentication.md!}
+{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 
-{!includes/prerequisites-authentication-providers.md!}
+{% include-markdown "includes/prerequisites-authentication-providers.md" %}
 
 !!! info "Login flow with multiple SAML providers"
     You can configure multiple SAML providers in TheHive. When a user attempts to log in, TheHive queries each provider sequentially, following the defined order. The process stops as soon as a provider grants authorization.
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/authentication-tab-go-to.md!}
+2. {% include-markdown "includes/authentication-tab-go-to.md" %}
 
     ---
 

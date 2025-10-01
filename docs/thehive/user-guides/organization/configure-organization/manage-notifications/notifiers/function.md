@@ -28,13 +28,13 @@ To learn more about functions, see the [About Functions](../../manage-functions/
     * *TaskClosed*  
     * *TaskMandatory*
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 

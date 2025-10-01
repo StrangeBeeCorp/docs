@@ -24,7 +24,7 @@ Using an SMTP server:
 
 ## Permissions
 
-{!includes/administrator-access-configure-smtp.md!}
+{% include-markdown "includes/administrator-access-configure-smtp.md" %}
 
 <h2>Next steps</h2>
 

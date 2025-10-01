@@ -6,9 +6,9 @@ This topic provides step-by-step instructions for saving and downloading a [case
 
 Use this procedure to report to your management and provide a follow-up on a case investigation.
 
-{!includes/other-reports-cases-from-case-reports.md!}
+{% include-markdown "includes/other-reports-cases-from-case-reports.md" %}
 
-{!includes/access-manage-case-reports.md!}
+{% include-markdown "includes/access-manage-case-reports.md" %}
 
 <h2>Procedure</h2>
 

@@ -7,11 +7,11 @@ This topic provides step-by-step instructions for adding and removing permission
 !!! note "Predefined profiles"
     You can't modify the predefined Admin, Org-Admin, and Read-Only profiles.
 
-{!includes/administrator-access-manage-profiles.md!}
+{% include-markdown "includes/administrator-access-manage-profiles.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
 2. In the **Profiles** tab, select :fontawesome-solid-ellipsis: next to the profile you want to update.
 
@@ -19,7 +19,7 @@ This topic provides step-by-step instructions for adding and removing permission
 
 4. In the **Editing a profile** drawer, select or deselect the relevant [permissions](about-profiles.md#profile-permissions).
 
-    {!includes/licensed-unlicensed-permissions.md!}
+    {% include-markdown "includes/licensed-unlicensed-permissions.md" %}
 
 5. Select **Confirm profile edition**.
 

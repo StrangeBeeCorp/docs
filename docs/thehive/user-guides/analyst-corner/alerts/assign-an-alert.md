@@ -2,11 +2,11 @@
 
 This topic provides step-by-step instructions for assigning an [alert](about-alerts.md) in TheHive.
 
-{!includes/access-assign-alerts.md!}
+{% include-markdown "includes/access-assign-alerts.md" %}
 
 ## Assign an alert to yourself
 
-1. {!includes/alerts-view-go-to.md!}
+1. {% include-markdown "includes/alerts-view-go-to.md" %}
 
 2. Select :fontawesome-solid-ellipsis: next to the alert you want to assign to yourself.
 

@@ -29,11 +29,11 @@ Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deplo
 
 ## Step 1: Activate audit log storage in Elasticsearch
 
-{!includes/activate-audit-log-storage-elasticsearch.md!}
+{% include-markdown "includes/activate-audit-log-storage-elasticsearch.md" %}
 
 ## (Optional) Step 2: Configure index template and Index Lifecycle Management (ILM)
 
-{!includes/configure-index-ilm-elasticsearch.md!}
+{% include-markdown "includes/configure-index-ilm-elasticsearch.md" %}
 
 ## (Optional) Step 3: Migrate historical audit logs to Elasticsearch
 
@@ -53,7 +53,7 @@ Run the `migrateAudits` script:
 * If you deployed TheHive with a Docker image:
 
   ``` bash
-  docker run --network host --rm -ti -v </path/to/your/application.conf>:/etc/thehive/application.conf:ro -v </path/to/your/logback.xml>:/etc/thehive/logback.xml:ro strangebee/thehive:{!includes/thehive-latest-version.md!lines=2}-1-SNAPSHOT  migrateAudits -Dlogback.configurationFile=/etc/thehive/logback.xml -- --audit-from-date <date> -c /etc/thehive/application.conf
+  docker run --network host --rm -ti -v </path/to/your/application.conf>:/etc/thehive/application.conf:ro -v </path/to/your/logback.xml>:/etc/thehive/logback.xml:ro strangebee/thehive:{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1-SNAPSHOT  migrateAudits -Dlogback.configurationFile=/etc/thehive/logback.xml -- --audit-from-date <date> -c /etc/thehive/application.conf
   ```
 
 Available options are:

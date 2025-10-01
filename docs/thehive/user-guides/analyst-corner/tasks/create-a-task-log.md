@@ -4,19 +4,19 @@ This topic provides step-by-step instructions for creating a [task log](about-ta
 
 A task log—also referred to as an activity—is where analysts record their actions, observations, and decisions in response to a [task](about-tasks.md). Task logs can be recorded at any time, regardless of the task’s status, including when it's marked as *Completed*.
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Procedure</h2>
 
 1. [Locate the task](../tasks/search-for-tasks/find-a-task.md) where you want to create a task log.
 
-2. {!includes/activity-section-go-to.md!}
+2. {% include-markdown "includes/activity-section-go-to.md" %}
 
 3. Select :fontawesome-solid-plus:.
 
 4. In the **Create a task log** drawer, enter the text you want to add in the **Log** field using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
 
-    {!includes/task-logs-no-observables.md!}
+    {% include-markdown "includes/task-logs-no-observables.md" %}
 
 5. Optional: Add images to the task log.
 

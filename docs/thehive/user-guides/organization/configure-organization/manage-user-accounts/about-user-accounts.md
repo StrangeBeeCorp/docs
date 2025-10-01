@@ -2,7 +2,7 @@
 
 This topic explains how user accounts work in TheHive.
 
-{!includes/license-user-accounts.md!}
+{% include-markdown "includes/license-user-accounts.md" %}
 
 ## Types
 
@@ -24,9 +24,9 @@ Each user account is assigned a [profile](../../../../administration/profiles/ab
 
 ## Permissions
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-{!includes/access-manage-user-accounts.md!}
+{% include-markdown "includes/access-manage-user-accounts.md" %}
 
 <h2>Next steps</h2>
 

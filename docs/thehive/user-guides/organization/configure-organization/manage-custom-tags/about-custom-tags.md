@@ -39,7 +39,7 @@ Custom tags can be created:
 
 ## Permissions
 
-{!includes/access-manage-custom-tags.md!}
+{% include-markdown "includes/access-manage-custom-tags.md" %}
 
 Users can create new custom tags by adding them directly to cases, alerts, and observables.
 

@@ -32,11 +32,11 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 
 ### Step 1: Manually install TheHive
 
-{!includes/manual-download-installation-thehive.md!}
+{% include-markdown "includes/manual-download-installation-thehive.md" %}
 
 ### Step 2: Remove the old repository
 
-{!includes/remove-old-repository.md!}
+{% include-markdown "includes/remove-old-repository.md" %}
 
 <h2>Next steps</h2>
 

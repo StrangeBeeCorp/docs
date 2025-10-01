@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for customizing an [analyzer templ
 
 Use this procedure to customize templates for reports generated after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
-{!includes/administrator-access-manage-analyzer-templates.md!}
+{% include-markdown "includes/administrator-access-manage-analyzer-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/analyzer-templates-tab-go-to.md!}
+2. {% include-markdown "includes/analyzer-templates-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the analyzer template you want to customize.
 

@@ -4,13 +4,13 @@
 
 This topic provides step-by-step instructions for deleting a [function](about-functions.md) in TheHive.
 
-{!includes/access-functions.md!}
+{% include-markdown "includes/access-functions.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/functions-tab-go-to.md!}
+2. {% include-markdown "includes/functions-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the function you want to delete, and then **Delete**.
 

@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for adding an [attachment](../../.
 
 To add an attachment to a case or an alert, see [Add an Attachment to a Case or an Alert](../../../analyst-corner/cases/attachments/add-an-attachment-case-alert.md).
 
-{!includes/access-manage-attachments.md!}
+{% include-markdown "includes/access-manage-attachments.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/attachments-tab-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-plus:.
 

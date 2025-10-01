@@ -2,11 +2,11 @@
 
 This topic provides step-by-step instructions for deleting a [Knowledge Base](about-knowledge-base.md) page in TheHive.
 
-{!includes/access-knowledge-base.md!}
+{% include-markdown "includes/access-knowledge-base.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/knowledge-base-view-go-to.md!}
+1. {% include-markdown "includes/knowledge-base-view-go-to.md" %}
 
 2. Select or hover over the page you want to delete in the right pane.
 

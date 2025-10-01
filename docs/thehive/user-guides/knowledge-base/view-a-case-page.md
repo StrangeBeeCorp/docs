@@ -6,7 +6,7 @@ This topic provides step-by-step instructions for viewing a [case page](about-ca
 
 1. [Find the case](../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to view a page.
 
-2. {!includes/pages-tab-go-to.md!}
+2. {% include-markdown "includes/pages-tab-go-to.md" %}
 
 3. Select the page you want to view in the right pane.
 

@@ -4,15 +4,15 @@ Configure a local authentication provider in TheHive.
 
 By default, TheHive manages authentication with its own local database, where usernames and passwords are stored directly in the application.
 
-{!includes/access-authentication.md!}
+{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 
-{!includes/prerequisites-authentication-providers.md!}
+{% include-markdown "includes/prerequisites-authentication-providers.md" %}
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
-2. {!includes/authentication-tab-go-to.md!}
+2. {% include-markdown "includes/authentication-tab-go-to.md" %}
 
 3. Select **Local authentication** in the **Authentication providers** section.
 

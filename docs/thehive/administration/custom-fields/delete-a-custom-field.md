@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for deleting a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
 
-{!includes/administrator-access-manage-custom-fields.md!}
+{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
 
 <h2>Procedure</h2>
 

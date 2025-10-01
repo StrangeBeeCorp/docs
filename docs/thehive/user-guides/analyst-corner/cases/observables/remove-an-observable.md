@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for removing an [observable](about-observables.md) from a case or alert in TheHive.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Procedure</h2>
 

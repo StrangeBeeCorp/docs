@@ -2,7 +2,7 @@
 
 ![](images/demo-virtual-machine.png)
 
-{!includes/vm-testing-only.md!}
+{% include-markdown "includes/vm-testing-only.md" %}
 
 Download the ready-to-use VM from the [StrangeBee website](https://www.strangebee.com/tryit).
 

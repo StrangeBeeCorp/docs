@@ -5,15 +5,15 @@ This topic provides step-by-step instructions for configuring the *EmailerToUser
 !!! note "Notifier availability"
     The *EmailerToUser* notifier is available only when you enable the **Send notification to every user in the organization** toggle.
 
-{!includes/requirements-email-notifiers.md!}
+{% include-markdown "includes/requirements-email-notifiers.md" %}
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: and then **Edit**.
 
@@ -33,9 +33,9 @@ This topic provides step-by-step instructions for configuring the *EmailerToUser
 
     The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
 
-    {!includes/notifications-variables.md!}
+    {% include-markdown "includes/notifications-variables.md" %}
 
-    {!includes/templates-notifications-helpers.md!}
+    {% include-markdown "includes/templates-notifications-helpers.md" %}
 
 6. Select **Confirm**.
 

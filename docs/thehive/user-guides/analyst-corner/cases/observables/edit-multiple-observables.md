@@ -2,13 +2,13 @@
 
 This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Procedure</h2>
 
 1. [Locate the case](../search-for-cases/find-a-case.md) or [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to update the observables.
 
-2. {!includes/observables-tab-go-to.md!}
+2. {% include-markdown "includes/observables-tab-go-to.md" %}
 
 3. Select :fontawesome-regular-square: next to the observables you want to update.
 

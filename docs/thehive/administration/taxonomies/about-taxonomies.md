@@ -29,7 +29,7 @@ However, administrators can:
 
 ## Permissions
 
-{!includes/administrator-access-manage-taxonomies.md!}
+{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
 
 Once created, tags from activated taxonomies are available to add to cases, alerts, and observables.
 

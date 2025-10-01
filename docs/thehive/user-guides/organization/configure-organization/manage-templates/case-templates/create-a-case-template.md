@@ -9,19 +9,19 @@ Case templates streamline case creation by automatically filling predefined fiel
 
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](export-import-a-case-template.md#import-a-case-template) topic.
 
-{!includes/access-manage-case-templates.md!}
+{% include-markdown "includes/access-manage-case-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
     ---
 
-3. {!includes/case-templates-go-to.md!}
+3. {% include-markdown "includes/case-templates-go-to.md" %}
 
     ---
 

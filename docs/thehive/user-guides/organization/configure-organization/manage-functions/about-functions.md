@@ -91,7 +91,7 @@ A function in TheHive can operate in one of three modes:
 
 ## Permissions
 
-{!includes/access-functions.md!}
+{% include-markdown "includes/access-functions.md" %}
 
 <h2>Next steps</h2>
 

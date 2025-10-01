@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for creating a [case page](about-c
 
 Use this procedure to store temporary, case-specific knowledge that’s useful during investigations but isn’t retained long term. To preserve information from case pages for the long term, manually copy the content to a [Knowledge Base page](about-knowledge-base.md).
 
-{!includes/access-case-pages.md!}
+{% include-markdown "includes/access-case-pages.md" %}
 
 <h2>Procedure</h2>
 
@@ -12,7 +12,7 @@ Use this procedure to store temporary, case-specific knowledge that’s useful d
 
     ---
 
-2. {!includes/pages-tab-go-to.md!}
+2. {% include-markdown "includes/pages-tab-go-to.md" %}
 
     ---
 
@@ -47,11 +47,11 @@ Use this procedure to store temporary, case-specific knowledge that’s useful d
 
     ---
 
-8. {!includes/preview-rendering-content.md!}
+8. {% include-markdown "includes/preview-rendering-content.md" %}
 
     ---
 
-9.  {!includes/save-content-page.md!}
+9.  {% include-markdown "includes/save-content-page.md" %}
 
 <h2>Next steps</h2>
 

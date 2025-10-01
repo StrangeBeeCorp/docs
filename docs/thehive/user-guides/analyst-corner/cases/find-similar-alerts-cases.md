@@ -6,7 +6,7 @@ Similarity checks between cases and alerts are based on [observables](../cases/o
 
 Use this procedure to identify similar cases or to correlate alerts with other alerts or with ongoing cases.
 
-{!includes/similar-cases-alerts-filters.md!}
+{% include-markdown "includes/similar-cases-alerts-filters.md" %}
 
 ## Find similar alerts
 
@@ -16,11 +16,11 @@ Use this procedure to identify similar cases or to correlate alerts with other a
 
     ![Similar alerts](../../../images/user-guides/analyst-corner/cases/similar-alerts.png)
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
-    {!includes/performance-optimization-matches.md!}
+    {% include-markdown "includes/performance-optimization-matches.md" %}
 
 ## Find similar cases
 
@@ -30,11 +30,11 @@ Use this procedure to identify similar cases or to correlate alerts with other a
 
     ![Similar cases](../../../images/user-guides/analyst-corner/cases/similar-cases.png)
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select **See all** in the **Matches** column to view the list of common observables.
 
-    {!includes/performance-optimization-matches.md!}
+    {% include-markdown "includes/performance-optimization-matches.md" %}
 
 <h2>Next steps</h2>
 

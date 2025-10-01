@@ -12,7 +12,7 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 !!! note "Link to case"
     Creating a case from an alert automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
 
-{!includes/access-create-case-from-alert.md!}
+{% include-markdown "includes/access-create-case-from-alert.md" %}
 
 <h2>Procedure</h2>
 

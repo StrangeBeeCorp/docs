@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for exporting data from [observabl
 
 1. [Locate the case](../search-for-cases/find-a-case.md) or [alert](../../alerts/search-for-alerts/find-an-alert.md) from which you want to export the observables.
 
-2. {!includes/observables-tab-go-to.md!}
+2. {% include-markdown "includes/observables-tab-go-to.md" %}
 
 3. Select **Export list** to export all observables displayed in the tab, reflecting the applied [filters and sorting](../../about-filtering-and-sorting.md). To export a specific selection of observables, select :fontawesome-regular-square: next to the observables you want to export, then select **Export selection**.
 

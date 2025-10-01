@@ -40,7 +40,7 @@ Adding an image to a task log automatically saves it in the [**Attachments** tab
 
 ## Permissions
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Next steps</h2>
 

@@ -8,11 +8,11 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
 <h2>Procedure</h2>
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. On the dashboards list, select the name of your dashboard.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select the **Export** symbol at the top right of the page to export the entire dashboard.
 

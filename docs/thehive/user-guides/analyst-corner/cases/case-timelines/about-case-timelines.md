@@ -6,7 +6,7 @@ Case timelines provide a chronological view of all events that occurred during t
 
 This topic explains the components of case timelines in TheHive.
 
-{!includes/other-reports-cases-from-case-timelines.md!}
+{% include-markdown "includes/other-reports-cases-from-case-timelines.md" %}
 
 ## Components
 

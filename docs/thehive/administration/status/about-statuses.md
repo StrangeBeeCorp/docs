@@ -4,7 +4,7 @@ The status represents the current state of a [case](../../user-guides/analyst-co
 
 This topic explains how statuses works in TheHive.
 
-{!includes/task-statuses-excluded.md!}
+{% include-markdown "includes/task-statuses-excluded.md" %}
 
 ## Predefined statuses
 
@@ -34,7 +34,7 @@ Each status is associated with:
 
 ## Permissions
 
-{!includes/administrator-access-manage-statuses.md!}
+{% include-markdown "includes/administrator-access-manage-statuses.md" %}
 
 After creation, statuses are available to users in cases and alerts.
 

@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of a [case](about-cases.md) in TheHive.
 
-{!includes/access-change-status-case.md!}
+{% include-markdown "includes/access-change-status-case.md" %}
 
 <h2>Procedure</h2>
 

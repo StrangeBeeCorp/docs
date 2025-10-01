@@ -37,7 +37,7 @@ In TheHive, an alert includes the following elements:
 
 ### Creating cases from alerts
 
-{!includes/access-merge-alerts.md!}
+{% include-markdown "includes/access-merge-alerts.md" %}
 
 [Create cases from alerts](create-a-case-from-an-alert.md) when further investigation is needed and no related investigation is already in progress.
 
@@ -45,7 +45,7 @@ This action automatically creates [a link between the alert and the case](../cas
 
 ### Adding alerts to existing cases
 
-{!includes/access-merge-alerts.md!}
+{% include-markdown "includes/access-merge-alerts.md" %}
 
 [Alerts can be added to existing cases](add-an-alert-to-an-existing-case.md) if they relate to an ongoing investigation.
 
@@ -53,7 +53,7 @@ This action automatically creates [a link between the alert and the case](../cas
 
 ### Closing alerts
 
-{!includes/access-close-alerts.md!}
+{% include-markdown "includes/access-close-alerts.md" %}
 
 [Close alerts](../alerts/close-an-alert.md) when they are not worth escalating into a new case or an existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 

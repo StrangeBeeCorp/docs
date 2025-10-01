@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for importing [observables](about-
 
 Analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Procedure</h2>
 

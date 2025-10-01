@@ -7,11 +7,11 @@ This topic provides step-by-step instructions for deleting a [permission profile
 !!! info "Deletion rules"
     You can’t delete a profile that's currently assigned to a user account, or any of the predefined Admin, Org-Admin, or Read-Only profiles.
 
-{!includes/administrator-access-manage-profiles.md!}
+{% include-markdown "includes/administrator-access-manage-profiles.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
 2. In the **Profiles** tab, select :fontawesome-solid-ellipsis: next to the profile you want to delete.
 

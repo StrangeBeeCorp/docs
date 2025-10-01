@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for removing a [link from a case](
 !!! info "Not applicable to alert links"
     This procedure doesn't apply to alert links that are automatically created when [creating a case from an alert](../../alerts/create-a-case-from-an-alert.md) or [adding an alert to an existing case](../../alerts/add-an-alert-to-an-existing-case.md). To unlink an alert and a case, refer to [Unlink an Alert and a Case](../../alerts/unlink-alert-case.md).
 
-{!includes/access-manage-case-links.md!}
+{% include-markdown "includes/access-manage-case-links.md" %}
 
 <h2>Procedure</h2>
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for removing a [link from a case](
 
 1. [Find the case](../search-for-cases/find-a-case.md) where you want to remove the link.
 
-2. {!includes/linked-elements-section.md!}
+2. {% include-markdown "includes/linked-elements-section.md" %}
 
 3. Select :fontawesome-solid-trash: next to the link you want to remove.
 

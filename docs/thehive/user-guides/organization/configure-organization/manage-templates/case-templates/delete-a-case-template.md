@@ -2,15 +2,15 @@
 
 This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
 
-{!includes/access-manage-case-templates.md!}
+{% include-markdown "includes/access-manage-case-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/case-templates-go-to.md!}
+3. {% include-markdown "includes/case-templates-go-to.md" %}
 
 4. Select :fontawesome-solid-ellipsis: next to the case template you want to delete.
 

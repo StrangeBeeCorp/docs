@@ -4,14 +4,14 @@ This topic provides step-by-step instructions for flagging a [case](about-cases.
 
 Use this procedure to highlight a case for all users in your organization. Flagged cases appear at the top of the case list.
 
-{!includes/access-flag-cases.md!}
+{% include-markdown "includes/access-flag-cases.md" %}
 
 <h2>Procedure</h2>
 
 !!! tip "Bulk flag"
     You can flag multiple cases at once. Select :fontawesome-regular-square: next to each case you want to flag, then choose **Flag cases** from the actions above the list.
 
-1. {!includes/cases-view-go-to.md!}
+1. {% include-markdown "includes/cases-view-go-to.md" %}
 
 2. Select :fontawesome-solid-ellipsis: next to the case you want to flag.
 

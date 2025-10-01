@@ -9,13 +9,13 @@ The link can point to another TheHive case or to an external resource.
 !!! info "Not applicable to alert links"
     This procedure doesn't apply to alert links that are automatically created when [creating a case from an alert](../../alerts/create-a-case-from-an-alert.md) or [adding an alert to an existing case](../../alerts/add-an-alert-to-an-existing-case.md).
 
-{!includes/access-manage-case-links.md!}
+{% include-markdown "includes/access-manage-case-links.md" %}
 
 <h2>Procedure</h2>
 
 1. [Find the case](../search-for-cases/find-a-case.md) where you want to add the link.
 
-2. {!includes/linked-elements-section.md!}
+2. {% include-markdown "includes/linked-elements-section.md" %}
 
 3. Select :fontawesome-solid-plus:.
 
@@ -31,7 +31,7 @@ The link can point to another TheHive case or to an external resource.
 
     Search for the case by number or title, or paste an external URL.
 
-    {!includes/elasticsearch-limitation.md!}
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
 
 5. Select :fontawesome-solid-check:.
 

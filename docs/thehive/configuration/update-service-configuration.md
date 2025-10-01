@@ -64,7 +64,7 @@ The base URL defines the public address that users access to reach TheHive. This
     * Port: The network port where TheHive is exposed. Include a port only when the public URL uses a non-standard port. Standard ports are `80` for HTTP and `443` for HTTPS.
     * Path segments: Needed if TheHive runs behind a reverse proxy under a subpath.
 
-    {!includes/example-configuration-service.md!}
+    {% include-markdown "includes/example-configuration-service.md" %}
 
 4. Save your modifications in the `application.conf` file.
 
@@ -95,7 +95,7 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
     play.http.context: "/thehive"
     ```
 
-    {!includes/example-configuration-service.md!}
+    {% include-markdown "includes/example-configuration-service.md" %}
 
 4. Save your modifications in the `application.conf` file.
 

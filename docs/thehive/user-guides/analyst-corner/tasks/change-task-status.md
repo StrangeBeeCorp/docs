@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for changing the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive.
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Procedure</h2>
 

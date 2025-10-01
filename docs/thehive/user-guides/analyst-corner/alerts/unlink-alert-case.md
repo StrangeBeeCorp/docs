@@ -14,11 +14,11 @@ An alert is automatically linked to a case when you [create a case from an alert
 
 1. [Find the case](../cases/search-for-cases/find-a-case.md) where you want to unlink alerts.
 
-2. {!includes/linked-alerts-tab-go-to.md!}
+2. {% include-markdown "includes/linked-alerts-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the alert you want to unlink.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 4. Select **Unlink**.
 
@@ -26,7 +26,7 @@ An alert is automatically linked to a case when you [create a case from an alert
 
 ## From an alert
 
-{!includes/access-unlink-alert-from-alert.md!}
+{% include-markdown "includes/access-unlink-alert-from-alert.md" %}
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to unlink.
 

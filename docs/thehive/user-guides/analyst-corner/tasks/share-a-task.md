@@ -9,13 +9,13 @@ This is useful when task sharing rules are set to *manual*, ensuring that users 
 
 To learn more about how sharing rules function and interact, see the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
 
-{!includes/access-manage-case-sharing.md!}
+{% include-markdown "includes/access-manage-case-sharing.md" %}
 
 <h2>Procedure</h2>
 
 1. [Locate the shared case](../../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to share the task.
 
-2. {!includes/tasks-tab-go-to.md!}
+2. {% include-markdown "includes/tasks-tab-go-to.md" %}
 
 3. Select the task you want to share.
 

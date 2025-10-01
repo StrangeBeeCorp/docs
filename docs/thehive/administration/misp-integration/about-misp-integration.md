@@ -2,7 +2,7 @@
 
 This topic explains how the Malware Information Sharing Platform (MISP) integrates with TheHive.
 
-{!includes/upgrade-misp.md!}
+{% include-markdown "includes/upgrade-misp.md" %}
 
 ## What's MISP?
 
@@ -24,7 +24,7 @@ TheHive integrates with MISP in several ways:
 
 ## Permissions
 
-{!includes/administrator-access-manage-misp-servers.md!}
+{% include-markdown "includes/administrator-access-manage-misp-servers.md" %}
 
 <h2>Next steps</h2>
 

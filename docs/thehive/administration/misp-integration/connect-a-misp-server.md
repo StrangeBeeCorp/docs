@@ -16,21 +16,21 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 !!! note "Multiple MISP servers"
     TheHive supports connecting multiple MISP servers only with a paid license.
 
-{!includes/upgrade-misp.md!}
+{% include-markdown "includes/upgrade-misp.md" %}
 
-{!includes/administrator-access-manage-misp-servers.md!}
+{% include-markdown "includes/administrator-access-manage-misp-servers.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/connectors-tab-go-to.md!}
+2. {% include-markdown "includes/connectors-tab-go-to.md" %}
 
     ---
 
-3. {!includes/misp-tab-go-to.md!}
+3. {% include-markdown "includes/misp-tab-go-to.md" %}
 
     ---
 
@@ -69,15 +69,15 @@ To manually import a MISP event as a case in TheHive, refer to [How to Create a 
 
     ---
 
-7. {!includes/proxy-settings.md!}
+7. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-8. {!includes/certificate-authority.md!}
+8. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-9. {!includes/host-name-verification.md!}
+9. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

@@ -1,2 +1,2 @@
-    !!! tip "Can't find a user account?"
-        You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/views/about-views/).
+!!! tip "Can't find a user account?"
+    You can apply [filters and sorting](/thehive/user-guides/analyst-corner/about-filtering-and-sorting/) to help locate user accounts. These preferences can be saved using [views](/thehive/user-guides/analyst-corner/views/about-views/).

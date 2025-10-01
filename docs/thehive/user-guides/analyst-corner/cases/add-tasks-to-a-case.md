@@ -8,7 +8,7 @@ This topic provides step-by-step instructions for adding [tasks](../tasks/about-
 
     ---
 
-2. {!includes/tasks-tab-go-to.md!}
+2. {% include-markdown "includes/tasks-tab-go-to.md" %}
 
     ---
 

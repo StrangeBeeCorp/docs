@@ -408,7 +408,7 @@ TheHive packages are distributed as RPM and DEB files available for direct downl
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-{!includes/manual-download-installation-thehive.md!}
+{% include-markdown "includes/manual-download-installation-thehive.md" %}
 
 <!-- During the installation, if you already prepared your configuration file during [Prepare for the new installation](#prepare-for-the-new-installation) chapter, continue **without** updating it with the maintainer's version.
 

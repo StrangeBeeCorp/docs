@@ -28,7 +28,7 @@ Any file format is supported for attachments.
 
 ## Permissions
 
-{!includes/access-manage-attachments.md!}
+{% include-markdown "includes/access-manage-attachments.md" %}
 
 Adding an attachment grants all users permission to view or download it.
 

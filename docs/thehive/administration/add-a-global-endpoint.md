@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for adding a global [endpoint](../
 
 Once created, this global endpoint becomes available to all organizations you choose to share it with.
 
-{!includes/administrator-access-global-endpoints.md!}
+{% include-markdown "includes/administrator-access-global-endpoints.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
-2. {!includes/global-endpoints-tab-go-to.md!}
+2. {% include-markdown "includes/global-endpoints-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-plus:.
 

@@ -5,13 +5,13 @@ This topic provides step-by-step instructions for deleting a [taxonomy](about-ta
 !!! warning "Permanent deletion"
     Deleting a taxonomy is permanent. To keep a taxonomy for future use, [deactivate it](activate-deactivate-a-taxonomy.md) instead.
 
-{!includes/administrator-access-manage-taxonomies.md!}
+{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/taxonomies-tab-go-to.md!}
+2. {% include-markdown "includes/taxonomies-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the taxonomy to delete.
 

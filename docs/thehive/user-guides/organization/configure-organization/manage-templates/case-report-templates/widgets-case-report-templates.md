@@ -35,7 +35,7 @@ Table widget configuration includes:
 
 * A title for the table
 * A parameter selection to choose from observables, tasks, TTPs, alerts, or [custom fields](../../../../../administration/custom-fields/about-custom-fields.md), along with the data to display
-{!includes/protect-observable-urls.md!}
+{% include-markdown "includes/protect-observable-urls.md" %}
 * Sorting rules and filters to refine the displayed data
 
 ## List widget
@@ -46,7 +46,7 @@ List widget configuration includes:
 
 * A title for the list
 * A parameter selection to choose from observables, tasks, TTPs, or alerts, along with the data to display
-{!includes/protect-observable-urls.md!}
+{% include-markdown "includes/protect-observable-urls.md" %}
 * Sorting rules and filters to refine the displayed data
 
 ## Timeline widget

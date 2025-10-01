@@ -4,11 +4,11 @@ This topic provides step-by-step instructions for creating a page in the TheHive
 
 Use this procedure to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
 
-{!includes/access-knowledge-base.md!}
+{% include-markdown "includes/access-knowledge-base.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/knowledge-base-view-go-to.md!}
+1. {% include-markdown "includes/knowledge-base-view-go-to.md" %}
 
 2. Select :fontawesome-solid-plus:.
 
@@ -28,9 +28,9 @@ Use this procedure to store knowledge that should be preserved for future refere
 
 6. Write your content using [TheHive-flavored Markdown syntax](../thehive-flavored-markdown.md).
 
-7. {!includes/preview-rendering-content.md!}
+7. {% include-markdown "includes/preview-rendering-content.md" %}
 
-8. {!includes/save-content-page.md!}
+8. {% include-markdown "includes/save-content-page.md" %}
 
 <h2>Next steps</h2>
 

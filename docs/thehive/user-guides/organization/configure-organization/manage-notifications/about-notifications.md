@@ -85,7 +85,7 @@ Several types of notifiers are available in TheHive:
 
 ## Permissions
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Next steps</h2>
 

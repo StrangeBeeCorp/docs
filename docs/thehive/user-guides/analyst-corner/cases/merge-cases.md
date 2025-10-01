@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for [merging cases](../cases/about-cases.md#merging-cases) in TheHive.
 
-{!includes/access-merge-cases.md!}
+{% include-markdown "includes/access-merge-cases.md" %}
 
 <h2>Procedure</h2>
 

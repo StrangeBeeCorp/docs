@@ -5,14 +5,13 @@ This topic provides step-by-step instructions for exporting and importing a [das
 !!! tip "Find dashboard templates"
     Dashboard templates from the community are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Dashboard%20Templates). Contributions are welcome!
 
-!!! warning "<!-- md:version 5.4 --> Required permissions"
-    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
+{% include-markdown "includes/access-manage-dashboards.md" %}
 
 ## Export a dashboard
 
 Use this procedure to share a dashboard with another organization or TheHive instance.
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. Select :fontawesome-solid-ellipsis: next to the dashboard you want to export, then select **Export**.
 
@@ -22,7 +21,7 @@ Use this procedure to share a dashboard with another organization or TheHive ins
 
 Use this procedure to use a dashboard from another organization or TheHive instance.
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. Select **Import dashboard**.
 

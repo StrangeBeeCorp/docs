@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for exporting a list of [alerts](a
 
 <h2>Procedure</h2>
 
-1. {!includes/alerts-view-go-to.md!}
+1. {% include-markdown "includes/alerts-view-go-to.md" %}
 
 2. Select **Export list** to export all displayed alerts, reflecting the applied [filters and sorting](../about-filtering-and-sorting.md). To export a specific selection of alerts, select :fontawesome-regular-square: next to the alerts you want to export, then select **Export selection**.
 

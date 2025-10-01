@@ -2,17 +2,17 @@
 
 This topic provides step-by-step instructions for renaming a [custom tag](about-custom-tags.md) in TheHive.
 
-{!includes/access-manage-custom-tags.md!}
+{% include-markdown "includes/access-manage-custom-tags.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/custom-tags-tab-go-to.md!}
+2. {% include-markdown "includes/custom-tags-tab-go-to.md" %}
 
 3. Select the name of the custom tag you want to change.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 4. Select :fontawesome-solid-check:.
 

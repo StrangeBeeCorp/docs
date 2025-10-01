@@ -19,7 +19,7 @@ In TheHive, custom fields add structure and flexibility to cases and alerts in t
 
 Custom fields support the following types:
 
-{!includes/custom-fields-formats.md!}
+{% include-markdown "includes/custom-fields-formats.md" %}
 
 ## Expected values
 
@@ -34,9 +34,9 @@ Custom fields can be configured as either optional or mandatory. Mandatory field
 
 ## Permissions
 
-{!includes/administrator-access-manage-custom-fields.md!}
+{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
 
-{!includes/access-manage-custom-fields.md!}
+{% include-markdown "includes/access-manage-custom-fields.md" %}
 
 <h2>Next steps</h2>
 

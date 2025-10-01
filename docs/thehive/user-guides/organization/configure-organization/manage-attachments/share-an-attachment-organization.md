@@ -4,17 +4,17 @@ This topic provides step-by-step instructions for sharing an [attachment](../../
 
 To share an attachment from a case or an alert, see [Share an Attachment from a Case or an Alert](../../../analyst-corner/cases/attachments/share-an-attachment-case-alert.md).
 
-{!includes/access-manage-attachments.md!}
+{% include-markdown "includes/access-manage-attachments.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/attachments-tab-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
 
-    {!includes/filters.md!}
+    {% include-markdown "includes/filters.md" %}
 
 4. Select **Copy URL**.
 

@@ -2,15 +2,15 @@
 
 This topic provides step-by-step instructions for managing [custom fields](../custom-fields/about-custom-fields.md) in TheHive.
 
-{!includes/administrator-access-manage-custom-fields.md!}
+{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
 
 ## Set a custom field as mandatory or optional
 
 It is recommended to set a custom field as mandatory if it is used in dashboards or any automation workflow.
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/custom-fields-tab-go-to.md!}
+2. {% include-markdown "includes/custom-fields-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the custom field you want to edit.
 
@@ -24,9 +24,9 @@ It is recommended to set a custom field as mandatory if it is used in dashboards
 
 For the string, integer, and float types, you can define predefined values. If you choose to do this, users are only able to select from the predefined values you specify. This helps maintain data consistency for reporting purposes.
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/custom-fields-tab-go-to.md!}
+2. {% include-markdown "includes/custom-fields-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the custom field you want to edit.
 
@@ -38,9 +38,9 @@ For the string, integer, and float types, you can define predefined values. If y
 
 ## Assign multiple custom fields to the same group
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/custom-fields-tab-go-to.md!}
+2. {% include-markdown "includes/custom-fields-tab-go-to.md" %}
 
 3. Select :fontawesome-regular-square: next to the custom fields you want to edit.
 

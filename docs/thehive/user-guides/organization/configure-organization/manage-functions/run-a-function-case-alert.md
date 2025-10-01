@@ -4,7 +4,7 @@
 
 This topic provides step-by-step instructions for manually running a [function](about-functions.md) on a [case](../../../analyst-corner/cases/about-cases.md) or an [alert](../../../analyst-corner/alerts/about-alerts.md) in TheHive.
 
-{!includes/access-functions.md!}
+{% include-markdown "includes/access-functions.md" %}
 
 <h2>Procedure</h2>
 

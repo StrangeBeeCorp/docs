@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for reopening a [case](about-cases
 
 Use this procedure to reopen a closed case and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *Closed* stage to the *In progress* stage.
 
-{!includes/access-reopen-cases.md!}
+{% include-markdown "includes/access-reopen-cases.md" %}
 
 <h2>Procedure</h2>
 

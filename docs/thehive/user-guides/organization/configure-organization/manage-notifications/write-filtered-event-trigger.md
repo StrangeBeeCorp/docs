@@ -5,15 +5,15 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
 !!! info "Capabilities of the *FilteredEvent* trigger"
     Read this [StrangeBee blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/) for an introduction to the capabilities of *FilteredEvent* trigger.
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
     ---
 

@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of an alert in TheHive.
 
-{!includes/access-change-status-alert.md!}
+{% include-markdown "includes/access-change-status-alert.md" %}
 
 <h2>Procedure</h2>
 

@@ -6,12 +6,11 @@ You can create a dashboard from scratch or duplicate an existing one.
 
 If you want to use a dashboard from another organization or TheHive instance as a template, you can [import it](export-import-a-dashboard.md#import-a-dashboard).
 
-!!! warning "<!-- md:version 5.4 --> Required permissions"
-    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
+{% include-markdown "includes/access-manage-dashboards.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. Two options are available:
 

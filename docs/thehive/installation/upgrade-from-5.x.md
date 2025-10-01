@@ -35,7 +35,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 Alternatively, you can deploy TheHive using Docker images.
 
-{!includes/manual-download-installation-thehive.md!}
+{% include-markdown "includes/manual-download-installation-thehive.md" %}
 
 === "Docker"
 

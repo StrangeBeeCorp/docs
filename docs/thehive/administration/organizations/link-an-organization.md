@@ -6,7 +6,7 @@ By default, organizations in TheHive aren't linked. Each organization operates i
 
 Link organizations to enable data sharing and define the applicable sharing rules.
 
-{!includes/administrator-access-manage-organizations.md!}
+{% include-markdown "includes/administrator-access-manage-organizations.md" %}
 
 <h2>Procedure</h2>
 

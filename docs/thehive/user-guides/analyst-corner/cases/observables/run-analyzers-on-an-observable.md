@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for running [analyzers](../../../.
 
 Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results. The type of each observable determines which analyzers are available.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 ## Run analyzers on an observable
 

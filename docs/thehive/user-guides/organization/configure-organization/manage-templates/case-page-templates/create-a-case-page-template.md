@@ -6,15 +6,15 @@ Case page templates streamline page creation within cases in TheHive by automati
 
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Page Template](import-a-case-page-template.md) topic.
 
-{!includes/access-manage-case-page-templates.md!}
+{% include-markdown "includes/access-manage-case-page-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/case-page-templates-go-to.md!}
+3. {% include-markdown "includes/case-page-templates-go-to.md" %}
 
 4. Select :fontawesome-solid-plus:.
 

@@ -13,7 +13,7 @@ TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, servi
 
 ---
 
-## Key Features
+## Key features
 
 **Integration with MISP:** 
 Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.
@@ -74,6 +74,3 @@ The essential components of TheHive setup include:
     ![](../images/overview/thehive-architecture-full-cluster.png){ align=center }
 
     Each layer and node within the architecture can be installed on dedicated operating systems, allowing for tailored configurations. The [installation guide for a 3-node cluster](../installation/deploying-a-cluster.md) provides comprehensive instructions for setting up a more complex clustered environment.
-
-
-&nbsp;

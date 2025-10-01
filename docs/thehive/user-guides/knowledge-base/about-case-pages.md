@@ -18,7 +18,7 @@ Case pages use [TheHive-flavored Markdown syntax](../thehive-flavored-markdown.m
 
 ## Permissions
 
-{!includes/access-case-pages.md!}
+{% include-markdown "includes/access-case-pages.md" %}
 
 <h2>Next steps</h2>
 

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for viewing a [Knowledge Base](abo
 
 <h2>Procedure</h2>
 
-1. {!includes/knowledge-base-view-go-to.md!}
+1. {% include-markdown "includes/knowledge-base-view-go-to.md" %}
 
 2. Select the page you want to view in the right pane.
 

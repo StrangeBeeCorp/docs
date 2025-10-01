@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for viewing the [profile and permi
 
 <h2>Procedure</h2>
 
-1. {!includes/user-symbol-go-to.md!}
+1. {% include-markdown "includes/user-symbol-go-to.md" %}
 
 2. Select **Settings**.
 

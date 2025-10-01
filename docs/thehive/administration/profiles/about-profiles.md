@@ -51,7 +51,7 @@ When [creating or editing a profile](create-a-profile.md), licensed permissions 
 
 ## Permissions
 
-{!includes/administrator-access-manage-profiles.md!}
+{% include-markdown "includes/administrator-access-manage-profiles.md" %}
 
 <h2>Next steps</h2>
 

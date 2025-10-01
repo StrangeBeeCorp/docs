@@ -6,15 +6,15 @@ This topic provides step-by-step instructions for creating an [alert feeder](abo
 
 Use this procedure to automatically retrieve data at a defined frequency from an external service via an HTTP API call and convert it into alerts in TheHive.
 
-{!includes/access-feeders.md!}
+{% include-markdown "includes/access-feeders.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/connectors-tab-organization-go-to.md!}
+2. {% include-markdown "includes/connectors-tab-organization-go-to.md" %}
 
     ---
 
@@ -61,23 +61,23 @@ Use this procedure to automatically retrieve data at a defined frequency from an
 
     ---
 
-6. {!includes/headers.md!}
+6. {% include-markdown "includes/headers.md" %}
 
     ---
 
-7. {!includes/authentication-type.md!}
+7. {% include-markdown "includes/authentication-type.md" %}
 
     ---
 
-8. {!includes/proxy-settings.md!}
+8. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-9. {!includes/certificate-authority.md!}
+9. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-10. {!includes/host-name-verification.md!}
+10. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 
@@ -100,11 +100,11 @@ Use this procedure to automatically retrieve data at a defined frequency from an
 
     **- Definition**
 
-    {!includes/function-definition.md!}
+    {% include-markdown "includes/function-definition.md" %}
 
     ---
 
-13. {!includes/test-function.md!}
+13. {% include-markdown "includes/test-function.md" %}
 
     ---
 

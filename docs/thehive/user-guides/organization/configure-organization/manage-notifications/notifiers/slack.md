@@ -24,15 +24,15 @@ This topic provides step-by-step instructions for configuring the *Slack* [notif
     * *TaskClosed*  
     * *TaskMandatory*
 
-{!includes/access-notifications.md!}
+{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/notifications-tab-go-to.md!}
+2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
     ---
 
@@ -64,9 +64,9 @@ This topic provides step-by-step instructions for configuring the *Slack* [notif
 
     A username that will appear as the sender of the message in Slack. This overrides the default username set in the endpoint configuration.
 
-    {!includes/notifications-variables.md!}
+    {% include-markdown "includes/notifications-variables.md" %}
     
-    {!includes/templates-notifications-helpers.md!}
+    {% include-markdown "includes/templates-notifications-helpers.md" %}
 
     ---
 

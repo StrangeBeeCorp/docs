@@ -15,7 +15,7 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 
 ## Step 1: Retrieve the challenge from your TheHive instance
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
 2. Select the **License** tab.
 

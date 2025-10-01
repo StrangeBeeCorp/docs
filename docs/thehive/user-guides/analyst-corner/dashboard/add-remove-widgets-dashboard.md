@@ -2,16 +2,15 @@
 
 This topic provides step-by-step instructions for adding or removing [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive.
 
-!!! warning "<!-- md:version 5.4 --> Required permissions"
-    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
+{% include-markdown "includes/access-manage-dashboards.md" %}
 
 ## Add widgets in a dashboard
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. On the dashboards list, select the name of your dashboard.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select :fontawesome-solid-pen:.
 
@@ -25,11 +24,11 @@ This topic provides step-by-step instructions for adding or removing [widgets](w
 
 ## Remove widgets in a dashboard
 
-1. {!includes/dashboards-view-go-to.md!}
+1. {% include-markdown "includes/dashboards-view-go-to.md" %}
 
 2. On the dashboards list, select the name of your dashboard.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 3. Select :fontawesome-solid-pen:.
 

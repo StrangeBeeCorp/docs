@@ -6,7 +6,7 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 Run a responder on an observable to take actions such as blocking an IP address on the firewall or a URL on the proxy.
 
-{!includes/access-manage-observables.md!}
+{% include-markdown "includes/access-manage-observables.md" %}
 
 ## Run responders on an observable
 

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for applying a [case template](../
 
 If you want to apply a template to a new case, refer to the [Create a Case](create-a-new-case.md) topic.
 
-{!includes/access-update-a-case.md!}
+{% include-markdown "includes/access-update-a-case.md" %}
 
 <h2>Procedure</h2>
 

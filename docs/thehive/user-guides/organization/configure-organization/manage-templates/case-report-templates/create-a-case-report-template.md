@@ -6,15 +6,15 @@ This topic provides step-by-step instructions for creating a [case report templa
 
 Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
 
-{!includes/access-manage-case-report-templates.md!}
+{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/report-templates-go-to.md!}
+3. {% include-markdown "includes/report-templates-go-to.md" %}
 
 4. Two options are available:
 

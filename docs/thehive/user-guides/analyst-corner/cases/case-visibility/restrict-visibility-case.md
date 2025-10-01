@@ -4,13 +4,13 @@
 
 This topic provides step-by-step instructions for restricting the [visibility of a case](../about-cases.md#case-visibility) in TheHive.
 
-{!includes/access-manage-visibility-cases.md!}
+{% include-markdown "includes/access-manage-visibility-cases.md" %}
 
 <h2>Procedure</h2>
 
 1. [Find the case](../search-for-cases/find-a-case.md) you want to restrict.
 
-2. {!includes/restrict-access-button.md!}
+2. {% include-markdown "includes/restrict-access-button.md" %}
 
 3. In the **Case access management** drawer, select **Restricted**.
 

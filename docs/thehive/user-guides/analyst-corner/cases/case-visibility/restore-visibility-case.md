@@ -4,13 +4,13 @@
 
 This topic provides step-by-step instructions for restoring the [visibility of a case](../about-cases.md#case-visibility) in TheHive, making it visible to all users again.
 
-{!includes/access-manage-visibility-cases.md!}
+{% include-markdown "includes/access-manage-visibility-cases.md" %}
 
 <h2>Procedure</h2>
 
 1. [Find the case](../search-for-cases/find-a-case.md) that you want to restore visibility for all users.
 
-2. {!includes/restrict-access-button.md!}
+2. {% include-markdown "includes/restrict-access-button.md" %}
 
 3. In the **Case access management** drawer, select **Visible**.
 

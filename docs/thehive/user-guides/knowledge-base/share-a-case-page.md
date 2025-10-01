@@ -8,7 +8,7 @@ Use this procedure to share a case page with your teammates through a messaging 
 
 1. [Find the case](../analyst-corner/cases/search-for-cases/find-a-case.md) where you want to share a page.
 
-2. {!includes/pages-tab-go-to.md!}
+2. {% include-markdown "includes/pages-tab-go-to.md" %}
 
 3. Select or hover over the page you want to share in the right pane.
 

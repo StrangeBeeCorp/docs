@@ -11,7 +11,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Measure the performance of all cases in your organization
 
-{!includes/dashboard-access.md!}
+{% include-markdown "includes/dashboard-access.md" %}
 
 1. Go to the **Dashboards** view from the sidebar menu.
 
@@ -25,7 +25,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 5. Select any value that begins with *timeTo* to any **Filters** box.
 
-{!includes/units-time-to.md!}
+{% include-markdown "includes/units-time-to.md" %}
 
 ## Measure the performance of a specific case
 
@@ -43,13 +43,13 @@ Two options are available to measure a case's performance:
 
 **In a case report template:**
 
-{!includes/access-manage-case-report-templates.md!}
+{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/report-templates-go-to.md!}
+3. {% include-markdown "includes/report-templates-go-to.md" %}
 
 4. Select a case report template.
 
@@ -59,7 +59,7 @@ Two options are available to measure a case's performance:
 
 7. Select any value that begins with *timeTo*.
 
-{!includes/units-time-to.md!}
+{% include-markdown "includes/units-time-to.md" %}
 
 <h2>Next steps</h2>
 

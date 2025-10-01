@@ -27,15 +27,15 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 *Use this method if you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.*
 
-{!includes/similar-cases-alerts-filters.md!}
+{% include-markdown "includes/similar-cases-alerts-filters.md" %}
 
 1. Open a case, an alert, or a task, and select the **Similar cases** tab.
 
     ![Similar cases](../../../../images/user-guides/analyst-corner/cases/similar-cases.png)
 
-2. {!includes/apply-filters.md!}
+2. {% include-markdown "includes/apply-filters.md" %}
 
-3. {!includes/search-results.md!}
+3. {% include-markdown "includes/search-results.md" %}
 
 For more information, see the [Find Similar Alerts and Cases](../find-similar-alerts-cases.md) topic.
 
@@ -49,14 +49,14 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
     ![Filters in the cases view](../../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view.png)
 
-2. {!includes/apply-filters.md!}
+2. {% include-markdown "includes/apply-filters.md" %}
 
-    {!includes/views-filters-sorts.md!}
+    {% include-markdown "includes/views-filters-sorts.md" %}
 
     !!! info "Beta feature available for filters and views"
         <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
 
-3. {!includes/search-results.md!}
+3. {% include-markdown "includes/search-results.md" %}
 
 ---
 
@@ -72,28 +72,17 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
     ![Global Search feature cases item](../../../../images/user-guides/analyst-corner/cases/find-a-case-global-search-feature-cases-item.png)
 
-    {!includes/global-search-all-elements.md!}
+    {% include-markdown "includes/global-search-all-elements.md" %}
 
 3. Enter the keywords you want to search for in the search box displayed by default.
 
-    !!! tip "<!-- md:version 5.4.7 --> Wildcard character"
-        You can use the wildcard character *\** to broaden your searches.
+    {% include-markdown "includes/wildcard-character.md" %}
 
-        The wildcard character acts as a placeholder that matches zero or more characters, helping you find variations of a term or incomplete information.
-        
-        Examples of use cases:
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
 
-        * Email domains: Entering *\*@gmail.com* will return entities containing the gmail.com domain.
-        * IP subnets: Entering *192.168.\*.\** will return entities with IP addresses in the 192.168.x.x subnet.
-        * URLs: Entering *https://malwaredomain.com/\** will return entities hosted under the malwaredomain.com directory.
+4. {% include-markdown "includes/global-search-additional-filters.md" preserve-includer-indent=false %}
 
-        Other advanced search options, such as Boolean and phrase searches, are not currently supported.
-
-    {!includes/elasticsearch-limitation.md!}
-
-4. {!includes/global-search-additional-filters.md!}
-
-5. {!includes/search-results.md!}
+5. {% include-markdown "includes/search-results.md" %}
 
 <h2>Next steps</h2>
 

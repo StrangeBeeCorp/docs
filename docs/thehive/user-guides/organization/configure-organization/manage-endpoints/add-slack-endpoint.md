@@ -2,17 +2,17 @@
 
 This topic provides step-by-step instructions for adding a local *Slack* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
-{!includes/local-global-endpoints.md!}
+{% include-markdown "includes/local-global-endpoints.md" %}
 
-{!includes/access-endpoints.md!}
+{% include-markdown "includes/access-endpoints.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/endpoints-tab-go-to.md!}
+2. {% include-markdown "includes/endpoints-tab-go-to.md" %}
 
     ---
 
@@ -36,15 +36,15 @@ This topic provides step-by-step instructions for adding a local *Slack* [endpoi
 
     ---
 
-6. {!includes/proxy-settings.md!}
+6. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-7. {!includes/certificate-authority.md!}
+7. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-8. {!includes/host-name-verification.md!}
+8. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

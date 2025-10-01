@@ -85,7 +85,7 @@ The following email providers are available in TheHive:
 
 ## Permissions
 
-{!includes/administrator-access-manage-email-intake-connectors.md!}
+{% include-markdown "includes/administrator-access-manage-email-intake-connectors.md" %}
 
 <h2>Next steps</h2>
 

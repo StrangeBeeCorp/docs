@@ -12,17 +12,17 @@ This topic provides step-by-step instructions for exporting and importing a [cas
     
     Each contribution is reviewed by StrangeBee before being published.
 
-{!includes/access-manage-case-templates.md!}
+{% include-markdown "includes/access-manage-case-templates.md" %}
 
 ## Export a case template
 
 Use this procedure to share a case template with another organization or TheHive instance.
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/case-templates-go-to.md!}
+3. {% include-markdown "includes/case-templates-go-to.md" %}
 
 4. Select :fontawesome-solid-ellipsis: next to the case template you want to export.
 
@@ -32,11 +32,11 @@ Use this procedure to share a case template with another organization or TheHive
 
 Use this procedure to use a case template from another organization or TheHive instance.
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/case-templates-go-to.md!}
+3. {% include-markdown "includes/case-templates-go-to.md" %}
 
 4. Select **Import case template**.
 

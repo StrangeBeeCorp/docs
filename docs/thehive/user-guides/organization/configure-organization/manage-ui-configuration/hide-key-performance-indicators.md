@@ -15,9 +15,9 @@ If you want to know more about the KPIs available in TheHive, refer to the [Key 
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/ui-configuration-tab-go-to.md!}
+2. {% include-markdown "includes/ui-configuration-tab-go-to.md" %}
 
 3. Move through the **Time metrics** section.
 

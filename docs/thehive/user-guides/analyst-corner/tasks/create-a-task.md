@@ -2,7 +2,7 @@
 
 This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Procedure</h2>
 
@@ -10,7 +10,7 @@ This topic provides step-by-step instructions for creating a [task](about-tasks.
 
     ---
 
-2. {!includes/tasks-tab-go-to.md!}
+2. {% include-markdown "includes/tasks-tab-go-to.md" %}
 
     ---
 

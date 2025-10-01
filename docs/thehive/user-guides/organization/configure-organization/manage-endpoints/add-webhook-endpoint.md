@@ -2,17 +2,17 @@
 
 This topic provides step-by-step instructions for adding a local *Webhook* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
 
-{!includes/local-global-endpoints.md!}
+{% include-markdown "includes/local-global-endpoints.md" %}
 
-{!includes/access-endpoints.md!}
+{% include-markdown "includes/access-endpoints.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
     ---
 
-2. {!includes/endpoints-tab-go-to.md!}
+2. {% include-markdown "includes/endpoints-tab-go-to.md" %}
 
     ---
 
@@ -40,19 +40,19 @@ This topic provides step-by-step instructions for adding a local *Webhook* [endp
 
     ---
 
-6. {!includes/authentication-type.md!}
+6. {% include-markdown "includes/authentication-type.md" %}
 
     ---
 
-7. {!includes/proxy-settings.md!}
+7. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-8. {!includes/certificate-authority.md!}
+8. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-9. {!includes/host-name-verification.md!}
+9. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 

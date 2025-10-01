@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for exporting a list of [cases](ab
 
 <h2>Procedure</h2>
 
-1. {!includes/cases-view-go-to.md!}
+1. {% include-markdown "includes/cases-view-go-to.md" %}
 
 2. Select **Export list** to export all displayed cases, reflecting the applied [filters and sorting](../about-filtering-and-sorting.md). To export a specific selection of cases, select :fontawesome-regular-square: next to the cases you want to export, then select **Export selection**.
 

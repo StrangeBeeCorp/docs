@@ -8,7 +8,7 @@ Pinning an observable allows you to access it from the **Observables** tab withi
 
 1. [Locate the case](../search-for-cases/find-a-case.md) or [alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to pin the observable.
 
-2. {!includes/observables-tab-go-to.md!}
+2. {% include-markdown "includes/observables-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the observable you want to pin.
 

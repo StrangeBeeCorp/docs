@@ -9,7 +9,7 @@ Use this procedure to turn off automatic updates for specific alerts.
 !!! warning "Requirements"
     Automatic alert updates are available only for alerts created through [MISP server integrations](../../../administration/misp-integration/connect-a-misp-server.md).
 
-{!includes/access-manage-alert-updates-misp.md!}
+{% include-markdown "includes/access-manage-alert-updates-misp.md" %}
 
 <h2>Procedure</h2>
 

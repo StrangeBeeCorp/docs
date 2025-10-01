@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for closing an [alert](about-alert
 
 Close an alert if it doesn't require escalation into a new or existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 
-{!includes/access-close-alerts.md!}
+{% include-markdown "includes/access-close-alerts.md" %}
 
 <h2>Procedure</h2>
 

@@ -7,13 +7,13 @@ Taxonomies are catalogs of structured tags managed in TheHive.
 !!! warning "Manual activation required"
     By default, MISP taxonomies aren't activated. You must [activate them manually](activate-deactivate-a-taxonomy.md).
 
-{!includes/administrator-access-manage-taxonomies.md!}
+{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/taxonomies-tab-go-to.md!}
+2. {% include-markdown "includes/taxonomies-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the taxonomy you want to activate or deactivate.
 

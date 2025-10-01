@@ -4,13 +4,13 @@ This topic provides step-by-step instructions for adding a custom [taxonomy](abo
 
 Use this procedure if you want to add taxonomies other than the default imported Malware Information Sharing Platform (MISP) taxonomies.
 
-{!includes/administrator-access-manage-taxonomies.md!}
+{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/taxonomies-tab-go-to.md!}
+2. {% include-markdown "includes/taxonomies-tab-go-to.md" %}
 
 3. Select **Import taxonomies**.
 

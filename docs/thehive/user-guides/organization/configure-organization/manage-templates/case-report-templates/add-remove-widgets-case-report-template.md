@@ -4,15 +4,15 @@
 
 This topic provides step-by-step instructions for adding and removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
 
-{!includes/access-manage-case-report-templates.md!}
+{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 ## Add widgets in a case report template
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/report-templates-go-to.md!}
+3. {% include-markdown "includes/report-templates-go-to.md" %}
 
 4. Select the case report template you want to edit, or select :fontawesome-solid-ellipsis: next to the case report template you want to edit and then **Edit**.
 
@@ -32,11 +32,11 @@ This topic provides step-by-step instructions for adding and removing widgets in
 
 ## Remove widgets in a case report template
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/report-templates-go-to.md!}
+3. {% include-markdown "includes/report-templates-go-to.md" %}
 
 4. Select the case report template you want to edit, or select :fontawesome-solid-ellipsis: next to the case report template you want to edit and then **Edit**.
 

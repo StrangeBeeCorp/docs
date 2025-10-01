@@ -2,17 +2,17 @@
 
 This topic provides step-by-step instructions for changing the color of a [custom tag](about-custom-tags.md) in TheHive.
 
-{!includes/access-manage-custom-tags.md!}
+{% include-markdown "includes/access-manage-custom-tags.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/custom-tags-tab-go-to.md!}
+2. {% include-markdown "includes/custom-tags-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-pen: in the **Color** column for the custom tag you want to update.
 
-    {!includes/filters-sorts-views.md!}
+    {% include-markdown "includes/filters-sorts-views.md" %}
 
 4. Enter the hex color code, or select :fontawesome-solid-fill-drip: to open the color picker.
 

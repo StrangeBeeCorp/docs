@@ -6,11 +6,11 @@ This topic provides step-by-step instructions for sharing an [attachment](../../
 
 1. [Locate the case](../search-for-cases/find-a-case.md) containing the attachment you want to share.
 
-2. {!includes/attachments-tab-case-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
 
-    {!includes/filters.md!}
+    {% include-markdown "includes/filters.md" %}
 
 4. Select **Copy URL**.
 
@@ -18,11 +18,11 @@ This topic provides step-by-step instructions for sharing an [attachment](../../
 
 1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) containing the attachment you want to share.
 
-2. {!includes/attachments-tab-alert-go-to.md!}
+2. {% include-markdown "includes/attachments-tab-alert-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
 
-    {!includes/filters.md!}
+    {% include-markdown "includes/filters.md" %}
 
 4. Select **Copy URL**.
 

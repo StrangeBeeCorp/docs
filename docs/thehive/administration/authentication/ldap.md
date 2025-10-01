@@ -4,19 +4,19 @@
 
 Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
-{!includes/access-authentication.md!}
+{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 
-{!includes/local-account-ldap-ad.md!}
+{% include-markdown "includes/local-account-ldap-ad.md" %}
 
-{!includes/prerequisites-authentication-providers.md!}
+{% include-markdown "includes/prerequisites-authentication-providers.md" %}
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/authentication-tab-go-to.md!}
+2. {% include-markdown "includes/authentication-tab-go-to.md" %}
 
     ---
 

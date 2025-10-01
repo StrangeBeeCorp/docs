@@ -10,9 +10,9 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 ### As an administrator
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-1. {!includes/users-view-go-to.md!}
+1. {% include-markdown "includes/users-view-go-to.md" %}
 
 2. Locate the user account you're looking for, hover over it, and select :fontawesome-solid-eye:.
 
@@ -25,14 +25,14 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 ### As an organization administrator
 
-{!includes/access-manage-user-accounts.md!}
+{% include-markdown "includes/access-manage-user-accounts.md" %}
 
 !!! info "Adding existing users not supported"
     As an organization administrator, you can remove an existing user from an organization or [create a new user account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md#as-an-organization-administrator), but you can't add an existing user. To do so, ask someone with an admin-type profile.
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/users-tab-go-to.md!}
+2. {% include-markdown "includes/users-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the user account you want to remove from the organization.
 

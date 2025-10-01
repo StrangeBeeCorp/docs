@@ -4,15 +4,15 @@ This topic provides step-by-step instructions for configuring an [SMTP server](a
 
 Use this procedure to enable sending [email notifications to specific users](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md) and [all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md), as well as [emails for password resets and edits](../../user-guides/manage-password.md).
 
-{!includes/administrator-access-configure-smtp.md!}
+{% include-markdown "includes/administrator-access-configure-smtp.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/smtp-tab-go-to.md!}
+2. {% include-markdown "includes/smtp-tab-go-to.md" %}
 
     ---
 

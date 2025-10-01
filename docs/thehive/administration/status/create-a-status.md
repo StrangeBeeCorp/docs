@@ -6,17 +6,17 @@ This topic provides step-by-step instructions for creating a [status](about-stat
 
 Use this procedure to add custom statuses in addition to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
 
-{!includes/task-statuses-excluded.md!}
+{% include-markdown "includes/task-statuses-excluded.md" %}
 
-{!includes/administrator-access-manage-statuses.md!}
+{% include-markdown "includes/administrator-access-manage-statuses.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/status-tab-go-to.md!}
+2. {% include-markdown "includes/status-tab-go-to.md" %}
 
     ---
 

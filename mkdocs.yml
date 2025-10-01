@@ -63,6 +63,8 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - include-markdown
+    
   - htmlproofer:
       enabled: !ENV [ENABLED_HTMLPROOFER, false]
       raise_error_after_finish: True
@@ -417,8 +419,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - markdown_include.include:
-      base_path: docs
 
 nav:
   - Home: index.md

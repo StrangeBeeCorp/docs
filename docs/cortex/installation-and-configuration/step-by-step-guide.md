@@ -192,7 +192,7 @@ Cortex packages are distributed as RPM and DEB files available for direct downlo
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
 
-{!includes/manual-download-installation-cortex.md!}
+{% include-markdown "includes/manual-download-installation-cortex.md" %}
 
 === "ZIP binary packages"
 
@@ -206,9 +206,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Using Wget
 
             ```bash
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
-            wget -O /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
+            wget -O /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip
+            wget -O /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.sha256
+            wget -O /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -225,9 +225,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Using cURL
 
             ```bash
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/zip/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256 https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/sha256/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
-            curl -o /opt/cortex/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc https://cortex.download.strangebee.com/{!includes/cortex-latest-version.md!lines=1}/asc/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc
+            curl -o /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip
+            curl -o /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.sha256
+            curl -o /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -248,13 +248,13 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
+            sha256sum /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
             ```bash
-            cat /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.sha256
+            cat /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.sha256
             ```
 
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -280,7 +280,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip.asc /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip
+            gpg --verify /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip.asc /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip
             ```
 
             d. Expected result.
@@ -307,12 +307,12 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
         !!! info "Unzip paths"
             
-            * Replace `/opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip` with the full path to the ZIP file you downloaded.
+            * Replace `/opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip` with the full path to the ZIP file you downloaded.
             * Replace `/opt/` after `-d` with the directory where you want to extract the contents of the archive.
 
         ```bash
-        unzip /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2.zip -d /opt/
-        sudo ln -s /opt/cortex-{!includes/cortex-latest-version.md!lines=2}-2 /opt/cortex
+        unzip /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.zip -d /opt/
+        sudo ln -s /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2 /opt/cortex
         ```
 
     4. Make the Cortex binary executable.

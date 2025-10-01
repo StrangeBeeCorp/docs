@@ -16,13 +16,13 @@ Then, remove or deactivate the old repository to avoid stale configurations.
 
     a. Deactivate the repository.
 
-        ```bash
-        sudo yum-config-manager --disable strangebee
-        ```
+    ```bash
+    sudo yum-config-manager --disable strangebee
+    ```
 
     b. Optional: Remove the repository file.
 
-        ```bash
-        sudo rm /etc/yum.repos.d/strangebee.repo
-        sudo yum clean all
-        ```
+    ```bash
+    sudo rm /etc/yum.repos.d/strangebee.repo
+    sudo yum clean all
+    ```

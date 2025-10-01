@@ -28,7 +28,7 @@ Add [widgets](widgets-case-report-templates.md) between these sections to displa
 
 ## Permissions
 
-{!includes/access-manage-case-report-templates.md!}
+{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 Once created, case report templates are automatically available to all users in the organization within case descriptions.
 

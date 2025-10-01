@@ -45,7 +45,7 @@ Use an alert feeder to integrate any external system that exposes a public REST 
 
 ## Permissions
 
-{!includes/access-feeders.md!}
+{% include-markdown "includes/access-feeders.md" %}
 
 <h2>Next steps</h2>
 

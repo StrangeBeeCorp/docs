@@ -10,37 +10,37 @@ To remove a user account from a specific organization without deleting it, see [
 
 ### As an administrator
 
-{!includes/administrator-access-manage-user-accounts.md!}
+{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
-1. {!includes/users-view-go-to.md!}
+1. {% include-markdown "includes/users-view-go-to.md" %}
 
 2. Select :fontawesome-solid-ellipsis: next to the user account you want to lock.
 
-    {!includes/find-a-user-account.md!}
+    {% include-markdown "includes/find-a-user-account.md" %}
 
 3. Select **Lock**.
 
-    {!includes/lock-multiple-user-accounts-bulk.md!}
+    {% include-markdown "includes/lock-multiple-user-accounts-bulk.md" %}
 
 4. Select **OK**.
 
 
 ### As an organization administrator
 
-{!includes/access-manage-user-accounts.md!}
+{% include-markdown "includes/access-manage-user-accounts.md" %}
 
 !!! warning "Lock applies to all organizations"
     Locking a user account from one organization locks it across all organizations.
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/users-tab-go-to.md!}
+2. {% include-markdown "includes/users-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the user account you want to lock.
 
 4. Select **Lock**.
 
-    {!includes/lock-multiple-user-accounts-bulk.md!}
+    {% include-markdown "includes/lock-multiple-user-accounts-bulk.md" %}
 
 5. Select **OK**.
 

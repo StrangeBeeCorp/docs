@@ -6,7 +6,7 @@ Responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 Run a responder on a task log to take actions such as improving its readability or clarity.
 
-{!includes/access-manage-tasks.md!}
+{% include-markdown "includes/access-manage-tasks.md" %}
 
 ## Run responders on a task log
 

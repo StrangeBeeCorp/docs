@@ -2,15 +2,15 @@
 
 Authentication in TheHive controls how users and services sign in. You can use the built-in local database, integrate with enterprise directories such as LDAP or AD, or enable SSO through SAML or OpenID providers. Additional options include API key authentication, basic authentication, HTTP header authentication, multi-factor authentication, and configurable session management.
 
-{!includes/access-authentication.md!}
+{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/authentication-tab-go-to.md!}
+2. {% include-markdown "includes/authentication-tab-go-to.md" %}
 
     ---
 

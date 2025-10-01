@@ -6,15 +6,15 @@ This topic provides step-by-step instructions for configuring an [LDAP server](a
 
 Use this procedure to periodically synchronize your local TheHive database with LDAP, enabling automatic user account creation, updates, deletion, and assignment to [organizations](../organizations/about-organizations.md) and [permission profiles](../profiles/about-profiles.md) within TheHive.
 
-{!includes/administrator-access-configure-ldap.md!}
+{% include-markdown "includes/administrator-access-configure-ldap.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/platform-management-view-go-to.md!}
+1. {% include-markdown "includes/platform-management-view-go-to.md" %}
 
     ---
 
-2. {!includes/ldap-tab-go-to.md!}
+2. {% include-markdown "includes/ldap-tab-go-to.md" %}
 
     ---
 

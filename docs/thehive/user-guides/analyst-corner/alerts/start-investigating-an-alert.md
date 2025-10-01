@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for starting the investigation of 
 
 Use this procedure to start investigating a new alert and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *New* stage to the *In progress* stage.
 
-{!includes/access-start-alerts.md!}
+{% include-markdown "includes/access-start-alerts.md" %}
 
 <h2>Procedure</h2>
 

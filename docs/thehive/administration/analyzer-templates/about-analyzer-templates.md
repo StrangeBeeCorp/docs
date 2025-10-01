@@ -12,7 +12,7 @@ TheHive requires analyzer templates to be in HTML format.
 
 ## Permissions
 
-{!includes/administrator-access-manage-analyzer-templates.md!}
+{% include-markdown "includes/administrator-access-manage-analyzer-templates.md" %}
 
 <h2>Next steps</h2>
 

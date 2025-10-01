@@ -4,15 +4,15 @@
 
 This topic provides step-by-step instructions for deleting a [case report template](about-case-report-templates.md) in TheHive.
 
-{!includes/access-manage-case-report-templates.md!}
+{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/organization-view-go-to.md!}
+1. {% include-markdown "includes/organization-view-go-to.md" %}
 
-2. {!includes/templates-go-to.md!}
+2. {% include-markdown "includes/templates-go-to.md" %}
 
-3. {!includes/report-templates-go-to.md!}
+3. {% include-markdown "includes/report-templates-go-to.md" %}
 
 4. Select :fontawesome-solid-ellipsis: next to the case report template you want to delete.
 

@@ -225,7 +225,7 @@ Now, upgrade Elasticsearch to version 7.x following the documentation for your o
 
 ## Install or update to Cortex 3.1.0
 
-{!includes/manual-download-installation-cortex.md!}
+{% include-markdown "includes/manual-download-installation-cortex.md" %}
 
 === "Docker"
 

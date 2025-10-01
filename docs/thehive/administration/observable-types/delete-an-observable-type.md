@@ -2,13 +2,13 @@
 
 This topic provides step-by-step instructions for deleting an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
 
-{!includes/administrator-access-manage-observable-types.md!}
+{% include-markdown "includes/administrator-access-manage-observable-types.md" %}
 
 <h2>Procedure</h2>
 
-1. {!includes/entities-management-view-go-to.md!}
+1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {!includes/observable-types-tab-go-to.md!}
+2. {% include-markdown "includes/observable-types-tab-go-to.md" %}
 
 3. Select :fontawesome-solid-ellipsis: next to the observable type you want to delete.
 

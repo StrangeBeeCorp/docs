@@ -11,7 +11,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Measure the performance of all alerts in your organization
 
-{!includes/dashboard-access.md!}
+{% include-markdown "includes/dashboard-access.md" %}
 
 1. Go to the **Dashboards** view from the sidebar menu.
 
@@ -25,7 +25,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 5. Select any value that begins with *timeTo* to any **Filters** box.
 
-{!includes/units-time-to.md!}
+{% include-markdown "includes/units-time-to.md" %}
 
 ## Measure the performance of a specific alert
 

@@ -13,7 +13,7 @@ Links can point to other TheHive cases or to external resources.
 
 1. [Find the case](../search-for-cases/find-a-case.md) where you want to view links.
 
-2. {!includes/linked-elements-section.md!}
+2. {% include-markdown "includes/linked-elements-section.md" %}
 
 <h2>Next steps</h2>
 

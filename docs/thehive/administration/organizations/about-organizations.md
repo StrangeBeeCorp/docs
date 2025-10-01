@@ -4,7 +4,7 @@ Organizations are the customers or tenants, such as separate divisions or busine
 
 This topic explains how organizations function within TheHive.
 
-{!includes/license-organizations.md!}
+{% include-markdown "includes/license-organizations.md" %}
 
 ## Default setup
 
@@ -22,7 +22,7 @@ A user can belong to one or more organizations. A profile is assigned for each o
 
 ## Permissions
 
-{!includes/administrator-access-manage-organizations.md!}
+{% include-markdown "includes/administrator-access-manage-organizations.md" %}
 
 <h2>Next steps</h2>
 
