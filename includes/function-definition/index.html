@@ -14459,22 +14459,23 @@
   <h1>Function definition</h1>
 
 <p>Enter the JavaScript code for your function. If you need inspiration, check out the <a href="https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples">GitHub repository with function examples</a>.</p>
-<div class="codehilite"><pre><span></span><code><span class="o">!!!</span><span class="w"> </span><span class="n">tip</span><span class="w"> </span><span class="s2">"Basic function structure"</span>
-<span class="w">    </span><span class="k">In</span><span class="w"> </span><span class="n">TheHive</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="k">follows</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">basic</span><span class="w"> </span><span class="n">structure</span><span class="o">:</span>
-
-<span class="w">    </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted"> javascript</span>
-<span class="n n-Quoted">    function handle(input, context) {</span>
-<span class="n n-Quoted">        // Your function logic goes here</span>
-<span class="n n-Quoted">    }</span>
-<span class="n n-Quoted">    </span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
-
-<span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`handle`</span><span class="w"> </span><span class="k">function</span><span class="o">:</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">write</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">script</span><span class="p">.</span><span class="w"> </span><span class="n">Your</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">placed</span><span class="w"> </span><span class="n">inside</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="n">structure</span><span class="p">.</span>
-<span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`input`</span><span class="w"> </span><span class="n">parameter</span><span class="o">:</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">represents</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">data</span><span class="w"> </span><span class="n">passed</span><span class="w"> </span><span class="k">into</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">function</span><span class="p">.</span><span class="w"> </span><span class="n">Its</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">depends</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">triggered</span><span class="p">.</span>
-<span class="w">    </span><span class="o">*</span><span class="w"> </span><span class="n">The</span><span class="w"> </span><span class="n n-Quoted">`context`</span><span class="w"> </span><span class="n">parameter</span><span class="o">:</span><span class="w"> </span><span class="n">This</span><span class="w"> </span><span class="n">provides</span><span class="w"> </span><span class="n">access</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">TheHive’s</span><span class="w"> </span><span class="n">environment</span><span class="p">,</span><span class="w"> </span><span class="n">allowing</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="err">[</span><span class="n">interact</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">common</span><span class="w"> </span><span class="n">TheHive</span><span class="w"> </span><span class="n">actions</span><span class="err">]</span><span class="p">(</span><span class="o">/</span><span class="n">thehive</span><span class="o">/</span><span class="k">user</span><span class="o">-</span><span class="n">guides</span><span class="o">/</span><span class="k">organization</span><span class="o">/</span><span class="n">configure</span><span class="o">-</span><span class="k">organization</span><span class="o">/</span><span class="n">manage</span><span class="o">-</span><span class="n">functions</span><span class="o">/</span><span class="n">functions</span><span class="o">-</span><span class="n">objects</span><span class="o">/</span><span class="p">).</span>
-
-<span class="o">!!!</span><span class="w"> </span><span class="n">warning</span><span class="w"> </span><span class="s2">"Duplicate management"</span>
-<span class="w">    </span><span class="n">Make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">implement</span><span class="w"> </span><span class="k">duplicate</span><span class="w"> </span><span class="n">management</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">functions</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">prevent</span><span class="w"> </span><span class="k">duplicate</span><span class="w"> </span><span class="n">objects</span><span class="p">.</span>
+<div class="admonition tip">
+<p class="admonition-title">Basic function structure</p>
+<p>In TheHive, a function follows this basic structure:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">handle</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Your function logic goes here</span>
+<span class="p">}</span>
 </code></pre></div>
+<ul>
+<li>The <code>handle</code> function: This is where you write your script. Your function must be placed inside this structure.</li>
+<li>The <code>input</code> parameter: This represents the data passed into the function. Its content depends on how the function is triggered.</li>
+<li>The <code>context</code> parameter: This provides access to TheHive’s environment, allowing your function to <a href="/thehive/user-guides/organization/configure-organization/manage-functions/functions-objects/">interact with common TheHive actions</a>.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Duplicate management</p>
+<p>Make sure to implement duplicate management in your functions to prevent duplicate objects.</p>
+</div>
 
 
 

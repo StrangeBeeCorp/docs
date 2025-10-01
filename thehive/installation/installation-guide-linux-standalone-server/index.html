@@ -15499,10 +15499,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
-</code></pre></div>
+</code></pre></div><p></p>
 <p>b. Import the key into your GPG keyring.</p>
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
@@ -15601,10 +15601,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>
 <p>Verify the GPG signature using the public key.</p>
 <p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
+<p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
-</code></pre></div>
+</code></pre></div><p></p>
 <p>b. Import the key into your GPG keyring.</p>
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
@@ -15894,7 +15894,7 @@ These settings control how TheHive listens internally on the host and are indepe
 </code></pre></div>
 </div>
 <p>Replace <code>&lt;thehive_role_password&gt;</code> with the password set in <a href="#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32">Step 3.6</a>.</p>
-<p>Replace <code>&lt;password_thehive_user&gt;</code> with the password set in <a href="#step-44-set-a-user-with-the-right-permissions-for-thehive-if-you-enabled-x-pack-security-in-step-42">Step 4.4</a>.</p>
+<p>Replace <code>&lt;password_thehive_user&gt;</code> with the password set in <a href="#step-44-permissions">Step 4.4</a>.</p>
 <p>Replace <code>&lt;cluster_name&gt;</code> with the value you set in the <code>cassandra.yaml</code> configuration file.</p>
 <p>You can remove the lines under <code># Cassandra authentication (recommended)</code> and <code># Elasticsearch authentication (recommended)</code> if you didn’t enable authentication for Cassandra or Elasticsearch.</p>
 </li>

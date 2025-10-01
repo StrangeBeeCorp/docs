@@ -14460,13 +14460,11 @@
 
 <div class="admonition tip">
 <p class="admonition-title">Conditional helpers using <a href="https://mustache.github.io/">Mustache syntax</a></p>
-<div class="codehilite"><pre><span></span><code><span class="x">Example: </span>
-<span class="x">```</span>
-<span class="cp">{{</span><span class="err">#</span><span class="k">if</span> <span class="o">(</span><span class="nv">eq</span> <span class="nv">object.severity</span> <span class="m">2</span><span class="o">)</span> <span class="cp">}}</span><span class="x">MEDIUM </span><span class="cp">{{</span><span class="k">else</span><span class="cp">}}</span><span class="x">Other </span><span class="cp">{{</span><span class="o">/</span><span class="k">if</span><span class="cp">}}</span>
-<span class="x">```</span>
-<span class="x">Find additional supported operators in [the official Handlebars documentation](https://www.javadoc.io/static/com.github.jknack/handlebars/4.1.0/com/github/jknack/handlebars/helper/ConditionalHelpers.html).</span>
+<p>Example: 
+</p><div class="highlight"><pre><span></span><code>{{#if (eq object.severity 2) }}MEDIUM {{else}}Other {{/if}}
 </code></pre></div>
-
+Find additional supported operators in <a href="https://www.javadoc.io/static/com.github.jknack/handlebars/4.1.0/com/github/jknack/handlebars/helper/ConditionalHelpers.html">the official Handlebars documentation</a>.<p></p>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Data formatting helpers</p>
 <p>The following helpers are available to format your data:</p>
@@ -14507,7 +14505,6 @@
 </tbody>
 </table>
 <p>Standard string helpers can be found in <a href="https://www.javadoc.io/static/com.github.jknack/handlebars/4.1.0/index.html?com/github/jknack/handlebars/helper/StringHelpers.html">the official Handlebars documentation</a>.</p>
-</div>
 </div>
 
 

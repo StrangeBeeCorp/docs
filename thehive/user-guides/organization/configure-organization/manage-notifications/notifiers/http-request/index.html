@@ -14553,7 +14553,9 @@
 <p>Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.</p>
 <div class="admonition note">
 <p class="admonition-title">Available variables</p>
-<p>You can use variables in certain fields by selecting <strong>Add variable</strong>. Refer to the <a href="../../variable-usage-examples/">Variable Usage Examples</a> topic for detailed examples.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">certain</span><span class="w"> </span><span class="n">fields</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">selecting</span><span class="w"> </span><span class="o">**</span><span class="n">Add</span><span class="w"> </span><span class="n">variable</span><span class="o">**.</span><span class="w"> </span><span class="n">Refer</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="p">[</span><span class="n">Variable</span><span class="w"> </span><span class="n">Usage</span><span class="w"> </span><span class="n">Examples</span><span class="p">](</span><span class="o">../../../../../../</span><span class="n">variable</span><span class="o">-</span><span class="n">usage</span><span class="o">-</span><span class="n">examples</span><span class="o">.</span><span class="n">md</span><span class="p">)</span><span class="w"> </span><span class="n">topic</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">detailed</span><span class="w"> </span><span class="n">examples</span><span class="o">.</span>
+</code></pre></div>
+
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Conditional helpers using <a href="https://mustache.github.io/">Mustache syntax</a></p>
@@ -14635,8 +14637,11 @@ Find additional supported operators in <a href="https://www.javadoc.io/static/co
 </li>
 <li>
 <p>Add a certificate authority (CA).</p>
-<p>The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See <a href="/thehive/configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a> for instructions.</p>
-<p>You can turn off the <strong>Don't check certificate authority</strong> toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.</p>
+<div class="codehilite"><pre><span></span><code>The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See [Configure JVM Trust for SSL/TLS Certificates](/thehive/configuration/ssl/configure-ssl-jvm/) for instructions.
+
+You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
+</code></pre></div>
+
 <hr>
 </li>
 <li>

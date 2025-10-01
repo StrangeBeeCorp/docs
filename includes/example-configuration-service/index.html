@@ -14458,40 +14458,33 @@
 
   <h1>Example configuration service</h1>
 
-<div class="codehilite"><pre><span></span><code>!!! example "Service configuration examples"
-
-    <span class="k">*</span> Root domain:
-
-        Without explicit port:
-
-        ```yaml
-        application.baseUrl = "https://thehive.example.org"
-        play.http.context = "/"
-        ```
-
-        With explicit port:
-
-        ```yaml
-        application.baseUrl = "https://thehive.example.org:9000"
-        play.http.context = "/"
-        ```
-
-    <span class="k">*</span> Custom path behind a reverse proxy:
-
-        Without explicit port:
-
-        ```yaml
-        application.baseUrl = "https://example.org/thehive"
-        play.http.context = "/thehive"
-        ```
-
-        With explicit port:
-
-        ```yaml
-        application.baseUrl = "https://example.org:9000/thehive"
-        play.http.context = "/thehive"
-        ```
+<div class="admonition example">
+<p class="admonition-title">Service configuration examples</p>
+<ul>
+<li>
+<p>Root domain:</p>
+<p>Without explicit port:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">application.baseUrl = "https://thehive.example.org"</span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = "/"</span>
 </code></pre></div>
+<p>With explicit port:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">application.baseUrl = "https://thehive.example.org:9000"</span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = "/"</span>
+</code></pre></div>
+</li>
+<li>
+<p>Custom path behind a reverse proxy:</p>
+<p>Without explicit port:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">application.baseUrl = "https://example.org/thehive"</span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = "/thehive"</span>
+</code></pre></div>
+<p>With explicit port:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">application.baseUrl = "https://example.org:9000/thehive"</span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.context = "/thehive"</span>
+</code></pre></div>
+</li>
+</ul>
+</div>
 
 
 
