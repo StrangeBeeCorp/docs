@@ -11,29 +11,94 @@
  */
 
 .md-typeset .mdx-badge {
-	font-size: 0.85em;
+    font-size: 0.85em;
+    display: inline-flex;
+    align-items: stretch;
+    vertical-align: middle;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .md-typeset .mdx-badge--right {
-	float: right;
-	margin-left: 0.35em;
+    float: right;
+    margin-left: 0.35em;
 }
 
 .md-typeset .mdx-badge__icon {
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  background-color: var(--badge-icon-bg-color, #FFC72C);
-  padding: .2rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    background-color: var(--badge-icon-bg-color, #F5DEB3);
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.6em;
+}
+
+/* Fix the link element inside the icon */
+.md-typeset .mdx-badge__icon a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    line-height: 0; /* Remove line-height from link */
+    position: relative;
+    left: 2px; /* Shift icon 2px to the right */
+}
+
+/* Fix the twemoji span wrapper */
+.md-typeset .mdx-badge__icon .twemoji {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
+/* Fix the SVG itself */
+.md-typeset .mdx-badge__icon svg,
+.md-typeset .mdx-badge__icon .twemoji svg {
+    width: 1.2em !important;
+    height: 1.2em !important;
+    display: block !important;
+    margin: 0 !important;
 }
 
 .md-typeset .mdx-badge__icon:last-child {
-	border-radius: px2rem(2px);
+    border-radius: 0.5rem;
+}
+
+/* When icon is standalone (fully rounded), reset the shift */
+.md-typeset .mdx-badge__icon:last-child a {
+    left: 0;
 }
 
 .md-typeset .mdx-badge__text {
-  border-bottom-right-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  box-shadow: 0 0 0 2px inset var(--badge-border-color, #FFC72C);
-  padding: .2rem .3rem;
-  font-weight: bold;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    box-shadow: 0 0 0 2px inset var(--badge-border-color, #F5DEB3);
+    padding: 0.2rem 0.3rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    line-height: 1.2;
+}
+
+/* Version badge specific styles */
+.md-typeset .mdx-badge--version .mdx-badge__icon {
+    background-color: #C7D2CC;
+}
+
+.md-typeset .mdx-badge--version .mdx-badge__text {
+    box-shadow: 0 0 0 2px inset #C7D2CC;
+}
+
+
+/* Permission badge specific styles */
+.md-typeset .mdx-badge--permission .mdx-badge__icon {
+    background-color: #E07B67;
+}
+
+.md-typeset .mdx-badge--permission .mdx-badge__text {
+    box-shadow: 0 0 0 2px inset #E07B67;
 }

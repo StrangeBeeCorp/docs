@@ -14489,6 +14489,7 @@
 
 
 <h1 id="connect-a-misp-server">Connect a MISP Server<a class="headerlink" href="#connect-a-misp-server" title="Permanent link">#</a></h1>
+<p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>[admin] managePlatform</code></span></span></p>
 <p>This topic provides step-by-step instructions for connecting a <a href="../about-misp-integration/">MISP server</a> to TheHive.</p>
 <p>Use this procedure if you want to automatically retrieve filtered MISP events as alerts in TheHive or <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/">manually export observables marked as indicators of compromise (IOCs) from cases to MISP</a>.</p>
 <p>By default, updates are automatically synchronized between TheHive and MISP.</p>
@@ -14505,10 +14506,6 @@
 <div class="admonition tip">
 <p class="admonition-title">Upgrading MISP from 2.4.x to 2.5.x</p>
 <p>If you have upgraded MISP from version 2.4.x to 2.5.x, ensure that you <a href="https://github.com/MISP/MISP/blob/2.5/app/Config/database.default.php#L43">update the database configuration in MISP</a> to avoid potential issues.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Required permissions</p>
-<p>Only users with an admin-type profile that has the <code>managePlatform</code> permission can manage MISP server connections in TheHive.</p>
 </div>
 <h2>Procedure</h2>
 
