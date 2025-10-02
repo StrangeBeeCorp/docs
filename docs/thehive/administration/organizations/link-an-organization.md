@@ -1,12 +1,12 @@
 # Link an Organization
 
+<!-- md:permission `[admin] manageOrganisation` -->
+
 This topic provides step-by-step instructions for linking an [organization](about-organizations.md) to another in TheHive.
 
 By default, organizations in TheHive aren't linked. Each organization operates independently and can't access others on the instance.
 
 Link organizations to enable data sharing and define the applicable sharing rules.
-
-{% include-markdown "includes/administrator-access-manage-organizations.md" %}
 
 <h2>Procedure</h2>
 

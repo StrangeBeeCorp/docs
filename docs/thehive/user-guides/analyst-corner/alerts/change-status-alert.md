@@ -1,8 +1,8 @@
 # Change an Alert Status
 
-This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of an alert in TheHive.
+<!-- md:permission `manageAlert/update` --> <!-- md:permission `manageAlert/reopen` -->
 
-{% include-markdown "includes/access-change-status-alert.md" %}
+This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of an alert in TheHive.
 
 <h2>Procedure</h2>
 

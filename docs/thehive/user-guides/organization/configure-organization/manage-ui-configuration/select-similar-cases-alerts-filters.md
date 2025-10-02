@@ -1,11 +1,10 @@
 # Select Similar Cases and Alerts Filters
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for selecting filters to apply on the [**Similar cases** and **Similar alerts** tabs](../../../analyst-corner/cases/observables/about-observables.md#similar-alerts-and-cases) in TheHive.
 
 The **Similar cases** and **Similar alerts** tabs display cases and alerts that share similar observables based on defined criteria.
-
-!!! warning "Required permissions"
-    Only users with the `manageConfig` permission can select filters on the **Similar cases** and **Similar alerts** tabs in TheHive.
 
 <h2>Procedure</h2>
 

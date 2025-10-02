@@ -1,8 +1,8 @@
 # Manage Custom Fields
 
-This topic provides step-by-step instructions for managing [custom fields](../custom-fields/about-custom-fields.md) in TheHive.
+<!-- md:permission `[admin] manageCustomField` -->
 
-{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
+This topic provides step-by-step instructions for managing [custom fields](../custom-fields/about-custom-fields.md) in TheHive.
 
 ## Set a custom field as mandatory or optional
 

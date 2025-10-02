@@ -85,7 +85,7 @@ The following email providers are available in TheHive:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-email-intake-connectors.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can manage email intake connectors in TheHive.
 
 <h2>Next steps</h2>
 

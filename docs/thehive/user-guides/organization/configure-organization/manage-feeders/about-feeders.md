@@ -45,7 +45,7 @@ Use an alert feeder to integrate any external system that exposes a public REST 
 
 ## Permissions
 
-{% include-markdown "includes/access-feeders.md" %}
+Only users with the `manageConfig` permission can manage alert feeders in TheHive.
 
 <h2>Next steps</h2>
 

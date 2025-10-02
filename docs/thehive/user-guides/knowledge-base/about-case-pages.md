@@ -18,7 +18,9 @@ Case pages use [TheHive-flavored Markdown syntax](../thehive-flavored-markdown.m
 
 ## Permissions
 
-{% include-markdown "includes/access-case-pages.md" %}
+Only users with the `managePage` permission can manage case pages in TheHive.
+
+Users with the necessary permissions can edit and delete any page, regardless of who created it.
 
 <h2>Next steps</h2>
 

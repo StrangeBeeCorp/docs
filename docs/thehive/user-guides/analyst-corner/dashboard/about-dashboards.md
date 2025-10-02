@@ -49,7 +49,7 @@ Apply [filters and sorting](../../analyst-corner/about-filtering-and-sorting.md)
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-dashboards.md" %}
+Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.
 
 Every user has read access to the dashboards within their organization and can export dashboards.
 

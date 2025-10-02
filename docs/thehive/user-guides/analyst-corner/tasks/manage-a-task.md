@@ -1,8 +1,8 @@
 # Manage Tasks
 
-This topic provides step-by-step instructions for managing a [task](about-tasks.md) in TheHive.
+<!-- md:permission `manageTask` -->
 
-{% include-markdown "includes/access-manage-tasks.md" %}
+This topic provides step-by-step instructions for managing a [task](about-tasks.md) in TheHive.
 
 ## Set a task as mandatory or optional
 

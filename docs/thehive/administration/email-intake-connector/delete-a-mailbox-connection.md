@@ -1,10 +1,8 @@
 # Delete a Mailbox Connection
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for deleting a [mailbox connection](about-email-intake-connectors.md) in TheHive.
-
-{% include-markdown "includes/administrator-access-manage-email-intake-connectors.md" %}
 
 <h2>Procedure</h2>
 

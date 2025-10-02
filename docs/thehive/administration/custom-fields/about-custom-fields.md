@@ -34,9 +34,9 @@ Custom fields can be configured as either optional or mandatory. Mandatory field
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-custom-fields.md" %}
+Only users with an admin-type profile that has the `manageCustomField` permission can create, edit, or delete custom fields in TheHive.
 
-{% include-markdown "includes/access-manage-custom-fields.md" %}
+Only users with the `manageCase/update` or `manageAlert/update` permission can add, remove, or enter values in custom fields in cases and alerts in TheHive.
 
 <h2>Next steps</h2>
 

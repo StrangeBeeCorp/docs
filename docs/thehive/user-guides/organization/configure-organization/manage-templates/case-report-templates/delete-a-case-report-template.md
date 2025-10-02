@@ -1,10 +1,8 @@
 # Delete a Case Report Template
 
-<!-- md:license Platinum -->
+<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for deleting a [case report template](about-case-report-templates.md) in TheHive.
-
-{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 <h2>Procedure</h2>
 

@@ -1,10 +1,8 @@
 # Delete a Function
 
-<!-- md:version 5.1 --> <!-- md:license Platinum -->
+<!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for deleting a [function](about-functions.md) in TheHive.
-
-{% include-markdown "includes/access-functions.md" %}
 
 <h2>Procedure</h2>
 

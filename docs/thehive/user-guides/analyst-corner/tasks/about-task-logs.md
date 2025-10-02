@@ -40,7 +40,7 @@ Adding an image to a task log automatically saves it in the [**Attachments** tab
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-tasks.md" %}
+Only users with the `manageTask` permission can manage task logs in TheHive.
 
 <h2>Next steps</h2>
 

@@ -27,7 +27,7 @@ Using an LDAP server:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-configure-ldap.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can configure an LDAP server in TheHive.
 
 <h2>Next steps</h2>
 

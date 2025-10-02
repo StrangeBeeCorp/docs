@@ -1,13 +1,12 @@
 # Pause Dashboard Refresh
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for pausing [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) refresh in TheHive.
 
 Use this procedure to improve application performance by preventing dashboard refresh and stopping users from re-enabling it.
 
 To reduce the refresh frequency while keeping it enabled, see [Adjust Dashboard Refresh Frequency](../../../analyst-corner/dashboard/adjust-dashboard-refresh-frequency.md).
-
-!!! warning "Required permissions"
-    Only users with the `manageConfig` permission can pause dashboard refresh in TheHive.
 
 <h2>Procedure</h2>
 

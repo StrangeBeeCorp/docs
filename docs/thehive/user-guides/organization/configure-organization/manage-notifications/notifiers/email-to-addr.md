@@ -1,5 +1,7 @@
 # Configure the EmailerToAddr Notifier
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for configuring the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -18,8 +20,6 @@ This topic provides step-by-step instructions for configuring the *EmailerToAddr
     * *TaskMandatory*
 
 {% include-markdown "includes/requirements-email-notifiers.md" %}
-
-{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 

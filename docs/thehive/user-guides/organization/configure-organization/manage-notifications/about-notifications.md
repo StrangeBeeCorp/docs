@@ -85,7 +85,7 @@ Several types of notifiers are available in TheHive:
 
 ## Permissions
 
-{% include-markdown "includes/access-notifications.md" %}
+Only users with the `manageConfig` permission can manage notifications in TheHive.
 
 <h2>Next steps</h2>
 

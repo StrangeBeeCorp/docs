@@ -1,10 +1,10 @@
 # Create a Task Log
 
+<!-- md:permission `manageTask` -->
+
 This topic provides step-by-step instructions for creating a [task log](about-task-logs.md) in TheHive.
 
 A task log—also referred to as an activity—is where analysts record their actions, observations, and decisions in response to a [task](about-tasks.md). Task logs can be recorded at any time, regardless of the task’s status, including when it's marked as *Completed*.
-
-{% include-markdown "includes/access-manage-tasks.md" %}
 
 <h2>Procedure</h2>
 

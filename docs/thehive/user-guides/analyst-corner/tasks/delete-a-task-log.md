@@ -1,8 +1,8 @@
 # Delete a Task Log
 
-This topic provides step-by-step instructions for deleting a [task log](about-task-logs.md) in TheHive.
+<!-- md:permission `manageTask` -->
 
-{% include-markdown "includes/access-manage-tasks.md" %}
+This topic provides step-by-step instructions for deleting a [task log](about-task-logs.md) in TheHive.
 
 <h2>Procedure</h2>
 

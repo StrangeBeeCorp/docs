@@ -1,10 +1,8 @@
 # Configure an AD Authentication Provider
 
-<!-- md:license Platinum -->
+<!-- md:permission `managePlatform` --> <!-- md:license Platinum -->
 
 Configure an [AD](../ldap/about-ldap.md) authentication provider in TheHive.
-
-{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 

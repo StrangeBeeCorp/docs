@@ -47,7 +47,7 @@ Cases and alerts are considered similar if all the following conditions are met:
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-observables.md" %}
+Only users with the `manageObservable` permission can manage observables in TheHive.
 
 <h2>Next steps</h2>
 

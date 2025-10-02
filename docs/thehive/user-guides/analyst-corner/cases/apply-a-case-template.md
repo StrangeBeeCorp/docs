@@ -1,10 +1,10 @@
 # Apply a Case Template
 
+<!-- md:permission `manageCase/update` -->
+
 This topic provides step-by-step instructions for applying a [case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) to an existing case in TheHive.
 
 If you want to apply a template to a new case, refer to the [Create a Case](create-a-new-case.md) topic.
-
-{% include-markdown "includes/access-update-a-case.md" %}
 
 <h2>Procedure</h2>
 

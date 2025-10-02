@@ -45,10 +45,13 @@ def on_page_markdown(
         args = args.strip()
         if type == "version":
             return _badge_for_version(args, page, files)
-        if type == "license":
+        elif type == "license":
             return _badge_for_license(args, page, files)
-        # Otherwise, raise an error
-        raise RuntimeError(f"Unknown shortcode: {type}")
+        elif type == "permission":
+            return _badge_for_permission(args, page, files)
+        else:
+            # Otherwise, raise an error
+            raise RuntimeError(f"Unknown shortcode: {type}")
 
     # Find and replace all external asset URLs in current page
     return re.sub(
@@ -98,7 +101,8 @@ def _badge_for_version(text: str, page: Page, files: Files):
     # Return badge
     return _badge(
         icon = f"[:{icon}:]({href} 'Minimum version')",
-        text = f"[{text}]({href})" if text else ""
+        text = f"[{text}]({href})" if text else "",
+        type="version"
     )
 
 # Create badge for license
@@ -107,4 +111,13 @@ def _badge_for_license(text: str, page: Page, files: Files):
     return _badge(
         icon=f"[:{icon}:]('#' 'License type')",
         text=text
+    )
+
+# Create badge for permission
+def _badge_for_permission(text: str, page: Page, files: Files):
+    icon = "material-lock"
+    return _badge(
+        icon=f"[:{icon}:]('#' 'Required permission')",
+        text=text,
+        type="permission"
     )

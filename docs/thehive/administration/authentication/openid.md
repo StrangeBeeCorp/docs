@@ -1,10 +1,8 @@
 # Configure an OpenID Authentication Provider
 
- <!-- md:version 5.5 --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `managePlatform` --> <!-- md:license Platinum -->
 
 Configure an OpenID authentication provider in TheHive.
-
-{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 

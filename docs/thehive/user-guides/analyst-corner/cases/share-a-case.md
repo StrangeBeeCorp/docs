@@ -1,13 +1,13 @@
 # Share a Case with Other Organizations
 
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageShare` -->
+
 This topic provides step-by-step instructions for configuring [local sharing rules](../../../administration/organizations/about-organizations-sharing-rules.md#local-sharing-rules) with [linked organizations](../../../administration/organizations/link-an-organization.md) for an existing case in TheHive.
 
 !!! info "Global sharing rules"
     This guide focuses on local sharing rules for individual existing cases. To configure global sharing rules for all cases in your organization, refer to [How to Link an Organization](../../../administration/organizations/link-an-organization.md).
 
 To learn more about how sharing rules function and interact, refer to the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
-
-{% include-markdown "includes/access-manage-case-sharing.md" %}
 
 <h2>Procedure</h2>
 

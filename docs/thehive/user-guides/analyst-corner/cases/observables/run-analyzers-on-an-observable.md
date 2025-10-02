@@ -1,10 +1,10 @@
 # Run Analyzers and Review Reports for an Observable
 
+<!-- md:permission `manageObservable` -->
+
 This topic provides step-by-step instructions for running [analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing analyzer reports in TheHive.
 
 Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results. The type of each observable determines which analyzers are available.
-
-{% include-markdown "includes/access-manage-observables.md" %}
 
 ## Run analyzers on an observable
 

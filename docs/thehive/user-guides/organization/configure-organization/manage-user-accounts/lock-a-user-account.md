@@ -10,7 +10,7 @@ To remove a user account from a specific organization without deleting it, see [
 
 ### As an administrator
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+<!-- md:permission `[admin] manageUser` -->
 
 1. {% include-markdown "includes/users-view-go-to.md" %}
 
@@ -24,10 +24,9 @@ To remove a user account from a specific organization without deleting it, see [
 
 4. Select **OK**.
 
-
 ### As an organization administrator
 
-{% include-markdown "includes/access-manage-user-accounts.md" %}
+<!-- md:permission `manageUser` -->
 
 !!! warning "Lock applies to all organizations"
     Locking a user account from one organization locks it across all organizations.

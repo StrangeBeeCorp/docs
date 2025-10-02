@@ -1,10 +1,10 @@
 # Share an Attachment from an Organization
 
+<!-- md:permission `manageKnowledgeBase` -->
+
 This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
 
 To share an attachment from a case or an alert, see [Share an Attachment from a Case or an Alert](../../../analyst-corner/cases/attachments/share-an-attachment-case-alert.md).
-
-{% include-markdown "includes/access-manage-attachments.md" %}
 
 <h2>Procedure</h2>
 

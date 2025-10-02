@@ -47,7 +47,7 @@ TheHive provides the following options to highlight important tasks:
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-tasks.md" %}
+Only users with the `manageTask` permission can manage tasks in TheHive.
 
 <h2>Next steps</h2>
 

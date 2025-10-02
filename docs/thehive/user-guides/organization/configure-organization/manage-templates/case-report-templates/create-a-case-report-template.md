@@ -1,12 +1,10 @@
 # Create a Case Report Template
 
-<!-- md:license Platinum -->
+<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for creating a [case report template](about-case-report-templates.md) in TheHive.
 
 Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
-
-{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 <h2>Procedure</h2>
 

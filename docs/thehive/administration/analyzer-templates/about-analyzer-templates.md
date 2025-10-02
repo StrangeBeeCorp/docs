@@ -12,7 +12,7 @@ TheHive requires analyzer templates to be in HTML format.
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-analyzer-templates.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can manage analyzer templates in TheHive.
 
 <h2>Next steps</h2>
 

@@ -4,7 +4,7 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 ## Export a list of user accounts at the client level
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+<!-- md:permission `[admin] manageUser` -->
 
 1. {% include-markdown "includes/users-view-go-to.md" %}
 
@@ -18,7 +18,7 @@ This topic provides step-by-step instructions for exporting a list of [user acco
 
 ## Export a list of user accounts for an organization
 
-{% include-markdown "includes/access-manage-user-accounts.md" %}
+<!-- md:permission `manageUser` -->
 
 1. {% include-markdown "includes/organization-view-go-to.md" %}
 

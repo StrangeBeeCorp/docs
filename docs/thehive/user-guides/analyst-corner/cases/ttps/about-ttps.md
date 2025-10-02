@@ -22,9 +22,9 @@ By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-ttps.md" %}
+Only users with an admin-type profile that has the `managePattern` permission can manage TTPs in TheHive.
 
-{% include-markdown "includes/access-ttps.md" %}
+Only users with the `manageProcedure` permission can add and remove TTPs in cases and alerts in TheHive.
 
 <h2>Next steps</h2>
 

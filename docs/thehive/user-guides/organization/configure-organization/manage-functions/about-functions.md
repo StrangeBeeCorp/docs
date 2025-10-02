@@ -91,7 +91,9 @@ A function in TheHive can operate in one of three modes:
 
 ## Permissions
 
-{% include-markdown "includes/access-functions.md" %}
+* Only users with the `manageFunction/create` permission can create a function in TheHive.
+* Only users with the `manageFunction/invoke` permission can invoke a function in TheHive.
+* Only users with the `manageAction` permission can run a function in TheHive.
 
 <h2>Next steps</h2>
 

@@ -11,7 +11,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Measure the performance of all cases in your organization
 
-{% include-markdown "includes/dashboard-access.md" %}
+<!-- md:permission `manageDashboard` -->
 
 1. Go to the **Dashboards** view from the sidebar menu.
 
@@ -43,7 +43,7 @@ Two options are available to measure a case's performance:
 
 **In a case report template:**
 
-{% include-markdown "includes/access-manage-case-report-templates.md" %}
+<!-- md:permission `manageCaseReportTemplate` -->
 
 1. {% include-markdown "includes/organization-view-go-to.md" %}
 
@@ -64,5 +64,3 @@ Two options are available to measure a case's performance:
 <h2>Next steps</h2>
 
 * [Measure Alert Performance](measure-alert-management-performance.md)
-
-

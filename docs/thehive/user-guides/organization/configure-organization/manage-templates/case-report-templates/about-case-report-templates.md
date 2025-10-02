@@ -28,7 +28,7 @@ Add [widgets](widgets-case-report-templates.md) between these sections to displa
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-case-report-templates.md" %}
+Only users with the `manageCaseReportTemplate` permission can manage case report templates in TheHive.
 
 Once created, case report templates are automatically available to all users in the organization within case descriptions.
 

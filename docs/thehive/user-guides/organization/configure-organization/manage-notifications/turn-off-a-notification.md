@@ -1,8 +1,8 @@
 # Turn Off a Notification
 
-This topic provides step-by-step instructions for turning off a [notification](about-notifications.md) in TheHive.
+<!-- md:permission `manageConfig` -->
 
-{% include-markdown "includes/access-notifications.md" %}
+This topic provides step-by-step instructions for turning off a [notification](about-notifications.md) in TheHive.
 
 <h2>Procedure</h2>
 

@@ -1,10 +1,8 @@
 # Configure a SAML Authentication Provider
 
-<!-- md:license Platinum -->
+<!-- md:permission `managePlatform` --> <!-- md:license Platinum -->
 
 Configure a SAML authentication provider in TheHive.
-
-{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 

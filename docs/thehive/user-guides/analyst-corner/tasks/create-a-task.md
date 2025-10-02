@@ -1,8 +1,8 @@
 # Create a Task
 
-This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
+<!-- md:permission `manageTask` -->
 
-{% include-markdown "includes/access-manage-tasks.md" %}
+This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
 
 <h2>Procedure</h2>
 

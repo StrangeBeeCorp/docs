@@ -1,10 +1,10 @@
 # Import Observables from Analyzer Reports
 
+<!-- md:permission `manageObservable` -->
+
 This topic provides step-by-step instructions for importing [observables](about-observables.md) from [analyzer reports](../../../../administration/cortex/about-cortex.md) in TheHive.
 
 Analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
-
-{% include-markdown "includes/access-manage-observables.md" %}
 
 <h2>Procedure</h2>
 

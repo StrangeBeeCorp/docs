@@ -1,5 +1,7 @@
 # Activate or Update a License
 
+<!-- md:permission `[admin] managePlatform` -->
+
 This topic provides step-by-step instructions for activating or updating a [TheHive license](about-licenses.md), whether it’s a Community, Gold, or Platinum license.
 
 !!! tip "Platinum trial"
@@ -9,9 +11,6 @@ This topic provides step-by-step instructions for activating or updating a [TheH
 
     * For Community license: This procedure assumes that you have already obtained a Community license by following the [Request a Community License](request-a-community-license.md) topic.
     * For Gold and Platinum licenses: This procedure assumes that you have already [purchased a valid Gold or Platinum license](https://strangebee.com/try-thehive/) and no longer wish or are able to use your trial license.
-
-!!! warning "Required permissions"
-    Only users with an admin-type profile that has the `managePlatform` permission can activate or update a license in TheHive.
 
 ## Step 1: Retrieve the challenge from your TheHive instance
 

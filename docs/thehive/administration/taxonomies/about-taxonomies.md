@@ -29,7 +29,7 @@ However, administrators can:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
+Only users with an admin-type profile that has the `manageTaxonomy` permission can manage taxonomies in TheHive.
 
 Once created, tags from activated taxonomies are available to add to cases, alerts, and observables.
 

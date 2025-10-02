@@ -1,10 +1,10 @@
 # Configure an SMTP Server
 
+<!-- md:permission `[admin] managePlatform` -->
+
 This topic provides step-by-step instructions for configuring an [SMTP server](about-smtp.md) in TheHive.
 
 Use this procedure to enable sending [email notifications to specific users](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md) and [all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md), as well as [emails for password resets and edits](../../user-guides/manage-password.md).
-
-{% include-markdown "includes/administrator-access-configure-smtp.md" %}
 
 <h2>Procedure</h2>
 

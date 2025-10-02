@@ -1,8 +1,8 @@
 # Delete a Case Template
 
-This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
+<!-- md:permission `manageCaseTemplate` -->
 
-{% include-markdown "includes/access-manage-case-templates.md" %}
+This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
 
 <h2>Procedure</h2>
 

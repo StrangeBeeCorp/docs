@@ -40,7 +40,7 @@ In TheHive, a case includes the following elements:
 
 ## Merging cases
 
-{% include-markdown "includes/access-merge-cases.md" %}
+<!-- md:permission `manageCase/merge` -->
 
 Cases can be merged if they're similar or part of the same investigation, enabling data centralization. 
 
@@ -55,9 +55,7 @@ Merging also impacts:
 
 ## Linking elements
 
-<!-- md:version 5.5 -->
-
-{% include-markdown "includes/access-manage-case-links.md" %}
+<!-- md:version 5.5 --> <!-- md:permission `manageCase/update` -->
 
 !!! info "Alerts as linked elements"
     Alerts can't be added to linked elements. An alert link is created automatically when a case is [created from an alert](../alerts/create-a-case-from-an-alert.md) or [an alert is added to an existing case](../alerts/add-an-alert-to-an-existing-case.md). To view alerts linked to a case, see [View Alerts linked to a Case](view-alerts-linked-to-a-case.md).
@@ -88,7 +86,7 @@ Links can be [added](./case-links/add-a-link-to-a-case.md) or [removed](./case-l
 
 ## Closing cases
 
-{% include-markdown "includes/access-close-cases.md" %}
+<!-- md:permission `manageCase/update` -->
 
 Cases can be [closed](close-a-case.md) once the investigation is complete.
 
@@ -98,9 +96,7 @@ Cases can't be closed if any required [custom fields](../../../administration/cu
 
 ## Case visibility
 
-<!-- md:version 5.5 --> <!-- md:license Platinum -->
-
-{% include-markdown "includes/access-manage-visibility-cases.md" %}
+<!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum -->
 
 ### Usage
 

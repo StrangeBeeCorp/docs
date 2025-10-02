@@ -1,8 +1,8 @@
 # Remove Custom Fields
 
-This topic provides step-by-step instructions for removing [custom fields](../../../../administration/custom-fields/about-custom-fields.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
 
-{% include-markdown "includes/access-manage-custom-fields.md" %}
+This topic provides step-by-step instructions for removing [custom fields](../../../../administration/custom-fields/about-custom-fields.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
 <h2>Procedure</h2>
 

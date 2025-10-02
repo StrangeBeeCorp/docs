@@ -1,6 +1,6 @@
 # Change a Status Visibility
 
-<!-- md:version 5.5 -->
+<!-- md:version 5.5 --> <!-- md:permission `[admin] managePlatform` -->
 
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) visibility for cases and alerts in TheHive.
 
@@ -10,8 +10,6 @@ Use this procedure if you want to hide [TheHive’s predefined statuses](about-s
     Changing the visibility of a status doesn't affect [the API](https://docs.strangebee.com/thehive/api-docs/). All statuses remain available through the API.
 
 {% include-markdown "includes/task-statuses-excluded.md" %}
-
-{% include-markdown "includes/administrator-access-manage-statuses.md" %}
 
 <h2>Procedure</h2>
 

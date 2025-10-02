@@ -1,10 +1,10 @@
 # Reopen a Case
 
+<!-- md:permission `manageCase/reopen` -->
+
 This topic provides step-by-step instructions for reopening a [case](about-cases.md) in TheHive.
 
 Use this procedure to reopen a closed case and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *Closed* stage to the *In progress* stage.
-
-{% include-markdown "includes/access-reopen-cases.md" %}
 
 <h2>Procedure</h2>
 

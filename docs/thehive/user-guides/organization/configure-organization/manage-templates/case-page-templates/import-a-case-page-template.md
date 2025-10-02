@@ -1,10 +1,10 @@
 # Import a Case Page Template
 
+<!-- md:permission `managePageTemplate` -->
+
 This topic provides step-by-step instructions for importing a [case page template](about-case-page-templates.md) in TheHive.
 
 Use this procedure to use a case page template from another organization or TheHive instance.
-
-{% include-markdown "includes/access-manage-case-page-templates.md" %}
 
 <h2>Procedure</h2>
 

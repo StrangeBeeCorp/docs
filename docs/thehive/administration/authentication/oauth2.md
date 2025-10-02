@@ -1,13 +1,11 @@
 # Configure an OAuth 2.0 Authentication Provider
 
-<!-- md:license Platinum -->
+<!-- md:permission `managePlatform` --> <!-- md:license Platinum -->
 
 Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—in TheHive.
 
 !!! warning "Deprecated since version 5.5"
     <!-- md:version 5.5 --> The OAuth 2.0 authentication provider is deprecated and will be removed in a future release. It's recommended to use the [OpenID authentication provider](openid.md) instead.
-
-{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 

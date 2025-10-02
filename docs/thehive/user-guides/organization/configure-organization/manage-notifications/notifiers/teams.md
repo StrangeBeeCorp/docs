@@ -1,6 +1,6 @@
 # Configure the Microsoft Teams Notifier
 
-<!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for configuring the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) in TheHive.
 
@@ -23,8 +23,6 @@ This topic provides step-by-step instructions for configuring the *Microsoft Tea
     * *ObservableCreated*  
     * *TaskClosed*  
     * *TaskMandatory*
-
-{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 

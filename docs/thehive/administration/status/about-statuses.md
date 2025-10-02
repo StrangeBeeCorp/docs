@@ -34,7 +34,7 @@ Each status is associated with:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-statuses.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can manage case and alert statuses in TheHive.
 
 After creation, statuses are available to users in cases and alerts.
 

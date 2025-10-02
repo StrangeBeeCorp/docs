@@ -1,5 +1,7 @@
 # Create a Case Template
 
+<!-- md:permission `manageCaseTemplate` -->
+
 This topic provides step-by-step instructions for creating a [case template](about-case-templates.md) in TheHive.
 
 Case templates streamline case creation by automatically filling predefined fields.
@@ -8,8 +10,6 @@ Case templates streamline case creation by automatically filling predefined fiel
     You can duplicate an existing case template within your organization to pre-fill fields and streamline the process.
 
 To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Template](export-import-a-case-template.md#import-a-case-template) topic.
-
-{% include-markdown "includes/access-manage-case-templates.md" %}
 
 <h2>Procedure</h2>
 

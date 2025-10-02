@@ -1,10 +1,10 @@
 # Add an Attachment to a Case or an Alert
 
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
+
 This topic provides step-by-step instructions for adding an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
 Use this procedure to add attachments in addition to those automatically saved when you save case reports or add images to case or alert descriptions and summaries, or task logs.
-
-{% include-markdown "includes/access-manage-attachments.md" %}
 
 ## Add an attachment to a case
 

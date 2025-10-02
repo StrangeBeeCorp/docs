@@ -1,10 +1,10 @@
 # Add a Custom Taxonomy
 
+<!-- md:permission `[admin] manageTaxonomy` -->
+
 This topic provides step-by-step instructions for adding a custom [taxonomy](about-taxonomies.md) in TheHive.
 
 Use this procedure if you want to add taxonomies other than the default imported Malware Information Sharing Platform (MISP) taxonomies.
-
-{% include-markdown "includes/administrator-access-manage-taxonomies.md" %}
 
 <h2>Procedure</h2>
 

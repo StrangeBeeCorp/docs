@@ -1,10 +1,8 @@
 # Configure an LDAP Authentication Provider
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
 Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
-
-{% include-markdown "includes/access-authentication.md" %}
 
 <h2>Procedure</h2>
 

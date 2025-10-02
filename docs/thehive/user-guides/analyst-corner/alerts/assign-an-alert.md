@@ -1,8 +1,8 @@
 # Assign an Alert
 
-This topic provides step-by-step instructions for assigning an [alert](about-alerts.md) in TheHive.
+<!-- md:permission `manageAlert/update` -->
 
-{% include-markdown "includes/access-assign-alerts.md" %}
+This topic provides step-by-step instructions for assigning an [alert](about-alerts.md) in TheHive.
 
 ## Assign an alert to yourself
 

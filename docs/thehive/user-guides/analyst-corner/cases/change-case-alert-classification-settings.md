@@ -1,8 +1,8 @@
 # Change Case or Alert Classification Settings
 
-This topic provides step-by-step instructions for changing the classification settings of a [case](about-cases.md) or [alert](../alerts/about-alerts.md) in TheHive, including severity, Traffic Light Protocol (TLP), and Permissible Actions Protocol (PAP).
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
 
-{% include-markdown "includes/access-change-case-alert-classification-settings.md" %}
+This topic provides step-by-step instructions for changing the classification settings of a [case](about-cases.md) or [alert](../alerts/about-alerts.md) in TheHive, including severity, Traffic Light Protocol (TLP), and Permissible Actions Protocol (PAP).
 
 <h2>Procedure</h2>
 

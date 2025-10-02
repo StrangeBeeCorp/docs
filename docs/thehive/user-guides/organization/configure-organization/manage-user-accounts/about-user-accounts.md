@@ -24,9 +24,9 @@ Each user account is assigned a [profile](../../../../administration/profiles/ab
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+Only users with an admin-type profile that has the `manageUser` permission can manage user accounts at the client level in TheHive.
 
-{% include-markdown "includes/access-manage-user-accounts.md" %}
+Only users with the `manageUser` permission can manage user accounts at the organization level in TheHive.
 
 <h2>Next steps</h2>
 

@@ -1,11 +1,11 @@
 # Add Custom Fields
 
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
+
 This topic provides step-by-step instructions for adding [custom fields](../../../../administration/custom-fields/about-custom-fields.md) to a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
 !!! tip "Can't find a custom field?"
     If you can't find the custom field you need, it might not exist yet, or someone may have deleted it. Contact someone with admin-level permissions to [create or restore it](../../../../administration/custom-fields/create-a-custom-field.md).
-
-{% include-markdown "includes/access-manage-custom-fields.md" %}
 
 <h2>Procedure</h2>
 

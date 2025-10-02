@@ -1,8 +1,8 @@
 # Delete a Case Page
 
-This topic provides step-by-step instructions for deleting a [case page](about-case-pages.md) in TheHive.
+<!-- md:permission `managePage` -->
 
-{% include-markdown "includes/access-case-pages.md" %}
+This topic provides step-by-step instructions for deleting a [case page](about-case-pages.md) in TheHive.
 
 <h2>Procedure</h2>
 

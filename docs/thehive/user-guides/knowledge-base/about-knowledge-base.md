@@ -18,7 +18,9 @@ Knowledge Base pages use [TheHive-flavored Markdown syntax](../thehive-flavored-
 
 ## Permissions
 
-{% include-markdown "includes/access-knowledge-base.md" %}
+Only users with the `manageKnowledgeBase` permission can manage the Knowledge Base in TheHive.
+
+Users with the necessary permissions can edit and delete any page, regardless of who created it.
 
 <h2>Next steps</h2>
 

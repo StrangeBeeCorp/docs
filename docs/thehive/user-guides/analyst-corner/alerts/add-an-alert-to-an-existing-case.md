@@ -1,5 +1,7 @@
 # Add an Alert to an Existing Case
 
+<!-- md:permission `manageAlert/update` -->
+
 This topic provides step-by-step instructions for adding an [alert](about-alerts.md) to an existing [case](../cases/about-cases.md) in TheHive.
 
 During triage, add an alert to an existing case if it needs further investigation and a similar case has already been created.
@@ -11,8 +13,6 @@ If it requires a separate investigation, [create a case from the alert](create-a
 
 !!! note "Link to case"
     Adding an alert to an existing case automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
-
-{% include-markdown "includes/access-create-case-from-alert.md" %}
 
 <h2>Procedure</h2>
 

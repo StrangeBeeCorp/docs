@@ -1,10 +1,8 @@
 # Add or Remove Widgets in a Case Report Template
 
-<!-- md:license Platinum -->
+<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for adding and removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
-
-{% include-markdown "includes/access-manage-case-report-templates.md" %}
 
 ## Add widgets in a case report template
 

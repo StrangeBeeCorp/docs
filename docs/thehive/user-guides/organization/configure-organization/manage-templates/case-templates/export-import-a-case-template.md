@@ -1,5 +1,7 @@
 # Export or Import a Case Template
 
+<!-- md:permission `manageCaseTemplate` -->
+
 This topic provides step-by-step instructions for exporting and importing a [case template](about-case-templates.md) in TheHive.
 
 !!! info "Share and discover case templates"
@@ -11,8 +13,6 @@ This topic provides step-by-step instructions for exporting and importing a [cas
     * Exclude custom fields.
     
     Each contribution is reviewed by StrangeBee before being published.
-
-{% include-markdown "includes/access-manage-case-templates.md" %}
 
 ## Export a case template
 

@@ -24,7 +24,7 @@ Using an SMTP server:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-configure-smtp.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can configure an SMTP server in TheHive.
 
 <h2>Next steps</h2>
 

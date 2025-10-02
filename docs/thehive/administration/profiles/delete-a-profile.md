@@ -1,13 +1,11 @@
 # Delete a Profile
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for deleting a [permission profile](about-profiles.md) in TheHive.
 
 !!! info "Deletion rules"
     You can’t delete a profile that's currently assigned to a user account, or any of the predefined Admin, Org-Admin, or Read-Only profiles.
-
-{% include-markdown "includes/administrator-access-manage-profiles.md" %}
 
 <h2>Procedure</h2>
 

@@ -1,10 +1,10 @@
 # Change a Status Color
 
+<!-- md:permission `[admin] managePlatform` -->
+
 This topic provides step-by-step instructions for changing a [status](about-statuses.md) color for cases and alerts in TheHive.
 
 {% include-markdown "includes/task-statuses-excluded.md" %}
-
-{% include-markdown "includes/administrator-access-manage-statuses.md" %}
 
 <h2>Procedure</h2>
 

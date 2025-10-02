@@ -1,8 +1,8 @@
 # Delete a Case Page Template
 
-This topic provides step-by-step instructions for deleting a [case page template](about-case-page-templates.md) in TheHive.
+<!-- md:permission `managePageTemplate` -->
 
-{% include-markdown "includes/access-manage-case-page-templates.md" %}
+This topic provides step-by-step instructions for deleting a [case page template](about-case-page-templates.md) in TheHive.
 
 <h2>Procedure</h2>
 

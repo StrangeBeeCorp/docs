@@ -10,7 +10,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 ### As an administrator
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+<!-- md:permission `[admin] manageUser` -->
 
 1. {% include-markdown "includes/organizations-view-go-to.md" %}
 
@@ -49,7 +49,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 ### As an organization administrator
 
-{% include-markdown "includes/access-manage-user-accounts.md" %}
+<!-- md:permission `manageUser` -->
 
 1. {% include-markdown "includes/organization-view-go-to.md" %}
 
@@ -92,7 +92,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 ## Create a user account for multiple organizations
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+<!-- md:permission `[admin] manageUser` -->
 
 1. {% include-markdown "includes/users-view-go-to.md" %}
 

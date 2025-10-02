@@ -1,8 +1,8 @@
 # Update the Status of an Observable
 
-This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
+<!-- md:permission `manageObservable` -->
 
-{% include-markdown "includes/access-manage-observables.md" %}
+This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
 
 {% include-markdown "includes/bulk-updates-observables.md" %}
 

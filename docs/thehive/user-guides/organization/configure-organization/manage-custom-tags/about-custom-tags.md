@@ -39,7 +39,7 @@ Custom tags can be created:
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-custom-tags.md" %}
+Only users with the `manageTag` permission can manage custom tags in TheHive.
 
 Users can create new custom tags by adding them directly to cases, alerts, and observables.
 

@@ -18,7 +18,7 @@ Use a case page template when [creating a case page](../../../../knowledge-base/
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-case-page-templates.md" %}
+Only users with the `managePageTemplate` permission can manage case page templates in TheHive.
 
 Once created, case page templates are automatically available to all users within the organization.
 

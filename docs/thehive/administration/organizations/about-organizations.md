@@ -22,7 +22,8 @@ A user can belong to one or more organizations. A profile is assigned for each o
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-organizations.md" %}
+* Only users with an admin-type profile that has the `manageOrganisation` permission can create, link, or lock organizations in TheHive.
+* Only users with the `manageUser` permission can assign users to organizations in TheHive.
 
 <h2>Next steps</h2>
 

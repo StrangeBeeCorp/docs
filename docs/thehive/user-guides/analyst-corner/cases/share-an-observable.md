@@ -1,5 +1,7 @@
 # Share an Observable with Other Organizations
 
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageShare` -->
+
 This topic provides step-by-step instructions for [manually sharing an observable in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
 
 !!! info "Shared cases only"
@@ -8,8 +10,6 @@ This topic provides step-by-step instructions for [manually sharing an observabl
 This is useful when observable sharing rules are set to *manual*, ensuring that users share only the relevant observables.
 
 To learn more about how sharing rules function and interact, see the [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md) topic.
-
-{% include-markdown "includes/access-manage-case-sharing.md" %}
 
 <h2>Procedure</h2>
 

@@ -41,7 +41,7 @@ Cortex offers the following features:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-cortex-connection.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can manage the Cortex connection in TheHive.
 
 <h2>Next steps</h2>
 

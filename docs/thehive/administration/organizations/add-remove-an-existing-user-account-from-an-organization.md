@@ -10,7 +10,7 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 ### As an administrator
 
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
+<!-- md:permission `[admin] manageUser` -->
 
 1. {% include-markdown "includes/users-view-go-to.md" %}
 
@@ -25,7 +25,7 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 ### As an organization administrator
 
-{% include-markdown "includes/access-manage-user-accounts.md" %}
+<!-- md:permission `manageUser` -->
 
 !!! info "Adding existing users not supported"
     As an organization administrator, you can remove an existing user from an organization or [create a new user account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md#as-an-organization-administrator), but you can't add an existing user. To do so, ask someone with an admin-type profile.

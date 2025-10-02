@@ -1,12 +1,10 @@
 # Connect a Mailbox
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for connecting a [mailbox](about-email-intake-connectors.md) in TheHive.
 
 Use this procedure if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
-
-{% include-markdown "includes/administrator-access-manage-email-intake-connectors.md" %}
 
 <h2>Procedure</h2>
 
@@ -60,69 +58,69 @@ Use this procedure if your organization receives alerts via email and you want t
 
         #### Step 2: Configure OAuth consent
 
-        1. Select **OAuth consent screen** from the left pane.
+        6. Select **OAuth consent screen** from the left pane.
 
             ![OAuth consent screen](/thehive/images/administration-guides/google-cloud-platform-oauth-consent-screen.png)
 
-        2. Select **Get started** to configure Google Auth Platform.
+        7. Select **Get started** to configure Google Auth Platform.
 
             ![Google Auth Platform](/thehive/images/administration-guides/google-cloud-platform-get-started.png)
 
-        3. In the **App information** section, enter information about your application.
+        8. In the **App information** section, enter information about your application.
 
-        4. In the **Audience** section, select *Internal*.
+        9. In the **Audience** section, select *Internal*.
 
-        5. In the **Contact information** section, enter the email address that will receive any updates related to the project.
+        10. In the **Contact information** section, enter the email address that will receive any updates related to the project.
 
-        6. Select **Create**.
+        11. Select **Create**.
 
         #### Step 3: Add a scope in the Google Auth Platform
 
-        1. Select **Data access** from the left pane.
+        12. Select **Data access** from the left pane.
 
             ![Google Auth Platform Data access](/thehive/images/administration-guides/google-auth-platform-data-access.png)
 
-        2. Select **Add or remove scopes**.
+        13. Select **Add or remove scopes**.
 
             ![Google Auth Platform Add remove scopes](/thehive/images/administration-guides/google-auth-platform-add-remove-scopes.png)
 
-        3. In the **Manually add scopes** section, enter *https://mail.google.com/*.
+        14. In the **Manually add scopes** section, enter *https://mail.google.com/*.
 
-        4. Select **Add to table**.
+        15. Select **Add to table**.
 
-        5. Make sure the new scope is selected, then select **Update**.
+        16. Make sure the new scope is selected, then select **Update**.
 
-        6. Make sure the scope is added to the **Your restricted scopes** section, then select *Save*.
+        17. Make sure the scope is added to the **Your restricted scopes** section, then select *Save*.
 
         #### Step 4: Create OAuth credentials
 
-        1. Enter *credentials* in the search bar at the top of the screen.
+        18. Enter *credentials* in the search bar at the top of the screen.
 
-        2. Select **Credentials** from the APIs & Services results.
+        19. Select **Credentials** from the APIs & Services results.
 
-        3. Select **Create credentials**, then **OAuth Client ID**.
+        20. Select **Create credentials**, then **OAuth Client ID**.
 
             ![Google Cloud Platform Add credentials](/thehive/images/administration-guides/google-cloud-platform-credentials-oauthclientid.png)
         
-        4. Select *Web application* as the application type.
+        21. Select *Web application* as the application type.
 
-        5. Enter an internal name for the OAuth 2.0 client.
+        22. Enter an internal name for the OAuth 2.0 client.
 
-        6. Select **Add URI** in the **Authorized JavaScript origins** section.
+        23. Select **Add URI** in the **Authorized JavaScript origins** section.
 
-        8. Enter a URI following this format: https://<your-thehive-instance-fqdn>.org.
+        24. Enter a URI following this format: https://<your-thehive-instance-fqdn>.org.
 
-        9. Enter the same URI in the **Authorized redirect URIs** section.
+        25. Enter the same URI in the **Authorized redirect URIs** section.
 
-        10. Select **Create**.
+        26. Select **Create**.
 
-        11. Copy the Client ID and Client Secret values from the dialog for use in TheHive configuration.
+        27. Copy the Client ID and Client Secret values from the dialog for use in TheHive configuration.
 
         #### Step 5: Configure the email intake connector in TheHive
 
-        1. Return to your TheHive application.
+        28. Return to your TheHive application.
 
-        2. In the **Provider** section, enter the following information:
+        29. In the **Provider** section, enter the following information:
 
             **- Name**
 
@@ -132,7 +130,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
             Select **Google Workspace** from the dropdown.
 
-        3. In the **Authentication** section, enter the following information:
+        30. In the **Authentication** section, enter the following information:
 
             **- Email**
 
@@ -161,36 +159,36 @@ Use this procedure if your organization receives alerts via email and you want t
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
-        1. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
+        31. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
 
-        2. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
+        32. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
 
         #### Step 2: Register a new application
 
-        1. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
+        33. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
 
-        2. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
+        34. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
         #### Step 3: Add a secret
 
-        1. Select **Certificates & secrets** from the left pane.
+        35. Select **Certificates & secrets** from the left pane.
 
-        2. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
+        36. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
 
-        3. Copy the secret's value for use in TheHive configuration.
+        37. Copy the secret's value for use in TheHive configuration.
 
             !!! warning "One-time display"
                 This secret value is never displayed again after you leave this page.
         
         #### Step 4: Assign API permissions
 
-        1. Select **API permissions** from the left pane.
+        38. Select **API permissions** from the left pane.
 
-        2. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission for Office 365 Exchange Online](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api).
+        39. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission for Office 365 Exchange Online](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api).
 
         #### Step 5: Configure PowerShell access
 
-        1. Define the necessary values for the configuration:
+        40. Define the necessary values for the configuration:
 
             ```powershell
             $AppID = '{ClientID}'
@@ -200,7 +198,7 @@ Use this procedure if your organization receives alerts via email and you want t
             $MailBox = '{MailBox}'  # The shared mailbox
             ```
 
-        2. Run the following PowerShell commands to configure access.
+        41. Run the following PowerShell commands to configure access.
 
             a. Define app permissions:
 
@@ -220,7 +218,7 @@ Use this procedure if your organization receives alerts via email and you want t
             New-ApplicationAccessPolicy -AppId $AppID -PolicyScopeGroupId $SecurityGroup -AccessRight RestrictAccess -Description "Restrict this app to members of distribution group {$SecurityGroup}"
             ```
 
-        3. Test the configuration.
+        42. Test the configuration.
 
             a. Run the following command to test if the application access policy is properly configured:
 
@@ -240,9 +238,9 @@ Use this procedure if your organization receives alerts via email and you want t
 
         #### Step 6: Configure the email intake connector in TheHive
 
-        1. Return to your TheHive application.
+        43. Return to your TheHive application.
 
-        2. In the **Provider** section, enter the following information:
+        44. In the **Provider** section, enter the following information:
 
             **- Name**
 
@@ -252,7 +250,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
             Select **Microsoft 365** from the dropdown.
 
-        3. In the **Authentication** section, enter the following information:
+        45. In the **Authentication** section, enter the following information:
 
             **- Email**
 
@@ -289,32 +287,32 @@ Use this procedure if your organization receives alerts via email and you want t
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
-        1. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
+        46. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
 
-        2. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
+        47. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
 
         #### Step 2: Register a new application
 
-        1. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
+        48. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
 
-        2. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
+        49. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
         #### Step 3: Add a secret
 
-        1. Select **Certificates & secrets** from the left pane.
+        50. Select **Certificates & secrets** from the left pane.
 
-        2. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
+        51. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
 
-        3. Copy the secret's value for use in TheHive configuration.
+        52. Copy the secret's value for use in TheHive configuration.
 
             !!! warning "One-time display"
                 This secret value is never displayed again after you leave this page.
         
         #### Step 4: Assign API permissions
 
-        1. Select **API permissions** from the left pane.
+        53. Select **API permissions** from the left pane.
 
-        2. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
+        54. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
 
             !!! tip "Recommanded permissions"
                 For Microsoft Graph to work correctly with TheHive, ensure that the following permissions are added:
@@ -332,7 +330,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
         #### Step 5: Configure PowerShell access
 
-        1. Define the necessary values for the configuration:
+        55. Define the necessary values for the configuration:
 
             ```powershell
             $AppID = '{ClientID}'
@@ -342,7 +340,7 @@ Use this procedure if your organization receives alerts via email and you want t
             $MailBox = '{MailBox}'  # The shared mailbox
             ```
 
-        2. Run the following PowerShell commands to configure access.
+        56. Run the following PowerShell commands to configure access.
 
             a. Define app permissions:
 
@@ -362,7 +360,7 @@ Use this procedure if your organization receives alerts via email and you want t
             New-ApplicationAccessPolicy -AppId $AppID -PolicyScopeGroupId $SecurityGroup -AccessRight RestrictAccess -Description "Restrict this app to members of distribution group {$SecurityGroup}"
             ```
 
-        3. Test the configuration.
+        57. Test the configuration.
 
             a. Run the following command to test if the application access policy is properly configured:
 
@@ -382,9 +380,9 @@ Use this procedure if your organization receives alerts via email and you want t
 
         #### Step 6: Configure the email intake connector in TheHive
 
-        1. Return to your TheHive application.
+        58. Return to your TheHive application.
 
-        2. In the **Provider** section, enter the following information:
+        59. In the **Provider** section, enter the following information:
 
             **- Name**
 
@@ -394,7 +392,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
             Select **Microsoft 365 GraphAPI** from the dropdown.
 
-        3. In the **Authentication** section, enter the following information:
+        60. In the **Authentication** section, enter the following information:
 
             **- Email**
 
@@ -418,7 +416,7 @@ Use this procedure if your organization receives alerts via email and you want t
     
         <!-- md:license Gold --> <!-- md:license Platinum -->
 
-        1. In the **Provider** section, enter the following information:
+        61. In the **Provider** section, enter the following information:
 
             **- Name**
 
@@ -436,15 +434,15 @@ Use this procedure if your organization receives alerts via email and you want t
 
             The port number of the IMAP server.
 
-        2. Add a certificate authority (CA).
+        62. Add a certificate authority (CA).
 
             The server's SSL/TLS certificate must be trusted by the Java virtual machine (JVM) truststore for secure connections. If your server uses a certificate from an internal CA or self-signed certificate, add it to the JVM truststore first. See [Configure JVM Trust for SSL/TLS Certificates](../../configuration/ssl/configure-ssl-jvm.md) for instructions.
 
             You can turn off the **Don't check certificate authority** toggle to bypass certificate validation, but this isn't recommended as it may compromise connection security.
 
-        3. Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
+        63. Turn on the **Disable host name verification** toggle if you want to bypass the verification of the server's host name against the certificate.
 
-        4. In the **Authentication** section, enter the following information:
+        64. In the **Authentication** section, enter the following information:
 
             **- Login**
 

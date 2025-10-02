@@ -1,8 +1,8 @@
 # View Custom Tag Statistics
 
-This topic provides step-by-step instructions for viewing [custom tag](about-custom-tags.md) statistics in TheHive.
+<!-- md:permission `manageTag` -->
 
-{% include-markdown "includes/access-manage-custom-tags.md" %}
+This topic provides step-by-step instructions for viewing [custom tag](about-custom-tags.md) statistics in TheHive.
 
 <h2>Procedure</h2>
 

@@ -1,10 +1,10 @@
 # Exclude an Observable from Similarity Checks
 
+<!-- md:permission `manageObservable` -->
+
 This topic provides step-by-step instructions for excluding an [observable](about-observables.md) from similarity checks in cases and alerts in TheHive.
 
 [Similar alerts and cases](../find-similar-alerts-cases.md) are detected based on shared observables. You can choose to ignore similarity for contextual observables, such as the company domain name, or for observables that aren't related to any potential threat.
-
-{% include-markdown "includes/access-manage-observables.md" %}
 
 {% include-markdown "includes/bulk-updates-observables.md" %}
 

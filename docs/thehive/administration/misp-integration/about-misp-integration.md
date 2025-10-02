@@ -24,7 +24,7 @@ TheHive integrates with MISP in several ways:
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-misp-servers.md" %}
+Only users with an admin-type profile that has the `managePlatform` permission can manage MISP server connections in TheHive.
 
 <h2>Next steps</h2>
 

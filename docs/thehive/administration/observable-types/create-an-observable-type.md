@@ -1,10 +1,10 @@
 # Create an Observable Type
 
+<!-- md:permission `[admin] manageObservableTemplate` -->
+
 This topic provides step-by-step instructions for creating an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
 
 Use this procedure to extend the predefined list of observable types with custom ones.
-
-{% include-markdown "includes/administrator-access-manage-observable-types.md" %}
 
 <h2>Procedure</h2>
 

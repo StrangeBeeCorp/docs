@@ -1,10 +1,10 @@
 # Remove Tactics, Techniques and Procedures
 
+<!-- md:permission `manageProcedure` -->
+
 Remove [tactics, techniques and procedures (TTPs)](about-ttps.md) from a [case](../about-cases.md) in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
-
-{% include-markdown "includes/access-ttps.md" %}
 
 <h2>Procedure</h2>
 

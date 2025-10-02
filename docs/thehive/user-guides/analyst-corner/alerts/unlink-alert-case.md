@@ -26,7 +26,7 @@ An alert is automatically linked to a case when you [create a case from an alert
 
 ## From an alert
 
-{% include-markdown "includes/access-unlink-alert-from-alert.md" %}
+<!-- md:permission `manageAlert/update` -->
 
 1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to unlink.
 

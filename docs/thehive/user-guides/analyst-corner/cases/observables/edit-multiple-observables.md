@@ -1,8 +1,8 @@
 # Edit Multiple Observables
 
-This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
+<!-- md:permission `manageObservable` -->
 
-{% include-markdown "includes/access-manage-observables.md" %}
+This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
 
 <h2>Procedure</h2>
 

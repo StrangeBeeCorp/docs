@@ -1,5 +1,7 @@
 # Create a Case
 
+<!-- md:permission `manageCase/create` -->
+
 This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) in TheHive.
 
 Several options are offered to create a case in TheHive:
@@ -10,8 +12,6 @@ Several options are offered to create a case in TheHive:
 * [Create a case from a MISP event](#create-a-case-from-a-misp-event)
 * [Create a case from an alert](#create-a-case-from-an-alert)
 * [Create a case from a detection tool](#create-a-case-from-a-detection-tool)
-
-{% include-markdown "includes/access-create-a-case.md" %}
 
 ## Create an empty case
 

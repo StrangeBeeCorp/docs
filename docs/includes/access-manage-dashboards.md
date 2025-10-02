@@ -1,2 +1,0 @@
-!!! warning "<!-- md:version 5.4 --> Required permissions"
-    Only users with the `manageDashboard` permission can manage dashboards in TheHive. However, any user can view, download, and export dashboards.

@@ -51,7 +51,7 @@ When [creating or editing a profile](create-a-profile.md), licensed permissions 
 
 ## Permissions
 
-{% include-markdown "includes/administrator-access-manage-profiles.md" %}
+Only users with an admin-type profile that has the `manageProfile` permission can manage permission profiles in TheHive.
 
 <h2>Next steps</h2>
 

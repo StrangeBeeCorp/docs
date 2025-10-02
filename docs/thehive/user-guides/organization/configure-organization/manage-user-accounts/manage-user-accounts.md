@@ -4,8 +4,7 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
 === "As an administrator"
 
-    !!! warning "Required permissions"
-        Only users with an admin-type profile that has the `manageUser` permission can manage user accounts at the client level in TheHive.
+    <!-- md:permission `[admin] manageUser` -->
 
     1. Go to the **Users** view from the sidebar menu.
 
@@ -18,8 +17,7 @@ This topic provides step-by-step instructions for managing [user accounts](about
 
 === "As an organization administrator"
 
-    !!! warning "Required permissions"
-        Only users with the `manageUser` permission can manage user accounts at the organization level in TheHive.
+    <!-- md:permission `manageUser` -->
 
     1. Go to the **Organization** view from the sidebar menu.
 

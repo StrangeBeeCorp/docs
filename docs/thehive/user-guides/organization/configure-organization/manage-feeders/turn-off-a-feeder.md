@@ -1,10 +1,8 @@
 # Turn Off an Alert Feeder
 
-<!-- md:version 5.5 --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
 This topic provides step-by-step instructions for turning off an [alert feeder](about-feeders.md) in TheHive.
-
-{% include-markdown "includes/access-feeders.md" %}
 
 <h2>Procedure</h2>
 

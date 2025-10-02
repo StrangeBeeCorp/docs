@@ -1,5 +1,7 @@
 # Configure the Webhook Notifier
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for configuring the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
@@ -21,8 +23,6 @@ This topic provides step-by-step instructions for configuring the *Webhook* [not
     * *ObservableCreated*  
     * *TaskClosed*  
     * *TaskMandatory*
-
-{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 

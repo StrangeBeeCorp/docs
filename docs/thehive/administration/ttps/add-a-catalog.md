@@ -1,12 +1,12 @@
 # Add a Tactics, Techniques and Procedures Catalog
 
+<!-- md:permission `[admin] managePattern` -->
+
 This topic provides step-by-step instructions for adding a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
 Use this procedure to add more MITRE catalogs than the [default one included in TheHive](../../user-guides/analyst-corner/cases/ttps/about-ttps.md#mitre-attck-framework).
-
-{% include-markdown "includes/administrator-access-manage-ttps.md" %}
 
 <h2>Procedure</h2>
 

@@ -6,8 +6,6 @@ This topic explains how sharing rules work and interact.
 
 ## Global sharing rules
 
-{% include-markdown "includes/administrator-access-manage-organizations.md" %}
-
 Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.
 
 TheHive requires setting these rules:
@@ -26,8 +24,6 @@ Local sharing rules are useful in the following scenarios:
 
 * [Global sharing rules](#global-sharing-rules) are already defined for newly created cases, but the same rules need to apply to an existing case.
 * One or more cases require different sharing settings that don't follow the global sharing rules.
-
-{% include-markdown "includes/access-manage-case-sharing.md" %}
 
 Follow these step-by-step instructions to see:
 

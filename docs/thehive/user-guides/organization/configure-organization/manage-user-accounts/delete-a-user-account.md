@@ -1,5 +1,7 @@
 # Delete a User Account
 
+<!-- md:permission `[admin] manageUser` -->
+
 This topic provides step-by-step instructions for deleting a [user account](about-user-accounts.md) in TheHive.
 
 !!! danger "Permanent action"
@@ -8,8 +10,6 @@ This topic provides step-by-step instructions for deleting a [user account](abou
 To lock a user account without deleting it, see [Lock a User Account](lock-a-user-account.md).
 
 To remove a user account from a specific organization without deleting it, see [Add or Remove an Existing User Account to an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
-
-{% include-markdown "includes/administrator-access-manage-user-accounts.md" %}
 
 <h2>Procedure</h2>
 

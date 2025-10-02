@@ -1,8 +1,8 @@
 # Rename a Custom Tag
 
-This topic provides step-by-step instructions for renaming a [custom tag](about-custom-tags.md) in TheHive.
+<!-- md:permission `manageTag` -->
 
-{% include-markdown "includes/access-manage-custom-tags.md" %}
+This topic provides step-by-step instructions for renaming a [custom tag](about-custom-tags.md) in TheHive.
 
 <h2>Procedure</h2>
 

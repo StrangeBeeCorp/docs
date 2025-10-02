@@ -1,8 +1,8 @@
 # Change a Case Status
 
-This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of a [case](about-cases.md) in TheHive.
+<!-- md:permission `manageCase/update` --> <!-- md:permission `manageCase/reopen` -->
 
-{% include-markdown "includes/access-change-status-case.md" %}
+This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of a [case](about-cases.md) in TheHive.
 
 <h2>Procedure</h2>
 

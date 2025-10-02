@@ -1,10 +1,10 @@
 # Create a Notification
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for creating a [notification](about-notifications.md) in TheHive.
 
 A notification triggers automated actions when specific events occur within an organization.
-
-{% include-markdown "includes/access-notifications.md" %}
 
 <h2>Procedure</h2>
 

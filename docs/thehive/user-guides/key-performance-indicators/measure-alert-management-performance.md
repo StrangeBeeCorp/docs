@@ -11,7 +11,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Measure the performance of all alerts in your organization
 
-{% include-markdown "includes/dashboard-access.md" %}
+<!-- md:permission `manageDashboard` -->
 
 1. Go to the **Dashboards** view from the sidebar menu.
 

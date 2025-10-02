@@ -23,7 +23,7 @@ Create a case from a case template when [initiating a new case](../../../../anal
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-case-templates.md" %}
+Only users with the `manageCaseTemplate` permission can manage case templates in TheHive.
 
 Once created, case templates are automatically available to all users in the organization.
 

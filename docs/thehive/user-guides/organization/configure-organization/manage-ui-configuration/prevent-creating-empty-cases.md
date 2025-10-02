@@ -1,11 +1,10 @@
 # Prevent Users from Creating Empty Cases
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for hiding the empty case option when [creating a case](../../../analyst-corner/cases/create-a-new-case.md#) in TheHive.
 
 By default, the empty case option is available. Use this procedure to require users to create cases only from templates, archived cases, or the Malware Information Sharing Platform (MISP) to ensure better standardization.
-
-!!! warning "Required permissions"
-    Only users with the `manageConfig` permission can hide the empty case option in TheHive.
 
 <h2>Procedure</h2>
 

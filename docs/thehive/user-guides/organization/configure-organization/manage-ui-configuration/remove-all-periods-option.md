@@ -1,13 +1,12 @@
 # Remove the All Periods Option in a Dashboard
 
+<!-- md:permission `manageConfig` -->
+
 This topic provides step-by-step instructions for removing the **All periods** option in a [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) in TheHive.
 
 Use this procedure to improve application performance by preventing users to select the **All periods** option.
 
 To learn how to change the display period for dashboards, see [Set a Dashboard Display Period](../../../analyst-corner/dashboard/set-dashboard-display-period.md).
-
-!!! warning "Required permissions"
-    Only users with the `manageConfig` permission can remove the **All periods** option in TheHive.
 
 <h2>Procedure</h2>
 

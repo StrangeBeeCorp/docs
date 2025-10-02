@@ -1,10 +1,10 @@
 # View Techniques in Tactics, Techniques and Procedures Catalogs
 
+<!-- md:permission `[admin] managePattern` -->
+
 This topic provides step-by-step instructions for viewing techniques in a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
 
 TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
-
-{% include-markdown "includes/administrator-access-manage-ttps.md" %}
 
 <h2>Procedure</h2>
 

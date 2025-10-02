@@ -1,10 +1,10 @@
 # Create a Knowledge Base Page
 
+<!-- md:permission `manageKnowledgeBase` -->
+
 This topic provides step-by-step instructions for creating a page in the TheHive [Knowledge Base](about-knowledge-base.md).
 
 Use this procedure to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
-
-{% include-markdown "includes/access-knowledge-base.md" %}
 
 <h2>Procedure</h2>
 

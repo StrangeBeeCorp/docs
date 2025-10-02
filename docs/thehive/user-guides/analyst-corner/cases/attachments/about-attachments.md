@@ -28,7 +28,8 @@ Any file format is supported for attachments.
 
 ## Permissions
 
-{% include-markdown "includes/access-manage-attachments.md" %}
+* Only users with the `manageKnowledgeBase` permission can manage attachments at the organization level in TheHive.
+* Only users with the `manageCase/update` and `manageAlert/update` permissions can add and remove attachments at the case and alert levels in TheHive.
 
 Adding an attachment grants all users permission to view or download it.
 
