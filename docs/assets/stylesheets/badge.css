@@ -27,7 +27,7 @@
 .md-typeset .mdx-badge__icon {
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    background-color: var(--badge-icon-bg-color, #F5DEB3);
+    background-color: var(--badge-icon-bg-color, #FFE9B0);
     padding: 0.2rem;
     display: flex;
     align-items: center;
@@ -76,7 +76,7 @@
 .md-typeset .mdx-badge__text {
     border-bottom-right-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    box-shadow: 0 0 0 2px inset var(--badge-border-color, #F5DEB3);
+    box-shadow: 0 0 0 2px inset var(--badge-border-color, #FFE9B0);
     padding: 0.2rem 0.3rem;
     font-weight: bold;
     display: flex;
@@ -86,19 +86,19 @@
 
 /* Version badge specific styles */
 .md-typeset .mdx-badge--version .mdx-badge__icon {
-    background-color: #C7D2CC;
+    background-color: #A7E7D2;
 }
 
 .md-typeset .mdx-badge--version .mdx-badge__text {
-    box-shadow: 0 0 0 2px inset #C7D2CC;
+    box-shadow: 0 0 0 2px inset #A7E7D2;
 }
 
 
 /* Permission badge specific styles */
 .md-typeset .mdx-badge--permission .mdx-badge__icon {
-    background-color: #E07B67;
+    background-color: #F8BFBF;
 }
 
 .md-typeset .mdx-badge--permission .mdx-badge__text {
-    box-shadow: 0 0 0 2px inset #E07B67;
+    box-shadow: 0 0 0 2px inset #F8BFBF;
 }
