@@ -6,6 +6,22 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.10 - October 8, 2025
+
+### Fixes
+
+#### Administration
+
+* Organization user list: Removed the profile selector, which should not appear in this list.
+* User creation: Resolved a UI bug affecting the organization name field in the user creation form.
+* Case list: Improved performance by optimizing user permission checks when loading cases.
+
+### Improvements
+
+#### Elasticsearch 9 support
+
+TheHive [now supports Elasticsearch 9](../installation/software-requirements.md) as a back-end index engine. See [the official Elasticsearch upgrade guide](https://www.elastic.co/docs/solutions/observability/apm/upgrade-to-version-9) for migration details.
+
 ## 5.5.9 - September 16, 2025
 
 ### Fixes

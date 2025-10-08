@@ -95,6 +95,8 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Elasticsearch
 
+{% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}
+
 !!! Example ""
 
     === "DEB"

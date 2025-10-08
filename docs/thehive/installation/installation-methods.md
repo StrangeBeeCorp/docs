@@ -20,7 +20,7 @@ For manual installation or environments without package managers, follow the [in
 
 ### :material-docker: Docker
 
-Deploy TheHive as a single container using [the official pre-built Docker images](https://hub.docker.com/r/strangebee/TheHive). See [Running TheHive with Docker](../installation/docker.md) for instructions.
+TheHive image is available on [Docker Hub](https://hub.docker.com/r/strangebee/TheHive). To deploy TheHive with all required services using Docker Compose, see [Running TheHive with Docker](../installation/docker.md).
 
 ## Cluster deployment
 

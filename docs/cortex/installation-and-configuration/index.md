@@ -17,6 +17,11 @@ Cortex has been tested and is supported on the following operating systems:
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
+## Software requirements
+
+* Java 11+
+* Elasticsearch 7.x
+
 ## Installation guide
 
 !!! Tip "Too much in a hurry to read?"

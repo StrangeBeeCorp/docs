@@ -26,15 +26,15 @@ Estimated resource recommendations are provided to offer guidance based on typic
     | :fontawesome-solid-user-group: < 20 | 3-4 CPU cores / 6 GB RAM | 3-4 CPU cores / 6 GB RAM | 3-4 CPU cores / 6 GB RAM |
     | :fontawesome-solid-user-group: < 50 | 4-6 CPU cores / 8 GB RAM | 4-6 CPU cores / 8 GB RAM | 4-6 CPU cores / 8 GB RAM |
 
-=== "Docker deployment"
+=== "Docker Compose deployment"
 
-    For Docker deployments, hardware requirements depend on the selected setup profile, with each profile defining a specific performance level.
+    For Docker deployments of TheHive with all required services, hardware requirements vary by setup profile. Each profile defines a specific performance level.
 
-    Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
+    Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
 
-=== "Kubernetes deployment"
+=== "Kubernetes deployment with Helm"
 
-    For Kubernetes deployments, refer to the [Docker Compose environments for TheHive and Cortex GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
+    For Kubernetes deployments, refer to the [Docker Compose environments GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles) for hardware requirements.
 
 !!! warning "Elasticsearch heap size configuration"
     Elasticsearch requires explicit [heap size configuration in the `jvm.options` file](installation-guide-linux-standalone-server.md#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file). Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection).
@@ -60,28 +60,19 @@ The recommended storage requirements for TheHive vary based on the use case and 
 
 ## Recommended operating systems
 
-=== "Linux installation"
+TheHive is officially supported on the following Linux distributions:
 
-    TheHive is officially supported on the following Linux distributions:
+* Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS
+* Debian 11
+* RHEL 8.5 | 9.3
+* Rocky Linux 9.4
+* Fedora 35 | 37
 
-    * Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS
-    * Debian 11
-    * RHEL 8.5 | 9.3
-    * Rocky Linux 9.4
-    * Fedora 35 | 37
-
-    Other distributions or versions aren't tested or supported.
-
-=== "Docker deployment"
-
-    For containerized deployments, an [official TheHive Docker image](https://hub.docker.com/r/strangebee/TheHive/tags) is available on Docker Hub.
-
-=== "Kubernetes deployment"
-
-    For Kubernetes environments, an [official Helm chart for Kubernetes deployments](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive) is provided.
+Other distributions or versions aren't tested or supported.
 
 <h2>Next steps</h2>
 
+* [Software Requirements](software-requirements.md)
 * [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
 * [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
 * [Running TheHive with Docker](docker.md)

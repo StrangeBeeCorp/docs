@@ -426,7 +426,9 @@ nav:
     - 'Overview': thehive/overview/index.md
     - 'Installation':
       - 'Installation Methods': thehive/installation/installation-methods.md
-      - 'System Requirements': thehive/installation/system-requirements.md
+      - 'Requirements':
+        - 'System Requirements': thehive/installation/system-requirements.md
+        - 'Software Requirements': thehive/installation/software-requirements.md
       - 'Single Server Installation':
         - 'Install on Linux': thehive/installation/installation-guide-linux-standalone-server.md
         - 'One-Command Install': thehive/installation/automated-installation-script-linux.md

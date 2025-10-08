@@ -127,9 +127,6 @@ Also note that Cortex stores data in Elasticsearch. Regular backups are strongly
 
 #### Elasticsearch
 
-!!! warning "Elasticsearch support"
-    Cortex currently supports only Elasticsearch version 7.x.
-
 By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
 
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.

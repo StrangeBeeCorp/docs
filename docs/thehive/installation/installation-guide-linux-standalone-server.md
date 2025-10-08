@@ -22,6 +22,7 @@ If you prefer a faster setup on Linux, you can run an [automated installation sc
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for Linux installation
+    * [Software requirements](software-requirements.md) satisfied for Linux installation
 
 ## Step 1: Install required dependencies
 
@@ -128,7 +129,7 @@ TheHive requires Java to run its application server and to manage various proces
 !!! info "Single node configuration"
     In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/) for detailed instructions.
 
-!!! note "Cassandra support"
+!!! note "Cassandra supported versions"
     TheHive is fully compatible with Cassandra version 4.1.x.
 
 ### Step 3.1: Install Cassandra
@@ -543,8 +544,15 @@ For additional configuration options, refer to:
 !!! info "Single node configuration"
     In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/) for detailed instructions.
 
-!!! note "Elasticsearch support"
-    Starting with version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x. If you want to use Elasticsearch to store your audit logs, ensure that you're using Elasticsearch 7.17 or later.
+!!! note "Elasticsearch supported versions"
+
+    * TheHive 5.2.x and earlier: Elasticsearch 7.x only
+    * TheHive 5.3.0 - 5.5.9: Elasticsearch 7.x - 8.x
+    * TheHive 5.5.10 and later: Elasticsearch 7.x - 9.1.x
+    
+    If using Elasticsearch for [audit log storage](#step-53-audit-log-storage), you must use Elasticsearch 7.17 or later.
+
+    [Cortex](../administration/cortex/about-cortex.md) only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.
 
 !!! note "OpenSearch support"
     Starting with version 5.3, TheHive supports [OpenSearch](https://opensearch.org/) for advanced use cases, except for audit log storage.
@@ -1164,7 +1172,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 5. Save your modifications in the `application.conf` file.
 
-### (Optional) Step 5.3: <!-- md:version 5.5 --> Configure audit log storage
+### (Optional) Step 5.3: <!-- md:version 5.5 --> Configure audit log storage {#step-53-audit-log-storage}
 
 By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch.
 

@@ -16,6 +16,11 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 !!! Info
     These applications can either be installed on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
 
+!!! warning "Before you begin"
+    To ensure a smooth installation process, make sure you have:
+
+    * [System requirements fully met and verified](system-requirements.md) for Linux installation
+    * [Software requirements](software-requirements.md) satisfied for Linux installation
 ---
 
 ## Architecture Diagram
@@ -291,6 +296,16 @@ The following steps aim to enable encryption secure communication between a clie
 
 ## Elasticsearch Setup
 ![](../images/installation/elasticsearch-cluster.png){ align=center }
+
+!!! note "Elasticsearch supported versions"
+
+    * TheHive 5.2.x and earlier: Elasticsearch 7.x only
+    * TheHive 5.3.0 - 5.5.9: Elasticsearch 7.x - 8.x
+    * TheHive 5.5.10 and later: Elasticsearch 7.x - 9.1.x
+    
+    If using Elasticsearch for [audit log storage](installation-guide-linux-standalone-server.md#step-53-audit-log-storage), you must use Elasticsearch 7.17 or later.
+
+    [Cortex](../administration/cortex/about-cortex.md) only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.
 
 ### Installation Instructions
 To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) for each node.

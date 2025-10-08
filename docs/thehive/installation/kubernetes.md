@@ -6,9 +6,9 @@ Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart reposito
     The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
 
 !!! danger "Dependency images"
-    The default Cassandra and Elasticsearch images used by the dependency Helm charts come from [Bitnami](https://bitnami.com/).    
-    
-    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications), StrangeBee Helm charts now reference the `bitnamilegacy` repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5 and Elasticsearch 9, which aren't compatible with TheHive.
+    The default Cassandra and Elasticsearch images used by the dependency Helm charts come from [Bitnami](https://bitnami.com/).  
+
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications), StrangeBee Helm charts now reference the `bitnamilegacy` repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5, which isn't compatible with TheHive, and Elasticsearch 9.
 
     This has important consequences:
 
