@@ -528,6 +528,47 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../system-requirements/" class="md-nav__link">
         
@@ -540,6 +581,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14555,8 +14627,8 @@
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Dependency images</p>
-<p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/">Bitnami</a>.    </p>
-<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5 and Elasticsearch 9, which aren't compatible with TheHive.</p>
+<p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/">Bitnami</a>.  </p>
+<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5, which isn't compatible with TheHive, and Elasticsearch 9.</p>
 <p>This has important consequences:</p>
 <ul>
 <li>These legacy images won't receive security updates and will become increasingly vulnerable over time. You may continue to use them at your own risk, but they aren't production-ready.</li>

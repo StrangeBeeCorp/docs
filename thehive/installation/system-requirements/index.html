@@ -11,7 +11,7 @@
         <link rel="prev" href="../installation-methods/">
       
       
-        <link rel="next" href="../installation-guide-linux-standalone-server/">
+        <link rel="next" href="../software-requirements/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -530,6 +530,49 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -601,6 +644,37 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -14551,7 +14625,7 @@
 </ul>
 <p>Initial deployments can start with minimal configurations and be scaled based on observed performance. Hardware adjustments should be guided by ongoing <a href="../../operations/monitoring/">monitoring of system resource utilization</a>.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Linux installation</label><label for="__tabbed_1_2">Docker deployment</label><label for="__tabbed_1_3">Kubernetes deployment</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Linux installation</label><label for="__tabbed_1_2">Docker Compose deployment</label><label for="__tabbed_1_3">Kubernetes deployment with Helm</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The following table lists recommended CPU and memory allocations per service when TheHive, Apache Cassandra, and Elasticsearch are hosted on a single machine, based on the number of concurrent users.</p>
@@ -14587,11 +14661,11 @@
 </table>
 </div>
 <div class="tabbed-block">
-<p>For Docker deployments, hardware requirements depend on the selected setup profile, with each profile defining a specific performance level.</p>
-<p>Available profiles and corresponding hardware specifications are documented in the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments for TheHive and Cortex GitHub repository</a>.</p>
+<p>For Docker deployments of TheHive with all required services, hardware requirements vary by setup profile. Each profile defines a specific performance level.</p>
+<p>Available profiles and corresponding hardware specifications are documented in the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments GitHub repository</a>.</p>
 </div>
 <div class="tabbed-block">
-<p>For Kubernetes deployments, refer to the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments for TheHive and Cortex GitHub repository</a>.</p>
+<p>For Kubernetes deployments, refer to the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments GitHub repository</a> for hardware requirements.</p>
 </div>
 </div>
 </div>
@@ -14615,9 +14689,6 @@
 <li>150 GB of storage is recommended for more intensive use cases with higher data volume or complex workflows.</li>
 </ul>
 <h2 id="recommended-operating-systems">Recommended operating systems<a class="headerlink" href="#recommended-operating-systems" title="Permanent link">#</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Linux installation</label><label for="__tabbed_2_2">Docker deployment</label><label for="__tabbed_2_3">Kubernetes deployment</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
 <p>TheHive is officially supported on the following Linux distributions:</p>
 <ul>
 <li>Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS</li>
@@ -14627,18 +14698,10 @@
 <li>Fedora 35 | 37</li>
 </ul>
 <p>Other distributions or versions aren't tested or supported.</p>
-</div>
-<div class="tabbed-block">
-<p>For containerized deployments, an <a href="https://hub.docker.com/r/strangebee/TheHive/tags">official TheHive Docker image</a> is available on Docker Hub.</p>
-</div>
-<div class="tabbed-block">
-<p>For Kubernetes environments, an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a> is provided.</p>
-</div>
-</div>
-</div>
 <h2>Next steps</h2>
 
 <ul>
+<li><a href="../software-requirements/">Software Requirements</a></li>
 <li><a href="../automated-installation-script-linux/">Quick Install on Linux Systems: One-Command Setup</a></li>
 <li><a href="../installation-guide-linux-standalone-server/">Install TheHive on Linux Systems</a></li>
 <li><a href="../docker/">Running TheHive with Docker</a></li>

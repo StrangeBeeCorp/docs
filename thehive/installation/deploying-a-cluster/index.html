@@ -528,6 +528,47 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../system-requirements/" class="md-nav__link">
         
@@ -540,6 +581,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14613,6 +14685,14 @@
 <p class="admonition-title">Info</p>
 <p>These applications can either be installed on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Before you begin</p>
+<p>To ensure a smooth installation process, make sure you have:</p>
+<ul>
+<li><a href="../system-requirements/">System requirements fully met and verified</a> for Linux installation</li>
+<li><a href="../software-requirements/">Software requirements</a> satisfied for Linux installation</li>
+</ul>
+</div>
 <hr>
 <h2 id="architecture-diagram">Architecture Diagram<a class="headerlink" href="#architecture-diagram" title="Permanent link">#</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/overview/thehive-architecture-full-cluster.png" data-desc-position="bottom"><img alt="" src="../../images/overview/thehive-architecture-full-cluster.png"></a></p>
@@ -14869,6 +14949,16 @@ UN<span class="w">  </span>&lt;ip<span class="w"> </span>node<span class="w"> </
 </ol>
 <h2 id="elasticsearch-setup">Elasticsearch Setup<a class="headerlink" href="#elasticsearch-setup" title="Permanent link">#</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/elasticsearch-cluster.png" data-desc-position="bottom"><img align="center" alt="" src="../../images/installation/elasticsearch-cluster.png"></a></p>
+<div class="admonition note">
+<p class="admonition-title">Elasticsearch supported versions</p>
+<ul>
+<li>TheHive 5.2.x and earlier: Elasticsearch 7.x only</li>
+<li>TheHive 5.3.0 - 5.5.9: Elasticsearch 7.x - 8.x</li>
+<li>TheHive 5.5.10 and later: Elasticsearch 7.x - 9.1.x</li>
+</ul>
+<p>If using Elasticsearch for <a href="../installation-guide-linux-standalone-server/#step-53-audit-log-storage">audit log storage</a>, you must use Elasticsearch 7.17 or later.</p>
+<p><a href="../../administration/cortex/about-cortex/">Cortex</a> only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.</p>
+</div>
 <h3 id="installation-instructions_1">Installation Instructions<a class="headerlink" href="#installation-instructions_1" title="Permanent link">#</a></h3>
 <p>To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on <a href="../installation-guide-linux-standalone-server/#step-41-install-elasticsearch"><strong>this page</strong></a> for each node.</p>
 <p>&nbsp;</p>

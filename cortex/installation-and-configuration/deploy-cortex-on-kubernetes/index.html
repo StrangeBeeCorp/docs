@@ -521,6 +521,47 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../thehive/installation/system-requirements/" class="md-nav__link">
         
@@ -533,6 +574,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/installation/software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14677,10 +14749,6 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 </ul>
 <p>Also note that Cortex stores data in Elasticsearch. Regular backups are strongly recommended to prevent data loss, especially when deploying Elasticsearch on Kubernetes using the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a>.</p>
 <h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
-<div class="admonition warning">
-<p class="admonition-title">Elasticsearch support</p>
-<p>Cortex currently supports only Elasticsearch version 7.x.</p>
-</div>
 <p>By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <div class="admonition note">

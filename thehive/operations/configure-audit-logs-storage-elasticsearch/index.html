@@ -515,6 +515,47 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../installation/system-requirements/" class="md-nav__link">
         
@@ -527,6 +568,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14623,7 +14695,7 @@
 <ul>
 <li>If you deployed TheHive with a Docker image:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--rm<span class="w"> </span>-ti<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/application.conf&gt;:/etc/thehive/application.conf:ro<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/logback.xml&gt;:/etc/thehive/logback.xml:ro<span class="w"> </span>strangebee/thehive:5.5.9-1-SNAPSHOT<span class="w">  </span>migrateAudits<span class="w"> </span>-Dlogback.configurationFile<span class="o">=</span>/etc/thehive/logback.xml<span class="w"> </span>--<span class="w"> </span>--audit-from-date<span class="w"> </span>&lt;date&gt;<span class="w"> </span>-c<span class="w"> </span>/etc/thehive/application.conf
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--rm<span class="w"> </span>-ti<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/application.conf&gt;:/etc/thehive/application.conf:ro<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/logback.xml&gt;:/etc/thehive/logback.xml:ro<span class="w"> </span>strangebee/thehive:5.5.10-1-SNAPSHOT<span class="w">  </span>migrateAudits<span class="w"> </span>-Dlogback.configurationFile<span class="o">=</span>/etc/thehive/logback.xml<span class="w"> </span>--<span class="w"> </span>--audit-from-date<span class="w"> </span>&lt;date&gt;<span class="w"> </span>-c<span class="w"> </span>/etc/thehive/application.conf
 </code></pre></div>
 <p>Available options are:</p>
 <div class="highlight"><pre><span></span><code>-v, --version: Displays the version of the migration tool.

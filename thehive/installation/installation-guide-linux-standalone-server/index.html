@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.strangebee.com/thehive/installation/installation-guide-linux-standalone-server/">
       
       
-        <link rel="prev" href="../system-requirements/">
+        <link rel="prev" href="../software-requirements/">
       
       
         <link rel="next" href="../automated-installation-script-linux/">
@@ -528,6 +528,47 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Requirements
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Requirements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../system-requirements/" class="md-nav__link">
         
@@ -540,6 +581,37 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Requirements
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -14613,6 +14685,7 @@
 <ul>
 <li>A basic understanding of <a href="../../overview/#architecture">TheHive architecture</a></li>
 <li><a href="../system-requirements/">System requirements fully met and verified</a> for Linux installation</li>
+<li><a href="../software-requirements/">Software requirements</a> satisfied for Linux installation</li>
 </ul>
 </div>
 <h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
@@ -14711,7 +14784,7 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 <p>In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Cassandra support</p>
+<p class="admonition-title">Cassandra supported versions</p>
 <p>TheHive is fully compatible with Cassandra version 4.1.x.</p>
 </div>
 <h3 id="step-31-install-cassandra">Step 3.1: Install Cassandra<a class="headerlink" href="#step-31-install-cassandra" title="Permanent link">#</a></h3>
@@ -15106,8 +15179,14 @@ For additional configuration options, refer to:
 <p>In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Elasticsearch support</p>
-<p>Starting with version 5.3, TheHive supports Elasticsearch 8.0 and 7.x. Earlier versions only support Elasticsearch 7.x. If you want to use Elasticsearch to store your audit logs, ensure that you're using Elasticsearch 7.17 or later.</p>
+<p class="admonition-title">Elasticsearch supported versions</p>
+<ul>
+<li>TheHive 5.2.x and earlier: Elasticsearch 7.x only</li>
+<li>TheHive 5.3.0 - 5.5.9: Elasticsearch 7.x - 8.x</li>
+<li>TheHive 5.5.10 and later: Elasticsearch 7.x - 9.1.x</li>
+</ul>
+<p>If using Elasticsearch for <a href="#step-53-audit-log-storage">audit log storage</a>, you must use Elasticsearch 7.17 or later.</p>
+<p><a href="../../administration/cortex/about-cortex/">Cortex</a> only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">OpenSearch support</p>
@@ -15451,9 +15530,9 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.9-1_all.deb
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.9-1_all.deb.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.9-1_all.deb.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.10-1_all.deb
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.10-1_all.deb.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.10-1_all.deb.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
@@ -15467,9 +15546,9 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.9-1_all.deb
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.9-1_all.deb.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.9-1_all.deb.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.5/deb/thehive_5.5.10-1_all.deb
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive_5.5.10-1_all.deb.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive_5.5.10-1_all.deb.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
@@ -15489,10 +15568,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -15507,7 +15586,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb.asc<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb.asc<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -15530,12 +15609,12 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using <code>apt-get</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dpkg</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/thehive_5.5.9-1_all.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/thehive_5.5.10-1_all.deb
 </code></pre></div>
 </li>
 </ul>
@@ -15553,9 +15632,9 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.9-1.noarch.rpm
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.9-1.noarch.rpm.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.9-1.noarch.rpm.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.10-1.noarch.rpm
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.10-1.noarch.rpm.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.10-1.noarch.rpm.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
@@ -15569,9 +15648,9 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.9-1.noarch.rpm
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.9-1.noarch.rpm.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.9-1.noarch.rpm.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.5/rpm/thehive-5.5.10-1.noarch.rpm
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.10-1.noarch.rpm.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.10-1.noarch.rpm.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
@@ -15591,10 +15670,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a></p>
 </li>
@@ -15609,7 +15688,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm.asc<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm.asc<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -15632,17 +15711,17 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using <code>yum</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dnf</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>rpm</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/thehive-5.5.9-1.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/thehive-5.5.10-1.noarch.rpm
 </code></pre></div>
 </li>
 </ul>
@@ -15661,9 +15740,9 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using Wget</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.9-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.9-1.zip
-wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.9-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.9-1.zip.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.9-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.9-1.zip.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.10-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.10-1.zip
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.10-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.10-1.zip.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.5.10-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.10-1.zip.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
@@ -15677,9 +15756,9 @@ wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 </li>
 <li>
 <p>Using cURL</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.9-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.9-1.zip
-curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.9-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.9-1.zip.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.9-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.9-1.zip.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.10-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.5/zip/thehive-5.5.10-1.zip
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.10-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.5/sha256/thehive-5.5.10-1.zip.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.5.10-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.5/asc/thehive-5.5.10-1.zip.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
@@ -15699,10 +15778,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/opt/thehive-5.5.9-1.zip
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/opt/thehive-5.5.10-1.zip
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/opt/thehive-5.5.9-1.zip.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/opt/thehive-5.5.10-1.zip.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -15717,7 +15796,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/opt/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/opt/thehive-5.5.9-1.zip.asc<span class="w"> </span>/opt/thehive-5.5.9-1.zip
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/opt/thehive-5.5.10-1.zip.asc<span class="w"> </span>/opt/thehive-5.5.10-1.zip
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -15740,12 +15819,12 @@ This warning is expected. It means the package is signed with the official TheHi
 <div class="admonition info">
 <p class="admonition-title">Unzip paths</p>
 <ul>
-<li>Replace <code>/opt/thehive-5.5.9-1.zip</code> with the full path to the ZIP file you downloaded.</li>
+<li>Replace <code>/opt/thehive-5.5.10-1.zip</code> with the full path to the ZIP file you downloaded.</li>
 <li>Replace <code>/opt/</code> after <code>-d</code> with the directory where you want to extract the contents of the archive.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/opt/thehive-5.5.9-1.zip<span class="w"> </span>-d<span class="w"> </span>/opt/
-sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/thehive-5.5.9-1<span class="w"> </span>/opt/thehive
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/opt/thehive-5.5.10-1.zip<span class="w"> </span>-d<span class="w"> </span>/opt/
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/thehive-5.5.10-1<span class="w"> </span>/opt/thehive
 </code></pre></div>
 </li>
 <li>
@@ -15902,7 +15981,7 @@ These settings control how TheHive listens internally on the host and are indepe
 <p>Save your modifications in the <code>application.conf</code> file.</p>
 </li>
 </ol>
-<h3 id="optional-step-53-55-configure-audit-log-storage">(Optional) Step 5.3: <span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Configure audit log storage<a class="headerlink" href="#optional-step-53-55-configure-audit-log-storage" title="Permanent link">#</a></h3>
+<h3 id="step-53-audit-log-storage">(Optional) Step 5.3: <span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Configure audit log storage<a class="headerlink" href="#step-53-audit-log-storage" title="Permanent link">#</a></h3>
 <p>By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to Elasticsearch.</p>
 <p>Elasticsearch offers better performance, reduced latency, and advanced search capabilities.</p>
 <div class="admonition warning">
