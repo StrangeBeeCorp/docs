@@ -1,6 +1,6 @@
 # Usage instructions for the official Azure distribution of Cortex
 
-[:simple-microsoftazure: Official Azure image](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/strangebee1595948424730.cortex-3?tab=Overview){ .md-button target=_blank } This is the official Cortex v3 release for the AWS Marketplace.
+[:fontawesome-brands-microsoft: Official Azure image](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/strangebee1595948424730.cortex-3?tab=Overview){ .md-button target=_blank } This is the official Cortex v3 release for the AWS Marketplace.
 
 The image can be used to set up a shiny-new Cortex install or to launch an instance with existing data and configuration (for update / migration / restore purposes).
 

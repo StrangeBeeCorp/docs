@@ -11,7 +11,7 @@ Your have your own cloud infrastruture and wish to manage and include TheHive an
 * :fontawesome-brands-aws: Amazon AWS environment:
     * for [TheHive](./iaas/aws/thehive.md) and [Cortex](./iaas/aws/cortex.md)
     *  or [Infra as Code](./iaas/aws/infra-as-code/README.md) deployment
-* :simple-microsoftazure: Microsoft Azure environment:
+* :fontawesome-brands-microsoft: Microsoft Azure environment:
     *  for [TheHive](./iaas/azure/thehive.md) and [Cortex](./iaas/azure/cortex.md)
     *  or [Infra as Code](./iaas/azure/infra-as-code/README.md) deployment
 
