@@ -1,6 +1,6 @@
 # Configure Database and Index Authentication
 
-We're going to secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.
+In this tutorial, we're going to secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 

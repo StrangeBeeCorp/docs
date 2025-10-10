@@ -1,6 +1,6 @@
 # Configure Database and Index SSL
 
-We're going to enable SSL/TLS for both Cassandra and Elasticsearch to secure communication with TheHive. By the end, all connections to the database and index backends will be encrypted in transit.
+In this tutorial, we're going to enable SSL/TLS for both Cassandra and Elasticsearch to secure communication with TheHive. By the end, all connections to the database and index backends will be encrypted in transit.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 

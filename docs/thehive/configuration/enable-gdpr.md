@@ -2,7 +2,7 @@
 
 <!-- md:version 5.0 --> <!-- md:license Platinum -->
 
-We're going to configure TheHive to automatically manage data retention according to GDPR requirements. By the end, you'll have automated data cleanup running on a schedule, ensuring your organization maintains compliance with data protection regulations.
+In this tutorial, we're going to configure TheHive to automatically manage data retention according to GDPR requirements. By the end, you'll have automated data cleanup running on a schedule, ensuring your organization maintains compliance with data protection regulations.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 
