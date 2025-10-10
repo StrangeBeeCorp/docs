@@ -1240,12 +1240,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/database/" class="md-nav__link">
+      <a href="../../configuration/turn-off-cortex-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database &amp; Index
+    Turn Off the Cortex Integration
     
   </span>
   
@@ -1263,12 +1263,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/file-storage/" class="md-nav__link">
+      <a href="../../configuration/turn-off-misp-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    File Storage
+    Turn Off the MISP Integration
     
   </span>
   
@@ -1286,12 +1286,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/connectors/" class="md-nav__link">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Connectors
+    Update Service Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-authentication-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-ssl-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index SSL
     
   </span>
   
@@ -1338,52 +1384,6 @@
   
   <span class="md-ellipsis">
     Pekko (Version 5.4+)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Logs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/secret/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Secrets
     
   </span>
   
@@ -1469,54 +1469,13 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_11">
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_11" id="__nav_2_3_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Compliance
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_11">
-            <span class="md-nav__icon md-icon"></span>
-            Compliance
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../configuration/gdpr/" class="md-nav__link">
+      <a href="../../configuration/update-log-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    General Data Protection Regulation (GDPR)
+    Update Log Configuration
     
   </span>
   
@@ -1527,9 +1486,24 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/enable-gdpr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable GDPR Compliance Feature
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -14994,7 +14968,7 @@ UN<span class="w">  </span>&lt;ip<span class="w"> </span>node<span class="w"> </
 <span class="nt">xpack.security.transport.ssl.certificate_authorities</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/ca/ca.crt</span>
 </code></pre></div>
 <ol>
-<li>Replace es1 with the IP or hostname of the respective node.</li>
+<li>Replace es1 with the IP or host name of the respective node.</li>
 <li>Keep this parameter with the same value for all nodes to ensure proper cluster discovery.</li>
 </ol>
 </div>
@@ -15178,22 +15152,49 @@ Source: <a href="https://pekko.apache.org"><strong>https://pekko.apache.org</str
 <div class="admonition example">
 <div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="c1">## Database configuration</span>
 <span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">## Cassandra configuration</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">backend = cql</span>
-<span class="hll"><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip node 1&gt;", "&lt;ip node 2&gt;", "&lt;ip node 3&gt;"]</span><span class="w"> </span><span class="c1">#(1)</span>
-</span><span class="w">    </span><span class="c1"># Cassandra authentication (if configured)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">password = "PASSWORD"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">cql {</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = thp</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">keyspace = thehive</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">backend = cql</span>
+<span class="hll"><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip node 1&gt;", "&lt;ip node 2&gt;", "&lt;ip node 3&gt;"]</span><span class="w"> </span><span class="c1">#(1)</span>
+</span><span class="w">        </span><span class="c1"># Cassandra authentication (if configured)</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">password = "PASSWORD"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cql {</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = thp</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">keyspace = thehive</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index.search {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">## Elasticsearch configuration</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">backend = elasticsearch</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip node&gt;"]</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">index-name = thehive</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># Elasticsearch authentication (recommended)</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">elasticsearch {</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">http {</span>
+<span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">auth {</span>
+<span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">type = basic</span>
+<span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">basic {</span>
+<span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">username = "httpuser"</span>
+<span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">password = "httppassword"</span>
+<span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="l l-Scalar l-Scalar-Plain">}</span>
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Consistent configuration across all TheHive nodes</p>
+<p>In this configuration, all TheHive nodes should have the same configuration.</p>
+<p>Elasticsearch configuration should use the default value for <code>script.allowed_types</code>, or contain the following configuration line: </p>
+<div class="highlight"><pre><span></span><code><span class="nt">script.allowed_types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
 </code></pre></div>
 </div>
 <p>Ensure that you replace <code>&lt;ip node 1&gt;</code>, <code>&lt;ip node 2&gt;</code>, and <code>&lt;ip node 3&gt;</code> with the respective IP addresses of your Cassandra nodes. This configuration ensures proper communication between TheHive and the Cassandra database, facilitating seamless operation of the platform. Additionally, if authentication is enabled for Cassandra, provide the appropriate username and password in the configuration.</p>
+<p>To learn about how to configure SSL for Cassandra and Elasticsearch, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
 <p>&nbsp;</p>
 <h4 id="file-storage_1">File storage<a class="headerlink" href="#file-storage_1" title="Permanent link">#</a></h4>
 <p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. These items are stored as-is.</p>
@@ -15229,27 +15230,46 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 <p>It you decide to go with S3 file storage, this section details how to configure your cluster.</p>
 <p>To enable S3 file storage for each node in TheHive cluster, add the relevant storage configuration to the <code>/etc/thehive/application.conf</code> file. Below is an example configuration for the first node:</p>
 <div class="admonition example">
-<div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">storage {</span>
-<span class="l l-Scalar l-Scalar-Plain">provider</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
-<span class="l l-Scalar l-Scalar-Plain">s3 {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">bucket = "thehive"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">readTimeout = 1 minute</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">writeTimeout = 1 minute</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">chunkSize = 1 MB</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">endpoint = "http://&lt;IP_MINIO_1&gt;:9100"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">accessKey = "thehive"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">aws.credentials.provider = "static"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">aws.credentials.secret-access-key = "password"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">access-style = path</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">aws.region.provider = "static"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">aws.region.default-region = "us-east-1"</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="err">}</span>
+<div class="highlight"><span class="filename">/etc/thehive/application.conf with TheHive 5.0.x</span><pre><span></span><code><span class="w">    </span><span class="c1">## Attachment storage configuration</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">provider</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">s3 {</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">bucket = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">readTimeout = 1 minute</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">writeTimeout = 1 minute</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">chunkSize = 1 MB</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">endpoint = "http://&lt;IP_MINIO_1&gt;:9100"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">accessKey = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">secretKey = "password"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">region = "us-east-1"</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">alpakka.s3.access-style = path</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">/etc/thehive/application.conf with TheHive &gt; 5.0</span><pre><span></span><code><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">provider</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">s3 {</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">bucket = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">readTimeout = 1 minute</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">writeTimeout = 1 minute</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">chunkSize = 1 MB</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">endpoint = "http://&lt;IP_MINIO_1&gt;:9100"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">accessKey = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">aws.credentials.provider = "static"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">aws.credentials.secret-access-key = "password"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">access-style = path</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">aws.region.provider = "static"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">aws.region.default-region = "us-east-1"</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">    </span><span class="err">}</span>
 </code></pre></div>
 </div>
 <ul>
 <li>
 <p>The provided configuration is backward compatible, ensuring compatibility with existing setups.</p>
+</li>
+<li>
+<p>The default region is us-east-1, but it's optional if not specified in the MinIO configuration.</p>
 </li>
 <li>
 <p>Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to <a href="#load-balancing-with-haproxy"><strong>the example for TheHive</strong></a>).</p>
@@ -15258,7 +15278,39 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 </div>
 </div>
 </div>
-<p>&nbsp;</p>
+<h4 id="optional-configure-the-secret-key-for-the-play-framework">Optional: Configure the secret key for the Play Framework<a class="headerlink" href="#optional-configure-the-secret-key-for-the-play-framework" title="Permanent link">#</a></h4>
+<p>TheHive uses a secret key to sign session cookies and ensure secure user authentication.</p>
+<p>Skip this step if you installed TheHive using DEB or RPM packages—they generate the key automatically.</p>
+<p>For other installation methods:</p>
+<ol>
+<li>Generate a secret key on the first node.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/thehive/secret.conf<span class="w"> </span><span class="s">&lt;&lt; _EOF_</span>
+<span class="s">play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"</span>
+<span class="s">_EOF_</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Minimum key length</p>
+</div>
+<p>TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.</p>
+<ol>
+<li>Set appropriate file permissions.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/etc/thehive/secret.conf
+chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive/secret.conf
+</code></pre></div>
+<ol>
+<li>
+<p>Copy the <code>/etc/thehive/secret.conf</code> file to all other nodes in the cluster.</p>
+</li>
+<li>
+<p>Verify the same permissions on each node.</p>
+</li>
+</ol>
+<div class="admonition danger">
+<p class="admonition-title">Security requirements</p>
+<p>Never share or commit your secret key to version control. All nodes in a cluster must use the same key, but different environments (development, staging, production) must use different keys.</p>
+</div>
 <h3 id="start-the-service">Start the service<a class="headerlink" href="#start-the-service" title="Permanent link">#</a></h3>
 <p>Once the configuration is updated, start TheHive service using the following command:</p>
 <div class="admonition example">
@@ -15266,6 +15318,10 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 </code></pre></div>
 </div>
 <p>This command initiates TheHive service, enabling S3 file storage functionality as configured. Make sure to execute this command on each node of TheHive cluster to ensure proper functionality across the entire setup.</p>
+<div class="admonition warning">
+<p class="admonition-title">Initial startup delay</p>
+<p>The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.</p>
+</div>
 <hr>
 <h2 id="load-balancing-with-haproxy">Load Balancing with HAProxy<a class="headerlink" href="#load-balancing-with-haproxy" title="Permanent link">#</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/load-balancers-thehive.png" data-desc-position="bottom"><img align="center" alt="" src="../../images/installation/load-balancers-thehive.png"></a>

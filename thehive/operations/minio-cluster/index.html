@@ -1120,12 +1120,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/database/" class="md-nav__link">
+      <a href="../../configuration/turn-off-cortex-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database &amp; Index
+    Turn Off the Cortex Integration
     
   </span>
   
@@ -1143,12 +1143,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/file-storage/" class="md-nav__link">
+      <a href="../../configuration/turn-off-misp-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    File Storage
+    Turn Off the MISP Integration
     
   </span>
   
@@ -1166,12 +1166,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/connectors/" class="md-nav__link">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Connectors
+    Update Service Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-authentication-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-ssl-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index SSL
     
   </span>
   
@@ -1218,52 +1264,6 @@
   
   <span class="md-ellipsis">
     Pekko (Version 5.4+)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Logs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/secret/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Secrets
     
   </span>
   
@@ -1349,54 +1349,13 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_11">
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_11" id="__nav_2_3_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Compliance
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_11">
-            <span class="md-nav__icon md-icon"></span>
-            Compliance
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../configuration/gdpr/" class="md-nav__link">
+      <a href="../../configuration/update-log-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    General Data Protection Regulation (GDPR)
+    Update Log Configuration
     
   </span>
   
@@ -1407,9 +1366,24 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/enable-gdpr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable GDPR Compliance Feature
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -14687,7 +14661,7 @@
 </ol>
 <hr>
 <h2 id="replace-a-node">Replace a Node<a class="headerlink" href="#replace-a-node" title="Permanent link">#</a></h2>
-<p>In the event that a server within your MinIO cluster has crashed and cannot be recovered, you can install a new server to replace it. Ensure that the new node is configured with the same IP address or hostname as the old node. Once the new server is operational and has joined the cluster, initiate a disk heal by running <code>mc admin heal</code>.</p>
+<p>In the event that a server within your MinIO cluster has crashed and cannot be recovered, you can install a new server to replace it. Ensure that the new node is configured with the same IP address or host name as the old node. Once the new server is operational and has joined the cluster, initiate a disk heal by running <code>mc admin heal</code>.</p>
 <p>&nbsp;</p>
 <h3 id="step-by-step-guide-replace-a-node-in-minio-cluster">Step-by-Step Guide: Replace a Node in MinIO Cluster<a class="headerlink" href="#step-by-step-guide-replace-a-node-in-minio-cluster" title="Permanent link">#</a></h3>
 <ol>
@@ -14701,7 +14675,7 @@
 <p>Ensure the new server has the same MinIO version as the existing cluster nodes.</p>
 </li>
 <li>
-<p>Assign the same IP address or hostname as the node being replaced.</p>
+<p>Assign the same IP address or host name as the node being replaced.</p>
 </li>
 </ul>
 </li>
@@ -14772,7 +14746,7 @@
 <p>Ensure the new server has the same MinIO version as the existing cluster nodes.</p>
 </li>
 <li>
-<p>Assign a static IP address or configure a hostname for the new node that matches the existing cluster nodes.</p>
+<p>Assign a static IP address or configure a host name for the new node that matches the existing cluster nodes.</p>
 </li>
 </ul>
 </li>
@@ -14783,7 +14757,7 @@
 <p>Access the configuration file (<code>config.json</code>) of each existing MinIO node in the cluster.</p>
 </li>
 <li>
-<p>Add the details of the new node (IP address or hostname) to the <code>config.json</code> file of each node under the <code>cluster</code> section:
+<p>Add the details of the new node (IP address or host name) to the <code>config.json</code> file of each node under the <code>cluster</code> section:
   </p><div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">   </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minio"</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">"cluster"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>

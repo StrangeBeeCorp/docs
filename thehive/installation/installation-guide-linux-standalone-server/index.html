@@ -1240,12 +1240,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/database/" class="md-nav__link">
+      <a href="../../configuration/turn-off-cortex-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Database &amp; Index
+    Turn Off the Cortex Integration
     
   </span>
   
@@ -1263,12 +1263,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/file-storage/" class="md-nav__link">
+      <a href="../../configuration/turn-off-misp-connector/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    File Storage
+    Turn Off the MISP Integration
     
   </span>
   
@@ -1286,12 +1286,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/connectors/" class="md-nav__link">
+      <a href="../../configuration/update-service-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Connectors
+    Update Service Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-authentication-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/configure-ssl-cassandra-elasticsearch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure Database and Index SSL
     
   </span>
   
@@ -1338,52 +1384,6 @@
   
   <span class="md-ellipsis">
     Pekko (Version 5.4+)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Logs
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../configuration/secret/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Secrets
     
   </span>
   
@@ -1469,54 +1469,13 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_11">
-        
-          
-          <label class="md-nav__link" for="__nav_2_3_11" id="__nav_2_3_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Compliance
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3_11">
-            <span class="md-nav__icon md-icon"></span>
-            Compliance
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../configuration/gdpr/" class="md-nav__link">
+      <a href="../../configuration/update-log-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    General Data Protection Regulation (GDPR)
+    Update Log Configuration
     
   </span>
   
@@ -1527,9 +1486,24 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/enable-gdpr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Enable GDPR Compliance Feature
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -14914,8 +14888,8 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 <p>Replace <code>&lt;directory_path&gt;</code> with the actual directory path. Do this for each directory listed in the previous step.</p>
 </li>
 <li>
-<p>Recommended: In the <code>cassandra.yaml</code> file, enable password authentication.</p>
-<p>To enable authentication, set the following parameters with these exact values:</p>
+<p>Recommended: In the <code>cassandra.yaml</code> file, enable authentication.</p>
+<p>Set the following parameters with these exact values:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">authenticator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PasswordAuthenticator</span>
 <span class="nt">authorizer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CassandraAuthorizer</span><span class="w"> </span>
 </code></pre></div>
@@ -14952,7 +14926,7 @@ authorizer: CassandraAuthorizer
 <p>Check whether the Cassandra service started automatically before configuring it.</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
 </code></pre></div>
-<p>If it is running, stop it and remove existing data.</p>
+<p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
 sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/cassandra/*
 </code></pre></div>
@@ -15369,7 +15343,7 @@ xpack.security.enabled: true
 <p>Check whether the Elasticsearch service started automatically before configuring it.</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
-<p>If it is running, stop it and remove existing data.</p>
+<p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
 sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/elasticsearch/*
 </code></pre></div>
@@ -15398,7 +15372,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <p>Check whether the Elasticsearch service started automatically before configuring it.</p>
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
-<p>If it is running, stop it and remove existing data.</p>
+<p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
 sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/elasticsearch/*
 </code></pre></div>
@@ -15434,11 +15408,10 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <h3 id="step-44-permissions">Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in <a href="#step-42-configure-elasticsearch">Step 4.2</a>)<a class="headerlink" href="#step-44-permissions" title="Permanent link">#</a></h3>
 <ol>
 <li>
-<p>Optional: Create a <code>thehive</code> user.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-users<span class="w"> </span>useradd<span class="w"> </span>thehive<span class="w"> </span>-p<span class="w"> </span>&lt;password_thehive_user&gt;<span class="w"> </span>-r<span class="w"> </span>superuser
+<p>Create a <code>thehive</code> user.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-users<span class="w"> </span>useradd<span class="w"> </span>thehive<span class="w"> </span>-p<span class="w"> </span>&lt;thehive_user_password&gt;<span class="w"> </span>-r<span class="w"> </span>superuser
 </code></pre></div>
-<p>Replace <code>&lt;password_thehive_user&gt;</code> with a secure password you choose for your TheHive user.</p>
-<p>Skip this step if you already have a suitable user.</p>
+<p>Replace <code>&lt;thehive_user_password&gt;</code> with a secure password you choose for your TheHive user.</p>
 <div class="admonition tip">
 <p class="admonition-title">Note this password</p>
 <p>Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.</p>
@@ -15463,7 +15436,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <ul>
 <li>Create a role:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;password_elastic_user&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -15474,13 +15447,13 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <span class="s1">  ]</span>
 <span class="s1">}'</span>
 </code></pre></div>
-<p>Replace <code>&lt;password_elastic_user&gt;</code> with the password you set for the <code>elastic</code> user.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for role creation</a>.</p>
 <ul>
 <li>Update a role:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;password_elastic_user&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -15492,21 +15465,20 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <span class="s1">}'</span>
 </code></pre></div>
 <p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
-<p>Replace <code>&lt;password_elastic_user&gt;</code> with the password you set for the <code>elastic</code> user.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for updating roles</a>.</p>
 </li>
 <li>
 <p>Assign the role to the user you'll use for TheHive.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;password_elastic_user&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 -d<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">    "password" : "&lt;password_thehive_user&gt;",</span>
+<span class="s1">    "password" : "&lt;thehive_user_password&gt;",</span>
 <span class="s1">    "roles" : ["thehive_role"]</span>
 <span class="s1">}'</span>
 </code></pre></div>
-<p>Replace <code>&lt;password_thehive_user&gt;</code> with the password you set for the <code>thehive</code> user.</p>
-<p>Replace <code>&lt;password_elastic_user&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>Replace <code>thehive</code> with your actual user name if different.</p>
+<p>Replace <code>&lt;thehive_user_password&gt;</code> with the password you set for the <code>thehive</code> user.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>Replace <code>thehive_role</code> with actual role name if different.</p>
 <p>If successful, the command should return: <code>{"created":true}</code>.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user">the official Elasticsearch API documentation for updating users</a>.</p>
@@ -15873,8 +15845,8 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <p>Replace <code>http://localhost:9000</code> with the actual public URL that users will use to access TheHive.</p>
 <h5 id="mandatory-elements">Mandatory elements<a class="headerlink" href="#mandatory-elements" title="Permanent link">#</a></h5>
 <ul>
-<li>Protocol: Either <code>http</code> or <code>https</code>, depending on whether you <a href="../../configuration/ssl/configure-https-reverse-proxy/">configured HTTPS using a reverse proxy</a>.</li>
-<li>Hostname: The DNS name or IP address that users enter in their browser.</li>
+<li>Protocol: Either <code>http</code> or <code>https</code>, depending on whether you <a href="../../configuration/ssl/configure-https-reverse-proxy/">configured HTTPS with a reverse proxy</a>.</li>
+<li>Host name: The DNS name or IP address that users enter in their browser.</li>
 </ul>
 <h5 id="optional-elements">Optional elements<a class="headerlink" href="#optional-elements" title="Permanent link">#</a></h5>
 <ul>
@@ -15889,11 +15861,11 @@ These settings control how TheHive listens internally on the host and are indepe
 <li>Use <code>http.address</code> and <code>http.port</code> to control how the service listens on the host.</li>
 <li>Use <code>application.baseUrl</code> to define the public URL that TheHive communicates to clients.</li>
 </ul>
-<p>To customize the listen address and port, see <a href="../../configuration/update-service-configuration/#update-the-listen-address-and-port">Service Configuration</a>.</p>
+<p>To customize the listen address and port, see <a href="../../configuration/update-service-configuration/#update-the-listen-address-and-port">Update TheHive Service Configuration</a>.</p>
 </div>
 <h4 id="playhttpcontext">play.http.context<a class="headerlink" href="#playhttpcontext" title="Permanent link">#</a></h4>
 <p>If TheHive is served under a subpath when running behind a reverse proxy, set <code>play.http.context</code> to the matching path segment.</p>
-<p>For configuration details, see <a href="../../configuration/update-service-configuration/#set-a-context-path">Service Configuration</a>.</p>
+<p>For configuration details, see <a href="../../configuration/update-service-configuration/#set-a-context-path">Update TheHive Service Configuration</a>.</p>
 <p>For additional guidance on proxy usage, see <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Service configuration examples</p>
@@ -15924,19 +15896,32 @@ These settings control how TheHive listens internally on the host and are indepe
 </div>
 </li>
 <li>
-<p>Optional: Configure the secret key manually.</p>
-<p>This step is only required if you aren't using the DEB or RPM installation methods.</p>
-<p>In this case, you must manually generate and define a secret key in <code>/etc/thehive/secret.conf</code>:</p>
+<p>Optional: Configure the secret key for the Play Framework.</p>
+<p>TheHive uses a secret key to sign session cookies and ensure secure user authentication.</p>
+<p>Skip this step if you installed TheHive using DEB or RPM packages—they generate the key automatically.</p>
+<p>a. For other installation methods, generate and configure a secret key.</p>
 <div class="highlight"><pre><span></span><code>cat<span class="w"> </span>&gt;<span class="w"> </span>/etc/thehive/secret.conf<span class="w"> </span><span class="s">&lt;&lt; _EOF_</span>
 <span class="s">play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"</span>
 <span class="s">_EOF_</span>
 </code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Minimum key length</p>
+</div>
+<p>TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.</p>
+<p>b. Set appropriate file permissions.</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/etc/thehive/secret.conf
+chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive/secret.conf
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Security requirements</p>
+<p>Never share or commit your secret key to version control. Use different keys for each environment (development, staging, production).</p>
+</div>
 </li>
 <li>
 <p>In the <code>application.conf</code> file, configure the database and index.</p>
 <div class="admonition example">
 <p class="admonition-title">Example of database and index configuration with authentication</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># content from /etc/thehive/application.conf</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># Content from /etc/thehive/application.conf</span>
 <span class="p p-Indicator">[</span><span class="nv">..</span><span class="p p-Indicator">]</span>
 <span class="c1"># Database and index configuration</span>
 <span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span>
@@ -15947,7 +15932,6 @@ These settings control how TheHive listens internally on the host and are indepe
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">password = "&lt;thehive_role_password&gt;"</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cql {</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = &lt;cluster_name&gt;</span>
 <span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">keyspace = thehive</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
@@ -15962,7 +15946,7 @@ These settings control how TheHive listens internally on the host and are indepe
 <span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">type = basic</span>
 <span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">basic {</span>
 <span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
-<span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">password = "&lt;password_thehive_user&gt;"</span>
+<span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">password = "&lt;thehive_user_password&gt;"</span>
 <span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">}</span>
@@ -15973,9 +15957,9 @@ These settings control how TheHive listens internally on the host and are indepe
 </code></pre></div>
 </div>
 <p>Replace <code>&lt;thehive_role_password&gt;</code> with the password set in <a href="#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32">Step 3.6</a>.</p>
-<p>Replace <code>&lt;password_thehive_user&gt;</code> with the password set in <a href="#step-44-permissions">Step 4.4</a>.</p>
-<p>Replace <code>&lt;cluster_name&gt;</code> with the value you set in the <code>cassandra.yaml</code> configuration file.</p>
+<p>Replace <code>&lt;thehive_user_password&gt;</code> with the password set in <a href="#step-44-permissions">Step 4.4</a>.</p>
 <p>You can remove the lines under <code># Cassandra authentication (recommended)</code> and <code># Elasticsearch authentication (recommended)</code> if you didn’t enable authentication for Cassandra or Elasticsearch.</p>
+<p>To set up SSL for Cassandra and Elasticsearch connections, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
 </li>
 <li>
 <p>Save your modifications in the <code>application.conf</code> file.</p>
@@ -16200,6 +16184,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <h2 id="advanced-configuration">Advanced configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">#</a></h2>
 <p>For additional customization, see the Configuration and Operations sections of this documentation.</p>
 <p>To enable HTTPS, follow the instructions in <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
+<p>To enable GDPR compliance, follow the instructions in <a href="../../configuration/enable-gdpr/">Enable the GDPR Compliance Feature</a>.</p>
 <hr>
 <h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">#</a></h2>
 <p>Choose between cold backups or hot backups depending on your operational requirements.  </p>
@@ -16211,11 +16196,13 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <h2>Next steps</h2>
 
 <ul>
-<li><a href="../../configuration/database/">Database and Index Configuration</a></li>
-<li><a href="../../configuration/logs/">Logs Configuration</a></li>
+<li><a href="../../configuration/turn-off-cortex-connector/">Turn Off The Cortex Integration</a></li>
+<li><a href="../../configuration/turn-off-misp-connector/">Turn Off The MISP Integration</a></li>
+<li><a href="../../configuration/update-log-configuration/">Update Log Configuration</a></li>
+<li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
+<li><a href="../../configuration/enable-gdpr/">Enable the GDPR Compliance Feature</a></li>
 <li><a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a></li>
 <li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
-<li><a href="../../configuration/gdpr/">GDPR Compliance in TheHive 5.x</a></li>
 <li><a href="../../operations/backup-restore/backup/hot-backup/">Hot Backups</a></li>
 <li><a href="../../operations/backup-restore/backup/physical-server/">Cold Backups for Physical Servers</a></li>
 <li><a href="../../operations/backup-restore/backup/virtual-server/">Cold Backups for Virtual Servers</a></li>
