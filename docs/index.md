@@ -155,6 +155,8 @@ sections:
               url: '/thehive/installation/installation-methods/'
             - text: 'Review system requirements'
               url: '/thehive/installation/system-requirements/'
+            - text: 'Review software requirements'
+              url: '/thehive/installation/software-requirements/'
             - text: 'Install TheHive on Linux'
               url: '/thehive/installation/installation-guide-linux-standalone-server/'
             - text: 'Use the one-command install'
