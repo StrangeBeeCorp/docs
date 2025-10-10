@@ -20,7 +20,7 @@
 
 #### Elasticsearch 9 support
 
-TheHive [now supports Elasticsearch 9](../installation/software-requirements.md) as a back-end index engine. See [the official Elasticsearch upgrade guide](https://www.elastic.co/docs/solutions/observability/apm/upgrade-to-version-9) for migration details.
+TheHive [now supports Elasticsearch 9](../installation/software-requirements.md) as a back-end index engine. See [the official Elasticsearch upgrade guide](https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster) for migration details.
 
 ## 5.5.9 - September 16, 2025
 
