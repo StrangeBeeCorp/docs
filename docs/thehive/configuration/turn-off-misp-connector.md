@@ -1,4 +1,4 @@
-# Turn Off The MISP Integration
+# Turn Off the MISP Integration
 
 Turn off the MISP integration if you don't use [MISP events](../administration/misp-integration/about-misp-integration.md). [MISP taxonomies](../administration/taxonomies/about-taxonomies.md) remain available as they're imported during TheHive installation.
 

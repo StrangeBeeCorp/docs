@@ -1,4 +1,4 @@
-# Turn Off The Cortex Integration
+# Turn Off the Cortex Integration
 
 Turn off the Cortex integration if you don't use [Cortex analyzers or responders](../administration/cortex/about-cortex.md).
 
