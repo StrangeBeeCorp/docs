@@ -459,7 +459,6 @@ nav:
       - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
       - 'Configure JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
       - 'Configure HTTPS Using a Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
-      - 'Update Service Configuration': thehive/configuration/update-service-configuration.md
       - 'Update Log Configuration': thehive/configuration/update-log-configuration.md
       - 'Enable GDPR Compliance Feature': thehive/configuration/enable-gdpr.md
     - 'Operations':
