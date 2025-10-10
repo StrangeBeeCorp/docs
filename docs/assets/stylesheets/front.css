@@ -1356,7 +1356,7 @@ footer.footer .content .head .links .pan .list>div a b {
     line-height: 142%;
     background: #1969FF;
     border-radius: 0.625rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.15rem 0.4rem 0;
     white-space: nowrap;
     text-decoration: underline 1px #1969FF;
 }

@@ -121,7 +121,15 @@ header.md-header {
     background: #ebecef; }
   header.md-header .md-search__suggest {
     padding-left: 0 !important;
-    pointer-events: none; }
+    pointer-events: none;
+    font-family: 'Poppins';
+    font-size: 0.72917rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 144%; }
+    @media (max-width: 959px) {
+      header.md-header .md-search__suggest {
+        left: 67px; } }
   header.md-header .md-search__options {
     display: inline-flex;
     flex-direction: row;
