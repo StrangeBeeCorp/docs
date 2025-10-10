@@ -195,11 +195,10 @@ akka {
 
 <h2>Next steps</h2>
 
-* [Database and Index Configuration](database.md)
-* [File Storage Configuration](file-storage.md)
-* [TheHive Connectors](connectors.md)
-* [Logs Configuration](logs.md)
-* [Secret Configuration File](secret.md)
 * [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
 * [Update TheHive Service Configuration](update-service-configuration.md)
-* [GDPR Compliance in TheHive 5.x](gdpr.md)
+* [Turn Off The Cortex Integration](turn-off-cortex-connector.md)
+* [Turn Off The MISP Integration](turn-off-misp-connector.md)
+* [Update Log Configuration](update-log-configuration.md)
+* [Update TheHive Service Configuration](update-service-configuration.md)
+* [Enable the GDPR Compliance Feature](enable-gdpr.md)

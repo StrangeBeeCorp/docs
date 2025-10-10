@@ -1,10 +1,10 @@
 # TheHive Installation Methods
 
-TheHive can be installed on a single server or deployed in a clustered environment, depending on your infrastructure requirements. Choose the best approach for your use case.
+TheHive can be installed on a standalone server or deployed in a clustered environment, depending on your infrastructure requirements. Choose the best approach for your use case.
 
 ## Single server installation
 
-Install TheHive and all required components on a single server. See [the architecture overview](../overview/index.md#architecture) for details.
+Install TheHive and all required components on a standalone server. See [the architecture overview](../overview/index.md#architecture) for details.
 
 ### :material-debian: Debian / :material-ubuntu: Ubuntu
 

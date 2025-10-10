@@ -255,9 +255,9 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
 
     Replace `<directory_path>` with the actual directory path. Do this for each directory listed in the previous step.
 
-6. Recommended: In the `cassandra.yaml` file, enable password authentication.
+6. Recommended: In the `cassandra.yaml` file, enable authentication.
 
-    To enable authentication, set the following parameters with these exact values:
+    Set the following parameters with these exact values:
 
     ```yaml
     authenticator: PasswordAuthenticator
@@ -294,7 +294,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
         systemctl status cassandra
         ```
 
-        If it is running, stop it and remove existing data.
+        If it's running, stop it and remove existing data.
 
         ```bash
         sudo systemctl stop cassandra
@@ -361,71 +361,11 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
 
 ### Step 3.4: Set a secure password for authentication (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
 
-By default, Cassandra uses the `cassandra` username and the password `cassandra`. For security reasons, especially in production environments, you must change this password immediately after setup.
-
-To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.
-
-1. Connect to Cassandra using default credentials.
-
-    ```bash
-    cqlsh -u cassandra -p cassandra
-    ```
-
-    !!! info "Cqlsh may not be available on RPM-based systems"
-        On some RPM-based distributions, the `cqlsh` client isn't included with the `cassandra` package. If running cqlsh gives an error, download the [official Apache Cassandra tarball](https://downloads.apache.org/cassandra/) that matches your server version and extract it. Then run the bundled client: `./bin/cqlsh -u cassandra -p cassandra`.
-
-    If the connection is successful, you'll see output similar to:
-
-    ```
-    Connected to xxx at xx.xx.xx.xx:xxxx
-    [cqlsh 6.1.0 | Cassandra 4.1.9 | CQL spec 3.4.6 | Native protocol v5]
-    ```
-
-2. Change the default password.
-
-    ```bash
-    ALTER USER cassandra WITH PASSWORD '<authentication_cassandra_password>';
-    ```
-
-    Replace `<authentication_cassandra_password>` with the password you intend to use for the `cassandra` superuser account.
-
-3. Disconnect from the session.
-
-    Press **Ctrl+D** to exit the `cqlsh` shell.
-
-4. Reconnect using your new password.
-
-    ```bash
-    cqlsh -u cassandra
-    ```
+{% include-markdown "includes/set-password-authentication-cassandra.md" %}
 
 ### Step 3.5: Create a new administrator role (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
 
-To avoid relying on the default `cassandra` superuser account, create a new administrator role and then delete the default user.
-
-1. Create the `admin` role.
-
-    ```bash
-    CREATE ROLE admin WITH PASSWORD = '<authentication_admin_password>' AND LOGIN = true AND SUPERUSER = true;
-    ```
-
-    Replace `<authentication_admin_password>` with the password you intend to use for the `admin` superuser account.
-
-2. Disconnect from the session.
-
-    Press **Ctrl+D** to exit the `cqlsh` shell.
-
-3. Reconnect as the new admin.
-
-    ```bash
-    cqlsh -u admin
-    ```
-
-4. Remove the default `cassandra` user.
-
-    ```bash
-    DROP ROLE cassandra;
-    ```
+{% include-markdown "includes/create-administrator-role-cassandra.md" %}
 
 ### Step 3.6: Create the keyspace and a role for TheHive (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
 
@@ -735,7 +675,7 @@ For additional configuration options, refer to:
         systemctl status elasticsearch
         ```
 
-        If it is running, stop it and remove existing data.
+        If it's running, stop it and remove existing data.
 
         ```bash
         sudo systemctl stop elasticsearch
@@ -771,7 +711,7 @@ For additional configuration options, refer to:
         systemctl status elasticsearch
         ```
 
-        If it is running, stop it and remove existing data.
+        If it's running, stop it and remove existing data.
 
         ```bash
         sudo systemctl stop elasticsearch
@@ -806,101 +746,7 @@ For additional configuration options, refer to:
 
 ### Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in [Step 4.2](#step-42-configure-elasticsearch)) {#step-44-permissions}
 
-1. Optional: Create a `thehive` user.
-
-    ```bash
-    sudo /usr/share/elasticsearch/bin/elasticsearch-users useradd thehive -p <password_thehive_user> -r superuser
-    ```
-
-    Replace `<password_thehive_user>` with a secure password you choose for your TheHive user.
-
-    Skip this step if you already have a suitable user.
-
-    !!! tip "Note this password"
-        Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.
-
-2. Optional: Set a password for the `elastic` user.
-
-    * [For Elasticsearch 7.x](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords):
-
-    ```bash
-    sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
-    ```
-
-    * [For Elasticsearch 8.0](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password):
-
-    ```bash
-    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password
-    ```
-
-    Skip this step if the password is already set.
-
-3. Create or update a role with the privileges needed for TheHive.
-
-    * Create a role:
-
-    ```bash
-    curl -u elastic:<password_elastic_user> -X POST "http://localhost:9200/_security/role/thehive_role" -H "Content-Type: application/json" -d '
-    {
-      "cluster": ["manage"],
-      "indices": [
-        {
-          "names": ["thehive*"],
-          "privileges": ["all"]
-        }
-      ]
-    }'
-    ```
-
-    Replace `<password_elastic_user>` with the password you set for the `elastic` user.
-
-    If successful, the command should return: `{"role":{"created":true}}`.
-
-    For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role).
-
-    * Update a role:
-
-    ```bash
-    curl -u elastic:<password_elastic_user> -X PUT "http://localhost:9200/_security/role/<role>" -H "Content-Type: application/json" -d '
-    {
-      "cluster": ["manage"],
-      "indices": [
-        {
-          "names": ["thehive*"],
-          "privileges": ["all"]
-        }
-      ]
-    }'
-    ```
-
-    Replace `<role>` with the actual role name you want to update.
-    
-    Replace `<password_elastic_user>` with the password you set for the `elastic` user.
-
-    For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role).
-
-4. Assign the role to the user you'll use for TheHive.
-
-    ```bash
-    curl -u elastic:<password_elastic_user> -X PUT "http://localhost:9200/_security/user/thehive" \
-    -H "Content-Type: application/json" \
-    -d '{
-        "password" : "<password_thehive_user>",
-        "roles" : ["thehive_role"]
-    }'
-    ```
-
-    Replace `<password_thehive_user>` with the password you set for the `thehive` user.
-    
-    Replace `<password_elastic_user>` with the password you set for the `elastic` user.
-    
-    Replace `thehive` with your actual user name if different.
-    
-    Replace `thehive_role` with actual role name if different.
-
-    If successful, the command should return: `{"created":true}`.
-
-    For more details, refer to [the official Elasticsearch API documentation for updating users](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user).
+{% include-markdown "includes/set-user-thehive-elasticsearch.md" %}
 
 ---
 
@@ -1083,8 +929,8 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     ##### Mandatory elements
 
-    * Protocol: Either `http` or `https`, depending on whether you [configured HTTPS using a reverse proxy](../configuration/ssl/configure-https-reverse-proxy.md).
-    * Hostname: The DNS name or IP address that users enter in their browser.
+    * Protocol: Either `http` or `https`, depending on whether you [configured HTTPS with a reverse proxy](../configuration/ssl/configure-https-reverse-proxy.md).
+    * Host name: The DNS name or IP address that users enter in their browser.
 
     ##### Optional elements
 
@@ -1098,23 +944,25 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
         * Use `http.address` and `http.port` to control how the service listens on the host.
         * Use `application.baseUrl` to define the public URL that TheHive communicates to clients.
 
-        To customize the listen address and port, see [Service Configuration](../configuration/update-service-configuration.md#update-the-listen-address-and-port).
+        To customize the listen address and port, see [Update TheHive Service Configuration](../configuration/update-service-configuration.md#update-the-listen-address-and-port).
 
     #### play.http.context
 
     If TheHive is served under a subpath when running behind a reverse proxy, set `play.http.context` to the matching path segment.
     
-    For configuration details, see [Service Configuration](../configuration/update-service-configuration.md#set-a-context-path).
+    For configuration details, see [Update TheHive Service Configuration](../configuration/update-service-configuration.md#set-a-context-path).
 
     For additional guidance on proxy usage, see [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
 
     {% include-markdown "includes/example-configuration-service.md" %}
 
-3. Optional: Configure the secret key manually.
+3. Optional: Configure the secret key for the Play Framework.
 
-    This step is only required if you aren't using the DEB or RPM installation methods.
+    TheHive uses a secret key to sign session cookies and ensure secure user authentication.
+    
+    Skip this step if you installed TheHive using DEB or RPM packages—they generate the key automatically.
 
-    In this case, you must manually generate and define a secret key in `/etc/thehive/secret.conf`:
+    a. For other installation methods, generate and configure a secret key.
 
     ```bash
     cat > /etc/thehive/secret.conf << _EOF_
@@ -1122,11 +970,24 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
     _EOF_
     ```
 
+    !!! warning "Minimum key length"
+    TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.
+
+    b. Set appropriate file permissions.
+    
+    ```bash
+    chmod 400 /etc/thehive/secret.conf
+    chown thehive:thehive /etc/thehive/secret.conf
+    ```
+
+    !!! danger "Security requirements"
+        Never share or commit your secret key to version control. Use different keys for each environment (development, staging, production).
+
 4. In the `application.conf` file, configure the database and index.
 
     !!! example "Example of database and index configuration with authentication"
         ```yaml
-        # content from /etc/thehive/application.conf
+        # Content from /etc/thehive/application.conf
         [..]
         # Database and index configuration
         db.janusgraph {
@@ -1137,7 +998,6 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
                 username = "thehive"
                 password = "<thehive_role_password>"
                 cql {
-                    cluster-name = <cluster_name>
                     keyspace = thehive
                 }
             }
@@ -1152,7 +1012,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
                             type = basic
                             basic {
                                 username = "thehive"
-                                password = "<password_thehive_user>"
+                                password = "<thehive_user_password>"
                             }
                         }
                     }
@@ -1164,11 +1024,11 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     Replace `<thehive_role_password>` with the password set in [Step 3.6](#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32).
 
-    Replace `<password_thehive_user>` with the password set in [Step 4.4](#step-44-permissions).
-
-    Replace `<cluster_name>` with the value you set in the `cassandra.yaml` configuration file.
+    Replace `<thehive_user_password>` with the password set in [Step 4.4](#step-44-permissions).
 
     You can remove the lines under `# Cassandra authentication (recommended)` and `# Elasticsearch authentication (recommended)` if you didn’t enable authentication for Cassandra or Elasticsearch.
+
+    To set up SSL for Cassandra and Elasticsearch connections, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md).
 
 5. Save your modifications in the `application.conf` file.
 
@@ -1282,6 +1142,8 @@ For additional customization, see the Configuration and Operations sections of t
 
 To enable HTTPS, follow the instructions in [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
 
+To enable GDPR compliance, follow the instructions in [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md).
+
 ---
 
 ## Backup
@@ -1300,11 +1162,13 @@ See the [Monitoring](../operations/monitoring.md) page for detailed instructions
 
 <h2>Next steps</h2>
 
-* [Database and Index Configuration](../configuration/database.md)
-* [Logs Configuration](../configuration/logs.md)
+* [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
+* [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
 * [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
 * [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
-* [GDPR Compliance in TheHive 5.x](../configuration/gdpr.md)
 * [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
 * [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)
 * [Cold Backups for Virtual Servers](../operations/backup-restore/backup/virtual-server.md)

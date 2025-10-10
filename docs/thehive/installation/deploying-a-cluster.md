@@ -347,7 +347,7 @@ For each node, update the configuration files located at `/etc/cassandra/elastic
     xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
     ```
 
-    1. Replace es1 with the IP or hostname of the respective node.
+    1. Replace es1 with the IP or host name of the respective node.
     2. Keep this parameter with the same value for all nodes to ensure proper cluster discovery.
 
 
@@ -565,22 +565,52 @@ To ensure proper database and index engine configuration for TheHive, update the
     ```yaml title="/etc/thehive/application.conf" hl_lines="7"
     ## Database configuration
     db.janusgraph {
-      storage {
+        storage {
         ## Cassandra configuration
         # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
-        backend = cql
-        hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"] #(1)
-        # Cassandra authentication (if configured)
-        username = "thehive"
-        password = "PASSWORD"
-        cql {
-          cluster-name = thp
-          keyspace = thehive
+            backend = cql
+            hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"] #(1)
+            # Cassandra authentication (if configured)
+            username = "thehive"
+            password = "PASSWORD"
+            cql {
+                cluster-name = thp
+                keyspace = thehive
+            }
         }
-      }
+        index.search {
+        ## Elasticsearch configuration
+            backend = elasticsearch
+            hostname = ["<ip node>"]
+            index-name = thehive
+            # Elasticsearch authentication (recommended)
+            elasticsearch {
+                http {
+                    auth {
+                        type = basic
+                        basic {
+                            username = "httpuser"
+                            password = "httppassword"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+!!! warning "Consistent configuration across all TheHive nodes"
+    In this configuration, all TheHive nodes should have the same configuration.
+    
+    Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line: 
+
+    ```yaml
+    script.allowed_types: inline,stored
     ```
 
 Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` with the respective IP addresses of your Cassandra nodes. This configuration ensures proper communication between TheHive and the Cassandra database, facilitating seamless operation of the platform. Additionally, if authentication is enabled for Cassandra, provide the appropriate username and password in the configuration.
+
+To learn about how to configure SSL for Cassandra and Elasticsearch, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md).
 
 &nbsp;
 
@@ -624,30 +654,81 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
 
     !!! Example ""
 
-        ```yaml title="/etc/thehive/application.conf"
-        storage {
-        provider: s3
-        s3 {
-            bucket = "thehive"
-            readTimeout = 1 minute
-            writeTimeout = 1 minute
-            chunkSize = 1 MB
-            endpoint = "http://<IP_MINIO_1>:9100"
-            accessKey = "thehive"
-            aws.credentials.provider = "static"
-            aws.credentials.secret-access-key = "password"
-            access-style = path
-            aws.region.provider = "static"
-            aws.region.default-region = "us-east-1"
+        ```yaml title="/etc/thehive/application.conf with TheHive 5.0.x"
+            ## Attachment storage configuration
+            storage {
+              provider: s3
+              s3 {
+                bucket = "thehive"
+                readTimeout = 1 minute
+                writeTimeout = 1 minute
+                chunkSize = 1 MB
+                endpoint = "http://<IP_MINIO_1>:9100"
+                accessKey = "thehive"
+                secretKey = "password"
+                region = "us-east-1"
+              }
             }
-        }
+            alpakka.s3.access-style = path
+        ```
+
+        ```yaml title="/etc/thehive/application.conf with TheHive > 5.0"
+            storage {
+              provider: s3
+              s3 {
+                bucket = "thehive"
+                readTimeout = 1 minute
+                writeTimeout = 1 minute
+                chunkSize = 1 MB
+                endpoint = "http://<IP_MINIO_1>:9100"
+                accessKey = "thehive"
+                aws.credentials.provider = "static"
+                aws.credentials.secret-access-key = "password"
+                access-style = path
+                aws.region.provider = "static"
+                aws.region.default-region = "us-east-1"
+              }
+            }
         ```
 
     - The provided configuration is backward compatible, ensuring compatibility with existing setups.
 
+    - The default region is us-east-1, but it's optional if not specified in the MinIO configuration.
+
     - Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancing-with-haproxy)).
 
-&nbsp;
+#### Optional: Configure the secret key for the Play Framework
+
+TheHive uses a secret key to sign session cookies and ensure secure user authentication.
+
+Skip this step if you installed TheHive using DEB or RPM packages—they generate the key automatically.
+
+For other installation methods:
+
+1. Generate a secret key on the first node.
+
+```bash
+cat > /etc/thehive/secret.conf << _EOF_
+play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+_EOF_
+```
+
+!!! warning "Minimum key length"
+TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.
+
+2. Set appropriate file permissions.
+
+```bash
+chmod 400 /etc/thehive/secret.conf
+chown thehive:thehive /etc/thehive/secret.conf
+```
+
+3. Copy the `/etc/thehive/secret.conf` file to all other nodes in the cluster.
+
+4. Verify the same permissions on each node.
+
+!!! danger "Security requirements"
+    Never share or commit your secret key to version control. All nodes in a cluster must use the same key, but different environments (development, staging, production) must use different keys.
 
 ### Start the service
 
@@ -659,6 +740,9 @@ Once the configuration is updated, start TheHive service using the following com
     systemctl start thehive
     ```
 This command initiates TheHive service, enabling S3 file storage functionality as configured. Make sure to execute this command on each node of TheHive cluster to ensure proper functionality across the entire setup.
+
+!!! warning "Initial startup delay"
+    The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.
 
 ---
 

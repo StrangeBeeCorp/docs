@@ -40,7 +40,7 @@ If a disk in your MinIO cluster is faulty and needs to be replaced, you can perf
 
 ## Replace a Node
 
-In the event that a server within your MinIO cluster has crashed and cannot be recovered, you can install a new server to replace it. Ensure that the new node is configured with the same IP address or hostname as the old node. Once the new server is operational and has joined the cluster, initiate a disk heal by running `mc admin heal`.
+In the event that a server within your MinIO cluster has crashed and cannot be recovered, you can install a new server to replace it. Ensure that the new node is configured with the same IP address or host name as the old node. Once the new server is operational and has joined the cluster, initiate a disk heal by running `mc admin heal`.
 
 &nbsp;
 
@@ -52,7 +52,7 @@ In the event that a server within your MinIO cluster has crashed and cannot be r
 
       - Ensure the new server has the same MinIO version as the existing cluster nodes.
 
-      - Assign the same IP address or hostname as the node being replaced.
+      - Assign the same IP address or host name as the node being replaced.
 
 2. **Prepare the Existing Cluster**
 
@@ -111,13 +111,13 @@ Note: MinIO strongly recommends restarting all nodes simultaneously when adding 
 
       - Ensure the new server has the same MinIO version as the existing cluster nodes.
       
-      - Assign a static IP address or configure a hostname for the new node that matches the existing cluster nodes.
+      - Assign a static IP address or configure a host name for the new node that matches the existing cluster nodes.
 
 2. **Update MinIO Configuration**
 
       - Access the configuration file (`config.json`) of each existing MinIO node in the cluster.
 
-      - Add the details of the new node (IP address or hostname) to the `config.json` file of each node under the `cluster` section:
+      - Add the details of the new node (IP address or host name) to the `config.json` file of each node under the `cluster` section:
       ```json
       {
          "version": "minio",

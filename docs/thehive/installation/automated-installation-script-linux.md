@@ -10,7 +10,7 @@ If you prefer a faster setup than going through [the complete installation guide
     * [Wget](https://www.gnu.org/software/wget/) installed
 
 !!! danger "No authentication configured for Cassandra and Elasticsearch"
-    This script doesn't set up authentication for Cassandra or Elasticsearch. For security—especially in production—enable authentication on both services before going live. See the corresponding steps in the [installation guide](installation-guide-linux-standalone-server.md).
+    This script doesn't set up authentication for Cassandra or Elasticsearch. For security—especially in production—enable authentication on both services before going live. See [Configure Database and Index Authentication](../configuration/configure-authentication-cassandra-elasticsearch.md) for instructions.
 
 <h2>Procedure</h2>
 
@@ -35,14 +35,13 @@ If you also want to use the script to install Cortex, refer to the [Cortex insta
 
 <h2>Next steps</h2>
 
-* [Database and Index Configuration](../configuration/database.md)
-* [File Storage Configuration](../configuration/file-storage.md)
-* [TheHive Connectors](../configuration/connectors.md)
-* [Logs Configuration](../configuration/logs.md)
-* [Secret Configuration File](../configuration/secret.md)
 * [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
 * [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
-* [GDPR Compliance in TheHive 5.x](../configuration/gdpr.md)
+* [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
+* [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
 * [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
 * [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)
 * [Cold Backups for Virtual Servers](../operations/backup-restore/backup/virtual-server.md)

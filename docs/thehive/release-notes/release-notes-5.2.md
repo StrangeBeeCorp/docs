@@ -360,7 +360,7 @@ The library dependencies has been updated. The following vulnerabilities has bee
 
 **Docker:**
 
-- Fixed a behavior where cassandra hostnames were discarded when not resolvable by the entrypoint. This caused the application to use the local file database instead of the provided cassandra hosts when no host could be resolved. This issue appeared in environments like docker swarm.
+- Fixed a behavior where cassandra host names were discarded when not resolvable by the entrypoint. This caused the application to use the local file database instead of the provided cassandra hosts when no host could be resolved. This issue appeared in environments like docker swarm.
 
 !!! warning
     The docker will no longer try to connect to a cassandra host called `cassandra` by default. If you use docker-compose with a cassandra database, make sure that you use the option `--cql-hostnames`

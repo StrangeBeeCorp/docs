@@ -1,8 +1,8 @@
 # Configure HTTPS for TheHive With a Reverse Proxy
 
-Use a reverse proxy like nginx to handle SSL/TLS encryption for TheHive. This approach simplifies certificate management and improves performance compared to configuring SSL/TLS directly in TheHive.
+Use a reverse proxy like Nginx to handle SSL/TLS encryption for TheHive. This approach simplifies certificate management and improves performance compared to configuring SSL/TLS directly in TheHive.
 
-For detailed instructions on configuring HTTPS servers with nginx, refer to the [nginx documentation](https://nginx.org/en/docs/http/configuring_https_servers.html).
+For detailed instructions on configuring HTTPS servers with Nginx, refer to the [Nginx documentation](https://nginx.org/en/docs/http/configuring_https_servers.html).
 
 !!! example "Nginx configuration file"
 

@@ -2,6 +2,8 @@
 
 Modify TheHive service configuration to fit your requirements.
 
+{% include-markdown "includes/maintenance-window-required.md" %}
+
 ## Update the listen address and port
 
 By default, TheHive listens on `all network interfaces (0.0.0.0)` on `port 9000`. You can change these settings to control how TheHive listens internally on the host.
@@ -13,6 +15,9 @@ By default, TheHive listens on `all network interfaces (0.0.0.0)` on `port 9000`
     * Use `application.baseUrl` to define the public URL that TheHive communicates to clients.
 
 1. Stop TheHive service.
+
+    !!! info "Service commands"
+        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
 
 2. Open the `application.conf` file using a text editor.
 
@@ -41,6 +46,9 @@ The base URL defines the public address that users access to reach TheHive. This
 
 1. Stop TheHive service.
 
+    !!! info "Service commands"
+        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+
 2. Open the `application.conf` file using a text editor.
 
 3. Update the following line:
@@ -57,7 +65,7 @@ The base URL defines the public address that users access to reach TheHive. This
     #### Mandatory elements
     
      * Protocol: Either `http` or `https`, depending on whether you [configured HTTPS using a reverse proxy](./ssl/configure-https-reverse-proxy.md).
-     * Hostname: The DNS name or IP address that users enter in their browser.
+     * Host name: The DNS name or IP address that users enter in their browser.
     
     #### Optional elements
 
@@ -75,6 +83,9 @@ The base URL defines the public address that users access to reach TheHive. This
 Configure a context path when [TheHive runs behind a reverse proxy](./ssl/configure-https-reverse-proxy.md) under a specific URL path.
 
 1. Stop TheHive service.
+
+    !!! info "Service commands"
+        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
 
 2. Open the `application.conf` file using a text editor.
 
@@ -103,9 +114,12 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
 
 ## Configure streams for reverse proxies
 
-[Reverse proxies](./ssl/configure-https-reverse-proxy.md) like nginx can cause `504 Gateway Time-Out` errors with TheHive long-polling requests. Configure the refresh interval to prevent these timeouts.
+[Reverse proxies](./ssl/configure-https-reverse-proxy.md) like Nginx can cause `504 Gateway Time-Out` errors with TheHive long-polling requests. Configure the refresh interval to prevent these timeouts.
 
 1. Stop TheHive service.
+
+    !!! info "Service commands"
+        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
 
 2. Open the `application.conf` file using a text editor.
 

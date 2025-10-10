@@ -165,7 +165,7 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/thehive/ ${BACKUP_FOLDER}/thehive || { echo "TheHive backup failed"; exit 1; }
     echo "TheHive backup completed."
 
-    ## Copy Casssandra data
+    ## Copy Cassandra data
     echo "Starting Cassandra backup..."
     rsync -aW --no-compress ${DOCKER_COMPOSE_PATH}/cassandra/ ${BACKUP_FOLDER}/cassandra || { echo "Cassandra backup failed"; exit 1; }
     echo "Cassandra backup completed."

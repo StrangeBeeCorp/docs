@@ -39,7 +39,7 @@ To authenticate with Cassandra and manage permissions, follow these steps:
         }
     ```
 
-    Ensure to replace xxx.xxx.xxx.xxx with the appropriate Cassandra hostname or IP address.
+    Ensure to replace xxx.xxx.xxx.xxx with the appropriate Cassandra host name or IP address.
 
 ---
 

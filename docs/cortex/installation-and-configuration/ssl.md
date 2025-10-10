@@ -2,7 +2,7 @@
 
 ## Connect Cortex using HTTPS
 
-We recommend using a reverse proxy to manage SSL layer; for example, Nginx. 
+We recommend using a reverse proxy to manage SSL layer; for example, Nginx.
 
 !!! Example ""
 

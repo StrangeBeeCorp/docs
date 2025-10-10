@@ -139,7 +139,7 @@ You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami
 
 #### Object storage
 
-To support multiple replicas of TheHive, this chart defines an [object storage](../configuration/file-storage.md) in the configuration and deploys a single instance of MinIO.
+To support multiple replicas of TheHive, this chart defines an object storage in the configuration and deploys a single instance of MinIO.
 
 For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:
 

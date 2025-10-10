@@ -22,7 +22,7 @@ Alerts statistics available:
 
 Observables statistics available:
 
-* Observables by datatype
+* Observables by data type
 * Observables as indicator of compromise (IOC)
 
 ## Filters on statistics

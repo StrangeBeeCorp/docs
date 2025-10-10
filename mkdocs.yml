@@ -338,7 +338,12 @@ plugins:
             'thehive/configuration/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/proxy.md': 'thehive/configuration/proxy-settings.md'
             'thehive/configuration/service.md': 'thehive/configuration/update-service-configuration.md'
-
+            'thehive/configuration/connectors.md': 'thehive/configuration/turn-off-cortex-connector.md'
+            'thehive/configuration/database.md': 'thehive/configuration/configure-authentication-cassandra-elasticsearch.md'
+            'thehive/configuration/file-storage.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
+            'thehive/configuration/gdpr.md': 'thehive/configuration/enable-gdpr.md'
+            'thehive/configuration/logs.md': 'thehive/configuration/update-log-configuration.md'
+            'thehive/configuration/secret.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
 
 extra:
   generator: false
@@ -445,23 +450,22 @@ nav:
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
     - 'Configuration':
-      - 'Database & Index': thehive/configuration/database.md
-      - 'File Storage': thehive/configuration/file-storage.md
-      - 'Connectors': thehive/configuration/connectors.md
+      - 'Turn Off the Cortex Integration': thehive/configuration/turn-off-cortex-connector.md
+      - 'Turn Off the MISP Integration': thehive/configuration/turn-off-misp-connector.md
+      - 'Update Service Configuration': thehive/configuration/update-service-configuration.md
+      - 'Configure Database and Index Authentication': thehive/configuration/configure-authentication-cassandra-elasticsearch.md
+      - 'Configure Database and Index SSL': thehive/configuration/configure-ssl-cassandra-elasticsearch.md
       - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
       - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
-      - 'Logs': thehive/configuration/logs.md
-      - 'Secrets': thehive/configuration/secret.md
       - 'Configure JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
       - 'Configure HTTPS Using a Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
       - 'Update Service Configuration': thehive/configuration/update-service-configuration.md
-      - 'Compliance':
-        - 'General Data Protection Regulation (GDPR)': thehive/configuration/gdpr.md
+      - 'Update Log Configuration': thehive/configuration/update-log-configuration.md
+      - 'Enable GDPR Compliance Feature': thehive/configuration/enable-gdpr.md
     - 'Operations':
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
-      # - 'Configure Audit Log Storage in Elasticsearch': thehive/operations/configure-audit-logs-storage-elasticsearch.md
       - 'Backup & Restore Operations': 
         - 'Overview':  thehive/operations/backup-restore/overview.md
         - 'Backup Process':

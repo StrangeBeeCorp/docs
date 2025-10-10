@@ -25,15 +25,13 @@ db.janusgraph {
     # Add this section below the Lucene configuration
     index.search {
         backend: elasticsearch
-        # Hostname(s) of your Elasticsearch server(s)
+        # Host name(s) of your Elasticsearch server(s)
         hostname: ["localhost"]
         # Default is "thehive"
         index-name: thehive
     }
 }
 ```
-
-Refer to the [configuration reference](../configuration/database.md) for more options.
 
 === "Docker"
 
@@ -90,7 +88,7 @@ db.janusgraph {
     # Retain this section
     index.search {
         backend: elasticsearch
-        # Hostname(s) of your Elasticsearch server(s)
+        # Host name(s) of your Elasticsearch server(s)
         hostname: ["localhost"]
         # Default is "thehive"
         index-name: thehive

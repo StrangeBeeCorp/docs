@@ -30,8 +30,14 @@ jobs:
           pip install -r requirements.txt
           mkdocs build
 
+      # https://github.com/rossjrw/pr-preview-action
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./site/
+          source-dir: ./site
           preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          pages-base-url: solid-bassoon-mrqy18o.pages.github.io
+          pages-base-path: .
+          comment: true
+

@@ -156,7 +156,7 @@ Available Options:
 - `--secret <secret>`: Sets the secret used to secure sessions.
 - `--show-secret`: Displays the generated secret.
 - `--no-config-db`: Disables automatic configuration of the database.
-- `--cql-hostnames <host>,<host>,...`: Resolves these hostnames to locate Cassandra instances.
+- `--cql-hostnames <host>,<host>,...`: Resolves these host names to locate Cassandra instances.
 - `--cql-username <username>`: Specifies the username for the Cassandra database.
 - `--cql-password <password>`: Specifies the password for the Cassandra database.
 - `--cql-datacenter <datacenter>`: Specifies the name of the Cassandra datacenter used by the TheHive node. This parameter is new as of version 5.4.7 and can have different values for each node in cluster mode.
@@ -176,7 +176,7 @@ Available Options:
 - `--no-config-cortex`: Excludes Cortex configuration.
 - `--cortex-proto <proto>`: Defines the protocol to connect to Cortex (default: http).
 - `--cortex-port <port>`: Defines the port to connect to Cortex (default: 9001).
-- `--cortex-hostnames <host>,<host>,...`: Resolves these hostnames to locate Cortex instances.
+- `--cortex-hostnames <host>,<host>,...`: Resolves these host names to locate Cortex instances.
 - `--cortex-keys <key>,<key>,...`: Defines Cortex keys.
 - `--kubernetes`: Utilizes the Kubernetes API to join other nodes.
 - `--kubernetes-pod-label-selector <selector>`: Specifies the selector to use to select other pods running the app (default app=thehive).
