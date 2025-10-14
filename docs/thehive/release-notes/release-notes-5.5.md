@@ -16,6 +16,10 @@
 * User creation: Resolved a UI bug affecting the organization name field in the user creation form.
 * Case list: Improved performance by optimizing user permission checks when loading cases.
 
+#### Sharing
+
+Shared task deletion: When a task is deleted in the owner organization, it's now also automatically deleted in all shared organizations.
+
 ### Improvements
 
 #### Elasticsearch 9 support
