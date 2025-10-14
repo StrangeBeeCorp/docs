@@ -93,7 +93,7 @@ TheHive requires Java to run its application server and to manage various proces
         ```bash
         sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
         wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
-        sudo yum install -y java-11-amazon-corretto-devel > /dev/null &
+        sudo yum install -y java-11-amazon-corretto-devel > /dev/null
         echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
         export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
         ```
