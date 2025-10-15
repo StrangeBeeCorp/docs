@@ -22,7 +22,6 @@ If you prefer a faster setup on Linux, you can run an [automated installation sc
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for Linux installation
-    * [Software requirements](software-requirements.md) satisfied for Linux installation
 
 ## Step 1: Install required dependencies
 

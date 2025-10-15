@@ -17,10 +17,7 @@ This guide presents configuration examples for setting up a fault-tolerant clust
     These applications can either be installed on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
 
 !!! warning "Before you begin"
-    To ensure a smooth installation process, make sure you have:
-
-    * [System requirements fully met and verified](system-requirements.md) for Linux installation
-    * [Software requirements](software-requirements.md) satisfied for Linux installation
+    To ensure a smooth installation process, make sure you have [system requirements fully met and verified](system-requirements.md) for Linux installation.
 ---
 
 ## Architecture Diagram
