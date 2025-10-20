@@ -241,7 +241,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
                 },
                 {
                     "_eq": {
-                        "value": "Engineering"
+                        "values": "Engineering"
                     }
                 }
             ]
