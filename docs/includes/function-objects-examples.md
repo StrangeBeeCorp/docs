@@ -1,0 +1,4 @@
+<!--start-alert-creation-->* `alert.create(input: InputCreateAlert): OutputAlert`: Creates a new alert.<!--end-alert-creation-->
+<!--start-alert-update-->* `alert.update(alertId: string, input: InputUpdateAlert): OutputAlert`: Updates an alert by its ID.<!--end-alert-update-->
+<!--start-observable-creation-->* `observable.createInCase(caseId: string, observable: InputObservable): OutputObservable`: Creates an observable within a case.<!--end-observable-creation-->
+<!--start-log-creation-->* `log.create(taskId: string, log: InputCreateLog): OutputLog`: Creates a log entry for a task.<!--end-log-creation-->

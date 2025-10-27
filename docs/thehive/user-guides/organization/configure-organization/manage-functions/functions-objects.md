@@ -1,8 +1,8 @@
 # Functions Objects
 
-This topic lists all available objects for functions in TheHive.
+Functions in TheHive have access to predefined objects that enable interaction with cases, alerts, tasks, observables, and other entities.
 
-!!! info "API documentation"
+!!! info "API documentation for further details"
     The objects in functions are the same as those used in TheHive HTTP API.
 
     For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/).
@@ -27,9 +27,9 @@ This topic lists all available objects for functions in TheHive.
 
 ## Alert
 
-* `alert.create(input: InputCreateAlert): OutputAlert`: Creates a new alert.
+{% include-markdown "includes/function-objects-examples.md" start="<!--start-alert-creation-->" end="<!--end-alert-creation-->" %}
 * `alert.get(id: string): OutputAlert`: Retrieves an alert by its ID.
-* `alert.update(alertId: string, input: InputUpdateAlert): OutputAlert`: Updates an alert by its ID.
+{% include-markdown "includes/function-objects-examples.md" start="<!--start-alert-update-->" end="<!--end-alert-update-->" %}
 * `alert.delete(alertId: string): void`: Deletes an alert by its ID.
 * `alert.createCase(alertId: string, input: InputCreateAlert): OutputCase`: Converts an alert into a case.
 * `alert.bulkDelete(input: {ids: string[]}): void`: Deletes multiple alerts at once.
@@ -73,7 +73,7 @@ This topic lists all available objects for functions in TheHive.
 
 ## Log
 
-* `log.create(taskId: string, log: InputCreateLog): OutputLog`: Creates a log entry for a task.
+{% include-markdown "includes/function-objects-examples.md" start="<!--start-log-creation-->" end="<!--end-log-creation-->" %}
 * `log.update(logId: string, update: InputUpdateLog): void`: Updates a log entry.
 * `log.delete(logId: string): void`: Deletes a log entry.
 * `log.deleteAttachment(logId: string, attachmentId: string): void`: Removes an attachment from a log entry.
@@ -81,7 +81,7 @@ This topic lists all available objects for functions in TheHive.
 
 ## Observable
 
-* `observable.createInCase(caseId: string, observable: InputObservable): OutputObservable`: Creates an observable within a case.
+{% include-markdown "includes/function-objects-examples.md" start="<!--start-observable-creation-->" end="<!--end-observable-creation-->" %}
 * `observable.createInAlert(alertId: string, observable: InputObservable): OutputObservable)`: Creates an observable within an alert.
 * `observable.bulkUpdate(update: {ids: string[]} & Partial<OutputObservable>)`: Updates multiple observables.
 * `observable.get(idOrName: string): OutputObservable`: Retrieves an observable by ID or name.

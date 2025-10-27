@@ -2,7 +2,7 @@
 
 <!-- md:version 5.1 --> <!-- md:permission `manageFunction/invoke` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for invoking a [function](about-functions.md) in TheHive.
+Invoke a [function](about-functions.md) in TheHive.
 
 <h2>Procedure</h2>
 

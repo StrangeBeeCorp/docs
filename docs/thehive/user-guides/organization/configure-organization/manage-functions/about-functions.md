@@ -2,7 +2,7 @@
 
 <!-- md:version 5.1 --> <!-- md:license Platinum -->
 
-A function in TheHive is a controlled JavaScript code block that must be written within TheHive’s interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it can't access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
+A function in TheHive is a controlled JavaScript code block that must be written within TheHive interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it can't access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
 It accepts inputs from external sources, processes data, and interacts with TheHive API to integrate external applications into its workflow.
 
@@ -11,11 +11,19 @@ For example, use a function to create alerts within TheHive without requiring an
 !!! tip "Contribute!"
     Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples). Contributions are welcome!
 
-This topic provides details on the different types and uses of functions in TheHive.
-
 ## Function endpoints
 
 Creating a function in TheHive automatically adds a new public endpoint to the TheHive public API, making it easy to call from an external system.
+
+## Function objects
+
+Functions have access to a set of predefined objects that expose methods for interacting with cases, alerts, tasks, observables, and other entities.
+
+Examples include:
+
+{% include-markdown "includes/function-objects-examples.md" %}
+
+For a complete list of available objects and their methods, see [Functions Objects](functions-objects.md).
 
 ## Trigger sources
 
@@ -71,7 +79,7 @@ The function type defines the scope in which the function can execute.
 
 Below are the different types of functions supported in TheHive:
 
-* **API**: An external service triggers these functions through TheHive public API, enabling automated workflows from outside the platform. A list of available objects appears in the [Functions Objects](functions-objects.md) topic. Execute the function by [invoking it via an HTTP call](invoke-a-function.md).
+* **API**: An external service triggers these functions through TheHive public API, enabling automated workflows from outside the platform. Execute the function by [invoking it via an HTTP call](invoke-a-function.md).
 
 * **Notification**: [These functions act as notifiers](../manage-notifications/notifiers/function.md) and trigger when specific events occur, such as alerts or case updates. They automate the notification process based on predefined conditions.
 

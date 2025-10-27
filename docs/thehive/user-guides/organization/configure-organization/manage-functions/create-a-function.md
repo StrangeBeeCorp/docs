@@ -2,9 +2,7 @@
 
 <!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating a [function](about-functions.md) in TheHive.
-
-Functions automate workflows, process data, and enhance case management.
+Create a [function](about-functions.md) to automate workflows, process data, and enhance case management in TheHive.
 
 <h2>Procedure</h2>
 
