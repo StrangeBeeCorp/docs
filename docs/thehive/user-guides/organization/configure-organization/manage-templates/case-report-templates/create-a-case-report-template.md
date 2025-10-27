@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating a [case report template](about-case-report-templates.md) in TheHive.
-
-Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
+Create a [case report template](about-case-report-templates.md) in TheHive to generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
 
 <h2>Procedure</h2>
 
@@ -28,13 +26,17 @@ Case report templates generate [reports](../../../../analyst-corner/cases/case-r
     **- Description**  
     A brief summary of your case report template, outlining its purpose and contents.
 
-6. Select **Add report template** or **Edit report template**. 
+6. Select **Add report template** or **Edit report template**.
 
 7. Drag available [widgets](widgets-case-report-templates.md) to position them as needed.
 
     ![Drag widgets](../../../../../images/user-guides/organization/configure-organization/manage-templates/drag-and-drop-widgets.gif)
 
 8. Enter the [required information for the widget](widgets-case-report-templates.md).
+
+    {% include-markdown "includes/reports-variables.md" %}
+
+    {% include-markdown "includes/templates-helpers.md" %}
 
 9. Select **Confirm**.
 

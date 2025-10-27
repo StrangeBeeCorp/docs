@@ -1,8 +1,6 @@
 # Widgets in Case Report Templates
 
-Several widget types are available for [case report templates](about-case-report-templates.md) in TheHive.
-
-This topic describes each widget type and its attributes.
+Several widget types are available for [case report templates](about-case-report-templates.md) to customize what information appears in your case reports in TheHive. Widgets are configurable components that display specific case data in different formats.
 
 ## Text widget
 
@@ -14,6 +12,10 @@ Text widget configuration includes:
 * The content of the text block, with the option to include case variables
 
 Format your text block using [TheHive-flavored Markdown syntax](../../../../thehive-flavored-markdown.md).
+
+{% include-markdown "includes/reports-variables.md" %}
+
+{% include-markdown "includes/templates-helpers.md" %}
 
 ## Image widget
 

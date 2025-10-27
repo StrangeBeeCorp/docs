@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for adding and removing widgets in a [case report template](about-case-report-templates.md) in TheHive.
+Add and remove widgets in a [case report template](about-case-report-templates.md) to customize what information appears in your case reports in TheHive. Widgets are configurable components that display specific case data in different formats.
 
 ## Add widgets in a case report template
 
@@ -19,6 +19,10 @@ This topic provides step-by-step instructions for adding and removing widgets in
     ![Drag widgets](../../../../../images/user-guides/organization/configure-organization/manage-templates/drag-and-drop-widgets.gif)
 
 6. Enter the [required information for the widget](widgets-case-report-templates.md).
+
+    {% include-markdown "includes/reports-variables.md" %}
+
+    {% include-markdown "includes/templates-helpers.md" %}
 
 7. Select **Confirm**.
 

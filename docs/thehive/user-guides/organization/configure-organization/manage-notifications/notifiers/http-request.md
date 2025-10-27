@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the *HttpRequest* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
     The *HttpRequest* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
@@ -64,7 +64,7 @@ This topic provides step-by-step instructions for configuring the *HttpRequest* 
 
     {% include-markdown "includes/notifications-variables.md" %}
     
-    {% include-markdown "includes/templates-notifications-helpers.md" %}
+    {% include-markdown "includes/templates-helpers.md" %}
 
     ---
 

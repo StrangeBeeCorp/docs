@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for configuring the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in TheHive.
 
 !!! note "Notifier availability"
     The *EmailerToUser* notifier is available only when you enable the **Send notification to every user in the organization** toggle.
@@ -35,7 +35,7 @@ This topic provides step-by-step instructions for configuring the *EmailerToUser
 
     {% include-markdown "includes/notifications-variables.md" %}
 
-    {% include-markdown "includes/templates-notifications-helpers.md" %}
+    {% include-markdown "includes/templates-helpers.md" %}
 
 6. Select **Confirm**.
 

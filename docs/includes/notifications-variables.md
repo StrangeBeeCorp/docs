@@ -1,2 +1,2 @@
 !!! note "Available variables"
-        You can use variables in certain fields by selecting **Add variable**. Refer to the [Variable Usage Examples](../variable-usage-examples.md) topic for detailed examples.
+    You can use variables in certain fields by selecting **Add variable**. Refer to the [Variable Usage Examples](/thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/) topic for detailed examples.
