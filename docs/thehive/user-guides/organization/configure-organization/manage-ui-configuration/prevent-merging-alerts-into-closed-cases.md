@@ -2,11 +2,11 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for deactivating the ability to [merge alerts into closed cases](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md) in TheHive.
+By default, TheHive allows users to [merge alerts into closed cases](../../../analyst-corner/alerts/add-an-alert-to-an-existing-case.md).
 
-A closed case is one with a [status](../../../../administration/status/about-statuses.md) assigned to the *Closed* stage.
+You can deactivate this capability to prevent modifications to cases that have been completed.
 
-By default, it's possible to merge alerts into a closed case. Use this procedure to restrict merging alerts into cases statuses linked to the *New* or *In progress* stages.
+A closed case is any case with a [status](../../../../administration/status/about-statuses.md) assigned to the *Closed* stage.
 
 <h2>Procedure</h2>
 
@@ -20,6 +20,7 @@ By default, it's possible to merge alerts into a closed case. Use this procedure
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Pause Dashboard Refresh](pause-dashboard-refresh.md)
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)

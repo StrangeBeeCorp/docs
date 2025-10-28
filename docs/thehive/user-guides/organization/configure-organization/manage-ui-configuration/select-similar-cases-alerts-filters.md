@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for selecting filters to apply on the [**Similar cases** and **Similar alerts** tabs](../../../analyst-corner/cases/observables/about-observables.md#similar-alerts-and-cases) in TheHive.
+Select filters to apply on the [**Similar cases** and **Similar alerts** tabs](../../../analyst-corner/cases/observables/about-observables.md#similar-alerts-and-cases) in TheHive.
 
 The **Similar cases** and **Similar alerts** tabs display cases and alerts that share similar observables based on defined criteria.
 
@@ -18,6 +18,7 @@ The **Similar cases** and **Similar alerts** tabs display cases and alerts that 
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Pause Dashboard Refresh](pause-dashboard-refresh.md)
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)

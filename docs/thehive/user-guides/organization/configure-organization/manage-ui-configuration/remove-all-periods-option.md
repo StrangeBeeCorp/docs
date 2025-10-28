@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for removing the **All periods** option in a [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) in TheHive.
-
-Use this procedure to improve application performance by preventing users to select the **All periods** option.
+Improve TheHive performance by preventing users to select the **All periods** option in a [dashboard](../../../analyst-corner/dashboard/about-dashboards.md).
 
 To learn how to change the display period for dashboards, see [Set a Dashboard Display Period](../../../analyst-corner/dashboard/set-dashboard-display-period.md).
 
@@ -20,6 +18,7 @@ To learn how to change the display period for dashboards, see [Set a Dashboard D
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Pause Dashboard Refresh](pause-dashboard-refresh.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
 * [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)

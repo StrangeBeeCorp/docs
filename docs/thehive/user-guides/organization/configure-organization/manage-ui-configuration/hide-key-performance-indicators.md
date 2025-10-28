@@ -2,13 +2,11 @@
 
 <!-- md:version 5.4 --> <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for hiding one or several key performance indicators (KPIs) for [cases](../../../analyst-corner/cases/about-cases.md) and [alerts](../../../analyst-corner/alerts/about-alerts.md) in TheHive.
-
-By default, all indicators appear in case and alert descriptions.
+By default, all key performance indicators (KPIs) appear in [case](../../../analyst-corner/cases/about-cases.md) and [alert](../../../analyst-corner/alerts/about-alerts.md) descriptions in TheHive.
 
 You can hide some or all indicators if they're not useful or could be misleading for your organization.
 
-If you want to know more about the KPIs available in TheHive, refer to the [Key Performance Indicators](../../../key-performance-indicators/key-performance-indicators.md) topic.
+If you want to know more about the KPIs available in TheHive, refer to [Key Performance Indicators](../../../key-performance-indicators/key-performance-indicators.md).
 
 <h2>Procedure</h2>
 
@@ -24,6 +22,7 @@ If you want to know more about the KPIs available in TheHive, refer to the [Key 
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Measure Case Management Performance](../../../key-performance-indicators/measure-case-management-performance.md)
 * [Measure Alert Management Performance](../../../key-performance-indicators/measure-alert-management-performance.md)
 * [Pause Dashboard Refresh](pause-dashboard-refresh.md)

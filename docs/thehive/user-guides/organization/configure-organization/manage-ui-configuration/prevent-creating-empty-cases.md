@@ -2,9 +2,9 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for hiding the empty case option when [creating a case](../../../analyst-corner/cases/create-a-new-case.md#) in TheHive.
+By default, TheHive provides an option to [create a case from scratch](../../../analyst-corner/cases/create-a-new-case.md#create-an-empty-case).
 
-By default, the empty case option is available. Use this procedure to require users to create cases only from templates, archived cases, or the Malware Information Sharing Platform (MISP) to ensure better standardization.
+You can hide this option to require users to create cases only from templates, archived cases, or Malware Information Sharing Platform (MISP) events to ensure better standardization.
 
 <h2>Procedure</h2>
 
@@ -18,6 +18,7 @@ By default, the empty case option is available. Use this procedure to require us
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Pause Dashboard Refresh](pause-dashboard-refresh.md)
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Select Similar Cases and Alerts Filters](select-similar-cases-alerts-filters.md)

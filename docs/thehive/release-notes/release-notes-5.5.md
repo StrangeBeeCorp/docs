@@ -6,6 +6,20 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.11 - October 28, 2025
+
+### Fixes
+
+* Observables (ZIP attachments): Fixed an issue where uploading an empty ZIP file through the 7-Zip UI generated an incorrect hash.
+* Case list: Corrected mislabeled action names displayed in the case list.
+* User creation: Fixed a license validation issue that occurred when creating certain user types.
+* Email Intake: Resolved a synchronization issue in the UI when adding a new email intake connector.
+
+### Improvements
+
+* Markdown and custom links: Added support for [defining additional allowed URL schemes](../user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes.md) for clickable links in Markdown fields.
+* Taxonomy deletion: Added a confirmation step to validate deletion actions and prevent accidental removals.
+
 ## 5.5.10 - October 8, 2025
 
 ### Fixes

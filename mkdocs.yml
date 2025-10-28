@@ -634,6 +634,7 @@ nav:
           - 'Pause Dashboard Refresh': thehive/user-guides/organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh.md
           - 'Remove the All Periods Option in a Dashboard': thehive/user-guides/organization/configure-organization/manage-ui-configuration/remove-all-periods-option.md
           - 'Hide KPIs': thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md
+          - 'Allow Custom Link Schemes': thehive/user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes.md
         - 'Notifications & Endpoints':
           - 'About Notifications': thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications.md
           - 'Create a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification.md

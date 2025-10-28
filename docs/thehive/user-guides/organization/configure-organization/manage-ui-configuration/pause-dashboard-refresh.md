@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for pausing [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) refresh in TheHive.
-
-Use this procedure to improve application performance by preventing dashboard refresh and stopping users from re-enabling it.
+Improve TheHive performance by preventing [dashboard](../../../analyst-corner/dashboard/about-dashboards.md) refresh and stopping users from re-enabling it.
 
 To reduce the refresh frequency while keeping it enabled, see [Adjust Dashboard Refresh Frequency](../../../analyst-corner/dashboard/adjust-dashboard-refresh-frequency.md).
 
@@ -20,6 +18,7 @@ To reduce the refresh frequency while keeping it enabled, see [Adjust Dashboard 
 
 <h2>Next steps</h2>
 
+* [UI Configuration Settings](ui-configuration-settings.md)
 * [Remove the All Periods Option in a Dashboard](remove-all-periods-option.md)
 * [Prevent Users from Creating Empty Cases](prevent-creating-empty-cases.md)
 * [Prevent Users from Merging Alerts into Closed Cases](prevent-merging-alerts-into-closed-cases.md)

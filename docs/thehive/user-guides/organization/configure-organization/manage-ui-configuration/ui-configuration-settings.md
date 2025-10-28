@@ -1,6 +1,6 @@
 # UI Configuration Settings
 
-This topic provides a list of all UI configuration settings available at the organization level in TheHive.
+A list of all UI configuration settings available at the organization level in TheHive.
 
 ## Configuration settings
 
@@ -16,6 +16,7 @@ This topic provides a list of all UI configuration settings available at the org
 | <!-- md:version 5.4 --> Hide time to acknowledge    | Hides the [time to acknowledge](../../../key-performance-indicators/key-performance-indicators.md#time-to-acknowledge-tta) indicator on cases and alerts when it's not useful or could be misleading for your organization. See [Hide Key Performance Indicators](hide-key-performance-indicators.md) for detailed instructions. |
 | <!-- md:version 5.4 --> Hide time to qualify   | Hides the [time to qualify](../../../key-performance-indicators/key-performance-indicators.md#time-to-qualify-ttq) indicator on cases when it's not useful or could be misleading for your organization. See [Hide Key Performance Indicators](hide-key-performance-indicators.md) for detailed instructions. |
 | <!-- md:version 5.4 --> Hide time to resolve | Hides the [time to resolve](../../../key-performance-indicators/key-performance-indicators.md#time-to-resolve-ttr) indicator on cases when it's not useful or could be misleading for your organization. See [Hide Key Performance Indicators](hide-key-performance-indicators.md) for detailed instructions. |
+| <!-- md:version 5.5.11 --> Custom application links | Allows enabling additional URL schemes to be rendered as clickable links in Markdown fields. By default, only `http`, `https`, and `data` links are allowed. See [Allow Custom Link Schemes](allow-custom-link-schemes.md) for detailed instructions. |
 
 <h2>Next steps</h2>
 
