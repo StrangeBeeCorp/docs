@@ -6,7 +6,7 @@ The tables below list the supported versions for Linux installations, Docker Com
 
 === "Linux installation"
 
-    | TheHive version | Java | Cassandra | Elasticsearch | OpenSearch | Cortex support | Notes |
+    | TheHive version | Java | Cassandra | Elasticsearch | OpenSearch | Cortex | Notes |
     |-----------------|------|-----------|---------------|------------|-------| -------|
     | 5.5.10+ | 11 | 3.11.x, 4.0.x, 4.1.x | 7.x - 9.1.x | Supported <br>—except for audit logs | 3.1.6+ | • ES 7.17+ required for [audit log storage](installation-guide-linux-standalone-server.md#step-53-audit-log-storage)<br>• ES 7.x required if shared with Cortex |
     | 5.5.0 - 5.5.9 | 11 | 3.11.x, 4.0.x, 4.1.x  | 7.x - 8.x | Supported <br>—except for audit logs | 3.1.6+ | • ES 7.17+ required for [audit log storage](installation-guide-linux-standalone-server.md#step-53-audit-log-storage)<br>• ES 7.x required if shared with Cortex|
