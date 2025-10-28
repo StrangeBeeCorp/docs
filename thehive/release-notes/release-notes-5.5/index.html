@@ -6294,6 +6294,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Allow Custom Link Schemes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -12761,6 +12784,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#5511-october-28-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5.11 - October 28, 2025
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5510-october-8-2025" class="md-nav__link">
     <span class="md-ellipsis">
       5.5.10 - October 8, 2025
@@ -14649,8 +14681,21 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.</p>
 </div>
-<h2 id="5510-october-8-2025">5.5.10 - October 8, 2025<a class="headerlink" href="#5510-october-8-2025" title="Permanent link">#</a></h2>
+<h2 id="5511-october-28-2025">5.5.11 - October 28, 2025<a class="headerlink" href="#5511-october-28-2025" title="Permanent link">#</a></h2>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Observables (ZIP attachments): Fixed an issue where uploading an empty ZIP file through the 7-Zip UI generated an incorrect hash.</li>
+<li>Case list: Corrected mislabeled action names displayed in the case list.</li>
+<li>User creation: Fixed a license validation issue that occurred when creating certain user types.</li>
+<li>Email Intake: Resolved a synchronization issue in the UI when adding a new email intake connector.</li>
+</ul>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<ul>
+<li>Markdown and custom links: Added support for <a href="../../user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes/">defining additional allowed URL schemes</a> for clickable links in Markdown fields.</li>
+<li>Taxonomy deletion: Added a confirmation step to validate deletion actions and prevent accidental removals.</li>
+</ul>
+<h2 id="5510-october-8-2025">5.5.10 - October 8, 2025<a class="headerlink" href="#5510-october-8-2025" title="Permanent link">#</a></h2>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <h4 id="administration">Administration<a class="headerlink" href="#administration" title="Permanent link">#</a></h4>
 <ul>
 <li>Organization user list: Removed the profile selector, which should not appear in this list.</li>
@@ -14659,11 +14704,11 @@
 </ul>
 <h4 id="sharing">Sharing<a class="headerlink" href="#sharing" title="Permanent link">#</a></h4>
 <p>Shared task deletion: When a task is deleted in the owner organization, it's now also automatically deleted in all shared organizations.</p>
-<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
 <h4 id="elasticsearch-9-support">Elasticsearch 9 support<a class="headerlink" href="#elasticsearch-9-support" title="Permanent link">#</a></h4>
 <p>TheHive <a href="../../installation/software-requirements/">now supports Elasticsearch 9</a> as a back-end index engine. See <a href="https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster">the official Elasticsearch upgrade guide</a> for migration details.</p>
 <h2 id="559-september-16-2025">5.5.9 - September 16, 2025<a class="headerlink" href="#559-september-16-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <h4 id="email-intake">Email Intake<a class="headerlink" href="#email-intake" title="Permanent link">#</a></h4>
 <p>Email preview rendering: Line breaks in alert description previews are now displayed correctly, improving readability of email content.</p>
 <h4 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">#</a></h4>
@@ -14672,7 +14717,7 @@
 <li>Bar widget: Resolved a problem with the <code>_total</code> column display.</li>
 <li>Donut widget: Corrected section color assignments that were occasionally mismatched in some configurations.</li>
 </ul>
-<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
+<h3 id="improvements_2">Improvements<a class="headerlink" href="#improvements_2" title="Permanent link">#</a></h3>
 <h4 id="audit-logs">Audit logs<a class="headerlink" href="#audit-logs" title="Permanent link">#</a></h4>
 <p>Audit logs now capture <a href="../../user-guides/organization/about-audit-logs/#custom-field-update-from-support-to-engineering">updates to tags and custom fields</a>. This makes it possible to detect specific changes (additions, modifications, deletions) and <a href="../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/#custom-field-business-unit-updated-to-engineering">trigger notifications when such changes occur</a>.</p>
 <h4 id="api-documentation">API documentation<a class="headerlink" href="#api-documentation" title="Permanent link">#</a></h4>
@@ -14687,7 +14732,7 @@
 <li>Notifications: The notifier list can now be sorted by notifier type.</li>
 </ul>
 <h2 id="558-august-27-2025">5.5.8 - August 27, 2025<a class="headerlink" href="#558-august-27-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <h4 id="dashboards_1">Dashboards<a class="headerlink" href="#dashboards_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Radar widget: Fixed an issue preventing creation of new radar widgets.</li>
@@ -14706,7 +14751,7 @@
 <li>Notifications: Fixed missing event trigger when an analyzer is launched on an alert’s observable.</li>
 <li>Dark mode: Corrected minor transition issue between light and dark themes.</li>
 </ul>
-<h3 id="improvements_2">Improvements<a class="headerlink" href="#improvements_2" title="Permanent link">#</a></h3>
+<h3 id="improvements_3">Improvements<a class="headerlink" href="#improvements_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Markdown styling: Updated the visual style of quote characters for better readability.</li>
 <li>Loading indicators: Introduced loading spinners on multiple pages to provide clearer feedback during page loads.</li>
@@ -14727,12 +14772,12 @@
 <li>This limit can be customized via the <code>alert.maxMergeInCase</code> and <code>case.maxMergeInCase</code> settings in <code>application.conf</code>.</li>
 </ul>
 <p>Caution: Raising the limit may affect performance. Proceed with care.</p>
-<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
+<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
 <ul>
 <li>Email Intake: Fixed an issue that prevented file attachments from being handled correctly when using the MS365 GraphAPI connector.</li>
 <li>SAML SSO authentication: Resolved a regression introduced in version 5.5.5 that affected SAML-based login.</li>
 </ul>
-<h3 id="improvements_3">Improvements<a class="headerlink" href="#improvements_3" title="Permanent link">#</a></h3>
+<h3 id="improvements_4">Improvements<a class="headerlink" href="#improvements_4" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Case reports:</p>
@@ -14751,7 +14796,7 @@
 <li>Case start date: Corrected an issue where the start date was incorrectly set after case creation.</li>
 <li>Tags: Fixed custom tag auto-completion problems when editing cases or configuring filters.</li>
 </ul>
-<h3 id="improvements_4">Improvements<a class="headerlink" href="#improvements_4" title="Permanent link">#</a></h3>
+<h3 id="improvements_5">Improvements<a class="headerlink" href="#improvements_5" title="Permanent link">#</a></h3>
 <p>Optimized audit JSON rendering to improve overall application performance and reduce CPU usage.</p>
 <h3 id="other-fixes_1">Other fixes<a class="headerlink" href="#other-fixes_1" title="Permanent link">#</a></h3>
 <ul>
@@ -14762,7 +14807,7 @@
 <h2 id="554-june-25-2025">5.5.4 - June 25, 2025<a class="headerlink" href="#554-june-25-2025" title="Permanent link">#</a></h2>
 <h3 id="regression-fixes_1">Regression fixes<a class="headerlink" href="#regression-fixes_1" title="Permanent link">#</a></h3>
 <p>Fixed a regression where the <code>creationDate</code> field wasn't automatically set to the current date when creating a new case.</p>
-<h3 id="improvements_5">Improvements<a class="headerlink" href="#improvements_5" title="Permanent link">#</a></h3>
+<h3 id="improvements_6">Improvements<a class="headerlink" href="#improvements_6" title="Permanent link">#</a></h3>
 <ul>
 <li>Functions: Added the ability to <a href="../../user-guides/organization/configure-organization/manage-functions/functions-objects/#case">switch a case to restricted mode using a function</a>.</li>
 <li>Docker image: Introduced <a href="../../../cortex/installation-and-configuration/run-cortex-with-docker/#overriding-configuration-with-a-custom-file">a new entry point to support custom certificate authority (CA) handling</a>.</li>
@@ -14798,7 +14843,7 @@
 <p>Fixed an issue where attachment files weren't visible in shared cases.</p>
 <h4 id="public-api">Public API<a class="headerlink" href="#public-api" title="Permanent link">#</a></h4>
 <p>Fixed incorrect HTTP response code returned when a merge operation failed due to an ID conflict.</p>
-<h3 id="improvements_6">Improvements<a class="headerlink" href="#improvements_6" title="Permanent link">#</a></h3>
+<h3 id="improvements_7">Improvements<a class="headerlink" href="#improvements_7" title="Permanent link">#</a></h3>
 <p>Analyzers and responders can now be triggered directly <a href="../../user-guides/organization/configure-organization/manage-functions/functions-objects/#cortex">from a TheHive function</a>, enabling greater automation capabilities.</p>
 <h2 id="551-april-30-2025">5.5.1 - April 30, 2025<a class="headerlink" href="#551-april-30-2025" title="Permanent link">#</a></h2>
 <p>Last update: May 26, 2025</p>
@@ -14811,10 +14856,10 @@
 </ul>
 </li>
 </ul>
-<h3 id="improvements_7">Improvements<a class="headerlink" href="#improvements_7" title="Permanent link">#</a></h3>
+<h3 id="improvements_8">Improvements<a class="headerlink" href="#improvements_8" title="Permanent link">#</a></h3>
 <h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">#</a></h4>
 <p>You can now sort tasks by their due dates.</p>
-<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
+<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
 <h4 id="dashboards_2">Dashboards<a class="headerlink" href="#dashboards_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Bar widget: The <code>_total</code> field no longer appears when data is stacked.</li>
@@ -14856,7 +14901,7 @@
 <p>The <a href="../../administration/email-intake-connector/connect-a-mailbox/">Microsoft 365 Graph API connector</a> is now available for email intakes. It uses the standard API recommended by Microsoft to connect and retrieve emails from a Microsoft mailbox.</p>
 <h4 id="case-report-templates-display-the-description-of-custom-events">Case report templates: Display the description of custom events<a class="headerlink" href="#case-report-templates-display-the-description-of-custom-events" title="Permanent link">#</a></h4>
 <p>You can now hide or show the description of custom events in the <a href="../../user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/#timeline-widget">timeline widget</a> within case reports.</p>
-<h3 id="improvements_8">Improvements<a class="headerlink" href="#improvements_8" title="Permanent link">#</a></h3>
+<h3 id="improvements_9">Improvements<a class="headerlink" href="#improvements_9" title="Permanent link">#</a></h3>
 <h4 id="taxonomy-drawer">Taxonomy drawer<a class="headerlink" href="#taxonomy-drawer" title="Permanent link">#</a></h4>
 <p>The taxonomies component has been redesigned to provide an improved user experience.</p>
 <h4 id="better-user-experience-for-custom-fields">Better user experience for custom fields<a class="headerlink" href="#better-user-experience-for-custom-fields" title="Permanent link">#</a></h4>
@@ -14867,7 +14912,7 @@
 <p>The status of tasks is now clearly visible in each row of the <strong>Tasks</strong> tab in cases, enabling quick identification without needing to open the details.</p>
 <h4 id="public-api-observable-route-optimization">Public API observable route optimization<a class="headerlink" href="#public-api-observable-route-optimization" title="Permanent link">#</a></h4>
 <p>The observable creation routes in alerts and cases have been optimized, making the creation of dozens of observables five times faster.</p>
-<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
+<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
 <h4 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">#</a></h4>
 <h5 id="dark-mode">Dark Mode<a class="headerlink" href="#dark-mode" title="Permanent link">#</a></h5>
 <ul>
