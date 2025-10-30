@@ -56,16 +56,16 @@ This topic provides step-by-step instructions for configuring the *Microsoft Tea
 
     The message content to send to the Microsoft Teams endpoint.
 
-    If an [Adaptive Card](https://adaptivecards.io/) template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
+    If an [Adaptive Card](https://adaptivecards.io/){target=_blank} template isn't provided, you must use a plain text template. In version 5.4.3, TheHive automatically converts plain text into an Adaptive Card format structured with JSON.
 
     !!! tips "Tips to write text templates"
         
         #### Use the Adaptive Cards Designer
-        Use [the Adaptive Cards Designer](https://adaptivecards.io/designer/) as a starting point to design your Adaptive Cards.
+        Use [the Adaptive Cards Designer](https://adaptivecards.io/designer/){target=_blank} as a starting point to design your Adaptive Cards.
         
         #### Format dates
-        * TheHive uses [Handlebars string helpers](https://github.com/jknack/handlebars.java/blob/master/handlebars/src/main/java/com/github/jknack/handlebars/helper/StringHelpers.java#L507-L543) to read dates.
-        * Formatting date and time in notifications requires using dedicated [Java patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html).
+        * TheHive uses [Handlebars string helpers](https://github.com/jknack/handlebars.java/blob/master/handlebars/src/main/java/com/github/jknack/handlebars/helper/StringHelpers.java#L507-L543){target=_blank} to read dates.
+        * Formatting date and time in notifications requires using dedicated [Java patterns](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html){target=_blank}.
 
         #### Format other custom data from TheHive
         Few data custom to TheHive can be properly displayed using custom string handlers together with `object` data in notifications:

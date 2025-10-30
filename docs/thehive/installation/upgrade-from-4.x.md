@@ -406,7 +406,7 @@ db.janusgraph.forceDropAndRebuildIndex = true
 
 TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
 {% include-markdown "includes/manual-download-installation-thehive.md" %}
 
@@ -542,6 +542,6 @@ During the update, few logs can be seen in TheHive `application.log` file.
     at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
     at java.base/java.lang.Thread.run(Thread.java:829)
     ```
-    :    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899), don't mind it as the indexing will continue normally. This will have no impact on TheHive_
+    :    _During indexing, Janusgraph may display this message, this error is coming from a [bug in janusgraph](https://github.com/JanusGraph/janusgraph/pull/2899){target=_blank}, don't mind it as the indexing will continue normally. This will have no impact on TheHive_
 
     &nbsp;

@@ -2,7 +2,7 @@
 
 <!-- md:version 5.4 -->
 
-With the release of version 5.4, TheHive transitioned from the Scala framework Akka to [Apache Pekko](https://pekko.apache.org/). This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
+With the release of version 5.4, TheHive transitioned from the Scala framework Akka to [Apache Pekko](https://pekko.apache.org/){target=_blank}. This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
 
 This topic provides instructions on updating your configuration to support this change.
 
@@ -161,7 +161,7 @@ pekko {
 !!! warning "Certificate considerations"
     Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.
     
-    For detailed instructions, see: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool).
+    For detailed instructions, see: [Using keytool for Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool){target=_blank}.
 
     Your server certificates should include the following _KeyUsage_ and _ExtendedkeyUsage_ extensions for proper functioning:
         

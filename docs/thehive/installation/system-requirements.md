@@ -28,16 +28,20 @@ Estimated resource recommendations are provided to offer guidance based on typic
 
 === "Docker Compose deployment"
 
-    For Docker deployments of TheHive with all required services, hardware requirements vary by setup profile. Each profile defines a specific performance level.
+    For Docker Compose deployments of TheHive with all [required services](../overview/index.md#architecture), hardware requirements vary by setup profile. Each profile defines a specific performance level.
 
-    Available profiles and corresponding hardware specifications are documented in the [Docker Compose environments GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles).
+    | Profile  | Usage               | Recommended memory               | Recommended CPU               |
+    | ---------------- | --------------------- | --------------------- |  --------------------- |
+    | [*Testing environment*](https://github.com/StrangeBeeCorp/docker/tree/main/testing){target=_blank}  | Functional testing of TheHive and Cortex | 8 GB RAM               | 4 vCPUs               |
+    | [*Production environment #1*](https://github.com/StrangeBeeCorp/docker/tree/main/prod1-thehive){target=_blank}  | Standard production workload | 16 GB RAM               | 4 vCPUs               |
+    | [*Production environment #2*](https://github.com/StrangeBeeCorp/docker/tree/main/prod2-thehive){target=_blank}  | High-performance production workload | 32 GB RAM               | 8 vCPUs               |
 
 === "Kubernetes deployment with Helm"
 
-    For Kubernetes deployments, refer to the [Docker Compose environments GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles) for hardware requirements.
+    For Kubernetes deployments, apply the same hardware recommendations as for the Docker Compose deployment in single-replica configurations. When deploying multiple replicas in a clustered setup, per-node hardware requirements can be reduced, as workload and resource utilization are distributed across replicas.
 
 !!! warning "Elasticsearch heap size configuration"
-    Elasticsearch requires explicit [heap size configuration in the `jvm.options` file](installation-guide-linux-standalone-server.md#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file). Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection).
+    Elasticsearch requires explicit [heap size configuration in the `jvm.options` file](installation-guide-linux-standalone-server.md#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file). Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}.
     
     On a 12 GB RAM system, for example:
 
@@ -75,6 +79,6 @@ Other distributions or versions aren't tested or supported.
 * [Software Requirements](software-requirements.md)
 * [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
 * [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
-* [Running TheHive with Docker](docker.md)
+* [Deploy TheHive with Docker Compose](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
 * [Setting up a Cluster with TheHive](deploying-a-cluster.md)

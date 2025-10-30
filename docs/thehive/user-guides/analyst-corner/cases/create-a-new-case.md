@@ -38,11 +38,11 @@ Several options are offered to create a case in TheHive:
 
     **- TLP (traffic light protocol) \***  
 
-    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
+    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} for detailed definitions of TLP values.
     
     **- PAP (permissible actions protocol) \***  
 
-    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
+    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} for detailed definitions of PAP values.
 
     **- [Tags](../../analyst-corner/cases/tags/add-remove-tags.md)**  
 
@@ -127,7 +127,7 @@ See [About MISP Integration](../../../administration/misp-integration/about-misp
 
     **- Attachment \***
 
-    Drop a JSON file directly into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book) to see how to export an event.
+    Drop a JSON file directly into the **Attachment** section or select the JSON file from your computer. Refer to [the MISP documentation](https://github.com/MISP/misp-book){target=_blank} to see how to export an event.
 
     **- [Tasks](../cases/add-tasks-to-a-case.md)**  
 
@@ -149,7 +149,7 @@ Refer to the [Create a Case from an Alert](../alerts/create-a-case-from-an-alert
 
 ## Create a case from a detection tool
 
-The creation of cases through detection tools is managed directly via the [API](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Create%20case).
+The creation of cases through detection tools is managed directly via the [API](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Create%20case){target=_blank}.
 
 <h2>Next steps</h2>
 

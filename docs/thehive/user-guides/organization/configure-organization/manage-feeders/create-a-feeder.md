@@ -110,7 +110,7 @@ Use this procedure to automatically retrieve data at a defined frequency from an
 
 ## Airtable example
 
-[Airtable](https://www.airtable.com/) is one of the external systems you can configure as an alert feeder in TheHive. Airtable is a cloud-based platform that combines the features of a spreadsheet and a database.
+[Airtable](https://www.airtable.com/){target=_blank} is one of the external systems you can configure as an alert feeder in TheHive. Airtable is a cloud-based platform that combines the features of a spreadsheet and a database.
 
 ### Query
 
@@ -167,7 +167,7 @@ Use this procedure to automatically retrieve data at a defined frequency from an
 
 ### Feeder function
 
-You can find the function example for creating an alert from Airtable in the [GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js).
+You can find the function example for creating an alert from Airtable in the [GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js){target=_blank}.
 
 <h2>Next steps</h2>
 

@@ -1,2 +1,2 @@
 !!! tip "Upgrading MISP from 2.4.x to 2.5.x"
-    If you have upgraded MISP from version 2.4.x to 2.5.x, ensure that you [update the database configuration in MISP](https://github.com/MISP/MISP/blob/2.5/app/Config/database.default.php#L43) to avoid potential issues.
+    If you have upgraded MISP from version 2.4.x to 2.5.x, ensure that you [update the database configuration in MISP](https://github.com/MISP/MISP/blob/2.5/app/Config/database.default.php#L43){target=_blank} to avoid potential issues.

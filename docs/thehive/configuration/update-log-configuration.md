@@ -1,6 +1,6 @@
 # Update Log Configuration
 
-TheHive uses [logback](https://logback.qos.ch/) for logging. You can adjust log levels to control the amount of information recorded for troubleshooting and monitoring purposes. By default, logs are stored in `/var/log/thehive/`, with the current log in `application.log` and older logs compressed as `application.%i.log.zip`.
+TheHive uses [logback](https://logback.qos.ch/){target=_blank} for logging. You can adjust log levels to control the amount of information recorded for troubleshooting and monitoring purposes. By default, logs are stored in `/var/log/thehive/`, with the current log in `application.log` and older logs compressed as `application.%i.log.zip`.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 
@@ -13,8 +13,7 @@ Control the detail of logged information by modifying log levels in the logback 
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `logback.xml` file using a text editor.
 
@@ -57,8 +56,7 @@ Enable logback debug mode to troubleshoot logging configuration issues. This dis
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `logback.xml` file using a text editor.
 
@@ -81,8 +79,7 @@ Separate access logs from application logs by configuring dedicated log appender
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `logback.xml` file using a text editor.
 
@@ -139,8 +136,7 @@ Forward TheHive logs to a centralized syslog server for aggregation and monitori
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `logback.xml` file using a text editor.
 
@@ -171,7 +167,7 @@ Forward TheHive logs to a centralized syslog server for aggregation and monitori
 7. Restart TheHive service to apply the new configuration.
 
 !!! warning "Limitations"
-    The logback syslog appender only supports UDP protocol. For TCP or TLS connections, use a third-party appender or forward logs through a local syslog daemon. See the [logback documentation](https://logback.qos.ch/manual/appenders.html#SyslogAppender) for alternatives.
+    The logback syslog appender only supports UDP protocol. For TCP or TLS connections, use a third-party appender or forward logs through a local syslog daemon. See the [logback documentation](https://logback.qos.ch/manual/appenders.html#SyslogAppender){target=_blank} for alternatives.
 
 <h2>Next steps</h2>
 

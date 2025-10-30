@@ -1,6 +1,6 @@
 # TheHive Installation Software Requirements
 
-TheHive requires specific software versions depending on the installation method.
+TheHive installation requires specific software components at specific versions, depending on the installation method.
 
 The tables below list the supported versions for Linux installations, Docker Compose deployments, and Kubernetes environments.
 
@@ -30,6 +30,6 @@ The tables below list the supported versions for Linux installations, Docker Com
 * [System Requirements](system-requirements.md)
 * [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
 * [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
-* [Running TheHive with Docker](docker.md)
+* [Deploy TheHive with Docker Compose](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
 * [Setting up a Cluster with TheHive](deploying-a-cluster.md)

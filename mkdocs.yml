@@ -457,6 +457,7 @@ nav:
       - 'Configure Database and Index SSL': thehive/configuration/configure-ssl-cassandra-elasticsearch.md
       - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
       - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
+      - 'Docker Entrypoint Settings': thehive/configuration/thehive-docker-entrypoint-settings.md
       - 'Configure JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
       - 'Configure HTTPS Using a Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
       - 'Update Log Configuration': thehive/configuration/update-log-configuration.md

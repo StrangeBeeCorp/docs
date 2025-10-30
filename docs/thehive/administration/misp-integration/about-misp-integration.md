@@ -6,7 +6,7 @@ This topic explains how the Malware Information Sharing Platform (MISP) integrat
 
 ## What's MISP?
 
-[MISP](https://www.misp-project.org/) is an open-source threat intelligence platform designed to improve the sharing of structured threat information. This includes indicators of compromise (IOCs), tactics, techniques, procedures (TTPs), and other relevant data.
+[MISP](https://www.misp-project.org/){target=_blank} is an open-source threat intelligence platform designed to improve the sharing of structured threat information. This includes indicators of compromise (IOCs), tactics, techniques, procedures (TTPs), and other relevant data.
 
 MISP enables organizations to share, store, and correlate security information to enhance their cybersecurity efforts and collaborate with other organizations or threat intelligence communities.
 

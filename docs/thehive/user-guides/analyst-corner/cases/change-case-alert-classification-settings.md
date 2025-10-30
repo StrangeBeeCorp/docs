@@ -14,9 +14,9 @@ This topic provides step-by-step instructions for changing the classification se
 
 3. Select the severity button to update its value. It indicates the severity level of the case or alert.
 
-4. Select the TLP button to update its value. It indicates how you can share information about the case or alert with others. Refer to the [Malware Information Sharing Platform (MISP) taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values.
+4. Select the TLP button to update its value. It indicates how you can share information about the case or alert with others. Refer to the [Malware Information Sharing Platform (MISP) taxonomy](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} for detailed definitions of TLP values.
 
-5. Select the PAP button to update its value. It specifies which actions you can take with the data of the case or alert. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
+5. Select the PAP button to update its value. It specifies which actions you can take with the data of the case or alert. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} for detailed definitions of PAP values.
 
 <h2>Next steps</h2>
 

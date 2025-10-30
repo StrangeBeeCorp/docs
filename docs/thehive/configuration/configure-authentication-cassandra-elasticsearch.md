@@ -14,8 +14,7 @@ First, we need to stop your running services in the following order to avoid dat
 
 2. Stop Cassandra service
 
-!!! info "Service commands"
-    For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+{% include-markdown "includes/service-commands.md" %}
 
 ### Step 2: Update Cassandra configuration
 
@@ -124,7 +123,7 @@ Now we'll modify Elasticsearch configuration to require authentication.
 
 1. Open the `/etc/elasticsearch/elasticsearch.yml` file using a text editor.
 
-2. In the `elasticsearch.yml` file, add the desired security parameters from [the official Elasticsearch security settings documentation](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings).
+2. In the `elasticsearch.yml` file, add the desired security parameters from [the official Elasticsearch security settings documentation](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings){target=_blank}.
     
     At minimum add the following line (or edit it if it already exists):
 

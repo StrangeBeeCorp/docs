@@ -22,9 +22,9 @@ title: Home
 
 ---
 
-**Source Code**: [https://github.com/thehive-project/Cortex/](https://github.com/thehive-project/Cortex/)
+**Source Code**: [https://github.com/thehive-project/Cortex/](https://github.com/thehive-project/Cortex/){target=_blank}
 
-**Website**: [https://www.strangebee.com](https://www.strangebee.com)
+**Website**: [https://www.strangebee.com](https://www.strangebee.com){target=_blank}
 
 ---
 
@@ -35,7 +35,7 @@ Cortex solves two common problems frequently encountered by SOCs, CSIRTs and sec
 - How to analyze observables they have collected, **at scale, by querying a single tool** instead of several?
 - How to actively respond to threats and interact with the constituency and other teams?
 
-Thanks to its many _analyzers_ and to its RESTful API, Cortex makes observable analysis a breeze, particularly if called from [TheHive](https://www.strangebee.com/thehive/), the highly popular, Security Incident Response Platform (SIRP).
+Thanks to its many _analyzers_ and to its RESTful API, Cortex makes observable analysis a breeze, particularly if called from [TheHive](https://www.strangebee.com/thehive/){target=_blank}, the highly popular, Security Incident Response Platform (SIRP).
 
 TheHive can also leverage Cortex _responders_ to perform specific actions on alerts, cases, tasks and observables collected in the course of the investigation: send an email to the constituents, block an IP address at the proxy level, notify team members that an alert needs to be taken care of urgently and much more.
 
@@ -58,21 +58,21 @@ The [first connection](user-guides/first-start.md) to the application requires s
 Cortex supports different roles for users. Refer to [User roles](user-guides/roles.md) for more details.
 
 ## License
-Cortex is an open source and free software released under the [AGPL](https://github.com/TheHive-Project/Cortex/blob/master/LICENSE) (Affero General Public License). We, [StrangeBee](https://strangebee.com), are committed to ensure that Cortex will remain a free and open source project on the long-run.
+Cortex is an open source and free software released under the [AGPL](https://github.com/TheHive-Project/Cortex/blob/master/LICENSE){target=_blank} (Affero General Public License). We, [StrangeBee](https://strangebee.com){target=_blank}, are committed to ensure that Cortex will remain a free and open source project on the long-run.
 
 ## Updates and community discussions
 Information, news and updates are regularly posted on several communication channels:
 
-:fontawesome-brands-twitter: [StrangeBee Twitter account](https://twitter.com/StrangeBee) / [TheHive Project Twitter account](https://twitter.com/thehive_project)
+:fontawesome-brands-twitter: [StrangeBee Twitter account](https://twitter.com/StrangeBee){target=_blank} / [TheHive Project Twitter account](https://twitter.com/thehive_project){target=_blank}
 
-:fontawesome-brands-mastodon:  [TheHive Project Mastodon account](https://infosec.exchange/@TheHive_Project) / [StrangeBee Mastodon account](https://infosec.exchange/@StrangeBee)
+:fontawesome-brands-mastodon:  [TheHive Project Mastodon account](https://infosec.exchange/@TheHive_Project){target=_blank} / [StrangeBee Mastodon account](https://infosec.exchange/@StrangeBee){target=_blank}
 
-:fontawesome-brands-wordpress: [blog at StrangeBee](https://blog.strangebee.com)
+:fontawesome-brands-wordpress: [blog at StrangeBee](https://blog.strangebee.com){target=_blank}
 
-:fontawesome-brands-discord: [Join users community on Discord](https://chat.thehive-project.org)
+:fontawesome-brands-discord: [Join users community on Discord](https://chat.thehive-project.org){target=_blank}
 
 
 ## Professional support
 
 ![StrangeBee](./images/strangebee.png){: align=left width=120 }
-Since 2018, Cortex is fully developed and maintained by [StrangeBee](https://www.strangebee.com). Should you need specific assistance, be aware that StrangeBee also provides professional services and support.
+Since 2018, Cortex is fully developed and maintained by [StrangeBee](https://www.strangebee.com){target=_blank}. Should you need specific assistance, be aware that StrangeBee also provides professional services and support.

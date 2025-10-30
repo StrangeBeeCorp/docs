@@ -451,7 +451,7 @@ To set up a shared file storage for TheHive in a clustered environment, several 
             dpkg -i mcli.deb
             ```
 
-    !!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/). Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
+    !!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/){target=_blank}. Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
 
     &nbsp;
 
@@ -515,7 +515,7 @@ TheHive utilizes the Pekko toolkit to effectively manage clusters and enhance sc
     <br/>
     Incorporating Pekko into TheHive configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
     <br/>
-    Source: [**https://pekko.apache.org**](https://pekko.apache.org)
+    Source: [**https://pekko.apache.org**](https://pekko.apache.org){target=_blank}
 
 &nbsp;
 

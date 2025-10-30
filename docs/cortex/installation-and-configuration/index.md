@@ -87,7 +87,7 @@ There are many disadvantages with this option:
 * Updating them might be a pain regarding Operating System used and dependencies
 
 ### Run with Docker
-_Analyzers_ & _Responders_ we publish also have their own [Docker images](https://hub.docker.com/search?q=cortexneurons). 
+_Analyzers_ & _Responders_ we publish also have their own [Docker images](https://hub.docker.com/search?q=cortexneurons){target=_blank}. 
 
 There are several benefits to use Docker images of _Analyzers_ & _Responders_.
 

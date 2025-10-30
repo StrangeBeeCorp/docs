@@ -166,8 +166,8 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
         
         !!! note "GitHub configuration"
 
-            * Generate the `<client_id>` and `<client_secret>` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers).
-            * Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile) for this configuration to work correctly.
+            * Generate the `<client_id>` and `<client_secret>` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers){target=_blank}.
+            * Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile){target=_blank} for this configuration to work correctly.
 
     === "Microsoft 365" 
 
@@ -185,7 +185,7 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
         | Field that contains the id of the user in user info | "mail"                                                         |
 
         !!! note "Microsoft configuration"
-            To generate the `<client_id>`, `<client_secret>` and `<tenant>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps).
+            To generate the `<client_id>`, `<client_secret>` and `<tenant>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps){target=_blank}.
 
     === "Google" 
 
@@ -204,9 +204,9 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
         
         !!! note "Google configuration"
 
-            * Generate the `<client_id>` and `<client_secret>` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials).
-            * Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849) for step-by-step instructions.
-            * Refer to [Google OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration) for the latest authentication URLs.            
+            * Generate the `<client_id>` and `<client_secret>` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials){target=_blank}.
+            * Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849){target=_blank} for step-by-step instructions.
+            * Refer to [Google OpenID Connect configuration](https://accounts.google.com/.well-known/openid-configuration){target=_blank} for the latest authentication URLs.            
 
 <h2>Next steps</h2>
 

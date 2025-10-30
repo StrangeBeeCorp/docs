@@ -25,7 +25,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 !!! example "Install Java"
 
-    For enhanced security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/), an OpenJDK build provided and maintained by Amazon. Corretto 11 or higher is required to install Cortex.
+    For enhanced security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, an OpenJDK build provided and maintained by Amazon. Corretto 11 or higher is required to install Cortex.
 
     === "DEB"
 
@@ -192,7 +192,7 @@ This section provides step-by-step instructions to install Cortex and configure 
 
 Cortex packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
 
-All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
 {% include-markdown "includes/manual-download-installation-cortex.md" %}
 
@@ -263,7 +263,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
 
             ```bash
             wget -O /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg

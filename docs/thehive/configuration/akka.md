@@ -1,6 +1,6 @@
 # Akka Configuration (Version 5.3 and Earlier)
 
-[Akka](https://akka.io/) is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.
+[Akka](https://akka.io/){target=_blank} is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.
 
 Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.
 
@@ -139,13 +139,13 @@ akka {
 !!! note "Remoting and security configuration"
     Note that `akka.remote.artery.transport` has changed and `akka.ssl.config-ssl-engine` needs to be configured.  
     
-    For more details, refer to [Akka Remoting with Artery - Remote Security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security).
+    For more details, refer to [Akka Remoting with Artery - Remote Security](https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security){target=_blank}.
 
 
 !!! warning "Certificate considerations"
     Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.  
     
-    For detailed instructions, see [Using Keytool for X.509 Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool).  
+    For detailed instructions, see [Using Keytool for X.509 Certificate Generation](https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool){target=_blank}.  
 
     Your server certificates should include the following `KeyUsage` and `ExtendedkeyUsage` extensions for proper functioning:
         

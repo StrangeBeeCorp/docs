@@ -16,18 +16,18 @@ This topic presents the different types of licenses available for TheHive.
 | License type    | Supported solution       | Purpose | Pricing |
 | :---------- | :---------------------      |  :---------------------      | :---------------------      |
 | Community   |  On-prem                    | Essential features to get started with TheHive or for users with basic needs. | Free—requires [requesting a Community license](request-a-community-license.md) |
-| Gold       |  On-prem                    | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/)|
-| Platinum    |  On-prem and Cloud Platform | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/) |
+| Gold       |  On-prem                    | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank}|
+| Platinum    |  On-prem and Cloud Platform | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank} |
 
 All license types require [activation](license.md) after acquisition.
 
-Check the pricing details and the full list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing-on-prem/).
+Check the pricing details and the full list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing-on-prem/){target=_blank}.
 
 ## Terms and quotas
 
 Each license includes validation and expiration dates.
 
-Each license type has specific [quotas](https://strangebee.com/thehive-pricing-on-prem/) for:
+Each license type has specific [quotas](https://strangebee.com/thehive-pricing-on-prem/){target=_blank} for:
 
 * Number of users: Only unlocked user accounts of type Normal with at least one licensed permission count toward the license limit. Service accounts and Normal accounts with no licensed permissions, such as Read-Only or Admin profiles, don't.
 * Number of organizations: Only unlocked organizations count toward the license limit.

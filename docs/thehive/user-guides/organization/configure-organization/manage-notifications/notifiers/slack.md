@@ -71,8 +71,8 @@ Configure the *Slack* [notifier](../about-notifications.md#notifiers) in TheHive
 6. Select the **Advanced settings** checkbox if you want to configure additional options.
 
     !!! tip "Slack documentation to the rescue"
-        - Test your integration [the postMessage page](https://api.slack.com/methods/chat.postMessage/test).  
-        - Build your blocks with the [Slack Block Kit Builder](https://app.slack.com/block-kit-builder/).
+        - Test your integration [the postMessage page](https://api.slack.com/methods/chat.postMessage/test){target=_blank}.  
+        - Build your blocks with the [Slack Block Kit Builder](https://app.slack.com/block-kit-builder/){target=_blank}.
 
     !!! example "Example of a blocks template: Send notification about case creation"
 

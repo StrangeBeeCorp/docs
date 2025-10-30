@@ -1,11 +1,11 @@
 # Deploy Cortex on Kubernetes
 
-Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts).
+Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}.
 
 !!! danger "Dependency image"
-    The default Elasticsearch image used by the dependency Helm chart comes from [Bitnami](https://bitnami.com/).  
+    The default Elasticsearch image used by the dependency Helm chart comes from [Bitnami](https://bitnami.com/){target=_blank}.  
 
-    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications), StrangeBee Helm charts now reference the `bitnamilegacy` repository for Elasticsearch. Bitnami latest public images ship Elasticsearch 9, which isn't compatible with Cortex.
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications){target=_blank}, StrangeBee Helm charts now reference the `bitnamilegacy` repository for Elasticsearch. Bitnami latest public images ship Elasticsearch 9, which isn't compatible with Cortex.
 
     This has important consequences:
 
@@ -39,8 +39,8 @@ The default deployment includes:
 
     Kubernetes supports several methods for sharing filesystems between pods, including:
 
-    * [PV using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs)  
-    * Dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
+    * [PV using an NFS server](https://kubernetes.io/docs/concepts/storage/volumes/#nfs){target=_blank}
+    * Dedicated storage solutions like [Longhorn](https://longhorn.io/){target=_blank} or [Rook](https://rook.io/){target=_blank}
 
     This guide focuses on configuring a PV using an NFS server, with an example for [AWS Elastic File System (EFS)](#example-deploy-cortex-using-aws-efs).
 
@@ -49,7 +49,7 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 * Cortex defaults to uid:gid `1001:1001`.
 * Analyzers may use different uid:gid, such as `1000:1000` or `0:0` if running as root.
 
-To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html) with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
+To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html){target=_blank} with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
 ## Step 2: Deploy Cortex
 
@@ -86,17 +86,17 @@ The default configuration is designed for development environments and requires 
 !!! warning "First start"
     At first start, you must access the Cortex web page to update the Elasticsearch database.
 
-For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/).
+For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/){target=_blank}.
 
 !!! info "Dependency"
-    The `cortex` Helm chart relies on the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) by default as the search index.
+    The `cortex` Helm chart relies on the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank} by default as the search index.
 
 !!! note "Upgrades"
     To upgrade your release to the latest version of the `cortex` Helm chart, run:
     ```bash
     helm upgrade <release_name> strangebee/cortex
     ```
-    For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/).
+    For additional options and best practices, see [the Helm upgrade documentation](https://helm.sh/docs/helm/helm_upgrade/){target=_blank}.
 
 ### Production configuration
 
@@ -108,7 +108,7 @@ Use the following command to view all available configuration options for the `c
 helm show values strangebee/cortex
 ```
 
-For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing). You can also review the available options for the dependency.
+For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for the dependency.
 
 #### Storage configuration
 
@@ -120,16 +120,16 @@ By default, this chart attempts to create such a PVC using your cluster’s defa
 Common solutions include:
 
 * Running an NFS server reachable from your cluster and creating a PV targeting it
-* Using dedicated storage solutions like [Longhorn](https://longhorn.io/) or [Rook](https://rook.io/)
-* Leveraging cloud provider-specific solutions like [AWS EFS with the EFS CSI Driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver)
+* Using dedicated storage solutions like [Longhorn](https://longhorn.io/){target=_blank} or [Rook](https://rook.io/){target=_blank}
+* Leveraging cloud provider-specific solutions like [AWS EFS with the EFS CSI Driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver){target=_blank}
 
-Also note that Cortex stores data in Elasticsearch. Regular backups are strongly recommended to prevent data loss, especially when deploying Elasticsearch on Kubernetes using the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch).
+Also note that Cortex stores data in Elasticsearch. Regular backups are strongly recommended to prevent data loss, especially when deploying Elasticsearch on Kubernetes using the [Bitnami Elasticsearch Stack](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank}.
 
 #### Elasticsearch
 
 By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
 
-You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch) for available configuration options.
+You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank} for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
     Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
@@ -152,14 +152,14 @@ Before setting up the PV for AWS EFS, complete the following steps:
 
 * [Create an Identity and Access Management (IAM) role](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to allow the EFS CSI driver to interact with EFS.
 * Install the EFS CSI driver on your Kubernetes cluster using one of the following methods:
-    * [EKS add-ons](https://www.eksworkshop.com/docs/fundamentals/storage/efs/efs-csi-driver) (recommended)
-    * [Official Helm chart](https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&expanded=true)
-* [Create an EFS filesystem](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md) and note the associated EFS filesystem ID.
+    * [EKS add-ons](https://www.eksworkshop.com/docs/fundamentals/storage/efs/efs-csi-driver){target=_blank} (recommended)
+    * [Official Helm chart](https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&expanded=true){target=_blank}
+* [Create an EFS filesystem](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md){target=_blank} and note the associated EFS filesystem ID.
 
 #### 1. Create a StorageClass for EFS
 
 !!! note "Reference example"
-    The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods).
+    The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods){target=_blank}.
 
 Create a StorageClass that references your EFS filesystem:    
 
@@ -184,7 +184,7 @@ parameters:
 
 Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.
 
-Use the `cortex` Helm chart to configure the storageClass value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the [`values.yaml`](https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml) file and look for the `persistentVolumeClaim` section.
+Use the `cortex` Helm chart to configure the storageClass value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the [`values.yaml`](https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml){target=_blank} file and look for the `persistentVolumeClaim` section.
 
 ## Next steps
 

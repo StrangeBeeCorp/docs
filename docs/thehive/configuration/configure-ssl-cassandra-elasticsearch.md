@@ -10,8 +10,7 @@ In this tutorial, we're going to enable SSL/TLS for both Cassandra and Elasticse
 
 Stop TheHive before applying changes to avoid conflicts.
 
-!!! info "Service commands"
-    For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+{% include-markdown "includes/service-commands.md" %}
 
 ### (Optional) Step 2: Configure Java Virtual Machine (JVM) trust for Cassandra SSL certificates
 

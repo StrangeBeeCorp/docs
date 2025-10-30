@@ -17,7 +17,7 @@ In addition to alerts, alert feeders can also generate cases and tasks
 ## Feeder functions
 
 !!! tip "Feeder function examples"
-    Feeder function examples are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples/Alert%20Feeder%20Functions).
+    Feeder function examples are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples/Alert%20Feeder%20Functions){target=_blank}.
 
 A feeder function transforms data retrieved from the HTTP API call and converts it into the expected TheHive format to create alerts.
 

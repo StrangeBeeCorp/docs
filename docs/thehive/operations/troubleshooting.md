@@ -69,7 +69,7 @@ cp /var/log/thehive/application.log /root
 
 ## Step 6: Share the Logs
 
-Create an issue on [GitHub](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D) and include the following information:
+Create an issue on [GitHub](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D){target=_blank} and include the following information:
 
 - **Context:**
   - Instance type (single node/cluster, backend type, index engine)

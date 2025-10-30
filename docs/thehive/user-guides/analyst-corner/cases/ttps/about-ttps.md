@@ -12,7 +12,7 @@ Procedures detail how they implement the techniques in practice.
 
 ## MITRE ATT&CK framework
 
-By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/). It's installed during setup, and a catalog named Enterprise Attack is created with all the techniques.
+By default, TheHive includes the [MITRE Enterprise Matrix](https://attack.mitre.org/matrices/enterprise/){target=_blank}. It's installed during setup, and a catalog named Enterprise Attack is created with all the techniques.
 
 [This catalog can be updated](../../../../administration/ttps/update-a-catalog.md) or supplemented by [adding others](../../../../administration/ttps/add-a-catalog.md).
 

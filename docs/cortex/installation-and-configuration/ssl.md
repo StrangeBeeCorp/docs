@@ -8,7 +8,7 @@ We recommend using a reverse proxy to manage SSL layer; for example, Nginx.
 
     === "Nginx"
 
-        **Reference**: [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html) on [nginx.org](https://nginx.org)
+        **Reference**: [Configuring HTTPS servers](https://nginx.org/en/docs/http/configuring_https_servers.html){target=_blank} on [nginx.org](https://nginx.org){target=_blank}
 
         ```title="/etc/nginx/sites-available/cortex.conf"
         server {

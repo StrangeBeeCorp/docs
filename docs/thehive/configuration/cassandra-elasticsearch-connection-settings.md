@@ -39,7 +39,7 @@ TheHive uses JanusGraph for database and index connections. These parameters con
 | `db.janusgraph.storage.cql.ssl.keystore.storepassword`                      | string         | Password to access the keystore.  |
 | `db.janusgraph.storage.cql.ssl.keystore.keypassword`                          | string         | Password for the private key in the keystore.  |
 
-For more detailed information on configuring Cassandra connection, refer to the [official JanusGraph documentation.](https://docs.janusgraph.org/configs/configuration-reference/).
+For more detailed information on configuring Cassandra connection, refer to the [official JanusGraph documentation.](https://docs.janusgraph.org/configs/configuration-reference/){target=_blank}.
 
 ## Index search parameters
 
@@ -75,7 +75,7 @@ For more detailed information on configuring Cassandra connection, refer to the 
 | `index.search.elasticsearch.ssl.disable-hostname-verification`  | boolean        | Turn off host name verification in SSL certificates. Default: `false`. |
 | `index.search.elasticsearch.ssl.allow-self-signed-certificates` | boolean        | Accept self-signed certificates. Default: `false`. |
 
-For more detailed information on configuring Elasticsearch connection, refer to the [official JanusGraph documentation.](https://docs.janusgraph.org/configs/configuration-reference/).
+For more detailed information on configuring Elasticsearch connection, refer to the [official JanusGraph documentation.](https://docs.janusgraph.org/configs/configuration-reference/){target=_blank}.
 
 ## Configuration example with authentication and ssl
 

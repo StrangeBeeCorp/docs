@@ -5,7 +5,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
 !!! info "API documentation for further details"
     The objects in functions are the same as those used in TheHive HTTP API.
 
-    For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/).
+    For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/){target=_blank}.
 
 ## User
 
@@ -218,7 +218,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
 * `cortex.createAction({ "responderId": "id", "objectId": "inputId", "objectType": "type"})`: Launches a Cortex responder action with `responderId` as the full ID of the responder to run, `objectId` as of ID of the object to act on, and `objectType` as its type, such as case, alert, or task.
 
     !!! tip "Responder ID"
-        To get the responder ID, use the [`GET /api/v1/connector/cortex/responder/` API endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders).
+        To get the responder ID, use the [`GET /api/v1/connector/cortex/responder/` API endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders){target=_blank}.
 
     !!! example "Example"
         ```json

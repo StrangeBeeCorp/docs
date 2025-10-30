@@ -13,7 +13,7 @@ You can configure multiple MISP servers in TheHive.
 To manually import a MISP event as a case in TheHive, refer to [How to Create a New Case](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event).
 
 !!! info "Requirements"
-    Before proceeding with these instructions, ensure you have [a MISP API key](https://www.circl.lu/doc/misp/automation/#automation-api). You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
+    Before proceeding with these instructions, ensure you have [a MISP API key](https://www.circl.lu/doc/misp/automation/#automation-api){target=_blank}. You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
 
 !!! note "Multiple MISP servers"
     TheHive supports connecting multiple MISP servers only with a paid license.

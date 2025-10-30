@@ -30,8 +30,8 @@ If you prefer more control over where Cortex is installed, need to use it in env
 
 ## :material-docker: Docker
 
-Prefer containerized deployment? Use the official pre-built Docker images on [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex). Follow the [Docker deployment instructions](../installation-and-configuration/run-cortex-with-docker.md) to get started.
+Prefer containerized deployment? Use the official pre-built Docker images on [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex){target=_blank}. Follow the [Docker deployment instructions](../installation-and-configuration/run-cortex-with-docker.md) to get started.
 
 ## :material-kubernetes: Kubernetes
 
-For Kubernetes users, deploy Cortex with pre-built Docker images from [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex). Refer to the [Kubernetes deployment guide](../installation-and-configuration/deploy-cortex-on-kubernetes.md) for detailed instructions.
+For Kubernetes users, deploy Cortex with pre-built Docker images from [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex){target=_blank}. Refer to the [Kubernetes deployment guide](../installation-and-configuration/deploy-cortex-on-kubernetes.md) for detailed instructions.

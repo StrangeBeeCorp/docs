@@ -49,11 +49,11 @@ To import an existing case template from another organization or TheHive instanc
     
     **- TLP (traffic light protocol) \***  
 
-    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [Malware Information Sharing Platform (MISP) taxonomy](https://www.misp-project.org/taxonomies.html#_tlp) for detailed definitions of TLP values. 
+    The TLP level for the case. It indicates how you can share the case's information with others. Refer to the [Malware Information Sharing Platform (MISP) taxonomy](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} for detailed definitions of TLP values. 
     
     **- PAP (permissible actions protocol) \***  
 
-    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap) for detailed definitions of PAP values.
+    The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} for detailed definitions of PAP values.
     
     **- Severity**  
 

@@ -14,7 +14,7 @@ Use this procedure if you want to add taxonomies other than the default imported
 
 3. Select **Import taxonomies**.
 
-4. In the **Import taxonomies archive** drawer, drop a ZIP file into the **Taxonomies archive** section or select it from your computer. The ZIP file must contain at least one file named `machinetag.json` that follows the [MISP JSON schema](https://github.com/MISP/misp-taxonomies).
+4. In the **Import taxonomies archive** drawer, drop a ZIP file into the **Taxonomies archive** section or select it from your computer. The ZIP file must contain at least one file named `machinetag.json` that follows the [MISP JSON schema](https://github.com/MISP/misp-taxonomies){target=_blank}.
 
 5. Select **Import**.
 

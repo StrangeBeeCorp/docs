@@ -10,12 +10,12 @@ By the end, you'll have a fully functional monitoring system displaying real-tim
 
     Before you start, ensure you have:
 
-    * A running [Prometheus](https://prometheus.io/) instance, version 2.x or 3.x 
-    * A running [Grafana](https://grafana.com/) instance, version 7.0 or later
+    * A running [Prometheus](https://prometheus.io/){target=_blank} instance, version 2.x or 3.x 
+    * A running [Grafana](https://grafana.com/){target=_blank} instance, version 7.0 or later
 
 ## Step 1: Enable monitoring in TheHive
 
-First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the [Kamon](https://kamon.io/) library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.
+First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the [Kamon](https://kamon.io/){target=_blank} library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.
 
 1. Open the `/etc/thehive/application.conf` file.
 
@@ -71,7 +71,7 @@ Now we'll configure Prometheus to collect these metrics from TheHive.
 
     === "For Prometheus v2.x"
 
-        Add the [scrape configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config) to `prometheus.yml`.
+        Add the [scrape configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config){target=_blank} to `prometheus.yml`.
 
         ```yaml
         scrape_configs:
@@ -85,7 +85,7 @@ Now we'll configure Prometheus to collect these metrics from TheHive.
 
     === "For Prometheus v3.x"
 
-        Add the [scrape configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config) to `prometheus.yml`.
+        Add the [scrape configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config){target=_blank} to `prometheus.yml`.
 
         ```yaml
         scrape_configs:
@@ -98,7 +98,7 @@ Now we'll configure Prometheus to collect these metrics from TheHive.
               - targets: ['<thehive_hostname>:9095'] # Set the IP or hostname for TheHive
         ```
 
-        The `fallback_scrape_protocol` ensures compatibility with TheHive metrics format. For more details, check the [Prometheus migration guide](https://prometheus.io/docs/prometheus/latest/migration/#scrape-protocols).
+        The `fallback_scrape_protocol` ensures compatibility with TheHive metrics format. For more details, check the [Prometheus migration guide](https://prometheus.io/docs/prometheus/latest/migration/#scrape-protocols){target=_blank}.
 
 3. Save the configuration file and restart Prometheus.
 
@@ -119,7 +119,7 @@ Now we'll configure Prometheus to collect these metrics from TheHive.
     * Add appropriate labels to your TheHive pods
     * Create a `PodMonitor` resource if using Prometheus Operator
 
-    For detailed instructions, see the [Prometheus Kubernetes configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config) or [Prometheus Operator](https://prometheus-operator.dev/docs/user-guides/getting-started/) documentation.
+    For detailed instructions, see the [Prometheus Kubernetes configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config){target=_blank} or [Prometheus Operator](https://prometheus-operator.dev/docs/user-guides/getting-started/){target=_blank} documentation.
 
 ## Step 3: Visualize metrics in Grafana
 
@@ -127,7 +127,7 @@ Time to make those metrics visible! We'll set up Grafana dashboards to display T
 
 1. Open Grafana in your browser and log in.
 
-2. [Configure Prometheus as a data source](https://next.prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source):
+2. [Configure Prometheus as a data source](https://next.prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source){target=_blank}:
 
     a. Select :fontawesome-solid-gear: in the left sidebar.
 
@@ -137,7 +137,7 @@ Time to make those metrics visible! We'll set up Grafana dashboards to display T
 
     d. In the **URL** field, enter the appropriate Prometheus server URL.
 
-    e. [Adjust other data source settings](https://grafana.com/docs/grafana/latest/datasources/prometheus/configure/) as desired.
+    e. [Adjust other data source settings](https://grafana.com/docs/grafana/latest/datasources/prometheus/configure/){target=_blank} as desired.
 
     f. Select **Save & Test**.
 
@@ -147,12 +147,12 @@ Time to make those metrics visible! We'll set up Grafana dashboards to display T
       
         We suggest starting with these Kamon 2.x dashboards, which work well with TheHive:
 
-        * [Kamon 2.x - API Dashboard](https://grafana.com/grafana/dashboards/12317-api-dashboard/) `ID: 12317`: Shows API metrics like request throughput, response latency, and error rates.  
+        * [Kamon 2.x - API Dashboard](https://grafana.com/grafana/dashboards/12317-api-dashboard/){target=_blank} `ID: 12317`: Shows API metrics like request throughput, response latency, and error rates.  
         Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.
-        * [Kamon 2.x - System Metrics Dashboard](https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/) `ID: 12315`: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.
-        * [Kamon 2.x - Akka Dashboard](https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/) `ID: 10776`: Shows Akka system information, actor metrics, and message processing times.
+        * [Kamon 2.x - System Metrics Dashboard](https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/){target=_blank} `ID: 12315`: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.
+        * [Kamon 2.x - Akka Dashboard](https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/){target=_blank} `ID: 10776`: Shows Akka system information, actor metrics, and message processing times.
 
-        For more options, browse the [Grafana dashboard library](https://grafana.com/grafana/dashboards/?pg=docs-grafana-latest-dashboards-variables).
+        For more options, browse the [Grafana dashboard library](https://grafana.com/grafana/dashboards/?pg=docs-grafana-latest-dashboards-variables){target=_blank}.
 
     a. Select **Dashboards** in the left sidebar.
 
@@ -166,9 +166,9 @@ Time to make those metrics visible! We'll set up Grafana dashboards to display T
 
     f. Select **Import**.
 
-4. Review and adjust the [dashboard variables](https://grafana.com/docs/grafana/latest/dashboards/variables/) to match your environment.
+4. Review and adjust the [dashboard variables](https://grafana.com/docs/grafana/latest/dashboards/variables/){target=_blank} to match your environment.
 
-To build custom dashboards from scratch, see [Create a dashboard in Grafana](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/).
+To build custom dashboards from scratch, see [Create a dashboard in Grafana](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/){target=_blank}.
 
 ## Step 4: Verify your monitoring setup
 

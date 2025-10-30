@@ -29,7 +29,7 @@ In TheHive, an alert includes the following elements:
 
 * [Observables](../cases/observables/about-observables.md): Data points such as IP addresses, file hashes, domains, and email addresses that are relevant to an investigation.
 
-* [TTPs](../cases/ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/) knowledge base.
+* [TTPs](../cases/ttps/about-ttps.md): The methods and strategies used by attackers, based on the [MITRE ATT&CK](https://attack.mitre.org/){target=_blank} knowledge base.
 
 * [Attachments](../cases/attachments/about-attachments.md): Files attached to an alert. Adding an image to an alert’s description or summary automatically saves it in the [alert’s Attachments tab](../cases/attachments/about-attachments.md#alerts). Attachments can also be [added manually](../cases/attachments/add-an-attachment-case-alert.md).
 

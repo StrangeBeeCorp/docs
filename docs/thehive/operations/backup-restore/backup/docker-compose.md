@@ -197,5 +197,5 @@ check the backup folder and verify the data has been well copied.
 
 ---
 !!! Tip
-    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to the appropriate documentation for detailed instructions [here](https://github.com/StrangeBeeCorp/docker).
+    * A comprehensive backup script, including all necessary housekeeping actions, is included with our Docker Compose profiles. Refer to the appropriate documentation for detailed instructions [here](https://github.com/StrangeBeeCorp/docker){target=_blank}.
     * You can also review the backup script for `prod1-thehive` directly on our GitHub repository.

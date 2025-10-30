@@ -20,7 +20,7 @@ For manual installation or environments without package managers, follow the [in
 
 ### :material-docker: Docker
 
-TheHive image is available on [Docker Hub](https://hub.docker.com/r/strangebee/TheHive). To deploy TheHive with all required services using Docker Compose, see [Running TheHive with Docker](../installation/docker.md).
+TheHive image is available on [Docker Hub](https://hub.docker.com/r/strangebee/TheHive){target=_blank}. To deploy TheHive with all [required services](../overview/index.md#architecture) using Docker Compose, see [Deploy TheHive with Docker Compose](../installation/docker.md).
 
 ## Cluster deployment
 
@@ -32,4 +32,4 @@ Configure a multi-node cluster with TheHive and its components running on dedica
 
 ### :material-kubernetes: Kubernetes
 
-Deploy TheHive on Kubernetes using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive). See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.
+Deploy TheHive on Kubernetes using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive){target=_blank}. See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.

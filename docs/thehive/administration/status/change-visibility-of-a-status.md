@@ -7,7 +7,7 @@ This topic provides step-by-step instructions for changing a [status](about-stat
 Use this procedure if you want to hide [TheHive’s predefined statuses](about-statuses.md#predefined-statuses), so users only use the custom statuses you have created. 
 
 !!! note "No impact on API"
-    Changing the visibility of a status doesn't affect [the API](https://docs.strangebee.com/thehive/api-docs/). All statuses remain available through the API.
+    Changing the visibility of a status doesn't affect [the API](https://docs.strangebee.com/thehive/api-docs/){target=_blank}. All statuses remain available through the API.
 
 {% include-markdown "includes/task-statuses-excluded.md" %}
 

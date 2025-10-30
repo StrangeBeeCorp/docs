@@ -8,8 +8,7 @@ Turn off the MISP integration if you don't use [MISP events](../administration/m
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `application.conf` file using a text editor.
 

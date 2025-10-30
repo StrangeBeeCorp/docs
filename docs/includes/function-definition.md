@@ -1,4 +1,4 @@
-Enter the JavaScript code for your function. If you need inspiration, check out the [GitHub repository with function examples](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples).
+Enter the JavaScript code for your function. If you need inspiration, check out the [GitHub repository with function examples](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples){target=_blank}.
 
 !!! tip "Basic function structure"
     In TheHive, a function follows this basic structure:

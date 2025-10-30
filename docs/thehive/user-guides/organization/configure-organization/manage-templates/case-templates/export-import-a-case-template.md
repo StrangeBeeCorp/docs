@@ -5,7 +5,7 @@
 This topic provides step-by-step instructions for exporting and importing a [case template](about-case-templates.md) in TheHive.
 
 !!! info "Share and discover case templates"
-    Contribute to and find case templates in our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates).  
+    Contribute to and find case templates in our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates){target=_blank}.  
     
     Before submitting your pull request:
 

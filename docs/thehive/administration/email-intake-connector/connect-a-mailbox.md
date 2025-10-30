@@ -42,7 +42,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
         #### Step 1: Create a project in the Google Cloud Console
 
-        1. Go to the [Google Admin Console](https://console.cloud.google.com/welcome).
+        1. Go to the [Google Admin Console](https://console.cloud.google.com/welcome){target=_blank}.
 
         2. Select **APIs & Services**.
 
@@ -159,13 +159,13 @@ Use this procedure if your organization receives alerts via email and you want t
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
-        31. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
+        31. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/){target=_blank}.
 
-        32. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
+        32. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group){target=_blank}.
 
         #### Step 2: Register a new application
 
-        33. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
+        33. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application){target=_blank}.
 
         34. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
@@ -173,7 +173,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
         35. Select **Certificates & secrets** from the left pane.
 
-        36. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
+        36. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials){target=_blank}.
 
         37. Copy the secret's value for use in TheHive configuration.
 
@@ -184,7 +184,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
         38. Select **API permissions** from the left pane.
 
-        39. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission for Office 365 Exchange Online](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api).
+        39. Follow [the Microsoft instructions and add the *IMAP.AccessAsApp* permission for Office 365 Exchange Online](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-your-web-api){target=_blank}.
 
         #### Step 5: Configure PowerShell access
 
@@ -287,13 +287,13 @@ Use this procedure if your organization receives alerts via email and you want t
 
         Create a security group that includes the shared mailbox. This group will be used to restrict access to the application, ensuring it is available only to the shared mailbox.
 
-        46. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/).
+        46. Go to your [Microsoft Exchange admin center](https://admin.exchange.microsoft.com/){target=_blank}.
 
-        47. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group).
+        47. Follow the [Microsoft instructions to create a mail-enabled security group and add the shared mailbox as a member](https://learn.microsoft.com/en-us/exchange/recipients-in-exchange-online/manage-mail-enabled-security-groups#use-the-eac-to-create-a-mail-enabled-security-group){target=_blank}.
 
         #### Step 2: Register a new application
 
-        48. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application).
+        48. Follow [the Microsoft instructions to register an application](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=certificate%2Cexpose-a-web-api#register-an-application){target=_blank}.
 
         49. Copy the Application (client) ID and Directory (tenant) ID for use in TheHive configuration.
 
@@ -301,7 +301,7 @@ Use this procedure if your organization receives alerts via email and you want t
 
         50. Select **Certificates & secrets** from the left pane.
 
-        51. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials).
+        51. Follow [the Microsoft instructions to add a client secret](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app?tabs=client-secret%2Cexpose-a-web-api#add-credentials){target=_blank}.
 
         52. Copy the secret's value for use in TheHive configuration.
 
@@ -312,21 +312,21 @@ Use this procedure if your organization receives alerts via email and you want t
 
         53. Select **API permissions** from the left pane.
 
-        54. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph).
+        54. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph){target=_blank}.
 
             !!! tip "Recommanded permissions"
                 For Microsoft Graph to work correctly with TheHive, ensure that the following permissions are added:
 
-                * [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread)
-                * [Mail.ReadBasic](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasic)
-                * [Mail.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasicall)
-                * [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite)
-                * [MailboxFolder.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxfolderreadall)
-                * [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall)
-                * [User.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadbasicall)
-                * [User.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadwriteall)
-                * [UserAuthenticationMethod.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadall)
-                * [UserAuthenticationMethod.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall)
+                * [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread){target=_blank}
+                * [Mail.ReadBasic](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasic){target=_blank}
+                * [Mail.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadbasicall){target=_blank}
+                * [Mail.ReadWrite](https://learn.microsoft.com/en-us/graph/permissions-reference#mailreadwrite){target=_blank}
+                * [MailboxFolder.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#mailboxfolderreadall){target=_blank}
+                * [User.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadall){target=_blank}
+                * [User.ReadBasic.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadbasicall){target=_blank}
+                * [User.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userreadwriteall){target=_blank}
+                * [UserAuthenticationMethod.Read.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadall){target=_blank}
+                * [UserAuthenticationMethod.ReadWrite.All](https://learn.microsoft.com/en-us/graph/permissions-reference#userauthenticationmethodreadwriteall){target=_blank}
 
         #### Step 5: Configure PowerShell access
 

@@ -9,7 +9,7 @@ To do this, we'll use CQL, the Cassandra Query Language, which is similar in pur
     ```
 
     !!! info "Cqlsh may not be available on RPM-based systems"
-        On some RPM-based distributions, the `cqlsh` client isn't included with the `cassandra` package. If running cqlsh gives an error, download the [official Apache Cassandra tarball](https://downloads.apache.org/cassandra/) that matches your server version and extract it. Then run the bundled client: `./bin/cqlsh -u cassandra -p cassandra`.
+        On some RPM-based distributions, the `cqlsh` client isn't included with the `cassandra` package. If running cqlsh gives an error, download the [official Apache Cassandra tarball](https://downloads.apache.org/cassandra/){target=_blank} that matches your server version and extract it. Then run the bundled client: `./bin/cqlsh -u cassandra -p cassandra`.
 
     If the connection is successful, you'll see output similar to:
 

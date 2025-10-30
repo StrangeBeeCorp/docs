@@ -1,6 +1,6 @@
 # About Cortex
 
-[Cortex](https://github.com/thehive-project/Cortex/) is an open-source analysis and response engine designed for SOCs, CSIRTs, and security researchers to automate threat intelligence gathering and incident response. Through its RESTful API, it allows teams to analyze observables—such as IP addresses, hashes, and domains—at scale and automate response actions.
+[Cortex](https://github.com/thehive-project/Cortex/){target=_blank} is an open-source analysis and response engine designed for SOCs, CSIRTs, and security researchers to automate threat intelligence gathering and incident response. Through its RESTful API, it allows teams to analyze observables—such as IP addresses, hashes, and domains—at scale and automate response actions.
 
 This topic explains what Cortex is and the benefits of using it with TheHive.
 

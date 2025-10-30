@@ -16,8 +16,7 @@ By default, TheHive listens on `all network interfaces (0.0.0.0)` on `port 9000`
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `application.conf` file using a text editor.
 
@@ -46,8 +45,7 @@ The base URL defines the public address that users access to reach TheHive. This
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `application.conf` file using a text editor.
 
@@ -84,8 +82,7 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `application.conf` file using a text editor.
 
@@ -118,8 +115,7 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
 
 1. Stop TheHive service.
 
-    !!! info "Service commands"
-        For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+    {% include-markdown "includes/service-commands.md" %}
 
 2. Open the `application.conf` file using a text editor.
 

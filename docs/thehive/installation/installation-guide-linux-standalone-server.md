@@ -13,8 +13,8 @@ If you prefer a faster setup on Linux, you can run an [automated installation sc
 
     It doesn't cover:
 
-    * Docker deployments: For Docker-based setups, follow [Running TheHive with Docker](docker.md).
-    * Cluster deployments: Refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
+    * Docker deployments: For Docker-based setups, follow [Deploy TheHive with Docker Compose](docker.md).
+    * Cluster deployments: Refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
     * Version upgrades: For upgrading an existing instance, see [Upgrade from TheHive 5.x](upgrade-from-5.x.md) or [Upgrade from TheHive 4.x](upgrade-from-4.x.md).
 
 !!! warning "Before you begin"
@@ -53,7 +53,7 @@ TheHive requires Java to run its application server and to manage various proces
 
 !!! note "Java support"
 
-    * For security and long-term support, we recommend using [Amazon Corretto](https://aws.amazon.com/corretto/), which provides OpenJDK builds maintained by Amazon.
+    * For security and long-term support, we recommend using [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
     * Only Java 11 is supported. Java 8 is no longer supported.
 
 === "DEB"
@@ -83,7 +83,7 @@ TheHive requires Java to run its application server and to manage various proces
         OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
         ```
         
-        If a different Java version appears, set Java 11 as the default using [`sudo update-alternatives --config java`](https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS).
+        If a different Java version appears, set Java 11 as the default using [`sudo update-alternatives --config java`](https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS){target=_blank}.
 
 === "RPM"
 
@@ -114,7 +114,7 @@ TheHive requires Java to run its application server and to manage various proces
         OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
         ```
 
-        If a different Java version appears, set Java 11 as the default using [`sudo alternatives --config java`](https://linux.die.net/man/8/alternatives).
+        If a different Java version appears, set Java 11 as the default using [`sudo alternatives --config java`](https://linux.die.net/man/8/alternatives){target=_blank}.
 
 === "Other installation methods"
     If you're using a system other than DEB or RPM, refer to your system documentation for instructions on installing Java 11.
@@ -123,10 +123,10 @@ TheHive requires Java to run its application server and to manage various proces
 
 ## :fontawesome-solid-database: Step 3: Install and configure Apache Cassandra
 
-[Apache Cassandra](https://cassandra.apache.org) is a database system that's used in TheHive as the back-end database for storing and managing incident response data.
+[Apache Cassandra](https://cassandra.apache.org){target=_blank} is a database system that's used in TheHive as the back-end database for storing and managing incident response data.
 
 !!! info "Single node configuration"
-    In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/) for detailed instructions.
+    In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md) for detailed instructions.
 
 !!! note "Cassandra supported versions"
     TheHive is fully compatible with Cassandra version 4.1.x.
@@ -172,7 +172,7 @@ TheHive requires Java to run its application server and to manage various proces
         sudo chown -R cassandra:cassandra /var/lib/cassandra
         ```
 
-    Refer to the official Cassandra documentation website for [the most up-to-date instructions](https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-debian-package).
+    Refer to the official Cassandra documentation website for [the most up-to-date instructions](https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-debian-package){target=_blank}.
 
 === "RPM"
 
@@ -219,11 +219,11 @@ TheHive requires Java to run its application server and to manage various proces
         sudo chown -R cassandra:cassandra /var/lib/cassandra
         ```
 
-    Refer to the official Cassandra documentation website for [the most up-to-date instructions](https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-rpm-package).
+    Refer to the official Cassandra documentation website for [the most up-to-date instructions](https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-rpm-package){target=_blank}.
 
 === "Other installation methods"
 
-    Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/) and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
+    Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/){target=_blank} and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
 
 ### Step 3.2: Configure Cassandra
 
@@ -263,8 +263,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     authorizer: CassandraAuthorizer 
     ```
 
-    !!! danger "Danger of no authentication"
-        Running Cassandra without authentication is strongly discouraged—especially in production environments. Doing so exposes your database to unauthorized access and can compromise the security of your entire TheHive deployment.
+    {% include-markdown "includes/no-authentication-cassandra.md" %}
 
 7. Save your modifications in the `cassandra.yaml` file.
 
@@ -478,10 +477,10 @@ For additional configuration options, refer to:
 
 ## :fontawesome-solid-list: Step 4: Install and configure Elasticsearch
 
-[Elasticsearch](https://www.elastic.co/elasticsearch) is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing [audit logs](../user-guides/organization/about-audit-logs.md).
+[Elasticsearch](https://www.elastic.co/elasticsearch){target=_blank} is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing [audit logs](../user-guides/organization/about-audit-logs.md).
 
 !!! info "Single node configuration"
-    In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/) for detailed instructions.
+    In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md) for detailed instructions.
 
 !!! note "Elasticsearch supported versions"
 
@@ -494,7 +493,7 @@ For additional configuration options, refer to:
     [Cortex](../administration/cortex/about-cortex.md) only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.
 
 !!! note "OpenSearch support"
-    Starting with version 5.3, TheHive supports [OpenSearch](https://opensearch.org/) for advanced use cases, except for audit log storage.
+    Starting with version 5.3, TheHive supports [OpenSearch](https://opensearch.org/){target=_blank} for advanced use cases, except for audit log storage.
 
 ### Step 4.1: Install Elasticsearch
 
@@ -524,7 +523,7 @@ For additional configuration options, refer to:
         sudo apt install elasticsearch
         ```
     
-    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package).
+    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package){target=_blank}.
 
 === "RPM"
 
@@ -556,11 +555,11 @@ For additional configuration options, refer to:
         sudo yum install --enablerepo=elasticsearch elasticsearch
         ```
     
-    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm).
+    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm){target=_blank}.
 
 === "Other installation methods"
 
-    Download the tar.gz archive from http://cassandra.apache.org/download/ and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/) to download the archive.
+    Download the tar.gz archive from [Elasticsearch downloads](http://elastic.co/downloads/elasticsearch){target=_blank} and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
 
 ### Step 4.2: Configure Elasticsearch
 
@@ -594,7 +593,7 @@ For additional configuration options, refer to:
 
 5. Recommended: Activate X-Pack security. It controls authentication, encryption, and other security features in Elasticsearch.
 
-    In the `elasticsearch.yml` file, add the desired security parameters from [the official Elasticsearch security settings documentation](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings). 
+    In the `elasticsearch.yml` file, add the desired security parameters from [the official Elasticsearch security settings documentation](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings){target=_blank}. 
     
     At minimum add the following line (or edit it if it already exists):
 
@@ -642,7 +641,7 @@ For additional configuration options, refer to:
     The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.
 
     !!! warning "Heap size configuration"
-        Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection).
+        Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}.
 
         Undefined heap settings may cause memory contention or out-of-memory errors.
 
@@ -755,7 +754,7 @@ For additional configuration options, refer to:
 
 TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
 
-All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum) and a [GPG](https://www.gnupg.org/) signature for verification.
+All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
 {% include-markdown "includes/manual-download-installation-thehive.md" %}
 
@@ -826,7 +825,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
 
             ```bash
             wget -O /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -904,7 +903,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 ### Step 5.2: Configure TheHive
 
 !!! info "Standalone server configuration"
-    In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/).
+    In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md).
 
 1. Open the `/etc/thehive/application.conf` file using a text editor.
 
@@ -1042,7 +1041,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
     * With the default configuration using Apache Cassandra (JanusGraph), audit logs immediately become private if the visibility of the associated case is restricted. This means that even if audit logs were originally public, they will be hidden from all users [once the case visibility is restricted](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md).
 
 !!! danger "Backups required"
-    Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
+    Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore){target=_blank} to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
 
 #### Activate audit log storage
 
@@ -1055,7 +1054,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 ### Step 5.4: Create the file storage directory
 
 !!! info "Standalone server configuration"
-    In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Setting up a Cluster with TheHive](https://docs.strangebee.com/thehive/installation/deploying-a-cluster/).
+    In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md).
 
 File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. These items are stored as-is.
 

@@ -2,7 +2,7 @@
 
 All persistent data is stored in an Elasticsearch database. The backup and
 restore procedures are the ones that are detailed in
-[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html).
+[Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html){target=_blank}.
 
 _Note_: you may have to adapt your indices in the examples below. To find the
 right index, use the following command :
@@ -37,7 +37,7 @@ Then, restart the Elasticsearch service.
 
 _Note_: Be careful if you run Elasticsearch in Docker, the directory must be
 mapped in host filesystem using `--volume`
-parameter (cf. [Docker documentation](https://docs.docker.com/engine/tutorials/dockervolumes/)).
+parameter (cf. [Docker documentation](https://docs.docker.com/engine/tutorials/dockervolumes/){target=_blank}).
 
 
 ## 2. Register a snapshot repository

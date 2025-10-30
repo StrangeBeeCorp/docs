@@ -8,7 +8,7 @@ This topic explains how taxonomies work.
 
 TheHive supports two ways to create taxonomies:
 
-* From the Malware Information Sharing Platform (MISP): TheHive imports [MISP taxonomies](https://github.com/MISP/misp-taxonomies) by default during installation.
+* From the Malware Information Sharing Platform (MISP): TheHive imports [MISP taxonomies](https://github.com/MISP/misp-taxonomies){target=_blank} by default during installation.
 
     !!! warning "Manual activation required"
         By default, MISP taxonomies aren't activated. Administrators must [activate them manually](activate-deactivate-a-taxonomy.md).
@@ -18,7 +18,7 @@ TheHive supports two ways to create taxonomies:
 ## Actions
 
 !!! info "MISP taxonomy upgrades"
-    TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html) available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. Updating them requires performing [a manual update](update-misp-taxonomies.md).
+    TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html){target=_blank} available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. Updating them requires performing [a manual update](update-misp-taxonomies.md).
 
 TheHive doesn't allow modifying taxonomies or their tags. 
 

@@ -64,7 +64,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -185,7 +185,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com) using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg

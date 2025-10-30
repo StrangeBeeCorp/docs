@@ -55,8 +55,7 @@ For audit logs, it redacts:
 
 Stop TheHive before applying changes to avoid conflicts.
 
-!!! info "Service commands"
-    For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
+{% include-markdown "includes/service-commands.md" %}
 
 ## Step 3: Configure GDPR settings in TheHive
 
@@ -89,7 +88,7 @@ Now we'll add the GDPR configuration.
 
     a. Adjust the schedule of the job.
 
-    Use this [Cron tutorial](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html) for more information.
+    Use this [Cron tutorial](https://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger.html){target=_blank} for more information.
 
     b. Choose your strategy.
 

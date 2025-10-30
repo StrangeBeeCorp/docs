@@ -11,13 +11,13 @@
 
 2. Optional: Set a password for the `elastic` user.
 
-    * [For Elasticsearch 7.x](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords):
+    * [For Elasticsearch 7.x](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords){target=_blank}:
 
     ```bash
     sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
     ```
 
-    * [For Elasticsearch 8.0](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password):
+    * [For Elasticsearch 8.0](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password){target=_blank}:
 
     ```bash
     sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password
@@ -46,7 +46,7 @@
 
     If successful, the command should return: `{"role":{"created":true}}`.
 
-    For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role).
+    For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
 
     * Update a role:
 
@@ -67,7 +67,7 @@
     
     Replace `<elastic_user_password>` with the password you set for the `elastic` user.
 
-    For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role).
+    For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
 
 4. Assign the role to the user you'll use for TheHive.
 
@@ -88,4 +88,4 @@
 
     If successful, the command should return: `{"created":true}`.
 
-    For more details, refer to [the official Elasticsearch API documentation for updating users](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user).
+    For more details, refer to [the official Elasticsearch API documentation for updating users](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user){target=_blank}.

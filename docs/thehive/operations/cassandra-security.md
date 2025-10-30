@@ -7,7 +7,7 @@
 !!! Note "References"
     Internal authentication
       
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html)
+    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureInternalAuthenticationTOC.html){target=_blank}
 
 To authenticate with Cassandra and manage permissions, follow these steps:
 
@@ -48,7 +48,7 @@ To authenticate with Cassandra and manage permissions, follow these steps:
 !!! Note "References"
     Node-to-Node Encryption
       
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html)
+    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLNodeToNode.html){target=_blank}
 
 
 To enable node-to-node encryption, modify the `cassandra.yaml` configuration file with the following settings:
@@ -95,8 +95,8 @@ By specifying a dedicated `native_transport_port_ssl`, all SSL communications wi
 !!! Note "References"
     Client to Node Encryption
     
-    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html)
-    - [https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl](https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl)
+    - [https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html](https://docs.datastax.com/en/archived/cassandra/3.0/cassandra/configuration/secureSSLClientToNode.html){target=_blank}
+    - [https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl](https://docs.janusgraph.org/basics/configuration-reference/#storagecqlssl){target=_blank}
 
 This guide explains how to establish a secure connection between Cassandra clients (specifically TheHive) and the Cassandra server.
 

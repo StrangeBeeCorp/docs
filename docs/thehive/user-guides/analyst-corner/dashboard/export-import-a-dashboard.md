@@ -5,7 +5,7 @@
 This topic provides step-by-step instructions for exporting and importing a [dashboard](about-dashboards.md) in TheHive.
 
 !!! tip "Find dashboard templates"
-    Dashboard templates from the community are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Dashboard%20Templates). Contributions are welcome!
+    Dashboard templates from the community are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Dashboard%20Templates){target=_blank}. Contributions are welcome!
 
 ## Export a dashboard
 

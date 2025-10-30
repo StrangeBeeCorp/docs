@@ -1,13 +1,13 @@
 # Quick Install on Linux Systems: One-Command Setup
 
-If you prefer a faster setup than going through [the complete installation guide](installation-guide-linux-standalone-server.md), you can run the automated installation script instead. It will install TheHive along with all required services and dependencies on a standalone Linux server using predefined settings.
+If you prefer a faster setup than going through [the complete installation guide](installation-guide-linux-standalone-server.md), you can run the automated installation script instead. It will install TheHive along with all [required services](../overview/index.md#architecture) and dependencies on a standalone Linux server using predefined settings.
 
 !!! warning "Before you begin"
     To ensure a smooth installation process, make sure you have:
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for script-based installation
-    * [Wget](https://www.gnu.org/software/wget/) installed
+    * [Wget](https://www.gnu.org/software/wget/){target=_blank} installed
 
 !!! danger "No authentication configured for Cassandra and Elasticsearch"
     This script doesn't set up authentication for Cassandra or Elasticsearch. For security—especially in production—enable authentication on both services before going live. See [Configure Database and Index Authentication](../configuration/configure-authentication-cassandra-elasticsearch.md) for instructions.

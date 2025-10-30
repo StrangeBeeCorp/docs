@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 -->
 
-By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to [Elasticsearch](https://www.elastic.co/enterprise-search).
+By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to [Elasticsearch](https://www.elastic.co/enterprise-search){target=_blank}.
 
 This topic provides step-by-step instructions for configuring TheHive audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
 
@@ -25,7 +25,7 @@ Make sure you're using Elasticsearch version 7.17 or later to guarantee compatib
 
 ### Back up Elasticsearch indices
 
-Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore) to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
+Regularly [back up your Elasticsearch indices](https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore){target=_blank} to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.
 
 ## Step 1: Activate audit log storage in Elasticsearch
 

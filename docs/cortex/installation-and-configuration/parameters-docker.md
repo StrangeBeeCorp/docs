@@ -33,7 +33,7 @@ Use this reference to understand and fine-tune the internal configuration option
 
 ## Using dockerized analyzers and responders
 
-To run analyzers and responders as Docker containers, register them using the [StrangeBee official catalogs](https://github.com/TheHive-Project/Cortex/tree/master/docker/cortex).
+To run analyzers and responders as Docker containers, register them using the [StrangeBee official catalogs](https://github.com/TheHive-Project/Cortex/tree/master/docker/cortex){target=_blank}.
 
 In the Cortex configuration file, update `analyzer.urls` and `responder.urls` to specify where Cortex should find analyzers and responders. 
 
@@ -44,15 +44,15 @@ These settings accept:
 
 Available URLs for dockerized analyzers:
 
-* [analyzers-stable.json](https://catalogs.download.strangebee.com/latest/json/analyzers-stable.json): Stable analyzers (no updates once used).
-* [analyzers.json](https://catalogs.download.strangebee.com/latest/json/analyzers.json): Updated with each new release.
-* [analyzers-devel.json](https://catalogs.download.strangebee.com/latest/json/analyzers-devel.json): Updated on every commit (development builds).
+* [analyzers-stable.json](https://catalogs.download.strangebee.com/latest/json/analyzers-stable.json){target=_blank}: Stable analyzers (no updates once used).
+* [analyzers.json](https://catalogs.download.strangebee.com/latest/json/analyzers.json){target=_blank}: Updated with each new release.
+* [analyzers-devel.json](https://catalogs.download.strangebee.com/latest/json/analyzers-devel.json){target=_blank}: Updated on every commit (development builds).
 
 Available URLs for dockerized responders:
 
-* [responders-stable.json](https://catalogs.download.strangebee.com/latest/json/responders-stable.json): Stable responders (no updates once used).
-* [responders.json](https://catalogs.download.strangebee.com/latest/json/responders.json): Updated with each new release.
-* [responders-devel.json](https://catalogs.download.strangebee.com/latest/json/responders-devel.json): Updated on every commit (development builds).
+* [responders-stable.json](https://catalogs.download.strangebee.com/latest/json/responders-stable.json){target=_blank}: Stable responders (no updates once used).
+* [responders.json](https://catalogs.download.strangebee.com/latest/json/responders.json){target=_blank}: Updated with each new release.
+* [responders-devel.json](https://catalogs.download.strangebee.com/latest/json/responders-devel.json){target=_blank}: Updated on every commit (development builds).
 
 <h2>Next steps</h2>
 

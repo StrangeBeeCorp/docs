@@ -59,7 +59,7 @@ The time it takes for your security team to fully resolve an incident after its 
 
 ---
 
-For more information on these KPIs, consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/).
+For more information on these KPIs, consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/){target=_blank}.
 
 <h2>Next steps</h2>
 

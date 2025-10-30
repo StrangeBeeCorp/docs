@@ -1,7 +1,7 @@
 # Restore a stack run with Docker Compose
 
 !!! Note
-    This process assumes you are using [one of our Docker Compose profiles](https://github.com/StrangeBeeCorp/docker), and you have already created backup using the previously outlined backup procedure.
+    This process assumes you are using [one of our Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, and you have already created backup using the previously outlined backup procedure.
 
 Restore data that has been saved following the previous backup process.
 

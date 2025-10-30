@@ -1,187 +1,444 @@
-# :material-docker: Running TheHive with Docker
+# Deploy TheHive with Docker Compose
 
-TheHive fully supports Docker, allowing users to quickly deploy and manage their instance of the platform using Docker containers.
+In this guide, we're going to deploy and configure TheHive On-prem using Docker Compose.
 
-We provides and maintain several setup profiles for TheHive and Cortex available on GitHub. This guide will walk you through choose the right profile and setting up TheHive using Docker.
+By the end, you'll have a fully functional TheHive instance running in Docker containers.
 
-!!! info "Cortex support"
-    <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
+We provide several deployment profiles depending on your performance requirements on [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main){target=_blank}, with [all services](../overview/index.md#architecture) configured automatically.
 
----
+If you want to use only the TheHive Docker image, get it from [Docker Hub](https://hub.docker.com/r/strangebee/TheHive){target=_blank}. You'll need to install [other required services](../overview/index.md#architecture) separately.
 
-## Prerequisites
+!!! note "Guide scope"
+    This guide covers deploying a new instance of TheHive using Docker Compose, with all components hosted on the same server.
 
-#### Software requirements
+    It doesn't cover:
 
-- **Docker Engine**: Version `v23.0.15` or later. [Installation instructions](https://docs.docker.com/engine/install/){target=_blank}
-- **Docker Compose Plugin**: Version `v2.20.2` or later. [Installation instructions](https://docs.docker.com/compose/install/){target=_blank}
-- **jq**: [jq installation instructions](https://jqlang.github.io/jq/){target=_blank}
-- **Permissions**: The current user should have at least `sudo` permissions.
+    * Linux installations: For Linux installations, follow [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md).
+    * Cluster deployments: Refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
+    * Version upgrades: For upgrading an existing instance, see [Upgrade from TheHive 5.x](upgrade-from-5.x.md) or [Upgrade from TheHive 4.x](upgrade-from-4.x.md).
 
-&nbsp;
+!!! warning "Before you begin"
+    To ensure a smooth deployment process, make sure you have:
 
-#### Hardware requirements
+    * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
+    * [System requirements fully met and verified](system-requirements.md) for Docker Compose deployment
+    * At least `sudo` permissions
 
-Hardware requirements will depend on the deployment profile being used. For example, for testing deployments, a CPU with 4 vCPUs and 8 GB RAM is recommended, while for high-performance deployments for TheHive on a dedicated server, a CPU with 8 vCPUs and 32 GB RAM is recommended. For more detailed requirements, please refer to the GitHub link provided below.
+## Step 1: Install required dependencies
 
-Basically, two hardware profiles are recommended to run the full stack for TheHive on a single server (virtual of physical): 
+Start by installing the necessary dependencies for deploying TheHive with Docker Compose.
 
-1. 4vCPUs, 16 GB of RAM and 100GB of storage is recommended for most use cases, 
-2. 8vCPUs, 32GB of RAM and 150GB of storage for intensive use cases.
+* [Docker Engine](https://docs.docker.com/engine/install/){target=_blank}: version `v23.0.15` or later
+* [Docker Compose plugin](https://docs.docker.com/compose/install/){target=_blank}: version `v2.20.2` or later
+* [jq](https://jqlang.github.io/jq/){target=_blank}
 
+### Verify dependencies installation
 
----
+Run the following commands to ensure the dependencies are correctly installed:
 
-## Clone the repository
+* Check the Docker engine version:
 
-Clone the [StrangeBee Docker repository](https://github.com/StrangeBeeCorp/docker.git) to your local machine:
+```bash
+docker version
+```
 
-```sh
+* Confirm the current user can run Docker commands:
+
+```bash
+docker run hello-world
+```
+
+For details on post-installation steps and user permissions, see the [Docker post-installation guide](https://docs.docker.com/engine/install/linux-postinstall/){target=_blank}.
+
+* Check the Docker Compose plugin version:
+
+```bash
+docker compose version
+```
+
+## Step 2: Clone the GitHub repository
+
+Next, clone the [StrangeBee Docker repository](https://github.com/StrangeBeeCorp/docker.git){target=_blank} to your local machine:
+
+```bash
 git clone https://github.com/StrangeBeeCorp/docker.git
 ```
 
-![](../images/installation/docker-install-0.png)
+## Step 3: Choose your deployment profile
 
----
+Before proceeding with any commands, take a moment to choose the deployment profile that best fits your needs. We provide three prebuilt profiles, each designed for different use cases and performance requirements.
 
-## Deployment profiles
+### Profile n°1: *Testing environment* (TheHive and Cortex)
 
-!!! Warning "**BEFORE** RUNNING ANY COMMAND"
-    Please, read carefully the documentation related to the profile you want to use (the `README.md` files you'll find in the GitHub repository).
+!!! danger "Testing only"
+    This profile is for testing purposes only and must never be used in production
 
+Single server deployment of both TheHive and [Cortex](../administration/cortex/about-cortex.md) for testing purposes.
 
+Check the hardware requirements in the [Docker Compose deployment section](system-requirements.md#hardware-requirements).
 
-The prebuilt deployment profiles allow you to quickly set up TheHive based on your specific use case. Choose from the following deployment options:
+### Profile n°2: *Production environment #1* (TheHive)
 
-**Testing Environment**
+Single server deployment of TheHive for intensive use.
 
-:  Deploys both TheHive (and [Cortex](../../cortex/index.md)) on a single server for testing purposes. [Link to the testing profile](https://github.com/StrangeBeeCorp/docker/blob/main/testing){target=_blank}
+Check the hardware requirements in the [Docker Compose deployment section](system-requirements.md#hardware-requirements).
 
-**Production Environment #1 - TheHive**
+### Profile n°3: *Production environment #2* (TheHive)
 
-:  Single server deployment for intensive use of TheHive. [Link to the production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive){target=_blank}
+Single server deployment of TheHive for high-performance requirements.
 
-**Production Environment #2 - TheHive**
+Check the hardware requirements in the [Docker Compose deployment section](system-requirements.md#hardware-requirements).
 
-:  High-performance deployment for TheHive on a dedicated server. [Link to the high-performance production profile](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive){target=_blank}
+!!! info "Cortex deployment"
+    Similar production deployment profiles are available for Cortex. See [Run Cortex with Docker](../../cortex/installation-and-configuration/run-cortex-with-docker.md) for details.
 
-You can choose the scenario that best suits your needs by selecting the appropriate Docker Compose YAML file.
+## Step 4: Understand the application stack content
 
----
+=== "Testing environment profile"
 
-## Starting TheHive
+    The Docker Compose file deploys the following components:
 
-The application stack includes several utility scripts, one of which is the `init.sh` script, which performs the following tasks for you:
+    * Cassandra: Database used by TheHive
+    * Elasticsearch: Database for Cortex and indexing engine for TheHive
+    * TheHive: Main application
+    * Cortex: Analyzers and responders engine
+    * Nginx: HTTPS reverse proxy
 
-- Prompt for a service name to include in the Nginx server certificate.
-- Initialize the `secret.conf` files for TheHive and Cortex.
-- Generate a self-signed certificate if none is found in the `./certificates` directory.
-- Create a `.env` file containing user/group information and other application settings.
-- Verify file and folder permissions to ensure proper access rights.
+    ### Configuration and data files
 
-!!! Note "Note"
-    TheHive application will run under the user account and group that execute the initialization script.
+    Each container has a dedicated folder for configuration, data, and log files.
 
-Follow the steps below to initialize the environment.
+    ```bash
+    ├── cassandra
+    ├── certificates
+    ├── cortex
+    ├── docker-compose.yml
+    ├── dot.env.template
+    ├── elasticsearch
+    ├── nginx
+    ├── README.md
+    ├── scripts
+    └── thehive
+    ```
 
-### Step 1: Run the initialization script
+    ### Files and folders overview
 
-Execute the `init.sh` script to set up the necessary configurations:
+    #### Cassandra
+
+    ```bash
+    cassandra
+    ├── data
+    └── logs
+    ```
+
+    * `./cassandra/data`: Database files.
+    * `./cassandra/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### Elasticsearch
+
+    ```bash
+    elasticsearch
+    ├── data
+    └── logs
+    ```
+
+    * `./elasticsearch/data`: Database files.
+    * `./elasticsearch/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### TheHive
+
+    ```bash
+    thehive
+    ├── config
+    │   ├── application.conf
+    │   ├── index.conf.template
+    │   ├── logback.xml
+    │   └── secret.conf.template
+    ├── data
+    │   └── files
+    └── logs
+    ```
+
+    * `./thehive/config`: Configuration files. `index.conf` and `secret.conf` are generated automatically when you use the `init.sh` script.
+    * `./thehive/data/files`: File storage for TheHive.
+    * `./thehive/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually-except-config.md" %}
+
+    #### Cortex
+
+    ```bash
+    cortex
+    ├── config
+    │   ├── application.conf
+    │   ├── index.conf.template
+    │   ├── logback.xml
+    │   └── secret.conf.template
+    ├── cortex-jobs
+    ├── logs
+    └── neurons
+    ```
+
+    * `./cortex/config`: Configuration files. `index.conf` and `secret.conf` are generated automatically when you use the `init.sh` script.
+    * `./cortex/cortex-jobs`: Temporary data storage for analyzers and responders.
+    * `./cortex/logs`: Log files.
+    * `./cortex/neurons`: Folder for custom analyzers and responders.
+
+    {% include-markdown "includes/docker-not-modify-files-manually-except-config.md" %}
+
+    #### Nginx
+
+    ```bash
+    nginx
+    ├── certs
+    └── templates
+        └── default.conf.template
+    ```
+
+    * `./nginx/templates/default.conf.template`: File used to initialize Nginx configuration when the container starts.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### Certificates
+
+    This folder is empty by default. The application stack initializes with self-signed certificates.
+
+    To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:
+
+    ```bash
+    certificates
+    ├── server.crt         ## Server certificate
+    ├── server.key         ## Server private key
+    └── ca.pem             ## Certificate Authority
+    ```
+
+    #### Scripts
+
+    ```bash
+    scripts
+    ├── check_permissions.sh
+    ├── generate_certs.sh
+    ├── init.sh
+    ├── output.sh
+    ├── reset.sh
+    ├── test_init_applications.sh
+    ├── test_init_cortex.sh
+    ├── test_init_thehive.sh
+    ├── backup.sh
+    └── restore.sh
+    ```
+
+    The application stack includes several utility scripts:
+
+    * `check_permissions.sh`: Ensures proper permissions are set on files and folders.
+    * `generate_certs.sh`: Generates a self-signed certificate for Nginx.
+    * `init.sh`: Initializes the application stack.
+    * `output.sh`: Displays output messages called by other scripts.
+    * `reset.sh`: Resets the testing environment. Running this script deletes all data and containers.
+    * `test_init_applications.sh`: Configures TheHive and Cortex by enabling analyzers, integrating Cortex with TheHive, and creating sample data like alerts, observables, and custom fields in TheHive.
+    * `test_init_cortex.sh`: Helper script called by `test_init_applications.sh` to set up Cortex.
+    * `test_init_thehive.sh`: Helper script called by `test_init_applications.sh` to set up TheHive.
+    * `backup.sh`: Performs a cold backup of the current environment.
+    * `restore.sh`: Restores the environment from a previously taken backup.
+
+=== "Production environment #1 & #2 profiles"
+
+    The Docker Compose file deploys the following components:
+
+    * Cassandra: Database used by TheHive
+    * Elasticsearch: Indexing engine for TheHive
+    * TheHive: Main application
+    * Nginx: HTTPS reverse proxy
+
+    ### Configuration and data files
+
+    Each container has a dedicated folder for configuration, data, and log files.
+
+    ```bash
+    ├── cassandra
+    ├── certificates
+    ├── docker-compose.yml
+    ├── dot.env.template
+    ├── elasticsearch
+    ├── nginx
+    ├── README.md
+    ├── scripts
+    └── thehive
+    ```
+
+    ### Files and folders overview
+
+    #### Cassandra
+
+    ```bash
+    cassandra
+    ├── data
+    └── logs
+    ```
+
+    * `./cassandra/data`: Database files.
+    * `./cassandra/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### Elasticsearch
+
+    ```bash
+    elasticsearch
+    ├── data
+    └── logs
+    ```
+
+    * `./elasticsearch/data`: Database files.
+    * `./elasticsearch/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### TheHive
+
+    ```bash
+    thehive
+    ├── config
+    │   ├── application.conf
+    │   ├── index.conf.template
+    │   ├── logback.xml
+    │   └── secret.conf.template
+    ├── data
+    │   └── files
+    └── logs
+    ```
+
+    * `./thehive/config`: Configuration files. `index.conf` and `secret.conf` are generated automatically when you use the `init.sh` script.
+    * `./thehive/data/files`: File storage for TheHive.
+    * `./thehive/logs`: Log files.
+
+    {% include-markdown "includes/docker-not-modify-files-manually-except-config.md" %}
+
+    #### Nginx
+
+    ```bash
+    nginx
+    ├── certs
+    └── templates
+        └── default.conf.template
+    ```
+
+    * `./nginx/templates/default.conf.template`: File used to initialize Nginx configuration when the container starts.
+
+    {% include-markdown "includes/docker-not-modify-files-manually.md" %}
+
+    #### Certificates
+
+    This folder is empty by default. The application stack initializes with self-signed certificates.
+
+    To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:
+
+    ```bash
+    certificates
+    ├── server.crt         ## Server certificate
+    ├── server.key         ## Server private key
+    └── ca.pem             ## Certificate Authority
+    ```
+
+    #### Scripts
+
+    ```bash
+    scripts
+    ├── check_permissions.sh
+    ├── generate_certs.sh
+    ├── init.sh
+    ├── output.sh
+    ├── reset.sh
+    ├── backup.sh
+    └── restore.sh
+    ```
+
+    The application stack includes several utility scripts:
+
+    * `check_permissions.sh`: Ensures proper permissions are set on files and folders.
+    * `generate_certs.sh`: Generates a self-signed certificate for Nginx.
+    * `init.sh`: Initializes the application stack.
+    * `output.sh`: Displays output messages called by other scripts.
+    * `reset.sh`: Resets the testing environment. Running this script deletes all data and containers.
+    * `backup.sh`: Performs a cold backup of the current environment. See [Backup a Stack Run with Docker Compose](../operations/backup-restore/backup/docker-compose.md) for more details.
+    * `restore.sh`: Restores the environment from a previously taken backup. See [Restore a Stack Run with Docker Compose](../operations/backup-restore/restore/docker-compose.md) for more details.
+
+## Step 5: Go to the selected profile
+
+Navigate to the directory of your chosen profile.
+
+For example, to select the *Production environment #1* profile:
+
+```bash
+cd docker/prod1-thehive
+```
+
+## Step 6: Initialize TheHive
+
+Before starting TheHive, we need to initialize the environment using the provided `init.sh` script.
+
+This script automates several critical setup tasks:
+
+* Prompts for a server name to include in the Nginx server certificate.
+* Initializes the `secret.conf` configuration files for TheHive and Cortex.
+* Generates a self-signed certificate if none exists in the `./certificates` directory.
+* Creates a `.env` file with user/group information and application settings.
+* Generates a random password for Elasticsearch authentication.
+* Verifies file and folder permissions to ensure proper access rights.
+
+!!! tip "Elasticsearch password"
+    If you need to retrieve the Elasticsearch password, check the `.env` file.
+
+!!! note "User permissions"
+    TheHive will run under the user account and group that execute the initialization script. Ensure you're using an appropriate user with the necessary permissions.
+
+Execute the initialization script to set up the necessary configurations:
 
 ```bash
 bash ./scripts/init.sh
 ```
 
-### Step 2: Run the application stack
+## Step 7: Start TheHive
 
-```bash
-docker compose up
-```
-
-or 
+Once initialization is complete, start all services using Docker Compose.
 
 ```bash
 docker compose up -d
 ```
 
-&nbsp;
-
-!!! Example "How to start quickly with prod1-thehive environment?"
-    1. Clone the repository
-    2. Open prod1-thehive folder
-    3. Initialize the environment
-    4. Start the application stack
-
-    ![](../images/installation/start-prod1-thehive.gif)
-
-
-### Step 3: Access the application
-
-Open your browser, and navigate to:
-
-* `https://HOSTNAME_OR_IP/thehive` to connect to TheHive if using the *testing* profile
-* `https://HOSTNAME_OR_IP/` to connect to TheHive if using the production profiles
-
-&nbsp;
-
-![](../images/installation/docker-install-2.png)
-
----
-
-## Additional configuration
-
-For more detailed information on the directory structure, services, scripts, and their respective functions, please refer to the `README.md` file located within each deployment profile:
-
-- [Testing Environment](https://github.com/StrangeBeeCorp/docker/blob/main/testing/README.md){target=_blank}
-- [Production Environment #1 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive/README.md){target=_blank}
-- [Production Environment #2 - TheHive](https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive/README.md){target=_blank}
-
----
-
-## TheHive Docker entrypoint options
-
-To view a list of all supported options for the Docker entry point, use the -h flag:
+If TheHive fails to start or you encounter errors, stop the running containers and restart without the `-d` flag to display real-time logs in your terminal:
 
 ```bash
-docker run --rm strangebee/thehive:<version> -h
+docker compose down
+docker compose up
 ```
 
-The output will display available options, allowing you to configure TheHive according to your requirements.
+## Step 8: Access TheHive
 
-Available Options:
+=== "Testing environment profile"
 
-- `--config-file <file>`: Specifies the path to the configuration file.
-- `--no-config`: Prevents TheHive from attempting to configure itself, including adding secrets and Elasticsearch settings.
-- `--no-config-secret`: Excludes the addition of a randomly generated secret from the configuration.
-- `--secret <secret>`: Sets the secret used to secure sessions.
-- `--show-secret`: Displays the generated secret.
-- `--no-config-db`: Disables automatic configuration of the database.
-- `--cql-hostnames <host>,<host>,...`: Resolves these host names to locate Cassandra instances.
-- `--cql-username <username>`: Specifies the username for the Cassandra database.
-- `--cql-password <password>`: Specifies the password for the Cassandra database.
-- `--cql-datacenter <datacenter>`: Specifies the name of the Cassandra datacenter used by the TheHive node. This parameter is new as of version 5.4.7 and can have different values for each node in cluster mode.
-- `--no-cql-wait`: Skips waiting for Cassandra to become available.
-- `--bdb-directory <path>`: Defines the location of the local database if Cassandra is not used (default: /data/db).
-- `--index-backend`: Specifies the backend to use for index, either 'lucene' or 'elasticsearch' (default: lucene).
-- `--es-hostnames`: Specifies the Elasticsearch instances used for index.
-- `--es-index`: Specifies the Elasticsearch index name to be used (default: thehive).
-- `--no-config-storage`: Disables automatic configuration of storage.
-- `--storage-directory <path>`: Specifies the location of local storage if S3 is not used (default: /data/files).
-- `--s3-endpoint <endpoint>`: Specifies the endpoint of S3 or other object storage if used, with 's3.amazonaws.com' for AWS S3.
-- `--s3-region <region>`: Specifies the S3 region, optional for MinIO.
-- `--s3-bucket <bucket>`: Specifies the name of the bucket to use (default: thehive), which must already exist.
-- `--s3-access-key <key>`: Specifies the S3 access key (required for S3).
-- `--s3-secret-key <key>`: Specifies the S3 secret key (required for S3).
-- `--s3-use-path-access-style`: Sets this flag if using MinIO or another non-AWS S3 provider, defaulting to virtual host style.
-- `--no-config-cortex`: Excludes Cortex configuration.
-- `--cortex-proto <proto>`: Defines the protocol to connect to Cortex (default: http).
-- `--cortex-port <port>`: Defines the port to connect to Cortex (default: 9001).
-- `--cortex-hostnames <host>,<host>,...`: Resolves these host names to locate Cortex instances.
-- `--cortex-keys <key>,<key>,...`: Defines Cortex keys.
-- `--kubernetes`: Utilizes the Kubernetes API to join other nodes.
-- `--kubernetes-pod-label-selector <selector>`: Specifies the selector to use to select other pods running the app (default app=thehive).
-- `--cluster-min-nodes-count <count>`: Specifies the minimum number of nodes to form a cluster (default to 1).
-- `migrate <param> <param> ...`: Runs the migration tool.
-- `cloner <param> <param> ...`: Runs the cloner tool. 
+    Open your browser and navigate to [`http://localhost/thehive`](http://localhost/thehive){target=_blank} or use the IP address of the server running Docker Compose.
 
-&nbsp;
+=== "Production environment #1 & #2 profiles"
+
+    * Without DNS: Open your browser and navigate to [`http://localhost`](http://localhost){target=_blank} or use the IP address of the server running Docker Compose.
+
+    * With DNS and a valid certificate: Use the public URL defined in `application.baseUrl`. See [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md).
+
+For additional Docker entrypoint options, see [TheHive Docker Entrypoint Settings](../configuration/thehive-docker-entrypoint-settings.md).
+
+<h2>Next steps</h2>
+
+* [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
+* [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
+* [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Backup a Stack Run with Docker Compose](../operations/backup-restore/backup/docker-compose.md)
+* [Monitoring](../operations/monitoring.md)

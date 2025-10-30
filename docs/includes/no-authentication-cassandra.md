@@ -1,0 +1,2 @@
+!!! danger "Danger of no authentication"
+    Running Cassandra without authentication is strongly discouraged—especially in production environments. Doing so exposes your database to unauthorized access and can compromise the security of your entire TheHive deployment.
