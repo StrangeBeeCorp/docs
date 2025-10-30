@@ -233,8 +233,8 @@ The following steps aim to enable encryption secure communication between a clie
         algorithm: SunX509
         store_type: JKS
         cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
-
         ```
+
 2. **Restart the Cassandra Service on All Nodes:**
 
     !!! Example ""
@@ -242,6 +242,7 @@ The following steps aim to enable encryption secure communication between a clie
         ```bash
         sudo service cassandra restart
         ```
+
 3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
@@ -273,8 +274,8 @@ The following steps aim to enable encryption secure communication between a clie
             cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
             require_client_auth: true
             enabled: true
-
         ```
+
 2. **Restart the Cassandra Service on All Nodes:**
 
     !!! Example ""
@@ -282,6 +283,7 @@ The following steps aim to enable encryption secure communication between a clie
         ```bash
         sudo service cassandra restart
         ```
+        
 3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
@@ -704,28 +706,27 @@ For other installation methods:
 
 1. Generate a secret key on the first node.
 
-```bash
-cat > /etc/thehive/secret.conf << _EOF_
-play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
-_EOF_
-```
+    ```bash
+    cat > /etc/thehive/secret.conf << _EOF_
+    play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+    _EOF_
+    ```
 
-!!! warning "Minimum key length"
-TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.
+    {% include-markdown "includes/minimum-key-length.md" %}
 
 2. Set appropriate file permissions.
 
-```bash
-chmod 400 /etc/thehive/secret.conf
-chown thehive:thehive /etc/thehive/secret.conf
-```
+    ```bash
+    chmod 400 /etc/thehive/secret.conf
+    chown thehive:thehive /etc/thehive/secret.conf
+    ```
 
 3. Copy the `/etc/thehive/secret.conf` file to all other nodes in the cluster.
 
 4. Verify the same permissions on each node.
 
-!!! danger "Security requirements"
-    Never share or commit your secret key to version control. All nodes in a cluster must use the same key, but different environments (development, staging, production) must use different keys.
+    !!! danger "Security requirements"
+        Never share or commit your secret key to version control. All nodes in a cluster must use the same key, but different environments (development, staging, production) must use different keys.
 
 ### Start the service
 

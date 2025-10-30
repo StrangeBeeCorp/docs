@@ -969,8 +969,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
     _EOF_
     ```
 
-    !!! warning "Minimum key length"
-    TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.
+    {% include-markdown "includes/minimum-key-length.md" %}
 
     b. Set appropriate file permissions.
     
