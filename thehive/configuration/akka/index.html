@@ -1345,6 +1345,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14583,7 +14606,7 @@
 
 
 <h1 id="akka-configuration-version-53-and-earlier">Akka Configuration (Version 5.3 and Earlier)<a class="headerlink" href="#akka-configuration-version-53-and-earlier" title="Permanent link">#</a></h1>
-<p><a href="https://akka.io/">Akka</a> is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.</p>
+<p><a href="https://akka.io/" target="_blank">Akka</a> is a powerful toolkit designed for building highly concurrent, distributed, and resilient message-driven applications in Java and Scala.</p>
 <p>Akka plays a crucial role in enabling multiple nodes of TheHive to communicate with each other seamlessly, thereby enhancing the overall user experience.</p>
 <p>This topic provides instructions for configuring Akka in your environment.</p>
 <div class="admonition note">
@@ -14707,12 +14730,12 @@
 <div class="admonition note">
 <p class="admonition-title">Remoting and security configuration</p>
 <p>Note that <code>akka.remote.artery.transport</code> has changed and <code>akka.ssl.config-ssl-engine</code> needs to be configured.  </p>
-<p>For more details, refer to <a href="https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security">Akka Remoting with Artery - Remote Security</a>.</p>
+<p>For more details, refer to <a href="https://doc.akka.io/docs/akka/current/remoting-artery.html#remote-security" target="_blank">Akka Remoting with Artery - Remote Security</a>.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Certificate considerations</p>
 <p>Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.  </p>
-<p>For detailed instructions, see <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool">Using Keytool for X.509 Certificate Generation</a>.  </p>
+<p>For detailed instructions, see <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool" target="_blank">Using Keytool for X.509 Certificate Generation</a>.  </p>
 <p>Your server certificates should include the following <code>KeyUsage</code> and <code>ExtendedkeyUsage</code> extensions for proper functioning:</p>
 <ul>
 <li>

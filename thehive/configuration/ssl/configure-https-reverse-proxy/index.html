@@ -1283,6 +1283,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14532,7 +14555,7 @@
 
 <h1 id="configure-https-for-thehive-with-a-reverse-proxy">Configure HTTPS for TheHive With a Reverse Proxy<a class="headerlink" href="#configure-https-for-thehive-with-a-reverse-proxy" title="Permanent link">#</a></h1>
 <p>Use a reverse proxy like Nginx to handle SSL/TLS encryption for TheHive. This approach simplifies certificate management and improves performance compared to configuring SSL/TLS directly in TheHive.</p>
-<p>For detailed instructions on configuring HTTPS servers with Nginx, refer to the <a href="https://nginx.org/en/docs/http/configuring_https_servers.html">Nginx documentation</a>.</p>
+<p>For detailed instructions on configuring HTTPS servers with Nginx, refer to the <a href="https://nginx.org/en/docs/http/configuring_https_servers.html" target="_blank">Nginx documentation</a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Nginx configuration file</p>
 <div class="highlight"><span class="filename">/etc/nginx/sites-available/thehive.conf</span><pre><span></span><code>server {
@@ -14561,7 +14584,7 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">Configure request size limits</p>
-<p>The <code>client_max_body_size</code> parameter in nginx applies to all request data, including both file uploads and text content. Set this value to match or exceed the maximum file size configured in TheHive <code>application.conf</code> to prevent upload failures. For more information, see <a href="https://docs.rackspace.com/docs/limit-file-upload-size-in-nginx">Limit File Upload Size in NGINX</a>.</p>
+<p>The <code>client_max_body_size</code> parameter in nginx applies to all request data, including both file uploads and text content. Set this value to match or exceed the maximum file size configured in TheHive <code>application.conf</code> to prevent upload failures. For more information, see <a href="https://docs.rackspace.com/docs/limit-file-upload-size-in-nginx" target="_blank">Limit File Upload Size in NGINX</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Additional settings</p>

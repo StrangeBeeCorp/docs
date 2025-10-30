@@ -1283,6 +1283,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14601,7 +14624,7 @@
 
 
 <h1 id="update-log-configuration">Update Log Configuration<a class="headerlink" href="#update-log-configuration" title="Permanent link">#</a></h1>
-<p>TheHive uses <a href="https://logback.qos.ch/">logback</a> for logging. You can adjust log levels to control the amount of information recorded for troubleshooting and monitoring purposes. By default, logs are stored in <code>/var/log/thehive/</code>, with the current log in <code>application.log</code> and older logs compressed as <code>application.%i.log.zip</code>.</p>
+<p>TheHive uses <a href="https://logback.qos.ch/" target="_blank">logback</a> for logging. You can adjust log levels to control the amount of information recorded for troubleshooting and monitoring purposes. By default, logs are stored in <code>/var/log/thehive/</code>, with the current log in <code>application.log</code> and older logs compressed as <code>application.%i.log.zip</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Maintenance window required</p>
 <p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
@@ -14617,7 +14640,12 @@
 <p>Stop TheHive service.</p>
 <div class="admonition info">
 <p class="admonition-title">Service commands</p>
-<p>For stop/restart commands depending on your installation method, refer back to the relevant installation guide.</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Linux installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
 </div>
 </li>
 <li>
@@ -14668,7 +14696,12 @@
 <p>Stop TheHive service.</p>
 <div class="admonition info">
 <p class="admonition-title">Service commands</p>
-<p>For stop/restart commands depending on your installation method, refer back to the relevant installation guide.</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Linux installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
 </div>
 </li>
 <li>
@@ -14697,7 +14730,12 @@
 <p>Stop TheHive service.</p>
 <div class="admonition info">
 <p class="admonition-title">Service commands</p>
-<p>For stop/restart commands depending on your installation method, refer back to the relevant installation guide.</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Linux installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
 </div>
 </li>
 <li>
@@ -14760,7 +14798,12 @@
 <p>Stop TheHive service.</p>
 <div class="admonition info">
 <p class="admonition-title">Service commands</p>
-<p>For stop/restart commands depending on your installation method, refer back to the relevant installation guide.</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Linux installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
 </div>
 </li>
 <li>
@@ -14796,7 +14839,7 @@
 </ol>
 <div class="admonition warning">
 <p class="admonition-title">Limitations</p>
-<p>The logback syslog appender only supports UDP protocol. For TCP or TLS connections, use a third-party appender or forward logs through a local syslog daemon. See the <a href="https://logback.qos.ch/manual/appenders.html#SyslogAppender">logback documentation</a> for alternatives.</p>
+<p>The logback syslog appender only supports UDP protocol. For TCP or TLS connections, use a third-party appender or forward logs through a local syslog daemon. See the <a href="https://logback.qos.ch/manual/appenders.html#SyslogAppender" target="_blank">logback documentation</a> for alternatives.</p>
 </div>
 <h2>Next steps</h2>
 

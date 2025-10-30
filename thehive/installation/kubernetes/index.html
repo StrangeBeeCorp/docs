@@ -1356,6 +1356,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14594,15 +14617,15 @@
 
 
 <h1 id="deploy-thehive-on-kubernetes">Deploy TheHive on Kubernetes<a class="headerlink" href="#deploy-thehive-on-kubernetes" title="Permanent link">#</a></h1>
-<p>Deploy TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts">the StrangeBee Helm chart repository</a>.</p>
+<p>Deploy TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts" target="_blank">the StrangeBee Helm chart repository</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">License</p>
 <p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must <a href="../licenses/license/">upgrade to a Gold or Platinum license</a>. A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Dependency images</p>
-<p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/">Bitnami</a>.  </p>
-<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5, which isn't compatible with TheHive, and Elasticsearch 9.</p>
+<p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/" target="_blank">Bitnami</a>.  </p>
+<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications" target="_blank">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5, which isn't compatible with TheHive, and Elasticsearch 9.</p>
 <p>This has important consequences:</p>
 <ul>
 <li>These legacy images won't receive security updates and will become increasingly vulnerable over time. You may continue to use them at your own risk, but they aren't production-ready.</li>
@@ -14627,7 +14650,7 @@
 <li>Network policies allowing inter-pod communication</li>
 </ul>
 <h2 id="deploy-with-default-configuration">Deploy with default configuration<a class="headerlink" href="#deploy-with-default-configuration" title="Permanent link">#</a></h2>
-<p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive">official Helm chart for Kubernetes deployments</a>. The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
+<p>TheHive provides an <a href="https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive" target="_blank">official Helm chart for Kubernetes deployments</a>. The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
 <ol>
 <li>
 <p>Add the StrangeBee Helm repository.</p>
@@ -14643,16 +14666,16 @@
 <p>Create a release using the <code>thehive</code> Helm chart.</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/thehive
 </code></pre></div>
-<p>For more options, see <a href="https://helm.sh/docs/helm/helm_install/">the Helm documentation for installation</a>.</p>
+<p>For more options, see <a href="https://helm.sh/docs/helm/helm_install/" target="_blank">the Helm documentation for installation</a>.</p>
 </li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Dependencies</p>
 <p>The <code>thehive</code> Helm chart relies on the following charts by default:</p>
 <ul>
-<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Apache Cassandra</a>-used as the database (uses legacy images by default)</li>
-<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Stack</a>-used as the search index (uses legacy images by default)</li>
-<li><a href="https://github.com/minio/minio/tree/master/helm/minio">MinIO Community Helm Chart</a>-used as S3-compatible object storage</li>
+<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra" target="_blank">Bitnami Apache Cassandra</a>-used as the database (uses legacy images by default)</li>
+<li><a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Stack</a>-used as the search index (uses legacy images by default)</li>
+<li><a href="https://github.com/minio/minio/tree/master/helm/minio" target="_blank">MinIO Community Helm Chart</a>-used as S3-compatible object storage</li>
 </ul>
 </div>
 <div class="admonition note">
@@ -14660,14 +14683,14 @@
 <p>To upgrade your release to the latest version of the <code>thehive</code> Helm chart, run:
 </p><div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/thehive
 </code></pre></div>
-For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/">the Helm upgrade documentation</a>.<p></p>
+For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/" target="_blank">the Helm upgrade documentation</a>.<p></p>
 </div>
 <h3 id="production-configuration">Production configuration<a class="headerlink" href="#production-configuration" title="Permanent link">#</a></h3>
 <p>The default <code>thehive</code> Helm chart bundles all dependencies for quick deployment but uses development-oriented configurations. Production deployments require adjustments to TheHive and its dependencies for security, performance, and reliability.</p>
 <p>Use the following command to view all available configuration options for the <code>thehive</code> Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/thehive
 </code></pre></div>
-<p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing">the dedicated Helm documentation</a>. You can also review the available options for each dependency.</p>
+<p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing" target="_blank">the dedicated Helm documentation</a>. You can also review the available options for each dependency.</p>
 <h4 id="resource-allocation">Resource allocation<a class="headerlink" href="#resource-allocation" title="Permanent link">#</a></h4>
 <p>Default pod resources are optimized for production workloads. If you need to adjust these values, especially memory limits, make sure you update the <code>JVM_OPTS</code> environment variable accordingly to avoid OOM crashes.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># JVM_OPTS variable for TheHive</span>
@@ -14689,22 +14712,22 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JVM_OPTS</span>
 <span class="w">        </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"-Xms2g</span><span class="nv"> </span><span class="s">-Xmx2g</span><span class="nv"> </span><span class="s">-Xmn200m"</span>
 </code></pre></div>
-<p>Refer to the official <a href="https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html">Cassandra</a> and <a href="https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments">Elasticsearch</a> documentation to learn how to optimize these values.</p>
+<p>Refer to the official <a href="https://cassandra.apache.org/doc/latest/cassandra/getting-started/production.html" target="_blank">Cassandra</a> and <a href="https://www.elastic.co/docs/deploy-manage/production-guidance/elasticsearch-in-production-environments" target="_blank">Elasticsearch</a> documentation to learn how to optimize these values.</p>
 <h4 id="storage-configuration">Storage configuration<a class="headerlink" href="#storage-configuration" title="Permanent link">#</a></h4>
 <p>By default, this chart uses your cluster's default StorageClass to create PVs.</p>
 <p>You can customize the StorageClass to suit your environment. In all cases, whether you use the default or a custom configuration, make sure it meets the following criteria:</p>
 <ul>
-<li>It's regularly backed up to prevent data loss. Tools like <a href="https://velero.io/">Velero</a> can help automate this process.</li>
+<li>It's regularly backed up to prevent data loss. Tools like <a href="https://velero.io/" target="_blank">Velero</a> can help automate this process.</li>
 <li>It has an appropriate <code>reclaimPolicy</code> to minimize the risk of data loss when volumes are deleted or released.</li>
 <li>It provides sufficient performance to ensure reliable operation of databases and applications.</li>
 </ul>
 <p>To configure StorageClasses based on your needs, refer to the relevant CSI drivers for your infrastructure. For example, use the EBS CSI driver for AWS or the Persistent Disk CSI driver for Google Cloud Platform.</p>
 <h4 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h4>
 <p>This chart deploys two Cassandra pods to store TheHive data.</p>
-<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra">Bitnami Cassandra Helm chart</a> for available configuration options.</p>
+<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/cassandra" target="_blank">Bitnami Cassandra Helm chart</a> for available configuration options.</p>
 <h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
 <p>This chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
-<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
+<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <div class="admonition note">
 <p class="admonition-title">Same Elasticsearch instance for both TheHive and Cortex</p>
 <p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>

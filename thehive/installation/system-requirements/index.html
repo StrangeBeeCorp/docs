@@ -1347,6 +1347,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14635,17 +14658,46 @@
 </table>
 </div>
 <div class="tabbed-block">
-<p>For Docker deployments of TheHive with all required services, hardware requirements vary by setup profile. Each profile defines a specific performance level.</p>
-<p>Available profiles and corresponding hardware specifications are documented in the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments GitHub repository</a>.</p>
+<p>For Docker Compose deployments of TheHive with all <a href="../../overview/#architecture">required services</a>, hardware requirements vary by setup profile. Each profile defines a specific performance level.</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Usage</th>
+<th>Recommended memory</th>
+<th>Recommended CPU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/StrangeBeeCorp/docker/tree/main/testing" target="_blank"><em>Testing environment</em></a></td>
+<td>Functional testing of TheHive and Cortex</td>
+<td>8 GB RAM</td>
+<td>4 vCPUs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/StrangeBeeCorp/docker/tree/main/prod1-thehive" target="_blank"><em>Production environment #1</em></a></td>
+<td>Standard production workload</td>
+<td>16 GB RAM</td>
+<td>4 vCPUs</td>
+</tr>
+<tr>
+<td><a href="https://github.com/StrangeBeeCorp/docker/tree/main/prod2-thehive" target="_blank"><em>Production environment #2</em></a></td>
+<td>High-performance production workload</td>
+<td>32 GB RAM</td>
+<td>8 vCPUs</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="tabbed-block">
-<p>For Kubernetes deployments, refer to the <a href="https://github.com/StrangeBeeCorp/docker/tree/main?tab=readme-ov-file#available-deployment-profiles">Docker Compose environments GitHub repository</a> for hardware requirements.</p>
+<p>For Kubernetes deployments, apply the same hardware recommendations as for the Docker Compose deployment in single-replica configurations. When deploying multiple replicas in a clustered setup, per-node hardware requirements can be reduced, as workload and resource utilization are distributed across replicas.</p>
 </div>
 </div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Elasticsearch heap size configuration</p>
-<p>Elasticsearch requires explicit <a href="../installation-guide-linux-standalone-server/#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file">heap size configuration in the <code>jvm.options</code> file</a>. Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection">must not exceed 50% of the total system RAM</a>.</p>
+<p>Elasticsearch requires explicit <a href="../installation-guide-linux-standalone-server/#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file">heap size configuration in the <code>jvm.options</code> file</a>. Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the total system RAM</a>.</p>
 <p>On a 12 GB RAM system, for example:</p>
 <div class="highlight"><pre><span></span><code>-Xms6g
 -Xmx6g
@@ -14678,7 +14730,7 @@
 <li><a href="../software-requirements/">Software Requirements</a></li>
 <li><a href="../automated-installation-script-linux/">Quick Install on Linux Systems: One-Command Setup</a></li>
 <li><a href="../installation-guide-linux-standalone-server/">Install TheHive on Linux Systems</a></li>
-<li><a href="../docker/">Running TheHive with Docker</a></li>
+<li><a href="../docker/">Deploy TheHive with Docker Compose</a></li>
 <li><a href="../kubernetes/">Deploy TheHive on Kubernetes</a></li>
 <li><a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a></li>
 </ul>

@@ -1265,6 +1265,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../thehive/configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14518,12 +14541,12 @@
 <li>
 <p>Optional: Set a password for the <code>elastic</code> user.</p>
 <ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords">For Elasticsearch 7.x</a>:</li>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords" target="_blank">For Elasticsearch 7.x</a>:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-setup-passwords<span class="w"> </span>interactive
 </code></pre></div>
 <ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password">For Elasticsearch 8.0</a>:</li>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">For Elasticsearch 8.0</a>:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password
 </code></pre></div>
@@ -14547,7 +14570,7 @@
 </code></pre></div>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for role creation</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
 <ul>
 <li>Update a role:</li>
 </ul>
@@ -14564,7 +14587,7 @@
 </code></pre></div>
 <p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for updating roles</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
 </li>
 <li>
 <p>Assign the role to the user you'll use for TheHive.</p>
@@ -14579,7 +14602,7 @@
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>Replace <code>thehive_role</code> with actual role name if different.</p>
 <p>If successful, the command should return: <code>{"created":true}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user">the official Elasticsearch API documentation for updating users</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user" target="_blank">the official Elasticsearch API documentation for updating users</a>.</p>
 </li>
 </ol>
 

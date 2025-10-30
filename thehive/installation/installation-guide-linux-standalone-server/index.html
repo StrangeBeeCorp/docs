@@ -1401,6 +1401,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14648,8 +14671,8 @@
 <p>This guide covers setting up a new instance of TheHive on Linux systems, with all components hosted on the same server.</p>
 <p>It doesn't cover:</p>
 <ul>
-<li>Docker deployments: For Docker-based setups, follow <a href="../docker/">Running TheHive with Docker</a>.</li>
-<li>Cluster deployments: Refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a> for Linux, or <a href="../kubernetes/">Deploy TheHive on Kubernetes</a> for Kubernetes deployments.</li>
+<li>Docker deployments: For Docker-based setups, follow <a href="../docker/">Deploy TheHive with Docker Compose</a>.</li>
+<li>Cluster deployments: Refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a> for Linux, or <a href="../kubernetes/">Deploy TheHive on Kubernetes</a> for Kubernetes deployments.</li>
 <li>Version upgrades: For upgrading an existing instance, see <a href="../upgrade-from-5.x/">Upgrade from TheHive 5.x</a> or <a href="../upgrade-from-4.x/">Upgrade from TheHive 4.x</a>.</li>
 </ul>
 </div>
@@ -14685,7 +14708,7 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 <div class="admonition note">
 <p class="admonition-title">Java support</p>
 <ul>
-<li>For security and long-term support, we recommend using <a href="https://aws.amazon.com/corretto/">Amazon Corretto</a>, which provides OpenJDK builds maintained by Amazon.</li>
+<li>For security and long-term support, we recommend using <a href="https://aws.amazon.com/corretto/" target="_blank">Amazon Corretto</a>, which provides OpenJDK builds maintained by Amazon.</li>
 <li>Only Java 11 is supported. Java 8 is no longer supported.</li>
 </ul>
 </div>
@@ -14712,7 +14735,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 OpenJDK<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span>Corretto-11.0.28.6.1<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">11</span>.0.28+6-LTS<span class="o">)</span>
 OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span>Corretto-11.0.28.6.1<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">11</span>.0.28+6-LTS,<span class="w"> </span>mixed<span class="w"> </span>mode<span class="o">)</span>
 </code></pre></div>
-<p>If a different Java version appears, set Java 11 as the default using <a href="https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS"><code>sudo update-alternatives --config java</code></a>.</p>
+<p>If a different Java version appears, set Java 11 as the default using <a href="https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS" target="_blank"><code>sudo update-alternatives --config java</code></a>.</p>
 </li>
 </ol>
 </div>
@@ -14740,7 +14763,7 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 OpenJDK<span class="w"> </span>Runtime<span class="w"> </span>Environment<span class="w"> </span>Corretto-11.0.28.6.1<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">11</span>.0.28+6-LTS<span class="o">)</span>
 OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </span>Server<span class="w"> </span>VM<span class="w"> </span>Corretto-11.0.28.6.1<span class="w"> </span><span class="o">(</span>build<span class="w"> </span><span class="m">11</span>.0.28+6-LTS,<span class="w"> </span>mixed<span class="w"> </span>mode<span class="o">)</span>
 </code></pre></div>
-<p>If a different Java version appears, set Java 11 as the default using <a href="https://linux.die.net/man/8/alternatives"><code>sudo alternatives --config java</code></a>.</p>
+<p>If a different Java version appears, set Java 11 as the default using <a href="https://linux.die.net/man/8/alternatives" target="_blank"><code>sudo alternatives --config java</code></a>.</p>
 </li>
 </ol>
 </div>
@@ -14751,10 +14774,10 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 </div>
 <hr>
 <h2 id="step-3-install-and-configure-apache-cassandra"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V288c0 44.2 100.3 80 224 80s224-35.8 224-80zm0-77.8V80c0-44.2-100.3-80-224-80S0 35.8 0 80v48c0 44.2 100.3 80 224 80s224-35.8 224-80m-49.5 261.8C351.6 406.5 289.9 416 224 416s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V432c0 44.2 100.3 80 224 80s224-35.8 224-80v-66.2c-14.8 9.8-31.8 17.7-49.5 24"></path></svg></span> Step 3: Install and configure Apache Cassandra<a class="headerlink" href="#step-3-install-and-configure-apache-cassandra" title="Permanent link">#</a></h2>
-<p><a href="https://cassandra.apache.org">Apache Cassandra</a> is a database system that's used in TheHive as the back-end database for storing and managing incident response data.</p>
+<p><a href="https://cassandra.apache.org" target="_blank">Apache Cassandra</a> is a database system that's used in TheHive as the back-end database for storing and managing incident response data.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
-<p>In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
+<p>In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Cassandra supported versions</p>
@@ -14793,7 +14816,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </code></pre></div>
 </li>
 </ol>
-<p>Refer to the official Cassandra documentation website for <a href="https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-debian-package">the most up-to-date instructions</a>.</p>
+<p>Refer to the official Cassandra documentation website for <a href="https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-debian-package" target="_blank">the most up-to-date instructions</a>.</p>
 </div>
 <div class="tabbed-block">
 <ol>
@@ -14831,10 +14854,10 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </code></pre></div>
 </li>
 </ol>
-<p>Refer to the official Cassandra documentation website for <a href="https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-rpm-package">the most up-to-date instructions</a>.</p>
+<p>Refer to the official Cassandra documentation website for <a href="https://cassandra.apache.org/doc/latest/cassandra/installing/installing.html#install-as-rpm-package" target="_blank">the most up-to-date instructions</a>.</p>
 </div>
 <div class="tabbed-block">
-<p>Download the <code>tar.gz</code> archive from <a href="http://cassandra.apache.org/download/">Apache Cassandra downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/">Wget</a> to download the archive.</p>
+<p>Download the <code>tar.gz</code> archive from <a href="http://cassandra.apache.org/download/" target="_blank">Apache Cassandra downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/" target="_blank">Wget</a> to download the archive.</p>
 </div>
 </div>
 </div>
@@ -14998,7 +15021,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Cqlsh may not be available on RPM-based systems</p>
-<p>On some RPM-based distributions, the <code>cqlsh</code> client isn't included with the <code>cassandra</code> package. If running cqlsh gives an error, download the <a href="https://downloads.apache.org/cassandra/">official Apache Cassandra tarball</a> that matches your server version and extract it. Then run the bundled client: <code>./bin/cqlsh -u cassandra -p cassandra</code>.</p>
+<p>On some RPM-based distributions, the <code>cqlsh</code> client isn't included with the <code>cassandra</code> package. If running cqlsh gives an error, download the <a href="https://downloads.apache.org/cassandra/" target="_blank">official Apache Cassandra tarball</a> that matches your server version and extract it. Then run the bundled client: <code>./bin/cqlsh -u cassandra -p cassandra</code>.</p>
 </div>
 <p>If the connection is successful, you'll see output similar to:</p>
 <div class="highlight"><pre><span></span><code>Connected to xxx at xx.xx.xx.xx:xxxx
@@ -15146,10 +15169,10 @@ For additional configuration options, refer to:
 
 <hr>
 <h2 id="step-4-install-and-configure-elasticsearch"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M40 48c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24zm152 16c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zM16 232v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24m24 136c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24z"></path></svg></span> Step 4: Install and configure Elasticsearch<a class="headerlink" href="#step-4-install-and-configure-elasticsearch" title="Permanent link">#</a></h2>
-<p><a href="https://www.elastic.co/elasticsearch">Elasticsearch</a> is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing <a href="../../user-guides/organization/about-audit-logs/">audit logs</a>.</p>
+<p><a href="https://www.elastic.co/elasticsearch" target="_blank">Elasticsearch</a> is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing <a href="../../user-guides/organization/about-audit-logs/">audit logs</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
-<p>In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
+<p>In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Elasticsearch supported versions</p>
@@ -15163,7 +15186,7 @@ For additional configuration options, refer to:
 </div>
 <div class="admonition note">
 <p class="admonition-title">OpenSearch support</p>
-<p>Starting with version 5.3, TheHive supports <a href="https://opensearch.org/">OpenSearch</a> for advanced use cases, except for audit log storage.</p>
+<p>Starting with version 5.3, TheHive supports <a href="https://opensearch.org/" target="_blank">OpenSearch</a> for advanced use cases, except for audit log storage.</p>
 </div>
 <h3 id="step-41-install-elasticsearch">Step 4.1: Install Elasticsearch<a class="headerlink" href="#step-41-install-elasticsearch" title="Permanent link">#</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">DEB</label><label for="__tabbed_5_2">RPM</label><label for="__tabbed_5_3">Other installation methods</label></div>
@@ -15188,7 +15211,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </code></pre></div>
 </li>
 </ol>
-<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package">the most up-to-date instructions</a>.</p>
+<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package" target="_blank">the most up-to-date instructions</a>.</p>
 </div>
 <div class="tabbed-block">
 <ol>
@@ -15214,10 +15237,10 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </code></pre></div>
 </li>
 </ol>
-<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm">the most up-to-date instructions</a>.</p>
+<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm" target="_blank">the most up-to-date instructions</a>.</p>
 </div>
 <div class="tabbed-block">
-<p>Download the tar.gz archive from http://cassandra.apache.org/download/ and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/">Wget</a> to download the archive.</p>
+<p>Download the tar.gz archive from <a href="http://elastic.co/downloads/elasticsearch" target="_blank">Elasticsearch downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/" target="_blank">Wget</a> to download the archive.</p>
 </div>
 </div>
 </div>
@@ -15265,7 +15288,7 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </li>
 <li>
 <p>Recommended: Activate X-Pack security. It controls authentication, encryption, and other security features in Elasticsearch.</p>
-<p>In the <code>elasticsearch.yml</code> file, add the desired security parameters from <a href="https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings">the official Elasticsearch security settings documentation</a>. </p>
+<p>In the <code>elasticsearch.yml</code> file, add the desired security parameters from <a href="https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings" target="_blank">the official Elasticsearch security settings documentation</a>. </p>
 <p>At minimum add the following line (or edit it if it already exists):</p>
 <div class="highlight"><pre><span></span><code><span class="nt">xpack.security.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
@@ -15311,7 +15334,7 @@ xpack.security.enabled: true
 <p>The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Heap size configuration</p>
-<p>Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection">must not exceed 50% of the total system RAM</a>.</p>
+<p>Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the total system RAM</a>.</p>
 <p>Undefined heap settings may cause memory contention or out-of-memory errors.</p>
 </div>
 <p>On a 12 GB RAM system, for example:</p>
@@ -15419,12 +15442,12 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <li>
 <p>Optional: Set a password for the <code>elastic</code> user.</p>
 <ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords">For Elasticsearch 7.x</a>:</li>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords" target="_blank">For Elasticsearch 7.x</a>:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-setup-passwords<span class="w"> </span>interactive
 </code></pre></div>
 <ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password">For Elasticsearch 8.0</a>:</li>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">For Elasticsearch 8.0</a>:</li>
 </ul>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password
 </code></pre></div>
@@ -15448,7 +15471,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </code></pre></div>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for role creation</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
 <ul>
 <li>Update a role:</li>
 </ul>
@@ -15465,7 +15488,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </code></pre></div>
 <p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role">the official Elasticsearch API documentation for updating roles</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
 </li>
 <li>
 <p>Assign the role to the user you'll use for TheHive.</p>
@@ -15480,14 +15503,14 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>Replace <code>thehive_role</code> with actual role name if different.</p>
 <p>If successful, the command should return: <code>{"created":true}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user">the official Elasticsearch API documentation for updating users</a>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user" target="_blank">the official Elasticsearch API documentation for updating users</a>.</p>
 </li>
 </ol>
 <hr>
 <h2 id="step-5-install-and-configure-thehive"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 14.5c0-1.56-1.03-2.87-2.45-3.32.28-.5.45-1.07.45-1.68 0-1.56-1.03-2.87-2.45-3.32.28-.5.45-1.07.45-1.68C19 2.57 17.43 1 15.5 1h-7C6.57 1 5 2.57 5 4.5c0 .61.17 1.18.45 1.68C4.04 6.63 3 7.94 3 9.5c0 .61.17 1.18.45 1.68C2.04 11.63 1 12.94 1 14.5c0 1.26.67 2.34 1.67 2.96-.42.57-.67 1.28-.67 2.04C2 21.43 3.57 23 5.5 23h13c1.93 0 3.5-1.57 3.5-3.5 0-.76-.25-1.47-.67-2.04 1-.62 1.67-1.7 1.67-2.96M8.5 3h7c.83 0 1.5.67 1.5 1.5S16.33 6 15.5 6h-7C7.67 6 7 5.33 7 4.5S7.67 3 8.5 3m-2 5h11c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-11C5.67 11 5 10.33 5 9.5S5.67 8 6.5 8M4 19.5c0-.83.67-1.5 1.5-1.5H9v3H5.5c-.83 0-1.5-.67-1.5-1.5M18.5 21H15v-3h3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5m1-5h-4.68c-.42-1.16-1.52-2-2.82-2s-2.4.84-2.82 2H4.5c-.83 0-1.5-.67-1.5-1.5S3.67 13 4.5 13h15c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5"></path></svg></span> Step 5: Install and configure TheHive<a class="headerlink" href="#step-5-install-and-configure-thehive" title="Permanent link">#</a></h2>
 <h3 id="step-51-install-thehive">Step 5.1: Install TheHive<a class="headerlink" href="#step-51-install-thehive" title="Permanent link">#</a></h3>
 <p>TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.</p>
-<p>All packages are hosted on an HTTPS-secured website and come with a <a href="https://linux.die.net/man/1/sha256sum">SHA256 checksum</a> and a <a href="https://www.gnupg.org/">GPG</a> signature for verification.</p>
+<p>All packages are hosted on an HTTPS-secured website and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">DEB</label><label for="__tabbed_7_2">RPM</label><label for="__tabbed_7_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -15548,7 +15571,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -15650,7 +15673,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -15758,7 +15781,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -15824,7 +15847,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <h3 id="step-52-configure-thehive">Step 5.2: Configure TheHive<a class="headerlink" href="#step-52-configure-thehive" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Standalone server configuration</p>
-<p>In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a>.</p>
+<p>In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a>.</p>
 </div>
 <ol>
 <li>
@@ -15976,7 +15999,7 @@ chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Backups required</p>
-<p>Regularly <a href="https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore">back up your Elasticsearch indices</a> to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.</p>
+<p>Regularly <a href="https://www.elastic.co/docs/deploy-manage/tools/snapshot-and-restore" target="_blank">back up your Elasticsearch indices</a> to ensure you can recover audit logs in the event of an incident. This is critical for maintaining the integrity and availability of your data.</p>
 </div>
 <h4 id="activate-audit-log-storage">Activate audit log storage<a class="headerlink" href="#activate-audit-log-storage" title="Permanent link">#</a></h4>
 <ol>
@@ -16106,7 +16129,7 @@ chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive
 <h3 id="step-54-create-the-file-storage-directory">Step 5.4: Create the file storage directory<a class="headerlink" href="#step-54-create-the-file-storage-directory" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Standalone server configuration</p>
-<p>In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="https://docs.strangebee.com/thehive/installation/deploying-a-cluster/">Setting up a Cluster with TheHive</a>.</p>
+<p>In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a>.</p>
 </div>
 <p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. These items are stored as-is.</p>
 <p>On a standalone server, these files are stored on the local filesystem. By default, TheHive uses <code>/opt/thp/thehive/files</code> as the storage path.</p>

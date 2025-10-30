@@ -229,6 +229,14 @@
          <lastmod>2025-10-30</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/docker-not-modify-files-manually-except-config/</loc>
+         <lastmod>2025-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/docker-not-modify-files-manually/</loc>
+         <lastmod>2025-10-30</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/elasticsearch-limitation/</loc>
          <lastmod>2025-10-30</lastmod>
     </url>
@@ -357,6 +365,10 @@
          <lastmod>2025-10-30</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/no-authentication-cassandra/</loc>
+         <lastmod>2025-10-30</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/notifications-tab-go-to/</loc>
          <lastmod>2025-10-30</lastmod>
     </url>
@@ -442,6 +454,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/search-results/</loc>
+         <lastmod>2025-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/service-commands/</loc>
          <lastmod>2025-10-30</lastmod>
     </url>
     <url>
@@ -882,6 +898,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/proxy-settings/</loc>
+         <lastmod>2025-10-30</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/configuration/thehive-docker-entrypoint-settings/</loc>
          <lastmod>2025-10-30</lastmod>
     </url>
     <url>

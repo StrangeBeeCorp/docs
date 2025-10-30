@@ -161,7 +161,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-thehive-with-docker" class="md-skip">
+        <a href="#deploy-thehive-with-docker-compose" class="md-skip">
           Skip to content
         </a>
       
@@ -765,54 +765,72 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#step-1-install-required-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
-      Prerequisites
+      Step 1: Install required dependencies
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clone-the-repository" class="md-nav__link">
+  <a href="#step-2-clone-the-github-repository" class="md-nav__link">
     <span class="md-ellipsis">
-      Clone the repository
+      Step 2: Clone the GitHub repository
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-profiles" class="md-nav__link">
+  <a href="#step-3-choose-your-deployment-profile" class="md-nav__link">
     <span class="md-ellipsis">
-      Deployment profiles
+      Step 3: Choose your deployment profile
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#starting-thehive" class="md-nav__link">
+  <a href="#step-4-understand-the-application-stack-content" class="md-nav__link">
     <span class="md-ellipsis">
-      Starting TheHive
+      Step 4: Understand the application stack content
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-configuration" class="md-nav__link">
+  <a href="#step-5-go-to-the-selected-profile" class="md-nav__link">
     <span class="md-ellipsis">
-      Additional configuration
+      Step 5: Go to the selected profile
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#thehive-docker-entrypoint-options" class="md-nav__link">
+  <a href="#step-6-initialize-thehive" class="md-nav__link">
     <span class="md-ellipsis">
-      TheHive Docker entrypoint options
+      Step 6: Initialize TheHive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-start-thehive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7: Start TheHive
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-access-thehive" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 8: Access TheHive
     </span>
   </a>
   
@@ -1366,6 +1384,29 @@
   
   <span class="md-ellipsis">
     Pekko (Version 5.4+)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
     
   </span>
   
@@ -14620,153 +14661,397 @@
 
 
 
-<h1 id="running-thehive-with-docker"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.81 10.25c-.06-.04-.56-.43-1.64-.43-.28 0-.56.03-.84.08-.21-1.4-1.38-2.11-1.43-2.14l-.29-.17-.18.27c-.24.36-.43.77-.51 1.19-.2.8-.08 1.56.33 2.21-.49.28-1.29.35-1.46.35H2.62c-.34 0-.62.28-.62.63 0 1.15.18 2.3.58 3.38.45 1.19 1.13 2.07 2 2.61.98.6 2.59.94 4.42.94.79 0 1.61-.07 2.42-.22 1.12-.2 2.2-.59 3.19-1.16A8.3 8.3 0 0 0 16.78 16c1.05-1.17 1.67-2.5 2.12-3.65h.19c1.14 0 1.85-.46 2.24-.85.26-.24.45-.53.59-.87l.08-.24zm-17.96.99h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H3.85c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.43 0h1.76c.08 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16H6.28c-.09 0-.16.07-.16.16v1.58c.01.09.07.16.16.16m2.47 0h1.75c.1 0 .17-.07.17-.16V9.5c0-.08-.06-.16-.17-.16H8.75c-.08 0-.15.07-.15.16v1.58c0 .09.06.16.15.16m2.44 0h1.77c.08 0 .15-.07.15-.16V9.5c0-.08-.06-.16-.15-.16h-1.77c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16M6.28 9h1.76c.08 0 .16-.09.16-.18V7.25c0-.09-.07-.16-.16-.16H6.28c-.09 0-.16.06-.16.16v1.57c.01.09.07.18.16.18m2.47 0h1.75c.1 0 .17-.09.17-.18V7.25c0-.09-.06-.16-.17-.16H8.75c-.08 0-.15.06-.15.16v1.57c0 .09.06.18.15.18m2.44 0h1.77c.08 0 .15-.09.15-.18V7.25c0-.09-.07-.16-.15-.16h-1.77c-.08 0-.15.06-.15.16v1.57c0 .09.07.18.15.18m0-2.28h1.77c.08 0 .15-.07.15-.16V5c0-.1-.07-.17-.15-.17h-1.77c-.08 0-.15.06-.15.17v1.56c0 .08.07.16.15.16m2.46 4.52h1.76c.09 0 .16-.07.16-.16V9.5c0-.08-.07-.16-.16-.16h-1.76c-.08 0-.15.07-.15.16v1.58c0 .09.07.16.15.16"></path></svg></span> Running TheHive with Docker<a class="headerlink" href="#running-thehive-with-docker" title="Permanent link">#</a></h1>
-<p>TheHive fully supports Docker, allowing users to quickly deploy and manage their instance of the platform using Docker containers.</p>
-<p>We provides and maintain several setup profiles for TheHive and Cortex available on GitHub. This guide will walk you through choose the right profile and setting up TheHive using Docker.</p>
-<div class="admonition info">
-<p class="admonition-title">Cortex support</p>
-<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Cortex 3.1.5 and earlier are no longer supported since version 5.5.</p>
-</div>
-<hr>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
-<h4 id="software-requirements">Software requirements<a class="headerlink" href="#software-requirements" title="Permanent link">#</a></h4>
+<h1 id="deploy-thehive-with-docker-compose">Deploy TheHive with Docker Compose<a class="headerlink" href="#deploy-thehive-with-docker-compose" title="Permanent link">#</a></h1>
+<p>In this guide, we're going to deploy and configure TheHive On-prem using Docker Compose.</p>
+<p>By the end, you'll have a fully functional TheHive instance running in Docker containers.</p>
+<p>We provide several deployment profiles depending on your performance requirements on <a href="https://github.com/StrangeBeeCorp/docker/tree/main" target="_blank">a dedicated GitHub repository</a>, with <a href="../../overview/#architecture">all services</a> configured automatically.</p>
+<p>If you want to use only the TheHive Docker image, get it from <a href="https://hub.docker.com/r/strangebee/TheHive" target="_blank">Docker Hub</a>. You'll need to install <a href="../../overview/#architecture">other required services</a> separately.</p>
+<div class="admonition note">
+<p class="admonition-title">Guide scope</p>
+<p>This guide covers deploying a new instance of TheHive using Docker Compose, with all components hosted on the same server.</p>
+<p>It doesn't cover:</p>
 <ul>
-<li><strong>Docker Engine</strong>: Version <code>v23.0.15</code> or later. <a href="https://docs.docker.com/engine/install/" target="_blank">Installation instructions</a></li>
-<li><strong>Docker Compose Plugin</strong>: Version <code>v2.20.2</code> or later. <a href="https://docs.docker.com/compose/install/" target="_blank">Installation instructions</a></li>
-<li><strong>jq</strong>: <a href="https://jqlang.github.io/jq/" target="_blank">jq installation instructions</a></li>
-<li><strong>Permissions</strong>: The current user should have at least <code>sudo</code> permissions.</li>
+<li>Linux installations: For Linux installations, follow <a href="../installation-guide-linux-standalone-server/">Install TheHive on Linux Systems</a>.</li>
+<li>Cluster deployments: Refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a> for Linux, or <a href="../kubernetes/">Deploy TheHive on Kubernetes</a> for Kubernetes deployments.</li>
+<li>Version upgrades: For upgrading an existing instance, see <a href="../upgrade-from-5.x/">Upgrade from TheHive 5.x</a> or <a href="../upgrade-from-4.x/">Upgrade from TheHive 4.x</a>.</li>
 </ul>
-<p>&nbsp;</p>
-<h4 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">#</a></h4>
-<p>Hardware requirements will depend on the deployment profile being used. For example, for testing deployments, a CPU with 4 vCPUs and 8 GB RAM is recommended, while for high-performance deployments for TheHive on a dedicated server, a CPU with 8 vCPUs and 32 GB RAM is recommended. For more detailed requirements, please refer to the GitHub link provided below.</p>
-<p>Basically, two hardware profiles are recommended to run the full stack for TheHive on a single server (virtual of physical): </p>
-<ol>
-<li>4vCPUs, 16 GB of RAM and 100GB of storage is recommended for most use cases, </li>
-<li>8vCPUs, 32GB of RAM and 150GB of storage for intensive use cases.</li>
-</ol>
-<hr>
-<h2 id="clone-the-repository">Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permanent link">#</a></h2>
-<p>Clone the <a href="https://github.com/StrangeBeeCorp/docker.git">StrangeBee Docker repository</a> to your local machine:</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Before you begin</p>
+<p>To ensure a smooth deployment process, make sure you have:</p>
+<ul>
+<li>A basic understanding of <a href="../../overview/#architecture">TheHive architecture</a></li>
+<li><a href="../system-requirements/">System requirements fully met and verified</a> for Docker Compose deployment</li>
+<li>At least <code>sudo</code> permissions</li>
+</ul>
+</div>
+<h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
+<p>Start by installing the necessary dependencies for deploying TheHive with Docker Compose.</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/" target="_blank">Docker Engine</a>: version <code>v23.0.15</code> or later</li>
+<li><a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose plugin</a>: version <code>v2.20.2</code> or later</li>
+<li><a href="https://jqlang.github.io/jq/" target="_blank">jq</a></li>
+</ul>
+<h3 id="verify-dependencies-installation">Verify dependencies installation<a class="headerlink" href="#verify-dependencies-installation" title="Permanent link">#</a></h3>
+<p>Run the following commands to ensure the dependencies are correctly installed:</p>
+<ul>
+<li>Check the Docker engine version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>version
+</code></pre></div>
+<ul>
+<li>Confirm the current user can run Docker commands:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div>
+<p>For details on post-installation steps and user permissions, see the <a href="https://docs.docker.com/engine/install/linux-postinstall/" target="_blank">Docker post-installation guide</a>.</p>
+<ul>
+<li>Check the Docker Compose plugin version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>version
+</code></pre></div>
+<h2 id="step-2-clone-the-github-repository">Step 2: Clone the GitHub repository<a class="headerlink" href="#step-2-clone-the-github-repository" title="Permanent link">#</a></h2>
+<p>Next, clone the <a href="https://github.com/StrangeBeeCorp/docker.git" target="_blank">StrangeBee Docker repository</a> to your local machine:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/StrangeBeeCorp/docker.git
 </code></pre></div>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/docker-install-0.png" data-desc-position="bottom"><img alt="" src="../../images/installation/docker-install-0.png"></a></p>
-<hr>
-<h2 id="deployment-profiles">Deployment profiles<a class="headerlink" href="#deployment-profiles" title="Permanent link">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title"><strong>BEFORE</strong> RUNNING ANY COMMAND</p>
-<p>Please, read carefully the documentation related to the profile you want to use (the <code>README.md</code> files you'll find in the GitHub repository).</p>
+<h2 id="step-3-choose-your-deployment-profile">Step 3: Choose your deployment profile<a class="headerlink" href="#step-3-choose-your-deployment-profile" title="Permanent link">#</a></h2>
+<p>Before proceeding with any commands, take a moment to choose the deployment profile that best fits your needs. We provide three prebuilt profiles, each designed for different use cases and performance requirements.</p>
+<h3 id="profile-n1-testing-environment-thehive-and-cortex">Profile n°1: <em>Testing environment</em> (TheHive and Cortex)<a class="headerlink" href="#profile-n1-testing-environment-thehive-and-cortex" title="Permanent link">#</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Testing only</p>
+<p>This profile is for testing purposes only and must never be used in production</p>
 </div>
-<p>The prebuilt deployment profiles allow you to quickly set up TheHive based on your specific use case. Choose from the following deployment options:</p>
-<dl>
-<dt><strong>Testing Environment</strong></dt>
-<dd>
-<p>Deploys both TheHive (and <a href="../../../cortex/">Cortex</a>) on a single server for testing purposes. <a href="https://github.com/StrangeBeeCorp/docker/blob/main/testing" target="_blank">Link to the testing profile</a></p>
-</dd>
-<dt><strong>Production Environment #1 - TheHive</strong></dt>
-<dd>
-<p>Single server deployment for intensive use of TheHive. <a href="https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive" target="_blank">Link to the production profile</a></p>
-</dd>
-<dt><strong>Production Environment #2 - TheHive</strong></dt>
-<dd>
-<p>High-performance deployment for TheHive on a dedicated server. <a href="https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive" target="_blank">Link to the high-performance production profile</a></p>
-</dd>
-</dl>
-<p>You can choose the scenario that best suits your needs by selecting the appropriate Docker Compose YAML file.</p>
-<hr>
-<h2 id="starting-thehive">Starting TheHive<a class="headerlink" href="#starting-thehive" title="Permanent link">#</a></h2>
-<p>The application stack includes several utility scripts, one of which is the <code>init.sh</code> script, which performs the following tasks for you:</p>
+<p>Single server deployment of both TheHive and <a href="../../administration/cortex/about-cortex/">Cortex</a> for testing purposes.</p>
+<p>Check the hardware requirements in the <a href="../system-requirements/#hardware-requirements">Docker Compose deployment section</a>.</p>
+<h3 id="profile-n2-production-environment-1-thehive">Profile n°2: <em>Production environment #1</em> (TheHive)<a class="headerlink" href="#profile-n2-production-environment-1-thehive" title="Permanent link">#</a></h3>
+<p>Single server deployment of TheHive for intensive use.</p>
+<p>Check the hardware requirements in the <a href="../system-requirements/#hardware-requirements">Docker Compose deployment section</a>.</p>
+<h3 id="profile-n3-production-environment-2-thehive">Profile n°3: <em>Production environment #2</em> (TheHive)<a class="headerlink" href="#profile-n3-production-environment-2-thehive" title="Permanent link">#</a></h3>
+<p>Single server deployment of TheHive for high-performance requirements.</p>
+<p>Check the hardware requirements in the <a href="../system-requirements/#hardware-requirements">Docker Compose deployment section</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Cortex deployment</p>
+<p>Similar production deployment profiles are available for Cortex. See <a href="../../../cortex/installation-and-configuration/run-cortex-with-docker/">Run Cortex with Docker</a> for details.</p>
+</div>
+<h2 id="step-4-understand-the-application-stack-content">Step 4: Understand the application stack content<a class="headerlink" href="#step-4-understand-the-application-stack-content" title="Permanent link">#</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Testing environment profile</label><label for="__tabbed_1_2">Production environment #1 &amp; #2 profiles</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The Docker Compose file deploys the following components:</p>
 <ul>
-<li>Prompt for a service name to include in the Nginx server certificate.</li>
-<li>Initialize the <code>secret.conf</code> files for TheHive and Cortex.</li>
-<li>Generate a self-signed certificate if none is found in the <code>./certificates</code> directory.</li>
-<li>Create a <code>.env</code> file containing user/group information and other application settings.</li>
-<li>Verify file and folder permissions to ensure proper access rights.</li>
+<li>Cassandra: Database used by TheHive</li>
+<li>Elasticsearch: Database for Cortex and indexing engine for TheHive</li>
+<li>TheHive: Main application</li>
+<li>Cortex: Analyzers and responders engine</li>
+<li>Nginx: HTTPS reverse proxy</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>TheHive application will run under the user account and group that execute the initialization script.</p>
+<h3 id="configuration-and-data-files">Configuration and data files<a class="headerlink" href="#configuration-and-data-files" title="Permanent link">#</a></h3>
+<p>Each container has a dedicated folder for configuration, data, and log files.</p>
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>cassandra
+├──<span class="w"> </span>certificates
+├──<span class="w"> </span>cortex
+├──<span class="w"> </span>docker-compose.yml
+├──<span class="w"> </span>dot.env.template
+├──<span class="w"> </span>elasticsearch
+├──<span class="w"> </span>nginx
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>scripts
+└──<span class="w"> </span>thehive
+</code></pre></div>
+<h3 id="files-and-folders-overview">Files and folders overview<a class="headerlink" href="#files-and-folders-overview" title="Permanent link">#</a></h3>
+<h4 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>cassandra
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./cassandra/data</code>: Database files.</li>
+<li><code>./cassandra/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
 </div>
-<p>Follow the steps below to initialize the environment.</p>
-<h3 id="step-1-run-the-initialization-script">Step 1: Run the initialization script<a class="headerlink" href="#step-1-run-the-initialization-script" title="Permanent link">#</a></h3>
-<p>Execute the <code>init.sh</code> script to set up the necessary configurations:</p>
+<h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>elasticsearch
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./elasticsearch/data</code>: Database files.</li>
+<li><code>./elasticsearch/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="thehive">TheHive<a class="headerlink" href="#thehive" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>thehive
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>data
+│<span class="w">   </span>└──<span class="w"> </span>files
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./thehive/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./thehive/data/files</code>: File storage for TheHive.</li>
+<li><code>./thehive/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h4 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>cortex
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>cortex-jobs
+├──<span class="w"> </span>logs
+└──<span class="w"> </span>neurons
+</code></pre></div>
+<ul>
+<li><code>./cortex/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./cortex/cortex-jobs</code>: Temporary data storage for analyzers and responders.</li>
+<li><code>./cortex/logs</code>: Log files.</li>
+<li><code>./cortex/neurons</code>: Folder for custom analyzers and responders.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h4 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>nginx
+├──<span class="w"> </span>certs
+└──<span class="w"> </span>templates
+<span class="w">    </span>└──<span class="w"> </span>default.conf.template
+</code></pre></div>
+<ul>
+<li><code>./nginx/templates/default.conf.template</code>: File used to initialize Nginx configuration when the container starts.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">#</a></h4>
+<p>This folder is empty by default. The application stack initializes with self-signed certificates.</p>
+<p>To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:</p>
+<div class="highlight"><pre><span></span><code>certificates
+├──<span class="w"> </span>server.crt<span class="w">         </span><span class="c1">## Server certificate</span>
+├──<span class="w"> </span>server.key<span class="w">         </span><span class="c1">## Server private key</span>
+└──<span class="w"> </span>ca.pem<span class="w">             </span><span class="c1">## Certificate Authority</span>
+</code></pre></div>
+<h4 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>scripts
+├──<span class="w"> </span>check_permissions.sh
+├──<span class="w"> </span>generate_certs.sh
+├──<span class="w"> </span>init.sh
+├──<span class="w"> </span>output.sh
+├──<span class="w"> </span>reset.sh
+├──<span class="w"> </span>test_init_applications.sh
+├──<span class="w"> </span>test_init_cortex.sh
+├──<span class="w"> </span>test_init_thehive.sh
+├──<span class="w"> </span>backup.sh
+└──<span class="w"> </span>restore.sh
+</code></pre></div>
+<p>The application stack includes several utility scripts:</p>
+<ul>
+<li><code>check_permissions.sh</code>: Ensures proper permissions are set on files and folders.</li>
+<li><code>generate_certs.sh</code>: Generates a self-signed certificate for Nginx.</li>
+<li><code>init.sh</code>: Initializes the application stack.</li>
+<li><code>output.sh</code>: Displays output messages called by other scripts.</li>
+<li><code>reset.sh</code>: Resets the testing environment. Running this script deletes all data and containers.</li>
+<li><code>test_init_applications.sh</code>: Configures TheHive and Cortex by enabling analyzers, integrating Cortex with TheHive, and creating sample data like alerts, observables, and custom fields in TheHive.</li>
+<li><code>test_init_cortex.sh</code>: Helper script called by <code>test_init_applications.sh</code> to set up Cortex.</li>
+<li><code>test_init_thehive.sh</code>: Helper script called by <code>test_init_applications.sh</code> to set up TheHive.</li>
+<li><code>backup.sh</code>: Performs a cold backup of the current environment.</li>
+<li><code>restore.sh</code>: Restores the environment from a previously taken backup.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p>The Docker Compose file deploys the following components:</p>
+<ul>
+<li>Cassandra: Database used by TheHive</li>
+<li>Elasticsearch: Indexing engine for TheHive</li>
+<li>TheHive: Main application</li>
+<li>Nginx: HTTPS reverse proxy</li>
+</ul>
+<h3 id="configuration-and-data-files_1">Configuration and data files<a class="headerlink" href="#configuration-and-data-files_1" title="Permanent link">#</a></h3>
+<p>Each container has a dedicated folder for configuration, data, and log files.</p>
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>cassandra
+├──<span class="w"> </span>certificates
+├──<span class="w"> </span>docker-compose.yml
+├──<span class="w"> </span>dot.env.template
+├──<span class="w"> </span>elasticsearch
+├──<span class="w"> </span>nginx
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>scripts
+└──<span class="w"> </span>thehive
+</code></pre></div>
+<h3 id="files-and-folders-overview_1">Files and folders overview<a class="headerlink" href="#files-and-folders-overview_1" title="Permanent link">#</a></h3>
+<h4 id="cassandra_1">Cassandra<a class="headerlink" href="#cassandra_1" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>cassandra
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./cassandra/data</code>: Database files.</li>
+<li><code>./cassandra/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="elasticsearch_1">Elasticsearch<a class="headerlink" href="#elasticsearch_1" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>elasticsearch
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./elasticsearch/data</code>: Database files.</li>
+<li><code>./elasticsearch/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="thehive_1">TheHive<a class="headerlink" href="#thehive_1" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>thehive
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>data
+│<span class="w">   </span>└──<span class="w"> </span>files
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./thehive/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./thehive/data/files</code>: File storage for TheHive.</li>
+<li><code>./thehive/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h4 id="nginx_1">Nginx<a class="headerlink" href="#nginx_1" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>nginx
+├──<span class="w"> </span>certs
+└──<span class="w"> </span>templates
+<span class="w">    </span>└──<span class="w"> </span>default.conf.template
+</code></pre></div>
+<ul>
+<li><code>./nginx/templates/default.conf.template</code>: File used to initialize Nginx configuration when the container starts.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="certificates_1">Certificates<a class="headerlink" href="#certificates_1" title="Permanent link">#</a></h4>
+<p>This folder is empty by default. The application stack initializes with self-signed certificates.</p>
+<p>To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:</p>
+<div class="highlight"><pre><span></span><code>certificates
+├──<span class="w"> </span>server.crt<span class="w">         </span><span class="c1">## Server certificate</span>
+├──<span class="w"> </span>server.key<span class="w">         </span><span class="c1">## Server private key</span>
+└──<span class="w"> </span>ca.pem<span class="w">             </span><span class="c1">## Certificate Authority</span>
+</code></pre></div>
+<h4 id="scripts_1">Scripts<a class="headerlink" href="#scripts_1" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>scripts
+├──<span class="w"> </span>check_permissions.sh
+├──<span class="w"> </span>generate_certs.sh
+├──<span class="w"> </span>init.sh
+├──<span class="w"> </span>output.sh
+├──<span class="w"> </span>reset.sh
+├──<span class="w"> </span>backup.sh
+└──<span class="w"> </span>restore.sh
+</code></pre></div>
+<p>The application stack includes several utility scripts:</p>
+<ul>
+<li><code>check_permissions.sh</code>: Ensures proper permissions are set on files and folders.</li>
+<li><code>generate_certs.sh</code>: Generates a self-signed certificate for Nginx.</li>
+<li><code>init.sh</code>: Initializes the application stack.</li>
+<li><code>output.sh</code>: Displays output messages called by other scripts.</li>
+<li><code>reset.sh</code>: Resets the testing environment. Running this script deletes all data and containers.</li>
+<li><code>backup.sh</code>: Performs a cold backup of the current environment. See <a href="../../operations/backup-restore/backup/docker-compose/">Backup a Stack Run with Docker Compose</a> for more details.</li>
+<li><code>restore.sh</code>: Restores the environment from a previously taken backup. See <a href="../../operations/backup-restore/restore/docker-compose/">Restore a Stack Run with Docker Compose</a> for more details.</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="step-5-go-to-the-selected-profile">Step 5: Go to the selected profile<a class="headerlink" href="#step-5-go-to-the-selected-profile" title="Permanent link">#</a></h2>
+<p>Navigate to the directory of your chosen profile.</p>
+<p>For example, to select the <em>Production environment #1</em> profile:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>docker/prod1-thehive
+</code></pre></div>
+<h2 id="step-6-initialize-thehive">Step 6: Initialize TheHive<a class="headerlink" href="#step-6-initialize-thehive" title="Permanent link">#</a></h2>
+<p>Before starting TheHive, we need to initialize the environment using the provided <code>init.sh</code> script.</p>
+<p>This script automates several critical setup tasks:</p>
+<ul>
+<li>Prompts for a server name to include in the Nginx server certificate.</li>
+<li>Initializes the <code>secret.conf</code> configuration files for TheHive and Cortex.</li>
+<li>Generates a self-signed certificate if none exists in the <code>./certificates</code> directory.</li>
+<li>Creates a <code>.env</code> file with user/group information and application settings.</li>
+<li>Generates a random password for Elasticsearch authentication.</li>
+<li>Verifies file and folder permissions to ensure proper access rights.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Elasticsearch password</p>
+<p>If you need to retrieve the Elasticsearch password, check the <code>.env</code> file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">User permissions</p>
+<p>TheHive will run under the user account and group that execute the initialization script. Ensure you're using an appropriate user with the necessary permissions.</p>
+</div>
+<p>Execute the initialization script to set up the necessary configurations:</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/init.sh
 </code></pre></div>
-<h3 id="step-2-run-the-application-stack">Step 2: Run the application stack<a class="headerlink" href="#step-2-run-the-application-stack" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up
-</code></pre></div>
-<p>or </p>
+<h2 id="step-7-start-thehive">Step 7: Start TheHive<a class="headerlink" href="#step-7-start-thehive" title="Permanent link">#</a></h2>
+<p>Once initialization is complete, start all services using Docker Compose.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-<p>&nbsp;</p>
-<div class="admonition example">
-<p class="admonition-title">How to start quickly with prod1-thehive environment?</p>
-<ol>
-<li>Clone the repository</li>
-<li>Open prod1-thehive folder</li>
-<li>Initialize the environment</li>
-<li>Start the application stack</li>
-</ol>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/start-prod1-thehive.gif" data-desc-position="bottom"><img alt="" src="../../images/installation/start-prod1-thehive.gif"></a></p>
-</div>
-<h3 id="step-3-access-the-application">Step 3: Access the application<a class="headerlink" href="#step-3-access-the-application" title="Permanent link">#</a></h3>
-<p>Open your browser, and navigate to:</p>
-<ul>
-<li><code>https://HOSTNAME_OR_IP/thehive</code> to connect to TheHive if using the <em>testing</em> profile</li>
-<li><code>https://HOSTNAME_OR_IP/</code> to connect to TheHive if using the production profiles</li>
-</ul>
-<p>&nbsp;</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/docker-install-2.png" data-desc-position="bottom"><img alt="" src="../../images/installation/docker-install-2.png"></a></p>
-<hr>
-<h2 id="additional-configuration">Additional configuration<a class="headerlink" href="#additional-configuration" title="Permanent link">#</a></h2>
-<p>For more detailed information on the directory structure, services, scripts, and their respective functions, please refer to the <code>README.md</code> file located within each deployment profile:</p>
-<ul>
-<li><a href="https://github.com/StrangeBeeCorp/docker/blob/main/testing/README.md" target="_blank">Testing Environment</a></li>
-<li><a href="https://github.com/StrangeBeeCorp/docker/blob/main/prod1-thehive/README.md" target="_blank">Production Environment #1 - TheHive</a></li>
-<li><a href="https://github.com/StrangeBeeCorp/docker/blob/main/prod2-thehive/README.md" target="_blank">Production Environment #2 - TheHive</a></li>
-</ul>
-<hr>
-<h2 id="thehive-docker-entrypoint-options">TheHive Docker entrypoint options<a class="headerlink" href="#thehive-docker-entrypoint-options" title="Permanent link">#</a></h2>
-<p>To view a list of all supported options for the Docker entry point, use the -h flag:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>strangebee/thehive:&lt;version&gt;<span class="w"> </span>-h
+<p>If TheHive fails to start or you encounter errors, stop the running containers and restart without the <code>-d</code> flag to display real-time logs in your terminal:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+docker<span class="w"> </span>compose<span class="w"> </span>up
 </code></pre></div>
-<p>The output will display available options, allowing you to configure TheHive according to your requirements.</p>
-<p>Available Options:</p>
+<h2 id="step-8-access-thehive">Step 8: Access TheHive<a class="headerlink" href="#step-8-access-thehive" title="Permanent link">#</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Testing environment profile</label><label for="__tabbed_2_2">Production environment #1 &amp; #2 profiles</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Open your browser and navigate to <a href="http://localhost/thehive" target="_blank"><code>http://localhost/thehive</code></a> or use the IP address of the server running Docker Compose.</p>
+</div>
+<div class="tabbed-block">
 <ul>
-<li><code>--config-file &lt;file&gt;</code>: Specifies the path to the configuration file.</li>
-<li><code>--no-config</code>: Prevents TheHive from attempting to configure itself, including adding secrets and Elasticsearch settings.</li>
-<li><code>--no-config-secret</code>: Excludes the addition of a randomly generated secret from the configuration.</li>
-<li><code>--secret &lt;secret&gt;</code>: Sets the secret used to secure sessions.</li>
-<li><code>--show-secret</code>: Displays the generated secret.</li>
-<li><code>--no-config-db</code>: Disables automatic configuration of the database.</li>
-<li><code>--cql-hostnames &lt;host&gt;,&lt;host&gt;,...</code>: Resolves these host names to locate Cassandra instances.</li>
-<li><code>--cql-username &lt;username&gt;</code>: Specifies the username for the Cassandra database.</li>
-<li><code>--cql-password &lt;password&gt;</code>: Specifies the password for the Cassandra database.</li>
-<li><code>--cql-datacenter &lt;datacenter&gt;</code>: Specifies the name of the Cassandra datacenter used by the TheHive node. This parameter is new as of version 5.4.7 and can have different values for each node in cluster mode.</li>
-<li><code>--no-cql-wait</code>: Skips waiting for Cassandra to become available.</li>
-<li><code>--bdb-directory &lt;path&gt;</code>: Defines the location of the local database if Cassandra is not used (default: /data/db).</li>
-<li><code>--index-backend</code>: Specifies the backend to use for index, either 'lucene' or 'elasticsearch' (default: lucene).</li>
-<li><code>--es-hostnames</code>: Specifies the Elasticsearch instances used for index.</li>
-<li><code>--es-index</code>: Specifies the Elasticsearch index name to be used (default: thehive).</li>
-<li><code>--no-config-storage</code>: Disables automatic configuration of storage.</li>
-<li><code>--storage-directory &lt;path&gt;</code>: Specifies the location of local storage if S3 is not used (default: /data/files).</li>
-<li><code>--s3-endpoint &lt;endpoint&gt;</code>: Specifies the endpoint of S3 or other object storage if used, with 's3.amazonaws.com' for AWS S3.</li>
-<li><code>--s3-region &lt;region&gt;</code>: Specifies the S3 region, optional for MinIO.</li>
-<li><code>--s3-bucket &lt;bucket&gt;</code>: Specifies the name of the bucket to use (default: thehive), which must already exist.</li>
-<li><code>--s3-access-key &lt;key&gt;</code>: Specifies the S3 access key (required for S3).</li>
-<li><code>--s3-secret-key &lt;key&gt;</code>: Specifies the S3 secret key (required for S3).</li>
-<li><code>--s3-use-path-access-style</code>: Sets this flag if using MinIO or another non-AWS S3 provider, defaulting to virtual host style.</li>
-<li><code>--no-config-cortex</code>: Excludes Cortex configuration.</li>
-<li><code>--cortex-proto &lt;proto&gt;</code>: Defines the protocol to connect to Cortex (default: http).</li>
-<li><code>--cortex-port &lt;port&gt;</code>: Defines the port to connect to Cortex (default: 9001).</li>
-<li><code>--cortex-hostnames &lt;host&gt;,&lt;host&gt;,...</code>: Resolves these host names to locate Cortex instances.</li>
-<li><code>--cortex-keys &lt;key&gt;,&lt;key&gt;,...</code>: Defines Cortex keys.</li>
-<li><code>--kubernetes</code>: Utilizes the Kubernetes API to join other nodes.</li>
-<li><code>--kubernetes-pod-label-selector &lt;selector&gt;</code>: Specifies the selector to use to select other pods running the app (default app=thehive).</li>
-<li><code>--cluster-min-nodes-count &lt;count&gt;</code>: Specifies the minimum number of nodes to form a cluster (default to 1).</li>
-<li><code>migrate &lt;param&gt; &lt;param&gt; ...</code>: Runs the migration tool.</li>
-<li><code>cloner &lt;param&gt; &lt;param&gt; ...</code>: Runs the cloner tool. </li>
+<li>
+<p>Without DNS: Open your browser and navigate to <a href="http://localhost" target="_blank"><code>http://localhost</code></a> or use the IP address of the server running Docker Compose.</p>
+</li>
+<li>
+<p>With DNS and a valid certificate: Use the public URL defined in <code>application.baseUrl</code>. See <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
+</li>
 </ul>
-<p>&nbsp;</p>
+</div>
+</div>
+</div>
+<p>For additional Docker entrypoint options, see <a href="../../configuration/thehive-docker-entrypoint-settings/">TheHive Docker Entrypoint Settings</a>.</p>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../configuration/turn-off-cortex-connector/">Turn Off The Cortex Integration</a></li>
+<li><a href="../../configuration/turn-off-misp-connector/">Turn Off The MISP Integration</a></li>
+<li><a href="../../configuration/update-log-configuration/">Update Log Configuration</a></li>
+<li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
+<li><a href="../../configuration/enable-gdpr/">Enable the GDPR Compliance Feature</a></li>
+<li><a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a></li>
+<li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
+<li><a href="../../operations/backup-restore/backup/docker-compose/">Backup a Stack Run with Docker Compose</a></li>
+<li><a href="../../operations/monitoring/">Monitoring</a></li>
+</ul>
 
 
 

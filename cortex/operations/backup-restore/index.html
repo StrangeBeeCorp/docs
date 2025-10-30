@@ -1276,6 +1276,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../thehive/configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14612,7 +14635,7 @@
 <h1 id="backup-and-restore-data">Backup and restore data<a class="headerlink" href="#backup-and-restore-data" title="Permanent link">#</a></h1>
 <p>All persistent data is stored in an Elasticsearch database. The backup and
 restore procedures are the ones that are detailed in
-<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html">Elasticsearch documentation</a>.</p>
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-snapshots.html" target="_blank">Elasticsearch documentation</a>.</p>
 <p><em>Note</em>: you may have to adapt your indices in the examples below. To find the
 right index, use the following command :</p>
 <div class="highlight"><pre><span></span><code>curl 'localhost:9200/_cat/indices?v'
@@ -14632,7 +14655,7 @@ adding:</p>
 <p>Then, restart the Elasticsearch service.</p>
 <p><em>Note</em>: Be careful if you run Elasticsearch in Docker, the directory must be
 mapped in host filesystem using <code>--volume</code>
-parameter (cf. <a href="https://docs.docker.com/engine/tutorials/dockervolumes/">Docker documentation</a>).</p>
+parameter (cf. <a href="https://docs.docker.com/engine/tutorials/dockervolumes/" target="_blank">Docker documentation</a>).</p>
 <h2 id="2-register-a-snapshot-repository">2. Register a snapshot repository<a class="headerlink" href="#2-register-a-snapshot-repository" title="Permanent link">#</a></h2>
 <p>Create an Elasticsearch snapshot point named <em>cortex_backup</em> with the following
 command (set the same path in the location setting as the one set in the

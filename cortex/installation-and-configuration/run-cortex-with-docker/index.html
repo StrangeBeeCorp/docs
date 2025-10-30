@@ -1276,6 +1276,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../thehive/configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14621,12 +14644,12 @@
 <h1 id="run-cortex-with-docker">Run Cortex with Docker<a class="headerlink" href="#run-cortex-with-docker" title="Permanent link">#</a></h1>
 <p>This topic provides step-by-step instructions for running Cortex with Docker or Podman.</p>
 <h2 id="prerequisites-and-alternatives">Prerequisites and alternatives<a class="headerlink" href="#prerequisites-and-alternatives" title="Permanent link">#</a></h2>
-<p>To run the Docker image, you need <a href="https://www.docker.com/">Docker</a>—no surprises there. Alternatively, you can also use <a href="https://podman.io/">Podman</a> as a compatible option.</p>
+<p>To run the Docker image, you need <a href="https://www.docker.com/" target="_blank">Docker</a>—no surprises there. Alternatively, you can also use <a href="https://podman.io/" target="_blank">Podman</a> as a compatible option.</p>
 <h2 id="default-configuration-of-the-cortex-docker-image">Default configuration of the Cortex Docker image<a class="headerlink" href="#default-configuration-of-the-cortex-docker-image" title="Permanent link">#</a></h2>
 <p>By default, the Docker image generates a Cortex configuration file with the following settings:</p>
 <ul>
 <li>It sets the Elasticsearch URI by resolving the host name <code>elasticsearch</code>.</li>
-<li>It uses the official locations for <a href="https://catalogs.download.strangebee.com/latest/json/analyzers.json">analyzers</a> and <a href="https://catalogs.download.strangebee.com/latest/json/responders.json">responders</a>.</li>
+<li>It uses the official locations for <a href="https://catalogs.download.strangebee.com/latest/json/analyzers.json" target="_blank">analyzers</a> and <a href="https://catalogs.download.strangebee.com/latest/json/responders.json" target="_blank">responders</a>.</li>
 <li>It includes a generated secret to secure user sessions.</li>
 </ul>
 <h2 id="customizing-cortex-docker-image-behavior">Customizing Cortex Docker image behavior<a class="headerlink" href="#customizing-cortex-docker-image-behavior" title="Permanent link">#</a></h2>
@@ -14763,9 +14786,9 @@
 </div>
 <p>In this mode, you don’t need to bind any job directories since the Docker daemon runs inside the container.</p>
 <h3 id="using-docker-compose-to-start-cortex-and-elasticsearch">Using Docker Compose to start Cortex and Elasticsearch<a class="headerlink" href="#using-docker-compose-to-start-cortex-and-elasticsearch" title="Permanent link">#</a></h3>
-<p>Cortex requires Elasticsearch to run. You can use <a href="https://github.com/StrangeBeeCorp/docker">Docker Compose</a> to start both services together, or install and configure Elasticsearch manually.</p>
+<p>Cortex requires Elasticsearch to run. You can use <a href="https://github.com/StrangeBeeCorp/docker" target="_blank">Docker Compose</a> to start both services together, or install and configure Elasticsearch manually.</p>
 <p>Docker Compose enables you to launch multiple containers and link them.</p>
-<p>The following <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml">docker-compose.yml</a> file starts Elasticsearch and Cortex:</p>
+<p>The following <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml" target="_blank">docker-compose.yml</a> file starts Elasticsearch and Cortex:</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>version: "2"
 services:
@@ -14792,15 +14815,15 @@ services:
       - "0.0.0.0:9001:9001"
 </code></pre></div>
 </div>
-<p>Place this <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml">Docker Compose file</a> and the corresponding <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env">.env file</a> in an empty folder, then run <code>docker-compose up</code>. Cortex is available on port 9001/tcp by default, which you can customize in the compose file.</p>
+<p>Place this <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml" target="_blank">Docker Compose file</a> and the corresponding <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env" target="_blank">.env file</a> in an empty folder, then run <code>docker-compose up</code>. Cortex is available on port 9001/tcp by default, which you can customize in the compose file.</p>
 <div class="admonition tip">
 <p class="admonition-title">Advanced configuration</p>
-<p>For advanced configuration, visit <a href="https://github.com/TheHive-Project/Docker-Templates">the StrangeBee Docker Templates repository</a>.</p>
+<p>For advanced configuration, visit <a href="https://github.com/TheHive-Project/Docker-Templates" target="_blank">the StrangeBee Docker Templates repository</a>.</p>
 </div>
 <h2 id="running-cortex-with-podman">Running Cortex with Podman<a class="headerlink" href="#running-cortex-with-podman" title="Permanent link">#</a></h2>
 <p>Podman is an open-source container engine designed as a drop-in replacement for Docker. It allows you to run containers without requiring a daemon and can run in rootless mode for improved security.</p>
 <p>Like Docker, Podman can run the Cortex container image as well as its analyzers. The examples below assume you run the containers in rootful mode.</p>
-<p>For Cortex to interact with Podman, it requires access to the <a href="https://docs.podman.io/en/latest/markdown/podman-system-service.1.html">Podman socket</a>. On some systems, Podman automatically installs and enables this socket service.</p>
+<p>For Cortex to interact with Podman, it requires access to the <a href="https://docs.podman.io/en/latest/markdown/podman-system-service.1.html" target="_blank">Podman socket</a>. On some systems, Podman automatically installs and enables this socket service.</p>
 <p>You can check whether the Podman socket service is running on your system with this command:</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>podman.socket

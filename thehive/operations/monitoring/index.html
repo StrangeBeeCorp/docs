@@ -1281,6 +1281,29 @@
   
   
     <li class="md-nav__item">
+      <a href="../../configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
@@ -14608,12 +14631,12 @@
 <p class="admonition-title">Before you begin</p>
 <p>Before you start, ensure you have:</p>
 <ul>
-<li>A running <a href="https://prometheus.io/">Prometheus</a> instance, version 2.x or 3.x </li>
-<li>A running <a href="https://grafana.com/">Grafana</a> instance, version 7.0 or later</li>
+<li>A running <a href="https://prometheus.io/" target="_blank">Prometheus</a> instance, version 2.x or 3.x </li>
+<li>A running <a href="https://grafana.com/" target="_blank">Grafana</a> instance, version 7.0 or later</li>
 </ul>
 </div>
 <h2 id="step-1-enable-monitoring-in-thehive">Step 1: Enable monitoring in TheHive<a class="headerlink" href="#step-1-enable-monitoring-in-thehive" title="Permanent link">#</a></h2>
-<p>First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the <a href="https://kamon.io/">Kamon</a> library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.</p>
+<p>First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the <a href="https://kamon.io/" target="_blank">Kamon</a> library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.</p>
 <ol>
 <li>
 <p>Open the <code>/etc/thehive/application.conf</code> file.</p>
@@ -14673,7 +14696,7 @@ You should see a page full of metrics in Prometheus format.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">For Prometheus v2.x</label><label for="__tabbed_1_2">For Prometheus v3.x</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Add the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config">scrape configuration</a> to <code>prometheus.yml</code>.</p>
+<p>Add the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config" target="_blank">scrape configuration</a> to <code>prometheus.yml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># ...  other scrape configs </span>
 
@@ -14684,7 +14707,7 @@ You should see a page full of metrics in Prometheus format.</p>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Add the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config">scrape configuration</a> to <code>prometheus.yml</code>.</p>
+<p>Add the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#scrape_config" target="_blank">scrape configuration</a> to <code>prometheus.yml</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
 <span class="w">  </span><span class="c1"># ...  other scrape configs </span>
 
@@ -14694,7 +14717,7 @@ You should see a page full of metrics in Prometheus format.</p>
 <span class="w">    </span><span class="nt">static_configs</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">targets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">'&lt;thehive_hostname&gt;:9095'</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># Set the IP or hostname for TheHive</span>
 </code></pre></div>
-<p>The <code>fallback_scrape_protocol</code> ensures compatibility with TheHive metrics format. For more details, check the <a href="https://prometheus.io/docs/prometheus/latest/migration/#scrape-protocols">Prometheus migration guide</a>.</p>
+<p>The <code>fallback_scrape_protocol</code> ensures compatibility with TheHive metrics format. For more details, check the <a href="https://prometheus.io/docs/prometheus/latest/migration/#scrape-protocols" target="_blank">Prometheus migration guide</a>.</p>
 </div>
 </div>
 </div>
@@ -14716,7 +14739,7 @@ You should see a page full of metrics in Prometheus format.</p>
 <li>Add appropriate labels to your TheHive pods</li>
 <li>Create a <code>PodMonitor</code> resource if using Prometheus Operator</li>
 </ul>
-<p>For detailed instructions, see the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config">Prometheus Kubernetes configuration</a> or <a href="https://prometheus-operator.dev/docs/user-guides/getting-started/">Prometheus Operator</a> documentation.</p>
+<p>For detailed instructions, see the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config" target="_blank">Prometheus Kubernetes configuration</a> or <a href="https://prometheus-operator.dev/docs/user-guides/getting-started/" target="_blank">Prometheus Operator</a> documentation.</p>
 </li>
 </ol>
 <h2 id="step-3-visualize-metrics-in-grafana">Step 3: Visualize metrics in Grafana<a class="headerlink" href="#step-3-visualize-metrics-in-grafana" title="Permanent link">#</a></h2>
@@ -14726,12 +14749,12 @@ You should see a page full of metrics in Prometheus format.</p>
 <p>Open Grafana in your browser and log in.</p>
 </li>
 <li>
-<p><a href="https://next.prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source">Configure Prometheus as a data source</a>:</p>
+<p><a href="https://next.prometheus.io/docs/visualization/grafana/#creating-a-prometheus-data-source" target="_blank">Configure Prometheus as a data source</a>:</p>
 <p>a. Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M195.1 9.5c3-14.8 16.1-25.5 31.3-25.5h59.8c15.2 0 28.3 10.7 31.3 25.5l14.5 70c14.1 6 27.3 13.7 39.3 22.8l67.8-22.5c14.4-4.8 30.2 1.2 37.8 14.4l29.9 51.8c7.6 13.2 4.9 29.8-6.5 39.9L447 233.3c.9 7.4 1.3 15 1.3 22.7s-.5 15.3-1.3 22.7l53.4 47.5c11.4 10.1 14 26.8 6.5 39.9L477 417.9c-7.6 13.1-23.4 19.2-37.8 14.4l-67.8-22.5c-12.1 9.1-25.3 16.7-39.3 22.8l-14.4 69.9c-3.1 14.9-16.2 25.5-31.3 25.5h-59.8c-15.2 0-28.3-10.7-31.3-25.5l-14.4-69.9c-14.1-6-27.2-13.7-39.3-22.8l-68.1 22.5c-14.4 4.8-30.2-1.2-37.8-14.4L5.8 366.1c-7.6-13.2-4.9-29.8 6.5-39.9l53.4-47.5c-.9-7.4-1.3-15-1.3-22.7s.5-15.3 1.3-22.7l-53.4-47.5C.9 175.7-1.7 159 5.8 145.9l29.9-51.8c7.6-13.2 23.4-19.2 37.8-14.4l67.8 22.5c12.1-9.1 25.3-16.7 39.3-22.8zM256.3 336a80 80 0 1 0-.6-160 80 80 0 1 0 .6 160"></path></svg></span> in the left sidebar.</p>
 <p>b. Select <strong>Data Sources</strong>.</p>
 <p>c. If Prometheus isn't listed, select <strong>Add data source</strong> and select <strong>Prometheus</strong>.</p>
 <p>d. In the <strong>URL</strong> field, enter the appropriate Prometheus server URL.</p>
-<p>e. <a href="https://grafana.com/docs/grafana/latest/datasources/prometheus/configure/">Adjust other data source settings</a> as desired.</p>
+<p>e. <a href="https://grafana.com/docs/grafana/latest/datasources/prometheus/configure/" target="_blank">Adjust other data source settings</a> as desired.</p>
 <p>f. Select <strong>Save &amp; Test</strong>.</p>
 </li>
 <li>
@@ -14740,12 +14763,12 @@ You should see a page full of metrics in Prometheus format.</p>
 <p class="admonition-title">Recommended dashboard templates</p>
 <p>We suggest starting with these Kamon 2.x dashboards, which work well with TheHive:</p>
 <ul>
-<li><a href="https://grafana.com/grafana/dashboards/12317-api-dashboard/">Kamon 2.x - API Dashboard</a> <code>ID: 12317</code>: Shows API metrics like request throughput, response latency, and error rates.<br>
+<li><a href="https://grafana.com/grafana/dashboards/12317-api-dashboard/" target="_blank">Kamon 2.x - API Dashboard</a> <code>ID: 12317</code>: Shows API metrics like request throughput, response latency, and error rates.<br>
 Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.</li>
-<li><a href="https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/">Kamon 2.x - System Metrics Dashboard</a> <code>ID: 12315</code>: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.</li>
-<li><a href="https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/">Kamon 2.x - Akka Dashboard</a> <code>ID: 10776</code>: Shows Akka system information, actor metrics, and message processing times.</li>
+<li><a href="https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/" target="_blank">Kamon 2.x - System Metrics Dashboard</a> <code>ID: 12315</code>: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.</li>
+<li><a href="https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/" target="_blank">Kamon 2.x - Akka Dashboard</a> <code>ID: 10776</code>: Shows Akka system information, actor metrics, and message processing times.</li>
 </ul>
-<p>For more options, browse the <a href="https://grafana.com/grafana/dashboards/?pg=docs-grafana-latest-dashboards-variables">Grafana dashboard library</a>.</p>
+<p>For more options, browse the <a href="https://grafana.com/grafana/dashboards/?pg=docs-grafana-latest-dashboards-variables" target="_blank">Grafana dashboard library</a>.</p>
 </div>
 <p>a. Select <strong>Dashboards</strong> in the left sidebar.</p>
 <p>b. Select <strong>Home</strong> and then <strong>Import</strong>.</p>
@@ -14755,10 +14778,10 @@ Note: Some API requests may display latencies of up to 60 seconds. This is expec
 <p>f. Select <strong>Import</strong>.</p>
 </li>
 <li>
-<p>Review and adjust the <a href="https://grafana.com/docs/grafana/latest/dashboards/variables/">dashboard variables</a> to match your environment.</p>
+<p>Review and adjust the <a href="https://grafana.com/docs/grafana/latest/dashboards/variables/" target="_blank">dashboard variables</a> to match your environment.</p>
 </li>
 </ol>
-<p>To build custom dashboards from scratch, see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/">Create a dashboard in Grafana</a>.</p>
+<p>To build custom dashboards from scratch, see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/" target="_blank">Create a dashboard in Grafana</a>.</p>
 <h2 id="step-4-verify-your-monitoring-setup">Step 4: Verify your monitoring setup<a class="headerlink" href="#step-4-verify-your-monitoring-setup" title="Permanent link">#</a></h2>
 <p>Let's make sure everything is working together:</p>
 <ol>

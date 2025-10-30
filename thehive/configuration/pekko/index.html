@@ -11,7 +11,7 @@
         <link rel="prev" href="../akka/">
       
       
-        <link rel="next" href="../ssl/configure-ssl-jvm/">
+        <link rel="next" href="../thehive-docker-entrypoint-settings/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -1333,6 +1333,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../thehive-docker-entrypoint-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Docker Entrypoint Settings
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -14584,7 +14607,7 @@
 
 <h1 id="pekko-configuration-version-54">Pekko Configuration (Version 5.4+)<a class="headerlink" href="#pekko-configuration-version-54" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.4/#5.4" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.4/#5.4">5.4</a></span></span></p>
-<p>With the release of version 5.4, TheHive transitioned from the Scala framework Akka to <a href="https://pekko.apache.org/">Apache Pekko</a>. This change enhances performance and introduces several updates that may require modifications to your <code>application.conf</code> file.</p>
+<p>With the release of version 5.4, TheHive transitioned from the Scala framework Akka to <a href="https://pekko.apache.org/" target="_blank">Apache Pekko</a>. This change enhances performance and introduces several updates that may require modifications to your <code>application.conf</code> file.</p>
 <p>This topic provides instructions on updating your configuration to support this change.</p>
 <div class="admonition note">
 <p class="admonition-title">Version compatibility </p>
@@ -14730,7 +14753,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Certificate considerations</p>
 <p>Ensure you use your internal PKI (Public Key Infrastructure) or keytool commands to generate certificates.</p>
-<p>For detailed instructions, see: <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool">Using keytool for Certificate Generation</a>.</p>
+<p>For detailed instructions, see: <a href="https://lightbend.github.io/ssl-config/CertificateGeneration.html#using-keytool" target="_blank">Using keytool for Certificate Generation</a>.</p>
 <p>Your server certificates should include the following <em>KeyUsage</em> and <em>ExtendedkeyUsage</em> extensions for proper functioning:</p>
 <ul>
 <li><em>KeyUsage</em> extensions<ul>
