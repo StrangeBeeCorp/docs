@@ -15,7 +15,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
@@ -2277,6 +2277,15 @@
   <a href="#how-sharing-rules-work-together" class="md-nav__link">
     <span class="md-ellipsis">
       How sharing rules work together
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deletion-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deletion behavior
     </span>
   </a>
   
@@ -8437,12 +8446,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
+      <a href="../../../user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Remove an Observable
+    Delete an Observable
     
   </span>
   
@@ -9677,12 +9686,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/observables/remove-an-observable/" class="md-nav__link">
+      <a href="../../../user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Remove an Observable
+    Delete an Observable
     
   </span>
   
@@ -14627,7 +14636,6 @@
 
 <h1 id="about-organizations-sharing-rules">About Organizations Sharing Rules<a class="headerlink" href="#about-organizations-sharing-rules" title="Permanent link">#</a></h1>
 <p>Sharing rules determine how cases, along with their tasks and observables, are shared with linked organizations.</p>
-<p>This topic explains how sharing rules work and interact.</p>
 <h2 id="global-sharing-rules">Global sharing rules<a class="headerlink" href="#global-sharing-rules" title="Permanent link">#</a></h2>
 <p>Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.</p>
 <p>TheHive requires setting these rules:</p>
@@ -14640,19 +14648,19 @@
 <p>Global sharing rules apply only to newly created cases. Existing cases and their related tasks and observables remain unaffected. Applying sharing rules to existing cases requires manual configuration for each case. See <a href="#local-sharing-rules">Local sharing rules</a> for details.</p>
 </div>
 <h2 id="local-sharing-rules">Local sharing rules<a class="headerlink" href="#local-sharing-rules" title="Permanent link">#</a></h2>
-<p>Local sharing rules customize how cases—and their associated tasks and observables—are shared with linked organizations. They apply to both new and existing cases and override global sharing rules defined when linking and creating organizations.</p>
+<p>Local sharing rules customize how cases and their associated tasks and observables are shared at the case level with linked organizations. They apply to both new and existing cases and override global sharing rules defined when linking and creating organizations. The configuration determines whether this sharing occurs automatically.</p>
 <p>Local sharing rules are useful in the following scenarios:</p>
 <ul>
 <li><a href="#global-sharing-rules">Global sharing rules</a> are already defined for newly created cases, but the same rules need to apply to an existing case.</li>
 <li>One or more cases require different sharing settings that don't follow the global sharing rules.</li>
 </ul>
-<p>Follow these step-by-step instructions to see:</p>
+<p>Follow these step-by-step instructions to:</p>
 <ul>
-<li><a href="../../../user-guides/analyst-corner/cases/share-a-case/">How to set up local sharing rules for an existing case</a></li>
-<li><a href="../../../user-guides/analyst-corner/cases/create-a-new-case/">How to set up local sharing rules for a new case</a></li>
+<li><a href="../../../user-guides/analyst-corner/cases/share-a-case/">Set up local sharing rules for an existing case</a></li>
+<li><a href="../../../user-guides/analyst-corner/cases/create-a-new-case/">Set up local sharing rules when creating a case</a></li>
 </ul>
 <h2 id="manual-sharing-of-tasks-and-observables-in-a-shared-case">Manual sharing of tasks and observables in a shared case<a class="headerlink" href="#manual-sharing-of-tasks-and-observables-in-a-shared-case" title="Permanent link">#</a></h2>
-<p>Manual sharing allows selective sharing of tasks and observables within a shared case. This approach is useful when task and observable sharing rules are set to manual, enabling users to share only the content that is relevant.</p>
+<p>Manual sharing allows selective sharing of tasks and observables within a shared case. This approach is useful when task and observable sharing rules are set to <em>manual</em>, enabling users to share only the content that is relevant.</p>
 <p>Follow these step-by-step instructions to learn how to:</p>
 <ul>
 <li><a href="../../../user-guides/analyst-corner/tasks/share-a-task/">Share a Task with Other Organizations</a></li>
@@ -14670,21 +14678,23 @@
 <tbody>
 <tr>
 <td><em>default</em></td>
-<td>New cases aren't automatically shared.</td>
-<td>New cases aren't automatically shared, and neither are their tasks and observables.</td>
+<td>Cases aren't automatically shared.</td>
+<td>Cases aren't automatically shared, and neither are their tasks and observables.</td>
 </tr>
 <tr>
 <td><em>supervised</em></td>
-<td>New cases are automatically shared without their linked tasks and observables.</td>
-<td>New cases are automatically shared with their linked tasks and observables.</td>
+<td>Cases are automatically shared with an analyst-type permission profile without their linked tasks and observables.</td>
+<td>Cases are automatically shared with an analyst-type permission profile with their linked tasks and observables.</td>
 </tr>
 <tr>
 <td><em>notify</em></td>
-<td>New cases are automatically shared without their linked tasks and observables.</td>
-<td>New cases are automatically shared with their linked tasks and observables.</td>
+<td>Cases are automatically shared with a read-only permission profile without their linked tasks and observables.</td>
+<td>Cases are automatically shared with a read-only permission profile with their linked tasks and observables.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="deletion-behavior">Deletion behavior<a class="headerlink" href="#deletion-behavior" title="Permanent link">#</a></h2>
+<p>Only the organization that owns a shared case can delete it and its tasks or observables. When a shared case is deleted, it's automatically removed from all organizations it was shared with. The same applies when individual tasks or observables are deleted.</p>
 <h2>Next steps</h2>
 
 <ul>
