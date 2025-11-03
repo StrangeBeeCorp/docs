@@ -16,4 +16,4 @@ Use this guide to choose the most effective method for your needs.
 | [Global Search feature](find-a-case.md#method-4-global-search-feature) | Advanced | Multiple | No | If you need to conduct advanced searches for one or more cases without requiring simultaneous actions. |
 
 <h2>Next steps</h2>
-* [How to Find a Case](find-a-case.md)
+* [Find a Case](find-a-case.md)

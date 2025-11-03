@@ -710,7 +710,7 @@ nav:
             - 'Update the Status of an Observable' : thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status.md
             - 'Edit Multiple Observables' : thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables.md
             - 'Exclude an Observable From Similarity Checks' : thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks.md
-            - 'Remove an Observable' : thehive/user-guides/analyst-corner/cases/observables/remove-an-observable.md
+            - 'Delete an Observable' : thehive/user-guides/analyst-corner/cases/observables/delete-an-observable.md
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
@@ -756,7 +756,7 @@ nav:
             - 'Update the Status of an Observable' : thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status.md
             - 'Edit Multiple Observables' : thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables.md
             - 'Exclude an Observable From Similarity Checks' : thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks.md
-            - 'Remove an Observable' : thehive/user-guides/analyst-corner/cases/observables/remove-an-observable.md
+            - 'Delete an Observable' : thehive/user-guides/analyst-corner/cases/observables/delete-an-observable.md
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
             - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md

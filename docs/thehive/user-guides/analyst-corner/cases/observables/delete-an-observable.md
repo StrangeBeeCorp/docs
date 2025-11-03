@@ -1,8 +1,8 @@
-# Remove an Observable
+# Delete an Observable
 
 <!-- md:permission `manageObservable` -->
 
-This topic provides step-by-step instructions for removing an [observable](about-observables.md) from a case or alert in TheHive.
+Delete an [observable](about-observables.md) from a case or alert in TheHive.
 
 <h2>Procedure</h2>
 

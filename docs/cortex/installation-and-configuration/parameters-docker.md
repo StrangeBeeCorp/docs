@@ -56,4 +56,4 @@ Available URLs for dockerized responders:
 
 <h2>Next steps</h2>
 
-* [How to Run Cortex with Docker](run-cortex-with-docker.md)
+* [Run Cortex with Docker](run-cortex-with-docker.md)

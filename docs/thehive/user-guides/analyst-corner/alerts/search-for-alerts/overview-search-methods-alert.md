@@ -15,4 +15,4 @@ Use this guide to choose the most effective method for your needs.
 | [Global Search feature](find-an-alert.md#method-3-global-search-feature) | Advanced | Multiple | No | If you need to conduct advanced searches for one or more alerts without requiring simultaneous actions. |
 
 <h2>Next steps</h2>
-* [How to Find an Alert](find-an-alert.md)
+* [Find an Alert](find-an-alert.md)

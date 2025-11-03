@@ -2,9 +2,9 @@
 
 <!-- md:permission `manageCase/delete` -->
 
-This topic provides step-by-step instructions for deleting a [case](about-cases.md) in TheHive.
+Permanently delete a [case](about-cases.md) from TheHive.
 
-Use this procedure to permanently delete a case. To close a case because it's a false positive or duplicate, use [Close a Case](close-a-case.md) instead.
+For false positives or duplicates, consider [closing the case](close-a-case.md) rather than deleting it.
 
 !!! danger "Permanent action"
     Deleting a case is an irreversible action. Once deleted, no one—not even the StrangeBee Support team—can recover the case.

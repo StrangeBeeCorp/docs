@@ -71,12 +71,12 @@ Several options are offered to create a case in TheHive:
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it's created. For more details, see [Share a Case](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 
 !!! info "Case template"
-    You can apply [a case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) after creating the case. For more details, see the [Apply a Case Template](../cases/apply-a-case-template.md) topic.
+    You can apply [a case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) after creating the case. For more details, see [Apply a Case Template](../cases/apply-a-case-template.md).
 
 ## Create a case from a template
 
@@ -108,7 +108,7 @@ Several options are offered to create a case in TheHive:
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it's created. For more details, see [Share a Case](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 
@@ -139,13 +139,13 @@ See [About MISP Integration](../../../administration/misp-integration/about-misp
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see the [Share a Case](../cases/share-a-case.md) topic.
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see [Share a Case](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 
 ## Create a case from an alert
 
-Refer to the [Create a Case from an Alert](../alerts/create-a-case-from-an-alert.md) topic for instructions.
+Refer to [Create a Case from an Alert](../alerts/create-a-case-from-an-alert.md) for instructions.
 
 ## Create a case from a detection tool
 

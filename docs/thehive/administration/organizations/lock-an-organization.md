@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] manageOrganisation` -->
 
-This topic provides step-by-step instructions for locking an [organization](about-organizations.md) in TheHive.
-
-Locking an organization is useful when you want to prevent users from logging in with that organization.
+Lock an [organization](about-organizations.md) to prevent users from logging in.
 
 !!! info "Deleting an organization"
     In TheHive, users can't delete organizations to ensure database integrity and safety.

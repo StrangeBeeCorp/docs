@@ -2,11 +2,11 @@
 
 <!-- md:permission `[admin] manageOrganisation` -->
 
-This topic provides step-by-step instructions for linking an [organization](about-organizations.md) to another in TheHive.
-
 By default, organizations in TheHive aren't linked. Each organization operates independently and can't access others on the instance.
 
-Link organizations to enable data sharing and define the applicable sharing rules.
+To allow case sharing with their related tasks and observables, link an [organization](about-organizations.md) to another and configure the corresponding global sharing rules at the organization level.
+
+To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](about-organizations-sharing-rules.md).
 
 <h2>Procedure</h2>
 
@@ -29,8 +29,6 @@ Link organizations to enable data sharing and define the applicable sharing rule
     * **default**: Cases aren't automatically shared with the other organization. Users must [share them manually](../../user-guides/analyst-corner/cases/share-a-case.md).
     * **supervised**: Cases are automatically shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.
     * **notify**: Cases are automatically shared with the other organization with a read-only permission profile.
-
-    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
 6. Select **Confirm**.
     

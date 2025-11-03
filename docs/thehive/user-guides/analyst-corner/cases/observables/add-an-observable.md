@@ -72,7 +72,7 @@ Observables are data points that represent specific events or properties within 
 
 <h2>Next steps</h2>
 
-* [Remove an Observable](remove-an-observable.md)
+* [Delete an Observable](delete-an-observable.md)
 * [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)

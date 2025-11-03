@@ -25,7 +25,7 @@ Analyzers enrich observables with detailed contextual intelligence, generating a
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
-* [Remove an Observable](remove-an-observable.md)
+* [Delete an Observable](delete-an-observable.md)
 * [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)

@@ -17,7 +17,7 @@ Pinning an observable allows you to access it from the **Observables** tab withi
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
-* [Remove an Observable](remove-an-observable.md)
+* [Delete an Observable](delete-an-observable.md)
 * [Update the Status of an Observable](update-an-observable-status.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Export Data from Observables](export-data-observables.md)

@@ -29,7 +29,7 @@ Mark an observable as an indicator of compromise (IOC) if you recognize it as re
 <h2>Next steps</h2>
 
 * [Add an Observable](add-an-observable.md)
-* [Remove an Observable](remove-an-observable.md)
+* [Delete an Observable](delete-an-observable.md)
 * [Edit Multiple Observables](edit-multiple-observables.md)
 * [Pin an Observable](pin-an-observable.md)
 * [Export Data from Observables](export-data-observables.md)

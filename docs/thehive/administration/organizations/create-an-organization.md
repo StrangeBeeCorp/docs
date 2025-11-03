@@ -2,8 +2,6 @@
 
 <!-- md:permission `[admin] manageOrganisation` -->
 
-This topic provides step-by-step instructions for creating an [organization](about-organizations.md) in TheHive.
-
 Organizations are the customers or tenants, such as separate divisions or business units, that use TheHive independently.
 
 {% include-markdown "includes/license-organizations.md" %}

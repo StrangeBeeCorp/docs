@@ -52,7 +52,7 @@ This topic provides step-by-step instructions for searching an [observable](../o
 
 <h2>Next steps</h2>
 
-* [Remove an Observable](../observables/remove-an-observable.md)
+* [Delete an Observable](../observables/delete-an-observable.md)
 * [Update the Status of an Observable](../observables/update-an-observable-status.md)
 * [Edit Multiple Observables](../observables/edit-multiple-observables.md)
 * [Pin an Observable](../observables/pin-an-observable.md)
