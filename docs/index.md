@@ -201,6 +201,8 @@ sections:
               url: '/thehive/api-docs/'
             - text: 'Use the Python API client'
               url: 'https://github.com/thehive-project/thehive4py'
+            - text: 'Use the Go API client'
+              url: 'https://github.com/StrangeBeeCorp/thehive4go'
 
 ---
 

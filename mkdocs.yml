@@ -867,6 +867,7 @@ nav:
     - 'API':
       - 'API Documentation': thehive/api-docs/
       - 'Python Client': https://github.com/thehive-project/thehive4py
+      - 'Go Client': https://github.com/StrangeBeeCorp/thehive4go
 
     - 'Release Notes':
       - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
@@ -933,6 +934,7 @@ nav:
     - 'Open source projects': 
         - 'SDK':
           - "TheHive4py": resources/thehive4py.md
+          - "TheHive4go": resources/thehive4go.md
           - "Cortex4py": resources/cortex4py.md
           - "Cortexutils": resources/cortexutils.md
     - 'Security': resources/security.md
