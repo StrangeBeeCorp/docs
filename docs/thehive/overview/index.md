@@ -44,8 +44,8 @@ TheHive can be set up on either a single server or as a cluster (a group of serv
 
 The essential components of TheHive setup include:
 
-- :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html){target=_blank} for robust data storage, with support for version 4.x.
-- :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co){target=_blank}, serving as a powerful indexing engine, with support for versions 7.x and 8.x.
+- :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html){target=_blank} for robust data storage
+- :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co){target=_blank}, serving as a powerful indexing engine
 - :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups or, NFS or [S3 MINIO](https://min.io/){target=_blank} for clustered environments.
 
 ![Application Stack](../images/overview/thehive-application-stack.png)

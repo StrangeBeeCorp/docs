@@ -298,9 +298,10 @@ The following steps aim to enable encryption secure communication between a clie
 
 !!! note "Elasticsearch supported versions"
 
-    * TheHive 5.2.x and earlier: Elasticsearch 7.x only
-    * TheHive 5.3.0 - 5.5.9: Elasticsearch 7.x - 8.x
-    * TheHive 5.5.10 and later: Elasticsearch 7.x - 9.1.x
+    * TheHive 5.2.x and earlier: Elasticsearch 7.2.x - 7.17.x
+    * TheHive 5.3.0 - 5.4.10: Elasticsearch 7.10.x - 8.x
+    * TheHive 5.5.0 - 5.5.9: Elasticsearch 7.11.x - 8.x
+    * TheHive 5.5.10 and later: Elasticsearch 7.11.x - 9.1.x
     
     If using Elasticsearch for [audit log storage](installation-guide-linux-standalone-server.md#step-53-audit-log-storage), you must use Elasticsearch 7.17 or later.
 
