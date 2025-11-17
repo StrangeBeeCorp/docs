@@ -937,4 +937,4 @@ nav:
           - "TheHive4go": resources/thehive4go.md
           - "Cortex4py": resources/cortex4py.md
           - "Cortexutils": resources/cortexutils.md
-    - 'Security': resources/security.md
+    - 'Security and Data Protection': resources/security.md

@@ -23,6 +23,8 @@ If you prefer a faster setup on Linux, you can run an [automated installation sc
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for Linux installation
 
+{% include-markdown "includes/data-protection-link.md" %}
+
 ## Step 1: Install required dependencies
 
 Start by installing the necessary dependencies for TheHive.
@@ -1057,7 +1059,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 !!! info "Standalone server configuration"
     In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md).
 
-File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. These items are stored as-is.
+File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. [All files are stored in their original form as plaintext](../../resources/security.md#database-and-storage).
 
 On a standalone server, these files are stored on the local filesystem. By default, TheHive uses `/opt/thp/thehive/files` as the storage path.
 

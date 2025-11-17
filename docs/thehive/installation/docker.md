@@ -24,6 +24,8 @@ If you want to use only the TheHive Docker image, get it from [Docker Hub](https
     * [System requirements fully met and verified](system-requirements.md) for Docker Compose deployment
     * At least `sudo` permissions
 
+{% include-markdown "includes/data-protection-link.md" %}
+
 ## Step 1: Install required dependencies
 
 Start by installing the necessary dependencies for deploying TheHive with Docker Compose.

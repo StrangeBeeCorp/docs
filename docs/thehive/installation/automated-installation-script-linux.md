@@ -12,6 +12,8 @@ If you prefer a faster setup than going through [the complete installation guide
 !!! danger "No authentication configured for Cassandra and Elasticsearch"
     This script doesn't set up authentication for Cassandra or Elasticsearch. For security—especially in production—enable authentication on both services before going live. See [Configure Database and Index Authentication](../configuration/configure-authentication-cassandra-elasticsearch.md) for instructions.
 
+{% include-markdown "includes/data-protection-link.md" %}
+
 <h2>Procedure</h2>
 
 1. Download and run the script.

@@ -16,6 +16,8 @@ Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart reposito
     * You can pay Bitnami for access to updated images and configure the Helm chart to reference them.
     * Alternatively, you can deactivate the dependency Helm charts and bring your own Cassandra and Elasticsearch deployments.
 
+{% include-markdown "includes/data-protection-link.md" %}
+
 ## Architecture overview
 
 The default deployment includes:

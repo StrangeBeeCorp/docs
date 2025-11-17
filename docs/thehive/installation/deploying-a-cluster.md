@@ -18,6 +18,8 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 !!! warning "Before you begin"
     To ensure a smooth installation process, make sure you have [system requirements fully met and verified](system-requirements.md) for Linux installation.
+
+{% include-markdown "includes/data-protection-link.md" %}
 ---
 
 ## Architecture Diagram
@@ -616,7 +618,7 @@ To learn about how to configure SSL for Cassandra and Elasticsearch, see [Config
 
 #### File storage
 
-File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. These items are stored as-is.
+File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. [All files are stored in their original form as plaintext](../../resources/security.md#database-and-storage).
 
 === "Using NFS file storage"
 

@@ -6,7 +6,7 @@ This topic explains how user accounts work in TheHive.
 
 ## Types
 
-<!-- md:version 5.0 --> 
+<!-- md:version 5.0 -->
 
 TheHive supports two types of user accounts:
 

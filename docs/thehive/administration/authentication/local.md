@@ -2,9 +2,12 @@
 
 <!-- md:permission `managePlatform` -->
 
-Configure a local authentication provider in TheHive.
-
 By default, TheHive manages authentication with its own local database, where usernames and passwords are stored directly in the application.
+
+To use this mechanism, configure a local authentication provider in TheHive.
+
+!!! info "Password storage"
+    Local account passwords are stored using [strong cryptographic hashing](../../../resources/security.md#password-storage).
 
 <h2>Procedure</h2>
 
