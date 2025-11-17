@@ -17621,7 +17621,7 @@
   <span class="md-ellipsis">
     
   
-    Security
+    Security and Data Protection
   
 
     
@@ -17767,6 +17767,10 @@
 <div class="admonition warning">
 <p class="admonition-title">Before you begin</p>
 <p>To ensure a smooth installation process, make sure you have <a href="../system-requirements/">system requirements fully met and verified</a> for Linux installation.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Security considerations</p>
+<p>Learn how <a href="/resources/security/">TheHive handles data protection</a> and safeguards your information.</p>
 </div>
 <hr>
 <h2 id="architecture-diagram">Architecture Diagram<a class="headerlink" href="#architecture-diagram" title="Permanent link">#</a></h2>
@@ -18299,7 +18303,7 @@ Source: <a href="https://pekko.apache.org" target="_blank"><strong>https://pekko
 <p>To learn about how to configure SSL for Cassandra and Elasticsearch, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
 <p>&nbsp;</p>
 <h4 id="file-storage_1">File storage<a class="headerlink" href="#file-storage_1" title="Permanent link">#</a></h4>
-<p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. These items are stored as-is.</p>
+<p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. <a href="../../../resources/security/#database-and-storage">All files are stored in their original form as plaintext</a>.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Using NFS file storage</label><label for="__tabbed_2_2">S3 file storage with MINIO (Optional)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">

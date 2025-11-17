@@ -20,7 +20,7 @@
     
     
       
-        <title>Security - TheHive 5 Documentation</title>
+        <title>Security and Data Protection - TheHive 5 Documentation</title>
       
     
     
@@ -161,7 +161,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security" class="md-skip">
+        <a href="#security-and-data-protection" class="md-skip">
           Skip to content
         </a>
       
@@ -17480,6 +17480,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security and Data Protection
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -17487,7 +17505,7 @@
   <span class="md-ellipsis">
     
   
-    Security
+    Security and Data Protection
   
 
     
@@ -17496,6 +17514,49 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#responsible-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsible disclosure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data protection
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -17574,10 +17635,23 @@
 
 
 
-<h1 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h1>
-<p>Find our Responsible Vulnerability Disclosure policy and Security advisories on our dedicated repository: </p>
+<h1 id="security-and-data-protection">Security and Data Protection<a class="headerlink" href="#security-and-data-protection" title="Permanent link">#</a></h1>
+<p>TheHive follows responsible security disclosure practices and implements specific data protection measures.</p>
+<h2 id="responsible-disclosure">Responsible disclosure<a class="headerlink" href="#responsible-disclosure" title="Permanent link">#</a></h2>
+<p>Our Responsible Vulnerability Disclosure policy and security advisories are available on our <a href="https://github.com/StrangeBeeCorp/Security" target="_blank">Security GitHub repository</a>.</p>
+<h2 id="data-protection">Data protection<a class="headerlink" href="#data-protection" title="Permanent link">#</a></h2>
+<p>TheHive stores data using a combination of Cassandra database and Elasticsearch indexing. For more information, see <a href="../../thehive/overview/#architecture">TheHive architecture</a>.</p>
+<h3 id="database-and-storage">Database and storage<a class="headerlink" href="#database-and-storage" title="Permanent link">#</a></h3>
+<p>TheHive uses Cassandra, which relies on a <a href="https://docs.cloud.google.com/bigtable/docs/overview?hl=en" target="_blank">Bigtable model</a> for data storage. Data are indexed in Elasticsearch.</p>
+<p>TheHive doesn't support database encryption—data are stored in plaintext within the database. <a href="../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/">Attachments</a> from cases, alerts, and organizations, as well as <a href="../../thehive/user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>, are also stored in their original form as plaintext.</p>
+<h3 id="password-storage">Password storage<a class="headerlink" href="#password-storage" title="Permanent link">#</a></h3>
+<p>Local account passwords are stored using strong cryptographic hashing. TheHive implements PBKDF2 (HMAC-SHA512 with 120,000 iterations) to protect user credentials.</p>
+<p>This approach ensures that passwords remain protected against brute-force attacks even if the database is compromised.</p>
+<h2>Next steps</h2>
+
 <ul>
-<li><a href="https://github.com/StrangeBeeCorp/Security">https://github.com/StrangeBeeCorp/Security</a></li>
+<li><a href="../../thehive/installation/installation-guide-linux-standalone-server/">Install TheHive on Linux Systems</a></li>
+<li><a href="../../thehive/administration/authentication/local/">Configure a Local Authentication Provider</a></li>
 </ul>
 
 

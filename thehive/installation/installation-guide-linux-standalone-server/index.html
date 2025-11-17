@@ -17621,7 +17621,7 @@
   <span class="md-ellipsis">
     
   
-    Security
+    Security and Data Protection
   
 
     
@@ -17765,6 +17765,10 @@
 <li>A basic understanding of <a href="../../overview/#architecture">TheHive architecture</a></li>
 <li><a href="../system-requirements/">System requirements fully met and verified</a> for Linux installation</li>
 </ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Security considerations</p>
+<p>Learn how <a href="/resources/security/">TheHive handles data protection</a> and safeguards your information.</p>
 </div>
 <h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
 <p>Start by installing the necessary dependencies for TheHive.</p>
@@ -19214,7 +19218,7 @@ chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive
 <p class="admonition-title">Standalone server configuration</p>
 <p>In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/">Setting up a Cluster with TheHive</a>.</p>
 </div>
-<p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. These items are stored as-is.</p>
+<p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. <a href="../../../resources/security/#database-and-storage">All files are stored in their original form as plaintext</a>.</p>
 <p>On a standalone server, these files are stored on the local filesystem. By default, TheHive uses <code>/opt/thp/thehive/files</code> as the storage path.</p>
 <ol>
 <li>
