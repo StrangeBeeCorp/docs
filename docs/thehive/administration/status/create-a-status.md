@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating a [status](about-statuses.md) for cases and alerts in TheHive.
-
-Use this procedure to add custom statuses in addition to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
+Create a [status](about-statuses.md) for cases and alerts in TheHive to add custom statuses in addition to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
 
 {% include-markdown "includes/task-statuses-excluded.md" %}
 
@@ -33,7 +31,10 @@ Use this procedure to add custom statuses in addition to [the predefined ones ma
     The stage linked to the status. TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them. After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
 
     !!! info "Imported stage"
-        The *Imported* stage isn't available for selection in the interface. It is linked to an *Imported* status that is applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [merged into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md).
+        The *Imported* stage isn't available for manual selection in the interface. It's linked to an *Imported* status that's automatically applied in the following situations:
+        
+        * When an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md) for investigation
+        * When an alert is created from [MISP](../misp-integration/about-misp-integration.md) after [indicators of compromise (IOCs) are manually shared from a case to the community](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md)
 
     **- Value**
 

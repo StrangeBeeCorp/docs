@@ -2,8 +2,6 @@
 
 A notification triggers automated actions when specific events occur within an organization.
 
-This topic explains the different notification capabilities in TheHive.
-
 ## Key components
 
 A notification consists of two key components:

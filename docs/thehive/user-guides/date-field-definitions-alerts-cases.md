@@ -1,6 +1,6 @@
 # Date Field Definitions for Alerts and Cases
 
-This topic defines each date field used in alerts and cases in TheHive.
+TheHive records several timestamps for alerts and cases to track their lifecycle and support time-based analysis across investigations.
 
 !!! note "Stages and statuses"
     Some of those dates are based on the stage of alerts and cases. To learn more about how statuses and stages interact, see [About Statuses](../administration/status/about-statuses.md).
@@ -15,7 +15,7 @@ This topic defines each date field used in alerts and cases in TheHive.
 | `newDate`       |  The first time the alert entered a status linked to the *New* stage.               |
 | <code style="white-space: nowrap;">inProgressDate</code>  |  The first time the alert entered a status linked to the *In progress* stage. |
 | `closedDate`  |  The first time the alert entered a status linked to the *Closed* stage because no further investigation was required.  |
-| `importedDate`  | The first time the alert entered the *Imported* status after being merged into a new or existing case for investigation.  |
+| `importedDate`  | The first time the alert entered the *Imported* status. This occurs when the alert is merged into a new or existing case for investigation.  |
 
 ## Date field definitions for cases
 

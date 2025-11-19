@@ -2,8 +2,6 @@
 
 The status represents the current state of a [case](../../user-guides/analyst-corner/cases/about-cases.md) or [alert](../../user-guides/analyst-corner/alerts/about-alerts.md).
 
-This topic explains how statuses works in TheHive.
-
 {% include-markdown "includes/task-statuses-excluded.md" %}
 
 ## Predefined statuses
@@ -17,7 +15,10 @@ Each status is associated with:
 * A stage: TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. Stages are hard-coded and can't be modified, deleted, or extended.
 
     !!! info "Imported stage"
-        The *Imported* stage and status aren't available for selection in the interface. The *Imported* status is automatically applied when an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [merged into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md).
+        The *Imported* stage and status aren't available for manual selection in the interface. The *Imported* status is automatically applied to alerts in the following situations:
+
+        * When an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md) for investigation
+        * When an alert is created from [MISP](../misp-integration/about-misp-integration.md) after [indicators of compromise (IOCs) are manually shared from a case to the community](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md)
 
 * <!-- md:version 5.5 --> A visibility: The status is either displayed or hidden in TheHive interface.
 

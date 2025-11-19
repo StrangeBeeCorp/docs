@@ -8,8 +8,6 @@ These KPIs are displayed by default on all cases and alerts in TheHive. However,
 
 You can also include these KPIs in dashboards and case reports.
 
-This topic defines each of these indicators.
-
 {% include-markdown "includes/units-time-to.md" %}
 
 ## Time to detect (TTD)

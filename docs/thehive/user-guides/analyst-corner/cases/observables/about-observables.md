@@ -4,8 +4,6 @@ Observables are data points that represent specific events or properties within 
 
 Observables include stateful properties like IP addresses, domain names, file MD5 hashes, and system behaviors. They also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.
 
-This topic provides an overview of the main characteristics of observables in TheHive.
-
 ## Type
 
 An observable type defines the category or classification of an observable in TheHive. While TheHive includes a predefined set of types, this list can be [expanded with custom types](../../../../administration/observable-types/create-an-observable-type.md) to meet specific needs.
@@ -43,7 +41,7 @@ Cases and alerts are considered similar if all the following conditions are met:
 
 * At least one observable not excluded from similarity checks shares the same value, such as an identical file name or IP address.
 * The related cases and alerts belong to the same organization or to [linked organizations](../../../../administration/organizations/about-organizations-sharing-rules.md).
-* Alerts don't have the status *Imported*. Alerts that have been merged into a case are no longer included in similarity checks—but the case is. 
+* Alerts don't have the status *Imported*. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.
 
 ## Permissions
 
