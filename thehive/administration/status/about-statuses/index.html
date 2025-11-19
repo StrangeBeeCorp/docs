@@ -17729,7 +17729,6 @@
 
 <h1 id="about-statuses">About Statuses<a class="headerlink" href="#about-statuses" title="Permanent link">#</a></h1>
 <p>The status represents the current state of a <a href="../../../user-guides/analyst-corner/cases/about-cases/">case</a> or <a href="../../../user-guides/analyst-corner/alerts/about-alerts/">alert</a>.</p>
-<p>This topic explains how statuses works in TheHive.</p>
 <div class="admonition info">
 <p class="admonition-title">Task statuses</p>
 <p>This page doesn't cover task statuses, which are hard-coded in TheHive. They can't be modified, deleted, or extended.</p>
@@ -17743,7 +17742,11 @@
 <p>A stage: TheHive includes four predefined stages—<em>New</em>, <em>Imported</em>, <em>In progress</em>, and <em>Closed</em>. Stages are hard-coded and can't be modified, deleted, or extended.</p>
 <div class="admonition info">
 <p class="admonition-title">Imported stage</p>
-<p>The <em>Imported</em> stage and status aren't available for selection in the interface. The <em>Imported</em> status is automatically applied when an alert is <a href="../../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/">merged into an existing case</a> or <a href="../../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">merged into a new case</a>.</p>
+<p>The <em>Imported</em> stage and status aren't available for manual selection in the interface. The <em>Imported</em> status is automatically applied to alerts in the following situations:</p>
+<ul>
+<li>When an alert is <a href="../../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/">merged into an existing case</a> or <a href="../../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">into a new case</a> for investigation</li>
+<li>When an alert is created from <a href="../../misp-integration/about-misp-integration/">MISP</a> after <a href="../../../user-guides/analyst-corner/cases/export-a-case-to-misp/">indicators of compromise (IOCs) are manually shared from a case to the community</a></li>
+</ul>
 </div>
 </li>
 <li>

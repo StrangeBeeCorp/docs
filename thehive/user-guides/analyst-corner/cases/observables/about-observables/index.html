@@ -17865,7 +17865,6 @@
 <h1 id="about-observables">About Observables<a class="headerlink" href="#about-observables" title="Permanent link">#</a></h1>
 <p>Observables are data points that represent specific events or properties within a system and can be directly observed. They serve as indicators monitored for signs of suspicious or malicious activity.</p>
 <p>Observables include stateful properties like IP addresses, domain names, file MD5 hashes, and system behaviors. They also cover measurable events such as the creation or deletion of files, registry keys, and other activities crucial to system and network operations.</p>
-<p>This topic provides an overview of the main characteristics of observables in TheHive.</p>
 <h2 id="type">Type<a class="headerlink" href="#type" title="Permanent link">#</a></h2>
 <p>An observable type defines the category or classification of an observable in TheHive. While TheHive includes a predefined set of types, this list can be <a href="../../../../../administration/observable-types/create-an-observable-type/">expanded with custom types</a> to meet specific needs.</p>
 <p>Available <a href="../../../../../../cortex/api/how-to-create-an-analyzer/">analyzers</a> depend on the observable’s type.</p>
@@ -17889,7 +17888,7 @@
 <ul>
 <li>At least one observable not excluded from similarity checks shares the same value, such as an identical file name or IP address.</li>
 <li>The related cases and alerts belong to the same organization or to <a href="../../../../../administration/organizations/about-organizations-sharing-rules/">linked organizations</a>.</li>
-<li>Alerts don't have the status <em>Imported</em>. Alerts that have been merged into a case are no longer included in similarity checks—but the case is. </li>
+<li>Alerts don't have the status <em>Imported</em>. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.</li>
 </ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <p>Only users with the <code>manageObservable</code> permission can manage observables in TheHive.</p>

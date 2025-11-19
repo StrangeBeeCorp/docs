@@ -17645,12 +17645,11 @@
 
 
 <h1 id="export-a-case-to-misp">Export a Case to MISP<a class="headerlink" href="#export-a-case-to-misp" title="Permanent link">#</a></h1>
-<p>This topic provides step-by-step instructions for manually exporting a <a href="../about-cases/">case</a> to the Malware Information Sharing Platform <a href="https://www.misp-project.org/">(MISP)</a> in TheHive.</p>
-<p>Use this procedure to share the results of your investigations with this open-source threat intelligence and sharing platform and contribute to the community.</p>
-<p>Only observables marked as indicators of compromise (IOCs) will be exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.</p>
+<p>Manually export a <a href="../about-cases/">case</a> from TheHive to the Malware Information Sharing Platform <a href="https://www.misp-project.org/">(MISP)</a> to share your investigation results with the community.</p>
+<p>Only observables marked as indicators of compromise (IOCs) are exported in the case. Once exported to MISP, any updates to the case IOCs is automatically synchronized with MISP, requiring no manual intervention.</p>
 <div class="admonition info">
 <p class="admonition-title">Requirements</p>
-<p>The MISP server you want to share your case with must be <a href="../../../../administration/misp-integration/connect-a-misp-server/">configured with either the <em>Import and export</em> or <em>Export only</em> purpose</a>.</p>
+<p>The MISP server you want to share your case with must be <a href="../../../../administration/misp-integration/connect-a-misp-server/">configured with either the <em>Import and export</em> or <em>Export only</em> purpose</a>. If it’s configured for <em>Import and export</em>, TheHive automatically creates alerts with the <em>Imported</em> status once the events linked to the IOCs you shared to MISP are published.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">MISP actions required</p>
