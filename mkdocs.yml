@@ -450,18 +450,19 @@ nav:
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
         - 'Migration from TheHive 3.x': thehive/installation/migration.md
     - 'Configuration':
-      - 'Turn Off the Cortex Integration': thehive/configuration/turn-off-cortex-connector.md
-      - 'Turn Off the MISP Integration': thehive/configuration/turn-off-misp-connector.md
-      - 'Update Service Configuration': thehive/configuration/update-service-configuration.md
-      - 'Configure Database and Index Authentication': thehive/configuration/configure-authentication-cassandra-elasticsearch.md
-      - 'Configure Database and Index SSL': thehive/configuration/configure-ssl-cassandra-elasticsearch.md
+      - 'Cortex Integration': thehive/configuration/turn-off-cortex-connector.md
+      - 'MISP Integration': thehive/configuration/turn-off-misp-connector.md
+      - 'Service Configuration': thehive/configuration/update-service-configuration.md
+      - 'Database and Index Authentication': thehive/configuration/configure-authentication-cassandra-elasticsearch.md
+      - 'Database and Index SSL': thehive/configuration/configure-ssl-cassandra-elasticsearch.md
       - 'Akka (Version 5.3 and Earlier)': thehive/configuration/akka.md
       - 'Pekko (Version 5.4+)': thehive/configuration/pekko.md
       - 'Docker Entrypoint Settings': thehive/configuration/thehive-docker-entrypoint-settings.md
-      - 'Configure JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
-      - 'Configure HTTPS Using a Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
-      - 'Update Log Configuration': thehive/configuration/update-log-configuration.md
-      - 'Enable GDPR Compliance Feature': thehive/configuration/enable-gdpr.md
+      - 'JVM SSL Trust': thehive/configuration/ssl/configure-ssl-jvm.md
+      - 'HTTPS via Reverse Proxy': thehive/configuration/ssl/configure-https-reverse-proxy.md
+      - 'Outbound Proxy Settings': thehive/configuration/proxy-settings.md
+      - 'Log Configuration': thehive/configuration/update-log-configuration.md
+      - 'GDPR Compliance Feature': thehive/configuration/enable-gdpr.md
     - 'Operations':
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md

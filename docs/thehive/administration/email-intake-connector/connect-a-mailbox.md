@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for connecting a [mailbox](about-email-intake-connectors.md) in TheHive.
-
-Use this procedure if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
+Connect a [mailbox](about-email-intake-connectors.md) if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
 
 <h2>Procedure</h2>
 
@@ -486,11 +484,17 @@ Use this procedure if your organization receives alerts via email and you want t
 
     ---
 
-9. Select **Test connection** to verify your connection.
+9. Optional: Configure a dedicated outbound proxy for the Email Intake connector in the `application.conf` file.
+
+    If your environment requires using a proxy for outbound HTTP connections, you can define connector-specific proxy settings. See [Outbound Proxy Settings](../../configuration/proxy-settings.md#email-intake-connectors) for available parameters.
 
     ---
 
-10. Select **Confirm**.
+10. Select **Test connection** to verify your connection.
+
+    ---
+
+11. Select **Confirm**.
 
 <h2>Next steps</h2>
 

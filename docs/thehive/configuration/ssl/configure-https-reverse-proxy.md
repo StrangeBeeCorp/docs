@@ -34,9 +34,6 @@ For detailed instructions on configuring HTTPS servers with Nginx, refer to the 
 !!! info "Configure request size limits"
     The `client_max_body_size` parameter in nginx applies to all request data, including both file uploads and text content. Set this value to match or exceed the maximum file size configured in TheHive `application.conf` to prevent upload failures. For more information, see [Limit File Upload Size in NGINX](https://docs.rackspace.com/docs/limit-file-upload-size-in-nginx){target=_blank}.
 
-!!! note "Additional settings"
-    TheHive uses JVM proxy settings by default. You can configure specific proxy settings for individual HTTP clients if needed. See [Proxy Settings](../proxy-settings.md) for available parameters.
-
 !!! warning "Required actions"
     After configuring the reverse proxy, you must update TheHive configuration to work correctly with HTTPS:
 

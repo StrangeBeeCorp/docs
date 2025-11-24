@@ -2,13 +2,11 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic explains what email intake connectors are in TheHive.
-
 Organizations that receive alert data by email can use email intake connectors to automate the creation of alerts in TheHive.
 
 ## Usage
 
-Email intake connectors integrate mailboxes that receive alerts. 
+Email intake connectors integrate mailboxes that receive alerts.
 
 It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.
 

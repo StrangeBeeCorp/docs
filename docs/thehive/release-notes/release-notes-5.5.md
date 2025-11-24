@@ -6,6 +6,30 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.12 - November 24, 2025
+
+### Fixes
+
+* Case reports:
+
+    * Fixed issues with tag display.
+    * Improved Markdown rendering for observable descriptions in Word exports.
+    * Long text now wraps correctly inside tables.
+
+* Taxonomy import: Introduced a new catalog that replaces the previous one. Pattern lookup is now performed using `patternId`: existing patterns are updated, and new ones are created if no match is found.
+
+* SSO in cluster environments: SSO login now functions correctly from any node in a clustered setup.
+
+* Case templates: Empty prefixes are now saved as expected.
+
+* Responder input data: All alert data is now passed to responder actions as input.
+
+* Email intake connectors: Added [a configuration option in `application.conf` to set a proxy](../configuration/proxy-settings.md#email-intake-connectors).
+
+* MISP alerts: Observables exported to MISP are now correctly saved as MISP-type alerts.
+
+* Case ownership: Improved performance when querying case for a specific organization.
+
 ## 5.5.11 - October 28, 2025
 
 ### Fixes
