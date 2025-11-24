@@ -1270,7 +1270,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the Cortex Integration
+    Cortex Integration
   
 
     
@@ -1298,7 +1298,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the MISP Integration
+    MISP Integration
   
 
     
@@ -1326,7 +1326,7 @@
   <span class="md-ellipsis">
     
   
-    Update Service Configuration
+    Service Configuration
   
 
     
@@ -1354,7 +1354,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index Authentication
+    Database and Index Authentication
   
 
     
@@ -1382,7 +1382,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index SSL
+    Database and Index SSL
   
 
     
@@ -1494,7 +1494,7 @@
   <span class="md-ellipsis">
     
   
-    Configure JVM SSL Trust
+    JVM SSL Trust
   
 
     
@@ -1522,7 +1522,35 @@
   <span class="md-ellipsis">
     
   
-    Configure HTTPS Using a Reverse Proxy
+    HTTPS via Reverse Proxy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/proxy-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Proxy Settings
   
 
     
@@ -1550,7 +1578,7 @@
   <span class="md-ellipsis">
     
   
-    Update Log Configuration
+    Log Configuration
   
 
     
@@ -1578,7 +1606,7 @@
   <span class="md-ellipsis">
     
   
-    Enable GDPR Compliance Feature
+    GDPR Compliance Feature
   
 
     
@@ -17677,7 +17705,7 @@
 <ul>
 <li>If you deployed TheHive with a Docker image:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--rm<span class="w"> </span>-ti<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/application.conf&gt;:/etc/thehive/application.conf:ro<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/logback.xml&gt;:/etc/thehive/logback.xml:ro<span class="w"> </span>strangebee/thehive:5.5.11-1-SNAPSHOT<span class="w">  </span>migrateAudits<span class="w"> </span>-Dlogback.configurationFile<span class="o">=</span>/etc/thehive/logback.xml<span class="w"> </span>--<span class="w"> </span>--audit-from-date<span class="w"> </span>&lt;date&gt;<span class="w"> </span>-c<span class="w"> </span>/etc/thehive/application.conf
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--network<span class="w"> </span>host<span class="w"> </span>--rm<span class="w"> </span>-ti<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/application.conf&gt;:/etc/thehive/application.conf:ro<span class="w"> </span>-v<span class="w"> </span>&lt;/path/to/your/logback.xml&gt;:/etc/thehive/logback.xml:ro<span class="w"> </span>strangebee/thehive:5.5.12-1-SNAPSHOT<span class="w">  </span>migrateAudits<span class="w"> </span>-Dlogback.configurationFile<span class="o">=</span>/etc/thehive/logback.xml<span class="w"> </span>--<span class="w"> </span>--audit-from-date<span class="w"> </span>&lt;date&gt;<span class="w"> </span>-c<span class="w"> </span>/etc/thehive/application.conf
 </code></pre></div>
 <p>Available options are:</p>
 <div class="highlight"><pre><span></span><code>-v, --version: Displays the version of the migration tool.

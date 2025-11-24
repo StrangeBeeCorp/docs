@@ -8,6 +8,10 @@
         <link rel="canonical" href="https://docs.strangebee.com/thehive/configuration/proxy-settings/">
       
       
+        <link rel="prev" href="../ssl/configure-https-reverse-proxy/">
+      
+      
+        <link rel="next" href="../update-log-configuration/">
       
       
         
@@ -18,7 +22,7 @@
     
     
       
-        <title>Proxy Settings - TheHive 5 Documentation</title>
+        <title>Outbound Proxy Settings - TheHive 5 Documentation</title>
       
     
     
@@ -159,7 +163,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#proxy-settings" class="md-skip">
+        <a href="#outbound-proxy-settings" class="md-skip">
           Skip to content
         </a>
       
@@ -202,10 +206,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../overview/" class="md-tabs__link">
           
   
@@ -392,24 +398,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -427,7 +438,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1210,6 +1221,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1220,11 +1233,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -1245,7 +1258,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1270,7 +1283,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the Cortex Integration
+    Cortex Integration
   
 
     
@@ -1298,7 +1311,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the MISP Integration
+    MISP Integration
   
 
     
@@ -1326,7 +1339,7 @@
   <span class="md-ellipsis">
     
   
-    Update Service Configuration
+    Service Configuration
   
 
     
@@ -1354,7 +1367,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index Authentication
+    Database and Index Authentication
   
 
     
@@ -1382,7 +1395,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index SSL
+    Database and Index SSL
   
 
     
@@ -1494,7 +1507,7 @@
   <span class="md-ellipsis">
     
   
-    Configure JVM SSL Trust
+    JVM SSL Trust
   
 
     
@@ -1522,7 +1535,7 @@
   <span class="md-ellipsis">
     
   
-    Configure HTTPS Using a Reverse Proxy
+    HTTPS via Reverse Proxy
   
 
     
@@ -1531,6 +1544,105 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Proxy Settings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Proxy Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#global-application-proxy-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Global application proxy parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#per-client-proxy-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Per-client proxy overrides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1550,7 +1662,7 @@
   <span class="md-ellipsis">
     
   
-    Update Log Configuration
+    Log Configuration
   
 
     
@@ -1578,7 +1690,7 @@
   <span class="md-ellipsis">
     
   
-    Enable GDPR Compliance Feature
+    GDPR Compliance Feature
   
 
     
@@ -17508,6 +17620,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../overview/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    TheHive
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../turn-off-cortex-connector/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Configuration
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -17515,8 +17685,8 @@
 
 
 
-<h1 id="proxy-settings">Proxy Settings<a class="headerlink" href="#proxy-settings" title="Permanent link">#</a></h1>
-<p>TheHive can route <a href="../ssl/configure-https-reverse-proxy/">HTTP connections through proxy servers</a> for external communications. By default, TheHive inherits Java virtual machine (JVM) proxy settings, but you can configure specific proxy parameters in the application configuration.</p>
+<h1 id="outbound-proxy-settings">Outbound Proxy Settings<a class="headerlink" href="#outbound-proxy-settings" title="Permanent link">#</a></h1>
+<p>TheHive can route outbound HTTP/HTTPS connections through proxy servers for external communications. By default, TheHive inherits Java virtual machine (JVM) proxy settings. You can configure global proxy parameters in the application configuration and, for some HTTP clients, override them with dedicated proxy settings.</p>
 <h2 id="global-application-proxy-parameters">Global application proxy parameters<a class="headerlink" href="#global-application-proxy-parameters" title="Permanent link">#</a></h2>
 <p>Configure these parameters in the <code>application.conf</code> file to define proxy settings for all HTTP clients in TheHive.</p>
 <table>
@@ -17567,6 +17737,41 @@
 <td><code>wsConfig.proxy.nonProxyHosts</code></td>
 <td>list</td>
 <td>Host names or patterns that bypass the proxy.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="per-client-proxy-overrides">Per-client proxy overrides<a class="headerlink" href="#per-client-proxy-overrides" title="Permanent link">#</a></h2>
+<p>Some HTTP clients in TheHive can use dedicated proxy settings that override the global configuration defined in <code>wsConfig.proxy.*</code>.</p>
+<h3 id="email-intake-connectors">Email intake connectors<a class="headerlink" href="#email-intake-connectors" title="Permanent link">#</a></h3>
+<p>Configure these parameters in the <code>application.conf</code> file to define the proxy settings used specifically by an <a href="../../administration/email-intake-connector/about-email-intake-connectors/">email intake connector</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>msGraph.client.proxy.host</code></td>
+<td>string</td>
+<td>Host name or IP address of the proxy server.</td>
+</tr>
+<tr>
+<td><code>msGraph.client.proxy.port</code></td>
+<td>integer</td>
+<td>Port number of the proxy server.</td>
+</tr>
+<tr>
+<td><code>msGraph.client.proxy.principal</code></td>
+<td>string</td>
+<td>Username for proxy authentication.</td>
+</tr>
+<tr>
+<td><code>msGraph.client.proxy.password</code></td>
+<td>string</td>
+<td>Password for proxy authentication.</td>
 </tr>
 </tbody>
 </table>

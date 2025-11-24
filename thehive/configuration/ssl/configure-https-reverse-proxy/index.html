@@ -11,7 +11,7 @@
         <link rel="prev" href="../configure-ssl-jvm/">
       
       
-        <link rel="next" href="../../update-log-configuration/">
+        <link rel="next" href="../../proxy-settings/">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Configure HTTPS Using a Reverse Proxy - TheHive 5 Documentation</title>
+        <title>HTTPS via Reverse Proxy - TheHive 5 Documentation</title>
       
     
     
@@ -1283,7 +1283,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the Cortex Integration
+    Cortex Integration
   
 
     
@@ -1311,7 +1311,7 @@
   <span class="md-ellipsis">
     
   
-    Turn Off the MISP Integration
+    MISP Integration
   
 
     
@@ -1339,7 +1339,7 @@
   <span class="md-ellipsis">
     
   
-    Update Service Configuration
+    Service Configuration
   
 
     
@@ -1367,7 +1367,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index Authentication
+    Database and Index Authentication
   
 
     
@@ -1395,7 +1395,7 @@
   <span class="md-ellipsis">
     
   
-    Configure Database and Index SSL
+    Database and Index SSL
   
 
     
@@ -1507,7 +1507,7 @@
   <span class="md-ellipsis">
     
   
-    Configure JVM SSL Trust
+    JVM SSL Trust
   
 
     
@@ -1544,7 +1544,7 @@
   <span class="md-ellipsis">
     
   
-    Configure HTTPS Using a Reverse Proxy
+    HTTPS via Reverse Proxy
   
 
     
@@ -1566,6 +1566,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../proxy-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbound Proxy Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../update-log-configuration/" class="md-nav__link">
         
   
@@ -1573,7 +1601,7 @@
   <span class="md-ellipsis">
     
   
-    Update Log Configuration
+    Log Configuration
   
 
     
@@ -1601,7 +1629,7 @@
   <span class="md-ellipsis">
     
   
-    Enable GDPR Compliance Feature
+    GDPR Compliance Feature
   
 
     
@@ -17628,10 +17656,6 @@
 <div class="admonition info">
 <p class="admonition-title">Configure request size limits</p>
 <p>The <code>client_max_body_size</code> parameter in nginx applies to all request data, including both file uploads and text content. Set this value to match or exceed the maximum file size configured in TheHive <code>application.conf</code> to prevent upload failures. For more information, see <a href="https://docs.rackspace.com/docs/limit-file-upload-size-in-nginx" target="_blank">Limit File Upload Size in NGINX</a>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Additional settings</p>
-<p>TheHive uses JVM proxy settings by default. You can configure specific proxy settings for individual HTTP clients if needed. See <a href="../../proxy-settings/">Proxy Settings</a> for available parameters.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Required actions</p>
