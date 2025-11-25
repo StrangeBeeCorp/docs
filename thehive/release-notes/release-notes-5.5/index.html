@@ -15432,6 +15432,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#5513-november-25-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.5.13 - November 25, 2025
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5512-november-24-2025" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -17815,8 +17826,14 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.</p>
 </div>
-<h2 id="5512-november-24-2025">5.5.12 - November 24, 2025<a class="headerlink" href="#5512-november-24-2025" title="Permanent link">#</a></h2>
+<h2 id="5513-november-25-2025">5.5.13 - November 25, 2025<a class="headerlink" href="#5513-november-25-2025" title="Permanent link">#</a></h2>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Case ownership: Improved performance when querying case for a specific organization.</li>
+</ul>
+<h2 id="5512-november-24-2025">5.5.12 - November 24, 2025<a class="headerlink" href="#5512-november-24-2025" title="Permanent link">#</a></h2>
+<p>Last update: November 25, 2025</p>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>
 <p>Case reports:</p>
@@ -17844,12 +17861,9 @@
 <li>
 <p>MISP alerts: Observables exported to MISP are now correctly saved as MISP-type alerts.</p>
 </li>
-<li>
-<p>Case ownership: Improved performance when querying case for a specific organization.</p>
-</li>
 </ul>
 <h2 id="5511-october-28-2025">5.5.11 - October 28, 2025<a class="headerlink" href="#5511-october-28-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Observables (ZIP attachments): Fixed an issue where uploading an empty ZIP file through the 7-Zip UI generated an incorrect hash.</li>
 <li>Case list: Corrected mislabeled action names displayed in the case list.</li>
@@ -17862,7 +17876,7 @@
 <li>Taxonomy deletion: Added a confirmation step to validate deletion actions and prevent accidental removals.</li>
 </ul>
 <h2 id="5510-october-8-2025">5.5.10 - October 8, 2025<a class="headerlink" href="#5510-october-8-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <h4 id="administration">Administration<a class="headerlink" href="#administration" title="Permanent link">#</a></h4>
 <ul>
 <li>Organization user list: Removed the profile selector, which should not appear in this list.</li>
@@ -17875,7 +17889,7 @@
 <h4 id="elasticsearch-9-support">Elasticsearch 9 support<a class="headerlink" href="#elasticsearch-9-support" title="Permanent link">#</a></h4>
 <p>TheHive <a href="../../installation/software-requirements/">now supports Elasticsearch 9</a> as a back-end index engine. See <a href="https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster" target="_blank">the official Elasticsearch upgrade guide</a> for migration details.</p>
 <h2 id="559-september-16-2025">5.5.9 - September 16, 2025<a class="headerlink" href="#559-september-16-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
+<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
 <h4 id="email-intake">Email Intake<a class="headerlink" href="#email-intake" title="Permanent link">#</a></h4>
 <p>Email preview rendering: Line breaks in alert description previews are now displayed correctly, improving readability of email content.</p>
 <h4 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">#</a></h4>
@@ -17899,7 +17913,7 @@
 <li>Notifications: The notifier list can now be sorted by notifier type.</li>
 </ul>
 <h2 id="558-august-27-2025">5.5.8 - August 27, 2025<a class="headerlink" href="#558-august-27-2025" title="Permanent link">#</a></h2>
-<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
+<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
 <h4 id="dashboards_1">Dashboards<a class="headerlink" href="#dashboards_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Radar widget: Fixed an issue preventing creation of new radar widgets.</li>
@@ -17939,7 +17953,7 @@
 <li>This limit can be customized via the <code>alert.maxMergeInCase</code> and <code>case.maxMergeInCase</code> settings in <code>application.conf</code>.</li>
 </ul>
 <p>Caution: Raising the limit may affect performance. Proceed with care.</p>
-<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
+<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
 <ul>
 <li>Email Intake: Fixed an issue that prevented file attachments from being handled correctly when using the MS365 GraphAPI connector.</li>
 <li>SAML SSO authentication: Resolved a regression introduced in version 5.5.5 that affected SAML-based login.</li>
@@ -18026,7 +18040,7 @@
 <h3 id="improvements_8">Improvements<a class="headerlink" href="#improvements_8" title="Permanent link">#</a></h3>
 <h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">#</a></h4>
 <p>You can now sort tasks by their due dates.</p>
-<h3 id="fixes_6">Fixes<a class="headerlink" href="#fixes_6" title="Permanent link">#</a></h3>
+<h3 id="fixes_7">Fixes<a class="headerlink" href="#fixes_7" title="Permanent link">#</a></h3>
 <h4 id="dashboards_2">Dashboards<a class="headerlink" href="#dashboards_2" title="Permanent link">#</a></h4>
 <ul>
 <li>Bar widget: The <code>_total</code> field no longer appears when data is stacked.</li>
@@ -18079,7 +18093,7 @@
 <p>The status of tasks is now clearly visible in each row of the <strong>Tasks</strong> tab in cases, enabling quick identification without needing to open the details.</p>
 <h4 id="public-api-observable-route-optimization">Public API observable route optimization<a class="headerlink" href="#public-api-observable-route-optimization" title="Permanent link">#</a></h4>
 <p>The observable creation routes in alerts and cases have been optimized, making the creation of dozens of observables five times faster.</p>
-<h3 id="fixes_7">Fixes<a class="headerlink" href="#fixes_7" title="Permanent link">#</a></h3>
+<h3 id="fixes_8">Fixes<a class="headerlink" href="#fixes_8" title="Permanent link">#</a></h3>
 <h4 id="ui">UI<a class="headerlink" href="#ui" title="Permanent link">#</a></h4>
 <h5 id="dark-mode">Dark Mode<a class="headerlink" href="#dark-mode" title="Permanent link">#</a></h5>
 <ul>
