@@ -213,6 +213,10 @@ Sample code here...
 
 ### Syntax
 
+URLs starting with the `http://` or `https://` schemes don’t need to use Markdown link syntax—they’re automatically detected and displayed as clickable links in TheHive.
+
+This behavior doesn’t apply to other schemes, such as the [custom ones you define](./organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes.md). For those, you must use the Markdown link syntax:
+
     [Link text](https://docs.strangebee.com/thehive/overview/)
     [Link with title](https://docs.strangebee.com/thehive/overview/ "title text!")
 

@@ -2,9 +2,12 @@
 
 <!-- md:version 5.5.11 --> <!-- md:permission `manageConfig` -->
 
-By default, only `http`, `https`, and `data` URL schemes are clickable in Markdown fields in TheHive.
+By default, only `http`, `https`, and `data` URL schemes are clickable in Markdown fields in TheHive when using the [Markdown link syntax](../../../thehive-flavored-markdown.md#links).
 
 You can add additional URL schemes to make them clickable when rendered in the application.
+
+!!! info "Markdown link syntax"
+    These custom schemes require the [Markdown link syntax](../../../thehive-flavored-markdown.md#links). Automatic link detection, available for `http` and `https`, doesn't apply to them.
 
 <h2>Procedure</h2>
 
