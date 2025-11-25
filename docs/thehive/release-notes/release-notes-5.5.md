@@ -6,7 +6,15 @@
 !!! info "Public API v0 deprecation"
     Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
 
+## 5.5.13 - November 25, 2025
+
+### Fixes
+
+* Case ownership: Improved performance when querying case for a specific organization.
+
 ## 5.5.12 - November 24, 2025
+
+Last update: November 25, 2025
 
 ### Fixes
 
@@ -27,8 +35,6 @@
 * Email intake connectors: Added [a configuration option in `application.conf` to set a proxy](../configuration/proxy-settings.md#email-intake-connectors).
 
 * MISP alerts: Observables exported to MISP are now correctly saved as MISP-type alerts.
-
-* Case ownership: Improved performance when querying case for a specific organization.
 
 ## 5.5.11 - October 28, 2025
 
