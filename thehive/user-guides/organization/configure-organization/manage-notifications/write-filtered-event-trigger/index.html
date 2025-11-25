@@ -17744,11 +17744,8 @@
 
 <h1 id="write-a-filteredevent-trigger">Write a FilteredEvent Trigger<a class="headerlink" href="#write-a-filteredevent-trigger" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>manageConfig</code></span></span></p>
-<p>This topic provides step-by-step instructions for writing a <em>FilteredEvent</em> <a href="../about-notifications/#triggers">trigger</a> in TheHive.</p>
-<div class="admonition info">
-<p class="admonition-title">Capabilities of the <em>FilteredEvent</em> trigger</p>
-<p>Read this <a href="https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/" target="_blank">StrangeBee blog post</a> for an introduction to the capabilities of <em>FilteredEvent</em> trigger.</p>
-</div>
+<p>Write a <em>FilteredEvent</em> <a href="../about-notifications/#triggers">trigger</a> in TheHive to send notifications based on custom event filters. </p>
+<p>For a list of available operators, see <a href="../filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
 <h2>Procedure</h2>
 
 <ol>
@@ -17775,7 +17772,7 @@
 <p>Write your filter.</p>
 <div class="admonition tip">
 <p class="admonition-title">Operators</p>
-<p>For details on the available operators, see <a href="../filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
+<p>For a complete list of available operators, see <a href="/thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
 </div>
 <p>To access a specific field within a JSON object, use dot (<code>.</code>) notation to navigate through nested properties.</p>
 <p>For example <code>object.severity</code> retrieves the <code>severity</code>field from the following JSON structure:</p>
@@ -17809,6 +17806,10 @@
 </li>
 </ol>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Operators</p>
+<p>For a complete list of available operators, see <a href="/thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
+</div>
 <h3 id="case-severity-updated-to-high-or-critical">Case severity updated to High or Critical<a class="headerlink" href="#case-severity-updated-to-high-or-critical" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
