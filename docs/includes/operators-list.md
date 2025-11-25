@@ -1,0 +1,2 @@
+!!! tip "Operators"
+    For a complete list of available operators, see [FilteredEvent Trigger Operators](/thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/).

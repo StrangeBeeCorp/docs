@@ -2,10 +2,9 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for writing a *FilteredEvent* [trigger](../manage-notifications/about-notifications.md#triggers) in TheHive.
+Write a *FilteredEvent* [trigger](../manage-notifications/about-notifications.md#triggers) in TheHive to send notifications based on custom event filters. 
 
-!!! info "Capabilities of the *FilteredEvent* trigger"
-    Read this [StrangeBee blog post](https://blog.strangebee.com/leveraging-thehive5-notification-capabilities-2-2/){target=_blank} for an introduction to the capabilities of *FilteredEvent* trigger.
+For a list of available operators, see [FilteredEvent Trigger Operators](filtered-event-trigger-operators.md).
 
 <h2>Procedure</h2>
 
@@ -26,11 +25,10 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
     Selecting *FilteredEvent* opens a field where you can define a custom filter. These filters apply to all actions recorded in the organization's [audit logs](../../about-audit-logs.md). When an action matches the filter criteria, a notification is triggered.
 
     ---
-    
+
 5. Write your filter.
 
-    !!! tip "Operators"
-        For details on the available operators, see [FilteredEvent Trigger Operators](filtered-event-trigger-operators.md).
+    {% include-markdown "includes/operators-list.md" %}
 
     To access a specific field within a JSON object, use dot (`.`) notation to navigate through nested properties.
 
@@ -50,6 +48,7 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
     ---
 
 6. Select the relevant notifiers to configure them:
+
     * [Configure the EmailerToAddr Notifier](../manage-notifications/notifiers/email-to-addr.md)
     * [Configure the HttpRequest Notifier](../manage-notifications/notifiers/http-request.md)
     * [Configure the Mattermost Notifier](../manage-notifications/notifiers/mattermost.md)
@@ -63,6 +62,8 @@ This topic provides step-by-step instructions for writing a *FilteredEvent* [tri
     * [Configure the Function Notifier](../manage-notifications/notifiers/function.md)
 
 ## Examples
+
+{% include-markdown "includes/operators-list.md" %}
 
 ### Case severity updated to High or Critical
 

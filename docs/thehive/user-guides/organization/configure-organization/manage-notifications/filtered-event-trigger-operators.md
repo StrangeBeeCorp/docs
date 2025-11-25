@@ -1,12 +1,8 @@
 # FilteredEvent Trigger Operators
 
-This topic lists the available operators for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
+Several operators are available for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
 
-<h2>Operators</h2>
-
-You can use the following operators to filter events.
-
-### Logical operators
+## Logical operators
 
 * `_and`: Matches when all conditions are met
 
@@ -38,15 +34,7 @@ This operator inverts the condition, returning events that don't match the speci
 {"_not": {... filterA} }
 ```
 
-* `_any`: Matches any event (useful for wildcard filtering)
-
-This operator removes all filtering and returns all events.
-
-```json
-{  "_any": "" }
-```
-
-### Comparison operators
+## Comparison operators
 
 * `_lt`, `_gt`, `_lte`, and `_gte`: Compare numerical values
 
@@ -74,7 +62,7 @@ Also works with arrays:
 { "_eq": { "tags": ["foo", "bar"] } }
 ```
 
-### String operators
+## String operators
 
 * `_startsWith` and `_endsWith`: Matches strings that begin or end with a specific sequence of characters
 
@@ -100,7 +88,15 @@ This operator performs pattern matching using wildcards (*).
 { "_like": { "foo": "*lce*" } }
 ```
 
-### Range and inclusion operators
+* `_match`: Matches a string using regex
+
+```json
+{
+  "_match": { "foo": "^[a-z]+$" }
+}
+```
+
+## Range and inclusion operators
 
 * `_between`: Matches values within a range
 
@@ -128,11 +124,11 @@ Works with strings:
 { "_in": { "_field": "tags", "_values": ["foo", "bar"] } }
 ```
 
-### Existence and content operators
+## Existence and content operators
 
 * `_contains`: Checks if a field contains a specific value
 
-This operator searches within strings or arrays of strings.
+This operator searches within arrays of strings.
 
 ```json
 { "_contains": { "foo": "LOW" } }
@@ -163,7 +159,19 @@ To check if a field doesn't exist, use:
 { "_not": {"_has": "foo"} }
 ```
 
+* `_id`: Matches an entity by its unique identifier
+
+This operator filters events based on the `_id` field of an object.
+
+```json
+{
+  "_id": "~327925760"
+}
+```
+
 * `_arrayMatch`: Checks if any element within an array field satisfies a specified condition
+
+This operator only works when the target field is an array of objects.
 
 ```json
 {
