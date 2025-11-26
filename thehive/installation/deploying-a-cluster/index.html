@@ -16357,6 +16357,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../cortex/operations/upgrade-cortex-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Upgrade to Cortex 4.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
     
@@ -16369,10 +16397,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_4">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_5">
         
           
-          <label class="md-nav__link" for="__nav_3_5_4" id="__nav_3_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_5" id="__nav_3_5_5_label" tabindex="0">
             
   
   
@@ -16390,8 +16418,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -18058,14 +18086,54 @@ UN<span class="w">  </span>&lt;ip<span class="w"> </span>node<span class="w"> </
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/installation/elasticsearch-cluster.png" data-desc-position="bottom"><img align="center" alt="" src="../../images/installation/elasticsearch-cluster.png"></a></p>
 <div class="admonition note">
 <p class="admonition-title">Elasticsearch supported versions</p>
-<ul>
-<li>TheHive 5.2.x and earlier: Elasticsearch 7.2.x - 7.17.x</li>
-<li>TheHive 5.3.0 - 5.4.10: Elasticsearch 7.10.x - 8.x</li>
-<li>TheHive 5.5.0 - 5.5.9: Elasticsearch 7.11.x - 8.x</li>
-<li>TheHive 5.5.10 and later: Elasticsearch 7.11.x - 9.1.x</li>
-</ul>
+<p><strong>TheHive</strong></p>
+<table>
+<thead>
+<tr>
+<th>TheHive version</th>
+<th>Elasticsearch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.5.10+</td>
+<td>7.11.x - 9.1.x</td>
+</tr>
+<tr>
+<td>5.5.0 - 5.5.9</td>
+<td>7.11.x - 8.x</td>
+</tr>
+<tr>
+<td>5.3.0 - 5.4.10</td>
+<td>7.10.x - 8.x</td>
+</tr>
+<tr>
+<td>5.0.0 - 5.2.16</td>
+<td>7.2.x - 7.17.x</td>
+</tr>
+</tbody>
+</table>
 <p>If using Elasticsearch for <a href="../installation-guide-linux-standalone-server/#step-53-audit-log-storage">audit log storage</a>, you must use Elasticsearch 7.17 or later.</p>
-<p><a href="../../administration/cortex/about-cortex/">Cortex</a> only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.</p>
+<p><strong>Cortex</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cortex version</th>
+<th>Elasticsearch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4.0.0+</td>
+<td>8.x</td>
+</tr>
+<tr>
+<td>3.2.1 and earlier</td>
+<td>7.x</td>
+</tr>
+</tbody>
+</table>
+<p>Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.</p>
 </div>
 <h3 id="installation-instructions_1">Installation Instructions<a class="headerlink" href="#installation-instructions_1" title="Permanent link">#</a></h3>
 <p>To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on <a href="../installation-guide-linux-standalone-server/#step-41-install-elasticsearch"><strong>this page</strong></a> for each node.</p>
