@@ -902,6 +902,7 @@ nav:
       -  'Backup & Restore': 'cortex/operations/backup-restore.md'
       -  'Analyzers/Responders input and output': 'cortex/operations/input-output.md'
       -  'Upgrade to Cortex 3.1': 'cortex/operations/upgrade_to_cortex_3_1_and_es7_x.md'
+      -  'Upgrade to Cortex 4.0': 'cortex/operations/upgrade-cortex-4.md'
       - 'End of APT and YUM repositories':
         - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
         - 'Switch to Manual Download and Installation': cortex/operations/switch-to-manual-download-installation-cortex.md

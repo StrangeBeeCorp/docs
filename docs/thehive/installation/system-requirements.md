@@ -67,7 +67,7 @@ The recommended storage requirements for TheHive vary based on the use case and 
 TheHive is officially supported on the following Linux distributions:
 
 * Ubuntu 20.04 LTS | 22.04 LTS | 24.04 LTS
-* Debian 11
+* Debian 11 | 12 | 13
 * RHEL 8.5 | 9.3
 * Rocky Linux 9.4
 * Fedora 35 | 37

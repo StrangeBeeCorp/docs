@@ -21,8 +21,8 @@
             wget -O /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.1.8-1_all`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
         * Using cURL:
 
@@ -40,8 +40,8 @@
             curl -o /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.1.8-1_all`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
             
 
     2. Verify the integrity of the downloaded package.
@@ -142,8 +142,8 @@
             wget -O /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
         * Using cURL:
 
@@ -161,8 +161,8 @@
             curl -o /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
     2. Verify the integrity of the downloaded package.
 

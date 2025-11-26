@@ -137,7 +137,7 @@ This chart deploys an Elasticsearch cluster with two nodes, both master-eligible
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank} for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
-    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods and use Elasticsearch version 7.x. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
+    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
 #### Object storage
 

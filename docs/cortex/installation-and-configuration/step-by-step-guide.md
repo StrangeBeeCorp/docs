@@ -95,7 +95,17 @@ This page is a step by step installation and configuration guide to get a Cortex
 
 ## Elasticsearch
 
-{% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}
+!!! note "Elasticsearch supported versions"
+
+    **Cortex**
+
+    {% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}
+
+    **TheHive**
+
+    {% include-markdown "includes/elasticsearch-supported-versions-thehive.md" %}
+    
+    Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.
 
 !!! Example ""
 
@@ -103,7 +113,7 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         ```bash
         wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list 
+        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
         sudo apt install elasticsearch   
         ```
 
@@ -111,8 +121,8 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         ```title="/etc/yum.repos.d/elasticsearch.repo"
         [elasticsearch]
-        name=Elasticsearch repository for 7.x packages
-        baseurl=https://artifacts.elastic.co/packages/7.x/yum
+        name=Elasticsearch repository for 8.x packages
+        baseurl=https://artifacts.elastic.co/packages/8.x/yum
         gpgcheck=1
         gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
         enabled=0
@@ -221,8 +231,8 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             wget -O /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
         * Using cURL
 
@@ -240,8 +250,8 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             curl -o /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.1.8-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
     2. Verify the integrity of the downloaded package.
 

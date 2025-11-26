@@ -6,7 +6,7 @@
 - This migration process is intended for single node of Elasticsearch database
 - The current version of this document is provided for testing purpose **ONLY!**  
 - This guide has been written and tested to migrate data from ES 6.8.2 to ES 7.8.1, and Cortex 3.0.1 to Cortex 3.1.0 **only!**
-- This guide starts with Elasticsearch version 6.8.2  up and running, indexes and data. To test this guide, we recommend using a backup of you production server. (see Backup and Restore page for more information)
+- This guide starts with Elasticsearch version 6.8.2  up and running, indexes and data. To test this guide, we recommend using a backup of your production server. (see Backup and Restore page for more information)
 - This guide is illustrated with Cortex index. The process is identical for Cortex, you just have to adjust index names.
 ---
 
@@ -22,9 +22,9 @@ You can easily identify if indexes should be reindexed or not. On the index name
 curl -s http://127.0.0.1:9200/cortex_4?human | jq '.cortex_4.settings.index.version.created'
 ```
 
-if the output is similar to `"5xxxxxx"`  then reindexing is required, you should follow this guide. 
+If the output is similar to `"5xxxxxx"`  then reindexing is required, you should follow this guide.
 
-If it is   `"6xxxxxx"` then the index can be read by Elasticsearch 7.8.x. Upgrade Elasticsearch, and Cortex 3.1.0.
+If it is `"6xxxxxx"` then the index can be read by Elasticsearch 7.8.x. Upgrade Elasticsearch, and Cortex 3.1.0.
 
 ## Migration guide
 
@@ -54,7 +54,7 @@ The index name is `cortex_4`. Record this somewhere.
 
 ### Stop services
 
-Before starting updating the database, lets stop applications:
+Before starting updating the database, let's stop applications:
 
 ```
 sudo service cortex stop 
@@ -62,8 +62,7 @@ sudo service cortex stop
 
 ### Create a new index
 
-
-The First operation lies in creating a new index named `new_cortex_4` with settings from current index `cortex_4` (ensure to keep index version, needed for future upgrade).
+The first operation lies in creating a new index named `new_cortex_4` with settings from current index `cortex_4` (ensure to keep index version, needed for future upgrade).
 
 ```bash
 curl -XPUT 'http://localhost:9200/new_cortex_4' \
@@ -79,14 +78,13 @@ curl -XPUT 'http://localhost:9200/new_cortex_4' \
     )"
 ```
 
+Check the new index is well created:
 
-Check the new index is well created: 
-
+```bash
+curl -XGET "http://localhost:9200/_cat/indices?v"
 ```
-curl -XGET http://localhost:9200/_cat/indices\?v
-```
 
-The output should look like this: 
+The output should look like this:
 
 ```
 health status index           uuid                   pri rep docs.count docs.deleted store.size pri.store.size
@@ -138,8 +136,8 @@ After a moment, you should get a similar output:
 
 Run the following command, and ensure the new index is like the current one (size can vary):
 
-```
-curl -XGET http://localhost:9200/_cat/indices\?v
+```bash
+curl -XGET "http://localhost:9200/_cat/indices?v"
 ```
 
 The output should look like this: 
@@ -178,7 +176,6 @@ curl -XPOST -H 'Content-Type: application/json'  'http://localhost:9200/_aliases
 }'
 ```
 
-
 Doing so will allow Cortex 3.1.0  to find the index without updating the configuration file. 
 
 Check the alias has been well created by running the following command
@@ -199,17 +196,15 @@ The output should look like:
 }
 ```
 
-
 ## Stop Elasticsearch version 6.8.2
 
 ```bash
 sudo service elasticsearch stop 
 ```
 
+## Update Elasticsearch
 
-## Update Elasticsearch 
-
-Update the configuration of Elastisearch. Configuration file should look like this:
+Update the configuration of Elasticsearch. Configuration file should look like this:
 
 ```
 [..]
@@ -225,7 +220,13 @@ Now, upgrade Elasticsearch to version 7.x following the documentation for your o
 
 ## Install or update to Cortex 3.1.0
 
-{% include-markdown "includes/manual-download-installation-cortex.md" %}
+=== "DEB"
+
+    Refer to the [installation instructions](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) and specify version 3.1.0.
+
+=== "RPM"
+
+    Refer to the [installation instructions](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) and specify version 3.1.0.
 
 === "Docker"
 
@@ -241,20 +242,18 @@ Now, upgrade Elasticsearch to version 7.x following the documentation for your o
 
 ### Update database
 
-Connect to TheHive (and Cortex), the maintenance page should ask to update. 
+Connect to TheHive (and Cortex), the maintenance page should ask to update.
 
 Once updated, ensure a new index named `cortex_5` has been created.
 
-
 ```bash
-curl -XGET http://localhost:9200/_cat/indices\?v
+curl -XGET "http://localhost:9200/_cat/indices?v"
 ```
 
-The output should look like this: 
+The output should look like this:
 
 ```
 health status index           uuid                   pri rep docs.count docs.deleted store.size pri.store.size
 green  open   new_cortex_4 GV-3Y8QjTjWw0F-p2sjW6Q   5   0      30977            0       26mb           26mb
 yellow open   cortex_5     Nz0vCKqhRK2xkx1t_WF-0g   5   1      30977            0     26.1mb         26.1mb
 ```
-

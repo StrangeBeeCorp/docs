@@ -13,14 +13,16 @@ Hardware requirements depends on the usage of the system. We recommend starting 
 Cortex has been tested and is supported on the following operating systems: 
 
 - :material-ubuntu: Ubuntu 20.04 LTS
-- :material-debian: Debian 11
+- :material-debian: Debian 11 | 12 | 13
 - :material-redhat: RHEL 8
 - :material-fedora: Fedora 35
 
 ## Software requirements
 
 * Java 11+
-* Elasticsearch 7.x
+* Elasticsearch:
+
+    {% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}
 
 ## Installation guide
 

@@ -259,8 +259,6 @@ You can find the available image versions for each component at the following li
 - [ElasticSearch images](https://hub.docker.com/_/elasticsearch/tags)
 - [Nginx images](https://hub.docker.com/_/nginx/tags)
 
-!!! Warning "TheHive v5 is not yet compatible with ElasticSearch v8.x - only the 7.x versions are supported for the time being."
-
 You can find the changelog for TheHive and Cortex at the following links:
 
 - [TheHive changelog](https://docs.strangebee.com/thehive/release-notes/release-notes-5.1/)

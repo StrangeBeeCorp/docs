@@ -1,4 +1,4 @@
-# Backup and restore data
+# Backup and Restore Data
 
 All persistent data is stored in an Elasticsearch database. The backup and
 restore procedures are the ones that are detailed in

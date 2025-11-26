@@ -486,14 +486,17 @@ For additional configuration options, refer to:
 
 !!! note "Elasticsearch supported versions"
 
-    * TheHive 5.2.x and earlier: Elasticsearch 7.2.x - 7.17.x
-    * TheHive 5.3.0 - 5.4.10: Elasticsearch 7.10.x - 8.x
-    * TheHive 5.5.0 - 5.5.9: Elasticsearch 7.11.x - 8.x
-    * TheHive 5.5.10 and later: Elasticsearch 7.11.x - 9.1.x
+    **TheHive**
+
+    {% include-markdown "includes/elasticsearch-supported-versions-thehive.md" %}
     
     If using Elasticsearch for [audit log storage](#step-53-audit-log-storage), you must use Elasticsearch 7.17 or later.
 
-    [Cortex](../administration/cortex/about-cortex.md) only supports Elasticsearch 7.x. Sharing an Elasticsearch instance between TheHive and Cortex isn't recommended, but if this setup is required, ensure you use Elasticsearch 7.x.
+    **Cortex**
+
+    {% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}
+    
+    Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.
 
 !!! note "OpenSearch support"
     Starting with version 5.3, TheHive supports [OpenSearch](https://opensearch.org/){target=_blank} for advanced use cases, except for audit log storage.
@@ -511,12 +514,12 @@ For additional configuration options, refer to:
         sudo apt-get install apt-transport-https
         ```
 
-        b. Check if the `/etc/apt/sources.list.d/elastic-7.x.list` file exists. If it doesn't, create it.
+        b. Check if the `/etc/apt/sources.list.d/elastic-8.x.list` file exists. If it doesn't, create it.
 
-        c. Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/elastic-7.x.list` file.
+        c. Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/elastic-8.x.list` file.
 
         ```bash
-        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-7.x.list 
+        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
         ```
 
     2. Update your package index and install Elasticsearch using the following commands:
@@ -544,8 +547,8 @@ For additional configuration options, refer to:
 
         ```bash
         echo "[elasticsearch]
-        name=Elasticsearch repository for 7.x packages
-        baseurl=https://artifacts.elastic.co/packages/7.x/yum
+        name=Elasticsearch repository for 8.x packages
+        baseurl=https://artifacts.elastic.co/packages/8.x/yum
         gpgcheck=1
         gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
         enabled=0" | sudo tee /etc/yum.repos.d/elasticsearch.repo
