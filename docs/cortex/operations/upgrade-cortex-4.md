@@ -1,6 +1,8 @@
 # Upgrade Cortex to Version 4.0
 
-In this tutorial, we're going to upgrade Cortex from version 3.1.x+ to 4.0.x, which requires upgrading Elasticsearch from 7.x to 8.x.
+In this tutorial, we're going to upgrade Cortex from version 3.1.x+ to 4.0.x.
+
+Because Cortex can't support multiple major versions of Elasticsearch simultaneously, this upgrade requires moving from Elasticsearch 7.x to 8.x.
 
 By the end, you'll have successfully upgraded both Elasticsearch to 8.x and Cortex to 4.0.x, with all services running and connected.
 
