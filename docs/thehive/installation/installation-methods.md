@@ -1,35 +1,41 @@
 # TheHive Installation Methods
 
-TheHive can be installed on a standalone server or deployed in a clustered environment, depending on your infrastructure requirements. Choose the best approach for your use case.
+TheHive can be installed in several ways depending on your operating system, deployment preferences, and infrastructure requirements. Choose the method that best fits your environment.
 
-## Single server installation
+## :material-debian: Debian / :material-ubuntu: Ubuntu
 
-Install TheHive and all required components on a standalone server. See [the architecture overview](../overview/index.md#architecture) for details.
+Install TheHive on a standalone server using DEB packages on Debian- or Ubuntu-based systems.
 
-### :material-debian: Debian / :material-ubuntu: Ubuntu
+See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **DEB** tab for instructions.
 
-For Debian- or Ubuntu-based OS, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **DEB** tab to install and configure TheHive.
+## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-### :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
+Install TheHive on a standalone server using RPM packages on RedHat- or Fedora-based systems.
 
-For RedHat- or Fedora-based OS, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **RPM** tab to install and configure TheHive.
+See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **RPM** tab for instructions.
 
-### :material-folder-zip: ZIP binary packages
+## :material-folder-zip: ZIP binary packages
 
-For manual installation or environments without package managers, follow the [installation guide](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab to install and configure TheHive.
+Install TheHive on a standalone server using the ZIP binary package for manual installations or for environments without package managers.
 
-### :material-docker: Docker
+See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab for instructions.
 
-TheHive image is available on [Docker Hub](https://hub.docker.com/r/strangebee/TheHive){target=_blank}. To deploy TheHive with all [required services](../overview/index.md#architecture) using Docker Compose, see [Deploy TheHive with Docker Compose](../installation/docker.md).
+## :material-docker: Docker
 
-## Cluster deployment
+TheHive image is available on [Docker Hub](https://hub.docker.com/r/strangebee/TheHive){target=_blank}.
 
-Deploy TheHive and all required components across multiple nodes to achieve scalability and high availability. See [the architecture overview](../overview/index.md#architecture) for details.
+Deploy TheHive and its [required services](../overview/index.md#architecture) as a single-server instance using Docker Compose.
 
-### :material-linux: Linux
+See [Deploy TheHive with Docker Compose](../installation/docker.md) for instructions.
 
-Configure a multi-node cluster with TheHive and its components running on dedicated hosts. See [Setting Up a Cluster with TheHive](deploying-a-cluster.md) for instructions.
+## :material-kubernetes: Kubernetes
 
-### :material-kubernetes: Kubernetes
+Deploy TheHive as a single-node or multi-node installation on Kubernetes using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive){target=_blank}.
 
-Deploy TheHive on Kubernetes using the [official Helm chart](https://github.com/StrangeBeeCorp/helm-charts/tree/main/thehive-charts/thehive){target=_blank}. See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.
+See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.
+
+## :material-linux: Cluster deployment on Linux
+
+Deploy TheHive on Linux as a multi-node cluster across dedicated hosts for high-availability setups.
+
+See [Setting Up a Cluster with TheHive](deploying-a-cluster.md) for instructions.

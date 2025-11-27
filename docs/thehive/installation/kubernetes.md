@@ -2,13 +2,10 @@
 
 Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}.
 
-!!! info "License"
-    The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
-
 !!! danger "Dependency images"
     The default Cassandra and Elasticsearch images used by the dependency Helm charts come from [Bitnami](https://bitnami.com/){target=_blank}.  
 
-    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications){target=_blank}, StrangeBee Helm charts now reference the `bitnamilegacy` repository for Cassandra and Elasticsearch. Bitnami latest public images ship Cassandra 5, which isn't compatible with TheHive, and Elasticsearch 9.
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications){target=_blank}, StrangeBee Helm charts now reference the `bitnamilegacy` repository for Cassandra and Elasticsearch.
 
     This has important consequences:
 
@@ -22,9 +19,9 @@ Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart reposito
 
 The default deployment includes:
 
-* TheHive application pods
-* A two-node Cassandra cluster for data storage
-* A two-node Elasticsearch cluster for search indexing
+* A single TheHive application pod
+* A one-node Cassandra cluster for data storage
+* A one-node Elasticsearch cluster for search indexing, using Elasticsearch 9
 * A MinIO instance for S3-compatible object storage
 
 ## Infrastructure requirements
@@ -51,7 +48,9 @@ TheHive provides an [official Helm chart for Kubernetes deployments](https://git
     helm repo update
     ```
 
-3. Create a release using the `thehive` Helm chart.
+3. Generate a unique HTTP secret and update the `httpSecret` value in your `values.yaml` file.
+
+4. Create a release using the `thehive` Helm chart.
 
     ```bash
     helm install <release_name> strangebee/thehive
@@ -82,6 +81,11 @@ Use the following command to view all available configuration options for the `t
 ```bash
 helm show values strangebee/thehive
 ```
+
+If you want to run TheHive as a multi-node cluster, increase the `thehive.replicas` value in `values.yaml`. If you're using the bundled dependencies, also adjust the `cassandra.replicaCount` and `elasticsearch.master.replicaCount` values to scale Cassandra and Elasticsearch accordingly.
+
+!!! info "License"
+    The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for each dependency.
 
@@ -126,22 +130,25 @@ To configure StorageClasses based on your needs, refer to the relevant CSI drive
 
 #### Cassandra
 
-This chart deploys two Cassandra pods to store TheHive data.
+This chart deploys one Cassandra pod to store TheHive data.
 
 You can review the [Bitnami Cassandra Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/cassandra){target=_blank} for available configuration options.
 
 #### Elasticsearch
 
-This chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
+This chart deploys a master-eligible and general-purpose Elasticsearch cluster with a single node, using Elasticsearch 9 by default.
 
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank} for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
-    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
+    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
 #### Object storage
 
-To support multiple replicas of TheHive, this chart defines an object storage in the configuration and deploys a single instance of MinIO.
+This chart defines an object storage in the configuration and deploys a single instance of MinIO.
+
+!!! warning "No updates"
+    MinIO community images now ship as [source-only distributions](https://github.com/minio/minio?tab=readme-ov-file#source-only-distribution){target=_blank} and no longer receive official updates.
 
 For production environments, use a managed object storage service to ensure optimal performance and resilience, such as:
 

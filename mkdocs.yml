@@ -434,13 +434,11 @@ nav:
       - 'Requirements':
         - 'System Requirements': thehive/installation/system-requirements.md
         - 'Software Requirements': thehive/installation/software-requirements.md
-      - 'Single Server Installation':
-        - 'Install on Linux': thehive/installation/installation-guide-linux-standalone-server.md
-        - 'One-Command Install': thehive/installation/automated-installation-script-linux.md
-        - 'Deploy with Docker': thehive/installation/docker.md
-      - 'Cluster Deployment':
-        - 'Set Up a Cluster on Linux': thehive/installation/deploying-a-cluster.md
-        - 'Deploy on Kubernetes': thehive/installation/kubernetes.md
+      - 'Install on Linux': thehive/installation/installation-guide-linux-standalone-server.md
+      - 'One-Command Install': thehive/installation/automated-installation-script-linux.md
+      - 'Deploy with Docker': thehive/installation/docker.md
+      - 'Deploy on Kubernetes': thehive/installation/kubernetes.md
+      - 'Set Up a Cluster on Linux': thehive/installation/deploying-a-cluster.md
       - 'Licenses':
         - 'About Licenses': thehive/installation/licenses/about-licenses.md
         - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md

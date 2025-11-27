@@ -5,7 +5,7 @@ Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repositor
 !!! danger "Dependency image"
     The default Elasticsearch image used by the dependency Helm chart comes from [Bitnami](https://bitnami.com/){target=_blank}.  
 
-    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications){target=_blank}, StrangeBee Helm charts now reference the `bitnamilegacy` repository for Elasticsearch. Bitnami latest public images ship Elasticsearch 9, which isn't compatible with Cortex.
+    Following [Bitnami decision to stop maintaining multiple freely available image versions](https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications){target=_blank}, StrangeBee Helm charts now reference the `bitnamilegacy` repository for Elasticsearch.
 
     This has important consequences:
 
@@ -17,8 +17,8 @@ Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repositor
 
 The default deployment includes:
 
-* Cortex application pods
-* A two-node Elasticsearch cluster for search indexing
+* A single Cortex application pod
+* A one-node Elasticsearch cluster for search indexing, using Elasticsearch 8
 * Shared storage for analyzer job data
 
 ## Infrastructure requirements
@@ -61,7 +61,7 @@ To prevent permission errors when reading or writing files on the shared filesys
 !!! note "Using an existing PV"
     The `cortex` Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.
 
-Use the `cortex` Helm chart to automate the creation of the PV, PVC, and SA during deployment. 
+Use the `cortex` Helm chart to automate the creation of the PV, PVC, and SA during deployment.
 
 The default configuration is designed for development environments and requires modifications for production use. See [Production configuration](#production-configuration) for required adjustments.
 
@@ -77,7 +77,9 @@ The default configuration is designed for development environments and requires 
     helm repo update
     ```
 
-3. Create a release using the `cortex` Helm chart
+3. Generate a unique HTTP secret and update the `httpSecret` value in your `values.yaml` file.
+
+4. Create a release using the `cortex` Helm chart
 
     ```bash
     helm install <release_name> strangebee/cortex
@@ -108,6 +110,8 @@ Use the following command to view all available configuration options for the `c
 helm show values strangebee/cortex
 ```
 
+If you want to run Cortex as a multi-node cluster, increase the `cortex.replicas` value in `values.yaml`. If you're using the bundled dependencies, also adjust the `elasticsearch.master.replicaCount` value to scale Elasticsearch accordingly.
+
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for the dependency.
 
 #### Storage configuration
@@ -127,12 +131,12 @@ Also note that Cortex stores data in Elasticsearch. Regular backups are strongly
 
 #### Elasticsearch
 
-By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.
+This chart deploys a master-eligible and general-purpose Elasticsearch cluster with a single node, using Elasticsearch 8 by default.
 
 You can review the [Bitnami Elasticsearch Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch){target=_blank} for available configuration options.
 
 !!! note "Same Elasticsearch instance for both TheHive and Cortex"
-    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
+    Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.
 
 #### Cortex server in TheHive
 
@@ -161,7 +165,7 @@ Before setting up the PV for AWS EFS, complete the following steps:
 !!! note "Reference example"
     The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods){target=_blank}.
 
-Create a StorageClass that references your EFS filesystem:    
+Create a StorageClass that references your EFS filesystem:
 
 ```yaml
 kind: StorageClass
