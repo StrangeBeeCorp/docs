@@ -17709,9 +17709,9 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-2_all.deb
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-2_all.deb.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-2_all.deb.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-1_all.deb
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-1_all.deb.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-1_all.deb.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
@@ -17719,15 +17719,15 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
 </code></pre></div>
 <ul>
-<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-1_all</code>.</li>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-2_all</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-2_all.deb
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-2_all.deb.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-2_all.deb.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-1_all.deb
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-1_all.deb.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-1_all.deb.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/deb/&lt;file_name&gt;.deb
@@ -17735,7 +17735,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/asc/&lt;file_name&gt;.deb.asc
 </code></pre></div>
 <ul>
-<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-1_all</code>.</li>
+<li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-2_all</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
 </li>
@@ -17747,10 +17747,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -17765,7 +17765,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb.asc<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.asc<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -17788,12 +17788,12 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using <code>apt-get</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dpkg</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/cortex_4.0.0-2_all.deb
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb
 </code></pre></div>
 </li>
 </ul>
@@ -17811,9 +17811,9 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using Wget:</p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-2.noarch.rpm
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-2.noarch.rpm.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-2.noarch.rpm.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-1.noarch.rpm
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.noarch.rpm.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.noarch.rpm.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
@@ -17827,9 +17827,9 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 </li>
 <li>
 <p>Using cURL:</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-2.noarch.rpm
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-2.noarch.rpm.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-2.noarch.rpm.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-1.noarch.rpm
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.noarch.rpm.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.noarch.rpm.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/&lt;major.minor_version&gt;/rpm/&lt;file_name&gt;.noarch.rpm
@@ -17849,10 +17849,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security Team</a>.</p>
 </li>
@@ -17867,7 +17867,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/tmp/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm.asc<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.asc<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -17890,17 +17890,17 @@ This warning is expected. It means the package is signed with the official TheHi
 <ul>
 <li>
 <p>Using <code>yum</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>dnf</code> to manage dependencies automatically:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm
 </code></pre></div>
 </li>
 <li>
 <p>Using <code>rpm</code>:</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/cortex-4.0.0-2.noarch.rpm
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>-ivh<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm
 </code></pre></div>
 </li>
 </ul>
