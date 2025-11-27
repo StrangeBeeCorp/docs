@@ -27,7 +27,7 @@ Before we upgrade Elasticsearch, we need to stop the Cortex service to prevent i
 
 ## Step 2: Upgrade Elasticsearch to 7.17.x
 
-Direct upgrades from Elasticsearch versions earlier than 7.17 to 8.x aren't supported. We'll first ensure you're running Elasticsearch 7.17.x before moving to 8.x.
+Direct upgrades from Elasticsearch versions earlier than 7.17.x to 8.x aren't supported. We'll first ensure you're running Elasticsearch 7.17.x before moving to 8.x.
 
 1. Check your current Elasticsearch version.
 
@@ -39,7 +39,7 @@ Direct upgrades from Elasticsearch versions earlier than 7.17 to 8.x aren't supp
 
 2. If your version is below 7.17.x, upgrade to Elasticsearch 7.17.x.
 
-    Follow the [official Elasticsearch 7.17 upgrade guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html){target=_blank} to bring your instance to the latest 7.x release.
+    Follow the [official Elasticsearch 7.17 upgrade guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html){target=_blank} to bring your instance to the latest 7.17.x release.
 
 3. If you're already running 7.17.x or have just upgraded, proceed to the next step.
 
