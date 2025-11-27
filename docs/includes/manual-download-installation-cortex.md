@@ -8,9 +8,9 @@
         * Using Wget:
 
             ```bash
-            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
-            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.sha256
-            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.asc
+            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
+            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256
+            wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -21,15 +21,15 @@
             wget -O /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-1_all`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
         * Using cURL:
 
             ```bash
-            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
-            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.sha256
-            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.asc
+            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
+            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256
+            curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -40,7 +40,7 @@
             curl -o /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-1_all`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
             
 
@@ -51,13 +51,13 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
+            sha256sum /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
             ```bash
-            cat /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.sha256
+            cat /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256
             ```
 
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -83,7 +83,7 @@
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb.asc /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
+            gpg --verify /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.asc /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
             ```
 
             d. Expected result.
@@ -110,13 +110,13 @@
         * Using `apt-get` to manage dependencies automatically:
 
             ```bash
-            sudo apt-get install /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
+            sudo apt-get install /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
             ```
 
         * Using `dpkg`:
 
             ```bash
-            sudo dpkg -i /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2_all.deb
+            sudo dpkg -i /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
             ```
 
 === "RPM"
@@ -129,9 +129,9 @@
         * Using Wget:
 
             ```bash
-            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
-            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.sha256
-            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.asc
+            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
+            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256
+            wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -148,9 +148,9 @@
         * Using cURL:
 
             ```bash
-            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
-            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.sha256
-            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.asc
+            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
+            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256 https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/sha256/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256
+            curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.asc https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/asc/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.asc
             ```
 
             To download a specific version instead of the latest, use the following format:
@@ -171,13 +171,13 @@
             a. Generate the SHA256 checksum of your downloaded package.
 
             ```bash
-            sha256sum /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
+            sha256sum /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
             ```
 
             b. Compare the output hash with the official SHA256 value listed in the .sha256 file.
 
             ```bash
-            cat /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.sha256
+            cat /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256
             ```
 
             c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
@@ -203,7 +203,7 @@
             c. Verify the downloaded package signature.
 
             ```bash
-            gpg --verify /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm.asc /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
+            gpg --verify /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.asc /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
             ```
 
             d. Expected result.
@@ -230,17 +230,17 @@
         * Using `yum` to manage dependencies automatically:
 
             ```bash
-            sudo yum install /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
+            sudo yum install /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
             ```
 
         * Using `dnf` to manage dependencies automatically:
 
             ```bash
-            sudo dnf install /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
+            sudo dnf install /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
             ```
 
         * Using `rpm`:
 
             ```bash
-            sudo rpm -ivh /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-2.noarch.rpm
+            sudo rpm -ivh /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
             ```
