@@ -670,56 +670,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3">
-        
-          
-          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single Server Installation
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Single Server Installation
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../../thehive/installation/installation-guide-linux-standalone-server/" class="md-nav__link">
         
@@ -798,43 +748,21 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
               
                 
   
   
   
   
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../../../thehive/installation/kubernetes/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4">
-        
-          
-          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
     
   
-    Cluster Deployment
+    Deploy on Kubernetes
   
 
     
@@ -842,19 +770,11 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Cluster Deployment
+      </a>
+    </li>
   
 
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+              
             
               
                 
@@ -890,42 +810,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../thehive/installation/kubernetes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploy on Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
     
@@ -938,10 +822,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8">
         
           
-          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
             
   
   
@@ -959,8 +843,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1080,10 +964,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
         
           
-          <label class="md-nav__link" for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
             
   
   
@@ -1101,8 +985,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -17740,7 +17624,7 @@
 <div class="admonition danger">
 <p class="admonition-title">Dependency image</p>
 <p>The default Elasticsearch image used by the dependency Helm chart comes from <a href="https://bitnami.com/" target="_blank">Bitnami</a>.  </p>
-<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications" target="_blank">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Elasticsearch. Bitnami latest public images ship Elasticsearch 9, which isn't compatible with Cortex.</p>
+<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications" target="_blank">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Elasticsearch.</p>
 <p>This has important consequences:</p>
 <ul>
 <li>This legacy image won't receive security updates and will become increasingly vulnerable over time. You may continue to use it at your own risk, but it isn't production-ready.</li>
@@ -17751,8 +17635,8 @@
 <h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
 <p>The default deployment includes:</p>
 <ul>
-<li>Cortex application pods</li>
-<li>A two-node Elasticsearch cluster for search indexing</li>
+<li>A single Cortex application pod</li>
+<li>A one-node Elasticsearch cluster for search indexing, using Elasticsearch 8</li>
 <li>Shared storage for analyzer job data</li>
 </ul>
 <h2 id="infrastructure-requirements">Infrastructure requirements<a class="headerlink" href="#infrastructure-requirements" title="Permanent link">#</a></h2>
@@ -17794,7 +17678,7 @@
 <p class="admonition-title">Using an existing PV</p>
 <p>The <code>cortex</code> Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.</p>
 </div>
-<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and SA during deployment. </p>
+<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and SA during deployment.</p>
 <p>The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
 <ol>
 <li>
@@ -17806,6 +17690,9 @@
 <p>Update your local Helm repositories</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>update
 </code></pre></div>
+</li>
+<li>
+<p>Generate a unique HTTP secret and update the <code>httpSecret</code> value in your <code>values.yaml</code> file.</p>
 </li>
 <li>
 <p>Create a release using the <code>cortex</code> Helm chart</p>
@@ -17834,6 +17721,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <p>Use the following command to view all available configuration options for the <code>cortex</code> Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/cortex
 </code></pre></div>
+<p>If you want to run Cortex as a multi-node cluster, increase the <code>cortex.replicas</code> value in <code>values.yaml</code>. If you're using the bundled dependencies, also adjust the <code>elasticsearch.master.replicaCount</code> value to scale Elasticsearch accordingly.</p>
 <p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing" target="_blank">the dedicated Helm documentation</a>. You can also review the available options for the dependency.</p>
 <h4 id="storage-configuration">Storage configuration<a class="headerlink" href="#storage-configuration" title="Permanent link">#</a></h4>
 <div class="admonition warning">
@@ -17849,11 +17737,11 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 </ul>
 <p>Also note that Cortex stores data in Elasticsearch. Regular backups are strongly recommended to prevent data loss, especially when deploying Elasticsearch on Kubernetes using the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Stack</a>.</p>
 <h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
-<p>By default, this chart deploys an Elasticsearch cluster with two nodes, both master-eligible and general-purpose.</p>
+<p>This chart deploys a master-eligible and general-purpose Elasticsearch cluster with a single node, using Elasticsearch 8 by default.</p>
 <p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
 <div class="admonition note">
 <p class="admonition-title">Same Elasticsearch instance for both TheHive and Cortex</p>
-<p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration for both pods, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
+<p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
 </div>
 <h4 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h4>
 <p>See <a href="../../../thehive/administration/cortex/add-a-cortex-server/">Add a Cortex Server</a> for detailed instructions.</p>
@@ -17877,7 +17765,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <p class="admonition-title">Reference example</p>
 <p>The following manifests are based on the <a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods" target="_blank">EFS CSI driver multiple pods example</a>.</p>
 </div>
-<p>Create a StorageClass that references your EFS filesystem:    </p>
+<p>Create a StorageClass that references your EFS filesystem:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.k8s.io/v1</span>
 <span class="nt">metadata</span><span class="p">:</span>
