@@ -61,7 +61,7 @@ Now that we're running Elasticsearch 7.17.x, we need to verify that all features
 
 With compatibility verified, we're ready to upgrade Elasticsearch to version 8.x.
 
-1. Follow the [official Elasticsearch upgrade documentation](https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster){target=_blank} to complete the upgrade.
+1. Follow the [official Elasticsearch upgrade documentation](https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster/upgrade-717#upgrade-step-1-7.17.x-8.19.x){target=_blank} to complete the upgrade.
 
     !!! note "Automatic restart"
         If you're using package-based or containerized installations, Elasticsearch restarts are handled automatically during the upgrade.
