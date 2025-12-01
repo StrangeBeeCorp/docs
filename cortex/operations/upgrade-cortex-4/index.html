@@ -16176,10 +16176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-upgrade-elasticsearch-to-717x" class="md-nav__link">
+  <a href="#step-2-check-the-elasticsearch-version" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Upgrade Elasticsearch to 7.17.x
+        Step 2: Check the Elasticsearch version
       
     </span>
   </a>
@@ -16187,10 +16187,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-prepare-for-elasticsearch-8x-upgrade" class="md-nav__link">
+  <a href="#optional-step-3-upgrade-elasticsearch-to-717x" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Prepare for Elasticsearch 8.x upgrade
+        (Optional) Step 3: Upgrade Elasticsearch to 7.17.x
       
     </span>
   </a>
@@ -16198,10 +16198,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-upgrade-elasticsearch-to-8x" class="md-nav__link">
+  <a href="#step-4-prepare-for-elasticsearch-8x-upgrade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Upgrade Elasticsearch to 8.x
+        Step 4: Prepare for Elasticsearch 8.x upgrade
       
     </span>
   </a>
@@ -16209,10 +16209,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-upgrade-cortex-to-version-40x" class="md-nav__link">
+  <a href="#step-5-upgrade-elasticsearch-to-8x" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Upgrade Cortex to version 4.0.x
+        Step 5: Upgrade Elasticsearch to 8.x
       
     </span>
   </a>
@@ -16220,10 +16220,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-restart-cortex-and-verify-connectivity" class="md-nav__link">
+  <a href="#step-6-upgrade-cortex-to-version-40x" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6: Restart Cortex and verify connectivity
+        Step 6: Upgrade Cortex to version 4.0.x
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-restart-cortex-and-verify-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Restart Cortex and verify connectivity
       
     </span>
   </a>
@@ -17668,24 +17679,23 @@
 <p class="admonition-title">Stop TheHive if sharing Elasticsearch</p>
 <p>If you share your Elasticsearch instance with TheHive, stop TheHive as well before upgrading Elasticsearch to prevent data inconsistencies.</p>
 </div>
-<h2 id="step-2-upgrade-elasticsearch-to-717x">Step 2: Upgrade Elasticsearch to 7.17.x<a class="headerlink" href="#step-2-upgrade-elasticsearch-to-717x" title="Permanent link">#</a></h2>
-<p>Direct upgrades from Elasticsearch versions earlier than 7.17.x to 8.x aren't supported. We'll first ensure you're running Elasticsearch 7.17.x before moving to 8.x.</p>
+<h2 id="step-2-check-the-elasticsearch-version">Step 2: Check the Elasticsearch version<a class="headerlink" href="#step-2-check-the-elasticsearch-version" title="Permanent link">#</a></h2>
+<p>We can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x. Before continuing, we need to confirm that our deployment is running Elasticsearch 7.17.x.</p>
 <ol>
 <li>
-<p>Check your current Elasticsearch version.</p>
+<p>Check your current Elasticsearch version:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">"localhost:9200"</span>
 </code></pre></div>
 <p>Look for the <code>version.number</code> field in the response.</p>
 </li>
 <li>
-<p>If your version is below 7.17.x, upgrade to Elasticsearch 7.17.x.</p>
-<p>Follow the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html" target="_blank">official Elasticsearch 7.17 upgrade guide</a> to bring your instance to the latest 7.17.x release.</p>
-</li>
-<li>
-<p>If you're already running 7.17.x or have just upgraded, proceed to the next step.</p>
+<p>If your Elasticsearch version is earlier than 7.17.x, continue to the next step. If you're already on 7.17.x, skip to <a href="#step-4-prepare-for-elasticsearch-8x-upgrade">Step 4</a>.</p>
 </li>
 </ol>
-<h2 id="step-3-prepare-for-elasticsearch-8x-upgrade">Step 3: Prepare for Elasticsearch 8.x upgrade<a class="headerlink" href="#step-3-prepare-for-elasticsearch-8x-upgrade" title="Permanent link">#</a></h2>
+<h2 id="optional-step-3-upgrade-elasticsearch-to-717x">(Optional) Step 3: Upgrade Elasticsearch to 7.17.x<a class="headerlink" href="#optional-step-3-upgrade-elasticsearch-to-717x" title="Permanent link">#</a></h2>
+<p>If our current version is below 7.17.x, we must upgrade to the latest 7.17.x release before moving forward.</p>
+<p>Follow the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html" target="_blank">official Elasticsearch 7.17 upgrade guide</a> to complete this upgrade.</p>
+<h2 id="step-4-prepare-for-elasticsearch-8x-upgrade">Step 4: Prepare for Elasticsearch 8.x upgrade<a class="headerlink" href="#step-4-prepare-for-elasticsearch-8x-upgrade" title="Permanent link">#</a></h2>
 <p>Now that we're running Elasticsearch 7.17.x, we need to verify that all features and indexes are ready for migration to 8.x.</p>
 <ol>
 <li>
@@ -17698,7 +17708,7 @@
 <p>If any elements require action, follow the recommendations in the API response before proceeding.</p>
 </li>
 </ol>
-<h2 id="step-4-upgrade-elasticsearch-to-8x">Step 4: Upgrade Elasticsearch to 8.x<a class="headerlink" href="#step-4-upgrade-elasticsearch-to-8x" title="Permanent link">#</a></h2>
+<h2 id="step-5-upgrade-elasticsearch-to-8x">Step 5: Upgrade Elasticsearch to 8.x<a class="headerlink" href="#step-5-upgrade-elasticsearch-to-8x" title="Permanent link">#</a></h2>
 <p>With compatibility verified, we're ready to upgrade Elasticsearch to version 8.x.</p>
 <ol>
 <li>
@@ -17715,10 +17725,10 @@
 <p>You should see <em>version 8.x</em> in the response.</p>
 </li>
 </ol>
-<h2 id="step-5-upgrade-cortex-to-version-40x">Step 5: Upgrade Cortex to version 4.0.x<a class="headerlink" href="#step-5-upgrade-cortex-to-version-40x" title="Permanent link">#</a></h2>
+<h2 id="step-6-upgrade-cortex-to-version-40x">Step 6: Upgrade Cortex to version 4.0.x<a class="headerlink" href="#step-6-upgrade-cortex-to-version-40x" title="Permanent link">#</a></h2>
 <p>With Elasticsearch 8.x running, we can now upgrade Cortex itself.</p>
 <p>Refer to the <a href="../../installation-and-configuration/step-by-step-guide/#cortex-installation-and-configuration">installation guide</a> to update Cortex to version 4.0.x.</p>
-<h2 id="step-6-restart-cortex-and-verify-connectivity">Step 6: Restart Cortex and verify connectivity<a class="headerlink" href="#step-6-restart-cortex-and-verify-connectivity" title="Permanent link">#</a></h2>
+<h2 id="step-7-restart-cortex-and-verify-connectivity">Step 7: Restart Cortex and verify connectivity<a class="headerlink" href="#step-7-restart-cortex-and-verify-connectivity" title="Permanent link">#</a></h2>
 <p>We're now ready to bring Cortex back online and ensure everything connects properly.</p>
 <ol>
 <li>

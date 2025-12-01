@@ -2,1954 +2,1954 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.strangebee.com/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/code-of-conduct/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/api/api-guide/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/api/how-to-create-a-responder/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/api/how-to-create-an-analyzer/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/download/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/advanced-configuration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/analyzers-responders/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/authentication/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/database/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/deploy-cortex-on-kubernetes/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/parameters-docker/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/proxy-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/run-cortex-with-docker/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/secret/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/ssl/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/installation-and-configuration/step-by-step-guide/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/operations/backup-restore/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/operations/input-output/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/operations/switch-to-manual-download-installation-cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/operations/upgrade-cortex-4/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/operations/upgrade_to_cortex_3_1_and_es7_x/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/user-guides/first-start/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/cortex/user-guides/roles/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/activate-audit-log-storage-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/activity-section-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/alerts-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/analyzer-templates-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/apply-filters-light/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/apply-filters/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/attachments-tab-alert-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/attachments-tab-case-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/attachments-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/attack-patterns-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/authentication-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/authentication-type/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/branding-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/bulk-updates-observables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/case-page-templates-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/case-report-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/case-templates-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/case-timeline-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/cases-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/certificate-authority/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/configure-index-ilm-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/connectors-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/connectors-tab-organization-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/cortex-latest-version/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/create-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/create-a-user-account/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/create-administrator-role-cassandra/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/custom-fields-formats/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/custom-fields-section-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/custom-fields-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/custom-tags-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/dashboards-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/data-protection-link/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/docker-not-modify-files-manually-except-config/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/docker-not-modify-files-manually/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/elasticsearch-limitation/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/elasticsearch-supported-versions-cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/elasticsearch-supported-versions-thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/email-intake-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/endpoints-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/entities-management-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/example-configuration-service/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/filters-sorts-views/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/filters/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/find-a-user-account/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/function-definition/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/function-objects-examples/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/functions-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/global-endpoints-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/global-search-additional-filters/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/global-search-all-elements/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/headers/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/host-name-verification/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/knowledge-base-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/ldap-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/license-organizations/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/license-user-accounts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/licensed-unlicensed-permissions/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/linked-alerts-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/linked-elements-section/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/local-account-ldap-ad/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/local-global-endpoints/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/lock-multiple-user-accounts-bulk/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/maintenance-window-required/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/manual-download-installation-cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/manual-download-installation-thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/minimum-key-length/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/misp-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/no-authentication-cassandra/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/notifications-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/notifications-variables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/observable-types-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/observables-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/operators-list/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/organization-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/organizations-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/other-reports-cases-from-case-reports/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/other-reports-cases-from-case-timelines/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/pages-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/performance-optimization-matches/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/platform-management-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/prerequisites-authentication-providers/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/preview-rendering-content/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/protect-observable-urls/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/proxy-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/remove-old-repository/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/report-templates-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/reports-variables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/requirements-email-notifiers/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/restrict-access-button/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/save-content-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/search-results/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/service-commands/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/set-password-authentication-cassandra/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/set-user-thehive-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/similar-cases-alerts-filters/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/smtp-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/status-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/task-logs-no-observables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/task-statuses-excluded/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/tasks-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/tasks-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/taxonomies-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/templates-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/templates-helpers/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/test-function/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/thehive-latest-version/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/ttps-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/ui-configuration-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/units-time-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/upgrade-misp/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/user-symbol-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/users-tab-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/users-view-go-to/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/views-filters-sorts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/vm-testing-only/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/wildcard-character/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/cortex4py/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/cortexutils/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/demo/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/howto-vm-demo/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/security/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/thehive4go/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/thehive4py/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/infra-as-code/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/infra-as-code/ug-secops-instances/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/aws/infra-as-code/ug-secops-vpc/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/infra-as-code/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/infra-as-code/ug-secops-instances/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/resources/iaas/azure/infra-as-code/ug-secops-vnet/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/add-a-global-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/customize-thehive-branding/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/perform-initial-setup-as-admin/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/analyzer-templates/about-analyzer-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/analyzer-templates/customize-an-analyzer-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/analyzer-templates/import-analyzer-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/ad/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/configure-authentication/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/ldap/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/local/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/oauth2/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/openid/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/authentication/saml/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/cortex/about-cortex/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/cortex/add-a-cortex-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/cortex/remove-a-cortex-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/custom-fields/about-custom-fields/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/custom-fields/create-a-custom-field/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/custom-fields/delete-a-custom-field/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/custom-fields/manage-a-custom-field/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/email-intake-connector/about-email-intake-connectors/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/email-intake-connector/connect-a-mailbox/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/email-intake-connector/delete-a-mailbox-connection/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/email-intake-connector/fetch-emails/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ldap/about-ldap/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ldap/configure-ldap-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/misp-integration/about-misp-integration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/misp-integration/connect-a-misp-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/misp-integration/delete-a-misp-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/observable-types/create-an-observable-type/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/observable-types/delete-an-observable-type/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/about-organizations-sharing-rules/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/about-organizations/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/create-an-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/link-an-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/organizations/lock-an-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/profiles/about-profiles/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/profiles/add-remove-permissions-from-a-profile/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/profiles/create-a-profile/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/profiles/delete-a-profile/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/smtp/about-smtp/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/smtp/configure-smtp-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/status/about-statuses/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/status/change-color-of-a-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/status/change-visibility-of-a-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/status/create-a-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/status/delete-a-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/about-taxonomies/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/activate-deactivate-a-taxonomy/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/add-a-custom-taxonomy/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/delete-a-taxonomy/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/taxonomies/update-misp-taxonomies/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ttps/add-a-catalog/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ttps/remove-a-catalog/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ttps/update-a-catalog/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/ttps/view-techniques-in-a-catalog/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/akka/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/cassandra-elasticsearch-connection-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/configure-authentication-cassandra-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/configure-ssl-cassandra-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/enable-gdpr/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/pekko/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/proxy-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/thehive-docker-entrypoint-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/turn-off-cortex-connector/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/turn-off-misp-connector/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/update-log-configuration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/update-service-configuration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/ssl/configure-https-reverse-proxy/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/ssl/configure-ssl-jvm/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/configuration/ssl/ssl-thehive-configuration-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/how-to/alert-management/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/how-to/fail2ban/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/how-to/splunk-integration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/automated-installation-script-linux/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/deploying-a-cluster/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/docker/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/installation-guide-linux-standalone-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/installation-methods/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/kubernetes/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/migration/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/software-requirements/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/system-requirements/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/upgrade-from-4.x/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/upgrade-from-5.x/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/licenses/about-licenses/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/licenses/license/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/installation/licenses/request-a-community-license/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/cassandra-cluster/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/cassandra-security/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/change-index/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/configure-audit-logs-storage-elasticsearch/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/minio-cluster/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/monitoring/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/troubleshooting/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/overview/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/backup/cloud/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/backup/docker-compose/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/backup/hot-backup/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/backup/physical-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/backup/virtual-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/restore/cloud/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/restore/docker-compose/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/restore/physical-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/restore/restore-hot-backup/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/backup-restore/restore/virtual-server/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/overview/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.0/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.1/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.2/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.3/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.4/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.5/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/automate-tracking-pending-alerts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/change-account-theme/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/date-field-definitions-alerts-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/log-out/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/manage-password/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/manage-user-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/switch-organizations/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/thehive-flavored-markdown/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/view-permissions/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/about-autorefresh/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/about-filtering-and-sorting/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/about-live-feed/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/about-statistics/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/preview-vs-detail-view/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/about-alerts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/assign-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/change-status-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/close-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/enrich-alert-details/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/export-list-of-alerts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/reopen-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/unlink-alert-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/apply-a-case-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/change-status-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/close-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/comment-on-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/create-a-new-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/delete-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/export-a-case-to-misp/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/export-an-archived-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/export-list-of-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/flag-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/merge-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/reopen-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/run-responders-on-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/share-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/share-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/about-attachments/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/about-observables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/add-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/delete-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/export-data-observables/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/pin-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/about-tags/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/about-ttps/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/add-ttps/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/export-ttps/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/ttps/remove-ttps/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/about-dashboards/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/adjust-dashboard-refresh-frequency/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/create-a-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/download-a-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/set-dashboard-display-period/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/dashboard/widgets-dashboards/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/about-task-logs/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/about-tasks/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/change-task-status/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/close-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/create-a-task-log/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/create-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/delete-a-task-log/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/delete-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/export-list-of-tasks/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/manage-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/share-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/start-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/views/about-views/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/views/create-a-custom-view/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/views/delete-a-custom-view/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/views/update-a-custom-view/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/key-performance-indicators/key-performance-indicators/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/key-performance-indicators/measure-alert-management-performance/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/key-performance-indicators/measure-case-management-performance/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/about-case-pages/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/about-knowledge-base/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/create-a-case-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/create-a-knowledge-base-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/delete-a-case-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/delete-a-knowledge-base-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/share-a-case-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/view-a-case-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/view-a-knowledge-base-page/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/about-audit-logs/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/about-functions/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/create-a-function/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/functions-objects/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/remove-all-periods-option/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/</loc>
-         <lastmod>2025-11-27</lastmod>
+         <lastmod>2025-12-01</lastmod>
     </url>
 </urlset>
