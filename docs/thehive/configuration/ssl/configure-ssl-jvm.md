@@ -130,8 +130,8 @@ If you use self-signed certificates or internal CAs, you must configure the JVM 
         ``` bash
         docker run -d \
           --name <thehive_container> \
-          -e "JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/<truststore_file> -Djavax.net.ssl.trustStorePassword=<truststore_password>" \
-          -v /host/path/to/<truststore_file>:/container/path/<truststore_file> \
+          -e "JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/to/<truststore_file> -Djavax.net.ssl.trustStorePassword=<truststore_password>" \
+          -v /host/path/to/<truststore_file>:/container/path/to/<truststore_file> \
           <thehive_image>
         ```
 
@@ -151,10 +151,23 @@ If you use self-signed certificates or internal CAs, you must configure the JVM 
 
     2. Mount the directory into the container.
 
+        * Mount a directory containing multiple certificates:
+
         ``` bash
         docker run -d \
           --name <thehive_container> \
-          -v /host/path/to/<ca_certificates>:/container/path/<ca_certificates> \
+          -v /host/path/to/<ca_certificates_directory>:/container/path/to/<ca_certificates_directory> \
+          -e TH_CACERT_FOLDER=/container/path/to/<ca_certificates_directory> \
+          <thehive_image>
+        ```
+
+        * Mount a single .pem certificate file:
+
+        ``` bash
+        docker run -d \
+          --name <thehive_container> \
+          -v /host/path/to/<ca_certificate_file>:/container/path/to/<ca_certificate_file> \
+          -e TH_CACERT_STRING=<ca_certificate_file> \
           <thehive_image>
         ```
 
