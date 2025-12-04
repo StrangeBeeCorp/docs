@@ -17749,8 +17749,8 @@ sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>
 <p>Mount it inside the container and pass JVM options.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>&lt;thehive_container&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-e<span class="w"> </span><span class="s2">"JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/&lt;truststore_file&gt; -Djavax.net.ssl.trustStorePassword=&lt;truststore_password&gt;"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/host/path/to/&lt;truststore_file&gt;:/container/path/&lt;truststore_file&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s2">"JAVA_OPTS=-Djavax.net.ssl.trustStore=/container/path/to/&lt;truststore_file&gt; -Djavax.net.ssl.trustStorePassword=&lt;truststore_password&gt;"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/host/path/to/&lt;truststore_file&gt;:/container/path/to/&lt;truststore_file&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>&lt;thehive_image&gt;
 </code></pre></div>
 </li>
@@ -17770,9 +17770,22 @@ sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>
 </li>
 <li>
 <p>Mount the directory into the container.</p>
+<ul>
+<li>Mount a directory containing multiple certificates:</li>
+</ul>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span>&lt;thehive_container&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/host/path/to/&lt;ca_certificates&gt;:/container/path/&lt;ca_certificates&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/host/path/to/&lt;ca_certificates_directory&gt;:/container/path/to/&lt;ca_certificates_directory&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">TH_CACERT_FOLDER</span><span class="o">=</span>/container/path/to/&lt;ca_certificates_directory&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>&lt;thehive_image&gt;
+</code></pre></div>
+<ul>
+<li>Mount a single .pem certificate file:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>&lt;thehive_container&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/host/path/to/&lt;ca_certificate_file&gt;:/container/path/to/&lt;ca_certificate_file&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="nv">TH_CACERT_STRING</span><span class="o">=</span>&lt;ca_certificate_file&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>&lt;thehive_image&gt;
 </code></pre></div>
 </li>
