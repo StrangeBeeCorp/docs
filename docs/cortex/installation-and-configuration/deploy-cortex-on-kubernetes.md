@@ -2,6 +2,8 @@
 
 Deploy Cortex on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}.
 
+{% include-markdown "includes/kubernetes-chart-poc-only.md" %}
+
 !!! danger "Dependency image"
     The default Elasticsearch image used by the dependency Helm chart comes from [Bitnami](https://bitnami.com/){target=_blank}.  
 
@@ -110,7 +112,7 @@ Use the following command to view all available configuration options for the `c
 helm show values strangebee/cortex
 ```
 
-If you want to run Cortex as a multi-node cluster, increase the `cortex.replicas` value in `values.yaml`. If you're using the bundled dependencies, also adjust the `elasticsearch.master.replicaCount` value to scale Elasticsearch accordingly.
+If you want to run Cortex as a multi-node cluster, increase the `cortex.replicas` value in `values.yaml`. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust `elasticsearch.master.replicaCount` to scale Elasticsearch accordingly.
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for the dependency.
 

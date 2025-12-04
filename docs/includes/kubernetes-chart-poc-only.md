@@ -1,0 +1,2 @@
+!!! note "POC only"
+    The default Kubernetes deployment provided by this chart is intended for POC use only. For production environments, you must adapt the deployment and configuration to your infrastructure and requirements. If you're unsure how to do this, contact the StrangeBee team for guidance.

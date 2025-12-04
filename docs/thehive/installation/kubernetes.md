@@ -2,6 +2,8 @@
 
 Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}.
 
+{% include-markdown "includes/kubernetes-chart-poc-only.md" %}
+
 !!! danger "Dependency images"
     The default Cassandra and Elasticsearch images used by the dependency Helm charts come from [Bitnami](https://bitnami.com/){target=_blank}.  
 
@@ -82,7 +84,7 @@ Use the following command to view all available configuration options for the `t
 helm show values strangebee/thehive
 ```
 
-If you want to run TheHive as a multi-node cluster, increase the `thehive.replicas` value in `values.yaml`. If you're using the bundled dependencies, also adjust the `cassandra.replicaCount` and `elasticsearch.master.replicaCount` values to scale Cassandra and Elasticsearch accordingly.
+If you want to run TheHive as a multi-node cluster, increase the `thehive.replicas` value in `values.yaml`. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust `cassandra.replicaCount` and `elasticsearch.master.replicaCount` to scale Cassandra and Elasticsearch accordingly.
 
 !!! info "License"
     The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
