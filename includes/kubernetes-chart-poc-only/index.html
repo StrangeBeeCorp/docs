@@ -5,28 +5,24 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/cortex/installation-and-configuration/deploy-cortex-on-kubernetes/">
+        <link rel="canonical" href="https://docs.strangebee.com/includes/kubernetes-chart-poc-only/">
       
       
-        <link rel="prev" href="../database/">
-      
-      
-        <link rel="next" href="../../user-guides/first-start/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>Deploy Cortex on Kubernetes - TheHive 5 Documentation</title>
+        <title>Kubernetes chart poc only - TheHive 5 Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
       
       
 
@@ -45,13 +41,13 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/badge.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/badge.css">
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/front.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/front.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -141,7 +137,7 @@
 <meta name="google-site-verification" content="OwK13WB3foDY_sewo_rglGx4a5f4eSunDAkGav9CMls">
 
 
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -161,11 +157,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#deploy-cortex-on-kubernetes" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -189,7 +180,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -210,7 +201,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../thehive/overview/" class="md-tabs__link">
+        <a href="../../thehive/overview/" class="md-tabs__link">
           
   
   
@@ -226,13 +217,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../cortex/" class="md-tabs__link">
           
   
   
@@ -271,7 +260,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../resources/" class="md-tabs__link">
+        <a href="../../resources/" class="md-tabs__link">
           
   
   
@@ -357,9 +346,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
       
-  <img src="../../../assets/images/strangebee.svg" alt="logo">
+  <img src="../../assets/images/strangebee.svg" alt="logo">
 
     </a>
     TheHive 5 Documentation
@@ -374,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -451,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/overview/" class="md-nav__link">
+      <a href="../../thehive/overview/" class="md-nav__link">
         
   
   
@@ -529,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/installation-methods/" class="md-nav__link">
+      <a href="../../thehive/installation/installation-methods/" class="md-nav__link">
         
   
   
@@ -607,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/system-requirements/" class="md-nav__link">
+      <a href="../../thehive/installation/system-requirements/" class="md-nav__link">
         
   
   
@@ -635,7 +624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/software-requirements/" class="md-nav__link">
+      <a href="../../thehive/installation/software-requirements/" class="md-nav__link">
         
   
   
@@ -671,7 +660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/installation-guide-linux-standalone-server/" class="md-nav__link">
+      <a href="../../thehive/installation/installation-guide-linux-standalone-server/" class="md-nav__link">
         
   
   
@@ -699,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/automated-installation-script-linux/" class="md-nav__link">
+      <a href="../../thehive/installation/automated-installation-script-linux/" class="md-nav__link">
         
   
   
@@ -727,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/docker/" class="md-nav__link">
+      <a href="../../thehive/installation/docker/" class="md-nav__link">
         
   
   
@@ -755,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/kubernetes/" class="md-nav__link">
+      <a href="../../thehive/installation/kubernetes/" class="md-nav__link">
         
   
   
@@ -783,7 +772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/deploying-a-cluster/" class="md-nav__link">
+      <a href="../../thehive/installation/deploying-a-cluster/" class="md-nav__link">
         
   
   
@@ -861,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/about-licenses/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/about-licenses/" class="md-nav__link">
         
   
   
@@ -889,7 +878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/request-a-community-license/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/request-a-community-license/" class="md-nav__link">
         
   
   
@@ -917,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/license/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/license/" class="md-nav__link">
         
   
   
@@ -1003,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/upgrade-from-5.x/" class="md-nav__link">
+      <a href="../../thehive/installation/upgrade-from-5.x/" class="md-nav__link">
         
   
   
@@ -1031,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/upgrade-from-4.x/" class="md-nav__link">
+      <a href="../../thehive/installation/upgrade-from-4.x/" class="md-nav__link">
         
   
   
@@ -1059,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/migration/" class="md-nav__link">
+      <a href="../../thehive/installation/migration/" class="md-nav__link">
         
   
   
@@ -1153,7 +1142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/turn-off-cortex-connector/" class="md-nav__link">
+      <a href="../../thehive/configuration/turn-off-cortex-connector/" class="md-nav__link">
         
   
   
@@ -1181,7 +1170,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/turn-off-misp-connector/" class="md-nav__link">
+      <a href="../../thehive/configuration/turn-off-misp-connector/" class="md-nav__link">
         
   
   
@@ -1209,7 +1198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/update-service-configuration/" class="md-nav__link">
+      <a href="../../thehive/configuration/update-service-configuration/" class="md-nav__link">
         
   
   
@@ -1237,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/configure-authentication-cassandra-elasticsearch/" class="md-nav__link">
+      <a href="../../thehive/configuration/configure-authentication-cassandra-elasticsearch/" class="md-nav__link">
         
   
   
@@ -1265,7 +1254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/configure-ssl-cassandra-elasticsearch/" class="md-nav__link">
+      <a href="../../thehive/configuration/configure-ssl-cassandra-elasticsearch/" class="md-nav__link">
         
   
   
@@ -1293,7 +1282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/akka/" class="md-nav__link">
+      <a href="../../thehive/configuration/akka/" class="md-nav__link">
         
   
   
@@ -1321,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/pekko/" class="md-nav__link">
+      <a href="../../thehive/configuration/pekko/" class="md-nav__link">
         
   
   
@@ -1349,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
+      <a href="../../thehive/configuration/thehive-docker-entrypoint-settings/" class="md-nav__link">
         
   
   
@@ -1377,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
+      <a href="../../thehive/configuration/ssl/configure-ssl-jvm/" class="md-nav__link">
         
   
   
@@ -1405,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
+      <a href="../../thehive/configuration/ssl/configure-https-reverse-proxy/" class="md-nav__link">
         
   
   
@@ -1433,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/proxy-settings/" class="md-nav__link">
+      <a href="../../thehive/configuration/proxy-settings/" class="md-nav__link">
         
   
   
@@ -1461,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/update-log-configuration/" class="md-nav__link">
+      <a href="../../thehive/configuration/update-log-configuration/" class="md-nav__link">
         
   
   
@@ -1489,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/configuration/enable-gdpr/" class="md-nav__link">
+      <a href="../../thehive/configuration/enable-gdpr/" class="md-nav__link">
         
   
   
@@ -1575,7 +1564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/cassandra-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/cassandra-cluster/" class="md-nav__link">
         
   
   
@@ -1603,7 +1592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/cassandra-security/" class="md-nav__link">
+      <a href="../../thehive/operations/cassandra-security/" class="md-nav__link">
         
   
   
@@ -1631,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/minio-cluster/" class="md-nav__link">
+      <a href="../../thehive/operations/minio-cluster/" class="md-nav__link">
         
   
   
@@ -1709,7 +1698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/overview/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/overview/" class="md-nav__link">
         
   
   
@@ -1787,7 +1776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/backup/physical-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/physical-server/" class="md-nav__link">
         
   
   
@@ -1815,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/backup/virtual-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/virtual-server/" class="md-nav__link">
         
   
   
@@ -1843,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/backup/docker-compose/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/docker-compose/" class="md-nav__link">
         
   
   
@@ -1871,7 +1860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/backup/hot-backup/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/backup/hot-backup/" class="md-nav__link">
         
   
   
@@ -1957,7 +1946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/restore/physical-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/physical-server/" class="md-nav__link">
         
   
   
@@ -1985,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/restore/virtual-server/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/virtual-server/" class="md-nav__link">
         
   
   
@@ -2013,7 +2002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/restore/docker-compose/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/docker-compose/" class="md-nav__link">
         
   
   
@@ -2041,7 +2030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/restore/cloud/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/cloud/" class="md-nav__link">
         
   
   
@@ -2069,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/backup-restore/restore/restore-hot-backup/" class="md-nav__link">
+      <a href="../../thehive/operations/backup-restore/restore/restore-hot-backup/" class="md-nav__link">
         
   
   
@@ -2163,7 +2152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
+      <a href="../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
         
   
   
@@ -2191,7 +2180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive/" class="md-nav__link">
+      <a href="../../thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive/" class="md-nav__link">
         
   
   
@@ -2227,7 +2216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/change-index/" class="md-nav__link">
+      <a href="../../thehive/operations/change-index/" class="md-nav__link">
         
   
   
@@ -2255,7 +2244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/troubleshooting/" class="md-nav__link">
+      <a href="../../thehive/operations/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2283,7 +2272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/monitoring/" class="md-nav__link">
+      <a href="../../thehive/operations/monitoring/" class="md-nav__link">
         
   
   
@@ -2369,7 +2358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/perform-initial-setup-as-admin/" class="md-nav__link">
+      <a href="../../thehive/administration/perform-initial-setup-as-admin/" class="md-nav__link">
         
   
   
@@ -2447,7 +2436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/about-organizations/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/about-organizations/" class="md-nav__link">
         
   
   
@@ -2475,7 +2464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/about-organizations-sharing-rules/" class="md-nav__link">
         
   
   
@@ -2503,7 +2492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/create-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/create-an-organization/" class="md-nav__link">
         
   
   
@@ -2531,7 +2520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/link-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/link-an-organization/" class="md-nav__link">
         
   
   
@@ -2559,7 +2548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/lock-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/lock-an-organization/" class="md-nav__link">
         
   
   
@@ -2645,7 +2634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
         
   
   
@@ -2673,7 +2662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
         
   
   
@@ -2701,7 +2690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
         
   
   
@@ -2729,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
         
   
   
@@ -2757,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/" class="md-nav__link">
         
   
   
@@ -2785,7 +2774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
         
   
   
@@ -2813,7 +2802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
         
   
   
@@ -2899,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/customize-thehive-branding/" class="md-nav__link">
+      <a href="../../thehive/administration/customize-thehive-branding/" class="md-nav__link">
         
   
   
@@ -2977,7 +2966,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/about-licenses/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/about-licenses/" class="md-nav__link">
         
   
   
@@ -3005,7 +2994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/request-a-community-license/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/request-a-community-license/" class="md-nav__link">
         
   
   
@@ -3033,7 +3022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/installation/licenses/license/" class="md-nav__link">
+      <a href="../../thehive/installation/licenses/license/" class="md-nav__link">
         
   
   
@@ -3119,7 +3108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/cortex/about-cortex/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/about-cortex/" class="md-nav__link">
         
   
   
@@ -3147,7 +3136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/cortex/add-a-cortex-server/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/add-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -3175,7 +3164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/cortex/remove-a-cortex-server/" class="md-nav__link">
+      <a href="../../thehive/administration/cortex/remove-a-cortex-server/" class="md-nav__link">
         
   
   
@@ -3261,7 +3250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/misp-integration/about-misp-integration/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/about-misp-integration/" class="md-nav__link">
         
   
   
@@ -3289,7 +3278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/connect-a-misp-server/" class="md-nav__link">
         
   
   
@@ -3317,7 +3306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
+      <a href="../../thehive/administration/misp-integration/delete-a-misp-server/" class="md-nav__link">
         
   
   
@@ -3403,7 +3392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/about-email-intake-connectors/" class="md-nav__link">
         
   
   
@@ -3431,7 +3420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/connect-a-mailbox/" class="md-nav__link">
         
   
   
@@ -3459,7 +3448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/email-intake-connector/fetch-emails/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/fetch-emails/" class="md-nav__link">
         
   
   
@@ -3487,7 +3476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
+      <a href="../../thehive/administration/email-intake-connector/delete-a-mailbox-connection/" class="md-nav__link">
         
   
   
@@ -3573,7 +3562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/configure-authentication/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/configure-authentication/" class="md-nav__link">
         
   
   
@@ -3651,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/local/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/local/" class="md-nav__link">
         
   
   
@@ -3679,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/ad/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/ad/" class="md-nav__link">
         
   
   
@@ -3707,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/ldap/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/ldap/" class="md-nav__link">
         
   
   
@@ -3735,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/oauth2/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/oauth2/" class="md-nav__link">
         
   
   
@@ -3763,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/saml/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/saml/" class="md-nav__link">
         
   
   
@@ -3791,7 +3780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/authentication/openid/" class="md-nav__link">
+      <a href="../../thehive/administration/authentication/openid/" class="md-nav__link">
         
   
   
@@ -3885,7 +3874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/smtp/about-smtp/" class="md-nav__link">
+      <a href="../../thehive/administration/smtp/about-smtp/" class="md-nav__link">
         
   
   
@@ -3913,7 +3902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/smtp/configure-smtp-server/" class="md-nav__link">
+      <a href="../../thehive/administration/smtp/configure-smtp-server/" class="md-nav__link">
         
   
   
@@ -3999,7 +3988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ldap/about-ldap/" class="md-nav__link">
+      <a href="../../thehive/administration/ldap/about-ldap/" class="md-nav__link">
         
   
   
@@ -4027,7 +4016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ldap/configure-ldap-server/" class="md-nav__link">
+      <a href="../../thehive/administration/ldap/configure-ldap-server/" class="md-nav__link">
         
   
   
@@ -4063,7 +4052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/add-a-global-endpoint/" class="md-nav__link">
+      <a href="../../thehive/administration/add-a-global-endpoint/" class="md-nav__link">
         
   
   
@@ -4199,7 +4188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/profiles/about-profiles/" class="md-nav__link">
+      <a href="../../thehive/administration/profiles/about-profiles/" class="md-nav__link">
         
   
   
@@ -4227,7 +4216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/profiles/create-a-profile/" class="md-nav__link">
+      <a href="../../thehive/administration/profiles/create-a-profile/" class="md-nav__link">
         
   
   
@@ -4255,7 +4244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/profiles/add-remove-permissions-from-a-profile/" class="md-nav__link">
+      <a href="../../thehive/administration/profiles/add-remove-permissions-from-a-profile/" class="md-nav__link">
         
   
   
@@ -4283,7 +4272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/profiles/delete-a-profile/" class="md-nav__link">
+      <a href="../../thehive/administration/profiles/delete-a-profile/" class="md-nav__link">
         
   
   
@@ -4369,7 +4358,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/custom-fields/about-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/about-custom-fields/" class="md-nav__link">
         
   
   
@@ -4397,7 +4386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/custom-fields/create-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/create-a-custom-field/" class="md-nav__link">
         
   
   
@@ -4425,7 +4414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/manage-a-custom-field/" class="md-nav__link">
         
   
   
@@ -4453,7 +4442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
+      <a href="../../thehive/administration/custom-fields/delete-a-custom-field/" class="md-nav__link">
         
   
   
@@ -4539,7 +4528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/observable-types/create-an-observable-type/" class="md-nav__link">
+      <a href="../../thehive/administration/observable-types/create-an-observable-type/" class="md-nav__link">
         
   
   
@@ -4567,7 +4556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/observable-types/delete-an-observable-type/" class="md-nav__link">
+      <a href="../../thehive/administration/observable-types/delete-an-observable-type/" class="md-nav__link">
         
   
   
@@ -4653,7 +4642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/status/about-statuses/" class="md-nav__link">
+      <a href="../../thehive/administration/status/about-statuses/" class="md-nav__link">
         
   
   
@@ -4681,7 +4670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/status/create-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/create-a-status/" class="md-nav__link">
         
   
   
@@ -4709,7 +4698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/status/change-visibility-of-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/change-visibility-of-a-status/" class="md-nav__link">
         
   
   
@@ -4737,7 +4726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/status/change-color-of-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/change-color-of-a-status/" class="md-nav__link">
         
   
   
@@ -4765,7 +4754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/status/delete-a-status/" class="md-nav__link">
+      <a href="../../thehive/administration/status/delete-a-status/" class="md-nav__link">
         
   
   
@@ -4851,7 +4840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/analyzer-templates/about-analyzer-templates/" class="md-nav__link">
+      <a href="../../thehive/administration/analyzer-templates/about-analyzer-templates/" class="md-nav__link">
         
   
   
@@ -4879,7 +4868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/analyzer-templates/import-analyzer-templates/" class="md-nav__link">
+      <a href="../../thehive/administration/analyzer-templates/import-analyzer-templates/" class="md-nav__link">
         
   
   
@@ -4907,7 +4896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/analyzer-templates/customize-an-analyzer-template/" class="md-nav__link">
+      <a href="../../thehive/administration/analyzer-templates/customize-an-analyzer-template/" class="md-nav__link">
         
   
   
@@ -4993,7 +4982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/taxonomies/about-taxonomies/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/about-taxonomies/" class="md-nav__link">
         
   
   
@@ -5021,7 +5010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/add-a-custom-taxonomy/" class="md-nav__link">
         
   
   
@@ -5049,7 +5038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/update-misp-taxonomies/" class="md-nav__link">
         
   
   
@@ -5077,7 +5066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/activate-deactivate-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -5105,7 +5094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
+      <a href="../../thehive/administration/taxonomies/delete-a-taxonomy/" class="md-nav__link">
         
   
   
@@ -5191,7 +5180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -5219,7 +5208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ttps/add-a-catalog/" class="md-nav__link">
+      <a href="../../thehive/administration/ttps/add-a-catalog/" class="md-nav__link">
         
   
   
@@ -5247,7 +5236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ttps/update-a-catalog/" class="md-nav__link">
+      <a href="../../thehive/administration/ttps/update-a-catalog/" class="md-nav__link">
         
   
   
@@ -5275,7 +5264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ttps/remove-a-catalog/" class="md-nav__link">
+      <a href="../../thehive/administration/ttps/remove-a-catalog/" class="md-nav__link">
         
   
   
@@ -5303,7 +5292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/ttps/view-techniques-in-a-catalog/" class="md-nav__link">
+      <a href="../../thehive/administration/ttps/view-techniques-in-a-catalog/" class="md-nav__link">
         
   
   
@@ -5397,7 +5386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/how-to/fail2ban/" class="md-nav__link">
+      <a href="../../thehive/how-to/fail2ban/" class="md-nav__link">
         
   
   
@@ -5425,7 +5414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/how-to/splunk-integration/" class="md-nav__link">
+      <a href="../../thehive/how-to/splunk-integration/" class="md-nav__link">
         
   
   
@@ -5519,7 +5508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/thehive-flavored-markdown/" class="md-nav__link">
+      <a href="../../thehive/user-guides/thehive-flavored-markdown/" class="md-nav__link">
         
   
   
@@ -5547,7 +5536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/date-field-definitions-alerts-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/date-field-definitions-alerts-cases/" class="md-nav__link">
         
   
   
@@ -5625,7 +5614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/manage-user-settings/" class="md-nav__link">
+      <a href="../../thehive/user-guides/manage-user-settings/" class="md-nav__link">
         
   
   
@@ -5653,7 +5642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/manage-password/" class="md-nav__link">
+      <a href="../../thehive/user-guides/manage-password/" class="md-nav__link">
         
   
   
@@ -5681,7 +5670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/change-account-theme/" class="md-nav__link">
+      <a href="../../thehive/user-guides/change-account-theme/" class="md-nav__link">
         
   
   
@@ -5709,7 +5698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/view-permissions/" class="md-nav__link">
+      <a href="../../thehive/user-guides/view-permissions/" class="md-nav__link">
         
   
   
@@ -5737,7 +5726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/switch-organizations/" class="md-nav__link">
+      <a href="../../thehive/user-guides/switch-organizations/" class="md-nav__link">
         
   
   
@@ -5765,7 +5754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/log-out/" class="md-nav__link">
+      <a href="../../thehive/user-guides/log-out/" class="md-nav__link">
         
   
   
@@ -5851,7 +5840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/about-knowledge-base/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/about-knowledge-base/" class="md-nav__link">
         
   
   
@@ -5879,7 +5868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/create-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -5907,7 +5896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/delete-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -5935,7 +5924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
         
   
   
@@ -6021,7 +6010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/key-performance-indicators/key-performance-indicators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -6049,7 +6038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/measure-case-management-performance/" class="md-nav__link">
         
   
   
@@ -6077,7 +6066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
+      <a href="../../thehive/user-guides/key-performance-indicators/measure-alert-management-performance/" class="md-nav__link">
         
   
   
@@ -6213,7 +6202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts/" class="md-nav__link">
         
   
   
@@ -6241,7 +6230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/" class="md-nav__link">
         
   
   
@@ -6269,7 +6258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts/" class="md-nav__link">
         
   
   
@@ -6297,7 +6286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
+      <a href="../../thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization/" class="md-nav__link">
         
   
   
@@ -6325,7 +6314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account/" class="md-nav__link">
         
   
   
@@ -6353,7 +6342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts/" class="md-nav__link">
         
   
   
@@ -6489,7 +6478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/" class="md-nav__link">
         
   
   
@@ -6517,7 +6506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/create-a-case-template/" class="md-nav__link">
         
   
   
@@ -6545,7 +6534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/delete-a-case-template/" class="md-nav__link">
         
   
   
@@ -6573,7 +6562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-templates/export-import-a-case-template/" class="md-nav__link">
         
   
   
@@ -6659,7 +6648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/about-case-page-templates/" class="md-nav__link">
         
   
   
@@ -6687,7 +6676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/create-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -6715,7 +6704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/delete-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -6743,7 +6732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/export-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -6771,7 +6760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-page-templates/import-a-case-page-template/" class="md-nav__link">
         
   
   
@@ -6857,7 +6846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/about-case-report-templates/" class="md-nav__link">
         
   
   
@@ -6885,7 +6874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/widgets-case-report-templates/" class="md-nav__link">
         
   
   
@@ -6913,7 +6902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/create-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -6941,7 +6930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/add-remove-widgets-case-report-template/" class="md-nav__link">
         
   
   
@@ -6969,7 +6958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-templates/case-report-templates/delete-a-case-report-template/" class="md-nav__link">
         
   
   
@@ -7063,7 +7052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/about-custom-tags/" class="md-nav__link">
         
   
   
@@ -7091,7 +7080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/change-the-color-of-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -7119,7 +7108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/rename-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -7147,7 +7136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/delete-a-custom-tag/" class="md-nav__link">
         
   
   
@@ -7175,7 +7164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-custom-tags/view-custom-tag-statistics/" class="md-nav__link">
         
   
   
@@ -7261,7 +7250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/ui-configuration-settings/" class="md-nav__link">
         
   
   
@@ -7289,7 +7278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-creating-empty-cases/" class="md-nav__link">
         
   
   
@@ -7317,7 +7306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/prevent-merging-alerts-into-closed-cases/" class="md-nav__link">
         
   
   
@@ -7345,7 +7334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/select-similar-cases-alerts-filters/" class="md-nav__link">
         
   
   
@@ -7373,7 +7362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh/" class="md-nav__link">
         
   
   
@@ -7401,7 +7390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/remove-all-periods-option/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/remove-all-periods-option/" class="md-nav__link">
         
   
   
@@ -7429,7 +7418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators/" class="md-nav__link">
         
   
   
@@ -7457,7 +7446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-ui-configuration/allow-custom-link-schemes/" class="md-nav__link">
         
   
   
@@ -7543,7 +7532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/about-notifications/" class="md-nav__link">
         
   
   
@@ -7571,7 +7560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification/" class="md-nav__link">
         
   
   
@@ -7599,7 +7588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification/" class="md-nav__link">
         
   
   
@@ -7627,7 +7616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification/" class="md-nav__link">
         
   
   
@@ -7655,7 +7644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/" class="md-nav__link">
         
   
   
@@ -7733,7 +7722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users/" class="md-nav__link">
         
   
   
@@ -7761,7 +7750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr/" class="md-nav__link">
         
   
   
@@ -7789,7 +7778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/http-request/" class="md-nav__link">
         
   
   
@@ -7817,7 +7806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/mattermost/" class="md-nav__link">
         
   
   
@@ -7845,7 +7834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/slack/" class="md-nav__link">
         
   
   
@@ -7873,7 +7862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/teams/" class="md-nav__link">
         
   
   
@@ -7901,7 +7890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/webhook/" class="md-nav__link">
         
   
   
@@ -7929,7 +7918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/kafka/" class="md-nav__link">
         
   
   
@@ -7957,7 +7946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/redis/" class="md-nav__link">
         
   
   
@@ -7985,7 +7974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers/" class="md-nav__link">
         
   
   
@@ -8013,7 +8002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/responders/" class="md-nav__link">
         
   
   
@@ -8041,7 +8030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/function/" class="md-nav__link">
         
   
   
@@ -8127,7 +8116,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger/" class="md-nav__link">
         
   
   
@@ -8155,7 +8144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/" class="md-nav__link">
         
   
   
@@ -8241,7 +8230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/about-endpoints/" class="md-nav__link">
         
   
   
@@ -8269,7 +8258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-http-request-endpoint/" class="md-nav__link">
         
   
   
@@ -8297,7 +8286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-mattermost-endpoint/" class="md-nav__link">
         
   
   
@@ -8325,7 +8314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint/" class="md-nav__link">
         
   
   
@@ -8353,7 +8342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint/" class="md-nav__link">
         
   
   
@@ -8381,7 +8370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint/" class="md-nav__link">
         
   
   
@@ -8475,7 +8464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/about-functions/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/about-functions/" class="md-nav__link">
         
   
   
@@ -8503,7 +8492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/create-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/create-a-function/" class="md-nav__link">
         
   
   
@@ -8531,7 +8520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function/" class="md-nav__link">
         
   
   
@@ -8559,7 +8548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function/" class="md-nav__link">
         
   
   
@@ -8587,7 +8576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/functions-objects/" class="md-nav__link">
         
   
   
@@ -8673,7 +8662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders/" class="md-nav__link">
         
   
   
@@ -8701,7 +8690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder/" class="md-nav__link">
         
   
   
@@ -8729,7 +8718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder/" class="md-nav__link">
         
   
   
@@ -8757,7 +8746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-feeders/delete-a-feeder/" class="md-nav__link">
         
   
   
@@ -8843,7 +8832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -8871,7 +8860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-attachments/add-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -8899,7 +8888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -8927,7 +8916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -8955,7 +8944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization/" class="md-nav__link">
         
   
   
@@ -9049,7 +9038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/automate-tracking-pending-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/automate-tracking-pending-alerts/" class="md-nav__link">
         
   
   
@@ -9185,7 +9174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/about-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/about-alerts/" class="md-nav__link">
         
   
   
@@ -9263,7 +9252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert/" class="md-nav__link">
         
   
   
@@ -9291,7 +9280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert/" class="md-nav__link">
         
   
   
@@ -9327,7 +9316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
         
   
   
@@ -9355,7 +9344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert/" class="md-nav__link">
         
   
   
@@ -9383,7 +9372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case/" class="md-nav__link">
         
   
   
@@ -9411,7 +9400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
         
   
   
@@ -9439,7 +9428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/change-status-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/change-status-alert/" class="md-nav__link">
         
   
   
@@ -9467,7 +9456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings/" class="md-nav__link">
         
   
   
@@ -9495,7 +9484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/enrich-alert-details/" class="md-nav__link">
         
   
   
@@ -9523,7 +9512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp/" class="md-nav__link">
         
   
   
@@ -9551,7 +9540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert/" class="md-nav__link">
         
   
   
@@ -9579,7 +9568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/assign-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/assign-an-alert/" class="md-nav__link">
         
   
   
@@ -9607,7 +9596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
         
   
   
@@ -9635,7 +9624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert/" class="md-nav__link">
         
   
   
@@ -9663,7 +9652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
         
   
   
@@ -9691,7 +9680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/export-list-of-alerts/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/export-list-of-alerts/" class="md-nav__link">
         
   
   
@@ -9769,7 +9758,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
         
   
   
@@ -9797,7 +9786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
         
   
   
@@ -9825,7 +9814,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
         
   
   
@@ -9853,7 +9842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
         
   
   
@@ -9881,7 +9870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
         
   
   
@@ -9909,7 +9898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
         
   
   
@@ -9937,7 +9926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
         
   
   
@@ -9965,7 +9954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
         
   
   
@@ -9993,7 +9982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
         
   
   
@@ -10021,7 +10010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
         
   
   
@@ -10049,7 +10038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
         
   
   
@@ -10077,7 +10066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
         
   
   
@@ -10105,7 +10094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
         
   
   
@@ -10133,7 +10122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
         
   
   
@@ -10219,7 +10208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -10247,7 +10236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
         
   
   
@@ -10333,7 +10322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -10361,7 +10350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -10389,7 +10378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -10417,7 +10406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -10445,7 +10434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -10531,7 +10520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -10559,7 +10548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -10645,7 +10634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -10673,7 +10662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -10701,7 +10690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -10737,7 +10726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/about-audit-logs/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/about-audit-logs/" class="md-nav__link">
         
   
   
@@ -10765,7 +10754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/comment-on-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/comment-on-case-alert/" class="md-nav__link">
         
   
   
@@ -10793,7 +10782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/close-an-alert/" class="md-nav__link">
         
   
   
@@ -10821,7 +10810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/reopen-an-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/reopen-an-alert/" class="md-nav__link">
         
   
   
@@ -10907,7 +10896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/about-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/about-cases/" class="md-nav__link">
         
   
   
@@ -10985,7 +10974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case/" class="md-nav__link">
         
   
   
@@ -11013,7 +11002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case/" class="md-nav__link">
         
   
   
@@ -11049,7 +11038,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/create-a-new-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/create-a-new-case/" class="md-nav__link">
         
   
   
@@ -11077,7 +11066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/export-list-of-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/export-list-of-cases/" class="md-nav__link">
         
   
   
@@ -11105,7 +11094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/export-an-archived-case/" class="md-nav__link">
         
   
   
@@ -11133,7 +11122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/export-a-case-to-misp/" class="md-nav__link">
         
   
   
@@ -11161,7 +11150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/apply-a-case-template/" class="md-nav__link">
         
   
   
@@ -11189,7 +11178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/" class="md-nav__link">
         
   
   
@@ -11267,7 +11256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/about-observables/" class="md-nav__link">
         
   
   
@@ -11295,7 +11284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/add-an-observable/" class="md-nav__link">
         
   
   
@@ -11323,7 +11312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/update-an-observable-status/" class="md-nav__link">
         
   
   
@@ -11351,7 +11340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/edit-multiple-observables/" class="md-nav__link">
         
   
   
@@ -11379,7 +11368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/exclude-an-observable-from-similarity-checks/" class="md-nav__link">
         
   
   
@@ -11407,7 +11396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/delete-an-observable/" class="md-nav__link">
         
   
   
@@ -11435,7 +11424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable/" class="md-nav__link">
         
   
   
@@ -11463,7 +11452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job/" class="md-nav__link">
         
   
   
@@ -11491,7 +11480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/share-an-observable/" class="md-nav__link">
         
   
   
@@ -11519,7 +11508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/export-data-observables/" class="md-nav__link">
         
   
   
@@ -11547,7 +11536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/pin-an-observable/" class="md-nav__link">
         
   
   
@@ -11575,7 +11564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable/" class="md-nav__link">
         
   
   
@@ -11603,7 +11592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/import-observables-from-analyzer-reports/" class="md-nav__link">
         
   
   
@@ -11631,7 +11620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/observables/run-responders-on-an-observable/" class="md-nav__link">
         
   
   
@@ -11717,7 +11706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields/" class="md-nav__link">
         
   
   
@@ -11745,7 +11734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields/" class="md-nav__link">
         
   
   
@@ -11773,7 +11762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields/" class="md-nav__link">
         
   
   
@@ -11859,7 +11848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case/" class="md-nav__link">
         
   
   
@@ -11887,7 +11876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case/" class="md-nav__link">
         
   
   
@@ -11915,7 +11904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case/" class="md-nav__link">
         
   
   
@@ -12001,7 +11990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case/" class="md-nav__link">
         
   
   
@@ -12029,7 +12018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/alerts/unlink-alert-case/" class="md-nav__link">
         
   
   
@@ -12065,7 +12054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/change-status-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/change-status-case/" class="md-nav__link">
         
   
   
@@ -12093,7 +12082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings/" class="md-nav__link">
         
   
   
@@ -12121,7 +12110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/flag-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/flag-a-case/" class="md-nav__link">
         
   
   
@@ -12199,7 +12188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/about-tags/" class="md-nav__link">
         
   
   
@@ -12227,7 +12216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/tags/add-remove-tags/" class="md-nav__link">
         
   
   
@@ -12263,7 +12252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case/" class="md-nav__link">
         
   
   
@@ -12291,7 +12280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/merge-cases/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/merge-cases/" class="md-nav__link">
         
   
   
@@ -12319,7 +12308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/share-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/share-a-case/" class="md-nav__link">
         
   
   
@@ -12397,7 +12386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/about-ttps/" class="md-nav__link">
         
   
   
@@ -12425,7 +12414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/add-ttps/" class="md-nav__link">
         
   
   
@@ -12453,7 +12442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/export-ttps/" class="md-nav__link">
         
   
   
@@ -12481,7 +12470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/ttps/remove-ttps/" class="md-nav__link">
         
   
   
@@ -12567,7 +12556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/about-attachments/" class="md-nav__link">
         
   
   
@@ -12595,7 +12584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/add-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -12623,7 +12612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -12651,7 +12640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -12679,7 +12668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/" class="md-nav__link">
         
   
   
@@ -12765,7 +12754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines/" class="md-nav__link">
         
   
   
@@ -12793,7 +12782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -12821,7 +12810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline/" class="md-nav__link">
         
   
   
@@ -12849,7 +12838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline/" class="md-nav__link">
         
   
   
@@ -12877,7 +12866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline/" class="md-nav__link">
         
   
   
@@ -12963,7 +12952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports/" class="md-nav__link">
         
   
   
@@ -12991,7 +12980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report/" class="md-nav__link">
         
   
   
@@ -13027,7 +13016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/about-audit-logs/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/about-audit-logs/" class="md-nav__link">
         
   
   
@@ -13105,7 +13094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/" class="md-nav__link">
         
   
   
@@ -13133,7 +13122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case/" class="md-nav__link">
         
   
   
@@ -13169,7 +13158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert/" class="md-nav__link">
         
   
   
@@ -13197,7 +13186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/run-responders-on-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/run-responders-on-a-case/" class="md-nav__link">
         
   
   
@@ -13225,7 +13214,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/comment-on-case-alert/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/comment-on-case-alert/" class="md-nav__link">
         
   
   
@@ -13303,7 +13292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/about-case-pages/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/about-case-pages/" class="md-nav__link">
         
   
   
@@ -13331,7 +13320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/create-a-case-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/create-a-case-page/" class="md-nav__link">
         
   
   
@@ -13359,7 +13348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/delete-a-case-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/delete-a-case-page/" class="md-nav__link">
         
   
   
@@ -13387,7 +13376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/share-a-case-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/share-a-case-page/" class="md-nav__link">
         
   
   
@@ -13415,7 +13404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/knowledge-base/view-a-case-page/" class="md-nav__link">
+      <a href="../../thehive/user-guides/knowledge-base/view-a-case-page/" class="md-nav__link">
         
   
   
@@ -13451,7 +13440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/close-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/close-a-case/" class="md-nav__link">
         
   
   
@@ -13479,7 +13468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/reopen-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/reopen-a-case/" class="md-nav__link">
         
   
   
@@ -13507,7 +13496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/cases/delete-a-case/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/cases/delete-a-case/" class="md-nav__link">
         
   
   
@@ -13643,7 +13632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/about-tasks/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/about-tasks/" class="md-nav__link">
         
   
   
@@ -13671,7 +13660,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/create-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/create-a-task/" class="md-nav__link">
         
   
   
@@ -13699,7 +13688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/start-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/start-a-task/" class="md-nav__link">
         
   
   
@@ -13727,7 +13716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/change-task-status/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/change-task-status/" class="md-nav__link">
         
   
   
@@ -13755,7 +13744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/manage-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/manage-a-task/" class="md-nav__link">
         
   
   
@@ -13783,7 +13772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/export-list-of-tasks/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/export-list-of-tasks/" class="md-nav__link">
         
   
   
@@ -13811,7 +13800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/delete-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/delete-a-task/" class="md-nav__link">
         
   
   
@@ -13889,7 +13878,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task/" class="md-nav__link">
         
   
   
@@ -13917,7 +13906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task/" class="md-nav__link">
         
   
   
@@ -13953,7 +13942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task/" class="md-nav__link">
         
   
   
@@ -13981,7 +13970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/share-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/share-a-task/" class="md-nav__link">
         
   
   
@@ -14009,7 +13998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/close-a-task/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/close-a-task/" class="md-nav__link">
         
   
   
@@ -14095,7 +14084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/about-task-logs/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/about-task-logs/" class="md-nav__link">
         
   
   
@@ -14123,7 +14112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/create-a-task-log/" class="md-nav__link">
         
   
   
@@ -14151,7 +14140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/delete-a-task-log/" class="md-nav__link">
         
   
   
@@ -14179,7 +14168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task-log/" class="md-nav__link">
         
   
   
@@ -14207,7 +14196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task-log/" class="md-nav__link">
         
   
   
@@ -14301,7 +14290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/about-dashboards/" class="md-nav__link">
         
   
   
@@ -14329,7 +14318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/widgets-dashboards/" class="md-nav__link">
         
   
   
@@ -14357,7 +14346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/create-a-dashboard/" class="md-nav__link">
         
   
   
@@ -14385,7 +14374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/add-remove-widgets-dashboard/" class="md-nav__link">
         
   
   
@@ -14413,7 +14402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/delete-a-dashboard/" class="md-nav__link">
         
   
   
@@ -14441,7 +14430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/change-visibility-of-a-dashboard/" class="md-nav__link">
         
   
   
@@ -14469,7 +14458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/adjust-dashboard-refresh-frequency/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/adjust-dashboard-refresh-frequency/" class="md-nav__link">
         
   
   
@@ -14497,7 +14486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/set-dashboard-display-period/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/set-dashboard-display-period/" class="md-nav__link">
         
   
   
@@ -14525,7 +14514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard/" class="md-nav__link">
         
   
   
@@ -14553,7 +14542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/dashboard/download-a-dashboard/" class="md-nav__link">
         
   
   
@@ -14589,7 +14578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/preview-vs-detail-view/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/preview-vs-detail-view/" class="md-nav__link">
         
   
   
@@ -14617,7 +14606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-filtering-and-sorting/" class="md-nav__link">
         
   
   
@@ -14695,7 +14684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/views/about-views/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/views/about-views/" class="md-nav__link">
         
   
   
@@ -14723,7 +14712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/views/create-a-custom-view/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/views/create-a-custom-view/" class="md-nav__link">
         
   
   
@@ -14751,7 +14740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/views/update-a-custom-view/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/views/update-a-custom-view/" class="md-nav__link">
         
   
   
@@ -14779,7 +14768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/views/delete-a-custom-view/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/views/delete-a-custom-view/" class="md-nav__link">
         
   
   
@@ -14815,7 +14804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/about-autorefresh/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-autorefresh/" class="md-nav__link">
         
   
   
@@ -14843,7 +14832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/about-statistics/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-statistics/" class="md-nav__link">
         
   
   
@@ -14871,7 +14860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/user-guides/analyst-corner/about-live-feed/" class="md-nav__link">
+      <a href="../../thehive/user-guides/analyst-corner/about-live-feed/" class="md-nav__link">
         
   
   
@@ -14965,7 +14954,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/api-docs/" class="md-nav__link">
+      <a href="../../thehive/api-docs/" class="md-nav__link">
         
   
   
@@ -15107,7 +15096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.0/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.0/" class="md-nav__link">
         
   
   
@@ -15135,7 +15124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.1/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.1/" class="md-nav__link">
         
   
   
@@ -15163,7 +15152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.2/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.2/" class="md-nav__link">
         
   
   
@@ -15191,7 +15180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.3/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.3/" class="md-nav__link">
         
   
   
@@ -15219,7 +15208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.4/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.4/" class="md-nav__link">
         
   
   
@@ -15247,7 +15236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/release-notes/release-notes-5.5/" class="md-nav__link">
+      <a href="../../thehive/release-notes/release-notes-5.5/" class="md-nav__link">
         
   
   
@@ -15287,29 +15276,24 @@
       
   
   
-    
   
   
-  
     
     
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -15327,7 +15311,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -15345,7 +15329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../../cortex/" class="md-nav__link">
         
   
   
@@ -15423,7 +15407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../download/" class="md-nav__link">
+      <a href="../../cortex/download/" class="md-nav__link">
         
   
   
@@ -15456,8 +15440,6 @@
                 
   
   
-    
-  
   
   
     
@@ -15468,11 +15450,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -15493,7 +15475,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -15511,7 +15493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/authentication/" class="md-nav__link">
         
   
   
@@ -15539,7 +15521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../secret/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/secret/" class="md-nav__link">
         
   
   
@@ -15567,7 +15549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-configuration/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/advanced-configuration/" class="md-nav__link">
         
   
   
@@ -15595,7 +15577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/ssl/" class="md-nav__link">
         
   
   
@@ -15623,7 +15605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../step-by-step-guide/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
         
   
   
@@ -15651,7 +15633,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/" class="md-nav__link">
         
   
   
@@ -15679,7 +15661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analyzers-responders/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/analyzers-responders/" class="md-nav__link">
         
   
   
@@ -15707,7 +15689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../run-cortex-with-docker/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/run-cortex-with-docker/" class="md-nav__link">
         
   
   
@@ -15735,7 +15717,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../proxy-settings/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/proxy-settings/" class="md-nav__link">
         
   
   
@@ -15763,7 +15745,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../parameters-docker/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/parameters-docker/" class="md-nav__link">
         
   
   
@@ -15791,7 +15773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../../cortex/installation-and-configuration/database/" class="md-nav__link">
         
   
   
@@ -15816,37 +15798,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploy Cortex on Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../cortex/installation-and-configuration/deploy-cortex-on-kubernetes/" class="md-nav__link">
         
   
   
@@ -15862,72 +15817,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Infrastructure requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-ensure-all-users-can-access-files-on-the-shared-filesystem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Ensure all users can access files on the shared filesystem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-deploy-cortex" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Deploy Cortex
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -15998,7 +15887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/first-start/" class="md-nav__link">
+      <a href="../../cortex/user-guides/first-start/" class="md-nav__link">
         
   
   
@@ -16026,7 +15915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../user-guides/roles/" class="md-nav__link">
+      <a href="../../cortex/user-guides/roles/" class="md-nav__link">
         
   
   
@@ -16112,7 +16001,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/" class="md-nav__link">
+      <a href="../../cortex/operations/backup-restore/" class="md-nav__link">
         
   
   
@@ -16140,7 +16029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/input-output/" class="md-nav__link">
+      <a href="../../cortex/operations/input-output/" class="md-nav__link">
         
   
   
@@ -16168,7 +16057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
+      <a href="../../cortex/operations/upgrade_to_cortex_3_1_and_es7_x/" class="md-nav__link">
         
   
   
@@ -16196,7 +16085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/upgrade-cortex-4/" class="md-nav__link">
+      <a href="../../cortex/operations/upgrade-cortex-4/" class="md-nav__link">
         
   
   
@@ -16274,7 +16163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
+      <a href="../../thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice/" class="md-nav__link">
         
   
   
@@ -16302,7 +16191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/switch-to-manual-download-installation-cortex/" class="md-nav__link">
+      <a href="../../cortex/operations/switch-to-manual-download-installation-cortex/" class="md-nav__link">
         
   
   
@@ -16396,7 +16285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/api-guide/" class="md-nav__link">
+      <a href="../../cortex/api/api-guide/" class="md-nav__link">
         
   
   
@@ -16424,7 +16313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/how-to-create-an-analyzer/" class="md-nav__link">
+      <a href="../../cortex/api/how-to-create-an-analyzer/" class="md-nav__link">
         
   
   
@@ -16452,7 +16341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/how-to-create-a-responder/" class="md-nav__link">
+      <a href="../../cortex/api/how-to-create-a-responder/" class="md-nav__link">
         
   
   
@@ -16572,7 +16461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/" class="md-nav__link">
+      <a href="../../resources/" class="md-nav__link">
         
   
   
@@ -16600,7 +16489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/templates/" class="md-nav__link">
+      <a href="../../resources/templates/" class="md-nav__link">
         
   
   
@@ -16678,7 +16567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../resources/demo/" class="md-nav__link">
         
   
   
@@ -16706,7 +16595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../resources/howto-vm-demo/" class="md-nav__link">
         
   
   
@@ -16842,7 +16731,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/" class="md-nav__link">
         
   
   
@@ -16870,7 +16759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/thehive/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/thehive/" class="md-nav__link">
         
   
   
@@ -16898,7 +16787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/cortex/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/cortex/" class="md-nav__link">
         
   
   
@@ -16926,7 +16815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
         
   
   
@@ -16954,7 +16843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
         
   
   
@@ -16982,7 +16871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -17068,7 +16957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/" class="md-nav__link">
         
   
   
@@ -17096,7 +16985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/thehive/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/thehive/" class="md-nav__link">
         
   
   
@@ -17124,7 +17013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/cortex/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/cortex/" class="md-nav__link">
         
   
   
@@ -17152,7 +17041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
         
   
   
@@ -17180,7 +17069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
         
   
   
@@ -17208,7 +17097,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -17236,7 +17125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
+      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
         
   
   
@@ -17380,7 +17269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/thehive4py/" class="md-nav__link">
+      <a href="../../resources/thehive4py/" class="md-nav__link">
         
   
   
@@ -17408,7 +17297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/thehive4go/" class="md-nav__link">
+      <a href="../../resources/thehive4go/" class="md-nav__link">
         
   
   
@@ -17436,7 +17325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/cortex4py/" class="md-nav__link">
+      <a href="../../resources/cortex4py/" class="md-nav__link">
         
   
   
@@ -17464,7 +17353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/cortexutils/" class="md-nav__link">
+      <a href="../../resources/cortexutils/" class="md-nav__link">
         
   
   
@@ -17508,7 +17397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/security/" class="md-nav__link">
+      <a href="../../resources/security/" class="md-nav__link">
         
   
   
@@ -17554,64 +17443,6 @@
   
 
 
-  <nav class="md-path" aria-label="Navigation">
-    <ol class="md-path__list">
-      
-        
-  
-  
-    <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
-        
-  <span class="md-ellipsis">
-    Home
-  </span>
-
-      </a>
-    </li>
-  
-
-      
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Cortex
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../authentication/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    Installation &amp; configuration
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-    </ol>
-  </nav>
-
               
               <article class="md-content__inner md-typeset">
                 
@@ -17619,181 +17450,12 @@
 
 
 
-<h1 id="deploy-cortex-on-kubernetes">Deploy Cortex on Kubernetes<a class="headerlink" href="#deploy-cortex-on-kubernetes" title="Permanent link">#</a></h1>
-<p>Deploy Cortex on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts" target="_blank">the StrangeBee Helm chart repository</a>.</p>
+  <h1>Kubernetes chart poc only</h1>
+
 <div class="admonition note">
 <p class="admonition-title">POC only</p>
 <p>The default Kubernetes deployment provided by this chart is intended for POC use only. For production environments, you must adapt the deployment and configuration to your infrastructure and requirements. If you're unsure how to do this, contact the StrangeBee team for guidance.</p>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Dependency image</p>
-<p>The default Elasticsearch image used by the dependency Helm chart comes from <a href="https://bitnami.com/" target="_blank">Bitnami</a>.  </p>
-<p>Following <a href="https://news.broadcom.com/app-dev/broadcom-introduces-bitnami-secure-images-for-production-ready-containerized-applications" target="_blank">Bitnami decision to stop maintaining multiple freely available image versions</a>, StrangeBee Helm charts now reference the <code>bitnamilegacy</code> repository for Elasticsearch.</p>
-<p>This has important consequences:</p>
-<ul>
-<li>This legacy image won't receive security updates and will become increasingly vulnerable over time. You may continue to use it at your own risk, but it isn't production-ready.</li>
-<li>You can pay Bitnami for access to updated images and configure the Helm chart to reference them.</li>
-<li>Alternatively, you can deactivate the dependency Helm charts and bring your own Elasticsearch deployment.</li>
-</ul>
-</div>
-<h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
-<p>The default deployment includes:</p>
-<ul>
-<li>A single Cortex application pod</li>
-<li>A one-node Elasticsearch cluster for search indexing, using Elasticsearch 8</li>
-<li>Shared storage for analyzer job data</li>
-</ul>
-<h2 id="infrastructure-requirements">Infrastructure requirements<a class="headerlink" href="#infrastructure-requirements" title="Permanent link">#</a></h2>
-<ul>
-<li>Kubernetes cluster v1.23.0 or later</li>
-<li>Helm v3.8.0 or later</li>
-<li>Minimum resources per node: see <a href="../#hardware-requirements">Cortex Installation System Requirements</a></li>
-<li>StorageClass supporting <code>ReadWriteMany</code> access mode</li>
-<li>Network policies allowing inter-pod communication</li>
-</ul>
-<h2 id="step-1-ensure-all-users-can-access-files-on-the-shared-filesystem">Step 1: Ensure all users can access files on the shared filesystem<a class="headerlink" href="#step-1-ensure-all-users-can-access-files-on-the-shared-filesystem" title="Permanent link">#</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Configuration errors</p>
-<p>Improperly configured shared filesystems can cause errors when running jobs with Cortex.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Why a shared filesystem</p>
-<p>When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. Without a shared filesystem accessible by both the Cortex pod and these analyzer and responder pods, they can't access the data they need to operate, causing the jobs to fail.</p>
-<p>Kubernetes supports several methods for sharing filesystems between pods, including:</p>
-<ul>
-<li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#nfs" target="_blank">PV using an NFS server</a></li>
-<li>Dedicated storage solutions like <a href="https://longhorn.io/" target="_blank">Longhorn</a> or <a href="https://rook.io/" target="_blank">Rook</a></li>
-</ul>
-<p>This guide focuses on configuring a PV using an NFS server, with an example for <a href="#example-deploy-cortex-using-aws-efs">AWS Elastic File System (EFS)</a>.</p>
-</div>
-<p>At runtime, Cortex and its jobs run on different pods and may use different user IDs (UIDs) and group IDs (GIDs):</p>
-<ul>
-<li>Cortex defaults to uid:gid <code>1001:1001</code>.</li>
-<li>Analyzers may use different uid:gid, such as <code>1000:1000</code> or <code>0:0</code> if running as root.</li>
-</ul>
-<p>To prevent permission errors when reading or writing files on the shared filesystem, <a href="https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html" target="_blank">configure the NFS server</a> with the <code>all_squash</code> parameter. This ensures all filesystem operations use uid:gid <code>65534:65534</code>, regardless of the user's actual UID and GID.</p>
-<h2 id="step-2-deploy-cortex">Step 2: Deploy Cortex<a class="headerlink" href="#step-2-deploy-cortex" title="Permanent link">#</a></h2>
-<h3 id="deploy-with-default-configuration">Deploy with default configuration<a class="headerlink" href="#deploy-with-default-configuration" title="Permanent link">#</a></h3>
-<div class="admonition info">
-<p class="admonition-title">Service account</p>
-<p>A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Using an existing PV</p>
-<p>The <code>cortex</code> Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.</p>
-</div>
-<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and SA during deployment.</p>
-<p>The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
-<ol>
-<li>
-<p>Add the StrangeBee Helm repository</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>strangebee<span class="w"> </span>https://strangebeecorp.github.io/helm-charts
-</code></pre></div>
-</li>
-<li>
-<p>Update your local Helm repositories</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>update
-</code></pre></div>
-</li>
-<li>
-<p>Generate a unique HTTP secret and update the <code>httpSecret</code> value in your <code>values.yaml</code> file.</p>
-</li>
-<li>
-<p>Create a release using the <code>cortex</code> Helm chart</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/cortex
-</code></pre></div>
-</li>
-</ol>
-<div class="admonition warning">
-<p class="admonition-title">First start</p>
-<p>At first start, you must access the Cortex web page to update the Elasticsearch database.</p>
-</div>
-<p>For more options, see <a href="https://helm.sh/docs/helm/helm_install/" target="_blank">the Helm documentation for installation</a>.</p>
-<div class="admonition info">
-<p class="admonition-title">Dependency</p>
-<p>The <code>cortex</code> Helm chart relies on the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Stack</a> by default as the search index.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Upgrades</p>
-<p>To upgrade your release to the latest version of the <code>cortex</code> Helm chart, run:
-</p><div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/cortex
-</code></pre></div>
-For additional options and best practices, see <a href="https://helm.sh/docs/helm/helm_upgrade/" target="_blank">the Helm upgrade documentation</a>.<p></p>
-</div>
-<h3 id="production-configuration">Production configuration<a class="headerlink" href="#production-configuration" title="Permanent link">#</a></h3>
-<p>The default <code>cortex</code> Helm chart bundles all dependencies for quick deployment but uses development-oriented configurations. Production deployments require adjustments to Cortex and its dependencies for security, performance, and reliability.</p>
-<p>Use the following command to view all available configuration options for the <code>cortex</code> Helm chart:</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/cortex
-</code></pre></div>
-<p>If you want to run Cortex as a multi-node cluster, increase the <code>cortex.replicas</code> value in <code>values.yaml</code>. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust <code>elasticsearch.master.replicaCount</code> to scale Elasticsearch accordingly.</p>
-<p>For more information on customization, see <a href="https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing" target="_blank">the dedicated Helm documentation</a>. You can also review the available options for the dependency.</p>
-<h4 id="storage-configuration">Storage configuration<a class="headerlink" href="#storage-configuration" title="Permanent link">#</a></h4>
-<div class="admonition warning">
-<p class="admonition-title">Shared storage requirement</p>
-<p>Cortex requires a shared PVC with <code>ReadWriteMany</code> access mode to allow multiple pods to read and write data simultaneously—essential for job inputs and outputs.</p>
-</div>
-<p>By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports <code>ReadWriteMany</code> to avoid deployment issues or target a StorageClass in your cluster compatible with this access mode.</p>
-<p>Common solutions include:</p>
-<ul>
-<li>Running an NFS server reachable from your cluster and creating a PV targeting it</li>
-<li>Using dedicated storage solutions like <a href="https://longhorn.io/" target="_blank">Longhorn</a> or <a href="https://rook.io/" target="_blank">Rook</a></li>
-<li>Leveraging cloud provider-specific solutions like <a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver" target="_blank">AWS EFS with the EFS CSI Driver</a></li>
-</ul>
-<p>Also note that Cortex stores data in Elasticsearch. Regular backups are strongly recommended to prevent data loss, especially when deploying Elasticsearch on Kubernetes using the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Stack</a>.</p>
-<h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
-<p>This chart deploys a master-eligible and general-purpose Elasticsearch cluster with a single node, using Elasticsearch 8 by default.</p>
-<p>You can review the <a href="https://github.com/bitnami/charts/tree/main/bitnami/elasticsearch" target="_blank">Bitnami Elasticsearch Helm chart</a> for available configuration options.</p>
-<div class="admonition note">
-<p class="admonition-title">Same Elasticsearch instance for both TheHive and Cortex</p>
-<p>Using the same Elasticsearch instance for both TheHive and Cortex isn't recommended. If this setup is necessary, ensure proper connectivity and configuration, and use an Elasticsearch version that is compatible with both applications. Be aware that sharing an Elasticsearch instance creates an interdependency that may lead to issues during updates or downtime.</p>
-</div>
-<h4 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h4>
-<p>See <a href="../../../thehive/administration/cortex/add-a-cortex-server/">Add a Cortex Server</a> for detailed instructions.</p>
-<p>When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service DNS as the server URL.</p>
-<div class="highlight"><pre><span></span><code>http://cortex.&lt;namespace&gt;.svc:9001
-</code></pre></div>
-<h3 id="example-deploy-cortex-using-aws-efs">Example: Deploy Cortex using AWS EFS<a class="headerlink" href="#example-deploy-cortex-using-aws-efs" title="Permanent link">#</a></h3>
-<h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
-<p>Before setting up the PV for AWS EFS, complete the following steps:</p>
-<ul>
-<li><a href="https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html">Create an Identity and Access Management (IAM) role</a> to allow the EFS CSI driver to interact with EFS.</li>
-<li>Install the EFS CSI driver on your Kubernetes cluster using one of the following methods:<ul>
-<li><a href="https://www.eksworkshop.com/docs/fundamentals/storage/efs/efs-csi-driver" target="_blank">EKS add-ons</a> (recommended)</li>
-<li><a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/releases?q=helm-chart&amp;expanded=true" target="_blank">Official Helm chart</a></li>
-</ul>
-</li>
-<li><a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/docs/efs-create-filesystem.md" target="_blank">Create an EFS filesystem</a> and note the associated EFS filesystem ID.</li>
-</ul>
-<h4 id="1-create-a-storageclass-for-efs">1. Create a StorageClass for EFS<a class="headerlink" href="#1-create-a-storageclass-for-efs" title="Permanent link">#</a></h4>
-<div class="admonition note">
-<p class="admonition-title">Reference example</p>
-<p>The following manifests are based on the <a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods" target="_blank">EFS CSI driver multiple pods example</a>.</p>
-</div>
-<p>Create a StorageClass that references your EFS filesystem:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.k8s.io/v1</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efs-sc</span>
-<span class="nt">provisioner</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efs.csi.aws.com</span>
-<span class="c1"># https://github.com/kubernetes-sigs/aws-efs-csi-driver?tab=readme-ov-file#storage-class-parameters-for-dynamic-provisioning</span>
-<span class="nt">parameters</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">provisioningMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">efs-ap</span><span class="w"> </span><span class="c1"># EFS access point provisioning mode</span>
-<span class="w">  </span><span class="nt">fileSystemId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fs-01234567</span><span class="w"> </span><span class="c1"># Replace with your EFS filesystem ID</span>
-<span class="w">  </span><span class="nt">directoryPerms</span><span class="p">:</span><span class="w"> </span><span class="s">"700"</span><span class="w"> </span><span class="c1"># Permissions for newly created directories</span>
-<span class="w">  </span><span class="nt">uid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1001</span><span class="w"> </span><span class="c1"># User ID to set file permissions</span>
-<span class="w">  </span><span class="nt">gid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1001</span><span class="w"> </span><span class="c1"># Group ID to set file permissions</span>
-<span class="w">  </span><span class="nt">ensureUniqueDirectory</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span><span class="w"> </span><span class="c1"># Set to false to allow shared folder access between Cortex and job containers</span>
-<span class="w">  </span><span class="nt">subPathPattern</span><span class="p">:</span><span class="w"> </span><span class="s">"${.PVC.namespace}/${.PVC.name}"</span><span class="w"> </span><span class="c1"># Optional subfolder structure inside the NFS filesystem</span>
-</code></pre></div>
-<h4 id="2-create-a-pvc-using-the-efs-storageclass">2. Create a PVC using the EFS StorageClass<a class="headerlink" href="#2-create-a-pvc-using-the-efs-storageclass" title="Permanent link">#</a></h4>
-<p>Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.</p>
-<p>Use the <code>cortex</code> Helm chart to configure the storageClass value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the <a href="https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml" target="_blank"><code>values.yaml</code></a> file and look for the <code>persistentVolumeClaim</code> section.</p>
-<h2>Next steps</h2>
-
-<ul>
-<li><a href="../analyzers-responders/">Analyzers &amp; Responders</a></li>
-<li><a href="../advanced-configuration/">Advanced Configuration</a></li>
-</ul>
 
 
 
@@ -17907,12 +17569,12 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate", "navigation.path", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../assets/js/main.js"></script>
+        <script src="../../assets/js/main.js"></script>
       
     
   

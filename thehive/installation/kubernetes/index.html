@@ -17610,6 +17610,10 @@
 
 <h1 id="deploy-thehive-on-kubernetes">Deploy TheHive on Kubernetes<a class="headerlink" href="#deploy-thehive-on-kubernetes" title="Permanent link">#</a></h1>
 <p>Deploy TheHive on a Kubernetes cluster using <a href="https://github.com/StrangeBeeCorp/helm-charts" target="_blank">the StrangeBee Helm chart repository</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">POC only</p>
+<p>The default Kubernetes deployment provided by this chart is intended for POC use only. For production environments, you must adapt the deployment and configuration to your infrastructure and requirements. If you're unsure how to do this, contact the StrangeBee team for guidance.</p>
+</div>
 <div class="admonition danger">
 <p class="admonition-title">Dependency images</p>
 <p>The default Cassandra and Elasticsearch images used by the dependency Helm charts come from <a href="https://bitnami.com/" target="_blank">Bitnami</a>.  </p>
@@ -17685,7 +17689,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <p>Use the following command to view all available configuration options for the <code>thehive</code> Helm chart:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>show<span class="w"> </span>values<span class="w"> </span>strangebee/thehive
 </code></pre></div>
-<p>If you want to run TheHive as a multi-node cluster, increase the <code>thehive.replicas</code> value in <code>values.yaml</code>. If you're using the bundled dependencies, also adjust the <code>cassandra.replicaCount</code> and <code>elasticsearch.master.replicaCount</code> values to scale Cassandra and Elasticsearch accordingly.</p>
+<p>If you want to run TheHive as a multi-node cluster, increase the <code>thehive.replicas</code> value in <code>values.yaml</code>. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust <code>cassandra.replicaCount</code> and <code>elasticsearch.master.replicaCount</code> to scale Cassandra and Elasticsearch accordingly.</p>
 <div class="admonition info">
 <p class="admonition-title">License</p>
 <p>The Community license supports only a single node. To deploy multiple TheHive nodes, you must <a href="../licenses/license/">upgrade to a Gold or Platinum license</a>. A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.</p>
