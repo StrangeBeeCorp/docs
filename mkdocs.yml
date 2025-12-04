@@ -56,6 +56,7 @@ plugins:
       exclude:
         - includes/*
         - thehive/operations/configure-audit-logs-storage-elasticsearch.md
+        - thehive/third-party-software-licenses.md
   - awesome-pages
   - glightbox
   - mkdocs-video:
@@ -394,6 +395,8 @@ extra:
             url: 'https://strangebee.com/blog/'
           - text: "Success stories"
             url: 'https://strangebee.com/success-stories/'
+          - text: "Third-party software licenses"
+            url: '/thehive/third-party-software-licenses/'
 
   analytics:
     provider: google
