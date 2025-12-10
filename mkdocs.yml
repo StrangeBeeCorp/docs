@@ -702,7 +702,7 @@ nav:
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
-          - 'Run a Function on an Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Export a List of Alerts': thehive/user-guides/analyst-corner/alerts/export-list-of-alerts.md
@@ -738,7 +738,7 @@ nav:
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
           - 'About Audit Logs': thehive/user-guides/organization/about-audit-logs.md
-          - 'Comment on Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
+          - 'Comment on Cases or Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
@@ -811,9 +811,9 @@ nav:
           - 'Manage Case Visibility':
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
-          - 'Run a Function on a Case': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
-          - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
+          - 'Comment on Cases or Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
           - 'Case Pages':
             - 'About Case Pages': thehive/user-guides/knowledge-base/about-case-pages.md
             - 'Create a Page': thehive/user-guides/knowledge-base/create-a-case-page.md
