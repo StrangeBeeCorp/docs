@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for adding a local *HttpRequest* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+Add a local *HttpRequest* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive to send HTTP requests to external services.
 
 {% include-markdown "includes/local-global-endpoints.md" %}
 

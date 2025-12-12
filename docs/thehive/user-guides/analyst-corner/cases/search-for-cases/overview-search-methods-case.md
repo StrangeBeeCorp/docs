@@ -2,10 +2,6 @@
 
 TheHive offers multiple methods for searching [cases](../about-cases.md), each tailored to specific scenarios.
 
-This topic provides an overview of the available search methods, compares their features, and explains when to use each one.
-
-Use this guide to choose the most effective method for your needs.
-
 ## Search method comparison
 
 | Method | Filter options | Result scope | Allows bulk actions | Use case |

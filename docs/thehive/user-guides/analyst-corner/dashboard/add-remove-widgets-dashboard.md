@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageDashboard` -->
 
-This topic provides step-by-step instructions for adding or removing [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive.
+Add or remove [widgets](widgets-dashboards.md) in a [dashboard](about-dashboards.md) in TheHive to customize the data visualizations and metrics displayed.
 
 ## Add widgets in a dashboard
 

@@ -68,7 +68,7 @@ Alerts can't close if any required [custom fields](../../../administration/custo
 * [Find an Alert](../alerts/search-for-alerts/find-an-alert.md)
 * [Enrich Alert Details](./enrich-alert-details.md)
 * [Assign an Alert](./assign-an-alert.md)
-* [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Start Working on an Alert](../alerts/start-investigating-an-alert.md)
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Change an Alert Status](change-status-alert.md)
 * [Create a Case from an Alert](create-a-case-from-an-alert.md)

@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for adding and removing permissions from a [profile](about-profiles.md) in TheHive.
+Add or remove permissions from a [profile](about-profiles.md) in TheHive to customize access control for users assigned to that profile.
 
 !!! note "Predefined profiles"
     You can't modify the predefined Admin, Org-Admin, and Read-Only profiles.

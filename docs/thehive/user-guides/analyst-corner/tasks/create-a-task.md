@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTask` -->
 
-This topic provides step-by-step instructions for creating a [task](about-tasks.md) in TheHive.
+Create a [task](about-tasks.md) in TheHive to organize and track investigative work within a case.
 
 <h2>Procedure</h2>
 

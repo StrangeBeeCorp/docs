@@ -1,9 +1,5 @@
 # About Analyzer Templates
 
-This topic explains what [analyzer](../cortex/about-cortex.md) templates are in TheHive.
-
-## Purpose
-
 Analyzer templates define how analyzer reports are displayed after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
 ## Format

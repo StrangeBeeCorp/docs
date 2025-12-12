@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for adding a global [endpoint](../user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md) in TheHive.
-
-Once created, this global endpoint becomes available to all organizations you choose to share it with.
+Global [endpoints](../user-guides/organization/configure-organization/manage-endpoints/about-endpoints.md) in TheHive are available to all organizations you choose to share them with.
 
 <h2>Procedure</h2>
 

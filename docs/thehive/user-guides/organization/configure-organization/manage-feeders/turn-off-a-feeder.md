@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for turning off an [alert feeder](about-feeders.md) in TheHive.
+Turn off an [alert feeder](about-feeders.md) in TheHive to temporarily stop it from retrieving data from an external service.
 
 <h2>Procedure</h2>
 

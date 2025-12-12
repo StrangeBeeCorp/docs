@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTag` -->
 
-This topic provides step-by-step instructions for deleting a [custom tag](about-custom-tags.md) in TheHive.
+Delete a [custom tag](about-custom-tags.md) in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

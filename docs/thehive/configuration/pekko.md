@@ -4,8 +4,6 @@
 
 With the release of version 5.4, TheHive transitioned from the Scala framework Akka to [Apache Pekko](https://pekko.apache.org/){target=_blank}. This change enhances performance and introduces several updates that may require modifications to your `application.conf` file.
 
-This topic provides instructions on updating your configuration to support this change.
-
 !!! note "Version compatibility "
     This documentation applies to TheHive version 5.4 and later. For instructions related to earlier versions, refer to the [Akka Configuration](./akka.md) topic.
 

@@ -2,11 +2,9 @@
 
 <!-- md:permission `managePageTemplate` -->
 
-This topic provides step-by-step instructions for creating a [case page template](about-case-page-templates.md) in TheHive.
+Create a [case page template](about-case-page-templates.md) in TheHive to streamline page creation within cases by automatically prefilling content.
 
-Case page templates streamline page creation within cases in TheHive by automatically prefilling content.
-
-To import an existing case template from another organization or TheHive instance, refer to the [Import a Case Page Template](import-a-case-page-template.md) topic.
+To import an existing case template from another organization or TheHive instance, refer to [Import a Case Page Template](import-a-case-page-template.md).
 
 <h2>Procedure</h2>
 

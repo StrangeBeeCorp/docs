@@ -2,8 +2,6 @@
 
 A dashboard compiles and visualizes data to provide key insights at a glance.
 
-This topic describes dashboards in the context of TheHive, including their functionality.
-
 !!! tip "Specific case reporting"
     To access reporting data for a specific case, use the [case report](../../analyst-corner/cases/case-reports/about-case-reports.md) and [case timeline](../cases/case-timelines/about-case-timelines.md) features.
 

@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] manageTaxonomy` -->
 
-This topic provides step-by-step instructions for activating and deactivating a [taxonomy](about-taxonomies.md) in TheHive.
-
-Taxonomies are catalogs of structured tags managed in TheHive.
+Activate or deactivate a [taxonomy](about-taxonomies.md) in TheHive to control which catalogs of structured tags are available for use.
 
 !!! warning "Manual activation required"
     By default, MISP taxonomies aren't activated. You must [activate them manually](activate-deactivate-a-taxonomy.md).

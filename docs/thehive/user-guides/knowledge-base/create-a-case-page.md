@@ -2,9 +2,9 @@
 
 <!-- md:permission `managePage` -->
 
-This topic provides step-by-step instructions for creating a [case page](about-case-pages.md) in TheHive.
+Create a [case page](about-case-pages.md) in TheHive to store temporary and case-specific knowledge that's useful during investigations but isn't retained long term.
 
-Use this procedure to store temporary, case-specific knowledge that’s useful during investigations but isn’t retained long term. To preserve information from case pages for the long term, manually copy the content to a [Knowledge Base page](about-knowledge-base.md).
+To preserve information from case pages for the long term, manually copy the content to a [Knowledge Base page](about-knowledge-base.md).
 
 <h2>Procedure</h2>
 

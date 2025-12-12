@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for removing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
-
-Use this procedure to remove attachments you added manually or that were previously included in case or alert descriptions, summaries, or task logs.
+Remove an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive, including those added manually or previously included in descriptions, summaries, or task logs.
 
 ## Remove an attachment from a case
 

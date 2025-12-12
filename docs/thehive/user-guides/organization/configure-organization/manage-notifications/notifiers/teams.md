@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) in TheHive to send automated notifications to Microsoft Teams channels based on specific triggers.
 
 !!! note "Notifier availability"
     The *Microsoft Teams* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:

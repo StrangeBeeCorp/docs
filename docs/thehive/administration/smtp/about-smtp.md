@@ -1,9 +1,5 @@
 # About SMTP
 
-This topic explains what Simple Mail Transfer Protocol (SMTP) is and how it's used in TheHive.
-
-## What's SMTP
-
 Simple Mail Transfer Protocol (SMTP) is the standard protocol used on the internet for sending email messages. It's responsible solely for email delivery and typically requires client authentication via credentials before granting access.
 
 ## Benefits of using an SMTP server

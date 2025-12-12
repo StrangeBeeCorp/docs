@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for removing a [Cortex](about-cortex.md) server in TheHive.
+Remove a [Cortex](about-cortex.md) server connection from TheHive when it's no longer needed.
 
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.

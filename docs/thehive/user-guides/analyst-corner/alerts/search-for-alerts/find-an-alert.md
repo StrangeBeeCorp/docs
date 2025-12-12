@@ -70,7 +70,7 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 
 <h2>Next steps</h2>
 
-* [Start Investigating an Alert](../start-investigating-an-alert.md)
+* [Start Working on an Alert](../start-investigating-an-alert.md)
 * [Assign an Alert](../assign-an-alert.md)
 * [Ignore Alert Updates from MISP](../ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](../add-an-alert-to-an-existing-case.md)

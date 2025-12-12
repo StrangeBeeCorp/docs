@@ -1,6 +1,6 @@
 # View a Knowledge Base Page
 
-This topic provides step-by-step instructions for viewing a [Knowledge Base](about-knowledge-base.md) page in TheHive.
+View a [Knowledge Base](about-knowledge-base.md) page in TheHive to access preserved knowledge and reference materials.
 
 <h2>Procedure</h2>
 

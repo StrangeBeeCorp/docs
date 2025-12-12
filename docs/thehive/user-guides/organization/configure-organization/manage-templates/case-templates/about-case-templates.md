@@ -2,8 +2,6 @@
 
 Case templates streamline case creation in TheHive by automatically filling predefined fields.
 
-This topic provides an overview of case template usage in TheHive.
-
 ## Benefits
 
 Use case templates to:

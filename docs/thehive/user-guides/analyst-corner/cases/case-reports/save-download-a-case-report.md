@@ -2,9 +2,7 @@
 
 <!-- md:version 5.4 --> <!-- md:permission `manageCaseReport` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for saving and downloading a [case report](about-case-reports.md) in TheHive.
-
-Use this procedure to report to your management and provide a follow-up on a case investigation.
+Save and download a [case report](about-case-reports.md) in TheHive to provide follow-up documentation and report to your management on case investigations.
 
 {% include-markdown "includes/other-reports-cases-from-case-reports.md" %}
 

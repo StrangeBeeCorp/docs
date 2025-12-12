@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageCustomField` -->
 
-This topic provides step-by-step instructions for managing [custom fields](../custom-fields/about-custom-fields.md) in TheHive.
+Manage [custom fields](../custom-fields/about-custom-fields.md) in TheHive by setting them as mandatory or optional, defining predefined values, and organizing them into groups.
 
 ## Set a custom field as mandatory or optional
 

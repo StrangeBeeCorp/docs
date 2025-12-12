@@ -1,6 +1,6 @@
 # Export a List of Cases
 
-This topic provides step-by-step instructions for exporting a list of [cases](about-cases.md) in TheHive.
+Export a list of [cases](about-cases.md) in TheHive to share information, create reports, or analyze data outside the platform.
 
 <h2>Procedure</h2>
 

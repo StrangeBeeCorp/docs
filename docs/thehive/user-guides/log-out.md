@@ -1,6 +1,6 @@
 # Log Out of your Account
 
-This topic provides step-by-step instructions for logging out of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
+Log out of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive when you're finished working or need to switch accounts.
 
 <h2>Procedure</h2>
 

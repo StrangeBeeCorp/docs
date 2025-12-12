@@ -1,6 +1,6 @@
 # Adjust Dashboard Refresh Frequency
 
-This topic provides step-by-step instructions for adjusting [dashboard](about-dashboards.md) refresh frequency in TheHive.
+Adjust [dashboard](about-dashboards.md) refresh frequency in TheHive to control how often dashboard data updates automatically.
 
 If you need to pause dashboard refresh and prevent users from re-enabling it due to performance issues, see [Pause Dashboard Refresh](../../organization/configure-organization/manage-ui-configuration/pause-dashboard-refresh.md).
 

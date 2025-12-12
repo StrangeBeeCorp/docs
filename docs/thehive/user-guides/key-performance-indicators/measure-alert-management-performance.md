@@ -1,8 +1,6 @@
 # Measure Alert Management Performance
 
-This topic provides step-by-step instructions for measuring alert management performance in TheHive.
-
-You can measure alert management performance [for all alerts in your organization](#measure-the-performance-of-all-alerts-in-your-organization) or [a specific case](#measure-the-performance-of-a-specific-alert).
+Measure alert management performance in TheHive [for all alerts in your organization](#measure-the-performance-of-all-alerts-in-your-organization) or [for a specific alert](#measure-the-performance-of-a-specific-alert).
 
 If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
 

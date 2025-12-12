@@ -2,11 +2,7 @@
 
 <!-- md:permission `manageComment` -->
 
-This topic provides step-by-step instructions for adding comments to a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive.
-
-Comments are visible to all organizations that share the case or alert.
-
-Use this procedure to provide feedback or leave notes for your team.
+Add comments to a [case](about-cases.md) or an [alert](../alerts/about-alerts.md) in TheHive to provide feedback or leave notes for your team. Comments are visible to all organizations that share the case or alert.
 
 <h2>Procedure</h2>
 

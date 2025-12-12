@@ -1,6 +1,6 @@
 # Unlink an Alert and a Case
 
-This topic provides step-by-step instructions for unlinking an [alert](about-alerts.md) and a [case](../cases/about-cases.md) in TheHive.
+Unlink an [alert](about-alerts.md) and a [case](../cases/about-cases.md) in TheHive when they're no longer related or if the alert was linked incorrectly.
 
 An alert is automatically linked to a case when you [create a case from an alert](create-a-case-from-an-alert.md) or [add an alert to an existing case](add-an-alert-to-an-existing-case.md).
 

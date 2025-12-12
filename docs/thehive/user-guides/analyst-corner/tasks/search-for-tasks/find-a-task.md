@@ -1,6 +1,6 @@
 # Find a Task
 
-This topic provides step-by-step instructions for using various methods to search for a [task](../about-tasks.md) in TheHive.
+Search for a [task](../about-tasks.md) in TheHive using various methods.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 

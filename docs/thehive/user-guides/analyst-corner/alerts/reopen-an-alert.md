@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageAlert/reopen` -->
 
-This topic provides step-by-step instructions for reopening an [alert](about-alerts.md) in TheHive.
-
-Use this procedure to reopen a closed alert and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *Closed* stage to the *In progress* stage.
+Reopen a closed [alert](about-alerts.md) in TheHive and change its [status](../../../administration/status/about-statuses.md) from the *Closed* stage to the *In progress* stage.
 
 <h2>Procedure</h2>
 

@@ -1,6 +1,6 @@
 # Manage your Account Settings
 
-This topic provides step-by-step instructions for managing the settings of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
+Manage various settings of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive, including your avatar, name, email address, API key, multi-factor authentication, homepage, date format, and beta features.
 
 ## Edit your avatar
 

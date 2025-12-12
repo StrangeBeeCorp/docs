@@ -1,6 +1,6 @@
 # Export Data from Observables
 
-This topic provides step-by-step instructions for exporting data from [observables](about-observables.md) in a case or alert in TheHive.
+Export data from [observables](about-observables.md) in a case or alert in TheHive by copying individual observable values, downloading attachments, or exporting lists of observables for analysis or reporting.
 
 ## Copy data from an observable
 

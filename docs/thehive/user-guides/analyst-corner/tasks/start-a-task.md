@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageTask` -->
 
-This topic provides step-by-step instructions for starting a [task](about-tasks.md) in TheHive.
-
-Use this procedure to indicate that you have started working on a task. This action automatically changes the task status to *In progress*.
+Start a [task](about-tasks.md) in TheHive to indicate that you've begun working on it. This action automatically changes the task status to *In progress*.
 
 <h2>Procedure</h2>
 

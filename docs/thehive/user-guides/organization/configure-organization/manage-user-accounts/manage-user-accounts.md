@@ -1,6 +1,6 @@
 # Manage User Accounts
 
-This topic provides step-by-step instructions for managing [user accounts](about-user-accounts.md) in TheHive.
+Manage [user accounts](about-user-accounts.md) in TheHive to update their settings, permissions, and authentication details.
 
 === "As an administrator"
 

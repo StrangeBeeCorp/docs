@@ -4,8 +4,6 @@
 
 Alert feeders enable TheHive to retrieve data from external systems on a schedule, eliminating the need for external tools to push data.
 
-This topic provides an overview of the scope and usage of alert feeders in TheHive.
-
 ## How alert feeders work
 
 Alert feeders allow an organization to automate data retrieval at a defined frequency from an external service through an HTTP API call. The retrieved data is then converted into alerts using [a function](#feeder-functions). Each alert feeder supports only one function.

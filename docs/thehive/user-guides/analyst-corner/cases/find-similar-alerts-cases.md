@@ -1,10 +1,6 @@
 # Find Similar Alerts or Cases
 
-This topic provides step-by-step instructions for finding similar alerts and cases in TheHive.
-
-Similarity checks between cases and alerts are based on [observables](../cases/observables/about-observables.md#similar-alerts-and-cases).
-
-Use this procedure to identify similar cases or to correlate alerts with other alerts or with ongoing cases.
+Find similar [alerts](../alerts/about-alerts.md) and [cases](about-cases.md) in TheHive to identify related incidents and correlate information across your investigations. Similarity checks between cases and alerts are based on [observables](../cases/observables/about-observables.md#similar-alerts-and-cases).
 
 {% include-markdown "includes/similar-cases-alerts-filters.md" %}
 

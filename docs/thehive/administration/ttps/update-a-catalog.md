@@ -2,11 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-This topic provides step-by-step instructions for updating a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
-
-TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
-
-The default and additional MITRE catalogs aren't updated automatically. Use this procedure to get the latest versions.
+Update a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive to get the latest versions. The default and additional MITRE catalogs aren't updated automatically.
 
 <h2>Procedure</h2>
 

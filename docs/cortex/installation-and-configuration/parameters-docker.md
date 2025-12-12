@@ -1,8 +1,8 @@
 # Parameters for Docker
 
-This topic lists the configuration keys available in Cortex’s `application.conf` file that control Docker-related behavior. These settings are usually set indirectly by [providing command-line parameters or environment variables when running the Cortex Docker container](run-cortex-with-docker.md#customizing-cortex-docker-image-behavior). The container entrypoint translates those inputs into this configuration file.
+Cortex `application.conf` file contains configuration keys that control Docker-related behavior. The container entrypoint typically sets these values by translating [command-line parameters or environment variables](run-cortex-with-docker.md#customizing-cortex-docker-image-behavior) provided when running the Cortex Docker container.
 
-Use this reference to understand and fine-tune the internal configuration options that govern how Cortex interacts with Docker containers, resource limits, networking, and registry authentication.
+The configuration options below govern how Cortex interacts with Docker containers, resource limits, networking, and registry authentication.
 
 ## Docker container configuration options
 

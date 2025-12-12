@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageObservableTemplate` -->
 
-This topic provides step-by-step instructions for deleting an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive.
+Delete an [observable](../../user-guides/analyst-corner/cases/observables/about-observables.md) type in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

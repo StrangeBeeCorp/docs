@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageCaseTemplate` -->
 
-This topic provides step-by-step instructions for deleting a [case template](about-case-templates.md) in TheHive.
+Delete a [case template](about-case-templates.md) in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

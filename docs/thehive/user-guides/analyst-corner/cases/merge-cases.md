@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageCase/merge` -->
 
-This topic provides step-by-step instructions for [merging cases](../cases/about-cases.md#merging-cases) in TheHive.
+Merge cases in TheHive to consolidate related investigations into a single case.
 
 <h2>Procedure</h2>
 

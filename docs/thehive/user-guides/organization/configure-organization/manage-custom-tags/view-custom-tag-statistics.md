@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTag` -->
 
-This topic provides step-by-step instructions for viewing [custom tag](about-custom-tags.md) statistics in TheHive.
+View [custom tag](about-custom-tags.md) statistics in TheHive to see how frequently tags are used across cases, alerts, and observables.
 
 <h2>Procedure</h2>
 

@@ -1,6 +1,6 @@
 # Find an Observable
 
-This topic provides step-by-step instructions for searching an [observable](../observables/about-observables.md) in TheHive.
+Search for an [observable](../observables/about-observables.md) in TheHive.
 
 !!! tip "Can't find an observable?"
 

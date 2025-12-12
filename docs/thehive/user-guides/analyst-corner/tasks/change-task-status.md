@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTask` -->
 
-This topic provides step-by-step instructions for changing the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive.
+Change the [status](about-tasks.md#statuses) of a [task](about-tasks.md) in TheHive to track its progress.
 
 <h2>Procedure</h2>
 

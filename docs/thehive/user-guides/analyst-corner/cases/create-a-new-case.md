@@ -2,9 +2,9 @@
 
 <!-- md:permission `manageCase/create` -->
 
-This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) in TheHive.
+Create a [case](../cases/about-cases.md) in TheHive using several methods.
 
-Several options are offered to create a case in TheHive:
+TheHive offers the following options for creating cases:
   
 * [Create an empty case](#create-an-empty-case)
 * [Create a case from a template](#create-a-case-from-a-template)

@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for deleting a [notification](about-notifications.md) in TheHive.
+Delete a [notification](about-notifications.md) in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

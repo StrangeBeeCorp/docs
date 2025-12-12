@@ -1,6 +1,6 @@
 # Lock a User Account
 
-This topic provides step-by-step instructions for locking a [user account](about-user-accounts.md) in TheHive.
+Lock a [user account](about-user-accounts.md) in TheHive to temporarily prevent access without permanently deleting it.
 
 To permanently delete a user account, see [Delete a User Account](delete-a-user-account.md).
 

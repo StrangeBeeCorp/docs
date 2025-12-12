@@ -1,9 +1,5 @@
 # About Cases
 
-This topic explains cases in TheHive, their components, and how they work.
-
-## Definition
-
 A case is a structured entity used to track, investigate, and respond to security incidents, threats, or suspicious activities. It serves as a central repository where security teams organize information, collaborate on investigations, and document their findings.
 
 ## Sources

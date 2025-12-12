@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageCase/update` --> <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for removing [custom fields](../../../../administration/custom-fields/about-custom-fields.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+Remove [custom fields](../../../../administration/custom-fields/about-custom-fields.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive when they're no longer needed or were added incorrectly.
 
 <h2>Procedure</h2>
 

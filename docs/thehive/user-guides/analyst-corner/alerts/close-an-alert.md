@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for closing an [alert](about-alerts.md) in TheHive.
-
-Close an alert if it doesn't require escalation into a new or existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
+Close an [alert](about-alerts.md) in TheHive when it doesn't require escalation into a new or existing case for further investigation. This may happen, for example, if the alert is a false positive or a duplicate.
 
 <h2>Procedure</h2>
 

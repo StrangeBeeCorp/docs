@@ -1,8 +1,6 @@
 # Measure Case Management Performance
 
-This topic provides step-by-step instructions for measuring case management performance in TheHive.
-
-You can measure case management performance [for all cases in your organization](#measure-the-performance-of-all-cases-in-your-organization) or [a specific case](#measure-the-performance-of-a-specific-case).
+Measure case management performance in TheHive [for all cases in your organization](#measure-the-performance-of-all-cases-in-your-organization) or [for a specific case](#measure-the-performance-of-a-specific-case).
 
 If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
 

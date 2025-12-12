@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] manageTaxonomy` -->
 
-This topic provides step-by-step instructions for updating the Malware Information Sharing Platform (MISP) [taxonomies](about-taxonomies.md) in TheHive.
-
-Use this procedure to update the MISP taxonomies included with your TheHive installation.
+Update the Malware Information Sharing Platform (MISP) [taxonomies](about-taxonomies.md) included with your TheHive installation to get the latest versions.
 
 <h2>Procedure</h2>
 

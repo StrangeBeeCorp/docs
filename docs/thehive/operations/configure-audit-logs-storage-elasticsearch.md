@@ -4,7 +4,7 @@
 
 By default, TheHive stores audit logs in Apache Cassandra via JanusGraph. However, if your organization generates a large volume of audit logs, you can switch to [Elasticsearch](https://www.elastic.co/enterprise-search){target=_blank}.
 
-This topic provides step-by-step instructions for configuring TheHive audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
+You can configure TheHive audit log storage in Elasticsearch for existing instances, including the option to migrate historical logs from JanusGraph.
 
 For new installations, refer to the [installation guide](../installation/installation-guide-linux-standalone-server.md) for instructions.
 

@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive to publish automated notifications to Kafka topics based on specific triggers.
 
 !!! note "Notifier availability"
     The *Kafka* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:

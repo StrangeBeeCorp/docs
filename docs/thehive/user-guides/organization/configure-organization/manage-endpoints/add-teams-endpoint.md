@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for adding a local *Microsoft Teams* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+Add a local *Microsoft Teams* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive to send messages to your Teams channels.
 
 {% include-markdown "includes/local-global-endpoints.md" %}
 

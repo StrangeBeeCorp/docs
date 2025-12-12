@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active Directory (AD).
-
-Use this procedure to periodically synchronize your local TheHive database with LDAP, enabling automatic user account creation, updates, deletion, and assignment to [organizations](../organizations/about-organizations.md) and [permission profiles](../profiles/about-profiles.md) within TheHive.
+Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active Directory (AD), to periodically synchronize your local TheHive database with LDAP. This enables automatic user account creation, updates, deletion, and assignment to [organizations](../organizations/about-organizations.md) and [permission profiles](../profiles/about-profiles.md) within TheHive.
 
 <h2>Procedure</h2>
 

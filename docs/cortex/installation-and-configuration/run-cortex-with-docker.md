@@ -1,6 +1,6 @@
 # Run Cortex with Docker
 
-This topic provides step-by-step instructions for running Cortex with Docker or Podman.
+Cortex runs on Docker using official container images.
 
 ## Prerequisites and alternatives
 

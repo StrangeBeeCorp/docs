@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageDashboard` -->
 
-This topic provides step-by-step instructions for changing the visibility of a [dashboard](about-dashboards.md) in TheHive.
+Change the visibility of a [dashboard](about-dashboards.md) in TheHive to make it private or shared with your entire organization.
 
 <h2>Procedure</h2>
 

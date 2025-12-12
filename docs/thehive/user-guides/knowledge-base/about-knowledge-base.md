@@ -2,8 +2,6 @@
 
 The Knowledge Base in TheHive enables the creation and sharing of valuable information within a team. It supports documenting lessons learned, writing reports, recording meeting notes, and sharing content that enhances collaboration and knowledge sharing.
 
-This topic describes how the Knowledge Base supports teamwork and ensures important information remains available to the team.
-
 ## Organization-wide sharing
 
 Knowledge Base pages are shared across the entire organization and accessible to all users.

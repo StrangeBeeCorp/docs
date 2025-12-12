@@ -1,8 +1,6 @@
 # Pin an Observable
 
-This topic provides step-by-step instructions for pinning an [observable](about-observables.md) in an case or alert in TheHive.
-
-Pinning an observable allows you to access it from the **Observables** tab within a case or alert. Pins are personal and only visible to you.
+Pin an [observable](about-observables.md) in a case or alert in TheHive to keep it easily accessible at the top of the **Observables** tab. Pins are personal and only visible to you.
 
 <h2>Procedure</h2>
 

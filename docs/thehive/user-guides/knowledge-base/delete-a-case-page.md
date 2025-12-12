@@ -2,7 +2,7 @@
 
 <!-- md:permission `managePage` -->
 
-This topic provides step-by-step instructions for deleting a [case page](about-case-pages.md) in TheHive.
+Delete a [case page](about-case-pages.md) from TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

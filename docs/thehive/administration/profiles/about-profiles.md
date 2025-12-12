@@ -1,8 +1,6 @@
 # About Profiles
 
-A profile is assigned to each user account within an organization and determines the permissions available to that user in that context.
-
-This topic provides a general overview of how profiles work in TheHive.
+A profile is assigned to each user account within an organization in TheHive and determines the permissions available to that user in that context.
 
 ## Profile types
 

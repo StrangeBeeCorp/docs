@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageTaxonomy` -->
 
-This topic provides step-by-step instructions for deleting a [taxonomy](about-taxonomies.md) in TheHive.
+Delete a [taxonomy](about-taxonomies.md) in TheHive when it's no longer needed.
 
 !!! warning "Permanent deletion"
     Deleting a taxonomy is permanent. To keep a taxonomy for future use, [deactivate it](activate-deactivate-a-taxonomy.md) instead.

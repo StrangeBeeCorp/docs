@@ -1,6 +1,6 @@
 # Switch Between Organizations
 
-This topic provides step-by-step instructions for switching between organizations in TheHive.
+Switch between [organizations](../administration/organizations/about-organizations.md) in TheHive to access different workspaces and their associated data.
 
 <h2>Procedure</h2>
 

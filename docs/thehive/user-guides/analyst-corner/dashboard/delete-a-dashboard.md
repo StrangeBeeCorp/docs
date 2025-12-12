@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageDashboard` -->
 
-This topic provides step-by-step instructions for deleting a [dashboard](about-dashboards.md) in TheHive.
+Delete a [dashboard](about-dashboards.md) from TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

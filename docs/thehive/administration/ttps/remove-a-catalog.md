@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-This topic provides step-by-step instructions for removing a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive.
-
-TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
+Remove a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

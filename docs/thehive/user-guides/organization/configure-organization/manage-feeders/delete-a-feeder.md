@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for deleting an [alert feeder](about-feeders.md) in TheHive.
+Delete an [alert feeder](about-feeders.md) in TheHive when it's no longer needed.
 
 !!! info "Deleting an alert feeder doesn't delete the associated feeder function"
     When you delete an alert feeder, the associated function remains. To remove the function, follow the instructions in [Delete a Function](../manage-functions/delete-a-function.md).

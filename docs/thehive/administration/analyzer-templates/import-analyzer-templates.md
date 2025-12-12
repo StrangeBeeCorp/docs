@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for importing [analyzer templates](about-analyzer-templates.md) in TheHive.
-
-Use this procedure to define templates for reports generated after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
+Import [analyzer templates](about-analyzer-templates.md) in TheHive to define how reports appear after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
 <h2>Procedure</h2>
 

@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageObservable` -->
 
-This topic provides step-by-step instructions for updating the status of an [observable](about-observables.md) in TheHive.
+Update the status of an [observable](about-observables.md) in TheHive to mark it as sighted when detected in your environment or as an indicator of compromise (IOC) when identified as malicious.
 
 {% include-markdown "includes/bulk-updates-observables.md" %}
 

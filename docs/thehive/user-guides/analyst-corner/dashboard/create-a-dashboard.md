@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageDashboard` -->
 
-This topic provides step-by-step instructions for creating a [dashboard](about-dashboards.md) in TheHive.
-
-You can create a dashboard from scratch or duplicate an existing one.
+Create a [dashboard](about-dashboards.md) in TheHive from scratch or by duplicating an existing one.
 
 If you want to use a dashboard from another organization or TheHive instance as a template, you can [import it](export-import-a-dashboard.md#import-a-dashboard).
 

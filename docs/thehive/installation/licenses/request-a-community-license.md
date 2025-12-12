@@ -1,8 +1,6 @@
 # Request a Community License
 
-This topic provides step-by-step instructions for requesting a [TheHive Community license](about-licenses.md).
-
-The Community license is free and includes essential features to help you get started with TheHive or support basic user needs.
+Request a free [TheHive Community license](about-licenses.md) that includes essential features to help you get started with TheHive and support basic user needs.
 
 !!! note "TheHive On-prem only"
     The Community license is available exclusively for TheHive On-prem deployments and isn't offered for TheHive Cloud Platform.

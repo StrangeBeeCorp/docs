@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for deleting a [mailbox connection](about-email-intake-connectors.md) in TheHive.
+Delete a [mailbox connection](about-email-intake-connectors.md) in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

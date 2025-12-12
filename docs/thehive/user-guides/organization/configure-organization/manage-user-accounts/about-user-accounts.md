@@ -1,6 +1,6 @@
 # About User Accounts
 
-This topic explains how user accounts work in TheHive.
+User accounts in TheHive enable individuals and services to access the platform or [TheHive API](https://docs.strangebee.com/thehive/api-docs/){target=_blank} with specific permissions and organizational memberships.
 
 {% include-markdown "includes/license-user-accounts.md" %}
 

@@ -1,6 +1,6 @@
 # Create a User Account
 
-This topic provides step-by-step instructions for creating a [user account](about-user-accounts.md) in TheHive.
+Create a [user account](about-user-accounts.md) in TheHive to grant individuals or services access to the platform or [TheHive API](https://docs.strangebee.com/thehive/api-docs/){target=_blank}.
 
 To add an existing user account to an organization, see [Add or Remove an Existing User Account from an Organization](../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md).
 

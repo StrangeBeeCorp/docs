@@ -2,8 +2,6 @@
 
 Tags assign labels to [cases](../about-cases.md), [alerts](../../alerts/about-alerts.md), and [observables](../observables/about-observables.md) in TheHive.
 
-This topic explains how tags function.
-
 ## Sources
 
 In TheHive, tags are created in two ways:

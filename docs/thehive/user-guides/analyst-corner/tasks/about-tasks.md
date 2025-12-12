@@ -1,9 +1,5 @@
 # About Tasks
 
-This topic explains tasks, their components, and their behavior in TheHive.
-
-## Definition
-
 A task represents one or more actions, called [task logs](../tasks/about-task-logs.md)—also referred to as activities—that must be completed within a [case](../cases/about-cases.md).
 
 * Tasks can be mandatory or optional.

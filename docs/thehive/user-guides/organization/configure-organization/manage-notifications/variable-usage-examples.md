@@ -1,6 +1,6 @@
 # Variable Usage Examples
 
-This topic provides examples of variable usage in the context of configuring [notifications](about-notifications.md) in TheHive.
+Examples of variable usage help you configure [notifications](about-notifications.md) in TheHive with dynamic content.
 
 ## Examples
 

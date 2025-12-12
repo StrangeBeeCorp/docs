@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for enriching [alert](about-alerts.md) details in TheHive.
+Enrich [alert](about-alerts.md) details in TheHive by updating its title, tags, description, and custom fields to provide additional context for triage and investigation.
 
 !!! info "Status update"
     When you enrich a new alert, its status automatically changes from one linked to the *New* stage to one linked to the *In progress* stage. To choose a different status within the *In progress* stage, see [Change an Alert Status](change-status-alert.md).
@@ -44,7 +44,7 @@ This topic provides step-by-step instructions for enriching [alert](about-alerts
 
 * [Change an Alert Status](change-status-alert.md)
 * [Close an Alert](close-an-alert.md)
-* [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Start Working on an Alert](../alerts/start-investigating-an-alert.md)
 * [Assign an Alert](assign-an-alert.md)
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)

@@ -1,6 +1,6 @@
 # Set a Dashboard Display Period
 
-This topic provides step-by-step instructions for setting a display period for a [dashboard](about-dashboards.md) in TheHive.
+Set a display period for a [dashboard](about-dashboards.md) in TheHive to focus on data from a specific timeframe.
 
 If you need to remove the **All periods** option due to performance issues, see [Remove the All Periods Option](../../organization/configure-organization/manage-ui-configuration/remove-all-periods-option.md).
 

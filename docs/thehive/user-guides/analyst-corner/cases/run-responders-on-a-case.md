@@ -1,10 +1,8 @@
 # Run Responders and Review Reports for a Case
 
-This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on a [case](about-cases.md) and reviewing responder reports in TheHive.
+Run [responders](../../../administration/cortex/about-cortex.md) on a [case](about-cases.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
 
 Responders execute actions on cases, alerts, observables, tasks, and task logs.
-
-Run a responder on a case to take actions such as closing an external ticket or executing a predefined response within TheHive.
 
 !!! note "Observables not included"
     Running a responder on a case doesn't run it on the observables linked to the case. To run responders on an observable, see [Run Responders and Review Reports for an Observable](./observables/run-responders-on-an-observable.md).

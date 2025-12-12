@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-This topic provides step-by-step instructions for creating a page in the TheHive [Knowledge Base](about-knowledge-base.md).
-
-Use this procedure to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
+Create a page in the TheHive [Knowledge Base](about-knowledge-base.md) to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
 
 <h2>Procedure</h2>
 

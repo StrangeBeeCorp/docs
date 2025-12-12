@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for configuring the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHive to send automated notifications to external systems via HTTP requests based on specific triggers.
 
 !!! note "Notifier availability"
     The *Webhook* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:

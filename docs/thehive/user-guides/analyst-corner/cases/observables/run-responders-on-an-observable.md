@@ -2,11 +2,9 @@
 
 <!-- md:permission `manageObservable` -->
 
-This topic provides step-by-step instructions for running [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) and reviewing responder reports in TheHive.
+Run [responders](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive to execute automated actions such as blocking an IP address on the firewall or a URL on the proxy.
 
-Responders execute actions on cases, alerts, observables, tasks, and task logs.
-
-Run a responder on an observable to take actions such as blocking an IP address on the firewall or a URL on the proxy.
+Cortex responders execute actions on cases, alerts, observables, tasks, and task logs.
 
 ## Run responders on an observable
 

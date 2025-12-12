@@ -1,8 +1,6 @@
 # Find a Task Log
 
-This topic provides step-by-step instructions for searching a task log in TheHive.
-
-A task log is a recorded history of actions, updates, or decisions taken on a specific task. It provides a detailed audit trail that helps track investigation progress, accountability, and compliance.
+Search for a task log in TheHive to locate specific actions, updates, or decisions recorded for a task. Task logs provide a detailed audit trail that helps track investigation progress, accountability, and compliance.
 
 !!! tip "Can't find a task log?"
     <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks and task logs won't appear in the list, search results, or dashboards.

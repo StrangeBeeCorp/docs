@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for adding a local *Webhook* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+Add a local *Webhook* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive to connect with external systems that accept webhook notifications.
 
 {% include-markdown "includes/local-global-endpoints.md" %}
 
@@ -32,11 +32,11 @@ This topic provides step-by-step instructions for adding a local *Webhook* [endp
 
     **- URL**
 
-    The URL to which TheHive will send webhook requests.
+    The URL to which TheHive sends webhook requests.
 
     **- Version**
 
-    Enter the webhook version supported by your external system. This determines the payload format and request structure that TheHive will use when sending data.
+    Enter the webhook version supported by your external system. This determines the payload format and request structure that TheHive uses when sending data.
 
     ---
 

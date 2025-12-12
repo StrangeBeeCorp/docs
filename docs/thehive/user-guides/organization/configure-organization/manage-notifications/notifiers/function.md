@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the *Function* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *Function* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute functions when specific triggers occur.
 
 To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
 

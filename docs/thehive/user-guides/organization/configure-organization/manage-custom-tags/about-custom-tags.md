@@ -4,8 +4,6 @@ Custom tags are [one of the tag categories](../../../analyst-corner/cases/tags/a
 
 These free-text labels are created when users add them to cases, alerts, or observables.
 
-This topic explains how custom tags work.
-
 ## Scope
 
 Custom tags are specific to a single organization and can't be shared between organizations or TheHive instances. Tags can contain sensitive data without risking exposure outside the organization.

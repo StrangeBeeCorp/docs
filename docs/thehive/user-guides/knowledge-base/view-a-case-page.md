@@ -1,6 +1,6 @@
 # View a Case Page
 
-This topic provides step-by-step instructions for viewing a [case page](about-case-pages.md) in TheHive.
+View a [case page](about-case-pages.md) in TheHive to access case-specific knowledge and information.
 
 <h2>Procedure</h2>
 

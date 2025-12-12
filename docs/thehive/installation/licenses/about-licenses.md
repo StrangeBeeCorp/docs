@@ -1,6 +1,6 @@
 # TheHive Licenses
 
-This topic presents the different types of licenses available for TheHive.
+TheHive offers different license types to meet various organizational needs, from essential features for getting started to comprehensive capabilities for large-scale incident response.
 
 !!! info "Cortex"
     Since Cortex is a fully open-source project, you don't need a license to use it.

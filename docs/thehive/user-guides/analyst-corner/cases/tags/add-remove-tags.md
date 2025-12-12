@@ -1,6 +1,6 @@
 # Add or Remove Tags
 
-This topic provides step-by-step instructions for adding and removing [tags](about-tags.md) from a [case](../about-cases.md), an [alert](../../alerts/about-alerts.md), or an [observable](../observables/about-observables.md) in TheHive.
+Add or remove [tags](about-tags.md) from a [case](../about-cases.md), an [alert](../../alerts/about-alerts.md), or an [observable](../observables/about-observables.md) in TheHive to categorize and label information for easier organization and filtering.
 
 ## Add tags
 

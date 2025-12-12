@@ -2,8 +2,6 @@
 
 The Live Feed is a feature that displays the latest key events from the [audit logs](../organization/about-audit-logs.md).
 
-This topic explains what the Live Feed covers.
-
 ![Live Feed button](../../images/user-guides/analyst-corner/live-feed-button.png)
 
 ![Live Feed drawer](../../images/user-guides/analyst-corner/live-feed-drawer.png)

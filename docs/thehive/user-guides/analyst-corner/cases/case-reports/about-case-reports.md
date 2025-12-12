@@ -4,8 +4,6 @@
 
 A case report is available for each individual [case](../about-cases.md) and displays key data from the case.
 
-This topic provides an overview of case reports and their usage in TheHive.
-
 {% include-markdown "includes/other-reports-cases-from-case-reports.md" %}
 
 ## Templates

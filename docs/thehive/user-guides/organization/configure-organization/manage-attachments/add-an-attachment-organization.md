@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-This topic provides step-by-step instructions for adding an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) to an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
+Add an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) to an [organization](../../../../administration/organizations/about-organizations.md) in TheHive to share files across your entire organization.
 
 To add an attachment to a case or an alert, see [Add an Attachment to a Case or an Alert](../../../analyst-corner/cases/attachments/add-an-attachment-case-alert.md).
 

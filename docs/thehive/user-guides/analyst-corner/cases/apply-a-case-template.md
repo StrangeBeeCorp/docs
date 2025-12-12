@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageCase/update` -->
 
-This topic provides step-by-step instructions for applying a [case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) to an existing case in TheHive.
+Apply a [case template](../../organization/configure-organization/manage-templates/case-templates/about-case-templates.md) to an existing case in TheHive to populate case elements with predefined values.
 
 If you want to apply a template to a new case, refer to the [Create a Case](create-a-new-case.md) topic.
 

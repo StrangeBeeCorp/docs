@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-This topic provides step-by-step instructions for deleting a [Knowledge Base](about-knowledge-base.md) page in TheHive.
+Delete a [Knowledge Base](about-knowledge-base.md) page in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

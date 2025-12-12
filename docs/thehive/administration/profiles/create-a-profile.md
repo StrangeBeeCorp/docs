@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating a [permission profile](about-profiles.md) in TheHive.
+Create custom [permission profiles](about-profiles.md) in TheHive to define specific access control levels for users.
 
 <h2>Procedure</h2>
 

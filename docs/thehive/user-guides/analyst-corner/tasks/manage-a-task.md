@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTask` -->
 
-This topic provides step-by-step instructions for managing a [task](about-tasks.md) in TheHive.
+Manage [tasks](about-tasks.md) in TheHive by updating their properties, such as making them mandatory, changing assignees, pinning them for quick access, or flagging them for visibility.
 
 ## Set a task as mandatory or optional
 

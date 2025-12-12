@@ -2,9 +2,7 @@
 
 <!-- md:version 5.5 -->
 
-This topic provides step-by-step instructions for viewing links in a [case](../about-cases.md#linking-elements) in TheHive.
-
-Links can point to other TheHive cases or to external resources.
+View links in a [case](../about-cases.md#linking-elements) in TheHive to see connections to other TheHive cases or external resources.
 
 !!! info "Not applicable to alert links"
     This procedure doesn't apply to alert links that are automatically created when [creating a case from an alert](../../alerts/create-a-case-from-an-alert.md) or [adding an alert to an existing case](../../alerts/add-an-alert-to-an-existing-case.md). Refer to [View Alerts Linked to a Case](../view-alerts-linked-to-a-case.md) to see alerts linked to a case.

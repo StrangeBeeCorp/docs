@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for changing a [status](about-statuses.md) color for cases and alerts in TheHive.
+Change a [status](about-statuses.md) color for cases and alerts in TheHive to customize your visual workflow.
 
 {% include-markdown "includes/task-statuses-excluded.md" %}
 

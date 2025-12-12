@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for adding a local *Slack* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive.
+Add a local *Slack* [endpoint](../manage-endpoints/about-endpoints.md) in TheHive to send messages to your Slack workspace.
 
 {% include-markdown "includes/local-global-endpoints.md" %}
 

@@ -2,11 +2,9 @@
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for adding an [alert](about-alerts.md) to an existing [case](../cases/about-cases.md) in TheHive.
+Add an [alert](about-alerts.md) to an existing [case](../cases/about-cases.md) in TheHive during triage when the alert needs further investigation and a similar case has already been created.
 
-During triage, add an alert to an existing case if it needs further investigation and a similar case has already been created.
-
-If it requires a separate investigation, [create a case from the alert](create-a-case-from-an-alert.md).
+If the alert requires a separate investigation, [create a case from the alert](create-a-case-from-an-alert.md).
 
 !!! info "Data transfer"
     When adding an alert to an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.

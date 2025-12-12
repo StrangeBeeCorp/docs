@@ -1,8 +1,6 @@
 # Share a Case Page
 
-This topic provides step-by-step instructions for sharing a [case page](about-knowledge-base.md).
-
-Use this procedure to share a case page with your teammates through a messaging tool, for instance.
+Share a [case page](about-case-pages.md) link with your teammates through a messaging tool or email.
 
 <h2>Procedure</h2>
 

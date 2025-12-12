@@ -2,13 +2,11 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for connecting a [MISP server](about-misp-integration.md) to TheHive.
-
-Use this procedure if you want to automatically retrieve filtered MISP events as alerts in TheHive or [manually export observables marked as indicators of compromise (IOCs) from cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md).
+Connect a [MISP server](about-misp-integration.md) to TheHive to automatically retrieve filtered MISP events as alerts or [manually export observables marked as indicators of compromise (IOCs) from cases to MISP](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md).
 
 By default, updates are automatically synchronized between TheHive and MISP.
 
-You can configure multiple MISP servers in TheHive.
+TheHive supports connecting multiple MISP servers with a paid license.
 
 To manually import a MISP event as a case in TheHive, refer to [Create a New Case](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event).
 

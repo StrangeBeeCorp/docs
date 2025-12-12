@@ -1,8 +1,6 @@
 # Perform Initial Login and Setup as an Admin
 
-This topic provides step-by-step instructions for performing the initial login and setup as an administrator in TheHive.
-
-Use this procedure at first start, before granting access to other users.
+Administrators must complete the initial login and setup before granting access to other users in TheHive.
 
 ## Step 1: Log in with the default credentials
 

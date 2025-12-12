@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for deleting a [MISP server connection](about-misp-integration.md) in TheHive.
+Delete a [MISP server connection](about-misp-integration.md) in TheHive when it's not longer needed.
 
 <h2>Procedure</h2>
 

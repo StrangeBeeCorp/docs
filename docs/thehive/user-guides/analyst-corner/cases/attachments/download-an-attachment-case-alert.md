@@ -1,6 +1,6 @@
 # Download an Attachment from a Case or an Alert
 
-This topic provides step-by-step instructions for downloading an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+Download an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive to save it locally or share it outside the platform.
 
 ## Download an attachment from a case
 

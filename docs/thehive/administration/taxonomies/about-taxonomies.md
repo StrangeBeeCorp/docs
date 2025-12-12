@@ -2,8 +2,6 @@
 
 Taxonomies are catalogs of structured tags managed in TheHive. They belong to [one of the tag categories](../../user-guides/analyst-corner/cases/tags/about-tags.md) available for cases, alerts, or observables.
 
-This topic explains how taxonomies work.
-
 ## Sources
 
 TheHive supports two ways to create taxonomies:

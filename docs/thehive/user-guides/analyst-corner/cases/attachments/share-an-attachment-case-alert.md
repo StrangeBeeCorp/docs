@@ -1,6 +1,6 @@
 # Share an Attachment from a Case or an Alert
 
-This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
+Share an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive by copying its URL to provide access to other users.
 
 ## Share an attachment from a case
 

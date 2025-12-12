@@ -2,7 +2,7 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for adding a custom event to a [case timeline](about-case-timelines.md) in TheHive.
+Add a custom event to a [case timeline](about-case-timelines.md) in TheHive to mark significant milestones or activities during your investigation in addition to events automatically added.
 
 <h2>Procedure</h2>
 

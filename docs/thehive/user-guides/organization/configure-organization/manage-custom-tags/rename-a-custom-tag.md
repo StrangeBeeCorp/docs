@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTag` -->
 
-This topic provides step-by-step instructions for renaming a [custom tag](about-custom-tags.md) in TheHive.
+Rename a [custom tag](about-custom-tags.md) in TheHive to better reflect its purpose or improve clarity.
 
 <h2>Procedure</h2>
 

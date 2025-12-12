@@ -1,10 +1,10 @@
 # Manage your Password
 
-This topic provides step-by-step instructions for managing the password of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive.
+Manage the password of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive by resetting it if you've forgotten it or changing it when logged in.
 
 ## Reset your password
 
-Use this procedure if you’ve forgotten your password and need to create a new one.
+If you've forgotten your password, you can reset it from the login page to create a new one.
 
 1. From the login page, select **I forgot my password**.
 
@@ -18,7 +18,7 @@ You will receive an email with a link to set a new password. The link is valid f
 
 ## Edit your password
 
-Use this procedure to change your current password.
+You can change your current password when logged in to your account.
 
 1. {% include-markdown "includes/user-symbol-go-to.md" %}
 

@@ -2,9 +2,9 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for creating an [alert feeder](about-feeders.md) in TheHive, with an example for [Airtable](#airtable-example).
+Create an [alert feeder](about-feeders.md) in TheHive to automatically retrieve data at a defined frequency from an external service via an HTTP API call and convert it into alerts.
 
-Use this procedure to automatically retrieve data at a defined frequency from an external service via an HTTP API call and convert it into alerts in TheHive.
+For an example configuration, see the [Airtable example](#airtable-example).
 
 <h2>Procedure</h2>
 

@@ -1,6 +1,6 @@
 # Export a List of User Accounts
 
-This topic provides step-by-step instructions for exporting a list of [user accounts](about-user-accounts.md) in TheHive.
+Export a list of [user accounts](about-user-accounts.md) from TheHive to share or analyze user data outside the platform.
 
 ## Export a list of user accounts at the client level
 

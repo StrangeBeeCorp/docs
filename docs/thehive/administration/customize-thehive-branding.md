@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for customizing TheHive branding.
-
-Use this procedure to personalize the application with your brand name and logo.
+Personalize TheHive branding with your brand name and logo across the login page, navigation bar, and browser tab.
 
 ## Customize the login page tab title
 

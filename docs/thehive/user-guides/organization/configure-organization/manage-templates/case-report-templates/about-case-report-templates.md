@@ -4,8 +4,6 @@
 
 Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
 
-This topic provides an overview of case report templates and their usage in TheHive.
-
 ## Benefits
 
 Use case report templates to:

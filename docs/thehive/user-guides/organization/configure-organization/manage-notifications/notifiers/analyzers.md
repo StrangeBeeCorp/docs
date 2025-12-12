@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for configuring the *RunAnalyzer* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *RunAnalyzer* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute [Cortex analyzers](../../../../../administration/cortex/about-cortex.md) when specific triggers occur.
 
 !!! note "Notifier availability"
     The *RunAnalyzer* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:  

@@ -692,7 +692,6 @@ nav:
           - 'Search for Alerts': 
             - 'Find an Alert': thehive/user-guides/analyst-corner/alerts/search-for-alerts/find-an-alert.md
             - 'Overview of Search Methods for Alerts': thehive/user-guides/analyst-corner/alerts/search-for-alerts/overview-search-methods-alert.md
-          - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Create a Case from an Alert': thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md
           - 'Add an Alert to an Existing Case': thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md
           - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
@@ -700,7 +699,7 @@ nav:
           - 'Change Alert Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
-          - 'Start Investigating an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
+          - 'Start Working on an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
           - 'Assign an Alert': thehive/user-guides/analyst-corner/alerts/assign-an-alert.md
           - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for an Alert': thehive/user-guides/analyst-corner/alerts/run-responders-on-an-alert.md

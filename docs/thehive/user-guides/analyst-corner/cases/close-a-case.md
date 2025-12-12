@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageCase/update` -->
 
-This topic provides step-by-step instructions for closing a [case](about-cases.md) in TheHive.
-
-Close the case when the investigation is complete.
+Close a [case](about-cases.md) in TheHive when the investigation is complete.
 
 !!! info "Pending tasks"
     Closing a case also permanently closes all pending tasks. This action can't be undone.

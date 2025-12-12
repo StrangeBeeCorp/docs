@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-This topic provides step-by-step instructions for turning off a [notification](about-notifications.md) in TheHive.
+Turn off a [notification](about-notifications.md) in TheHive to temporarily stop it from triggering automated messages.
 
 <h2>Procedure</h2>
 

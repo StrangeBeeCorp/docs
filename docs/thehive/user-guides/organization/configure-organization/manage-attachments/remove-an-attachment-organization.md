@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-This topic provides step-by-step instructions for removing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
+Remove an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive when it's no longer needed.
 
 To remove an attachment from a case or an alert, see [Remove an Attachment from a Case or an Alert](../../../analyst-corner/cases/attachments/remove-an-attachment-case-alert.md).
 

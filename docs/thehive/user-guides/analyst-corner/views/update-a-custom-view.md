@@ -1,6 +1,6 @@
 # Update a Custom View
 
-This topic provides step-by-step instructions for updating a custom [view](create-a-custom-view.md) in TheHive.
+Update a custom [view](about-views.md) in TheHive to modify its saved filters and sorting preferences.
 
 !!! note "Default view"
     You can't modify the *Default* view.

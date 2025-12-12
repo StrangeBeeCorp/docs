@@ -1,6 +1,6 @@
 # Switch to Manual Download and Installation for TheHive
 
-This topic provides step-by-step instructions for switching from APT and YUM repositories to a manual process for installing and upgrading TheHive, following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-notice.md).
+Following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-notice.md), TheHive installations must switch from repository-based package management to a manual download and installation process.
 
 For instructions on performing the same process for Cortex, see [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md).
 

@@ -2,7 +2,7 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for viewing a [case timeline](about-case-timelines.md) in TheHive.
+View a [case timeline](about-case-timelines.md) in TheHive to see a chronological overview of all events during your investigation.
 
 {% include-markdown "includes/other-reports-cases-from-case-timelines.md" %}
 

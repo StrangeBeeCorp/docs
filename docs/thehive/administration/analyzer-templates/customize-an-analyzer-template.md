@@ -2,9 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for customizing an [analyzer template](about-analyzer-templates.md) in TheHive.
-
-Use this procedure to customize templates for reports generated after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
+Customize [analyzer templates](about-analyzer-templates.md) in TheHive to modify how reports appear after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
 <h2>Procedure</h2>
 

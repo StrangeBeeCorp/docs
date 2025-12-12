@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-This topic provides step-by-step instructions for sharing an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive.
+Share an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) link from an [organization](../../../../administration/organizations/about-organizations.md) in TheHive by copying its URL to provide access to other users.
 
 To share an attachment from a case or an alert, see [Share an Attachment from a Case or an Alert](../../../analyst-corner/cases/attachments/share-an-attachment-case-alert.md).
 

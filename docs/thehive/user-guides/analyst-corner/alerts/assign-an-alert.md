@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for assigning an [alert](about-alerts.md) in TheHive.
+Assign an [alert](about-alerts.md) in TheHive to yourself or another user for triage.
 
 ## Assign an alert to yourself
 

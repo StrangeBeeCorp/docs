@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTag` -->
 
-This topic provides step-by-step instructions for changing the color of a [custom tag](about-custom-tags.md) in TheHive.
+Change the color of a [custom tag](about-custom-tags.md) in TheHive to improve visual organization and identification.
 
 <h2>Procedure</h2>
 

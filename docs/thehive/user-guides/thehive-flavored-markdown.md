@@ -1,7 +1,5 @@
 # TheHive-Flavored Markdown Syntax Reference
 
-This topic provides a reference for TheHive-flavored Markdown syntax.
-
 Markdown is a lightweight markup language designed to format plain text using simple syntax. It allows users to create structured documents, including headings, lists, links, and code blocks, without relying on complex formatting tools.
 
 TheHive uses a customized version of Markdown, known as TheHive-flavored Markdown. This tailored syntax extends the standard Markdown features to support additional formatting options and functionalities specific to TheHive.

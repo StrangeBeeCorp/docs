@@ -1,6 +1,6 @@
 # View Alerts Linked to a Case
 
-This topic provides step-by-step instructions for viewing alerts linked to a [case](../cases/about-cases.md) in TheHive.
+View alerts linked to a [case](../cases/about-cases.md) in TheHive to see which alerts contributed to the investigation.
 
 An alert is automatically linked to a case when you [create a case from an alert](../alerts/create-a-case-from-an-alert.md) or [add an alert to an existing case](../alerts/add-an-alert-to-an-existing-case.md).
 

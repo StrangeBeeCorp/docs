@@ -2,9 +2,7 @@
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for creating a [case](../cases/about-cases.md) from an [alert](about-alerts.md) in TheHive.
-
-During triage, create a case from an alert if it needs further investigation and no case exists yet.
+Create a [case](../cases/about-cases.md) from an [alert](about-alerts.md) in TheHive during triage when the alert needs further investigation and no case exists yet.
 
 If an investigation is already ongoing, [add the alert to an existing case](add-an-alert-to-an-existing-case.md).
 

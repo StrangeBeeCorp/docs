@@ -1,6 +1,6 @@
 # Export a List of Alerts
 
-This topic provides step-by-step instructions for exporting a list of [alerts](about-alerts.md) in TheHive.
+Export a list of [alerts](about-alerts.md) in TheHive to share information, create reports, or analyze data outside the platform.
 
 <h2>Procedure</h2>
 
@@ -16,7 +16,7 @@ This topic provides step-by-step instructions for exporting a list of [alerts](a
 
 <h2>Next steps</h2>
 
-* [Start Investigating an Alert](start-investigating-an-alert.md)
+* [Start Working on an Alert](start-investigating-an-alert.md)
 * [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)
 * [Create a Case from an Alert](create-a-case-from-an-alert.md)
 * [Assign an Alert](assign-an-alert.md)

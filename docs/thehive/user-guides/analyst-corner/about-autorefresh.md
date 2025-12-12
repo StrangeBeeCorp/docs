@@ -2,8 +2,6 @@
 
 Autorefresh is a feature that automatically refreshes lists to display new elements in TheHive.
 
-This topic explains how autorefresh works in TheHive.
-
 ## Update frequency
 
 When turned on, autorefresh updates the lists every time there is an event worth mentioning in the [Live Feed](about-live-feed.md).

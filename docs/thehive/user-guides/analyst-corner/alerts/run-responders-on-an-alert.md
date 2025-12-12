@@ -1,10 +1,8 @@
 # Run Responders and Review Reports for an Alert
 
-This topic provides step-by-step instructions for running [responders](../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) and reviewing responder reports in TheHive.
+Run [responders](../../../administration/cortex/about-cortex.md) on an [alert](about-alerts.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
 
 Responders execute actions on cases, alerts, observables, tasks, and task logs.
-
-Run a responder on an alert to take actions such as closing an external ticket or executing a predefined response within TheHive.
 
 !!! note "Observables not included"
     Running a responder on an alert doesn't run it on the observables linked to the alert. To run responders on an observable, see [Run Responders and Review Reports for an Observable](../cases/observables/run-responders-on-an-observable.md).

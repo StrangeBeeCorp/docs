@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageCustomField` -->
 
-This topic provides step-by-step instructions for creating a [custom field](../custom-fields/about-custom-fields.md) in TheHive.
+Create [custom fields](../custom-fields/about-custom-fields.md) in TheHive to extend the default set of fields available in cases and alerts with company-specific data.
 
 <h2>Procedure</h2>
 

@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageUser` -->
 
-This topic provides step-by-step instructions for deleting a [user account](about-user-accounts.md) in TheHive.
+Delete a [user account](about-user-accounts.md) from TheHive to permanently remove it at the client level.
 
 !!! danger "Permanent action"
     This action permanently deletes the user account at the client level, removing it from all organizations.

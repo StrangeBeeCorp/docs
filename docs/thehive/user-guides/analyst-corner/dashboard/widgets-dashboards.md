@@ -2,8 +2,6 @@
 
 Several widget types are available for dashboards in TheHive.
 
-This topic describes each widget type and its attributes.
-
 ## Row widget
 
 A row widget is a prerequisite for adding other types of widgets. Each row can contain up to three widgets. If a row already exists, you can add more widgets to it.

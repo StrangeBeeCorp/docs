@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageObservable` -->
 
-This topic provides step-by-step instructions for performing bulk edits on multiple [observables](about-observables.md) in TheHive.
+Perform bulk edits on multiple [observables](about-observables.md) in TheHive to update their properties efficiently without editing each one individually.
 
 <h2>Procedure</h2>
 

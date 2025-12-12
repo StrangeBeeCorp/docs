@@ -1,8 +1,6 @@
 # About Custom Fields
 
-Custom fields provide a way to extend the default set of fields available in [cases](../../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md), allowing additional, organization-specific information to be recorded.
-
-This topic provides a general overview of custom field usage in TheHive.
+Custom fields extend the default set of fields available in [cases](../../user-guides/analyst-corner/cases/about-cases.md) and [alerts](../../user-guides/analyst-corner/alerts/about-alerts.md), allowing organizations to capture company-specific information.
 
 ## Use cases
 

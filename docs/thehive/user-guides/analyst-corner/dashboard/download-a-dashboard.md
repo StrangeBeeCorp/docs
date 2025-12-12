@@ -1,10 +1,8 @@
 # Download a Dashboard
 
-This topic provides step-by-step instructions for downloading a [dashboard](about-dashboards.md) in TheHive.
+Download a [dashboard](about-dashboards.md) in TheHive as a PNG image for sharing or documentation purposes. Individual [widgets](widgets-dashboards.md) can be downloaded as PNG or CSV files.
 
-The PNG format is available for both the entire dashboard and individual [widgets](widgets-dashboards.md), while the CSV format is only available for individual widgets.
-
-To download your dashboard in JSON format, refer to the [Export a Dashboard](export-import-a-dashboard.md#export-a-dashboard) topic.
+To download your dashboard in JSON format, refer to [Export a Dashboard](export-import-a-dashboard.md#export-a-dashboard).
 
 <h2>Procedure</h2>
 
@@ -14,7 +12,7 @@ To download your dashboard in JSON format, refer to the [Export a Dashboard](exp
 
     {% include-markdown "includes/filters-sorts-views.md" %}
 
-3. Select the **Export** symbol at the top right of the page to export the entire dashboard.
+3. Select the **Export** symbol at the top right of the page to export the entire dashboard as a PNG image.
 
     ![Download a dashboard](../../../images/user-guides/analyst-corner/dashboard/download-a-dashboard.png)
 

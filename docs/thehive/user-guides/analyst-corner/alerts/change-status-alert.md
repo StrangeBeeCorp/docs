@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageAlert/update` --> <!-- md:permission `manageAlert/reopen` -->
 
-This topic provides step-by-step instructions for changing the [status](../../../administration/status/about-statuses.md) of an alert in TheHive.
+Change the [status](../../../administration/status/about-statuses.md) of an alert in TheHive to reflect its current state in the triage workflow.
 
 <h2>Procedure</h2>
 
@@ -24,7 +24,7 @@ This topic provides step-by-step instructions for changing the [status](../../..
 
 <h2>Next steps</h2>
 
-* [Start Investigating an Alert](../alerts/start-investigating-an-alert.md)
+* [Start Working on an Alert](../alerts/start-investigating-an-alert.md)
 * [Assign an Alert](assign-an-alert.md)
 * [Ignore Alert Updates from MISP](ignore-alert-updates-misp.md)
 * [Add an Alert to an Existing Case](add-an-alert-to-an-existing-case.md)

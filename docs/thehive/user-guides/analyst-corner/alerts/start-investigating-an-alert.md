@@ -1,14 +1,12 @@
-# Start Investigating an Alert
+# Start Working on an Alert
 
 <!-- md:permission `manageAlert/update` -->
 
-This topic provides step-by-step instructions for starting the investigation of an [alert](about-alerts.md) in TheHive.
-
-Use this procedure to start investigating a new alert and change its [status](../../../administration/status/about-statuses.md) so that it moves from the *New* stage to the *In progress* stage.
+Start working on a new [alert](about-alerts.md) in TheHive and change its [status](../../../administration/status/about-statuses.md) from the *New* stage to the *In progress* stage.
 
 <h2>Procedure</h2>
 
-1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to start investigating.
+1. [Find the alert](./search-for-alerts/find-an-alert.md) you want to start working on.
 
 2. In the alert, select **Start**.
 

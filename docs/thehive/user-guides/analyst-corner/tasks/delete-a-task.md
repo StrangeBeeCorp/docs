@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageTask` -->
 
-This topic provides step-by-step instructions for deleting a [task](about-tasks.md) in TheHive.
+Delete a [task](about-tasks.md) from TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

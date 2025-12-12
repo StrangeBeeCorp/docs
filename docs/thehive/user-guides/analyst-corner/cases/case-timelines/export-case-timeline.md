@@ -2,7 +2,7 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for exporting a [case timeline](about-case-timelines.md) in TheHive.
+Export a [case timeline](about-case-timelines.md) in TheHive to save a record of case events or share timeline data outside the platform.
 
 {% include-markdown "includes/other-reports-cases-from-case-timelines.md" %}
 

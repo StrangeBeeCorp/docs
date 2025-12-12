@@ -2,7 +2,7 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-This topic provides step-by-step instructions for deleting a custom event from a [case timeline](about-case-timelines.md) in TheHive.
+Delete a custom event from a [case timeline](about-case-timelines.md) in TheHive when it's no longer relevant or was added incorrectly.
 
 <h2>Procedure</h2>
 

@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-This topic provides step-by-step instructions for adding a [Cortex](about-cortex.md) server in TheHive.
+Connect [Cortex](about-cortex.md) servers to TheHive to enable automated analysis and response capabilities.
 
 [Cortex](https://github.com/thehive-project/Cortex/){target=_blank} is an open-source analysis and response engine designed for SOCs, CSIRTs, and security researchers to automate threat intelligence gathering and incident response.
 
