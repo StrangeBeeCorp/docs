@@ -7,6 +7,8 @@
 
     Please also note that the `play.http.secret.key` parameter requires now at least a 32 character value. [See more details](https://docs.strangebee.com/thehive/configuration/secret/) about secret configuration.
 
+{% include-markdown "includes/api-public-v0-deprecation.md" %}
+
 !!! info
     The following API endpoints will no longer be accessible via GET requests. You will now need to use POST requests to access them:
 

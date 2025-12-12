@@ -5,16 +5,6 @@
 
     This release also comes with some breaking changes, please review them below
 
-
-!!! warning
-    Note: public API v0 is now considered as deprecated.
-
-    The public API v0 is obsolete, and you should not be using it anymore. All the endpoints are available in the public API v1. That being said, it will be deactivated in a future version.
-
-    The API v0 was initially developed for TheHive 3 and maintained for backward compatibility reasons only. 
-
-    API v0 endpoints refer to APIs beginning with `/api/` or `/api/v0/` (but not with `/api/v1/`).
-
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 

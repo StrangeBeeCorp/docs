@@ -3,8 +3,7 @@
 !!! warning "Cortex support"
     Version 5.5 no longer supports Cortex versions earlier than 3.1.5 (released on June 22, 2022).
 
-!!! info "Public API v0 deprecation"
-    Version 5.5 is the last minor release to support API v0 routes, which will be deactivated by default in version 5.6. Note that API v0 has been deprecated since version 5.4.0.
+{% include-markdown "includes/api-public-v0-deprecation.md" %}
 
 ## 5.5.13 - November 25, 2025
 
