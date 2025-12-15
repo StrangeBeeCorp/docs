@@ -46,6 +46,7 @@ extra_css:
 
 extra_javascript:
   - assets/js/main.js
+  - assets/js/init_kapa_widget.js
 
 hooks:
   - ./overrides/hooks/shortcodes.py
