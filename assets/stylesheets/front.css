@@ -8,6 +8,9 @@
     font-display: swap;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
 
 body {
     margin: 0;
