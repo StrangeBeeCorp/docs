@@ -124,6 +124,25 @@ grep -i "gdpr" /var/log/thehive/application.log
 
 You should see confirmation that GDPR is enabled and scheduled.
 
+## Troubleshooting
+
+During a GDPR module run, Elasticsearch may time out when processing large volumes of data.
+
+To mitigate this issue, increase the default Elasticsearch [`scroll-keep-alive`](https://docs.janusgraph.org/configs/configuration-reference/#indexxelasticsearch){target=_blank} value in the `application.conf` file. The default value is 5 minutes, which may be insufficient for large datasets.
+
+Update the configuration as follows:
+
+```yaml
+db.janusgraph {
+    index.search {
+        [..]
+        scroll-keep-alive = 1800 # 30 minutes in seconds
+    }
+}
+```
+
+After applying the change, restart TheHive to ensure the new setting is applied.
+
 <h2>Next steps</h2>
 
 * [Perform Initial Login and Setup as an Admin](../administration/perform-initial-setup-as-admin.md)
