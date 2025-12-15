@@ -1612,6 +1612,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -17714,6 +17725,18 @@
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"gdpr"</span><span class="w"> </span>/var/log/thehive/application.log
 </code></pre></div>
 <p>You should see confirmation that GDPR is enabled and scheduled.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<p>During a GDPR module run, Elasticsearch may time out when processing large volumes of data.</p>
+<p>To mitigate this issue, increase the default Elasticsearch <a href="https://docs.janusgraph.org/configs/configuration-reference/#indexxelasticsearch" target="_blank"><code>scroll-keep-alive</code></a> value in the <code>application.conf</code> file. The default value is 5 minutes, which may be insufficient for large datasets.</p>
+<p>Update the configuration as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index.search {</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">[..]</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">scroll-keep-alive = 1800</span><span class="w"> </span><span class="c1"># 30 minutes in seconds</span>
+<span class="w">    </span><span class="err">}</span>
+<span class="err">}</span>
+</code></pre></div>
+<p>After applying the change, restart TheHive to ensure the new setting is applied.</p>
 <h2>Next steps</h2>
 
 <ul>
