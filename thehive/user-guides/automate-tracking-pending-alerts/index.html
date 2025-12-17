@@ -17615,40 +17615,59 @@
 <p>The status and wait time criteria used in this tutorial are just a starting point. Feel free to adjust them based on your team’s triage and escalation practices.</p>
 </div>
 <h2 id="step-1-create-a-custom-alert-status-to-flag-pending-alerts">Step 1: Create a custom alert status to flag pending alerts<a class="headerlink" href="#step-1-create-a-custom-alert-status-to-flag-pending-alerts" title="Permanent link">#</a></h2>
-<p>To highlight alerts needing review, start by creating a new alert status in TheHive.</p>
-<p>Follow the steps in <a href="../../administration/status/create-a-status/">Create a Status</a>, using the following values:</p>
-<div class="admonition tip">
-<p class="admonition-title">Values to use for the new <em>TOREVIEW</em> status</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Visibility</code></td>
-<td><em>Display</em></td>
-</tr>
-<tr>
-<td><code>Stage</code></td>
-<td><em>New</em></td>
-</tr>
-<tr>
-<td><code>Value</code></td>
-<td><em>TOREVIEW</em></td>
-</tr>
-</tbody>
-</table>
-</div>
+<p>To highlight alerts needing review, start by <a href="../../administration/status/create-a-status/">creating a new alert status</a> in TheHive.</p>
+<ol>
+<li>
+<p>Go to the <strong>Entities management</strong> view from the sidebar menu.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/administration-guides/entities-management-view.png" data-desc-position="bottom"><img alt="Entities management" src="/thehive/images/administration-guides/entities-management-view.png"></a></p>
+</li>
+<li>
+<p>Select the <strong>Case status</strong> tab or the <strong>Alert status</strong> tab.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/administration-guides/status-tab.png" data-desc-position="bottom"><img alt="Pages tab" src="/thehive/images/administration-guides/status-tab.png"></a></p>
+</li>
+<li>
+<p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v160H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h160v160c0 17.7 14.3 32 32 32s32-14.3 32-32V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span>.</p>
+</li>
+<li>
+<p>In the <strong>Add a custom status</strong> drawer, enter the following information:</p>
+<p><strong>- Visibility</strong>: <em>Display</em></p>
+<p><strong>- Stage</strong>: <em>New</em></p>
+<p><strong>- Value</strong>: <em>TOREVIEW</em></p>
+<p><strong>- Color</strong>: Enter a hex color code in the format #RRGGBB, or select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M309.7 71.6 245.3 136l33.4 33.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L200 181.3l-96.4 96.4c-2.9 2.9-5.1 6.5-6.3 10.3h321.5l53.7-53.7c4.9-4.9 7.6-11.5 7.6-18.3s-2.7-13.5-7.6-18.3L346.3 71.6c-4.8-4.9-11.4-7.6-18.3-7.6s-13.5 2.7-18.3 7.6M58.3 232.4l96.4-96.4-49.4-49.4c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L200 90.7l64.4-64.4C281.3 9.5 304.1 0 328 0s46.7 9.5 63.6 26.3l126.1 126.1c16.8 16.9 26.3 39.7 26.3 63.6s-9.5 46.7-26.3 63.6L311.6 485.7C294.7 502.5 271.9 512 248 512s-46.7-9.5-63.6-26.3L58.3 359.6C41.5 342.7 32 319.9 32 296s9.5-46.7 26.3-63.6M512 544c-35.3 0-64-28.7-64-64 0-25.2 32.6-79.6 51.2-108.7 6-9.4 19.5-9.4 25.5 0 18.7 29.1 51.2 83.5 51.2 108.7 0 35.3-28.7 64-64 64z"></path></svg></span> to open the color picker.</p>
+</li>
+<li>
+<p>Verify that the preview looks correct.</p>
+</li>
+<li>
+<p>Select <strong>Confirm custom status creation</strong>.</p>
+</li>
+</ol>
 <h2 id="step-2-set-up-an-email-notification-for-toreview-alerts">Step 2: Set up an email notification for <em>TOREVIEW</em> alerts<a class="headerlink" href="#step-2-set-up-an-email-notification-for-toreview-alerts" title="Permanent link">#</a></h2>
-<p>Next, configure TheHive to send an email notification to the manager when an alert status changes to <em>TOREVIEW</em>.</p>
-<p>Follow the steps in <a href="../organization/configure-organization/manage-notifications/create-a-notification/">Create a Notification</a>, using the following values:</p>
-<div class="admonition tip">
-<p class="admonition-title">Values to use for the email notification</p>
-<h3 id="trigger">Trigger<a class="headerlink" href="#trigger" title="Permanent link">#</a></h3>
-<p>As the trigger, select <a href="../organization/configure-organization/manage-notifications/write-filtered-event-trigger/"><em>FilteredEvent</em></a> and enter the following custom filter:</p>
+<p>Next, configure TheHive to <a href="../organization/configure-organization/manage-notifications/create-a-notification/">send an email notification</a> to the manager when an alert status changes to <em>TOREVIEW</em>.</p>
+<ol>
+<li>
+<p>Go to the <strong>Organization</strong> view from the sidebar menu.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/organization-view.png" data-desc-position="bottom"><img alt="Organization view" src="/thehive/images/user-guides/organization/configure-organization/organization-view.png"></a></p>
+</li>
+<li>
+<p>Select the <strong>Notifications</strong> tab.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/manage-notifications/notifications-tab.png" data-desc-position="bottom"><img alt="Notifications tab" src="/thehive/images/user-guides/organization/configure-organization/manage-notifications/notifications-tab.png"></a></p>
+</li>
+<li>
+<p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v160H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h160v160c0 17.7 14.3 32 32 32s32-14.3 32-32V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span>.</p>
+</li>
+<li>
+<p>In the <strong>Add notification</strong> drawer, enter the name of your notification.</p>
+<div class="admonition warning">
+<p class="admonition-title">Unique name</p>
+<p>This name must be unique, as two notifications can't have the same name.</p>
+</div>
+</li>
+<li>
+<p>Select the <em>FilteredEvent</em> trigger.</p>
+</li>
+<li>
+<p>Enter the following custom filter:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
@@ -17670,8 +17689,76 @@
 <span class="w">    </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="notifier">Notifier<a class="headerlink" href="#notifier" title="Permanent link">#</a></h3>
-<p>As the notifier, select <a href="../organization/configure-organization/manage-notifications/notifiers/email-to-addr/"><em>EmailerToAddr</em></a>.</p>
+</li>
+<li>
+<p>Select the <em>EmailerToAddr</em> notifier.</p>
+</li>
+<li>
+<p>In the <strong>EmailerToAddr</strong> drawer, enter the required email information.</p>
+<div class="admonition note">
+<p class="admonition-title">Available variables</p>
+<p>You can use variables in certain fields by selecting <strong>Add variable</strong>. Refer to the <a href="/thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/">Variable Usage Examples</a> topic for detailed examples.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Helpers using <a href="https://mustache.github.io/" target="_blank">Mustache syntax</a></p>
+<h3 id="data-transformation-helpers"><strong>Data transformation helpers</strong><a class="headerlink" href="#data-transformation-helpers" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>Description</th>
+<th>Usage</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tlpLabel</code></td>
+<td>Format the <code>tlp</code> field of the object</td>
+<td><code>{{ tlpLabel object.tlp }}</code></td>
+<td><code>Amber</code></td>
+</tr>
+<tr>
+<td><code>papLabel</code></td>
+<td>Format the <code>pap</code> field of the object</td>
+<td><code>{{ papLabel object.pap }}</code></td>
+<td><code>Amber</code></td>
+</tr>
+<tr>
+<td><code>severityLabel</code></td>
+<td>Format the <code>severity</code> field of the object</td>
+<td><code>{{ severityLabel object.severity }}</code></td>
+<td><code>Critical</code></td>
+</tr>
+<tr>
+<td><code>dateFormat</code></td>
+<td>Format a date field of the object using <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html" target="_blank">Java date time patterns</a></td>
+<td><code>{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}</code></td>
+<td><code>jeudi 01 septembre 2022</code></td>
+</tr>
+</tbody>
+</table>
+<p>Standard string helpers can be found in <a href="https://www.javadoc.io/static/com.github.jknack/handlebars/4.1.0/index.html?com/github/jknack/handlebars/helper/StringHelpers.html" target="_blank">the official Handlebars documentation</a>.</p>
+<h3 id="conditional-helpers"><strong>Conditional helpers</strong><a class="headerlink" href="#conditional-helpers" title="Permanent link">#</a></h3>
+<p>Examples:</p>
+<ul>
+<li>Displays <em>Medium</em> if <code>case.severity</code> equals 2, otherwise displays <em>Other</em>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{{#if (eq case.severity 2) }}
+    Medium
+{{else}}
+    Other 
+{{/if}}
+</code></pre></div>
+<ul>
+<li>Displays the threat actor value only if <code>case.customFieldValues.threat-actor</code> is defined:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{{#if case.customFieldValues.threat-actor}}
+    Threat Actor: {{case.customFieldValues.threat-actor}}
+{{/if}}
+</code></pre></div>
+<p>Find additional supported operators in <a href="https://www.javadoc.io/static/com.github.jknack/handlebars/4.1.0/com/github/jknack/handlebars/helper/ConditionalHelpers.html" target="_blank">the official Handlebars documentation</a>.</p>
+</div>
 <p>Email template example:</p>
 <div class="highlight"><pre><span></span><code>Hello,
 
@@ -17680,42 +17767,60 @@ The following alert has been pending for a while and requires your priority revi
 * ID: {{audit.objectId}}
 * Title: {{audit.object.title}}
 
-You can access the full alert details here: https://&lt;your-thehive-url&gt;/alerts/{{audit.objectId}}/details
+You can access the full alert details here: https://&lt;thehive_url&gt;/alerts/{{audit.objectId}}/details
 </code></pre></div>
-</div>
+<p>Replace <code>&lt;thehive_url&gt;</code> with your actual TheHive URL.</p>
+</li>
+<li>
+<p>Select <strong>Confirm</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Confirm</strong> again to save the notification.</p>
+</li>
+</ol>
 <p>To verify that your notification works as expected, manually change the status of an alert to <em>TOREVIEW</em>. This action should trigger an email to the configured recipient. If the email arrives, you're all set to move on to the final step!</p>
 <h2 id="step-3-automate-status-updates-using-an-alert-feeder">Step 3: Automate status updates using an alert feeder<a class="headerlink" href="#step-3-automate-status-updates-using-an-alert-feeder" title="Permanent link">#</a></h2>
-<p>Create an alert feeder that automatically updates the status of unassigned new alerts older than four hours.</p>
-<p>This alert feeder will periodically:</p>
-<ul>
-<li>Search for alerts that meet the criteria</li>
-<li>Update their status to <em>TOREVIEW</em></li>
-</ul>
-<p>Follow the steps in <a href="../organization/configure-organization/manage-feeders/create-a-feeder/">Create an Alert Feeder</a>, using the following values:</p>
-<div class="admonition tip">
-<p class="admonition-title">Values to use for the ChangePendingAlertStatus alert feeder</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Method</code></td>
-<td><em>GET</em></td>
-</tr>
-<tr>
-<td><code>URL</code></td>
-<td><em>https://<thehive-url>/api/v1/status/public/</thehive-url></em></td>
-</tr>
-<tr>
-<td><code>Authentication</code></td>
-<td><em>None</em></td>
-</tr>
-</tbody>
-</table>
+<p><a href="../organization/configure-organization/manage-feeders/create-a-feeder/">Create an alert feeder</a> that automatically updates the status of unassigned new alerts older than four hours.</p>
+<p>This alert feeder will periodically search for alerts that meet the criteria and update their status to <em>TOREVIEW</em></p>
+<ol>
+<li>
+<p>Go to the <strong>Organization</strong> view from the sidebar menu.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/organization-view.png" data-desc-position="bottom"><img alt="Organization view" src="/thehive/images/user-guides/organization/configure-organization/organization-view.png"></a></p>
+</li>
+<li>
+<p>Select the <strong>Connectors</strong> tab.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/manage-feeders/connectors-tab-organization.png" data-desc-position="bottom"><img alt="Connectors tab" src="/thehive/images/user-guides/organization/configure-organization/manage-feeders/connectors-tab-organization.png"></a></p>
+</li>
+<li>
+<p>In the <strong>General settings</strong> section, enter the following information:</p>
+<p><strong>- Name</strong>: A unique name for the alert feeder. You can’t change this name later.</p>
+<p><strong>- Interval</strong>: How often the alert feeder sends requests to the external system.</p>
+<div class="admonition warning">
+<p class="admonition-title">Define the interval carefully based on your reactivity requirements</p>
+<p>Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.</p>
+</div>
+<p><strong>- Request timeout time</strong>: The maximum time, in seconds, the alert feeder waits for a response before timing out.</p>
+<p><strong>- Request response max size</strong>: The maximum response size, in megabytes, that the alert feeder accepts from the external system.</p>
+<p><strong>- Description</strong>: A description to provide additional context or notes about the alert feeder configuration.</p>
+</li>
+<li>
+<p>In the <strong>HTTP request</strong> section, enter the following information:</p>
+<p><strong>- Method</strong>: <em>GET</em></p>
+<p><strong>- URL</strong>: <em>https://<thehive_url>/api/v1/status/public/</thehive_url></em></p>
+<p>Replace <code>&lt;thehive_url&gt;</code> with your actual TheHive URL.</p>
+</li>
+<li>
+<p>Select <strong>Test connection</strong> to verify the connection to the external system.</p>
+</li>
+<li>
+<p>In the <strong>Create function</strong> section, enter the following information:</p>
+<div class="admonition info">
+<p class="admonition-title">Feeder function</p>
+<p>Once created, the function is automatically added to the <a href="../manage-functions/about-functions.md">functions list</a> with the type <em>feeder</em>.</p>
+</div>
+<p><strong>- Function name</strong>: <em>ChangePendingAlertStatus</em></p>
+<p><strong>- Description</strong>: <em>This function retrieves all alerts with status New that are unassigned and were created more than four hours ago, then updates their status to TOREVIEW</em></p>
+<p><strong>- Definition</strong></p>
 <p>Use this function definition:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Name: ChangePendingAlertStatus </span>
 <span class="c1">// Type: Feeder</span>
@@ -17770,7 +17875,35 @@ You can access the full alert details here: https://&lt;your-thehive-url&gt;/ale
 <span class="w">    </span><span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-</div>
+</li>
+<li>
+<p>In the <strong>Test function</strong> section, you can test your function as follows:</p>
+<ul>
+<li>
+<p>Enter input data by selecting <em>input</em>.</p>
+</li>
+<li>
+<p>Select one of the following:</p>
+<ul>
+<li><strong>Run function (dry-run)</strong> to simulate the function without sending data.</li>
+<li><strong>Run function</strong> to execute the function with actual data.</li>
+</ul>
+</li>
+<li>
+<p>After running the function, select one of the following to view results:</p>
+<ul>
+<li><em>result</em> to view the function’s output</li>
+<li><em>stdout</em> to display standard output from the function</li>
+<li><em>stderr</em> to display errors and warnings</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Select <strong>Confirm</strong>.</p>
+</li>
+</ol>
+<p>That’s it—your automation is now fully set up and ready to ensure no pending alert goes unnoticed.</p>
 <h2>Next steps</h2>
 
 <ul>
