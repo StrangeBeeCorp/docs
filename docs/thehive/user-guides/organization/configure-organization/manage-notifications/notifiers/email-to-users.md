@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in TheHive to send emails to all users in the organization.
 
 !!! note "Notifier availability"
     The *EmailerToUser* notifier is available only when you enable the **Send notification to every user in the organization** toggle.
@@ -15,7 +15,7 @@ Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in
 
 2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
 
 4. Select the **EmailerToUser** notifier.
 

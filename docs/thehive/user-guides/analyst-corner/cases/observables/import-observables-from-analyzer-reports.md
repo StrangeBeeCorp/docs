@@ -2,7 +2,9 @@
 
 <!-- md:permission `manageObservable` -->
 
-Import [observables](about-observables.md) from [analyzer reports](../../../../administration/cortex/about-cortex.md) in TheHive to add additional observables discovered during analysis to your case or alert.
+[Cortex analyzers](../../../../administration/cortex/about-cortex.md) enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
+
+Import [observables](about-observables.md) from analyzer reports in TheHive to add additional observables discovered during analysis to your case or alert.
 
 Cortex analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
 

@@ -30,7 +30,7 @@ Configure the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHi
 
 2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
 
 4. Select the **Webhook** notifier.
 

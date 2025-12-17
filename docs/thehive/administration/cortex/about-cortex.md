@@ -37,6 +37,8 @@ Cortex offers the following features:
 * Analyzers enrich observables with detailed, contextual intelligence, generating a report with the results.
 * Responders execute actions on cases, alerts, observables, tasks, and task logs to support investigations and incident response, generating a report with the results.
 
+See the full list of available analyzers and responders in the [Cortex Neurons documentation](https://thehive-project.github.io/Cortex-Analyzers/){target=_blank}.
+
 ## Permissions
 
 Only users with an admin-type profile that has the `managePlatform` permission can manage the Cortex connection in TheHive.

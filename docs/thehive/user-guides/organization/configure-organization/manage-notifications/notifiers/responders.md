@@ -22,13 +22,15 @@ Configure the *RunResponder* [notifier](../about-notifications.md#notifiers) in 
     * *TaskClosed*  
     * *TaskMandatory*
 
+{% include-markdown "includes/cortex-integration-required.md" %}
+
 <h2>Procedure</h2>
 
 1. {% include-markdown "includes/organization-view-go-to.md" %}
 
 2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
 
 4. Select the **RunResponder** notifier.
 

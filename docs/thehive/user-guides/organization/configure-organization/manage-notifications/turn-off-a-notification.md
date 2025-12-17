@@ -10,7 +10,7 @@ Turn off a [notification](about-notifications.md) in TheHive to temporarily stop
 
 2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification you want to turn off, then select **Edit**.
 
 4. Turn off the **Enable notification** toggle to deactivate the notification.
 

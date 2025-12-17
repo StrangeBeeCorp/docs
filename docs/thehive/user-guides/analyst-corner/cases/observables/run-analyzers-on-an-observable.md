@@ -2,7 +2,9 @@
 
 <!-- md:permission `manageObservable` -->
 
-Run [Cortex analyzers](../../../../administration/cortex/about-cortex.md) on an [observable](about-observables.md) in TheHive to enrich it with contextual intelligence. Analyzers generate reports with their findings.
+[Cortex analyzers](../../../../administration/cortex/about-cortex.md) enrich observables with detailed, contextual intelligence, generating a report with the results. The type of each observable determines which analyzers are available.
+
+Run analyzers on an [observable](about-observables.md) in TheHive to enrich it with contextual intelligence. Analyzers generate reports with their findings.
 
 The observable type determines which analyzers are available.
 

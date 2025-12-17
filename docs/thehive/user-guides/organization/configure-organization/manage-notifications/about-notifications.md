@@ -65,18 +65,18 @@ Learn how to create filtered events and explore examples in the [Write a Filtere
 
 Several types of notifiers are available in TheHive:
 
-* *EmailerToUser*: Sends an email to all [users in the current organization](./notifiers/email-to-users.md)
-* *EmailerToAddr*: Sends an email to [a specific email address](./notifiers/email-to-addr.md)
-* *HttpRequest*: Sends data to a specified [HTTP endpoint](./notifiers/http-request.md)
-* *Mattermost*: Sends data to a selected [Mattermost endpoint](./notifiers/mattermost.md)
-* *Slack*: Sends data to a selected [Slack endpoint](./notifiers/slack.md)
-* *Teams*: Sends data to a selected [Microsoft Teams endpoint](./notifiers/teams.md)
-* *Webhook*: Sends data to a chosen [webhook endpoint](./notifiers/webhook.md)
-* *Kafka*: Sends data to a specified [Kafka queue](./notifiers/kafka.md)
-* *Redis*: Sends data to a selected [Redis channel](./notifiers/redis.md)
-* *RunAnalyzer*: Executes a selected [analyzer](./notifiers/analyzers.md)
-* *RunResponder*: Executes a selected [responder](./notifiers/responders.md)
-* *Function*: Run a specified [function](./notifiers/function.md)
+* [*EmailerToUser*](./notifiers/email-to-users.md): Sends an email to all users in the current organization
+* [*EmailerToAddr*](./notifiers/email-to-addr.md): Sends an email to a specific email address
+* [*HttpRequest*](./notifiers/http-request.md): Sends data to a specified HTTP endpoint
+* [*Mattermost*](./notifiers/mattermost.md): Sends data to a selected Mattermost endpoint
+* [*Slack*](./notifiers/slack.md): Sends data to a selected Slack endpoint
+* [*Teams*](./notifiers/teams.md): Sends data to a selected Microsoft Teams endpoint
+* [*Webhook*](./notifiers/webhook.md): Sends data to a chosen webhook endpoint
+* [*Kafka*](./notifiers/kafka.md): Sends data to a specified Kafka queue
+* [*Redis*](./notifiers/redis.md): Sends data to a selected Redis channel
+* [*RunAnalyzer*](./notifiers/analyzers.md): Executes selected analyzers
+* [*RunResponder*](./notifiers/responders.md): Executes selected responders
+* [*Function*](./notifiers/function.md): Run a specified function
 
 !!! warning "Endpoints required"
     Some notifiers require at least one defined endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. Refer to the dedicated page for each notifier to learn how to create the necessary local endpoints.

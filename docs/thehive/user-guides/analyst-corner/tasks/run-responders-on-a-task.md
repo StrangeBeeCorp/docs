@@ -2,7 +2,9 @@
 
 <!-- md:permission `manageTask` -->
 
-Run [Cortex responders](../../../administration/cortex/about-cortex.md) on a [task](about-tasks.md) in TheHive to take automated actions, such as summarizing task logs. Responders generate reports documenting the actions taken.
+[Cortex responders](../../../administration/cortex/about-cortex.md) execute actions on cases, alerts, observables, tasks, and task logs.
+
+Run responders on a [task](about-tasks.md) in TheHive to take automated actions, such as summarizing task logs. Responders generate reports documenting the actions taken.
 
 Responders execute actions on cases, alerts, observables, tasks, and task logs.
 

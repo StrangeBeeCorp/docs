@@ -34,7 +34,7 @@ Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in T
 
     ---
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
 
     ---
 

@@ -1,5 +1,7 @@
 # About Analyzer Templates
 
+[Cortex analyzers](../cortex/about-cortex.md) enrich observables with detailed, contextual intelligence, generating a report with the results.
+
 Analyzer templates define how analyzer reports are displayed after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
 ## Format

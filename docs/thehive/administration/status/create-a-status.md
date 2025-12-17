@@ -16,7 +16,7 @@ Create a [status](about-statuses.md) for cases and alerts in TheHive to add cust
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

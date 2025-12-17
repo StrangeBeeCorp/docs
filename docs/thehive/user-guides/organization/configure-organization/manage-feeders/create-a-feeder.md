@@ -83,10 +83,10 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
     ---
 
-12. Create a function to map fields from the external system to TheHive’s format:
+12. Create a function to map fields from the external system to TheHive format:
 
     !!! info "Feeder function"
-        Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*. 
+        Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*.
 
     **- Function name**
 

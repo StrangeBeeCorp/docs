@@ -12,7 +12,7 @@ Add [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in The
 
     ---
 
-3. Select :fontawesome-regular-square-plus:.
+3. Select :fontawesome-solid-plus:.
 
     ---
 

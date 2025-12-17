@@ -1,6 +1,8 @@
 # Run Responders and Review Reports for a Case
 
-Run [responders](../../../administration/cortex/about-cortex.md) on a [case](about-cases.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
+[Cortex responders](../../../administration/cortex/about-cortex.md) execute actions on cases, alerts, observables, tasks, and task logs.
+
+Run responders on a [case](about-cases.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
 
 Responders execute actions on cases, alerts, observables, tasks, and task logs.
 

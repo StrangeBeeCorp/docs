@@ -2,6 +2,8 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
+[Cortex analyzers](../cortex/about-cortex.md) enrich observables with detailed, contextual intelligence, generating a report with the results.
+
 Import [analyzer templates](about-analyzer-templates.md) in TheHive to define how reports appear after [running an analyzer on an observable](../../user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md).
 
 <h2>Procedure</h2>

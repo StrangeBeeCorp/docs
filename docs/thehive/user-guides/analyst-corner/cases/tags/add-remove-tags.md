@@ -8,11 +8,11 @@ Add or remove [tags](about-tags.md) from a [case](../about-cases.md), an [alert]
 
 1. Find the [case](../search-for-cases/find-a-case.md), the [alert](../../alerts/search-for-alerts/find-an-alert.md), or the [observable](../search-for-cases/find-an-observable.md) where you want to add tags.
 
-2. Hover over the tags and select :fontawesome-regular-square-plus: on the right.
+2. Hover over the tags and select :fontawesome-solid-plus: on the right.
 
     ![Taxonomy tags](../../../../images/administration-guides/taxonomy-tags.gif)
 
-    !!! tip "Can't find the :fontawesome-regular-square-plus: button?"
+    !!! tip "Can't find the :fontawesome-solid-plus: button?"
         The button appears only if at least one taxonomy is active. Contact someone with admin-level permissions to [activate taxonomies](../../../../administration/taxonomies/activate-deactivate-a-taxonomy.md).
 
 3. In the **Select tags from library** drawer, select the relevant taxonomy and the tags you want to add.

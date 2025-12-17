@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageConfig` -->
 
-Configure the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in TheHive.
+Configure the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in TheHive to send emails to a single recipient.
 
 !!! note "Notifier availability"
     The *EmailerToAddr* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
@@ -27,7 +27,7 @@ Configure the *EmailerToAddr* [notifier](../about-notifications.md#notifiers) in
 
 2. {% include-markdown "includes/notifications-tab-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: and then **Edit**.
+3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
 
 4. Select the **EmailerToAddr** notifier.
 

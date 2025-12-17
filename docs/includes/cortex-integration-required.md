@@ -1,0 +1,2 @@
+!!! warning "Cortex integration required"
+    To use analyzers and responders within TheHive, you must [connect at least one Cortex server to your TheHive instance](/thehive/administration/cortex/add-a-cortex-server/).
