@@ -148,7 +148,7 @@ This alert feeder will periodically search for alerts that meet the criteria and
 6. In the **Create function** section, enter the following information:
 
     !!! info "Feeder function"
-        Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*.
+        Once created, the function is automatically added to the [functions list](./organization/configure-organization/manage-functions/about-functions.md) with the type *feeder*.
 
     **- Function name**: *ChangePendingAlertStatus*
 
