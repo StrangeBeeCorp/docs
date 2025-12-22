@@ -203,6 +203,10 @@ sections:
               url: 'https://github.com/thehive-project/thehive4py'
             - text: 'Use the Go API client'
               url: 'https://github.com/StrangeBeeCorp/thehive4go'
+        - title: 'Integrate with the MCP server'
+          links: 
+            - text: 'Get started with the MCP server'
+              url: 'https://github.com/StrangeBeeCorp/TheHiveMCP'
 
 ---
 

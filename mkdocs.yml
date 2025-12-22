@@ -687,7 +687,7 @@ nav:
           - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
       - 'Automation Hacks':
         - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
-      - 'Analyst''s Corner':
+      - 'Analyst Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
           - 'Search for Alerts': 
@@ -871,6 +871,8 @@ nav:
       - 'Python Client': https://github.com/thehive-project/thehive4py
       - 'Go Client': https://github.com/StrangeBeeCorp/thehive4go
 
+    - 'MCP Server': https://github.com/StrangeBeeCorp/TheHiveMCP"target="_blank
+
     - 'Release Notes':
       - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
       - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
@@ -911,7 +913,7 @@ nav:
       - 'API Guide': './cortex/api/api-guide.md'
       - 'How to create an Analyzer' : './cortex/api/how-to-create-an-analyzer.md'
       - 'How to create a Responder': './cortex/api/how-to-create-a-responder.md'
-  - 'Cortex Neurons': https://thehive-project.github.io/Cortex-Analyzers/" target="_blank
+  - 'Cortex Neurons': https://thehive-project.github.io/Cortex-Analyzers/"target="_blank
   - 'Resources': 
     - resources/index.md
     - resources/templates.md
