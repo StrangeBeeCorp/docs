@@ -41,7 +41,7 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
 
     The URL where the OAuth 2.0 server redirects users after authentication.
     
-    Format: *https://<your-hive-domain>/api/ssoLogin*
+    Format: `https://<your-hive-domain>/api/ssoLogin`
 
     **- Grant type**
 

@@ -43,7 +43,7 @@ Connect [Cortex](about-cortex.md) servers to TheHive to enable automated analysi
 
     The URL of the Cortex server to connect to.
     
-    Example: *https://cortex.mycompany.com*
+    Example: `https://cortex.mycompany.com`
 
     **- API key**
 

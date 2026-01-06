@@ -51,7 +51,7 @@ To manually import a MISP event as a case in TheHive, refer to [Create a New Cas
 
     **- Server URL**
 
-    The URL of the MISP server to connect with. For example: *https://misp.mycompany.com*.
+    The URL of the MISP server to connect with. For example: `https://misp.mycompany.com`.
 
     **- API key**
 

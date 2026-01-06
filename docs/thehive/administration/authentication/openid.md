@@ -57,7 +57,7 @@ Configure an OpenID authentication provider in TheHive.
 
     * If you choose *url*, provide the full link to the metadata document.
     
-        Example: *https://login.microsoftonline.com/{tenant-id}/.well-known/openid-configuration*
+        Example: `https://login.microsoftonline.com/{tenant-id}/.well-known/openid-configuration`
 
     * If you choose *json*, paste the JSON content directly into the field.
     

@@ -82,7 +82,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
             ![Google Auth Platform Add remove scopes](/thehive/images/administration-guides/google-auth-platform-add-remove-scopes.png)
 
-        14. In the **Manually add scopes** section, enter *https://mail.google.com/*.
+        14. In the **Manually add scopes** section, enter `https://mail.google.com/`.
 
         15. Select **Add to table**.
 

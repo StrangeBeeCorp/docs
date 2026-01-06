@@ -137,9 +137,9 @@ This alert feeder will periodically search for alerts that meet the criteria and
 
 4. In the **HTTP request** section, enter the following information:
 
-    **- Method**: *GET*
+    **- Method**: `GET`
 
-    **- URL**: *https://<thehive_url>/api/v1/status/public/*
+    **- URL**: `https://<thehive_url>/api/v1/status/public/`
 
     Replace `<thehive_url>` with your actual TheHive URL.
 

@@ -53,7 +53,7 @@ Configure a SAML authentication provider in TheHive.
 
     * If you choose *url*, provide the full link to the metadata document.
     
-        Example: *https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml*
+        Example: `https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml`
 
     * If you choose *xml*, paste the XML metadata content directly into the field.
     
