@@ -103,6 +103,8 @@ Steps to Remove a Dead Node:
 
 ## Increasing Replication Factor in Cassandra
 
+{% include-markdown "includes/python-compatibility-cqlsh.md" %}
+
 When you have multiple nodes, increasing the replication factor enhances fault tolerance by creating additional copies in the cluster. More copies mean greater resilience to hardware failures. However, this also means more disk space is used due to the increased data redundancy, potentially resulting in slower write access.
 
 To enhance fault tolerance in your Cassandra cluster by increasing the replication factor, follow these steps:

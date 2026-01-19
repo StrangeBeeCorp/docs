@@ -17,9 +17,12 @@ This guide presents configuration examples for setting up a fault-tolerant clust
     These applications can either be installed on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
 
 !!! warning "Before you begin"
-    To ensure a smooth installation process, make sure you have [system requirements fully met and verified](system-requirements.md) for Linux installation.
+  
+    * Verify that all [Linux system requirements](system-requirements.md) are met on every node.
+    * Ensure that Python 3.9 is available for using the Cassandra Query Language (CQL) shell `cqlsh`. Later Python versions aren't compatible.
 
 {% include-markdown "includes/data-protection-link.md" %}
+
 ---
 
 ## Architecture Diagram
@@ -42,6 +45,7 @@ The subsequent sections will provide detailed configuration examples and step-by
 ---
 
 ## Cassandra Setup
+
 ![](../images/installation/cassandra-cluster.png){ align=center}
 
 When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of 3. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node, meaning that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cyber threats without downtime or data loss.
@@ -154,6 +158,8 @@ To initiate the Cassandra service on each node, follow these steps:
 
 ### Initializing the Database
 
+{% include-markdown "includes/python-compatibility-cqlsh.md" %}
+
 To initialize the database, perform the following steps:
 
 
@@ -182,7 +188,7 @@ To initialize the database, perform the following steps:
         ```sql
         CREATE ROLE admin WITH PASSWORD password = 'admin_password' AND LOGIN = true AND SUPERUSER = true;
         ```
-    After executing the query, exit the CQL shell and reconnect  using the new admin role.
+    After executing the query, exit the CQL shell and reconnect using the new admin role.
 
     Remove the default cassandra user using the following CQL query
 
@@ -429,8 +435,8 @@ To set up a shared file storage for TheHive in a clustered environment, several 
         !!! Example ""
 
             ```bash
-            mkdir -p /srv/minio/{1,2}
-            chown -R minio-user:minio-user /srv/minio
+            sudo mkdir -p /srv/minio/{1,2}
+            sudo chown -R minio-user:minio-user /srv/minio
             ```
 
     3. **Setting up Hosts Files**: To ensure proper communication between servers in your environment, it's necessary to configure the ``/etc/hosts`` file on all servers:
@@ -486,9 +492,9 @@ To set up a shared file storage for TheHive in a clustered environment, several 
     !!! Example ""
 
         ```bash
-        systemctl daemon-reload
-        systemctl enable minio
-        systemctl start minio.service
+        sudo systemctl daemon-reload
+        sudo systemctl enable minio
+        sudo systemctl start minio.service
         ```
 
     &nbsp;
@@ -632,7 +638,7 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
         !!! Example ""
 
             ```bash
-            chown -R thehive:thehive /opt/thp/thehive/files
+            sudo chown -R thehive:thehive /opt/thp/thehive/files
             sudo chmod 700 /opt/thp/thehive/files
             ```
 
@@ -723,8 +729,8 @@ For other installation methods:
 2. Set appropriate file permissions.
 
     ```bash
-    chmod 400 /etc/thehive/secret.conf
-    chown thehive:thehive /etc/thehive/secret.conf
+    sudo chmod 400 /etc/thehive/secret.conf
+    sudo chown thehive:thehive /etc/thehive/secret.conf
     ```
 
 3. Copy the `/etc/thehive/secret.conf` file to all other nodes in the cluster.
@@ -741,7 +747,7 @@ Once the configuration is updated, start TheHive service using the following com
 !!! Example ""
 
     ```bash
-    systemctl start thehive
+    sudo systemctl start thehive
     ```
 This command initiates TheHive service, enabling S3 file storage functionality as configured. Make sure to execute this command on each node of TheHive cluster to ensure proper functionality across the entire setup.
 

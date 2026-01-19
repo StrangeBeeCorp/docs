@@ -85,5 +85,5 @@ Replace `<thehive_version>` with the TheHive version.
 
 <h2>Next steps</h2>
 
-* [Backup a Stack Run with Docker Compose](../operations/backup-restore/backup/docker-compose.md)
-* [Monitoring](../operations/monitoring.md)
+* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/cold-backup/docker-compose.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)

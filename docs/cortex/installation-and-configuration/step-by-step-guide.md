@@ -380,7 +380,7 @@ Save configuration file and run the service:
 !!! Example "" 
 
     ```bash
-    systemctl start cortex
+    sudo systemctl start cortex
     ```
 
 Please note that the service may take some time to start. Once it is started, you may launch your browser and connect to `http://YOUR_SERVER_ADDRESS:9001/`. 

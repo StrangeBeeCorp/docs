@@ -70,7 +70,7 @@ In the event that a server within your MinIO cluster has crashed and cannot be r
 
       - Start the MinIO service on the new replacement node and ensure it joins the cluster successfully:
       ```bash
-      systemctl start minio
+      sudo systemctl start minio
       ```
 
 6. **Verify Node Replacement**
@@ -142,7 +142,7 @@ Note: MinIO strongly recommends restarting all nodes simultaneously when adding 
       
       - On each existing MinIO node, restart the MinIO service to apply the updated configuration:
       ```bash
-      systemctl restart minio
+      sudo systemctl restart minio
       ```
 
 5. **Verify Node Addition**

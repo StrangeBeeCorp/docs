@@ -84,7 +84,7 @@ Once finished, clone the Cortex-analyzers repository in the directory of your ch
     ```bash
     cd /opt
     git clone https://github.com/TheHive-Project/Cortex-Analyzers
-    chown -R cortex:cortex /opt/Cortex-Analyzers 
+    sudo chown -R cortex:cortex /opt/Cortex-Analyzers 
     ```
 
 ### Install dependencies
@@ -151,8 +151,8 @@ Create a dedicated folder to host your programs:
     
     ```bash
     cd /opt
-    mkdir -p Custom-Analyzers/{analyzers,responder}
-    chown -R cortex:cortex /opt/Cortex-Analyzers 
+    sudo mkdir -p Custom-Analyzers/{analyzers,responder}
+    sudo chown -R cortex:cortex /opt/Cortex-Analyzers 
     ```
 
 ### Update Cortex configuration

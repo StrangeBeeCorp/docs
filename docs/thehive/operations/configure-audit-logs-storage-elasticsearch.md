@@ -70,6 +70,6 @@ Available options are:
 
 <h2>Next steps</h2>
 
-* [Back up and restore](../operations/backup-restore/overview.md)
-* [Monitoring](monitoring.md)
+* [Cold vs. Hot Backup and Restore](../operations/backup-restore/cold-hot-backup-restore.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](monitoring.md)
 * [Troubleshooting](troubleshooting.md)

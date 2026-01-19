@@ -1,48 +1,41 @@
-# Restore physical server
+# Restore a Cold Backup on a Physical Server
 
-## Introduction
+In this tutorial, we're going to guide you through restoring a cold backup of TheHive on a physical server.
 
-Restoring your application stack on physical servers is a process that involves recovering configuration files, data, and logs from a previously created backup. This procedure ensures the application is returned to a consistent and operational state.
+Restoring your application stack is a process that involves recovering configuration files, data, and logs from a previously created backup. This procedure ensures the application is returned to a consistent and operational state.
 
-Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services. This guide assumes that:
+Unlike virtual or containerized environments, restoring on physical servers requires manual handling of files and services.
 
-* You are restoring from [a cold backup](../backup/physical-server.md), where services were stopped during the backup process to maintain data consistency.
-* The server environment matches the original configuration (e.g., paths, software versions, and dependencies).
-* The backup was created following the [Backup Procedure for Physical Servers](../backup/physical-server.md).
+{% include-markdown "includes/implications-cold-backup-restore.md" %}
 
-When performing a restore, you will:
+{% include-markdown "includes/backup-restore-best-practices.md" %}
 
-1. Ensure all services are stopped (Elasticsearch, Cassandra, TheHive, etc.) before running the restoration process.
-2. Restore the configuration, data, and log files from the backup.
-3. Restart services and verify that the system is functioning as expected.
+## Prerequisites
 
-!!! Warning
-    * Always test the restoration process in a non-production or test environment before applying it to a live system.
-    * Ensure you have a current backup before starting the restore operation, as any errors during restoration could lead to data loss.
-    * This guide provides general instructions; adapt them to your specific server configuration.
+This guide assumes that:
 
----
-## Step-by-step instructions
+* You are restoring from a cold backup created using the procedures outlined in the [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md) guide, where services were stopped during the backup process to ensure data consistency.
+* The server environment matches the original configuration (for example, paths, software versions, and dependencies).
 
-### Ensure all services are stopped
+## Step 1: Stop the services
+
+Stop all services to ensure data consistency and prevent any changes during the restore process.
 
 !!! Example ""
 
     ```bash
-    systemctl stop thehive
-    systemctl stop elasticsearch
-    systemctl stop cassandra
+    sudo systemctl stop thehive
+    sudo systemctl stop elasticsearch
+    sudo systemctl stop cassandra
     ```
 
-
-### Check all data folders are empty
+## Step 2: Check all data folders are empty
 
 Ensure `/var/lib/cassandra/` and `/var/lib/elasticsearch/` are empty.
 
+## Step 3: Copy files from the backup folder
 
-### Copy files from the backup folder
-
-For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy all files preserving their permissions
+For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy all files preserving their permissions.
 
 !!! Example ""
 
@@ -89,7 +82,7 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
     ## WARNING:
     ## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.
     ## - This script will overwrite existing data. Use it with caution.
-    ## - Do not modify the rest of the script unless necessary.
+    ## - Don't modify the rest of the script unless necessary.
     ##
     ## ============================================================
     ## DO NOT MODIFY ANYTHING BELOW THIS LINE
@@ -162,7 +155,7 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
     rsync -aW --no-compress ${BACKUP_FOLDER}/thehive/data/ /opt/thp/thehive/files || { echo "TheHive data restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/thehive/logs/ /var/log/thehive || { echo "TheHive logs restore failed"; exit 1; }
 
-    # Copy Casssandra data
+    # Copy Cassandra data
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/config/ /etc/cassandra || { echo "Cassandra config restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/data/ /var/lib/cassandra || { echo "Cassandra data restore failed"; exit 1; }
     rsync -aW --no-compress ${BACKUP_FOLDER}/cassandra/logs/ /var/log/cassandra || { echo "Cassandra logs restore failed"; exit 1; }
@@ -177,7 +170,9 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
 
 Ensure permissions are correctly setup before running services. 
 
-### Start services in this order
+### Step 4: Restart all services
+
+Restart services in this order:
 
 1. Elasticsearch
 2. Cassandra
@@ -186,12 +181,15 @@ Ensure permissions are correctly setup before running services.
 !!! Example ""
 
     ```bash
-    systemctl start thehive
-    systemctl start elasticsearch
-    systemctl start cassandra
+    sudo systemctl start thehive
+    sudo systemctl start elasticsearch
+    sudo systemctl start cassandra
     ```
 
----
-## Validation
+## Step 5: Validate the restore
 
-Open you browser, connect to TheHive, and check your data has been restored correctly. 
+Open you browser, connect to TheHive, and check your data has been restored correctly.
+
+<h2>Next steps</h2>
+
+* [Perform a Cold Backup on a Physical Server](../../backup/cold-backup/physical-server.md)

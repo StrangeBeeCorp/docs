@@ -1,0 +1,2 @@
+!!! danger "Understand the implications"
+    Hot backups allow TheHive to keep running during the process, but they don’t guarantee perfect data consistency. Review the [Cold vs. Hot Backups and Restores](/thehive/operations/backup-restore/cold-hot-backup-restore/) topic to ensure this method fits your organization's risk tolerance and operational needs.

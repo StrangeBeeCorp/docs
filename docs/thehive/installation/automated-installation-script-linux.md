@@ -37,15 +37,15 @@ If you also want to use the script to install Cortex, refer to the [Cortex insta
 
 <h2>Next steps</h2>
 
-* [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
-* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
 * [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
 * [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
-* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
-* [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
-* [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)
-* [Cold Backups for Virtual Servers](../operations/backup-restore/backup/virtual-server.md)
-* [Monitoring](../operations/monitoring.md)
+* [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
+* [Perform a Hot Backup on a Standalone Server](../operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md)
+* [Perform a Cold Backup on a Physical Server](../operations/backup-restore/backup/cold-backup/physical-server.md)
+* [Perform a Cold Backup on a Virtual Server](../operations/backup-restore/backup/cold-backup/virtual-server.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)

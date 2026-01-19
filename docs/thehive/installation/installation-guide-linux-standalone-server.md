@@ -123,7 +123,7 @@ TheHive requires Java to run its application server and to manage various proces
 
 ---
 
-## :fontawesome-solid-database: Step 3: Install and configure Apache Cassandra
+## :fontawesome-solid-database: Step 3: Install and configure Apache Cassandra {#step-3-install-configure-cassandra}
 
 [Apache Cassandra](https://cassandra.apache.org){target=_blank} is a database system that's used in TheHive as the back-end database for storing and managing incident response data.
 
@@ -163,7 +163,7 @@ TheHive requires Java to run its application server and to manage various proces
     3. Verify that Cassandra is installed.
 
         ```bash
-        systemctl status cassandra
+        sudo systemctl status cassandra
         ```
 
         This will show you the status of the Cassandra service. If Cassandra is installed you should see details about the service. If it's not installed, you will receive an error indicating that the service isn't found.
@@ -291,7 +291,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     1. Check whether the Cassandra service started automatically before configuring it.
 
         ```bash
-        systemctl status cassandra
+        sudo systemctl status cassandra
         ```
 
         If it's running, stop it and remove existing data.
@@ -316,7 +316,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     4. Verify that Cassandra is running.
 
         ```bash
-        systemctl status cassandra
+        sudo systemctl status cassandra
         ```
 
         If Cassandra is running, you should see an active status in green.
@@ -477,7 +477,7 @@ For additional configuration options, refer to:
 
 ---
 
-## :fontawesome-solid-list: Step 4: Install and configure Elasticsearch
+## :fontawesome-solid-list: Step 4: Install and configure Elasticsearch {#step-4-install-configure-elasticsearch}
 
 [Elasticsearch](https://www.elastic.co/elasticsearch){target=_blank} is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing [audit logs](../user-guides/organization/about-audit-logs.md).
 
@@ -676,7 +676,7 @@ For additional configuration options, refer to:
     1. Check whether the Elasticsearch service started automatically before configuring it.
 
         ```bash
-        systemctl status elasticsearch
+        sudo systemctl status elasticsearch
         ```
 
         If it's running, stop it and remove existing data.
@@ -702,7 +702,7 @@ For additional configuration options, refer to:
     4. Verify that Elasticsearch is running.
 
         ```bash
-        systemctl status elasticsearch
+        sudo systemctl status elasticsearch
         ```
 
         If Elasticsearch is running, you should see an active status in green.
@@ -712,7 +712,7 @@ For additional configuration options, refer to:
     1. Check whether the Elasticsearch service started automatically before configuring it.
 
         ```bash
-        systemctl status elasticsearch
+        sudo systemctl status elasticsearch
         ```
 
         If it's running, stop it and remove existing data.
@@ -738,7 +738,7 @@ For additional configuration options, refer to:
     4. Verify that Elasticsearch is running.
 
         ```bash
-        systemctl status elasticsearch
+        sudo systemctl status elasticsearch
         ```
 
         If Elasticsearch is running, you should see an active status in green.
@@ -979,8 +979,8 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
     b. Set appropriate file permissions.
     
     ```bash
-    chmod 400 /etc/thehive/secret.conf
-    chown thehive:thehive /etc/thehive/secret.conf
+    sudo chmod 400 /etc/thehive/secret.conf
+    sudo chown thehive:thehive /etc/thehive/secret.conf
     ```
 
     !!! danger "Security requirements"
@@ -1119,7 +1119,7 @@ scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
 2. Verify that TheHive is running.
 
     ```bash
-    systemctl status thehive
+    sudo systemctl status thehive
     ```
 
     If TheHive is running, you should see an active status in green.
@@ -1161,19 +1161,19 @@ See detailed steps in the Backup & Restore Operations section.
 
 We recommend setting up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  
 
-See the [Monitoring](../operations/monitoring.md) page for detailed instructions.
+See the [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md) page for detailed instructions.
 
 <h2>Next steps</h2>
 
 * [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
 * [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
-* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
 * [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
-* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
-* [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
-* [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)
-* [Cold Backups for Virtual Servers](../operations/backup-restore/backup/virtual-server.md)
-* [Monitoring](../operations/monitoring.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
+* [Perform a Hot Backup on a Standalone Server](../operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md)
+* [Perform a Cold Backup on a Physical Server](../operations/backup-restore/backup/cold-backup/physical-server.md)
+* [Perform a Cold Backup on a Virtual Server](../operations/backup-restore/backup/cold-backup/virtual-server.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)

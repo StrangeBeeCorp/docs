@@ -158,7 +158,7 @@ You can check whether the Podman socket service is running on your system with t
 
 !!! Example ""
     ```shell
-    systemctl status podman.socket
+    sudo systemctl status podman.socket
     ```
 
 By default, the Podman socket resides at `/run/podman/podman.sock`. This path may vary depending on your system configuration.

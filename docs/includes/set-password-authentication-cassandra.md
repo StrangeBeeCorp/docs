@@ -1,3 +1,5 @@
+{% include-markdown "includes/python-compatibility-cqlsh.md" %}
+
 By default, Cassandra uses the `cassandra` username and the password `cassandra`. For security reasons, especially in production environments, you must change this password immediately after setup.
 
 To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.

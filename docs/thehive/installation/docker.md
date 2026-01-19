@@ -366,8 +366,8 @@ Check the hardware requirements in the [Docker Compose deployment section](syste
     * `init.sh`: Initializes the application stack.
     * `output.sh`: Displays output messages called by other scripts.
     * `reset.sh`: Resets the testing environment. Running this script deletes all data and containers.
-    * `backup.sh`: Performs a cold backup of the current environment. See [Backup a Stack Run with Docker Compose](../operations/backup-restore/backup/docker-compose.md) for more details.
-    * `restore.sh`: Restores the environment from a previously taken backup. See [Restore a Stack Run with Docker Compose](../operations/backup-restore/restore/docker-compose.md) for more details.
+    * `backup.sh`: Performs a cold backup of the current environment. See [# Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/cold-backup/docker-compose.md) for more details.
+    * `restore.sh`: Restores the environment from a previously taken backup. See [Restore a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/restore/cold-restore/docker-compose.md) for more details.
 
 ## Step 5: Go to the selected profile
 
@@ -437,10 +437,10 @@ For additional Docker entrypoint options, see [TheHive Docker Entrypoint Setting
 
 * [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
 * [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
-* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
 * [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
 * [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
-* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
-* [Backup a Stack Run with Docker Compose](../operations/backup-restore/backup/docker-compose.md)
-* [Monitoring](../operations/monitoring.md)
+* [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
+* [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/cold-backup/docker-compose.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)

@@ -191,5 +191,5 @@ http://cortex.<namespace>.svc:9001
 
 <h2>Next steps</h2>
 
-* [Monitoring TheHive](../operations/monitoring.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
 * [Troubleshooting](../operations/troubleshooting.md)

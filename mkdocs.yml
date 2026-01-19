@@ -336,6 +336,17 @@ plugins:
             'thehive/installation/step-by-step-installation-guide.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/user-guides/analyst-corner/about-views.md': 'thehive/user-guides/analyst-corner/views/about-views.md'
             'thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/share-a-case-page.md'
+            'thehive/operations/backup-restore/backup/docker-compose.md': 'thehive/operations/backup-restore/backup/cold-backup/docker-compose.md'
+            'thehive/operations/backup-restore/backup/physical-server.md': 'thehive/operations/backup-restore/backup/cold-backup/physical-server.md'
+            'thehive/operations/backup-restore/backup/virtual-server.md': 'thehive/operations/backup-restore/backup/cold-backup/virtual-server.md'
+            'thehive/operations/backup-restore/backup/hot-backup.md': 'thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md'
+            'thehive/operations/backup-restore/backup/cloud.md': 'thehive/operations/backup-restore/backup/cold-backup/virtual-server.md'
+            'thehive/operations/backup-restore/overview.md': 'thehive/operations/backup-restore/cold-hot-backup-restore.md'
+            'thehive/operations/backup-restore/restore/docker-compose.md': 'thehive/operations/backup-restore/restore/cold-restore/docker-compose.md'
+            'thehive/operations/backup-restore/restore/physical-server.md': 'thehive/operations/backup-restore/restore/cold-restore/physical-server.md'
+            'thehive/operations/backup-restore/restore/virtual-server.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
+            'thehive/operations/backup-restore/restore/restore-hot-backup.md': 'thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md'
+            'thehive/operations/backup-restore/restore/cloud.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
             'thehive/administration/authentication/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/proxy.md': 'thehive/configuration/proxy-settings.md'
@@ -470,19 +481,23 @@ nav:
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
       - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
       - 'Backup & Restore Operations': 
-        - 'Overview':  thehive/operations/backup-restore/overview.md
+        - 'Cold vs. Hot Backups and Restores': thehive/operations/backup-restore/cold-hot-backup-restore.md
         - 'Backup Process':
-            - 'Physical Server':  thehive/operations/backup-restore/backup/physical-server.md
-            - 'Virtual Server':  thehive/operations/backup-restore/backup/virtual-server.md
-            - 'Docker Compose':  thehive/operations/backup-restore/backup/docker-compose.md
-            # - 'Cloud Infrastructure':  thehive/operations/backup-restore/backup/cloud.md
-            - 'Hot backups': thehive/operations/backup-restore/backup/hot-backup.md
+          - 'Cold Backup':
+            - 'Physical Server': thehive/operations/backup-restore/backup/cold-backup/physical-server.md
+            - 'Virtual Server': thehive/operations/backup-restore/backup/cold-backup/virtual-server.md
+            - 'Docker Compose': thehive/operations/backup-restore/backup/cold-backup/docker-compose.md
+          - 'Hot Backup':
+            - 'Standalone Server': thehive/operations/backup-restore/backup/hot-backup/hot-backup-standalone-server.md
+            - 'Cluster': thehive/operations/backup-restore/backup/hot-backup/hot-backup-cluster.md
         - 'Restore Process':
-            - 'Physical Server':  thehive/operations/backup-restore/restore/physical-server.md
-            - 'Virtual Server':  thehive/operations/backup-restore/restore/virtual-server.md
-            - 'Docker Compose':  thehive/operations/backup-restore/restore/docker-compose.md
-            - 'Cloud Infrastructure':  thehive/operations/backup-restore/restore/cloud.md
-            - 'Restore hot backups': thehive/operations/backup-restore/restore/restore-hot-backup.md
+          - 'Cold Restore':
+            - 'Physical Server': thehive/operations/backup-restore/restore/cold-restore/physical-server.md
+            - 'Virtual Server': thehive/operations/backup-restore/restore/cold-restore/virtual-server.md
+            - 'Docker Compose': thehive/operations/backup-restore/restore/cold-restore/docker-compose.md
+          - 'Hot Restore':
+            - 'Standalone Server': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md
+            - 'Cluster': thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster.md
       - 'End of APT and YUM repositories':
         - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
         - 'Switch to Manual Download and Installation': thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md
