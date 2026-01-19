@@ -762,7 +762,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-install-and-configure-apache-cassandra" class="md-nav__link">
+  <a href="#step-3-install-configure-cassandra" class="md-nav__link">
     <span class="md-ellipsis">
       
         Step 3: Install and configure Apache Cassandra
@@ -773,7 +773,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-install-and-configure-elasticsearch" class="md-nav__link">
+  <a href="#step-4-install-configure-elasticsearch" class="md-nav__link">
     <span class="md-ellipsis">
       
         Step 4: Install and configure Elasticsearch
@@ -1853,14 +1853,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/overview/" class="md-nav__link">
+      <a href="../../operations/backup-restore/cold-hot-backup-restore/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Cold vs. Hot Backups and Restores
   
 
     
@@ -1930,8 +1930,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4_2_1" id="__nav_2_4_4_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cold Backup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cold Backup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/backup/physical-server/" class="md-nav__link">
+      <a href="../../operations/backup-restore/backup/cold-backup/physical-server/" class="md-nav__link">
         
   
   
@@ -1959,7 +2009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/backup/virtual-server/" class="md-nav__link">
+      <a href="../../operations/backup-restore/backup/cold-backup/virtual-server/" class="md-nav__link">
         
   
   
@@ -1987,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/backup/docker-compose/" class="md-nav__link">
+      <a href="../../operations/backup-restore/backup/cold-backup/docker-compose/" class="md-nav__link">
         
   
   
@@ -2008,6 +2058,64 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4_2_2" id="__nav_2_4_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hot Backup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hot Backup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -2015,14 +2123,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/backup/hot-backup/" class="md-nav__link">
+      <a href="../../operations/backup-restore/backup/hot-backup/hot-backup-standalone-server/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Hot backups
+    Standalone Server
   
 
     
@@ -2031,6 +2139,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/backup-restore/backup/hot-backup/hot-backup-cluster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cluster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2100,8 +2244,58 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4_3_1" id="__nav_2_4_4_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cold Restore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cold Restore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/restore/physical-server/" class="md-nav__link">
+      <a href="../../operations/backup-restore/restore/cold-restore/physical-server/" class="md-nav__link">
         
   
   
@@ -2129,7 +2323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/restore/virtual-server/" class="md-nav__link">
+      <a href="../../operations/backup-restore/restore/cold-restore/virtual-server/" class="md-nav__link">
         
   
   
@@ -2157,7 +2351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/restore/docker-compose/" class="md-nav__link">
+      <a href="../../operations/backup-restore/restore/cold-restore/docker-compose/" class="md-nav__link">
         
   
   
@@ -2178,6 +2372,64 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_4_3_2" id="__nav_2_4_4_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hot Restore
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_4_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hot Restore
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -2185,14 +2437,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/restore/cloud/" class="md-nav__link">
+      <a href="../../operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Cloud Infrastructure
+    Standalone Server
   
 
     
@@ -2213,14 +2465,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../operations/backup-restore/restore/restore-hot-backup/" class="md-nav__link">
+      <a href="../../operations/backup-restore/restore/hot-restore/restore-hot-backup-cluster/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Restore hot backups
+    Cluster
   
 
     
@@ -2229,6 +2481,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -17779,7 +18039,7 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 </div>
 </div>
 <hr>
-<h2 id="step-3-install-and-configure-apache-cassandra"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V288c0 44.2 100.3 80 224 80s224-35.8 224-80zm0-77.8V80c0-44.2-100.3-80-224-80S0 35.8 0 80v48c0 44.2 100.3 80 224 80s224-35.8 224-80m-49.5 261.8C351.6 406.5 289.9 416 224 416s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V432c0 44.2 100.3 80 224 80s224-35.8 224-80v-66.2c-14.8 9.8-31.8 17.7-49.5 24"></path></svg></span> Step 3: Install and configure Apache Cassandra<a class="headerlink" href="#step-3-install-and-configure-apache-cassandra" title="Permanent link">#</a></h2>
+<h2 id="step-3-install-configure-cassandra"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V288c0 44.2 100.3 80 224 80s224-35.8 224-80zm0-77.8V80c0-44.2-100.3-80-224-80S0 35.8 0 80v48c0 44.2 100.3 80 224 80s224-35.8 224-80m-49.5 261.8C351.6 406.5 289.9 416 224 416s-127.6-9.5-174.5-26.2c-17.6-6.3-34.7-14.2-49.5-24V432c0 44.2 100.3 80 224 80s224-35.8 224-80v-66.2c-14.8 9.8-31.8 17.7-49.5 24"></path></svg></span> Step 3: Install and configure Apache Cassandra<a class="headerlink" href="#step-3-install-configure-cassandra" title="Permanent link">#</a></h2>
 <p><a href="https://cassandra.apache.org" target="_blank">Apache Cassandra</a> is a database system that's used in TheHive as the back-end database for storing and managing incident response data.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
@@ -17812,7 +18072,7 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 </li>
 <li>
 <p>Verify that Cassandra is installed.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
 </code></pre></div>
 <p>This will show you the status of the Cassandra service. If Cassandra is installed you should see details about the service. If it's not installed, you will receive an error indicating that the service isn't found.</p>
 </li>
@@ -17952,7 +18212,7 @@ authorizer: CassandraAuthorizer
 <ol>
 <li>
 <p>Check whether the Cassandra service started automatically before configuring it.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
 </code></pre></div>
 <p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>cassandra
@@ -17971,7 +18231,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </li>
 <li>
 <p>Verify that Cassandra is running.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>cassandra
 </code></pre></div>
 <p>If Cassandra is running, you should see an active status in green.</p>
 </li>
@@ -18018,6 +18278,10 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </ul>
 </div>
 <h3 id="step-34-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-32">Step 3.4: Set a secure password for authentication (if you enabled authentication in <a href="#step-32-configure-cassandra">Step 3.2</a>)<a class="headerlink" href="#step-34-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-32" title="Permanent link">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Python compatibility for cqlsh</p>
+<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+</div>
 <p>By default, Cassandra uses the <code>cassandra</code> username and the password <code>cassandra</code>. For security reasons, especially in production environments, you must change this password immediately after setup.</p>
 <p>To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
 <ol>
@@ -18174,7 +18438,7 @@ For additional configuration options, refer to:
 - [Datastax documentation page](https://docs.datastax.com/en/ddac/doc/datastax_enterprise/config/configTOC.html) -->
 
 <hr>
-<h2 id="step-4-install-and-configure-elasticsearch"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M40 48c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24zm152 16c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zM16 232v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24m24 136c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24z"></path></svg></span> Step 4: Install and configure Elasticsearch<a class="headerlink" href="#step-4-install-and-configure-elasticsearch" title="Permanent link">#</a></h2>
+<h2 id="step-4-install-configure-elasticsearch"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M40 48c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24zm152 16c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zM16 232v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24m24 136c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24z"></path></svg></span> Step 4: Install and configure Elasticsearch<a class="headerlink" href="#step-4-install-configure-elasticsearch" title="Permanent link">#</a></h2>
 <p><a href="https://www.elastic.co/elasticsearch" target="_blank">Elasticsearch</a> is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing <a href="../../user-guides/organization/about-audit-logs/">audit logs</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
@@ -18410,7 +18674,7 @@ xpack.security.enabled: true
 <ol>
 <li>
 <p>Check whether the Elasticsearch service started automatically before configuring it.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
 <p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
@@ -18429,7 +18693,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 </li>
 <li>
 <p>Verify that Elasticsearch is running.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
 <p>If Elasticsearch is running, you should see an active status in green.</p>
 </li>
@@ -18439,7 +18703,7 @@ sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span
 <ol>
 <li>
 <p>Check whether the Elasticsearch service started automatically before configuring it.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
 <p>If it's running, stop it and remove existing data.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
@@ -18459,7 +18723,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </li>
 <li>
 <p>Verify that Elasticsearch is running.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
 </code></pre></div>
 <p>If Elasticsearch is running, you should see an active status in green.</p>
 </li>
@@ -18978,8 +19242,8 @@ These settings control how TheHive listens internally on the host and are indepe
 <p>TheHive 5.4 and later requires a minimum 32-character secret key. The command above generates a 64-character key for enhanced security.</p>
 </div>
 <p>b. Set appropriate file permissions.</p>
-<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/etc/thehive/secret.conf
-chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive/secret.conf
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">400</span><span class="w"> </span>/etc/thehive/secret.conf
+sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span class="w"> </span>/etc/thehive/secret.conf
 </code></pre></div>
 <div class="admonition danger">
 <p class="admonition-title">Security requirements</p>
@@ -19226,7 +19490,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </li>
 <li>
 <p>Verify that TheHive is running.</p>
-<div class="highlight"><pre><span></span><code>systemctl<span class="w"> </span>status<span class="w"> </span>thehive
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>thehive
 </code></pre></div>
 <p>If TheHive is running, you should see an active status in green.</p>
 <div class="admonition info">
@@ -19261,21 +19525,21 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <hr>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">#</a></h2>
 <p>We recommend setting up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  </p>
-<p>See the <a href="../../operations/monitoring/">Monitoring</a> page for detailed instructions.</p>
+<p>See the <a href="../../operations/monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a> page for detailed instructions.</p>
 <h2>Next steps</h2>
 
 <ul>
 <li><a href="../../configuration/turn-off-cortex-connector/">Turn Off The Cortex Integration</a></li>
 <li><a href="../../configuration/turn-off-misp-connector/">Turn Off The MISP Integration</a></li>
-<li><a href="../../configuration/update-log-configuration/">Update Log Configuration</a></li>
 <li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
+<li><a href="../../configuration/update-log-configuration/">Update Log Configuration</a></li>
 <li><a href="../../configuration/enable-gdpr/">Enable the GDPR Compliance Feature</a></li>
 <li><a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a></li>
-<li><a href="../../configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
-<li><a href="../../operations/backup-restore/backup/hot-backup/">Hot Backups</a></li>
-<li><a href="../../operations/backup-restore/backup/physical-server/">Cold Backups for Physical Servers</a></li>
-<li><a href="../../operations/backup-restore/backup/virtual-server/">Cold Backups for Virtual Servers</a></li>
-<li><a href="../../operations/monitoring/">Monitoring</a></li>
+<li><a href="../../configuration/ssl/configure-ssl-jvm/">Configure JVM Trust for SSL/TLS Certificates</a></li>
+<li><a href="../../operations/backup-restore/backup/hot-backup/hot-backup-standalone-server/">Perform a Hot Backup on a Standalone Server</a></li>
+<li><a href="../../operations/backup-restore/backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a></li>
+<li><a href="../../operations/backup-restore/backup/cold-backup/virtual-server/">Perform a Cold Backup on a Virtual Server</a></li>
+<li><a href="../../operations/monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a></li>
 <li><a href="../../operations/troubleshooting/">Troubleshooting</a></li>
 </ul>
 
