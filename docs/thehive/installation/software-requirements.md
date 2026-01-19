@@ -19,13 +19,13 @@ The tables below list the supported versions for Linux installations, Docker Com
 
     | TheHive version | Docker Engine | Docker Compose plugin |
     |-----------------|---------------|----------------|
-    | 5.0.0 - 5.5.13 | v23.0.15+ | v2.20.2+ |
+    | 5.0.0 - 5.5.14 | v23.0.15+ | v2.20.2+ |
 
 === "Kubernetes deployment with Helm"
 
     | TheHive version | Kubernetes cluster | Helm |
     |-----------------|---------------|----------------|
-    | 5.0.0 - 5.5.13 | v1.23.0+ | v3.8.0+ |
+    | 5.0.0 - 5.5.14 | v1.23.0+ | v3.8.0+ |
 
 <h2>Next steps</h2>
 

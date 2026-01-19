@@ -5,6 +5,28 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.5.14 - January 12, 2026
+
+### Fixes
+
+#### Alert and case handling
+
+* Case creation message: Removed an incorrect placeholder message that could appear when creating a case in organizations with supervised or notify links.
+* Case summary persistence: Fixed an issue where changing a case status from the alert list could incorrectly override the case summary.
+* Case reports: Ensured generating a case report triggers the expected event and associated workflows.
+* ATT&CK catalogs in clusters: Fixed duplicated Enterprise Attack patterns in clustered environments.
+
+#### UI/UX
+
+* Markdown pages: Fixed text wrapping issues in rendered Markdown content.
+* Dashboards: Color rules are now correctly applied when based on numeric values.
+* Alert Feeder editor: Improved text contrast to keep editor content readable.
+* Alert merge guidance: Improved the informational message explaining why alerts can’t be merged into closed cases.
+
+#### Custom tags
+
+* Tag editing: Fixed an issue where custom tags could disappear or trigger errors after opening the editor and saving without changes.
+
 ## 5.5.13 - November 25, 2025
 
 ### Fixes
