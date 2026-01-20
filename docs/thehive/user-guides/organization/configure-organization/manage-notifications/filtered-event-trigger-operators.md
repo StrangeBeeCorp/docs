@@ -85,14 +85,14 @@ This operator performs pattern matching using wildcards (*).
 ```
 
 ```json
-{ "_like": { "foo": "*lce*" } }
+{ "_like": { "foo": "*lice*" } }
 ```
 
-* `_match`: Matches a string using regex
+* `_match`: Matches a string
 
 ```json
 {
-  "_match": { "foo": "^[a-z]+$" }
+  "_match": { "foo": "alice" }
 }
 ```
 
