@@ -41,6 +41,9 @@ To highlight alerts needing review, start by [creating a new alert status](../ad
 
 ## Step 2: Set up an email notification for *TOREVIEW* alerts
 
+!!! warning "SMTP server required"
+    This step requires an SMTP server to be configured. If it's not already set up, follow the instructions in [Configure an SMTP Server](../administration/smtp/configure-smtp-server.md).
+
 Next, configure TheHive to [send an email notification](../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md) to the manager when an alert status changes to *TOREVIEW*.
 
 1. {% include-markdown "includes/organization-view-go-to.md" %}
