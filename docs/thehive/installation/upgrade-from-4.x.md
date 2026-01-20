@@ -1,6 +1,6 @@
 # Upgrade from TheHive 4.x
 
-This guide provides comprehensive instructions for upgrading TheHive from version 4.1.x to 5.0.x. Please ensure that your system meets the following requirements:
+This guide provides comprehensive instructions for upgrading TheHive from version 4.1.x to 5.x. Please ensure that your system meets the following requirements:
 
 - The application is running on a supported Linux operating system.
 - The server meets prerequisites regarding CPU & RAM.
@@ -177,7 +177,7 @@ nodetool repair --full
 
         **Stop Existing Nodes**: Stop all existing nodes of TheHive (4.x).
 
-        **Upgrade and Start a Single Node**: Begin by upgrading and starting only one node to TheHive 5.0.0. Verify that everything functions correctly with this node before proceeding further.
+        **Upgrade and Start a Single Node**: Begin by upgrading and starting only one node to TheHive 5.x. Verify that everything functions correctly with this node before proceeding further.
 
         **Update and Start Other Nodes**: Once the initial node is successfully upgraded and operational, proceed to update and start the remaining nodes.
 
