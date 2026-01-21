@@ -21,6 +21,12 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+## 5.4.11 - January 20, 2026
+
+### Security fixes
+
+* This release includes security updates that address known vulnerabilities in third-party libraries.
+
 ## 5.4.10 - April 24, 2025
 
 Last update: May 26, 2025

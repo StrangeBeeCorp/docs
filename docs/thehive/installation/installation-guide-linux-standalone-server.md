@@ -789,7 +789,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             wget -O /opt/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.4.10-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.4.11-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.4`.
 
         * Using cURL
@@ -808,7 +808,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             curl -o /opt/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.4.10-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.4.11-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.4`.
 
     2. Verify the integrity of the downloaded package.
