@@ -21,7 +21,10 @@ Functions have access to a set of predefined objects that expose methods for int
 
 Examples include:
 
-{% include-markdown "includes/function-objects-examples.md" %}
+* `alert.create(input: InputCreateAlert): OutputAlert`: Creates a new alert.
+* `alert.update(alertId: string, input: InputUpdateAlert): OutputAlert`: Updates an alert.
+* `observable.createInCase(caseId: string, input: InputObservable): OutputObservable`: Creates an observable within a case.
+* `log.create(taskId: string, input: InputCreateLog): OutputLog`: Creates a log entry for a task.
 
 For a complete list of available objects and their methods, see [Functions Objects](functions-objects.md).
 
