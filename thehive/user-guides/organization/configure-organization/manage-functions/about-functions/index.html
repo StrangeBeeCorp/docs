@@ -17974,21 +17974,11 @@
 <h2 id="function-objects">Function objects<a class="headerlink" href="#function-objects" title="Permanent link">#</a></h2>
 <p>Functions have access to a set of predefined objects that expose methods for interacting with cases, alerts, tasks, observables, and other entities.</p>
 <p>Examples include:</p>
-<!--start-alert-creation-->
 <ul>
 <li><code>alert.create(input: InputCreateAlert): OutputAlert</code>: Creates a new alert.</li>
-</ul>
-<!--start-alert-update-->
-<ul>
-<li><code>alert.update(alertId: string, input: InputUpdateAlert): OutputAlert</code>: Updates an alert by its ID.</li>
-</ul>
-<!--start-observable-creation-->
-<ul>
-<li><code>observable.createInCase(caseId: string, observable: InputObservable): OutputObservable</code>: Creates an observable within a case.</li>
-</ul>
-<!--start-log-creation-->
-<ul>
-<li><code>log.create(taskId: string, log: InputCreateLog): OutputLog</code>: Creates a log entry for a task.</li>
+<li><code>alert.update(alertId: string, input: InputUpdateAlert): OutputAlert</code>: Updates an alert.</li>
+<li><code>observable.createInCase(caseId: string, input: InputObservable): OutputObservable</code>: Creates an observable within a case.</li>
+<li><code>log.create(taskId: string, input: InputCreateLog): OutputLog</code>: Creates a log entry for a task.</li>
 </ul>
 <p>For a complete list of available objects and their methods, see <a href="../functions-objects/">Functions Objects</a>.</p>
 <h2 id="trigger-sources">Trigger sources<a class="headerlink" href="#trigger-sources" title="Permanent link">#</a></h2>
@@ -18070,7 +18060,7 @@
 <li>Only users with the <code>manageFunction/invoke</code> permission can invoke a function in TheHive.</li>
 <li>Only users with the <code>manageAction</code> permission can run a function in TheHive.</li>
 </ul>
-<!--end-alert-creation--><!--end-alert-update--><!--end-observable-creation--><!--end-log-creation--><h2>Next steps</h2>
+<h2>Next steps</h2>
 
 <ul>
 <li><a href="../create-a-function/">Create a Function</a></li>

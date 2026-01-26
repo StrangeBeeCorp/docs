@@ -5,7 +5,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/includes/function-objects-examples/">
+        <link rel="canonical" href="https://docs.strangebee.com/includes/typescript-notation/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Function objects examples - TheHive 5 Documentation</title>
+        <title>Typescript notation - TheHive 5 Documentation</title>
       
     
     
@@ -17710,24 +17710,10 @@
 
 
 
-  <h1>Function objects examples</h1>
+  <h1>Typescript notation</h1>
 
-<ul>
-<li><code>alert.create(input: InputCreateAlert): OutputAlert</code>: Creates a new alert.</li>
-</ul>
-<!--start-alert-update-->
-<ul>
-<li><code>alert.update(alertId: string, input: InputUpdateAlert): OutputAlert</code>: Updates an alert by its ID.</li>
-</ul>
-<!--start-observable-creation-->
-<ul>
-<li><code>observable.createInCase(caseId: string, observable: InputObservable): OutputObservable</code>: Creates an observable within a case.</li>
-</ul>
-<!--start-log-creation-->
-<ul>
-<li><code>log.create(taskId: string, log: InputCreateLog): OutputLog</code>: Creates a log entry for a task.</li>
-</ul>
-<!--end-alert-creation--><!--end-alert-update--><!--end-observable-creation--><!--end-log-creation-->
+<p>This method takes a single object argument.</p>
+<p>The <code>{ A } &amp; B</code> notation indicates that the object must include both the listed fields and those defined by the API input type.</p>
 
 
 
