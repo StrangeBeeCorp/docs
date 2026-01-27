@@ -17890,7 +17890,7 @@
 <p class="admonition-title">Backup requirement</p>
 <p>All three components—Apache Cassandra, Elasticsearch, and file storage—must be backed up to ensure proper recovery.</p>
 </div>
-<p>TheHive is built on an architecture that includes <a href="../../../installation/installation-guide-linux-standalone-server/#step-3-install-configure-cassandra">Apache Cassandra as the database</a>, <a href="../../../installation/installation-guide-linux-standalone-server/#step-4-install-configure-elasticsearch">Elasticsearch as the indexing engine</a>, and file storage managed either <a href="../../../installation/installation-guide-linux-standalone-server/#step-54-create-the-file-storage-directory">locally</a>, <a href="../../../installation/deploying-a-cluster/#file-storage">via a NFS, or using S3-compatible object storage</a>. This architecture requires careful coordination to maintain consistency across the database, index, and file storage during backups. Any mismatch between these components can lead to restoration failures.</p>
+<p>TheHive is built on an architecture that includes <a href="../../../installation/installation-guide-linux-standalone-server/#step-3-install-configure-cassandra">Apache Cassandra as the database</a>, <a href="../../../installation/installation-guide-linux-standalone-server/#step-4-install-configure-elasticsearch">Elasticsearch as the indexing engine</a>, and file storage managed either <a href="../../../installation/installation-guide-linux-standalone-server/#step-54-create-the-file-storage-directory">locally</a>, <a href="../../../installation/deploying-a-cluster/#configure-file-storage">via a NFS, or using S3-compatible object storage</a>. This architecture requires careful coordination to maintain consistency across the database, index, and file storage during backups. Any mismatch between these components can lead to restoration failures.</p>
 <h2 id="cold-vs-hot-backup-and-restore-comparison">Cold vs. hot backup and restore comparison<a class="headerlink" href="#cold-vs-hot-backup-and-restore-comparison" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -17960,7 +17960,6 @@
 <ul>
 <li><a href="../../cassandra-cluster/">Cassandra Cluster Operations</a></li>
 <li><a href="../../cassandra-security/">Security in Apache Cassandra</a></li>
-<li><a href="../minio-cluster.md">MinIO Cluster Operations</a></li>
 <li><a href="../../monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a></li>
 <li><a href="../../troubleshooting/">Troubleshooting</a></li>
 </ul>
