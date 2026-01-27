@@ -11,6 +11,12 @@ html {
     html {
       font-size: 20px; } }
 
+.md-typeset img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 header.md-header {
   background: #fff;
   display: flex;
