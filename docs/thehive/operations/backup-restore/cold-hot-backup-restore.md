@@ -14,7 +14,7 @@ TheHive supports two backup and restore approaches: cold backups, which require 
 
 {% include-markdown "includes/backup-requirement.md" %}
 
-TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/installation-guide-linux-standalone-server.md#step-3-install-configure-cassandra), [Elasticsearch as the indexing engine](../../installation/installation-guide-linux-standalone-server.md#step-4-install-configure-elasticsearch), and file storage managed either [locally](../../installation/installation-guide-linux-standalone-server.md#step-54-create-the-file-storage-directory), [via a NFS, or using S3-compatible object storage](../../installation/deploying-a-cluster.md#file-storage). This architecture requires careful coordination to maintain consistency across the database, index, and file storage during backups. Any mismatch between these components can lead to restoration failures.
+TheHive is built on an architecture that includes [Apache Cassandra as the database](../../installation/installation-guide-linux-standalone-server.md#step-3-install-configure-cassandra), [Elasticsearch as the indexing engine](../../installation/installation-guide-linux-standalone-server.md#step-4-install-configure-elasticsearch), and file storage managed either [locally](../../installation/installation-guide-linux-standalone-server.md#step-54-create-the-file-storage-directory), [via a NFS, or using S3-compatible object storage](../../installation/deploying-a-cluster.md#configure-file-storage). This architecture requires careful coordination to maintain consistency across the database, index, and file storage during backups. Any mismatch between these components can lead to restoration failures.
 
 ## Cold vs. hot backup and restore comparison
 
@@ -55,6 +55,5 @@ The approach to hot backup and restore varies depending on the deployment type, 
 
 * [Cassandra Cluster Operations](../cassandra-cluster.md)
 * [Security in Apache Cassandra](../cassandra-security.md)
-* [MinIO Cluster Operations](../minio-cluster.md)
 * [Set Up Monitoring for TheHive with Prometheus and Grafana](../monitoring.md)
 * [Troubleshooting](../troubleshooting.md)
