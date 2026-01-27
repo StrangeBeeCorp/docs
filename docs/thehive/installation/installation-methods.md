@@ -38,4 +38,4 @@ See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructio
 
 Deploy TheHive on Linux as a multi-node cluster across dedicated hosts for high-availability setups.
 
-See [Setting Up a Cluster with TheHive](deploying-a-cluster.md) for instructions.
+See [Set Up a Cluster on Linux Systems](deploying-a-cluster.md) for instructions.

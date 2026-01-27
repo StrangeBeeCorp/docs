@@ -1,20 +1,23 @@
-# Setting up a Cluster with TheHive
+# Set Up a Cluster on Linux Systems
+
+<!-- md:version 5.4 -->
 
 !!! Note
-    - This documentation applies to TheHive versions 5.4 and later. For earlier versions, [please refer to the Akka Configuration](../configuration/akka.md).
-    - This documentation applies for a fresh installation for a new instance.
+
+    * This documentation applies to TheHive versions 5.4 and later. For earlier versions, [refer to the Akka Configuration](../configuration/akka.md).
+    * This documentation applies for a fresh installation for a new instance.
 
 This guide presents configuration examples for setting up a fault-tolerant cluster for TheHive. Each cluster comprises three active nodes, featuring:
 
-- Cassandra for the database
-- Elasticsearch for the indexing engine
-- NFS (recommended), or S3 file storage (for example MINIO)
-- TheHive
-- Haproxy (to demonstrate load balancing)
-- Keepalived (to demonstrate virtual IP setup)
+* Cassandra for the database
+* Elasticsearch for the indexing engine
+* NFS or S3-compatible object storage for file storage
+* TheHive
+* HAProxy for load balancing
+* Keepalived for virtual IP setup
 
 !!! Info
-    These applications can either be installed on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
+    You can install these applications on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
 
 !!! warning "Before you begin"
   
@@ -23,48 +26,42 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 
 {% include-markdown "includes/data-protection-link.md" %}
 
----
+## Architecture diagram
 
-## Architecture Diagram
-
-![](../images/overview/thehive-architecture-full-cluster.png)
+![TheHive cluster architecture](../images/overview/thehive-architecture-full-cluster.png){ width=70% .center }
 
 The diagram above illustrates the key components and their interactions within the cluster architecture.
 
 Each component fulfills a critical role in the functionality and resilience of the cluster:
 
-- **Cassandra**: Acts as the primary database, ensuring robust data storage and retrieval capabilities.
-- **Elasticsearch**: Serves as the indexing engine, facilitating efficient search operations within TheHive platform.
-- **MinIO**: Provides S3-compatible object storage, offering scalable and resilient storage solutions for TheHive.
-- **TheHive**: Central component responsible for incident response management and collaboration within the cluster.
-- **Haproxy**: Functions as a load balancer, evenly distributing incoming traffic across multiple nodes for improved performance and availability.
-- **Keepalived**: Facilitates the setup of a virtual IP address, ensuring seamless failover and high availability by redirecting traffic to a standby node in case of failure.
+* Keepalived manages a virtual IP address to provide automatic failover and maintain service continuity.
+* HAProxy distributes incoming requests across TheHive nodes to improve availability and handle node failures transparently.
+* Cassandra ensures durable and consistent storage of TheHive data across nodes.
+* Elasticsearch enables efficient indexing and fast search capabilities.
+* Shared file storage centralizes attachments and file-type observables, making them available to all cluster nodes.
+* TheHive nodes run the application logic and coordinate incident response workflows and collaboration.
 
 The subsequent sections will provide detailed configuration examples and step-by-step instructions for setting up each component within the cluster environment.
 
----
+## Step 1: Install and configure Apache Cassandra
 
-## Cassandra Setup
-
-![](../images/installation/cassandra-cluster.png){ align=center}
-
-When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of 3. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node, meaning that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cyber threats without downtime or data loss.
+When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of `3`. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node. It means that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cybersecurity threats without downtime or data loss.
 
 !!! Info "Note: Note: For the purposes of this documentation, we assume that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center."
 
-&nbsp;
+### Step 1.1: Install Cassandra
 
-### Installation Instructions
-To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [**provided guide**](installation-guide-linux-standalone-server.md#step-31-install-cassandra).
+To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the [installation guide](installation-guide-linux-standalone-server.md#step-31-install-cassandra).
 
-!!! Info "A ``node`` in this context refers to each server or machine designated to participate in the Cassandra cluster."
+!!! Info "A node in this context refers to each server or machine designated to participate in the Cassandra cluster."
 
-&nbsp;
+### Step 1.2: Configure Cassandra
 
-### Configuration Instructions
-For each node in the Cassandra cluster, it's crucial to update the configuration files located at ``/etc/cassandra/cassandra.yaml`` with specific parameters to ensure proper functionality. Follow the steps below to modify the configuration:
+For each node in the Cassandra cluster, it's crucial to update the configuration files located at `/etc/cassandra/cassandra.yaml` with specific parameters to ensure proper functionality. Follow the steps below to modify the configuration:
 
-1. **Update Cassandra Configuration File**: Open the `/etc/cassandra/cassandra.yaml` file on each node using a text editor.
+1. Update Cassandra configuration file.
+
+    Open the `/etc/cassandra/cassandra.yaml` file on each node using a text editor:
 
     !!! Example ""
 
@@ -81,7 +78,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
         seed_provider:
             - class_name: org.apache.cassandra.locator.SimpleSeedProvider
             parameters:
-                - seeds: "<ip node 1>, <ip node 2>, <ip node 3>"  # (1)
+                - seeds: "<ip_node_1>, <ip_node_2>, <ip_node_3>"  # (1)
         listen_interface : eth0 # (2)
         rpc_interface: eth0 # (3)
         endpoint_snitch: GossipingPropertyFileSnitch
@@ -91,25 +88,28 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
         2.  Ensure to setup the right interface name
         3.  Ensure to setup the right interface name
 
-    - **Cluster Name**: Set the name of the Cassandra cluster.
-    - **Number of Tokens**: Configure the number of tokens for each node.
-    - **Authentication and Authorization**: Specify the authenticator, authorizer, and role manager.
-    - **Directories**: Define directories for data, commit logs, and saved caches.
-    - **Seed Provider**: List all IP addresses of nodes included in the cluster (Ensure to list all IP addresses of the nodes that are included in the cluster).
-    - **Network Interfaces**: Set up the appropriate network interfaces (Ensure to setup the right interface name).
-    - **Endpoint Snitch**: Specify the snitch for determining network topology.
+    * Cluster name: Set the name of the Cassandra cluster.
+    * Number of tokens: Configure the number of tokens for each node.
+    * Authentication and authorization: Specify the authenticator, authorizer, and role manager.
+    * Directories: Define directories for data, commit logs, and saved caches.
+    * Seed provider: List all IP addresses of nodes included in the cluster. Ensure to list all IP addresses of the nodes that are included in the cluster.
+    * Network interfaces: Set up the appropriate network interfaces. Ensure to setup the right interface name.
+    * Endpoint snitch: Specify the snitch for determining network topology.
 
-    !!! Info "For detailed explanations of each parameter in the YAML file, refer to our article on Cassandra configuration which can be found [**in the following page**](installation-guide-linux-standalone-server.md#step-32-configure-cassandra)."
+    !!! Info "For detailed explanations of each parameter in the YAML file, refer to the [Cassandra configuration section](installation-guide-linux-standalone-server.md#step-32-configure-cassandra)."
 
-2. **Delete Cassandra Topology Properties File**: Remove the ``cassandra-topology.properties`` file to prevent any conflicts.
+2. Delete Cassandra topology properties file.
+
+    Remove the `cassandra-topology.properties` file to prevent any conflicts:
 
     !!! Example ""
         ```
         rm /etc/cassandra/cassandra-topology.properties
         ```
-&nbsp;
 
-3. **Configure Cassandra GossipingPropertyFileSnitch**: In the ``cassandra-rackdc.properties``  file assign the datacenter and rack names for each node.
+3. Configure Cassandra GossipingPropertyFileSnitch.
+
+    In the `cassandra-rackdc.properties`  file assign the datacenter and rack names for each node:
 
     !!! Example ""
 
@@ -127,19 +127,25 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
         rack=rack3
 
         ```
-&nbsp;
 
-### Starting the Nodes
+### Step 1.3: Start the nodes
+
 To initiate the Cassandra service on each node, follow these steps:
 
-1. **Start Cassandra Service**: Start Cassandra Service: Execute the following command on each node one at a time to start the Cassandra service::
+1. Start Cassandra service.
+
+    Execute the following command on each node one at a time to start the Cassandra service:
 
     !!! Example ""
         ```bash
         service cassandra start
         ```
 
-2. **Verify Node Status**: Ensure that all nodes are up and running by checking their status using the ``nodetool status`` command. Open a terminal and run:
+2. Verify node status.
+
+    Ensure that all nodes are up and running by checking their status using the `nodetool status` command.
+
+    Open a terminal and run:
 
     !!! Example ""
         ```bash
@@ -149,39 +155,42 @@ To initiate the Cassandra service on each node, follow these steps:
         Status=Up/Down
         |/ State=Normal/Leaving/Joining/Moving
         --  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
-        UN  <ip node 1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
-        UN  <ip node 2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
-        UN  <ip node 3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
+        UN  <ip_node_1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
+        UN  <ip_node_2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
+        UN  <ip_node_3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
         ```
 
-&nbsp;
-
-### Initializing the Database
+### Step 1.4: Initialize the database
 
 {% include-markdown "includes/python-compatibility-cqlsh.md" %}
 
 To initialize the database, perform the following steps:
 
+1. Access CQL shell.
 
-1. **Access CQL Shell**: On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:
+    On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:
 
-    !!! Example ""
-        ```bash
-        cqlsh <ip node X> -u cassandra
-        ```
+        !!! Example ""
+            ```bash
+            cqlsh <ip_node_X> -u cassandra
+            ```
 
-    !!! Info "Note that the default password for the cassandra account is ``cassandra``"
+        !!! Info "Note that the default password for the Cassandra account is `cassandra`"
 
-    !!! Info "to prevent security issue, the cassandra default user will be removed from the base."
+        !!! Info "To prevent security issue, the Cassandra default user should be removed from the base."
 
-2. **Configure the system authentication replication**: Before creating a new users, you have to modify the default replication factor for the keyspace system_auth using the following cql command:
+2. Configure the system authentication replication.
+
+    Before creating a new users, you have to modify the default replication factor for the keyspace system_auth using the following CQL command:
 
     !!! Example ""
         ```sql
         ALTER KEYSPACE system_auth WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': 3 };
         ```
 
-3. **Create a custom administrator account**: Create a new administrator cassandra role that will replace the default user:
+3. Create a custom administrator account.
+
+    Create a new administrator Cassandra role that will replace the default user:
 
     !!! Example ""
 
@@ -190,7 +199,7 @@ To initialize the database, perform the following steps:
         ```
     After executing the query, exit the CQL shell and reconnect using the new admin role.
 
-    Remove the default cassandra user using the following CQL query
+    Remove the default Cassandra user using the following CQL query.
 
     !!! Example ""
 
@@ -198,8 +207,9 @@ To initialize the database, perform the following steps:
         DROP ROLE cassandra;
         ```
 
+4. Create keyspace.
 
-4. **Create Keyspace**: Create a keyspace named thehive with a replication factor of 3 and durable writes enabled:
+    Create a keyspace named `thehive` with a replication factor of `3` and durable writes enabled:
 
     !!! Example ""
 
@@ -207,7 +217,9 @@ To initialize the database, perform the following steps:
         CREATE KEYSPACE thehive WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
         ```
 
-5. **Create Role and Grant Permissions**: Finally, create a role named thehive and grant permissions on the thehive keyspace. Choose a password for the role:
+5. Create role and grant permissions.
+
+    Finally, create a role named `thehive` and grant permissions on the `thehive` keyspace.
 
     !!! Example ""
 
@@ -216,15 +228,18 @@ To initialize the database, perform the following steps:
         GRANT ALL PERMISSIONS ON KEYSPACE thehive TO 'thehive';
         ```
 
-### OPTIONAL: Enable encryption for client and inter-node communication
+!!! tip "Cassandra cluster maintenance"
+    In a Cassandra cluster, regular repairs are required to maintain data consistency between nodes. Automate a full repair with `nodetool repair -full`, for example by running it weekly using `cron`. Failing to run regular repairs can lead to inconsistent data, read errors, and authorization issues over time.
+
+### (Optional) Step 1.5: Enable encryption for client and inter-node communication
 
 The following steps aim to enable encryption secure communication between a client machine and a database cluster and between nodes within a cluster.
 
-#### Client to Node Encryption
+#### Client to node encryption
 
-!!! Notes "Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores)."
+!!! Notes "Prerequisite: having configured the necessary certificates for encryption (keystores and truststores)."
 
-1. **Open the ``cassandra.yaml`` Configuration File and edit the ``client_encryption_options`` section:**
+1. Open the `cassandra.yaml` configuration file and edit the `client_encryption_options` section.
 
     !!! Example ""
 
@@ -233,17 +248,17 @@ The following steps aim to enable encryption secure communication between a clie
         enabled: true
         optional: false
         keystore: </path/to/node1.keystore>
-        keystore_password: <your_keystore_password>
+        keystore_password: <keystore_password>
         require_client_auth: true
         truststore: </path/to/cassandra.truststore>
-        truststore_password: <your_truststore_password>
+        truststore_password: <truststore_password>
         protocol: TLS
         algorithm: SunX509
         store_type: JKS
         cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
         ```
 
-2. **Restart the Cassandra Service on All Nodes:**
+2. Restart the Cassandra service on all nodes.
 
     !!! Example ""
 
@@ -251,7 +266,9 @@ The following steps aim to enable encryption secure communication between a clie
         sudo service cassandra restart
         ```
 
-3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
+3. Check Cassandra logs.
+
+    Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
 
@@ -259,13 +276,11 @@ The following steps aim to enable encryption secure communication between a clie
         tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
         ```
 
-&nbsp;
+#### Inter-node encryption
 
-#### Inter Node Encryption
+!!! Notes "Prerequisite: having configured the necessary certificates for encryption (keystores and truststores)."
 
-!!! Prerequisite: having configured the necessary certificates for encryption (Keystores and Truststores).
-
-1. **Open the ``cassandra.yaml`` Configuration File and edit the ``server_encryption_options`` section:**
+1. Open the `cassandra.yaml` configuration file and edit the `server_encryption_options` section.
 
     !!! Example ""
 
@@ -284,7 +299,7 @@ The following steps aim to enable encryption secure communication between a clie
             enabled: true
         ```
 
-2. **Restart the Cassandra Service on All Nodes:**
+2. Restart the Cassandra service on all nodes.
 
     !!! Example ""
 
@@ -292,17 +307,17 @@ The following steps aim to enable encryption secure communication between a clie
         sudo service cassandra restart
         ```
         
-3. **Check Cassandra Logs**: Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
+3. Check Cassandra logs.
+
+    Review the Cassandra logs to ensure there are no errors related to SSL/TLS.
 
     !!! Example ""
 
         ```bash
         tail -n 100 /var/log/cassandra/system.log | grep -iE "error|warning"
         ```
----
 
-## Elasticsearch Setup
-![](../images/installation/elasticsearch-cluster.png){ align=center }
+## Step 2: Install and configure Elasticsearch
 
 !!! note "Elasticsearch supported versions"
 
@@ -318,13 +333,13 @@ The following steps aim to enable encryption secure communication between a clie
     
     Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.
 
-### Installation Instructions
-To establish a cluster of 3 active Elasticsearch nodes, follow the installation instructions provided on [**this page**](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) for each node.
+### Step 2.1: Install Elasticsearch
 
-&nbsp;
+To establish a cluster of three active Elasticsearch nodes, follow the [installation instructions](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) for each node.
 
-### Configuration Instructions
-For each node, update the configuration files located at `/etc/cassandra/elasticsearch.yml` with the following parameters, ensuring to adjust the network.host accordingly.
+### Step 2.2: Configure Elasticsearch
+
+For each node, update the configuration files located at `/etc/cassandra/elasticsearch.yml` with the following parameters, ensuring to adjust the `network.host` accordingly.
 
 !!! Example ""
 
@@ -358,18 +373,15 @@ For each node, update the configuration files located at `/etc/cassandra/elastic
     xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
     ```
 
-    1. Replace es1 with the IP or host name of the respective node.
+    1. Replace `es1` with the IP or host name of the respective node.
     2. Keep this parameter with the same value for all nodes to ensure proper cluster discovery.
 
-
 !!! Warning
-    When configuring Xpack and SSL with Elasticsearch, it's essential to review the documentation specific to your Elasticsearch version for accurate setup instructions. 
+    When configuring Xpack and SSL with Elasticsearch, it's essential to review the documentation specific to your Elasticsearch version for accurate setup instructions.
 
-&nbsp;
+### Step 2.3: Customize JVM options
 
-### Custom JVM Options
-
-To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM Options File named jvm.options in the directory ``/etc/elasticsearch/jvm.options.d/`` with the following lines:
+To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM options file named `jvm.options` in the directory `/etc/elasticsearch/jvm.options.d/` with the following lines:
 
 !!! Example ""
 
@@ -379,11 +391,9 @@ To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM 
     -Xmx4g
     ```
 
-!!! Note "Adjust according to Available Memory - It's important to adjust the heap size values based on the amount of memory available on your system to ensure optimal performance and resource utilization."
+!!! Note "Adjust according to available memory-It's important to adjust the heap size values based on the amount of memory available on your system to ensure optimal performance and resource utilization."
 
-&nbsp;
-
-### Starting the Nodes
+### Step 2.4: Start the nodes
 
 To start the Elasticsearch service on each node, execute the following command:
 
@@ -395,147 +405,52 @@ To start the Elasticsearch service on each node, execute the following command:
 
 This command initiates the Elasticsearch service, allowing the node to join the cluster and begin handling data requests.
 
----
+## Step 3: Set up a shared file storage
 
-## File storage
-
-To set up a shared file storage for TheHive in a clustered environment, several options are available. The primary goal is to establish a common storage space accessible to all nodes. 
+To set up shared file storage for TheHive in a clustered environment, several options are available. The primary goal is to provide a common storage space used by all nodes.
 
 === "NFS"
+
     Using NFS is one of the simplest methods to implement shared file storage. By configuring a single NFS endpoint, all nodes in the cluster can access and share files seamlessly.
-    
-    1. **Mount the NFS endpoint** to _/opt/thp/thehive/files_ on each node.
-    2. **Set permissions:** Ensure the thehive user has both read and write access to this directory, including the ability to create subdirectories. This allows TheHive to manage files as required across the cluster.
 
+    1. Mount the NFS endpoint to `_/opt/thp/thehive/files_` on each node.
+    2. Set permissions: Ensure the `thehive` user has both read and write access to this directory, including the ability to create subdirectories. This allows TheHive to manage files as required across the cluster.
 
-=== "Minio"
-    ![](../images/installation/minio-cluster.png){ align=center }
-    <br/>
-    MinIO is a scalable, cloud-native object storage system designed to efficiently manage data storage and retrieval in cloud-native environments. Its primary purpose is to provide seamless scalability and reliability for storing and accessing large volumes of data across distributed systems. Within TheHive, MinIO efficiently handles vast amounts of data distributed across multiple nodes, ensuring robustness and optimal performance.
+=== "S3-compatible object storage"
 
-    &nbsp;
+    TheHive can store files in object storage that implements the Amazon S3 API. This includes Amazon S3 itself, as well as many S3-compatible services, whether managed or self-hosted.
 
-    ### Installation Instructions
-    To implement MinIO with TheHive, follow the procedure outlined below on all servers in the cluster. For this example, we assume a cluster setup consisting of 3 servers named minio1, minio2, and minio3.
+    Commonly used S3-compatible options include:
 
-    !!! Warning
-        Unlike Cassandra and Elasticsearch, MinIO requires a load balancer to be installed in front of the nodes to distribute connections effectively.
+    * [Cloudflare R2](https://developers.cloudflare.com/r2/){target=_blank}
+    * [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces){target=_blank}
+    * [Wasabi](https://wasabi.com/){target=_blank}
+    * [Backblaze B2](https://www.backblaze.com/cloud-storage){target=_blank}
+    * [MinIO](https://www.min.io/){target=_blank}
+    * [Ceph Object Gateway](https://docs.ceph.com/en/reef/radosgw/){target=_blank}
 
-    1. **Create a Dedicated System Account**: First, create a dedicated user and group for MinIO:
+    !!! note "Endpoint and availability"
+        From TheHive perspective, you configure a single S3 endpoint. If you self-host object storage, ensure the endpoint is highly available, for example via the storage platform itself or a correctly configured load balancer.
 
-        !!! Example ""
+## Step 4: Install and configure TheHive
 
-            ```bash
-            adduser minio-user
-            addgroup minio-user
-            ```
+TheHive uses the [Apache Pekko](https://pekko.apache.org/){target=_blank} toolkit to manage clustering and scalability. Apache Pekko is a framework for building highly concurrent, distributed, and resilient message-driven applications on the JVM. Within TheHive, Pekko handles inter-node communication, cluster membership, and task coordination, enabling the platform to efficiently process concurrent workloads and operate reliably in a distributed cluster environment.
 
-    2. **Create Data Volumes**: Next, create at least 2 data volumes on each server by executing the following commands:
+### Step 4.1: Install TheHive
 
-        !!! Example ""
+To deploy TheHive in a clustered environment, you must install TheHive on each TheHive node.
 
-            ```bash
-            sudo mkdir -p /srv/minio/{1,2}
-            sudo chown -R minio-user:minio-user /srv/minio
-            ```
+TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
 
-    3. **Setting up Hosts Files**: To ensure proper communication between servers in your environment, it's necessary to configure the ``/etc/hosts`` file on all servers:
+Follow the steps in the [installation guide](installation-guide-linux-standalone-server.md#step-51-install-thehive).
 
-        !!! Example ""
+### Step 4.2: Configure TheHive
 
-            ```title="/etc/hosts"
-            ip-minio-1     minio1
-            ip-minio-2     minio2
-            ip-minio-3     minio3
-            ```
+#### Configure the cluster
 
-
-        In the above example, replace ip-minio-1, ip-minio-2, and ip-minio-3 with the respective IP addresses of your MinIO servers. These entries map the server names (minio1, minio2, minio3) to their corresponding IP addresses, ensuring that they can be resolved correctly within your network.
-
-    4. **Install MinIO**: Installing MinIO and MC Command Line Tool, by first downloading the latest DEB packages for MinIO and MC from the official MinIO website and then installing the downloaded DEB packages using the dpkg command:
-
-        !!! Example "Example for DEB packages"
-
-            ```bash
-            wget https://dl.min.io/server/minio/release/linux-amd64/minio.deb
-            wget https://dl.min.io/client/mc/release/linux-amd64/mcli.deb
-            dpkg -i minio.deb
-            dpkg -i mcli.deb
-            ```
-
-    !!! Info "You can find the latest versions of the required packages on the [**MinIO download page**](https://dl.min.io/){target=_blank}. Ensure that you download the appropriate packages for your system architecture and MinIO version requirements."
-
-    &nbsp;
-
-    ### Configuration Instructions
-
-    To configure MinIO, create or edit the file ``/etc/default/minio`` with the following settings:
-
-    !!! Example ""
-
-        ```conf title="/etc/default/minio"
-        MINIO_OPTS="--address :9100 --console-address :9001"
-        MINIO_VOLUMES="http://minio{1...3}:9100/srv/minio/{1...2}"
-        MINIO_ROOT_USER=thehive
-        MINIO_ROOT_PASSWORD=password
-        MINIO_SITE_REGION="us-east-1"
-        ```
-
-    Ensure to replace placeholders such as ``thehive``, ``password``, and ``us-east-1`` with your desired values. These settings define the address, volumes, root user credentials, and site region for your MinIO setup.
-
-    &nbsp;
-
-    ### Enable and Start the Service
-
-    Once configured, enable and start the MinIO service using the following commands:
-
-    !!! Example ""
-
-        ```bash
-        sudo systemctl daemon-reload
-        sudo systemctl enable minio
-        sudo systemctl start minio.service
-        ```
-
-    &nbsp;
-
-    ### Prepare the Service for TheHive
-
-    Before proceeding, ensure that all servers are up and running. The following operations should be performed once all servers are operational, as adding a new server afterward is not supported.
-
-    !!! Info "Following operations should be performed once all servers are up and running. A new server CAN NOT be added afterward."
-
-    5. Connect to one of the MinIO servers using your browser at port 9100: ``http://minio:9100``. You will need to use the access key and secret key provided during the MinIO setup process.
-
-        ![](../images/installation/minio-login.png)
-
-    6. Create a bucket named thehive.
-
-        ![](../images/installation/minio-list-buckets.png)
-
-    Ensure that the bucket is successfully created and available on all your MinIO servers. This ensures uniformity and accessibility across your MinIO cluster.
-
----
-
-## TheHive Setup
-![](../images/installation/thehive-cluster.png){ align=left width=100 }
-
-TheHive utilizes the Pekko toolkit to effectively manage clusters and enhance scalability. Pekko facilitates efficient management of threads and multi-processing, enabling TheHive to handle concurrent tasks seamlessly.
-
-!!! Note
-    Apache Pekko is a toolkit designed for building highly concurrent, distributed, and resilient message-driven applications for Java and Scala.
-    <br/>
-    Incorporating Pekko into TheHive configuration ensures robustness and enhances its ability to handle distributed workloads effectively.
-    <br/>
-    Source: [**https://pekko.apache.org**](https://pekko.apache.org){target=_blank}
-
-&nbsp;
-
-### Configuration
-#### Cluster
 When configuring TheHive for a clustered environment, it's essential to configure Pekko to ensure efficient management of the cluster by the application.
 
-In this guide, we assume that node 1 serves as the master node. Begin by configuring the ``pekko`` component in the ``/etc/thehive/application.conf`` file of each node as follows:
+In this guide, we assume that node 1 serves as the master node. Begin by configuring the `pekko` component in the `/etc/thehive/application.conf` file of each node as follows:
 
 !!! Example ""
 
@@ -547,29 +462,27 @@ In this guide, we assume that node 1 serves as the master node. Begin by configu
       }
     remote.artery {
       canonical {
-        hostname = "<My IP address>" # (1)
+        hostname = "<ip_address>" # (1)
         port = 2551
       }
     }
     # seed node list contains at least one active node
     cluster.seed-nodes = [
-                          "pekko://application@<Node 1 IP address>:2551",  # (2)
-                          "pekko://application@<Node 2 IP address>:2551",
-                          "pekko://application@<Node 3 IP address>:2551"
+                          "pekko://application@<node_1_ip_address>:2551",  # (2)
+                          "pekko://application@<node_2_ip_address>:2551",
+                          "pekko://application@<node_3_ip_address>:2551"
                         ]
     cluster.min-nr-of-members = 2    # (3)
     }
     ```
 
-1.    Set the IP address of the current node.
-2.    Ensure consistency of this parameter across all nodes.
-3.    Choose a value corresponding to half the number of nodes plus one (for 3 nodes, use 2).
+    1. Set the IP address of the current node.
+    2. Ensure consistency of this parameter across all nodes.
+    3. Choose a value corresponding to half the number of nodes plus one (for three nodes, use `2`).
 
-&nbsp;
+#### Configure the database and index engine
 
-#### Database and Index Engine Configuration
-
-To ensure proper database and index engine configuration for TheHive, update the /etc/thehive/application.conf file as follows:
+To ensure proper database and index engine configuration for TheHive, update the `/etc/thehive/application.conf` file as follows:
 
 !!! Example ""
 
@@ -580,7 +493,7 @@ To ensure proper database and index engine configuration for TheHive, update the
         ## Cassandra configuration
         # More information at https://docs.janusgraph.org/basics/configuration-reference/#storagecql
             backend = cql
-            hostname = ["<ip node 1>", "<ip node 2>", "<ip node 3>"] #(1)
+            hostname = ["<ip_node_1>", "<ip_node_2>", "<ip_node_3>"] #(1)
             # Cassandra authentication (if configured)
             username = "thehive"
             password = "PASSWORD"
@@ -592,7 +505,7 @@ To ensure proper database and index engine configuration for TheHive, update the
         index.search {
         ## Elasticsearch configuration
             backend = elasticsearch
-            hostname = ["<ip node>"]
+            hostname = ["<ip_node>"]
             index-name = thehive
             # Elasticsearch authentication (recommended)
             elasticsearch {
@@ -612,26 +525,26 @@ To ensure proper database and index engine configuration for TheHive, update the
 
 !!! warning "Consistent configuration across all TheHive nodes"
     In this configuration, all TheHive nodes should have the same configuration.
-    
+
     Elasticsearch configuration should use the default value for `script.allowed_types`, or contain the following configuration line: 
 
     ```yaml
     script.allowed_types: inline,stored
     ```
 
-Ensure that you replace ``<ip node 1>``, ``<ip node 2>``, and ``<ip node 3>`` with the respective IP addresses of your Cassandra nodes. This configuration ensures proper communication between TheHive and the Cassandra database, facilitating seamless operation of the platform. Additionally, if authentication is enabled for Cassandra, provide the appropriate username and password in the configuration.
+Ensure that you replace `<ip_node_1>`, `<ip_node_2>`, and `<ip_node_3>` with the respective IP addresses of your Cassandra nodes. This configuration ensures proper communication between TheHive and the Cassandra database, facilitating seamless operation of the platform. Additionally, if you enabled authentication for Cassandra, provide the appropriate username and password in the configuration.
 
 To learn about how to configure SSL for Cassandra and Elasticsearch, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md).
 
-&nbsp;
-
-#### File storage
+#### Configure file storage
 
 File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. [All files are stored in their original form as plaintext](../../resources/security.md#database-and-storage).
 
-=== "Using NFS file storage"
+=== "NFS"
 
-    All nodes should have access to the same file storage. So, ideally, all TheHive nodes should have a similar NFS mount point. Then, on each node:
+    All nodes should have access to the same file storage. So, ideally, all TheHive nodes should have a similar NFS mount point. 
+    
+    Then, on each node:
 
     1. Set ownership and permissions so that only the `thehive` user can read and write files.
 
@@ -642,7 +555,7 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
             sudo chmod 700 /opt/thp/thehive/files
             ```
 
-    2. Update the _application.conf_ TheHive configuration file 
+    2. Update the `application.conf` TheHive configuration file 
 
         !!! Example ""
 
@@ -656,57 +569,45 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
             }
             ```
 
+=== "S3-compatible object storage"
 
-=== "S3 file storage with MINIO (Optional)"
+    If you decide to use object storage, configure TheHive to store files using an Amazon S3 or S3-compatible endpoint.
 
-    It you decide to go with S3 file storage, this section details how to configure your cluster.
+    Before you begin, make sure you have:
+    
+    * An existing bucket
+    * An access key and secret key (or equivalent credentials for your storage service)
+    * The S3-compatible endpoint URL
+    * The region configured for your S3 service (if applicable)
 
-    To enable S3 file storage for each node in TheHive cluster, add the relevant storage configuration to the ``/etc/thehive/application.conf`` file. Below is an example configuration for the first node:
+    To enable S3 file storage in a TheHive cluster, configure the storage section in `/etc/thehive/application.conf` on each TheHive node, using the same bucket and endpoint settings.
 
     !!! Example ""
 
-        ```yaml title="/etc/thehive/application.conf with TheHive 5.0.x"
-            ## Attachment storage configuration
+        ```yaml title="/etc/thehive/application.conf"
             storage {
               provider: s3
               s3 {
-                bucket = "thehive"
+                bucket = "<bucket_name>"
                 readTimeout = 1 minute
                 writeTimeout = 1 minute
                 chunkSize = 1 MB
-                endpoint = "http://<IP_MINIO_1>:9100"
-                accessKey = "thehive"
-                secretKey = "password"
-                region = "us-east-1"
-              }
-            }
-            alpakka.s3.access-style = path
-        ```
-
-        ```yaml title="/etc/thehive/application.conf with TheHive > 5.0"
-            storage {
-              provider: s3
-              s3 {
-                bucket = "thehive"
-                readTimeout = 1 minute
-                writeTimeout = 1 minute
-                chunkSize = 1 MB
-                endpoint = "http://<IP_MINIO_1>:9100"
-                accessKey = "thehive"
+                endpoint-url = "https://<s3_endpoint>"
+                access-key-id = "<access_key>"
                 aws.credentials.provider = "static"
-                aws.credentials.secret-access-key = "password"
+                aws.credentials.secret-access-key = "<secret_key>"
                 access-style = path
                 aws.region.provider = "static"
-                aws.region.default-region = "us-east-1"
+                aws.region.default-region = "<region>"
               }
             }
         ```
 
-    - The provided configuration is backward compatible, ensuring compatibility with existing setups.
+    !!! note "Access style and endpoint"
+        Some S3-compatible providers require path-style access, while others support or prefer virtual-hosted style. If you encounter addressing issues, adjust `access-style` accordingly.
 
-    - The default region is us-east-1, but it's optional if not specified in the MinIO configuration.
-
-    - Each TheHive server can connect to one MinIO server, or you can choose to distribute connections across all nodes of the cluster using a load balancer (refer to [**the example for TheHive**](#load-balancing-with-haproxy)).
+    !!! note "High availability"
+        Managed services expose a single highly available endpoint. For self-hosted S3-compatible platforms, ensure your endpoint is highly available, for example via the storage platform itself or a properly configured load balancer.
 
 #### Optional: Configure the secret key for the Play Framework
 
@@ -740,28 +641,25 @@ For other installation methods:
     !!! danger "Security requirements"
         Never share or commit your secret key to version control. All nodes in a cluster must use the same key, but different environments (development, staging, production) must use different keys.
 
-### Start the service
+### Step 4.3: Start the service
 
-Once the configuration is updated, start TheHive service using the following command:
+Once you have updated the configuration, start TheHive service using the following command:
 
 !!! Example ""
 
     ```bash
     sudo systemctl start thehive
     ```
-This command initiates TheHive service, enabling S3 file storage functionality as configured. Make sure to execute this command on each node of TheHive cluster to ensure proper functionality across the entire setup.
+This command initiates TheHive service, enabling file storage functionality as configured. Make sure to execute this command on each node of TheHive cluster to ensure proper functionality across the entire setup.
 
 !!! warning "Initial startup delay"
     The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.
 
----
+## Step 5: Set up load balancing with HAProxy
 
-## Load Balancing with HAProxy
-![](../images/installation/load-balancers-thehive.png){ align=center }
-<br/>
-To enhance the availability and distribution of HTTP requests across TheHive cluster, you can integrate a load balancer. The load balancer efficiently distributes incoming requests among the cluster nodes, ensuring optimal resource utilization. Notably, client affinity is not required, meaning that a client does not need to consistently connect to the same node.
+To enhance the availability and distribution of HTTP requests across TheHive cluster, you can integrate a load balancer. The load balancer efficiently distributes incoming requests among the cluster nodes, ensuring optimal resource utilization. Notably, client affinity isn't required, meaning that a client doesn't need to consistently connect to the same node.
 
-Below is a basic example of what should be added to the HAProxy configuration file, typically located at ``/etc/haproxy/haproxy.cfg``. This configuration should be consistent across all HAProxy instances:
+Below is a basic example of what you should add to the HAProxy configuration file, typically located at `/etc/haproxy/haproxy.cfg`. This configuration should be consistent across all HAProxy instances:
 
 !!! Example ""
 
@@ -769,7 +667,7 @@ Below is a basic example of what should be added to the HAProxy configuration fi
 
     # Listen on all interfaces, on port 80/tcp
     frontend thehive-in
-            bind <VIRTUAL_IP>:80                # (1)
+            bind <virtual_ip>:80                # (1)
             default_backend thehive
     # Configure all cluster node
     backend thehive
@@ -784,16 +682,13 @@ Below is a basic example of what should be added to the HAProxy configuration fi
 
 This configuration ensures that incoming HTTP requests are efficiently distributed among the cluster nodes.
 
----
+## Step 6: Configure a virtual IP with Keepalived
 
-## Virtual IP with Keepalived
-![](../images/installation/keepalived-load-balancers.png){ align=center }
-<br/>
 If you choose to use Keepalived to set up a virtual IP address for your load balancers, this section provides a basic example of configuration.
 
-Keepalived is a service that monitors the status of load balancers (such as [**HAProxy**](#load-balancing-with-haproxy)) installed on the same system. In this setup, LB1 acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
+Keepalived is a service that monitors the status of load balancers, such as [HAProxy](#step-5-set-up-load-balancing-with-haproxy), installed on the same system. In this setup, the load balancer 1 (LB1) acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
 
-!!! Example "" 
+!!! Example ""
 
     ```yaml hl_lines="12"
     vrrp_script chk_haproxy {     # (1)
@@ -816,47 +711,56 @@ Keepalived is a service that monitors the status of load balancers (such as [**H
     ```
 
     1.   Requires Keepalived version > 1.1.13.
-    2.   Set `priority 100`` for a secondary node.
+    2.   Set `priority 100` for a secondary node.
     3.   :fontawesome-solid-triangle-exclamation: This is an example. Replace it with your actual IP address and broadcast address.
-
----
 
 ## Troubleshooting
 
-Issues can be encountered during cluster deployment with TheHive. Here are some of the most commonly encountered ones and their solutions:
+Here are some commonly encountered issues during cluster deployment with TheHive and their solutions:
 
-- **Example 1**: InvalidRequest Error
-    
+* InvalidRequest error
+
     !!! Example "" 
 
         ```log
         InvalidRequest: code=2200 [Invalid query] message=”org.apache.cassandra.auth.CassandraRoleManager doesn’t support PASSWORD”.`
         ```
 
-    **Resolution**:
+    Resolution:
 
-    To resolve this error, set the value ``authenticator: PasswordAuthenticator`` in the ``cassandra.yaml`` configuration file.
+    To resolve this error, set the value `authenticator: PasswordAuthenticator` in the `cassandra.yaml` configuration file.
 
-&nbsp;
+* UnauthorizedException caused by inconsistent replication
 
-- **Example 2**: UnauthorizedException Caused by Inconsistent Replication
-    
-    !!! Example "" 
+    !!! Example ""
 
         ```log
         Caused by: java.util.concurrent.ExecutionException: com.datastax.driver.core.exceptions.UnauthorizedException: Unable to perform authorization of permissions: Unable to perform authorization of super-user permission: Cannot achieve consistency level LOCAL_ONE
         ```
 
-    **Resolution**:
+    Resolution:
 
-    To address this issue, execute the following CQL command to adjust the replication settings for the system_auth keyspace:
+    To address this issue, execute the following CQL command to adjust the replication settings for the `system_auth` keyspace:
 
-    !!! Example "" 
+    !!! Example ""
 
         ```sql
         ALTER KEYSPACE system_auth WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
         ```
 
-    After making this adjustment, perform a full repair using the ``nodetool repair -full`` command to ensure data consistency across the cluster.
+    After making this adjustment, perform a full repair using the `nodetool repair -full` command to ensure data consistency across the cluster.
 
-&nbsp;
+## Next steps
+
+* [Turn Off The Cortex Integration](../configuration/turn-off-cortex-connector.md)
+* [Turn Off The MISP Integration](../configuration/turn-off-misp-connector.md)
+* [Update Log Configuration](../configuration/update-log-configuration.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Enable the GDPR Compliance Feature](../configuration/enable-gdpr.md)
+* [Configure HTTPS for TheHive With a Reverse Proxy](../configuration/ssl/configure-https-reverse-proxy.md)
+* [Update TheHive Service Configuration](../configuration/update-service-configuration.md)
+* [Hot Backups](../operations/backup-restore/backup/hot-backup.md)
+* [Cold Backups for Physical Servers](../operations/backup-restore/backup/physical-server.md)
+* [Cold Backups for Virtual Servers](../operations/backup-restore/backup/virtual-server.md)
+* [Monitoring](../operations/monitoring.md)
+* [Troubleshooting](../operations/troubleshooting.md)

@@ -187,8 +187,6 @@ sections:
           links: 
             - text: 'Perform Cassandra cluster operations'
               url: '/thehive/operations/cassandra-cluster/'
-            - text: 'Manage the MinIO cluster'
-              url: '/thehive/operations/minio-cluster/'
             - text: 'Perform backups and restore data'
               url: '/thehive/operations/backup-restore/overview/'
             - text: 'Set up monitoring tools'

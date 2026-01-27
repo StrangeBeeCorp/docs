@@ -52,11 +52,11 @@ Replace `<thehive_version>` with the TheHive version.
 | `--no-config-storage` | flag | Turns off automatic storage configuration. |
 | `--storage-directory <path>` | string | Specifies local storage location when not using S3. Default: `/data/files`. |
 | `--s3-endpoint <endpoint>` | string | Specifies S3 or object storage endpoint. Use `s3.amazonaws.com` for AWS S3. |
-| `--s3-region <region>` | string | Specifies the S3 region. Optional for MinIO. |
+| `--s3-region <region>` | string | Specifies the S3 region. |
 | `--s3-bucket <bucket>` | string | Specifies the S3 bucket name. Default: `thehive`, which must already exist. |
 | `--s3-access-key <key>` | string | Specifies the S3 access key. Required for S3. |
 | `--s3-secret-key <key>` | string | Specifies the S3 secret key. Required for S3. |
-| `--s3-use-path-access-style` | flag | Enables path-style access for MinIO or non-AWS S3 providers (defaults to virtual host style). |
+| `--s3-use-path-access-style` | flag | Enables path-style access for non-AWS S3 providers (defaults to virtual host style). |
 
 ### Cortex integration
 

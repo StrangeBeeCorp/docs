@@ -14,7 +14,7 @@ If you want to use only the TheHive Docker image, get it from [Docker Hub](https
     It doesn't cover:
 
     * Linux installations: For Linux installations, follow [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md).
-    * Cluster deployments: Refer to [Setting up a Cluster with TheHive](deploying-a-cluster.md) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
+    * Cluster deployments: Refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
     * Version upgrades: For upgrading an existing instance, see [Upgrade from TheHive 5.x](upgrade-from-5.x.md) or [Upgrade from TheHive 4.x](upgrade-from-4.x.md).
 
 !!! warning "Before you begin"

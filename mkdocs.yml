@@ -357,6 +357,7 @@ plugins:
             'thehive/configuration/gdpr.md': 'thehive/configuration/enable-gdpr.md'
             'thehive/configuration/logs.md': 'thehive/configuration/update-log-configuration.md'
             'thehive/configuration/secret.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
+            'thehive/operations/minio-cluster.md': 'thehive/installation/deploying-a-cluster.md'
 
 extra:
   generator: false
@@ -479,7 +480,6 @@ nav:
     - 'Operations':
       - 'Cassandra Cluster Operations': thehive/operations/cassandra-cluster.md
       - 'Cassandra Security Operations': thehive/operations/cassandra-security.md
-      - 'MinIO Cluster Operations': thehive/operations/minio-cluster.md
       - 'Backup & Restore Operations': 
         - 'Cold vs. Hot Backups and Restores': thehive/operations/backup-restore/cold-hot-backup-restore.md
         - 'Backup Process':

@@ -35,4 +35,4 @@ The tables below list the supported versions for Linux installations, Docker Com
 * [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
 * [Deploy TheHive with Docker Compose](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
-* [Setting up a Cluster with TheHive](deploying-a-cluster.md)
+* [Set Up a Cluster on Linux Systems](deploying-a-cluster.md)
