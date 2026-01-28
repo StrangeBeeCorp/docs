@@ -418,7 +418,7 @@ To set up shared file storage for TheHive in a clustered environment, several op
 
 === "S3-compatible object storage"
 
-    TheHive can store files in object storage that implements the Amazon S3 API. This includes Amazon S3 itself, as well as many S3-compatible services, whether managed or self-hosted.
+    TheHive can store files in object storage that implements the Amazon S3 API. This includes [Amazon S3](https://aws.amazon.com/s3/){target=_blank} itself, as well as many S3-compatible services, whether managed or self-hosted.
 
     Commonly used S3-compatible options include:
 
