@@ -212,7 +212,7 @@ sections:
 
     - title: 'External User'
       text: 'I need to access shared cases and collaborate with the SOC team.'
-      icon: assets/images/docs-infraEngineer.png
+      icon: assets/images/docs-externalUser.png
       anchor:
         name: 'External User'
         href: 'externaluser'
