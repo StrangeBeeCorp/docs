@@ -2,8 +2,6 @@
 
 Sharing rules determine how cases, along with their tasks and observables, are shared with linked organizations within TheHive.
 
-{% include-markdown "includes/sharing-with-external-users.md" %}
-
 ## Global sharing rules
 
 Global sharing rules define how newly created cases and their related tasks and observables are shared at the organization level with linked organizations. The configuration determines whether this sharing occurs automatically.

@@ -1,2 +1,0 @@
-!!! tip "Sharing with external stakeholders"
-    <!-- md:version 5.6 --> <!-- md:license Platinum --> To share cases with users outside your Security team, use [TheHive Portal](/thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users/) instead.

@@ -9,8 +9,6 @@ Configure [local sharing rules](../../../administration/organizations/about-orga
 
 To learn more about how sharing rules function and interact, refer to [Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
 
-{% include-markdown "includes/sharing-with-external-users.md" %}
-
 <h2>Procedure</h2>
 
 1. [Locate the case you want to share](../../analyst-corner/cases/search-for-cases/find-a-case.md).

@@ -14,9 +14,6 @@ Share cases with external users to enable controlled collaboration with stakehol
     * Attachments: Like comments, attachments must be individually [marked as external](../attachments/share-an-attachment-case-alert.md#share-an-attachment-with-external-users) for portal visibility.
     * Observables: Observables created by analysts remain private and can't be shared with external users. Only observables created by external users themselves are visible in the portal.
 
-!!! tip "Sharing with internal organizations"
-    To share cases with users from other internal organizations within TheHive, configure [sharing rules between organizations](../../../../administration/organizations/about-organizations-sharing-rules.md).
-
 <h2>Procedure</h2>
 
 !!! warning "Prerequisite"
