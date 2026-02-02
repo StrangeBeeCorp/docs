@@ -703,7 +703,7 @@ nav:
           - 'Add an Alert to an Existing Case': thehive/user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md
           - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Change an Alert Status': thehive/user-guides/analyst-corner/alerts/change-status-alert.md
-          - 'Change Alert Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
+          - 'Change Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
           - 'Enrich Alert Details': thehive/user-guides/analyst-corner/alerts/enrich-alert-details.md
           - 'Ignore Alert Updates from MISP': thehive/user-guides/analyst-corner/alerts/ignore-alert-updates-misp.md
           - 'Start Working on an Alert': thehive/user-guides/analyst-corner/alerts/start-investigating-an-alert.md
@@ -753,9 +753,6 @@ nav:
             - 'Find a Case': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-case.md
             - 'Overview of Search Methods for Cases': thehive/user-guides/analyst-corner/cases/search-for-cases/overview-search-methods-case.md
           - 'Create a Case': thehive/user-guides/analyst-corner/cases/create-a-new-case.md
-          - 'Export a List of Cases': thehive/user-guides/analyst-corner/cases/export-list-of-cases.md
-          - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
-          - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Apply a Case Template': thehive/user-guides/analyst-corner/cases/apply-a-case-template.md
           - 'Find Similar Alerts or Cases': thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases.md
           - 'Observables' :
@@ -777,24 +774,9 @@ nav:
             - 'Add Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/add-custom-fields.md
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
-          - 'Link Elements in Cases':
-            - 'Add a Link to a Case': thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case.md
-            - 'Remove a Link from a Case': thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case.md
-            - 'View Links in a Case': thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md
-          - 'Linked Alerts to Cases':
-            - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
-            - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
-          - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
-          - 'Change Case Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
-          - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
           - 'Tags':
             - 'About Tags': thehive/user-guides/analyst-corner/cases/tags/about-tags.md
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
-          - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
-          - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
-          - 'Share a Case with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
-          - 'Share a Case with External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users.md
-          - 'Revoke Case Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/revoke-case-access-external-users.md
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
@@ -807,33 +789,52 @@ nav:
             - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
             - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
             - 'Remove External User Access to an Attachment': thehive/user-guides/analyst-corner/cases/case-thehive-portal/remove-case-attachment-access-thehive-portal.md
+          - 'Link Elements in Cases':
+            - 'Add a Link to a Case': thehive/user-guides/analyst-corner/cases/case-links/add-a-link-to-a-case.md
+            - 'Remove a Link from a Case': thehive/user-guides/analyst-corner/cases/case-links/remove-a-link-from-a-case.md
+            - 'View Links in a Case': thehive/user-guides/analyst-corner/cases/case-links/view-links-in-a-case.md
+          - 'Linked Alerts to Cases':
+            - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
+            - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
+          - 'Comments':
+            - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case.md
+            - 'Control Comment Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/control-case-comment-access-thehive-portal.md
+          - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
+          - 'Change Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
+          - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
+          - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
+          - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
+          - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
+          - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
+          - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
+          - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
+          - 'Delete a Case': thehive/user-guides/analyst-corner/cases/delete-a-case.md
+          - 'Case Access Control':
+            - 'Share a Case with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+            - 'Share a Case with External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users.md
+            - 'Revoke Case Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/revoke-case-access-external-users.md
+            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
+            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
           - 'Case Timelines':
             - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md
             - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md
             - 'View a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/view-case-timeline.md
             - 'Export a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/export-case-timeline.md
             - 'Delete a Case Timeline': thehive/user-guides/analyst-corner/cases/case-timelines/delete-custom-event-timeline.md
-          - 'Case Reports':
-            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
-            - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
-          - 'About Audit Logs': thehive/user-guides/organization/about-audit-logs.md
-          - 'Manage Case Visibility':
-            - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md
-            - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
-          - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
-          - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
-          - 'Comments':
-            - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case.md
-            - 'Control Comment Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/control-case-comment-access-thehive-portal.md
+          - 'Export Cases':
+            - 'Export a List of Cases': thehive/user-guides/analyst-corner/cases/export-list-of-cases.md
+            - 'Export an Archived Case': thehive/user-guides/analyst-corner/cases/export-an-archived-case.md
+            - 'Export a Case to MISP': thehive/user-guides/analyst-corner/cases/export-a-case-to-misp.md
           - 'Case Pages':
             - 'About Case Pages': thehive/user-guides/knowledge-base/about-case-pages.md
             - 'Create a Page': thehive/user-guides/knowledge-base/create-a-case-page.md
             - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-case-page.md
             - 'Share a Page': thehive/user-guides/knowledge-base/share-a-case-page.md
             - 'View a Page': thehive/user-guides/knowledge-base/view-a-case-page.md
-          - 'Close a Case': thehive/user-guides/analyst-corner/cases/close-a-case.md
-          - 'Reopen a Case': thehive/user-guides/analyst-corner/cases/reopen-a-case.md
-          - 'Delete a Case': thehive/user-guides/analyst-corner/cases/delete-a-case.md
+          - 'Case Reports':
+            - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
+            - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
+          - 'About Audit Logs': thehive/user-guides/organization/about-audit-logs.md
         - 'Tasks Management':
           - 'Tasks':
             - 'About Tasks': thehive/user-guides/analyst-corner/tasks/about-tasks.md
