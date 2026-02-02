@@ -1,6 +1,6 @@
 # Share an Attachment from a Case or an Alert
 
-Share an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive by copying its URL to provide access to other users.
+Share an [attachment](../../../analyst-corner/cases/attachments/about-attachments.md) from a [case](../about-cases.md) or an [alert](../../alerts/about-alerts.md) in TheHive.
 
 ## Share an attachment from a case
 
@@ -23,6 +23,9 @@ Cases support two methods for sharing attachments: copying a direct URL or share
 <!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum -->
 
 Share attachments with external users who have access to the case through TheHive Portal.
+
+!!! warning "Case sharing required"
+    To share an attachment from a case, you must first [share the case](../case-thehive-portal/share-case-external-users.md).
 
 1. [Locate the case](../search-for-cases/find-a-case.md) containing the attachment you want to share.
 

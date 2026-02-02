@@ -6,6 +6,9 @@ Control which case comments external users can access through [TheHive Portal](.
 
 ## Grant external users access to a comment
 
+!!! warning "Case sharing required"
+    To grant access to a case comment, you must first [share the case](../case-thehive-portal/share-case-external-users.md).
+
 1. [Find the case](../search-for-cases/find-a-case.md) containing the comment.
 
 2. In the right pane, locate the comment in the comment thread.
