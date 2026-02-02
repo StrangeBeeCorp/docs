@@ -277,7 +277,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         * `AllExternalAccessKind`: Shares the case with all external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). Authorizing all external users grants access to both current and future external users.
         * `ExternalAccessKind`: Shares the case with selected external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). External users must already exist in TheHive with the External account type.
 
-        See the `PATCH /api/v1/case/_bulk/access` endpoint for the complete object definition.
+        See the [`POST /api/v1/case/_bulk/access` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Bulk%20Manage%20Case%20access){target=_blank} for the complete object definition.
 
 ## Task
 
