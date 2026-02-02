@@ -1,15 +1,13 @@
-# Share a Task with Other Organizations
+# Share a Task with Other Internal Organizations
 
 <!-- md:permission `manageCase/update` --> <!-- md:permission `manageShare` -->
 
-[Manually share a task in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
+[Manually share a task in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive. This is useful when task sharing rules are set to *manual*, ensuring that users share only the relevant tasks.
 
 !!! info "Shared cases only"
-    To share a task manually, the case must already be shared with the relevant linked organizations. If not, refer to [Share a Case](../cases/share-a-case.md).
+    To share a task manually, the case must already be shared with the relevant linked organizations. If the case hasn’t been shared yet, refer to [Share a Case](../cases/share-a-case.md).
 
-This is useful when task sharing rules are set to *manual*, ensuring that users share only the relevant tasks.
-
-To learn more about how sharing rules function and interact, see [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, see [Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
 
 <h2>Procedure</h2>
 

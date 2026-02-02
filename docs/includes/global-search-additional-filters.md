@@ -1,9 +1,9 @@
-If you need additional filters, apply one or more filters by selecting **Add new filter**. 
+To refine results, select **Add new filter** and choose one or more filters.
 
-    These filters refine your search results and act as an equivalent to the AND operator in Boolean search.
+    Filters narrow your search results and work like the AND operator in a Boolean search.
 
     !!! warning "Required filters"
-        Filters are required for the following fields to ensure the search engine accurately interprets values:
+        Filters are mandatory for certain fields to ensure the search engine interprets values correctly:
 
         * Fields with specific date formats
         * [Custom fields](/thehive/administration/custom-fields/about-custom-fields/)

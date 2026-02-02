@@ -10,11 +10,17 @@ Add an [attachment](../../../analyst-corner/cases/attachments/about-attachments.
 
 2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
-3. Go to the **Cases** or **Reports** tab and select :fontawesome-solid-plus:.
+3. Go to the **Cases** tab and select :fontawesome-solid-plus:.
 
 4. In the **Add attachment** drawer, drop a file or select it from your computer.
 
 5. Select **Confirm**.
+
+6. <!-- md:version 5.6 --> <!-- md:license Platinum --> Optional: To share this attachment with external users who have access to the case through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md):
+    
+    a. Select :fontawesome-solid-ellipsis: next to the attachment.
+
+    b. Select **External**.
 
 ## Add an attachment to an alert
 

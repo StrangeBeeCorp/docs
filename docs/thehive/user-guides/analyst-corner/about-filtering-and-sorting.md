@@ -2,24 +2,21 @@
 
 Filtering and sorting in TheHive refine and organize displayed lists, helping you quickly find and prioritize the information you need.
 
-!!! info "Beta feature available for filters and views"
-    <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
-
 ## Filtering elements
 
 Filtering in TheHive refines displayed lists.
 
 ### Applying filters
 
-Applying filters requires turning on the **Filters** toggle at the top right of the page to access filtering options and manually enter filter values.
+Applying filters requires selecting **Add filter** at the top right of the page to access filtering options and manually enter filter values.
 
-![Filters](../../images/user-guides/analyst-corner/filters.png)
+![Add filter](../../images/user-guides/analyst-corner/add-filter.png)
 
 When available, these quicker alternatives provide filtering options without manual value entry:
 
 * Using predefined quick filters
 
-    Select the **Quick filters** dropdown to access predefined filters. All users have access to these filters and can't modify them.
+    Select **Quick filters** to access predefined filters. All users have access to these filters and can't modify them.
 
     ![Quick filters](../../images/user-guides/analyst-corner/quick-filters.png)
 

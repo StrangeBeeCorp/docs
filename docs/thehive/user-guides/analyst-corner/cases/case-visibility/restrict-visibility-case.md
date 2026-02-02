@@ -2,7 +2,10 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum -->
 
-Restrict the [visibility of a case](../about-cases.md#case-visibility) in TheHive to limit access to specific authorized users for sensitive investigations.
+Restrict the [visibility of a case](../about-cases.md#case-visibility-restriction) in TheHive to limit access to specific authorized users for sensitive investigations.
+
+!!! info "Limitation"
+    [Cases shared with external users](../about-cases.md#thehive-portal-sharing) can't have their visibility restricted.
 
 <h2>Procedure</h2>
 

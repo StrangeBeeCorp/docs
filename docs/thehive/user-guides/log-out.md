@@ -1,4 +1,4 @@
-# Log Out of your Account
+# Log Out of Your Account
 
 Log out of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive when you're finished working or need to switch accounts.
 

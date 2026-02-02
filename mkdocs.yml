@@ -347,6 +347,7 @@ plugins:
             'thehive/operations/backup-restore/restore/virtual-server.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
             'thehive/operations/backup-restore/restore/restore-hot-backup.md': 'thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md'
             'thehive/operations/backup-restore/restore/cloud.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
+            'thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md': 'thehive/user-guides/analyst-corner/cases/comment-on-case.md'
             'thehive/administration/authentication/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/proxy.md': 'thehive/configuration/proxy-settings.md'
@@ -504,11 +505,11 @@ nav:
       - 'Index Management': thehive/operations/change-index.md
       - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
       - 'Set Up Monitoring': thehive/operations/monitoring.md
-    - 'Administration Guides':
+    - 'Admin Guides':
       - 'First Start': thehive/administration/perform-initial-setup-as-admin.md
       - 'Organizations':
         - 'About Organizations': thehive/administration/organizations/about-organizations.md
-        - 'About Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
+        - 'Organizations Sharing Rules': thehive/administration/organizations/about-organizations-sharing-rules.md
         - 'Create an Organization': thehive/administration/organizations/create-an-organization.md
         - 'Link an Organization': thehive/administration/organizations/link-an-organization.md
         - 'Lock an Organization': thehive/administration/organizations/lock-an-organization.md
@@ -591,29 +592,21 @@ nav:
           - 'Update a Catalog': thehive/administration/ttps/update-a-catalog.md
           - 'Remove a Catalog': thehive/administration/ttps/remove-a-catalog.md
           - 'View Techniques': thehive/administration/ttps/view-techniques-in-a-catalog.md
+      - 'Setting up TheHive Portal': 
+        - 'About TheHive Portal': thehive/administration/thehive-portal/about-thehive-portal.md
+        - 'Tutorial: Set Up TheHive Portal Access': thehive/administration/thehive-portal/set-up-thehive-portal-access.md
       - 'How To':
         - 'Fail2ban Configuration': thehive/how-to/fail2ban.md
         - 'Splunk Integration Guide': thehive/how-to/splunk-integration.md
     - 'User Guides':
-      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
-      - 'Date Field Definitions': thehive/user-guides/date-field-definitions-alerts-cases.md
       - 'Account Management':
-        - 'Manage your Account Settings': thehive/user-guides/manage-user-settings.md
-        - 'Manage your Password': thehive/user-guides/manage-password.md
-        - 'Change your Account Theme': thehive/user-guides/change-account-theme.md
-        - 'View your Account Profile and Permissions': thehive/user-guides/view-permissions.md
+        - 'Manage Your Account Settings': thehive/user-guides/manage-user-settings.md
+        - 'Manage Your Password': thehive/user-guides/manage-password.md
+        - 'Change Your Account Theme': thehive/user-guides/change-account-theme.md
+        - 'View Your Account Profile and Permissions': thehive/user-guides/view-permissions.md
         - 'Switch Between Organizations': thehive/user-guides/switch-organizations.md
-        - 'Log Out of your Account': thehive/user-guides/log-out.md
-      - 'Knowledge Base':
-          - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
-          - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
-          - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
-          - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
-      - 'Key Performance Indicators':
-          - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
-          - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
-          - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
-      - 'Organization Administration':
+        - 'Log Out of Your Account': thehive/user-guides/log-out.md
+      - 'Organization Admin':
         - 'User Accounts':
           - 'About User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md
           - 'Create a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md
@@ -700,8 +693,6 @@ nav:
           - 'Remove an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization.md
           - 'Download an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization.md
           - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
-      - 'Automation Hacks':
-        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
       - 'Analyst Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
@@ -730,7 +721,7 @@ nav:
             - 'Delete an Observable' : thehive/user-guides/analyst-corner/cases/observables/delete-an-observable.md
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
-            - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
+            - 'Share an Observable with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
             - 'Run Analyzers and Review Reports for an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
@@ -753,7 +744,7 @@ nav:
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
           - 'About Audit Logs': thehive/user-guides/organization/about-audit-logs.md
-          - 'Comment on Cases or Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
+          - 'Comment on Alerts': thehive/user-guides/analyst-corner/alerts/comment-on-alert.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
@@ -776,7 +767,7 @@ nav:
             - 'Delete an Observable' : thehive/user-guides/analyst-corner/cases/observables/delete-an-observable.md
             - 'Find an Observable': thehive/user-guides/analyst-corner/cases/search-for-cases/find-an-observable.md
             - 'Find a Job': thehive/user-guides/analyst-corner/cases/search-for-cases/find-a-job.md
-            - 'Share an Observable with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
+            - 'Share an Observable with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-an-observable.md
             - 'Export Data from an Observable' : thehive/user-guides/analyst-corner/cases/observables/export-data-observables.md
             - 'Pin an Observable' : thehive/user-guides/analyst-corner/cases/observables/pin-an-observable.md
             - 'Run Analyzers on an Observable' : thehive/user-guides/analyst-corner/cases/observables/run-analyzers-on-an-observable.md
@@ -801,7 +792,9 @@ nav:
             - 'Add or Remove Tags': thehive/user-guides/analyst-corner/cases/tags/add-remove-tags.md
           - 'Add Tasks to a Case': thehive/user-guides/analyst-corner/cases/add-tasks-to-a-case.md
           - 'Merge Cases': thehive/user-guides/analyst-corner/cases/merge-cases.md
-          - 'Share a Case with Other Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+          - 'Share a Case with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+          - 'Share a Case with External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users.md
+          - 'Revoke Case Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/revoke-case-access-external-users.md
           - 'TTPs':
             - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md
             - 'Add TTPs': thehive/user-guides/analyst-corner/cases/ttps/add-ttps.md
@@ -813,6 +806,7 @@ nav:
             - 'Remove an Attachment': thehive/user-guides/analyst-corner/cases/attachments/remove-an-attachment-case-alert.md
             - 'Download an Attachment': thehive/user-guides/analyst-corner/cases/attachments/download-an-attachment-case-alert.md
             - 'Share an Attachment': thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert.md
+            - 'Remove External User Access to an Attachment': thehive/user-guides/analyst-corner/cases/case-thehive-portal/remove-case-attachment-access-thehive-portal.md
           - 'Case Timelines':
             - 'About Case Timelines': thehive/user-guides/analyst-corner/cases/case-timelines/about-case-timelines.md
             - 'Add a Custom Event': thehive/user-guides/analyst-corner/cases/case-timelines/add-custom-event-timeline.md
@@ -828,7 +822,9 @@ nav:
             - 'Restore Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restore-visibility-case.md
           - 'Run a Function on a Case or Alert': thehive/user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md
           - 'Run Responders and Review Reports for a Case': thehive/user-guides/analyst-corner/cases/run-responders-on-a-case.md
-          - 'Comment on Cases or Alerts': thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md
+          - 'Comments':
+            - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case.md
+            - 'Control Comment Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/control-case-comment-access-thehive-portal.md
           - 'Case Pages':
             - 'About Case Pages': thehive/user-guides/knowledge-base/about-case-pages.md
             - 'Create a Page': thehive/user-guides/knowledge-base/create-a-case-page.md
@@ -851,7 +847,7 @@ nav:
               - 'Find a Task': thehive/user-guides/analyst-corner/tasks/search-for-tasks/find-a-task.md
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
             - 'Run Responders and Review Reports for a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
-            - 'Share a Task with Other Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+            - 'Share a Task with Internal Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
             - 'Close a Task': thehive/user-guides/analyst-corner/tasks/close-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md
@@ -870,16 +866,47 @@ nav:
           - 'Set a Dashboard Display Period': thehive/user-guides/analyst-corner/dashboard/set-dashboard-display-period.md
           - 'Export or Import a Dashboard': thehive/user-guides/analyst-corner/dashboard/export-import-a-dashboard.md
           - 'Download a Dashboard': thehive/user-guides/analyst-corner/dashboard/download-a-dashboard.md
-        - 'Detail View vs. Preview': thehive/user-guides/analyst-corner/preview-vs-detail-view.md
-        - 'About Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
+        - 'Preview vs. Detail View': thehive/user-guides/analyst-corner/preview-vs-detail-view.md
+        - 'Filtering and Sorting': thehive/user-guides/analyst-corner/about-filtering-and-sorting.md
         - 'Views':
           - 'About Views': thehive/user-guides/analyst-corner/views/about-views.md
           - 'Create a Custom View': thehive/user-guides/analyst-corner/views/create-a-custom-view.md
           - 'Update a Custom View': thehive/user-guides/analyst-corner/views/update-a-custom-view.md
+          - 'Rename a Custom View': thehive/user-guides/analyst-corner/views/rename-a-custom-view.md
           - 'Delete a Custom View': thehive/user-guides/analyst-corner/views/delete-a-custom-view.md
-        - 'About Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
-        - 'About Statistics': thehive/user-guides/analyst-corner/about-statistics.md
-        - 'About the Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
+          - 'Change a Custom View Visibility': thehive/user-guides/analyst-corner/views/change-visibility-custom-view.md
+        - 'Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
+        - 'Statistics': thehive/user-guides/analyst-corner/about-statistics.md
+        - 'Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
+      - 'Automation Hacks':
+        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
+      - 'Knowledge Base':
+        - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
+        - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
+        - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
+        - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
+      - 'Key Performance Indicators':
+        - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
+        - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
+        - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
+      - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
+      - 'Date Field Definitions': thehive/user-guides/date-field-definitions-alerts-cases.md
+    - 'External User Guides':
+      - 'Activate Your Account': thehive/thehive-portal/activate-thehive-portal-account.md
+      - 'Glossary': thehive/thehive-portal/glossary-thehive-portal.md
+      - 'Find a Case': thehive/thehive-portal/find-a-case-thehive-portal.md
+      - 'Create a Case': thehive/thehive-portal/create-case-thehive-portal.md
+      - 'Post a Comment': thehive/thehive-portal/add-comment-cases-shared-thehive-portal.md
+      - 'Update a Comment': thehive/thehive-portal/update-comment-cases-shared-thehive-portal.md
+      - 'Delete a Comment': thehive/thehive-portal/delete-comment-cases-shared-thehive-portal.md
+      - 'Upload an Attachment': thehive/thehive-portal/add-attachment-cases-shared-thehive-portal.md
+      - 'Add an Observable': thehive/thehive-portal/add-observable-cases-shared-thehive-portal.md
+      - 'Account Settings':
+        - 'Manage Your Account Settings': thehive/thehive-portal/manage-account-settings-thehive-portal.md
+        - 'Manage Your Password': thehive/user-guides/manage-password.md
+        - 'Change Your Account Theme': thehive/user-guides/change-account-theme.md
+        - 'Switch Between Organizations': thehive/user-guides/switch-organizations.md
+        - 'Log Out of Your Account': thehive/user-guides/log-out.md
           
     - 'API':
       - 'API Documentation': thehive/api-docs/
@@ -895,6 +922,7 @@ nav:
       - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
       - 'Release Notes for Version 5.4': thehive/release-notes/release-notes-5.4.md
       - 'Release Notes for Version 5.5': thehive/release-notes/release-notes-5.5.md
+      - 'Release Notes for Version 5.6': thehive/release-notes/release-notes-5.6.md
   - Cortex: 
     - cortex/index.md
     - 'Download':

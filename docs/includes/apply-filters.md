@@ -4,9 +4,9 @@ Apply filters using any of these options individually or in combination:
 
         ![Quick filters](/thehive/images/user-guides/analyst-corner/cases/find-a-case-quick-filters.png)
 
-    * Turn on the **Filters** toggle and enter one or more filters.
+    * Select **Add filter** and choose one or more filters.
 
-        ![Filters toggle](/thehive/images/user-guides/analyst-corner/cases/find-a-case-filters-toggle.png)
+        ![Add filter](/thehive/images/user-guides/analyst-corner/cases/find-a-case-add-filter.png)
 
     * Select a value from a field to use it as a filter criterion.
 

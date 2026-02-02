@@ -1,0 +1,2 @@
+!!! info "Access level compatibility"
+    Cases with restricted visibility can't be shared with external users. Similarly, once a case is shared with external users, its visibility can't be restricted.

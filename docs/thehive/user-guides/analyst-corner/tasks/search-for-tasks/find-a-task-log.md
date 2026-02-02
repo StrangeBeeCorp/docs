@@ -3,9 +3,34 @@
 Search for a task log in TheHive to locate specific actions, updates, or decisions recorded for a task. Task logs provide a detailed audit trail that helps track investigation progress, accountability, and compliance.
 
 !!! tip "Can't find a task log?"
-    <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks and task logs won't appear in the list, search results, or dashboards.
+    <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks and task logs won't appear in the list, search results, or dashboards.
 
-<h2>Procedure</h2>
+## Method 1: Search bar
+
+<!-- md:version 5.6 -->
+
+*Simple searches for one or more task logs without requiring simultaneous actions.*
+
+1. In the search bar at the top of the page, enter your search text.
+
+    ![Search bar](../../../../images/user-guides/analyst-corner/cases/search-bar.png)
+
+    {% include-markdown "includes/wildcard-character.md" %}
+
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
+
+2. Select a result from the list, or choose **All results** to view the full set of matches.
+
+!!! note "Refine results"
+    The search bar searches across all element types—cases, alerts, observables, tasks, task logs, and jobs. It also doesn't support filters.  
+
+    Use the [Global Search feature](#method-2-global-search-feature) when you need to refine results more precisely.
+
+---
+
+## Method 2: Global Search feature
+
+*Advanced searches for one or more task logs without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 

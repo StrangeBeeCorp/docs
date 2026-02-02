@@ -5,7 +5,7 @@
 Add or remove permissions from a [profile](about-profiles.md) in TheHive to customize access control for users assigned to that profile.
 
 !!! note "Predefined profiles"
-    You can't modify the predefined Admin, Org-Admin, and Read-Only profiles.
+    You can't modify the predefined Admin, Org-Admin, Read-Only, External-Reader, and External-Actor profiles.
 
 <h2>Procedure</h2>
 
@@ -15,7 +15,7 @@ Add or remove permissions from a [profile](about-profiles.md) in TheHive to cust
 
 3. Select **Edit**.
 
-4. In the **Editing a profile** drawer, select or deselect the relevant [permissions](about-profiles.md#profile-permissions).
+4. In the **Editing a profile** drawer, select or deselect the relevant [permissions](about-profiles.md#permission-structure).
 
     {% include-markdown "includes/licensed-unlicensed-permissions.md" %}
 

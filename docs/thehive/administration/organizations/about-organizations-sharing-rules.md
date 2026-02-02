@@ -1,6 +1,8 @@
-# About Organizations Sharing Rules
+# Organizations Sharing Rules
 
-Sharing rules determine how cases, along with their tasks and observables, are shared with linked organizations.
+Sharing rules determine how cases, along with their tasks and observables, are shared with linked organizations within TheHive.
+
+{% include-markdown "includes/sharing-with-external-users.md" %}
 
 ## Global sharing rules
 
@@ -34,8 +36,8 @@ Manual sharing allows selective sharing of tasks and observables within a shared
 
 Follow these step-by-step instructions to learn how to:
 
-* [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
-* [Share an Observable with Other Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
+* [Share a task with internal organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an observable with internal organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
 
 ## How sharing rules work together
 
@@ -52,6 +54,6 @@ Only the organization that owns a shared case can delete it and its tasks or obs
 <h2>Next steps</h2>
 
 * [Link an Organization](link-an-organization.md)
-* [Share a Case](../../user-guides/analyst-corner/cases/share-a-case.md)
-* [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
-* [Share an Observable with Other Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
+* [Share a Case with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-a-case.md)
+* [Share a Task with Other Internal Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)

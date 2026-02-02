@@ -1,15 +1,13 @@
-# Share an Observable with Other Organizations
+# Share an Observable with Other Internal Organizations
 
 <!-- md:permission `manageCase/update` --> <!-- md:permission `manageShare` -->
 
-[Manually share an observable in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive.
+[Manually share an observable in a shared case](../../../administration/organizations/about-organizations-sharing-rules.md#manual-sharing-of-tasks-and-observables-in-a-shared-case) with [linked organizations](../../../administration/organizations/link-an-organization.md) in TheHive. This is useful when observable sharing rules are set to *manual*, ensuring that users share only the relevant observables.
 
 !!! info "Shared cases only"
-    To share an observable manually, the case must already be shared with the relevant linked organizations. If not, refer to [Share a Case](share-a-case.md).
+    To share an observable manually, the case must already be shared with the relevant linked organizations. If the case hasn’t been shared yet, refer to [Share a Case](share-a-case.md).
 
-This is useful when observable sharing rules are set to *manual*, ensuring that users share only the relevant observables.
-
-To learn more about how sharing rules function and interact, see [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, see [Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
 
 <h2>Procedure</h2>
 
@@ -27,5 +25,5 @@ To learn more about how sharing rules function and interact, see [About Organiza
 
 <h2>Next steps</h2>
 
-* [Share a Task with Other Organizations](../tasks/share-a-task.md)
-* [Share a Case with Other Organizations](share-a-case.md)
+* [Share a Task with Other Internal Organizations](../tasks/share-a-task.md)
+* [Share a Case with Other Internal Organizations](share-a-case.md)

@@ -20,14 +20,14 @@ Add an [observable](about-observables.md) to a [case](../about-cases.md) or [ale
 
 4. In the **Adding an observable** drawer, enter the following information:
 
-    **- Type**
+    **- Type \***
 
     The type of an observable determines which analyzers are available and whether it requires a value or an attachment. You can't change an observable’s type between one requiring a value and one requiring an attachment once it’s created.
 
     !!! tip "Can't find an observable type?"
         If you can't find the type you need, it might not exist yet, or someone may have deleted it. Contact someone with admin-level permissions to [create or restore it](../../../../administration/observable-types/create-an-observable-type.md).
 
-    **- Value/attachment**
+    **- Value/attachment \***
 
     Depending on the type of the observable, provide:
 

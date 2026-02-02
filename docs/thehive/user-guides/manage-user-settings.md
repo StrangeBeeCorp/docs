@@ -1,36 +1,18 @@
-# Manage your Account Settings
+# Manage Your Account Settings
 
 Manage various settings of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive, including your avatar, name, email address, API key, multi-factor authentication, homepage, date format, and beta features.
 
 ## Edit your avatar
 
-1. {% include-markdown "includes/user-symbol-go-to.md" %}
-
-2. Select **Settings**.
-
-3. In the **Infos** tab, select the avatar, then select a new image in PNG or JPG format. The file must be smaller than 500 KB.
-
-4. Select **Confirm**.
+{% include-markdown "includes/edit-your-avatar.md" %}
 
 ## Edit your name
 
-1. {% include-markdown "includes/user-symbol-go-to.md" %}
-
-2. Select **Settings**.
-
-3. In the **Infos** tab, edit your name.
-
-4. Select **Confirm**.
+{% include-markdown "includes/edit-your-name.md" %}
 
 ## Edit your email address
 
-1. {% include-markdown "includes/user-symbol-go-to.md" %}
-
-2. Select **Settings**.
-
-3. In the **Infos** tab, edit your email address. The email address is used to send you notifications and password-related information.
-
-4. Select **Confirm**.
+{% include-markdown "includes/edit-your-email-address.md" %}
 
 ## Manage your API key
 
@@ -69,28 +51,6 @@ Use this procedure to add an extra layer of security to your account.
 2. Select **Settings**.
 
 3. In the **Options** tab, select the date format you want to use.
-
-4. Select **Confirm**.
-
-## Activate the beta of filters and views
-
-<!-- md:version 5.5.6 -->
-
-A beta feature to enhance user experience for [filters](./analyst-corner/about-filtering-and-sorting.md) and [views](./analyst-corner/views/about-views.md) is available for testing on lists of cases, alerts, tasks, and observables.
-
-!!! note "Views persistence"
-    Use this beta feature for one-time testing only:
-
-    * When you activate the beta for the first time, views from the current version are automatically copied to the beta. However, if you deactivate and then reactivate the beta, views won't be copied again.
-    * Views you create while using the beta won't be retained in version 5.6 and will be lost if you deactivate the beta.
-
-1. {% include-markdown "includes/user-symbol-go-to.md" %}
-
-2. Select **Settings**.
-
-3. In the **Options** tab, turn on the **Use the new beta filters view** toggle.
-
-    ![Beta filters views](../images/user-guides/beta-filters-views.png)
 
 4. Select **Confirm**.
 

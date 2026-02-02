@@ -1,9 +1,6 @@
 # Create a Custom View
 
-Create a custom [view](about-views.md) in TheHive to save your filters and sorting preferences applied to a list for easy reuse.
-
-!!! info "Beta feature available for filters and views"
-    <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+Create a custom [view](about-views.md) in TheHive to save your current filters and sorting for quick access later.
 
 <h2>Procedure</h2>
 
@@ -11,15 +8,22 @@ Create a custom [view](about-views.md) in TheHive to save your filters and sorti
 
 2. Select the current view name followed by an asterisk (*\**).
 
-    ![Current view](../../../images/user-guides/analyst-corner/current-view.png)
+    ![Views](../../../images/user-guides/analyst-corner/views-asterisk.png)
 
 3. Select **Save view as** to save your changes as a new view.
 
 4. In the **Save current view** drawer, enter the name of the view.
 
-5. Select **Confirm**.
+5. <!-- md:version 5.6 --> Select the visibility of your view:
+
+    * **Private**: The view is visible only to you.
+    * **Shared with this organization**: The view is available to all users in the organization. They can view, modify, and delete it.
+
+6. Select **Save view**.
 
 <h2>Next steps</h2>
 
 * [Update a Custom View](update-a-custom-view.md)
+* [Rename a Custom View](rename-a-custom-view.md)
 * [Delete a Custom View](delete-a-custom-view.md)
+* [Change a Custom View Visibility](change-visibility-custom-view.md)

@@ -1,6 +1,5 @@
 # About SMTP
-
-Simple Mail Transfer Protocol (SMTP) is the standard protocol used on the internet for sending email messages. It's responsible solely for email delivery and typically requires client authentication via credentials before granting access.
+Simple Mail Transfer Protocol (SMTP) enables TheHive to send automated email messages for notifications, account management, and invitations to the [TheHive Portal](../thehive-portal/about-thehive-portal.md).
 
 ## Benefits of using an SMTP server
 
@@ -17,6 +16,7 @@ Using an SMTP server:
 * [Email notifications to specific users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md)
 * [Email notifications to all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md)
 * [Emails for password resets and edits](../../user-guides/manage-password.md)
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> Email invitations to [TheHive Portal](../thehive-portal/about-thehive-portal.md)
 
 ## Permissions
 

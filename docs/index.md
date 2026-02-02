@@ -35,7 +35,7 @@ sections:
             - text: 'Cross-check with similar alerts and cases'
               url: '/thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/'
             - text: 'Comment on alerts'
-              url: '/thehive/user-guides/analyst-corner/cases/comment-on-case-alert/'
+              url: '/thehive/user-guides/analyst-corner/alerts/comment-on-alert/'
             - text: 'Convert alerts into cases when investigation is needed'
               url: '/thehive/user-guides/analyst-corner/alerts/create-a-case-from-an-alert/'
             - text: 'Close alerts if no further action is required'
@@ -47,6 +47,8 @@ sections:
               url: '/thehive/user-guides/analyst-corner/views/create-a-custom-view/'
             - text: 'Access case details quickly'
               url: '/thehive/user-guides/analyst-corner/preview-vs-detail-view/'
+            - text: 'Share a case with external users'
+              url: '/thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users/'
             - text: 'Update severity, TLP and PAP as needed'
               url: '/thehive/user-guides/analyst-corner/cases/change-case-classification-settings/'
             - text: 'Save logs for mandatory tasks'
@@ -62,7 +64,7 @@ sections:
             - text: 'Document attack techniques'
               url: '/thehive/user-guides/analyst-corner/cases/ttps/add-ttps/'
             - text: 'Comment on cases'
-              url: '/thehive/user-guides/analyst-corner/cases/comment-on-case-alert/'
+              url: '/thehive/user-guides/analyst-corner/cases/comment-on-case/'
             - text: 'Cross-check with similar alerts and cases'
               url: '/thehive/user-guides/analyst-corner/cases/find-similar-alerts-cases/'
             - text: 'Close the case'
@@ -112,7 +114,7 @@ sections:
             - text: 'Evaluate case metrics on dashboards'
               url: '/thehive/user-guides/key-performance-indicators/measure-case-management-performance/'
             - text: 'Comment on cases and alerts to provide feedback'
-              url: '/thehive/user-guides/analyst-corner/cases/comment-on-case-alert/'
+              url: '/thehive/user-guides/analyst-corner/cases/comment-on-case/'
 
     - title: 'DevSecOps corner'
       text: 'I want to automate tasks, manage integrations and streamline data enrichment.'
@@ -183,6 +185,8 @@ sections:
               url: '/thehive/administration/authentication/configure-authentication/'
             - text: 'Connect Cortex for analyzers and responders'
               url: '/thehive/administration/cortex/add-a-cortex-server/'
+            - text: 'Configure external user access'
+              url: '/thehive/administration/thehive-portal/set-up-thehive-portal-access/'
         - title: 'Maintain TheHive'
           links: 
             - text: 'Perform Cassandra cluster operations'
@@ -205,6 +209,34 @@ sections:
           links: 
             - text: 'Get started with the MCP server'
               url: 'https://github.com/StrangeBeeCorp/TheHiveMCP'
+
+    - title: 'External User'
+      text: 'I need to access shared cases and collaborate with the SOC team.'
+      icon: assets/images/docs-infraEngineer.png
+      anchor:
+        name: 'External User'
+        href: 'externaluser'
+      groups:
+        - title: 'Get started with TheHive Portal'
+          links: 
+            - text: 'Understand security case terminology'
+              url: '/thehive/thehive-portal/glossary-thehive-portal/'
+            - text: 'Activate your TheHive Portal account'
+              url: '/thehive/thehive-portal/activate-thehive-portal-account/'
+            - text: 'Find and navigate security issues'
+              url: '/thehive/thehive-portal/find-a-case-thehive-portal/'
+            - text: 'Manage your account settings'
+              url: '/thehive/thehive-portal/manage-account-settings-thehive-portal/'
+        - title: 'Collaborate on security cases'
+          links: 
+            - text: 'Report new security issues'
+              url: '/thehive/thehive-portal/create-case-thehive-portal/'
+            - text: 'Share threat indicators'
+              url: '/thehive/thehive-portal/add-attachment-cases-shared-thehive-portal/'
+            - text: 'Upload supporting documents'
+              url: '/thehive/thehive-portal/add-attachment-cases-shared-thehive-portal/'
+            - text: 'Post comments'
+              url: '/thehive/thehive-portal/add-comment-cases-shared-thehive-portal/'
 
 ---
 

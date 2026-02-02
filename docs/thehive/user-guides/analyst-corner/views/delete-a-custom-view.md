@@ -5,22 +5,26 @@ Delete a custom [view](about-views.md) from TheHive when it's no longer needed.
 !!! note "Default view"
     You can't delete the *Default* view.
 
-!!! info "Beta feature available for filters and views"
-    <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
+!!! danger "Shared views"
+    <!-- md:version 5.6 --> If you delete a view that's [shared with the entire organization](change-visibility-custom-view.md#share-a-custom-view-with-the-entire-organization), it's permanently removed for all users in your organization.
 
 <h2>Procedure</h2>
 
-1. Select the current view name followed by an asterisk (*\**).
+1. Select the current view name.
 
-    ![Current view](../../../images/user-guides/analyst-corner/current-view.png)
+    ![Views](../../../images/user-guides/analyst-corner/views.png)
 
 2. Select **Manage views**.
 
-3. Select :fontawesome-solid-ellipsis: next to the view you want to delete.
+    ![Manage views](../../../images/user-guides/analyst-corner/manage-views.png)
 
-4. Select **Delete**.
+3. In the **Manage views** drawer, select :fontawesome-solid-trash: next to the view you want to delete.
+
+4. Select **OK**.
 
 <h2>Next steps</h2>
 
 * [Create a Custom View](create-a-custom-view.md)
 * [Update a Custom View](update-a-custom-view.md)
+* [Rename a Custom View](rename-a-custom-view.md)
+* [Change a Custom View Visibility](change-visibility-custom-view.md)

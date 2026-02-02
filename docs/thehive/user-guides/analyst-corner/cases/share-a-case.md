@@ -1,4 +1,4 @@
-# Share a Case with Other Organizations
+# Share a Case with Other Internal Organizations
 
 <!-- md:permission `manageCase/update` --> <!-- md:permission `manageShare` -->
 
@@ -7,7 +7,9 @@ Configure [local sharing rules](../../../administration/organizations/about-orga
 !!! info "Global sharing rules"
     This guide focuses on local sharing rules for individual existing cases. To configure global sharing rules for all new cases in your organization, refer to [Link an Organization](../../../administration/organizations/link-an-organization.md).
 
-To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, refer to [Organizations Sharing Rules](../../../administration/organizations/about-organizations-sharing-rules.md).
+
+{% include-markdown "includes/sharing-with-external-users.md" %}
 
 <h2>Procedure</h2>
 
@@ -44,5 +46,5 @@ To learn more about how sharing rules function and interact, refer to [About Org
 
 <h2>Next steps</h2>
 
-* [Share a Task with Other Organizations](../tasks/share-a-task.md)
-* [Share an Observable with Other Organizations](share-an-observable.md)
+* [Share a Task with Other Internal Organizations](../tasks/share-a-task.md)
+* [Share an Observable with Other Internal Organizations](share-an-observable.md)

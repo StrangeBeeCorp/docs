@@ -1,4 +1,4 @@
-# Change your Account Theme
+# Change Your Account Theme
 
 <!-- md:version 5.4 -->
 

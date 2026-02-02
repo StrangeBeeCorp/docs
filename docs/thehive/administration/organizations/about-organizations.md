@@ -1,12 +1,12 @@
 # About Organizations
 
-Organizations are the customers or tenants, such as separate divisions or business units, that use TheHive independently.
+Organizations are independent tenants in TheHive, such as divisions or business units.
 
 {% include-markdown "includes/license-organizations.md" %}
 
 ## Default setup
 
-TheHive includes a default Admin organization for users with administrator-type permissions. This organization manages global configurations, such as organizations, users, entities, and platform settings. 
+TheHive includes a default Admin organization for users with administrator-type permissions. This organization manages global configurations, such as organizations, users, entities, and platform settings.
 
 Non-Admin organizations manage operations on cases, alerts, and tasks.
 

@@ -1,4 +1,4 @@
-# Manage your Password
+# Manage Your Password
 
 Manage the password of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive by resetting it if you've forgotten it or changing it when logged in.
 

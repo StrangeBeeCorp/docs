@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] manageOrganisation` -->
 
-Organizations are the customers or tenants, such as separate divisions or business units, that use TheHive independently.
+Create an [organization](about-organizations.md) to represent an independent tenant in TheHive, such as a division or business unit.
 
 {% include-markdown "includes/license-organizations.md" %}
 
@@ -30,7 +30,7 @@ Organizations are the customers or tenants, such as separate divisions or busine
 
     **- Tasks sharing rule \***
 
-    How tasks linked to a case are handled when the case is shared with another organization.
+    How tasks linked to a case are handled when the case is shared with another internal organization.
 
     Pick an option from the dropdown list:
 
@@ -39,14 +39,14 @@ Organizations are the customers or tenants, such as separate divisions or busine
 
     **- Observables sharing rule \***
 
-    How observables linked to a case are handled when the case is shared with another organization.
+    How observables linked to a case are handled when the case is shared with another internal organization.
 
     Pick an option from the dropdown list:
 
     * **manual** (default): Observables aren't shared automatically. Users must [share them manually](../../user-guides/analyst-corner/cases/share-an-observable.md).
     * **autoShare**: Observables are shared automatically.
 
-    To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
+    To learn more about how sharing rules function and interact, refer to [Organizations Sharing Rules](../../administration/organizations/about-organizations-sharing-rules.md).
 
     ---
 

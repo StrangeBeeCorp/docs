@@ -1,17 +1,40 @@
 # Find a Task
 
-Search for a [task](../about-tasks.md) in TheHive using various methods.
+Search for [tasks](../about-tasks.md) in TheHive to manage investigation workflows and coordinate team activities during incident response.
 
 If you’re unsure which method to use, refer to the [Overview of Search Methods for Tasks](overview-search-methods-task.md) topic.
 
 !!! tip "Can't find a task?"
 
     * Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new tasks in lists.
-    * <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
+    * <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
 
-## Method 1: Tasks tab in cases descriptions
+## Method 1: Search bar
 
-*Use this method if you want to find one or more tasks related to a case and want to perform actions on them simultaneously.*
+<!-- md:version 5.6 -->
+
+*Simple searches for one or more tasks without requiring simultaneous actions.*
+
+1. In the search bar at the top of the page, enter your search text.
+
+    ![Search bar](../../../../images/user-guides/analyst-corner/cases/search-bar.png)
+
+    {% include-markdown "includes/wildcard-character.md" %}
+
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
+
+2. Select a result from the list, or choose **All results** to view the full set of matches.
+
+!!! note "Refine results"
+    The search bar searches across all element types—cases, alerts, observables, tasks, task logs, and jobs. It also doesn't support filters.  
+
+    Use the [Global Search feature](#method-4-global-search-feature) when you need to refine results more precisely.
+
+---
+
+## Method 2: Tasks tab in cases descriptions
+
+*If you want to find one or more tasks related to a case and want to perform actions on them simultaneously.*
 
 1. Open a case and select the **Tasks** tab.
 
@@ -21,9 +44,6 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
     {% include-markdown "includes/views-filters-sorts.md" %}
 
-    !!! info "Beta feature available for filters and views"
-        <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
-
 3. {% include-markdown "includes/search-results.md" %}
 
 !!! tip "Show tasks per group"
@@ -31,28 +51,23 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 
 ---
 
-## Method 2: Filters in the Tasks view
+## Method 3: Filters in the Tasks view
 
-*Use this method if you need to search for one or more tasks without requiring simultaneous actions.*
+*If you need to search for one or more tasks without requiring simultaneous actions.*
 
-1. Go to the **Tasks** view from the sidebar menu.
-
-    ![Tasks view](../../../../images/user-guides/analyst-corner/tasks/find-a-task-tasks-view.png)
+1. {% include-markdown "includes/tasks-view-go-to.md" %}
 
 2. {% include-markdown "includes/apply-filters.md" %}
 
     {% include-markdown "includes/views-filters-sorts.md" %}
 
-    !!! info "Beta feature available for filters and views"
-        <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
-
 3. {% include-markdown "includes/search-results.md" %}
 
 ---
 
-## Method 3: Global Search feature
+## Method 4: Global Search feature
 
-*Use this method if you need to conduct advanced searches for one or more tasks without requiring simultaneous actions.*
+*Advanced searches for one or more tasks without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 

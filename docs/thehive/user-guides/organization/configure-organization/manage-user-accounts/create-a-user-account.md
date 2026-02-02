@@ -29,6 +29,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
     Pick an option from the dropdown list:
 
     * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * <!-- md:version 5.6 --> <!-- md:license Platinum --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
     * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
 
     **- Login \***
@@ -73,6 +74,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
     * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    * <!-- md:version 5.6 --> <!-- md:license Platinum --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
     **- Login \***
 
@@ -112,6 +114,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
     * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    * <!-- md:version 5.6 --> <!-- md:license Platinum --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
     **- Login \***
 
@@ -127,7 +130,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     For each organization, select a [permission profile](../../../../administration/profiles/about-profiles.md) for the user account from the dropdown list.
 
-    <!-- md:version 5.4.3 --> Profiles that require a [Gold or Platinum license](../../../../installation/licenses/about-licenses.md) are labeled *License required*. 
+    <!-- md:version 5.4.3 --> Profiles that require a [Gold or Platinum license](../../../../installation/licenses/about-licenses.md) are labeled *License required*.
 
     ---
 

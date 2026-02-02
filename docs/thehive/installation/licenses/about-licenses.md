@@ -29,7 +29,7 @@ Each license includes validation and expiration dates.
 
 Each license type has specific [quotas](https://strangebee.com/thehive-pricing-on-prem/){target=_blank} for:
 
-* Number of users: Only unlocked user accounts of type Normal with at least one licensed permission count toward the license limit. Service accounts and Normal accounts with no licensed permissions, such as Read-Only or Admin profiles, don't.
+* Number of users: Only unlocked user accounts of type Normal with at least one licensed permission count toward the license limit. Service accounts and Normal accounts with no licensed permissions, such as [Read-Only, Admin, or External-Reader profiles](../../administration/profiles/about-profiles.md#predefined-profiles), don't.
 * Number of organizations: Only unlocked organizations count toward the license limit.
 * Number of instances
 * Number of Cortex servers

@@ -20,7 +20,7 @@ The time it takes to set the status of a case or alert to one linked to the *New
 
 ## Time to triage (TTT)
 
-The time it takes for your security team to acknowledge a case or alert by changing its status to one linked to the *In Progress* stage in TheHive. It reflects how efficiently alerts and cases are reviewed and escalated for investigation.
+The time it takes for your Security team to acknowledge a case or alert by changing its status to one linked to the *In Progress* stage in TheHive. It reflects how efficiently alerts and cases are reviewed and escalated for investigation.
 
 | KPI | Formula | In case description | In alert description |
 |-----------|------------------|-------------------|--------------------|
@@ -28,7 +28,7 @@ The time it takes for your security team to acknowledge a case or alert by chang
 
 ## Time to acknowledge (TTA)
 
-The time it takes for your security team to acknowledge a case or alert by changing its status to one linked to the *In Progress* stage after the event occurs. This measures the responsiveness of your team after detecting a potential security incident.
+The time it takes for your Security team to acknowledge a case or alert by changing its status to one linked to the *In Progress* stage after the event occurs. This measures the responsiveness of your team after detecting a potential security incident.
 
 | KPI | Formula | In case description | In alert description |
 |-----------|------------------|-------------------|--------------------|
@@ -36,7 +36,7 @@ The time it takes for your security team to acknowledge a case or alert by chang
 
 ## Time to qualify (TTQ)
 
-The time it takes for your security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into a case. This metric helps measure the accuracy and speed of the qualification process.
+The time it takes for your Security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into a case. This metric helps measure the accuracy and speed of the qualification process.
 
 | KPI | Formula | In case description | In alert description |
 |-----------|------------------|-------------------|--------------------|
@@ -44,7 +44,7 @@ The time it takes for your security team to analyze an alert and determine wheth
 
 ## Time to resolve (TTR)
 
-The time it takes for your security team to fully resolve an incident after its status is set to one linked to the *In Progress* stage. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
+The time it takes for your Security team to fully resolve an incident after its status is set to one linked to the *In Progress* stage. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.
 
 | KPI | Formula | In case description | In alert description |
 |-----------|------------------|-------------------|--------------------|

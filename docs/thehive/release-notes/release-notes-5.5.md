@@ -164,8 +164,6 @@ A new beta feature is available to enhance the filtering and view experience acr
 
 Watch this [short demo video](https://strangebee.storylane.io/share/lylowjsgdcxb) to see it in action.
 
-Want to try it out? Follow the [instructions](../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views) to activate the beta in your user settings.
-
 ### Bulk case and alert merge limit
 
 To improve platform stability, a merge limit has been introduced for alerts and cases.
@@ -304,7 +302,7 @@ You can now sort tasks by their due dates.
 
 #### Private cases: Restrict access to sensitive cases
 
-You can now [restrict access to sensitive cases](../user-guides/analyst-corner/cases/about-cases.md#case-visibility) to designated team members and managers.
+You can now [restrict access to sensitive cases](../user-guides/analyst-corner/cases/about-cases.md#case-visibility-restriction) to designated team members and managers.
 
 #### Alert feeders
 

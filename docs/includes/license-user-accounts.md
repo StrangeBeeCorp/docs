@@ -8,4 +8,4 @@
     **Don't count**:  
     
     * Service user accounts  
-    * Normal user accounts with no licensed permissions, for example profiles such as Read-Only or Admin
+    * Normal user accounts with no licensed permissions, for example profiles such as Read-Only, Admin, or External-Reader

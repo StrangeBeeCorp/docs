@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-Configure an [SMTP server](about-smtp.md) in TheHive to enable [email notifications to specific users](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md) and [all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md), as well as [emails for password resets and edits](../../user-guides/manage-password.md).
+Configure an [SMTP server](about-smtp.md) to enable email notifications to [specific users](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md) and to [all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md), as well as [password resets and edits emails](../../user-guides/manage-password.md) and invitation emails to the [TheHive Portal](../thehive-portal/about-thehive-portal.md) from TheHive.
 
 <h2>Procedure</h2>
 
@@ -50,7 +50,17 @@ Configure an [SMTP server](about-smtp.md) in TheHive to enable [email notificati
 
     ---
 
-6. In the **Reset Password** section, set the token expiration duration to control how long password reset tokens stay valid before they expire. This limits the time users have to complete a password reset and helps keep your system secure.
+6. In the **Token expiration settings** section, enter the following information:
+
+    **- Reset password expiration**
+
+    Set how long password reset links remain valid. Shorter durations improve security by limiting the window for potential misuse, while longer durations accommodate users who may not check email immediately.
+
+    **- Invitation expiration**
+
+    <!-- md:version 5.6 --> <!-- md:license Platinum -->
+
+    Set the validity period for [TheHive Portal](../thehive-portal/about-thehive-portal.md) invitation links.
 
     ---
 

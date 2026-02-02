@@ -7,25 +7,32 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 !!! tip "Can't find a case?"
 
     * Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new cases in lists.
-    * <!-- md:version 5.5 --> [Case visibility](../about-cases.md#case-visibility) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
+    * <!-- md:version 5.5 --> <!-- md:license Platinum --> [Case visibility](../about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
 
-## Method 1: Enter a case number search box
+## Method 1: Search bar
 
-*Use this method if you already know the case number you're looking for.*
+*Simple searches for one or more cases without requiring simultaneous actions.*
 
-1. Enter the case number in the search box located at the top of the page, visible across all views.
+1. In the search bar at the top of the page, enter the case number or <!-- md:version 5.6 --> any relevant text.
 
-    ![Enter a case number search box](../../../../images/user-guides/analyst-corner/cases/find_a_case_enter_a_case_number.png)
+    ![Search bar](../../../../images/user-guides/analyst-corner/cases/search-bar.png)
 
-2. Press **Enter** or select :material-magnify:.
+    {% include-markdown "includes/wildcard-character.md" %}
 
-3. The case description appears.
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
+
+2. Select a result from the list, or choose **All results** to view the full set of matches.
+
+!!! note "Refine results"
+    The search bar searches across all element types—cases, alerts, observables, tasks, task logs, and jobs. It also doesn't support filters.  
+
+    Use the [Global Search feature](#method-4-global-search-feature) when you need to refine results more precisely.
 
 ---
 
 ## Method 2: Similar cases
 
-*Use this method if you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.*
+*If you want to find one or more cases similar to a known case without needing to perform actions on them simultaneously.*
 
 {% include-markdown "includes/similar-cases-alerts-filters.md" %}
 
@@ -43,18 +50,13 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
 ## Method 3: Filters in the Cases view
 
-*Use this method if you want to find one or more cases to perform actions on them simultaneously.*
+*If you want to find one or more cases to perform actions on them simultaneously.*
 
-1. Go to the **Cases** view from the sidebar menu.
-
-    ![Filters in the cases view](../../../../images/user-guides/analyst-corner/cases/find-a-case-filters-cases-view.png)
+1. {% include-markdown "includes/cases-view-go-to.md" %}
 
 2. {% include-markdown "includes/apply-filters.md" %}
 
     {% include-markdown "includes/views-filters-sorts.md" %}
-
-    !!! info "Beta feature available for filters and views"
-        <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
 
 3. {% include-markdown "includes/search-results.md" %}
 
@@ -62,7 +64,7 @@ For more information, see the [Find Similar Alerts and Cases](../find-similar-al
 
 ## Method 4: Global Search feature
 
-*Use this method if you need to conduct advanced searches for one or more cases without requiring simultaneous actions.*
+*Advanced searches for one or more cases without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 

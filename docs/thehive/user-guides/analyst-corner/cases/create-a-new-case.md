@@ -50,7 +50,7 @@ TheHive offers the following options for creating cases:
 
     **- Description \***  
 
-    A description of the case using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md). 
+    A description of the case using [TheHive-flavored Markdown syntax](../../thehive-flavored-markdown.md).
     
     <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Description** field or selecting the :fontawesome-solid-image: symbol.
 

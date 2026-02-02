@@ -4,15 +4,35 @@ Share an [attachment](../../../analyst-corner/cases/attachments/about-attachment
 
 ## Share an attachment from a case
 
+Cases support two methods for sharing attachments: copying a direct URL or share attachments through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
+
+### Copy attachment URL
+
 1. [Locate the case](../search-for-cases/find-a-case.md) containing the attachment you want to share.
 
 2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
+3. Select :fontawesome-solid-ellipsis: next to the attachment.
 
     {% include-markdown "includes/filters.md" %}
 
 4. Select **Copy URL**.
+
+### Share an attachment with external users
+
+<!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum -->
+
+Share attachments with external users who have access to the case through TheHive Portal.
+
+1. [Locate the case](../search-for-cases/find-a-case.md) containing the attachment you want to share.
+
+2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
+
+3. Select :fontawesome-solid-ellipsis: next to the attachment.
+
+    {% include-markdown "includes/filters.md" %}
+
+4. Select **External**.
 
 ## Share an attachment from an alert
 
@@ -20,7 +40,7 @@ Share an [attachment](../../../analyst-corner/cases/attachments/about-attachment
 
 2. {% include-markdown "includes/attachments-tab-alert-go-to.md" %}
 
-3. Select :fontawesome-solid-ellipsis: next to the attachment to copy its URL.
+3. Select :fontawesome-solid-ellipsis: next to the attachment.
 
     {% include-markdown "includes/filters.md" %}
 

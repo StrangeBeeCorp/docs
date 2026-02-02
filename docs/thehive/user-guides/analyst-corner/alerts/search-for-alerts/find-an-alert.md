@@ -7,9 +7,32 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 !!! tip "Can't find an alert?"
     Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new alerts in lists.
 
-## Method 1: Similar alerts
+## Method 1: Search bar
 
-*Use this method if you want to find one or more alerts similar to a known alert and need to perform actions on them simultaneously.*
+<!-- md:version 5.6 -->
+
+*Simple searches for one or more alerts without requiring simultaneous actions.*
+
+1. In the search bar at the top of the page, enter your search text.
+
+    ![Search bar](../../../../images/user-guides/analyst-corner/cases/search-bar.png)
+
+    {% include-markdown "includes/wildcard-character.md" %}
+
+    {% include-markdown "includes/elasticsearch-limitation.md" %}
+
+2. Select a result from the list, or choose **All results** to view the full set of matches.
+
+!!! note "Refine results"
+    The search bar searches across all element types—cases, alerts, observables, tasks, task logs, and jobs. It also doesn't support filters.  
+
+    Use the [Global Search feature](#method-4-global-search-feature) when you need to refine results more precisely.
+
+---
+
+## Method 2: Similar alerts
+
+*If you want to find one or more alerts similar to a known alert and need to perform actions on them simultaneously.*
 
 {% include-markdown "includes/similar-cases-alerts-filters.md" %}
 
@@ -25,28 +48,23 @@ For more information, see the [Find Similar Alerts and Cases](../../cases/find-s
 
 ---
 
-## Method 2: Filters in the Alerts view
+## Method 3: Filters in the Alerts view
 
-*Use this method if you need to search for one or more alerts to perform actions on them simultaneously.*
+*If you need to search for one or more alerts to perform actions on them simultaneously.*
 
-1. Go to the **Alerts** view from the sidebar menu.
-
-    ![Filters in Alerts view](../../../../images/user-guides/analyst-corner/alerts/find-an-alert-alerts-view.png)
+1. {% include-markdown "includes/alerts-view-go-to.md" %}
 
 2. {% include-markdown "includes/apply-filters.md" %}
 
     {% include-markdown "includes/views-filters-sorts.md" %}
 
-    !!! info "Beta feature available for filters and views"
-        <!-- md:version 5.5.6 --> A beta feature to enhance user experience for filters and views is available for testing on lists of cases, alerts, tasks, and observables. For detailed instructions on how to activate this beta feature, see [Activate the Beta of Filters and Views](../../../../user-guides/manage-user-settings.md#activate-the-beta-of-filters-and-views).
-
 3. {% include-markdown "includes/search-results.md" %}
 
 ---
 
-## Method 3: Global Search feature
+## Method 4: Global Search feature
 
-*Use this method if you need to conduct advanced searches for one or more alerts without requiring simultaneous actions.*
+*Advanced searches for one or more alerts without requiring simultaneous actions.*
 
 1. Go to the **Global Search** view from the sidebar menu.
 

@@ -227,7 +227,57 @@ Functions in TheHive have access to predefined objects that enable interaction w
         );
         ```
 
+        ```javascript
+        context.caze.manageCaseAccess(
+            "~103",
+            {
+                access: {
+                    _kind: "AllExternalAccessKind"
+                }
+            }
+        );
+        ```
+
+        Allowed values for `_kind`:
+
+        * `OrganisationAccessKind`: Makes the case visible to all members of the organization.
+        * `UserAccessKind`: Restricts access to specific internal users. The user list must include at least the case assignee and the user making the request.
+        * `AllExternalAccessKind`: Shares the case with all external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). Authorizing all external users grants access to both current and future external users.
+        * `ExternalAccessKind`: Shares the case with selected external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). External users must already exist in TheHive with the External account type.
+
         See the [`POST /api/v1/case/{caseId}/access` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Manage%20Case%20access){target=_blank} for the complete object definition.
+
+* `caze.manageCaseAccess(ids: string[] & input: InputManageCaseAccessWithIds): void`: Sets the access level for multiple cases at once.
+
+    ??? tip "Example"
+
+        ```javascript
+        context.caze.manageCaseAccess({
+            ids: ["102", "103"],
+            access: {
+                users: ["lucas@example.com", "emma@example.com"],
+                _kind: "UserAccessKind"
+            } 
+        });
+        ```
+
+        ```javascript
+        context.caze.manageCaseAccess({
+            ids: ["104", "105"],
+            access: {
+                _kind: "AllExternalAccessKind"
+            } 
+        });
+        ```
+
+        Allowed values for `_kind`:
+
+        * `OrganisationAccessKind`: Makes the case visible to all members of the organization.
+        * `UserAccessKind`: Restricts access to specific internal users. The user list must include at least the case assignee and the user making the request.
+        * `AllExternalAccessKind`: Shares the case with all external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). Authorizing all external users grants access to both current and future external users.
+        * `ExternalAccessKind`: Shares the case with selected external users via [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). External users must already exist in TheHive with the External account type.
+
+        See the `PATCH /api/v1/case/_bulk/access` endpoint for the complete object definition.
 
 ## Task
 

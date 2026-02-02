@@ -6,7 +6,7 @@ By default, organizations in TheHive aren't linked. Each organization operates i
 
 To allow case sharing with their related tasks and observables, link an [organization](about-organizations.md) to another and configure the corresponding global sharing rules at the organization level.
 
-To learn more about how sharing rules function and interact, refer to [About Organizations Sharing Rules](about-organizations-sharing-rules.md).
+To learn more about how sharing rules function and interact, refer to [Organizations Sharing Rules](about-organizations-sharing-rules.md).
 
 <h2>Procedure</h2>
 
@@ -34,6 +34,6 @@ To learn more about how sharing rules function and interact, refer to [About Org
     
 <h2>Next steps</h2>
 
-* [Share a Case with Other Organizations](../../user-guides/analyst-corner/cases/share-a-case.md)
-* [Share a Task with Other Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
-* [Share an Observable with Other Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)
+* [Share a Case with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-a-case.md)
+* [Share a Task with Other Internal Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Share an Observable with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)

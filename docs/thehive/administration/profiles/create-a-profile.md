@@ -12,7 +12,7 @@ Create custom [permission profiles](about-profiles.md) in TheHive to define spec
 
 3. In the **Adding a profile** drawer, enter a name for the profile. You won't be able to change this name later.
 
-4. Select the [profile type](about-profiles.md#profile-types) and the relevant [permissions](about-profiles.md#profile-permissions).
+4. Select the [profile type](about-profiles.md#profile-types) and the relevant [permissions](about-profiles.md#permission-structure).
 
     {% include-markdown "includes/licensed-unlicensed-permissions.md" %}
 
