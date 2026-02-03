@@ -19094,7 +19094,7 @@ curl<span class="w"> </span>-u<span class="w"> </span>mylogin:mypassword<span cl
 </tr>
 <tr>
 <td><code>roles</code></td>
-<td>Roles. Possible values are: <code>read</code>, <code>read,analyze</code>, <code>read,analyze,orgadmin</code> and <code>superadmin</code></td>
+<td>Roles. Possible values are: <code>read</code>, <code>read,analyze</code>, <code>read,analyze,orgadmin</code>, and <code>superadmin</code></td>
 <td>writable</td>
 </tr>
 <tr>
@@ -19596,13 +19596,13 @@ It returns a JSON object representing the user as described <a href="#user-model
 <span class="s1">}'</span>
 </code></pre></div>
 <p>Both calls supports the <code>range</code> and <code>sort</code> query parameters declared in <a href="#paging-and-sorting">paging and sorting details</a>, and both return a JSON array of analyzer objects as described in <a href="#analyzer-model">Analyzer Model section</a>.</p>
-<p>If called by a user with only an <code>nalyzer</code> role, the <code>configuration</code> attribute is not included on the JSON objects.</p>
+<p>If called by a user with only an <code>analyze</code> role, the <code>configuration</code> attribute is not included on the JSON objects.</p>
 <h3 id="get-details-about-a-job">Get Details About a Job<a class="headerlink" href="#get-details-about-a-job" title="Permanent link">#</a></h3>
 <p>This call allows a user with a <code>analyze</code> or <code>orgAdmin</code> role to get an analyzer's details.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/analyzer/ANALYZER_ID'</span>
 </code></pre></div>
 <p>It returns a analyzer JSON object as described in <a href="#analyzer-model">Analyzer Model section</a>.</p>
-<p>If called by a user with only an <code>nalyzer</code> role, the <code>configuration</code> attribute is not included on the JSON objects.</p>
+<p>If called by a user with only an <code>analyze</code> role, the <code>configuration</code> attribute is not included on the JSON objects.</p>
 <h3 id="get-by-type">Get By Type<a class="headerlink" href="#get-by-type" title="Permanent link">#</a></h3>
 <p>This call is mostly used by TheHive and allows to quickly get the list of analyzers that can run on the given datatype. It requires an <code>analyze</code> or <code>orgAdmin</code> role.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/analyzer/type/DATA_TYPE'</span>
@@ -19639,7 +19639,7 @@ It returns a JSON object representing the user as described <a href="#user-model
 <span class="s">  }</span>
 <span class="s">_EOF_</span>
 </code></pre></div>
-<p>for all the other types of observerables, the request is:</p>
+<p>for all the other types of observables, the request is:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/analyzer/ANALYZER_ID/run'</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{</span>
 <span class="s1">  "data":"8.8.8.8",</span>
 <span class="s1">  "dataType":"ip",</span>
