@@ -285,7 +285,7 @@ A user is defined by the following attributes:
 | --------- | ----------- | ---- |
 |`id` | ID/login | readonly |
 |`name` | Name | writable |
-|`roles`| Roles. Possible values are: `read`, `read,analyze`, `read,analyze,orgadmin` and `superadmin` | writable |
+|`roles`| Roles. Possible values are: `read`, `read,analyze`, `read,analyze,orgadmin`, and `superadmin` | writable |
 |`status` | Status (`Active` or `Locked`) | writable |
 |`organization` | organization to which the user belongs (set upon account creation) | readonly |
 |`createdAt` | Creation date | computed |
@@ -685,7 +685,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 
 Both calls supports the `range` and `sort` query parameters declared in [paging and sorting details](#paging-and-sorting), and both return a JSON array of analyzer objects as described in [Analyzer Model section](#analyzer-model).
 
-If called by a user with only an `nalyzer` role, the `configuration` attribute is not included on the JSON objects.
+If called by a user with only an `analyze` role, the `configuration` attribute is not included on the JSON objects.
 
 ### Get Details About a Job
 This call allows a user with a `analyze` or `orgAdmin` role to get an analyzer's details.
@@ -696,7 +696,7 @@ curl -H 'Authorization: Bearer **API_KEY**' 'https://CORTEX_APP_URL:9001/api/ana
 
 It returns a analyzer JSON object as described in [Analyzer Model section](#analyzer-model).
 
-If called by a user with only an `nalyzer` role, the `configuration` attribute is not included on the JSON objects.
+If called by a user with only an `analyze` role, the `configuration` attribute is not included on the JSON objects.
 
 ### Get By Type
 This call is mostly used by TheHive and allows to quickly get the list of analyzers that can run on the given datatype. It requires an `analyze` or `orgAdmin` role.
@@ -746,7 +746,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 _EOF_
 ```
 
-for all the other types of observerables, the request is:
+for all the other types of observables, the request is:
 
 ```bash
 curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application/json' 'https://CORTEX_APP_URL:9001/api/analyzer/ANALYZER_ID/run' -d '{
