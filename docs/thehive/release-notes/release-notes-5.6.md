@@ -4,6 +4,8 @@
 
 ## 5.6.0 - February 2, 2026
 
+Last update: February 4, 2026
+
 ### New features
 
 #### TheHive Portal <!-- md:license Platinum -->
@@ -37,3 +39,4 @@ The filter component has been redesigned to provide a more intuitive and respons
 * SSO authentication: Fixed an issue with the Spanish translation.
 * LDAP sync: Corrected the placeholder to display the appropriate attribute.
 * Dashboard: Fixed an issue where selecting a “By severity” dashboard widget created a filter with an incorrect value.
+* Custom tag: Improved performance of tag queries for list retrieval.
