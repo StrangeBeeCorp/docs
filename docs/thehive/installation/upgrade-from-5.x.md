@@ -39,10 +39,10 @@ Alternatively, you can deploy TheHive using Docker images.
 
 === "Docker"
 
-    Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named `strangebee/thehive:5.5`
+    Update your existing TheHive 5.x Docker stack (docker-compose file or similar) using the image named `strangebee/thehive:5.6`
 
     !!! Note "Important note"
-        Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.5 tag is now available and associated with the latest 5.5.x version.
+        Ensure that you update your Docker tags accordingly. The strangebee/thehive:latest tag is deprecated and remains associated with TheHive 5.0.x versions. A new strangebee/thehive:5.6 tag is now available and associated with the latest 5.6.x version.
 
 ---
 
