@@ -13,6 +13,7 @@ Share cases with external users to enable controlled collaboration with stakehol
     * Comments: Comments aren't automatically shared when a case is shared. Each comment requires [explicit marking as external](control-case-comment-access-thehive-portal.md) to be visible in the portal.
     * Attachments: Like comments, attachments must be individually [marked as external](../attachments/share-an-attachment-case-alert.md#share-an-attachment-with-external-users) for portal visibility.
     * Observables: Observables created by analysts remain private and can't be shared with external users. Only observables created by external users themselves are visible in the portal.
+    * Tasks: Tasks managed by analysts remain private and can't be shared with external users.
 
 <h2>Procedure</h2>
 

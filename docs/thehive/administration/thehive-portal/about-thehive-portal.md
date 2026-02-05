@@ -82,6 +82,7 @@ External users with the appropriate permissions can:
 External users can't:
 
 * Edit existing case details or elements
+* View tasks in cases
 * Delete cases
 
 ## Visual indicator
