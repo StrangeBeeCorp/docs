@@ -1,6 +1,6 @@
 # Tutorial: Automate Tracking of Pending Alerts
 
-<!-- md:version 5.5 --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
 In this tutorial, we're going to set up an automation in TheHive to monitor [alerts](./analyst-corner/alerts/about-alerts.md) that stay in the *New* status and remain unassigned for too long.
 
@@ -21,17 +21,19 @@ To highlight alerts needing review, start by [creating a new alert status](../ad
 
 1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
-2. {% include-markdown "includes/status-tab-go-to.md" %}
+2. Select the **Alert status** tab.
+
+    ![Alert status tab](../images/administration-guides/alert-status-tab.png)
 
 3. Select :fontawesome-solid-plus:.
 
 4. In the **Add a custom status** drawer, enter the following information:
 
-    **- Visibility**: *Display*
+    **- Visibility**: `Display`
 
-    **- Stage**: *New*
+    **- Stage**: `New`
 
-    **- Value**: *TOREVIEW*
+    **- Value**: `TOREVIEW`
 
     **- Color**: Enter a hex color code in the format #RRGGBB, or select :fontawesome-solid-fill-drip: to open the color picker.
 
@@ -52,10 +54,7 @@ Next, configure TheHive to [send an email notification](../user-guides/organizat
 
 3. Select :fontawesome-solid-plus:.
 
-4. In the **Add notification** drawer, enter the name of your notification.
-
-    !!! warning "Unique name"
-        This name must be unique, as two notifications can't have the same name.
+4. In the **Add notification** drawer, enter the name of the notification: `AlertToReviewNotification`
 
 5. Select the *FilteredEvent* trigger.
 
@@ -84,13 +83,9 @@ Next, configure TheHive to [send an email notification](../user-guides/organizat
     }
     ```
 
-7. Select the *EmailerToAddr* notifier.
+7. Select the [*EmailerToAddr* notifier](./organization/configure-organization/manage-notifications/notifiers/email-to-addr.md).
 
 8. In the **EmailerToAddr** drawer, enter the required email information.
-
-    {% include-markdown "includes/notifications-variables.md" %}
-
-    {% include-markdown "includes/templates-helpers.md" %}
 
     Email template example:
 
@@ -125,18 +120,15 @@ This alert feeder will periodically search for alerts that meet the criteria and
 
 3. In the **General settings** section, enter the following information:
 
-    **- Name**: A unique name for the alert feeder. You can’t change this name later.
+    **- Name**: `ChangePendingAlertStatusFeeder`
 
-    **- Interval**: How often the alert feeder sends requests to the external system.
+    **- Interval**: `30 minutes`
 
-    !!! warning "Define the interval carefully based on your reactivity requirements"
-        Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.
+    **- Request timeout time**: `10 seconds`
 
-    **- Request timeout time**: The maximum time, in seconds, the alert feeder waits for a response before timing out.
+    **- Request response max size**: `10`
 
-    **- Request response max size**: The maximum response size, in megabytes, that the alert feeder accepts from the external system.
-
-    **- Description**: A description to provide additional context or notes about the alert feeder configuration.
+    **- Description**: `This alert feeder periodically checks for unassigned alerts that remain in the *New* status for more than four hours, and automatically updates their status to *TOREVIEW* so they can be prioritized.`
 
 4. In the **HTTP request** section, enter the following information:
 
@@ -146,16 +138,23 @@ This alert feeder will periodically search for alerts that meet the criteria and
 
     Replace `<thehive_url>` with your actual TheHive URL.
 
-5. Select **Test connection** to verify the connection to the external system.
+5. Optional: If you belong to multiple organizations, add a custom header in the **Header** section.
 
-6. In the **Create function** section, enter the following information:
+    Select :fontawesome-solid-plus: to add a new header and configure the header as follows:
 
-    !!! info "Feeder function"
-        Once created, the function is automatically added to the [functions list](./organization/configure-organization/manage-functions/about-functions.md) with the type *feeder*.
+    | Key    | Value | Description |
+    | -------- | ------- |
+    | `X-organisation` | `<organization_name>`     | Specifies the organization to use for the request. If omitted, the default organization is used.|
 
-    **- Function name**: *ChangePendingAlertStatus*
+    Replace `<organization_name>` with the name of the organization in which you want the HTTP request to be executed.
 
-    **- Description**: *This function retrieves all alerts with status New that are unassigned and were created more than four hours ago, then updates their status to TOREVIEW*
+6. Select **Test connection** to verify the connection to the TheHive API.
+
+7. In the **Create function** section, enter the following information:
+
+    **- Function name**: `ChangePendingAlertStatus`
+
+    **- Description**: `This function retrieves all alerts with status New that are unassigned and were created more than four hours ago, then updates their status to TOREVIEW`
 
     **- Definition**
 
@@ -216,9 +215,9 @@ This alert feeder will periodically search for alerts that meet the criteria and
     }
     ```
 
-7. {% include-markdown "includes/test-function.md" %}
+8.  {% include-markdown "includes/test-function.md" %}
 
-8. Select **Confirm**.
+9.  Select **Confirm**.
 
 That’s it—your automation is now fully set up and ready to ensure no pending alert goes unnoticed.
 

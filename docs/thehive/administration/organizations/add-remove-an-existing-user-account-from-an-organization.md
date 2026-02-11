@@ -48,5 +48,6 @@ To permanently delete a user account from all organizations, see [Delete a User 
 
 <h2>Next steps</h2>
 
+* [Modify the Default Organization for a User Account](modify-default-organization-user-account.md)
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

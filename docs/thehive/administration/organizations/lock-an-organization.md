@@ -24,3 +24,4 @@ Lock an [organization](about-organizations.md) to prevent users from logging in.
 * [Create an Organization](create-an-organization.md)
 * [Link an Organization](link-an-organization.md)
 * [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
+* [Modify the Default Organization for a User Account](modify-default-organization-user-account.md)

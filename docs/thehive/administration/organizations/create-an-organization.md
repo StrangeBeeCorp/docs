@@ -59,5 +59,6 @@ Create an [organization](about-organizations.md) to represent an independent ten
 <h2>Next steps</h2>
 
 * [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
+* [Modify the Default Organization for a User Account](modify-default-organization-user-account.md)
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

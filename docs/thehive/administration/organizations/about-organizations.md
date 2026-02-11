@@ -27,5 +27,6 @@ A user can belong to one or more organizations. A profile is assigned for each o
 
 * [Create an Organization](create-an-organization.md)
 * [Add or Remove an Existing User Account from an Organization](add-remove-an-existing-user-account-from-an-organization.md)
+* [Modify the Default Organization for a User Account](modify-default-organization-user-account.md)
 * [Link an Organization](link-an-organization.md)
 * [Lock an Organization](lock-an-organization.md)

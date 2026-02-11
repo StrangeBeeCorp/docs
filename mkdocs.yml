@@ -518,6 +518,7 @@ nav:
         - 'Create a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md
         - 'Manage User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts.md
         - 'Add or Remove An Existing User Account from an Organization': thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization.md
+        - 'Modify the Default Organization for a User Account': thehive/administration/organizations/modify-default-organization-user-account.md
         - 'Delete a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md
         - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
         - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
@@ -693,6 +694,9 @@ nav:
           - 'Remove an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/remove-an-attachment-organization.md
           - 'Download an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/download-an-attachment-organization.md
           - 'Share an Attachment': thehive/user-guides/organization/configure-organization/manage-attachments/share-an-attachment-organization.md
+      - 'Automation Hacks':
+        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
+        - 'Tutorial: Automate Monitoring of Tasks Approaching Their Due Date': thehive/user-guides/automate-monitoring-tasks-approaching-due-date.md
       - 'Analyst Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
@@ -879,8 +883,6 @@ nav:
         - 'Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
         - 'Statistics': thehive/user-guides/analyst-corner/about-statistics.md
         - 'Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
-      - 'Automation Hacks':
-        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
       - 'Knowledge Base':
         - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
         - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
