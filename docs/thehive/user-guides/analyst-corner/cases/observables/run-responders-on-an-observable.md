@@ -6,8 +6,6 @@
 
 Run responders on an [observable](about-observables.md) in TheHive to execute automated actions such as blocking an IP address on the firewall or a URL on the proxy.
 
-Cortex responders execute actions on cases, alerts, observables, tasks, and task logs.
-
 ## Run responders on an observable
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run responders.

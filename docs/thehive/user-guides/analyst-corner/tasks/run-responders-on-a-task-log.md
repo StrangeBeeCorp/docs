@@ -6,8 +6,6 @@
 
 Run responders on a [task log](about-task-logs.md) in TheHive to take automated actions, such as improving its readability or clarity. Responders generate reports documenting the actions taken.
 
-Responders execute actions on cases, alerts, observables, tasks, and task logs.
-
 ## Run responders on a task log
 
 1. [Locate the task](./search-for-tasks/find-a-task.md) that contains the task log on which you want to run responders.

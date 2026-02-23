@@ -4,8 +4,6 @@
 
 Run responders on an [alert](about-alerts.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
 
-Responders execute actions on cases, alerts, observables, tasks, and task logs.
-
 !!! note "Observables not included"
     Running a responder on an alert doesn't run it on the observables linked to the alert. To run responders on an observable, see [Run Responders and Review Reports for an Observable](../cases/observables/run-responders-on-an-observable.md).
 

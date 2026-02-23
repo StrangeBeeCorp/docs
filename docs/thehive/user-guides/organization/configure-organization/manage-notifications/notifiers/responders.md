@@ -42,5 +42,3 @@ Configure the *RunResponder* [notifier](../about-notifications.md#notifiers) in 
 
 * [Turn Off a Notification](../turn-off-a-notification.md)
 * [Delete a Notification](../delete-a-notification.md)
-
-

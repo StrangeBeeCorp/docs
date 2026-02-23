@@ -6,8 +6,6 @@
 
 Run analyzers on an [observable](about-observables.md) in TheHive to enrich it with contextual intelligence. Analyzers generate reports with their findings.
 
-The observable type determines which analyzers are available.
-
 ## Run analyzers on an observable
 
 !!! tip "Bulk run"

@@ -6,8 +6,6 @@
 
 Import [observables](about-observables.md) from analyzer reports in TheHive to add additional observables discovered during analysis to your case or alert.
 
-Cortex analyzers enrich observables with detailed contextual intelligence, generating a report with the results, which may include additional observables.
-
 <h2>Procedure</h2>
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you ran the analyzer.
