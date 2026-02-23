@@ -593,7 +593,7 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
                 writeTimeout = 1 minute
                 chunkSize = 1 MB
                 endpoint-url = "https://<s3_endpoint>"
-                access-key-id = "<access_key>"
+                aws.credentials.access-key-id = "<access_key>"
                 aws.credentials.provider = "static"
                 aws.credentials.secret-access-key = "<secret_key>"
                 access-style = path
