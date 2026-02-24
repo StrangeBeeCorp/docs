@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
@@ -5778,10 +5778,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-grant-case-access-permissions" class="md-nav__link">
+  <a href="#step-3-add-the-external-case-sharing-permission" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Grant case access permissions
+        Step 3: Add the external case sharing permission
       
     </span>
   </a>
@@ -18893,9 +18893,13 @@
 <p class="admonition-title">Existing user accounts</p>
 <p>You can't change user account types after creation. Converting a Normal user to an external user requires <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account/">deleting the existing account</a> and recreating it with the External type.</p>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Not counted toward license</p>
+<p>You can assign external profiles to as many user accounts as needed. They don't consume license seats.</p>
+</div>
 <p>Follow the instructions in <a href="../../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account/">Create a User Account</a>, selecting <strong>External</strong> as the account type.</p>
 <p>When you create an external user account, TheHive automatically sends an invitation email that expires after 24 hours. This email explains the portal's purpose, why they've been granted access, and includes a secure link to set up their account. To modify the expiration period, see <a href="../../smtp/configure-smtp-server/">Configure an SMTP Server</a>.</p>
-<h2 id="step-3-grant-case-access-permissions">Step 3: Grant case access permissions<a class="headerlink" href="#step-3-grant-case-access-permissions" title="Permanent link">#</a></h2>
+<h2 id="step-3-add-the-external-case-sharing-permission">Step 3: Add the external case sharing permission<a class="headerlink" href="#step-3-add-the-external-case-sharing-permission" title="Permanent link">#</a></h2>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>[admin] manageProfile</code></span></span></p>
 <p>The default Org-Admin profile automatically receives the <code>manageCaseAccess/external</code> permission during the upgrade, allowing it to share cases with external stakeholders. For other profiles, you must add this permission manually.</p>
 <p>Follow the instructions in <a href="../../profiles/add-remove-permissions-from-a-profile/">Add or Remove Permissions from a Profile</a>.</p>
