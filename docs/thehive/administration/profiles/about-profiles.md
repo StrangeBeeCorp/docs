@@ -51,6 +51,7 @@ These permissions don't require a license:
 * `manageConfig`
 * `manageKnowledgeBase`
 * all permissions included in administration-type profiles
+* all permissions included in external-type profiles
 
 When [creating or editing a profile](create-a-profile.md), licensed permissions are clearly marked to help identify which ones affect license usage. When [assigning a user to an organization](../../administration/organizations/add-remove-an-existing-user-account-from-an-organization.md), profiles that include at least one licensed permission are also marked accordingly.
 

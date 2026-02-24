@@ -38,11 +38,14 @@ Now we'll create accounts for external stakeholders who need portal access.
 !!! note "Existing user accounts"
     You can't change user account types after creation. Converting a Normal user to an external user requires [deleting the existing account](../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md) and recreating it with the External type.
 
+!!! info "Not counted toward license"
+    You can assign external profiles to as many user accounts as needed. They don't consume license seats.
+
 Follow the instructions in [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md), selecting **External** as the account type.
 
 When you create an external user account, TheHive automatically sends an invitation email that expires after 24 hours. This email explains the portal's purpose, why they've been granted access, and includes a secure link to set up their account. To modify the expiration period, see [Configure an SMTP Server](../../administration/smtp/configure-smtp-server.md).
 
-## Step 3: Grant case access permissions
+## Step 3: Add the external case sharing permission
 
 <!-- md:permission `[admin] manageProfile` -->
 
