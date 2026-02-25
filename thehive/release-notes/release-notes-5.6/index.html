@@ -16538,6 +16538,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#561-february-25-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.1 - February 25, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#560-february-2-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -18813,6 +18824,26 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>The public API v0 has been deprecated since TheHive 5.4. It should no longer be used. Please use the API v1 endpoints (<code>/api/v1</code>) instead.</p>
 </div>
+<h2 id="561-february-25-2026">5.6.1 - February 25, 2026<a class="headerlink" href="#561-february-25-2026" title="Permanent link">#</a></h2>
+<h3 id="regression-fix">Regression fix<a class="headerlink" href="#regression-fix" title="Permanent link">#</a></h3>
+<ul>
+<li>Private cases: Resolved a regression introduced in 5.6.0 that prevented Service users from accessing private cases.</li>
+</ul>
+<h3 id="security-fixes">Security fixes<a class="headerlink" href="#security-fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>This update includes a patch addressing a vulnerability that hasn't been exploited in the wild. Further details will be provided soon in a dedicated security bulletin, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md" target="_blank">Responsible Vulnerability Disclosure Policy</a>.</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Cases: Fixed an issue where case data didn’t refresh correctly when navigating between cases.</li>
+<li>Case templates: Resolved a display issue in the case templates list to ensure action buttons remain accessible, even when template names are very long.</li>
+<li>Images in description fields: You can now paste images directly into descriptions when creating a case or a task.</li>
+<li>Markdown: Email addresses inside code blocks are no longer altered, preventing unwanted link formatting.</li>
+<li>Tasks: Improved performance when marking an action as required or done.</li>
+<li>Observables: Improved observable search performance and accuracy by optimizing data queries and indexing attachment properties.</li>
+<li>Notifications: Fixed an issue where global notification endpoints weren't properly shared with organizations.</li>
+<li>Authentication: Resolved several issues with auto-logout to ensure inactivity timers reset correctly and users are no longer disconnected while actively using TheHive, even across multiple tabs or in read-only mode.</li>
+</ul>
 <h2 id="560-february-2-2026">5.6.0 - February 2, 2026<a class="headerlink" href="#560-february-2-2026" title="Permanent link">#</a></h2>
 <p>Last update: February 4, 2026</p>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
@@ -18837,7 +18868,7 @@
 <h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
 <h4 id="filter-user-experience">Filter user experience<a class="headerlink" href="#filter-user-experience" title="Permanent link">#</a></h4>
 <p>The filter component has been redesigned to provide a more intuitive and responsive experience across cases, alerts, and tasks. It now offers increased flexibility and finer-grained filtering, while enabling more advanced frontend customization.</p>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>SSO authentication: Fixed an issue with the Spanish translation.</li>
 <li>LDAP sync: Corrected the placeholder to display the appropriate attribute.</li>
