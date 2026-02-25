@@ -71,7 +71,7 @@ TheHive offers the following options for creating cases:
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it's created. For more details, see [Share a Case](../cases/share-a-case.md).
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Select **Manage case sharing** to modify these rules and apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case [after it's created](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 
@@ -108,7 +108,7 @@ TheHive offers the following options for creating cases:
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it's created. For more details, see [Share a Case](../cases/share-a-case.md).
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Select **Manage case sharing** to modify these rules and apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case [after it's created](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 
@@ -139,7 +139,7 @@ See [About MISP Integration](../../../administration/misp-integration/about-misp
 
     **- Sharing**  
 
-    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Here, you can modify these rules to apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case after it is created. For more details, see [Share a Case](../cases/share-a-case.md).
+    By default, [global sharing rules set at the organization level](../../../administration/organizations/about-organizations-sharing-rules.md#global-sharing-rules) are applied when you create a new case. Select **Manage case sharing** to modify these rules and apply local sharing settings to the case. You can modify local sharing rules for tasks and observables linked to the case [after it's created](../cases/share-a-case.md).
 
 4. Select **Confirm**.
 

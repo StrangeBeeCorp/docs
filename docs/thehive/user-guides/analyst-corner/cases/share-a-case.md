@@ -36,7 +36,7 @@ To learn more about how sharing rules function and interact, refer to [Organizat
 
 5. Select **Confirm**.
 
-6. Select **Manage case sharings**.
+6. Select **Manage case sharing**.
 
 7. Turn on the **Share this case** toggle for each relevant organization and select the appropriate [permission profile](../../../administration/profiles/about-profiles.md).
 
