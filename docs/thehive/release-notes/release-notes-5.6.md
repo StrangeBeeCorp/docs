@@ -2,6 +2,27 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.6.1 - February 25, 2026
+
+### Regression fix
+
+* Private cases: Resolved a regression introduced in 5.6.0 that prevented Service users from accessing private cases.
+
+### Security fixes
+
+* This update includes a patch addressing a vulnerability that hasn't been exploited in the wild. Further details will be provided soon in a dedicated security bulletin, in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md){target=_blank}.
+
+### Fixes
+
+* Cases: Fixed an issue where case data didn’t refresh correctly when navigating between cases.
+* Case templates: Resolved a display issue in the case templates list to ensure action buttons remain accessible, even when template names are very long.
+* Images in description fields: You can now paste images directly into descriptions when creating a case or a task.
+* Markdown: Email addresses inside code blocks are no longer altered, preventing unwanted link formatting.
+* Tasks: Improved performance when marking an action as required or done.
+* Observables: Improved observable search performance and accuracy by optimizing data queries and indexing attachment properties.
+* Notifications: Fixed an issue where global notification endpoints weren't properly shared with organizations.
+* Authentication: Resolved several issues with auto-logout to ensure inactivity timers reset correctly and users are no longer disconnected while actively using TheHive, even across multiple tabs or in read-only mode.
+
 ## 5.6.0 - February 2, 2026
 
 Last update: February 4, 2026
