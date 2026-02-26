@@ -14,7 +14,7 @@ Invoke a [function](about-functions.md) in TheHive.
 
 4. Select the **How to call the function** section.
 
-5. Copy the cURL or Python command example to use in your HTTP call.
+5. Copy the `curl` or Python command example to use in your HTTP call.
 
 !!! example ""
 

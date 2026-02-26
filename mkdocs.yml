@@ -451,6 +451,7 @@ nav:
       - 'Requirements':
         - 'System Requirements': thehive/installation/system-requirements.md
         - 'Software Requirements': thehive/installation/software-requirements.md
+      - 'Package Repository': thehive/installation/thehive-packages.md
       - 'Install on Linux': thehive/installation/installation-guide-linux-standalone-server.md
       - 'One-Command Install': thehive/installation/automated-installation-script-linux.md
       - 'Deploy with Docker': thehive/installation/docker.md
@@ -935,6 +936,7 @@ nav:
       -  ./cortex/installation-and-configuration/secret.md
       -  ./cortex/installation-and-configuration/advanced-configuration.md
       -  ./cortex/installation-and-configuration/ssl.md
+      -  ./cortex/installation-and-configuration/cortex-packages.md
       -  ./cortex/installation-and-configuration/step-by-step-guide.md
       -  ./cortex/installation-and-configuration/index.md
       -  ./cortex/installation-and-configuration/analyzers-responders.md

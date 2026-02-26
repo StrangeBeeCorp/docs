@@ -29,7 +29,7 @@ This guide provides step-by-step instructions for upgrading an existing TheHive 
 
 ## Upgrade instructions
 
-TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
+TheHive packages are distributed as RPM and DEB files available for direct download via tools like `wget` or `curl`, with installation performed manually.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 

@@ -5,7 +5,7 @@
 
     1. Download the installation package along with its SHA256 checksum and signature files.
 
-        * Using Wget:
+        * Using `wget`:
 
             ```bash
             wget -O /tmp/thehive_{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/thehive_{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
@@ -24,7 +24,10 @@
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.5.14-2_all`. 
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
 
-        * Using cURL:
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
+
+        * Using `curl`:
 
             ```bash
             curl -o /tmp/thehive_{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/thehive_{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
@@ -42,6 +45,9 @@
 
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.5.14-2_all`. 
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
+
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
 
         
     2. Verify the integrity of the downloaded package.
@@ -64,7 +70,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -126,7 +132,7 @@
 
     1. Download the installation package along with its SHA256 checksum and signature files.
 
-        * Using Wget:
+        * Using `wget`:
 
             ```bash
             wget -O /tmp/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
@@ -145,7 +151,10 @@
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
 
-        * Using cURL:
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
+
+        * Using `curl`:
 
             ```bash
             curl -o /tmp/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
@@ -163,9 +172,11 @@
 
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
-            
 
-    2. Verify the integrity of the downloaded package.
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
+            
+    1. Verify the integrity of the downloaded package.
               
           * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -185,7 +196,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -226,7 +237,7 @@
 
             If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
-    3. Install the package.
+    2. Install the package.
 
         * Using `yum` to manage dependencies automatically:
 

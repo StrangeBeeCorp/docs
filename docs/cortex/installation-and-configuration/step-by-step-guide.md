@@ -200,7 +200,7 @@ This section provides step-by-step instructions to install Cortex and configure 
 
 ### Installation
 
-Cortex packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.
+Cortex packages are distributed as RPM and DEB files available for direct download via tools like `wget` or `curl`, with installation performed manually.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
@@ -215,7 +215,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     1. Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.
    
-        * Using Wget
+        * Using `wget`
 
             ```bash
             wget -O /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
@@ -234,7 +234,10 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
-        * Using cURL
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](cortex-packages.md).
+
+        * Using `curl`
 
             ```bash
             curl -o /opt/cortex/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
@@ -252,6 +255,9 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](cortex-packages.md).
 
     2. Verify the integrity of the downloaded package.
 
@@ -273,7 +279,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg

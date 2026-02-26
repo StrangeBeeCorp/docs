@@ -5,7 +5,7 @@
 
     1. Download the installation package along with its SHA256 checksum and signature files.
 
-        * Using Wget:
+        * Using `wget`:
 
             ```bash
             wget -O /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
@@ -24,7 +24,10 @@
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
-        * Using cURL:
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
+
+        * Using `curl`:
 
             ```bash
             curl -o /tmp/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/deb/cortex_{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb
@@ -42,9 +45,12 @@
 
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
             
 
-    2. Verify the integrity of the downloaded package.
+    1. Verify the integrity of the downloaded package.
 
           * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -64,7 +70,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -105,7 +111,7 @@
 
             If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
-    3. Install the package.
+    2. Install the package.
 
         * Using `apt-get` to manage dependencies automatically:
 
@@ -126,7 +132,7 @@
 
     1. Download the installation package along with its SHA256 checksum and signature files.
 
-        * Using Wget:
+        * Using `wget`:
 
             ```bash
             wget -O /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
@@ -145,7 +151,10 @@
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
-        * Using cURL:
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
+
+        * Using `curl`:
 
             ```bash
             curl -o /tmp/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm https://cortex.download.strangebee.com/{% include-markdown "includes/cortex-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/rpm/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm
@@ -164,7 +173,10 @@
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
 
-    2. Verify the integrity of the downloaded package.
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
+
+    1. Verify the integrity of the downloaded package.
 
           * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -184,7 +196,7 @@
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /tmp/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -225,7 +237,7 @@
 
             If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
 
-    3. Install the package.
+    2. Install the package.
 
         * Using `yum` to manage dependencies automatically:
 

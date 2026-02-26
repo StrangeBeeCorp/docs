@@ -225,7 +225,7 @@ TheHive requires Java to run its application server and to manage various proces
 
 === "Other installation methods"
 
-    Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/){target=_blank} and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
+    Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/){target=_blank} and extract it into the folder of your choice. You can use utilities like [`wget`](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
 
 ### Step 3.2: Configure Cassandra
 
@@ -565,7 +565,7 @@ For additional configuration options, refer to:
 
 === "Other installation methods"
 
-    Download the tar.gz archive from [Elasticsearch downloads](http://elastic.co/downloads/elasticsearch){target=_blank} and extract it into the folder of your choice. You can use utilities like [Wget](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
+    Download the tar.gz archive from [Elasticsearch downloads](http://elastic.co/downloads/elasticsearch){target=_blank} and extract it into the folder of your choice. You can use utilities like [`wget`](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
 
 ### Step 4.2: Configure Elasticsearch
 
@@ -758,9 +758,9 @@ For additional configuration options, refer to:
 
 ### Step 5.1: Install TheHive
 
-TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
+TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like `wget` or `curl`, with installation performed manually.
 
-All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
+All packages are hosted on an [HTTPS-secured website](https://thehive.download.strangebee.com/){target=_blank} and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
 {% include-markdown "includes/manual-download-installation-thehive.md" %}
 
@@ -773,7 +773,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
     1. Download the binary package along with its SHA256 checksum and signature files. You can install TheHive anywhere on your filesystem.
    
-        * Using Wget
+        * Using `wget`
 
             ```bash
             wget -O /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
@@ -792,7 +792,10 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
 
-        * Using cURL
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](thehive-packages.md).
+
+        * Using `curl`
 
             ```bash
             curl -o /opt/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip https://thehive.download.strangebee.com/{% include-markdown "includes/thehive-latest-version.md" start="<!--start-shortversion-->" end="<!--end-shortversion-->" %}/zip/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip
@@ -811,7 +814,10 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
 
-    2. Verify the integrity of the downloaded package.
+            !!! tip "Package repository"
+                For details on package organization and naming conventions, see [TheHive Package Repository](thehive-packages.md).
+
+    1. Verify the integrity of the downloaded package.
 
         * Check the SHA256 checksum by comparing it with the provided value.
 
@@ -831,7 +837,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
           * Verify the GPG signature using the public key.
      
-            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using Wget or cURL.
+            a. Download the public key at [keys.download.strangebee.com](https://keys.download.strangebee.com){target=_blank} using `wget` or `curl`.
 
             ```bash
             wget -O /opt/strangebee.gpg https://keys.download.strangebee.com/latest/gpg/strangebee.gpg

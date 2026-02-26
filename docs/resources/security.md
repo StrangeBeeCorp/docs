@@ -22,6 +22,18 @@ Local account passwords are stored using strong cryptographic hashing. TheHive i
 
 This approach ensures that passwords remain protected against brute-force attacks even if the database is compromised.
 
+## Software supply chain transparency
+
+TheHive provides [SBOM](https://github.com/resources/articles/what-is-an-sbom-software-bill-of-materials){target=_blank} files for its published packages. These files describe the third-party components and dependencies included in the backend and frontend of each TheHive build and are provided for transparency and audit purposes. They don't affect the runtime behavior of TheHive.
+
+SBOM files are intended to support:
+
+* Security audits
+* Vulnerability management processes
+* Compliance and regulatory requirements
+
+For details on retrieving SBOM files, see [TheHive Package Repository](../thehive/installation/thehive-packages.md).
+
 <h2>Next steps</h2>
 
 * [Install TheHive on Linux Systems](../thehive/installation/installation-guide-linux-standalone-server.md)

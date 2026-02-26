@@ -77,6 +77,7 @@ Other distributions or versions aren't tested or supported.
 <h2>Next steps</h2>
 
 * [Software Requirements](software-requirements.md)
+* [TheHive Package Repository](thehive-packages.md)
 * [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
 * [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
 * [Deploy TheHive with Docker Compose](docker.md)

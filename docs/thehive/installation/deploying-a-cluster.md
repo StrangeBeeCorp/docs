@@ -440,7 +440,7 @@ TheHive uses the [Apache Pekko](https://pekko.apache.org/){target=_blank} toolki
 
 To deploy TheHive in a clustered environment, you must install TheHive on each TheHive node.
 
-TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like Wget or cURL, with installation performed manually.
+TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like `wget` or `curl`, with installation performed manually.
 
 Follow the steps in the [installation guide](installation-guide-linux-standalone-server.md#step-51-install-thehive).
 

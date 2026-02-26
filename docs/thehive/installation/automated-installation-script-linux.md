@@ -7,7 +7,7 @@ If you prefer a faster setup than going through [the complete installation guide
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for script-based installation
-    * [Wget](https://www.gnu.org/software/wget/){target=_blank} installed
+    * [`wget`](https://www.gnu.org/software/wget/){target=_blank} installed
 
 !!! danger "No authentication configured for Cassandra and Elasticsearch"
     This script doesn't set up authentication for Cassandra or Elasticsearch. For security—especially in production—enable authentication on both services before going live. See [Configure Database and Index Authentication](../configuration/configure-authentication-cassandra-elasticsearch.md) for instructions.
