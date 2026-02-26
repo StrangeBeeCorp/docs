@@ -678,6 +678,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../thehive-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../installation-guide-linux-standalone-server/" class="md-nav__link">
         
   
@@ -829,10 +857,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
         
           
-          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
             
   
   
@@ -850,8 +878,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -973,10 +1001,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
             
   
   
@@ -994,8 +1022,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16973,6 +17001,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../cortex/installation-and-configuration/cortex-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cortex Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
         
   
@@ -19245,7 +19301,7 @@ UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c25
 </code></pre></div>
 <p>&nbsp;</p>
 <h3 id="installing-thehive">Installing TheHive<a class="headerlink" href="#installing-thehive" title="Permanent link">#</a></h3>
-<p>TheHive packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.</p>
+<p>TheHive packages are distributed as RPM and DEB files available for direct download via tools like <code>wget</code> or <code>curl</code>, with installation performed manually.</p>
 <p>All packages are hosted on an HTTPS-secured website and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">DEB</label><label for="__tabbed_2_2">RPM</label></div>
 <div class="tabbed-content">
@@ -19259,7 +19315,7 @@ UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c25
 <p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
-<p>Using Wget:</p>
+<p>Using <code>wget</code>:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.6/deb/thehive_5.6.1-1_all.deb
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.6/sha256/thehive_5.6.1-1_all.deb.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.6/asc/thehive_5.6.1-1_all.deb.asc
@@ -19273,9 +19329,13 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive_5.5.14-2_all</code>. </li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.5</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/thehive/installation/thehive-packages/">TheHive Package Repository</a>.</p>
+</div>
 </li>
 <li>
-<p>Using cURL:</p>
+<p>Using <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb<span class="w"> </span>https://thehive.download.strangebee.com/5.6/deb/thehive_5.6.1-1_all.deb
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.6/sha256/thehive_5.6.1-1_all.deb.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive_5.6.1-1_all.deb.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.6/asc/thehive_5.6.1-1_all.deb.asc
@@ -19289,6 +19349,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive_5.5.14-2_all</code>. </li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.5</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/thehive/installation/thehive-packages/">TheHive Package Repository</a>.</p>
+</div>
 </li>
 </ul>
 </li>
@@ -19307,7 +19371,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using <code>wget</code> or <code>curl</code>.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -19361,7 +19425,7 @@ This warning is expected. It means the package is signed with the official TheHi
 <p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
-<p>Using Wget:</p>
+<p>Using <code>wget</code>:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.6/rpm/thehive-5.6.1-1.noarch.rpm
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.6/sha256/thehive-5.6.1-1.noarch.rpm.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.6/asc/thehive-5.6.1-1.noarch.rpm.asc
@@ -19375,9 +19439,13 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.5.14-2</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.5</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/thehive/installation/thehive-packages/">TheHive Package Repository</a>.</p>
+</div>
 </li>
 <li>
-<p>Using cURL:</p>
+<p>Using <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm<span class="w"> </span>https://thehive.download.strangebee.com/5.6/rpm/thehive-5.6.1-1.noarch.rpm
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.6/sha256/thehive-5.6.1-1.noarch.rpm.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/thehive-5.6.1-1.noarch.rpm.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.6/asc/thehive-5.6.1-1.noarch.rpm.asc
@@ -19391,6 +19459,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>thehive-5.5.14-2</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>5.5</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/thehive/installation/thehive-packages/">TheHive Package Repository</a>.</p>
+</div>
 </li>
 </ul>
 </li>
@@ -19409,7 +19481,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using <code>wget</code> or <code>curl</code>.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg

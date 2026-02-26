@@ -669,6 +669,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../thehive/installation/thehive-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../thehive/installation/installation-guide-linux-standalone-server/" class="md-nav__link">
         
   
@@ -820,10 +848,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
         
           
-          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
             
   
   
@@ -841,8 +869,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -962,10 +990,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10">
         
           
-          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
             
   
   
@@ -983,8 +1011,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16836,6 +16864,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cortex/installation-and-configuration/cortex-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cortex Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cortex/installation-and-configuration/step-by-step-guide/" class="md-nav__link">
         
   
@@ -18716,6 +18772,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#software-supply-chain-transparency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software supply chain transparency
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -18809,6 +18876,15 @@
 <h3 id="password-storage">Password storage<a class="headerlink" href="#password-storage" title="Permanent link">#</a></h3>
 <p>Local account passwords are stored using strong cryptographic hashing. TheHive implements PBKDF2 (HMAC-SHA512 with 120,000 iterations) to protect user credentials.</p>
 <p>This approach ensures that passwords remain protected against brute-force attacks even if the database is compromised.</p>
+<h2 id="software-supply-chain-transparency">Software supply chain transparency<a class="headerlink" href="#software-supply-chain-transparency" title="Permanent link">#</a></h2>
+<p>TheHive provides <a href="https://github.com/resources/articles/what-is-an-sbom-software-bill-of-materials" target="_blank">SBOM</a> files for its published packages. These files describe the third-party components and dependencies included in the backend and frontend of each TheHive build and are provided for transparency and audit purposes. They don't affect the runtime behavior of TheHive.</p>
+<p>SBOM files are intended to support:</p>
+<ul>
+<li>Security audits</li>
+<li>Vulnerability management processes</li>
+<li>Compliance and regulatory requirements</li>
+</ul>
+<p>For details on retrieving SBOM files, see <a href="../../thehive/installation/thehive-packages/">TheHive Package Repository</a>.</p>
 <h2>Next steps</h2>
 
 <ul>

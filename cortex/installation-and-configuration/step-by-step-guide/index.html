@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.strangebee.com/cortex/installation-and-configuration/step-by-step-guide/">
       
       
-        <link rel="prev" href="../ssl/">
+        <link rel="prev" href="../cortex-packages/">
       
       
         <link rel="next" href="../">
@@ -671,6 +671,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../thehive/installation/thehive-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../thehive/installation/installation-guide-linux-standalone-server/" class="md-nav__link">
         
   
@@ -822,10 +850,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
         
           
-          <label class="md-nav__link" for="__nav_2_2_8" id="__nav_2_2_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
             
   
   
@@ -843,8 +871,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_8">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -964,10 +992,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_10">
         
           
-          <label class="md-nav__link" for="__nav_2_2_9" id="__nav_2_2_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_2_10" id="__nav_2_2_10_label" tabindex="0">
             
   
   
@@ -985,8 +1013,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_9">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16842,6 +16870,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../cortex-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cortex Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -19091,7 +19147,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> <
 <h2 id="cortex-installation-and-configuration">Cortex installation and configuration<a class="headerlink" href="#cortex-installation-and-configuration" title="Permanent link">#</a></h2>
 <p>This section provides step-by-step instructions to install Cortex and configure it properly.</p>
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
-<p>Cortex packages are distributed as RPM and DEB files available for direct download via tools like Wget or cURL, with installation performed manually.</p>
+<p>Cortex packages are distributed as RPM and DEB files available for direct download via tools like <code>wget</code> or <code>curl</code>, with installation performed manually.</p>
 <p>All packages are hosted on an HTTPS-secured website and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">DEB</label><label for="__tabbed_5_2">RPM</label><label for="__tabbed_5_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
@@ -19105,7 +19161,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> <
 <p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
-<p>Using Wget:</p>
+<p>Using <code>wget</code>:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-1_all.deb
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-1_all.deb.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-1_all.deb.asc
@@ -19119,9 +19175,13 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-2_all</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/cortex/installation-and-configuration/cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 <li>
-<p>Using cURL:</p>
+<p>Using <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb<span class="w"> </span>https://cortex.download.strangebee.com/4.0/deb/cortex_4.0.0-1_all.deb
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex_4.0.0-1_all.deb.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex_4.0.0-1_all.deb.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex_4.0.0-1_all.deb.asc
@@ -19135,6 +19195,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex_3.2.1-2_all</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/cortex/installation-and-configuration/cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 </ul>
 </li>
@@ -19153,7 +19217,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.deb
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using <code>wget</code> or <code>curl</code>.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -19207,7 +19271,7 @@ This warning is expected. It means the package is signed with the official TheHi
 <p>Download the installation package along with its SHA256 checksum and signature files.</p>
 <ul>
 <li>
-<p>Using Wget:</p>
+<p>Using <code>wget</code>:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-1.noarch.rpm
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.noarch.rpm.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.noarch.rpm.asc
@@ -19221,9 +19285,13 @@ wget<span class="w"> </span>-O<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.2.1-1</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/cortex/installation-and-configuration/cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 <li>
-<p>Using cURL:</p>
+<p>Using <code>curl</code>:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm<span class="w"> </span>https://cortex.download.strangebee.com/4.0/rpm/cortex-4.0.0-1.noarch.rpm
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.noarch.rpm.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/tmp/cortex-4.0.0-1.noarch.rpm.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.noarch.rpm.asc
@@ -19237,6 +19305,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.2.1-1</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="/cortex/installation-and-configuration/cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 </ul>
 </li>
@@ -19255,7 +19327,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/tmp/&lt;file_name&gt;.noa
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using <code>wget</code> or <code>curl</code>.</p>
 <p></p><div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/tmp/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
@@ -19315,7 +19387,7 @@ This warning is expected. It means the package is signed with the official TheHi
 <p>Download the binary package along with its SHA256 checksum and signature files. You can install Cortex anywhere on your filesystem.</p>
 <ul>
 <li>
-<p>Using Wget</p>
+<p>Using <code>wget</code></p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip<span class="w"> </span>https://cortex.download.strangebee.com/4.0/zip/cortex-4.0.0-1.zip
 wget<span class="w"> </span>-O<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.zip.sha256
 wget<span class="w"> </span>-O<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.zip.asc
@@ -19329,9 +19401,13 @@ wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.2.1-2</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="../cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 <li>
-<p>Using cURL</p>
+<p>Using <code>curl</code></p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip<span class="w"> </span>https://cortex.download.strangebee.com/4.0/zip/cortex-4.0.0-1.zip
 curl<span class="w"> </span>-o<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip.sha256<span class="w"> </span>https://cortex.download.strangebee.com/4.0/sha256/cortex-4.0.0-1.zip.sha256
 curl<span class="w"> </span>-o<span class="w"> </span>/opt/cortex/cortex-4.0.0-1.zip.asc<span class="w"> </span>https://cortex.download.strangebee.com/4.0/asc/cortex-4.0.0-1.zip.asc
@@ -19345,6 +19421,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <li>Replace <code>&lt;file_name&gt;</code> with the full name of the versioned file you want to install. For example, use <code>cortex-3.2.1-2</code>.</li>
 <li>Replace <code>&lt;major.minor_version&gt;</code> with the corresponding version directory. For example, use <code>3.2</code>.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Package repository</p>
+<p>For details on package organization and naming conventions, see <a href="../cortex-packages/">Cortex Package Repository</a>.</p>
+</div>
 </li>
 </ul>
 </li>
@@ -19363,7 +19443,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 </li>
 <li>
 <p>Verify the GPG signature using the public key.</p>
-<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using Wget or cURL.</p>
+<p>a. Download the public key at <a href="https://keys.download.strangebee.com" target="_blank">keys.download.strangebee.com</a> using <code>wget</code> or <code>curl</code>.</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/strangebee.gpg<span class="w"> </span>https://keys.download.strangebee.com/latest/gpg/strangebee.gpg
