@@ -18942,29 +18942,14 @@
 
 <h1 id="write-a-filteredevent-trigger">Write a FilteredEvent Trigger<a class="headerlink" href="#write-a-filteredevent-trigger" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>manageConfig</code></span></span></p>
-<p>Write a <em>FilteredEvent</em> <a href="../about-notifications/#triggers">trigger</a> in TheHive to send notifications based on custom event filters. </p>
+<p>Write a <em>FilteredEvent</em> <a href="../about-notifications/#triggers">trigger</a> in TheHive to send notifications based on custom event filters.</p>
 <p>For a list of available operators, see <a href="../filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
 <h2>Procedure</h2>
 
 <ol>
 <li>
-<p>Go to the <strong>Organization</strong> view from the sidebar menu.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/organization-view.png" data-desc-position="bottom"><img alt="Organization view" src="/thehive/images/user-guides/organization/configure-organization/organization-view.png"></a></p>
-<hr>
-</li>
-<li>
-<p>Select the <strong>Notifications</strong> tab.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="/thehive/images/user-guides/organization/configure-organization/manage-notifications/notifications-tab.png" data-desc-position="bottom"><img alt="Notifications tab" src="/thehive/images/user-guides/organization/configure-organization/manage-notifications/notifications-tab.png"></a></p>
-<hr>
-</li>
-<li>
-<p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v160H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h160v160c0 17.7 14.3 32 32 32s32-14.3 32-32V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span>.</p>
-<hr>
-</li>
-<li>
-<p>Select the <em>FilteredEvent</em> trigger.</p>
-<p>Selecting <em>FilteredEvent</em> opens a field where you can define a custom filter. These filters apply to all actions recorded in the organization's <a href="../../../about-audit-logs/">audit logs</a>. When an action matches the filter criteria, a notification is triggered.</p>
-<hr>
+<p>When <a href="../create-a-notification/">creating a new notification</a> or editing an existing one, select the <em>FilteredEvent</em> trigger.</p>
+<p>Selecting <em>FilteredEvent</em> opens a field where you can define a custom JSON filter. These filters apply to all actions recorded in the organization's <a href="../../../about-audit-logs/">audit logs</a>. When an action matches the filter criteria, a notification is triggered.</p>
 </li>
 <li>
 <p>Write your filter.</p>
@@ -18972,34 +18957,300 @@
 <p class="admonition-title">Operators</p>
 <p>For a complete list of available operators, see <a href="/thehive/user-guides/organization/configure-organization/manage-notifications/filtered-event-trigger-operators/">FilteredEvent Trigger Operators</a>.</p>
 </div>
-<p>To access a specific field within a JSON object, use dot (<code>.</code>) notation to navigate through nested properties.</p>
-<p>For example <code>object.severity</code> retrieves the <code>severity</code>field from the following JSON structure:</p>
+<p>To write an effective JSON filter, you first need to understand the structure of the event payload and how to access its fields.</p>
+<p>Event payloads may include the following top-level fields, depending on the event type:</p>
+<ul>
+<li><code>object</code>: The object affected by the event.</li>
+<li><code>details</code>: The specific changes applied to the object.</li>
+<li><code>context</code>: The related object providing context for the event, such as the parent object or the object itself.</li>
+</ul>
+<p>To access a specific field within a JSON object, use <code>.</code> to navigate through nested properties.</p>
+<p>You can inspect the event structure using either a <em>Function</em> notifier or a <em>Webhook</em> notifier.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Function option</label><label for="__tabbed_1_2">Webhook option</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Log the full event payload directly from a function.</p>
+<p>a. <a href="../../manage-functions/create-a-function/">Create a function</a> of type <em>Notification</em> with the following definition:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">handle</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="nx">context</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"=== INPUT RECEIVED ==="</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">input</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"=== END INPUT ==="</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div>
+<p>b. <a href="../create-a-notification/">Create a dedicated notification</a> using a <a href="../notifiers/function/"><em>Function</em> notifier</a>, and select the function you just created.</p>
+<p>c. Trigger the notification based on the trigger you selected.</p>
+<p>d. Return to the function configuration and open the <strong>Last success</strong> section to view the event payload and analyze its structure.</p>
+</div>
+<div class="tabbed-block">
+<p>Inspect the event payload by sending it to a Webhook endpoint.</p>
+<p>a. <a href="../create-a-notification/">Create a dedicated notification</a> using a <a href="../notifiers/webhook/"><em>Webhook</em> notifier</a>.</p>
+<p>b. Review the received JSON payload on the Webhook endpoint to understand the event structure.</p>
+</div>
+</div>
+</div>
+<details class="example">
+<summary>Event payload example</summary>
+<p>Example of an event payload generated after a VirusTotal analyzer report is created for an observable:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8847368352"</span><span class="p">,</span>
 <span class="nt">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suspicious@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747992922320</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ioc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"VirusTotal_GetReport_3_1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VT"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetReport"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0/92"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"CyberCrime-Tracker_1_0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CCT"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C2 Search"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 hits"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"Abuse_Finder_3_0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abuse_Finder"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"ignoreSimilarity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sighted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138172568</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138172568</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8561545240"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain involved in DNS tunneling."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"case"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3275</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171189</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640200000000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToResolve"</span><span class="p">:</span><span class="w"> </span><span class="mi">594888828</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious DNS requests detected, indicating potential tunneling activity.\n  \n#### Merged with alert #compromised_account-20250203154628-800386a4 Compromised Account Detected\n\nSuspicious login activity detected for user emma@example.com."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER+STRICT"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8765923376"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171143</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"dns"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"tunneling"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"compromised"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"account"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"alertNewDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1738232244332</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1769010542427</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLEAR"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertImportedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171140</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToQualify"</span><span class="p">:</span><span class="w"> </span><span class="mi">8905926808</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640200000000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">8905893515</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"closedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertInProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138137847</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">98032244332</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNS Tunneling Detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"handlingDuration"</span><span class="p">:</span><span class="w"> </span><span class="mi">594888828</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"impactStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WithImpact"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrganisationAccessKind"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">106938137847</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fqdn"</span>
+<span class="p">},</span>
+<span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable"</span><span class="p">,</span>
+<span class="nt">"rootId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8765923376"</span><span class="p">,</span>
+<span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"VirusTotal_GetReport_3_1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetReport"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VT:GetReport=\"0/92\""</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0/92"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VT"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">},</span>
+<span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1769070800405</span><span class="p">,</span>
+<span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>
+<span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~6840459424"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Documentation"</span>
+<span class="p">},</span>
+<span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"suspicious@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747992922320</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"ioc"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"reports"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"VirusTotal_GetReport_3_1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VT"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GetReport"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0/92"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"CyberCrime-Tracker_1_0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CCT"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C2 Search"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0 hits"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"Abuse_Finder_3_0"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"taxonomies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"info"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"namespace"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Abuse_Finder"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"predicate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"ignoreSimilarity"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"sighted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138172568</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138172568</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8561545240"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Domain involved in DNS tunneling."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"case"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">3275</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171189</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640200000000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToResolve"</span><span class="p">:</span><span class="w"> </span><span class="mi">594888828</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"endDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious DNS requests detected, indicating potential tunneling activity.\n  \n#### Merged with alert #compromised_account-20250203154628-800386a4 Compromised Account Detected\n\nSuspicious login activity detected for user emma@example.com."</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER+STRICT"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8765923376"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171143</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"dns"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"tunneling"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"compromised"</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">"account"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"alertNewDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1738232244332</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1769010542427</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLEAR"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertImportedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138171140</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToQualify"</span><span class="p">:</span><span class="w"> </span><span class="mi">8905926808</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1640200000000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">8905893515</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"closedDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747733026675</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"alertInProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1747138137847</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">98032244332</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DNS Tunneling Detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"handlingDuration"</span><span class="p">:</span><span class="w"> </span><span class="mi">594888828</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"impactStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WithImpact"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"access"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"_kind"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrganisationAccessKind"</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">106938137847</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">"dataType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fqdn"</span>
+<span class="p">},</span>
+<span class="nt">"mainAction"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6348d5be16e93bc8:-15fbcccd:19be2caa21b:-8000::2872"</span><span class="p">,</span>
+<span class="nt">"objectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~8561545240"</span><span class="p">,</span>
+<span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span>
 <span class="p">}</span>
 </code></pre></div>
-<div class="admonition tip">
+</details>
+<div class="admonition info">
 <p class="admonition-title">Tag and custom field changes</p>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.</p>
 </div>
-<hr>
 </li>
 <li>
 <p>Select the relevant notifiers to configure them:</p>
 <ul>
-<li><a href="../notifiers/email-to-addr/">Configure the EmailerToAddr Notifier</a></li>
-<li><a href="../notifiers/http-request/">Configure the HttpRequest Notifier</a></li>
-<li><a href="../notifiers/mattermost/">Configure the Mattermost Notifier</a></li>
-<li><a href="../notifiers/slack/">Configure the Slack Notifier</a></li>
-<li><a href="../notifiers/teams/">Configure the Teams Notifier</a></li>
-<li><a href="../notifiers/webhook/">Configure the webhook Notifier</a></li>
-<li><a href="../notifiers/kafka/">Configure the Kafka Notifier</a></li>
-<li><a href="../notifiers/redis/">Configure the Redis Notifier</a></li>
-<li><a href="../notifiers/analyzers/">Configure the RunAnalyzer Notifier</a></li>
-<li><a href="../notifiers/responders/">Configure the RunResponder Notifier</a></li>
-<li><a href="../notifiers/function/">Configure the Function Notifier</a></li>
+<li><a href="../notifiers/email-to-addr/">EmailerToAddr</a></li>
+<li><a href="../notifiers/http-request/">HttpRequest</a></li>
+<li><a href="../notifiers/mattermost/">Mattermost</a></li>
+<li><a href="../notifiers/slack/">Slack</a></li>
+<li><a href="../notifiers/teams/">Teams</a></li>
+<li><a href="../notifiers/webhook/">Webhook</a></li>
+<li><a href="../notifiers/kafka/">Kafka</a></li>
+<li><a href="../notifiers/redis/">Redis</a></li>
+<li><a href="../notifiers/analyzers/">RunAnalyzer</a></li>
+<li><a href="../notifiers/responders/">RunResponder</a></li>
+<li><a href="../notifiers/function/">Function</a></li>
 </ul>
 </li>
 </ol>
@@ -19010,190 +19261,88 @@
 </div>
 <h3 id="case-severity-updated-to-high-or-critical">Case severity updated to High or Critical<a class="headerlink" href="#case-severity-updated-to-high-or-critical" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_gte"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"details.severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_gte"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="alert-closed-without-an-assignee">Alert closed without an assignee<a class="headerlink" href="#alert-closed-without-an-assignee" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alert"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"details.stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Closed"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object.assignee"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.assignee"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Alert"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Closed"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object.assignee"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.assignee"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="observable-updated-with-a-report-from-analyzer-crt_sh_transparency_logs_1_0">Observable updated with a report from analyzer <code>Crt_sh_Transparency_Logs_1_0</code><a class="headerlink" href="#observable-updated-with-a-report-from-analyzer-crt_sh_transparency_logs_1_0" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.reports.Crt_sh_Transparency_Logs_1_0"</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Observable"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.reports.Crt_sh_Transparency_Logs_1_0"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="responder-action-finished">Responder action finished<a class="headerlink" href="#responder-action-finished" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Action"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failure"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Action"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failure"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="case-status-updated-to-truepositive-or-falsepositive-with-the-custom-field-business-unit-set-to-sales-or-marketing">Case status updated to <code>TruePositive</code> or <code>FalsePositive</code>, with the custom field <code>business-unit</code> set to <code>Sales</code> or <code>Marketing</code><a class="headerlink" href="#case-status-updated-to-truepositive-or-falsepositive-with-the-custom-field-business-unit-set-to-sales-or-marketing" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePositive"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FalsePositive"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"object.customFieldValues.business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"object.customFieldValues.business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TruePositive"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"details.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FalsePositive"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"_or"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"object.customFieldValues.business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sales"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"object.customFieldValues.business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Marketing"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="custom-field-business-unit-updated-to-engineering">Custom field <code>business-unit</code> updated to <code>Engineering</code><a class="headerlink" href="#custom-field-business-unit-updated-to-engineering" title="Permanent link">#</a></h3>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span></p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_arrayMatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.customFieldChanges"</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">"_filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valuesAdded"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">},</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span>
-<span class="w">                    </span><span class="p">}</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"_arrayMatch"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"details.customFieldChanges"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_filter"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"valuesAdded"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business-unit"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="analyzer-emlparser_2_1-completed-successfully">Analyzer <code>EmlParser_2_1</code> completed successfully<a class="headerlink" href="#analyzer-emlparser_2_1-completed-successfully" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Job"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"object.analyzerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmlParser_2_1"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">"object.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span>
-<span class="w">            </span><span class="p">}</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Job"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"object.analyzerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EmlParser_2_1"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"_is"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"object.status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2>Next steps</h2>
