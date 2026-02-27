@@ -26,23 +26,11 @@ Configure the *Slack* [notifier](../about-notifications.md#notifiers) in TheHive
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **Slack** notifier.
 
     ---
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-    ---
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-    ---
-
-4. Select the **Slack** notifier.
-
-    ---
-
-5. In the **Slack** drawer, enter the following information:
+2. In the **Slack** drawer, enter the following information:
 
     **- Endpoint**
 
@@ -68,7 +56,7 @@ Configure the *Slack* [notifier](../about-notifications.md#notifiers) in TheHive
 
     ---
 
-6. Select the **Advanced settings** checkbox if you want to configure additional options.
+3. Select the **Advanced settings** checkbox if you want to configure additional options.
 
     !!! tip "Slack documentation to the rescue"
         - Test your integration [the postMessage page](https://api.slack.com/methods/chat.postMessage/test){target=_blank}.  
@@ -112,7 +100,7 @@ Configure the *Slack* [notifier](../about-notifications.md#notifiers) in TheHive
 
     ---
 
-7. Select **Confirm**.
+4. Select **Confirm**.
 
 <h2>Next steps</h2>
 

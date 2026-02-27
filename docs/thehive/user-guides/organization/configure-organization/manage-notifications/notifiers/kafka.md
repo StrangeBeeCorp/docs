@@ -29,15 +29,9 @@ Configure the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive
 !!! info "No endpoint required"
     An endpoint definition isn't required to send data to a Kafka topic.
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **Kafka** notifier.
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-4. Select the **Kafka** notifier.
-
-5. In the **Kafka** drawer, enter the following information:
+2. In the **Kafka** drawer, enter the following information:
 
     **- Topic**
 
@@ -47,7 +41,7 @@ Configure the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive
 
     A comma-separated list of Kafka network addresses with port numbers. These servers act as the entry point for TheHive to connect to your Kafka cluster.
 
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

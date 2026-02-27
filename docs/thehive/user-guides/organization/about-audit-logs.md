@@ -6,8 +6,7 @@ Every create, update, delete, merge, and function invocation generates an audit 
 
 TheHive displays audit logs in the **History** tab within case and alert descriptions. The most recent key events from these audit logs are also displayed in the [Live Feed](../analyst-corner/about-live-feed.md) for real-time activity monitoring.
 
-!!! tip "Tag and custom field changes"
-    <!-- md:version 5.5.9 --> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.
+{% include-markdown "includes/tag-customfield-changes.md" %}
 
 !!! info "TheHive Portal activities"
     <!-- md:version 5.6 --> <!-- md:license Platinum --> All actions performed through [TheHive Portal](../../administration/thehive-portal/about-thehive-portal.md) are recorded as audit logs in the main TheHive interface. This includes both external user activities in the portal and internal user actions to share cases, comments, and attachments with external users.

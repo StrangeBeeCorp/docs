@@ -34,6 +34,8 @@ Create a [notification](about-notifications.md) in TheHive to trigger automated 
 
 6. Select the [trigger](about-notifications.md#triggers) you want to use.
 
+    For guidance on defining a custom JSON filter to match specific events, see [Write a FilteredEvent Trigger](write-filtered-event-trigger.md).
+
     ---
 
 7. Turn on the **Enable notification** toggle to activate the notification.

@@ -26,17 +26,11 @@ Configure the *RunResponder* [notifier](../about-notifications.md#notifiers) in 
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **RunResponder** notifier.
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
+2. Select the responders you want to run.
 
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-4. Select the **RunResponder** notifier.
-
-5. Select the responders you want to run.
-
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

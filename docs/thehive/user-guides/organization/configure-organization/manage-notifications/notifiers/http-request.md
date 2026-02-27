@@ -26,23 +26,11 @@ Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in T
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **HttpRequest** notifier.
 
     ---
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-    ---
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-    ---
-
-4. Select the **HttpRequest** notifier.
-
-    ---
-
-5. In the **HttpRequest** drawer, enter the following information:
+2. In the **HttpRequest** drawer, enter the following information:
 
     **- Endpoint \***
 
@@ -68,31 +56,31 @@ Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in T
 
     ---
 
-6. Turn on the **Log errors** toggle if you want to capture and track any errors that occur when sending the HTTP request.
+3. Turn on the **Log errors** toggle if you want to capture and track any errors that occur when sending the HTTP request.
 
     ---
 
-7. {% include-markdown "includes/headers.md" %}
+4. {% include-markdown "includes/headers.md" %}
 
     ---
 
-8. {% include-markdown "includes/authentication-type.md" %}
+5. {% include-markdown "includes/authentication-type.md" %}
 
     ---
 
-9. {% include-markdown "includes/proxy-settings.md" %}
+6. {% include-markdown "includes/proxy-settings.md" %}
 
     ---
 
-10. {% include-markdown "includes/certificate-authority.md" %}
+7. {% include-markdown "includes/certificate-authority.md" %}
 
     ---
 
-11. {% include-markdown "includes/host-name-verification.md" %}
+8. {% include-markdown "includes/host-name-verification.md" %}
 
     ---
 
-12. Select **Confirm**.
+9. Select **Confirm**.
 
 <h2>Next steps</h2>
 

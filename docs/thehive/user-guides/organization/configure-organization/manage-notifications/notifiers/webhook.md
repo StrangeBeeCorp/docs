@@ -26,15 +26,9 @@ Configure the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHi
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **Webhook** notifier.
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-4. Select the **Webhook** notifier.
-
-5. In the **Webhook** drawer, select an existing endpoint.
+2. In the **Webhook** drawer, select an existing endpoint.
 
     Using a webhook as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to the webhook.
 
@@ -42,7 +36,7 @@ Configure the *Webhook* [notifier](../about-notifications.md#notifiers) in TheHi
 
     You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-webhook-endpoint.md).
 
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

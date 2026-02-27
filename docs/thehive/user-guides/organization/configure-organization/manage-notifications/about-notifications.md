@@ -57,9 +57,9 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
 #### FilteredEvent
 
-Selecting *FilteredEvent* lets TheHive define a structured JSON filter to match specific events.
+Selecting *FilteredEvent* enables the use of a custom JSON filter to match specific events.
 
-Learn how to create filtered events and explore examples in the [Write a Filtered Event Trigger](./write-filtered-event-trigger.md) topic.
+Learn how to create filtered events and explore examples in [Write a Filtered Event Trigger](./write-filtered-event-trigger.md).
 
 ### Notifiers
 

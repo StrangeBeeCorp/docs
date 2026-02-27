@@ -11,15 +11,9 @@ Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **EmailerToUser** notifier.
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-4. Select the **EmailerToUser** notifier.
-
-5. In the **EmailerToUser** drawer, enter the following information:
+2. In the **EmailerToUser** drawer, enter the following information:
 
     **- Subject**
 
@@ -37,7 +31,7 @@ Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in
 
     {% include-markdown "includes/templates-helpers.md" %}
 
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

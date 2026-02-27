@@ -26,15 +26,9 @@ Configure the *Mattermost* [notifier](../about-notifications.md#notifiers) in Th
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **Mattermost** notifier.
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-4. Select the **Mattermost** notifier.
-
-5. In the **Mattermost** drawer, enter the following information:
+2. In the **Mattermost** drawer, enter the following information:
 
     **- Endpoint**
 
@@ -58,7 +52,7 @@ Configure the *Mattermost* [notifier](../about-notifications.md#notifiers) in Th
     
     {% include-markdown "includes/templates-helpers.md" %}
 
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 

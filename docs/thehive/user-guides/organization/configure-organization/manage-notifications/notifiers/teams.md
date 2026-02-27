@@ -26,23 +26,11 @@ Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) 
 
 <h2>Procedure</h2>
 
-1. {% include-markdown "includes/organization-view-go-to.md" %}
+1. When [creating a new notification](../create-a-notification.md) or editing an existing one, select the **Teams** notifier.
 
     ---
 
-2. {% include-markdown "includes/notifications-tab-go-to.md" %}
-
-    ---
-
-3. Select :fontawesome-solid-ellipsis: next to the notification where you want to add the notifier, then select **Edit**.
-
-    ---
-
-4. Select the **Teams** notifier.
-
-    ---
-
-5. In the **Teams** drawer, enter the following information:
+2. In the **Teams** drawer, enter the following information:
 
     **- Endpoint**
 
@@ -167,7 +155,7 @@ Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) 
 
     ---
 
-6. Select **Confirm**.
+3. Select **Confirm**.
 
 <h2>Next steps</h2>
 
