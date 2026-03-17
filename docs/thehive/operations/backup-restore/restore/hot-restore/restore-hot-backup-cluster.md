@@ -66,7 +66,7 @@ For additional details, refer to the official [Cassandra documentation](https://
 
 Finally, we're going to restore the file attachments that were backed up.
 
-The restore procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses MinIO as an example, but you can adapt the same approach to any S3-compatible implementation.
+The restore procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
 
 === "NFS"
 
@@ -78,21 +78,23 @@ The restore procedure depends on your storage backend—either NFS or an S3-comp
 
     {% include-markdown "includes/hot-restore-file-storage-local-nfs.md" %}
 
-=== "S3-compatible object storage (MinIO example)"
+=== "S3-compatible object storage (SeaweedFS example)"
+
+    {% include-markdown "includes/s3-client-required.md" %}
 
     ### 1. Prepare the restore script
 
     Before running the script, you'll need to update several values to match your environment:
 
-    * Update `MINIO_ENDPOINT` with your MinIO server URL.
-    * Update `MINIO_ACCESS_KEY` with your MinIO access key.
-    * Update `MINIO_SECRET_KEY` with your MinIO secret key.
-    * Change `MINIO_BUCKET` if you want to use a different bucket name.
-    * Change `MINIO_ALIAS` if you want to use a different alias name.
+    * Update `SEAWEEDFS_ENDPOINT` with your SeaweedFS server URL.
+    * Update `SEAWEEDFS_ACCESS_KEY` with your SeaweedFS access key.
+    * Update `SEAWEEDFS_SECRET_KEY` with your SeaweedFS secret key.
+    * Change `SEAWEEDFS_BUCKET` if you want to use a different bucket name.
+    * Change `SEAWEEDFS_ALIAS` if you want to use a different alias name.
 
     ### 2. Run the restore script
 
-    {% include-markdown "includes/hot-restore-file-storage-minio.md" %}
+    {% include-markdown "includes/hot-restore-file-storage-seaweedfs.md" %}
 
 ## Step 4: Start TheHive on all nodes and verify
 

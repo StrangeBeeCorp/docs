@@ -418,16 +418,9 @@ To set up shared file storage for TheHive in a clustered environment, several op
 
 === "S3-compatible object storage"
 
-    TheHive can store files in object storage that implements the Amazon S3 API. This includes [Amazon S3](https://aws.amazon.com/s3/){target=_blank} itself, as well as many S3-compatible services, whether managed or self-hosted.
+    TheHive can store files in object storage that implements the Amazon S3 API. This includes [Amazon S3](https://aws.amazon.com/s3/){target=_blank} itself, as well as many S3-compatible services, whether managed by a cloud provider or self-hosted.
 
-    Commonly used S3-compatible options include:
-
-    * [Cloudflare R2](https://developers.cloudflare.com/r2/){target=_blank}
-    * [DigitalOcean Spaces](https://www.digitalocean.com/products/spaces){target=_blank}
-    * [Wasabi](https://wasabi.com/){target=_blank}
-    * [Backblaze B2](https://www.backblaze.com/cloud-storage){target=_blank}
-    * [MinIO](https://www.min.io/){target=_blank}
-    * [Ceph Object Gateway](https://docs.ceph.com/en/reef/radosgw/){target=_blank}
+    Several object storage solutions are compatible with TheHive. For example, the [SeaweedFS](https://github.com/seaweedfs/seaweedfs){target=_blank} S3-compatible storage system has been tested and works well with TheHive. You can also use object storage provided by your cloud provider or any other service implementing the S3 API.
 
     !!! note "Endpoint and availability"
         From TheHive perspective, you configure a single S3 endpoint. If you self-host object storage, ensure the endpoint is highly available, for example via the storage platform itself or a correctly configured load balancer.
@@ -578,7 +571,7 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
     * An existing bucket
     * An access key and secret key (or equivalent credentials for your storage service)
     * The S3-compatible endpoint URL
-    * The region configured for your S3 service (if applicable)
+    * The region configured for your S3 service (if it doesn't define one, use `us-east-1`)
 
     To enable S3 file storage in a TheHive cluster, configure the storage section in `/etc/thehive/application.conf` on each TheHive node, using the same bucket and endpoint settings.
 
@@ -603,8 +596,8 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
             }
         ```
 
-    !!! note "Access style and endpoint"
-        Some S3-compatible providers require path-style access, while others support or prefer virtual-hosted style. If you encounter addressing issues, adjust `access-style` accordingly.
+    !!! note "Access style"
+        Some S3-compatible providers require path-style access, while others support or prefer virtual-hosted style. SeaweedFS requires path-style access when used with TheHive.
 
     !!! note "High availability"
         Managed services expose a single highly available endpoint. For self-hosted S3-compatible platforms, ensure your endpoint is highly available, for example via the storage platform itself or a properly configured load balancer.

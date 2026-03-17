@@ -2,7 +2,7 @@
 
 In this tutorial, we're going to guide you through performing a hot backup of TheHive on a cluster using the provided scripts.
 
-By the end, you'll have created complete backups of your database and search index across all three nodes, plus your file storage
+By the end, you'll have created complete backups of your database and search index across all three nodes, plus your file storage.
 
 Hot backups let you protect your data while keeping TheHive running, which means zero downtime for your security operations team.
 
@@ -212,7 +212,7 @@ For more details about snapshot management, refer to the official [Cassandra doc
 
 Finally, we're going to back up TheHive file storage, which contains all the attachments and files.
 
-The backup procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses MinIO as an example, but you can adapt the same approach to any S3-compatible implementation.
+The backup procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
 
 === "NFS"
 
@@ -226,31 +226,33 @@ The backup procedure depends on your storage backend—either NFS or an S3-compa
 
     After running the script, the backup archive is available at `/mnt/backup/storage`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
 
-=== "S3-compatible object storage (MinIO example)"
+=== "S3-compatible object storage (SeaweedFS example)"
+
+    {% include-markdown "includes/s3-client-required.md" %}
 
     ### 1. Prepare the backup script
 
     Before running the script, you'll need to update several values to match your environment:
 
-    * Update `MINIO_ENDPOINT` with your MinIO server URL.
-    * Update `MINIO_ACCESS_KEY` with your MinIO access key.
-    * Update `MINIO_SECRET_KEY` with your MinIO secret key.
-    * Change `MINIO_BUCKET` if you want to use a different bucket name.
-    * Change `MINIO_ALIAS` if you want to use a different alias name.
+    * Update `SEAWEEDFS_ENDPOINT` with your SeaweedFS server URL.
+    * Update `SEAWEEDFS_ACCESS_KEY` with your SeaweedFS access key.
+    * Update `SEAWEEDFS_SECRET_KEY` with your SeaweedFS secret key.
+    * Change `SEAWEEDFS_BUCKET` if you want to use a different bucket name.
+    * Change `SEAWEEDFS_ALIAS` if you want to use a different alias name.
 
-    ### 2. Configure the MinIO alias
+    ### 2. Configure the SeaweedFS alias
 
-    Run this command once to configure the MinIO alias using the same values you defined in the script:
+    Run this command once to configure the SeaweedFS alias using the same values you defined in the script:
     
     ```bash
-    mcli alias set <minio_alias> <minio_endpoint> <minio_access_key> <minio_secret_key>
+    mcli alias set <th_seaweedfs> <seaweedfs_endpoint> <seaweedfs_access_key> <seaweedfs_secret_key>
     ```
 
     ### 3. Run the backup script
 
-    {% include-markdown "includes/hot-backup-file-storage-minio.md" %}
+    {% include-markdown "includes/hot-backup-file-storage-seaweedfs.md" %}
 
-    After running the script, the backup archive is available at `/mnt/backup/minio`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
+    After running the script, the backup archive is available at `/mnt/backup/seaweedfs`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
 
 You've completed the hot backup process for your TheHive cluster. We recommend verifying your backup archives are complete and accessible before relying on them for recovery.
 

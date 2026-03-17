@@ -1,0 +1,2 @@
+!!! warning "Required S3 client"
+    You need an S3-compatible client to sync or mirror the bucket locally. The example uses `mc`. [Install it](https://github.com/minio/mc){target=_blank} before continuing. If you prefer another tool, adapt the commands accordingly.
