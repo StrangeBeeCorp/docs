@@ -16566,6 +16566,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#562-march-17-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.6.2 - March 17, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#561-february-25-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -18880,6 +18891,25 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>The public API v0 has been deprecated since TheHive 5.4. It should no longer be used. Please use the API v1 endpoints (<code>/api/v1</code>) instead.</p>
 </div>
+<h2 id="562-march-17-2026">5.6.2 - March 17, 2026<a class="headerlink" href="#562-march-17-2026" title="Permanent link">#</a></h2>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Cases: Creating a restricted or external case from scratch now correctly checks user permissions and the allowed user list before the case is created.</li>
+<li>Markdown: The standard undo and redo keyboard shortcuts are operational again in the Markdown editor.</li>
+<li>Case preview: Counters for tasks, observables, and TTPs now update in real time.</li>
+<li>Timeline: Timeline events no longer render HTML content, which keeps event details displayed as plain text.</li>
+<li>Global endpoints: Fixed an issue affecting the organization input field when editing global endpoints.</li>
+<li>Case pages: Long code lines in Markdown blocks now wrap correctly on case pages.</li>
+</ul>
+<h3 id="vulnerabilities">Vulnerabilities<a class="headerlink" href="#vulnerabilities" title="Permanent link">#</a></h3>
+<ul>
+<li>Images: Restricted accepted image MIME types to PNG, JPG, and JPEG.</li>
+</ul>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<ul>
+<li>Cases: You can now filter the case list by restricted cases.</li>
+<li>Organizations: The user list now includes a profile type column.</li>
+</ul>
 <h2 id="561-february-25-2026">5.6.1 - February 25, 2026<a class="headerlink" href="#561-february-25-2026" title="Permanent link">#</a></h2>
 <h3 id="regression-fix">Regression fix<a class="headerlink" href="#regression-fix" title="Permanent link">#</a></h3>
 <ul>
@@ -18889,7 +18919,7 @@
 <ul>
 <li>This update includes a patch addressing a vulnerability that hasn't been exploited in the wild. Further details will be provided soon in a dedicated security bulletin, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md" target="_blank">Responsible Vulnerability Disclosure Policy</a>.</li>
 </ul>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Cases: Fixed an issue where case data didn’t refresh correctly when navigating between cases.</li>
 <li>Case templates: Resolved a display issue in the case templates list to ensure action buttons remain accessible, even when template names are very long.</li>
@@ -18921,10 +18951,10 @@
 <p class="admonition-title">Legacy views migration</p>
 <p>Legacy saved views are automatically migrated to private backend views on login, when no equivalent backend view exists.</p>
 </div>
-<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
 <h4 id="filter-user-experience">Filter user experience<a class="headerlink" href="#filter-user-experience" title="Permanent link">#</a></h4>
 <p>The filter component has been redesigned to provide a more intuitive and responsive experience across cases, alerts, and tasks. It now offers increased flexibility and finer-grained filtering, while enabling more advanced frontend customization.</p>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <ul>
 <li>SSO authentication: Fixed an issue with the Spanish translation.</li>
 <li>LDAP sync: Corrected the placeholder to display the appropriate attribute.</li>
