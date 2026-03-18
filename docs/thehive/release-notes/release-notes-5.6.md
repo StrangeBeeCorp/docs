@@ -2,6 +2,26 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.6.2 - March 17, 2026
+
+### Fixes
+
+* Cases: Creating a restricted or external case from scratch now correctly checks user permissions and the allowed user list before the case is created.
+* Markdown: The standard undo and redo keyboard shortcuts are operational again in the Markdown editor.
+* Case preview: Counters for tasks, observables, and TTPs now update in real time.
+* Timeline: Timeline events no longer render HTML content, which keeps event details displayed as plain text.
+* Global endpoints: Fixed an issue affecting the organization input field when editing global endpoints.
+* Case pages: Long code lines in Markdown blocks now wrap correctly on case pages.
+
+### Vulnerabilities
+
+* Images: Restricted accepted image MIME types to PNG, JPG, and JPEG.
+
+### Improvements
+
+* Cases: You can now filter the case list by restricted cases.
+* Organizations: The user list now includes a profile type column.
+
 ## 5.6.1 - February 25, 2026
 
 ### Regression fix
