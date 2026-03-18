@@ -2,40 +2,19 @@
 
 <!-- md:license Gold --> <!-- md:license Platinum -->
 
-Organizations that receive alert data by email can use email intake connectors to automate the creation of alerts in TheHive.
+Organizations that receive alert data by email can use email intake connectors to automate alert creation in TheHive.
 
 ## Usage
 
-Email intake connectors integrate mailboxes that receive alerts.
+Email intake connectors automatically processes incoming emails and creates alerts in TheHive.
 
-It automatically processes incoming emails, extracts relevant information, and creates alerts within TheHive platform. The email itself, its sender, and any attached files are automatically added as observables within the respective alerts.
+Each alert includes the following observables:
 
-!!! tip "Parsing emails"
-    The content of the email itself isn't automatically parsed when creating the alert. To enable observable extraction, a [notification](../../user-guides/organization/configure-organization/manage-notifications/create-a-notification.md) must trigger [a FilteredEvent](../../user-guides/organization/configure-organization/manage-notifications/write-filtered-event-trigger.md) that [runs the *EmlParser* analyzer](../../user-guides/organization/configure-organization/manage-notifications/notifiers/analyzers.md).
+* The email file (`.eml`)
+* The sender's email address
+* Any file attachments
 
-    Below is an example of the FilteredEvent trigger:
-
-    ```json
-    {
-        "_and": [
-            {
-                "_is": {
-                    "action": "create"
-                }
-            },
-            {
-                "_is": {
-                    "objectType": "Observable"
-                }
-            },
-            {
-                "_is": {
-                    "object.alert.type": "email-intake"
-                }
-            }
-        ]
-    }
-    ```
+The email body isn't parsed for observables by default. To extract them, run the *EmlParser* analyzer manually, or [automate extraction using a notification](../../user-guides/automate-extraction-observables-from-emails.md).
 
 ## Data mapping
 
@@ -90,3 +69,4 @@ Only users with an admin-type profile that has the `managePlatform` permission c
 * [Connect a Mailbox](connect-a-mailbox.md)
 * [Delete a Mailbox](delete-a-mailbox-connection.md)
 * [Manually Trigger Email Fetch in a Mailbox](fetch-emails.md)
+* [Automate Extraction of Observables from Emails](../../user-guides/automate-extraction-observables-from-emails.md)

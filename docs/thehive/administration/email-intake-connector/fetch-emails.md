@@ -20,3 +20,4 @@ Manually trigger email fetch in a [mailbox](about-email-intake-connectors.md) in
 
 * [Connect a Mailbox](connect-a-mailbox.md)
 * [Delete a Mailbox](delete-a-mailbox-connection.md)
+* [Automate Extraction of Observables from Emails](../../user-guides/automate-extraction-observables-from-emails.md)

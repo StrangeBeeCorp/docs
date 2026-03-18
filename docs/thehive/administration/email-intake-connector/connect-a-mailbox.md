@@ -500,3 +500,4 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
 * [Delete a Mailbox Connection](delete-a-mailbox-connection.md)
 * [Manually Trigger Email Fetch in a Mailbox](fetch-emails.md)
+* [Automate Extraction of Observables from Emails](../../user-guides/automate-extraction-observables-from-emails.md)

@@ -698,6 +698,7 @@ nav:
       - 'Automation Hacks':
         - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
         - 'Tutorial: Automate Monitoring of Tasks Approaching Their Due Date': thehive/user-guides/automate-monitoring-tasks-approaching-due-date.md
+        - 'Tutorial: Automate Extraction of Observables from Emails': thehive/user-guides/automate-extraction-observables-from-emails.md
       - 'Analyst Corner':
         - 'Alerts Management':
           - 'About Alerts': thehive/user-guides/analyst-corner/alerts/about-alerts.md
