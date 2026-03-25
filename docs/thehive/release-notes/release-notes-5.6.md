@@ -24,13 +24,11 @@
 
 ## 5.6.1 - February 25, 2026
 
+Last update: March 25, 2026
+
 ### Regression fix
 
 * Private cases: Resolved a regression introduced in 5.6.0 that prevented Service users from accessing private cases.
-
-### Security fixes
-
-* This update includes a patch addressing a vulnerability that hasn't been exploited in the wild. Further details will be provided soon in a dedicated security bulletin, in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md){target=_blank}.
 
 ### Fixes
 
