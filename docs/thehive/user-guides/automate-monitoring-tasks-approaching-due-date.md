@@ -70,7 +70,7 @@ This helps teams stay ahead of deadlines and reduce the risk of overdue tasks.
     | Key    | Value | Description |
     | -------- | ------- | ------- |
     | `Content-Type` | `application/json` | Specifies that the request payload is formatted as JSON. |
-    | `X-organisation` | `<organization_name>`     | Optional. Specifies the organization to use for the request when you belong to multiple organizations. If omitted, the default organization is used. Replace `<organization_name>` with the name of the organization in which you want the HTTP request to be executed.|
+    | `X-Organisation` | `<organization_name>`     | Optional. Specifies the organization to use for the request when you belong to multiple organizations. If omitted, the default organization is used. Replace `<organization_name>` with the name of the organization in which you want the HTTP request to be executed.|
 
 6. In the **Authentication** section, enter the following information:
 

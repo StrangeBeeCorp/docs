@@ -144,7 +144,7 @@ This alert feeder will periodically search for alerts that meet the criteria and
 
     | Key    | Value | Description |
     | -------- | ------- |
-    | `X-organisation` | `<organization_name>`     | Specifies the organization to use for the request. If omitted, the default organization is used.|
+    | `X-Organisation` | `<organization_name>`     | Specifies the organization to use for the request. If omitted, the default organization is used.|
 
     Replace `<organization_name>` with the name of the organization in which you want the HTTP request to be executed.
 
