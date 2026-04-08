@@ -29,7 +29,7 @@ This helps teams stay ahead of deadlines and reduce the risk of overdue tasks.
 
     **- Interval**: `30 minutes`
 
-    **- Request timeout time**: `10 seconds`
+    **- Request timeout time**: `10 minutes`
 
     **- Request response max size**: `10`
 
