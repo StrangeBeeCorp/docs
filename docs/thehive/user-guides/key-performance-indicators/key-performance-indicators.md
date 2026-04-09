@@ -2,9 +2,9 @@
 
 <!-- md:version 5.1 -->
 
-TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md) and [alerts](../analyst-corner/alerts/about-alerts.md).
+TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for [cases](../analyst-corner/cases/about-cases.md), [alerts](../analyst-corner/alerts/about-alerts.md), and <!-- md:version 5.7 --> [tasks](../analyst-corner/tasks/about-tasks.md).
 
-These KPIs are displayed by default on all cases and alerts in TheHive. However, you can [hide some or all indicators](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md) if they're not useful or may be misleading for your organization.
+These KPIs are displayed by default in TheHive. However, you can [hide some or all indicators for cases and alerts](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md) if they're not useful or may be misleading for your organization.
 
 You can also include these KPIs in dashboards and case reports.
 
@@ -53,11 +53,19 @@ The time it takes for your Security team to fully resolve an incident after its 
 !!! note "handlingDuration"
     The `handlingDuration` field is available for cases and alerts in the API. The calculation is based on the difference between the end of the case date or the alert merge into case date, and the incident creation date in TheHive.  
 
-    This field is a relic from older TheHive versions and can be slow to calculate. Use the time to resolve metric instead.
+    This field is a relic from older TheHive versions and can be slow to calculate. Use the Time to resolve metric instead.
 
----
+## Time to handle tasks
 
-For more information on these KPIs, consult this [SecurityScorecard blog post](https://securityscorecard.com/blog/kpis-for-security-operations-incident-response/){target=_blank}.
+<!-- md:version 5.7 -->
+
+The time it takes for your Security team to complete a task, from the moment work begins to when the task is marked as completed. This metric helps identify bottlenecks and measure team efficiency at the task level.
+
+It's only available when a task has the status *Completed*.
+
+| KPI | Formula |
+|-----------|------------------|
+| Time to handle | = `task.endDate` - `task.startDate` |
 
 <h2>Next steps</h2>
 
@@ -65,3 +73,4 @@ For more information on these KPIs, consult this [SecurityScorecard blog post](h
 * [Hide Key Performance Indicators](../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators.md)
 * [Measure Case Performance](measure-case-management-performance.md)
 * [Measure Alert Performance](measure-alert-management-performance.md)
+* [Measure Task Performance](measure-task-management-performance.md)

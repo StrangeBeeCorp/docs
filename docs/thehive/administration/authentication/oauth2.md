@@ -62,7 +62,7 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
     Defines the type of token to pass in the authorization header, typically:
 
     * Bearer (most common)
-    * Basic (used for basic authentication)
+    * Basic (used for Basic authentication)
 
     **- Token URL**
 
@@ -123,48 +123,51 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
 
         | Parameter                                           | Value                                                               |
         |-----------------------------------------------------|---------------------------------------------------------------------|
-        | Client ID                                           | <client_id>                                                         |
-        | Client secret                                       | <client_secret>                                                    |
-        | TheHive redirect URL                                | https://<thehive_url>/api/ssoLogin                                |
-        | Grant type                                          | authorization_code                                  |
-        | Authorization URL                                   | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth     |
-        | Prefix of the authorization header                  | Bearer                                |
-        | Token URL                                           | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token    |
-        | User information URL                                | http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo |
-        | List of scope                                       | ["openid", "email"]                                               |
-        | Field that contains the id of the user in user info | "email"                                                             |
+        | Client ID                                           | `<client_id>`                                                         |
+        | Client secret                                       | `<client_secret>`                                                    |
+        | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`                                |
+        | Grant type                                          | `authorization_code`                                  |
+        | Authorization URL                                   | `https://<keycloak_url>/auth/realms/<realm_name>/protocol/openid-connect/auth`     |
+        | Prefix of the authorization header                  | `Bearer`                                |
+        | Token URL                                           | `https://<keycloak_url>/auth/realms/<realm_name>/protocol/openid-connect/token`    |
+        | User information URL                                | `https://<keycloak_url>/auth/realms/<realm_name>/protocol/openid-connect/userinfo` |
+        | List of scopes                                       | `["openid", "email"]`                                               |
+        | Field that contains the id of the user in user info | `"email"`   |
+        
+        !!! Note "Keycloak URL"
+            The `/auth` prefix may vary depending on your Keycloak version.                                                          
         
     === "Okta"
 
         | Parameter                                           | Value                            |
         |-----------------------------------------------------|----------------------------------|
-        | Client ID                                           | <client_id>                    |
-        | Client secret                                       | <client_secret>                  |
-        | TheHive redirect URL                                | http://<thehive_url>/api/ssoLogin  |
-        | Grant type                                          | authorization_code                                  |
-        | Authorization URL                                   | https://OKTA/oauth2/v1/authorize |
-        | Prefix of the authorization header                  | Bearer                                |
-        | Token URL                                           | http://OKTA/oauth2/v1/token      |
-        | User information URL                                | http://OKTA/oauth2/v1/userinfo   |
-        | List of scope                                       | ["openid", "email"]            |
-        | Field that contains the id of the user in user info | "email"                          |
+        | Client ID                                           | `<client_id>`                    |
+        | Client secret                                       | `<client_secret>`                  |
+        | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`  |
+        | Grant type                                          | `authorization_code`                                  |
+        | Authorization URL                                   | `https://<okta_domain>/oauth2/<auth_server_id>/v1/authorize` |
+        | Prefix of the authorization header                  | `Bearer`                                |
+        | Token URL                                           | `https://<okta_domain>/oauth2/<auth_server_id>/v1/token`      |
+        | User information URL                                | `https://<okta_domain>/oauth2/<auth_server_id>/v1/userinfo`   |
+        | List of scopes                                       | `["openid", "email"]`            |
+        | Field that contains the id of the user in user info | `"email"`                          |
 
     === "GitHub"
 
         | Parameter                                           | Value                                       |
         |-----------------------------------------------------|---------------------------------------------|
-        | Client ID                                           | <client_id>                                 |
-        | Client secret                                       | <client_secret>                             |
-        | TheHive redirect URL                                | https://<thehive_url>/api/ssoLogin            |
-        | Grant type                                          | authorization_code                                  |
-        | Authorization URL                                   | https://github.com/login/oauth/authorize    |
-        | Prefix of the authorization header                  | Bearer                                |
-        | Token URL                                           | https://github.com/login/oauth/access_token |
-        | User information URL                                | https://api.github.com/user                 |
-        | List of scope                                       | ["user"]                                  |
-        | Field that contains the id of the user in user info | "email"                                     |
+        | Client ID                                           | `<client_id>`                                 |
+        | Client secret                                       | `<client_secret>`                             |
+        | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`            |
+        | Grant type                                          | `authorization_code`                                  |
+        | Authorization URL                                   | `https://github.com/login/oauth/authorize`    |
+        | Prefix of the authorization header                  | `Bearer`                                |
+        | Token URL                                           | `https://github.com/login/oauth/access_token` |
+        | User information URL                                | `https://api.github.com/user`                 |
+        | List of scopes                                       | `["user"]`                                  |
+        | Field that contains the id of the user in user info | `"email"`                                     |
         
-        !!! note "GitHub configuration"
+        !!! Note "GitHub configuration"
 
             * Generate the `<client_id>` and `<client_secret>` in the OAuth Apps section at [GitHub Developer Settings](https://github.com/settings/developers){target=_blank}.
             * Ensure users set a public email address in their profile at [GitHub Profile Settings](https://github.com/settings/profile){target=_blank} for this configuration to work correctly.
@@ -173,36 +176,36 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
 
         | Parameter                                           | Value                                                          |
         |-----------------------------------------------------|----------------------------------------------------------------|
-        | Client ID                                           | <client_id>                                                    |
-        | Client secret                                       | <client_secret>                                                |
-        | TheHive redirect URL                                | https://<thehive_url>/api/ssoLogin                               |
-        | Grant type                                          | authorization_code                                  |
-        | Authorization URL                                   | https://login.microsoftonline.com/<tenant>/oauth2/v2.0/authorize |
-        | Prefix of the authorization header                  | Bearer                                |
-        | Token URL                                           | https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token     |
-        | User information URL                                | https://graph.microsoft.com/v1.0/me                            |
-        | List of scope                                       | ["User.Read"]                                                |
-        | Field that contains the id of the user in user info | "mail"                                                         |
+        | Client ID                                           | `<client_id>`                                                    |
+        | Client secret                                       | `<client_secret>`                                                |
+        | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`                               |
+        | Grant type                                          | `authorization_code`                                  |
+        | Authorization URL                                   | `https://login.microsoftonline.com/<tenant>/oauth2/v2.0/authorize` |
+        | Prefix of the authorization header                  | `Bearer`                                |
+        | Token URL                                           | `https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token`     |
+        | User information URL                                | `https://graph.microsoft.com/v1.0/me`                            |
+        | List of scopes                                       | `["User.Read"]`                                                |
+        | Field that contains the id of the user in user info | `"mail"`                                                         |
 
-        !!! note "Microsoft configuration"
+        !!! Note "Microsoft configuration"
             To generate the `<client_id>`, `<client_secret>` and `<tenant>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps){target=_blank}.
 
     === "Google" 
 
         | Parameter                                           | Value                                            |
         |-----------------------------------------------------|--------------------------------------------------|
-        | Client ID                                           | <client_id>                                      |
-        | Client secret                                       | <client_secret>                                  |
-        | TheHive redirect URL                                | https://<thehive_url>/api/ssoLogin                 |
-        | Grant type                                          | authorization_code                                  |
-        | Authorization URL                                   | https://accounts.google.com/o/oauth2/v2/auth     |
-        | Prefix of the authorization header                  | Bearer                                |
-        | Token URL                                           | https://oauth2.googleapis.com/token              |
-        | User information URL                                | https://openidconnect.googleapis.com/v1/userinfo |
-        | List of scope                                       | ["email", "profile", "openid"]                 |
-        | Field that contains the id of the user in user info | "email"                                          |
+        | Client ID                                           | `<client_id>`                                      |
+        | Client secret                                       | `<client_secret>`                                  |
+        | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`                 |
+        | Grant type                                          | `authorization_code`                                  |
+        | Authorization URL                                   | `https://accounts.google.com/o/oauth2/v2/auth`     |
+        | Prefix of the authorization header                  | `Bearer`                                |
+        | Token URL                                           | `https://oauth2.googleapis.com/token`              |
+        | User information URL                                | `https://openidconnect.googleapis.com/v1/userinfo` |
+        | List of scopes                                       | `["email", "profile", "openid"]`                 |
+        | Field that contains the id of the user in user info | `"email"`                                          |
         
-        !!! note "Google configuration"
+        !!! Note "Google configuration"
 
             * Generate the `<client_id>` and `<client_secret>` in the **APIs & Services > Credentials** section of the [Google Cloud Console](https://console.cloud.google.com/apis/credentials){target=_blank}.
             * Follow the [Google OAuth 2.0 credentials guide](https://support.google.com/cloud/answer/6158849){target=_blank} for step-by-step instructions.

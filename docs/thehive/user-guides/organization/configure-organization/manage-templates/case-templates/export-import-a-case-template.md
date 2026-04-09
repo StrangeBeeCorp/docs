@@ -5,7 +5,7 @@
 Export a [case template](about-case-templates.md) from TheHive to share it with another organization or TheHive instance, or import a case template to reuse configurations created elsewhere.
 
 !!! info "Share and discover case templates"
-    Contribute to and find case templates in our [public GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Case%20Templates){target=_blank}.  
+    Contribute to and find case templates in our [public GitHub repository](https://github.com/StrangeBeeCorp/integrations/tree/main/integrations/generic/case-templates){target=_blank}.  
 
     Before submitting your pull request:
 

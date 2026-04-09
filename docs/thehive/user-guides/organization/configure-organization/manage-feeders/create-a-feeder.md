@@ -65,9 +65,83 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
 7. {% include-markdown "includes/authentication-type.md" %}
 
+    * **None**: Use this method when the external API doesn't require authentication.
+    * **Basic**: Use this method to authenticate using HTTP Basic authentication.  
+    Enter the username and password provided by the external system, which will be sent in the `Authorization` header.
+    * **Key**: Use this method to authenticate using an API key.  
+    Enter the API key provided by the external system.
+    * **Bearer**: Use this method to authenticate using a bearer token.  
+    Enter the bearer token, which will be sent in the `Authorization` header.
+    * <!-- md:version 5.7 --> **OAuth 2.0** (client credentials): Use this method to authenticate with an OAuth 2.0 authorization server using the client credentials grant type.
+
+        **- Client authentication method \***
+
+        Defines how the client credentials are sent to the token endpoint.
+
+        Supported values:
+
+        * `client_secret_post`: The client credentials are sent in the request body as form parameters.
+        * `client_secret_basic`: The client credentials are sent in the HTTP `Authorization` header using Basic authentication.
+      
+        **- Client ID \***
+
+        The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. TheHive uses this identifier to authenticate with the OAuth server during the authorization process.
+
+        **- Client secret \***
+
+        A confidential string issued by the OAuth 2.0 provider, used along with the client ID to authenticate TheHive securely.
+
+        **- Token URL \***
+
+        The OAuth 2.0 token endpoint used to obtain an access token.
+
+        **- Scope**
+
+        Optional list of scopes to request from the authorization server.
+
+        **- Token parameters**
+
+        Additional parameters to include in the token request.
+
+        !!! Example "Examples"
+
+            === "Keycloak"
+
+                | Parameter                                           | Value                                                          |
+                |-----------------------------------------------------|----------------------------------------------------------------|
+                | Client authentication method                        | `client_secret_post`                                                 |
+                | Client ID                                           | `<client_id>`                                                  |
+                | Client secret                                       | `<client_secret>`                                                |
+                | Token URL                                           | `https://<keycloak_url>/auth/realms/<realm_name>/protocol/openid-connect/token`      |
+                | Scope                                       | `["openid", "email"]`                                               |
+
+                !!! Note "Keycloak URL"
+                    The `/auth` prefix may vary depending on your Keycloak version.
+
+            === "Microsoft 365"
+
+                | Parameter                                           | Value                                                          |
+                |-----------------------------------------------------|----------------------------------------------------------------|
+                | Client authentication method                        | `client_secret_post`                                            |
+                | Client ID                                           | `<client_id>`                                                    |
+                | Client secret                                       | `<client_secret>`                                                |
+                | Token URL                                           | `https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token`     |
+                | Scope                                       | `["User.Read"]`                                              |
+
+                !!! note "Microsoft configuration"
+                    To generate the `<client_id>`, `<client_secret>` and `<tenant>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps){target=_blank}.
+
     ---
 
-8. {% include-markdown "includes/proxy-settings.md" %}
+8. In the **Proxy settings** section, select the proxy settings you want to apply:
+
+    * *Default configuration*
+    * *Disabled*
+    * *Enabled*:
+        * Enter the type of protocol, either HTTP or HTTPS.
+        * Enter the IP address or domain name of the proxy server.
+        * Enter the port number used by the proxy server.
+        * The username and password to authenticate with the proxy server.
 
     ---
 
@@ -102,7 +176,20 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
     ---
 
-13. {% include-markdown "includes/test-function.md" %}
+13. In the **Test function** section, you can test your function as follows:
+
+      * Enter input data by selecting *input*.
+
+      * Select one of the following:
+
+          * **Run function (dry-run)** to simulate the function without sending data.
+          * **Run function** to execute the function with actual data.
+
+      * After running the function, select one of the following to view results:
+
+          * *result* to view the function’s output
+          * *stdout* to display standard output from the function
+          * *stderr* to display errors and warnings
 
     ---
 
@@ -167,7 +254,7 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
 ### Feeder function
 
-You can find the function example for creating an alert from Airtable in the [GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js){target=_blank}.
+You can find the function example for creating an alert from Airtable in the [GitHub repository](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/airtable-alertfromairtable.md){target=_blank}.
 
 <h2>Next steps</h2>
 

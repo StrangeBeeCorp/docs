@@ -1,1 +1,1 @@
-In the **Authentication** section, select an authentication type if required.
+In the **Authentication** section, select an authentication type.

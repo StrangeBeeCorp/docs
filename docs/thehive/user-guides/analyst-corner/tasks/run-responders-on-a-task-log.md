@@ -6,6 +6,8 @@
 
 Run responders on a [task log](about-task-logs.md) in TheHive to take automated actions, such as improving its readability or clarity. Responders generate reports documenting the actions taken.
 
+Only responders authorized for task logs and matching their case's TLP (traffic light protocol) and PAP (permissible actions protocol) levels are available.
+
 ## Run responders on a task log
 
 1. [Locate the task](./search-for-tasks/find-a-task.md) that contains the task log on which you want to run responders.

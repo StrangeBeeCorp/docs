@@ -99,7 +99,7 @@ Before running the script, you'll need to update several values to match your en
 
 {% include-markdown "includes/hot-backup-cassandra-elasticsearch-snapshots.md" %}
 
-After running the script, the backup archives are available at `/mnt/backup/cassandra` and `/mnt/backup/elasticsearch`. Be sure to copy these archives to a separate server or storage location to safeguard against data loss if the TheHive server fails.
+After running the script, the backup archives are available at `/mnt/backup/cassandra` and `/mnt/backup/elasticsearch`. Be sure to copy these archives to a separate server or storage location to safeguard against data loss if TheHive server fails.
 
 For more details about snapshot management, refer to the official [Cassandra documentation](https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html){target=_blank} and [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html){target=_blank}.
 
@@ -115,7 +115,7 @@ Before running the script, update `ATTACHMENT_FOLDER` to match your environment.
 
 {% include-markdown "includes/hot-backup-file-storage-local-nfs.md" %}
 
-After running the script, the backup archive is available at `/mnt/backup/storage`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
+After running the script, the backup archive is available at `/mnt/backup/storage`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if TheHive server fails.
 
 You've completed the hot backup process for your TheHive standalone server. Verify that your backup archives are complete and accessible before relying on them for recovery.
 

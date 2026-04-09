@@ -6,7 +6,7 @@ Remove external user access to cases when collaboration is complete or no longer
 
 <h2>Procedure</h2>
 
-!!! tip "Bulk revocation"
+!!! tip "Bulk revoke"
     To revoke access for multiple cases at once, go to the **Cases** view and select :fontawesome-regular-square: next to each case. Then select **Manage external access** above the list.
 
 1. [Locate the case](../search-for-cases/find-a-case.md) where you want to revoke external access.

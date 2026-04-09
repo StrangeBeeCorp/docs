@@ -9,11 +9,11 @@ It accepts inputs from external sources, processes data, and interacts with TheH
 For example, use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
 
 !!! tip "Contribute!"
-    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples){target=_blank}. Contributions are welcome!
+    Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/integrations/tree/main/.generated/docs/functions){target=_blank}. Contributions are welcome!
 
 ## Function endpoints
 
-Creating a function in TheHive automatically adds a new public endpoint to the TheHive public API, making it easy to call from an external system.
+Creating a function in TheHive automatically adds a new public endpoint to TheHive public API, making it easy to call from an external system.
 
 ## Function objects
 
@@ -50,28 +50,28 @@ Below are some common use cases, each with a link to the corresponding JavaScrip
 
 ### User actions
 
-* Deleting observables of type IP from an alert: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Action%20Functions/function_Action_deleteIPObsFromAlert.js){target=_blank}
-* Changing the assignee of a case and all its associated tasks to the user who runs the function: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Action%20Functions/function_Action_assignToMe.js){target=_blank}
+* Deleting observables of type IP from an alert: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/deleteipobsfromalert.md){target=_blank}
+* Changing the assignee of a case and all its associated tasks to the user who runs the function: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/assigntome.md){target=_blank}
 
 ### Automation
 
-Identifying *New* and *In progress* cases that haven't been updated in the last month and tagging them with *cold-case*: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/API%20Functions/function_API_coldCaseAutomation.js){target=_blank}
+Identifying *New* and *In progress* cases that haven't been updated in the last month and tagging them with *cold-case*: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/coldcaseautomation.md){target=_blank}
 
 ### Notifications
 
-* Assigning high or critical alerts to a specific user when they're created via a notification: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Notifier%20Functions/function_notifier_assignAlert.js){target=_blank}
-* Updating the status of alerts merged into a case that was closed via a notification: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Notifier%20Functions/function_notifier_changeImportedAlertStatus.js){target=_blank}
+* Assigning high or critical alerts to a specific user when they're created via a notification: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/assignalert.md){target=_blank}
+* Updating the status of alerts merged into a case that was closed via a notification: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/changeimportedalertstatus.md){target=_blank}
 
 ### External systems (push method)
 
-Ingesting Splunk alerts and converting them into TheHive alerts: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/API%20Functions/function_API_createAlertFromSplunk.js){target=_blank}
+Ingesting Splunk alerts and converting them into TheHive alerts: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/splunk-createalertfromsplunk.md){target=_blank}
 
 ### External systems (pull method)
 
 <!-- md:version 5.5 --> 
 
-* Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js){target=_blank}
-* Creating alerts from Jira via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromJIRA.js){target=_blank}
+* Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/airtable-alertfromairtable.md){target=_blank}
+* Creating alerts from Jira via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/jira-alertfromjira.md){target=_blank}
 
 ## Function types
 

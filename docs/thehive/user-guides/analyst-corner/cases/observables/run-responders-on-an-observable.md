@@ -6,7 +6,12 @@
 
 Run responders on an [observable](about-observables.md) in TheHive to execute automated actions such as blocking an IP address on the firewall or a URL on the proxy.
 
+Only responders that match the observables' type, as well as their TLP (traffic light protocol) and PAP (permissible actions protocol) levels, are available.
+
 ## Run responders on an observable
+
+!!! tip "<!-- md:version 5.7 --> Bulk run"
+    To run responders on multiple observables, go to the **Observables** tab in a case or alert and select :fontawesome-regular-square: next to each observable you want to include. Then select :fontawesome-solid-gear: above the list.
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run responders.
 

@@ -275,7 +275,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
             cat /opt/cortex-{% include-markdown "includes/cortex-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.zip.sha256
             ```
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the [StrangeBee Security team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
      
@@ -318,7 +318,7 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
                 ```
                 This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
 
-            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security team](mailto:security@strangebee.com).
 
 
     3. Unzip the package.

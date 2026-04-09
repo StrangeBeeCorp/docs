@@ -59,7 +59,7 @@ When the `secops_thehive_init` and/or `secops_cortex_init` variable are set to `
 # Restoring data from earlier snapshots instead of latest instance volume snapshots
 If for any reason you wish to restore from specific snapshots and not from the latest volume state, you can edit the code and set the snapshot id for each volume. 
 
-For example, to restore the TheHive data volume from a specific snapshot, the sample code should be edited to update the `snapshot_id` value.
+For example, to restore TheHive data volume from a specific snapshot, the sample code should be edited to update the `snapshot_id` value.
 
 
 

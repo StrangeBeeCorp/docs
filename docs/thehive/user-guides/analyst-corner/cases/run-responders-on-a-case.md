@@ -4,6 +4,8 @@
 
 Run responders on a [case](about-cases.md) to execute automated actions such as closing an external ticket or performing a predefined response within TheHive.
 
+Only responders authorized for cases and matching their TLP (traffic light protocol) and PAP (permissible actions protocol) levels are available.
+
 !!! note "Observables not included"
     Running a responder on a case doesn't run it on the observables linked to the case. To run responders on an observable, see [Run Responders and Review Reports for an Observable](./observables/run-responders-on-an-observable.md).
 

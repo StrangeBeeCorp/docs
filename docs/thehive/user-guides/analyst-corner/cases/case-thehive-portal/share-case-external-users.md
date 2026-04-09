@@ -20,7 +20,7 @@ Share cases with external users to enable controlled collaboration with stakehol
 !!! warning "Prerequisite"
     External users must already exist in TheHive with the External account type. [Create External user accounts](../../../../administration/thehive-portal/set-up-thehive-portal-access.md#step-2-create-external-user-accounts) before sharing cases with them.
 
-!!! tip "Bulk sharing"
+!!! tip "Bulk share"
     To share multiple cases in bulk with external users, go to the **Cases** view and select :fontawesome-regular-square: next to each case you want to share. Then select **Manage external access** above the list.
 
 1. [Locate the case you want to share](../search-for-cases/find-a-case.md).

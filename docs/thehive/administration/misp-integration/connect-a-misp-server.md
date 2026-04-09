@@ -105,7 +105,7 @@ To manually import a MISP event as a case in TheHive, refer to [Create a New Cas
 
     **- Export TheHive URL**
 
-    Exports the TheHive case link to the MISP event.
+    Exports TheHive case link to the MISP event.
 
     ---
   

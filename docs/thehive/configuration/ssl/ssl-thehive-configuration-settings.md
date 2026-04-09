@@ -2,7 +2,7 @@
 
 Authentication providers and connectors may require SSL/TLS configuration to connect securely with TheHive.
 
-SSL/TLS trust is typically configured [at the Java virtual machine (JVM) level](configure-ssl-jvm.md) for certificate validation. The parameters below provide additional SSL/TLS capabilities. These parameters are defined in the TheHive `application.conf` configuration file.
+SSL/TLS trust is typically configured [at the Java virtual machine (JVM) level](configure-ssl-jvm.md) for certificate validation. The parameters below provide additional SSL/TLS capabilities. These parameters are defined in TheHive `application.conf` configuration file.
 
 ## Configuration parameters
 

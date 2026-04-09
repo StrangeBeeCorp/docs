@@ -456,7 +456,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
     **- Organization**
 
-    The TheHive organization where the alerts are sent.
+    TheHive organization where the alerts are sent.
 
     **- Folder**
 

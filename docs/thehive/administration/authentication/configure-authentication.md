@@ -2,7 +2,7 @@
 
 <!-- md:permission `managePlatform` -->
 
-Authentication in TheHive controls how users and services sign in. You can use the built-in local database, integrate with enterprise directories such as LDAP or AD, or enable SSO through SAML or OpenID providers. Additional options include API key authentication, basic authentication, HTTP header authentication, multi-factor authentication, and configurable session management.
+Authentication in TheHive controls how users and services sign in. You can use the built-in local database, integrate with enterprise directories such as LDAP or AD, or enable SSO through SAML or OpenID providers. Additional options include API key authentication, Basic authentication, HTTP header authentication, multifactor authentication (MFA), and configurable session management.
 
 <h2>Procedure</h2>
 
@@ -40,7 +40,7 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
     Authenticates HTTP requests using an API key.
 
-    **- Enable basic authentication**
+    **- Enable Basic authentication**
 
     Authenticates HTTP requests using a login and password. When enabled, you must provide a realm—a string that defines a protected space on the server.
 
@@ -48,9 +48,15 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
     Authenticates HTTP requests using a HTTP header that contains a user login. When enabled, you must provide the header name that the server will use to extract the login information from incoming requests.
 
-    **- Enable multi-factor authentication**
+    **- Enable multifactor authentication**
 
     Enables MFA, allowing users to activate it.
+
+    **- <!-- md:version 5.7 --> Enforce multifactor authentication**
+
+    Visible only when MFA is enabled. When turned on, MFA becomes mandatory for all users, ensuring consistent security standards across the platform. When turned off, MFA remains optional.
+
+    Users who haven't yet configured MFA must set it up before they can log in to TheHive interface.
 
     **- Default domain for user login**
 

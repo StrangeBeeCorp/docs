@@ -7,7 +7,7 @@ Flag a [case](about-cases.md) in TheHive to highlight it for all users in your o
 <h2>Procedure</h2>
 
 !!! tip "Bulk flag"
-    You can flag multiple cases at once. Select :fontawesome-regular-square: next to each case you want to flag, then choose **Flag cases** from the actions above the list.
+    You can flag multiple cases at once. Select :fontawesome-regular-square: next to each case you want to flag, then choose :fontawesome-solid-flag: from the actions above the list.
 
 1. {% include-markdown "includes/cases-view-go-to.md" %}
 

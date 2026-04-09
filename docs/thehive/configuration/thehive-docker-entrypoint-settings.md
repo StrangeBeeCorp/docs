@@ -10,7 +10,7 @@ To display all supported entrypoint options:
 docker run --rm strangebee/thehive:<thehive_version> -h
 ```
 
-Replace `<thehive_version>` with the TheHive version.
+Replace `<thehive_version>` with TheHive version.
 
 ## Configuration options
 

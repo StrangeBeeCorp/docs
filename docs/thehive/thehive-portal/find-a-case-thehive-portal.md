@@ -1,6 +1,6 @@
 # Find a Case in TheHive Portal
 
-Search for [cases](glossary-thehive-portal.md#cases) in the TheHive Portal to find security incidents shared with you or that you've created.
+Search for [cases](glossary-thehive-portal.md#cases) in TheHive Portal to find security incidents shared with you or that you've created.
 
 ## Method 1: Search bar
 

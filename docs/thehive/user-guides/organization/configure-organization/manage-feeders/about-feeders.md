@@ -13,7 +13,7 @@ Alert feeders perform unidirectional data retrieval only. In addition to alerts,
 ## Feeder functions
 
 !!! tip "Feeder function examples"
-    Feeder function examples are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples/Alert%20Feeder%20Functions){target=_blank}.
+    Feeder function examples are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/integrations/tree/main/.generated/docs/functions){target=_blank}.
 
 Feeder functions transform data retrieved from HTTP API calls into the expected TheHive format for alert creation.
 
@@ -25,19 +25,20 @@ Deleting an alert feeder doesn't remove its associated function. Function remova
 
 ## Authentication modes
 
-Alert feeders currently support four authentication methods:
+Alert feeders currently support five authentication methods:
 
-* None
-* Basic
-* Key
-* Bearer
+* None – No authentication is applied.
+* Basic – Uses HTTP Basic authentication (username and password) in the `Authorization` header.
+* Key – Uses an API key included in the request.
+* Bearer – Uses a bearer token in the `Authorization` header.
+* <!-- md:version 5.7 --> OAuth 2.0 (client credentials) – Uses OAuth 2.0 with the client credentials grant type.
 
 ## Example integrations
 
 Use an alert feeder to integrate any external system that exposes a public REST API with [supported authentication modes](#authentication-modes) and supports synchronous data retrieval into TheHive, including:
 
-* [Jira](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromJIRA.js){target=_blank}
-* [Airtable](https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js){target=_blank}
+* [Jira](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/jira-alertfromjira.md){target=_blank}
+* [Airtable](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/airtable-alertfromairtable.md){target=_blank}
 
 ## Permissions
 

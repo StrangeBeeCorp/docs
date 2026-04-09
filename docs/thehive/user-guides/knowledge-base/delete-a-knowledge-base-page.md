@@ -18,3 +18,4 @@ Delete a [Knowledge Base](about-knowledge-base.md) page in TheHive when it's no 
 
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [View a Knowledge Base Page](view-a-knowledge-base-page.md)
+* [Share a Knowledge Base Page](share-a-knowledge-base-page.md)

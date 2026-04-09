@@ -78,7 +78,7 @@ This helps teams stay ahead of deadlines and reduce the risk of overdue tasks.
 
     **- Key**: Your API key. For guidance on finding it, see [Manage your API key](manage-user-settings.md#manage-your-api-key).
 
-7. Select **Test connection** to verify the connection to the TheHive API.
+7. Select **Test connection** to verify the connection to TheHive API.
 
 8. In the **Create function** section, enter the following information:
 
@@ -172,7 +172,20 @@ This helps teams stay ahead of deadlines and reduce the risk of overdue tasks.
     }
     ```
 
-9. {% include-markdown "includes/test-function.md" %}
+9. In the **Test function** section, you can test your function as follows:
+
+      * Enter input data by selecting *input*.
+
+      * Select one of the following:
+
+          * **Run function (dry-run)** to simulate the function without sending data.
+          * **Run function** to execute the function with actual data.
+
+      * After running the function, select one of the following to view results:
+
+          * *result* to view the function’s output
+          * *stdout* to display standard output from the function
+          * *stderr* to display errors and warnings
 
 10. Select **Confirm**.
 

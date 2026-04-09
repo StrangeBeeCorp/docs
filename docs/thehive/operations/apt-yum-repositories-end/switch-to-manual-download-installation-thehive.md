@@ -7,7 +7,7 @@ For instructions on performing the same process for Cortex, see [Switch to Manua
 !!! info "Are you concerned?"
     Use this procedure if you currently install or update TheHive On-prem with packages using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
 
-    You aren't affected if you use the TheHive Cloud Platform or run TheHive through Docker deployments.
+    You aren't affected if you use TheHive Cloud Platform or run TheHive through Docker deployments.
 
     If you are a new user, follow the instructions in the [installation guide](../../installation/installation-guide-linux-standalone-server.md).
 

@@ -2,7 +2,7 @@
 
 <!-- md:permission `manageKnowledgeBase` -->
 
-Create a page in the TheHive [Knowledge Base](about-knowledge-base.md) to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
+Create a page in TheHive [Knowledge Base](about-knowledge-base.md) to store knowledge that should be preserved for future reference, such as lessons learned, reports, and meeting notes.
 
 <h2>Procedure</h2>
 
@@ -34,3 +34,4 @@ Create a page in the TheHive [Knowledge Base](about-knowledge-base.md) to store 
 
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
 * [View a Knowledge Base Page](view-a-knowledge-base-page.md)
+* [Share a Knowledge Base Page](share-a-knowledge-base-page.md)

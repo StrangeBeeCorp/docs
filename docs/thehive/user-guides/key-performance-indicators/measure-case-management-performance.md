@@ -2,7 +2,7 @@
 
 Measure case management performance in TheHive [for all cases in your organization](#measure-the-performance-of-all-cases-in-your-organization) or [for a specific case](#measure-the-performance-of-a-specific-case).
 
-If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to the [Key Performance Indicators](key-performance-indicators.md) topic.
+If you want to know more about the key performance indicators (KPIs) available in TheHive, refer to [Key Performance Indicators](key-performance-indicators.md).
 
 !!! info "Automated actions"
     If cases are created or updated through automated actions (API, functions, or external services), some indicators may be identical or very close in value, especially if multiple operations occur within the same second.
@@ -62,3 +62,4 @@ Two options are available to measure a case's performance:
 <h2>Next steps</h2>
 
 * [Measure Alert Performance](measure-alert-management-performance.md)
+* [Measure Task Performance](measure-task-management-performance.md)

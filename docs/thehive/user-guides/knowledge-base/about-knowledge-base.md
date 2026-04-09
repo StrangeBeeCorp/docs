@@ -25,3 +25,4 @@ Users with the necessary permissions can edit and delete any page, regardless of
 * [Create a Knowledge Base Page](create-a-knowledge-base-page.md)
 * [Delete a Knowledge Base Page](delete-a-knowledge-base-page.md)
 * [View a Knowledge Base Page](view-a-knowledge-base-page.md)
+* [Share a Knowledge Base Page](share-a-knowledge-base-page.md)

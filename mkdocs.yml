@@ -335,7 +335,6 @@ plugins:
             'thehive/installation/automated-installation-script.md': 'thehive/installation/automated-installation-script-linux.md'
             'thehive/installation/step-by-step-installation-guide.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/user-guides/analyst-corner/about-views.md': 'thehive/user-guides/analyst-corner/views/about-views.md'
-            'thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md': 'thehive/user-guides/knowledge-base/share-a-case-page.md'
             'thehive/operations/backup-restore/backup/docker-compose.md': 'thehive/operations/backup-restore/backup/cold-backup/docker-compose.md'
             'thehive/operations/backup-restore/backup/physical-server.md': 'thehive/operations/backup-restore/backup/cold-backup/physical-server.md'
             'thehive/operations/backup-restore/backup/virtual-server.md': 'thehive/operations/backup-restore/backup/cold-backup/virtual-server.md'
@@ -347,7 +346,7 @@ plugins:
             'thehive/operations/backup-restore/restore/virtual-server.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
             'thehive/operations/backup-restore/restore/restore-hot-backup.md': 'thehive/operations/backup-restore/restore/hot-restore/restore-hot-backup-standalone-server.md'
             'thehive/operations/backup-restore/restore/cloud.md': 'thehive/operations/backup-restore/restore/cold-restore/virtual-server.md'
-            'thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md': 'thehive/user-guides/analyst-corner/cases/comment-on-case.md'
+            'thehive/user-guides/analyst-corner/cases/comment-on-case-alert.md': 'thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md'
             'thehive/administration/authentication/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/ssl.md': 'thehive/configuration/ssl/configure-ssl-jvm.md'
             'thehive/configuration/proxy.md': 'thehive/configuration/proxy-settings.md'
@@ -361,6 +360,7 @@ plugins:
             'thehive/operations/minio-cluster.md': 'thehive/installation/deploying-a-cluster.md'
             'resources/demo.md': 'resources/vm-demo.md'
             'resources/howto-vm-demo.md': 'resources/vm-demo.md'
+            'thehive/user-guides/analyst-corner/cases/comment-on-case.md': 'thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md'
 
 extra:
   generator: false
@@ -550,7 +550,7 @@ nav:
             - 'Local': thehive/administration/authentication/local.md
             - 'Active Directory (AD)': thehive/administration/authentication/ad.md
             - 'LDAP': thehive/administration/authentication/ldap.md
-            - 'OAUTH 2.0': thehive/administration/authentication/oauth2.md
+            - 'OAuth 2.0': thehive/administration/authentication/oauth2.md
             - 'SAML': thehive/administration/authentication/saml.md
             - 'OpenID': thehive/administration/authentication/openid.md
         - 'Configure SMTP':
@@ -573,6 +573,7 @@ nav:
           - 'Delete a Custom Field': thehive/administration/custom-fields/delete-a-custom-field.md
         - 'Observable Types':
           - 'Create an Observable Type': thehive/administration/observable-types/create-an-observable-type.md
+          - 'Set an Observable Type as Case-Insensitive': thehive/administration/observable-types/set-an-observable-type-case-insensitive.md
           - 'Delete an Observable Type': thehive/administration/observable-types/delete-an-observable-type.md
         - 'Statuses':
           - 'About Statuses': thehive/administration/status/about-statuses.md
@@ -752,7 +753,9 @@ nav:
             - 'Remove Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/remove-custom-fields.md
             - 'Enter Values in Custom Fields': thehive/user-guides/analyst-corner/cases/custom-fields/enter-values-in-custom-fields.md
           - 'About Audit Logs': thehive/user-guides/organization/about-audit-logs.md
-          - 'Comment on Alerts': thehive/user-guides/analyst-corner/alerts/comment-on-alert.md
+          - 'Comments':
+            - 'Comment on Alerts': thehive/user-guides/analyst-corner/alerts/comment-on-alert.md
+            - 'Share a Comment': thehive/user-guides/analyst-corner/cases/case-comments/share-a-comment.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
@@ -805,7 +808,8 @@ nav:
             - 'View Alerts Linked to a Case': thehive/user-guides/analyst-corner/cases/view-alerts-linked-to-a-case.md
             - 'Unlink an Alert and a Case': thehive/user-guides/analyst-corner/alerts/unlink-alert-case.md
           - 'Comments':
-            - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/comment-on-case.md
+            - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md
+            - 'Share a Comment': thehive/user-guides/analyst-corner/cases/case-comments/share-a-comment.md
             - 'Control Comment Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/control-case-comment-access-thehive-portal.md
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
           - 'Change Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
@@ -891,11 +895,13 @@ nav:
         - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
         - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
         - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
+        - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
         - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
       - 'Key Performance Indicators':
         - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
         - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
         - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
+        - 'Measure Task Management Performance': thehive/user-guides/key-performance-indicators/measure-task-management-performance.md
       - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
       - 'Date Field Definitions': thehive/user-guides/date-field-definitions-alerts-cases.md
     - 'External User Guides':

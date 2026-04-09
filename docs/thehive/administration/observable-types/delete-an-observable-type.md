@@ -19,4 +19,4 @@ Delete an [observable](../../user-guides/analyst-corner/cases/observables/about-
 <h2>Next steps</h2>
 
 * [Create an Observable Type](create-an-observable-type.md)
-
+* [Set an Observable Type as Case-Insensitive](set-an-observable-type-case-insensitive.md)

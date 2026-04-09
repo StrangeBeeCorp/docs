@@ -31,4 +31,4 @@ Control which case comments external users can access through [TheHive Portal](.
 
 <h2>Next steps</h2>
 
-* [Comment on a Case](../comment-on-case.md)
+* [Comment on a Case](../case-comments/comment-on-case.md)

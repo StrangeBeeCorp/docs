@@ -16,8 +16,13 @@ Create custom [observable](../../user-guides/analyst-corner/cases/observables/ab
 
 5. Turn on the **Attachment** toggle if you want users to provide a file instead of a value when adding an observable of this type.
 
-6. Select **Confirm observable type creation**.
+6. <!-- md:version 5.7 --> Turn on the **Case-insensitive** toggle.
+
+    When enabled, observables of this type are automatically normalized to lowercase upon creation, ensuring values are treated as identical regardless of letter casing.
+
+7. Select **Confirm observable type creation**.
 
 <h2>Next steps</h2>
 
+* [Set an Observable Type as Case-Insensitive](set-an-observable-type-case-insensitive.md)
 * [Delete an Observable Type](delete-an-observable-type.md)

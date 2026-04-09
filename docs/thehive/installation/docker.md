@@ -4,7 +4,7 @@ Deploy and configure TheHive On-prem using Docker Compose.
 
 Two deployment profiles for production environments are available on [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/docker/tree/main){target=_blank}, with [all services](../overview/index.md#architecture) configured automatically.
 
-If you want to use only the TheHive Docker image, get it from [Docker Hub](https://hub.docker.com/r/strangebee/thehive){target=_blank}. You'll need to install [other required services](../overview/index.md#architecture) separately.
+If you want to use only TheHive Docker image, get it from [Docker Hub](https://hub.docker.com/r/strangebee/thehive){target=_blank}. You'll need to install [other required services](../overview/index.md#architecture) separately.
 
 !!! tip "Trying out TheHive?"
     This guide covers production deployments only. To trial TheHive with sample data, see [Deploy a Demo Docker Environment](../../resources/docker-demo.md).

@@ -42,9 +42,9 @@ Update the email address and select **Confirm**.
 
 Select the avatar, then select a new image in PNG or JPG format. The file must be smaller than 500 KB. Select **Confirm** to apply the change.
 
-## Check whether a user account has activated multi-factor authentication
+## Check whether a user account has activated multifactor authentication (MFA)
 
-Move through the **MFA** section. If the user has activated multi-factor authentication, *Yes* appears.
+Move through the **MFA** section. If the user has activated MFA, *Yes* appears.
 
 ## Edit a user account permission profile
 
@@ -56,7 +56,7 @@ Move through the **API key** section and select **Renew**, **Reveal**, or **Revo
 
 ## Delete a user account session
 
-Move through the **Sessions** section and select **Delete** next to the session you want to delete. This logs the user out of the TheHive interface.
+Move through the **Sessions** section and select **Delete** next to the session you want to delete. This logs the user out of TheHive interface.
 
 ## Edit a user account password
 

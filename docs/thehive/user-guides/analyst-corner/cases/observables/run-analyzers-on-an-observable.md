@@ -6,10 +6,12 @@
 
 Run analyzers on an [observable](about-observables.md) in TheHive to enrich it with contextual intelligence. Analyzers generate reports with their findings.
 
+Only analyzers that match the observables' type, as well as their TLP (traffic light protocol) and PAP (permissible actions protocol) levels, are available.
+
 ## Run analyzers on an observable
 
 !!! tip "Bulk run"
-    To run analyzers on multiple observables, go to the **Observables** tab in a case or alert and select :fontawesome-regular-square: next to each observable you want to include. Then select **Run analyzers** above the list.
+    To run analyzers on multiple observables, go to the **Observables** tab in a case or alert and select :fontawesome-regular-square: next to each observable you want to include. Then select :fontawesome-solid-fire: above the list.
 
 1. [Locate the observable](../search-for-cases/find-an-observable.md) on which you want to run analyzers.
 

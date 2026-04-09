@@ -21,8 +21,8 @@
             wget -O /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.5.14-2_all`. 
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.2-1_all`. 
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -43,8 +43,8 @@
             curl -o /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.5.14-2_all`. 
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.2-1_all`. 
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -66,7 +66,7 @@
             cat /tmp/thehive_{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1_all.deb.sha256
             ```
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com).
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security team](mailto:security@strangebee.com).
 
           * Verify the GPG signature using the public key.
      
@@ -109,7 +109,7 @@
                 ```
                 This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
 
-            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security team](mailto:security@strangebee.com).
 
     3. Install the package.
 
@@ -148,8 +148,8 @@
             wget -O /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.2-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -170,8 +170,8 @@
             curl -o /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.5.14-2`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.5`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.2-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -192,7 +192,7 @@
             cat /tmp/thehive-{% include-markdown "includes/thehive-latest-version.md" start="<!--start-fullversion-->" end="<!--end-fullversion-->" %}-1.noarch.rpm.sha256
             ```
 
-            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security Team](mailto:security@strangebee.com)
+            c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with installation, and contact the [StrangeBee Security team](mailto:security@strangebee.com)
 
           * Verify the GPG signature using the public key.
      
@@ -235,7 +235,7 @@
                 ```
                 This warning is expected. It means the package is signed with the official TheHive release key, but you haven't marked this key as `trusted` in your local GPG setup. As long as you see `Good signature` and the fingerprint matches, the verification is successful. Don't mark our key as globally trusted—the warning is a normal safety reminder and should remain visible.
 
-            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security Team](mailto:security@strangebee.com).
+            If you don't see `Good signature`, if the fingerprint differs, or if the signature is reported as `BAD`, don't install the package. This indicates the integrity or authenticity of the file can't be confirmed. Report the issue to the [StrangeBee Security team](mailto:security@strangebee.com).
 
     2. Install the package.
 

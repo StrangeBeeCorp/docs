@@ -64,7 +64,7 @@ You can also provision the whole thing using Terraform; check our [GitHub reposi
 
 1. Launch an instance from the AMI and base the additional EBS volumes (`/dev/sdh`, `/dev/sdi` and `/dev/sdj` by default) on existing TheHive EBS volume snapshots for the Cassandra database (`/dev/sdh`), the storage attachments (`/dev/sdi`) and the database index (`/dev/sdj`).
 2. SSH into the instance with the _ubuntu_ user.
-3. Launch the TheHive restore script with the EBS data volumes block device names as arguments, which are `/dev/sdh`, `/dev/sdi` and `/dev/sdj` if you are using a default AMI setup. If you are using a Nitro-based instance, **do not** use the nvme names (like /dev/nvme1n1). Example: `/opt/thehive/ops/scripts/ops-thehive-restore.sh /dev/sdh /dev/sdi /dev/sdj`.
+3. Launch TheHive restore script with the EBS data volumes block device names as arguments, which are `/dev/sdh`, `/dev/sdi` and `/dev/sdj` if you are using a default AMI setup. If you are using a Nitro-based instance, **do not** use the nvme names (like /dev/nvme1n1). Example: `/opt/thehive/ops/scripts/ops-thehive-restore.sh /dev/sdh /dev/sdi /dev/sdj`.
 4. That's it! TheHive is now available on port 9000 (or on the custom port you had configured) with all your existing configuration, users and data.
 
 Alternately, you can easily perform step 3 by providing cloud-init user data to the AMI at launch. In the following example using an m5 instance (Nitro-based), we:

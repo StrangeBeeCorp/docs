@@ -148,7 +148,7 @@ This alert feeder will periodically search for alerts that meet the criteria and
 
     Replace `<organization_name>` with the name of the organization in which you want the HTTP request to be executed.
 
-6. Select **Test connection** to verify the connection to the TheHive API.
+6. Select **Test connection** to verify the connection to TheHive API.
 
 7. In the **Create function** section, enter the following information:
 
@@ -215,9 +215,22 @@ This alert feeder will periodically search for alerts that meet the criteria and
     }
     ```
 
-8.  {% include-markdown "includes/test-function.md" %}
+8. In the **Test function** section, you can test your function as follows:
 
-9.  Select **Confirm**.
+      * Enter input data by selecting *input*.
+
+      * Select one of the following:
+
+          * **Run function (dry-run)** to simulate the function without sending data.
+          * **Run function** to execute the function with actual data.
+
+      * After running the function, select one of the following to view results:
+
+          * *result* to view the function’s output
+          * *stdout* to display standard output from the function
+          * *stderr* to display errors and warnings
+
+9. Select **Confirm**.
 
 That’s it—your automation is now fully set up and ready to ensure no pending alert goes unnoticed.
 

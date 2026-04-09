@@ -383,7 +383,7 @@ start reading the code of some of them before writing your own.
 ### Report Templates
 When using TheHive, analysts can submit an observable for analysis to one or
 several Cortex instances by a click of a button. Once finished,
-Cortex returns the result to TheHive. The TheHive displays that result
+Cortex returns the result to TheHive. TheHive displays that result
 using HTML templates for short and long reports.
 
 #### Cortex Result in TheHive

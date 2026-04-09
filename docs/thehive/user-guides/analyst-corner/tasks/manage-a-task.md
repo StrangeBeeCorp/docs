@@ -26,6 +26,9 @@ Manage [tasks](about-tasks.md) in TheHive by updating their properties, such as 
 
 Pinning a task allows you to access it from the **Tasks** tab within a case. Pins are personal and only visible to you.
 
+!!! tip "Bulk pin"
+    To pin multiple tasks at once, go to the **Tasks** tab in a case and select :fontawesome-regular-square: next to each task you want to pin. Then choose :fontawesome-solid-thumbtack: from the actions above the list.
+
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to pin.
 
 2. In the task details, select :fontawesome-solid-thumbtack:.
@@ -33,6 +36,9 @@ Pinning a task allows you to access it from the **Tasks** tab within a case. Pin
 ## Flag a task
 
 Flagging a task highlights it for all users in your organization, making it more visible in the task list.
+
+!!! tip "Bulk flag"
+    To flag multiple tasks at once, go to the **Tasks** tab in a case and select :fontawesome-regular-square: next to each task you want to flag. Then choose :fontawesome-solid-flag: from the actions above the list.
 
 1. [Find the task](../tasks/search-for-tasks/find-a-task.md) you want to flag.
 

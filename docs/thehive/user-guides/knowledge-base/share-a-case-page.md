@@ -12,6 +12,8 @@ Share a [case page](about-case-pages.md) link with your teammates through a mess
 
 4. Select :fontawesome-solid-link:.
 
+The page link is copied to the clipboard and is ready to share.
+
 <h2>Next steps</h2>
 
 * [Create a Case Page](create-a-case-page.md)
