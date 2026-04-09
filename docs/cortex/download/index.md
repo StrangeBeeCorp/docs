@@ -5,7 +5,7 @@ hide:
 
 # Download Cortex
 
-Cortex is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it on traditional Linux systems, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links below.
+Cortex is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it with packages, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links below.
 
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 

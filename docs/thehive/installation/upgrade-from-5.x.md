@@ -11,7 +11,7 @@
 
 Before proceeding with the upgrade, please keep the following points in mind:
 
-1. **Database Backup**: We strongly recommend performing a full database backup before upgrading. For detailed instructions on how to perform a backup, please refer to the backup instructions.
+1. **Database Backup**: Perform a full database backup before upgrading. For detailed instructions on how to perform a backup, please refer to the backup instructions.
 
 2. **Downgrade Limitation**: Once upgraded to TheHive 5.5, your instance can't be downgraded. This means reverting to a previous version of TheHive 5 will require restoring your data from the backup.
 

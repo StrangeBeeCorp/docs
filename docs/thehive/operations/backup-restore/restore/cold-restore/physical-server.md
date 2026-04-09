@@ -1,6 +1,6 @@
 # Restore a Cold Backup on a Physical Server
 
-In this tutorial, we're going to guide you through restoring a cold backup of TheHive on a physical server.
+In this tutorial, you'll restore a cold backup of TheHive on a physical server.
 
 Restoring your application stack is a process that involves recovering configuration files, data, and logs from a previously created backup. This procedure ensures the application is returned to a consistent and operational state.
 

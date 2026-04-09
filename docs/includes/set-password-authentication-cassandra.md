@@ -2,7 +2,7 @@
 
 By default, Cassandra uses the `cassandra` username and the password `cassandra`. For security reasons, especially in production environments, you must change this password immediately after setup.
 
-To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.
+To do this, you'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.
 
 1. Connect to Cassandra using default credentials.
 

@@ -1,4 +1,4 @@
-# Quick Install on Linux Systems: One-Command Setup
+# Quick Install with Packages: One-Command Setup
 
 If you prefer a faster setup than going through [the complete installation guide](installation-guide-linux-standalone-server.md), you can run the automated installation script instead. It will install TheHive along with all [required services](../overview/index.md#architecture) and dependencies on a standalone Linux server using predefined settings.
 

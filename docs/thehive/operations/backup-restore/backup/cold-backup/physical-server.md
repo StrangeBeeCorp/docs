@@ -1,6 +1,6 @@
 # Perform a Cold Backup on a Physical Server
 
-In this tutorial, we're going to guide you through performing a cold backup of TheHive on a physical server. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
+In this tutorial, you'll perform a cold backup of TheHive on a physical server. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
 
 Unlike virtualized or containerized environments, physical servers require direct access to the file system and services to perform backups.
 

@@ -12,11 +12,11 @@ Estimated resource recommendations are provided to offer guidance based on typic
     * Usage intensity: Number of users accessing the system at the same time, including [service accounts](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md#types) and external integrations
     * Data volume: Amount of data ingested, processed, and stored
     * Performance expectations: Expected system responsiveness under typical and peak loads
-    * Deployment method: Installation via Linux packages or Docker containers
+    * Deployment method: Installation via packages or Docker containers
 
     Initial deployments can start with minimal configurations and be scaled based on observed performance. Hardware adjustments should be guided by ongoing [monitoring of system resource utilization](../operations/monitoring.md).
 
-=== "Linux installation"
+=== "Package installation"
 
     The following table lists recommended CPU and memory allocations per service when TheHive, Apache Cassandra, and Elasticsearch are hosted on a single machine, based on the number of concurrent users.
 
@@ -78,8 +78,8 @@ Other distributions or versions aren't tested or supported.
 
 * [Software Requirements](software-requirements.md)
 * [TheHive Package Repository](thehive-packages.md)
-* [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
-* [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
+* [Quick Install with Packages: One-Command Setup](automated-installation-script-linux.md)
+* [Install TheHive with Packages](installation-guide-linux-standalone-server.md)
 * [Deploy TheHive with Docker Compose](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
-* [Set Up a Cluster on Linux Systems](deploying-a-cluster.md)
+* [Set Up a Cluster with Packages](deploying-a-cluster.md)

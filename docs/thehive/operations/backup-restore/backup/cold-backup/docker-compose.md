@@ -1,6 +1,6 @@
 # Perform a Cold Backup for a Stack Running with Docker Compose
 
-In this tutorial, we're going to guide you through performing a cold backup of a stack running with Docker Compose for TheHive. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
+In this tutorial, you'll perform a cold backup of a stack running with Docker Compose for TheHive. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
 
 {% include-markdown "includes/implications-cold-backup-restore.md" %}
 

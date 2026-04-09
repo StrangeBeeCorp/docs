@@ -2,9 +2,9 @@
 
 TheHive installation requires specific software components at specific versions, depending on the installation method.
 
-The tables below list the supported versions for Linux installations, Docker Compose deployments, and Kubernetes environments.
+The tables below list the supported versions for package installations, Docker Compose deployments, and Kubernetes environments.
 
-=== "Linux installation"
+=== "Package installation"
 
     | TheHive version | Java | Cassandra | Elasticsearch | OpenSearch | Cortex | Notes |
     |-----------------|------|-----------|---------------|------------|-------|-------|
@@ -31,8 +31,8 @@ The tables below list the supported versions for Linux installations, Docker Com
 
 * [System Requirements](system-requirements.md)
 * [TheHive Package Repository](thehive-packages.md)
-* [Quick Install on Linux Systems: One-Command Setup](automated-installation-script-linux.md)
-* [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
+* [Quick Install with Packages: One-Command Setup](automated-installation-script-linux.md)
+* [Install TheHive with Packages](installation-guide-linux-standalone-server.md)
 * [Deploy TheHive with Docker Compose](docker.md)
 * [Deploy TheHive on Kubernetes](kubernetes.md)
-* [Set Up a Cluster on Linux Systems](deploying-a-cluster.md)
+* [Set Up a Cluster with Packages](deploying-a-cluster.md)

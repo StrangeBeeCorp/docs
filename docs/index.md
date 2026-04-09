@@ -151,6 +151,12 @@ sections:
         name: 'Infra Engineer'
         href: 'infraengineer'
       groups:
+        - title: 'Try TheHive with Cortex'
+          links:
+            - text: Set up a VM demo environment
+              url: '/resources/vm-demo/'
+            - text: Deploy a Docker demo environment
+              url: '/resources/docker-demo/'
         - title: 'Install and configure TheHive'
           links: 
             - text: 'Choose your installation method'
@@ -159,13 +165,13 @@ sections:
               url: '/thehive/installation/system-requirements/'
             - text: 'Review software requirements'
               url: '/thehive/installation/software-requirements/'
-            - text: 'Install TheHive on Linux'
+            - text: 'Install TheHive with packages'
               url: '/thehive/installation/installation-guide-linux-standalone-server/'
             - text: 'Use the one-command install'
               url: '/thehive/installation/automated-installation-script-linux/'
             - text: 'Deploy with Docker'
               url: '/thehive/installation/docker/'
-            - text: 'Set up a cluster on Linux'
+            - text: 'Set up a cluster with packages'
               url: '/thehive/installation/deploying-a-cluster/'
             - text: 'Deploy on Kubernetes'
               url: '/thehive/installation/kubernetes/'

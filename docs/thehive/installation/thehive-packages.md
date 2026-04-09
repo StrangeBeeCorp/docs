@@ -4,7 +4,7 @@ TheHive packages are distributed as RPM and DEB files, as well as ZIP binary pac
 
 All packages are hosted on an [HTTPS-secured website](https://thehive.download.strangebee.com/){target=_blank} and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
-For detailed installation instructions, see [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md).
+For detailed installation instructions, see [Install TheHive with Packages](installation-guide-linux-standalone-server.md).
 
 ## Repository structure
 
@@ -80,4 +80,4 @@ Use the same method for RPM and ZIP packages.
 
 <h2>Next steps</h2>
 
-* [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md)
+* [Install TheHive with Packages](installation-guide-linux-standalone-server.md)

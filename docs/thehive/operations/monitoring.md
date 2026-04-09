@@ -15,7 +15,7 @@ By the end, you'll have a fully functional monitoring system displaying real-tim
 
 ## Step 1: Enable monitoring in TheHive
 
-First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the [Kamon](https://kamon.io/){target=_blank} library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.
+First, activate TheHive built-in monitoring capabilities. TheHive uses the [Kamon](https://kamon.io/){target=_blank} library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.
 
 1. Open the `/etc/thehive/application.conf` file.
 
@@ -58,12 +58,12 @@ First, we need to activate TheHive built-in monitoring capabilities. TheHive use
 
 4. Restart TheHive to apply the changes.
 
-Let's verify that everything is working. Open your browser and navigate to `http://<thehive_hostname>:9095/metrics`.
+Verify that everything is working. Open your browser and navigate to `http://<thehive_hostname>:9095/metrics`.
 You should see a page full of metrics in Prometheus format.
 
 ## Step 2: Connect Prometheus to TheHive
 
-Now we'll configure Prometheus to collect these metrics from TheHive.
+Now configure Prometheus to collect these metrics from TheHive.
 
 1. Locate and open your `prometheus.yml` configuration file.
 
@@ -123,7 +123,7 @@ Now we'll configure Prometheus to collect these metrics from TheHive.
 
 ## Step 3: Visualize metrics in Grafana
 
-Time to make those metrics visible! We'll set up Grafana dashboards to display TheHive performance data.
+Time to make those metrics visible! Set up Grafana dashboards to display TheHive performance data.
 
 1. Open Grafana in your browser and log in.
 
@@ -141,11 +141,11 @@ Time to make those metrics visible! We'll set up Grafana dashboards to display T
 
     f. Select **Save & Test**.
 
-3. Now let's import pre-built dashboards to start monitoring TheHive.
+3. Now import pre-built dashboards to start monitoring TheHive.
 
     !!! tip "Recommended dashboard templates"
       
-        We suggest starting with these Kamon 2.x dashboards, which work well with TheHive:
+        These Kamon 2.x dashboards work well with TheHive:
 
         * [Kamon 2.x - API Dashboard](https://grafana.com/grafana/dashboards/12317-api-dashboard/){target=_blank} `ID: 12317`: Shows API metrics like request throughput, response latency, and error rates.  
         Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.
@@ -172,7 +172,7 @@ To build custom dashboards from scratch, see [Create a dashboard in Grafana](htt
 
 ## Step 4: Verify your monitoring setup
 
-Let's make sure everything is working together:
+Make sure everything is working together:
 
 1. Generate some activity in TheHive.
   

@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-In this tutorial, we're going to set up an automation in TheHive to monitor [alerts](./analyst-corner/alerts/about-alerts.md) that stay in the *New* status and remain unassigned for too long.
+In this tutorial, you'll set up an automation in TheHive to monitor [alerts](./analyst-corner/alerts/about-alerts.md) that stay in the *New* status and remain unassigned for too long.
 
 By the end, you'll have a working configuration that:
 

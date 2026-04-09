@@ -1,8 +1,8 @@
-Before creating any backups, we're going to verify that all TheHive components are healthy. This helps us catch any issues that could affect backup integrity.
+Before creating any backups, verify that all TheHive components are healthy. This helps catch any issues that could affect backup integrity.
 
 ### Check service status
 
-Let's confirm that all TheHive components are running.
+Confirm that all TheHive components are running.
 
 ```bash
 sudo systemctl status thehive

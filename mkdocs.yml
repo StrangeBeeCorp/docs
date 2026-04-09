@@ -359,6 +359,8 @@ plugins:
             'thehive/configuration/logs.md': 'thehive/configuration/update-log-configuration.md'
             'thehive/configuration/secret.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/operations/minio-cluster.md': 'thehive/installation/deploying-a-cluster.md'
+            'resources/demo.md': 'resources/vm-demo.md'
+            'resources/howto-vm-demo.md': 'resources/vm-demo.md'
 
 extra:
   generator: false
@@ -452,11 +454,11 @@ nav:
         - 'System Requirements': thehive/installation/system-requirements.md
         - 'Software Requirements': thehive/installation/software-requirements.md
       - 'Package Repository': thehive/installation/thehive-packages.md
-      - 'Install on Linux': thehive/installation/installation-guide-linux-standalone-server.md
+      - 'Install with Packages': thehive/installation/installation-guide-linux-standalone-server.md
       - 'One-Command Install': thehive/installation/automated-installation-script-linux.md
       - 'Deploy with Docker': thehive/installation/docker.md
       - 'Deploy on Kubernetes': thehive/installation/kubernetes.md
-      - 'Set Up a Cluster on Linux': thehive/installation/deploying-a-cluster.md
+      - 'Set Up a Cluster with Packages': thehive/installation/deploying-a-cluster.md
       - 'Licenses':
         - 'About Licenses': thehive/installation/licenses/about-licenses.md
         - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md
@@ -966,9 +968,9 @@ nav:
   - 'Resources': 
     - resources/index.md
     - resources/templates.md
-    - 'Demo Virtual Machine':
-      - 'How to download the VM': resources/demo.md
-      - resources/howto-vm-demo.md
+    - 'Demo Environments':
+      - 'VM Demo Environment': resources/vm-demo.md
+      - 'Docker Demo Environment': resources/docker-demo.md
     - 'IaaS deployment': 
       - 'Amazon AWS': 
         - 'Main Features': resources/iaas/aws/index.md

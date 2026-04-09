@@ -1,4 +1,4 @@
-Before we begin, let's make sure your system has all the necessary tools installed.
+Before you begin, make sure your system has all the necessary tools installed.
 
 You'll need the following:
 

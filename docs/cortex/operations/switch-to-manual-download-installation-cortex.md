@@ -5,7 +5,7 @@ Following the [APT and YUM repositories deprecation notice](../../thehive/operat
 For instructions on performing the same process for TheHive, see [Switch to Manual Download and Installation for TheHive](../../thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md).
 
 !!! info "Are you concerned?"
-    Use this procedure if you currently install or update Cortex on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
+    Use this procedure if you currently install or update Cortex with packages using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
 
     You aren't affected if you run Cortex through Docker deployments.
 

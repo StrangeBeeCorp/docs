@@ -1,6 +1,6 @@
 # Restore a Hot Backup on a Cluster
 
-In this tutorial, we're going to guide you through restoring a hot backup of TheHive on a cluster using the provided scripts.
+In this tutorial, you'll restore a hot backup of TheHive on a cluster using the provided scripts.
 
 By the end, you'll have brought your system back to a working state using the backups you created previously, with all your database, search index, and file storage fully restored across your cluster.
 
@@ -14,7 +14,7 @@ This tutorial assumes you’ve completed the [Perform a Hot Backup on a Cluster]
 
 ## Step 1: Stop TheHive on all nodes
 
-Before we begin restoring data, we need to stop TheHive on all cluster nodes to prevent any conflicts during the restoration process.
+Before restoring data, stop TheHive on all cluster nodes to prevent any conflicts during the restoration process.
 
 Run this command on each node:
 
@@ -32,7 +32,7 @@ You should see that the service is inactive on each node.
 
 ## Step 2: Restore Cassandra and Elasticsearch snapshots
 
-Now we're going to restore both your database and search index from the backup archives. Since data is fully replicated across all nodes, we only need to run the restore script on one node—the script will automatically distribute the data across your entire cluster. The script handles situations where nodes have been added or removed since the backup was created.
+Now you'll restore both your database and search index from the backup archives. Since data is fully replicated across all nodes, you only need to run the restore script on one node—the script will automatically distribute the data across your entire cluster. The script handles situations where nodes have been added or removed since the backup was created.
 
 ### 1. Prepare the restore script
 
@@ -64,7 +64,7 @@ For additional details, refer to the official [Cassandra documentation](https://
 
 ## Step 3: Restore file storage
 
-Finally, we're going to restore the file attachments that were backed up.
+Finally, restore the file attachments that were backed up.
 
 The restore procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
 
@@ -98,7 +98,7 @@ The restore procedure depends on your storage backend—either NFS or an S3-comp
 
 ## Step 4: Start TheHive on all nodes and verify
 
-Now that all data components have been restored, we're going to start TheHive on all cluster nodes and verify that everything works as expected.
+Now that all data components have been restored, start TheHive on all cluster nodes and verify that everything works as expected.
 
 1. Start TheHive on each node.
 

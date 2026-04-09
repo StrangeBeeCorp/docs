@@ -1,24 +1,24 @@
 # TheHive Installation Methods
 
-TheHive can be installed in several ways depending on your operating system, deployment preferences, and infrastructure requirements. Choose the method that best fits your environment.
+TheHive runs on Linux and can be deployed in several ways depending on your deployment preferences and infrastructure requirements. Choose the method that best fits your environment.
 
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
 Install TheHive on a standalone server using DEB packages on Debian- or Ubuntu-based systems.
 
-See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **DEB** tab for instructions.
+See [Install TheHive with Packages](installation-guide-linux-standalone-server.md) using the **DEB** tab for instructions.
 
 ## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
 Install TheHive on a standalone server using RPM packages on RedHat- or Fedora-based systems.
 
-See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **RPM** tab for instructions.
+See [Install TheHive with Packages](installation-guide-linux-standalone-server.md) using the **RPM** tab for instructions.
 
 ## :material-folder-zip: ZIP binary packages
 
 Install TheHive on a standalone server using the ZIP binary package for manual installations or for environments without package managers.
 
-See [Install TheHive on Linux Systems](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab for instructions.
+See [Install TheHive with Packages](installation-guide-linux-standalone-server.md) using the **ZIP binary packages** tab for instructions.
 
 ## :material-docker: Docker
 
@@ -34,8 +34,8 @@ Deploy TheHive as a single-node or multi-node installation on Kubernetes using t
 
 See [Deploy TheHive on Kubernetes](../installation/kubernetes.md) for instructions.
 
-## :material-linux: Cluster deployment on Linux
+## :material-linux: Cluster deployment with packages
 
-Deploy TheHive on Linux as a multi-node cluster across dedicated hosts for high-availability setups.
+Deploy TheHive with packages as a multi-node cluster across dedicated hosts for high-availability setups.
 
-See [Set Up a Cluster on Linux Systems](deploying-a-cluster.md) for instructions.
+See [Set Up a Cluster with Packages](deploying-a-cluster.md) for instructions.

@@ -1,6 +1,6 @@
 # Restore a Hot Backup on a Standalone Server
 
-In this tutorial, we're going to guide you through restoring a hot backup of TheHive on a standalone server using the provided scripts.
+In this tutorial, you'll restore a hot backup of TheHive on a standalone server using the provided scripts.
 
 By the end, you'll have brought your system back to a working state using the backups you created previously, with all your database, search index, and file storage fully restored.
 
@@ -14,7 +14,7 @@ This tutorial assumes you’ve completed the [Perform a Hot Backup on a Standalo
 
 ## Step 1: Stop TheHive
 
-Before we begin restoring data, we need to stop TheHive to prevent any conflicts during the restoration process.
+Before restoring data, stop TheHive to prevent any conflicts during the restoration process.
 
 ```bash
 sudo systemctl stop thehive
@@ -28,7 +28,7 @@ sudo systemctl status thehive
 
 ## Step 2: Restore Cassandra and Elasticsearch snapshots
 
-We're going to restore both your database and search index from the backup archives. The script automatically identifies your most recent backup files, extracts them, and restores both Cassandra and Elasticsearch in parallel while handling keyspace recreation if needed.
+You'll restore both your database and search index from the backup archives. The script automatically identifies your most recent backup files, extracts them, and restores both Cassandra and Elasticsearch in parallel while handling keyspace recreation if needed.
 
 ### 1. Prepare the restore script
 
@@ -60,7 +60,7 @@ For additional details, refer to the official [Cassandra documentation](https://
 
 ## Step 3: Restore file storage
 
-Finally, we're going to restore the file attachments that were backed up.
+Finally, restore the file attachments that were backed up.
 
 ### 1. Prepare the restore script
 
@@ -72,7 +72,7 @@ Before running the script, update `ATTACHMENT_FOLDER` to match your environment.
 
 ## Step 4: Start TheHive and verify
 
-Now that all data components have been restored, we're going to start TheHive and verify that everything works as expected.
+Now that all data components have been restored, start TheHive and verify that everything works as expected.
 
 1. Start TheHive.
 

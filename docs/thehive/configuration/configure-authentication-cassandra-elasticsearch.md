@@ -1,6 +1,6 @@
 # Configure Database and Index Authentication
 
-In this tutorial, we're going to secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.
+In this tutorial, you'll secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 
@@ -8,7 +8,7 @@ In this tutorial, we're going to secure your TheHive installation by configuring
 
 ### Step 1: Stop your services
 
-First, we need to stop your running services in the following order to avoid data corruption:
+First, stop your running services in the following order to avoid data corruption:
 
 1. Stop TheHive service
 
@@ -18,7 +18,7 @@ First, we need to stop your running services in the following order to avoid dat
 
 ### Step 2: Update Cassandra configuration
 
-Now we'll modify Cassandra configuration to require authentication.
+Now you'll modify the Cassandra configuration to require authentication.
 
 1. Locate the `cassandra.yaml` file.
 
@@ -47,7 +47,7 @@ Now we'll modify Cassandra configuration to require authentication.
 
 ### Step 5: Create a role for TheHive
 
-Let's create a dedicated role that TheHive will use to connect to Cassandra.
+Create a dedicated role that TheHive will use to connect to Cassandra.
 
 1. Create a dedicated role for TheHive.
 
@@ -68,7 +68,7 @@ Let's create a dedicated role that TheHive will use to connect to Cassandra.
 
 ### Step 6: Update TheHive configuration
 
-Now we'll configure TheHive to use the credentials we just created.
+Now you'll configure TheHive to use the credentials you just created.
 
 1. Open the `application.conf` file using a text editor.
 
@@ -111,7 +111,7 @@ At this point, your Cassandra database is secured with authentication.
 
 ### Step 1: Stop services
 
-First, we need to stop your running services in the following order to avoid data corruption:
+First, stop your running services in the following order to avoid data corruption:
 
 1. Stop TheHive service
 
@@ -119,7 +119,7 @@ First, we need to stop your running services in the following order to avoid dat
 
 ### Step 2: Update Elasticsearch configuration
 
-Now we'll modify Elasticsearch configuration to require authentication.
+Now you'll modify the Elasticsearch configuration to require authentication.
 
 1. Open the `/etc/elasticsearch/elasticsearch.yml` file using a text editor.
 
@@ -139,7 +139,7 @@ Now we'll modify Elasticsearch configuration to require authentication.
 
 ### Step 4: Update TheHive configuration
 
-Now we'll configure TheHive to use the credentials we just created.
+Now you'll configure TheHive to use the credentials you just created.
 
 1. Open the `application.conf` file using a text editor.
 

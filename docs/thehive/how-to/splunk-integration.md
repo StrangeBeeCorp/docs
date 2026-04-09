@@ -26,7 +26,7 @@ Discover valuable insights in the "Tips & Tricks" section, where you can learn h
 
 Explore advanced techniques to enrich your search results with additional tags, including the utilization of the `th_inline_msg` field and the creative renaming of fields for improved tagging.
 
-For comprehensive details and examples, we encourage you to explore the [original documentation](https://github.com/LetMeR00t/TA-thehive-cortex/blob/main/docs/alert_actions_and_adaptive_responses.md){target=_blank} to set up your connector effectively.
+For comprehensive details and examples, explore the [original documentation](https://github.com/LetMeR00t/TA-thehive-cortex/blob/main/docs/alert_actions_and_adaptive_responses.md){target=_blank} to set up your connector effectively.
 
 To integrate this connector into your workflow, please refer to the [original documentation](https://github.com/LetMeR00t/TA-thehive-cortex/blob/main/docs/alert_actions_and_adaptive_responses.md){target=_blank}. Your success starts there!
 

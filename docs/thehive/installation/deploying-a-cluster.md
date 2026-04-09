@@ -1,4 +1,4 @@
-# Set Up a Cluster on Linux Systems
+# Set Up a Cluster with Packages
 
 <!-- md:version 5.4 -->
 
@@ -17,11 +17,11 @@ This guide presents configuration examples for setting up a fault-tolerant clust
 * Keepalived for virtual IP setup
 
 !!! Info
-    You can install these applications on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.
+    You can install these applications on separate servers or on the same server. For the purpose of this documentation, the setup is demonstrated on three distinct operating systems.
 
 !!! warning "Before you begin"
   
-    * Verify that all [Linux system requirements](system-requirements.md) are met on every node.
+    * Verify that all [system requirements for package installation](system-requirements.md) are met on every node.
     * Ensure that Python 3.9 is available for using the Cassandra Query Language (CQL) shell `cqlsh`. Later Python versions aren't compatible.
 
 {% include-markdown "includes/data-protection-link.md" %}
@@ -45,9 +45,9 @@ The subsequent sections will provide detailed configuration examples and step-by
 
 ## Step 1: Install and configure Apache Cassandra
 
-When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of `3`. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node. It means that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cybersecurity threats without downtime or data loss.
+When configuring a Cassandra cluster, the goal is a setup comprising three active nodes with a replication factor of `3`. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node. It means that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cybersecurity threats without downtime or data loss.
 
-!!! Info "Note: Note: For the purposes of this documentation, we assume that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center."
+!!! Info "Note: Note: For the purposes of this documentation, it's assumed that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center."
 
 ### Step 1.1: Install Cassandra
 
@@ -443,7 +443,7 @@ Follow the steps in the [installation guide](installation-guide-linux-standalone
 
 When configuring TheHive for a clustered environment, it's essential to configure Pekko to ensure efficient management of the cluster by the application.
 
-In this guide, we assume that node 1 serves as the master node. Begin by configuring the `pekko` component in the `/etc/thehive/application.conf` file of each node as follows:
+In this guide, node 1 is assumed to serve as the master node. Begin by configuring the `pekko` component in the `/etc/thehive/application.conf` file of each node as follows:
 
 !!! Example ""
 

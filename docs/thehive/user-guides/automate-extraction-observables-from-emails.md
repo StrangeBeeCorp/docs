@@ -4,7 +4,7 @@
 
 When an [email intake connector](../administration/email-intake-connector/about-email-intake-connectors.md) processes an incoming email, it creates an alert in TheHive with several observables, including the email file itself. However, the email body isn't parsed for observables by default—you need to run the *EmlParser* analyzer to extract them.
 
-In this tutorial, we're going to set up an automation in TheHive that runs the *EmlParser* analyzer automatically each time an email intake alert is created.
+In this tutorial, you'll set up an automation in TheHive that runs the *EmlParser* analyzer automatically each time an email intake alert is created.
 
 !!! warning "Prerequisites"
     This tutorial assumes you've already [configured an email intake connector](../administration/email-intake-connector/connect-a-mailbox.md) for your TheHive instance.

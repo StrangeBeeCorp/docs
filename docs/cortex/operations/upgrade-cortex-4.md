@@ -1,6 +1,6 @@
 # Upgrade Cortex to Version 4.0
 
-In this tutorial, we're going to upgrade Cortex from version 3.1.x+ to 4.0.x.
+In this tutorial, you'll upgrade Cortex from version 3.1.x+ to 4.0.x.
 
 Because Cortex can't support multiple major versions of Elasticsearch simultaneously, this upgrade requires moving from Elasticsearch 7.x to 8.x.
 
@@ -19,7 +19,7 @@ This tutorial applies to single-node Elasticsearch instances.
 
 ## Step 1: Stop Cortex service
 
-Before we upgrade Elasticsearch, we need to stop the Cortex service to prevent index writes during the process.
+Before upgrading Elasticsearch, stop the Cortex service to prevent index writes during the process.
 
 !!! info "Service commands"
     For stop/restart commands depending on your installation method, refer back to the relevant installation guide.
@@ -29,7 +29,7 @@ Before we upgrade Elasticsearch, we need to stop the Cortex service to prevent i
 
 ## Step 2: Check the Elasticsearch version
 
-We can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x. Before continuing, we need to confirm that our deployment is running Elasticsearch 7.17.x.
+You can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x. Before continuing, confirm that your deployment is running Elasticsearch 7.17.x.
 
 1. Check your current Elasticsearch version:
 
@@ -43,13 +43,13 @@ We can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x
 
 ## (Optional) Step 3: Upgrade Elasticsearch to 7.17.x
 
-If our current version is below 7.17.x, we must upgrade to the latest 7.17.x release before moving forward.
+If your current version is below 7.17.x, upgrade to the latest 7.17.x release before moving forward.
 
 Follow the [official Elasticsearch 7.17 upgrade guide](https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html){target=_blank} to complete this upgrade.
 
 ## Step 4: Prepare for Elasticsearch 8.x upgrade
 
-Now that we're running Elasticsearch 7.17.x, we need to verify that all features and indexes are ready for migration to 8.x.
+Now that you're running Elasticsearch 7.17.x, verify that all features and indexes are ready for migration to 8.x.
 
 1. Check upgrade compatibility using the [Elasticsearch feature upgrade API](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-migration-get-feature-upgrade-status){target=_blank}.
 
@@ -63,7 +63,7 @@ Now that we're running Elasticsearch 7.17.x, we need to verify that all features
 
 ## Step 5: Upgrade Elasticsearch to 8.x
 
-With compatibility verified, we're ready to upgrade Elasticsearch to version 8.x.
+With compatibility verified, you're ready to upgrade Elasticsearch to version 8.x.
 
 1. Follow the [official Elasticsearch upgrade documentation](https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster/upgrade-717#upgrade-step-1-7.17.x-8.19.x){target=_blank} to complete the upgrade.
 
@@ -80,13 +80,13 @@ With compatibility verified, we're ready to upgrade Elasticsearch to version 8.x
 
 ## Step 6: Upgrade Cortex to version 4.0.x
 
-With Elasticsearch 8.x running, we can now upgrade Cortex itself.
+With Elasticsearch 8.x running, you can now upgrade Cortex itself.
 
 Refer to the [installation guide](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to update Cortex to version 4.0.x.
 
 ## Step 7: Restart Cortex and verify connectivity
 
-We're now ready to bring Cortex back online and ensure everything connects properly.
+You're now ready to bring Cortex back online and ensure everything connects properly.
 
 1. Restart the Cortex service.
 

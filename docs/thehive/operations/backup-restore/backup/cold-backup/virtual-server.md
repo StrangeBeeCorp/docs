@@ -1,6 +1,6 @@
 # Perform a Cold Backup on a Virtual Server
 
-In this tutorial, we're going to guide you through performing a cold backup of TheHive on a virtual server. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
+In this tutorial, you'll perform a cold backup of TheHive on a virtual server. A cold backup involves fully stopping TheHive and its related services before making a copy of your data. While it requires downtime, this method ensures the highest level of data consistency.
 
 Using virtual servers provides more flexibility in performing backup and restore operations.
 

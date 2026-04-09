@@ -2,7 +2,7 @@
 
 <!-- md:version 5.6 --> <!-- md:license Platinum -->
 
-We're going to set up access to [TheHive Portal](about-thehive-portal.md) in TheHive, enabling controlled collaboration with stakeholders outside your Security Operations Center (SOC) team. By the end, you'll have configured the necessary permissions and created external user accounts.
+You'll set up access to [TheHive Portal](about-thehive-portal.md) in TheHive, enabling controlled collaboration with stakeholders outside your Security Operations Center (SOC) team. By the end, you'll have configured the necessary permissions and created external user accounts.
 
 !!! warning "Before you begin"
     Ensure you have [configured an SMTP server](../../administration/smtp/configure-smtp-server.md) before starting. External users need to receive invitation emails to access the portal.
@@ -11,7 +11,7 @@ We're going to set up access to [TheHive Portal](about-thehive-portal.md) in The
 
 <!-- md:permission `[admin] manageProfile` -->
 
-After upgrading to TheHive 5.6, the platform automatically creates [two external profiles](../../administration/profiles/about-profiles.md#predefined-profiles). Let's verify they're available and understand their purposes.
+After upgrading to TheHive 5.6, the platform automatically creates [two external profiles](../../administration/profiles/about-profiles.md#predefined-profiles). Verify they're available and understand their purposes.
 
 1. {% include-markdown "includes/entities-management-view-go-to.md" %}
 
@@ -33,7 +33,7 @@ After upgrading to TheHive 5.6, the platform automatically creates [two external
 
 <!-- md:permission `[admin] manageUser` --> <!-- md:permission `manageUser` -->
 
-Now we'll create accounts for external stakeholders who need portal access.
+Now create accounts for external stakeholders who need portal access.
 
 !!! note "Existing user accounts"
     You can't change user account types after creation. Converting a Normal user to an external user requires [deleting the existing account](../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md) and recreating it with the External type.

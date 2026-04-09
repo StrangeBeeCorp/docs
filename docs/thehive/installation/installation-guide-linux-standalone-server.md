@@ -1,27 +1,27 @@
-# Install TheHive on Linux Systems
+# Install TheHive with Packages
 
-Welcome to the step-by-step guide for installing and configuring TheHive On-prem on Linux systems!
+Welcome to the step-by-step guide for installing and configuring TheHive On-prem with packages!
 
 This guide is designed for users who are comfortable with Linux system administration, but you don’t need to be an infrastructure expert to follow along.
 
 By the end, you'll have a fully functional instance of TheHive up and running.
 
-If you prefer a faster setup on Linux, you can run an [automated installation script](automated-installation-script-linux.md) to install TheHive along with its required services and dependencies using predefined settings.
+If you prefer a faster setup, you can run an [automated installation script](automated-installation-script-linux.md) to install TheHive along with its required services and dependencies using predefined settings.
 
 !!! note "Guide scope"
-    This guide covers setting up a new instance of TheHive on Linux systems, with all components hosted on the same server.
+    This guide covers setting up a new instance of TheHive with packages, with all components hosted on the same server.
 
     It doesn't cover:
 
     * Docker deployments: For Docker-based setups, follow [Deploy TheHive with Docker Compose](docker.md).
-    * Cluster deployments: Refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md) for Linux, or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
+    * Cluster deployments: Refer to [Set Up a Cluster with Packages](deploying-a-cluster.md), or [Deploy TheHive on Kubernetes](kubernetes.md) for Kubernetes deployments.
     * Version upgrades: For upgrading an existing instance, see [Upgrade from TheHive 5.x](upgrade-from-5.x.md) or [Upgrade from TheHive 4.x](upgrade-from-4.x.md).
 
 !!! warning "Before you begin"
     To ensure a smooth installation process, make sure you have:
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
-    * [System requirements fully met and verified](system-requirements.md) for Linux installation
+    * [System requirements fully met and verified](system-requirements.md) for package installation
 
 {% include-markdown "includes/data-protection-link.md" %}
 
@@ -55,7 +55,7 @@ TheHive requires Java to run its application server and to manage various proces
 
 !!! note "Java support"
 
-    * For security and long-term support, we recommend using [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
+    * For security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
     * Only Java 11 is supported. Java 8 is no longer supported.
 
 === "DEB"
@@ -128,7 +128,7 @@ TheHive requires Java to run its application server and to manage various proces
 [Apache Cassandra](https://cassandra.apache.org){target=_blank} is a database system that's used in TheHive as the back-end database for storing and managing incident response data.
 
 !!! info "Single node configuration"
-    In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md#step-1-install-and-configure-apache-cassandra) for detailed instructions.
+    In this guide, you will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-1-install-and-configure-apache-cassandra) for detailed instructions.
 
 !!! note "Cassandra supported versions"
     TheHive is fully compatible with Cassandra version 4.1.x.
@@ -482,7 +482,7 @@ For additional configuration options, refer to:
 [Elasticsearch](https://www.elastic.co/elasticsearch){target=_blank} is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing [audit logs](../user-guides/organization/about-audit-logs.md).
 
 !!! info "Single node configuration"
-    In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md#step-2-install-and-configure-elasticsearch) for detailed instructions.
+    In this guide, you will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-2-install-and-configure-elasticsearch) for detailed instructions.
 
 !!! note "Elasticsearch supported versions"
 
@@ -915,7 +915,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 ### Step 5.2: Configure TheHive
 
 !!! info "Standalone server configuration"
-    In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md#step-4-install-and-configure-thehive).
+    In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-4-install-and-configure-thehive).
 
 1. Open the `/etc/thehive/application.conf` file using a text editor.
 
@@ -1066,7 +1066,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 ### Step 5.4: Create the file storage directory
 
 !!! info "Standalone server configuration"
-    In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster on Linux Systems](deploying-a-cluster.md#step-3-set-up-a-shared-file-storage).
+    In this guide, you will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-3-set-up-a-shared-file-storage).
 
 File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. [All files are stored in their original form as plaintext](../../resources/security.md#database-and-storage).
 
@@ -1165,7 +1165,7 @@ See detailed steps in the Backup & Restore Operations section.
 
 ## Monitoring
 
-We recommend setting up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  
+Set up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  
 
 See the [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md) page for detailed instructions.
 

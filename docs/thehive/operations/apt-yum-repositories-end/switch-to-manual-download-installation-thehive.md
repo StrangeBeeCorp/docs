@@ -5,7 +5,7 @@ Following the [APT and YUM repositories deprecation notice](apt-yum-deprecation-
 For instructions on performing the same process for Cortex, see [Switch to Manual Download and Installation for Cortex](../../../cortex/operations/switch-to-manual-download-installation-cortex.md).
 
 !!! info "Are you concerned?"
-    Use this procedure if you currently install or update TheHive On-prem on Linux distributions using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
+    Use this procedure if you currently install or update TheHive On-prem with packages using `apt-get install`, `apt-get upgrade`, `yum install`, or `yum update`.
 
     You aren't affected if you use the TheHive Cloud Platform or run TheHive through Docker deployments.
 

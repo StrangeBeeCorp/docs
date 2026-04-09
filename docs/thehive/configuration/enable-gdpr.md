@@ -2,13 +2,13 @@
 
 <!-- md:version 5.0 --> <!-- md:license Platinum -->
 
-In this tutorial, we're going to configure TheHive to automatically manage data retention according to GDPR requirements. By the end, you'll have automated data cleanup running on a schedule, ensuring your organization maintains compliance with data protection regulations.
+In this tutorial, you'll configure TheHive to automatically manage data retention according to GDPR requirements. By the end, you'll have automated data cleanup running on a schedule, ensuring your organization maintains compliance with data protection regulations.
 
 {% include-markdown "includes/maintenance-window-required.md" %}
 
 ## Step 1: Choose your GDPR strategy
 
-Let's decide how TheHive should handle data that exceeds your retention period. We've two strategies available, each suited to different compliance needs.
+Choose how TheHive should handle data that exceeds your retention period. Two strategies are available, each suited to different compliance needs.
 
 ### Option 1: Delete strategy
 
@@ -59,7 +59,7 @@ Stop TheHive before applying changes to avoid conflicts.
 
 ## Step 3: Configure GDPR settings in TheHive
 
-Now we'll add the GDPR configuration.
+Now add the GDPR configuration.
 
 1. Open the `application.conf` file using a text editor.
 
@@ -116,7 +116,7 @@ Restart TheHive to apply the new configuration.
 
 ## Step 5: Verify GDPR job scheduling
 
-Let's check TheHive logs for GDPR initialization:
+Check TheHive logs for GDPR initialization:
 
 ```bash
 grep -i "gdpr" /var/log/thehive/application.log

@@ -1,6 +1,6 @@
 # Perform a Hot Backup on a Cluster
 
-In this tutorial, we're going to guide you through performing a hot backup of TheHive on a cluster using the provided scripts.
+In this tutorial, you'll perform a hot backup of TheHive on a cluster using the provided scripts.
 
 By the end, you'll have created complete backups of your database and search index across all three nodes, plus your file storage.
 
@@ -21,7 +21,7 @@ These backups are essential to protect your data and ensure you can recover quic
 
 ## Step 2: Configure NFS-shared storage for Elasticsearch snapshots
 
-Elasticsearch requires a snapshot repository that's accessible from all cluster nodes. To meet this requirement, we will set up an NFS share so every node can reach the backup location. If you don't have a dedicated NFS server, you can export an NFS share directly from one of the Elasticsearch nodes.
+Elasticsearch requires a snapshot repository that's accessible from all cluster nodes. To meet this requirement, you'll set up an NFS share so every node can reach the backup location. If you don't have a dedicated NFS server, you can export an NFS share directly from one of the Elasticsearch nodes.
 
 ### On the NFS server
 
@@ -83,7 +83,7 @@ Elasticsearch requires a snapshot repository that's accessible from all cluster 
 
 ## Step 3: Set up the Elasticsearch snapshot repository
 
-We're going to configure Elasticsearch to store snapshots with timestamped names. This repository will be used to create backups of your search index.
+Configure Elasticsearch to store snapshots with timestamped names. This repository will be used to create backups of your search index.
 
 1. In the `elasticsearch.yml` file on each node, define the directory where snapshots will be stored.
 
@@ -129,7 +129,7 @@ For step-by-step details, see the [official Elasticsearch documentation](https:/
 !!! warning "Data replication requirement"
     It's your responsibility to ensure data replication across all nodes before proceeding. If this requirement isn't met, cluster restoration may fail, and integrity issues could arise.
 
-Before we proceed with the backup, we need to ensure your Cassandra cluster has a replication factor that provides full data redundancy across all nodes. This way, we can take snapshots from a single node while maintaining data consistency.
+Before proceeding with the backup, ensure your Cassandra cluster has a replication factor that provides full data redundancy across all nodes. This way, you can take snapshots from a single node while maintaining data consistency.
 
 1. Verify replication factor.
 
@@ -181,7 +181,7 @@ Before we proceed with the backup, we need to ensure your Cassandra cluster has 
 
 ## Step 6: Create Cassandra and Elasticsearch snapshots
 
-Now we're going to create snapshots of both your database and search index simultaneously. The script captures snapshots from one node, since data is fully replicated, then packages both into separate .tar archives for safe storage.
+Now you'll create snapshots of both your database and search index simultaneously. The script captures snapshots from one node, since data is fully replicated, then packages both into separate .tar archives for safe storage.
 
 ### 1. Prepare the backup script
 
@@ -210,7 +210,7 @@ For more details about snapshot management, refer to the official [Cassandra doc
 
 ## Step 7: Back up file storage
 
-Finally, we're going to back up TheHive file storage, which contains all the attachments and files.
+Finally, back up TheHive file storage, which contains all the attachments and files.
 
 The backup procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
 
@@ -254,7 +254,7 @@ The backup procedure depends on your storage backend—either NFS or an S3-compa
 
     After running the script, the backup archive is available at `/mnt/backup/seaweedfs`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
 
-You've completed the hot backup process for your TheHive cluster. We recommend verifying your backup archives are complete and accessible before relying on them for recovery.
+You've completed the hot backup process for your TheHive cluster. Verify that your backup archives are complete and accessible before relying on them for recovery.
 
 <h2>Next steps</h2>
 

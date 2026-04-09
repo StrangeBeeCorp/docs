@@ -1,6 +1,6 @@
 # Perform a Hot Backup on a Standalone Server
 
-In this tutorial, we're going to guide you through performing a hot backup of TheHive on a standalone server using the provided scripts.
+In this tutorial, you'll perform a hot backup of TheHive on a standalone server using the provided scripts.
 
 By the end, you'll have created complete backups of your database, search index, and file storage—all without stopping TheHive.
 
@@ -13,7 +13,7 @@ These backups are essential to protect your data and ensure you can recover quic
 {% include-markdown "includes/backup-restore-best-practices.md" %}
 
 !!! warning "Script restrictions"
-    These scripts work only for native installations following the [Install TheHive on Linux Systems](../../../../installation/installation-guide-linux-standalone-server.md) configuration. Docker and Kubernetes deployments aren't supported.
+    These scripts work only for native installations following the [Install TheHive with Packages](../../../../installation/installation-guide-linux-standalone-server.md) configuration. Docker and Kubernetes deployments aren't supported.
 
 ## Step 1: Install required tools
 
@@ -21,7 +21,7 @@ These backups are essential to protect your data and ensure you can recover quic
 
 ## Step 2: Set Elasticsearch permissions
 
-Let's ensure Elasticsearch has the correct permissions to access the snapshot directory.
+Ensure Elasticsearch has the correct permissions to access the snapshot directory.
 
 ```bash
 sudo mkdir -p /mnt/backup/elasticsearch
@@ -31,7 +31,7 @@ sudo chmod 770 /mnt/backup/elasticsearch
 
 ## Step 3: Set up the Elasticsearch snapshot repository
 
-We're going to configure Elasticsearch to store snapshots with timestamped names. This repository will be used to create backups of your search index.
+Configure Elasticsearch to store snapshots with timestamped names. This repository will be used to create backups of your search index.
 
 1. In your `elasticsearch.yml` file, define the location where snapshots will be stored.
 
@@ -74,11 +74,11 @@ For step-by-step details, see the [official Elasticsearch documentation](https:/
 
 ## Step 5: Create Cassandra and Elasticsearch snapshots
 
-Now we're going to create snapshots of both your database and search index simultaneously. This parallel approach minimizes the time window between snapshots.
+Now you'll create snapshots of both your database and search index simultaneously. This parallel approach minimizes the time window between snapshots.
 
 ### 1. Prepare the backup script
 
-We're going to use a script that creates hot backups of both Cassandra and Elasticsearch in parallel. The script simultaneously captures snapshots of your database and index, then packages both into separate .tar archives for safe storage.
+You'll use a script that creates hot backups of both Cassandra and Elasticsearch in parallel. The script simultaneously captures snapshots of your database and index, then packages both into separate .tar archives for safe storage.
 
 Before running the script, you'll need to update several values to match your environment:
 
@@ -105,7 +105,7 @@ For more details about snapshot management, refer to the official [Cassandra doc
 
 ## Step 6: Back up file storage
 
-Finally, we're going to back up TheHive file storage, which contains all the attachments and files.
+Finally, back up TheHive file storage, which contains all the attachments and files.
 
 ### 1. Prepare the backup script
 
@@ -117,7 +117,7 @@ Before running the script, update `ATTACHMENT_FOLDER` to match your environment.
 
 After running the script, the backup archive is available at `/mnt/backup/storage`. Be sure to copy this archive to a separate server or storage location to safeguard against data loss if the TheHive server fails.
 
-You've completed the hot backup process for your TheHive standalone server. We recommend verifying your backup archives are complete and accessible before relying on them for recovery.
+You've completed the hot backup process for your TheHive standalone server. Verify that your backup archives are complete and accessible before relying on them for recovery.
 
 <h2>Next steps</h2>
 

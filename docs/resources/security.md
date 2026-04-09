@@ -36,5 +36,5 @@ For details on retrieving SBOM files, see [TheHive Package Repository](../thehiv
 
 <h2>Next steps</h2>
 
-* [Install TheHive on Linux Systems](../thehive/installation/installation-guide-linux-standalone-server.md)
+* [Install TheHive with Packages](../thehive/installation/installation-guide-linux-standalone-server.md)
 * [Configure a Local Authentication Provider](../thehive/administration/authentication/local.md)

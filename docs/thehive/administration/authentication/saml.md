@@ -76,7 +76,7 @@ Configure a SAML authentication provider in TheHive.
 
     The maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.
 
-    If you're unsure of the value set in your IdP, we recommend setting it to *90 days*, as this is the default for most IdPs.
+    If you're unsure of the value set in your IdP, set it to *90 days*, as this is the default for most IdPs.
 
 <h2>Next steps</h2>
 

@@ -2,7 +2,7 @@
 
 <!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
 
-In this tutorial, we're going to set up an automation in TheHive to monitor [tasks](./analyst-corner/tasks/about-tasks.md) that are approaching their due date.
+In this tutorial, you'll set up an automation in TheHive to monitor [tasks](./analyst-corner/tasks/about-tasks.md) that are approaching their due date.
 
 By the end, you'll have a working configuration that:
 

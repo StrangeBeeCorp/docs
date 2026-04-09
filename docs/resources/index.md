@@ -2,11 +2,15 @@
 
 In this section, you can find a collection of valuable resources regarding the applications.
 
-## Demo virtual machine 
-Learn how to [download](./demo.md) and [use](./howto-vm-demo.md) our demo virtual machine
+## Demo environments
+
+Deploy a demo environment to trial TheHive and Cortex with sample data:
+
+* [Set Up a Demo Virtual Machine Environment](./vm-demo.md): Download a ready-to-use VM image and open it in VMware or VirtualBox.
+* [Deploy a Demo Docker Environment](./docker-demo.md): Run TheHive and Cortex on a Linux host using Docker Compose.
 
 ## IaaS environment
-Your have your own cloud infrastruture and wish to manage and include TheHive and Cortex ; learn how to deploy our dedicated images by reading our usage instructions:
+Your have your own cloud infrastructure and wish to manage and include TheHive and Cortex ; learn how to deploy our dedicated images by reading our usage instructions:
 
 * :fontawesome-brands-aws: Amazon AWS environment:
     * for [TheHive](./iaas/aws/thehive.md) and [Cortex](./iaas/aws/cortex.md)
@@ -19,15 +23,15 @@ Your have your own cloud infrastruture and wish to manage and include TheHive an
 
     This documentation contains sample Terraform and cloud-init code to easily launch and update TheHive and Cortex instances.
 
-    ## Main features of the cloud distributions of TheHive and Cortex
+    ### Main features of the cloud distributions of TheHive and Cortex
 
-    ### Easy to use and deploy
+    #### Easy to use and deploy
     The cloud distributions were built with operations and automation in mind. We wanted DevSecOps-friendly products that would fit in most organizations, no matter how simple or complex their infrastructure.
 
-    ### Always up-to-date
+    #### Always up-to-date
     The images are updated whenever a new TheHive or Cortex version is released. No need to bother updating your instances anymore, just launch a new one with a fresh image as if it were a container!
 
-    ### Production-ready
+    #### Production-ready
     + **Dedicated data volumes**: All persistent data is stored on dedicated volumes, not in the root filesystem. 
     + **Easy-resizing**: Resizing independent data volumes is a lot easier as no action is required within the instance at the operating system level.
     + **Ubuntu-based**: Our images are based on the official Ubuntu 20.04 LTS distributions from Canonical.
