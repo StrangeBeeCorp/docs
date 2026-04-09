@@ -629,10 +629,6 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/includes/test-function/</loc>
-         <lastmod>2026-04-09</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/includes/thehive-latest-version/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
@@ -898,6 +894,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/observable-types/delete-an-observable-type/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/observable-types/set-an-observable-type-case-insensitive/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
@@ -1257,6 +1257,10 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.7/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/thehive-portal/activate-thehive-portal-account/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
@@ -1449,10 +1453,6 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
-         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/comment-on-case/</loc>
-         <lastmod>2026-04-09</lastmod>
-    </url>
-    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/create-a-new-case/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
@@ -1522,6 +1522,14 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/attachments/share-an-attachment-case-alert/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/case-comments/share-a-comment/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
@@ -1829,6 +1837,10 @@
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/key-performance-indicators/measure-task-management-performance/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/about-case-pages/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
@@ -1854,6 +1866,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/share-a-case-page/</loc>
+         <lastmod>2026-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/user-guides/knowledge-base/share-a-knowledge-base-page/</loc>
          <lastmod>2026-04-09</lastmod>
     </url>
     <url>

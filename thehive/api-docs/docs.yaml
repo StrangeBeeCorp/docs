@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v5.6.2
+  version: v5.7.0
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -320,16 +320,16 @@ paths:
       - Query and Export
       description: "\n### Overview\n\nThe Query API is the API used to search for\
         \ objects with filtering and sorting capabilities. It's an API introduced\
-        \ by TheHive 4 and is optimized for the the new data model.\n\nTheHive comes\
-        \ with a list of predefined search *Queries* like:\n\n- `listOrganisation`\n\
-        - `listUser`\n- `listAlert`\n- `listCase`\n\nThe Query API request body should\
-        \ be an object with the following fields:\n - `query` *required*: an array\
-        \ of *operations* of different types:\n    - Selection: *required*\n     \
-        \ - list of objects\n      - object by identifier\n    - Filtering: *optional*\n\
-        \    - Sorting: *optional*\n    - Pagination: *optional*\n - `excludeFields`\
-        \ *optional*: an array of field names\n\n### Examples\n\nSimple List:\n```json\n\
-        {\n    \"query\": [\n        {\n            \"_name\": \"listOrganisation\"\
-        \n        }\n    ]\n}\n```\n\nList with filters:\n```json\n{\n    \"query\"\
+        \ by TheHive 4 and is optimized for the new data model.\n\nTheHive comes with\
+        \ a list of predefined search *Queries* like:\n\n- `listOrganisation`\n- `listUser`\n\
+        - `listAlert`\n- `listCase`\n\nThe Query API request body should be an object\
+        \ with the following fields:\n - `query` *required*: an array of *operations*\
+        \ of different types:\n    - Selection: *required*\n      - list of objects\n\
+        \      - object by identifier\n    - Filtering: *optional*\n    - Sorting:\
+        \ *optional*\n    - Pagination: *optional*\n - `excludeFields` *optional*:\
+        \ an array of field names\n\n### Examples\n\nSimple List:\n```json\n{\n  \
+        \  \"query\": [\n        {\n            \"_name\": \"listOrganisation\"\n\
+        \        }\n    ]\n}\n```\n\nList with filters:\n```json\n{\n    \"query\"\
         : [\n        {\n            \"_name\": \"listOrganisation\"\n        },\n\
         \        {\n            \"_name\": \"filter\",\n            \"_eq\": {\n \
         \               \"_field\": \"name\",\n                \"_value\": \"admin\"\
@@ -12114,6 +12114,7 @@ paths:
       - Session: []
       x-TheHive-scopes:
       - name: TheHive
+      - name: Portal
   /api/v1/auth/totp/set:
     post:
       tags:
@@ -12204,6 +12205,7 @@ paths:
       - Session: []
       x-TheHive-scopes:
       - name: TheHive
+      - name: Portal
   /api/v1/auth/totp/unset:
     post:
       tags:
@@ -12288,6 +12290,7 @@ paths:
       - Session: []
       x-TheHive-scopes:
       - name: TheHive
+      - name: Portal
   /api/v1/auth/totp/unset/{user}:
     post:
       tags:
@@ -21661,6 +21664,106 @@ paths:
       - name: TheHive
       x-TheHive-permissions:
       - manageObservableTemplate
+    patch:
+      tags:
+      - Observable Type
+      operationId: Update Observable Type
+      parameters:
+      - name: typeId
+        in: path
+        required: true
+        schema:
+          description: The _id of the entity or its 'name' (depends of the entity)
+          examples:
+          - ~354
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputUpdateObservableType'
+        required: true
+      responses:
+        '204':
+          description: ''
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageObservableTemplate
   /api/v1/observable/type:
     post:
       tags:
@@ -22219,6 +22322,106 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OutputAction'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageAction
+  /api/v1/connector/cortex/actions:
+    post:
+      tags:
+      - Cortex
+      operationId: Create several actions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/InputAction'
+        required: false
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputAction'
         '400':
           description: BadRequest
           content:
@@ -23464,6 +23667,105 @@ paths:
       - Session: []
       x-TheHive-scopes:
       - name: TheHive
+  /api/v1/connector/cortex/responders/{entityType}:
+    get:
+      tags:
+      - Cortex
+      description: List responders for a given entity type
+      operationId: List responders for entity type
+      parameters:
+      - name: entityType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputWorker1'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageAction
   /api/v1/connector/misp/status:
     get:
       tags:
@@ -28635,7 +28937,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OutputInvokeFunction'
+                $ref: '#/components/schemas/OutputInvokeFunctionOk'
         '400':
           description: BadRequest
           content:
@@ -29143,22 +29445,8 @@ components:
       - none
       - fulltext
       - fulltextOnly
-    Auth:
-      title: Auth
-      oneOf:
-      - $ref: '#/components/schemas/BasicAuth'
-      - $ref: '#/components/schemas/BearerAuth'
-      - $ref: '#/components/schemas/KeyAuth'
-      - $ref: '#/components/schemas/NoneAuth'
-      discriminator:
-        propertyName: type
-        mapping:
-          basic: '#/components/schemas/BasicAuth'
-          bearer: '#/components/schemas/BearerAuth'
-          key: '#/components/schemas/KeyAuth'
-          none: '#/components/schemas/NoneAuth'
-    BasicAuth:
-      title: BasicAuth
+    BasicCreateAuth:
+      title: BasicCreateAuth
       type: object
       required:
       - username
@@ -29184,8 +29472,82 @@ components:
       enum:
       - standard
       - none
-    BearerAuth:
-      title: BearerAuth
+    BasicOutputAuth:
+      title: BasicOutputAuth
+      type: object
+      required:
+      - username
+      - password
+      - type
+      properties:
+        username:
+          type: string
+          maxLength: 128
+          minLength: 1
+        password:
+          type: string
+          maxLength: 512
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - basic
+          const: basic
+    BasicUpdateAuth:
+      title: BasicUpdateAuth
+      type: object
+      required:
+      - username
+      - password
+      - type
+      properties:
+        username:
+          type: string
+          maxLength: 128
+          minLength: 1
+        password:
+          type: string
+          maxLength: 512
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - basic
+          const: basic
+    BearerCreateAuth:
+      title: BearerCreateAuth
+      type: object
+      required:
+      - key
+      - type
+      properties:
+        key:
+          type: string
+          maxLength: 1024
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - bearer
+          const: bearer
+    BearerOutputAuth:
+      title: BearerOutputAuth
+      type: object
+      required:
+      - key
+      - type
+      properties:
+        key:
+          type: string
+          maxLength: 1024
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - bearer
+          const: bearer
+    BearerUpdateAuth:
+      title: BearerUpdateAuth
       type: object
       required:
       - key
@@ -29253,6 +29615,12 @@ components:
           type: string
         i18n:
           $ref: '#/components/schemas/I18n'
+    ClientAuthenticationMethod:
+      title: ClientAuthenticationMethod
+      type: string
+      enum:
+      - client_secret_post
+      - client_secret_basic
     ClientProxyWSConfigDto:
       title: ClientProxyWSConfigDto
       type: object
@@ -29341,6 +29709,24 @@ components:
           exclusiveMinimum: 0
         _kind:
           $ref: '#/components/schemas/Kind'
+    CreateAuth:
+      title: CreateAuth
+      description: 'Optional, the type of authentication: none, basic, oauth2 or key
+        (API key or bearer token). Leaving it empty means no authentication'
+      oneOf:
+      - $ref: '#/components/schemas/BasicCreateAuth'
+      - $ref: '#/components/schemas/BearerCreateAuth'
+      - $ref: '#/components/schemas/KeyCreateAuth'
+      - $ref: '#/components/schemas/NoneCreateAuth'
+      - $ref: '#/components/schemas/OAuth2CreateAuth'
+      discriminator:
+        propertyName: type
+        mapping:
+          basic: '#/components/schemas/BasicCreateAuth'
+          bearer: '#/components/schemas/BearerCreateAuth'
+          key: '#/components/schemas/KeyCreateAuth'
+          none: '#/components/schemas/NoneCreateAuth'
+          oauth2: '#/components/schemas/OAuth2CreateAuth'
     CustomFieldType:
       title: CustomFieldType
       type: string
@@ -29624,6 +30010,11 @@ components:
       properties:
         template:
           type: string
+    GrantType:
+      title: GrantType
+      type: string
+      enum:
+      - client_credentials
     Header:
       title: Header
       type: object
@@ -29761,9 +30152,7 @@ components:
           default: true
           type: boolean
         auth:
-          $ref: '#/components/schemas/Auth'
-          description: 'Optional, the type of authentication: basic, bearer or key.
-            Leaving it empty means no authentication'
+          $ref: '#/components/schemas/CreateAuth'
         proxyConfig:
           $ref: '#/components/schemas/ClientProxyWSConfigDto'
         requestTimeout:
@@ -31453,6 +31842,8 @@ components:
           minLength: 1
         isAttachment:
           type: boolean
+        isCaseSensitive:
+          type: boolean
     InputOrganisationBulkLink:
       title: InputOrganisationBulkLink
       type: object
@@ -31804,9 +32195,9 @@ components:
           default: true
           type: boolean
         auth:
-          $ref: '#/components/schemas/Auth'
-          description: 'Optional, the type of authentication: basic, bearer or key.
-            Leaving it empty means no authentication'
+          $ref: '#/components/schemas/UpdateAuth'
+          description: 'Optional, the type of authentication: none, basic, bearer,
+            key or oauth2. Leaving it empty or setting it to ''none'' means no authentication'
         proxyConfig:
           $ref: '#/components/schemas/ClientProxyWSConfigDto'
         requestTimeout:
@@ -31972,9 +32363,9 @@ components:
           default: true
           type: boolean
         auth:
-          $ref: '#/components/schemas/Auth'
-          description: 'Optional, the type of authentication: basic, bearer or key.
-            Leaving it empty means no authentication'
+          $ref: '#/components/schemas/UpdateAuth'
+          description: 'Optional, the type of authentication: none, basic, bearer,
+            key or oauth2. Leaving it empty means no authentication'
         proxyConfig:
           $ref: '#/components/schemas/ClientProxyWSConfigDto'
         requestTimeout:
@@ -32645,6 +33036,12 @@ components:
             minLength: 1
         external:
           type: boolean
+    InputUpdateObservableType:
+      title: InputUpdateObservableType
+      type: object
+      properties:
+        isCaseSensitive:
+          type: boolean
     InputUpdateObservableWithIds:
       title: InputUpdateObservableWithIds
       type: object
@@ -33041,8 +33438,48 @@ components:
     JsObject:
       title: JsObject
       type: object
-    KeyAuth:
-      title: KeyAuth
+    KeyCreateAuth:
+      title: KeyCreateAuth
+      type: object
+      required:
+      - key
+      - type
+      properties:
+        key:
+          type: string
+          maxLength: 1024
+          minLength: 1
+        prefix:
+          type: string
+          maxLength: 32
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - key
+          const: key
+    KeyOutputAuth:
+      title: KeyOutputAuth
+      type: object
+      required:
+      - key
+      - type
+      properties:
+        key:
+          type: string
+          maxLength: 1024
+          minLength: 1
+        prefix:
+          type: string
+          maxLength: 32
+          minLength: 1
+        type:
+          type: string
+          enum:
+          - key
+          const: key
+    KeyUpdateAuth:
+      title: KeyUpdateAuth
       type: object
       required:
       - key
@@ -33217,8 +33654,8 @@ components:
     Nil:
       title: Nil
       type: object
-    NoneAuth:
-      title: NoneAuth
+    NoneCreateAuth:
+      title: NoneCreateAuth
       type: object
       required:
       - type
@@ -33228,6 +33665,142 @@ components:
           enum:
           - none
           const: none
+    NoneOutputAuth:
+      title: NoneOutputAuth
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - none
+          const: none
+    NoneUpdateAuth:
+      title: NoneUpdateAuth
+      type: object
+      required:
+      - type
+      properties:
+        type:
+          type: string
+          enum:
+          - none
+          const: none
+    OAuth2CreateAuth:
+      title: OAuth2CreateAuth
+      type: object
+      required:
+      - clientId
+      - clientSecret
+      - tokenUrl
+      - clientAuthenticationMethod
+      - type
+      properties:
+        clientId:
+          type: string
+          maxLength: 512
+          minLength: 1
+        clientSecret:
+          type: string
+          maxLength: 512
+          minLength: 1
+        grantType:
+          $ref: '#/components/schemas/GrantType'
+          description: Default value is 'client_credentials'
+        tokenUrl:
+          description: The access token url
+          type: string
+          format: url
+        scope:
+          description: Default value is empty array
+          type: array
+          items:
+            type: string
+        clientAuthenticationMethod:
+          $ref: '#/components/schemas/ClientAuthenticationMethod'
+        tokenParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenParameter'
+        type:
+          type: string
+          enum:
+          - oauth2
+          const: oauth2
+    OAuth2OutputAuth:
+      title: OAuth2OutputAuth
+      type: object
+      required:
+      - clientId
+      - tokenUrl
+      - clientAuthenticationMethod
+      - type
+      properties:
+        clientId:
+          type: string
+          maxLength: 512
+          minLength: 1
+        grantType:
+          $ref: '#/components/schemas/GrantType'
+        tokenUrl:
+          type: string
+        scope:
+          type: array
+          items:
+            type: string
+        clientAuthenticationMethod:
+          $ref: '#/components/schemas/ClientAuthenticationMethod'
+        tokenParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenParameter'
+        type:
+          type: string
+          enum:
+          - oauth2
+          const: oauth2
+    OAuth2UpdateAuth:
+      title: OAuth2UpdateAuth
+      type: object
+      required:
+      - clientId
+      - tokenUrl
+      - clientAuthenticationMethod
+      - type
+      properties:
+        clientId:
+          type: string
+          maxLength: 512
+          minLength: 1
+        clientSecret:
+          description: Won't be updated if it only contains * chars
+          type: string
+          maxLength: 512
+          minLength: 1
+        grantType:
+          $ref: '#/components/schemas/GrantType'
+          description: Default value is 'client_credentials'
+        tokenUrl:
+          description: The access token url
+          type: string
+          format: url
+        scope:
+          description: Default value is empty array
+          type: array
+          items:
+            type: string
+        clientAuthenticationMethod:
+          $ref: '#/components/schemas/ClientAuthenticationMethod'
+        tokenParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/TokenParameter'
+        type:
+          type: string
+          enum:
+          - oauth2
+          const: oauth2
     ObservableField:
       title: ObservableField
       type: string
@@ -33602,7 +34175,7 @@ components:
           items:
             $ref: '#/components/schemas/Header'
         auth:
-          $ref: '#/components/schemas/Auth'
+          $ref: '#/components/schemas/OutputAuth'
         body:
           type: string
         enabled:
@@ -33789,6 +34362,22 @@ components:
           $ref: '#/components/schemas/JsObject'
         mainAction:
           type: boolean
+    OutputAuth:
+      title: OutputAuth
+      oneOf:
+      - $ref: '#/components/schemas/BasicOutputAuth'
+      - $ref: '#/components/schemas/BearerOutputAuth'
+      - $ref: '#/components/schemas/KeyOutputAuth'
+      - $ref: '#/components/schemas/NoneOutputAuth'
+      - $ref: '#/components/schemas/OAuth2OutputAuth'
+      discriminator:
+        propertyName: type
+        mapping:
+          basic: '#/components/schemas/BasicOutputAuth'
+          bearer: '#/components/schemas/BearerOutputAuth'
+          key: '#/components/schemas/KeyOutputAuth'
+          none: '#/components/schemas/NoneOutputAuth'
+          oauth2: '#/components/schemas/OAuth2OutputAuth'
     OutputBranding:
       title: OutputBranding
       type: object
@@ -34960,12 +35549,6 @@ components:
           description: Field is present if there were some errors during import
           type: array
           items: {}
-    OutputInvokeFunction:
-      title: OutputInvokeFunction
-      oneOf:
-      - $ref: '#/components/schemas/OutputInvokeFunctionBackground'
-      - $ref: '#/components/schemas/OutputInvokeFunctionKo'
-      - $ref: '#/components/schemas/OutputInvokeFunctionOk'
     OutputInvokeFunctionBackground:
       title: OutputInvokeFunctionBackground
       type: object
@@ -35440,6 +36023,7 @@ components:
       - _createdBy
       - name
       - isAttachment
+      - isCaseSensitive
       properties:
         _id:
           type: string
@@ -35462,6 +36046,8 @@ components:
         name:
           type: string
         isAttachment:
+          type: boolean
+        isCaseSensitive:
           type: boolean
     OutputOrganisation:
       title: OutputOrganisation
@@ -36067,6 +36653,9 @@ components:
           type: boolean
         extraData:
           $ref: '#/components/schemas/JsObject'
+        timeToHandle:
+          type: integer
+          format: int64
     OutputTaxonomy:
       title: OutputTaxonomy
       type: object
@@ -36257,6 +36846,20 @@ components:
           type: array
           items:
             type: string
+    OutputWorker1:
+      title: OutputWorker
+      type: object
+      required:
+      - id
+      - name
+      - description
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
     Pages:
       title: Pages
       type: object
@@ -36278,7 +36881,7 @@ components:
       - consumesLicense
       properties:
         name:
-          type: string
+          $ref: '#/components/schemas/Permissions'
         label:
           description: The user-friendly name of the permission
           type: string
@@ -36291,6 +36894,58 @@ components:
           type: array
           items:
             type: string
+    Permissions:
+      title: Permissions
+      type: string
+      enum:
+      - accessTheHiveFS
+      - manageAction
+      - manageAlert/create
+      - manageAlert/delete
+      - manageAlert/import
+      - manageAlert/reopen
+      - manageAlert/update
+      - manageAnalyse
+      - manageAnalyzerTemplate
+      - manageCase/changeOwnership
+      - manageCase/create
+      - manageCase/delete
+      - manageCase/merge
+      - manageCase/reopen
+      - manageCase/update
+      - manageCaseAccess/external
+      - manageCaseAccess/restrict
+      - manageCaseReport
+      - manageCaseReportTemplate
+      - manageCaseTemplate
+      - manageComment
+      - manageConfig
+      - manageCustomEvent
+      - manageCustomField
+      - manageDashboard
+      - manageFunction/create
+      - manageFunction/invoke
+      - manageKnowledgeBase
+      - manageObservable
+      - manageObservableTemplate
+      - manageOrchestrator/deleteVariables
+      - manageOrchestrator/deleteWorkflows
+      - manageOrchestrator/readVariables
+      - manageOrchestrator/readWorkflows
+      - manageOrchestrator/writeVariables
+      - manageOrchestrator/writeWorkflows
+      - manageOrganisation
+      - managePage
+      - managePageTemplate
+      - managePattern
+      - managePlatform
+      - manageProcedure
+      - manageProfile
+      - manageShare
+      - manageTag
+      - manageTask
+      - manageTaxonomy
+      - manageUser
     ProfileType:
       title: ProfileType
       type: string
@@ -36720,6 +37375,33 @@ components:
           type: string
         request:
           type: string
+    TokenParameter:
+      title: TokenParameter
+      type: object
+      required:
+      - key
+      - value
+      properties:
+        key:
+          type: string
+        value:
+          type: string
+    UpdateAuth:
+      title: UpdateAuth
+      oneOf:
+      - $ref: '#/components/schemas/BasicUpdateAuth'
+      - $ref: '#/components/schemas/BearerUpdateAuth'
+      - $ref: '#/components/schemas/KeyUpdateAuth'
+      - $ref: '#/components/schemas/NoneUpdateAuth'
+      - $ref: '#/components/schemas/OAuth2UpdateAuth'
+      discriminator:
+        propertyName: type
+        mapping:
+          basic: '#/components/schemas/BasicUpdateAuth'
+          bearer: '#/components/schemas/BearerUpdateAuth'
+          key: '#/components/schemas/KeyUpdateAuth'
+          none: '#/components/schemas/NoneUpdateAuth'
+          oauth2: '#/components/schemas/OAuth2UpdateAuth'
     UrlPropertyDescription:
       title: UrlPropertyDescription
       type: object
@@ -37061,7 +37743,6 @@ x-tagGroups:
   - Page
 - name: Connectors
   tags:
-  - Cortex
   - MISP
   - Email Intake
   - Alert Feeder
@@ -37086,6 +37767,7 @@ x-tagGroups:
   - Audit
   - Function
   - Views
+  - Cortex
   - Describe
   - Dashboard
   - Status

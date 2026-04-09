@@ -22,7 +22,7 @@
     
     
       
-        <title>OAUTH 2.0 - TheHive 5 Documentation</title>
+        <title>OAuth 2.0 - TheHive 5 Documentation</title>
       
     
     
@@ -4052,7 +4052,7 @@
   <span class="md-ellipsis">
     
   
-    OAUTH 2.0
+    OAuth 2.0
   
 
     
@@ -4070,7 +4070,7 @@
   <span class="md-ellipsis">
     
   
-    OAUTH 2.0
+    OAuth 2.0
   
 
     
@@ -4908,6 +4908,34 @@
     
   
     Create an Observable Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observable-types/set-an-observable-type-case-insensitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set an Observable Type as Case-Insensitive
   
 
     
@@ -10899,6 +10927,56 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_1_22">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_4_1_22" id="__nav_2_6_4_1_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_6_4_1_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_1_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../user-guides/analyst-corner/alerts/comment-on-alert/" class="md-nav__link">
         
@@ -10916,6 +10994,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guides/analyst-corner/cases/case-comments/share-a-comment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Comment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -12676,7 +12790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../user-guides/analyst-corner/cases/comment-on-case/" class="md-nav__link">
+      <a href="../../../user-guides/analyst-corner/cases/case-comments/comment-on-case/" class="md-nav__link">
         
   
   
@@ -12684,6 +12798,34 @@
     
   
     Comment on Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guides/analyst-corner/cases/case-comments/share-a-comment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Comment
   
 
     
@@ -15460,6 +15602,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../user-guides/knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../user-guides/knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
         
   
@@ -15610,6 +15780,34 @@
     
   
     Measure Alert Management Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../user-guides/key-performance-indicators/measure-task-management-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure Task Management Performance
   
 
     
@@ -19010,7 +19208,7 @@
 <p>Defines the type of token to pass in the authorization header, typically:</p>
 <ul>
 <li>Bearer (most common)</li>
-<li>Basic (used for basic authentication)</li>
+<li>Basic (used for Basic authentication)</li>
 </ul>
 <p><strong>- Token URL</strong></p>
 <p>The endpoint used by TheHive to exchange the authorization code for an access token.</p>
@@ -19084,43 +19282,99 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td><client_id></client_id></td>
+<td><code>&lt;client_id&gt;</code></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td><client_secret></client_secret></td>
+<td><code>&lt;client_secret&gt;</code></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
+<td><code>https://&lt;thehive_url&gt;/api/ssoLogin</code></td>
 </tr>
 <tr>
 <td>Grant type</td>
-<td>authorization_code</td>
+<td><code>authorization_code</code></td>
 </tr>
 <tr>
 <td>Authorization URL</td>
-<td>http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/auth</td>
+<td><code>https://&lt;keycloak_url&gt;/auth/realms/&lt;realm_name&gt;/protocol/openid-connect/auth</code></td>
 </tr>
 <tr>
 <td>Prefix of the authorization header</td>
-<td>Bearer</td>
+<td><code>Bearer</code></td>
 </tr>
 <tr>
 <td>Token URL</td>
-<td>http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/token</td>
+<td><code>https://&lt;keycloak_url&gt;/auth/realms/&lt;realm_name&gt;/protocol/openid-connect/token</code></td>
 </tr>
 <tr>
 <td>User information URL</td>
-<td>http://KEYCLOAK/auth/realms/TENANT/protocol/openid-connect/userinfo</td>
+<td><code>https://&lt;keycloak_url&gt;/auth/realms/&lt;realm_name&gt;/protocol/openid-connect/userinfo</code></td>
 </tr>
 <tr>
-<td>List of scope</td>
-<td>["openid", "email"]</td>
+<td>List of scopes</td>
+<td><code>["openid", "email"]</code></td>
 </tr>
 <tr>
 <td>Field that contains the id of the user in user info</td>
-<td>"email"</td>
+<td><code>"email"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Keycloak URL</p>
+<p>The <code>/auth</code> prefix may vary depending on your Keycloak version.                                                          </p>
+</div>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client ID</td>
+<td><code>&lt;client_id&gt;</code></td>
+</tr>
+<tr>
+<td>Client secret</td>
+<td><code>&lt;client_secret&gt;</code></td>
+</tr>
+<tr>
+<td>TheHive redirect URL</td>
+<td><code>https://&lt;thehive_url&gt;/api/ssoLogin</code></td>
+</tr>
+<tr>
+<td>Grant type</td>
+<td><code>authorization_code</code></td>
+</tr>
+<tr>
+<td>Authorization URL</td>
+<td><code>https://&lt;okta_domain&gt;/oauth2/&lt;auth_server_id&gt;/v1/authorize</code></td>
+</tr>
+<tr>
+<td>Prefix of the authorization header</td>
+<td><code>Bearer</code></td>
+</tr>
+<tr>
+<td>Token URL</td>
+<td><code>https://&lt;okta_domain&gt;/oauth2/&lt;auth_server_id&gt;/v1/token</code></td>
+</tr>
+<tr>
+<td>User information URL</td>
+<td><code>https://&lt;okta_domain&gt;/oauth2/&lt;auth_server_id&gt;/v1/userinfo</code></td>
+</tr>
+<tr>
+<td>List of scopes</td>
+<td><code>["openid", "email"]</code></td>
+</tr>
+<tr>
+<td>Field that contains the id of the user in user info</td>
+<td><code>"email"</code></td>
 </tr>
 </tbody>
 </table>
@@ -19136,95 +19390,43 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td><client_id></client_id></td>
+<td><code>&lt;client_id&gt;</code></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td><client_secret></client_secret></td>
+<td><code>&lt;client_secret&gt;</code></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>http://<thehive_url>/api/ssoLogin</thehive_url></td>
+<td><code>https://&lt;thehive_url&gt;/api/ssoLogin</code></td>
 </tr>
 <tr>
 <td>Grant type</td>
-<td>authorization_code</td>
+<td><code>authorization_code</code></td>
 </tr>
 <tr>
 <td>Authorization URL</td>
-<td>https://OKTA/oauth2/v1/authorize</td>
+<td><code>https://github.com/login/oauth/authorize</code></td>
 </tr>
 <tr>
 <td>Prefix of the authorization header</td>
-<td>Bearer</td>
+<td><code>Bearer</code></td>
 </tr>
 <tr>
 <td>Token URL</td>
-<td>http://OKTA/oauth2/v1/token</td>
+<td><code>https://github.com/login/oauth/access_token</code></td>
 </tr>
 <tr>
 <td>User information URL</td>
-<td>http://OKTA/oauth2/v1/userinfo</td>
+<td><code>https://api.github.com/user</code></td>
 </tr>
 <tr>
-<td>List of scope</td>
-<td>["openid", "email"]</td>
-</tr>
-<tr>
-<td>Field that contains the id of the user in user info</td>
-<td>"email"</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Client ID</td>
-<td><client_id></client_id></td>
-</tr>
-<tr>
-<td>Client secret</td>
-<td><client_secret></client_secret></td>
-</tr>
-<tr>
-<td>TheHive redirect URL</td>
-<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
-</tr>
-<tr>
-<td>Grant type</td>
-<td>authorization_code</td>
-</tr>
-<tr>
-<td>Authorization URL</td>
-<td>https://github.com/login/oauth/authorize</td>
-</tr>
-<tr>
-<td>Prefix of the authorization header</td>
-<td>Bearer</td>
-</tr>
-<tr>
-<td>Token URL</td>
-<td>https://github.com/login/oauth/access_token</td>
-</tr>
-<tr>
-<td>User information URL</td>
-<td>https://api.github.com/user</td>
-</tr>
-<tr>
-<td>List of scope</td>
-<td>["user"]</td>
+<td>List of scopes</td>
+<td><code>["user"]</code></td>
 </tr>
 <tr>
 <td>Field that contains the id of the user in user info</td>
-<td>"email"</td>
+<td><code>"email"</code></td>
 </tr>
 </tbody>
 </table>
@@ -19247,43 +19449,43 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td><client_id></client_id></td>
+<td><code>&lt;client_id&gt;</code></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td><client_secret></client_secret></td>
+<td><code>&lt;client_secret&gt;</code></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
+<td><code>https://&lt;thehive_url&gt;/api/ssoLogin</code></td>
 </tr>
 <tr>
 <td>Grant type</td>
-<td>authorization_code</td>
+<td><code>authorization_code</code></td>
 </tr>
 <tr>
 <td>Authorization URL</td>
-<td>https://login.microsoftonline.com/<tenant>/oauth2/v2.0/authorize</tenant></td>
+<td><code>https://login.microsoftonline.com/&lt;tenant&gt;/oauth2/v2.0/authorize</code></td>
 </tr>
 <tr>
 <td>Prefix of the authorization header</td>
-<td>Bearer</td>
+<td><code>Bearer</code></td>
 </tr>
 <tr>
 <td>Token URL</td>
-<td>https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token</tenant></td>
+<td><code>https://login.microsoftonline.com/&lt;tenant&gt;/oauth2/v2.0/token</code></td>
 </tr>
 <tr>
 <td>User information URL</td>
-<td>https://graph.microsoft.com/v1.0/me</td>
+<td><code>https://graph.microsoft.com/v1.0/me</code></td>
 </tr>
 <tr>
-<td>List of scope</td>
-<td>["User.Read"]</td>
+<td>List of scopes</td>
+<td><code>["User.Read"]</code></td>
 </tr>
 <tr>
 <td>Field that contains the id of the user in user info</td>
-<td>"mail"</td>
+<td><code>"mail"</code></td>
 </tr>
 </tbody>
 </table>
@@ -19303,43 +19505,43 @@
 <tbody>
 <tr>
 <td>Client ID</td>
-<td><client_id></client_id></td>
+<td><code>&lt;client_id&gt;</code></td>
 </tr>
 <tr>
 <td>Client secret</td>
-<td><client_secret></client_secret></td>
+<td><code>&lt;client_secret&gt;</code></td>
 </tr>
 <tr>
 <td>TheHive redirect URL</td>
-<td>https://<thehive_url>/api/ssoLogin</thehive_url></td>
+<td><code>https://&lt;thehive_url&gt;/api/ssoLogin</code></td>
 </tr>
 <tr>
 <td>Grant type</td>
-<td>authorization_code</td>
+<td><code>authorization_code</code></td>
 </tr>
 <tr>
 <td>Authorization URL</td>
-<td>https://accounts.google.com/o/oauth2/v2/auth</td>
+<td><code>https://accounts.google.com/o/oauth2/v2/auth</code></td>
 </tr>
 <tr>
 <td>Prefix of the authorization header</td>
-<td>Bearer</td>
+<td><code>Bearer</code></td>
 </tr>
 <tr>
 <td>Token URL</td>
-<td>https://oauth2.googleapis.com/token</td>
+<td><code>https://oauth2.googleapis.com/token</code></td>
 </tr>
 <tr>
 <td>User information URL</td>
-<td>https://openidconnect.googleapis.com/v1/userinfo</td>
+<td><code>https://openidconnect.googleapis.com/v1/userinfo</code></td>
 </tr>
 <tr>
-<td>List of scope</td>
-<td>["email", "profile", "openid"]</td>
+<td>List of scopes</td>
+<td><code>["email", "profile", "openid"]</code></td>
 </tr>
 <tr>
 <td>Field that contains the id of the user in user info</td>
-<td>"email"</td>
+<td><code>"email"</code></td>
 </tr>
 </tbody>
 </table>

@@ -4035,7 +4035,7 @@
   <span class="md-ellipsis">
     
   
-    OAUTH 2.0
+    OAuth 2.0
   
 
     
@@ -4840,6 +4840,34 @@
     
   
     Create an Observable Type
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../administration/observable-types/set-an-observable-type-case-insensitive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set an Observable Type as Case-Insensitive
   
 
     
@@ -10897,6 +10925,56 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_4_1_22">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_4_1_22" id="__nav_2_6_4_1_22_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_2_6_4_1_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_4_1_22">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../../../../analyst-corner/alerts/comment-on-alert/" class="md-nav__link">
         
@@ -10914,6 +10992,42 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyst-corner/cases/case-comments/share-a-comment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Comment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -12674,7 +12788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../analyst-corner/cases/comment-on-case/" class="md-nav__link">
+      <a href="../../../../analyst-corner/cases/case-comments/comment-on-case/" class="md-nav__link">
         
   
   
@@ -12682,6 +12796,34 @@
     
   
     Comment on Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../analyst-corner/cases/case-comments/share-a-comment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Comment
   
 
     
@@ -15458,6 +15600,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../knowledge-base/share-a-knowledge-base-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Share a Page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../knowledge-base/view-a-knowledge-base-page/" class="md-nav__link">
         
   
@@ -15608,6 +15778,34 @@
     
   
     Measure Alert Management Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../key-performance-indicators/measure-task-management-performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure Task Management Performance
   
 
     
@@ -18997,11 +19195,119 @@
 </li>
 <li>
 <p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v160H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h160v160c0 17.7 14.3 32 32 32s32-14.3 32-32V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span> in the <strong>Headers</strong> section to add headers.</p>
-<p>Enter a header key and its corresponding value to include in the HTTP request. Use headers to send authentication tokens, content types, or other metadata required by the external system.</p>
+<p>Enter a header key and its corresponding value to include in the HTTP request. Use headers to define content types, expected response formats, or to include custom metadata required by the external system.</p>
 <hr>
 </li>
 <li>
-<p>In the <strong>Authentication</strong> section, select an authentication type if required.</p>
+<p>In the <strong>Authentication</strong> section, select an authentication type.</p>
+<ul>
+<li><strong>None</strong>: Use this method when the external API doesn't require authentication.</li>
+<li><strong>Basic</strong>: Use this method to authenticate using HTTP Basic authentication.<br>
+Enter the username and password provided by the external system, which will be sent in the <code>Authorization</code> header.</li>
+<li><strong>Key</strong>: Use this method to authenticate using an API key.<br>
+Enter the API key provided by the external system.</li>
+<li><strong>Bearer</strong>: Use this method to authenticate using a bearer token.<br>
+Enter the bearer token, which will be sent in the <code>Authorization</code> header.</li>
+<li>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.7/#5.7" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.7/#5.7">5.7</a></span></span> <strong>OAuth 2.0</strong> (client credentials): Use this method to authenticate with an OAuth 2.0 authorization server using the client credentials grant type.</p>
+<p><strong>- Client authentication method *</strong></p>
+<p>Defines how the client credentials are sent to the token endpoint.</p>
+<p>Supported values:</p>
+<ul>
+<li><code>client_secret_post</code>: The client credentials are sent in the request body as form parameters.</li>
+<li><code>client_secret_basic</code>: The client credentials are sent in the HTTP <code>Authorization</code> header using Basic authentication.</li>
+</ul>
+<p><strong>- Client ID *</strong></p>
+<p>The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. TheHive uses this identifier to authenticate with the OAuth server during the authorization process.</p>
+<p><strong>- Client secret *</strong></p>
+<p>A confidential string issued by the OAuth 2.0 provider, used along with the client ID to authenticate TheHive securely.</p>
+<p><strong>- Token URL *</strong></p>
+<p>The OAuth 2.0 token endpoint used to obtain an access token.</p>
+<p><strong>- Scope</strong></p>
+<p>Optional list of scopes to request from the authorization server.</p>
+<p><strong>- Token parameters</strong></p>
+<p>Additional parameters to include in the token request.</p>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Keycloak</label><label for="__tabbed_1_2">Microsoft 365</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client authentication method</td>
+<td><code>client_secret_post</code></td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td><code>&lt;client_id&gt;</code></td>
+</tr>
+<tr>
+<td>Client secret</td>
+<td><code>&lt;client_secret&gt;</code></td>
+</tr>
+<tr>
+<td>Token URL</td>
+<td><code>https://&lt;keycloak_url&gt;/auth/realms/&lt;realm_name&gt;/protocol/openid-connect/token</code></td>
+</tr>
+<tr>
+<td>Scope</td>
+<td><code>["openid", "email"]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Keycloak URL</p>
+<p>The <code>/auth</code> prefix may vary depending on your Keycloak version.</p>
+</div>
+</div>
+<div class="tabbed-block">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client authentication method</td>
+<td><code>client_secret_post</code></td>
+</tr>
+<tr>
+<td>Client ID</td>
+<td><code>&lt;client_id&gt;</code></td>
+</tr>
+<tr>
+<td>Client secret</td>
+<td><code>&lt;client_secret&gt;</code></td>
+</tr>
+<tr>
+<td>Token URL</td>
+<td><code>https://login.microsoftonline.com/&lt;tenant&gt;/oauth2/v2.0/token</code></td>
+</tr>
+<tr>
+<td>Scope</td>
+<td><code>["User.Read"]</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Microsoft configuration</p>
+<p>To generate the <code>&lt;client_id&gt;</code>, <code>&lt;client_secret&gt;</code> and <code>&lt;tenant&gt;</code>, register a new application in the <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps" target="_blank">Azure Active Directory App Registrations portal</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul>
 <hr>
 </li>
 <li>
@@ -19013,7 +19319,7 @@
 <li>Enter the type of protocol, either HTTP or HTTPS.</li>
 <li>Enter the IP address or domain name of the proxy server.</li>
 <li>Enter the port number used by the proxy server.</li>
-<li>Turn on the <strong>Authentication</strong> toggle if you want to require a username and password to authenticate with the proxy server.</li>
+<li>The username and password to authenticate with the proxy server.</li>
 </ul>
 </li>
 </ul>
@@ -19044,7 +19350,7 @@
 <p><strong>- Description</strong></p>
 <p>Describe what the function does.</p>
 <p><strong>- Definition</strong></p>
-<p>Enter the JavaScript code for your function. If you need inspiration, check out the <a href="https://github.com/StrangeBeeCorp/thehive-templates/tree/main/Functions%20Examples" target="_blank">GitHub repository with function examples</a>.</p>
+<p>Enter the JavaScript code for your function. If you need inspiration, check out the <a href="https://github.com/StrangeBeeCorp/integrations/tree/main/.generated/docs/functions" target="_blank">GitHub repository with function examples</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Basic function structure</p>
 <p>In TheHive, a function follows this basic structure:</p>
@@ -19066,20 +19372,26 @@
 </li>
 <li>
 <p>In the <strong>Test function</strong> section, you can test your function as follows:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">*</span> Enter input data by selecting <span class="gs">*input*</span>.
-
-<span class="k">*</span> Select one of the following:
-
-    <span class="k">*</span> **Run function (dry-run)** to simulate the function without sending data.
-    <span class="k">*</span> **Run function** to execute the function with actual data.
-
-<span class="k">*</span> After running the function, select one of the following to view results:
-
-    <span class="k">*</span> *result* to view the function’s output
-    <span class="k">*</span> *stdout* to display standard output from the function
-    <span class="k">*</span> *stderr* to display errors and warnings
-</code></pre></div>
-
+<ul>
+<li>
+<p>Enter input data by selecting <em>input</em>.</p>
+</li>
+<li>
+<p>Select one of the following:</p>
+<ul>
+<li><strong>Run function (dry-run)</strong> to simulate the function without sending data.</li>
+<li><strong>Run function</strong> to execute the function with actual data.</li>
+</ul>
+</li>
+<li>
+<p>After running the function, select one of the following to view results:</p>
+<ul>
+<li><em>result</em> to view the function’s output</li>
+<li><em>stdout</em> to display standard output from the function</li>
+<li><em>stderr</em> to display errors and warnings</li>
+</ul>
+</li>
+</ul>
 <hr>
 </li>
 <li>
@@ -19136,7 +19448,7 @@
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="feeder-function">Feeder function<a class="headerlink" href="#feeder-function" title="Permanent link">#</a></h3>
-<p>You can find the function example for creating an alert from Airtable in the <a href="https://github.com/StrangeBeeCorp/thehive-templates/blob/main/Functions%20Examples/Alert%20Feeder%20Functions/function_Feeder_alertFromAirtable.js" target="_blank">GitHub repository</a>.</p>
+<p>You can find the function example for creating an alert from Airtable in the <a href="https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/airtable-alertfromairtable.md" target="_blank">GitHub repository</a>.</p>
 <h2>Next steps</h2>
 
 <ul>
