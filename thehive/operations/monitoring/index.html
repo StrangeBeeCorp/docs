@@ -711,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -823,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17955,7 +17955,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -17971,7 +17971,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -17984,14 +17984,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18012,14 +18012,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18938,7 +18938,7 @@
 </ul>
 </div>
 <h2 id="step-1-enable-monitoring-in-thehive">Step 1: Enable monitoring in TheHive<a class="headerlink" href="#step-1-enable-monitoring-in-thehive" title="Permanent link">#</a></h2>
-<p>First, we need to activate TheHive built-in monitoring capabilities. TheHive uses the <a href="https://kamon.io/" target="_blank">Kamon</a> library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.</p>
+<p>First, activate TheHive built-in monitoring capabilities. TheHive uses the <a href="https://kamon.io/" target="_blank">Kamon</a> library to collect metrics, but it's turned off by default. The platform includes built-in integration with Prometheus Reporter. For other reporters, contact StrangeBee Support.</p>
 <ol>
 <li>
 <p>Open the <code>/etc/thehive/application.conf</code> file.</p>
@@ -18985,10 +18985,10 @@
 <p>Restart TheHive to apply the changes.</p>
 </li>
 </ol>
-<p>Let's verify that everything is working. Open your browser and navigate to <code>http://&lt;thehive_hostname&gt;:9095/metrics</code>.
+<p>Verify that everything is working. Open your browser and navigate to <code>http://&lt;thehive_hostname&gt;:9095/metrics</code>.
 You should see a page full of metrics in Prometheus format.</p>
 <h2 id="step-2-connect-prometheus-to-thehive">Step 2: Connect Prometheus to TheHive<a class="headerlink" href="#step-2-connect-prometheus-to-thehive" title="Permanent link">#</a></h2>
-<p>Now we'll configure Prometheus to collect these metrics from TheHive.</p>
+<p>Now configure Prometheus to collect these metrics from TheHive.</p>
 <ol>
 <li>
 <p>Locate and open your <code>prometheus.yml</code> configuration file.</p>
@@ -19045,7 +19045,7 @@ You should see a page full of metrics in Prometheus format.</p>
 </li>
 </ol>
 <h2 id="step-3-visualize-metrics-in-grafana">Step 3: Visualize metrics in Grafana<a class="headerlink" href="#step-3-visualize-metrics-in-grafana" title="Permanent link">#</a></h2>
-<p>Time to make those metrics visible! We'll set up Grafana dashboards to display TheHive performance data.</p>
+<p>Time to make those metrics visible! Set up Grafana dashboards to display TheHive performance data.</p>
 <ol>
 <li>
 <p>Open Grafana in your browser and log in.</p>
@@ -19060,10 +19060,10 @@ You should see a page full of metrics in Prometheus format.</p>
 <p>f. Select <strong>Save &amp; Test</strong>.</p>
 </li>
 <li>
-<p>Now let's import pre-built dashboards to start monitoring TheHive.</p>
+<p>Now import pre-built dashboards to start monitoring TheHive.</p>
 <div class="admonition tip">
 <p class="admonition-title">Recommended dashboard templates</p>
-<p>We suggest starting with these Kamon 2.x dashboards, which work well with TheHive:</p>
+<p>These Kamon 2.x dashboards work well with TheHive:</p>
 <ul>
 <li><a href="https://grafana.com/grafana/dashboards/12317-api-dashboard/" target="_blank">Kamon 2.x - API Dashboard</a> <code>ID: 12317</code>: Shows API metrics like request throughput, response latency, and error rates.<br>
 Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.</li>
@@ -19085,7 +19085,7 @@ Note: Some API requests may display latencies of up to 60 seconds. This is expec
 </ol>
 <p>To build custom dashboards from scratch, see <a href="https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/create-dashboard/" target="_blank">Create a dashboard in Grafana</a>.</p>
 <h2 id="step-4-verify-your-monitoring-setup">Step 4: Verify your monitoring setup<a class="headerlink" href="#step-4-verify-your-monitoring-setup" title="Permanent link">#</a></h2>
-<p>Let's make sure everything is working together:</p>
+<p>Make sure everything is working together:</p>
 <ol>
 <li>
 <p>Generate some activity in TheHive.</p>

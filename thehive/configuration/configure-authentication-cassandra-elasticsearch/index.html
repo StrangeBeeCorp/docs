@@ -711,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -823,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17933,7 +17933,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -17949,7 +17949,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -17962,14 +17962,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -17990,14 +17990,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18904,14 +18904,14 @@
 
 
 <h1 id="configure-database-and-index-authentication">Configure Database and Index Authentication<a class="headerlink" href="#configure-database-and-index-authentication" title="Permanent link">#</a></h1>
-<p>In this tutorial, we're going to secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.</p>
+<p>In this tutorial, you'll secure your TheHive installation by configuring authentication for both Cassandra and Elasticsearch. By the end, you'll have password-protected access to your database and index backends.</p>
 <div class="admonition warning">
 <p class="admonition-title">Maintenance window required</p>
 <p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
 </div>
 <h2 id="configure-authentication-for-cassandra">Configure authentication for Cassandra<a class="headerlink" href="#configure-authentication-for-cassandra" title="Permanent link">#</a></h2>
 <h3 id="step-1-stop-your-services">Step 1: Stop your services<a class="headerlink" href="#step-1-stop-your-services" title="Permanent link">#</a></h3>
-<p>First, we need to stop your running services in the following order to avoid data corruption:</p>
+<p>First, stop your running services in the following order to avoid data corruption:</p>
 <ol>
 <li>
 <p>Stop TheHive service</p>
@@ -18924,13 +18924,13 @@
 <p class="admonition-title">Service commands</p>
 <p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
 <ul>
-<li>Linux installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
 <li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
 <li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
 </ul>
 </div>
 <h3 id="step-2-update-cassandra-configuration">Step 2: Update Cassandra configuration<a class="headerlink" href="#step-2-update-cassandra-configuration" title="Permanent link">#</a></h3>
-<p>Now we'll modify Cassandra configuration to require authentication.</p>
+<p>Now you'll modify the Cassandra configuration to require authentication.</p>
 <ol>
 <li>
 <p>Locate the <code>cassandra.yaml</code> file.</p>
@@ -18958,7 +18958,7 @@
 <p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
 </div>
 <p>By default, Cassandra uses the <code>cassandra</code> username and the password <code>cassandra</code>. For security reasons, especially in production environments, you must change this password immediately after setup.</p>
-<p>To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
+<p>To do this, you'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
 <ol>
 <li>
 <p>Connect to Cassandra using default credentials.</p>
@@ -19014,7 +19014,7 @@
 </li>
 </ol>
 <h3 id="step-5-create-a-role-for-thehive">Step 5: Create a role for TheHive<a class="headerlink" href="#step-5-create-a-role-for-thehive" title="Permanent link">#</a></h3>
-<p>Let's create a dedicated role that TheHive will use to connect to Cassandra.</p>
+<p>Create a dedicated role that TheHive will use to connect to Cassandra.</p>
 <ol>
 <li>
 <p>Create a dedicated role for TheHive.</p>
@@ -19033,7 +19033,7 @@
 </li>
 </ol>
 <h3 id="step-6-update-thehive-configuration">Step 6: Update TheHive configuration<a class="headerlink" href="#step-6-update-thehive-configuration" title="Permanent link">#</a></h3>
-<p>Now we'll configure TheHive to use the credentials we just created.</p>
+<p>Now you'll configure TheHive to use the credentials you just created.</p>
 <ol>
 <li>
 <p>Open the <code>application.conf</code> file using a text editor.</p>
@@ -19075,7 +19075,7 @@
 <p>At this point, your Cassandra database is secured with authentication.</p>
 <h2 id="configure-authentication-for-elasticsearch">Configure authentication for Elasticsearch<a class="headerlink" href="#configure-authentication-for-elasticsearch" title="Permanent link">#</a></h2>
 <h3 id="step-1-stop-services">Step 1: Stop services<a class="headerlink" href="#step-1-stop-services" title="Permanent link">#</a></h3>
-<p>First, we need to stop your running services in the following order to avoid data corruption:</p>
+<p>First, stop your running services in the following order to avoid data corruption:</p>
 <ol>
 <li>
 <p>Stop TheHive service</p>
@@ -19085,7 +19085,7 @@
 </li>
 </ol>
 <h3 id="step-2-update-elasticsearch-configuration">Step 2: Update Elasticsearch configuration<a class="headerlink" href="#step-2-update-elasticsearch-configuration" title="Permanent link">#</a></h3>
-<p>Now we'll modify Elasticsearch configuration to require authentication.</p>
+<p>Now you'll modify the Elasticsearch configuration to require authentication.</p>
 <ol>
 <li>
 <p>Open the <code>/etc/elasticsearch/elasticsearch.yml</code> file using a text editor.</p>
@@ -19180,7 +19180,7 @@
 </li>
 </ol>
 <h3 id="step-4-update-thehive-configuration">Step 4: Update TheHive configuration<a class="headerlink" href="#step-4-update-thehive-configuration" title="Permanent link">#</a></h3>
-<p>Now we'll configure TheHive to use the credentials we just created.</p>
+<p>Now you'll configure TheHive to use the credentials you just created.</p>
 <ol>
 <li>
 <p>Open the <code>application.conf</code> file using a text editor.</p>

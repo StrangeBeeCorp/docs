@@ -5,9 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/includes/vm-testing-only/">
+        <link rel="canonical" href="https://docs.strangebee.com/resources/docker-demo/">
       
       
+        <link rel="prev" href="../vm-demo/">
+      
+      
+        <link rel="next" href="../iaas/aws/">
       
       
         
@@ -18,7 +22,7 @@
     
     
       
-        <title>Vm testing only - TheHive 5 Documentation</title>
+        <title>Docker Demo Environment - TheHive 5 Documentation</title>
       
     
     
@@ -158,6 +162,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#deploy-a-demo-docker-environment" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -256,11 +265,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../resources/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -695,7 +706,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -807,7 +818,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17714,24 +17725,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -17749,7 +17765,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -17767,7 +17783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -17795,7 +17811,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/templates/" class="md-nav__link">
+      <a href="../templates/" class="md-nav__link">
         
   
   
@@ -17820,6 +17836,8 @@
                 
   
   
+    
+  
   
   
     
@@ -17830,11 +17848,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
@@ -17844,7 +17862,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -17855,12 +17873,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -17873,14 +17891,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/demo/" class="md-nav__link">
+      <a href="../vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -17898,17 +17916,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../resources/howto-vm-demo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Demo Environment
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -17917,6 +17962,149 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-required-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Install required dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-clone-the-github-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Clone the GitHub repository
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-go-to-the-testing-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Go to the Testing profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-initialize-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Initialize the environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-start-the-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Start the environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-load-demo-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Load demo data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-access-thehive-and-cortex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Access TheHive and Cortex
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-your-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reset your environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -18037,7 +18225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/" class="md-nav__link">
+      <a href="../iaas/aws/" class="md-nav__link">
         
   
   
@@ -18065,7 +18253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/thehive/" class="md-nav__link">
+      <a href="../iaas/aws/thehive/" class="md-nav__link">
         
   
   
@@ -18093,7 +18281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/cortex/" class="md-nav__link">
+      <a href="../iaas/aws/cortex/" class="md-nav__link">
         
   
   
@@ -18121,7 +18309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/infra-as-code/" class="md-nav__link">
+      <a href="../iaas/aws/infra-as-code/" class="md-nav__link">
         
   
   
@@ -18149,7 +18337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
+      <a href="../iaas/aws/infra-as-code/ug-secops-vpc/" class="md-nav__link">
         
   
   
@@ -18177,7 +18365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../iaas/aws/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -18263,7 +18451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/" class="md-nav__link">
+      <a href="../iaas/azure/" class="md-nav__link">
         
   
   
@@ -18291,7 +18479,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/thehive/" class="md-nav__link">
+      <a href="../iaas/azure/thehive/" class="md-nav__link">
         
   
   
@@ -18319,7 +18507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/cortex/" class="md-nav__link">
+      <a href="../iaas/azure/cortex/" class="md-nav__link">
         
   
   
@@ -18347,7 +18535,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/infra-as-code/" class="md-nav__link">
+      <a href="../iaas/azure/infra-as-code/" class="md-nav__link">
         
   
   
@@ -18375,7 +18563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
+      <a href="../iaas/azure/infra-as-code/ug-secops-vnet/" class="md-nav__link">
         
   
   
@@ -18403,7 +18591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
+      <a href="../iaas/azure/infra-as-code/ug-secops-instances/" class="md-nav__link">
         
   
   
@@ -18431,7 +18619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
+      <a href="../iaas/azure/infra-as-code/ug-secops-instances/docs/upgrade/" class="md-nav__link">
         
   
   
@@ -18575,7 +18763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/thehive4py/" class="md-nav__link">
+      <a href="../thehive4py/" class="md-nav__link">
         
   
   
@@ -18603,7 +18791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/thehive4go/" class="md-nav__link">
+      <a href="../thehive4go/" class="md-nav__link">
         
   
   
@@ -18631,7 +18819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/cortex4py/" class="md-nav__link">
+      <a href="../cortex4py/" class="md-nav__link">
         
   
   
@@ -18659,7 +18847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/cortexutils/" class="md-nav__link">
+      <a href="../cortexutils/" class="md-nav__link">
         
   
   
@@ -18703,7 +18891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../resources/security/" class="md-nav__link">
+      <a href="../security/" class="md-nav__link">
         
   
   
@@ -18749,6 +18937,64 @@
   
 
 
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Resources
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../vm-demo/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Demo Environments
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
@@ -18756,12 +19002,356 @@
 
 
 
-  <h1>Vm testing only</h1>
-
-<div class="admonition warning">
+<h1 id="deploy-a-demo-docker-environment">Deploy a Demo Docker Environment<a class="headerlink" href="#deploy-a-demo-docker-environment" title="Permanent link">#</a></h1>
+<p>Deploy a demo environment to trial TheHive and Cortex with sample data using Docker Compose.</p>
+<p>For a simpler setup using a pre-packaged VM image, see <a href="../vm-demo/">Set Up a Demo Virtual Machine Environment</a>.</p>
+<div class="admonition danger">
 <p class="admonition-title">Testing only</p>
-<p>This virtual machine (VM) is provided for testing purposes only. Don't use it in production.</p>
+<p>This environment is for testing purposes only and must never be used in production.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Platinum trial</p>
+<p>The Docker installation of TheHive with Cortex includes a 14-day Platinum trial license. After the trial ends, TheHive switches to read-only mode.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Before you begin</p>
+<p>To ensure a smooth deployment process, make sure you have:</p>
+<ul>
+<li>A basic understanding of <a href="../../thehive/overview/#architecture">TheHive architecture</a></li>
+<li><a href="../../thehive/installation/system-requirements/">System requirements</a> fully met and verified for a Docker Compose <em>Testing</em> environment</li>
+<li>At least <code>sudo</code> permissions</li>
+</ul>
+</div>
+<h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
+<p>Start by installing the necessary dependencies for deploying TheHive with Docker Compose.</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/" target="_blank">Docker Engine</a>: version <code>v23.0.15</code> or later</li>
+<li><a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose plugin</a>: version <code>v2.20.2</code> or later</li>
+<li><a href="https://jqlang.github.io/jq/" target="_blank">jq</a></li>
+</ul>
+<h3 id="verify-dependencies-installation">Verify dependencies installation<a class="headerlink" href="#verify-dependencies-installation" title="Permanent link">#</a></h3>
+<p>Run the following commands to ensure the dependencies are correctly installed:</p>
+<ul>
+<li>Check the Docker engine version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>version
+</code></pre></div>
+<ul>
+<li>Confirm the current user can run Docker commands:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div>
+<p>For details on post-installation steps and user permissions, see the <a href="https://docs.docker.com/engine/install/linux-postinstall/" target="_blank">Docker post-installation guide</a>.</p>
+<ul>
+<li>Check the Docker Compose plugin version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>version
+</code></pre></div>
+<h2 id="step-2-clone-the-github-repository">Step 2: Clone the GitHub repository<a class="headerlink" href="#step-2-clone-the-github-repository" title="Permanent link">#</a></h2>
+<p>Next, clone the <a href="https://github.com/StrangeBeeCorp/docker.git" target="_blank">StrangeBee Docker repository</a> to your local machine:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/StrangeBeeCorp/docker.git
+</code></pre></div>
+<h2 id="step-3-go-to-the-testing-profile">Step 3: Go to the <em>Testing</em> profile<a class="headerlink" href="#step-3-go-to-the-testing-profile" title="Permanent link">#</a></h2>
+<p>Navigate to the testing environment directory:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>docker/testing
+</code></pre></div>
+<h2 id="step-4-initialize-the-environment">Step 4: Initialize the environment<a class="headerlink" href="#step-4-initialize-the-environment" title="Permanent link">#</a></h2>
+<p>Before starting TheHive and Cortex, initialize the environment using the provided <code>init.sh</code> script.</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/init.sh
+</code></pre></div>
+<p>This script automates several critical setup tasks:</p>
+<ul>
+<li>Prompts for a server name to include in the Nginx server certificate.</li>
+<li>Initializes the <code>secret.conf</code> and <code>index.conf</code> configuration files for TheHive and Cortex.</li>
+<li>Generates a self-signed certificate if none exists in the <code>./certificates</code> directory.</li>
+<li>Creates a <code>.env</code> file with user/group information and application settings.</li>
+<li>Generates a random password for Elasticsearch authentication.</li>
+<li>Verifies file and folder permissions to ensure proper access rights.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Elasticsearch password</p>
+<p>If you need to retrieve the Elasticsearch password, check the <code>.env</code> file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">User permissions</p>
+<p>TheHive and Cortex will run under the user account and group that execute the initialization script. That user must have read/write access to the mounted host directories created during initialization.</p>
+</div>
+<h2 id="step-5-start-the-environment">Step 5: Start the environment<a class="headerlink" href="#step-5-start-the-environment" title="Permanent link">#</a></h2>
+<p>Start all services using Docker Compose:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Check that all containers are running.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>All services should show a running status. If any service fails to start, stop the containers and restart without the <code>-d</code> flag to display real-time logs:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+docker<span class="w"> </span>compose<span class="w"> </span>up
+</code></pre></div>
+<h2 id="step-6-load-demo-data">Step 6: Load demo data<a class="headerlink" href="#step-6-load-demo-data" title="Permanent link">#</a></h2>
+<p>Run the following script to configure TheHive and Cortex with sample data:</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/test_init_applications.sh
+</code></pre></div>
+<p>This script:</p>
+<ul>
+<li>Initializes Cortex and TheHive with a <code>Demo</code> organization and <code>thehive</code> user account</li>
+<li>Integrates TheHive with Cortex</li>
+<li>Enables some free analyzers</li>
+<li>Adds sample data including an alert, a case template, custom fields, MISP taxonomies, and MITRE ATT&amp;CK data</li>
+</ul>
+<h2 id="step-7-access-thehive-and-cortex">Step 7: Access TheHive and Cortex<a class="headerlink" href="#step-7-access-thehive-and-cortex" title="Permanent link">#</a></h2>
+<ul>
+<li>
+<p>TheHive: Open your browser and navigate to <a href="http://localhost/thehive" target="_blank"><code>http://localhost/thehive</code></a> or use the IP address of the server running Docker Compose.</p>
+</li>
+<li>
+<p>Cortex: Open your browser and navigate to <a href="http://localhost/cortex" target="_blank"><code>http://localhost/cortex</code></a> or use the IP address of the server running Docker Compose.</p>
+</li>
+</ul>
+<p>Then use the following default users and passwords to access TheHive and Cortex:</p>
+<table>
+<thead>
+<tr>
+<th>Application</th>
+<th>User type</th>
+<th>Username</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TheHive</td>
+<td>Admin</td>
+<td><code>admin@thehive.local</code></td>
+<td><code>secret</code></td>
+</tr>
+<tr>
+<td>TheHive</td>
+<td>Org Admin</td>
+<td><code>thehive@thehive.local</code></td>
+<td><code>thehive1234</code></td>
+</tr>
+<tr>
+<td>Cortex</td>
+<td>Admin</td>
+<td><code>admin</code></td>
+<td><code>thehive1234</code></td>
+</tr>
+<tr>
+<td>Cortex</td>
+<td>Org Admin</td>
+<td><code>thehive</code></td>
+<td><code>thehive1234</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reset-your-environment">Reset your environment<a class="headerlink" href="#reset-your-environment" title="Permanent link">#</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Irreversible action</p>
+<p>This script deletes all data and containers.</p>
+</div>
+<p>Run the following script to delete all data in the testing environment:</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/reset.sh
+</code></pre></div>
+<h2 id="application-stack">Application stack<a class="headerlink" href="#application-stack" title="Permanent link">#</a></h2>
+<p>This section describes the components and file structure deployed by the Docker Compose file. Use it as a reference when troubleshooting or customizing your environment.</p>
+<p>The Docker Compose file deploys the following components:</p>
+<ul>
+<li>Cassandra: Database used by TheHive</li>
+<li>Elasticsearch: Database for Cortex and indexing engine for TheHive</li>
+<li>TheHive: Main application</li>
+<li>Cortex: Analyzers and responders engine</li>
+<li>Nginx: HTTPS reverse proxy</li>
+</ul>
+<h3 id="configuration-and-data-files">Configuration and data files<a class="headerlink" href="#configuration-and-data-files" title="Permanent link">#</a></h3>
+<p>Each container has a dedicated folder for configuration, data, and log files.</p>
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>cassandra
+├──<span class="w"> </span>certificates
+├──<span class="w"> </span>cortex
+├──<span class="w"> </span>docker-compose.yml
+├──<span class="w"> </span>dot.env.template
+├──<span class="w"> </span>elasticsearch
+├──<span class="w"> </span>nginx
+├──<span class="w"> </span>README.md
+├──<span class="w"> </span>scripts
+└──<span class="w"> </span>thehive
+</code></pre></div>
+<h3 id="files-and-folders-overview">Files and folders overview<a class="headerlink" href="#files-and-folders-overview" title="Permanent link">#</a></h3>
+<h4 id="cassandra">Cassandra<a class="headerlink" href="#cassandra" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>cassandra
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./cassandra/data</code>: Database files.</li>
+<li><code>./cassandra/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>elasticsearch
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./elasticsearch/data</code>: Database files.</li>
+<li><code>./elasticsearch/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="thehive">TheHive<a class="headerlink" href="#thehive" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>thehive
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>data
+│<span class="w">   </span>└──<span class="w"> </span>files
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./thehive/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./thehive/data/files</code>: File storage for TheHive.</li>
+<li><code>./thehive/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h4 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>cortex
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>cortex-jobs
+├──<span class="w"> </span>logs
+└──<span class="w"> </span>neurons
+</code></pre></div>
+<ul>
+<li><code>./cortex/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./cortex/cortex-jobs</code>: Temporary data storage for analyzers and responders.</li>
+<li><code>./cortex/logs</code>: Log files.</li>
+<li><code>./cortex/neurons</code>: Folder for custom analyzers and responders.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h4 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>nginx
+├──<span class="w"> </span>certs
+└──<span class="w"> </span>templates
+<span class="w">    </span>└──<span class="w"> </span>default.conf.template
+</code></pre></div>
+<ul>
+<li><code>./nginx/templates/default.conf.template</code>: File used to initialize Nginx configuration when the container starts.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h4 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">#</a></h4>
+<p>This folder is empty by default. The application stack initializes with self-signed certificates.</p>
+<p>To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:</p>
+<div class="highlight"><pre><span></span><code>certificates
+├──<span class="w"> </span>server.crt<span class="w">         </span><span class="c1">## Server certificate</span>
+├──<span class="w"> </span>server.key<span class="w">         </span><span class="c1">## Server private key</span>
+└──<span class="w"> </span>ca.pem<span class="w">             </span><span class="c1">## Certificate Authority</span>
+</code></pre></div>
+<h4 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code>scripts
+├──<span class="w"> </span>check_permissions.sh
+├──<span class="w"> </span>generate_certs.sh
+├──<span class="w"> </span>init.sh
+├──<span class="w"> </span>output.sh
+├──<span class="w"> </span>reset.sh
+├──<span class="w"> </span>test_init_applications.sh
+├──<span class="w"> </span>test_init_cortex.sh
+├──<span class="w"> </span>test_init_thehive.sh
+├──<span class="w"> </span>backup.sh
+└──<span class="w"> </span>restore.sh
+</code></pre></div>
+<p>The application stack includes several utility scripts:</p>
+<ul>
+<li><code>check_permissions.sh</code>: Ensures proper permissions are set on files and folders.</li>
+<li><code>generate_certs.sh</code>: Generates a self-signed certificate for Nginx.</li>
+<li><code>init.sh</code>: Initializes the application stack.</li>
+<li><code>output.sh</code>: Displays output messages called by other scripts.</li>
+<li><code>reset.sh</code>: Resets the testing environment. Running this script deletes all data and containers.</li>
+<li><code>test_init_applications.sh</code>: Configures TheHive and Cortex by enabling analyzers, integrating Cortex with TheHive, and creating sample data like alerts, observables, and custom fields in TheHive.</li>
+<li><code>test_init_cortex.sh</code>: Helper script called by <code>test_init_applications.sh</code> to set up Cortex.</li>
+<li><code>test_init_thehive.sh</code>: Helper script called by <code>test_init_applications.sh</code> to set up TheHive.</li>
+<li><code>backup.sh</code>: Performs a cold backup of the current environment.</li>
+<li><code>restore.sh</code>: Restores the environment from a previously taken backup.</li>
+</ul>
+<h2 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">#</a></h2>
+<p>All commands must be run from the <code>docker/testing</code> directory where the <code>docker-compose.yml</code> file is located.</p>
+<h3 id="configure-thehive">Configure TheHive<a class="headerlink" href="#configure-thehive" title="Permanent link">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Maintenance window required</p>
+<p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
+</div>
+<p>After modifying TheHive configuration, restart the service.</p>
+<ul>
+<li>
+<p>Configuration file: <code>./thehive/config/application.conf</code></p>
+</li>
+<li>
+<p>Restart command:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>thehive
+</code></pre></div>
+<p>The following documentation pages explain how to configure specific settings in <code>application.conf</code>:</p>
+<ul>
+<li><a href="../../thehive/configuration/update-service-configuration/">Update TheHive Service Configuration</a></li>
+<li><a href="../../thehive/configuration/configure-authentication-cassandra-elasticsearch/">Configure Database and Index Authentication</a></li>
+<li><a href="../../thehive/configuration/cassandra-elasticsearch-connection-settings/">TheHive Database and Index Connection Settings</a></li>
+<li><a href="../../thehive/configuration/turn-off-cortex-connector/">Turn Off the Cortex Integration</a></li>
+<li><a href="../../thehive/configuration/turn-off-misp-connector/">Turn Off the MISP Integration</a></li>
+</ul>
+<h3 id="configure-cortex">Configure Cortex<a class="headerlink" href="#configure-cortex" title="Permanent link">#</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Maintenance window required</p>
+<p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
+</div>
+<p>After modifying Cortex configuration, restart the service.</p>
+<ul>
+<li>
+<p>Configuration file: <code>./cortex/config/application.conf</code></p>
+</li>
+<li>
+<p>Restart command:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>restart<span class="w"> </span>cortex
+</code></pre></div>
+<p>The following documentation pages explain how to configure specific settings in <code>application.conf</code>:</p>
+<ul>
+<li><a href="../../cortex/installation-and-configuration/database/">Database Configuration</a></li>
+<li><a href="../../cortex/installation-and-configuration/authentication/">Authentication</a></li>
+<li><a href="../../cortex/installation-and-configuration/proxy-settings/">Proxy Settings</a></li>
+<li><a href="../../cortex/installation-and-configuration/analyzers-responders/">Analyzers and Responders</a></li>
+<li><a href="../../cortex/installation-and-configuration/advanced-configuration/">Advanced Configuration</a></li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
+<ul>
+<li>TheHive service logs: <code>./thehive/log/application.log</code></li>
+<li>Cortex service logs: <code>./cortex/log/application.log</code></li>
+</ul>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../thehive/operations/troubleshooting/">TheHive Troubleshooting</a></li>
+<li><a href="../../thehive/installation/docker/">Deploy TheHive with Docker Compose</a></li>
+<li><a href="../../cortex/installation-and-configuration/run-cortex-with-docker/">Run Cortex with Docker</a></li>
+</ul>
 
 
 

@@ -711,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -823,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17961,7 +17961,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -17977,7 +17977,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -17990,14 +17990,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/demo/" class="md-nav__link">
+      <a href="../../../../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18018,14 +18018,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18994,7 +18994,7 @@
 
 
 <h1 id="restore-a-hot-backup-on-a-standalone-server">Restore a Hot Backup on a Standalone Server<a class="headerlink" href="#restore-a-hot-backup-on-a-standalone-server" title="Permanent link">#</a></h1>
-<p>In this tutorial, we're going to guide you through restoring a hot backup of TheHive on a standalone server using the provided scripts.</p>
+<p>In this tutorial, you'll restore a hot backup of TheHive on a standalone server using the provided scripts.</p>
 <p>By the end, you'll have brought your system back to a working state using the backups you created previously, with all your database, search index, and file storage fully restored.</p>
 <div class="admonition warning">
 <p class="admonition-title">Shutdown required</p>
@@ -19014,14 +19014,14 @@
 </div>
 <p>This tutorial assumes you’ve completed the <a href="../../../backup/hot-backup/hot-backup-standalone-server/">Perform a Hot Backup on a Standalone Server</a> tutorial, and that you're using the same directory paths during restore as during backup.</p>
 <h2 id="step-1-stop-thehive">Step 1: Stop TheHive<a class="headerlink" href="#step-1-stop-thehive" title="Permanent link">#</a></h2>
-<p>Before we begin restoring data, we need to stop TheHive to prevent any conflicts during the restoration process.</p>
+<p>Before restoring data, stop TheHive to prevent any conflicts during the restoration process.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
 </code></pre></div>
 <p>Verify that TheHive has stopped:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>thehive
 </code></pre></div>
 <h2 id="step-2-restore-cassandra-and-elasticsearch-snapshots">Step 2: Restore Cassandra and Elasticsearch snapshots<a class="headerlink" href="#step-2-restore-cassandra-and-elasticsearch-snapshots" title="Permanent link">#</a></h2>
-<p>We're going to restore both your database and search index from the backup archives. The script automatically identifies your most recent backup files, extracts them, and restores both Cassandra and Elasticsearch in parallel while handling keyspace recreation if needed.</p>
+<p>You'll restore both your database and search index from the backup archives. The script automatically identifies your most recent backup files, extracts them, and restores both Cassandra and Elasticsearch in parallel while handling keyspace recreation if needed.</p>
 <h3 id="1-prepare-the-restore-script">1. Prepare the restore script<a class="headerlink" href="#1-prepare-the-restore-script" title="Permanent link">#</a></h3>
 <p>Before running the script, you'll need to update several values to match your environment:</p>
 <h4 id="for-cassandra">For Cassandra<a class="headerlink" href="#for-cassandra" title="Permanent link">#</a></h4>
@@ -19150,7 +19150,7 @@
 <p>The script will automatically identify your most recent backup archives and restore them. You'll see progress messages as the restoration proceeds. When complete, you should see the message <code>=== ✓ Successful full restore ===</code>.</p>
 <p>For additional details, refer to the official <a href="https://cassandra.apache.org/doc/stable/cassandra/managing/operating/backups.html" target="_blank">Cassandra documentation</a> and <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html" target="_blank">Elasticsearch documentation</a>.</p>
 <h2 id="step-3-restore-file-storage">Step 3: Restore file storage<a class="headerlink" href="#step-3-restore-file-storage" title="Permanent link">#</a></h2>
-<p>Finally, we're going to restore the file attachments that were backed up.</p>
+<p>Finally, restore the file attachments that were backed up.</p>
 <h3 id="1-prepare-the-restore-script_1">1. Prepare the restore script<a class="headerlink" href="#1-prepare-the-restore-script_1" title="Permanent link">#</a></h3>
 <p>Before running the script, update <code>ATTACHMENT_FOLDER</code> to match your environment. You can find this path in <code>/etc/thehive/application.conf</code> under the <code>storage.localfs.location</code> attribute. The script uses <code>/opt/thp/thehive/files</code> by default.</p>
 <h3 id="2-run-the-restore-script_1">2. Run the restore script<a class="headerlink" href="#2-run-the-restore-script_1" title="Permanent link">#</a></h3>
@@ -19185,7 +19185,7 @@ cp<span class="w"> </span>-r<span class="w"> </span><span class="si">${</span><s
 rm<span class="w"> </span>-rf<span class="w"> </span><span class="si">${</span><span class="nv">ATTACHMENT_SNAPSHOT_FOLDER</span><span class="si">}</span>
 </code></pre></div>
 <h2 id="step-4-start-thehive-and-verify">Step 4: Start TheHive and verify<a class="headerlink" href="#step-4-start-thehive-and-verify" title="Permanent link">#</a></h2>
-<p>Now that all data components have been restored, we're going to start TheHive and verify that everything works as expected.</p>
+<p>Now that all data components have been restored, start TheHive and verify that everything works as expected.</p>
 <ol>
 <li>
 <p>Start TheHive.</p>

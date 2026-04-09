@@ -711,7 +711,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -823,7 +823,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17961,7 +17961,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -17977,7 +17977,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -17990,14 +17990,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/demo/" class="md-nav__link">
+      <a href="../../../../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18018,14 +18018,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18994,7 +18994,7 @@
 
 
 <h1 id="restore-a-hot-backup-on-a-cluster">Restore a Hot Backup on a Cluster<a class="headerlink" href="#restore-a-hot-backup-on-a-cluster" title="Permanent link">#</a></h1>
-<p>In this tutorial, we're going to guide you through restoring a hot backup of TheHive on a cluster using the provided scripts.</p>
+<p>In this tutorial, you'll restore a hot backup of TheHive on a cluster using the provided scripts.</p>
 <p>By the end, you'll have brought your system back to a working state using the backups you created previously, with all your database, search index, and file storage fully restored across your cluster.</p>
 <div class="admonition warning">
 <p class="admonition-title">Shutdown required</p>
@@ -19014,7 +19014,7 @@
 </div>
 <p>This tutorial assumes you’ve completed the <a href="../../../backup/hot-backup/hot-backup-cluster/">Perform a Hot Backup on a Cluster</a> tutorial, and that you're using the same directory paths during restore as during backup.</p>
 <h2 id="step-1-stop-thehive-on-all-nodes">Step 1: Stop TheHive on all nodes<a class="headerlink" href="#step-1-stop-thehive-on-all-nodes" title="Permanent link">#</a></h2>
-<p>Before we begin restoring data, we need to stop TheHive on all cluster nodes to prevent any conflicts during the restoration process.</p>
+<p>Before restoring data, stop TheHive on all cluster nodes to prevent any conflicts during the restoration process.</p>
 <p>Run this command on each node:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
 </code></pre></div>
@@ -19023,7 +19023,7 @@
 </code></pre></div>
 <p>You should see that the service is inactive on each node.</p>
 <h2 id="step-2-restore-cassandra-and-elasticsearch-snapshots">Step 2: Restore Cassandra and Elasticsearch snapshots<a class="headerlink" href="#step-2-restore-cassandra-and-elasticsearch-snapshots" title="Permanent link">#</a></h2>
-<p>Now we're going to restore both your database and search index from the backup archives. Since data is fully replicated across all nodes, we only need to run the restore script on one node—the script will automatically distribute the data across your entire cluster. The script handles situations where nodes have been added or removed since the backup was created.</p>
+<p>Now you'll restore both your database and search index from the backup archives. Since data is fully replicated across all nodes, you only need to run the restore script on one node—the script will automatically distribute the data across your entire cluster. The script handles situations where nodes have been added or removed since the backup was created.</p>
 <h3 id="1-prepare-the-restore-script">1. Prepare the restore script<a class="headerlink" href="#1-prepare-the-restore-script" title="Permanent link">#</a></h3>
 <p>Before running the script, you'll need to update several values to match your environment:</p>
 <h4 id="for-cassandra">For Cassandra<a class="headerlink" href="#for-cassandra" title="Permanent link">#</a></h4>
@@ -19154,7 +19154,7 @@
 <p>The script will automatically identify your most recent backup archives and restore them. You'll see progress messages as the restoration proceeds. When complete, you should see the message <code>=== ✓ Successful full restore ===</code>.</p>
 <p>For additional details, refer to the official <a href="https://cassandra.apache.org/doc/stable/cassandra/managing/operating/backups.html" target="_blank">Cassandra documentation</a> and <a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html" target="_blank">Elasticsearch documentation</a>.</p>
 <h2 id="step-3-restore-file-storage">Step 3: Restore file storage<a class="headerlink" href="#step-3-restore-file-storage" title="Permanent link">#</a></h2>
-<p>Finally, we're going to restore the file attachments that were backed up.</p>
+<p>Finally, restore the file attachments that were backed up.</p>
 <p>The restore procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">NFS</label><label for="__tabbed_1_2">S3-compatible object storage (SeaweedFS example)</label></div>
 <div class="tabbed-content">
@@ -19258,7 +19258,7 @@ rm<span class="w"> </span>-rf<span class="w"> </span><span class="s2">"</span><s
 </div>
 </div>
 <h2 id="step-4-start-thehive-on-all-nodes-and-verify">Step 4: Start TheHive on all nodes and verify<a class="headerlink" href="#step-4-start-thehive-on-all-nodes-and-verify" title="Permanent link">#</a></h2>
-<p>Now that all data components have been restored, we're going to start TheHive on all cluster nodes and verify that everything works as expected.</p>
+<p>Now that all data components have been restored, start TheHive on all cluster nodes and verify that everything works as expected.</p>
 <ol>
 <li>
 <p>Start TheHive on each node.</p>

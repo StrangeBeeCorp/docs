@@ -22,7 +22,7 @@
     
     
       
-        <title>Set Up a Cluster on Linux - TheHive 5 Documentation</title>
+        <title>Set Up a Cluster with Packages - TheHive 5 Documentation</title>
       
     
     
@@ -163,7 +163,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#set-up-a-cluster-on-linux-systems" class="md-skip">
+        <a href="#set-up-a-cluster-with-packages" class="md-skip">
           Skip to content
         </a>
       
@@ -713,7 +713,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -834,7 +834,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -852,7 +852,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -18010,7 +18010,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -18026,7 +18026,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -18039,14 +18039,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18067,14 +18067,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18980,7 +18980,7 @@
 
 
 
-<h1 id="set-up-a-cluster-on-linux-systems">Set Up a Cluster on Linux Systems<a class="headerlink" href="#set-up-a-cluster-on-linux-systems" title="Permanent link">#</a></h1>
+<h1 id="set-up-a-cluster-with-packages">Set Up a Cluster with Packages<a class="headerlink" href="#set-up-a-cluster-with-packages" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.4/#5.4" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.4/#5.4">5.4</a></span></span></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -19000,12 +19000,12 @@
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You can install these applications on separate servers or on the same server. For the purpose of this documentation, we've chosen to demonstrate the setup on three distinct operating systems.</p>
+<p>You can install these applications on separate servers or on the same server. For the purpose of this documentation, the setup is demonstrated on three distinct operating systems.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Before you begin</p>
 <ul>
-<li>Verify that all <a href="../system-requirements/">Linux system requirements</a> are met on every node.</li>
+<li>Verify that all <a href="../system-requirements/">system requirements for package installation</a> are met on every node.</li>
 <li>Ensure that Python 3.9 is available for using the Cassandra Query Language (CQL) shell <code>cqlsh</code>. Later Python versions aren't compatible.</li>
 </ul>
 </div>
@@ -19027,9 +19027,9 @@
 </ul>
 <p>The subsequent sections will provide detailed configuration examples and step-by-step instructions for setting up each component within the cluster environment.</p>
 <h2 id="step-1-install-and-configure-apache-cassandra">Step 1: Install and configure Apache Cassandra<a class="headerlink" href="#step-1-install-and-configure-apache-cassandra" title="Permanent link">#</a></h2>
-<p>When configuring a Cassandra cluster, we aim to establish a setup comprising three active nodes with a replication factor of <code>3</code>. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node. It means that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cybersecurity threats without downtime or data loss.</p>
+<p>When configuring a Cassandra cluster, the goal is a setup comprising three active nodes with a replication factor of <code>3</code>. This configuration ensures that all nodes are active and data is replicated across each node, thus providing tolerance to the failure of a single node. It means that if one node experiences hardware issues or network disruptions, the other two nodes continue to store and process incident data seamlessly. This fault-tolerant configuration guarantees uninterrupted access to critical security information, enabling the SOC to effectively manage and respond to cybersecurity threats without downtime or data loss.</p>
 <div class="admonition info">
-<p class="admonition-title">Note: Note: For the purposes of this documentation, we assume that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center.</p>
+<p class="admonition-title">Note: Note: For the purposes of this documentation, it's assumed that all nodes reside within the same network environment. Ideally, the nodes should be deployed in different racks within the same data center.</p>
 </div>
 <h3 id="step-11-install-cassandra">Step 1.1: Install Cassandra<a class="headerlink" href="#step-11-install-cassandra" title="Permanent link">#</a></h3>
 <p>To ensure the successful deployment of Cassandra within your cluster, it's essential to install Cassandra on each individual node. Follow the steps outlined in the <a href="../installation-guide-linux-standalone-server/#step-31-install-cassandra">installation guide</a>.</p>
@@ -19422,7 +19422,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <h3 id="step-42-configure-thehive">Step 4.2: Configure TheHive<a class="headerlink" href="#step-42-configure-thehive" title="Permanent link">#</a></h3>
 <h4 id="configure-the-cluster">Configure the cluster<a class="headerlink" href="#configure-the-cluster" title="Permanent link">#</a></h4>
 <p>When configuring TheHive for a clustered environment, it's essential to configure Pekko to ensure efficient management of the cluster by the application.</p>
-<p>In this guide, we assume that node 1 serves as the master node. Begin by configuring the <code>pekko</code> component in the <code>/etc/thehive/application.conf</code> file of each node as follows:</p>
+<p>In this guide, node 1 is assumed to serve as the master node. Begin by configuring the <code>pekko</code> component in the <code>/etc/thehive/application.conf</code> file of each node as follows:</p>
 <div class="admonition example">
 <div class="highlight"><span class="filename">/etc/thehive/application.conf</span><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">pekko {</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.enable = on</span><span class="w"> </span>

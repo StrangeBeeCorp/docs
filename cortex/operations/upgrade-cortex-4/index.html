@@ -706,7 +706,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -818,7 +818,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17988,7 +17988,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -18004,7 +18004,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -18017,14 +18017,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18045,14 +18045,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18959,7 +18959,7 @@
 
 
 <h1 id="upgrade-cortex-to-version-40">Upgrade Cortex to Version 4.0<a class="headerlink" href="#upgrade-cortex-to-version-40" title="Permanent link">#</a></h1>
-<p>In this tutorial, we're going to upgrade Cortex from version 3.1.x+ to 4.0.x.</p>
+<p>In this tutorial, you'll upgrade Cortex from version 3.1.x+ to 4.0.x.</p>
 <p>Because Cortex can't support multiple major versions of Elasticsearch simultaneously, this upgrade requires moving from Elasticsearch 7.x to 8.x.</p>
 <p>By the end, you'll have successfully upgraded both Elasticsearch to 8.x and Cortex to 4.0.x, with all services running and connected.</p>
 <div class="admonition danger">
@@ -18976,7 +18976,7 @@
 </div>
 <p>This tutorial applies to single-node Elasticsearch instances.</p>
 <h2 id="step-1-stop-cortex-service">Step 1: Stop Cortex service<a class="headerlink" href="#step-1-stop-cortex-service" title="Permanent link">#</a></h2>
-<p>Before we upgrade Elasticsearch, we need to stop the Cortex service to prevent index writes during the process.</p>
+<p>Before upgrading Elasticsearch, stop the Cortex service to prevent index writes during the process.</p>
 <div class="admonition info">
 <p class="admonition-title">Service commands</p>
 <p>For stop/restart commands depending on your installation method, refer back to the relevant installation guide.</p>
@@ -18986,7 +18986,7 @@
 <p>If you share your Elasticsearch instance with TheHive, stop TheHive as well before upgrading Elasticsearch to prevent data inconsistencies.</p>
 </div>
 <h2 id="step-2-check-the-elasticsearch-version">Step 2: Check the Elasticsearch version<a class="headerlink" href="#step-2-check-the-elasticsearch-version" title="Permanent link">#</a></h2>
-<p>We can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x. Before continuing, we need to confirm that our deployment is running Elasticsearch 7.17.x.</p>
+<p>You can't upgrade directly from Elasticsearch versions earlier than 7.17.x to 8.x. Before continuing, confirm that your deployment is running Elasticsearch 7.17.x.</p>
 <ol>
 <li>
 <p>Check your current Elasticsearch version:</p>
@@ -18999,10 +18999,10 @@
 </li>
 </ol>
 <h2 id="optional-step-3-upgrade-elasticsearch-to-717x">(Optional) Step 3: Upgrade Elasticsearch to 7.17.x<a class="headerlink" href="#optional-step-3-upgrade-elasticsearch-to-717x" title="Permanent link">#</a></h2>
-<p>If our current version is below 7.17.x, we must upgrade to the latest 7.17.x release before moving forward.</p>
+<p>If your current version is below 7.17.x, upgrade to the latest 7.17.x release before moving forward.</p>
 <p>Follow the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/setup-upgrade.html" target="_blank">official Elasticsearch 7.17 upgrade guide</a> to complete this upgrade.</p>
 <h2 id="step-4-prepare-for-elasticsearch-8x-upgrade">Step 4: Prepare for Elasticsearch 8.x upgrade<a class="headerlink" href="#step-4-prepare-for-elasticsearch-8x-upgrade" title="Permanent link">#</a></h2>
-<p>Now that we're running Elasticsearch 7.17.x, we need to verify that all features and indexes are ready for migration to 8.x.</p>
+<p>Now that you're running Elasticsearch 7.17.x, verify that all features and indexes are ready for migration to 8.x.</p>
 <ol>
 <li>
 <p>Check upgrade compatibility using the <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-migration-get-feature-upgrade-status" target="_blank">Elasticsearch feature upgrade API</a>.</p>
@@ -19015,7 +19015,7 @@
 </li>
 </ol>
 <h2 id="step-5-upgrade-elasticsearch-to-8x">Step 5: Upgrade Elasticsearch to 8.x<a class="headerlink" href="#step-5-upgrade-elasticsearch-to-8x" title="Permanent link">#</a></h2>
-<p>With compatibility verified, we're ready to upgrade Elasticsearch to version 8.x.</p>
+<p>With compatibility verified, you're ready to upgrade Elasticsearch to version 8.x.</p>
 <ol>
 <li>
 <p>Follow the <a href="https://www.elastic.co/docs/deploy-manage/upgrade/deployment-or-cluster/upgrade-717#upgrade-step-1-7.17.x-8.19.x" target="_blank">official Elasticsearch upgrade documentation</a> to complete the upgrade.</p>
@@ -19032,10 +19032,10 @@
 </li>
 </ol>
 <h2 id="step-6-upgrade-cortex-to-version-40x">Step 6: Upgrade Cortex to version 4.0.x<a class="headerlink" href="#step-6-upgrade-cortex-to-version-40x" title="Permanent link">#</a></h2>
-<p>With Elasticsearch 8.x running, we can now upgrade Cortex itself.</p>
+<p>With Elasticsearch 8.x running, you can now upgrade Cortex itself.</p>
 <p>Refer to the <a href="../../installation-and-configuration/step-by-step-guide/#cortex-installation-and-configuration">installation guide</a> to update Cortex to version 4.0.x.</p>
 <h2 id="step-7-restart-cortex-and-verify-connectivity">Step 7: Restart Cortex and verify connectivity<a class="headerlink" href="#step-7-restart-cortex-and-verify-connectivity" title="Permanent link">#</a></h2>
-<p>We're now ready to bring Cortex back online and ensure everything connects properly.</p>
+<p>You're now ready to bring Cortex back online and ensure everything connects properly.</p>
 <ol>
 <li>
 <p>Restart the Cortex service.</p>

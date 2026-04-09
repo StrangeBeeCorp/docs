@@ -22,7 +22,7 @@
     
     
       
-        <title>Install on Linux - TheHive 5 Documentation</title>
+        <title>Install with Packages - TheHive 5 Documentation</title>
       
     
     
@@ -163,7 +163,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-thehive-on-linux-systems" class="md-skip">
+        <a href="#install-thehive-with-packages" class="md-skip">
           Skip to content
         </a>
       
@@ -722,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -740,7 +740,7 @@
   <span class="md-ellipsis">
     
   
-    Install on Linux
+    Install with Packages
   
 
     
@@ -962,7 +962,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up a Cluster on Linux
+    Set Up a Cluster with Packages
   
 
     
@@ -17999,7 +17999,7 @@
   <span class="md-ellipsis">
     
   
-    Demo Virtual Machine
+    Demo Environments
   
 
     
@@ -18015,7 +18015,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Demo Virtual Machine
+    Demo Environments
   
 
           </label>
@@ -18028,14 +18028,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/demo/" class="md-nav__link">
+      <a href="../../../resources/vm-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to download the VM
+    VM Demo Environment
   
 
     
@@ -18056,14 +18056,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../resources/howto-vm-demo/" class="md-nav__link">
+      <a href="../../../resources/docker-demo/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Use the Demo Virtual Machine
+    Docker Demo Environment
   
 
     
@@ -18969,18 +18969,18 @@
 
 
 
-<h1 id="install-thehive-on-linux-systems">Install TheHive on Linux Systems<a class="headerlink" href="#install-thehive-on-linux-systems" title="Permanent link">#</a></h1>
-<p>Welcome to the step-by-step guide for installing and configuring TheHive On-prem on Linux systems!</p>
+<h1 id="install-thehive-with-packages">Install TheHive with Packages<a class="headerlink" href="#install-thehive-with-packages" title="Permanent link">#</a></h1>
+<p>Welcome to the step-by-step guide for installing and configuring TheHive On-prem with packages!</p>
 <p>This guide is designed for users who are comfortable with Linux system administration, but you don’t need to be an infrastructure expert to follow along.</p>
 <p>By the end, you'll have a fully functional instance of TheHive up and running.</p>
-<p>If you prefer a faster setup on Linux, you can run an <a href="../automated-installation-script-linux/">automated installation script</a> to install TheHive along with its required services and dependencies using predefined settings.</p>
+<p>If you prefer a faster setup, you can run an <a href="../automated-installation-script-linux/">automated installation script</a> to install TheHive along with its required services and dependencies using predefined settings.</p>
 <div class="admonition note">
 <p class="admonition-title">Guide scope</p>
-<p>This guide covers setting up a new instance of TheHive on Linux systems, with all components hosted on the same server.</p>
+<p>This guide covers setting up a new instance of TheHive with packages, with all components hosted on the same server.</p>
 <p>It doesn't cover:</p>
 <ul>
 <li>Docker deployments: For Docker-based setups, follow <a href="../docker/">Deploy TheHive with Docker Compose</a>.</li>
-<li>Cluster deployments: Refer to <a href="../deploying-a-cluster/">Set Up a Cluster on Linux Systems</a> for Linux, or <a href="../kubernetes/">Deploy TheHive on Kubernetes</a> for Kubernetes deployments.</li>
+<li>Cluster deployments: Refer to <a href="../deploying-a-cluster/">Set Up a Cluster with Packages</a>, or <a href="../kubernetes/">Deploy TheHive on Kubernetes</a> for Kubernetes deployments.</li>
 <li>Version upgrades: For upgrading an existing instance, see <a href="../upgrade-from-5.x/">Upgrade from TheHive 5.x</a> or <a href="../upgrade-from-4.x/">Upgrade from TheHive 4.x</a>.</li>
 </ul>
 </div>
@@ -18989,7 +18989,7 @@
 <p>To ensure a smooth installation process, make sure you have:</p>
 <ul>
 <li>A basic understanding of <a href="../../overview/#architecture">TheHive architecture</a></li>
-<li><a href="../system-requirements/">System requirements fully met and verified</a> for Linux installation</li>
+<li><a href="../system-requirements/">System requirements fully met and verified</a> for package installation</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -19020,7 +19020,7 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 <div class="admonition note">
 <p class="admonition-title">Java support</p>
 <ul>
-<li>For security and long-term support, we recommend using <a href="https://aws.amazon.com/corretto/" target="_blank">Amazon Corretto</a>, which provides OpenJDK builds maintained by Amazon.</li>
+<li>For security and long-term support, use <a href="https://aws.amazon.com/corretto/" target="_blank">Amazon Corretto</a>, which provides OpenJDK builds maintained by Amazon.</li>
 <li>Only Java 11 is supported. Java 8 is no longer supported.</li>
 </ul>
 </div>
@@ -19089,7 +19089,7 @@ OpenJDK<span class="w"> </span><span class="m">64</span>-Bit<span class="w"> </s
 <p><a href="https://cassandra.apache.org" target="_blank">Apache Cassandra</a> is a database system that's used in TheHive as the back-end database for storing and managing incident response data.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
-<p>In this guide, we will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/#step-1-install-and-configure-apache-cassandra">Set Up a Cluster on Linux Systems</a> for detailed instructions.</p>
+<p>In this guide, you will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/#step-1-install-and-configure-apache-cassandra">Set Up a Cluster with Packages</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Cassandra supported versions</p>
@@ -19329,7 +19329,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 <p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
 </div>
 <p>By default, Cassandra uses the <code>cassandra</code> username and the password <code>cassandra</code>. For security reasons, especially in production environments, you must change this password immediately after setup.</p>
-<p>To do this, we'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
+<p>To do this, you'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
 <ol>
 <li>
 <p>Connect to Cassandra using default credentials.</p>
@@ -19488,7 +19488,7 @@ For additional configuration options, refer to:
 <p><a href="https://www.elastic.co/elasticsearch" target="_blank">Elasticsearch</a> is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing <a href="../../user-guides/organization/about-audit-logs/">audit logs</a>.</p>
 <div class="admonition info">
 <p class="admonition-title">Single node configuration</p>
-<p>In this guide, we will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/#step-2-install-and-configure-elasticsearch">Set Up a Cluster on Linux Systems</a> for detailed instructions.</p>
+<p>In this guide, you will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to <a href="../deploying-a-cluster/#step-2-install-and-configure-elasticsearch">Set Up a Cluster with Packages</a> for detailed instructions.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Elasticsearch supported versions</p>
@@ -20228,7 +20228,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <h3 id="step-52-configure-thehive">Step 5.2: Configure TheHive<a class="headerlink" href="#step-52-configure-thehive" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Standalone server configuration</p>
-<p>In this guide, we will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/#step-4-install-and-configure-thehive">Set Up a Cluster on Linux Systems</a>.</p>
+<p>In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/#step-4-install-and-configure-thehive">Set Up a Cluster with Packages</a>.</p>
 </div>
 <ol>
 <li>
@@ -20510,7 +20510,7 @@ sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span cl
 <h3 id="step-54-create-the-file-storage-directory">Step 5.4: Create the file storage directory<a class="headerlink" href="#step-54-create-the-file-storage-directory" title="Permanent link">#</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Standalone server configuration</p>
-<p>In this guide, we will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/#step-3-set-up-a-shared-file-storage">Set Up a Cluster on Linux Systems</a>.</p>
+<p>In this guide, you will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/#step-3-set-up-a-shared-file-storage">Set Up a Cluster with Packages</a>.</p>
 </div>
 <p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. <a href="../../../resources/security/#database-and-storage">All files are stored in their original form as plaintext</a>.</p>
 <p>On a standalone server, these files are stored on the local filesystem. By default, TheHive uses <code>/opt/thp/thehive/files</code> as the storage path.</p>
@@ -20594,7 +20594,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <p>See detailed steps in the Backup &amp; Restore Operations section.</p>
 <hr>
 <h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">#</a></h2>
-<p>We recommend setting up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  </p>
+<p>Set up monitoring to track key performance metrics such as request latency, CPU usage, and memory consumption.  </p>
 <p>See the <a href="../../operations/monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a> page for detailed instructions.</p>
 <h2>Next steps</h2>
 
