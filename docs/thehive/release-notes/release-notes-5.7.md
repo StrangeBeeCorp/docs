@@ -2,6 +2,44 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.7.1 - April 20, 2026
+
+### Fixes
+
+#### Cases
+
+* Fixed an issue where tags from the case template were automatically merged into the case when creating it via the API, even when the request included an explicit tag list.
+* Corrected a caching issue that caused outdated tag values to continue appearing in tag suggestions after an update.
+* Enforced the share management permission check when updating task and observable rules on cases. Users without this permission now receive an error.
+
+#### Custom fields
+
+* Eliminated silent failures when an integer custom field value falls outside the valid 32-bit range: the form now shows an inline validation error and blocks submission.
+* Corrected two issues with list-type custom fields: submitting an array value now returns an error, and setting a single value correctly appends a new entry instead of replacing the last one.
+
+#### Observables
+
+* Restored the option to import observables from analyzer reports when viewing alert observables. The import button was previously only shown for case observables.
+* Fixed the display of past analyzer executions on the observable page for analyzers that are no longer listed in Cortex.
+
+#### Notifications
+
+* Corrected notification template rendering to fall back to the user's login when no email address is configured.
+* Removed user-context template variables from the autocomplete in notifier inputs when user context isn't available.
+
+#### Integrations
+
+* Improved the sanitization of IP addresses in email content processed by the email intake connector.
+* Corrected the OAuth 2.0 authority field handling in the email intake connector for Microsoft Graph API configurations.
+
+#### Other
+
+* Log entries now correctly include user and request context when Kamon monitoring is turned off.
+
+### Security
+
+* HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.
+
 ## 5.7.0 - April 9, 2026
 
 ### New features
