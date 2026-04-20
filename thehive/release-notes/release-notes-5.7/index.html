@@ -16820,6 +16820,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#571-april-20-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.1 - April 20, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#570-april-9-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -19123,6 +19134,42 @@
 <p class="admonition-title">Public API v0 deprecation</p>
 <p>The public API v0 has been deprecated since TheHive 5.4. It should no longer be used. Please use the API v1 endpoints (<code>/api/v1</code>) instead.</p>
 </div>
+<h2 id="571-april-20-2026">5.7.1 - April 20, 2026<a class="headerlink" href="#571-april-20-2026" title="Permanent link">#</a></h2>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h4 id="cases">Cases<a class="headerlink" href="#cases" title="Permanent link">#</a></h4>
+<ul>
+<li>Fixed an issue where tags from the case template were automatically merged into the case when creating it via the API, even when the request included an explicit tag list.</li>
+<li>Corrected a caching issue that caused outdated tag values to continue appearing in tag suggestions after an update.</li>
+<li>Enforced the share management permission check when updating task and observable rules on cases. Users without this permission now receive an error.</li>
+</ul>
+<h4 id="custom-fields">Custom fields<a class="headerlink" href="#custom-fields" title="Permanent link">#</a></h4>
+<ul>
+<li>Eliminated silent failures when an integer custom field value falls outside the valid 32-bit range: the form now shows an inline validation error and blocks submission.</li>
+<li>Corrected two issues with list-type custom fields: submitting an array value now returns an error, and setting a single value correctly appends a new entry instead of replacing the last one.</li>
+</ul>
+<h4 id="observables">Observables<a class="headerlink" href="#observables" title="Permanent link">#</a></h4>
+<ul>
+<li>Restored the option to import observables from analyzer reports when viewing alert observables. The import button was previously only shown for case observables.</li>
+<li>Fixed the display of past analyzer executions on the observable page for analyzers that are no longer listed in Cortex.</li>
+</ul>
+<h4 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">#</a></h4>
+<ul>
+<li>Corrected notification template rendering to fall back to the user's login when no email address is configured.</li>
+<li>Removed user-context template variables from the autocomplete in notifier inputs when user context isn't available.</li>
+</ul>
+<h4 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">#</a></h4>
+<ul>
+<li>Improved the sanitization of IP addresses in email content processed by the email intake connector.</li>
+<li>Corrected the OAuth 2.0 authority field handling in the email intake connector for Microsoft Graph API configurations.</li>
+</ul>
+<h4 id="other">Other<a class="headerlink" href="#other" title="Permanent link">#</a></h4>
+<ul>
+<li>Log entries now correctly include user and request context when Kamon monitoring is turned off.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<ul>
+<li>HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.</li>
+</ul>
 <h2 id="570-april-9-2026">5.7.0 - April 9, 2026<a class="headerlink" href="#570-april-9-2026" title="Permanent link">#</a></h2>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
 <h4 id="case-insensitive-observable-management">Case-insensitive observable management<a class="headerlink" href="#case-insensitive-observable-management" title="Permanent link">#</a></h4>
@@ -19148,7 +19195,7 @@
 <p>The case merging interface has been redesigned for better usability. Recent cases are now highlighted, and search has been simplified to help users quickly find relevant cases.</p>
 <h4 id="direct-link-to-documentation">Direct link to documentation<a class="headerlink" href="#direct-link-to-documentation" title="Permanent link">#</a></h4>
 <p>A direct link to the documentation has been added to the help menu for quicker access.</p>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Improved QR code readability for multifactor authentication (MFA) in dark mode.</li>
 <li>Fixed a crash related to date format settings.</li>
