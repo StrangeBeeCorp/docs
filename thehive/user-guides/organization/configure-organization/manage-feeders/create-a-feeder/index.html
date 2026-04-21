@@ -19197,27 +19197,28 @@
 </li>
 <li>
 <p>In the <strong>General settings</strong> section, enter the following information:</p>
-<p><strong>- Name</strong></p>
+<p><em>Fields marked with * are mandatory.</em></p>
+<p><strong>- Name *</strong></p>
 <p>A unique name for the alert feeder. You can’t change this name later.</p>
-<p><strong>- Interval</strong></p>
+<p><strong>- Interval *</strong></p>
 <p>How often the alert feeder sends requests to the external system.</p>
 <div class="admonition warning">
 <p class="admonition-title">Define the interval carefully based on your reactivity requirements</p>
 <p>Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.</p>
 </div>
-<p><strong>- Request timeout time</strong></p>
+<p><strong>- Request timeout time *</strong></p>
 <p>The maximum time, in seconds, the alert feeder waits for a response before timing out.</p>
-<p><strong>- Request response max size</strong></p>
+<p><strong>- Request response max size *</strong></p>
 <p>The maximum response size, in megabytes, that the alert feeder accepts from the external system.</p>
-<p><strong>- Description</strong></p>
+<p><strong>- Description *</strong></p>
 <p>A description to provide additional context or notes about the alert feeder configuration.</p>
 <hr>
 </li>
 <li>
 <p>In the <strong>HTTP request</strong> section, enter the following information:</p>
-<p><strong>- Method</strong></p>
+<p><strong>- Method *</strong></p>
 <p>The HTTP method to use when requesting data from the external system.</p>
-<p><strong>- URL</strong></p>
+<p><strong>- URL *</strong></p>
 <p>The endpoint URL of the external system.</p>
 <hr>
 </li>
@@ -19373,11 +19374,11 @@ Enter the bearer token, which will be sent in the <code>Authorization</code> hea
 <p class="admonition-title">Feeder function</p>
 <p>Once created, the function is automatically added to the <a href="../../manage-functions/about-functions/">functions list</a> with the type <em>feeder</em>.</p>
 </div>
-<p><strong>- Function name</strong></p>
+<p><strong>- Function name *</strong></p>
 <p>Enter a name for the function. You can’t change this name later.</p>
 <p><strong>- Description</strong></p>
 <p>Describe what the function does.</p>
-<p><strong>- Definition</strong></p>
+<p><strong>- Definition *</strong></p>
 <p>Enter the JavaScript code for your function. If you need inspiration, check out the <a href="https://github.com/StrangeBeeCorp/integrations/tree/main/.generated/docs/functions" target="_blank">GitHub repository with function examples</a>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Basic function structure</p>

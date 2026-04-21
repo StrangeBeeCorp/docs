@@ -19179,15 +19179,16 @@
 </li>
 <li>
 <p>Enter the following information:</p>
-<p><strong>- DN of the service account</strong></p>
+<p><em>Fields marked with * are mandatory.</em></p>
+<p><strong>- DN of the service account *</strong></p>
 <p>The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.</p>
 <p>Example: <em>cn=thehive,ou=users,dc=company,dc=com</em></p>
-<p><strong>- Bind password</strong></p>
+<p><strong>- Bind password *</strong></p>
 <p>The password associated with the service account. This password authenticates the service account to allow LDAP queries.</p>
-<p><strong>- Users base DN</strong></p>
+<p><strong>- Users base DN *</strong></p>
 <p>The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.</p>
 <p>Example: <em>ou=users,dc=company,dc=com</em></p>
-<p><strong>- Filter used to search users</strong></p>
+<p><strong>- Filter used to search users *</strong></p>
 <p>The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.</p>
 <p>Example: <em>(&amp;(uid={0})(objectClass=inetOrgPerson))</em></p>
 <hr>

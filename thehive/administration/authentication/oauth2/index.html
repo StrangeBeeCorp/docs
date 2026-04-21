@@ -19215,14 +19215,15 @@
 </li>
 <li>
 <p>Enter the following information:</p>
-<p><strong>- Client ID</strong></p>
+<p><em>Fields marked with * are mandatory.</em></p>
+<p><strong>- Client ID *</strong></p>
 <p>The unique identifier assigned to TheHive by the OAuth 2.0 provider when you register the application. TheHive uses this identifier to authenticate with the OAuth server during the authorization process.</p>
-<p><strong>- Client secret</strong></p>
+<p><strong>- Client secret *</strong></p>
 <p>A confidential string issued by the OAuth 2.0 provider, used along with the client ID to authenticate TheHive securely.</p>
-<p><strong>- TheHive redirect URL</strong></p>
+<p><strong>- TheHive redirect URL *</strong></p>
 <p>The URL where the OAuth 2.0 server redirects users after authentication.</p>
 <p>Format: <code>https://&lt;your-hive-domain&gt;/api/ssoLogin</code></p>
-<p><strong>- Grant type</strong></p>
+<p><strong>- Grant type *</strong></p>
 <p>Specifies the OAuth 2.0 authorization flow used for authentication. </p>
 <p>Common types include:</p>
 <ul>
@@ -19230,19 +19231,19 @@
 <li>Client credentials (used for machine-to-machine authentication)</li>
 <li>Implicit (used for browser-based apps, though less secure)</li>
 </ul>
-<p><strong>- Authorization URL</strong></p>
+<p><strong>- Authorization URL *</strong></p>
 <p>The endpoint of the OAuth 2.0 provider where users are redirected to authenticate and authorize access.</p>
-<p><strong>- Prefix of the authorization header</strong></p>
+<p><strong>- Prefix of the authorization header *</strong></p>
 <p>Defines the type of token to pass in the authorization header, typically:</p>
 <ul>
 <li>Bearer (most common)</li>
 <li>Basic (used for Basic authentication)</li>
 </ul>
-<p><strong>- Token URL</strong></p>
+<p><strong>- Token URL *</strong></p>
 <p>The endpoint used by TheHive to exchange the authorization code for an access token.</p>
-<p><strong>- User information URL</strong></p>
+<p><strong>- User information URL *</strong></p>
 <p>The endpoint that TheHive calls using the access token to retrieve user details (such as ID, email, or name).</p>
-<p><strong>- List of scope</strong></p>
+<p><strong>- List of scope *</strong></p>
 <p>Specifies the access permissions that TheHive requests from the OAuth 2.0 server.</p>
 <p>Examples include:</p>
 <ul>
@@ -19250,7 +19251,7 @@
 <li><em>email</em>: Access to the user’s email address</li>
 <li><em>profile</em>: Access to profile information</li>
 </ul>
-<p><strong>- Field that contains the id of the user in user info</strong></p>
+<p><strong>- Field that contains the id of the user in user info *</strong></p>
 <p>The specific field in the user information response that holds the user's unique identifier. TheHive uses this field to map authenticated users.</p>
 <hr>
 </li>
