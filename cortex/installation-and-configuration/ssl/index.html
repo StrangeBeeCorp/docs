@@ -19156,7 +19156,7 @@
 <h3 id="certificate-manager">Certificate manager<a class="headerlink" href="#certificate-manager" title="Permanent link">#</a></h3>
 <p>Certificate manager is used to store client certificates and certificate authorities.</p>
 <h4 id="use-custom-certificate-authorities">Use custom certificate authorities<a class="headerlink" href="#use-custom-certificate-authorities" title="Permanent link">#</a></h4>
-<p>The prefered way to use custom certificate authorities is to use the system configuration. </p>
+<p>The preferred way to use custom certificate authorities is to use the system configuration. </p>
 <p>If setting up a custom certificate authority (to connect web proxies, remote services like LPAPS server ...) is required globally in the application, the better solution consists of installing it on the OS and restarting Cortex. </p>
 <div class="admonition example">
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Debian</label><label for="__tabbed_2_2">RPM</label></div>
@@ -19171,7 +19171,7 @@ service<span class="w"> </span>cortex<span class="w"> </span>restart
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>No additionnal packages is required on Fedora or RHEL. Copy the CA certificate in the right folder, run <code>update-ca-trust</code> and restart Cortex service.</p>
+<p>No additional packages are required on Fedora or RHEL. Copy the CA certificate in the right folder, run <code>update-ca-trust</code> and restart Cortex service.</p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>mycustomcert.crt<span class="w"> </span>/etc/pki/ca-trust/source/anchors
 sudo<span class="w"> </span>update-ca-trust<span class="w"> </span>
 service<span class="w"> </span>cortex<span class="w"> </span>restart

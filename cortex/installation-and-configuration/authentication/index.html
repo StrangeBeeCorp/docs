@@ -19198,10 +19198,10 @@ session {
 <h4 id="oauth2openid-connect">OAuth2/OpenID Connect<a class="headerlink" href="#oauth2openid-connect" title="Permanent link">#</a></h4>
 <p>To enable authentication using OAuth2/OpenID Connect, edit the <code>application.conf</code> file and supply the values of <code>auth.oauth2</code> according to your environment. In addition, you need to supply:</p>
 <ul>
-<li><code>auth.sso.attributes.login</code>: name of the attribute containing the OAuth2 user's login in retreived user info (mandatory)</li>
-<li><code>auth.sso.attributes.name</code>: name of the attribute containing the OAuth2 user's name in retreived user info (mandatory)</li>
+<li><code>auth.sso.attributes.login</code>: name of the attribute containing the OAuth2 user's login in retrieved user info (mandatory)</li>
+<li><code>auth.sso.attributes.name</code>: name of the attribute containing the OAuth2 user's name in retrieved user info (mandatory)</li>
 <li><code>auth.sso.attributes.groups</code>: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)</li>
-<li><code>auth.sso.attributes.roles</code>: name of the attribute containing the OAuth2 user's roles in retreived user info (mandatory using simple mapping)</li>
+<li><code>auth.sso.attributes.roles</code>: name of the attribute containing the OAuth2 user's roles in retrieved user info (mandatory using simple mapping)</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Important note</p>
@@ -19209,7 +19209,7 @@ session {
 <ul>
 <li>clientId (string) client ID in the OAuth2 server.</li>
 <li>clientSecret (string) client secret in the OAuth2 server.</li>
-<li>redirectUri (string) the url of TheHive AOuth2 page (.../api/ssoLogin).</li>
+<li>redirectUri (string) the url of TheHive OAuth2 page (.../api/ssoLogin).</li>
 <li>responseType (string) type of the response. Currently only "code" is accepted.</li>
 <li>grantType (string) type of the grant. Currently only "authorization_code" is accepted.</li>
 <li>authorizationUrl (string) the url of the OAuth2 server.</li>

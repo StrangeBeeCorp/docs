@@ -19551,7 +19551,7 @@ curl<span class="w"> </span>-u<span class="w"> </span>mylogin:mypassword<span cl
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="update-a-user">Update a User<a class="headerlink" href="#update-a-user" title="Permanent link">#</a></h3>
-<p>This API call allows updating the writable attributed of a user account. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. Any user can also use it to update their own information (but obviously not their roles).</p>
+<p>This API call allows updating the writable attributes of a user account. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. Any user can also use it to update their own information (but obviously not their roles).</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XPATCH<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN'</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{</span>
 <span class="s1">  "name": "John Doe",</span>
 <span class="s1">  "roles": [</span>
@@ -19593,7 +19593,7 @@ It returns a JSON object representing the user as described <a href="#user-model
 </code></pre></div>
 <p>If successful, the generated API key is returned in <code>text/plain</code>response</p>
 <h3 id="revoke-an-api-key">Revoke an API Key<a class="headerlink" href="#revoke-an-api-key" title="Permanent link">#</a></h3>
-<p>This calls allow revoking a user's API key. This calls allow revoking a user's API key.</p>
+<p>This call allows revoking a user's API key.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XDELETE<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key'</span>
 </code></pre></div>
 <p>A successful request returns nothing (HTTP 200 OK).</p>
