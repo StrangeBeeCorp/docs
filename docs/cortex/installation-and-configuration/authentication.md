@@ -135,10 +135,10 @@ The default values within the configuration file are:
 
 To enable authentication using OAuth2/OpenID Connect, edit the `application.conf` file and supply the values of `auth.oauth2` according to your environment. In addition, you need to supply:
 
-- `auth.sso.attributes.login`: name of the attribute containing the OAuth2 user's login in retreived user info (mandatory)
-- `auth.sso.attributes.name`: name of the attribute containing the OAuth2 user's name in retreived user info (mandatory)
+- `auth.sso.attributes.login`: name of the attribute containing the OAuth2 user's login in retrieved user info (mandatory)
+- `auth.sso.attributes.name`: name of the attribute containing the OAuth2 user's name in retrieved user info (mandatory)
 - `auth.sso.attributes.groups`: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)
-- `auth.sso.attributes.roles`: name of the attribute containing the OAuth2 user's roles in retreived user info (mandatory using simple mapping)
+- `auth.sso.attributes.roles`: name of the attribute containing the OAuth2 user's roles in retrieved user info (mandatory using simple mapping)
 
 
 
@@ -147,7 +147,7 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
 
     - clientId (string) client ID in the OAuth2 server.
     - clientSecret (string) client secret in the OAuth2 server.
-    - redirectUri (string) the url of TheHive AOuth2 page (.../api/ssoLogin).
+    - redirectUri (string) the url of TheHive OAuth2 page (.../api/ssoLogin).
     - responseType (string) type of the response. Currently only "code" is accepted.
     - grantType (string) type of the grant. Currently only "authorization_code" is accepted.
     - authorizationUrl (string) the url of the OAuth2 server.

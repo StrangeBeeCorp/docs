@@ -3,7 +3,7 @@
 This is the quick start guide for Cortex 3. It assumes that Cortex [has been installed](../installation-and-configuration/step-by-step-guide.md), and that [the analyzers](../installation-and-configuration/analyzers-responders.md) have been installed as well.
 
 ## Step 1: Connect to Cortex
-One Cortex is installed and configured, open your web browser and connect to http://cortexaddress:9001. 
+Once Cortex is installed and configured, open your web browser and connect to http://cortexaddress:9001. 
 
 ## Step 2: Update the database
 Cortex uses ElasticSearch to store users, organizations and analyzers configuration. The first time you connect to the Web UI (`http://<CORTEX_IP>:9001` by default), you have to create the database by clicking the `Update Database` button.
@@ -15,7 +15,7 @@ You are then invited to create the first user. This is a Cortex global administr
 
 ![Cortex administrator](images/cortex_admin.png)
 
-You will then be able to log in using this user account. You will note that the default `cortex` organization has been created and that it includes your user account, a Cortex global admininistrator.
+You will then be able to log in using this user account. You will note that the default `cortex` organization has been created and that it includes your user account, a Cortex global administrator.
 
 ![Cortex administrator Account](images/cortex_admin_login.png)
 
@@ -25,7 +25,7 @@ The default `cortex` organization cannot be used for any other purpose than mana
 
 ![Add Organization](images/new_org.png)
 
-## Step 5: Create a organization Administrator
+## Step 5: Create an organization Administrator
 
 Create the organization administrator account (user with an `orgAdmin` role).
 

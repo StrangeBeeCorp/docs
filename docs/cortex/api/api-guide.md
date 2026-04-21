@@ -357,7 +357,7 @@ If successful, the call returns a JSON object representing the created user as d
 ```
 
 ### Update a User
-This API call allows updating the writable attributed of a user account. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to update their own information (but obviously not their roles).
+This API call allows updating the writable attributes of a user account. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to update their own information (but obviously not their roles).
 
 ```bash
 curl -XPATCH -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application/json' 'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN' -d '{
@@ -422,7 +422,7 @@ curl -H 'Authorization: Bearer **API_KEY**' 'https://CORTEX_APP_URL:9001/api/use
 If successful, the generated API key is returned in `text/plain`response
 
 ### Revoke an API Key
-This calls allow revoking a user's API key. This calls allow revoking a user's API key.
+This call allows revoking a user's API key.
 
 ```bash
 curl -XDELETE -H 'Authorization: Bearer **API_KEY**' 'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key'

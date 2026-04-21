@@ -4,7 +4,7 @@ title: Home
 
 <div>
   <figure align="center">
-    <img src="./images/cortex-logo.png"width="600"/>  
+    <img src="./images/cortex-logo.png" width="600"/>  
     <figcaption>Cortex : Installation, operation and user guides</figcaption>
   </figure>
 </div>
@@ -51,7 +51,7 @@ Many features are included with Cortex:
 [This documentation](./installation-and-configuration/index.md) contains step-by-step installation instructions for Cortex for different operating systems as well as corresponding ZIP binary packages.
 
 All aspects of the configuration are also detailed in a dedicated section.
-s
+
 ## User guides
 The [first connection](user-guides/first-start.md) to the application requires several actions.
 

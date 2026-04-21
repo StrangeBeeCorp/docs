@@ -1,7 +1,7 @@
 ##  Analyzers / Responders communication
 
 
-From version 3, cortexutils 2.x is required because communication between Cortex and the analyzers/responders has changed. **Analyzers and responders doesn't need to be rewritten if they use cortexutils**. Cortex 2 send data using stdin and receive result from stdout.
+From version 3, cortexutils 2.x is required because communication between Cortex and the analyzers/responders has changed. **Analyzers and responders don't need to be rewritten if they use cortexutils**. Cortex 2 send data using stdin and receive result from stdout.
 
 Cortex 3 uses files: a job is stored in a folder with the following structure:
 

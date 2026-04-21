@@ -314,7 +314,7 @@ Description:
 **UI:**
 
 - Dashboard:
-    - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+    - Remove some entities from the entity list for which dashboards were not useful or working (like comments or actions)
     - Clicking on a counter or donut now correctly sets the filters in the search page
     - conversion of v4 dashboards failed with `not` operator
 - Improvement around time filters (custom and periods)
@@ -342,7 +342,7 @@ Description:
 - Notify user when an update in Cortex is available
 - Dashboard:
     - Default period is now 3 months instead of "All"
-    - Remove some entities from the entity list for which dashboards were not usefull or working (like comments or actions)
+    - Remove some entities from the entity list for which dashboards were not useful or working (like comments or actions)
     - An org admin can disallow the "All" period in the dasboards (organization settings > UI Configuration)
     - Widgets legends now show fully
 - Add an indicator on the number of open requests made by the browser
@@ -564,7 +564,7 @@ If you are using the ad/ldap authentification, you should update to TheHive 5.0.
 
 **API:**
 
-- Fix breaking change in api V0: don't limit the size of observable data in json. This prevented the creation of files in observables. Note: with v1 the prefered way is to use a multipart request.
+- Fix breaking change in api V0: don't limit the size of observable data in json. This prevented the creation of files in observables. Note: with v1 the preferred way is to use a multipart request.
 
 **Migration 3 to 5**
 

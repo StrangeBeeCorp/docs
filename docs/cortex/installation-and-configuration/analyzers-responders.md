@@ -2,7 +2,7 @@
 
 ## Run with Docker
 
-!!! Tip "Ensure Cortex is authorized to run use Docker"
+!!! Tip "Ensure Cortex is authorized to run Docker"
     To run docker images of Analyzers & Responders, Cortex should have permissions to use docker. 
 
     ```bash
@@ -11,7 +11,7 @@
 
 ### Configure Cortex
 
-To run Analyzers&Responders with Docker images, Cortex should be able have access to Internet:
+To run Analyzers & Responders with Docker images, Cortex should be able to have access to Internet:
 
 - To download public catalogs from the [catalogs official website](https://catalogs.download.strangebee.com){target=_blank}
 - To download Docker images from _hub.docker.com_ ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons){target=_blank})
@@ -59,7 +59,7 @@ To run Analyzers&Responders with Docker images, Cortex should be able have acces
 
 ### Additional packages
 
-Some system packages are required to run Analyzers&Responders programs successfully: 
+Some system packages are required to run Analyzers & Responders programs successfully: 
 
 !!! Example ""
 
@@ -139,7 +139,7 @@ Next, you'll need to tell Cortex where to find the analyzers. Analyzers may be i
     ```
 
 
-## Run you own Analyzers & Responders
+## Run your own Analyzers & Responders
 
 Either you run them from the host or with Docker images, you can also run your own custom Analyzers and Responders. 
 

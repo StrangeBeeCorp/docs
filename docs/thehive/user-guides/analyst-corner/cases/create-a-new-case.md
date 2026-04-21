@@ -30,7 +30,7 @@ TheHive offers the following options for creating cases:
 
     **Date \***  
     
-    The start date and time of the case. It indicates when the incident occured. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators.md).
+    The start date and time of the case. It indicates when the incident occurred. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators.md).
 
     **- Severity \***  
 
