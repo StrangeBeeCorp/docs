@@ -32,6 +32,8 @@ Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in T
 
 2. In the **HttpRequest** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Endpoint \***
 
     Using HttpRequest as a notifier requires at least one endpoint.
@@ -46,7 +48,7 @@ Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in T
 
     Enter a valid URL.
 
-    **- Template \***
+    **- Template**
 
     Enter the payload to be sent to the HTTP endpoint. Select JSON, XML, or plain text based on what your external system requirements.
 

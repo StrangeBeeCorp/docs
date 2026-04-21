@@ -33,11 +33,13 @@ Configure the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive
 
 2. In the **Kafka** drawer, enter the following information:
 
-    **- Topic**
+    *Fields marked with \* are mandatory.*
+
+    **- Topic \***
 
     The Kafka topic where TheHive will publish messages. This must match an existing topic in your Kafka setup.
 
-    **- Bootstrap servers**
+    **- Bootstrap servers \***
 
     A comma-separated list of Kafka network addresses with port numbers. These servers act as the entry point for TheHive to connect to your Kafka cluster.
 

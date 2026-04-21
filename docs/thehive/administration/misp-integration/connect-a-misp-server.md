@@ -45,19 +45,21 @@ To manually import a MISP event as a case in TheHive, refer to [Create a New Cas
 
 6. In the **Set up the new server** drawer, enter the following information in the **General settings** section:
 
-    **- Server name**
+    *Fields marked with \* are mandatory.*
+
+    **- Server name \***
 
     A name for the connection. Use explicit, precise names for each connection if you have multiple servers configured in TheHive.
 
-    **- Server URL**
+    **- Server URL \***
 
     The URL of the MISP server to connect with. For example: `https://misp.mycompany.com`.
 
-    **- API key**
+    **- API key \***
 
     The API key for the dedicated MISP account. You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
 
-    **- Purpose**
+    **- Purpose \***
     
     The purpose of this connection indicates what actions you are allowed to perform with the server:
     

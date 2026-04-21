@@ -17,15 +17,17 @@ Add a custom event to a [case timeline](about-case-timelines.md) in TheHive to m
     !!! warning "Modification not possible"
         Once you create a custom event, you can't modify it. To make changes, you must [delete](delete-custom-event-timeline.md) it and create a new one.
 
-    **- Title**
+    *Fields marked with \* are mandatory.*
+
+    **- Title \***
 
     The name of your custom event, visible to users on the timeline.
 
-    **- Description**
+    **- Description \***
 
     A brief description of your custom event. Users can view this brief description of the custom event by selecting **Preview**, but it does not appear on the timeline.
 
-    **- Date**
+    **- Date \***
 
     The start date of your custom event.
 

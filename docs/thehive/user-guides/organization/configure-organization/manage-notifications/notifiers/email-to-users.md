@@ -15,15 +15,17 @@ Configure the *EmailerToUser* [notifier](../about-notifications.md#notifiers) in
 
 2. In the **EmailerToUser** drawer, enter the following information:
 
-    **- Subject**
+    *Fields marked with \* are mandatory.*
+
+    **- Subject \***
 
     The email subject line.
 
-    **- From**
+    **- From \***
 
     The sender's email address.
 
-    **- Template**
+    **- Template \***
 
     The email template used for the message. If you select the HTML format, you must write the full HTML syntax.
 

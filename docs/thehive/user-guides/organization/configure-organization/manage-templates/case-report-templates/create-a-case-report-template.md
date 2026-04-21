@@ -20,6 +20,8 @@ Create a [case report template](about-case-report-templates.md) in TheHive to ge
 
 5. In the drawer, enter the following fields:
 
+    *Fields marked with \* are mandatory.*
+
     **- Title \***  
     The title users will see when selecting reports in case descriptions.
 

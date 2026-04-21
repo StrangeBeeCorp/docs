@@ -20,6 +20,8 @@ Add an [observable](about-observables.md) to a [case](../about-cases.md) or [ale
 
 4. In the **Adding an observable** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Type \***
 
     The type of an observable determines which analyzers are available and whether it requires a value or an attachment. You can't change an observable’s type between one requiring a value and one requiring an attachment once it’s created.

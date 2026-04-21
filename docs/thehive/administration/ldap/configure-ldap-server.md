@@ -20,6 +20,8 @@ Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active
 
 4. In the **LDAP configuration** drawer, enter the following information under the **General settings** section:
 
+    *Fields marked with \* are mandatory.*
+
     **- Name of the configuration \***
 
     A descriptive name to identify this LDAP configuration within TheHive.
@@ -30,7 +32,7 @@ Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active
 
     Example: *ldap.domain.local*
 
-    **- Auth-Use SSL \***
+    **- Auth-Use SSL**
 
     Turn on this toggle to use SSL/TLS encryption when connecting to the LDAP server for secure communication.
 

@@ -20,6 +20,8 @@ Create a [task](about-tasks.md) in TheHive to organize and track investigative w
 
 4. In the **Adding a task** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Group \***
 
     The group the task belongs to. Groups help organize and visualize tasks.
@@ -28,7 +30,7 @@ Create a [task](about-tasks.md) in TheHive to organize and track investigative w
 
     The title of the task.
 
-    **- Mandatory \***
+    **- Mandatory**
 
     Whether the task is mandatory. Mandatory tasks must contain at least one [task log](about-task-logs.md) before you can mark them as *Completed*. You can't close a case until all mandatory tasks are completed.
 
@@ -40,7 +42,7 @@ Create a [task](about-tasks.md) in TheHive to organize and track investigative w
 
     The person assigned to the task.
 
-    **- Flag this task? \***
+    **- Flag this task?**
 
     Whether to flag the task to highlight it for all users in your organization. Flagged tasks are more visible in the task list.
 

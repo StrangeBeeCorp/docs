@@ -32,13 +32,15 @@ Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) 
 
 2. In the **Teams** drawer, enter the following information:
 
-    **- Endpoint**
+    *Fields marked with \* are mandatory.*
+
+    **- Endpoint \***
 
     Using Microsoft Teams as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Microsoft Teams.
 
     Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-teams-endpoint.md).
 
-    **- Text template**
+    **- Text template \***
 
     The message content to send to the Microsoft Teams endpoint.
 

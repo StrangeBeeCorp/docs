@@ -37,6 +37,8 @@ Configure an OpenID authentication provider in TheHive.
 
 7. Enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Name \***
 
     A recognizable name for the IdP in TheHive.

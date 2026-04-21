@@ -23,6 +23,8 @@ If you need to share whole document or files, see [Upload an Attachment to a Cas
 
 4. In the **Add an observable** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Type \***
 
     Select the category that best describes what you're reporting.

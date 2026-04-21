@@ -32,17 +32,19 @@ Configure an [AD](../ldap/about-ldap.md) authentication provider in TheHive.
 
 6. Enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- The addresses of the domain controllers**
 
     The IP addresses or host names of the domain controllers responsible for handling authentication requests within the network.
 
-    **- The Windows domain name**
+    **- The Windows domain name \***
 
     The name of the Windows domain that manages user accounts and permissions. This is typically the NetBIOS name used within the Windows network.
 
     Example: *DOMAIN*
 
-    **- The DNS domain name**
+    **- The DNS domain name \***
 
     The FQDN associated with the Windows domain (for example, *corp.example.com*). This is used for resolving network resources through the DNS.
 

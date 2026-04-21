@@ -16,6 +16,8 @@ Configure an [SMTP server](about-smtp.md) to enable email notifications to [spec
 
 3. In the **Server settings** section, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Server name or IP address \***
 
     The host name or IP address of your SMTP server.
@@ -32,7 +34,7 @@ Configure an [SMTP server](about-smtp.md) to enable email notifications to [spec
 
 4. In the **Security and authentication settings** section, enter the following information:
 
-    **- Connection security \***
+    **- Connection security**
 
     Select the security protocol to use.
 

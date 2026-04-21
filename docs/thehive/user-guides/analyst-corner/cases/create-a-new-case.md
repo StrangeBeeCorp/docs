@@ -24,11 +24,13 @@ TheHive offers the following options for creating cases:
 
 3. Enter the following fields:
 
+    *Fields marked with \* are mandatory.*
+
     **- Title \***  
 
     The title of the case.
 
-    **Date \***  
+    **- Date \***  
     
     The start date and time of the case. It indicates when the incident occurred. By default, this field is pre-filled with the current date and time. This information is used to calculate [KPIs](../../key-performance-indicators/key-performance-indicators.md).
 
@@ -98,6 +100,8 @@ TheHive offers the following options for creating cases:
 
 3. In the **Import case** drawer:
 
+    *Fields marked with \* are mandatory.*
+
     **- Attachment \***  
 
     Drop a THAR file directly into the **Attachment** section or select it from your computer. THAR files are TheHive archive files. Use the file you obtained from [exporting an archived case](export-an-archived-case.md).
@@ -124,6 +128,8 @@ See [About MISP Integration](../../../administration/misp-integration/about-misp
 2. In the **Create case** drawer, select **From MISP (.json)**.
 
 3. In the **Import from MISP** drawer:
+
+    *Fields marked with \* are mandatory.*
 
     **- Attachment \***
 

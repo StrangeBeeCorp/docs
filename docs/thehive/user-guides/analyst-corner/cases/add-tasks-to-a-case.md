@@ -18,6 +18,8 @@ Add [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in The
 
 4. In the **Adding a task** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Group \***
 
     The category your task belongs to. Tasks can be visually grouped by group for easier navigation. If the group doesn't exist, it will be created automatically.
@@ -26,7 +28,7 @@ Add [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in The
 
     The name of the task, visible to users in the task list.
 
-    **- Mandatory \***
+    **- Mandatory**
 
     Specifies whether the task is required. Turn on the toggle to make it mandatory.
 
@@ -38,7 +40,7 @@ Add [tasks](../tasks/about-tasks.md) to a [case](../cases/about-cases.md) in The
 
     The person responsible for completing the task.
 
-    **- Flag this task? \***
+    **- Flag this task?**
 
     Highlights the task for all users in the organization.
 

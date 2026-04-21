@@ -35,6 +35,8 @@ Configure the *Redis* [notifier](../about-notifications.md#notifiers) in TheHive
 
 2. In the **Redis** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Channel \***
 
     The Redis channel where you want to publish the data.
@@ -43,7 +45,7 @@ Configure the *Redis* [notifier](../about-notifications.md#notifiers) in TheHive
 
     The Redis server address. This is where TheHive will send data.
 
-    **- Port \***
+    **- Port**
 
     The port number Redis is listening on.
 

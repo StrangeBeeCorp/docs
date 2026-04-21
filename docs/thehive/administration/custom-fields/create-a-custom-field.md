@@ -20,6 +20,8 @@ Create [custom fields](../custom-fields/about-custom-fields.md) in TheHive to ex
 
 4. Enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Display name \***
 
     The name users will see when adding this custom field to their cases or alerts.

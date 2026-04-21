@@ -16,6 +16,8 @@ TTPs describe the behaviors and methods commonly used by specific threat actors 
 
 4. In the **Add TTP** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **-Catalog \***
 
     The MITRE catalog to use. By default, the Enterprise Attack catalog is installed with TheHive and includes all standard techniques. [Additional catalogs can be added](../../../../administration/ttps/add-a-catalog.md).

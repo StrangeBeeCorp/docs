@@ -26,6 +26,8 @@ Add a local *Mattermost* [endpoint](../manage-endpoints/about-endpoints.md) in T
 
 5. Enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Name \***
 
     The endpoint name, used to identify this Mattermost integration in TheHive. This name must be unique, as two endpoints can't have the same name.

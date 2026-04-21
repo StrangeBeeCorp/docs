@@ -22,6 +22,8 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 3. In the **Adding a user** drawer, enter:
 
+    *Fields marked with \* are mandatory.*
+
     **- Type \***
 
     The user account type you want to create.
@@ -66,6 +68,8 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 4. In the **Adding a user** drawer, enter:
 
+    *Fields marked with \* are mandatory.*
+
     **- Type \***
 
     The user account type you want to create.
@@ -106,6 +110,8 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
 3. In the **Adding a user** drawer, enter:
 
+    *Fields marked with \* are mandatory.*
+
     **- Type \***
 
     The user account type you want to create.
@@ -124,7 +130,7 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     The user account's display name.
 
-    **- Organizations \***
+    **- Organizations**
 
     Select one or more organizations to assign to the user account. To set the default organization the user accesses when signing in to TheHive, select **Set as default**.
 

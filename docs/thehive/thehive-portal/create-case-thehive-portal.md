@@ -15,6 +15,8 @@ Create a new [case](glossary-thehive-portal.md#cases) to report a security incid
 
 2. In the **Create Case** drawer, enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Title \***  
 
     Provide a brief and clear description of the incident. For example: *Suspicious email from unknown sender*.

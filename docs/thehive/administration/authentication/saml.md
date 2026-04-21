@@ -41,6 +41,8 @@ Configure a SAML authentication provider in TheHive.
 
 4. Enter the following information:
 
+    *Fields marked with \* are mandatory.*
+
     **- Name \***
 
     A recognizable name for the IdP in TheHive.
@@ -72,7 +74,7 @@ Configure a SAML authentication provider in TheHive.
 
     The name of the attribute from the IdP that contains the user's login information (such as email or username).
 
-    **- Maximum authentication life time \***
+    **- Maximum authentication life time**
 
     The maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.
 

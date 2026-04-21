@@ -20,13 +20,15 @@ Create a [function](about-functions.md) to automate workflows, process data, and
 
 4. In the **Create function** drawer:
 
+    *Fields marked with \* are mandatory.*
+
     **- Name \***
 
     Enter the function name, which you will use in your HTTP call to invoke the function.
 
-    **- Mode \***
+    **- Mode**
 
-    Select the mode you want to apply to the function. For more details on the available options, see [About Functions](about-functions.md#function-modes).
+    Select the state you want to apply to the function. For more details on the available options, see [About Functions](about-functions.md#function-modes).
 
     **- Types \***
 

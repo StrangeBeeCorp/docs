@@ -26,11 +26,13 @@ Add a local *Slack* [endpoint](../manage-endpoints/about-endpoints.md) in TheHiv
 
 5. Enter the following information:
 
-    **- Name**
+    *Fields marked with \* are mandatory.*
+
+    **- Name \***
 
     The endpoint name, used to identify this Slack integration in TheHive. This name must be unique, as two endpoints can't have the same name.
 
-    **- Token**
+    **- Token \***
 
     The authentication token required to connect to Slack.
 

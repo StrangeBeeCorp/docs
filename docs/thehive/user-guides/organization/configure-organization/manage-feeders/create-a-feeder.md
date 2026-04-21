@@ -22,26 +22,28 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
 4. In the **General settings** section, enter the following information:
 
-    **- Name**
+    *Fields marked with \* are mandatory.*
+
+    **- Name \***
 
     A unique name for the alert feeder. You can’t change this name later.
 
-    **- Interval**
+    **- Interval \***
 
     How often the alert feeder sends requests to the external system.
 
     !!! warning "Define the interval carefully based on your reactivity requirements"
         Make sure the interval is shorter than the processing time to avoid potential issues, but not too short to prevent excessive requests to the API.
 
-    **- Request timeout time**
+    **- Request timeout time \***
 
     The maximum time, in seconds, the alert feeder waits for a response before timing out.
 
-    **- Request response max size**
+    **- Request response max size \***
 
     The maximum response size, in megabytes, that the alert feeder accepts from the external system.
 
-    **- Description**
+    **- Description \***
 
     A description to provide additional context or notes about the alert feeder configuration.
 
@@ -49,11 +51,11 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
 5. In the **HTTP request** section, enter the following information:
 
-    **- Method**
+    **- Method \***
 
     The HTTP method to use when requesting data from the external system.
 
-    **- URL**
+    **- URL \***
 
     The endpoint URL of the external system.
 
@@ -162,7 +164,7 @@ For an example configuration, see the [Airtable example](#airtable-example).
     !!! info "Feeder function"
         Once created, the function is automatically added to the [functions list](../manage-functions/about-functions.md) with the type *feeder*.
 
-    **- Function name**
+    **- Function name \***
 
     Enter a name for the function. You can’t change this name later.
 
@@ -170,7 +172,7 @@ For an example configuration, see the [Airtable example](#airtable-example).
 
     Describe what the function does.
 
-    **- Definition**
+    **- Definition \***
 
     {% include-markdown "includes/function-definition.md" %}
 

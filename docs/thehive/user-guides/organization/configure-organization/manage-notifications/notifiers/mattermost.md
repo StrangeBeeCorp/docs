@@ -30,21 +30,23 @@ Configure the *Mattermost* [notifier](../about-notifications.md#notifiers) in Th
 
 2. In the **Mattermost** drawer, enter the following information:
 
-    **- Endpoint**
+    *Fields marked with \* are mandatory.*
+
+    **- Endpoint \***
 
     Using Mattermost as a notifier requires at least one endpoint. This endpoint defines how TheHive connects to Mattermost.
 
     Select an existing endpoint. Endpoints can be local, defined at the organization level, or [global](../../../../../administration/add-a-global-endpoint.md), defined at the client level for one or more organizations. You can add a new local endpoint by selecting [**Add a new endpoint**](../../manage-endpoints/add-mattermost-endpoint.md).
 
-    **- Channel**
+    **- Channel \***
 
     The Mattermost channel where you want to send the data. This overrides the default channel set in the endpoint configuration.
 
-    **- Username**
+    **- Username \***
 
     The username that will appear as the sender of the message in Mattermost. This overrides the default username set in the endpoint configuration.
 
-    **- Template**
+    **- Template \***
 
     The message content to send to the Mattermost endpoint. Select JSON, Markdown, or plain text.
 

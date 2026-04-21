@@ -120,25 +120,27 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         29. In the **Provider** section, enter the following information:
 
-            **- Name**
+            *Fields marked with \* are mandatory.*
+
+            **- Name \***
 
             A name for your connector.
 
-            **- Provider**
+            **- Provider \***
 
             Select **Google Workspace** from the dropdown.
 
         30. In the **Authentication** section, enter the following information:
 
-            **- Email**
+            **- Email \***
 
             The email address associated with your account.
 
-            **- ClientId**
+            **- ClientId \***
 
             Paste the Client ID value you obtained from Google.
 
-            **- Secret**
+            **- Secret \***
 
             Paste the Client Secret value you obtained from Google.
 
@@ -239,30 +241,32 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
         43. Return to your TheHive application.
 
         44. In the **Provider** section, enter the following information:
+   
+            *Fields marked with \* are mandatory.*
 
-            **- Name**
+            **- Name \***
 
             A name for your connector.
 
-            **- Provider**
+            **- Provider \***
 
             Select **Microsoft 365** from the dropdown.
 
         45. In the **Authentication** section, enter the following information:
 
-            **- Email**
+            **- Email \***
 
             The email address associated with your account.
 
-            **- TenantId**
+            **- TenantId \***
 
             Paste the Tenant ID value you obtained from Microsoft.
 
-            **- ClientId**
+            **- ClientId \***
 
             Paste the Client ID value you obtained from Microsoft.
 
-            **- Secret**
+            **- Secret \***
 
             Paste the Client Secret value you obtained from Microsoft.
 
@@ -381,30 +385,32 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
         58. Return to your TheHive application.
 
         59. In the **Provider** section, enter the following information:
+   
+            *Fields marked with \* are mandatory.*
 
-            **- Name**
+            **- Name \***
 
             A name for your connector.
 
-            **- Provider**
+            **- Provider \***
 
             Select **Microsoft 365 GraphAPI** from the dropdown.
 
         60. In the **Authentication** section, enter the following information:
 
-            **- Email**
+            **- Email \***
 
             The email address associated with your account.
 
-            **- TenantId**
+            **- TenantId \***
 
             Paste the Tenant ID value you obtained from Microsoft.
 
-            **- ClientId**
+            **- ClientId \***
 
             Paste the Client ID value you obtained from Microsoft.
 
-            **- Secret**
+            **- Secret \***
 
             Paste the Client Secret value you obtained from Microsoft.
 
@@ -416,19 +422,21 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         61. In the **Provider** section, enter the following information:
 
-            **- Name**
+            *Fields marked with \* are mandatory.*
+
+            **- Name \***
 
             A name for your connector.
 
-            **- Provider**
+            **- Provider \***
 
             Select **IMAP server** from the dropdown.
 
-            **- Host**
+            **- Host \***
 
             The host address of the IMAP server.
 
-            **- Port**
+            **- Port \***
 
             The port number of the IMAP server.
 
@@ -442,11 +450,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         64. In the **Authentication** section, enter the following information:
 
-            **- Login**
+            **- Login \***
 
             The email address or account username associated with your account.
 
-            **- Password**
+            **- Password \***
 
             The password associated with your account.
 
@@ -454,11 +462,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
 7. In the **Settings** section, enter the following information:
 
-    **- Organization**
+    **- Organization \***
 
     TheHive organization where the alerts are sent.
 
-    **- Folder**
+    **- Folder \***
 
     The folder from which emails are fetched.
 
@@ -470,11 +478,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
 8. <!-- md:version 5.5 --> In the **Alert properties** section, enter the following information:
 
-    **- Type**
+    **- Type \***
 
     The type of the alerts created through the email intake connector.
 
-    **- Source**
+    **- Source \***
 
     The source of the alerts created through the email intake connector.
 

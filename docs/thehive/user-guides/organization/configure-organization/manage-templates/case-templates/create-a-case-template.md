@@ -33,6 +33,8 @@ To import an existing case template from another organization or TheHive instanc
 
 5. In the **Adding a case template** drawer, enter values in some or all the following fields to pre-fill:
 
+    *Fields marked with \* are mandatory.*
+
     **- Prefix**  
 
     A prefix that's automatically added to case titles. The prefix value isn't visible when creating a case from the template but applies after creation. Use it to categorize cases for reporting. Add a hyphen (*-*) after the prefix to clearly separate it from the case title.
@@ -53,7 +55,7 @@ To import an existing case template from another organization or TheHive instanc
 
     The PAP level for the case. It specifies which actions you can take with the case data. Refer to the [MISP taxonomy](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} for detailed definitions of PAP values.
     
-    **- Severity**  
+    **- Severity \***  
 
     The default severity level for cases.
     

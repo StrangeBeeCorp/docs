@@ -35,17 +35,19 @@ Connect [Cortex](about-cortex.md) servers to TheHive to enable automated analysi
 
 5. In the **Set up a new server** drawer, enter the following information:
 
-    **- Server name**
+    *Fields marked with \* are mandatory.*
+
+    **- Server name \***
 
     The name of the connection. If you have multiple connections, use explicit names for clarity.
 
-    **- Server URL**
+    **- Server URL \***
 
     The URL of the Cortex server to connect to.
     
     Example: `https://cortex.mycompany.com`
 
-    **- API key**
+    **- API key \***
 
     The API key associated with the dedicated Cortex account.
 

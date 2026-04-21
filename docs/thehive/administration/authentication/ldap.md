@@ -44,23 +44,25 @@ Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
 8. Enter the following information:
 
-    **- DN of the service account**
+    *Fields marked with \* are mandatory.*
+
+    **- DN of the service account \***
 
     The Distinguished Name (DN) of the service account used for authentication. This account is responsible for binding to the LDAP directory and performing search operations.
 
     Example: *cn=thehive,ou=users,dc=company,dc=com*
 
-    **- Bind password**
+    **- Bind password \***
 
     The password associated with the service account. This password authenticates the service account to allow LDAP queries.
 
-    **- Users base DN**
+    **- Users base DN \***
 
     The base DN from which the search for user accounts will begin. This limits the search scope to a specific branch of the directory.
 
     Example: *ou=users,dc=company,dc=com*
 
-    **- Filter used to search users**
+    **- Filter used to search users \***
 
     The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
 

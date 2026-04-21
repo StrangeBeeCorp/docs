@@ -51,7 +51,7 @@ To preserve information from case pages for the long term, manually copy the con
 
     ---
 
-9.  {% include-markdown "includes/save-content-page.md" %}
+9. {% include-markdown "includes/save-content-page.md" %}
 
 <h2>Next steps</h2>
 

@@ -16,19 +16,21 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
 3. Enter the values for each session setting:
 
-    **- Session expiration autologout**
+    *Fields marked with \* are mandatory.*
+
+    **- Session expiration autologout \***
 
     The amount of time before users are automatically signed out, regardless of activity. This is based on the total duration of the session.
 
-    **- Session expiration warning time**
+    **- Session expiration warning time \***
 
     The amount of time remaining before session expiration when users receive a warning. This must be equal to or less than the session expiration autologout time.
 
-    **- Inactivity autologout**
+    **- Inactivity autologout \***
 
     The amount of time before users are automatically signed out due to inactivity. If users interact with the interface, the timer is reset.
 
-    **- Inactivity warning time**
+    **- Inactivity warning time \***
 
     The amount of time remaining before automatic sign-out due to inactivity when users receive a warning. This must be equal to or less than the inactivity autologout time.
 
