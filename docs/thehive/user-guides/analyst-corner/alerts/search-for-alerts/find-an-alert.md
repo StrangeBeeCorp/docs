@@ -24,7 +24,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 2. Select a result from the list, or choose **All results** to view the full set of matches.
 
 !!! note "Refine results"
-    The search bar searches across all element types—cases, alerts, observables, tasks, task logs, jobs, <!-- md:version 5.7 --> comments, and <!-- md:version 5.7 --> pages—but it doesn't support filters.
+    The search bar searches across all element types—cases, alerts, observables, tasks, and task logs—but it doesn't support filters.
 
     Use the [Global Search feature](#method-4-global-search-feature) when you need to refine results more precisely.
 
