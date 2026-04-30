@@ -2,6 +2,12 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.7.2 - April 30, 2026
+
+### Fixes
+
+* Analyzers reports: Resolved an error that prevented Cortex jobs from being processed correctly.
+
 ## 5.7.1 - April 20, 2026
 
 ### Fixes
