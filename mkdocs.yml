@@ -466,7 +466,7 @@ nav:
       - 'Version Upgrades':
         - 'Upgrade from Version 5.x': thehive/installation/upgrade-from-5.x.md
         - 'Upgrade from Version 4.x': thehive/installation/upgrade-from-4.x.md
-        - 'Migration from TheHive 3.x': thehive/installation/migration.md
+        - 'Migration from Version 3.x': thehive/installation/migration.md
     - 'Configuration':
       - 'Cortex Integration': thehive/configuration/turn-off-cortex-connector.md
       - 'MISP Integration': thehive/configuration/turn-off-misp-connector.md

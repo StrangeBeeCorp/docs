@@ -2,6 +2,9 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+!!! warning "Database evolution on upgrade"
+    Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
+
 ## 5.7.2 - April 30, 2026
 
 ### Fixes

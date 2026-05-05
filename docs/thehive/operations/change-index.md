@@ -1,4 +1,3 @@
-
 # Change Index from Lucene to Elasticsearch
 
 Lucene index support was removed starting from TheHive version 5.1. Follow this procedure to change your index to Elasticsearch. This procedure is compatible with any 5.x version.
