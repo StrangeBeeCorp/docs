@@ -5,6 +5,19 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
+## 5.6.3 - May 5, 2026
+
+### Fixes
+
+* Cases: Resolved an issue where not all attachments were removed when a case was deleted.
+* Tasks: Corrected task retrieval within a case, which could return an incomplete list under certain conditions.
+* Dashboards: Partial fix for a display issue in time-based charts where the internal field path was shown instead of the configured field name. Performance issues may persist as investigation continues.
+
+### Security
+
+* HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and prevent XSS attacks.
+* Updated third-party libraries to address known security vulnerabilities.
+
 ## 5.6.2 - March 17, 2026
 
 ### Fixes

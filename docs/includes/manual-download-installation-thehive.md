@@ -21,7 +21,7 @@
             wget -O /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.2-1_all`. 
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.3-1_all`. 
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
@@ -43,7 +43,7 @@
             curl -o /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.2-1_all`. 
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.3-1_all`. 
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
@@ -148,7 +148,7 @@
             wget -O /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.2-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.3-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
@@ -170,7 +170,7 @@
             curl -o /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.2-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.3-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
