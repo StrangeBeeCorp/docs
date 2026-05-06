@@ -7,11 +7,13 @@
 
 ## 5.6.3 - May 5, 2026
 
+Last update: May 6, 2026
+
 ### Fixes
 
 * Cases: Resolved an issue where not all attachments were removed when a case was deleted.
 * Tasks: Corrected task retrieval within a case, which could return an incomplete list under certain conditions.
-* Dashboards: Partial fix for a display issue in time-based charts where the internal field path was shown instead of the configured field name. Performance issues may persist as investigation continues.
+* Dashboards: Partial fix for a display issue in time-based charts where the internal field path was shown instead of the configured field name. Performance issues may persist for custom date field aggregations.
 
 ### Security
 
