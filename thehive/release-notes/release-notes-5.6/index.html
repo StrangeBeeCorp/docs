@@ -19161,11 +19161,12 @@
 <p>Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.</p>
 </div>
 <h2 id="563-may-5-2026">5.6.3 - May 5, 2026<a class="headerlink" href="#563-may-5-2026" title="Permanent link">#</a></h2>
+<p>Last update: May 6, 2026</p>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
 <ul>
 <li>Cases: Resolved an issue where not all attachments were removed when a case was deleted.</li>
 <li>Tasks: Corrected task retrieval within a case, which could return an incomplete list under certain conditions.</li>
-<li>Dashboards: Partial fix for a display issue in time-based charts where the internal field path was shown instead of the configured field name. Performance issues may persist as investigation continues.</li>
+<li>Dashboards: Partial fix for a display issue in time-based charts where the internal field path was shown instead of the configured field name. Performance issues may persist for custom date field aggregations.</li>
 </ul>
 <h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
 <ul>
