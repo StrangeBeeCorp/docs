@@ -145,6 +145,9 @@ If you use self-signed certificates or internal CAs, you must configure the JVM 
 
     Starting with TheHive 5.5.4, you no longer need to build or maintain a custom truststore. You can directly mount PEM-format CA certificates, and the entrypoint automatically imports them into the JVM truststore at startup.
 
+    !!! warning "Incompatible with `--no-config`"
+        The `TH_CACERT_FOLDER` and `TH_CACERT_STRING` environment variables, as well as their CLI equivalents, have no effect when the entrypoint is started with [`--no-config`](../thehive-docker-entrypoint-settings.md#general-configuration).
+
     1. Store your CA certificates in a host directory.
 
         Multiple certificates are supported. No password is required.
