@@ -19295,6 +19295,10 @@ sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>
 </div>
 <div class="tabbed-block">
 <p>Starting with TheHive 5.5.4, you no longer need to build or maintain a custom truststore. You can directly mount PEM-format CA certificates, and the entrypoint automatically imports them into the JVM truststore at startup.</p>
+<div class="admonition warning">
+<p class="admonition-title">Incompatible with <code>--no-config</code></p>
+<p>The <code>TH_CACERT_FOLDER</code> and <code>TH_CACERT_STRING</code> environment variables, as well as their CLI equivalents, have no effect when the entrypoint is started with <a href="../../thehive-docker-entrypoint-settings/#general-configuration"><code>--no-config</code></a>.</p>
+</div>
 <ol>
 <li>
 <p>Store your CA certificates in a host directory.</p>
