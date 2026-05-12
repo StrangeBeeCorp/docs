@@ -2,6 +2,8 @@
 
 Add or remove an existing user account from an [organization](about-organizations.md) in TheHive.
 
+Cases, alerts, and tasks assigned to a user removed from an organization remain assigned to that user, but the interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the user's login, then reassign them manually.
+
 To create a new user account and assign it to an organization, see [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md).
 
 To permanently delete a user account from all organizations, see [Delete a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md).
