@@ -65,12 +65,14 @@ Next, configure TheHive to [send an email notification](../user-guides/organizat
         "_and": [
             {
                 "_is": {
-                    "objectType": "Alert"
+                    "_field": "objectType",
+                    "_value": "Alert"
                 }
             },
             {
                 "_is": {
-                    "action": "update"
+                    "_field": "action",
+                    "_value": "update"
                 }
             },
             {

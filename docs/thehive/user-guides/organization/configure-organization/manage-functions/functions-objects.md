@@ -18,7 +18,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
 * `request.getQueryString(key: string): string | null`: Retrieves the value associated with a specific query string key. Returns `null` if the key does not exist.
 * `request.getHeader(name: string): string | null`: Retrieves the value of a specific HTTP request header. Returns `null` if the header is not present.
 * `request.headers(): Record<string, string>`: Returns all request headers as a dictionary.
-* `request.contentType: string`: Retrieves the `Content-Type` header value from the request.
+* `request.contentType(): string`: Retrieves the `Content-Type` header value from the request.
 * `request.remoteAddress(): string`: Returns the IP address of the client making the request.
 
 ## Query
@@ -247,12 +247,12 @@ Functions in TheHive have access to predefined objects that enable interaction w
 
         See the [`POST /api/v1/case/{caseId}/access` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Manage%20Case%20access){target=_blank} for the complete object definition.
 
-* `caze.manageCaseAccess(ids: string[] & input: InputManageCaseAccessWithIds): void`: Sets the access level for multiple cases at once.
+* `caze.bulkManageCaseAccess(ids: string[] & input: InputManageCaseAccessWithIds): void`: Sets the access level for multiple cases at once.
 
     ??? tip "Example"
 
         ```javascript
-        context.caze.manageCaseAccess({
+        context.caze.bulkManageCaseAccess({
             ids: ["102", "103"],
             access: {
                 users: ["lucas@example.com", "emma@example.com"],
@@ -262,7 +262,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         ```
 
         ```javascript
-        context.caze.manageCaseAccess({
+        context.caze.bulkManageCaseAccess({
             ids: ["104", "105"],
             access: {
                 _kind: "AllExternalAccessKind"

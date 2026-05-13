@@ -327,9 +327,9 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "action": "update" } },
-    { "_is": { "objectType": "Case" } },
-    { "_gte": { "details.severity": 3 } }
+    { "_is": { "_field": "action", "_value": "update" } },
+    { "_is": { "_field": "objectType", "_value": "Case" } },
+    { "_gte": { "_field": "details.severity", "_value": 3 } }
   ]
 }
 ```
@@ -339,8 +339,8 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "objectType": "Alert" } },
-    { "_is": { "details.stage": "Closed" } },
+    { "_is": { "_field": "objectType", "_value": "Alert" } },
+    { "_is": { "_field": "details.stage", "_value": "Closed" } },
     { "_not": { "_has": "object.assignee" } },
     { "_not": { "_has": "details.assignee" } }
   ]
@@ -352,8 +352,8 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "action": "update" } },
-    { "_is": { "objectType": "Observable" } },
+    { "_is": { "_field": "action", "_value": "update" } },
+    { "_is": { "_field": "objectType", "_value": "Observable" } },
     { "_has": "details.reports.Crt_sh_Transparency_Logs_1_0" }
   ]
 }
@@ -364,12 +364,12 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "action": "update" } },
-    { "_is": { "objectType": "Action" } },
+    { "_is": { "_field": "action", "_value": "update" } },
+    { "_is": { "_field": "objectType", "_value": "Action" } },
     {
       "_or": [
-        { "_is": { "details.status": "Success" } },
-        { "_is": { "details.status": "Failure" } }
+        { "_is": { "_field": "details.status", "_value": "Success" } },
+        { "_is": { "_field": "details.status", "_value": "Failure" } }
       ]
     }
   ]
@@ -381,18 +381,18 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "action": "update" } },
-    { "_is": { "objectType": "Case" } },
+    { "_is": { "_field": "action", "_value": "update" } },
+    { "_is": { "_field": "objectType", "_value": "Case" } },
     {
       "_or": [
-        { "_is": { "details.status": "TruePositive" } },
-        { "_is": { "details.status": "FalsePositive" } }
+        { "_is": { "_field": "details.status", "_value": "TruePositive" } },
+        { "_is": { "_field": "details.status", "_value": "FalsePositive" } }
       ]
     },
     {
       "_or": [
-        { "_is": { "object.customFieldValues.business-unit": "Sales" } },
-        { "_is": { "object.customFieldValues.business-unit": "Marketing" } }
+        { "_is": { "_field": "object.customFieldValues.business-unit", "_value": "Sales" } },
+        { "_is": { "_field": "object.customFieldValues.business-unit", "_value": "Marketing" } }
       ]
     }
   ]
@@ -409,9 +409,9 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
     "_field": "details.customFieldChanges",
     "_filter": {
       "_and": [
-        { "_eq": { "operation": "valuesAdded" } },
-        { "_eq": { "name": "business-unit" } },
-        { "_eq": { "values": "Engineering" } }
+        { "_eq": { "_field": "operation", "_value": "valuesAdded" } },
+        { "_eq": { "_field": "name", "_value": "business-unit" } },
+        { "_eq": { "_field": "values", "_value": "Engineering" } }
       ]
     }
   }
@@ -423,9 +423,9 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
 ```json
 {
   "_and": [
-    { "_is": { "objectType": "Job" } },
-    { "_is": { "object.analyzerName": "EmlParser_2_1" } },
-    { "_is": { "object.status": "Success" } }
+    { "_is": { "_field": "objectType", "_value": "Job" } },
+    { "_is": { "_field": "object.analyzerName", "_value": "EmlParser_2_1" } },
+    { "_is": { "_field": "object.status", "_value": "Success" } }
   ]
 }
 ```

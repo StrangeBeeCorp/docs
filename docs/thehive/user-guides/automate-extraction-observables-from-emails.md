@@ -35,17 +35,20 @@ This eliminates the need to manually run the analyzer for each email alert.
         "_and": [
             {
                 "_is": {
-                    "action": "create"
+                    "_field": "action",
+                    "_value": "create"
                 }
             },
             {
                 "_is": {
-                    "objectType": "Observable"
+                    "_field": "objectType",
+                    "_value": "Observable"
                 }
             },
             {
                 "_is": {
-                    "object.alert.type": "email-intake"
+                    "_field": "object.alert.type",
+                    "_value": "email-intake"
                 }
             }
         ]

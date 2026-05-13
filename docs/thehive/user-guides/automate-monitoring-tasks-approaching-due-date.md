@@ -210,17 +210,20 @@ Next, configure TheHive to [send a notification](../user-guides/organization/con
         "_and": [
             {
                 "_is": {
-                    "objectType": "Task"
+                    "_field": "objectType",
+                    "_value": "Task"
                 }
             },
             {
                 "_is": {
-                    "action": "update"
+                    "_field": "action",
+                    "_value": "update"
                 }
             },
             {
                 "_is": {
-                    "details.flag": true
+                    "_field": "details.flag",
+                    "_value": true
                 }
             }
         ]

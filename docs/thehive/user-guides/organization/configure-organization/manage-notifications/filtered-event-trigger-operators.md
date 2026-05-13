@@ -2,6 +2,13 @@
 
 Several operators are available for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
 
+!!! warning "Deprecated shorthand"
+    The shorthand `{ "_operator": { "field": value } }` is deprecated and logs a warning when used. For all comparison and string operators, use the explicit `_field`/`_value` form instead:
+
+    ```json
+    { "_eq": { "_field": "action", "_value": "create" } }
+    ```
+
 ## Logical operators
 
 * `_and`: Matches when all conditions are met
@@ -41,7 +48,7 @@ This operator inverts the condition, returning events that don't match the speci
 These operators filter events based on less than (`_lt`), greater than (`_gt`), less than or equal (`_lte`), or greater than or equal (`_gte`) conditions.
 
 ```json
-{ "_lt": { "foo" : 42 } }
+{ "_lt": { "_field": "foo", "_value": 42 } }
 ```
 
 * `_eq` and `_is`: Matches an exact value
@@ -49,17 +56,17 @@ These operators filter events based on less than (`_lt`), greater than (`_gt`), 
 `_eq` is an alias for `_is`. Both check for exact matches.
 
 ```json
-{ "_eq": { "foo": 42 } }
+{ "_eq": { "_field": "foo", "_value": 42 } }
 ```
 
 ```json
-{ "_eq": { "foo": "LOW" } }
+{ "_eq": { "_field": "foo", "_value": "LOW" } }
 ```
 
 Also works with arrays:
 
 ```json
-{ "_eq": { "tags": ["foo", "bar"] } }
+{ "_eq": { "_field": "tags", "_value": ["foo", "bar"] } }
 ```
 
 ## String operators
@@ -69,7 +76,7 @@ Also works with arrays:
 These operators filter events based on whether a string starts with or ends with a given value.
 
 ```json
-{ "_startsWith": { "foo": "LOW" } }
+{ "_startsWith": { "_field": "foo", "_value": "LOW" } }
 ```
 
 * `_like`: Matches a string using wildcards (*)
@@ -77,22 +84,22 @@ These operators filter events based on whether a string starts with or ends with
 This operator performs pattern matching using wildcards (*).
 
 ```json
-{ "_like": { "foo": "*ice" } }
+{ "_like": { "_field": "foo", "_value": "*ice" } }
 ```
 
 ```json
-{ "_like": { "foo": "ali*" } }
+{ "_like": { "_field": "foo", "_value": "ali*" } }
 ```
 
 ```json
-{ "_like": { "foo": "*lice*" } }
+{ "_like": { "_field": "foo", "_value": "*lice*" } }
 ```
 
 * `_match`: Matches a string
 
 ```json
 {
-  "_match": { "foo": "alice" }
+  "_match": { "_field": "foo", "_value": "alice" }
 }
 ```
 
@@ -181,12 +188,14 @@ This operator only works when the target field is an array of objects.
             "_and": [
                 {
                     "_eq": {
-                        "name": "bar"
+                        "_field": "name",
+                        "_value": "bar"
                     }
                 },
                 {
                     "_eq": {
-                        "value": "LOW"
+                        "_field": "value",
+                        "_value": "LOW"
                     }
                 }
             ]
