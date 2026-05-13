@@ -19240,6 +19240,12 @@
 
 <h1 id="filteredevent-trigger-operators">FilteredEvent Trigger Operators<a class="headerlink" href="#filteredevent-trigger-operators" title="Permanent link">#</a></h1>
 <p>Several operators are available for use with the <a href="../write-filtered-event-trigger/">FilteredEvent trigger</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Deprecated shorthand</p>
+<p>The shorthand <code>{ "_operator": { "field": value } }</code> is deprecated and logs a warning when used. For all comparison and string operators, use the explicit <code>_field</code>/<code>_value</code> form instead:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"action"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</div>
 <h2 id="logical-operators">Logical operators<a class="headerlink" href="#logical-operators" title="Permanent link">#</a></h2>
 <ul>
 <li><code>_and</code>: Matches when all conditions are met</li>
@@ -19270,41 +19276,41 @@
 <li><code>_lt</code>, <code>_gt</code>, <code>_lte</code>, and <code>_gte</code>: Compare numerical values</li>
 </ul>
 <p>These operators filter events based on less than (<code>_lt</code>), greater than (<code>_gt</code>), less than or equal (<code>_lte</code>), or greater than or equal (<code>_gte</code>) conditions.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_lt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_lt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>_eq</code> and <code>_is</code>: Matches an exact value</li>
 </ul>
 <p><code>_eq</code> is an alias for <code>_is</code>. Both check for exact matches.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>Also works with arrays:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <h2 id="string-operators">String operators<a class="headerlink" href="#string-operators" title="Permanent link">#</a></h2>
 <ul>
 <li><code>_startsWith</code> and <code>_endsWith</code>: Matches strings that begin or end with a specific sequence of characters</li>
 </ul>
 <p>These operators filter events based on whether a string starts with or ends with a given value.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_startsWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_startsWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>_like</code>: Matches a string using wildcards (*)</li>
 </ul>
 <p>This operator performs pattern matching using wildcards (*).</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*ice"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*ice"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*lice*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*lice*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
 <li><code>_match</code>: Matches a string</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"_match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice"</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nt">"_match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice"</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="range-and-inclusion-operators">Range and inclusion operators<a class="headerlink" href="#range-and-inclusion-operators" title="Permanent link">#</a></h2>
@@ -19370,12 +19376,14 @@
 <span class="w">            </span><span class="nt">"_and"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">                </span><span class="p">{</span>
 <span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span>
+<span class="w">                        </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"name"</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="w">                </span><span class="p">},</span>
 <span class="w">                </span><span class="p">{</span>
 <span class="w">                    </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">                        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span>
+<span class="w">                        </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span>
 <span class="w">                    </span><span class="p">}</span>
 <span class="w">                </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
