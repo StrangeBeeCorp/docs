@@ -13,6 +13,8 @@
 
 ## 5.7.1 - April 20, 2026
 
+Last update: May 12, 2026
+
 ### Fixes
 
 #### Cases
@@ -24,7 +26,7 @@
 #### Custom fields
 
 * Eliminated silent failures when an integer custom field value falls outside the valid 32-bit range: the form now shows an inline validation error and blocks submission.
-* Corrected two issues with list-type custom fields: submitting an array value now returns an error, and setting a single value correctly appends a new entry instead of replacing the last one.
+* Corrected two issues with the `customFields` field when updated using the API on [cases](https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Update%20case){target=_blank}, [alerts](https://docs.strangebee.com/thehive/api-docs/#tag/Alert/operation/Update%20Alert){target=_blank}, and [case templates](https://docs.strangebee.com/thehive/api-docs/#tag/CaseTemplate/operation/Update%20CaseTemplate){target=_blank}. The object format (`{"custom_field_name": "value", ...}`) now appends each entry without modifying or removing any existing custom field values. Array values inside the object format now return an error. To replace the full set of custom field values, use the array format (`[{"name": "custom_field_name", "value": "value", "order": 0}, ...]`) instead.
 
 #### Observables
 
