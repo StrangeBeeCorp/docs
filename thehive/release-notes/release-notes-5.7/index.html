@@ -19155,6 +19155,7 @@
 <li>Analyzers reports: Resolved an error that prevented Cortex jobs from being processed correctly.</li>
 </ul>
 <h2 id="571-april-20-2026">5.7.1 - April 20, 2026<a class="headerlink" href="#571-april-20-2026" title="Permanent link">#</a></h2>
+<p>Last update: May 12, 2026</p>
 <h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <h4 id="cases">Cases<a class="headerlink" href="#cases" title="Permanent link">#</a></h4>
 <ul>
@@ -19165,7 +19166,7 @@
 <h4 id="custom-fields">Custom fields<a class="headerlink" href="#custom-fields" title="Permanent link">#</a></h4>
 <ul>
 <li>Eliminated silent failures when an integer custom field value falls outside the valid 32-bit range: the form now shows an inline validation error and blocks submission.</li>
-<li>Corrected two issues with list-type custom fields: submitting an array value now returns an error, and setting a single value correctly appends a new entry instead of replacing the last one.</li>
+<li>Corrected two issues with the <code>customFields</code> field when updated using the API on <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Case/operation/Update%20case" target="_blank">cases</a>, <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Alert/operation/Update%20Alert" target="_blank">alerts</a>, and <a href="https://docs.strangebee.com/thehive/api-docs/#tag/CaseTemplate/operation/Update%20CaseTemplate" target="_blank">case templates</a>. The object format (<code>{"custom_field_name": "value", ...}</code>) now appends each entry without modifying or removing any existing custom field values. Array values inside the object format now return an error. To replace the full set of custom field values, use the array format (<code>[{"name": "custom_field_name", "value": "value", "order": 0}, ...]</code>) instead.</li>
 </ul>
 <h4 id="observables">Observables<a class="headerlink" href="#observables" title="Permanent link">#</a></h4>
 <ul>
