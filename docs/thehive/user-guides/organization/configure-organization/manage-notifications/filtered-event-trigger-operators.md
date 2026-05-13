@@ -3,7 +3,7 @@
 Several operators are available for use with the [FilteredEvent trigger](write-filtered-event-trigger.md).
 
 !!! warning "Deprecated shorthand"
-    The shorthand `{ "_operator": { "field": value } }` is deprecated and logs a warning when used. For all comparison and string operators, use the explicit `_field`/`_value` form instead:
+    <!-- md:version 5.4 --> The shorthand `{ "_operator": { "field": value } }` is deprecated and logs a warning when used. For all comparison and string operators, use the explicit `_field`/`_value` form instead:
 
     ```json
     { "_eq": { "_field": "action", "_value": "create" } }
