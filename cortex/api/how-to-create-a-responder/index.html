@@ -19416,8 +19416,8 @@ input's TLP is above <code>max_tlp</code>, the responder is not executed.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">TLP</th>
-<th style="text-align: center;">max_tlp value</th>
+<th style="text-align: center;">PAP</th>
+<th style="text-align: center;">max_pap value</th>
 </tr>
 </thead>
 <tbody>
@@ -19485,18 +19485,100 @@ path to the main program file.</p>
     successfully.</li>
 <li><code>full</code> is the full report of the responder. It must contain at least
     a message.</li>
-<li><code>operations</code> is a list what the submitter system should execute.
-    As of version 3.1.0, TheHive accepts the following operations:<ul>
-<li><code>AddTagToArtifact</code> (<code>{ "type": "AddTagToArtifact", "tag": "tag to add" }</code>): add
-     a tag to the artifact related to the object</li>
-<li><code>AddTagToCase</code> (<code>{ "type": "AddTagToCase", "tag": "tag to add" }</code>): add
-     a tag to the case related to the object</li>
-<li><code>MarkAlertAsRead</code>: mark the alert related to the object as read</li>
-<li><code>AddCustomFields</code> (<code>{"name": "key", "value": "value", "tpe": "type"</code>): add a custom field to the case related to the object</li>
-</ul>
+<li>
+<p><code>operations</code> is a list what the submitter system should execute.</p>
+<p>TheHive accepts the following operations. Each operation only applies in the context it supports.</p>
+<p><strong>Case context</strong></p>
+<p>Accepted datatypes: <code>thehive:case</code>, <code>thehive:case_artifact</code>, <code>thehive:case_task</code>, <code>thehive:case_task_log</code>. These operations aren't available in alert context.</p>
+<table>
+<thead>
+<tr>
+<th><span style="min-width:120px; display:inline-block">Operation</span></th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddTagToCase</code></td>
+<td><code>{ "type": "AddTagToCase", "tag": "&lt;tag&gt;" }</code></td>
+<td>Add a tag to the case related to the object.</td>
+</tr>
+<tr>
+<td><code>AddTagToArtifact</code></td>
+<td><code>{ "type": "AddTagToArtifact", "tag": "&lt;tag&gt;" }</code></td>
+<td>Add a tag to the observable the responder was run on. Only works when launched on a <code>thehive:case_artifact</code>.</td>
+</tr>
+<tr>
+<td><code>AddCustomFields</code></td>
+<td><code>{ "type": "AddCustomFields", "name": "&lt;field_name&gt;", "tpe": "&lt;type&gt;", "value": "&lt;value&gt;" }</code></td>
+<td>Add a custom field to the case related to the object. Note: the field type key is <code>tpe</code>, not <code>type</code>.</td>
+</tr>
+<tr>
+<td><code>AddArtifactToCase</code></td>
+<td><code>{ "type": "AddArtifactToCase", "data": "&lt;value&gt;", "dataType": "&lt;dataType&gt;", "message": "&lt;description&gt;", "tlp": &lt;tlp&gt;, "ioc": &lt;boolean&gt;, "sighted": &lt;boolean&gt;, "tags": [&lt;tags&gt;] }</code></td>
+<td>Add a new observable to the case.</td>
+</tr>
+<tr>
+<td><code>AssignCase</code></td>
+<td><code>{ "type": "AssignCase", "owner": "&lt;username&gt;" }</code></td>
+<td>Assign the case to a user.</td>
+</tr>
+<tr>
+<td><code>CreateTask</code></td>
+<td><code>{ "type": "CreateTask", "title": "&lt;title&gt;", "description": "&lt;description&gt;" }</code></td>
+<td>Create a new task in the case related to the object.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Alert context</strong></p>
+<p>Accepted datatype: <code>thehive:alert</code> only. Including any other data type causes the entity to be resolved as a non-alert object, and these operations fail.</p>
+<table>
+<thead>
+<tr>
+<th><span style="min-width:120px; display:inline-block">Operation</span></th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddTagToAlert</code></td>
+<td><code>{ "type": "AddTagToAlert", "tag": "&lt;tag&gt;" }</code></td>
+<td>Add a tag to the alert.</td>
+</tr>
+<tr>
+<td><code>MarkAlertAsRead</code></td>
+<td><code>{ "type": "MarkAlertAsRead" }</code></td>
+<td>Mark the alert as read.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Task context</strong></p>
+<p>Accepted datatype: <code>thehive:case_task_log</code> only. These operations resolve the parent task from a log entry and aren't available when <code>dataTypeList</code> is set to <code>thehive:case_task</code>.</p>
+<table>
+<thead>
+<tr>
+<th><span style="min-width:120px; display:inline-block">Operation</span></th>
+<th>Payload</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AddLogToTask</code></td>
+<td><code>{ "type": "AddLogToTask", "content": "&lt;log_text&gt;", "owner": "&lt;username&gt;" }</code></td>
+<td>Add a log entry to the related task.</td>
+</tr>
+<tr>
+<td><code>CloseTask</code></td>
+<td><code>{ "type": "CloseTask" }</code></td>
+<td>Mark the related task as completed.</td>
+</tr>
+</tbody>
+</table>
 </li>
 </ul>
-<p>The list of acceptable operations will increase in future releases of TheHive.</p>
 <h3 id="the-cortexutils-python-library">The Cortexutils Python Library<a class="headerlink" href="#the-cortexutils-python-library" title="Permanent link">#</a></h3>
 <p>So far, all the published responders have been written in Python. We provide a Python library called <code>cortexutils</code> to help developers easily write their programs. Note though that Python is not mandatory for responder coding and any language that runs on Linux can be used, though you won't have the benefits of the CortexUtils library.</p>
 <p>Cortexutils can be used with Python 2 and 3. Due to the end of life from Python2 it is strongly advised to work as much with Python3 as possible.
@@ -19579,10 +19661,10 @@ Ensure that all information is correct and particularly the <code>author</code> 
 <code>requirements.txt</code> file with the list of all the external libraries that are
 needed to run the responder correctly.</p>
 <h3 id="verify-execution">Verify Execution<a class="headerlink" href="#verify-execution" title="Permanent link">#</a></h3>
-<p>Use these three simple checks before submitting your responder:</p>
+<p>Use these two simple checks before submitting your responder:</p>
 <ul>
 <li>Ensure it works with the expected configuration, TLP, PAP or datatype.</li>
-<li>Ensure it works with missing configuration, PAP, datatype or TLP: your
+<li>Ensure it works with missing configuration, TLP, PAP, or datatype: your
 responder must generate an explicit error message.</li>
 </ul>
 <h3 id="create-a-pull-request">Create a Pull Request<a class="headerlink" href="#create-a-pull-request" title="Permanent link">#</a></h3>
