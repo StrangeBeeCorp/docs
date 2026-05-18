@@ -256,7 +256,6 @@ The TLP level above which the responder must not be executed.
 | AMBER | 2 |
 | RED | 3 |
 
-
 ##### check_tlp
 This is a boolean parameter. When `true`, `max_tlp` is checked. And if the
 input's TLP is above `max_tlp`, the responder is not executed.
@@ -267,14 +266,13 @@ For consistency reasons, we do recommend setting both `check_tlp` and
 #####  max_pap
 The PAP level above which the responder must not be executed.
 
-| TLP   |     max_tlp value     |
+| PAP   |     max_pap value     |
 |:----------:|:-------------:|
 | Unknown |  -1 |
 | WHITE |   0  |
 | GREEN | 1 |
 | AMBER | 2 |
 | RED | 3 |
-
 
 ##### check_pap
 This is a boolean parameter. When `true`, `max_pap` is checked. And if the
@@ -329,15 +327,39 @@ If the responder **succeeds** (i.e. it runs without any error):
 -   `full` is the full report of the responder. It must contain at least
     a message.
 -   `operations` is a list what the submitter system should execute.
-    As of version 3.1.0, TheHive accepts the following operations:
-    -    `AddTagToArtifact` (`{ "type": "AddTagToArtifact", "tag": "tag to add" }`): add
-         a tag to the artifact related to the object
-    -    `AddTagToCase` (`{ "type": "AddTagToCase", "tag": "tag to add" }`): add
-         a tag to the case related to the object
-    -    `MarkAlertAsRead`: mark the alert related to the object as read
-    -    `AddCustomFields` (`{"name": "key", "value": "value", "tpe": "type"`): add a custom field to the case related to the object
-   
-  The list of acceptable operations will increase in future releases of TheHive.
+    
+    TheHive accepts the following operations. Each operation only applies in the context it supports.
+
+    **Case context**
+
+    Accepted datatypes: `thehive:case`, `thehive:case_artifact`, `thehive:case_task`, `thehive:case_task_log`. These operations aren't available in alert context.
+
+    | <span style="min-width:120px; display:inline-block">Operation</span> | Payload | Description |
+    | --- | --- | --- |
+    | `AddTagToCase` | `{ "type": "AddTagToCase", "tag": "<tag>" }` | Add a tag to the case related to the object. |
+    | `AddTagToArtifact` | `{ "type": "AddTagToArtifact", "tag": "<tag>" }` | Add a tag to the observable the responder was run on. Only works when launched on a `thehive:case_artifact`. |
+    | `AddCustomFields` | `{ "type": "AddCustomFields", "name": "<field_name>", "tpe": "<type>", "value": "<value>" }` | Add a custom field to the case related to the object. Note: the field type key is `tpe`, not `type`. |
+    | `AddArtifactToCase` | `{ "type": "AddArtifactToCase", "data": "<value>", "dataType": "<dataType>", "message": "<description>", "tlp": <tlp>, "ioc": <boolean>, "sighted": <boolean>, "tags": [<tags>] }` | Add a new observable to the case. |
+    | `AssignCase` | `{ "type": "AssignCase", "owner": "<username>" }` | Assign the case to a user. |
+    | `CreateTask` | `{ "type": "CreateTask", "title": "<title>", "description": "<description>" }` | Create a new task in the case related to the object. |
+
+    **Alert context**
+
+    Accepted datatype: `thehive:alert` only. Including any other data type causes the entity to be resolved as a non-alert object, and these operations fail.
+
+    | <span style="min-width:120px; display:inline-block">Operation</span> | Payload | Description |
+    | --- | --- | --- |
+    | `AddTagToAlert` | `{ "type": "AddTagToAlert", "tag": "<tag>" }` | Add a tag to the alert. |
+    | `MarkAlertAsRead` | `{ "type": "MarkAlertAsRead" }` | Mark the alert as read. |
+
+    **Task context**
+
+    Accepted datatype: `thehive:case_task_log` only. These operations resolve the parent task from a log entry and aren't available when `dataTypeList` is set to `thehive:case_task`.
+
+    | <span style="min-width:120px; display:inline-block">Operation</span> | Payload | Description |
+    | --- | --- | --- |
+    | `AddLogToTask` | `{ "type": "AddLogToTask", "content": "<log_text>", "owner": "<username>" }` | Add a log entry to the related task. |
+    | `CloseTask` | `{ "type": "CloseTask" }` | Mark the related task as completed. |
 
 ### The Cortexutils Python Library
 So far, all the published responders have been written in Python. We provide a Python library called `cortexutils` to help developers easily write their programs. Note though that Python is not mandatory for responder coding and any language that runs on Linux can be used, though you won't have the benefits of the CortexUtils library.
@@ -439,10 +461,10 @@ If your responder is written in Python, make sure to complete the
 needed to run the responder correctly.
 
 ### Verify Execution
-Use these three simple checks before submitting your responder:
+Use these two simple checks before submitting your responder:
 
 -   Ensure it works with the expected configuration, TLP, PAP or datatype.
--   Ensure it works with missing configuration, PAP, datatype or TLP: your
+-   Ensure it works with missing configuration, TLP, PAP, or datatype: your
 responder must generate an explicit error message.
 
 ### Create a Pull Request
