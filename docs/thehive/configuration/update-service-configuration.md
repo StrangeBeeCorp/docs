@@ -109,9 +109,16 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
 
 5. Restart TheHive service.
 
-## Configure streams for reverse proxies
+## Adjust the stream long-polling refresh interval
 
-[Reverse proxies](./ssl/configure-https-reverse-proxy.md) like Nginx can cause `504 Gateway Time-Out` errors with TheHive long-polling requests. Configure the refresh interval to prevent these timeouts.
+TheHive uses long-polling to stream events to clients, with a default refresh interval of `1 minute`.
+
+Adjusting the `stream.longPolling.refresh` setting is useful in two situations:
+
+* Reverse proxy timeouts: Proxies such as Nginx can return `504 Gateway Time-Out` errors on long-polling requests. Reducing this interval keeps requests within the proxy's timeout threshold.
+* Performance: Adjusting this interval lets you balance event delivery speed against server load.
+
+To update these settings, follow the steps below.
 
 1. Stop TheHive service.
 
@@ -119,13 +126,41 @@ Configure a context path when [TheHive runs behind a reverse proxy](./ssl/config
 
 2. Open the `application.conf` file using a text editor.
 
-3. Add the following configuration:
+3. Add the following configuration, adjusting the value to your requirements:
 
     ```yaml
-    stream.longPolling.refresh: 45 seconds
+    stream.longPolling.refresh: 1 minute
     ```
 
-    This setting determines how often TheHive refreshes long-polling connections to prevent proxy timeouts.
+4. Save your modifications in the `application.conf` file.
+
+5. Restart TheHive service.
+
+## Adjust attachment and request size limits
+
+TheHive enforces size limits on uploaded attachments and HTTP requests.
+
+Two settings control these limits independently:
+
+| Setting | Controls | Default |
+|-----------------|------|-----------|
+| `play.http.parser.maxDiskBuffer` | Maximum attachment size | `1GB` |
+| `play.http.parser.maxMemoryBuffer` | Maximum HTTP request size (excluding attachments) | `10M` |
+
+To update these settings, follow the steps below.
+
+1. Stop TheHive service.
+
+    {% include-markdown "includes/service-commands.md" %}
+
+2. Open the `application.conf` file using a text editor.
+
+3. Add the following configuration, adjusting the values to your requirements:
+
+    ```yaml
+    play.http.parser.maxDiskBuffer = 1GB
+    play.http.parser.maxMemoryBuffer = 10M
+    ```
 
 4. Save your modifications in the `application.conf` file.
 

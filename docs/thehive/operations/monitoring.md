@@ -186,9 +186,11 @@ Make sure everything is working together:
 
 You now have a complete monitoring solution for TheHive. Your dashboards will help you track performance, identify bottlenecks, and ensure your TheHive instance runs smoothly.
 
-If you experience performance issues, review and adjust the [CPU and memory allocation](../installation/system-requirements.md) according to your environment.
+If you experience performance issues, review and adjust the [CPU and memory allocation](performance.md) according to your environment.
 
 <h2>Next steps</h2>
 
 * [TheHive Installation System Requirements](../installation/system-requirements.md)
-* [Troubleshooting](troubleshooting.md)
+* [Optimize Performance](performance.md)
+* [Enable Trace Logging for Troubleshooting](troubleshooting.md)
+* [Tune JVM Memory](tune-jvm-memory.md)

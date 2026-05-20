@@ -227,7 +227,32 @@ TheHive requires Java to run its application server and to manage various proces
 
     Download the `tar.gz` archive from [Apache Cassandra downloads](http://cassandra.apache.org/download/){target=_blank} and extract it into the folder of your choice. You can use utilities like [`wget`](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
 
-### Step 3.2: Configure Cassandra
+### Step 3.2: Configure JVM options for Cassandra
+
+The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
+
+1. Check if the `/etc/cassandra/jvm-server.options` exists. If it doesn't, create it.
+
+2. Open the `/etc/cassandra/jvm-server.options` file using a text editor.
+
+3. In the `jvm-server.options` file, set the JVM options.
+
+    !!! tip "Heap size guidelines for Cassandra"
+        Heap allocation [must not exceed 50% of the available RAM and should not be less than 2 GB](https://cassandra.apache.org/doc/stable/cassandra/managing/operating/hardware.html#memory){target=_blank}. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
+
+    ```yaml
+    -Xms<heap_size>
+    -Xmx<heap_size>
+    -Xmn<young_gen_size>
+    ```
+
+    Replace `<heap_size>` with the desired heap size and `<young_gen_size>` with the desired young generation size. `Xms` sets the initial heap size, `Xmx` sets the maximum, and `Xmn` sets the size of the young generation, where short-lived objects are allocated.
+
+    {% include-markdown "includes/recommended-jvm-values-same-host-cassandra.md" %}
+
+4. Save your modifications in the `jvm-server.options` file.
+
+### Step 3.3: Configure Cassandra
 
 Configure Cassandra by modifying settings within the `cassandra.yaml` file.
 
@@ -284,7 +309,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     [..]
     ```
 
-### Step 3.3: Start the Cassandra service
+### Step 3.4: Start the Cassandra service
 
 === "DEB"
 
@@ -359,15 +384,15 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     * Service won’t start → Check logs in `/var/log/cassandra/`. Look for binding or configuration errors in `cassandra.yaml`.
     * Port 9042 not reachable → Verify firewall rules and confirm Cassandra is listening with `ss -tlnp | grep 9042`.
 
-### Step 3.4: Set a secure password for authentication (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
+### Step 3.5: Set a secure password for authentication (if you enabled authentication in [Step 3.3](#step-33-configure-cassandra))
 
 {% include-markdown "includes/set-password-authentication-cassandra.md" %}
 
-### Step 3.5: Create a new administrator role (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
+### Step 3.6: Create a new administrator role (if you enabled authentication in [Step 3.3](#step-33-configure-cassandra))
 
 {% include-markdown "includes/create-administrator-role-cassandra.md" %}
 
-### Step 3.6: Create the keyspace and a role for TheHive (if you enabled authentication in [Step 3.2](#step-32-configure-cassandra))
+### Step 3.7: Create the keyspace and a role for TheHive (if you enabled authentication in [Step 3.3](#step-33-configure-cassandra))
 
 1. Create the `thehive` keyspace with basic replication.
 
@@ -636,30 +661,30 @@ For additional configuration options, refer to:
     [..]
     ```
 
-#### Configure the `/etc/elasticsearch/jvm.options.d/jvm.options` file
+#### Configure JVM options for Elasticsearch
+
+The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
 
 1. Check if the `/etc/elasticsearch/jvm.options.d/jvm.options` exists. If it doesn't, create it.
 
 2. Open the `/etc/elasticsearch/jvm.options.d/jvm.options` file using a text editor.
 
-3. In the `jvm.options` file, set the Java virtual machine (JVM) options.
+3. In the `jvm.options` file, set the JVM options.
 
-    The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.
-
-    !!! warning "Heap size configuration"
-        Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}.
-
-        Undefined heap settings may cause memory contention or out-of-memory errors.
-
-    On a 12 GB RAM system, for example:
+    !!! tip "Heap size guidelines for Elasticsearch"
+        Heap allocation [must not exceed 50% of the available RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
 
     ```yaml
     -Dlog4j2.formatMsgNoLookups=true
-    -Xms6g
-    -Xmx6g
+    -Xms<heap_size>
+    -Xmx<heap_size>
     ```
 
-    `Xms` defines the initial heap size allocated to the JVM, and `Xmx` sets the maximum heap size. Setting them to the same value is recommended for stable performance and predictable garbage collection.
+    Replace `<heap_size>` with the desired heap size. `Xms` sets the initial heap size, and `Xmx` the maximum heap size.
+
+    {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
+
+    {% include-markdown "includes/recommended-jvm-values-same-host-elasticsearch.md" %}
 
 4. Save your modifications in the `jvm.options` file.
 
@@ -750,7 +775,99 @@ For additional configuration options, refer to:
 
 ### Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in [Step 4.2](#step-42-configure-elasticsearch)) {#step-44-permissions}
 
-{% include-markdown "includes/set-user-thehive-elasticsearch.md" %}
+1. Create a `thehive` user.
+
+    ```bash
+    sudo /usr/share/elasticsearch/bin/elasticsearch-users useradd thehive -p <thehive_user_password> -r superuser
+    ```
+
+    Replace `<thehive_user_password>` with a secure password you choose for your TheHive user.
+
+    !!! tip "Note this password"
+        Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.
+
+2. Optional: Set a password for the `elastic` user.
+
+    * [For Elasticsearch 7.x](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords){target=_blank}:
+
+    ```bash
+    sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+    ```
+
+    * [For Elasticsearch 8.0](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password){target=_blank}:
+
+    ```bash
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password
+    ```
+
+    Skip this step if the password is already set.
+
+3. Create or update a role with the privileges needed for TheHive.
+
+    * Create a role:
+
+    ```bash
+    curl -u elastic:<elastic_user_password> -X POST "http://localhost:9200/_security/role/thehive_role" -H "Content-Type: application/json" -d '
+    {
+      "cluster": ["manage"],
+      "indices": [
+        {
+          "names": ["thehive*"],
+          "privileges": ["all"]
+        }
+      ]
+    }'
+    ```
+
+    
+
+    Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+
+    If successful, the command should return: `{"role":{"created":true}}`.
+
+    For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
+
+    * Update a role:
+
+    ```bash
+    curl -u elastic:<elastic_user_password> -X PUT "http://localhost:9200/_security/role/<role>" -H "Content-Type: application/json" -d '
+    {
+      "cluster": ["manage"],
+      "indices": [
+        {
+          "names": ["thehive*"],
+          "privileges": ["all"]
+        }
+      ]
+    }'
+    ```
+
+    Replace `<role>` with the actual role name you want to update.
+    
+    Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+
+    For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
+
+4. Assign the role to the user you'll use for TheHive.
+
+    ```bash
+    curl -u elastic:<elastic_user_password> -X PUT "http://localhost:9200/_security/user/thehive" \
+    -H "Content-Type: application/json" \
+    -d '{
+        "password" : "<thehive_user_password>",
+        "roles" : ["thehive_role"]
+    }'
+    ```
+
+    Replace `<thehive_user_password>` with the password you set for the `thehive` user.
+    
+    Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+    
+    Replace `thehive_role` with actual role name if different.
+
+    If successful, the command should return: `{"created":true}`.
+
+    For more details, refer to [the official Elasticsearch API documentation for updating users](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user){target=_blank}.
 
 ---
 
@@ -771,6 +888,8 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 !!! info "Standalone server configuration"
     In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-4-install-and-configure-thehive).
 
+#### Configure service
+
 1. Open the `/etc/thehive/application.conf` file using a text editor.
 
 2. In the `application.conf` file, configure the service.
@@ -787,16 +906,16 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
     [..]
     ```
 
-    #### application.baseUrl
+    ##### application.baseUrl
 
     Replace `http://localhost:9000` with the actual public URL that users will use to access TheHive.
 
-    ##### Mandatory elements
+    ###### Mandatory elements
 
     * Protocol: Either `http` or `https`, depending on whether you [configured HTTPS with a reverse proxy](../configuration/ssl/configure-https-reverse-proxy.md).
     * Host name: The DNS name or IP address that users enter in their browser.
 
-    ##### Optional elements
+    ###### Optional elements
 
     * Port: The network port where TheHive is exposed. Include a port only when the public URL uses a non-standard port. Standard ports are `80` for HTTP and `443` for HTTPS.
     * Path segments: Needed if TheHive runs behind a reverse proxy under a subpath.
@@ -810,7 +929,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
         To customize the listen address and port, see [Update TheHive Service Configuration](../configuration/update-service-configuration.md#update-the-listen-address-and-port).
 
-    #### play.http.context
+    ##### play.http.context
 
     If TheHive is served under a subpath when running behind a reverse proxy, set `play.http.context` to the matching path segment.
     
@@ -885,7 +1004,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
         [..]
         ```
 
-    Replace `<thehive_role_password>` with the password set in [Step 3.6](#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32).
+    Replace `<thehive_role_password>` with the password set in [Step 3.7](#step-37-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-33).
 
     Replace `<thehive_user_password>` with the password set in [Step 4.4](#step-44-permissions).
 
@@ -894,6 +1013,38 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
     To set up SSL for Cassandra and Elasticsearch connections, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md).
 
 5. Save your modifications in the `application.conf` file.
+
+#### Configure JVM options for TheHive
+
+The Java virtual machine (JVM) is what runs TheHive. The JVM options control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
+
+1. Open the `/etc/default/thehive` file using a text editor.
+
+2. Uncomment the `JAVA_OPTS` variable.
+
+3. In the `thehive` file, set the JVM options.
+
+    !!! tip "Heap size guidelines for TheHive"
+        Heap allocation must not exceed 60% of the available RAM. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
+
+    ``` yaml
+    -Xms<heap_size>
+    -Xmx<heap_size>
+    -XX:MaxMetaspaceSize=<metaspace_size>
+    -XX:ReservedCodeCacheSize=<code_cache_size>
+    ```
+
+    Replace `<heap_size>` with the desired heap size.
+
+    {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
+
+    Replace `<metaspace_size>` with the desired Metaspace limit.
+
+    Replace `<code_cache_size>` with the desired code cache limit.
+
+    {% include-markdown "includes/recommended-jvm-values-same-host-thehive.md" %}
+
+4. Save your modifications in the `thehive` file.
 
 ### (Optional) Step 5.3: <!-- md:version 5.5 --> Configure audit log storage {#step-53-audit-log-storage}
 
@@ -988,7 +1139,7 @@ scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
         Be aware that the service may take some time to start initially.
 
     !!! bug "Troubleshooting TheHive"
-        If you run into issues, see the [Troubleshooting](../operations/troubleshooting.md) page for guidance.
+        If you run into issues, see [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md) for guidance.
 
 3. Open your web browser and go to the URL you configured in the `application.baseUrl` setting inside the `/etc/thehive/application.conf` file.
 
@@ -1036,4 +1187,5 @@ See the [Set Up Monitoring for TheHive with Prometheus and Grafana](../operation
 * [Perform a Cold Backup on a Physical Server](../operations/backup-restore/backup/cold-backup/physical-server.md)
 * [Perform a Cold Backup on a Virtual Server](../operations/backup-restore/backup/cold-backup/virtual-server.md)
 * [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
-* [Troubleshooting](../operations/troubleshooting.md)
+* [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md)
+* [Optimize Performance](../operations/performance.md)

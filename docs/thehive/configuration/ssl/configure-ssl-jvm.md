@@ -4,6 +4,8 @@ Java applications such as TheHive rely on a Java truststore to validate SSL/TLS 
 
 If you use self-signed certificates or internal CAs, you must configure the JVM to trust them. This configuration is essential for authentication providers and connectors used in TheHive.
 
+{% include-markdown "includes/maintenance-window-required.md" %}
+
 ## DEB package
 
 === "Option 1: Custom truststore"

@@ -8,8 +8,7 @@ TheHive uses [logback](https://logback.qos.ch/){target=_blank} for logging. You 
 
 Control the detail of logged information by modifying log levels in the logback configuration. Higher log levels capture more detailed information for troubleshooting.
 
-!!! info "Docker deployment"
-    Docker containers write logs to both stdout and `/var/log/thehive/application.log` by default. To use custom logging settings, mount your logback configuration file to `/etc/thehive/logback.xml`.
+{% include-markdown "includes/docker-logs.md" %}
 
 1. Stop TheHive service.
 
@@ -41,7 +40,7 @@ Control the detail of logged information by modifying log levels in the logback 
     * WARN: Warnings and errors
     * INFO: General information (default)
     * DEBUG: Detailed debugging information
-    * TRACE: Very detailed trace information
+    * TRACE: Very detailed trace information. To use this level for troubleshooting, see [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md).
 
     !!! warning "Performance impact"
         Setting log levels to `DEBUG` or `TRACE` significantly increases log volume and may impact performance. Use these levels only for troubleshooting, then return to `INFO` for normal operation.
@@ -172,3 +171,5 @@ Forward TheHive logs to a centralized syslog server for aggregation and monitori
 <h2>Next steps</h2>
 
 * [Perform Initial Login and Setup as an Admin](../administration/perform-initial-setup-as-admin.md)
+* [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md)
+* [Optimize Performance](../operations/performance.md)

@@ -1,100 +1,90 @@
-# Troubleshooting
+# Enable Trace Logging for Troubleshooting
 
-For some issues, additional information in logs is needed to troubleshoot and understand the root causes. To gather and share this information, please carefully read and follow these steps.
+If you need additional log information to identify the root cause of an issue, you can enable trace logging in TheHive.
 
-!!! Warning
-    **ENABLING TRACE LOGS HAS A SIGNIFICANT IMPACT ON PERFORMANCE. DO NOT ENABLE IT ON PRODUCTION SERVERS.**
+!!! danger "Not for production servers"
+    Enabling trace logging has a significant impact on performance. Don't enable it on production servers.
 
---- 
+{% include-markdown "includes/maintenance-window-required.md" %}
 
-## Step 1: Stop TheHive Service
+{% include-markdown "includes/docker-logs.md" %}
 
-First, stop TheHive service:
+## Step 1: Stop TheHive service
 
-```bash
-service thehive stop
-```
+Stop TheHive service.
 
-Ensure the service is stopped with the following command:
+{% include-markdown "includes/service-commands.md" %}
 
-```bash
-service thehive status
-```
+## Step 2: Back up the `application.log` file
 
----
-
-## Step 2: Renew `application.log` File
-
-Move the existing `application.log` file to a backup location:
+Move your existing `application.log` file to a backup location. This ensures the new log file created on restart contains only trace logs from your current session.
 
 ```bash
 mv /var/log/thehive/application.log /var/log/thehive/application.log.bak
 ```
 
----
+## Step 3: Enable trace logging
 
-## Step 3: Update Log Configuration
+!!! info "Log levels reference"
+    For a full description of available log levels and general log configuration, see [Update Log Configuration](../configuration/update-log-configuration.md).
 
-Edit the log configuration file `/etc/thehive/logback.xml`. Locate the line containing `<logger name="org.thp" level="INFO"/>` and update it to the following:
+1. Open the `logback.xml` file using a text editor and locate the following line:
 
-```xml
+    ```xml
+    <logger name="org.thp" level="INFO"/>
+    ```
+
+2. Replace it with:
+
+    ```xml
     <logger name="org.thp" level="TRACE"/>
-```
+    ```
 
-Save the file after making the changes.
+3. Save the file.
 
----
+## Step 4: Restart TheHive service
 
-## Step 4: Restart TheHive Service
+Restart TheHive service.
 
-Restart TheHive service:
+TheHive creates a new `/var/log/thehive/application.log` file with extensive logging information.
 
-```bash
-service thehive start
-```
+## Step 5: Reproduce the issue and save the log
 
-A new log file `/var/log/thehive/application.log` will be created and will contain extensive logging information.
-
----
-
-## Step 5: Monitor and Save Logs
-
-Wait for the issue to occur or for the application to stop. Then, copy the log file to a safe location:
+Wait for the issue to occur or for the application to stop, then copy the log file to a safe location:
 
 ```bash
 cp /var/log/thehive/application.log /root
 ```
 
----
+## Step 6: Revert trace logging
 
-## Step 6: Share the Logs
-
-Create an issue on [GitHub](https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&labels=bug%2C+TheHive&template=bug_report.md&title=%5BBug%5D){target=_blank} and include the following information:
-
-- **Context:**
-  - Instance type (single node/cluster, backend type, index engine)
-  - System details (Operating System, amount of RAM, number of CPUs for each server/node)
-
-- **Symptoms:**
-  - Actions taken, how the situation occurred, and what happened
-
-- **Log File:**
-  - Attach the log file with trace information
-
----
-
-## Step 7: Revert Log Configuration
-
-To revert to the normal log configuration:
+After collecting the logs, revert your log configuration:
 
 1. Stop TheHive service.
-2. Edit the `logback.xml` file to restore the previous log level configuration.
+
+2. Edit `logback.xml` and restore the original line:
+
+    ```xml
+    <logger name="org.thp" level="INFO"/>
+    ```
+
 3. Restart TheHive service.
 
-```bash
-service thehive stop
-# Restore the logback.xml file to previous state
-service thehive start
-```
+## (Optional) Step 7: Report the issue
 
-&nbsp;
+If the logs reveal an issue you want to report:
+
+* Gold or Platinum license: open a ticket with the StrangeBee Support team
+* Community license: open an issue on the [`TheHive-feedback` GitHub repository](https://github.com/StrangeBeeCorp/TheHive-feedback/issues){target=_blank}
+
+In both cases, include the following information:
+
+* Context: your instance type (single node/cluster, backend type, index engine), operating system, RAM, and CPU count per server and node
+* Symptoms: the actions you took, how the issue occurred, and what happened
+* Log file: attach your log file with trace information
+
+<h2>Next steps</h2>
+  
+* [Update Log Configuration](../configuration/update-log-configuration.md)
+* [Optimize Performance](performance.md)
+* [Set Up Monitoring for TheHive with Prometheus and Grafana](monitoring.md)

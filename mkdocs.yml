@@ -506,8 +506,11 @@ nav:
         - 'Deprecation Notice': thehive/operations/apt-yum-repositories-end/apt-yum-deprecation-notice.md
         - 'Switch to Manual Download and Installation': thehive/operations/apt-yum-repositories-end/switch-to-manual-download-installation-thehive.md
       - 'Index Management': thehive/operations/change-index.md
-      - 'Troubleshooting Guide': thehive/operations/troubleshooting.md
-      - 'Set Up Monitoring': thehive/operations/monitoring.md
+      - 'Index Refresh Interval': thehive/operations/shorten-elasticsearch-refresh-interval.md
+      - 'JVM Memory': thehive/operations/tune-jvm-memory.md
+      - 'Performance': thehive/operations/performance.md
+      - 'Troubleshooting': thehive/operations/troubleshooting.md
+      - 'Monitoring': thehive/operations/monitoring.md
     - 'Admin Guides':
       - 'First Start': thehive/administration/perform-initial-setup-as-admin.md
       - 'Organizations':

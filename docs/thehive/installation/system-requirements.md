@@ -40,17 +40,8 @@ Estimated resource recommendations are provided to offer guidance based on typic
 
     For Kubernetes deployments, apply the same hardware recommendations as for the Docker Compose deployment in single-replica configurations. When deploying multiple replicas in a clustered setup, per-node hardware requirements can be reduced, as workload and resource utilization are distributed across replicas.
 
-!!! warning "Elasticsearch heap size configuration"
-    Elasticsearch requires explicit [heap size configuration in the `jvm.options` file](installation-guide-linux-standalone-server.md#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file). Heap allocation [must not exceed 50% of the total system RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}.
-    
-    On a 12 GB RAM system, for example:
-
-    ```
-    -Xms6g
-    -Xmx6g
-    ```
-
-    Undefined heap settings may cause memory contention or out-of-memory errors.
+!!! warning "Heap size guidelines"
+    TheHive, Cassandra, and Elasticsearch each run on the JVM and require explicit heap size configuration in production environments. Especially when all three services run on the same host, their combined heap allocation competes for available RAM. See [Tune JVM Memory](../operations/tune-jvm-memory.md) for recommended values per service. Undefined heap settings may cause memory contention or out-of-memory errors.
 
 !!! info "Cluster deployments"
     In cluster deployments, each node must independently meet the recommended per-service CPU and memory requirements. The number of nodes, as well as CPU and RAM, may need to be adjusted based on the specific demands of the deployment.

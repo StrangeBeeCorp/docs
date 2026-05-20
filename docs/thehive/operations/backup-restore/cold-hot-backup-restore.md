@@ -56,4 +56,5 @@ The approach to hot backup and restore varies depending on the deployment type, 
 * [Cassandra Cluster Operations](../cassandra-cluster.md)
 * [Security in Apache Cassandra](../cassandra-security.md)
 * [Set Up Monitoring for TheHive with Prometheus and Grafana](../monitoring.md)
-* [Troubleshooting](../troubleshooting.md)
+* [Enable Trace Logging for Troubleshooting](../troubleshooting.md)
+* [Optimize Performance](../performance.md)

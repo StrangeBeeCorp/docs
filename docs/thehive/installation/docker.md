@@ -282,3 +282,4 @@ Then follow the [instructions to perform the first login](../administration/perf
 * [Configure JVM Trust for SSL/TLS Certificates](../configuration/ssl/configure-ssl-jvm.md)
 * [Perform a Cold Backup for a Stack Running with Docker Compose](../operations/backup-restore/backup/cold-backup/docker-compose.md)
 * [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
+* [Optimize Performance](../operations/performance.md)

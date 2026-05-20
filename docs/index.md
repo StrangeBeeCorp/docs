@@ -203,6 +203,8 @@ sections:
               url: '/thehive/operations/monitoring/'
             - text: 'Diagnose and resolve issues'
               url: '/thehive/operations/troubleshooting/'
+            - text: 'Optimize performance'
+              url: '/thehive/operations/performance/'
         - title: 'Use the API'
           links: 
             - text: 'Access and use the API documentation'

@@ -12,7 +12,7 @@ Stop TheHive before applying changes to avoid conflicts.
 
 {% include-markdown "includes/service-commands.md" %}
 
-### (Optional) Step 2: Configure Java Virtual Machine (JVM) trust for Cassandra SSL certificates
+### (Optional) Step 2: Configure Java virtual machine (JVM) trust for Cassandra SSL certificates
 
 Java applications such as TheHive rely on a Java trust store to validate SSL/TLS certificates. By default, the JVM trusts only well-known certificate authorities (CAs).
 
@@ -64,7 +64,9 @@ Restart TheHive to apply the new configuration.
 
 Stop TheHive before applying changes to avoid conflicts.
 
-### (Optional) Step 2: Configure Java Virtual Machine (JVM) trust for Elasticsearch SSL certificates
+{% include-markdown "includes/service-commands.md" %}
+
+### (Optional) Step 2: Configure Java virtual machine (JVM) trust for Elasticsearch SSL certificates
 
 Java applications such as TheHive rely on a Java trust store to validate SSL/TLS certificates. By default, the JVM trusts only well-known certificate authorities (CAs).
 

@@ -96,7 +96,7 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
     * Network interfaces: Set up the appropriate network interfaces. Ensure to setup the right interface name.
     * Endpoint snitch: Specify the snitch for determining network topology.
 
-    !!! Info "For detailed explanations of each parameter in the YAML file, refer to the [Cassandra configuration section](installation-guide-linux-standalone-server.md#step-32-configure-cassandra)."
+    !!! Info "For detailed explanations of each parameter in the YAML file, refer to the [Cassandra configuration section](installation-guide-linux-standalone-server.md#step-33-configure-cassandra)."
 
 2. Delete Cassandra topology properties file.
 
@@ -128,7 +128,28 @@ For each node in the Cassandra cluster, it's crucial to update the configuration
 
         ```
 
-### Step 1.3: Start the nodes
+### Step 1.3: Configure JVM options for Cassandra
+
+The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
+
+Check if the `/etc/cassandra/jvm-server.options` exists. If it doesn't, create it, then open it using a text editor and set the JVM options.
+
+!!! tip "Heap size guidelines for Cassandra"
+    Heap allocation [must not exceed 50% of the available RAM and should not be less than 2 GB](https://cassandra.apache.org/doc/stable/cassandra/managing/operating/hardware.html#memory){target=_blank}. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
+
+```yaml
+-Xms<heap_size>
+-Xmx<heap_size>
+-Xmn<young_gen_size>
+```
+
+Replace `<heap_size>` with the desired heap size and `<young_gen_size>` with the desired young generation size. `Xms` sets the initial heap size, `Xmx` sets the maximum, and `Xmn` sets the size of the young generation, where short-lived objects are allocated.
+
+Repeat this step on each node.
+
+{% include-markdown "includes/recommended-jvm-values-same-host-cassandra.md" %}
+
+### Step 1.4: Start the nodes
 
 To initiate the Cassandra service on each node, follow these steps:
 
@@ -160,7 +181,7 @@ To initiate the Cassandra service on each node, follow these steps:
         UN  <ip_node_3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
         ```
 
-### Step 1.4: Initialize the database
+### Step 1.5: Initialize the database
 
 {% include-markdown "includes/python-compatibility-cqlsh.md" %}
 
@@ -231,7 +252,7 @@ To initialize the database, perform the following steps:
 !!! tip "Cassandra cluster maintenance"
     In a Cassandra cluster, regular repairs are required to maintain data consistency between nodes. Automate a full repair with `nodetool repair -full`, for example by running it weekly using `cron`. Failing to run regular repairs can lead to inconsistent data, read errors, and authorization issues over time.
 
-### (Optional) Step 1.5: Enable encryption for client and inter-node communication
+### (Optional) Step 1.6: Enable encryption for client and inter-node communication
 
 The following steps aim to enable encryption secure communication between a client machine and a database cluster and between nodes within a cluster.
 
@@ -379,19 +400,28 @@ For each node, update the configuration files located at `/etc/cassandra/elastic
 !!! Warning
     When configuring Xpack and SSL with Elasticsearch, it's essential to review the documentation specific to your Elasticsearch version for accurate setup instructions.
 
-### Step 2.3: Customize JVM options
+### Step 2.3: Configure JVM options for Elasticsearch
 
-To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM options file named `jvm.options` in the directory `/etc/elasticsearch/jvm.options.d/` with the following lines:
+The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
 
-!!! Example ""
+Check if the `/etc/elasticsearch/jvm.options.d/jvm.options` exists. If it doesn't, create it, then open it using a text editor and set the JVM options.
 
-    ```
-    -Dlog4j2.formatMsgNoLookups=true
-    -Xms4g
-    -Xmx4g
-    ```
+!!! tip "Heap size guidelines for Elasticsearch"
+    Heap allocation [must not exceed 50% of the available RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
 
-!!! Note "Adjust according to available memory-It's important to adjust the heap size values based on the amount of memory available on your system to ensure optimal performance and resource utilization."
+```yaml
+-Dlog4j2.formatMsgNoLookups=true
+-Xms<heap_size>
+-Xmx<heap_size>
+```
+
+Replace `<heap_size>` with the desired heap size. `Xms` sets the initial heap size, and `Xmx` the maximum heap size.
+
+{% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
+
+Repeat this step on each node.
+
+{% include-markdown "includes/recommended-jvm-values-same-host-elasticsearch.md" %}
 
 ### Step 2.4: Start the nodes
 
@@ -602,6 +632,34 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
     !!! note "High availability"
         Managed services expose a single highly available endpoint. For self-hosted S3-compatible platforms, ensure your endpoint is highly available, for example via the storage platform itself or a properly configured load balancer.
 
+#### Configure JVM options for TheHive
+
+The Java virtual machine (JVM) is what runs TheHive. The JVM options control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
+
+Open the `/etc/default/thehive` file using a text editor, uncomment the `JAVA_OPTS` variable, and set the JVM options.
+
+!!! tip "Heap size guidelines for TheHive"
+    Heap allocation must not exceed 60% of the available RAM. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
+
+``` yaml
+-Xms<heap_size>
+-Xmx<heap_size>
+-XX:MaxMetaspaceSize=<metaspace_size>
+-XX:ReservedCodeCacheSize=<code_cache_size>
+```
+
+Replace `<heap_size>` with the desired heap size.
+
+{% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
+
+Replace `<metaspace_size>` with the desired Metaspace limit.
+
+Replace `<code_cache_size>` with the desired code cache limit.
+
+Repeat this step on each node.
+
+{% include-markdown "includes/recommended-jvm-values-same-host-thehive.md" %}
+
 #### Optional: Configure the secret key for the Play Framework
 
 TheHive uses a secret key to sign session cookies and ensure secure user authentication.
@@ -756,4 +814,5 @@ Here are some commonly encountered issues during cluster deployment with TheHive
 * [Perform a Cold Backup on a Physical Server](../operations/backup-restore/backup/cold-backup/physical-server.md)
 * [Perform a Cold Backup on a Virtual Server](../operations/backup-restore/backup/cold-backup/virtual-server.md)
 * [Monitoring](../operations/monitoring.md)
-* [Troubleshooting](../operations/troubleshooting.md)
+* [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md)
+* [Optimize Performance](../operations/performance.md)

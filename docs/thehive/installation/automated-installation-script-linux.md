@@ -48,4 +48,5 @@ If you also want to use the script to install Cortex, refer to the [Cortex insta
 * [Perform a Cold Backup on a Physical Server](../operations/backup-restore/backup/cold-backup/physical-server.md)
 * [Perform a Cold Backup on a Virtual Server](../operations/backup-restore/backup/cold-backup/virtual-server.md)
 * [Set Up Monitoring for TheHive with Prometheus and Grafana](../operations/monitoring.md)
-* [Troubleshooting](../operations/troubleshooting.md)
+* [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md)
+* [Optimize Performance](../operations/performance.md)
