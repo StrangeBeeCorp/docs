@@ -2593,6 +2593,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2600,7 +2684,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2628,7 +2712,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19147,7 +19231,7 @@
 <li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
 </ul>
 </div>
-<h3 id="optional-step-2-configure-java-virtual-machine-jvm-trust-for-cassandra-ssl-certificates">(Optional) Step 2: Configure Java Virtual Machine (JVM) trust for Cassandra SSL certificates<a class="headerlink" href="#optional-step-2-configure-java-virtual-machine-jvm-trust-for-cassandra-ssl-certificates" title="Permanent link">#</a></h3>
+<h3 id="optional-step-2-configure-java-virtual-machine-jvm-trust-for-cassandra-ssl-certificates">(Optional) Step 2: Configure Java virtual machine (JVM) trust for Cassandra SSL certificates<a class="headerlink" href="#optional-step-2-configure-java-virtual-machine-jvm-trust-for-cassandra-ssl-certificates" title="Permanent link">#</a></h3>
 <p>Java applications such as TheHive rely on a Java trust store to validate SSL/TLS certificates. By default, the JVM trusts only well-known certificate authorities (CAs).</p>
 <p>If you use self-signed certificates or internal CAs, you must configure the JVM to trust them.</p>
 <p>See <a href="../ssl/configure-ssl-jvm/">Configure JVM Trust for SSL Certificates</a> for instructions.</p>
@@ -19193,7 +19277,16 @@
 <h2 id="configure-ssl-for-elasticsearch">Configure SSL for Elasticsearch<a class="headerlink" href="#configure-ssl-for-elasticsearch" title="Permanent link">#</a></h2>
 <h3 id="step-1-stop-thehive-service_1">Step 1: Stop TheHive service<a class="headerlink" href="#step-1-stop-thehive-service_1" title="Permanent link">#</a></h3>
 <p>Stop TheHive before applying changes to avoid conflicts.</p>
-<h3 id="optional-step-2-configure-java-virtual-machine-jvm-trust-for-elasticsearch-ssl-certificates">(Optional) Step 2: Configure Java Virtual Machine (JVM) trust for Elasticsearch SSL certificates<a class="headerlink" href="#optional-step-2-configure-java-virtual-machine-jvm-trust-for-elasticsearch-ssl-certificates" title="Permanent link">#</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Service commands</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
+</div>
+<h3 id="optional-step-2-configure-java-virtual-machine-jvm-trust-for-elasticsearch-ssl-certificates">(Optional) Step 2: Configure Java virtual machine (JVM) trust for Elasticsearch SSL certificates<a class="headerlink" href="#optional-step-2-configure-java-virtual-machine-jvm-trust-for-elasticsearch-ssl-certificates" title="Permanent link">#</a></h3>
 <p>Java applications such as TheHive rely on a Java trust store to validate SSL/TLS certificates. By default, the JVM trusts only well-known certificate authorities (CAs).</p>
 <p>If you use self-signed certificates or internal CAs, you must configure the JVM to trust them.</p>
 <p>See <a href="../ssl/configure-ssl-jvm/">Configure JVM Trust for SSL Certificates</a> for instructions.</p>

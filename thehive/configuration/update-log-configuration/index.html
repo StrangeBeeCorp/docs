@@ -2615,6 +2615,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2622,7 +2706,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2650,7 +2734,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19161,7 +19245,7 @@
 <p>Control the detail of logged information by modifying log levels in the logback configuration. Higher log levels capture more detailed information for troubleshooting.</p>
 <div class="admonition info">
 <p class="admonition-title">Docker deployment</p>
-<p>Docker containers write logs to both stdout and <code>/var/log/thehive/application.log</code> by default. To use custom logging settings, mount your logback configuration file to <code>/etc/thehive/logback.xml</code>.</p>
+<p>Docker containers write logs to both stdout and <code>application.log</code> by default. To use custom logging settings, mount your logback configuration file to <code>logback.xml</code>.</p>
 </div>
 <ol>
 <li>
@@ -19203,7 +19287,7 @@
 <li>WARN: Warnings and errors</li>
 <li>INFO: General information (default)</li>
 <li>DEBUG: Detailed debugging information</li>
-<li>TRACE: Very detailed trace information</li>
+<li>TRACE: Very detailed trace information. To use this level for troubleshooting, see <a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a>.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Performance impact</p>
@@ -19373,6 +19457,8 @@
 
 <ul>
 <li><a href="../../administration/perform-initial-setup-as-admin/">Perform Initial Login and Setup as an Admin</a></li>
+<li><a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a></li>
+<li><a href="../../operations/performance/">Optimize Performance</a></li>
 </ul>
 
 

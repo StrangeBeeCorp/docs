@@ -1339,10 +1339,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-streams-for-reverse-proxies" class="md-nav__link">
+  <a href="#adjust-the-stream-long-polling-refresh-interval" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configure streams for reverse proxies
+        Adjust the stream long-polling refresh interval
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjust-attachment-and-request-size-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjust attachment and request size limits
       
     </span>
   </a>
@@ -2615,6 +2626,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2622,7 +2717,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2650,7 +2745,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19342,8 +19437,14 @@
 <p>Restart TheHive service.</p>
 </li>
 </ol>
-<h2 id="configure-streams-for-reverse-proxies">Configure streams for reverse proxies<a class="headerlink" href="#configure-streams-for-reverse-proxies" title="Permanent link">#</a></h2>
-<p><a href="../ssl/configure-https-reverse-proxy/">Reverse proxies</a> like Nginx can cause <code>504 Gateway Time-Out</code> errors with TheHive long-polling requests. Configure the refresh interval to prevent these timeouts.</p>
+<h2 id="adjust-the-stream-long-polling-refresh-interval">Adjust the stream long-polling refresh interval<a class="headerlink" href="#adjust-the-stream-long-polling-refresh-interval" title="Permanent link">#</a></h2>
+<p>TheHive uses long-polling to stream events to clients, with a default refresh interval of <code>1 minute</code>.</p>
+<p>Adjusting the <code>stream.longPolling.refresh</code> setting is useful in two situations:</p>
+<ul>
+<li>Reverse proxy timeouts: Proxies such as Nginx can return <code>504 Gateway Time-Out</code> errors on long-polling requests. Reducing this interval keeps requests within the proxy's timeout threshold.</li>
+<li>Performance: Adjusting this interval lets you balance event delivery speed against server load.</li>
+</ul>
+<p>To update these settings, follow the steps below.</p>
 <ol>
 <li>
 <p>Stop TheHive service.</p>
@@ -19361,10 +19462,63 @@
 <p>Open the <code>application.conf</code> file using a text editor.</p>
 </li>
 <li>
-<p>Add the following configuration:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">stream.longPolling.refresh</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">45 seconds</span>
+<p>Add the following configuration, adjusting the value to your requirements:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">stream.longPolling.refresh</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 minute</span>
 </code></pre></div>
-<p>This setting determines how often TheHive refreshes long-polling connections to prevent proxy timeouts.</p>
+</li>
+<li>
+<p>Save your modifications in the <code>application.conf</code> file.</p>
+</li>
+<li>
+<p>Restart TheHive service.</p>
+</li>
+</ol>
+<h2 id="adjust-attachment-and-request-size-limits">Adjust attachment and request size limits<a class="headerlink" href="#adjust-attachment-and-request-size-limits" title="Permanent link">#</a></h2>
+<p>TheHive enforces size limits on uploaded attachments and HTTP requests.</p>
+<p>Two settings control these limits independently:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Controls</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>play.http.parser.maxDiskBuffer</code></td>
+<td>Maximum attachment size</td>
+<td><code>1GB</code></td>
+</tr>
+<tr>
+<td><code>play.http.parser.maxMemoryBuffer</code></td>
+<td>Maximum HTTP request size (excluding attachments)</td>
+<td><code>10M</code></td>
+</tr>
+</tbody>
+</table>
+<p>To update these settings, follow the steps below.</p>
+<ol>
+<li>
+<p>Stop TheHive service.</p>
+<div class="admonition info">
+<p class="admonition-title">Service commands</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open the <code>application.conf</code> file using a text editor.</p>
+</li>
+<li>
+<p>Add the following configuration, adjusting the values to your requirements:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxDiskBuffer = 1GB</span>
+<span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxMemoryBuffer = 10M</span>
+</code></pre></div>
 </li>
 <li>
 <p>Save your modifications in the <code>application.conf</code> file.</p>

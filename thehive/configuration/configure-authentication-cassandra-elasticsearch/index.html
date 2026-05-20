@@ -2593,6 +2593,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2600,7 +2684,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2628,7 +2712,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19310,6 +19394,15 @@
 <p>Stop Elasticsearch service</p>
 </li>
 </ol>
+<div class="admonition info">
+<p class="admonition-title">Service commands</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
+</div>
 <h3 id="step-2-update-elasticsearch-configuration">Step 2: Update Elasticsearch configuration<a class="headerlink" href="#step-2-update-elasticsearch-configuration" title="Permanent link">#</a></h3>
 <p>Now you'll modify the Elasticsearch configuration to require authentication.</p>
 <ol>
@@ -19357,7 +19450,7 @@
 <ul>
 <li>Create a role:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://&lt;elasticsearch_host&gt;/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -19368,13 +19461,14 @@
 <span class="s1">  ]</span>
 <span class="s1">}'</span>
 </code></pre></div>
+<p>Replace <code>&lt;elasticsearch_host&gt;</code> with <code>localhost:9200</code> if you're running a standalone server deployment, or with the IP address or hostname of any one of your Elasticsearch nodes if you're running a cluster deployment. The security configuration is automatically replicated across all nodes.</p>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
 <ul>
 <li>Update a role:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://&lt;elasticsearch_host&gt;/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -19385,19 +19479,21 @@
 <span class="s1">  ]</span>
 <span class="s1">}'</span>
 </code></pre></div>
+<p>Replace <code>&lt;elasticsearch_host&gt;</code> with <code>localhost:9200</code> if you're running a standalone server deployment, or with the IP address or hostname of any one of your Elasticsearch nodes if you're running a cluster deployment. The security configuration is automatically replicated across all nodes.</p>
 <p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
 </li>
 <li>
 <p>Assign the role to the user you'll use for TheHive.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://&lt;elasticsearch_host&gt;/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 -d<span class="w"> </span><span class="s1">'{</span>
 <span class="s1">    "password" : "&lt;thehive_user_password&gt;",</span>
 <span class="s1">    "roles" : ["thehive_role"]</span>
 <span class="s1">}'</span>
 </code></pre></div>
+<p>Replace <code>&lt;elasticsearch_host&gt;</code> with <code>localhost:9200</code> if you're running a standalone server deployment, or with the IP address or hostname of any one of your Elasticsearch nodes if you're running a cluster deployment. The security configuration is automatically replicated across all nodes.</p>
 <p>Replace <code>&lt;thehive_user_password&gt;</code> with the password you set for the <code>thehive</code> user.</p>
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>Replace <code>thehive_role</code> with actual role name if different.</p>

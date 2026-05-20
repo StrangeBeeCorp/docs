@@ -2604,6 +2604,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2611,7 +2695,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2639,7 +2723,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19143,6 +19227,10 @@
 <h1 id="configure-jvm-trust-for-ssltls-certificates">Configure JVM Trust for SSL/TLS Certificates<a class="headerlink" href="#configure-jvm-trust-for-ssltls-certificates" title="Permanent link">#</a></h1>
 <p>Java applications such as TheHive rely on a Java truststore to validate SSL/TLS certificates. By default, the Java virtual machine (JVM) trusts only well-known certificate authorities (CAs).</p>
 <p>If you use self-signed certificates or internal CAs, you must configure the JVM to trust them. This configuration is essential for authentication providers and connectors used in TheHive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Maintenance window required</p>
+<p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
+</div>
 <h2 id="deb-package">DEB package<a class="headerlink" href="#deb-package" title="Permanent link">#</a></h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Option 1: Custom truststore</label><label for="__tabbed_1_2">Option 2: System-wide CA certificates</label></div>
 <div class="tabbed-content">

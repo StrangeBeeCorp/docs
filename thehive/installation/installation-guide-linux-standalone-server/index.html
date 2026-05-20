@@ -2659,6 +2659,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2666,7 +2750,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2694,7 +2778,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19399,7 +19483,76 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </div>
 </div>
 </div>
-<h3 id="step-32-configure-cassandra">Step 3.2: Configure Cassandra<a class="headerlink" href="#step-32-configure-cassandra" title="Permanent link">#</a></h3>
+<h3 id="step-32-configure-jvm-options-for-cassandra">Step 3.2: Configure JVM options for Cassandra<a class="headerlink" href="#step-32-configure-jvm-options-for-cassandra" title="Permanent link">#</a></h3>
+<p>The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
+<ol>
+<li>
+<p>Check if the <code>/etc/cassandra/jvm-server.options</code> exists. If it doesn't, create it.</p>
+</li>
+<li>
+<p>Open the <code>/etc/cassandra/jvm-server.options</code> file using a text editor.</p>
+</li>
+<li>
+<p>In the <code>jvm-server.options</code> file, set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for Cassandra</p>
+<p>Heap allocation <a href="https://cassandra.apache.org/doc/stable/cassandra/managing/operating/hardware.html#memory" target="_blank">must not exceed 50% of the available RAM and should not be less than 2 GB</a>. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn&lt;young_gen_size&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size and <code>&lt;young_gen_size&gt;</code> with the desired young generation size. <code>Xms</code> sets the initial heap size, <code>Xmx</code> sets the maximum, and <code>Xmn</code> sets the size of the young generation, where short-lived objects are allocated.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended Cassandra values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Without Cortex</label><label for="__tabbed_4_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">16 GB RAM</label><label for="__tabbed_5_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx4g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn200m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms4g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx8g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">16 GB RAM</label><label for="__tabbed_6_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms1g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn200m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx6g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
+</div>
+</li>
+<li>
+<p>Save your modifications in the <code>jvm-server.options</code> file.</p>
+</li>
+</ol>
+<h3 id="step-33-configure-cassandra">Step 3.3: Configure Cassandra<a class="headerlink" href="#step-33-configure-cassandra" title="Permanent link">#</a></h3>
 <p>Configure Cassandra by modifying settings within the <code>cassandra.yaml</code> file.</p>
 <ol>
 <li>
@@ -19477,8 +19630,8 @@ authorizer: CassandraAuthorizer
 [..]
 </code></pre></div>
 </div>
-<h3 id="step-33-start-the-cassandra-service">Step 3.3: Start the Cassandra service<a class="headerlink" href="#step-33-start-the-cassandra-service" title="Permanent link">#</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">DEB</label><label for="__tabbed_4_2">RPM</label></div>
+<h3 id="step-34-start-the-cassandra-service">Step 3.4: Start the Cassandra service<a class="headerlink" href="#step-34-start-the-cassandra-service" title="Permanent link">#</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">DEB</label><label for="__tabbed_7_2">RPM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -19549,7 +19702,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 <li>Port 9042 not reachable → Verify firewall rules and confirm Cassandra is listening with <code>ss -tlnp | grep 9042</code>.</li>
 </ul>
 </div>
-<h3 id="step-34-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-32">Step 3.4: Set a secure password for authentication (if you enabled authentication in <a href="#step-32-configure-cassandra">Step 3.2</a>)<a class="headerlink" href="#step-34-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-32" title="Permanent link">#</a></h3>
+<h3 id="step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33">Step 3.5: Set a secure password for authentication (if you enabled authentication in <a href="#step-33-configure-cassandra">Step 3.3</a>)<a class="headerlink" href="#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
 <p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
@@ -19586,7 +19739,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </code></pre></div>
 </li>
 </ol>
-<h3 id="step-35-create-a-new-administrator-role-if-you-enabled-authentication-in-step-32">Step 3.5: Create a new administrator role (if you enabled authentication in <a href="#step-32-configure-cassandra">Step 3.2</a>)<a class="headerlink" href="#step-35-create-a-new-administrator-role-if-you-enabled-authentication-in-step-32" title="Permanent link">#</a></h3>
+<h3 id="step-36-create-a-new-administrator-role-if-you-enabled-authentication-in-step-33">Step 3.6: Create a new administrator role (if you enabled authentication in <a href="#step-33-configure-cassandra">Step 3.3</a>)<a class="headerlink" href="#step-36-create-a-new-administrator-role-if-you-enabled-authentication-in-step-33" title="Permanent link">#</a></h3>
 <p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then delete the default user.</p>
 <ol>
 <li>
@@ -19610,7 +19763,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </code></pre></div>
 </li>
 </ol>
-<h3 id="step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32">Step 3.6: Create the keyspace and a role for TheHive (if you enabled authentication in <a href="#step-32-configure-cassandra">Step 3.2</a>)<a class="headerlink" href="#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32" title="Permanent link">#</a></h3>
+<h3 id="step-37-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-33">Step 3.7: Create the keyspace and a role for TheHive (if you enabled authentication in <a href="#step-33-configure-cassandra">Step 3.3</a>)<a class="headerlink" href="#step-37-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-33" title="Permanent link">#</a></h3>
 <ol>
 <li>
 <p>Create the <code>thehive</code> keyspace with basic replication.</p>
@@ -19772,7 +19925,7 @@ For additional configuration options, refer to:
 <p>Starting with version 5.3, TheHive supports <a href="https://opensearch.org/" target="_blank">OpenSearch</a> for advanced use cases, except for audit log storage.</p>
 </div>
 <h3 id="step-41-install-elasticsearch">Step 4.1: Install Elasticsearch<a class="headerlink" href="#step-41-install-elasticsearch" title="Permanent link">#</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">DEB</label><label for="__tabbed_5_2">RPM</label><label for="__tabbed_5_3">Other installation methods</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">DEB</label><label for="__tabbed_8_2">RPM</label><label for="__tabbed_8_3">Other installation methods</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -19904,7 +20057,8 @@ xpack.security.enabled: true
 [..]
 </code></pre></div>
 </div>
-<h4 id="configure-the-etcelasticsearchjvmoptionsdjvmoptions-file">Configure the <code>/etc/elasticsearch/jvm.options.d/jvm.options</code> file<a class="headerlink" href="#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file" title="Permanent link">#</a></h4>
+<h4 id="configure-jvm-options-for-elasticsearch">Configure JVM options for Elasticsearch<a class="headerlink" href="#configure-jvm-options-for-elasticsearch" title="Permanent link">#</a></h4>
+<p>The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
 <ol>
 <li>
 <p>Check if the <code>/etc/elasticsearch/jvm.options.d/jvm.options</code> exists. If it doesn't, create it.</p>
@@ -19913,19 +20067,60 @@ xpack.security.enabled: true
 <p>Open the <code>/etc/elasticsearch/jvm.options.d/jvm.options</code> file using a text editor.</p>
 </li>
 <li>
-<p>In the <code>jvm.options</code> file, set the Java virtual machine (JVM) options.</p>
-<p>The JVM is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings.</p>
-<div class="admonition warning">
-<p class="admonition-title">Heap size configuration</p>
-<p>Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the total system RAM</a>.</p>
-<p>Undefined heap settings may cause memory contention or out-of-memory errors.</p>
+<p>In the <code>jvm.options</code> file, set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for Elasticsearch</p>
+<p>Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the available RAM</a>. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
 </div>
-<p>On a 12 GB RAM system, for example:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Dlog4j2.formatMsgNoLookups=true</span>
-<span class="l l-Scalar l-Scalar-Plain">-Xms6g</span>
-<span class="l l-Scalar l-Scalar-Plain">-Xmx6g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
 </code></pre></div>
-<p><code>Xms</code> defines the initial heap size allocated to the JVM, and <code>Xmx</code> sets the maximum heap size. Setting them to the same value is recommended for stable performance and predictable garbage collection.</p>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size. <code>Xms</code> sets the initial heap size, and <code>Xmx</code> the maximum heap size.</p>
+<div class="admonition tip">
+<p class="admonition-title">Set initial and maximum heap to the same value</p>
+<p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Recommended Elasticsearch values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">Without Cortex</label><label for="__tabbed_9_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">16 GB RAM</label><label for="__tabbed_10_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3000m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms7000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx7000m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">16 GB RAM</label><label for="__tabbed_11_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx2000m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx5400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
+</div>
 </li>
 <li>
 <p>Save your modifications in the <code>jvm.options</code> file.</p>
@@ -19940,7 +20135,7 @@ xpack.security.enabled: true
 </ul>
 </div>
 <h3 id="step-43-start-the-elasticsearch-service">Step 4.3: Start the Elasticsearch service<a class="headerlink" href="#step-43-start-the-elasticsearch-service" title="Permanent link">#</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">DEB</label><label for="__tabbed_6_2">RPM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="" id="__tabbed_12_1" name="__tabbed_12" type="radio"><input id="__tabbed_12_2" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="__tabbed_12_1">DEB</label><label for="__tabbed_12_2">RPM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
@@ -20094,7 +20289,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <h3 id="step-51-install-thehive">Step 5.1: Install TheHive<a class="headerlink" href="#step-51-install-thehive" title="Permanent link">#</a></h3>
 <p>TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like <code>wget</code> or <code>curl</code>, with installation performed manually.</p>
 <p>All packages are hosted on an <a href="https://thehive.download.strangebee.com/" target="_blank">HTTPS-secured website</a> and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">DEB</label><label for="__tabbed_7_2">RPM</label><label for="__tabbed_7_3">ZIP binary packages</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:3"><input checked="" id="__tabbed_13_1" name="__tabbed_13" type="radio"><input id="__tabbed_13_2" name="__tabbed_13" type="radio"><input id="__tabbed_13_3" name="__tabbed_13" type="radio"><div class="tabbed-labels"><label for="__tabbed_13_1">DEB</label><label for="__tabbed_13_2">RPM</label><label for="__tabbed_13_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition tip">
@@ -20456,6 +20651,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <p class="admonition-title">Standalone server configuration</p>
 <p>In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to <a href="../deploying-a-cluster/#step-4-install-and-configure-thehive">Set Up a Cluster with Packages</a>.</p>
 </div>
+<h4 id="configure-service">Configure service<a class="headerlink" href="#configure-service" title="Permanent link">#</a></h4>
 <ol>
 <li>
 <p>Open the <code>/etc/thehive/application.conf</code> file using a text editor.</p>
@@ -20470,14 +20666,14 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <span class="l l-Scalar l-Scalar-Plain">play.http.context = "/"</span>
 <span class="l l-Scalar l-Scalar-Plain">[..]</span>
 </code></pre></div>
-<h4 id="applicationbaseurl">application.baseUrl<a class="headerlink" href="#applicationbaseurl" title="Permanent link">#</a></h4>
+<h5 id="applicationbaseurl">application.baseUrl<a class="headerlink" href="#applicationbaseurl" title="Permanent link">#</a></h5>
 <p>Replace <code>http://localhost:9000</code> with the actual public URL that users will use to access TheHive.</p>
-<h5 id="mandatory-elements">Mandatory elements<a class="headerlink" href="#mandatory-elements" title="Permanent link">#</a></h5>
+<h6 id="mandatory-elements">Mandatory elements<a class="headerlink" href="#mandatory-elements" title="Permanent link">#</a></h6>
 <ul>
 <li>Protocol: Either <code>http</code> or <code>https</code>, depending on whether you <a href="../../configuration/ssl/configure-https-reverse-proxy/">configured HTTPS with a reverse proxy</a>.</li>
 <li>Host name: The DNS name or IP address that users enter in their browser.</li>
 </ul>
-<h5 id="optional-elements">Optional elements<a class="headerlink" href="#optional-elements" title="Permanent link">#</a></h5>
+<h6 id="optional-elements">Optional elements<a class="headerlink" href="#optional-elements" title="Permanent link">#</a></h6>
 <ul>
 <li>Port: The network port where TheHive is exposed. Include a port only when the public URL uses a non-standard port. Standard ports are <code>80</code> for HTTP and <code>443</code> for HTTPS.</li>
 <li>Path segments: Needed if TheHive runs behind a reverse proxy under a subpath.</li>
@@ -20492,7 +20688,7 @@ These settings control how TheHive listens internally on the host and are indepe
 </ul>
 <p>To customize the listen address and port, see <a href="../../configuration/update-service-configuration/#update-the-listen-address-and-port">Update TheHive Service Configuration</a>.</p>
 </div>
-<h4 id="playhttpcontext">play.http.context<a class="headerlink" href="#playhttpcontext" title="Permanent link">#</a></h4>
+<h5 id="playhttpcontext">play.http.context<a class="headerlink" href="#playhttpcontext" title="Permanent link">#</a></h5>
 <p>If TheHive is served under a subpath when running behind a reverse proxy, set <code>play.http.context</code> to the matching path segment.</p>
 <p>For configuration details, see <a href="../../configuration/update-service-configuration/#set-a-context-path">Update TheHive Service Configuration</a>.</p>
 <p>For additional guidance on proxy usage, see <a href="../../configuration/ssl/configure-https-reverse-proxy/">Configure HTTPS for TheHive With a Reverse Proxy</a>.</p>
@@ -20585,13 +20781,93 @@ sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span cl
 <span class="l l-Scalar l-Scalar-Plain">[..]</span>
 </code></pre></div>
 </div>
-<p>Replace <code>&lt;thehive_role_password&gt;</code> with the password set in <a href="#step-36-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-32">Step 3.6</a>.</p>
+<p>Replace <code>&lt;thehive_role_password&gt;</code> with the password set in <a href="#step-37-create-the-keyspace-and-a-role-for-thehive-if-you-enabled-authentication-in-step-33">Step 3.7</a>.</p>
 <p>Replace <code>&lt;thehive_user_password&gt;</code> with the password set in <a href="#step-44-permissions">Step 4.4</a>.</p>
 <p>You can remove the lines under <code># Cassandra authentication (recommended)</code> and <code># Elasticsearch authentication (recommended)</code> if you didn’t enable authentication for Cassandra or Elasticsearch.</p>
 <p>To set up SSL for Cassandra and Elasticsearch connections, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
 </li>
 <li>
 <p>Save your modifications in the <code>application.conf</code> file.</p>
+</li>
+</ol>
+<h4 id="configure-jvm-options-for-thehive">Configure JVM options for TheHive<a class="headerlink" href="#configure-jvm-options-for-thehive" title="Permanent link">#</a></h4>
+<p>The Java virtual machine (JVM) is what runs TheHive. The JVM options control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
+<ol>
+<li>
+<p>Open the <code>/etc/default/thehive</code> file using a text editor.</p>
+</li>
+<li>
+<p>Uncomment the <code>JAVA_OPTS</code> variable.</p>
+</li>
+<li>
+<p>In the <code>thehive</code> file, set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for TheHive</p>
+<p>Heap allocation must not exceed 60% of the available RAM. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=&lt;metaspace_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=&lt;code_cache_size&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size.</p>
+<div class="admonition tip">
+<p class="admonition-title">Set initial and maximum heap to the same value</p>
+<p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
+</div>
+<p>Replace <code>&lt;metaspace_size&gt;</code> with the desired Metaspace limit.</p>
+<p>Replace <code>&lt;code_cache_size&gt;</code> with the desired code cache limit.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended TheHive values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="" id="__tabbed_14_1" name="__tabbed_14" type="radio"><input id="__tabbed_14_2" name="__tabbed_14" type="radio"><div class="tabbed-labels"><label for="__tabbed_14_1">Without Cortex</label><label for="__tabbed_14_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="" id="__tabbed_15_1" name="__tabbed_15" type="radio"><input id="__tabbed_15_2" name="__tabbed_15" type="radio"><div class="tabbed-labels"><label for="__tabbed_15_1">16 GB RAM</label><label for="__tabbed_15_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms7250m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx7250m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="" id="__tabbed_16_1" name="__tabbed_16" type="radio"><input id="__tabbed_16_2" name="__tabbed_16" type="radio"><div class="tabbed-labels"><label for="__tabbed_16_1">16 GB RAM</label><label for="__tabbed_16_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
+</div>
+</li>
+<li>
+<p>Save your modifications in the <code>thehive</code> file.</p>
 </li>
 </ol>
 <h3 id="step-53-audit-log-storage">(Optional) Step 5.3: <span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../release-notes/release-notes-5.5/#5.5" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../release-notes/release-notes-5.5/#5.5">5.5</a></span></span> Configure audit log storage<a class="headerlink" href="#step-53-audit-log-storage" title="Permanent link">#</a></h3>
@@ -20795,7 +21071,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </div>
 <div class="admonition bug">
 <p class="admonition-title">Troubleshooting TheHive</p>
-<p>If you run into issues, see the <a href="../../operations/troubleshooting/">Troubleshooting</a> page for guidance.</p>
+<p>If you run into issues, see <a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a> for guidance.</p>
 </div>
 </li>
 <li>
@@ -20836,7 +21112,8 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <li><a href="../../operations/backup-restore/backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a></li>
 <li><a href="../../operations/backup-restore/backup/cold-backup/virtual-server/">Perform a Cold Backup on a Virtual Server</a></li>
 <li><a href="../../operations/monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a></li>
-<li><a href="../../operations/troubleshooting/">Troubleshooting</a></li>
+<li><a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a></li>
+<li><a href="../../operations/performance/">Optimize Performance</a></li>
 </ul>
 
 

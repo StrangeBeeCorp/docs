@@ -8,7 +8,7 @@
         <link rel="canonical" href="https://docs.strangebee.com/thehive/operations/troubleshooting/">
       
       
-        <link rel="prev" href="../change-index/">
+        <link rel="prev" href="../performance/">
       
       
         <link rel="next" href="../monitoring/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Troubleshooting Guide - TheHive 5 Documentation</title>
+        <title>Troubleshooting - TheHive 5 Documentation</title>
       
     
     
@@ -163,7 +163,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#troubleshooting" class="md-skip">
+        <a href="#enable-trace-logging-for-troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -2519,6 +2519,90 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2538,7 +2622,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2556,7 +2640,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2587,7 +2671,7 @@
   <a href="#step-1-stop-thehive-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Stop TheHive Service
+        Step 1: Stop TheHive service
       
     </span>
   </a>
@@ -2595,10 +2679,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-renew-applicationlog-file" class="md-nav__link">
+  <a href="#step-2-back-up-the-applicationlog-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2: Renew application.log File
+        Step 2: Back up the application.log file
       
     </span>
   </a>
@@ -2606,10 +2690,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-update-log-configuration" class="md-nav__link">
+  <a href="#step-3-enable-trace-logging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3: Update Log Configuration
+        Step 3: Enable trace logging
       
     </span>
   </a>
@@ -2620,7 +2704,7 @@
   <a href="#step-4-restart-thehive-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Restart TheHive Service
+        Step 4: Restart TheHive service
       
     </span>
   </a>
@@ -2628,10 +2712,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-monitor-and-save-logs" class="md-nav__link">
+  <a href="#step-5-reproduce-the-issue-and-save-the-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Monitor and Save Logs
+        Step 5: Reproduce the issue and save the log
       
     </span>
   </a>
@@ -2639,10 +2723,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-share-the-logs" class="md-nav__link">
+  <a href="#step-6-revert-trace-logging" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6: Share the Logs
+        Step 6: Revert trace logging
       
     </span>
   </a>
@@ -2650,10 +2734,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-revert-log-configuration" class="md-nav__link">
+  <a href="#optional-step-7-report-the-issue" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7: Revert Log Configuration
+        (Optional) Step 7: Report the issue
       
     </span>
   </a>
@@ -2683,7 +2767,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19184,75 +19268,96 @@
 
 
 
-<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h1>
-<p>For some issues, additional information in logs is needed to troubleshoot and understand the root causes. To gather and share this information, please carefully read and follow these steps.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>ENABLING TRACE LOGS HAS A SIGNIFICANT IMPACT ON PERFORMANCE. DO NOT ENABLE IT ON PRODUCTION SERVERS.</strong></p>
+<h1 id="enable-trace-logging-for-troubleshooting">Enable Trace Logging for Troubleshooting<a class="headerlink" href="#enable-trace-logging-for-troubleshooting" title="Permanent link">#</a></h1>
+<p>If you need additional log information to identify the root cause of an issue, you can enable trace logging in TheHive.</p>
+<div class="admonition danger">
+<p class="admonition-title">Not for production servers</p>
+<p>Enabling trace logging has a significant impact on performance. Don't enable it on production servers.</p>
 </div>
-<hr>
-<h2 id="step-1-stop-thehive-service">Step 1: Stop TheHive Service<a class="headerlink" href="#step-1-stop-thehive-service" title="Permanent link">#</a></h2>
-<p>First, stop TheHive service:</p>
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>thehive<span class="w"> </span>stop
-</code></pre></div>
-<p>Ensure the service is stopped with the following command:</p>
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>thehive<span class="w"> </span>status
-</code></pre></div>
-<hr>
-<h2 id="step-2-renew-applicationlog-file">Step 2: Renew <code>application.log</code> File<a class="headerlink" href="#step-2-renew-applicationlog-file" title="Permanent link">#</a></h2>
-<p>Move the existing <code>application.log</code> file to a backup location:</p>
+<div class="admonition warning">
+<p class="admonition-title">Maintenance window required</p>
+<p>This procedure involves changing configuration files and restarting services. Schedule a maintenance window to prevent service disruption.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Docker deployment</p>
+<p>Docker containers write logs to both stdout and <code>application.log</code> by default. To use custom logging settings, mount your logback configuration file to <code>logback.xml</code>.</p>
+</div>
+<h2 id="step-1-stop-thehive-service">Step 1: Stop TheHive service<a class="headerlink" href="#step-1-stop-thehive-service" title="Permanent link">#</a></h2>
+<p>Stop TheHive service.</p>
+<div class="admonition info">
+<p class="admonition-title">Service commands</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
+</div>
+<h2 id="step-2-back-up-the-applicationlog-file">Step 2: Back up the <code>application.log</code> file<a class="headerlink" href="#step-2-back-up-the-applicationlog-file" title="Permanent link">#</a></h2>
+<p>Move your existing <code>application.log</code> file to a backup location. This ensures the new log file created on restart contains only trace logs from your current session.</p>
 <div class="highlight"><pre><span></span><code>mv<span class="w"> </span>/var/log/thehive/application.log<span class="w"> </span>/var/log/thehive/application.log.bak
 </code></pre></div>
-<hr>
-<h2 id="step-3-update-log-configuration">Step 3: Update Log Configuration<a class="headerlink" href="#step-3-update-log-configuration" title="Permanent link">#</a></h2>
-<p>Edit the log configuration file <code>/etc/thehive/logback.xml</code>. Locate the line containing <code>&lt;logger name="org.thp" level="INFO"/&gt;</code> and update it to the following:</p>
-<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="nt">&lt;logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.thp"</span><span class="w"> </span><span class="na">level=</span><span class="s">"TRACE"</span><span class="nt">/&gt;</span>
+<h2 id="step-3-enable-trace-logging">Step 3: Enable trace logging<a class="headerlink" href="#step-3-enable-trace-logging" title="Permanent link">#</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Log levels reference</p>
+<p>For a full description of available log levels and general log configuration, see <a href="../../configuration/update-log-configuration/">Update Log Configuration</a>.</p>
+</div>
+<ol>
+<li>
+<p>Open the <code>logback.xml</code> file using a text editor and locate the following line:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.thp"</span><span class="w"> </span><span class="na">level=</span><span class="s">"INFO"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>Save the file after making the changes.</p>
-<hr>
-<h2 id="step-4-restart-thehive-service">Step 4: Restart TheHive Service<a class="headerlink" href="#step-4-restart-thehive-service" title="Permanent link">#</a></h2>
-<p>Restart TheHive service:</p>
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>thehive<span class="w"> </span>start
+</li>
+<li>
+<p>Replace it with:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.thp"</span><span class="w"> </span><span class="na">level=</span><span class="s">"TRACE"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>A new log file <code>/var/log/thehive/application.log</code> will be created and will contain extensive logging information.</p>
-<hr>
-<h2 id="step-5-monitor-and-save-logs">Step 5: Monitor and Save Logs<a class="headerlink" href="#step-5-monitor-and-save-logs" title="Permanent link">#</a></h2>
-<p>Wait for the issue to occur or for the application to stop. Then, copy the log file to a safe location:</p>
+</li>
+<li>
+<p>Save the file.</p>
+</li>
+</ol>
+<h2 id="step-4-restart-thehive-service">Step 4: Restart TheHive service<a class="headerlink" href="#step-4-restart-thehive-service" title="Permanent link">#</a></h2>
+<p>Restart TheHive service.</p>
+<p>TheHive creates a new <code>/var/log/thehive/application.log</code> file with extensive logging information.</p>
+<h2 id="step-5-reproduce-the-issue-and-save-the-log">Step 5: Reproduce the issue and save the log<a class="headerlink" href="#step-5-reproduce-the-issue-and-save-the-log" title="Permanent link">#</a></h2>
+<p>Wait for the issue to occur or for the application to stop, then copy the log file to a safe location:</p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>/var/log/thehive/application.log<span class="w"> </span>/root
 </code></pre></div>
-<hr>
-<h2 id="step-6-share-the-logs">Step 6: Share the Logs<a class="headerlink" href="#step-6-share-the-logs" title="Permanent link">#</a></h2>
-<p>Create an issue on <a href="https://github.com/StrangeBeeCorp/TheHive-feedback/issues/new?assignees=&amp;labels=bug%2C+TheHive&amp;template=bug_report.md&amp;title=%5BBug%5D" target="_blank">GitHub</a> and include the following information:</p>
-<ul>
-<li><strong>Context:</strong></li>
-<li>Instance type (single node/cluster, backend type, index engine)</li>
-<li>
-<p>System details (Operating System, amount of RAM, number of CPUs for each server/node)</p>
-</li>
-<li>
-<p><strong>Symptoms:</strong></p>
-</li>
-<li>
-<p>Actions taken, how the situation occurred, and what happened</p>
-</li>
-<li>
-<p><strong>Log File:</strong></p>
-</li>
-<li>Attach the log file with trace information</li>
-</ul>
-<hr>
-<h2 id="step-7-revert-log-configuration">Step 7: Revert Log Configuration<a class="headerlink" href="#step-7-revert-log-configuration" title="Permanent link">#</a></h2>
-<p>To revert to the normal log configuration:</p>
+<h2 id="step-6-revert-trace-logging">Step 6: Revert trace logging<a class="headerlink" href="#step-6-revert-trace-logging" title="Permanent link">#</a></h2>
+<p>After collecting the logs, revert your log configuration:</p>
 <ol>
-<li>Stop TheHive service.</li>
-<li>Edit the <code>logback.xml</code> file to restore the previous log level configuration.</li>
-<li>Restart TheHive service.</li>
-</ol>
-<div class="highlight"><pre><span></span><code>service<span class="w"> </span>thehive<span class="w"> </span>stop
-<span class="c1"># Restore the logback.xml file to previous state</span>
-service<span class="w"> </span>thehive<span class="w"> </span>start
+<li>
+<p>Stop TheHive service.</p>
+</li>
+<li>
+<p>Edit <code>logback.xml</code> and restore the original line:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;logger</span><span class="w"> </span><span class="na">name=</span><span class="s">"org.thp"</span><span class="w"> </span><span class="na">level=</span><span class="s">"INFO"</span><span class="nt">/&gt;</span>
 </code></pre></div>
-<p>&nbsp;</p>
+</li>
+<li>
+<p>Restart TheHive service.</p>
+</li>
+</ol>
+<h2 id="optional-step-7-report-the-issue">(Optional) Step 7: Report the issue<a class="headerlink" href="#optional-step-7-report-the-issue" title="Permanent link">#</a></h2>
+<p>If the logs reveal an issue you want to report:</p>
+<ul>
+<li>Gold or Platinum license: open a ticket with the StrangeBee Support team</li>
+<li>Community license: open an issue on the <a href="https://github.com/StrangeBeeCorp/TheHive-feedback/issues" target="_blank"><code>TheHive-feedback</code> GitHub repository</a></li>
+</ul>
+<p>In both cases, include the following information:</p>
+<ul>
+<li>Context: your instance type (single node/cluster, backend type, index engine), operating system, RAM, and CPU count per server and node</li>
+<li>Symptoms: the actions you took, how the issue occurred, and what happened</li>
+<li>Log file: attach your log file with trace information</li>
+</ul>
+<h2>Next steps</h2>
+
+<ul>
+<li><a href="../../configuration/update-log-configuration/">Update Log Configuration</a></li>
+<li><a href="../performance/">Optimize Performance</a></li>
+<li><a href="../monitoring/">Set Up Monitoring for TheHive with Prometheus and Grafana</a></li>
+</ul>
 
 
 

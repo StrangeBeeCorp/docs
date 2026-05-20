@@ -5,7 +5,7 @@
       
       
       
-        <link rel="canonical" href="https://docs.strangebee.com/includes/set-user-thehive-elasticsearch/">
+        <link rel="canonical" href="https://docs.strangebee.com/includes/recommended-jvm-values-same-host-elasticsearch/">
       
       
       
@@ -18,7 +18,7 @@
     
     
       
-        <title>Set user thehive elasticsearch - TheHive 5 Documentation</title>
+        <title>Recommended jvm values same host elasticsearch - TheHive 5 Documentation</title>
       
     
     
@@ -2504,6 +2504,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../thehive/operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thehive/operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../thehive/operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../thehive/operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2511,7 +2595,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2539,7 +2623,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -18982,86 +19066,48 @@
 
 
 
-  <h1>Set user thehive elasticsearch</h1>
+  <h1>Recommended jvm values same host elasticsearch</h1>
 
-<ol>
-<li>
-<p>Create a <code>thehive</code> user.</p>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-users<span class="w"> </span>useradd<span class="w"> </span>thehive<span class="w"> </span>-p<span class="w"> </span>&lt;thehive_user_password&gt;<span class="w"> </span>-r<span class="w"> </span>superuser
-</code></pre></div>
-<p>Replace <code>&lt;thehive_user_password&gt;</code> with a secure password you choose for your TheHive user.</p>
 <div class="admonition tip">
-<p class="admonition-title">Note this password</p>
-<p>Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.</p>
+<p class="admonition-title">Recommended Elasticsearch values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Without Cortex</label><label for="__tabbed_1_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">16 GB RAM</label><label for="__tabbed_2_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3000m</span>
+</code></pre></div>
 </div>
-</li>
-<li>
-<p>Optional: Set a password for the <code>elastic</code> user.</p>
-<ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords" target="_blank">For Elasticsearch 7.x</a>:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-setup-passwords<span class="w"> </span>interactive
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms7000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx7000m</span>
 </code></pre></div>
-<ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">For Elasticsearch 8.0</a>:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">16 GB RAM</label><label for="__tabbed_3_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx2000m</span>
 </code></pre></div>
-<p>Skip this step if the password is already set.</p>
-</li>
-<li>
-<p>Create or update a role with the privileges needed for TheHive.</p>
-<ul>
-<li>Create a role:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
-<span class="s1">{</span>
-<span class="s1">  "cluster": ["manage"],</span>
-<span class="s1">  "indices": [</span>
-<span class="s1">    {</span>
-<span class="s1">      "names": ["thehive*"],</span>
-<span class="s1">      "privileges": ["all"]</span>
-<span class="s1">    }</span>
-<span class="s1">  ]</span>
-<span class="s1">}'</span>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx5400m</span>
 </code></pre></div>
-<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
-<ul>
-<li>Update a role:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
-<span class="s1">{</span>
-<span class="s1">  "cluster": ["manage"],</span>
-<span class="s1">  "indices": [</span>
-<span class="s1">    {</span>
-<span class="s1">      "names": ["thehive*"],</span>
-<span class="s1">      "privileges": ["all"]</span>
-<span class="s1">    }</span>
-<span class="s1">  ]</span>
-<span class="s1">}'</span>
-</code></pre></div>
-<p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
-<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
-</li>
-<li>
-<p>Assign the role to the user you'll use for TheHive.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
--H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
--d<span class="w"> </span><span class="s1">'{</span>
-<span class="s1">    "password" : "&lt;thehive_user_password&gt;",</span>
-<span class="s1">    "roles" : ["thehive_role"]</span>
-<span class="s1">}'</span>
-</code></pre></div>
-<p>Replace <code>&lt;thehive_user_password&gt;</code> with the password you set for the <code>thehive</code> user.</p>
-<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
-<p>Replace <code>thehive_role</code> with actual role name if different.</p>
-<p>If successful, the command should return: <code>{"created":true}</code>.</p>
-<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user" target="_blank">the official Elasticsearch API documentation for updating users</a>.</p>
-</li>
-</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
+</div>
 
 
 

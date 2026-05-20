@@ -2670,6 +2670,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2677,7 +2761,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2705,7 +2789,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19302,7 +19386,7 @@
 <li>Endpoint snitch: Specify the snitch for determining network topology.</li>
 </ul>
 <div class="admonition info">
-<p class="admonition-title">For detailed explanations of each parameter in the YAML file, refer to the <a href="../installation-guide-linux-standalone-server/#step-32-configure-cassandra">Cassandra configuration section</a>.</p>
+<p class="admonition-title">For detailed explanations of each parameter in the YAML file, refer to the <a href="../installation-guide-linux-standalone-server/#step-33-configure-cassandra">Cassandra configuration section</a>.</p>
 </div>
 </li>
 <li>
@@ -19332,7 +19416,64 @@
 </div>
 </li>
 </ol>
-<h3 id="step-13-start-the-nodes">Step 1.3: Start the nodes<a class="headerlink" href="#step-13-start-the-nodes" title="Permanent link">#</a></h3>
+<h3 id="step-13-configure-jvm-options-for-cassandra">Step 1.3: Configure JVM options for Cassandra<a class="headerlink" href="#step-13-configure-jvm-options-for-cassandra" title="Permanent link">#</a></h3>
+<p>The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
+<p>Check if the <code>/etc/cassandra/jvm-server.options</code> exists. If it doesn't, create it, then open it using a text editor and set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for Cassandra</p>
+<p>Heap allocation <a href="https://cassandra.apache.org/doc/stable/cassandra/managing/operating/hardware.html#memory" target="_blank">must not exceed 50% of the available RAM and should not be less than 2 GB</a>. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn&lt;young_gen_size&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size and <code>&lt;young_gen_size&gt;</code> with the desired young generation size. <code>Xms</code> sets the initial heap size, <code>Xmx</code> sets the maximum, and <code>Xmn</code> sets the size of the young generation, where short-lived objects are allocated.</p>
+<p>Repeat this step on each node.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended Cassandra values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Without Cortex</label><label for="__tabbed_1_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">16 GB RAM</label><label for="__tabbed_2_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx4g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn200m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms4g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx8g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">16 GB RAM</label><label for="__tabbed_3_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms1g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn200m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx6g</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmn400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
+</div>
+<h3 id="step-14-start-the-nodes">Step 1.4: Start the nodes<a class="headerlink" href="#step-14-start-the-nodes" title="Permanent link">#</a></h3>
 <p>To initiate the Cassandra service on each node, follow these steps:</p>
 <ol>
 <li>
@@ -19361,7 +19502,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 </div>
 </li>
 </ol>
-<h3 id="step-14-initialize-the-database">Step 1.4: Initialize the database<a class="headerlink" href="#step-14-initialize-the-database" title="Permanent link">#</a></h3>
+<h3 id="step-15-initialize-the-database">Step 1.5: Initialize the database<a class="headerlink" href="#step-15-initialize-the-database" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
 <p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
@@ -19426,7 +19567,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p class="admonition-title">Cassandra cluster maintenance</p>
 <p>In a Cassandra cluster, regular repairs are required to maintain data consistency between nodes. Automate a full repair with <code>nodetool repair -full</code>, for example by running it weekly using <code>cron</code>. Failing to run regular repairs can lead to inconsistent data, read errors, and authorization issues over time.</p>
 </div>
-<h3 id="optional-step-15-enable-encryption-for-client-and-inter-node-communication">(Optional) Step 1.5: Enable encryption for client and inter-node communication<a class="headerlink" href="#optional-step-15-enable-encryption-for-client-and-inter-node-communication" title="Permanent link">#</a></h3>
+<h3 id="optional-step-16-enable-encryption-for-client-and-inter-node-communication">(Optional) Step 1.6: Enable encryption for client and inter-node communication<a class="headerlink" href="#optional-step-16-enable-encryption-for-client-and-inter-node-communication" title="Permanent link">#</a></h3>
 <p>The following steps aim to enable encryption secure communication between a client machine and a database cluster and between nodes within a cluster.</p>
 <h4 id="client-to-node-encryption">Client to node encryption<a class="headerlink" href="#client-to-node-encryption" title="Permanent link">#</a></h4>
 <div class="admonition notes">
@@ -19600,16 +19741,62 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p class="admonition-title">Warning</p>
 <p>When configuring Xpack and SSL with Elasticsearch, it's essential to review the documentation specific to your Elasticsearch version for accurate setup instructions.</p>
 </div>
-<h3 id="step-23-customize-jvm-options">Step 2.3: Customize JVM options<a class="headerlink" href="#step-23-customize-jvm-options" title="Permanent link">#</a></h3>
-<p>To customize Java virtual machine (JVM) options for Elasticsearch, create a JVM options file named <code>jvm.options</code> in the directory <code>/etc/elasticsearch/jvm.options.d/</code> with the following lines:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>-Dlog4j2.formatMsgNoLookups=true
--Xms4g
--Xmx4g
+<h3 id="step-23-configure-jvm-options-for-elasticsearch">Step 2.3: Configure JVM options for Elasticsearch<a class="headerlink" href="#step-23-configure-jvm-options-for-elasticsearch" title="Permanent link">#</a></h3>
+<p>The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
+<p>Check if the <code>/etc/elasticsearch/jvm.options.d/jvm.options</code> exists. If it doesn't, create it, then open it using a text editor and set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for Elasticsearch</p>
+<p>Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the available RAM</a>. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Dlog4j2.formatMsgNoLookups=true</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size. <code>Xms</code> sets the initial heap size, and <code>Xmx</code> the maximum heap size.</p>
+<div class="admonition tip">
+<p class="admonition-title">Set initial and maximum heap to the same value</p>
+<p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
+</div>
+<p>Repeat this step on each node.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended Elasticsearch values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Without Cortex</label><label for="__tabbed_4_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">16 GB RAM</label><label for="__tabbed_5_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3000m</span>
 </code></pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Adjust according to available memory-It's important to adjust the heap size values based on the amount of memory available on your system to ensure optimal performance and resource utilization.</p>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms7000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx7000m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">16 GB RAM</label><label for="__tabbed_6_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx2000m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx5400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
 </div>
 <h3 id="step-24-start-the-nodes">Step 2.4: Start the nodes<a class="headerlink" href="#step-24-start-the-nodes" title="Permanent link">#</a></h3>
 <p>To start the Elasticsearch service on each node, execute the following command:</p>
@@ -19620,7 +19807,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>This command initiates the Elasticsearch service, allowing the node to join the cluster and begin handling data requests.</p>
 <h2 id="step-3-set-up-a-shared-file-storage">Step 3: Set up a shared file storage<a class="headerlink" href="#step-3-set-up-a-shared-file-storage" title="Permanent link">#</a></h2>
 <p>To set up shared file storage for TheHive in a clustered environment, several options are available. The primary goal is to provide a common storage space used by all nodes.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">NFS</label><label for="__tabbed_1_2">S3-compatible object storage</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">NFS</label><label for="__tabbed_7_2">S3-compatible object storage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Using NFS is one of the simplest methods to implement shared file storage. By configuring a single NFS endpoint, all nodes in the cluster can access and share files seamlessly.</p>
@@ -19726,7 +19913,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>To learn about how to configure SSL for Cassandra and Elasticsearch, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
 <h4 id="configure-file-storage">Configure file storage<a class="headerlink" href="#configure-file-storage" title="Permanent link">#</a></h4>
 <p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. <a href="../../../resources/security/#database-and-storage">All files are stored in their original form as plaintext</a>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">NFS</label><label for="__tabbed_2_2">S3-compatible object storage</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">NFS</label><label for="__tabbed_8_2">S3-compatible object storage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>All nodes should have access to the same file storage. So, ideally, all TheHive nodes should have a similar NFS mount point. </p>
@@ -19794,6 +19981,74 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 </div>
 </div>
 </div>
+</div>
+<h4 id="configure-jvm-options-for-thehive">Configure JVM options for TheHive<a class="headerlink" href="#configure-jvm-options-for-thehive" title="Permanent link">#</a></h4>
+<p>The Java virtual machine (JVM) is what runs TheHive. The JVM options control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
+<p>Open the <code>/etc/default/thehive</code> file using a text editor, uncomment the <code>JAVA_OPTS</code> variable, and set the JVM options.</p>
+<div class="admonition tip">
+<p class="admonition-title">Heap size guidelines for TheHive</p>
+<p>Heap allocation must not exceed 60% of the available RAM. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx&lt;heap_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=&lt;metaspace_size&gt;</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=&lt;code_cache_size&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;heap_size&gt;</code> with the desired heap size.</p>
+<div class="admonition tip">
+<p class="admonition-title">Set initial and maximum heap to the same value</p>
+<p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
+</div>
+<p>Replace <code>&lt;metaspace_size&gt;</code> with the desired Metaspace limit.</p>
+<p>Replace <code>&lt;code_cache_size&gt;</code> with the desired code cache limit.</p>
+<p>Repeat this step on each node.</p>
+<div class="admonition tip">
+<p class="admonition-title">Recommended TheHive values when all services share the same host</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">Without Cortex</label><label for="__tabbed_9_2">With Cortex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">16 GB RAM</label><label for="__tabbed_10_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx3000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms7250m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx7250m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabbed-block">
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">16 GB RAM</label><label for="__tabbed_11_2">32 GB RAM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx2000m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-Xmx5400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:MaxMetaspaceSize=400m</span>
+<span class="l l-Scalar l-Scalar-Plain">-XX:ReservedCodeCacheSize=400m</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
 </div>
 <h4 id="optional-configure-the-secret-key-for-the-play-framework">Optional: Configure the secret key for the Play Framework<a class="headerlink" href="#optional-configure-the-secret-key-for-the-play-framework" title="Permanent link">#</a></h4>
 <p>TheHive uses a secret key to sign session cookies and ensure secure user authentication.</p>
@@ -19928,7 +20183,8 @@ sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span cl
 <li><a href="../../operations/backup-restore/backup/cold-backup/physical-server/">Perform a Cold Backup on a Physical Server</a></li>
 <li><a href="../../operations/backup-restore/backup/cold-backup/virtual-server/">Perform a Cold Backup on a Virtual Server</a></li>
 <li><a href="../../operations/monitoring/">Monitoring</a></li>
-<li><a href="../../operations/troubleshooting/">Troubleshooting</a></li>
+<li><a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a></li>
+<li><a href="../../operations/performance/">Optimize Performance</a></li>
 </ul>
 
 

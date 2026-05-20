@@ -2595,6 +2595,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../operations/shorten-elasticsearch-refresh-interval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index Refresh Interval
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/tune-jvm-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JVM Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../operations/troubleshooting/" class="md-nav__link">
         
   
@@ -2602,7 +2686,7 @@
   <span class="md-ellipsis">
     
   
-    Troubleshooting Guide
+    Troubleshooting
   
 
     
@@ -2630,7 +2714,7 @@
   <span class="md-ellipsis">
     
   
-    Set Up Monitoring
+    Monitoring
   
 
     
@@ -19238,13 +19322,8 @@
 </div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Elasticsearch heap size configuration</p>
-<p>Elasticsearch requires explicit <a href="../installation-guide-linux-standalone-server/#configure-the-etcelasticsearchjvmoptionsdjvmoptions-file">heap size configuration in the <code>jvm.options</code> file</a>. Heap allocation <a href="https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection" target="_blank">must not exceed 50% of the total system RAM</a>.</p>
-<p>On a 12 GB RAM system, for example:</p>
-<div class="highlight"><pre><span></span><code>-Xms6g
--Xmx6g
-</code></pre></div>
-<p>Undefined heap settings may cause memory contention or out-of-memory errors.</p>
+<p class="admonition-title">Heap size guidelines</p>
+<p>TheHive, Cassandra, and Elasticsearch each run on the JVM and require explicit heap size configuration in production environments. Especially when all three services run on the same host, their combined heap allocation competes for available RAM. See <a href="../../operations/tune-jvm-memory/">Tune JVM Memory</a> for recommended values per service. Undefined heap settings may cause memory contention or out-of-memory errors.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Cluster deployments</p>
