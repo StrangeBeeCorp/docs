@@ -100,3 +100,5 @@ mkdocs gh-deploy --remote-branch gh-pages
 :bulb: Please also note that each PR is temporary deployed to `docs.strangebee.com/pr-preview/pr-${PR_ID}/`.
 This environment is automatically created and dropped when the PR is closed or
 merged!
+
+:warning: some PR preview deployments seem buggy :grimacing:
