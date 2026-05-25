@@ -19334,6 +19334,7 @@
 <li>HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.</li>
 </ul>
 <h2 id="570-april-9-2026">5.7.0 - April 9, 2026<a class="headerlink" href="#570-april-9-2026" title="Permanent link">#</a></h2>
+<p>Last update: May 25, 2026</p>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
 <h4 id="case-insensitive-observable-management">Case-insensitive observable management<a class="headerlink" href="#case-insensitive-observable-management" title="Permanent link">#</a></h4>
 <p>Observable types can now <a href="../../administration/observable-types/set-an-observable-type-case-insensitive/">be configured as case-insensitive</a>. When enabled, new observables of these types are automatically normalized to lower case. Existing observables aren't affected.</p>
@@ -19365,6 +19366,10 @@
 <li>Fixed an issue where pages and comments could be deleted after case removal.</li>
 <li>Prevented data loss in the connector creation form (MISP and Cortex) after prolonged inactivity.</li>
 <li>Updated the behavior of the Invoke function, Invoke function on an object, and Run an alert feeder endpoints to return errors from the underlying function as HTTP 500 responses.</li>
+</ul>
+<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.</li>
 </ul>
 
 
