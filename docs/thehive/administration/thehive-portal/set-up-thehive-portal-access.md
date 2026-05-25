@@ -38,8 +38,8 @@ Now create accounts for external stakeholders who need portal access.
 !!! note "Existing user accounts"
     You can't change user account types after creation. Converting a Normal user to an external user requires [deleting the existing account](../../user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md) and recreating it with the External type.
 
-!!! info "Not counted toward license"
-    You can assign external profiles to as many user accounts as needed. They don't consume license seats.
+!!! info "Unlimited"
+    You can assign external profiles to as many user accounts as needed. They consume license seats but are unlimited.
 
 Follow the instructions in [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md), selecting **External** as the account type.
 
