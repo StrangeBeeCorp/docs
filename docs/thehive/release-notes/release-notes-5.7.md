@@ -53,6 +53,8 @@ Last update: May 12, 2026
 
 ## 5.7.0 - April 9, 2026
 
+Last update: May 25, 2026
+
 ### New features
 
 #### Case-insensitive observable management
@@ -108,3 +110,7 @@ A direct link to the documentation has been added to the help menu for quicker a
 * Fixed an issue where pages and comments could be deleted after case removal.
 * Prevented data loss in the connector creation form (MISP and Cortex) after prolonged inactivity.
 * Updated the behavior of the Invoke function, Invoke function on an object, and Run an alert feeder endpoints to return errors from the underlying function as HTTP 500 responses.
+
+### Security
+
+* Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.

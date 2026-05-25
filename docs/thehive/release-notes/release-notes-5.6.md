@@ -22,6 +22,8 @@ Last update: May 6, 2026
 
 ## 5.6.2 - March 17, 2026
 
+Last update: May 25, 2026
+
 ### Fixes
 
 * Cases: Creating a restricted or external case from scratch now correctly checks user permissions and the allowed user list before the case is created.
@@ -33,7 +35,7 @@ Last update: May 6, 2026
 
 ### Vulnerabilities
 
-* Images: Restricted accepted image MIME types to PNG, JPG, and JPEG.
+* Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.
 
 ### Improvements
 
