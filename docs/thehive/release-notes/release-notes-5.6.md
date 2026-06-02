@@ -5,6 +5,26 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
+## 5.6.4 - June 2, 2026
+
+### Fixes
+
+#### Performance
+
+* Improved API responsiveness under load by running heavy queries separately from the main request pipeline, so endpoints stay available even during long-running queries.
+* Optimized internal query execution to speed up case and observable searches that combine multiple filter conditions.
+* Added a configuration option to turn off the legacy dashboard aggregation engine, which could become resource intensive on large datasets.
+
+#### Dashboards
+
+* Corrected dashboard aggregations to handle nested custom fields correctly.
+
+### Security
+
+* API: Added HTTP security headers to server responses.
+* Case report: Sanitized HTML content in case reports to prevent cross-site scripting (XSS).
+* Dependencies: Patched several CVEs reported in third-party libraries.
+
 ## 5.6.3 - May 5, 2026
 
 Last update: May 6, 2026
