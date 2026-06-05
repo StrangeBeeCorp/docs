@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v5.7.2
+  version: v5.7.3
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -22986,6 +22986,104 @@ paths:
       - name: TheHive
       x-TheHive-permissions:
       - manageAnalyse
+  /api/v1/connector/cortex/job/_bulk:
+    post:
+      tags:
+      - Cortex
+      operationId: Create Cortex bulk jobs
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputJobBulk'
+        required: true
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OutputJob'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - Api Key: []
+      - Basic: []
+      - Session: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageAnalyse
   /api/v1/connector/cortex/job/{jobId}:
     get:
       tags:
@@ -30473,7 +30571,7 @@ components:
           minLength: 1
         externalLink:
           type: string
-          maxLength: 512
+          maxLength: 4096
           minLength: 1
         title:
           type: string
@@ -31734,6 +31832,14 @@ components:
           type: string
         parameters:
           $ref: '#/components/schemas/JsObject'
+    InputJobBulk:
+      title: InputJobBulk
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InputJob'
     InputLicense:
       title: InputLicense
       type: object
@@ -32246,7 +32352,7 @@ components:
           minLength: 1
         externalLink:
           type: string
-          maxLength: 512
+          maxLength: 4096
           minLength: 1
         title:
           type: string
@@ -32420,7 +32526,7 @@ components:
           minLength: 1
         externalLink:
           type: string
-          maxLength: 512
+          maxLength: 4096
           minLength: 1
         title:
           type: string

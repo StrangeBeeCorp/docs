@@ -5,8 +5,50 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
-!!! danger "Skip directly to version 5.7.2"
-    Version 5.7.0 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.2 instead.
+!!! danger "Skip directly to version 5.7.3"
+    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.3 instead.
+
+## 5.7.3 - June 4, 2026
+
+### Improvements
+
+* Authentication: Added informational logs to the LDAP synchronization process, covering sync start and end, search parameters, and per-user group and profile mappings.
+
+### Fixes
+
+#### Cases
+
+* Resolved an issue where deleting a case left some attachments behind in storage.
+* Corrected validation of custom field options to reject invalid configurations.
+
+#### Alerts
+
+* Removed an unsupported sort by observable count from the linked alerts tab of a case, which caused the list to render empty.
+
+#### Tasks
+
+* Repaired attachment download links in task logs, which returned a 404 since version 5.7.0.
+
+#### Dashboards
+
+* Corrected the legend on time-based charts to display the full property name instead of an internal identifier.
+* Addressed broken aggregations on dashboard widgets that used nested properties.
+* Turned off the legacy dashboard.
+
+#### Search
+
+* Changed tag suggestions to match by prefix instead of substring.
+* Resolved a Global Search issue where re-running the same query after navigating away required a manual refresh.
+
+#### Performance
+
+* Improved query execution by reordering filter steps and removing an unnecessary barrier.
+
+### Security
+
+* API: Added HTTP security headers to server responses.
+* Case report: Sanitized HTML content in case reports to prevent cross-site scripting (XSS).
+* Dependencies: Patched several CVEs reported in third-party libraries.
 
 ## 5.7.2 - April 30, 2026
 
