@@ -8,7 +8,7 @@
 !!! danger "Skip directly to version 5.7.3"
     Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.3 instead.
 
-## 5.7.3 - June 4, 2026
+## 5.7.3 - June 5, 2026
 
 ### Improvements
 
