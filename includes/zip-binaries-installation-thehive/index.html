@@ -19140,9 +19140,9 @@
 <ul>
 <li>
 <p>Using <code>wget</code></p>
-<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.2-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.7/zip/thehive-5.7.2-1.zip
-wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.2-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.7/sha256/thehive-5.7.2-1.zip.sha256
-wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.2-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.7/asc/thehive-5.7.2-1.zip.asc
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.3-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.7/zip/thehive-5.7.3-1.zip
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.3-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.7/sha256/thehive-5.7.3-1.zip.sha256
+wget<span class="w"> </span>-O<span class="w"> </span>/opt/thehive-5.7.3-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.7/asc/thehive-5.7.3-1.zip.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
@@ -19160,9 +19160,9 @@ wget<span class="w"> </span>-O<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 </li>
 <li>
 <p>Using <code>curl</code></p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.2-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.7/zip/thehive-5.7.2-1.zip
-curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.2-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.7/sha256/thehive-5.7.2-1.zip.sha256
-curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.2-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.7/asc/thehive-5.7.2-1.zip.asc
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.3-1.zip<span class="w"> </span>https://thehive.download.strangebee.com/5.7/zip/thehive-5.7.3-1.zip
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.3-1.zip.sha256<span class="w"> </span>https://thehive.download.strangebee.com/5.7/sha256/thehive-5.7.3-1.zip.sha256
+curl<span class="w"> </span>-o<span class="w"> </span>/opt/thehive-5.7.3-1.zip.asc<span class="w"> </span>https://thehive.download.strangebee.com/5.7/asc/thehive-5.7.3-1.zip.asc
 </code></pre></div>
 <p>To download a specific version instead of the latest, use the following format:</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip<span class="w"> </span>thehive.download.strangebee.com/&lt;major.minor_version&gt;/zip/&lt;file_name&gt;.zip
@@ -19186,10 +19186,10 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <li>
 <p>Check the SHA256 checksum by comparing it with the provided value.</p>
 <p>a. Generate the SHA256 checksum of your downloaded package.</p>
-<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/opt/thehive-5.7.2-1.zip
+<div class="highlight"><pre><span></span><code>sha256sum<span class="w"> </span>/opt/thehive-5.7.3-1.zip
 </code></pre></div>
 <p>b. Compare the output hash with the official SHA256 value listed in the .sha256 file.</p>
-<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/opt/thehive-5.7.2-1.zip.sha256
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>/opt/thehive-5.7.3-1.zip.sha256
 </code></pre></div>
 <p>c. If both hashes match exactly, the file integrity is verified. If not, the file may be corrupted or tampered with—don't proceed with unzipping or installation, and contact the <a href="mailto:security@strangebee.com">StrangeBee Security team</a>.</p>
 </li>
@@ -19204,7 +19204,7 @@ curl<span class="w"> </span>-o<span class="w"> </span>/opt/&lt;file_name&gt;.zip
 <div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--import<span class="w"> </span>/opt/strangebee.gpg
 </code></pre></div>
 <p>c. Verify the downloaded package signature.</p>
-<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/opt/thehive-5.7.2-1.zip.asc<span class="w"> </span>/opt/thehive-5.7.2-1.zip
+<div class="highlight"><pre><span></span><code>gpg<span class="w"> </span>--verify<span class="w"> </span>/opt/thehive-5.7.3-1.zip.asc<span class="w"> </span>/opt/thehive-5.7.3-1.zip
 </code></pre></div>
 <p>d. Expected result.</p>
 <p>You should see output similar to:</p>
@@ -19227,12 +19227,12 @@ This warning is expected. It means the package is signed with the official TheHi
 <div class="admonition info">
 <p class="admonition-title">Unzip paths</p>
 <ul>
-<li>Replace <code>/opt/thehive-5.7.2-1.zip</code> with the full path to the ZIP file you downloaded.</li>
+<li>Replace <code>/opt/thehive-5.7.3-1.zip</code> with the full path to the ZIP file you downloaded.</li>
 <li>Replace <code>/opt/</code> after <code>-d</code> with the directory where you want to extract the contents of the archive.</li>
 </ul>
 </div>
-<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/opt/thehive-5.7.2-1.zip<span class="w"> </span>-d<span class="w"> </span>/opt/
-sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/thehive-5.7.2-1<span class="w"> </span>/opt/thehive
+<div class="highlight"><pre><span></span><code>unzip<span class="w"> </span>/opt/thehive-5.7.3-1.zip<span class="w"> </span>-d<span class="w"> </span>/opt/
+sudo<span class="w"> </span>ln<span class="w"> </span>-s<span class="w"> </span>/opt/thehive-5.7.3-1<span class="w"> </span>/opt/thehive
 </code></pre></div>
 </li>
 <li>

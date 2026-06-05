@@ -16962,6 +16962,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#573-june-4-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.3 - June 4, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#572-april-30-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -19292,18 +19303,58 @@
 <p>Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.</p>
 </div>
 <div class="admonition danger">
-<p class="admonition-title">Skip directly to version 5.7.2</p>
-<p>Version 5.7.0 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.2 instead.</p>
+<p class="admonition-title">Skip directly to version 5.7.3</p>
+<p>Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.3 instead.</p>
 </div>
-<h2 id="572-april-30-2026">5.7.2 - April 30, 2026<a class="headerlink" href="#572-april-30-2026" title="Permanent link">#</a></h2>
+<h2 id="573-june-4-2026">5.7.3 - June 4, 2026<a class="headerlink" href="#573-june-4-2026" title="Permanent link">#</a></h2>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<ul>
+<li>Authentication: Added informational logs to the LDAP synchronization process, covering sync start and end, search parameters, and per-user group and profile mappings.</li>
+</ul>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h4 id="cases">Cases<a class="headerlink" href="#cases" title="Permanent link">#</a></h4>
+<ul>
+<li>Resolved an issue where deleting a case left some attachments behind in storage.</li>
+<li>Corrected validation of custom field options to reject invalid configurations.</li>
+</ul>
+<h4 id="alerts">Alerts<a class="headerlink" href="#alerts" title="Permanent link">#</a></h4>
+<ul>
+<li>Removed an unsupported sort by observable count from the linked alerts tab of a case, which caused the list to render empty.</li>
+</ul>
+<h4 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">#</a></h4>
+<ul>
+<li>Repaired attachment download links in task logs, which returned a 404 since version 5.7.0.</li>
+</ul>
+<h4 id="dashboards">Dashboards<a class="headerlink" href="#dashboards" title="Permanent link">#</a></h4>
+<ul>
+<li>Corrected the legend on time-based charts to display the full property name instead of an internal identifier.</li>
+<li>Addressed broken aggregations on dashboard widgets that used nested properties.</li>
+<li>Turned off the legacy dashboard.</li>
+</ul>
+<h4 id="search">Search<a class="headerlink" href="#search" title="Permanent link">#</a></h4>
+<ul>
+<li>Changed tag suggestions to match by prefix instead of substring.</li>
+<li>Resolved a Global Search issue where re-running the same query after navigating away required a manual refresh.</li>
+</ul>
+<h4 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">#</a></h4>
+<ul>
+<li>Improved query execution by reordering filter steps and removing an unnecessary barrier.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<ul>
+<li>API: Added HTTP security headers to server responses.</li>
+<li>Case report: Sanitized HTML content in case reports to prevent cross-site scripting (XSS).</li>
+<li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
+</ul>
+<h2 id="572-april-30-2026">5.7.2 - April 30, 2026<a class="headerlink" href="#572-april-30-2026" title="Permanent link">#</a></h2>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Analyzers reports: Resolved an error that prevented Cortex jobs from being processed correctly.</li>
 </ul>
 <h2 id="571-april-20-2026">5.7.1 - April 20, 2026<a class="headerlink" href="#571-april-20-2026" title="Permanent link">#</a></h2>
 <p>Last update: May 12, 2026</p>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
-<h4 id="cases">Cases<a class="headerlink" href="#cases" title="Permanent link">#</a></h4>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h4 id="cases_1">Cases<a class="headerlink" href="#cases_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Fixed an issue where tags from the case template were automatically merged into the case when creating it via the API, even when the request included an explicit tag list.</li>
 <li>Corrected a caching issue that caused outdated tag values to continue appearing in tag suggestions after an update.</li>
@@ -19333,7 +19384,7 @@
 <ul>
 <li>Log entries now correctly include user and request context when Kamon monitoring is turned off.</li>
 </ul>
-<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
 <ul>
 <li>HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.</li>
 </ul>
@@ -19348,7 +19399,7 @@
 <p>Users can now <a href="../../user-guides/manage-user-settings/#customize-status-style">choose between two display styles for status labels</a> in their personal settings.</p>
 <h4 id="enforced-multifactor-authentication-mfa">Enforced multifactor authentication (MFA)<a class="headerlink" href="#enforced-multifactor-authentication-mfa" title="Permanent link">#</a></h4>
 <p>Administrators can now <a href="../../administration/authentication/configure-authentication/">enforce MFA for all users</a>. Users without MFA configured must set it up at their next login. This strengthens security and ensures consistent authentication policies.</p>
-<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
 <h4 id="beta-improved-browser-multi-tab-management">(Beta) Improved browser multi-tab management<a class="headerlink" href="#beta-improved-browser-multi-tab-management" title="Permanent link">#</a></h4>
 <p>Enhances multi-tab performance, allowing up to 10 tabs to be opened simultaneously. Tabs refresh quickly and reliably using SSE, with a single shared stream across all open tabs. This feature is available in beta and can be enabled by Administrators in the <strong>Platform management</strong> view, under the <strong>General settings</strong> tab.</p>
 <h4 id="oauth-20-support-for-alert-feeder">OAuth 2.0 support for Alert Feeder<a class="headerlink" href="#oauth-20-support-for-alert-feeder" title="Permanent link">#</a></h4>
@@ -19363,7 +19414,7 @@
 <p>The case merging interface has been redesigned for better usability. Recent cases are now highlighted, and search has been simplified to help users quickly find relevant cases.</p>
 <h4 id="direct-link-to-documentation">Direct link to documentation<a class="headerlink" href="#direct-link-to-documentation" title="Permanent link">#</a></h4>
 <p>A direct link to the documentation has been added to the help menu for quicker access.</p>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Improved QR code readability for multifactor authentication (MFA) in dark mode.</li>
 <li>Fixed a crash related to date format settings.</li>
@@ -19371,7 +19422,7 @@
 <li>Prevented data loss in the connector creation form (MISP and Cortex) after prolonged inactivity.</li>
 <li>Updated the behavior of the Invoke function, Invoke function on an object, and Run an alert feeder endpoints to return errors from the underlying function as HTTP 500 responses.</li>
 </ul>
-<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
+<h3 id="security_2">Security<a class="headerlink" href="#security_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.</li>
 </ul>
