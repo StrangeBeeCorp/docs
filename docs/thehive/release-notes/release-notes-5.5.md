@@ -5,6 +5,17 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.5.15 - June 16, 2026
+
+### Security
+
+* Case reports: Sanitized HTML content in case reports to prevent cross-site scripting (XSS), and introduced an informational banner in the HTML preview to indicate that JavaScript and certain inline CSS are disabled as part of the sanitization process.
+* API: Added HTTP security headers to server responses.
+* Attachments: HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.
+* Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.
+* XML parsing: Disabled the WebDAV module to prevent XML External Entity attacks.
+* Dependencies: Patched several CVEs reported in third-party libraries and bumped Bootstrap to version 5 to remove a known CVE.
+
 ## 5.5.14 - January 12, 2026
 
 ### Fixes
