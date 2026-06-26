@@ -27,9 +27,13 @@ To run Analyzers & Responders with Docker images, Cortex should be able to have 
         "https://catalogs.download.strangebee.com/latest/json/analyzers.json"
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
 
@@ -39,9 +43,13 @@ To run Analyzers & Responders with Docker images, Cortex should be able to have 
         "https://catalogs.download.strangebee.com/latest/json/responders.json"
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
     [..]
@@ -102,9 +110,13 @@ Next, you'll need to tell Cortex where to find the analyzers. Analyzers may be i
         "/opt/Cortex-Analyzers/responders",
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
 
@@ -114,9 +126,13 @@ Next, you'll need to tell Cortex where to find the analyzers. Analyzers may be i
         "/opt/Cortex-Analyzers/responders"
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
     [..]
@@ -154,9 +170,13 @@ Update `analyzer.urls` and `responders.urls` accordingly.
         "/opt/Custom-Analyzers/analyzers" 
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
 
@@ -167,9 +187,13 @@ Update `analyzer.urls` and `responders.urls` accordingly.
         "/opt/Custom-Analyzers/responders"
       ]
 
-      # Number of concurrent jobs - adjust to your server resources
-      thread-pool-executor {
-        fixed-pool-size = 20
+      fork-join-executor {
+        # Min number of threads available for analyze
+        parallelism-min = 2
+        # Parallelism (threads) ... ceil(available processors * factor)
+        parallelism-factor = 2.0
+        # Max number of threads available for analyze
+        parallelism-max = 4
       }
     }
     [..]

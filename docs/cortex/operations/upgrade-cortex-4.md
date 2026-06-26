@@ -1,10 +1,10 @@
-# Upgrade Cortex to Version 4.1
+# Upgrade Cortex to Version 4.0
 
-In this tutorial, you'll upgrade Cortex from version 3.1.x+ to 4.1.x.
+In this tutorial, you'll upgrade Cortex from version 3.1.x+ to 4.0.x.
 
 Because Cortex can't support multiple major versions of Elasticsearch simultaneously, this upgrade requires moving from Elasticsearch 7.x to 8.x.
 
-By the end, you'll have successfully upgraded both Elasticsearch to 8.x and Cortex to 4.1.x, with all services running and connected.
+By the end, you'll have successfully upgraded both Elasticsearch to 8.x and Cortex to 4.0.x, with all services running and connected.
 
 !!! danger "Shared Elasticsearch instance"
     If you share the same Elasticsearch instance between Cortex and TheHive, ensure that [your TheHive version also supports Elasticsearch 8.x](../../thehive/installation/software-requirements.md). If you're running TheHive 5.2.16 or earlier, [upgrade TheHive](../../thehive/installation/upgrade-from-5.x.md) at the same time as Cortex.
@@ -78,11 +78,11 @@ With compatibility verified, you're ready to upgrade Elasticsearch to version 8.
 
     You should see *version 8.x* in the response.
 
-## Step 6: Upgrade Cortex to version 4.1.x
+## Step 6: Upgrade Cortex to version 4.0.x
 
 With Elasticsearch 8.x running, you can now upgrade Cortex itself.
 
-Refer to the [installation guide](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to update Cortex to version 4.1.x.
+Refer to the [installation guide](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to update Cortex to version 4.0.x.
 
 ## Step 7: Restart Cortex and verify connectivity
 
@@ -100,7 +100,7 @@ You're now ready to bring Cortex back online and ensure everything connects prop
 
 4. Verify that both Cortex (and TheHive, if applicable) are functioning normally.
 
-You've successfully upgraded Cortex to version 4.1.x with Elasticsearch 8.x. Your system is now running the latest versions and ready for use.
+You've successfully upgraded Cortex to version 4.0.x with Elasticsearch 8.x. Your system is now running the latest versions and ready for use.
 
 <h2>Next steps</h2>
 
