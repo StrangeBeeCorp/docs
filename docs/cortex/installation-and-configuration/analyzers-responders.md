@@ -3,7 +3,7 @@
 ## Run with Docker
 
 !!! Tip "Ensure Cortex is authorized to run Docker"
-    To run docker images of Analyzers & Responders, Cortex should have permissions to use docker. 
+    To run Docker images of analyzers and responders, Cortex should have permissions to use Docker. 
 
     ```bash
     sudo usermod -G docker cortex
@@ -11,7 +11,7 @@
 
 ### Configure Cortex
 
-To run Analyzers & Responders with Docker images, Cortex should be able to have access to Internet:
+To run analyzers and responders with Docker images, Cortex should be able to have access to Internet:
 
 - To download public catalogs from the [catalogs official website](https://catalogs.download.strangebee.com){target=_blank}
 - To download Docker images from _hub.docker.com_ ([https://hub.docker.com/search?q=cortexneurons](https://hub.docker.com/search?q=cortexneurons){target=_blank})
@@ -27,14 +27,17 @@ To run Analyzers & Responders with Docker images, Cortex should be able to have 
         "https://catalogs.download.strangebee.com/latest/json/analyzers.json"
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
 
     responder {
@@ -43,14 +46,17 @@ To run Analyzers & Responders with Docker images, Cortex should be able to have 
         "https://catalogs.download.strangebee.com/latest/json/responders.json"
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
     [..]
     ```
@@ -110,14 +116,17 @@ Next, you'll need to tell Cortex where to find the analyzers. Analyzers may be i
         "/opt/Cortex-Analyzers/responders",
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
 
     responder {
@@ -126,14 +135,17 @@ Next, you'll need to tell Cortex where to find the analyzers. Analyzers may be i
         "/opt/Cortex-Analyzers/responders"
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
     [..]
     ```
@@ -170,14 +182,17 @@ Update `analyzer.urls` and `responders.urls` accordingly.
         "/opt/Custom-Analyzers/analyzers" 
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
 
     responder {
@@ -187,14 +202,17 @@ Update `analyzer.urls` and `responders.urls` accordingly.
         "/opt/Custom-Analyzers/responders"
       ]
 
-      fork-join-executor {
-        # Min number of threads available for analyze
-        parallelism-min = 2
-        # Parallelism (threads) ... ceil(available processors * factor)
-        parallelism-factor = 2.0
-        # Max number of threads available for analyze
-        parallelism-max = 4
+      # Number of concurrent jobs - adjust to your server resources
+      # Cortex 4.1+
+      thread-pool-executor {
+        fixed-pool-size = 20
       }
+      # Cortex < 4.1
+      # fork-join-executor {
+      #   parallelism-min = 2
+      #   parallelism-factor = 2.0
+      #   parallelism-max = 4
+      # }
     }
     [..]
     ```
