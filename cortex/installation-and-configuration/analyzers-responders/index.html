@@ -17866,7 +17866,7 @@
   <span class="md-ellipsis">
     
   
-    Upgrade to Cortex 4.0
+    Upgrade to Cortex 4.1
   
 
     
@@ -19286,12 +19286,12 @@
 <h2 id="run-with-docker">Run with Docker<a class="headerlink" href="#run-with-docker" title="Permanent link">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Ensure Cortex is authorized to run Docker</p>
-<p>To run docker images of Analyzers &amp; Responders, Cortex should have permissions to use docker. </p>
+<p>To run Docker images of analyzers and responders, Cortex should have permissions to use Docker. </p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>docker<span class="w"> </span>cortex
 </code></pre></div>
 </div>
 <h3 id="configure-cortex">Configure Cortex<a class="headerlink" href="#configure-cortex" title="Permanent link">#</a></h3>
-<p>To run Analyzers &amp; Responders with Docker images, Cortex should be able to have access to Internet:</p>
+<p>To run analyzers and responders with Docker images, Cortex should be able to have access to Internet:</p>
 <ul>
 <li>To download public catalogs from the <a href="https://catalogs.download.strangebee.com" target="_blank">catalogs official website</a></li>
 <li>To download Docker images from <em>hub.docker.com</em> (<a href="https://hub.docker.com/search?q=cortexneurons" target="_blank">https://hub.docker.com/search?q=cortexneurons</a>)</li>
@@ -19304,14 +19304,17 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/analyzers.json"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">responder {</span>
@@ -19320,14 +19323,17 @@
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"https://catalogs.download.strangebee.com/latest/json/responders.json"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="l l-Scalar l-Scalar-Plain">[..]</span>
 </code></pre></div>
@@ -19371,14 +19377,17 @@ for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip3 inst
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Cortex-Analyzers/responders",</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">responder {</span>
@@ -19387,14 +19396,17 @@ for I in $(find Cortex-Analyzers -name 'requirements.txt'); do sudo -H pip3 inst
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Cortex-Analyzers/responders"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="l l-Scalar l-Scalar-Plain">[..]</span>
 </code></pre></div>
@@ -19420,14 +19432,17 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Custom-Analyzers/analyzers"</span><span class="w"> </span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 
 <span class="l l-Scalar l-Scalar-Plain">responder {</span>
@@ -19437,14 +19452,17 @@ sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </sp
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"/opt/Custom-Analyzers/responders"</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
 
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">fork-join-executor {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Min number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-min = 2</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Parallelism (threads) ... ceil(available processors * factor)</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-factor = 2.0</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain"># Max number of threads available for analyze</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Number of concurrent jobs - adjust to your server resources</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex 4.1+</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">thread-pool-executor {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">fixed-pool-size = 20</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># Cortex &lt; 4.1</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># fork-join-executor {</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-min = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-factor = 2.0</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">#   parallelism-max = 4</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain"># }</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="l l-Scalar l-Scalar-Plain">[..]</span>
 </code></pre></div>
