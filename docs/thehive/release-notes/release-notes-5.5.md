@@ -5,6 +5,16 @@
 
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
+## 5.5.16 - June 30, 2026
+
+### Fixes
+
+* Cases: Resolved an issue where comments, pages, and procedures linked to a case weren't removed when the case was deleted.
+
+### Security
+
+* Dependencies: Patched CVEs in log4j and OpenTelemetry libraries.
+
 ## 5.5.15 - June 16, 2026
 
 ### Security
