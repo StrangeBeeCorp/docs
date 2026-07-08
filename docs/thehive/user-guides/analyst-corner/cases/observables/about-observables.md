@@ -43,6 +43,16 @@ Cases and alerts are considered similar if all the following conditions are met:
 * The related cases and alerts belong to the same organization or to [linked organizations](../../../../administration/organizations/about-organizations-sharing-rules.md).
 * Alerts don't have the status *Imported*. Alerts that have been merged into a case are no longer included in similarity checks—but the case is.
 
+### Related observables indicator
+
+In the observables list, :fontawesome-regular-eye: shows whether an observable's value also appears in other cases or alerts:
+
+* Grey: The value hasn't been seen elsewhere.
+* Red: The value has been seen elsewhere, and at least one of those other occurrences is marked as an IOC.
+* Blue: The value has been seen elsewhere, but none of those other occurrences are marked as an IOC.
+
+Hovering over the icon shows the number of related observables.
+
 ## Permissions
 
 Only users with the `manageObservable` permission can manage observables in TheHive.
