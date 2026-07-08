@@ -30,7 +30,10 @@ Create a [status](about-statuses.md) for cases and alerts in TheHive to add cust
 
     **- Stage \***
 
-    The stage linked to the status. TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them. After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+    The stage linked to the status. TheHive includes four predefined stages—*New*, *Imported*, *In progress*, and *Closed*. These stages are hard-coded and you can't modify, delete, or extend them.
+
+    !!! note "Stage can't be changed"
+        After you link a stage to a status, you can't change it. To assign a different stage, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
 
     !!! info "Imported stage"
         The *Imported* stage isn't available for manual selection in the interface. It's linked to an *Imported* status that's automatically applied in the following situations:
@@ -40,7 +43,10 @@ Create a [status](about-statuses.md) for cases and alerts in TheHive to add cust
 
     **- Value \***
 
-    The name of the status. After you create a status, you can't change its name. To use a different name, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+    The name of the status.
+
+    !!! note "Name can't be changed"
+        After you create a status, you can't change its name. To use a different name, you must [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
 
     **- Color**
 

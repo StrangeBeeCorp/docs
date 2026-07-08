@@ -24,6 +24,9 @@ Each status is associated with:
 
 * A color: The color helps users easily recognize the status.
 
+!!! note "Stage and name can't be changed"
+    After creation, you can't change a status's stage or name. To use a different stage or name, [delete the status](delete-a-status.md) and [create a new one](create-a-status.md).
+
 ## Behavior
 
 !!! info "Alert status restrictions"
