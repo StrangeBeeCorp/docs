@@ -5,6 +5,20 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
+## 5.6.5 - July 8, 2026
+
+### Fixes
+
+* Cases: Resolved an issue where comments, pages, and procedures weren't removed when deleting a case.
+* Search: Corrected observable data search so the `like` operator now matches substrings correctly.
+* Tag autocompletion: Changed tag suggestions to match by prefix instead of substring.
+
+### Security
+
+* Case report: Added a banner to report previews noting that HTML is sanitized to prevent cross-site scripting (XSS).
+* API: Extended the CSP security header to cover case reports and attachment downloads.
+* Dependencies: Patched several CVEs reported in a third-party library.
+
 ## 5.6.4 - June 2, 2026
 
 ### Fixes
