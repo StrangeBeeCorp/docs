@@ -19235,8 +19235,8 @@
 <span class="w">  </span><span class="c1">#}</span>
 
 <span class="w">  </span><span class="c1">## Authentication configuration</span>
-<span class="w">  </span><span class="c1">#user = ""</span>
-<span class="w">  </span><span class="c1">#password = ""</span>
+<span class="w">  </span><span class="c1">#user = "cortex"</span>
+<span class="w">  </span><span class="c1">#password = "&lt;cortex_user_password&gt;"</span>
 
 <span class="w">  </span><span class="c1">## SSL configuration</span>
 <span class="w">  </span><span class="c1">#keyStore {</span>
@@ -19251,6 +19251,10 @@
 <span class="w">  </span><span class="c1">#}</span>
 <span class="err">}</span>
 </code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Required Elasticsearch privileges</p>
+<p>If Elasticsearch authentication is enabled, uncomment <code>user</code> and <code>password</code>. The Elasticsearch user must have specific privileges to work with Cortex. See the detailed configuration steps in the <a href="../step-by-step-guide/#set-a-user-with-the-right-permissions">step-by-step guide</a>.</p>
 </div>
 
 

@@ -19508,11 +19508,162 @@ type=rpm-md
 -Xmx4g
 </code></pre></div>
 </div>
-<p>If authentication is enabled, configure the credentials service after starting Elasticsearch, using the instructions in <a href="../../../thehive/installation/installation-guide-linux-standalone-server/#step-44-permissions">Set a user with the right permissions</a>.</p>
+<h3 id="start-the-elasticsearch-service">Start the Elasticsearch service<a class="headerlink" href="#start-the-elasticsearch-service" title="Permanent link">#</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">DEB</label><label for="__tabbed_4_2">RPM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Check whether the Elasticsearch service started automatically before configuring it.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>If it's running, stop it and remove existing data.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/elasticsearch/*
+</code></pre></div>
+</li>
+<li>
+<p>Start the Elasticsearch service.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
+</code></pre></div>
+</li>
+<li>
+<p>Enable the Elasticsearch service to restart automatically after a system reboot.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elasticsearch
+</code></pre></div>
+</li>
+<li>
+<p>Verify that Elasticsearch is running.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>If Elasticsearch is running, you should see an active status in green.</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Check whether the Elasticsearch service started automatically before configuring it.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>If it's running, stop it and remove existing data.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>elasticsearch
+sudo<span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/elasticsearch/*
+</code></pre></div>
+</li>
+<li>
+<p>Start the Elasticsearch service by running the following commands:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
+</code></pre></div>
+</li>
+<li>
+<p>Enable the Elasticsearch service to restart automatically after a system reboot.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elasticsearch
+</code></pre></div>
+</li>
+<li>
+<p>Verify that Elasticsearch is running.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>elasticsearch
+</code></pre></div>
+<p>If Elasticsearch is running, you should see an active status in green.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<h3 id="set-a-user-with-the-right-permissions">Set a user with the right permissions<a class="headerlink" href="#set-a-user-with-the-right-permissions" title="Permanent link">#</a></h3>
+<p>If you enabled X-Pack security in the <a href="#configuration">Configuration</a> step, and Elasticsearch is running, set up a user with the right permissions for Cortex.</p>
+<ol>
+<li>
+<p>Create a <code>cortex</code> user.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-users<span class="w"> </span>useradd<span class="w"> </span>cortex<span class="w"> </span>-p<span class="w"> </span>&lt;cortex_user_password&gt;<span class="w"> </span>-r<span class="w"> </span>superuser
+</code></pre></div>
+<p>Replace <code>&lt;cortex_user_password&gt;</code> with a secure password you choose for your Cortex user.</p>
+<div class="admonition tip">
+<p class="admonition-title">Note this password</p>
+<p>Keep this password secure. You will need to enter it later in the Cortex configuration file so the application can connect to Elasticsearch.</p>
+</div>
+</li>
+<li>
+<p>Optional: Set a password for the <code>elastic</code> user.</p>
+<ul>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords" target="_blank">For Elasticsearch 7.x</a>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-setup-passwords<span class="w"> </span>interactive
+</code></pre></div>
+<ul>
+<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">For Elasticsearch 8.0</a>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password
+</code></pre></div>
+<p>Skip this step if the password is already set.</p>
+</li>
+<li>
+<p>Create or update a role with the privileges needed for Cortex.</p>
+<div class="admonition warning">
+<p class="admonition-title">Elasticsearch permission requirements</p>
+<p>The <code>cortex_role</code> role needs the <code>create_index</code>, <code>write</code>, and <code>read</code> indices privileges on <code>cortex_*</code> indices:</p>
+<ul>
+<li>Creating an index and its mapping at initialization requires the <code>create_index</code> privilege.</li>
+<li>Creating and deleting documents in the index requires the <code>write</code> privilege.</li>
+<li>Searching documents in the index requires the <code>read</code> privilege.</li>
+</ul>
+<p>If you're using an existing Elasticsearch instance, confirm it can grant these privileges before connecting it to Cortex.</p>
+</div>
+<ul>
+<li>Create a role:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/cortex_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<span class="s1">{</span>
+<span class="s1">  "indices": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "names": ["cortex_*"],</span>
+<span class="s1">      "privileges": ["create_index", "write", "read"]</span>
+<span class="s1">    }</span>
+<span class="s1">  ]</span>
+<span class="s1">}'</span>
+</code></pre></div>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
+<p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
+<ul>
+<li>Update a role:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<span class="s1">{</span>
+<span class="s1">  "indices": [</span>
+<span class="s1">    {</span>
+<span class="s1">      "names": ["cortex_*"],</span>
+<span class="s1">      "privileges": ["create_index", "write", "read"]</span>
+<span class="s1">    }</span>
+<span class="s1">  ]</span>
+<span class="s1">}'</span>
+</code></pre></div>
+<p>Replace <code>&lt;role&gt;</code> with the actual role name you want to update.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
+</li>
+<li>
+<p>Assign the role to the user you'll use for Cortex.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/cortex"</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "password" : "&lt;cortex_user_password&gt;",</span>
+<span class="s1">    "roles" : ["cortex_role"]</span>
+<span class="s1">}'</span>
+</code></pre></div>
+<p>Replace <code>&lt;cortex_user_password&gt;</code> with the password you set for the <code>cortex</code> user.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
+<p>Replace <code>cortex_role</code> with actual role name if different.</p>
+<p>If successful, the command should return: <code>{"created":true}</code>.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user" target="_blank">the official Elasticsearch API documentation for updating users</a>.</p>
+</li>
+</ol>
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">#</a></h2>
 <p>If using Docker images of analyzers and responders, Docker engine is required on the operating system:</p>
 <div class="admonition example">
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">DEB</label><label for="__tabbed_4_2">RPM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">DEB</label><label for="__tabbed_5_2">RPM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code>.<span class="w"> </span>/etc/os-release
@@ -19545,7 +19696,7 @@ sudo<span class="w"> </span>dnf<span class="w"> </span>install<span class="w"> <
 <h3 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">#</a></h3>
 <p>Cortex packages are distributed as RPM and DEB files available for direct download via tools like <code>wget</code> or <code>curl</code>, with installation performed manually.</p>
 <p>All packages are hosted on an HTTPS-secured website and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">DEB</label><label for="__tabbed_5_2">RPM</label><label for="__tabbed_5_3">ZIP binary packages</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">DEB</label><label for="__tabbed_6_2">RPM</label><label for="__tabbed_6_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition tip">
