@@ -20291,6 +20291,16 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </li>
 <li>
 <p>Create or update a role with the privileges needed for TheHive.</p>
+<div class="admonition warning">
+<p class="admonition-title">Elasticsearch permission requirements</p>
+<p>The <code>thehive</code> role needs the <code>manage</code> cluster privilege and the <code>all</code> indices privilege on <code>thehive*</code> indices:</p>
+<ul>
+<li>A cluster health check at every startup requires the <code>monitor</code> cluster privilege, already covered by <code>manage</code>.</li>
+<li>Stored script management via <code>/_scripts/&lt;index&gt;-add</code> and <code>/_scripts/&lt;index&gt;-del</code> at every startup requires <code>manage</code>. Elasticsearch provides no narrower privilege for this operation.</li>
+<li>Index creation, updates, and occasional removal and re-creation of <code>thehive*</code> indices require the <code>all</code> indices privilege.</li>
+</ul>
+<p>If you're using an existing Elasticsearch instance, confirm it can grant these privileges before connecting it to TheHive.</p>
+</div>
 <ul>
 <li>Create a role:</li>
 </ul>
