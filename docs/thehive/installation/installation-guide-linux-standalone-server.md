@@ -804,6 +804,16 @@ The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options contr
 
 3. Create or update a role with the privileges needed for TheHive.
 
+    !!! warning "Elasticsearch permission requirements"
+
+        The `thehive` role needs the `manage` cluster privilege and the `all` indices privilege on `thehive*` indices:
+
+        * A cluster health check at every startup requires the `monitor` cluster privilege, already covered by `manage`.
+        * Stored script management via `/_scripts/<index>-add` and `/_scripts/<index>-del` at every startup requires `manage`. Elasticsearch provides no narrower privilege for this operation.
+        * Index creation, updates, and occasional removal and re-creation of `thehive*` indices require the `all` indices privilege.
+
+        If you're using an existing Elasticsearch instance, confirm it can grant these privileges before connecting it to TheHive.
+
     * Create a role:
 
     ```bash
