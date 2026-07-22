@@ -26,8 +26,8 @@
       #}
 
       ## Authentication configuration
-      #user = ""
-      #password = ""
+      #user = "cortex"
+      #password = "<cortex_user_password>"
 
       ## SSL configuration
       #keyStore {
@@ -42,3 +42,6 @@
       #}
     }
     ```
+
+!!! note "Required Elasticsearch privileges"
+    If Elasticsearch authentication is enabled, uncomment `user` and `password`. The Elasticsearch user must have specific privileges to work with Cortex. See the detailed configuration steps in the [step-by-step guide](step-by-step-guide.md#set-a-user-with-the-right-permissions).
