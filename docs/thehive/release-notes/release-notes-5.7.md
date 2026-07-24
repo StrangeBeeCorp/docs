@@ -5,8 +5,25 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
-!!! danger "Skip directly to version 5.7.3"
-    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.3 instead.
+!!! danger "Skip directly to version 5.7.4"
+    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.4 instead.
+
+## 5.7.4 - July 23, 2026
+
+### Fixes
+
+* Cases: Restored similar case and alert suggestions, which had stopped appearing due to an incompatible search query.
+* Observable search: Corrected observable data search so the `like` operator now matches substrings correctly.
+* Tasks: Clarified the tooltip for a task's handling time, which now describes the duration from the last move to "In progress" through completion.
+* Users and organizations: Resolved an issue preventing roles from being resolved when their profile, user, or organization had no label.
+* Dashboards: Corrected radar widgets so case status and stage values display the correct label instead of appearing blank, and corrected dashboard widgets so sub-aggregation filters combined with custom field aggregations return accurate results.
+* Integrations: Prevented MISP file upload requests from following redirects.
+
+### Security
+
+* Case report: Added a banner to report previews noting that HTML is sanitized to prevent cross-site scripting (XSS).
+* API: Extended the CSP security header to cover case reports and attachment downloads.
+* Dependencies: Patched several CVEs reported in third-party libraries.
 
 ## 5.7.3 - June 4, 2026
 
