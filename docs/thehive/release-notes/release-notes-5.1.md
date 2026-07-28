@@ -8,6 +8,11 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.0
 
+!!! warning "Unmaintained version"
+    Version 5.1 is no longer maintained and won't receive further fixes, including security fixes. Upgrade to a maintained version as soon as possible. See the [release and maintenance policy](../installation/release-and-maintenance-policy.md) for details. Contact StrangeBee Support for upgrade assistance.
+
+    Within a maintained version, always upgrade to the latest patch release to benefit from all bug corrections and security fixes.
+
 ## 5.1.12 - 9th April 2024
 
 - Fix a regression following a security fix that made the MFA authentication impossible.

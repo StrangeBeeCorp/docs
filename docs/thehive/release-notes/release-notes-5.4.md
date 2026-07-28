@@ -21,6 +21,11 @@
 !!! info
     An [upgrade guide](../installation/upgrade-from-5.x.md) is available to help you migrate from TheHive 5.x
 
+!!! warning "Unmaintained version"
+    Version 5.4 is no longer maintained and won't receive further fixes, including security fixes. Upgrade to a maintained version as soon as possible. See the [release and maintenance policy](../installation/release-and-maintenance-policy.md) for details. Contact StrangeBee Support for upgrade assistance.
+
+    Within a maintained version, always upgrade to the latest patch release to benefit from all bug corrections and security fixes.
+
 ## 5.4.11 - January 20, 2026
 
 ### Security fixes

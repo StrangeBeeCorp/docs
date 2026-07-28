@@ -933,6 +933,7 @@ nav:
     - 'MCP Server': https://github.com/StrangeBeeCorp/TheHiveMCP"target="_blank
 
     - 'Release Notes':
+      - 'Release Versioning and Maintenance Policy': thehive/installation/release-and-maintenance-policy.md
       - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
       - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
       - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md

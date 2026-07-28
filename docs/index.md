@@ -179,6 +179,8 @@ sections:
               url: '/thehive/installation/activate-license/'
             - text: 'Perform version upgrades'
               url: '/thehive/installation/upgrade-from-5.x/'
+            - text: 'Check the release versioning and maintenance policy'
+              url: '/thehive/installation/release-and-maintenance-policy/'
         - title: 'Configure organizations'
           links: 
             - text: 'Complete the initial login'
