@@ -52,7 +52,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 !!! note "Cluster deployments"
     For cluster deployments, install the new version on each node.
 
-{% include-markdown "includes/manual-download-installation-thehive.md" %}
+{% include-markdown "includes/manual-download-upgrade-thehive.md" %}
 
 {% include-markdown "includes/zip-binaries-installation-thehive.md" %}
 

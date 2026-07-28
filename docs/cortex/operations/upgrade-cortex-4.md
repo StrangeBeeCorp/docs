@@ -82,7 +82,19 @@ With compatibility verified, you're ready to upgrade Elasticsearch to version 8.
 
 With Elasticsearch 8.x running, you can now upgrade Cortex itself.
 
-Refer to the [installation guide](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to update Cortex to version 4.1.x.
+Download RPM, DEB, and ZIP packages directly with tools like `wget` or `curl` and install them manually. For Docker, redeploy with the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank} or pull an updated image tag.
+
+All packages are hosted on an [HTTPS-secured website](https://thehive.download.strangebee.com/){target=_blank} and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
+
+{% include-markdown "includes/manual-download-upgrade-cortex.md" %}
+
+{% include-markdown "includes/zip-binaries-installation-cortex.md" %}
+
+=== "Docker Compose deployment"
+
+    If you deployed using the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, pull the latest version of the repository before redeploying. The `docker-compose.yml`, configuration templates, and helper scripts may have changed between versions. The version is set in the `versions.env` file at the root of the repository, with the `cortex_image_version` variable.
+
+    If you used the public image directly, update the image tag to `thehiveproject/cortex:4.1`, or to a specific version if you don't want the latest.
 
 ## Step 7: Restart Cortex and verify connectivity
 
