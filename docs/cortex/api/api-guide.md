@@ -23,8 +23,9 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
     * [Update a User](#update-a-user)
     * [Get Details About a User](#get-details-about-a-user)
     * [Set a Password](#set-a-password)
-    * [Change a password](#change-a-password)
+    * [Change a Password](#change-a-password)
     * [Set and Renew an API Key](#set-and-renew-an-api-key)
+    * [Set a Specific API Key](#set-a-specific-api-key)
     * [Get an API Key](#get-an-api-key)
     * [Revoke an API Key](#revoke-an-api-key)
   * [Job APIs](#job-apis)
@@ -391,7 +392,7 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 
 If successful, the call returns 204 (success / no content).
 
-### Change a password
+### Change a Password
 This call allows a given user to change only **their own** existing password. It is available to all users including `superAdmin` and `orgAdmin` ones. Please note that if a `superAdmin` or an `orgAdmin` needs to update the password of another user, they must use the `/password/set` call described in the previous subsection.
 
 ```bash
@@ -404,13 +405,26 @@ curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application
 If successful, the call returns 204 (success / no content).
 
 ### Set and Renew an API Key
-This calls allows setting and renewing the API key of a user. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to renew their own API key. Again, the request needs to be made using HTTPS with a valid certificate on the server's end to prevent credential sniffing or other PITM (Person-In-The-Middle) attacks. You know the drill ;-)
+This calls allows setting and renewing the API key of a user. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to renew their own API key. Again, the request needs to be made using HTTPS with a valid certificate on the server's end to prevent credential sniffing or other PITM (Person-In-The-Middle) attacks. You know the drill!
+
+This generates a random key server-side. To set a specific key value instead, use [Set a Specific API Key](#set-a-specific-api-key). Both calls overwrite any existing key for the user.
 
 ```bash
 curl -XPOST -H 'Authorization: Bearer **API_KEY**' 'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key/renew'
 ```
 
 If successful, it returns the generated API key in a `text/plain`response.
+
+### Set a Specific API Key
+This call allows setting a user's API key to a specific value instead of a randomly generated one. It's available to users with `superAdmin` or `orgAdmin` roles. The key must be at least 32 characters long.
+
+```bash
+curl -XPOST -H 'Authorization: Bearer **API_KEY**' -H 'Content-Type: application/json' 'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key/set' -d '{
+  "key": "<api_key>"
+}'
+```
+
+If successful, it returns the key in a `text/plain` response.
 
 ### Get an API Key
 This calls allows getting a user's API key. It's available to users with `superAdmin` or `orgAdmin` roles. Any user can also use it to obtain their own API key.
@@ -420,6 +434,8 @@ curl -H 'Authorization: Bearer **API_KEY**' 'https://CORTEX_APP_URL:9001/api/use
 ```
 
 If successful, the generated API key is returned in `text/plain`response
+
+This call only succeeds if the target user already has a key. If the user has never had one generated, the call fails with `Get API key is not supported`. Use [Set and Renew an API Key](#set-and-renew-an-api-key) or [Set a Specific API Key](#set-a-specific-api-key) to generate one first.
 
 ### Revoke an API Key
 This call allows revoking a user's API key.
