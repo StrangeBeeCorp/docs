@@ -1,0 +1,2 @@
+!!! warning "Deactivate memory swapping"
+    Memory swapping on the host running Elasticsearch degrades performance: garbage collection and cluster communication then depend on disk speed instead of RAM. Deactivate swap entirely, or set `bootstrap.memory_lock: true` in `elasticsearch.yml` to lock the JVM heap in RAM. See [Disable swapping](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/setup-configuration-memory){target=_blank} in the official Elasticsearch documentation.

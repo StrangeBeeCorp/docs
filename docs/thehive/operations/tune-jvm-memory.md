@@ -113,6 +113,8 @@ When multiple services run on the same host, plan heap sizes across all of them 
 
     {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
 
+    {% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
 4. Save your modifications in the `jvm.options` file.
 
 5. Restart Elasticsearch service.

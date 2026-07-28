@@ -159,6 +159,8 @@ This page is a step by step installation and configuration guide to get a Cortex
     -Xmx4g
     ```
 
+{% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
 ### Start the Elasticsearch service
 
 === "DEB"

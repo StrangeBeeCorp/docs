@@ -684,6 +684,8 @@ The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options contr
 
     {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
 
+    {% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
     {% include-markdown "includes/recommended-jvm-values-same-host-elasticsearch.md" %}
 
 4. Save your modifications in the `jvm.options` file.

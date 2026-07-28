@@ -419,6 +419,8 @@ Replace `<heap_size>` with the desired heap size. `Xms` sets the initial heap si
 
 {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
 
+{% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
 Repeat this step on each node.
 
 {% include-markdown "includes/recommended-jvm-values-same-host-elasticsearch.md" %}

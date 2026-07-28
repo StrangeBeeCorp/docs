@@ -43,6 +43,8 @@ Estimated resource recommendations are provided to offer guidance based on typic
 !!! warning "Heap size guidelines"
     TheHive, Cassandra, and Elasticsearch each run on the JVM and require explicit heap size configuration in production environments. Especially when all three services run on the same host, their combined heap allocation competes for available RAM. See [Tune JVM Memory](../operations/tune-jvm-memory.md) for recommended values per service. Undefined heap settings may cause memory contention or out-of-memory errors.
 
+{% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
 !!! info "Cluster deployments"
     In cluster deployments, each node must independently meet the recommended per-service CPU and memory requirements. The number of nodes, as well as CPU and RAM, may need to be adjusted based on the specific demands of the deployment.
 
