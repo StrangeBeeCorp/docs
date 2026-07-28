@@ -19355,8 +19355,9 @@
 <li><a href="#update-a-user">Update a User</a></li>
 <li><a href="#get-details-about-a-user">Get Details About a User</a></li>
 <li><a href="#set-a-password">Set a Password</a></li>
-<li><a href="#change-a-password">Change a password</a></li>
+<li><a href="#change-a-password">Change a Password</a></li>
 <li><a href="#set-and-renew-an-api-key">Set and Renew an API Key</a></li>
+<li><a href="#set-a-specific-api-key">Set a Specific API Key</a></li>
 <li><a href="#get-an-api-key">Get an API Key</a></li>
 <li><a href="#revoke-an-api-key">Revoke an API Key</a></li>
 </ul>
@@ -19716,7 +19717,7 @@ It returns a JSON object representing the user as described <a href="#user-model
 <span class="s1">}'</span>
 </code></pre></div>
 <p>If successful, the call returns 204 (success / no content).</p>
-<h3 id="change-a-password">Change a password<a class="headerlink" href="#change-a-password" title="Permanent link">#</a></h3>
+<h3 id="change-a-password">Change a Password<a class="headerlink" href="#change-a-password" title="Permanent link">#</a></h3>
 <p>This call allows a given user to change only <strong>their own</strong> existing password. It is available to all users including <code>superAdmin</code> and <code>orgAdmin</code> ones. Please note that if a <code>superAdmin</code> or an <code>orgAdmin</code> needs to update the password of another user, they must use the <code>/password/set</code> call described in the previous subsection.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/password/change'</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{</span>
 <span class="s1">  "currentPassword": "password",</span>
@@ -19725,15 +19726,24 @@ It returns a JSON object representing the user as described <a href="#user-model
 </code></pre></div>
 <p>If successful, the call returns 204 (success / no content).</p>
 <h3 id="set-and-renew-an-api-key">Set and Renew an API Key<a class="headerlink" href="#set-and-renew-an-api-key" title="Permanent link">#</a></h3>
-<p>This calls allows setting and renewing the API key of a user. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. Any user can also use it to renew their own API key. Again, the request needs to be made using HTTPS with a valid certificate on the server's end to prevent credential sniffing or other PITM (Person-In-The-Middle) attacks. You know the drill ;-)</p>
+<p>This calls allows setting and renewing the API key of a user. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. Any user can also use it to renew their own API key. Again, the request needs to be made using HTTPS with a valid certificate on the server's end to prevent credential sniffing or other PITM (Person-In-The-Middle) attacks. You know the drill!</p>
+<p>This generates a random key server-side. To set a specific key value instead, use <a href="#set-a-specific-api-key">Set a Specific API Key</a>. Both calls overwrite any existing key for the user.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key/renew'</span>
 </code></pre></div>
 <p>If successful, it returns the generated API key in a <code>text/plain</code>response.</p>
+<h3 id="set-a-specific-api-key">Set a Specific API Key<a class="headerlink" href="#set-a-specific-api-key" title="Permanent link">#</a></h3>
+<p>This call allows setting a user's API key to a specific value instead of a randomly generated one. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. The key must be at least 32 characters long.</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XPOST<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span>-H<span class="w"> </span><span class="s1">'Content-Type: application/json'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key/set'</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">  "key": "&lt;api_key&gt;"</span>
+<span class="s1">}'</span>
+</code></pre></div>
+<p>If successful, it returns the key in a <code>text/plain</code> response.</p>
 <h3 id="get-an-api-key">Get an API Key<a class="headerlink" href="#get-an-api-key" title="Permanent link">#</a></h3>
 <p>This calls allows getting a user's API key. It's available to users with <code>superAdmin</code> or <code>orgAdmin</code> roles. Any user can also use it to obtain their own API key.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key'</span>
 </code></pre></div>
 <p>If successful, the generated API key is returned in <code>text/plain</code>response</p>
+<p>This call only succeeds if the target user already has a key. If the user has never had one generated, the call fails with <code>Get API key is not supported</code>. Use <a href="#set-and-renew-an-api-key">Set and Renew an API Key</a> or <a href="#set-a-specific-api-key">Set a Specific API Key</a> to generate one first.</p>
 <h3 id="revoke-an-api-key">Revoke an API Key<a class="headerlink" href="#revoke-an-api-key" title="Permanent link">#</a></h3>
 <p>This call allows revoking a user's API key.</p>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-XDELETE<span class="w"> </span>-H<span class="w"> </span><span class="s1">'Authorization: Bearer **API_KEY**'</span><span class="w"> </span><span class="s1">'https://CORTEX_APP_URL:9001/api/user/USER_LOGIN/key'</span>
