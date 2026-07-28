@@ -465,6 +465,14 @@
          <lastmod>2026-07-28</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/includes/manual-download-upgrade-cortex/</loc>
+         <lastmod>2026-07-28</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/manual-download-upgrade-thehive/</loc>
+         <lastmod>2026-07-28</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/includes/minimum-key-length/</loc>
          <lastmod>2026-07-28</lastmod>
     </url>
@@ -698,6 +706,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/includes/wildcard-character/</loc>
+         <lastmod>2026-07-28</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/includes/zip-binaries-installation-cortex/</loc>
          <lastmod>2026-07-28</lastmod>
     </url>
     <url>
