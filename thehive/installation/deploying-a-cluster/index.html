@@ -19843,6 +19843,10 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p class="admonition-title">Set initial and maximum heap to the same value</p>
 <p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Deactivate memory swapping</p>
+<p>Memory swapping on the host running Elasticsearch degrades performance: garbage collection and cluster communication then depend on disk speed instead of RAM. Deactivate swap entirely, or set <code>bootstrap.memory_lock: true</code> in <code>elasticsearch.yml</code> to lock the JVM heap in RAM. See <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/setup-configuration-memory" target="_blank">Disable swapping</a> in the official Elasticsearch documentation.</p>
+</div>
 <p>Repeat this step on each node.</p>
 <div class="admonition tip">
 <p class="admonition-title">Recommended Elasticsearch values when all services share the same host</p>

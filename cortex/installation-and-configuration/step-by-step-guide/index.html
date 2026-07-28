@@ -19536,6 +19536,10 @@ type=rpm-md
 -Xmx4g
 </code></pre></div>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Deactivate memory swapping</p>
+<p>Memory swapping on the host running Elasticsearch degrades performance: garbage collection and cluster communication then depend on disk speed instead of RAM. Deactivate swap entirely, or set <code>bootstrap.memory_lock: true</code> in <code>elasticsearch.yml</code> to lock the JVM heap in RAM. See <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/setup-configuration-memory" target="_blank">Disable swapping</a> in the official Elasticsearch documentation.</p>
+</div>
 <h3 id="start-the-elasticsearch-service">Start the Elasticsearch service<a class="headerlink" href="#start-the-elasticsearch-service" title="Permanent link">#</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">DEB</label><label for="__tabbed_4_2">RPM</label></div>
 <div class="tabbed-content">

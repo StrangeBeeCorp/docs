@@ -19481,6 +19481,10 @@ Cortex:        -Xms4g -Xmx4g
 <p class="admonition-title">Set initial and maximum heap to the same value</p>
 <p>Set <code>-Xms</code> and <code>-Xmx</code> to the same value to prevent heap resizing at runtime and reduce CPU overhead.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Deactivate memory swapping</p>
+<p>Memory swapping on the host running Elasticsearch degrades performance: garbage collection and cluster communication then depend on disk speed instead of RAM. Deactivate swap entirely, or set <code>bootstrap.memory_lock: true</code> in <code>elasticsearch.yml</code> to lock the JVM heap in RAM. See <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/setup-configuration-memory" target="_blank">Disable swapping</a> in the official Elasticsearch documentation.</p>
+</div>
 </li>
 <li>
 <p>Save your modifications in the <code>jvm.options</code> file.</p>
