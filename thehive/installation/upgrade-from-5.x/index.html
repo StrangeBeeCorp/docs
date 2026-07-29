@@ -19758,7 +19758,8 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 </ol>
 </div>
 <div class="tabbed-block">
-<p>If you deployed using the <a href="https://github.com/StrangeBeeCorp/docker" target="_blank">StrangeBee Docker Compose profiles</a>, pull the latest version of the repository before redeploying. The <code>docker-compose.yml</code>, configuration templates, and helper scripts may have changed between 5.x versions. The version is set in the <code>versions.env</code> file at the root of the repository, with the <code>thehive_image_version</code> variable.</p>
+<p>If you deployed using the <a href="https://github.com/StrangeBeeCorp/docker" target="_blank">StrangeBee Docker Compose profiles</a>, pull the latest version of the repository before redeploying. The <code>docker-compose.yml</code>, configuration templates, and helper scripts may have changed between 5.x versions.</p>
+<p>Then update the <code>thehive_image_version</code> variable in the <code>.env</code> file, located in the same folder as your <code>docker-compose.yml</code>. Check <a href="https://hub.docker.com/r/strangebee/thehive" target="_blank">TheHive Docker Hub</a> for the available version tags.</p>
 <p>If you used the public image directly, update the image tag to <code>strangebee/thehive:5.7</code>, or to a specific version if you don't want the latest.</p>
 <div class="admonition warning">
 <p class="admonition-title">Don't use the <code>latest</code> tag</p>
