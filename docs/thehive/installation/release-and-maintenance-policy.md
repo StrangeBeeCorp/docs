@@ -8,16 +8,18 @@ Since April 2024, TheHive follows a three-part `X.Y.Z` version scheme.
 
 | Segment | Name | Covers |
 | --- | --- | --- |
-| `X` | Major version | Significant changes, such as complex features, major structural changes, or breaking changes that can't be avoided. |
-| `Y` | Minor version | Smaller or intermediate features without major breaking changes. When a breaking change is unavoidable, TheHive always provides a rollback path. |
-| `Z` | Patchfix and hotfix | Bug fixes. A hotfix specifically addresses a critical bug or a high-severity security issue. |
-
-!!! note "Backporting"
-    TheHive backports bugs rated Critical or High priority with customer impact, and security fixes rated Critical or High severity, to older still-maintained versions. Each backport decision is made individually, prioritizing customer stability and security.
+| `X` | Major version | Major structural changes, including breaking changes. |
+| `Y` | Minor version | Smaller or intermediate features without major breaking changes. A breaking change only appears here if unavoidable, with a rollback path always provided. |
+| `Z` | Patchfix and hotfix | Bug fixes. A hotfix specifically addresses a critical bug or a critical-severity security issue. |
 
 ## Maintenance windows
 
-How long a version keeps receiving fixes and support depends on its type and its position in the release history.
+A maintained version keeps receiving corrections for bugs and security issues, along with support from the StrangeBee Support Team.
+
+!!! note "Backporting"
+    TheHive backports bugs rated Critical or High priority with customer impact, and security fixes of any severity, to older still-maintained versions. Each backport decision is made individually, prioritizing customer stability and security.
+
+How long a version stays maintained depends on its type and its position in the release history.
 
 Every minor version is maintained for a minimum amount of time from its release date, regardless of what happens next:
 
