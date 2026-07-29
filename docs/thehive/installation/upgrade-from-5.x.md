@@ -58,7 +58,9 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
 === "Docker Compose deployment"
 
-    If you deployed using the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, pull the latest version of the repository before redeploying. The `docker-compose.yml`, configuration templates, and helper scripts may have changed between 5.x versions. The version is set in the `versions.env` file at the root of the repository, with the `thehive_image_version` variable.
+    If you deployed using the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, pull the latest version of the repository before redeploying. The `docker-compose.yml`, configuration templates, and helper scripts may have changed between 5.x versions.
+
+    Then update the `thehive_image_version` variable in the `.env` file, located in the same folder as your `docker-compose.yml`. Check [TheHive Docker Hub](https://hub.docker.com/r/strangebee/thehive){target=_blank} for the available version tags.
 
     If you used the public image directly, update the image tag to `strangebee/thehive:5.7`, or to a specific version if you don't want the latest.
 
