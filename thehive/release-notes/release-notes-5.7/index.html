@@ -16990,6 +16990,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#575-july-29-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.7.5 - July 29, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#574-july-23-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -19342,11 +19353,21 @@
 <p>Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.</p>
 </div>
 <div class="admonition danger">
-<p class="admonition-title">Skip directly to version 5.7.4</p>
-<p>Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.4 instead.</p>
+<p class="admonition-title">Skip directly to version 5.7.5</p>
+<p>Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.5 instead.</p>
 </div>
-<h2 id="574-july-23-2026">5.7.4 - July 23, 2026<a class="headerlink" href="#574-july-23-2026" title="Permanent link">#</a></h2>
+<h2 id="575-july-29-2026">5.7.5 - July 29, 2026<a class="headerlink" href="#575-july-29-2026" title="Permanent link">#</a></h2>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Custom fields: Corrected custom field updates so a new value replaces the existing one instead of being added to the list.</li>
+<li>Notifications: Prevented locked and external users from receiving notifications.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<ul>
+<li>Updated third-party libraries to address known security vulnerabilities.</li>
+</ul>
+<h2 id="574-july-23-2026">5.7.4 - July 23, 2026<a class="headerlink" href="#574-july-23-2026" title="Permanent link">#</a></h2>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Cases: Restored similar case and alert suggestions, which had stopped appearing due to an incompatible search query.</li>
 <li>Observable search: Corrected observable data search so the <code>like</code> operator now matches substrings correctly.</li>
@@ -19355,7 +19376,7 @@
 <li>Dashboards: Corrected radar widgets so case status and stage values display the correct label instead of appearing blank, and corrected dashboard widgets so sub-aggregation filters combined with custom field aggregations return accurate results.</li>
 <li>Integrations: Prevented MISP file upload requests from following redirects.</li>
 </ul>
-<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Case report: Added a banner to report previews noting that HTML is sanitized to prevent cross-site scripting (XSS).</li>
 <li>API: Extended the CSP security header to cover case reports and attachment downloads.</li>
@@ -19366,7 +19387,7 @@
 <ul>
 <li>Authentication: Added informational logs to the LDAP synchronization process, covering sync start and end, search parameters, and per-user group and profile mappings.</li>
 </ul>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <h4 id="cases">Cases<a class="headerlink" href="#cases" title="Permanent link">#</a></h4>
 <ul>
 <li>Resolved an issue where deleting a case left some attachments behind in storage.</li>
@@ -19395,20 +19416,20 @@
 <ul>
 <li>Improved query execution by reordering filter steps and removing an unnecessary barrier.</li>
 </ul>
-<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
+<h3 id="security_2">Security<a class="headerlink" href="#security_2" title="Permanent link">#</a></h3>
 <ul>
 <li>API: Added HTTP security headers to server responses.</li>
 <li>Case report: Sanitized HTML content in case reports to prevent cross-site scripting (XSS).</li>
 <li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
 </ul>
 <h2 id="572-april-30-2026">5.7.2 - April 30, 2026<a class="headerlink" href="#572-april-30-2026" title="Permanent link">#</a></h2>
-<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
+<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <ul>
 <li>Analyzers reports: Resolved an error that prevented Cortex jobs from being processed correctly.</li>
 </ul>
 <h2 id="571-april-20-2026">5.7.1 - April 20, 2026<a class="headerlink" href="#571-april-20-2026" title="Permanent link">#</a></h2>
 <p>Last update: May 12, 2026</p>
-<h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
+<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
 <h4 id="cases_1">Cases<a class="headerlink" href="#cases_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Fixed an issue where tags from the case template were automatically merged into the case when creating it via the API, even when the request included an explicit tag list.</li>
@@ -19439,7 +19460,7 @@
 <ul>
 <li>Log entries now correctly include user and request context when Kamon monitoring is turned off.</li>
 </ul>
-<h3 id="security_2">Security<a class="headerlink" href="#security_2" title="Permanent link">#</a></h3>
+<h3 id="security_3">Security<a class="headerlink" href="#security_3" title="Permanent link">#</a></h3>
 <ul>
 <li>HTML, XHTML, and SVG attachments served inline are now sanitized to remove script tags and other unsafe content, preventing cross-site scripting (XSS) attacks.</li>
 </ul>
@@ -19469,7 +19490,7 @@
 <p>The case merging interface has been redesigned for better usability. Recent cases are now highlighted, and search has been simplified to help users quickly find relevant cases.</p>
 <h4 id="direct-link-to-documentation">Direct link to documentation<a class="headerlink" href="#direct-link-to-documentation" title="Permanent link">#</a></h4>
 <p>A direct link to the documentation has been added to the help menu for quicker access.</p>
-<h3 id="fixes_4">Fixes<a class="headerlink" href="#fixes_4" title="Permanent link">#</a></h3>
+<h3 id="fixes_5">Fixes<a class="headerlink" href="#fixes_5" title="Permanent link">#</a></h3>
 <ul>
 <li>Improved QR code readability for multifactor authentication (MFA) in dark mode.</li>
 <li>Fixed a crash related to date format settings.</li>
@@ -19477,7 +19498,7 @@
 <li>Prevented data loss in the connector creation form (MISP and Cortex) after prolonged inactivity.</li>
 <li>Updated the behavior of the Invoke function, Invoke function on an object, and Run an alert feeder endpoints to return errors from the underlying function as HTTP 500 responses.</li>
 </ul>
-<h3 id="security_3">Security<a class="headerlink" href="#security_3" title="Permanent link">#</a></h3>
+<h3 id="security_4">Security<a class="headerlink" href="#security_4" title="Permanent link">#</a></h3>
 <ul>
 <li>Images: Restricted accepted branding image MIME types to PNG, JPG, and JPEG.</li>
 </ul>
