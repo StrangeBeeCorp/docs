@@ -41,6 +41,14 @@ jobs:
       - name: Build doc
         run: mkdocs build
 
+      # This private repo publishes to an access-controlled *.pages.github.io URL and must NOT claim
+      # docs.strangebee.com — that custom domain belongs to the strangebeecorp/docs production site.
+      # Two Pages sites cannot claim the same domain, so keeping the CNAME here fails this repo's
+      # Pages build. Guarded so the production repo (strangebeecorp) keeps its CNAME untouched.
+      - name: Strip CNAME on the private preview repo
+        if: github.repository != 'strangebeecorp/docs'
+        run: rm -f site/CNAME
+
       - name: Clone branch gh-pages
         uses: actions/checkout@v4
         with:

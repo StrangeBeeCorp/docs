@@ -30,6 +30,13 @@ jobs:
           pip install -r requirements.txt
           mkdocs build
 
+      # Drop the CNAME from the preview build so it is not carried into pr-preview/pr-N/. GitHub only
+      # reads the CNAME at the gh-pages root, so this is cosmetic, but keeps the domain out of previews.
+      # Guarded so the production repo (strangebeecorp) is never affected.
+      - name: Strip CNAME from preview build
+        if: github.event.action != 'closed' && github.repository != 'strangebeecorp/docs'
+        run: rm -f site/CNAME
+
       # https://github.com/rossjrw/pr-preview-action
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
