@@ -12,12 +12,55 @@ on:
 
 concurrency: deploy-doc
 
+permissions:
+  contents: write       # push preview + prune commits to gh-pages
+  pull-requests: write  # pr-preview-action posts the preview comment
+
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      # The pr-preview umbrella stores a full site copy per PR and its auto-cleanup has not kept up,
+      # bloating gh-pages until the GitHub Pages build runs out of disk ("No space left on device").
+      # Before deploying, drop every pr-preview/pr-N whose PR is no longer open. Uses a blobless,
+      # no-checkout clone so it stays cheap even while the branch is still huge. Guarded so the
+      # strangebeecorp production repo is never touched.
+      - name: Prune stale PR previews
+        if: github.repository != 'strangebeecorp/docs'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          work="${RUNNER_TEMP}/gh-pages-prune"
+          rm -rf "$work"
+          git clone --filter=blob:none --no-checkout --single-branch --branch gh-pages \
+            "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "$work" 2>/dev/null || {
+              echo "No gh-pages branch yet; nothing to prune."; exit 0; }
+          cd "$work"
+          mapfile -t previews < <(git ls-tree --name-only HEAD pr-preview/ 2>/dev/null || true)
+          if [ "${#previews[@]}" -eq 0 ]; then echo "No previews to prune."; exit 0; fi
+          open="$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --limit 1000 \
+            --json number --jq '.[].number' | sort -u)"
+          git read-tree HEAD
+          removed=0
+          for p in "${previews[@]}"; do
+            case "$p" in pr-preview/pr-*) ;; *) continue ;; esac
+            n="${p##*/pr-}"
+            if ! grep -qxF "$n" <<<"$open"; then
+              git rm -r --cached --quiet "$p"
+              removed=$((removed + 1))
+              echo "prune: $p (PR #$n not open)"
+            fi
+          done
+          if [ "$removed" -eq 0 ]; then echo "Nothing to prune."; exit 0; fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --quiet -m "chore(pages): prune ${removed} stale PR preview(s)"
+          git push origin gh-pages
+          echo "Pruned ${removed} stale preview(s)."
 
       - name: Setup python
         uses: actions/setup-python@v5
@@ -47,4 +90,3 @@ jobs:
           pages-base-url: solid-bassoon-mrqy18o.pages.github.io
           pages-base-path: .
           comment: true
-

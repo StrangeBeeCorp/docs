@@ -64,6 +64,13 @@ jobs:
             --exclude pr-preview/ \
             site/ $GITHUB_WORKSPACE/gh-pages/
 
+      # mkdocs output is already static; disable the legacy Pages Jekyll build so it does not run out
+      # of disk on this large multi-product preview site. Guarded so strangebeecorp production is
+      # untouched (its gh-pages holds no PR previews and builds fine as-is).
+      - name: Disable Jekyll on the private preview repo
+        if: github.repository != 'strangebeecorp/docs'
+        run: touch $GITHUB_WORKSPACE/gh-pages/.nojekyll
+
       - name: Commit and push
         run: |
           cd $GITHUB_WORKSPACE/gh-pages/
