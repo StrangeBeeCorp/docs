@@ -5,6 +5,18 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
+## 5.6.6 - August 6, 2026
+
+### Fixes
+
+* Integrations: Prevented MISP file upload requests from following redirects.
+* Notifications: Prevented locked and external users from receiving notifications.
+* Search: Corrected index handling so the search index is no longer dropped when indexing is turned off, which lets a new index be created correctly.
+
+### Security
+
+* Dependencies: Patched several CVEs reported in a third-party library.
+
 ## 5.6.5 - July 8, 2026
 
 ### Fixes

@@ -23,7 +23,7 @@
             wget -O /opt/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.5-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.6-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
@@ -45,7 +45,7 @@
             curl -o /opt/<file_name>.zip.asc thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.5-1`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.6-1`.
             * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
 
             !!! tip "Package repository"
