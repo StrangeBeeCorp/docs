@@ -19891,7 +19891,7 @@ If you are installing a standalone server, tombstones can be disabled.
 1. Check `gc_grace_seconds` value
 
     !!! Example ""        
-        <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>&lt;IP<span class="w"> </span>ADDRESS&gt;<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name=&#39;thehive&#39;&quot;</span>
+        <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>&lt;IP<span class="w"> </span>ADDRESS&gt;<span class="w"> </span>-e<span class="w"> </span><span class="s2">"SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"</span>
 </code></pre></div>
 
         **Note**: default credentials for Cassandra database: _cassandra/cassandra_ 
@@ -19917,14 +19917,14 @@ If you are installing a standalone server, tombstones can be disabled.
     !!! Example ""       
         <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span>TABLE<span class="w"> </span><span class="k">in</span><span class="w"> </span>edgestore<span class="w"> </span>edgestore_lock_<span class="w"> </span>graphindex<span class="w"> </span>graphindex_lock_<span class="w"> </span>janusgraph_ids<span class="w"> </span>system_properties<span class="w"> </span>system_properties_lock_<span class="w"> </span>systemlog<span class="w"> </span>txlog
 <span class="w">    </span><span class="k">do</span>
-<span class="w">    </span>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;ALTER TABLE thehive.</span><span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span><span class="s2"> WITH gc_grace_seconds = 0;&quot;</span>
+<span class="w">    </span>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-e<span class="w"> </span><span class="s2">"ALTER TABLE thehive.</span><span class="si">${</span><span class="nv">TABLE</span><span class="si">}</span><span class="s2"> WITH gc_grace_seconds = 0;"</span>
 <span class="w">    </span><span class="k">done</span>
 </code></pre></div>
 
 3. Check changes has been taken into account, by running this command again: 
 
     !!! Example ""        
-        <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>&lt;IP<span class="w"> </span>ADDRESS&gt;<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name=&#39;thehive&#39;&quot;</span>
+        <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>&lt;IP<span class="w"> </span>ADDRESS&gt;<span class="w"> </span>-e<span class="w"> </span><span class="s2">"SELECT table_name,gc_grace_seconds FROM system_schema.tables WHERE keyspace_name='thehive'"</span>
 </code></pre></div>
 
     Results should look like this: 
