@@ -37,13 +37,13 @@ Each release shifts this set forward, which is what extends some versions' maint
 
 ### End of maintenance table
 
-| Version | Initial release | End of maintenance |
+| Version | Initial release | End of maintenance and support |
 | --- | --- | --- |
-| [5.0](../release-notes/release-notes-5.0.md) | March 15, 2022 | No longer maintained |
-| [5.1](../release-notes/release-notes-5.1.md) | March 1, 2023 | No longer maintained |
-| [5.2](../release-notes/release-notes-5.2.md) | July 6, 2023 | No longer maintained |
-| [5.3](../release-notes/release-notes-5.3.md) | April 24, 2024 | No longer maintained |
-| [5.4](../release-notes/release-notes-5.4.md) | September 26, 2024 | No longer maintained |
+| [5.0](../release-notes/release-notes-5.0.md) | March 15, 2022 | No longer maintained or supported |
+| [5.1](../release-notes/release-notes-5.1.md) | March 1, 2023 | No longer maintained or supported |
+| [5.2](../release-notes/release-notes-5.2.md) | July 6, 2023 | No longer maintained or supported |
+| [5.3](../release-notes/release-notes-5.3.md) | April 24, 2024 | No longer maintained or supported |
+| [5.4](../release-notes/release-notes-5.4.md) | September 26, 2024 | No longer maintained or supported |
 | [5.5](../release-notes/release-notes-5.5.md) | April 22, 2025 | 5.8 ships |
 | [5.6](../release-notes/release-notes-5.6.md) | February 2, 2026 | 6.0 ships |
 | [Latest] [5.7](../release-notes/release-notes-5.7.md) | April 9, 2026 | 6.1 ships |
@@ -53,7 +53,7 @@ Each release shifts this set forward, which is what extends some versions' maint
 
 The same pattern repeats at every later major and minor release.
 
-A version marked "No longer maintained" receives no further fixes, including security fixes. Upgrade to a maintained version as soon as possible.
+A version no longer maintained or supported receives no further fixes, including security fixes, and no assistance from the StrangeBee Support Team. Upgrade to a maintained version as soon as possible.
 
 Within a maintained version, always upgrade to the latest patch release to benefit from all bug corrections and security fixes.
 
