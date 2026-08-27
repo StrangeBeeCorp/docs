@@ -8,10 +8,10 @@
         <link rel="canonical" href="https://docs.strangebee.com/cortex/installation-and-configuration/run-cortex-with-docker/">
       
       
-        <link rel="prev" href="../analyzers-responders/">
+        <link rel="prev" href="../automated-installation-script-linux/">
       
       
-        <link rel="next" href="../proxy-settings/">
+        <link rel="next" href="../deploy-cortex-on-kubernetes/">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Run Cortex with Docker - TheHive 5 Documentation</title>
+        <title>Run with Docker - TheHive 5 Documentation</title>
       
     
     
@@ -17104,7 +17104,7 @@
   <span class="md-ellipsis">
     
   
-    Download Cortex
+    Cortex Installation Methods
   
 
     
@@ -17184,6 +17184,463 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software-requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cortex-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Package Repository
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../step-by-step-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install with Packages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../automated-installation-script-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    One-Command Install
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run with Docker
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run with Docker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#deploy-cortex-with-docker-compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Cortex with Docker Compose
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-cortex-with-a-standalone-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Cortex with a standalone container
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#running-cortex-with-podman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Cortex with Podman
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-cortex-docker-image-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Cortex Docker image behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deploy-cortex-on-kubernetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deploy on Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
       <a href="../authentication/" class="md-nav__link">
         
@@ -17220,7 +17677,7 @@
   <span class="md-ellipsis">
     
   
-    Secret key configuration
+    Secret Key
   
 
     
@@ -17241,126 +17698,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced-configuration/" class="md-nav__link">
+      <a href="../database/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Advanced configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configure SSL
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cortex-packages/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cortex Package Repository
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../step-by-step-guide/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Step-by-Step Guide
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation and Configuration Guides
+    Database Configuration
   
 
     
@@ -17406,149 +17751,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Run Cortex with Docker
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Run Cortex with Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites-and-alternatives" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites and alternatives
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#default-configuration-of-the-cortex-docker-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Default configuration of the Cortex Docker image
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customizing-cortex-docker-image-behavior" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Customizing Cortex Docker image behavior
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#overriding-configuration-with-a-custom-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Overriding configuration with a custom file
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-cortex-with-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running Cortex with Docker
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-cortex-with-podman" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Running Cortex with Podman
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -17559,7 +17761,7 @@
   <span class="md-ellipsis">
     
   
-    Proxy settings
+    Proxy Settings
   
 
     
@@ -17587,7 +17789,7 @@
   <span class="md-ellipsis">
     
   
-    Parameters for Docker
+    Docker Parameters
   
 
     
@@ -17608,14 +17810,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
+      <a href="../ssl/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Database configuration
+    SSL Configuration
   
 
     
@@ -17636,14 +17838,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-cortex-on-kubernetes/" class="md-nav__link">
+      <a href="../advanced-configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Deploy Cortex on Kubernetes
+    Advanced Configuration
   
 
     
@@ -17652,6 +17854,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -19320,11 +19530,37 @@
   
     
     
+      
+  
+  
+    
+    
       <li class="md-path__item">
-        <a href="../authentication/" class="md-path__link">
+        <a href="../system-requirements/" class="md-path__link">
           
   <span class="md-ellipsis">
     Installation &amp; configuration
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../cortex-packages/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Installation
   </span>
 
         </a>
@@ -19345,17 +19581,293 @@
 
 <h1 id="run-cortex-with-docker">Run Cortex with Docker<a class="headerlink" href="#run-cortex-with-docker" title="Permanent link">#</a></h1>
 <p>Cortex runs on Docker using official container images.</p>
-<h2 id="prerequisites-and-alternatives">Prerequisites and alternatives<a class="headerlink" href="#prerequisites-and-alternatives" title="Permanent link">#</a></h2>
-<p>To run the Docker image, you need <a href="https://www.docker.com/" target="_blank">Docker</a>—no surprises there. Alternatively, you can also use <a href="https://podman.io/" target="_blank">Podman</a> as a compatible option.</p>
-<h2 id="default-configuration-of-the-cortex-docker-image">Default configuration of the Cortex Docker image<a class="headerlink" href="#default-configuration-of-the-cortex-docker-image" title="Permanent link">#</a></h2>
+<p>You can run Cortex with Docker in several ways:</p>
+<ul>
+<li>Deploy Cortex and Elasticsearch as a production-ready stack using Docker Compose—the recommended approach, covered below.</li>
+<li>Run <a href="#running-cortex-with-a-standalone-container">a standalone Cortex container</a> directly with <code>docker run</code>, with or without Docker-in-Docker.</li>
+<li>Run Cortex with <a href="#running-cortex-with-podman">Podman</a> instead of Docker.</li>
+</ul>
+<p>In every method, Cortex also uses Docker to run analyzers and responders, so it needs access to a Docker or Podman socket.</p>
+<p>Regardless of the method you choose, you can <a href="#customizing-cortex-docker-image-behavior">customize how the Cortex image behaves at startup</a> using environment variables or command-line parameters.</p>
+<h2 id="deploy-cortex-with-docker-compose">Deploy Cortex with Docker Compose<a class="headerlink" href="#deploy-cortex-with-docker-compose" title="Permanent link">#</a></h2>
+<p>Two deployment profiles for production environments are available on <a href="https://github.com/StrangeBeeCorp/docker/tree/main" target="_blank">a dedicated GitHub repository</a>, with all services configured automatically.</p>
+<p>If you want to use only the Cortex Docker image, get it from <a href="https://hub.docker.com/r/thehiveproject/cortex" target="_blank">Docker Hub</a>. You'll need to install Elasticsearch separately.</p>
+<div class="admonition tip">
+<p class="admonition-title">Trying out Cortex?</p>
+<p>This section covers production deployments only. To trial Cortex with TheHive and sample data, see <a href="../../../resources/docker-demo/">Deploy a Demo Docker Environment</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Guide scope</p>
+<p>This section covers deploying a new instance of Cortex using Docker Compose, with all components hosted on the same server.</p>
+<p>It doesn't cover:</p>
+<ul>
+<li>Package installations: For package installations, follow the <a href="../step-by-step-guide/">step-by-step guide</a>.</li>
+<li>Cluster deployments: Refer to <a href="../deploy-cortex-on-kubernetes/">Deploy Cortex on Kubernetes</a> for Kubernetes deployments.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Before you begin</p>
+<p>To ensure a smooth deployment process, make sure you have:</p>
+<ul>
+<li>A basic understanding of <a href="../../">the role and architecture of Cortex</a></li>
+<li>At least <code>sudo</code> permissions</li>
+</ul>
+</div>
+<h3 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h3>
+<p>Start by installing the necessary dependencies for deploying Cortex with Docker Compose.</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/" target="_blank">Docker Engine</a>: version <code>v23.0.15</code> or later</li>
+<li><a href="https://docs.docker.com/compose/install/" target="_blank">Docker Compose plugin</a>: version <code>v2.20.2</code> or later</li>
+<li><a href="https://jqlang.github.io/jq/" target="_blank">jq</a></li>
+</ul>
+<h4 id="verify-dependencies-installation">Verify dependencies installation<a class="headerlink" href="#verify-dependencies-installation" title="Permanent link">#</a></h4>
+<p>Run the following commands to ensure the dependencies are correctly installed:</p>
+<ul>
+<li>Check the Docker engine version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>version
+</code></pre></div>
+<ul>
+<li>Confirm the current user can run Docker commands:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</code></pre></div>
+<p>For details on post-installation steps and user permissions, see the <a href="https://docs.docker.com/engine/install/linux-postinstall/" target="_blank">Docker post-installation guide</a>.</p>
+<ul>
+<li>Check the Docker Compose plugin version:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>version
+</code></pre></div>
+<h3 id="step-2-clone-the-github-repository">Step 2: Clone the GitHub repository<a class="headerlink" href="#step-2-clone-the-github-repository" title="Permanent link">#</a></h3>
+<p>Next, clone the <a href="https://github.com/StrangeBeeCorp/docker.git" target="_blank">StrangeBee Docker repository</a> to your local machine:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/StrangeBeeCorp/docker.git
+</code></pre></div>
+<h3 id="step-3-choose-your-deployment-profile">Step 3: Choose your deployment profile<a class="headerlink" href="#step-3-choose-your-deployment-profile" title="Permanent link">#</a></h3>
+<p>Before proceeding with any commands, take a moment to choose the deployment profile that best fits your needs. Two prebuilt profiles are available for production environments, each designed for different use cases and performance requirements.</p>
+<h4 id="profile-n1-production-environment-1-cortex">Profile n°1: <em>Production environment #1</em> (Cortex)<a class="headerlink" href="#profile-n1-production-environment-1-cortex" title="Permanent link">#</a></h4>
+<p>Single server deployment of Cortex for standard production workloads.</p>
+<p>Check the hardware requirements in the <a href="../system-requirements/#hardware-requirements">System Requirements</a>.</p>
+<h4 id="profile-n2-production-environment-2-cortex">Profile n°2: <em>Production environment #2</em> (Cortex)<a class="headerlink" href="#profile-n2-production-environment-2-cortex" title="Permanent link">#</a></h4>
+<p>Single server deployment of Cortex for high-performance or resource-intensive workloads.</p>
+<p>Check the hardware requirements in the <a href="../system-requirements/#hardware-requirements">System Requirements</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">TheHive deployment</p>
+<p>Similar production deployment profiles are available for TheHive. See <a href="../../../thehive/installation/docker/">Deploy TheHive with Docker Compose</a> for details.</p>
+</div>
+<h3 id="step-4-review-the-application-stack">Step 4: Review the application stack<a class="headerlink" href="#step-4-review-the-application-stack" title="Permanent link">#</a></h3>
+<p>The Docker Compose file deploys the following components:</p>
+<ul>
+<li>Elasticsearch: Database used by Cortex</li>
+<li>Cortex: Main application</li>
+<li>Nginx: HTTPS reverse proxy</li>
+</ul>
+<h4 id="configuration-and-data-files">Configuration and data files<a class="headerlink" href="#configuration-and-data-files" title="Permanent link">#</a></h4>
+<p>Each container has a dedicated folder for configuration, data, and log files.</p>
+<div class="highlight"><pre><span></span><code>├──<span class="w"> </span>certificates
+├──<span class="w"> </span>cortex
+├──<span class="w"> </span>docker-compose.yml
+├──<span class="w"> </span>dot.env.template
+├──<span class="w"> </span>elasticsearch
+├──<span class="w"> </span>nginx
+├──<span class="w"> </span>README.md
+└──<span class="w"> </span>scripts
+</code></pre></div>
+<h4 id="files-and-folders-overview">Files and folders overview<a class="headerlink" href="#files-and-folders-overview" title="Permanent link">#</a></h4>
+<h5 id="elasticsearch">Elasticsearch<a class="headerlink" href="#elasticsearch" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code>elasticsearch
+├──<span class="w"> </span>data
+└──<span class="w"> </span>logs
+</code></pre></div>
+<ul>
+<li><code>./elasticsearch/data</code>: Database files.</li>
+<li><code>./elasticsearch/logs</code>: Log files.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h5 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code>cortex
+├──<span class="w"> </span>config
+│<span class="w">   </span>├──<span class="w"> </span>application.conf
+│<span class="w">   </span>├──<span class="w"> </span>index.conf.template
+│<span class="w">   </span>├──<span class="w"> </span>logback.xml
+│<span class="w">   </span>└──<span class="w"> </span>secret.conf.template
+├──<span class="w"> </span>cortex-jobs
+├──<span class="w"> </span>logs
+└──<span class="w"> </span>neurons
+</code></pre></div>
+<ul>
+<li><code>./cortex/config</code>: Configuration files. <code>index.conf</code> and <code>secret.conf</code> are generated automatically when you use the <code>init.sh</code> script.</li>
+<li><code>./cortex/cortex-jobs</code>: Temporary data storage for analyzers and responders.</li>
+<li><code>./cortex/logs</code>: Log files.</li>
+<li><code>./cortex/neurons</code>: Folder for custom analyzers and responders.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders except for files in <code>config</code> if you know what you're doing.</p>
+</div>
+<h5 id="nginx">Nginx<a class="headerlink" href="#nginx" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code>nginx
+├──<span class="w"> </span>certs
+└──<span class="w"> </span>templates
+<span class="w">    </span>└──<span class="w"> </span>default.conf.template
+</code></pre></div>
+<ul>
+<li><code>./nginx/templates/default.conf.template</code>: File used to initialize Nginx configuration when the container starts.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Don't modify</p>
+<p>Don't manually modify these folders.</p>
+</div>
+<h5 id="certificates">Certificates<a class="headerlink" href="#certificates" title="Permanent link">#</a></h5>
+<p>This folder is empty by default. The application stack initializes with self-signed certificates.</p>
+<p>To use your own certificates, such as certificates signed by an internal authority, create the following files with these exact filenames:</p>
+<div class="highlight"><pre><span></span><code>certificates
+├──<span class="w"> </span>server.crt<span class="w">         </span><span class="c1">## Server certificate</span>
+├──<span class="w"> </span>server.key<span class="w">         </span><span class="c1">## Server private key</span>
+└──<span class="w"> </span>ca.pem<span class="w">             </span><span class="c1">## Certificate Authority</span>
+</code></pre></div>
+<h5 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">#</a></h5>
+<div class="highlight"><pre><span></span><code>scripts
+├──<span class="w"> </span>check_permissions.sh
+├──<span class="w"> </span>generate_certs.sh
+├──<span class="w"> </span>init.sh
+├──<span class="w"> </span>output.sh
+├──<span class="w"> </span>reset.sh
+├──<span class="w"> </span>backup.sh
+└──<span class="w"> </span>restore.sh
+</code></pre></div>
+<p>The application stack includes several utility scripts:</p>
+<ul>
+<li><code>check_permissions.sh</code>: Ensures proper permissions are set on files and folders.</li>
+<li><code>generate_certs.sh</code>: Generates a self-signed certificate for Nginx.</li>
+<li><code>init.sh</code>: Initializes the application stack.</li>
+<li><code>output.sh</code>: Displays output messages called by other scripts.</li>
+<li><code>reset.sh</code>: Resets the environment. Running this script deletes all data and containers.</li>
+<li><code>backup.sh</code>: Performs a cold backup of the current environment.</li>
+<li><code>restore.sh</code>: Restores the environment from a previously taken backup.</li>
+</ul>
+<h3 id="step-5-go-to-the-selected-profile">Step 5: Go to the selected profile<a class="headerlink" href="#step-5-go-to-the-selected-profile" title="Permanent link">#</a></h3>
+<p>Navigate to the directory of your chosen profile.</p>
+<p>For example, to select the <em>Production environment #1</em> profile:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>docker/prod1-cortex
+</code></pre></div>
+<h3 id="step-6-initialize-cortex">Step 6: Initialize Cortex<a class="headerlink" href="#step-6-initialize-cortex" title="Permanent link">#</a></h3>
+<p>Before starting Cortex, initialize the environment using the provided <code>init.sh</code> script.</p>
+<div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/init.sh
+</code></pre></div>
+<p>This script automates several critical setup tasks:</p>
+<ul>
+<li>Prompts for a server name to include in the Nginx server certificate.</li>
+<li>Initializes the <code>secret.conf</code> and <code>index.conf</code> configuration files for Cortex.</li>
+<li>Generates a self-signed certificate if none exists in the <code>./certificates</code> directory.</li>
+<li>Creates a <code>.env</code> file with user/group information and application settings.</li>
+<li>Generates a random password for Elasticsearch authentication.</li>
+<li>Verifies file and folder permissions to ensure proper access rights.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Elasticsearch password</p>
+<p>If you need to retrieve the Elasticsearch password, check the <code>.env</code> file.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">User permissions</p>
+<p>Cortex will run under the user account and group that execute the initialization script. That user must have read/write access to the mounted host directories created during initialization.</p>
+</div>
+<h3 id="step-7-start-cortex">Step 7: Start Cortex<a class="headerlink" href="#step-7-start-cortex" title="Permanent link">#</a></h3>
+<p>Once initialization is complete, start all services using Docker Compose.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>Check that all containers are running.</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>All services should show a running status. If Cortex fails to start or you encounter errors, stop the running containers and restart without the <code>-d</code> flag to display real-time logs in your terminal:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>down
+docker<span class="w"> </span>compose<span class="w"> </span>up
+</code></pre></div>
+<h3 id="step-8-access-cortex">Step 8: Access Cortex<a class="headerlink" href="#step-8-access-cortex" title="Permanent link">#</a></h3>
+<p>Open your browser and navigate to the IP address or hostname of the server running Docker Compose.</p>
+<p>For additional Docker entrypoint options, see <a href="#customizing-cortex-docker-image-behavior">Customizing Cortex Docker image behavior</a> below.</p>
+<h2 id="running-cortex-with-a-standalone-container">Running Cortex with a standalone container<a class="headerlink" href="#running-cortex-with-a-standalone-container" title="Permanent link">#</a></h2>
+<p>Cortex uses Docker to run analyzers and responders. When running Cortex inside a Docker container, you can:</p>
+<ul>
+<li>Grant Cortex access to the Docker or Podman service (recommended approach)</li>
+<li>Start a Docker service inside the Cortex Docker container</li>
+</ul>
+<h3 id="using-the-host-docker-service">Using the host Docker service<a class="headerlink" href="#using-the-host-docker-service" title="Permanent link">#</a></h3>
+<p>To allow Cortex to use the Docker service, you must bind the Docker socket into the Cortex container. Since Cortex shares job files with analyzers, you also need to bind a shared folder between Cortex and the analyzers.</p>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
+</code></pre></div>
+</div>
+<p>Cortex creates Docker containers via the Docker socket <code>/var/run/docker.sock</code>. The directory <code>/var/run/cortex/jobs</code> stores temporary job files on the host, and <code>/tmp/cortex-jobs</code> is the corresponding path inside the container. Cortex requires both paths via <code>--job-directory</code> (inside container) and <code>--docker-job-directory</code> (host path) so job files are available to analyzers. Usually, when host and container paths are the same, <code>--docker-job-directory</code> can be omitted.</p>
+<p>On Windows, Docker service is accessible through the named pipe <code>\\.\pipe\docker_engine</code>. The command changes accordingly:</p>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>docker run --volume //./pipe/docker_engine://./pipe/docker_engine --volume C:\\CORTEX\\JOBS:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory C:\\CORTEX\\JOBS
+</code></pre></div>
+</div>
+<h3 id="running-docker-inside-cortex-container-docker-in-docker">Running Docker inside Cortex container (Docker-in-Docker)<a class="headerlink" href="#running-docker-inside-cortex-container-docker-in-docker" title="Permanent link">#</a></h3>
+<p>You can also run a Docker service inside the Cortex container itself by using the <code>--start-docker</code> parameter. You must start the container in privileged mode.</p>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>docker run --privileged thehiveproject/cortex:latest --start-docker
+</code></pre></div>
+</div>
+<p>In this mode, you don't need to bind any job directories since the Docker daemon runs inside the container.</p>
+<h2 id="running-cortex-with-podman">Running Cortex with Podman<a class="headerlink" href="#running-cortex-with-podman" title="Permanent link">#</a></h2>
+<p>Podman is an open-source container engine designed as a drop-in replacement for Docker. It allows you to run containers without requiring a daemon and can run in rootless mode for improved security.</p>
+<p>Like Docker, Podman can run the Cortex container image as well as its analyzers. The examples below assume you run the containers in rootful mode.</p>
+<p>For Cortex to interact with Podman, it requires access to the <a href="https://docs.podman.io/en/latest/markdown/podman-system-service.1.html" target="_blank">Podman socket</a>. On some systems, Podman automatically installs and enables this socket service.</p>
+<p>You can check whether the Podman socket service is running on your system with this command:</p>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>podman.socket
+</code></pre></div>
+</div>
+<p>By default, the Podman socket resides at <code>/run/podman/podman.sock</code>. This path may vary depending on your system configuration.</p>
+<div class="admonition example">
+<p class="admonition-title">Configuring Cortex to run analyzers with Podman</p>
+<p>To allow Cortex to run analyzers with Podman, mount the Podman socket inside the container at <code>/var/run/docker.sock</code>:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>cortex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">9001</span>:9001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/var/run/cortex/jobs:/tmp/cortex-jobs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span>/run/podman/podman.sock:/var/run/docker.sock<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>docker.io/thehiveproject/cortex:3.1.7<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--job-directory<span class="w"> </span>/tmp/cortex-jobs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-job-directory<span class="w"> </span>/var/run/cortex/jobs<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--es-uri<span class="w"> </span>http://&lt;elasticsearch_ip&gt;:9200
+</code></pre></div>
+<p>With this setup, Cortex will use Podman to run analyzers inside the container.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Image not found</p>
+<p>Podman may encounter issues pulling Cortex analyzer images from the default Docker registry. To fix this, add <code>docker.io</code> as an unqualified registry in your Podman configuration.</p>
+<p>Edit <code>/etc/containers/registries.conf</code> and add:</p>
+<div class="highlight"><pre><span></span><code>unqualified-search-registries = ['docker.io']
+</code></pre></div>
+<p>After making this change, restart the Podman socket service to apply the update.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Docker in Podman</p>
+<p>You can run Docker inside a Podman container by using the <code>--privileged</code> flag:</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>cortex<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">9001</span>:9001<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>docker.io/thehiveproject/cortex:3.1.7<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--es-uri<span class="w"> </span>http://&lt;elasticsearch_ip&gt;:9200<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--start-docker
+</code></pre></div>
+</div>
+<h2 id="customizing-cortex-docker-image-behavior">Customizing Cortex Docker image behavior<a class="headerlink" href="#customizing-cortex-docker-image-behavior" title="Permanent link">#</a></h2>
 <p>By default, the Docker image generates a Cortex configuration file with the following settings:</p>
 <ul>
 <li>It sets the Elasticsearch URI by resolving the host name <code>elasticsearch</code>.</li>
 <li>It uses the official locations for <a href="https://catalogs.download.strangebee.com/latest/json/analyzers.json" target="_blank">analyzers</a> and <a href="https://catalogs.download.strangebee.com/latest/json/responders.json" target="_blank">responders</a>.</li>
 <li>It includes a generated secret to secure user sessions.</li>
 </ul>
-<h2 id="customizing-cortex-docker-image-behavior">Customizing Cortex Docker image behavior<a class="headerlink" href="#customizing-cortex-docker-image-behavior" title="Permanent link">#</a></h2>
-<p>You can customize the behavior of the Cortex Docker image using environment variables or command-line parameters:</p>
+<p>You can further customize this behavior using environment variables or command-line parameters:</p>
 <table>
 <thead>
 <tr>
@@ -19433,26 +19945,21 @@
 </tbody>
 </table>
 <p>The command-line parameters and environment variables documented here are used to customize Cortex when the container starts. These are converted into settings inside the <code>application.conf</code> configuration file, whose available options and structure are documented separately in <a href="../parameters-docker/">Parameters for Docker</a>.</p>
-<h2 id="overriding-configuration-with-a-custom-file">Overriding configuration with a custom file<a class="headerlink" href="#overriding-configuration-with-a-custom-file" title="Permanent link">#</a></h2>
+<h3 id="overriding-configuration-with-a-custom-file">Overriding configuration with a custom file<a class="headerlink" href="#overriding-configuration-with-a-custom-file" title="Permanent link">#</a></h3>
 <p>The generated configuration includes the file <code>/etc/cortex/application.conf</code> at the end. You can override any setting by mounting your own <code>application.conf</code> file to this path.</p>
 <div class="admonition example">
-<div class="highlight"><pre><span></span><code>docker run --volume /path/to/my/application.conf:/etc/cortex/application.conf thehiveproject/cortex:latest --es-uri http://&lt;elasticsearch-host&gt;:9200
+<div class="highlight"><pre><span></span><code>docker run --volume /path/to/my/application.conf:/etc/cortex/application.conf thehiveproject/cortex:latest --es-uri http://&lt;elasticsearch_host&gt;:9200
 </code></pre></div>
 </div>
-<p>Cortex uses Docker to run analyzers and responders. When running Cortex inside a Docker container, you can:</p>
-<ul>
-<li>Grant Cortex access to the Docker or Podman service (recommended approach)</li>
-<li>Start a Docker service inside the Cortex Docker container</li>
-</ul>
 <p>If your environment requires Docker registry authentication, add the following block to your Cortex <code>application.conf</code> file:</p>
 <div class="admonition example">
 <div class="highlight"><pre><span></span><code>docker {
-  host = "&lt;docker-host-url&gt;"
+  host = "&lt;docker_host_url&gt;"
   tlsVerify = true 
   certPath = "/path/to/ca/certificates"
   registry {
-    user = "&lt;registry-username&gt;"
-    password = "&lt;registry-password&gt;"
+    user = "&lt;registry_username&gt;"
+    password = "&lt;registry_password&gt;"
   }
 }
 </code></pre></div>
@@ -19462,117 +19969,17 @@
 <div class="admonition warning">
 <p class="admonition-title">Registry behavior</p>
 <ul>
-<li>Public registries like Docker Hub typically don’t need credentials. Adding authentication to public pulls may cause failures.</li>
+<li>Public registries like Docker Hub typically don't need credentials. Adding authentication to public pulls may cause failures.</li>
 <li>Cortex supports only one registry credentials set for all image pulls. It can't handle different credentials for different registries.</li>
 <li>The target registry is determined by the FQDN, such as <code>harbor.example.com/project/image:tag</code>.</li>
 </ul>
-</div>
-<h2 id="running-cortex-with-docker">Running Cortex with Docker<a class="headerlink" href="#running-cortex-with-docker" title="Permanent link">#</a></h2>
-<h3 id="using-the-host-docker-service">Using the host Docker service<a class="headerlink" href="#using-the-host-docker-service" title="Permanent link">#</a></h3>
-<p>To allow Cortex to use the Docker service, you must bind the Docker socket into the Cortex container. Since Cortex shares job files with analyzers, you also need to bind a shared folder between Cortex and the analyzers.</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>docker run --volume /var/run/docker.sock:/var/run/docker.sock --volume /var/run/cortex/jobs:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory /var/run/cortex/jobs
-</code></pre></div>
-</div>
-<p>Cortex creates Docker containers via the Docker socket <code>/var/run/docker.sock</code>. The directory <code>/var/run/cortex/jobs</code> stores temporary job files on the host, and <code>/tmp/cortex-jobs</code> is the corresponding path inside the container. Cortex requires both paths via <code>--job-directory</code> (inside container) and <code>--docker-job-directory</code> (host path) so job files are available to analyzers. Usually, when host and container paths are the same, <code>--docker-job-directory</code> can be omitted.</p>
-<p>On Windows, Docker service is accessible through the named pipe <code>\\.\pipe\docker_engine</code>. The command changes accordingly:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>docker run --volume //./pipe/docker_engine://./pipe/docker_engine --volume C:\\CORTEX\\JOBS:/tmp/cortex-jobs thehiveproject/cortex:latest --job-directory /tmp/cortex-jobs --docker-job-directory C:\\CORTEX\\JOBS
-</code></pre></div>
-</div>
-<h3 id="running-docker-inside-cortex-container-docker-in-docker">Running Docker inside Cortex container (Docker-in-Docker)<a class="headerlink" href="#running-docker-inside-cortex-container-docker-in-docker" title="Permanent link">#</a></h3>
-<p>You can also run a Docker service inside the Cortex container itself—essentially Docker within Docker—by using the <code>--start-docker</code> parameter. Note that you must start the container in privileged mode.</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>docker run --privileged thehiveproject/cortex:latest --start-docker
-</code></pre></div>
-</div>
-<p>In this mode, you don’t need to bind any job directories since the Docker daemon runs inside the container.</p>
-<h3 id="using-docker-compose-to-start-cortex-and-elasticsearch">Using Docker Compose to start Cortex and Elasticsearch<a class="headerlink" href="#using-docker-compose-to-start-cortex-and-elasticsearch" title="Permanent link">#</a></h3>
-<p>Cortex requires Elasticsearch to run. You can use <a href="https://github.com/StrangeBeeCorp/docker" target="_blank">Docker Compose</a> to start both services together, or install and configure Elasticsearch manually.</p>
-<p>Docker Compose enables you to launch multiple containers and link them.</p>
-<p>The following <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/docker-compose.yml" target="_blank">docker-compose.yml</a> file starts Elasticsearch and Cortex:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>version: "2"
-services:
-  elasticsearch:
-    image: elasticsearch:7.9.1
-    environment:
-      - http.host=0.0.0.0
-      - discovery.type=single-node
-      - script.allowed_types=inline
-      - thread_pool.search.queue_size=100000
-      - thread_pool.write.queue_size=10000
-    volumes:
-      - /path/to/data:/usr/share/elasticsearch/data
-  cortex:
-    image: thehiveproject/cortex:3.1.1
-    environment:
-      - job_directory=${job_directory}
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ${job_directory}:${job_directory}
-    depends_on:
-      - elasticsearch
-    ports:
-      - "0.0.0.0:9001:9001"
-</code></pre></div>
-</div>
-<p>Place this <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/docker-compose.yaml" target="_blank">Docker Compose file</a> and the corresponding <a href="https://raw.githubusercontent.com/TheHive-Project/Cortex/master/docker/cortex/.env" target="_blank">.env file</a> in an empty folder, then run <code>docker-compose up</code>. Cortex is available on port 9001/tcp by default, which you can customize in the compose file.</p>
-<div class="admonition tip">
-<p class="admonition-title">Advanced configuration</p>
-<p>For advanced configuration, visit <a href="https://github.com/TheHive-Project/Docker-Templates" target="_blank">the StrangeBee Docker Templates repository</a>.</p>
-</div>
-<h2 id="running-cortex-with-podman">Running Cortex with Podman<a class="headerlink" href="#running-cortex-with-podman" title="Permanent link">#</a></h2>
-<p>Podman is an open-source container engine designed as a drop-in replacement for Docker. It allows you to run containers without requiring a daemon and can run in rootless mode for improved security.</p>
-<p>Like Docker, Podman can run the Cortex container image as well as its analyzers. The examples below assume you run the containers in rootful mode.</p>
-<p>For Cortex to interact with Podman, it requires access to the <a href="https://docs.podman.io/en/latest/markdown/podman-system-service.1.html" target="_blank">Podman socket</a>. On some systems, Podman automatically installs and enables this socket service.</p>
-<p>You can check whether the Podman socket service is running on your system with this command:</p>
-<div class="admonition example">
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>podman.socket
-</code></pre></div>
-</div>
-<p>By default, the Podman socket resides at <code>/run/podman/podman.sock</code>. This path may vary depending on your system configuration.</p>
-<div class="admonition example">
-<p class="admonition-title">Configuring Cortex to run analyzers with Podman</p>
-<p>To allow Cortex to run analyzers with Podman, mount the Podman socket inside the container at <code>/var/run/docker.sock</code>:</p>
-<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>cortex<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-p<span class="w"> </span><span class="m">9001</span>:9001<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/var/run/cortex/jobs:/tmp/cortex-jobs<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-v<span class="w"> </span>/run/podman/podman.sock:/var/run/docker.sock<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>docker.io/thehiveproject/cortex:3.1.7<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--job-directory<span class="w"> </span>/tmp/cortex-jobs<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-job-directory<span class="w"> </span>/var/run/cortex/jobs<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--es-uri<span class="w"> </span>http://&lt;elasticsearch-ip&gt;:9200
-</code></pre></div>
-<p>With this setup, Cortex will use Podman to run analyzers inside the container.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Image not found</p>
-<p>Podman may encounter issues pulling Cortex analyzer images from the default Docker registry. To fix this, add <code>docker.io</code> as an unqualified registry in your Podman configuration.</p>
-<p>Edit <code>/etc/containers/registries.conf</code> and add:</p>
-<div class="highlight"><pre><span></span><code>unqualified-search-registries = ['docker.io']
-</code></pre></div>
-<p>After making this change, restart the Podman socket service to apply the update.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Docker in Podman</p>
-<p>You can run Docker inside a Podman container by using the <code>--privileged</code> flag:</p>
-<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--rm<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>cortex<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-p<span class="w"> </span><span class="m">9001</span>:9001<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>docker.io/thehiveproject/cortex:3.1.7<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--es-uri<span class="w"> </span>http://&lt;elasticsearch-ip&gt;:9200<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--start-docker
-</code></pre></div>
 </div>
 <h2>Next steps</h2>
 
 <ul>
 <li><a href="../parameters-docker/">Parameters for Docker</a></li>
+<li><a href="../../../thehive/installation/docker/">Deploy TheHive with Docker Compose</a></li>
+<li><a href="../../../resources/docker-demo/">Deploy a Demo Docker Environment</a></li>
 </ul>
 
 

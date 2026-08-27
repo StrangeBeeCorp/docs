@@ -8,10 +8,10 @@
         <link rel="canonical" href="https://docs.strangebee.com/cortex/installation-and-configuration/deploy-cortex-on-kubernetes/">
       
       
-        <link rel="prev" href="../database/">
+        <link rel="prev" href="../run-cortex-with-docker/">
       
       
-        <link rel="next" href="../../user-guides/first-start/">
+        <link rel="next" href="../authentication/">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Deploy Cortex on Kubernetes - TheHive 5 Documentation</title>
+        <title>Deploy on Kubernetes - TheHive 5 Documentation</title>
       
     
     
@@ -17104,7 +17104,7 @@
   <span class="md-ellipsis">
     
   
-    Download Cortex
+    Cortex Installation Methods
   
 
     
@@ -17184,15 +17184,65 @@
   
   
   
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_1" id="__nav_3_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../authentication/" class="md-nav__link">
+      <a href="../system-requirements/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Authentication
+    System Requirements
   
 
     
@@ -17213,14 +17263,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../secret/" class="md-nav__link">
+      <a href="../software-requirements/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Secret key configuration
+    Software Requirements
   
 
     
@@ -17234,29 +17284,9 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced-configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -17266,17 +17296,33 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ssl/" class="md-nav__link">
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_2" id="__nav_3_3_2_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    Configure SSL
+    Installation
   
 
     
@@ -17284,11 +17330,19 @@
   
   
 
-      </a>
-    </li>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Installation
   
 
-              
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -17304,7 +17358,7 @@
   <span class="md-ellipsis">
     
   
-    Cortex Package Repository
+    Package Repository
   
 
     
@@ -17332,7 +17386,7 @@
   <span class="md-ellipsis">
     
   
-    Step-by-Step Guide
+    Install with Packages
   
 
     
@@ -17353,42 +17407,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../automated-installation-script-linux/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Installation and Configuration Guides
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analyzers-responders/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Analyzers &amp; Responders
+    One-Command Install
   
 
     
@@ -17416,91 +17442,7 @@
   <span class="md-ellipsis">
     
   
-    Run Cortex with Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../proxy-settings/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Proxy settings
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../parameters-docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Parameters for Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../database/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Database configuration
+    Run with Docker
   
 
     
@@ -17537,7 +17479,7 @@
   <span class="md-ellipsis">
     
   
-    Deploy Cortex on Kubernetes
+    Deploy on Kubernetes
   
 
     
@@ -17555,7 +17497,7 @@
   <span class="md-ellipsis">
     
   
-    Deploy Cortex on Kubernetes
+    Deploy on Kubernetes
   
 
     
@@ -17629,6 +17571,296 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secret/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secret Key
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../analyzers-responders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyzers &amp; Responders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxy-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxy Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parameters-docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSL Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -19298,11 +19530,37 @@
   
     
     
+      
+  
+  
+    
+    
       <li class="md-path__item">
-        <a href="../authentication/" class="md-path__link">
+        <a href="../system-requirements/" class="md-path__link">
           
   <span class="md-ellipsis">
     Installation &amp; configuration
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../cortex-packages/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Installation
   </span>
 
         </a>
@@ -19349,7 +19607,7 @@
 <ul>
 <li>Kubernetes cluster v1.23.0 or later</li>
 <li>Helm v3.8.0 or later</li>
-<li>Minimum resources per node: see <a href="../#hardware-requirements">Cortex Installation System Requirements</a></li>
+<li>Minimum resources per node: see <a href="../system-requirements/#hardware-requirements">Cortex Installation System Requirements</a></li>
 <li>StorageClass supporting <code>ReadWriteMany</code> access mode</li>
 <li>Network policies allowing inter-pod communication</li>
 </ul>
