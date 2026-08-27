@@ -13,7 +13,7 @@ The tables below list the supported versions for package installations, Docker C
     | 5.3.0 - 5.4.11 | 11 | 4.0.x - 4.1.x  | 7.10.x - 8.x | Supported | All versions | ES 8.x required for Cortex 4.x |
     | 5.0.0 - 5.2.16 | 11 | 4.0.x - 4.1.x | 7.2.x - 7.17.x | Not supported | 3.2.1 and earlier | --- |
     
-    Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with [both applications](../../cortex/installation-and-configuration/index.md#software-requirements).
+    Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with [both applications](../../cortex/installation-and-configuration/software-requirements.md).
 
 === "Docker Compose deployment"
 

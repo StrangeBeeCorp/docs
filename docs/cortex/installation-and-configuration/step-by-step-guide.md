@@ -1,99 +1,133 @@
-# Step-by-Step Guide
+# Install Cortex with Packages
 
-This page is a step by step installation and configuration guide to get a Cortex instance up and running. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from ZIP binary packages.
+Welcome to the step-by-step guide for installing and configuring Cortex with packages!
 
-## Required packages
+This guide is designed for users who are comfortable with Linux system administration, but you don't need to be an infrastructure expert to follow along.
 
-!!! Example ""
+By the end, you'll have a fully functional instance of Cortex up and running.
 
-    === "DEB" 
+!!! note "Guide scope"
+    This guide covers setting up a new instance of Cortex with packages, with all components hosted on the same server. This guide is illustrated with examples for Debian and RPM packages based systems and for installation from ZIP binary packages.
 
-        ```bash
-        apt install wget curl gnupg coreutils apt-transport-https git ca-certificates ca-certificates-java software-properties-common python3-pip lsb-release unzip
-        ``` 
+    It doesn't cover:
 
-    === "RPM"
+    * Docker deployments: For Docker-based setups, follow [Run Cortex with Docker](run-cortex-with-docker.md).
+    * Cluster deployments: Refer to [Deploy Cortex on Kubernetes](deploy-cortex-on-kubernetes.md) for Kubernetes deployments.
+    * Version upgrades: For upgrading an existing instance, see [Upgrade to Cortex 4.1](../operations/upgrade-cortex-4.md).
 
-        ```bash
-        yum install wget curl gnupg2 coreutils chkconfig python3-pip git unzip
-        ```
+!!! warning "Before you begin"
+    To ensure a smooth installation process, make sure you have:
 
-## Java Virtual Machine
+    * A basic understanding of [the role and architecture of Cortex](../index.md)
+    * [Hardware and operating system](system-requirements.md), and [software](software-requirements.md) requirements fully met and verified
+
+## Step 1: Install required dependencies
+
+Start by installing the necessary dependencies for Cortex.
+
+=== "DEB (Debian/Ubuntu)"
+
+    Run the following commands:
+
+    ```bash
+    sudo apt update
+    sudo apt install wget curl gnupg coreutils apt-transport-https git ca-certificates ca-certificates-java software-properties-common python3-pip lsb-release unzip
+    ```
+
+=== "RPM (RHEL/Fedora)"
+
+    Run the following commands:
+
+    ```bash
+    sudo yum update
+    sudo yum install wget curl gnupg2 coreutils chkconfig python3-pip git unzip
+    ```
+
+---
+
+## Step 2: Set up the Java virtual machine (JVM)
+
+Cortex requires Java to run its application server and to manage various processes.
 
 !!! warning "Manual installation required"
     Starting with Cortex 3.2, the Java virtual machine (JVM) is no longer installed automatically. You must manually install it before running Cortex.
 
-!!! example "Install Java"
+!!! note "Java support"
 
-    For enhanced security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, an OpenJDK build provided and maintained by Amazon. Corretto 11 or higher is required to install Cortex.
+    * For security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
+    * Corretto 11 or higher is required to install Cortex.
 
-    === "DEB"
+=== "DEB"
 
-        1. Open a terminal window.
-        2. Execute the following commands:
+    1. Run the following commands:
 
-            !!! Example ""
-                ```bash
-                wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto.gpg
-                echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" | sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
-                sudo apt update
-                sudo apt install java-common java-11-amazon-corretto-jdk
-                echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
-                export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
-                ```
+        ```bash
+        wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto.gpg
+        echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" | sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
+        sudo apt update
+        sudo apt install java-common java-11-amazon-corretto-jdk
+        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+        ```
 
-        3. Verify the installation by running:
+    2. Verify the installation.
 
-            !!! Example ""
-                ```bash
-                java -version
-                ```
+        ```bash
+        java -version
+        ```
 
-        4. You should see output similar to the following:
+        You should see output similar to the following:
 
-            !!! Example ""
-                ```bash
-                openjdk version "11.0.12" 2022-07-19
-                OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
-                OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
-                ```
+        ```bash
+        openjdk version "11.0.28" 2025-07-15
+        OpenJDK Runtime Environment Corretto-11.0.28.6.1 (build 11.0.28+6-LTS)
+        OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
+        ```
 
+        If a different Java version appears, set Java 11 as the default using [`sudo update-alternatives --config java`](https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS){target=_blank}.
 
-    === "RPM"
+=== "RPM"
 
-        1. Open a terminal window.
-        2. Execute the following commands:
+    1. Run the following commands:
 
-            !!! Example ""
-                ```bash
-                sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
-                wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
-                yum install java-11-amazon-corretto-devel &> /dev/null
-                echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
-                export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
-                ```
+        ```bash
+        sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
+        wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
+        sudo yum install -y java-11-amazon-corretto-devel &> /dev/null
+        echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
+        export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
+        ```
 
-        3. Verify the installation by running:
+        !!! note "Adjusting for your distribution"
+            The exact commands may vary depending on your Linux distribution. Refer to your distribution documentation for the recommended way to install Java and adjust the steps accordingly.
 
-            !!! Example ""
-                ```bash
-                java -version
-                ```
+    2. Verify the installation.
 
-        4. You should see output similar to the following:
+        ```bash
+        java -version
+        ```
 
-            !!! Example ""
-                ```bash
-                openjdk version "11.0.12" 2022-07-19
-                OpenJDK Runtime Environment Corretto-11.0.12.7.1 (build 11.0.12+7-LTS)
-                OpenJDK 64-Bit Server VM Corretto-11.0.12.7.1 (build 11.0.12+7-LTS, mixed mode)
-                ```
+        You should see output similar to the following:
 
-    === "Other"
+        ```bash
+        openjdk version "11.0.28" 2025-07-15
+        OpenJDK Runtime Environment Corretto-11.0.28.6.1 (build 11.0.28+6-LTS)
+        OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
+        ```
 
-        The installation requires Java 11, so refer to your system documentation to install it.
+        If a different Java version appears, set Java 11 as the default using [`sudo alternatives --config java`](https://linux.die.net/man/8/alternatives){target=_blank}.
 
-## Elasticsearch
+=== "Other installation methods"
+    If you're using a system other than DEB or RPM, refer to your system documentation for instructions on installing Java 11.
+
+---
+
+## :fontawesome-solid-list: Step 3: Install and configure Elasticsearch {#step-3-install-configure-elasticsearch}
+
+[Elasticsearch](https://www.elastic.co/elasticsearch){target=_blank} is a data indexing and search engine that's used in Cortex to store and manage all its data.
+
+!!! info "Single node configuration"
+    In this guide, you will configure Elasticsearch as a single node on your server, which is fine for running Cortex.
 
 !!! note "Elasticsearch supported versions"
 
@@ -104,64 +138,173 @@ This page is a step by step installation and configuration guide to get a Cortex
     **TheHive**
 
     {% include-markdown "includes/elasticsearch-supported-versions-thehive.md" %}
-    
+
     Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.
 
-!!! Example ""
+### Step 3.1: Install Elasticsearch
 
-    === "DEB"
+=== "DEB"
+
+    1. Add Elasticsearch repository references.
+
+        a. Download Elasticsearch repository keys.
 
         ```bash
         wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
-        sudo apt install elasticsearch   
+        sudo apt-get install apt-transport-https
         ```
 
-    === "RPM"
+        b. Check if the `/etc/apt/sources.list.d/elastic-8.x.list` file exists. If it doesn't, create it.
 
-        ```title="/etc/yum.repos.d/elasticsearch.repo"
-        [elasticsearch]
+        c. Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/elastic-8.x.list` file.
+
+        ```bash
+        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
+        ```
+
+    2. Update your package index and install Elasticsearch using the following commands:
+
+        ```bash
+        sudo apt update
+        sudo apt install elasticsearch
+        ```
+
+    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package){target=_blank}.
+
+=== "RPM"
+
+    1. Add Elasticsearch repository references.
+
+        a. Download Elasticsearch repository keys.
+
+        ```bash
+        sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        ```
+
+        b. Check if the `/etc/yum.repos.d/elasticsearch.repo` file exists. If it doesn't, create it.
+
+        c. Add the repository to your system by appending the following line to the `/etc/yum.repos.d/elasticsearch.repo` file.
+
+        ```bash
+        echo "[elasticsearch]
         name=Elasticsearch repository for 8.x packages
         baseurl=https://artifacts.elastic.co/packages/8.x/yum
         gpgcheck=1
         gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-        enabled=0
-        autorefresh=1
-        type=rpm-md
+        enabled=0" | sudo tee /etc/yum.repos.d/elasticsearch.repo
         ```
 
+    2. Update your package index and install Elasticsearch using the following commands:
+
         ```bash
+        sudo yum -y update
         sudo yum install --enablerepo=elasticsearch elasticsearch
         ```
 
-### Configuration
+    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm){target=_blank}.
 
-!!! Example "Example"
+=== "Other installation methods"
 
-    ```yaml title="/etc/elasticsearch/elasticsearch.yml"
-    http.host: 127.0.0.1
-    transport.host: 127.0.0.1
-    cluster.name: hive
+    Download the tar.gz archive from [Elasticsearch downloads](http://elastic.co/downloads/elasticsearch){target=_blank} and extract it into the folder of your choice. You can use utilities like [`wget`](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
+
+### Step 3.2: Configure Elasticsearch
+
+#### Configure the `/etc/elasticsearch/elasticsearch.yml` file
+
+1. Open the `/etc/elasticsearch/elasticsearch.yml` file using a text editor.
+
+2. In the `elasticsearch.yml` file, set the `cluster.name` parameter to the desired name. This name will help identify your Elasticsearch cluster.
+
+    Replace `my-application` with your new cluster name.
+
+    !!! tip "Default commented line"
+        This line is commented out by default. Uncomment it to ensure your new value is applied.
+
+3. In the `elasticsearch.yml` file, set the `thread_pool.search.queue_size` to the desired number. This parameter controls how many search requests Elasticsearch can queue at the same time. If the queue is full, new requests will wait or be rejected.
+
+    Add the following line (or edit it if it already exists):
+
+    ```yaml
+    thread_pool.search.queue_size: <requests_limit>
+    ```
+
+    Replace `<requests_limit>` with the number of requests you want to allow in the queue. For example, you can use `100000` for a single-node setup.
+
+4. Optional: In the `elasticsearch.yml` file, change the default directory path values for the `path.data` and `path.logs` parameters. That tells Elasticsearch where to store its data and logs.
+
+    | Parameter    | Default directory path value |
+    | -------- | ------- |
+    | `path.data`  | /var/lib/elasticsearch |
+    | `path.logs` | /var/log/elasticsearch     |
+
+5. Recommended: Activate X-Pack security. It controls authentication, encryption, and other security features in Elasticsearch.
+
+    In the `elasticsearch.yml` file, add the desired security parameters from [the official Elasticsearch security settings documentation](https://www.elastic.co/docs/reference/elasticsearch/configuration-reference/security-settings){target=_blank}.
+
+    At minimum add the following line (or edit it if it already exists):
+
+    ```yaml
+    xpack.security.enabled: true
+    ```
+
+    !!! danger "Deactivating X-Pack security"
+        You can deactivate X-Pack security by setting `xpack.security.enabled: false`, but this is strongly discouraged—especially in production environments. Doing so leaves your Elasticsearch instance unprotected against unauthorized access and compromises the security of your entire Cortex deployment.
+
+6. Optional: In the `elasticsearch.yml` file, set the `script.allowed_types` parameter. This controls what types of scripts Elasticsearch is allowed to run for calculations, aggregations, or custom logic on your data.
+
+    By default, Elasticsearch allows both inline and stored scripts. For a standard single-node setup, you usually don't need to change this.
+
+    You can restrict this if you want to allow only one type—or none by adding the following line (or edit it if it already exists):
+
+    ```yaml
+    script.allowed_types: <allowed_type>
+    ```
+
+    Replace `<allowed_type>` with the type you want to allow: `inline`, `stored`, or `none`.
+
+7. Save your modifications in the `elasticsearch.yml` file.
+
+!!! example "Example of a `elasticsearch.yml` file configuration"
+    ```
+    # content from /etc/elasticsearch/elasticsearch.yml
+    [..]
+    cluster.name: cortex
     thread_pool.search.queue_size: 100000
     path.logs: "/var/log/elasticsearch"
     path.data: "/var/lib/elasticsearch"
-    xpack.security.enabled: <boolean>
+    xpack.security.enabled: true
     script.allowed_types: "inline,stored"
+    [..]
     ```
 
-    Set `<boolean>` to `false` to turn off authentication, or `true` to enable it.
+#### Configure JVM options for Elasticsearch
 
-    Adjust this file according to the amount of RAM available on your server: 
+The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
 
-    ```title="/etc/elasticsearch/jvm.options.d/jvm.options"
+1. Check if the `/etc/elasticsearch/jvm.options.d/jvm.options` exists. If it doesn't, create it.
+
+2. Open the `/etc/elasticsearch/jvm.options.d/jvm.options` file using a text editor.
+
+3. In the `jvm.options` file, set the JVM options.
+
+    !!! tip "Heap size guidelines for Elasticsearch"
+        Heap allocation [must not exceed 50% of the available RAM](https://www.elastic.co/search-labs/blog/elasticsearch-heap-size-jvm-garbage-collection){target=_blank}. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
+
+    ```yaml
     -Dlog4j2.formatMsgNoLookups=true
-    -Xms4g
-    -Xmx4g
+    -Xms<heap_size>
+    -Xmx<heap_size>
     ```
 
-{% include-markdown "includes/disable-swap-elasticsearch.md" %}
+    Replace `<heap_size>` with the desired heap size. `Xms` sets the initial heap size, and `Xmx` the maximum heap size.
 
-### Start the Elasticsearch service
+    {% include-markdown "includes/jvm-options-xms-xmx-same-value.md" %}
+
+    {% include-markdown "includes/disable-swap-elasticsearch.md" %}
+
+4. Save your modifications in the `jvm.options` file.
+
+### Step 3.3: Start the Elasticsearch service
 
 === "DEB"
 
@@ -234,9 +377,14 @@ This page is a step by step installation and configuration guide to get a Cortex
 
         If Elasticsearch is running, you should see an active status in green.
 
-### Set a user with the right permissions
+!!! bug "Troubleshooting Elasticsearch"
 
-If you enabled X-Pack security in the [Configuration](#configuration) step, and Elasticsearch is running, set up a user with the right permissions for Cortex.
+    * Service not starting → Check `/var/log/elasticsearch/` for JVM errors or heap misconfiguration.
+    * Memory issues → Ensure heap (`Xms`/`Xmx`) is no more than 50% of system RAM.
+
+### Step 3.4: Set a user with the right permissions {#set-a-user-with-the-right-permissions}
+
+If you enabled X-Pack security in [Step 3.2](#step-32-configure-elasticsearch), and Elasticsearch is running, set up a user with the right permissions for Cortex.
 
 1. Create a `cortex` user.
 
@@ -338,46 +486,48 @@ If you enabled X-Pack security in the [Configuration](#configuration) step, and 
 
     For more details, refer to [the official Elasticsearch API documentation for updating users](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-user){target=_blank}.
 
-## Docker
+---
 
-If using Docker images of analyzers and responders, Docker engine is required on the operating system:
+## (Optional) Step 4: Install Docker
 
-!!! Example ""
+If you plan to run [analyzers and responders as Docker images](analyzers-responders.md#run-with-docker)—the recommended option—install the Docker engine on the operating system running Cortex.
 
-    === "DEB"
+=== "DEB (Debian/Ubuntu)"
 
-        ```bash
-        . /etc/os-release
-        curl -fsSL https://download.docker.com/linux/${ID}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/${ID} ${VERSION_CODENAME:-$UBUNTU_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/docker.list
-        sudo apt update
-        sudo apt install docker-ce
-        ```
+    ```bash
+    . /etc/os-release
+    curl -fsSL https://download.docker.com/linux/${ID}/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/${ID} ${VERSION_CODENAME:-$UBUNTU_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/docker.list
+    sudo apt update
+    sudo apt install docker-ce
+    ```
 
-    === "RPM"
-        
-        ```bash
-        . /etc/os-release
-        sudo yum remove -yq docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
-        sudo dnf -yq install dnf-plugins-core
-        sudo dnf config-manager --add-repo https://download.docker.com/linux/${ID}/docker-ce.repo
-        sudo dnf install -yq docker-ce docker-ce-cli containerd.io docker-compose-plugin
-        ```
+=== "RPM (RHEL/Fedora)"
 
-## Cortex installation and configuration
+    ```bash
+    . /etc/os-release
+    sudo yum remove -yq docker \
+              docker-client \
+              docker-client-latest \
+              docker-common \
+              docker-latest \
+              docker-latest-logrotate \
+              docker-logrotate \
+              docker-engine
+    sudo dnf -yq install dnf-plugins-core
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/${ID}/docker-ce.repo
+    sudo dnf install -yq docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    ```
 
-This section provides step-by-step instructions to install Cortex and configure it properly.
+If you'd rather store and run analyzers and responders directly on the host instead of using Docker, see [Store & run programs on the host](analyzers-responders.md#store-run-programs-on-the-host).
 
-### Installation
+---
 
-Cortex packages are distributed as RPM and DEB files available for direct download via tools like `wget` or `curl`, with installation performed manually.
+## Step 5: Install and configure Cortex {#cortex-installation-and-configuration}
+
+### Step 5.1: Install Cortex
+
+Cortex packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like `wget` or `curl`, with installation performed manually.
 
 All packages are hosted on an HTTPS-secured website and come with a [SHA256 checksum](https://linux.die.net/man/1/sha256sum){target=_blank} and a [GPG](https://www.gnupg.org/){target=_blank} signature for verification.
 
@@ -385,17 +535,68 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 
 {% include-markdown "includes/zip-binaries-installation-cortex.md" %}
 
-### Post-installation configuration
+### Step 5.2: Configure Cortex
 
-#### Running analyzers & responders with Docker
+#### Configure the secret key
 
-If you plan to use Cortex with _Analyzers & Responders_ running in Docker, ensure the `cortex` service account has appropriate permissions to interact with Docker:
+Cortex uses a secret key to sign session cookies and ensure secure user authentication.
+
+1. Generate and configure a secret key.
+
+    ```bash
+    cat > /etc/cortex/secret.conf << _EOF_
+    play.http.secret.key="$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 64 | head -n 1)"
+    _EOF_
+    ```
+
+2. In the `/etc/cortex/application.conf` file, replace the line including `play.http.secret.key=` with:
+
+    ```yaml title="/etc/cortex/application.conf"
+    [..]
+    include "/etc/cortex/secret.conf"
+    [..]
+    ```
+
+    !!! danger "Security requirements"
+        Never share or commit your secret key to version control. Use different keys for each environment (development, staging, production).
+
+For more details, see [Secret key configuration](secret.md).
+
+#### Configure the database and index
+
+In the `application.conf` file, configure Cortex to connect to Elasticsearch.
+
+!!! example "Example of database and index configuration with authentication"
+    ```yaml title="/etc/cortex/application.conf"
+    [..]
+    search {
+      index = cortex
+      uri = "http://127.0.0.1:9200"
+      user = "cortex"
+      password = "<cortex_user_password>"
+    }
+    [..]
+    ```
+
+Replace `<cortex_user_password>` with the password set in [Step 3.4](#set-a-user-with-the-right-permissions).
+
+You can remove the `user` and `password` lines if you didn't enable X-Pack security for Elasticsearch.
+
+For all available options, see [Database configuration](database.md).
+
+#### Configure analyzers and responders
+
+Tell Cortex where to find analyzers and responders, and whether they run as Docker images or directly on the host.
+
+For detailed instructions and configuration examples, see [Analyzers & Responders](analyzers-responders.md).
+
+If you plan to run analyzers and responders as Docker images, ensure the `cortex` service account has appropriate permissions to interact with Docker:
 
 ```bash
 sudo usermod -a -G docker cortex
 ```
 
-#### Verify installation
+### Step 5.3: Verify installation
 
 After installation, you can check if Cortex is properly installed by running:
 
@@ -405,38 +606,63 @@ cortex --version
 
 This should return the installed version of Cortex.
 
-#### Configuration
+### Step 5.4: Start Cortex service
 
-Following settings are required to start Cortex successfully:
+!!! warning
+    Before starting the service, ensure you have configured the application accordingly. At minimum, set up the [secret key](#configure-the-secret-key) and the [database and index configuration](#configure-the-database-and-index).
 
-- [Secret key](secret.md) configuration
-- [Database configuration](database.md)
-- [Authentication](authentication.md)
-- [Analyzers & Responders configuration](analyzers-responders.md)
-
-Advanced configuration settings might be added to run the application successfully: 
-
-- [Specific Docker parameters](parameters-docker.md)
-- [Proxy settings](proxy-settings.md)
-- [SSL configuration](ssl.md)
-
-#### Start Cortex service
-
-!!! Warning
-
-    Before starting the service, ensure to have configured accordingly the application. Start by setting up the [secret key](secret.md).
-
-Save configuration file and run the service:
-
-!!! Example "" 
+1. Start Cortex service and enable it at boot.
 
     ```bash
     sudo systemctl start cortex
+    sudo systemctl enable cortex
     ```
 
-Please note that the service may take some time to start. Once it is started, you may launch your browser and connect to `http://YOUR_SERVER_ADDRESS:9001/`. 
+2. Verify that Cortex is running.
 
-## First start
+    ```bash
+    sudo systemctl status cortex
+    ```
 
-Refer to the [First start](../user-guides/first-start.md) guide for the next steps.
+    If Cortex is running, you should see an active status in green.
 
+    !!! info "Service startup delay"
+        Be aware that the service may take some time to start initially.
+
+    !!! bug "Troubleshooting Cortex"
+        Check the Cortex logs in `/var/log/cortex/application.log` for configuration or startup errors.
+
+3. Open your web browser and navigate to `http://<server_address>:9001/`.
+
+### Step 5.5: Perform the initial setup
+
+Follow the instructions in the [First start](../user-guides/first-start.md) guide to complete the initial setup of Cortex.
+
+---
+
+## Advanced configuration
+
+For additional customization, see:
+
+* [Proxy Settings](proxy-settings.md)
+* [SSL Configuration](ssl.md)
+* [Advanced Configuration](advanced-configuration.md)
+* [Parameters for Docker](parameters-docker.md)
+
+---
+
+## Backup
+
+All persistent data is stored in Elasticsearch. See [Backup and Restore Data](../operations/backup-restore.md) for detailed steps.
+
+<h2>Next steps</h2>
+
+* [First start](../user-guides/first-start.md)
+* [Authentication](authentication.md)
+* [Analyzers & Responders](analyzers-responders.md)
+* [Proxy Settings](proxy-settings.md)
+* [SSL Configuration](ssl.md)
+* [Advanced Configuration](advanced-configuration.md)
+* [Backup and Restore Data](../operations/backup-restore.md)
+* [Cortex Package Repository](cortex-packages.md)
+* [Run Cortex with Docker](run-cortex-with-docker.md)

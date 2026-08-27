@@ -1,37 +1,35 @@
----
-hide:
-  - toc
----
+# Cortex Installation Methods
 
-# Download Cortex
-
-Cortex is distributed in various formats to suit different environments and deployment preferences. Whether you want to install it with packages, run it as a container with Docker, or deploy it in a Kubernetes cluster, you’ll find the appropriate options and instructional links below.
+Cortex runs on Linux. You can deploy it in several ways depending on your deployment preferences and infrastructure requirements. Choose the method that best fits your environment.
 
 ## :material-debian: Debian / :material-ubuntu: Ubuntu
 
-If you use a Debian- or Ubuntu-based OS, follow the steps in the [**Step-by-Step Installation Guide**](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to install and configure Cortex.
+Install Cortex on a standalone server using DEB packages on Debian- or Ubuntu-based systems.
 
-!!! tip "DEB tab"
-    Select the DEB tab in the guide to ensure you use the correct commands.
+See [Install Cortex with Packages](../installation-and-configuration/step-by-step-guide.md) using the **DEB** tab for instructions.
 
 ## :material-redhat: RedHat Enterprise Linux / :material-fedora: Fedora
 
-For RedHat or Fedora-based systems, use the [**Step-by-Step Installation Guide**](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration) to install and configure Cortex.
+Install Cortex on a standalone server using RPM packages on RedHat- or Fedora-based systems.
 
-!!! tip "RPM tab"
-    Select the RPM tab in the guide to ensure you use the correct commands.
+See [Install Cortex with Packages](../installation-and-configuration/step-by-step-guide.md) using the **RPM** tab for instructions.
 
-## :material-archive: ZIP binary packages
+## :material-folder-zip: ZIP binary packages
 
-If you prefer more control over where Cortex is installed, need to use it in environments without package managers, or want to avoid dependency issues, you can [install Cortex by downloading a ZIP binary package](../installation-and-configuration/step-by-step-guide.md#cortex-installation-and-configuration).
+Install Cortex on a standalone server using the ZIP binary package for manual installations or for environments without package managers.
 
-!!! tip "ZIP binary packages tab"
-    Select the ZIP binary packages tab in the guide to ensure you use the correct commands.
+See [Install Cortex with Packages](../installation-and-configuration/step-by-step-guide.md) using the **ZIP binary packages** tab for instructions.
 
 ## :material-docker: Docker
 
-Prefer containerized deployment? Use the official pre-built Docker images on [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex){target=_blank}. Follow the [Docker deployment instructions](../installation-and-configuration/run-cortex-with-docker.md) to get started.
+Cortex image is available on [Docker Hub](https://hub.docker.com/r/thehiveproject/cortex){target=_blank}.
+
+Deploy Cortex and Elasticsearch as a single-server instance using Docker Compose.
+
+See [Run Cortex with Docker](../installation-and-configuration/run-cortex-with-docker.md) for instructions.
 
 ## :material-kubernetes: Kubernetes
 
-For Kubernetes users, deploy Cortex with pre-built Docker images from [**Cortex Docker Hub**](https://hub.docker.com/r/thehiveproject/cortex){target=_blank}. Refer to the [Kubernetes deployment guide](../installation-and-configuration/deploy-cortex-on-kubernetes.md) for detailed instructions.
+Deploy Cortex on a Kubernetes cluster using the [StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}.
+
+See [Deploy Cortex on Kubernetes](../installation-and-configuration/deploy-cortex-on-kubernetes.md) for instructions.

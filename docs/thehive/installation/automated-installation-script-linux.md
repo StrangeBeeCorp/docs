@@ -33,7 +33,7 @@ If you prefer a faster setup than going through [the complete installation guide
 
 5. Perform the initial setup of the application by following the instructions in [Perform Initial Login and Setup as an Admin](../administration/perform-initial-setup-as-admin.md).
 
-If you also want to use the script to install Cortex, refer to the [Cortex installation guide](../../cortex/installation-and-configuration/index.md#installation-guide) for additional details.
+If you also want to use the script to install Cortex, refer to [Quick Install Cortex with Packages: One-Command Setup](../../cortex/installation-and-configuration/automated-installation-script-linux.md) for additional details.
 
 <h2>Next steps</h2>
 

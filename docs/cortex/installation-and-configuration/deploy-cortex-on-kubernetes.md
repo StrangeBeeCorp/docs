@@ -27,7 +27,7 @@ The default deployment includes:
 
 * Kubernetes cluster v1.23.0 or later
 * Helm v3.8.0 or later
-* Minimum resources per node: see [Cortex Installation System Requirements](../installation-and-configuration/index.md#hardware-requirements)
+* Minimum resources per node: see [Cortex Installation System Requirements](system-requirements.md#hardware-requirements)
 * StorageClass supporting `ReadWriteMany` access mode
 * Network policies allowing inter-pod communication
 

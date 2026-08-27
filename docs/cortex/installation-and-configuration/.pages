@@ -1,11 +1,13 @@
 nav:
-    - index.md
+    - System requirements: system-requirements.md
+    - Software requirements: software-requirements.md
     - Step by step guide: step-by-step-guide.md
+    - One-command install: automated-installation-script-linux.md
     - Set up a secret key: secret.md
     - Authentication options: authentication.md
     - Database configuration: database.md
     - Configure Analyzers & Responders: analyzers-responders.md
-    - Docker parameters: docker.md
+    - Docker parameters: parameters-docker.md
     - Using Cortex behind a proxy: proxy-settings.md
     - SSL configuration: ssl.md
     - Advanced configuration: advanced-configuration.md

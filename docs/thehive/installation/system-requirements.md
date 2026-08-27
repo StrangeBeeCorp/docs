@@ -12,7 +12,7 @@ Estimated resource recommendations are provided to offer guidance based on typic
     * Usage intensity: Number of users accessing the system at the same time, including [service accounts](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md#types) and external integrations
     * Data volume: Amount of data ingested, processed, and stored
     * Performance expectations: Expected system responsiveness under typical and peak loads
-    * Deployment method: Installation via packages or Docker containers
+    * Deployment method: Installation via packages, Docker containers, or Kubernetes
 
     Initial deployments can start with minimal configurations and be scaled based on observed performance. Hardware adjustments should be guided by ongoing [monitoring of system resource utilization](../operations/monitoring.md).
 

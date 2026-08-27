@@ -7,7 +7,7 @@ Connect [Cortex](about-cortex.md) servers to TheHive to enable automated analysi
 [Cortex](https://github.com/thehive-project/Cortex/){target=_blank} is an open-source analysis and response engine designed for SOCs, CSIRTs, and security researchers to automate threat intelligence gathering and incident response.
 
 !!! warning "Requirements"
-    Before adding a Cortex server, you must install and configure Cortex. For instructions, refer to the [Installation and Configuration Guides](../../../cortex/installation-and-configuration/index.md).
+    Before adding a Cortex server, you must install and configure Cortex. For instructions, refer to [Cortex Installation Methods](../../../cortex/download/index.md).
 
 !!! note "Multiple Cortex servers"
     TheHive supports connecting multiple Cortex servers only with a paid license.
