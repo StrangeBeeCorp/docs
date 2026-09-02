@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v5.7.5
+  version: v5.7.6
   description: "\n## General\n\nAlmost all of the endpoints will require an authentication.\
     \ Supported ways of authentication are detailed below.\n\nEach user has permissions,\
     \ defined by their role. The permissions of the user are checked when making api\
@@ -29621,7 +29621,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         type:
           type: string
@@ -29637,7 +29637,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         type:
           type: string
@@ -29653,7 +29653,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         type:
           type: string
@@ -30126,7 +30126,7 @@ components:
           pattern: ^[ -~]+$
         value:
           type: string
-          maxLength: 512
+          maxLength: 8192
           minLength: 1
     HeaderWidget:
       title: HeaderWidget
@@ -32406,6 +32406,34 @@ components:
         follow:
           type: boolean
         customFields:
+          description: |-
+            Several formats are accepted, with different behaviors:
+
+            Replacements
+
+            - To replace all values of a custom field with a single value — Object format.
+            Overwrites the current values of each listed custom field. Fields not listed are left untouched.
+            `{"threat-type": "Malware", "detection-source": "EDR"}`
+            - To replace all values of a custom field with one or more values — Array format.
+            Overwrites the current values of each listed custom field. Fields not listed are deleted.
+            `[{"name": "threat-type", "value": "Malware", "order": 0}, {"name": "threat-type", "value": "Ransomware", "order": 1}, {"name": "detection-source", "value": "EDR", "order": 2}]
+            - To replace one specific value inside a custom field with one or more values — Object format with a field:value key.
+            Only the targeted value changes. Every other value in that custom field is kept, and fields not listed are left untouched.
+            `{"threat-type:Malware":"Ransomware"}` or `{"threat-type:Malware":["Ransomware", "Spyware"]}`
+
+            Additions
+
+            To add one or more values to a custom field without touching its existing values — Object format with an empty target.
+            The trailing colon means that no value is targeted, so the new value is appended.
+
+            `{"threat-type:": "Malware"}` or `{"threat-type:": ["Malware", "Ransomware"]}`
+
+            Deletions
+
+            To delete one specific value from a custom field — Object format with an empty replacement.
+            Only the targeted value is removed. Every other value in that field is kept.
+
+            `{"threat-type:Malware": ""}`
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
@@ -32580,6 +32608,34 @@ components:
         follow:
           type: boolean
         customFields:
+          description: |-
+            Several formats are accepted, with different behaviors:
+
+            Replacements
+
+            - To replace all values of a custom field with a single value — Object format.
+            Overwrites the current values of each listed custom field. Fields not listed are left untouched.
+            `{"threat-type": "Malware", "detection-source": "EDR"}`
+            - To replace all values of a custom field with one or more values — Array format.
+            Overwrites the current values of each listed custom field. Fields not listed are deleted.
+            `[{"name": "threat-type", "value": "Malware", "order": 0}, {"name": "threat-type", "value": "Ransomware", "order": 1}, {"name": "detection-source", "value": "EDR", "order": 2}]
+            - To replace one specific value inside a custom field with one or more values — Object format with a field:value key.
+            Only the targeted value changes. Every other value in that custom field is kept, and fields not listed are left untouched.
+            `{"threat-type:Malware":"Ransomware"}` or `{"threat-type:Malware":["Ransomware", "Spyware"]}`
+
+            Additions
+
+            To add one or more values to a custom field without touching its existing values — Object format with an empty target.
+            The trailing colon means that no value is targeted, so the new value is appended.
+
+            `{"threat-type:": "Malware"}` or `{"threat-type:": ["Malware", "Ransomware"]}`
+
+            Deletions
+
+            To delete one specific value from a custom field — Object format with an empty replacement.
+            Only the targeted value is removed. Every other value in that field is kept.
+
+            `{"threat-type:Malware": ""}`
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
@@ -32691,11 +32747,33 @@ components:
           minLength: 1
         customFields:
           description: |-
-            One of: {"custom-name": "example", ...} (adding values to the existing list) OR [{
-                        "name": "business-unit",
-                        "value": "Sales",
-                        "order": 0
-                    }...] (replace whole list)
+            Several formats are accepted, with different behaviors:
+
+            Replacements
+
+            - To replace all values of a custom field with a single value — Object format.
+            Overwrites the current values of each listed custom field. Fields not listed are left untouched.
+            `{"threat-type": "Malware", "detection-source": "EDR"}`
+            - To replace all values of a custom field with one or more values — Array format.
+            Overwrites the current values of each listed custom field. Fields not listed are deleted.
+            `[{"name": "threat-type", "value": "Malware", "order": 0}, {"name": "threat-type", "value": "Ransomware", "order": 1}, {"name": "detection-source", "value": "EDR", "order": 2}]
+            - To replace one specific value inside a custom field with one or more values — Object format with a field:value key.
+            Only the targeted value changes. Every other value in that custom field is kept, and fields not listed are left untouched.
+            `{"threat-type:Malware":"Ransomware"}` or `{"threat-type:Malware":["Ransomware", "Spyware"]}`
+
+            Additions
+
+            To add one or more values to a custom field without touching its existing values — Object format with an empty target.
+            The trailing colon means that no value is targeted, so the new value is appended.
+
+            `{"threat-type:": "Malware"}` or `{"threat-type:": ["Malware", "Ransomware"]}`
+
+            Deletions
+
+            To delete one specific value from a custom field — Object format with an empty replacement.
+            Only the targeted value is removed. Every other value in that field is kept.
+
+            `{"threat-type:Malware": ""}`
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
@@ -32820,6 +32898,34 @@ components:
           type: string
           maxLength: 1048576
         customFields:
+          description: |-
+            Several formats are accepted, with different behaviors:
+
+            Replacements
+
+            - To replace all values of a custom field with a single value — Object format.
+            Overwrites the current values of each listed custom field. Fields not listed are left untouched.
+            `{"threat-type": "Malware", "detection-source": "EDR"}`
+            - To replace all values of a custom field with one or more values — Array format.
+            Overwrites the current values of each listed custom field. Fields not listed are deleted.
+            `[{"name": "threat-type", "value": "Malware", "order": 0}, {"name": "threat-type", "value": "Ransomware", "order": 1}, {"name": "detection-source", "value": "EDR", "order": 2}]
+            - To replace one specific value inside a custom field with one or more values — Object format with a field:value key.
+            Only the targeted value changes. Every other value in that custom field is kept, and fields not listed are left untouched.
+            `{"threat-type:Malware":"Ransomware"}` or `{"threat-type:Malware":["Ransomware", "Spyware"]}`
+
+            Additions
+
+            To add one or more values to a custom field without touching its existing values — Object format with an empty target.
+            The trailing colon means that no value is targeted, so the new value is appended.
+
+            `{"threat-type:": "Malware"}` or `{"threat-type:": ["Malware", "Ransomware"]}`
+
+            Deletions
+
+            To delete one specific value from a custom field — Object format with an empty replacement.
+            Only the targeted value is removed. Every other value in that field is kept.
+
+            `{"threat-type:Malware": ""}`
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
@@ -32911,11 +33017,33 @@ components:
           minLength: 1
         customFields:
           description: |-
-            One of: {"custom-name": "example", ...} (adding values to the existing list) OR [{
-                        "name": "business-unit",
-                        "value": "Sales",
-                        "order": 0
-                    }...] (replace whole list)
+            Several formats are accepted, with different behaviors:
+
+            Replacements
+
+            - To replace all values of a custom field with a single value — Object format.
+            Overwrites the current values of each listed custom field. Fields not listed are left untouched.
+            `{"threat-type": "Malware", "detection-source": "EDR"}`
+            - To replace all values of a custom field with one or more values — Array format.
+            Overwrites the current values of each listed custom field. Fields not listed are deleted.
+            `[{"name": "threat-type", "value": "Malware", "order": 0}, {"name": "threat-type", "value": "Ransomware", "order": 1}, {"name": "detection-source", "value": "EDR", "order": 2}]
+            - To replace one specific value inside a custom field with one or more values — Object format with a field:value key.
+            Only the targeted value changes. Every other value in that custom field is kept, and fields not listed are left untouched.
+            `{"threat-type:Malware":"Ransomware"}` or `{"threat-type:Malware":["Ransomware", "Spyware"]}`
+
+            Additions
+
+            To add one or more values to a custom field without touching its existing values — Object format with an empty target.
+            The trailing colon means that no value is targeted, so the new value is appended.
+
+            `{"threat-type:": "Malware"}` or `{"threat-type:": ["Malware", "Ransomware"]}`
+
+            Deletions
+
+            To delete one specific value from a custom field — Object format with an empty replacement.
+            Only the targeted value is removed. Every other value in that field is kept.
+
+            `{"threat-type:Malware": ""}`
           oneOf:
           - $ref: '#/components/schemas/customFieldsAsObject'
           - type: array
@@ -33553,7 +33681,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         prefix:
           type: string
@@ -33573,7 +33701,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         prefix:
           type: string
@@ -33593,7 +33721,7 @@ components:
       properties:
         key:
           type: string
-          maxLength: 1024
+          maxLength: 8192
           minLength: 1
         prefix:
           type: string
