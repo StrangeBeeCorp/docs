@@ -14,7 +14,6 @@
 
 * Alerts: Alert feeder authentication keys and bearer tokens now accept up to 8192 characters, so long OAuth and JWT tokens can be saved.
 * Users: Extended the audit trail to cover all user management actions.
-* Performance: Reduced latency on authenticated endpoints by optimizing how unique values are looked up in the search index.
 
 ### Fixes
 
