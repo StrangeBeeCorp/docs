@@ -985,7 +985,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         });
         ```
 
-        See the [`POST /api/v1/organisation` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Create%20Organisation){target=_blank} for the complete object definition.
+        See the [`POST /api/v1/organisation` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Create%20Organisation){target=_blank} for the complete object definition.
 
 * `organisation.update(orgId: string, update: InputUpdateOrganisation): void`: Updates an organization’s details.
 
@@ -1000,7 +1000,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         );
         ```
 
-        See the [`PATCH /api/v1/organisation/{orgId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Update%20Organisation){target=_blank} for the complete object definition.
+        See the [`PATCH /api/v1/organisation/{orgId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Update%20Organisation){target=_blank} for the complete object definition.
 
 * `organisation.get(orgId: string): OutputOrganisation`: Retrieves details of an organization.
   
@@ -1019,7 +1019,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         );
         ```
 
-        See the [`PUT /api/v1/organisation/{orgId}/link/{otherOrgId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Link%20Organisations){target=_blank} for the complete object definition.
+        See the [`PUT /api/v1/organisation/{orgId}/link/{otherOrgId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Link%20Organisations){target=_blank} for the complete object definition.
 
 * `organisation.bulkLink(orgId: string, input: InputOrganisationBulkLink): void`: Links multiple organizations together.
 
@@ -1037,7 +1037,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         );
         ```
 
-        See the [`PUT /api/v1/organisation/{orgId}/links` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Bulk%20link%20Organisations){target=_blank} for the complete object definition.
+        See the [`PUT /api/v1/organisation/{orgId}/links` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Bulk%20link%20Organisations){target=_blank} for the complete object definition.
 
 * `organisation.unlink(orgId: string, otherOrgId: string): void`: Removes the link between two organizations.
 * `organisation.listLinks(orgId: string): OutputOrganisationLink[]`: Lists all links between organizations.
@@ -1167,11 +1167,20 @@ Functions in TheHive have access to predefined objects that enable interaction w
 
 ## Cortex
 
-<!-- md:version 5.5.2 -->
-
 ### Analyzer
 
-* `cortex.createJob(input: InputJob): OutputJob`:  Launches a Cortex analyzer job on an observable.
+* <!-- md:version 5.8 --> `cortex.listAnalyzers(): OutputAnalyzer[]`: Lists the analyzers available to the organization across every connected Cortex server. Returns an empty array if no Cortex server is connected or no analyzer is available.
+
+    ??? tip "Example"
+
+        ```javascript
+        const analyzers = context.cortex.listAnalyzers();
+        const emlParser = analyzers.find(a => a.name === "EmlParser_2_1");
+        ```
+
+        Each returned object includes at minimum `id`, `name`, and `cortexIds`—the Cortex servers where the analyzer is available. See the [`GET /api/v1/connector/cortex/analyzer` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers){target=_blank} for the complete object definition.
+
+* <!-- md:version 5.5.2 --> `cortex.createJob(input: InputJob): OutputJob`:  Launches a Cortex analyzer job on an observable.
 
     ??? tip "Example"
 
@@ -1183,13 +1192,24 @@ Functions in TheHive have access to predefined objects that enable interaction w
         });
         ```
 
-        To list available analyzers and retrieve their full IDs, use the [`GET /api/v1/connector/cortex/analyzer` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers){target=_blank}.
+        To list available analyzers and retrieve their full IDs, use the [`GET /api/v1/connector/cortex/analyzer` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers){target=_blank}, or call `context.cortex.listAnalyzers()` directly from within the Function.
 
         See the [`POST /api/v1/connector/cortex/job` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/Create%20Cortex%20job){target=_blank} for the complete object definition.
 
 ### Responder
 
-* `cortex.createAction(input: InputAction): OutputAction`: Launches a Cortex responder action on a case, an alert, or a task.
+* <!-- md:version 5.8 --> `cortex.listResponders(entityType: string, entityId: string): OutputResponder[]`: Lists the responders available for an entity, filtered by the entity's TLP and PAP levels. `entityType` is one of `case`, `case_artifact`, `case_task`, `case_task_log`, or `alert`. Returns an empty array if no responder is available for the entity.
+
+    ??? tip "Example"
+
+        ```javascript
+        const responders = context.cortex.listResponders("alert", "~456");
+        const blockIp = responders.find(r => r.name === "Firewall_BlockIP_1_0");
+        ```
+
+        Each returned object includes at minimum `id`, `name`, and `cortexIds`—the Cortex servers where the responder is available. See the [`GET /api/v1/connector/cortex/responder/{entityType}/{entityId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders){target=_blank} for the complete object definition.
+
+* <!-- md:version 5.5.2 --> `cortex.createAction(input: InputAction): OutputAction`: Launches a Cortex responder action on a case, an alert, or a task.
 
     ??? tip "Example"
 
@@ -1201,7 +1221,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
         });
         ```
 
-        To list available responders and retrieve their full IDs, use the [`GET /api/v1/connector/cortex/responder/` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders){target=_blank}.
+        To list available responders and retrieve their full IDs, use the [`GET /api/v1/connector/cortex/responder/{entityType}/{entityId}` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders){target=_blank}, or call `context.cortex.listResponders()` directly from within the Function.
 
         See the [`POST /api/v1/connector/cortex/action` endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/Create%20an%20action){target=_blank} for the complete object definition.
 
