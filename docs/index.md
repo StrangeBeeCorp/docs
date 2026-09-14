@@ -99,6 +99,8 @@ sections:
               url: '/thehive/administration/ttps/add-a-catalog/'
             - text: 'Restrict visibility for sensitive cases'
               url: '/thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/'
+            - text: 'Configure SLA rules to define response-time objectives'
+              url: '/thehive/user-guides/organization/configure-organization/manage-sla/configure-sla-rules/'
         - title: 'Track team activity'
           links: 
             - text: 'Create custom case and alert views'
@@ -113,6 +115,8 @@ sections:
               url: '/thehive/user-guides/key-performance-indicators/measure-alert-management-performance/'
             - text: 'Evaluate case metrics on dashboards'
               url: '/thehive/user-guides/key-performance-indicators/measure-case-management-performance/'
+            - text: 'Monitor SLA compliance across the organization'
+              url: '/thehive/user-guides/sla-management/monitor-sla/'
             - text: 'Comment on cases and alerts to provide feedback'
               url: '/thehive/user-guides/analyst-corner/cases/comment-on-case/'
 

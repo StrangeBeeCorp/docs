@@ -60,9 +60,12 @@
 
 ## 5.7.3 - June 4, 2026
 
+Last update: September 14, 2026
+
 ### Improvements
 
 * Authentication: Added informational logs to the LDAP synchronization process, covering sync start and end, search parameters, and per-user group and profile mappings.
+* Alerts: The `externalLink` field accepts up to 4096 characters when [creating](https://docs.strangebee.com/thehive/api-docs/#tag/Alert/operation/Create%20Alert){target=_blank} or [updating](https://docs.strangebee.com/thehive/api-docs/#tag/Alert/operation/Update%20Alert){target=_blank} an alert through the API.
 
 ### Fixes
 

@@ -10,9 +10,7 @@ Save and download a [case report](about-case-reports.md) in TheHive to provide f
 
 1. [Locate the case](../search-for-cases/find-a-case.md).
 
-2. In the case, select the **Report** tab.
-
-    ![Case report tab](/thehive/images/user-guides/analyst-corner/cases/report-tab.png)
+2. {% include-markdown "includes/case-report-tab-go-to.md" %}
 
 3. In the right pane, under the **General** section, select the template you want to apply, the format, and the maximum number of elements displayed per widget.
 

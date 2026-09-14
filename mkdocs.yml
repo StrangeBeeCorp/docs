@@ -686,7 +686,9 @@ nav:
             - 'Add a Local Slack Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-slack-endpoint.md
             - 'Add a Local Teams Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-teams-endpoint.md
             - 'Add a Local Webhook Endpoint': thehive/user-guides/organization/configure-organization/manage-endpoints/add-webhook-endpoint.md
-        - 'Functions': 
+        - 'SLA Management':
+          - 'Configure SLA Rules': thehive/user-guides/organization/configure-organization/manage-sla/configure-sla-rules.md
+        - 'Functions':
           - 'About Functions': thehive/user-guides/organization/configure-organization/manage-functions/about-functions.md
           - 'Create a Function': thehive/user-guides/organization/configure-organization/manage-functions/create-a-function.md
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
@@ -907,6 +909,10 @@ nav:
         - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md
         - 'Measure Alert Management Performance': thehive/user-guides/key-performance-indicators/measure-alert-management-performance.md
         - 'Measure Task Management Performance': thehive/user-guides/key-performance-indicators/measure-task-management-performance.md
+      - 'SLA Management':
+        - 'About SLA Management': thehive/user-guides/sla-management/about-sla-management.md
+        - 'Monitor SLA': thehive/user-guides/sla-management/monitor-sla.md
+        - 'Configure SLA Notifications': thehive/user-guides/sla-management/configure-sla-notifications.md
       - 'Flavored Markdown Syntax': thehive/user-guides/thehive-flavored-markdown.md
       - 'Date Field Definitions': thehive/user-guides/date-field-definitions-alerts-cases.md
     - 'External User Guides':
@@ -943,7 +949,8 @@ nav:
       - 'Release Notes for Version 5.5': thehive/release-notes/release-notes-5.5.md
       - 'Release Notes for Version 5.6': thehive/release-notes/release-notes-5.6.md
       - 'Release Notes for Version 5.7': thehive/release-notes/release-notes-5.7.md
-  - Cortex: 
+      - 'Release Notes for Version 5.8': thehive/release-notes/release-notes-5.8.md
+  - Cortex:
     - cortex/index.md
     - 'Download':
       - 'cortex/download/index.md'

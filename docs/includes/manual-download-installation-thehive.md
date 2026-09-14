@@ -21,8 +21,8 @@
             wget -O /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.6-1_all`. 
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.7.6-1_all`. 
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.7`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -43,8 +43,8 @@
             curl -o /tmp/<file_name>.deb.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.6.6-1_all`. 
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive_5.7.6-1_all`. 
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.7`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -148,8 +148,8 @@
             wget -O /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.6-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.7.6-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.7`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).
@@ -170,8 +170,8 @@
             curl -o /tmp/<file_name>.noarch.rpm.asc https://thehive.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.6.6-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.6`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `thehive-5.7.6-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `5.7`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [TheHive Package Repository](/thehive/installation/thehive-packages/).

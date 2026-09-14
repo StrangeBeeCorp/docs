@@ -16,7 +16,7 @@ A notification consists of two key components:
 
 Associate each notification with only one trigger.
 
-TheHive provides several predefined triggers for [cases](#triggers-on-cases), [alerts](#triggers-on-alerts), [tasks](#triggers-on-tasks), [observables](#triggers-on-observables), [jobs](#triggers-on-jobs), and [actions](#triggers-on-actions). Additionally, create custom triggers using [*FilteredEvent*](write-filtered-event-trigger.md).
+TheHive provides several predefined triggers for [cases](#triggers-on-cases), [alerts](#triggers-on-alerts), [tasks](#triggers-on-tasks), [observables](#triggers-on-observables), [jobs](#triggers-on-jobs), [actions](#triggers-on-actions), and <!-- md:version 5.8 --> [service level agreements (SLAs)](#triggers-on-sla). Additionally, create custom triggers using [*FilteredEvent*](write-filtered-event-trigger.md).
 
 Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 
@@ -46,6 +46,19 @@ Use the *AnyEvent* trigger to execute notifications for any event in TheHive.
 * *TaskAssigned*: Triggered when a task is assigned to a user or the assignee is updated
 * *TaskClosed*: Triggered when a task is closed
 * *TaskMandatory*: Triggered when a task is made mandatory
+
+#### Triggers on SLA
+
+<!-- md:version 5.8 -->
+
+* *AlertSlaAtRisk*: Triggered when an alert's SLA reaches its warning threshold
+* *AlertSlaOverdue*: Triggered when an alert's SLA deadline is exceeded
+* *CaseSlaAtRisk*: Triggered when a case's SLA reaches its warning threshold
+* *CaseSlaOverdue*: Triggered when a case's SLA deadline is exceeded
+* *TaskSlaAtRisk*: Triggered when a task's SLA reaches its warning threshold
+* *TaskSlaOverdue*: Triggered when a task's SLA deadline is exceeded
+
+See [About SLA Management](../../../sla-management/about-sla-management.md) to learn how SLA rules, warning thresholds, and deadlines are defined, and [Configure SLA Notifications](../../../sla-management/configure-sla-notifications.md) for message template examples.
 
 #### Triggers on jobs
 
@@ -90,3 +103,4 @@ Only users with the `manageConfig` permission can manage notifications in TheHiv
 * [Create a Notification](create-a-notification.md)
 * [Turn Off a Notification](turn-off-a-notification.md)
 * [Delete a Notification](delete-a-notification.md)
+* [Configure SLA Notifications](../../../sla-management/configure-sla-notifications.md)

@@ -44,12 +44,13 @@ Each release shifts this set forward, which is what extends some versions' maint
 | [5.2](../release-notes/release-notes-5.2.md) | July 6, 2023 | No longer maintained or supported |
 | [5.3](../release-notes/release-notes-5.3.md) | April 24, 2024 | No longer maintained or supported |
 | [5.4](../release-notes/release-notes-5.4.md) | September 26, 2024 | No longer maintained or supported |
-| [5.5](../release-notes/release-notes-5.5.md) | April 22, 2025 | 5.8 ships |
+| [5.5](../release-notes/release-notes-5.5.md) | April 22, 2025 | No longer maintained or supported |
 | [5.6](../release-notes/release-notes-5.6.md) | February 2, 2026 | 6.0 ships |
-| [Latest] [5.7](../release-notes/release-notes-5.7.md) | April 9, 2026 | 6.1 ships |
-| 5.8 | — | 7.0 ships |
+| [5.7](../release-notes/release-notes-5.7.md) | April 9, 2026 | 6.1 ships |
+| [Latest] [5.8](../release-notes/release-notes-5.8.md) | September 14, 2026 | 7.0 ships |
 | 6.0 | — | 6.2 ships |
 | 6.1 | — | 6.3 ships |
+| 6.2 | — | 6.4 ships |
 
 The same pattern repeats at every later major and minor release.
 
