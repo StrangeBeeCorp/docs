@@ -11,7 +11,7 @@
         <link rel="prev" href="../update-misp-taxonomies/">
       
       
-        <link rel="next" href="../delete-a-taxonomy/">
+        <link rel="next" href="../activate-deactivate-a-taxonomy-tag/">
       
       
         
@@ -5572,6 +5572,34 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activate-deactivate-a-taxonomy-tag/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activate or Deactivate a Taxonomy Tag
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -19886,10 +19914,11 @@
 
 <h1 id="activate-or-deactivate-a-taxonomy">Activate or Deactivate a Taxonomy<a class="headerlink" href="#activate-or-deactivate-a-taxonomy" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>[admin] manageTaxonomy</code></span></span></p>
-<p>Activate or deactivate a <a href="../about-taxonomies/">taxonomy</a> in TheHive to control which catalogs of structured tags are available for use.</p>
+<p>Activate or deactivate a <a href="../about-taxonomies/">taxonomy</a> in TheHive to control which catalogs of structured tags are available for use. Taxonomy status applies to the whole instance, so deactivating a taxonomy affects every organization.</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.8/#5.8" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.8/#5.8">5.8</a></span></span> To keep a taxonomy active but rule out only some of its tags, <a href="../activate-deactivate-a-taxonomy-tag/">deactivate those tags individually</a> instead.</p>
 <div class="admonition warning">
 <p class="admonition-title">Manual activation required</p>
-<p>By default, MISP taxonomies aren't activated. You must <a href="./">activate them manually</a>.</p>
+<p>By default, MISP taxonomies aren't activated. You must activate them manually.</p>
 </div>
 <h2>Procedure</h2>
 
@@ -19906,12 +19935,13 @@
 <p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M0 256a56 56 0 1 1 112 0 56 56 0 1 1-112 0m168 0a56 56 0 1 1 112 0 56 56 0 1 1-112 0m224-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112"></path></svg></span> next to the taxonomy you want to activate or deactivate.</p>
 </li>
 <li>
-<p>Select <strong>Activate</strong> or <strong>Deactivate</strong>, depending on the action what you want to take.</p>
+<p>Select <strong>Activate</strong> or <strong>Deactivate</strong>, depending on the action you want to take.</p>
 </li>
 </ol>
 <h2>Next steps</h2>
 
 <ul>
+<li><a href="../activate-deactivate-a-taxonomy-tag/">Activate or Deactivate a Taxonomy Tag</a></li>
 <li><a href="../add-a-custom-taxonomy/">Add a Custom Taxonomy</a></li>
 <li><a href="../update-misp-taxonomies/">Update MISP Taxonomies</a></li>
 <li><a href="../delete-a-taxonomy/">Delete a Taxonomy</a></li>
