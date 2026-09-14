@@ -22,9 +22,13 @@
 		</style>
 	</head>
 	<body>
-		<redoc
-			spec-url="https://docs.strangebee.com/thehive/api-docs/docs.yaml"
-			expand-responses="200,201"></redoc>
+		<div id="redoc"></div>
 		<script src="https://cdn.jsdelivr.net/npm/redoc@2.1.5/bundles/redoc.standalone.js"></script>
+		<script>
+			Redoc.init("https://docs.strangebee.com/thehive/api-docs/docs.yaml", {
+			expandResponses: "200,201",
+			jsonSampleExpandLevel: "all"
+			}, document.getElementById("redoc"));
+		</script>
 	</body>
 </html>
