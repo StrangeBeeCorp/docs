@@ -946,15 +946,16 @@ nav:
 
     - 'Release Notes':
       - 'Release Versioning and Maintenance Policy': thehive/installation/release-and-maintenance-policy.md
-      - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
-      - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
-      - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
-      - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
-      - 'Release Notes for Version 5.4': thehive/release-notes/release-notes-5.4.md
-      - 'Release Notes for Version 5.5': thehive/release-notes/release-notes-5.5.md
-      - 'Release Notes for Version 5.6': thehive/release-notes/release-notes-5.6.md
-      - 'Release Notes for Version 5.7': thehive/release-notes/release-notes-5.7.md
       - 'Release Notes for Version 5.8': thehive/release-notes/release-notes-5.8.md
+      - 'Release Notes for Version 5.7': thehive/release-notes/release-notes-5.7.md
+      - 'Release Notes for Version 5.6': thehive/release-notes/release-notes-5.6.md
+      - 'Release Notes for Version 5.5': thehive/release-notes/release-notes-5.5.md
+      - 'Release Notes for Version 5.4': thehive/release-notes/release-notes-5.4.md
+      - 'Release Notes for Version 5.3': thehive/release-notes/release-notes-5.3.md
+      - 'Release Notes for Version 5.2': thehive/release-notes/release-notes-5.2.md
+      - 'Release Notes for Version 5.1': thehive/release-notes/release-notes-5.1.md
+      - 'Release Notes for Version 5.0': thehive/release-notes/release-notes-5.0.md
+
   - Cortex:
     - cortex/index.md
     - 'Download':
