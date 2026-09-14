@@ -24,6 +24,7 @@ Add comments to [cases](../about-cases.md) to document investigation progress, s
 
 <h2>Next steps</h2>
 
+* [Find a Comment](find-a-comment.md)
 * [Share a Comment](share-a-comment.md)
 * [Add Tasks to a Case](../add-tasks-to-a-case.md)
 * [Add a Link to a Case](../case-links/add-a-link-to-a-case.md)

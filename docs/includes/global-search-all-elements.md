@@ -1,2 +1,2 @@
 !!! note "All elements"
-    Select the **All elements** item for a comprehensive tool-wide overview that includes all entity types, such as cases, alerts, observables, jobs, tasks, and task logs. Use this option to analyze cross-linked information or to conduct a detailed investigation.
+    Select the **All elements** item for a comprehensive tool-wide overview that includes all entity types, such as cases, alerts, observables, jobs, tasks, task logs, <!-- md:version 5.8 --> comments, and <!-- md:version 5.8 --> pages. Use this option to analyze cross-linked information or to conduct a detailed investigation.

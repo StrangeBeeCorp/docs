@@ -763,6 +763,7 @@ nav:
           - 'Comments':
             - 'Comment on Alerts': thehive/user-guides/analyst-corner/alerts/comment-on-alert.md
             - 'Share a Comment': thehive/user-guides/analyst-corner/cases/case-comments/share-a-comment.md
+            - 'Find a Comment': thehive/user-guides/analyst-corner/cases/case-comments/find-a-comment.md
           - 'Close an Alert': thehive/user-guides/analyst-corner/alerts/close-an-alert.md
           - 'Reopen an Alert': thehive/user-guides/analyst-corner/alerts/reopen-an-alert.md
         - 'Cases Management':
@@ -818,6 +819,7 @@ nav:
             - 'Comment on Cases': thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md
             - 'Share a Comment': thehive/user-guides/analyst-corner/cases/case-comments/share-a-comment.md
             - 'Control Comment Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/control-case-comment-access-thehive-portal.md
+            - 'Find a Comment': thehive/user-guides/analyst-corner/cases/case-comments/find-a-comment.md
           - 'Change a Case Status': thehive/user-guides/analyst-corner/cases/change-status-case.md
           - 'Change Classification Settings': thehive/user-guides/analyst-corner/cases/change-case-alert-classification-settings.md
           - 'Flag a Case': thehive/user-guides/analyst-corner/cases/flag-a-case.md
@@ -850,6 +852,7 @@ nav:
             - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-case-page.md
             - 'Share a Page': thehive/user-guides/knowledge-base/share-a-case-page.md
             - 'View a Page': thehive/user-guides/knowledge-base/view-a-case-page.md
+            - 'Find a Page': thehive/user-guides/knowledge-base/find-a-page.md
           - 'Case Reports':
             - 'About Case Reports': thehive/user-guides/analyst-corner/cases/case-reports/about-case-reports.md
             - 'Save and Download a Case Report': thehive/user-guides/analyst-corner/cases/case-reports/save-download-a-case-report.md
@@ -904,6 +907,7 @@ nav:
         - 'Delete a Page': thehive/user-guides/knowledge-base/delete-a-knowledge-base-page.md
         - 'Share a Page': thehive/user-guides/knowledge-base/share-a-knowledge-base-page.md
         - 'View a Page': thehive/user-guides/knowledge-base/view-a-knowledge-base-page.md
+        - 'Find a Page': thehive/user-guides/knowledge-base/find-a-page.md
       - 'Key Performance Indicators':
         - 'KPIs': thehive/user-guides/key-performance-indicators/key-performance-indicators.md
         - 'Measure Case Management Performance': thehive/user-guides/key-performance-indicators/measure-case-management-performance.md

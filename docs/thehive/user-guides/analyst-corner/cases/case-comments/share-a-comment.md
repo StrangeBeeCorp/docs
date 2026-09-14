@@ -18,4 +18,5 @@ The comment link is copied to the clipboard and is ready to share.
 
 <h2>Next steps</h2>
 
+* [Find a Comment](find-a-comment.md)
 * [Comment on a Case](comment-on-case.md)

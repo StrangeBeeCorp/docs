@@ -4,7 +4,7 @@ Case pages in TheHive enable the creation and sharing of valuable information wi
 
 ## Permanent vs. temporary documentation
 
-Case pages are intended for temporary documentation, useful during investigations but not necessarily retained long-term, and they can't be searched. In contrast, [Knowledge Base pages](about-knowledge-base.md) store knowledge that should be preserved for future reference. To retain information from case pages, manually copy the content to a Knowledge Base page.
+Case pages are intended for temporary documentation, useful during investigations but not necessarily retained long-term. In contrast, [Knowledge Base pages](about-knowledge-base.md) store knowledge that should be preserved for future reference. To retain information from case pages, manually copy the content to a Knowledge Base page.
 
 ## Templates
 
@@ -22,6 +22,7 @@ Users with the necessary permissions can edit and delete any page, regardless of
 
 <h2>Next steps</h2>
 
+* [Find a Page](find-a-page.md)
 * [Create a Case Page](create-a-case-page.md)
 * [Delete a Case Page](delete-a-case-page.md)
 * [View a Case Page](view-a-case-page.md)

@@ -16,6 +16,7 @@ Add comments to [alerts](../alerts/about-alerts.md) to document triage decisions
 
 <h2>Next steps</h2>
 
+* [Find a Comment](../cases/case-comments/find-a-comment.md)
 * [Enter Values in Custom Fields](../cases/custom-fields/enter-values-in-custom-fields.md)
 * [Add an Observable](../cases/observables/add-an-observable.md)
 * [Add or Remove Tags](../cases/tags/add-remove-tags.md)
