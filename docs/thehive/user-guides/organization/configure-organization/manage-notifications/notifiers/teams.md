@@ -49,7 +49,7 @@ Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) 
     !!! tips "Tips to write text templates"
         
         #### Use the Adaptive Cards Designer
-        Use [the Adaptive Cards Designer](https://adaptivecards.io/designer/){target=_blank} as a starting point to design your Adaptive Cards.
+        Use [the Adaptive Cards Designer](https://adaptivecards.io/designer){target=_blank} as a starting point to design your Adaptive Cards.
         
         #### Format dates
         * TheHive uses [Handlebars string helpers](https://github.com/jknack/handlebars.java/blob/master/handlebars/src/main/java/com/github/jknack/handlebars/helper/StringHelpers.java#L507-L543){target=_blank} to read dates.

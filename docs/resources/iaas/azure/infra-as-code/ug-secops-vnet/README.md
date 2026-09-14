@@ -19,9 +19,9 @@ If you do not already have a virtual network (vnet) at hand to deploy TheHive an
     * [085-routes.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/085-routes.tf)
     * [090-instance-disks.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/090-instance-disks.tf)
     * [200-appgw.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/200-appgw.tf)
-    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/output.tf)
+    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/outputs.tf)
     * [variables.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/variables.tf)
-    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/tarreform.tfvars)
+    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/terraform.tfvars)
     * [files/nva-nat-cloud-config.yaml](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-vnet/files/nva-nat-cloud-config.yaml)
 
 

@@ -5,10 +5,10 @@ If you do not already have a VPC at hand to deploy TheHive and Cortex into, usin
 !!! Example "Files"
 
     * [main.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/main.tf)
-    * [providers.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/providers.cf)
-    * [outputs.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/outputs.cf)
-    * [variables.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/variables.cf)
-    * [samples.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/samples.tfvars)
+    * [providers.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/providers.tf)
+    * [outputs.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/outputs.tf)
+    * [variables.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/variables.tf)
+    * [samples.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/sample.tfvars)
     * [files/bastion-cloud-config-new.tpl](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-vpc/files/bastion-cloud-config-new.tpl)
 
 

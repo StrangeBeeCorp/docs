@@ -206,7 +206,7 @@ Before running the script, you'll need to update several values to match your en
 
 After running the script, the backup archives are available at `/mnt/backup/cassandra` and `/mnt/backup/elasticsearch`. Be sure to copy these archives to a separate server or storage location to safeguard against data loss if TheHive server fails.
 
-For more details about snapshot management, refer to the official [Cassandra documentation](https://cassandra.apache.org/doc/stable/cassandra/operating/backups.html){target=_blank} and [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html){target=_blank}.
+For more details about snapshot management, refer to the official [Cassandra documentation](https://cassandra.apache.org/doc/stable/cassandra/managing/operating/backups.html){target=_blank} and [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/snapshot-restore.html){target=_blank}.
 
 ## Step 7: Back up file storage
 

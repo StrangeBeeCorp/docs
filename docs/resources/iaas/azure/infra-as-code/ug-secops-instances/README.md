@@ -22,9 +22,9 @@ Our sample code can handle two use-cases:
     * [040-securitygroup-th.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/040-securitygroup-th.tf)
     * [090-instance-cortex.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/090-instance-cortex.tf)
     * [090-instance-th.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/090-instance-th.tf)
-    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/output.tf)
+    * [output.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/outputs.tf)
     * [variables.tf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/variables.tf)
-    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/tarreform.tfvars)
+    * [tarreform.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/terraform.tfvars)
     * [files/cloud-config.tpl](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/azure/ug-secops-instances/files/cloud-config.tpl)
 
 

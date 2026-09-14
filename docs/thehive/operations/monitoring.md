@@ -119,7 +119,7 @@ Now configure Prometheus to collect these metrics from TheHive.
     * Add appropriate labels to your TheHive pods
     * Create a `PodMonitor` resource if using Prometheus Operator
 
-    For detailed instructions, see the [Prometheus Kubernetes configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config){target=_blank} or [Prometheus Operator](https://prometheus-operator.dev/docs/user-guides/getting-started/){target=_blank} documentation.
+    For detailed instructions, see the [Prometheus Kubernetes configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#kubernetes_sd_config){target=_blank} or [Prometheus Operator](https://prometheus-operator.dev/docs/getting-started/installation/){target=_blank} documentation.
 
 ## Step 3: Visualize metrics in Grafana
 
