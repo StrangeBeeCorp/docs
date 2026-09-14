@@ -18,8 +18,3 @@ In TheHive, tags are created in two ways:
 
 * [About Taxonomies](../../../../administration/taxonomies/about-taxonomies.md)
 * [About Custom Tags](../../../organization/configure-organization/manage-custom-tags/about-custom-tags.md)
-
-
-
-
-

@@ -595,6 +595,7 @@ nav:
           - 'Add a Custom Taxonomy': thehive/administration/taxonomies/add-a-custom-taxonomy.md
           - 'Update MISP Taxonomies': thehive/administration/taxonomies/update-misp-taxonomies.md
           - 'Activate or Deactivate a Taxonomy': thehive/administration/taxonomies/activate-deactivate-a-taxonomy.md
+          - 'Activate or Deactivate a Taxonomy Tag': thehive/administration/taxonomies/activate-deactivate-a-taxonomy-tag.md
           - 'Delete a Taxonomy': thehive/administration/taxonomies/delete-a-taxonomy.md
         - 'TTPs':
           - 'About TTPs': thehive/user-guides/analyst-corner/cases/ttps/about-ttps.md

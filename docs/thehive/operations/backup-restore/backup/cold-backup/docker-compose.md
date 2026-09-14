@@ -76,7 +76,7 @@ For example, on the host server, create a folder on a dedicated NFS volume named
     ##
     ## ADDITIONAL RESOURCES:
     ## Refer to the official documentation for detailed instructions and 
-    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/backup/cold-backup/docker-compose.md.
+    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/backup/cold-backup/docker-compose/
     ##
     ## WARNING:
     ## - This script stops Nginx, Elasticsearch, Cassandra, and TheHive services, 

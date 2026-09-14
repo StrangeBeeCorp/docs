@@ -77,7 +77,7 @@ For example, with a dedicated NFS volume and a folder named `/opt/backup`  copy 
     ##
     ## ADDITIONAL RESOURCES:
     ## Refer to the official documentation for detailed instructions and 
-    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/
+    ## additional information: https://docs.strangebee.com/thehive/operations/backup-restore/restore/cold-restore/physical-server/
     ##
     ## WARNING:
     ## - This script ensure Nginx, Elasticsearch, Cassandra, and TheHive services are stopped before performing the restore, and then restarts the services.

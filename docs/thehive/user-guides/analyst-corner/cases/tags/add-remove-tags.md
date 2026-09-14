@@ -15,7 +15,10 @@ Add or remove [tags](about-tags.md) from a [case](../about-cases.md), an [alert]
     !!! tip "Can't find the :fontawesome-solid-plus: button?"
         The button appears only if at least one taxonomy is active. Contact someone with admin-level permissions to [activate taxonomies](../../../../administration/taxonomies/activate-deactivate-a-taxonomy.md).
 
-3. In the **Select tags from library** drawer, select the relevant taxonomy and the tags you want to add.
+3. In the **Choose tags from taxonomy** drawer, select the relevant taxonomy and the tags you want to add.
+
+    !!! tip "Can't find the tag you're looking for?"
+        <!-- md:version 5.8 --> The drawer lists only active tags. Contact someone with admin-level permissions to [activate the tag](../../../../administration/taxonomies/activate-deactivate-a-taxonomy-tag.md).
 
 4. Select **Add selected tags**.
 

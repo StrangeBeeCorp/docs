@@ -18,22 +18,24 @@ TheHive supports two ways to create taxonomies:
 !!! info "MISP taxonomy upgrades"
     TheHive includes the version of [MISP taxonomies](https://www.misp-project.org/taxonomies.html){target=_blank} available at the time of installation. Upgrading TheHive doesn't automatically update MISP taxonomies. Updating them requires performing [a manual update](update-misp-taxonomies.md).
 
-TheHive doesn't allow modifying taxonomies or their tags. 
+TheHive doesn't allow editing the content of taxonomies or their tags.
 
 However, administrators can:
 
 * [Deactivate taxonomies](activate-deactivate-a-taxonomy.md)
+* <!-- md:version 5.8 --> [Deactivate individual tags of a taxonomy](activate-deactivate-a-taxonomy-tag.md)
 * [Delete taxonomies](delete-a-taxonomy.md)
 
 ## Permissions
 
 Only users with an admin-type profile that has the `manageTaxonomy` permission can manage taxonomies in TheHive.
 
-Once created, tags from activated taxonomies are available to add to cases, alerts, and observables.
+Once created, tags from activated taxonomies are available to add to cases, alerts, and observables, unless the tag itself is deactivated.
 
 <h2>Next steps</h2>
 
 * [Activate or Deactivate a Taxonomy](activate-deactivate-a-taxonomy.md)
+* [Activate or Deactivate a Taxonomy Tag](activate-deactivate-a-taxonomy-tag.md)
 * [Add a Custom Taxonomy](add-a-custom-taxonomy.md)
 * [Update MISP Taxonomies](update-misp-taxonomies.md)
 * [Delete a Taxonomy](delete-a-taxonomy.md)
