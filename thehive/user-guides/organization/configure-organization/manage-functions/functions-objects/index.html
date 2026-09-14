@@ -21155,7 +21155,7 @@
 <span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s2">"Organization used for incident response and case handling."</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Create%20Organisation" target="_blank"><code>POST /api/v1/organisation</code> endpoint</a> for the complete object definition.</p>
+<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Create%20Organisation" target="_blank"><code>POST /api/v1/organisation</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
 <li>
@@ -21169,7 +21169,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Update%20Organisation" target="_blank"><code>PATCH /api/v1/organisation/{orgId}</code> endpoint</a> for the complete object definition.</p>
+<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Update%20Organisation" target="_blank"><code>PATCH /api/v1/organisation/{orgId}</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
 <li>
@@ -21188,7 +21188,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Link%20Organisations" target="_blank"><code>PUT /api/v1/organisation/{orgId}/link/{otherOrgId}</code> endpoint</a> for the complete object definition.</p>
+<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Link%20Organisations" target="_blank"><code>PUT /api/v1/organisation/{orgId}/link/{otherOrgId}</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
 <li>
@@ -21205,7 +21205,7 @@
 <span class="w">    </span><span class="p">}</span>
 <span class="p">);</span>
 </code></pre></div>
-<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organisation/operation/Bulk%20link%20Organisations" target="_blank"><code>PUT /api/v1/organisation/{orgId}/links</code> endpoint</a> for the complete object definition.</p>
+<p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Organization/operation/Bulk%20link%20Organisations" target="_blank"><code>PUT /api/v1/organisation/{orgId}/links</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
 <li>
@@ -21337,11 +21337,20 @@
 <li><code>function.find(query: any[]): OutputFunction[]</code>: Searches for functions matching the given query.</li>
 </ul>
 <h2 id="cortex">Cortex<a class="headerlink" href="#cortex" title="Permanent link">#</a></h2>
-<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2">5.5.2</a></span></span></p>
 <h3 id="analyzer">Analyzer<a class="headerlink" href="#analyzer" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<p><code>cortex.createJob(input: InputJob): OutputJob</code>:  Launches a Cortex analyzer job on an observable.</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.8/#5.8" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.8/#5.8">5.8</a></span></span> <code>cortex.listAnalyzers(): OutputAnalyzer[]</code>: Lists the analyzers available to the organization across every connected Cortex server. Returns an empty array if no Cortex server is connected or no analyzer is available.</p>
+<details class="tip">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">analyzers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">cortex</span><span class="p">.</span><span class="nx">listAnalyzers</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">emlParser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">analyzers</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">a</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"EmlParser_2_1"</span><span class="p">);</span>
+</code></pre></div>
+<p>Each returned object includes at minimum <code>id</code>, <code>name</code>, and <code>cortexIds</code>—the Cortex servers where the analyzer is available. See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers" target="_blank"><code>GET /api/v1/connector/cortex/analyzer</code> endpoint</a> for the complete object definition.</p>
+</details>
+</li>
+<li>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2">5.5.2</a></span></span> <code>cortex.createJob(input: InputJob): OutputJob</code>:  Launches a Cortex analyzer job on an observable.</p>
 <details class="tip">
 <summary>Example</summary>
 <div class="highlight"><pre><span></span><code><span class="nx">context</span><span class="p">.</span><span class="nx">cortex</span><span class="p">.</span><span class="nx">createJob</span><span class="p">({</span>
@@ -21350,7 +21359,7 @@
 <span class="w">    </span><span class="nx">cortexId</span><span class="o">:</span><span class="w"> </span><span class="s2">"Cluster-1"</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>To list available analyzers and retrieve their full IDs, use the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers" target="_blank"><code>GET /api/v1/connector/cortex/analyzer</code> endpoint</a>.</p>
+<p>To list available analyzers and retrieve their full IDs, use the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20Analyzers" target="_blank"><code>GET /api/v1/connector/cortex/analyzer</code> endpoint</a>, or call <code>context.cortex.listAnalyzers()</code> directly from within the Function.</p>
 <p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/Create%20Cortex%20job" target="_blank"><code>POST /api/v1/connector/cortex/job</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
@@ -21358,7 +21367,17 @@
 <h3 id="responder">Responder<a class="headerlink" href="#responder" title="Permanent link">#</a></h3>
 <ul>
 <li>
-<p><code>cortex.createAction(input: InputAction): OutputAction</code>: Launches a Cortex responder action on a case, an alert, or a task.</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.8/#5.8" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.8/#5.8">5.8</a></span></span> <code>cortex.listResponders(entityType: string, entityId: string): OutputResponder[]</code>: Lists the responders available for an entity, filtered by the entity's TLP and PAP levels. <code>entityType</code> is one of <code>case</code>, <code>case_artifact</code>, <code>case_task</code>, <code>case_task_log</code>, or <code>alert</code>. Returns an empty array if no responder is available for the entity.</p>
+<details class="tip">
+<summary>Example</summary>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">responders</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">cortex</span><span class="p">.</span><span class="nx">listResponders</span><span class="p">(</span><span class="s2">"alert"</span><span class="p">,</span><span class="w"> </span><span class="s2">"~456"</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">blockIp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">responders</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">r</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">r</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Firewall_BlockIP_1_0"</span><span class="p">);</span>
+</code></pre></div>
+<p>Each returned object includes at minimum <code>id</code>, <code>name</code>, and <code>cortexIds</code>—the Cortex servers where the responder is available. See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders" target="_blank"><code>GET /api/v1/connector/cortex/responder/{entityType}/{entityId}</code> endpoint</a> for the complete object definition.</p>
+</details>
+</li>
+<li>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.5/#5.5.2">5.5.2</a></span></span> <code>cortex.createAction(input: InputAction): OutputAction</code>: Launches a Cortex responder action on a case, an alert, or a task.</p>
 <details class="tip">
 <summary>Example</summary>
 <div class="highlight"><pre><span></span><code><span class="nx">context</span><span class="p">.</span><span class="nx">cortex</span><span class="p">.</span><span class="nx">createAction</span><span class="p">({</span>
@@ -21367,7 +21386,7 @@
 <span class="w">    </span><span class="nx">objectType</span><span class="o">:</span><span class="w"> </span><span class="s2">"alert"</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>To list available responders and retrieve their full IDs, use the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders" target="_blank"><code>GET /api/v1/connector/cortex/responder/</code> endpoint</a>.</p>
+<p>To list available responders and retrieve their full IDs, use the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/List%20responders" target="_blank"><code>GET /api/v1/connector/cortex/responder/{entityType}/{entityId}</code> endpoint</a>, or call <code>context.cortex.listResponders()</code> directly from within the Function.</p>
 <p>See the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Cortex/operation/Create%20an%20action" target="_blank"><code>POST /api/v1/connector/cortex/action</code> endpoint</a> for the complete object definition.</p>
 </details>
 </li>
