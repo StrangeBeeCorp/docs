@@ -19995,6 +19995,17 @@
 <li>For TheHive in the cluster, see <a href="../../../thehive/installation/kubernetes/">Deploy TheHive on Kubernetes</a>.</li>
 <li>For TheHive outside the cluster, see <a href="../../../thehive/installation/docker/">Deploy TheHive with Docker Compose</a> for a new deployment, or <a href="../../../thehive/installation/upgrade-from-5.x/">Upgrade from TheHive 5.x</a> for an existing one.</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Point a Docker Compose profile at the loaded image</p>
+<p>The archive loads the image as <code>ghcr.io/strangebee/thehive:&lt;version&gt;</code>. With TheHive outside the cluster on a StrangeBee Docker Compose profile, <code>testing</code>, <code>prod1-thehive</code>, or <code>prod2-thehive</code>, the profile references TheHive image on Docker Hub instead. In the profile directory, edit the <code>image</code> line of the <code>thehive</code> service in <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">thehive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">"ghcr.io/strangebee/thehive:${thehive_image_version}"</span>
+</code></pre></div>
+<p>Then set the tag printed by <code>docker load</code> in the <code>.env</code> file located next to <code>docker-compose.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="na">thehive_image_version</span><span class="o">=</span><span class="s">&lt;version&gt;</span>
+</code></pre></div>
+<p>Left unchanged, the profile pulls a TheHive 5.x image from Docker Hub instead of using the image loaded from the archive.</p>
+</div>
 <h2 id="step-4-provision-the-secrets">Step 4: Provision the secrets<a class="headerlink" href="#step-4-provision-the-secrets" title="Permanent link">#</a></h2>
 <p>The chart creates no Secrets itself: it reads every secret from existing Kubernetes Secrets in the release namespace, named as follows by default. The bootstrap script applies them with placeholder values. Without it, create them before the installation. The names and keys are configurable through the <code>secrets.*</code> values.</p>
 <table>

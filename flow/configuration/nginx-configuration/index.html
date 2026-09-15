@@ -19922,6 +19922,16 @@
 </tr>
 </tbody>
 </table>
+<h2 id="service-name-and-published-port">Service name and published port<a class="headerlink" href="#service-name-and-published-port" title="Permanent link">#</a></h2>
+<p>The <code>nginx</code> service in <code>docker-compose.yml</code> runs as a container named <code>nginx</code> and publishes port 443 on the host. TheHive Docker Compose profiles use the same container name and the same host port, so running both stacks on a single host means changing them on TheHive Flow side. Use any unused container name and any free host port:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">nginx</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;container_name&gt;</span>
+<span class="w">  </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'&lt;host_port&gt;:443'</span>
+</code></pre></div>
+<p>Keep the container port set to 443: it's the port the template listens on.</p>
+<p>Make the change in <code>docker-compose.yml</code> rather than in <code>docker-compose.override.yml</code>: Compose adds the ports of an override file to those of the base file instead of replacing them, so port 443 would stay published.</p>
+<p>Publishing another host port changes the address TheHive Flow answers on, <code>https://&lt;flow_host&gt;:&lt;host_port&gt;/</code>. Use that address in <a href="../../installation/docker/#step-6-configure-thehive-to-reach-thehive-flow">TheHive configuration</a>.</p>
 <h2 id="listener">Listener<a class="headerlink" href="#listener" title="Permanent link">#</a></h2>
 <p>The template configures a single listener on port 443, with HTTP/2 enabled. It terminates TLS, then proxies requests to <code>orchestrator:8081</code> on the internal Docker network.</p>
 <p>The listener sets the <code>Host</code>, <code>X-Real-IP</code>, <code>X-Forwarded-For</code>, and <code>X-Forwarded-Proto</code> headers on proxied requests, adds a <code>Strict-Transport-Security</code> response header, and applies the following limits:</p>
