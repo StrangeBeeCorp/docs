@@ -12,7 +12,7 @@
 
 2. In the case, select :fontawesome-solid-arrow-left:.
 
-    ![Open comment drawer TheHive Portal](/thehive/images/user-guides/thehive-portal/open-comment-drawer-thehive-portal.png)
+    ![Open comment drawer TheHive Portal](../images/user-guides/thehive-portal/open-comment-drawer-thehive-portal.png)
 
 3. Enter your comment in the text field.
 

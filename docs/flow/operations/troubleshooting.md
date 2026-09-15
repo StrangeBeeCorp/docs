@@ -55,9 +55,9 @@ TheHive Flow launches containers on the host Docker daemon to run [Python and Ja
 
 | Symptom | Likely cause | Fix |
 | ------- | ------------ | --- |
-| A code transformation fails with `permission denied` on the Docker socket | Group ID mismatch between the container process and the Docker socket | Compare `stat -c '%g' /var/run/docker.sock` with `DOCKER_GID` in `.env`. If they differ, delete `docker-compose.override.yml` and run `./scripts/init.sh` again |
+| A code transformation fails with `permission denied` on the Docker socket | Group ID mismatch between the container process and the Docker socket | Compare `stat -c '%g' /var/run/docker.sock` with `DOCKER_GID` in `.env`. If they differ, set `DOCKER_GID` in `.env` to the `stat` output, then run `docker compose up -d orchestrator` |
 | A code transformation fails with `cannot connect to Docker daemon at unix:///var/run/docker.sock` | Socket path mismatch, or the socket isn't mounted | Run `docker inspect orchestrator` and verify the socket appears under `Mounts`. Check `DOCKER_SOCKET_PATH` in `.env` |
-| A code transformation fails with `cannot connect to Docker daemon` in TCP mode | `DOCKER_HOST` isn't reachable from inside the container | Don't use `localhost`: use the host IP. Verify with `docker compose exec orchestrator curl http://<host_ip>:<port>/v1.41/info` |
+| A code transformation fails with `cannot connect to Docker daemon` in TCP mode | `DOCKER_HOST` isn't reachable from inside the container | Don't use `localhost`: use the host IP. Verify from the host that the endpoint answers: `curl http://<host_ip>:<port>/v1.41/info` |
 
 ## Authentication and JWT
 
@@ -78,7 +78,7 @@ TheHive Flow launches containers on the host Docker daemon to run [Python and Ja
 
 | Symptom | Likely cause | Fix |
 | ------- | ------------ | --- |
-| `/readyz` returns 503 | PostgreSQL or Temporal isn't reachable | Check `docker compose logs orchestrator` for `failed to connect to database` or `failed to create temporal client`, and `docker compose ps` for unhealthy services |
+| `/readyz` returns 503 | PostgreSQL or Temporal isn't reachable | Check `docker compose logs orchestrator` for `failed to ping database` or `failed to create temporal client`, and `docker compose ps` for unhealthy services |
 | `/livez` returns connection refused | The `orchestrator` container is down or crashed | Run `docker compose up -d orchestrator` and check `docker compose logs orchestrator` for crash details |
 | The `orchestrator` container restarts in a loop | Startup error, such as a database that isn't healthy yet or a configuration error | Check `docker compose logs orchestrator` for `FATAL` entries. A common cause is a missing `temporal/.resolved.yaml`: run `./scripts/init.sh` |
 
@@ -96,7 +96,7 @@ TheHive Flow launches containers on the host Docker daemon to run [Python and Ja
 
 | Symptom | Likely cause | Fix |
 | ------- | ------------ | --- |
-| The `temporal` service exits with `schema version mismatch` | The Temporal Server image was bumped without running schema migrations | Run the schema tool first: `docker compose --profile admin run --rm temporal-admin temporal-sql-tool --plugin postgres12 --ep postgresql -p 5432 -u temporal --pw <temporal_db_password> --db temporal update-schema -d /etc/temporal/schema/postgresql/v12/temporal/versioned` |
+| The `temporal` service exits with `schema version mismatch` | The Temporal Server image was bumped without running schema migrations | Run `./scripts/upgrade-temporal.sh --apply`: the script migrates both Temporal databases before recreating the server. See [Update the other services](maintenance.md#update-the-other-services) |
 | A workflow run is stuck indefinitely | The Temporal worker isn't polling the task queue | Run `docker compose restart orchestrator`. If the issue persists, check the Temporal logs for the workflow history |
 | The Temporal logs show `history size limit exceeded` | A workflow accumulated too many events, for example through a very large loop | Terminate the stuck workflow: `docker compose --profile admin run --rm temporal-admin temporal workflow terminate --workflow-id <workflow_id> --reason "history limit" --address temporal:7233` |
 
@@ -111,7 +111,7 @@ TheHive Flow launches containers on the host Docker daemon to run [Python and Ja
 
 ## Get support
 
-If the steps above don't resolve the issue, collect the support bundle and open a ticket:
+If the steps above don't resolve the issue, collect the support bundle and open a ticket. Run interactively without variables, the script prompts for these values instead:
 
 ```bash
 DIAGNOSE_TICKET=SUP-XXXX \

@@ -34,7 +34,9 @@ Use a workflow from another organization or TheHive instance.
 
 3. In the **Import workflow** drawer, drop a YAML file or select it from your computer. Use the file you obtained from [exporting a workflow](#export-a-workflow).
 
-4. Select **Import**.
+4. Optional: In the **Name** field, enter a new name for the imported workflow.
+
+5. Select **Import**.
 
 <h2>Next steps</h2>
 

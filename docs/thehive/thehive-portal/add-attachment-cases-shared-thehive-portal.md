@@ -17,7 +17,7 @@ If you need to share specific indicators such as suspicious email addresses, URL
 
 2. In the case, select the **Attachments** tab.
 
-    ![Add attachments TheHive Portal](/thehive/images/user-guides/thehive-portal/add-attachments-thehive-portal.png)
+    ![Add attachments TheHive Portal](../images/user-guides/thehive-portal/add-attachments-thehive-portal.png)
 
 3. Select :fontawesome-solid-plus:.
 

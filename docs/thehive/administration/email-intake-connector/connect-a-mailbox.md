@@ -44,11 +44,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         2. Select **APIs & Services**.
 
-            ![Google Cloud Console APIs and services](/thehive/images/administration-guides/google-cloud-console-apis-services.png)
+            ![Google Cloud Console APIs and services](../../images/administration-guides/google-cloud-console-apis-services.png)
 
         3. Select **Create project**.
 
-            ![Google Cloud Console Create project](/thehive/images/administration-guides/google-cloud-platform-create-project.png)
+            ![Google Cloud Console Create project](../../images/administration-guides/google-cloud-platform-create-project.png)
 
         4. Enter a name for the project, an organization, and a location.
 
@@ -58,11 +58,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         6. Select **OAuth consent screen** from the left pane.
 
-            ![OAuth consent screen](/thehive/images/administration-guides/google-cloud-platform-oauth-consent-screen.png)
+            ![OAuth consent screen](../../images/administration-guides/google-cloud-platform-oauth-consent-screen.png)
 
         7. Select **Get started** to configure Google Auth Platform.
 
-            ![Google Auth Platform](/thehive/images/administration-guides/google-cloud-platform-get-started.png)
+            ![Google Auth Platform](../../images/administration-guides/google-cloud-platform-get-started.png)
 
         8. In the **App information** section, enter information about your application.
 
@@ -76,11 +76,11 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         12. Select **Data access** from the left pane.
 
-            ![Google Auth Platform Data access](/thehive/images/administration-guides/google-auth-platform-data-access.png)
+            ![Google Auth Platform Data access](../../images/administration-guides/google-auth-platform-data-access.png)
 
         13. Select **Add or remove scopes**.
 
-            ![Google Auth Platform Add remove scopes](/thehive/images/administration-guides/google-auth-platform-add-remove-scopes.png)
+            ![Google Auth Platform Add remove scopes](../../images/administration-guides/google-auth-platform-add-remove-scopes.png)
 
         14. In the **Manually add scopes** section, enter `https://mail.google.com/`.
 
@@ -98,7 +98,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         20. Select **Create credentials**, then **OAuth Client ID**.
 
-            ![Google Cloud Platform Add credentials](/thehive/images/administration-guides/google-cloud-platform-credentials-oauthclientid.png)
+            ![Google Cloud Platform Add credentials](../../images/administration-guides/google-cloud-platform-credentials-oauthclientid.png)
         
         21. Select *Web application* as the application type.
 

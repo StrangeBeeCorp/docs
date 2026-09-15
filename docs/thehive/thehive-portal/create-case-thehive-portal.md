@@ -11,7 +11,7 @@ Create a new [case](glossary-thehive-portal.md#cases) to report a security incid
 
 1. Select **+ Create Case**.
 
-    ![Create case TheHive Portal](/thehive/images/user-guides/thehive-portal/create-case-thehive-portal.png)
+    ![Create case TheHive Portal](../images/user-guides/thehive-portal/create-case-thehive-portal.png)
 
 2. In the **Create Case** drawer, enter the following information:
 

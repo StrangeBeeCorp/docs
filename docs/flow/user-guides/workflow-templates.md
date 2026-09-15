@@ -58,7 +58,7 @@ After importing this template, adjust the following elements:
 * Trigger wiring: Create the TheHive notification with a *Webhook* notifier pointing to the trigger URL, as described in [Add a Trigger](add-trigger.md#add-a-webhook-trigger).
 * Email notification: The *Send Email - Critical Alert* node ships with `N/A` placeholders. Set the sender and recipient addresses, or remove the node.
 * Alert status: The `:x:` reaction sets the *FalsePositive* status. Change it if your organization uses other [alert statuses](../../thehive/administration/status/about-statuses.md).
-* Watch duration: The *For Each* loop runs nine iterations with a 20-second pause. Increase these values to watch reactions for longer.
+* Watch duration: The *For each* loop runs nine iterations with a 20-second pause. Increase these values to watch reactions for longer.
 
 ## Suspicious email campaign
 
@@ -83,7 +83,7 @@ After importing this template, adjust the following elements:
 * Jira project and issue type: The *Set Jira Project Key and Issue Type* node ships with empty values. Set the `jira_project_key` and `jira_issue_type` variables to match the Jira project receiving the issues.
 * Trigger wiring: Create the TheHive notification with a *Webhook* notifier pointing to the trigger URL, as described in [Add a Trigger](add-trigger.md#add-a-webhook-trigger).
 * Closing transition: The *Jira close issue* node applies the transition named *Done*. Change this name if your Jira project uses another workflow.
-* Sync duration: The *For Each (While)* loop runs nine synchronization cycles with a 10-second pause. Increase these values to keep the alert and the issue in sync for longer.
+* Sync duration: The *For each (While)* loop runs nine synchronization cycles with a 10-second pause. Increase these values to keep the alert and the issue in sync for longer.
 
 <h2>Next steps</h2>
 

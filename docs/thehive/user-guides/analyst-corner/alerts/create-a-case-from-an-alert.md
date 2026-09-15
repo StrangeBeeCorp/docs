@@ -23,7 +23,7 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 
 2. In the alert, select **Create case from alert**.
 
-    ![Create case from alert](/thehive/images/user-guides/analyst-corner/cases/create-case-from-alert.png)
+    ![Create case from alert](../../../images/user-guides/analyst-corner/cases/create-case-from-alert.png)
 
 3. In the **Create case** drawer, select either **Empty case** or **From template**.
 

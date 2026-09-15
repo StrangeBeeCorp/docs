@@ -15,7 +15,7 @@ Use this procedure to share a dashboard with another organization or TheHive ins
 
 2. Select :fontawesome-solid-ellipsis: next to the dashboard you want to export, then select **Export**.
 
-    ![Export a dashboard](/thehive/images/user-guides/analyst-corner/dashboard/export-a-dashboard.png)
+    ![Export a dashboard](../../../images/user-guides/analyst-corner/dashboard/export-a-dashboard.png)
 
 ## Import a dashboard
 

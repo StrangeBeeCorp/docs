@@ -92,7 +92,7 @@ docker compose up -d orchestrator
 
 ### The `temporal` service
 
-Semi-structured text. Key events to watch for:
+Structured JSON, in Temporal's own schema. Key events to watch for:
 
 * `workflow task timeout`: A workflow is stuck, with no worker polling
 * `history size limit exceeded`: A workflow accumulated too many events. See [Troubleshoot TheHive Flow](troubleshooting.md#temporal-and-workflows)
@@ -120,7 +120,7 @@ docker compose up -d postgresql
 
 ### The `nginx` service
 
-The access log format is `IP - - [timestamp] "METHOD path HTTP/version" status bytes "referer" "user-agent"`. The error log includes TLS handshake failures and upstream connection errors.
+The access log format is `IP - - [timestamp] "METHOD path HTTP/version" status bytes "referer" "user-agent" "x-forwarded-for"`. The error log includes TLS handshake failures and upstream connection errors.
 
 ## Collect logs during an incident
 
@@ -141,7 +141,7 @@ The `./scripts/diagnose.sh` script does this collection for you: it produces a s
 
 Collect a wider window than you think you need, at least 2 hours before the incident, because Temporal workflows can have long delays between task scheduling and execution. The log window is configurable through `DIAGNOSE_LOG_HOURS`.
 
-To add a support ticket for context, and attach the support bundle to every support ticket:
+Run interactively without variables, the script prompts for a ticket id, a description, and reproduction steps. Set the variables on the command line to skip the prompts, and attach the support bundle to every support ticket:
 
 ```bash
 DIAGNOSE_TICKET=SUP-XXXX \

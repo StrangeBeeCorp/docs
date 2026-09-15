@@ -61,7 +61,7 @@ Configure a *Webhook* trigger that starts the workflow automatically when the we
     | --- | --- | --- |
     | *None* | — | No authentication. Anyone who knows the webhook URL can start the workflow. This is the default. |
     | *Basic Auth* | **Username \***, **Password \*** | The caller sends the credentials in an `Authorization` header using the HTTP Basic scheme. |
-    | *Key / Header Auth* | **Header name \***, **Header value \*** | The caller sends the header you define, with an exact, case-sensitive value. Use it for a shared secret or an API key, for example a `X-API-Key` header. |
+    | *Key / Header Auth* | **Header name \***, **Header value \*** | The caller sends the header you define, with an exact, case-sensitive value. Use it for a shared secret or an API key, for example an `X-Api-Key` header. |
     | *JWT Token* | **Secret key \***, **Algorithm \***, **Require token expiration** | The caller sends a signed token in an `Authorization` header using the Bearer scheme. TheHive validates the token against the secret key and the algorithm, tolerating a clock difference of 30 seconds. In **Algorithm**, enter the HMAC algorithm the token is signed with, for example `HS256`, `HS384`, or `HS512`. Turn on **Require token expiration** to reject tokens that carry no expiration claim. It's turned off by default, so tokens that never expire are accepted. |
 
     !!! warning "Leaving the method set to *None*"

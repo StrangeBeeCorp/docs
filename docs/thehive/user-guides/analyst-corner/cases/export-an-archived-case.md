@@ -13,7 +13,7 @@ Export an archived [case](../cases/about-cases.md) in TheHive to preserve invest
 
 2. In the case, select the **Export** button.
 
-    ![Export a case](/thehive/images/user-guides/analyst-corner/cases/export-a-case.png)
+    ![Export a case](../../../images/user-guides/analyst-corner/cases/export-a-case.png)
 
 3. Enter an archive password in the **Export as an archive** section. 
 

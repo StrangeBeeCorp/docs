@@ -12,13 +12,13 @@ Each component can be updated independently, with the constraints noted below. T
 
 | Component | Update path | Constraint |
 | --------- | ----------- | ---------- |
-| TheHive Flow | Edit `ORCHESTRATOR_VERSION` in `.env`, then run [`./scripts/update.sh`](maintenance.md#update-thehive-flow) | Forward-compatible migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back across a migration boundary |
+| TheHive Flow | Edit `FLOW_VERSION` in `.env`, then run [`./scripts/update.sh`](maintenance.md#update-thehive-flow) | Forward-compatible migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back across a migration boundary |
 | Nginx | Edit the image tag in `docker-compose.yml`, then run `docker compose up -d nginx` | No schema and no state, so fully independent |
 | PostgreSQL, minor patch | Edit the image tag in `docker-compose.yml`, then run `docker compose up -d postgresql` | Data is preserved in the named volume. Minor patches are safe |
 | PostgreSQL, major version | `pg_upgrade` or a dump and restore procedure | Breaking change requiring a coordinated procedure outside the stack |
-| Temporal, minor patch | Edit the image tag in `docker-compose.yml`, then run `docker compose up -d temporal` | Verify schema compatibility before upgrading |
+| Temporal, minor patch | Edit the `temporalio/server` and `temporalio/admin-tools` image tags in `docker-compose.yml`, always to the same version, then run `docker compose up -d temporal` | Verify schema compatibility before upgrading. `upgrade-temporal.sh` refuses a mismatched image pair |
 | Temporal, minor version with schema change | [`./scripts/upgrade-temporal.sh`](maintenance.md#update-the-other-services), a dry run by default, with `--apply` to execute | Runs schema migrations before recreating the server, and steps automatically through every intermediate minor version recorded in the bundled version manifest |
-| SeaweedFS object storage | Edit the image tag and digest on both `s3-store` and `init-s3-store` in `docker-compose.yml`, then run `docker compose up -d init-s3-store` | Both services must be bumped together: they deliberately share one image, so no second pin can drift. Data is preserved in the `orchestrator-s3-data` volume. Stop the `orchestrator` service first, because recreating the store under a running instance surfaces as workflow steps failing on blob reads |
+| SeaweedFS object storage | Edit the image tag and digest on both `s3-store` and `init-s3-store` in `docker-compose.yml`, then run `docker compose up -d init-s3-store` | Both services must be bumped together: they run the same image, and a drifted pair fails the bundle's own tests. Data is preserved in the `orchestrator-s3-data` volume. Stop the `orchestrator` service first, because recreating the store under a running instance surfaces as workflow steps failing on blob reads |
 
 ### Version coupling between Temporal and TheHive Flow
 
@@ -28,7 +28,7 @@ The Temporal Server version must be compatible with the Temporal SDK version emb
 
 ### CVE in TheHive Flow binary
 
-Edit `.env` and set `ORCHESTRATOR_VERSION` to the patched tag, then pull and redeploy:
+Edit `.env` and set `FLOW_VERSION` to the patched tag, then pull and redeploy:
 
 ```bash
 ./scripts/update.sh
@@ -48,7 +48,7 @@ The other services see no downtime. The nginx reload is graceful: in-flight requ
 
 ### CVE in the object storage
 
-Edit `docker-compose.yml` to bump the tag and digest on both `s3-store` and `init-s3-store`, which deliberately share one image reference. Then stop the `orchestrator` service, recreate the store, and provision it again:
+Edit `docker-compose.yml` to bump the tag and digest on both `s3-store` and `init-s3-store`, keeping the two image references identical. Then stop the `orchestrator` service, recreate the store, and provision it again:
 
 ```bash
 docker compose stop orchestrator
@@ -74,7 +74,7 @@ The `orchestrator-postgres-data` volume is preserved. Expect 10 to 30 seconds of
 
 ### CVE in Temporal
 
-For a minor patch without a schema change, edit `docker-compose.yml` to bump the Temporal image tag and digest, then restart:
+For a minor patch without a schema change, edit `docker-compose.yml` to bump the `temporalio/server` and `temporalio/admin-tools` image tags and digests to the same version, then restart:
 
 ```bash
 docker compose up -d temporal
@@ -88,9 +88,9 @@ The PostgreSQL, Temporal, and nginx images are rebuilt by their maintainers with
 
 ## Version pinning policy
 
-Every image in `docker-compose.yml` is pinned by both tag and immutable digest, in the form `image: name:tag@sha256:…`. The `latest` tag is never used.
+Every image in `docker-compose.yml` is pinned by both tag and immutable digest, in the form `image: name:tag@sha256:…`, except TheHive Flow image, which `FLOW_VERSION` pins by tag only. The `latest` tag is never used.
 
-* `ORCHESTRATOR_VERSION` in `.env` is the only operator-tunable pin. It must always be a released tag, never `latest` or a branch name.
+* `FLOW_VERSION` in `.env` is the only operator-tunable pin. It must always be a released tag, never `latest` or a branch name.
 * The other image versions are maintained in the deployment bundle by StrangeBee. Operators update them by deploying a refreshed bundle, not by editing image references directly.
 
 Verify that no image is missing its digest:
@@ -99,7 +99,7 @@ Verify that no image is missing its digest:
 grep 'image:' docker-compose.yml | grep -v '@sha256:'
 ```
 
-The only expected output is the `orchestrator` image, which is pinned by tag through `ORCHESTRATOR_VERSION`.
+The only expected output is the `orchestrator` image, which is pinned by tag through `FLOW_VERSION`.
 
 ## TLS certificate expiry
 
@@ -118,7 +118,7 @@ For production deployments, use certificates signed by a trusted certificate aut
 Run the following checks periodically. Monthly is recommended.
 
 * All image digests in `docker-compose.yml` match the current published digests
-* `ORCHESTRATOR_VERSION` is set to the latest stable release
+* `FLOW_VERSION` is set to the latest stable release
 * The `nginx/certs/server.crt` expiry is more than 60 days away
 * The `.env` permissions are 600: `ls -la .env`
 * The `orchestrator/secret/thehive-api-key` permissions are 644

@@ -15,7 +15,7 @@ To learn more about how sharing rules function and interact, refer to [Organizat
 
 2. On the case description, select the **Sharing** button.
 
-    ![Sharing a case](/thehive/images/user-guides/analyst-corner/cases/sharing-a-case.png)
+    ![Sharing a case](../../../images/user-guides/analyst-corner/cases/sharing-a-case.png)
 
 3. Select the tasks sharing rules to apply.
 

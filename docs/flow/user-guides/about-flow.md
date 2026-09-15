@@ -89,7 +89,7 @@ Integration nodes perform operations in TheHive or third-party products. Each in
 
 Available integrations are:
 
-* [*TheHive*](configure-integration-node.md#configure-a-thehive-integration-node): Performs operations in TheHive through TheHive API, such as creating, updating, querying, or deleting cases, alerts, tasks, observables, comments, and task logs, or starting a Cortex job. Returns the response body, status code, and headers as outputs. To perform an operation this node doesn't manage, use the [*HTTP request*](configure-action-node.md#configure-an-http-request-action-node) action node instead.
+* [*TheHive*](configure-integration-node.md#configure-a-thehive-integration-node): Performs operations in TheHive through TheHive API, such as creating, updating, querying, or deleting cases, alerts, tasks, and observables, managing comments and task logs, or starting a Cortex job. Returns the response body, status code, and headers as outputs. To perform an operation this node doesn't manage, use the [*HTTP request*](configure-action-node.md#configure-an-http-request-action-node) action node instead.
 * [*Splunk*](configure-integration-node.md#configure-a-splunk-integration-node): Performs operations through the Splunk REST API, such as creating and following search jobs, running searches, listing indexes and fired alerts, submitting events, and updating Splunk Enterprise Security findings and investigations. Returns the response body, status code, and headers as outputs.
 * [*Microsoft Defender for Endpoint*](configure-integration-node.md#configure-a-microsoft-defender-for-endpoint-integration-node): Performs operations through the Microsoft Defender for Endpoint API, such as listing, retrieving, and updating alerts, running response actions on devices, and creating indicators. Returns the response body, status code, and headers as outputs.
 * [*Microsoft Defender (Graph Security API)*](configure-integration-node.md#configure-a-microsoft-defender-graph-security-api-integration-node): Performs operations through the Microsoft Graph security API, such as listing, retrieving, and updating Microsoft Defender XDR alerts and incidents. Returns the response body, status code, and headers as outputs.
@@ -99,7 +99,7 @@ Available integrations are:
 * [*VirusTotal*](configure-integration-node.md#configure-a-virustotal-integration-node): Performs operations through the VirusTotal API, such as scanning URLs and files, and retrieving domain, IP address, file, and analysis reports. Returns the response body, status code, and headers as outputs.
 * [*CrowdStrike Falcon*](configure-integration-node.md#configure-a-crowdstrike-falcon-integration-node): Performs operations through the CrowdStrike Falcon APIs, such as querying devices and vulnerabilities, running response actions on hosts, querying and updating alerts, looking up threat intelligence indicators, managing custom indicators of compromise, and detonating file samples in the Falcon sandbox. Returns the response body, status code, and headers as outputs.
 * [*Elastic Security*](configure-integration-node.md#configure-an-elastic-security-integration-node): Performs operations through the Elasticsearch API, such as searching and indexing documents, running ES|QL queries, and listing Elastic Security detection alerts. Returns the response body, status code, and headers as outputs.
-* [*HarfangLab EDR*](configure-integration-node.md#configure-a-harfanglab-edr-integration-node): Performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, and managing IOC and Sigma rules. Returns the response body, status code, and headers as outputs.
+* [*HarfangLab EDR*](configure-integration-node.md#configure-a-harfanglab-edr-integration-node): Performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, managing IOC rules, and listing Sigma rules. Returns the response body, status code, and headers as outputs.
 * [*Jira Cloud v3*](configure-integration-node.md#configure-a-jira-cloud-v3-integration-node): Performs operations through the Jira Cloud platform REST API, such as creating, editing, transitioning, and searching issues, managing comments, attachments, worklogs, watchers, and votes, and browsing projects and issue metadata. Returns the response body, status code, and headers as outputs.
 * [*Slack*](configure-integration-node.md#configure-a-slack-integration-node): Performs operations through the Slack Web API, such as posting, updating, and deleting messages, managing reactions, reading threads and channel history, and looking up channels and users. Returns the response body, status code, and headers as outputs.
 
@@ -121,7 +121,7 @@ Insert variables with the **$var** button, or type `$` in a field and start typi
 
 An inserted variable is highlighted in the field. How you read a nested field from it depends on its type:
 
-* A direct variable (green): appears in the condition of an *If* node and the collection of a *For Each* node. Read a nested field by typing `.<field_name>` right after the reference, directly in the field.
+* A direct variable (green): appears in the condition of an *If* node and the collection of a *For each* node. Read a nested field by typing `.<field_name>` right after the reference, directly in the field.
 * A jq expression (blue): the variable wrapped in a [jq expression](https://jqlang.org/){target=_blank}. To read a nested field or transform the value, select the expression and edit the jq inside it. Always add fields inside the expression itself: text typed after it in the field is treated as literal text, not as part of the expression, and the node fails at execution with a type mismatch. You can also use the **+** button to write the variable and the field together in one step.
 
 ## Files
@@ -132,7 +132,7 @@ A value is stored as a file in the following cases:
 
 * **Large node outputs**: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.
 * **Binary or multipart HTTP responses**: An [*HTTP request* node](configure-action-node.md#configure-an-http-request-action-node) response body that isn't valid text is stored as a file regardless of its size. Parts of a `multipart/*` response body that are large or not JSON are stored as files too.
-* **Files uploaded to a webhook**: A file sent with the HTTP request that triggers a [*Webhook* trigger](add-trigger.md#add-a-webhook-trigger) is stored as a file and available in the payload as `$request.files.<field>`.
+* **Files uploaded to a webhook**: A file sent with the HTTP request that triggers a [*Webhook* trigger](add-trigger.md#add-a-webhook-trigger) is stored as a file and available for input mapping as `$request.files.<field>` in the trigger configuration.
 * **Files written by code nodes**: A file registered with `flow.set_file()` in a [*Python code*](configure-transformation-node.md#configure-a-python-code-node) or [*JavaScript code*](configure-transformation-node.md#configure-a-javascript-code-node) node.
 
 Stored files are capped at 25 MiB by default. A value above that limit is rejected.
@@ -171,7 +171,7 @@ In the variable suggestions, these metadata references appear in a dedicated **F
 
 * A timeout defines the maximum duration an operation is allowed to run before it's automatically stopped and marked as timed out. Timeouts can be configured at both the [workflow level](manage-workflows.md#create-a-workflow) and the node level. When both levels define a timeout, the shortest duration is applied.
 
-* A retry defines the number of times a failed node execution is attempted again. Always configure a retry delay along with it, to specify the wait time between retry attempts: without a delay, retries are effectively never scheduled. Retry can be configured only at the node level.
+* A retry defines the number of times a failed node execution is attempted again. A retry delay specifies the wait time between retry attempts: without a delay, retries run 1 second apart by default. Retry can be configured only at the node level.
 
 * A backoff defines the coefficient applied to the retry delay to increase the wait time after each failed attempt. Backoff can be configured only at the node level.
 
@@ -188,10 +188,11 @@ Execution mode is configured in the node's **Add options**, under **Execution co
 
 Executions are asynchronous: triggering a workflow doesn't block TheHive interface.
 
-Each workflow execution generates an execution record that captures the status of the workflow and each of its nodes. [Execution logs](display-execution-logs.md) are available in two places:
+Each workflow execution generates an execution record that captures the status of the workflow and each of its nodes. [Execution logs](display-execution-logs.md) are available in three places:
 
 * The **Execution logs** tab in the **Flow** view lists the executions of every workflow in the organization from the past 30 days, giving an overview to spot failures and open a specific run.
 * The **Executions** tab inside a workflow shows that workflow's runs in detail. Selecting a node displays its start and end dates, duration, status, and input and output data.
+* The **Automation** tab of a case or alert in TheHive lists the runs launched on that case or alert.
 
 ## Permissions
 

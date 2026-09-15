@@ -12,7 +12,7 @@ LLM providers connect TheHive to large language models (LLMs), for use in [TheHi
 
 3. Select the **LLM Providers** tab.
 
-    ![LLM Providers tab](/thehive/images/administration-guides/llm-providers-tab.png)
+    ![LLM Providers tab](../images/administration-guides/llm-providers-tab.png)
 
 4. Select :fontawesome-solid-plus:.
 

@@ -47,7 +47,7 @@ For this exercise, skip the trigger configuration. You'll run the workflow manua
 
 ## Step 2: Set the vendor and product
 
-You'll fetch CVEs for Apple macOS. Rather than hardcoding these values directly into the API request, store them as local variables. They're scoped to a single workflow and available to all subsequent nodes.
+You'll fetch CVEs for Apple macOS. Rather than hardcoding these values directly into the API request, store them as local variables. They're scoped to a single workflow run and available to all subsequent nodes.
 
 1. In the workflow editor, drag the trigger node connector to an empty area of the canvas.
 
@@ -191,7 +191,7 @@ Now loop over the CVE array and filter out entries that aren't valid CVE records
 
     The **Loop output variables** section aggregates values produced inside the loop across all iterations, so nodes placed after the loop can use them. This exercise creates the alerts inside the loop itself and doesn't need them.
 
-3. Add a *Set local variable* node from the `For Each` node.
+3. Add a *Set local variable* node from the `For each` node.
 
     The *For each* node has two branches: the `Loop` branch and the `Done` branch. Use the `Loop` branch: :fontawesome-solid-arrows-rotate:.
 
@@ -201,7 +201,7 @@ Now loop over the CVE array and filter out entries that aren't valid CVE records
 
     **- Type**: `json`
 
-    **- Value**: Select the **+** button, type `$`, select the **For Each > item** variable, and add `[1]` while still inside the jq expression.
+    **- Value**: Select the **+** button, type `$`, select the **For each > item** variable, and add `[1]` while still inside the jq expression.
 
     The final value should look like this: `$for_each.item[1]`.
 
@@ -331,20 +331,20 @@ After Step 4, your workflow should still be enabled. If you turned it off, re-en
 If alerts appear in TheHive, your workflow is working end to end. You've built your first workflow in TheHive Flow!
 
 !!! info "Running the workflow more than once"
-    TheHive [rejects an alert when one with the same type, source, and source reference already exists](../../thehive/user-guides/analyst-corner/alerts/about-alerts.md#uniqueness) in the organization. If you run the workflow again, the `Create alert` node fails with a `400` error for each CVE already imported. To run the exercise again, [delete the previously created alerts in TheHive first](#step-9-clean-up).
+    TheHive [rejects an alert when one with the same type, source, and source reference already exists](../../thehive/user-guides/analyst-corner/alerts/about-alerts.md#uniqueness) in the organization. If you run the workflow again, the `Create alert` node fails with a `400` error for each CVE already imported. To run the exercise again, [delete the previously created alerts in TheHive first](#optional-step-9-clean-up).
 
 !!! tip "Run a workflow on a case or an alert"
     Workflows can also be [run from a case or alert page in TheHive](manually-run-workflow.md#run-a-workflow-from-a-case-or-alert). The run passes the case or alert identifier to the workflow as the `case_id` or `alert_id` entry variable, so a workflow can act on the entity it was launched from, for example to enrich a case or triage an alert.
 
-## Step 9: Clean up
+## (Optional) Step 9: Clean up
 
-This exercise creates real alerts in TheHive. If you ran it on a shared or production instance, close the alerts you no longer need and deactivate the workflow.
+This exercise creates real alerts in TheHive. Delete the alerts you no longer need and turn off the workflow. Deleting the alerts also lets you run the exercise again: TheHive rejects a new alert matching an existing one, whatever its status.
 
 1. In the **Alerts** view, filter on the source `flow` to isolate the alerts created by the workflow.
 
-2. Select :fontawesome-regular-square: in the column header to select all the alerts on the page, then select :fontawesome-solid-xmark: above the list.
+2. Select :fontawesome-regular-square: in the column header to select all the alerts on the page, then select :fontawesome-solid-trash: above the list.
 
-3. In the **Change the alert status** drawer, select a status such as `Ignored`, then select **Confirm**.
+3. In the confirmation dialog, select **OK**.
 
 4. Go back to the **Flow** view, select the workflow, then select **Disable workflow**.
 

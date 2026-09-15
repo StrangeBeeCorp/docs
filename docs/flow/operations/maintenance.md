@@ -10,7 +10,7 @@ Routine maintenance of a [TheHive Flow](../user-guides/about-flow.md) deployment
 
 Updating the `orchestrator` binary is the most common maintenance operation. Only the `orchestrator` container is affected: PostgreSQL and Temporal remain running.
 
-1. Edit `.env` and set [`ORCHESTRATOR_VERSION`](../configuration/environment-variables.md) to the new released tag. Never use `latest`.
+1. Edit `.env` and set [`FLOW_VERSION`](../configuration/environment-variables.md) to the new released tag. Never use `latest`.
 
 2. Run the update script:
 
@@ -22,7 +22,7 @@ The script pulls the new image, stops the `orchestrator` container, verifies tha
 
 The script never touches [`orchestrator/orchestrator.yml`](../configuration/flow-configuration.md): that file is yours, so configuration blocks introduced by a newer version aren't added to an existing installation by updating. After an update, compare your file with the shipped `orchestrator/orchestrator.yml` from the new deployment bundle and add what's missing. `modules.runs.sync_temporal_retention` is one such block, and without it the run list and the Temporal history expire on different clocks. See [Temporal workflow history retention](#temporal-workflow-history-retention).
 
-To roll back, revert `ORCHESTRATOR_VERSION` in `.env` and run `./scripts/update.sh` again. Forward-compatible database migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back the binary across a migration boundary.
+To roll back, revert `FLOW_VERSION` in `.env` and run `./scripts/update.sh` again. Forward-compatible database migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back the binary across a migration boundary.
 
 ## Update the other services
 
@@ -42,13 +42,13 @@ For a PostgreSQL minor patch, with the data preserved in the named volume:
 docker compose up -d postgresql
 ```
 
-For a Temporal minor patch, with the state preserved in PostgreSQL:
+For a Temporal minor patch, with the state preserved in PostgreSQL, bump `temporalio/server` and `temporalio/admin-tools` to the same version, because `upgrade-temporal.sh` refuses a mismatched pair:
 
 ```bash
 docker compose up -d temporal
 ```
 
-Temporal Server upgrades, image and schema migrations together, are handled by `./scripts/upgrade-temporal.sh`. Without flags it's a dry run: it prints the current and target versions, the step plan, and the pending schema migrations, and changes nothing. Pass `--apply` to execute. When the running server is more than one minor version behind, the script steps through the intermediate minor versions one at a time, landing on the latest recorded patch of each, using the version manifest shipped in the bundle, `temporal-version-history.json`. It refuses to upgrade to, or through, any version missing from the manifest: only versions vetted and pinned by StrangeBee appear in it.
+Temporal Server upgrades, image and schema migrations together, are handled by `./scripts/upgrade-temporal.sh`. Without flags it's a dry run: it prints the current and target versions, the step plan, and the pending schema migrations, and changes nothing. Pass `--apply` to execute: the script then stops the `orchestrator` service for the whole upgrade window, asks for confirmation unless `--yes` is passed, and first dumps the `temporal`, `temporal_visibility`, and `orchestrator` databases under `./backups/temporal-preupgrade-<timestamp>/`. An exit code of `2` means the upgrade applied but the final shard verification was skipped. When the running server is more than one minor version behind, the script steps through the intermediate minor versions one at a time, landing on the latest recorded patch of each, using the version manifest shipped in the bundle, `temporal-version-history.json`. It refuses to step through any intermediate version missing from the manifest, and refuses a target absent from it whenever the running version is recorded there: only versions vetted and pinned by StrangeBee appear in it.
 
 The stepping path supports Temporal images 1.30 or later. Earlier server releases don't honor the configuration file path the stack relies on and crash-loop, and earlier `admin-tools` images hang on the schema tool. This isn't a practical limitation, because the stack has never shipped anything older than 1.30.4.
 

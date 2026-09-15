@@ -30,6 +30,8 @@ The listener sets the `Host`, `X-Real-IP`, `X-Forwarded-For`, and `X-Forwarded-P
 
 A request that exceeds the proxy timeout returns `504 Gateway Timeout`: see [Troubleshoot TheHive Flow](../operations/troubleshooting.md#nginx-and-connectivity) before raising the limit.
 
+The listener also turns response buffering off with `proxy_buffering off`: nginx streams each response to the client as the application produces it, instead of buffering it first. Request bodies remain buffered, a behavior described in [Troubleshoot TheHive Flow](../operations/troubleshooting.md#nginx-and-connectivity).
+
 To restrict which sources can reach the webhook paths, see [Webhook exposure](../operations/security.md#webhook-exposure).
 
 <h2>Next steps</h2>

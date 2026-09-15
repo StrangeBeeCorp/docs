@@ -36,6 +36,8 @@ This procedure needs the `install/` directory and the `thehive-flow-<version>.ta
     docker load -i thehive-flow-<version>.tar
     ```
 
+    The archive loads the image as `ghcr.io/strangebee/thehive-flow:<version>`. The `FLOW_VERSION` variable in `.env`, created at [step 3](#step-3-run-the-bootstrap-script), must match this tag.
+
 ## (Optional) Step 2: Provide custom TLS certificates
 
 If you have certificates signed by your own certificate authority (CA), place them in the `certificates` directory before running `init.sh`. The script matches on the exact file names `server.crt`, `server.key`, and `ca.pem`, so rename your files as you copy them:
@@ -54,16 +56,25 @@ cp /path/to/<ca_certificate> ./certificates/ca.pem
 
 The `init.sh` script automates the following setup tasks:
 
-1/ Checks that the [required software](software-requirements.md) is installed: Docker Engine, the Docker Compose v2 plugin, and openssl.
-2/ Detects the Docker endpoint, Unix socket or TCP, used to run code transformations. See [Docker engine access](../configuration/environment-variables.md#docker-engine-access).
-3/ Creates `.env` from `.env.example`, filling random 256-bit secrets with `openssl rand`.
-4/ Prompts for the server name, used as the nginx host name and in the TLS certificate. The default is the system host name. In non-interactive runs, set the `SERVICE_HOSTNAME` environment variable instead.
-5/ Generates `docker-compose.override.yml` for Docker engine access, with a socket mount or a TCP endpoint.
-6/ Creates the named Docker volumes `orchestrator-postgres-data` and `orchestrator-s3-data`.
-7/ Creates the `orchestrator/secret/` directory with mode 755.
-8/ Generates `temporal/.resolved.yaml`, the Temporal configuration with passwords resolved.
-9/ Starts PostgreSQL temporarily, runs `temporal-sql-tool` to initialize the schema, and creates the `default` namespace.
-10/ Prints next steps.
+1/ Checks that the [required software](software-requirements.md) is installed: Docker Engine, the Docker Compose v2 plugin, and openssl.  
+
+2/ Detects the Docker endpoint, Unix socket or TCP, used to run code transformations. See [Docker engine access](../configuration/environment-variables.md#docker-engine-access).  
+
+3/ Creates `.env` from `.env.example`, filling random 256-bit secrets with `openssl rand`.  
+
+4/ Prompts for the server name, used as the nginx host name and in the TLS certificate. The default is the system host name. In non-interactive runs, set the `SERVICE_HOSTNAME` environment variable instead.  
+
+5/ Generates `docker-compose.override.yml` for Docker engine access, with a socket mount or a TCP endpoint.  
+
+6/ Creates the named Docker volumes `orchestrator-postgres-data` and `orchestrator-s3-data`.  
+
+7/ Creates the `orchestrator/secret/` directory with mode 755.  
+
+8/ Generates `temporal/.resolved.yaml`, the Temporal configuration with passwords resolved.  
+
+9/ Starts PostgreSQL temporarily, runs `temporal-sql-tool` to initialize the schema, and creates the `default` namespace.  
+
+10/ Prints next steps.  
 
 1. Run the script a first time:
 
@@ -71,7 +82,7 @@ The `init.sh` script automates the following setup tasks:
     bash ./scripts/init.sh
     ```
 
-    The run performs tasks 1 to 8, then stops with the following error. That's expected: `.env` now exists and holds every generated value, except TheHive URL.
+    The run performs tasks 1 to 8, then stops with an error similar to the following. That's expected: `.env` now exists and holds every generated value, except TheHive URL.
 
     ```text
     error while interpolating services.orchestrator.environment.ORCHESTRATOR_THEHIVE_URL: required variable ORCHESTRATOR_THEHIVE_URL is missing a value: ORCHESTRATOR_THEHIVE_URL must be set in .env
@@ -112,12 +123,12 @@ The `init.sh` script automates the following setup tasks:
 
     Bootstrapping .env
     [*] Copied .env.example -> .env
-    Server Name (default: flow-host ): flow.example.com
-    [✔] Generating self-signed certificate...
-    [✔] Self-signed certificate generated for flow.example.com.
     [*] Generated random secrets for JWT_SIGNING_KEY, POSTGRES_PASSWORD,
     [*]   ORCHESTRATOR_DB_PASSWORD, TEMPORAL_DB_PASSWORD, GRAFANA_ADMIN_PASSWORD,
     [*]   BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY.
+    Server Name (default: flow-host ): flow.example.com
+    [✔] Generating self-signed certificate...
+    [✔] Self-signed certificate generated for flow.example.com.
     [*] Set .env permissions to 600 (owner-only).
 
     Generating docker-compose.override.yml
@@ -165,7 +176,7 @@ The `init.sh` script automates the following setup tasks:
     ```
 
     * The `[!]` warning about `orchestrator/secret/thehive-api-key` is expected at this point: the key is provisioned at [step 5](#step-5-provision-thehive-api-key).
-    * With custom certificates provided at [step 2](#optional-step-2-provide-custom-tls-certificates), the two certificate lines read `Using custom certificates found in ./certificates.` instead.
+    * With custom certificates provided at [step 2](#optional-step-2-provide-custom-tls-certificates), the two certificate lines are replaced by a single `Using custom certificates found in ./certificates.` line.
     * A line starting with `/!\` is an error: the script stops, and running it again after fixing the cause is safe.
 
 ## Step 4: Deploy or upgrade TheHive

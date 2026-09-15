@@ -10,6 +10,8 @@ Every workflow run in [TheHive Flow](about-flow.md), whatever started it, expose
 * `trigger_id`: The identifier of the trigger that started the run, or of the user for a manual run
 * `triggered_at`: The UTC timestamp of when the run was triggered
 
+A *Scheduler* trigger adds no fields beyond these.
+
 ## Additional fields from a *Webhook* trigger
 
 * `body`: The JSON body of the incoming request
@@ -30,9 +32,9 @@ When the body isn't in the payload, assign it to an entry variable with `$reques
 
 ## Additional fields from a manual run
 
-A manual run adds the variables supplied with the run, by name: a [run from a case or alert page](manually-run-workflow.md#run-a-workflow-from-a-case-or-alert) adds the entity identifier, while a [run from the workflow editor](manually-run-workflow.md) adds nothing, as no input can be passed there. A *Scheduler* trigger adds no fields.
+A manual run adds the variables supplied with the run, by name: a [run from a case or alert page](manually-run-workflow.md#run-a-workflow-from-a-case-or-alert) adds the entity identifier, while a [run from the workflow editor](manually-run-workflow.md) adds nothing, as no input can be passed there.
 
-* `payload_trimmed`: Set to `true` when the payload exceeded its size limit and fields were dropped to fit. It reports that a drop happened, not which fields went, and it's absent when nothing was dropped.
+* `payload_trimmed`: Set to `true` when the supplied variables exceeded the payload size limit and some were dropped to fit. It reports that a drop happened, not which fields went, and it's absent when nothing was dropped.
 
 <h2>Next steps</h2>
 

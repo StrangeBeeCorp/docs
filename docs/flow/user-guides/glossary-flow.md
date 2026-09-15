@@ -54,7 +54,7 @@ A value shared across all workflows within an organization. Global variables can
 
 ## *HarfangLab EDR* integration
 
-An [integration node](#integration-node) that performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, and managing IOC and Sigma rules.
+An [integration node](#integration-node) that performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, managing IOC rules, and listing Sigma rules.
 
 ## *HTTP request* action
 
@@ -83,6 +83,10 @@ A [query language](https://jqlang.org/){target=_blank} used to evaluate conditio
 ## Local variable
 
 A variable scoped to a single workflow, created during workflow execution using a [*Set local variable*](#set-local-variable-transformation) transformation node.
+
+## Loop output variable
+
+A variable declared on a [*For each* flow node](#for-each-flow) to collect results across iterations. Each loop output variable is a named [jq expression](#jq-expression) evaluated after every iteration. The values are aggregated across all iterations and available in the nodes that follow the loop, referenced as `$<node_name>.<variable_name>`.
 
 ## *Microsoft Defender for Endpoint* integration
 
@@ -154,7 +158,7 @@ An [action node](#action-node) that sends messages to Microsoft Teams.
 
 ## *TheHive* integration
 
-An [integration node](#integration-node) that performs operations in TheHive through [TheHive API](https://docs.strangebee.com/thehive/api-docs/){target=_blank}, such as creating, updating, querying, or deleting cases, alerts, tasks, observables, comments, and task logs, or starting a Cortex job.
+An [integration node](#integration-node) that performs operations in TheHive through [TheHive API](https://docs.strangebee.com/thehive/api-docs/){target=_blank}, such as creating, updating, querying, or deleting cases, alerts, tasks, and observables, managing comments and task logs, or starting a Cortex job.
 
 ## Transformation node
 

@@ -10,13 +10,13 @@ The file isn't committed to git—it's covered by `.gitignore`. Edit it directly
 
 | Variable | Set by | Description |
 | -------- | ------ | ----------- |
-| `ORCHESTRATOR_VERSION` | Operator | Image tag of the `orchestrator` service. Bump it to update the binary. |
+| `FLOW_VERSION` | Operator | Image tag of the `orchestrator` service. Bump it to update the binary. |
 | `POSTGRES_USER` | Preset | PostgreSQL superuser. Default: `postgres`. |
 | `POSTGRES_DB` | Preset | Maintenance database of the PostgreSQL instance. Default: `postgres`. |
 | `POSTGRES_PASSWORD` | `init.sh` | PostgreSQL superuser password, a random 256-bit hex value. |
 | `ORCHESTRATOR_DB_PASSWORD` | `init.sh` | Password of the `orchestrator` database user. |
 | `TEMPORAL_DB_PASSWORD` | `init.sh` | Password of the `temporal` database user. |
-| `S3_ACCESS_KEY_ID` | Operator | Access key ID of the bundled object storage. Not a secret, and optional: defaults to `orchestrator` when unset. |
+| `S3_ACCESS_KEY_ID` | Preset | Access key ID of the bundled object storage. Not a secret, and optional: defaults to `orchestrator` when unset. |
 | `BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY` | `init.sh` | Secret access key of the bundled object storage, a random 256-bit hex value. Must be set: the stack won't start without it. |
 | `JWT_SIGNING_KEY` | `init.sh` | HS256 symmetric key shared with TheHive. See [Configure TheHive to reach TheHive Flow](../installation/docker.md#step-6-configure-thehive-to-reach-thehive-flow). |
 | `ORCHESTRATOR_THEHIVE_URL` | Operator | Required. URL of TheHive host reachable from the `orchestrator` container. |
@@ -26,7 +26,7 @@ The file isn't committed to git—it's covered by `.gitignore`. Edit it directly
 | `DOCKER_HOST` | `init.sh` | Docker TCP endpoint, in TCP mode. |
 | `nginx_server_name` | `init.sh` | Host name used in the TLS certificate. |
 | `nginx_ssl_trusted_certificate` | `init.sh` | Filled when a custom certificate authority (CA) is provided. |
-| `GRAFANA_ADMIN_PASSWORD` | `init.sh` | Grafana admin login, only used by the optional `--profile observability`. See [Monitor TheHive Flow](../operations/monitoring.md#bundled-observability-stack). |
+| `GRAFANA_ADMIN_PASSWORD` | `init.sh` | Grafana admin password, only used by the optional `--profile observability`. See [Monitor TheHive Flow](../operations/monitoring.md#bundled-observability-stack). |
 | `OTEL_EXPORTER_OTLP_ENDPOINT` | Operator | OTLP endpoint of your own observability back end, receiving the application traces, metrics, and logs. Optional: OTLP export is off when unset. |
 | `OTEL_EXPORTER_OTLP_PROTOCOL` | Operator | OTLP transport protocol, for example `grpc`. |
 | `OTEL_EXPORTER_OTLP_HEADERS` | Operator | Headers added to OTLP requests, such as an authorization token. |
@@ -39,7 +39,7 @@ The file isn't committed to git—it's covered by `.gitignore`. Edit it directly
 
 ## S3 credentials
 
-The two object storage credentials travel together: the application rejects a configuration where exactly one of them is set. Only `BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY` is strictly required in `.env`. Docker Compose refuses to start without it, while `S3_ACCESS_KEY_ID` falls back to `orchestrator` when unset or absent.
+The two object storage credentials travel together: the application rejects a configuration where exactly one of them is set. Of the pair, only `BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY` is strictly required in `.env`. Docker Compose refuses to start without it, while `S3_ACCESS_KEY_ID` falls back to `orchestrator` when unset or absent.
 
 What matters is that the pair the `orchestrator` service uses matches what the `init-s3-store` container provisioned. Since both read the same two variables, they can't disagree unless `.env` is edited between the two starts. For the full behavior, including what changing a credential after first start involves, see the [blob store section](flow-configuration.md#blob-store) of the application configuration.
 

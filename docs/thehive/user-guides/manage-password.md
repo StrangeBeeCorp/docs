@@ -8,11 +8,11 @@ If you've forgotten your password, you can reset it from the login page to creat
 
 1. From the login page, select **I forgot my password**.
 
-    ![Forgot password](/thehive/images/user-guides/forgot-password.png)
+    ![Forgot password](../images/user-guides/forgot-password.png)
 
 2. Enter your login information and select **Send**.
 
-    ![Reset password](/thehive/images/user-guides/reset-password.png)
+    ![Reset password](../images/user-guides/reset-password.png)
 
 You will receive an email with a link to set a new password. The link is valid for a limited time.
 

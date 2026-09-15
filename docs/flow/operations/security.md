@@ -53,7 +53,7 @@ Secrets don't have to live in `.env`. The application resolves every `BEEFLOW_SE
 Two network-level restrictions narrow the exposure further:
 
 * Host firewall: When every caller is known, restrict inbound port 443 to their source addresses. TheHive reaches TheHive Flow on the same port, so keep TheHive host among the allowed sources.
-* Nginx: To restrict the webhook paths only, keeping the rest of the listener open to TheHive, add a dedicated location block to the [nginx configuration template](../configuration/nginx-configuration.md) and restart nginx. Location blocks don't inherit the proxy directives, so the block repeats them, including the headers that carry the client IP the rate limiter reads:
+* Nginx: To restrict the webhook paths only, keeping the rest of the listener open to TheHive, add a dedicated location block to the [nginx configuration template](../configuration/nginx-configuration.md) and restart nginx. Location blocks don't inherit the proxy directives, so the block repeats them, including the headers that carry the client IP into the application logs:
 
     ```nginx
     location /webhook/ {
@@ -73,7 +73,7 @@ Two network-level restrictions narrow the exposure further:
 Nginx terminates TLS on port 443. Two modes are available, selected by `init.sh`:
 
 * Self-signed certificate, the default: `init.sh` generates a 365-day, 2048-bit RSA certificate for the configured `nginx_server_name`. Clients must either [trust the certificate or turn off certificate verification](../installation/docker.md#tls-with-a-self-signed-certificate).
-* Custom certificate: place `server.crt`, `server.key`, and optionally `ca.pem` in `./certificates/` [before running `init.sh`](../installation/docker.md#optional-step-2-provide-custom-tls-certificates). The files are copied to `nginx/certs/` and the `ssl_trusted_certificate` directive is enabled automatically in the [nginx configuration](../configuration/nginx-configuration.md).
+* Custom certificate: place `server.crt`, `server.key`, and optionally `ca.pem` in `./certificates/` [before running `init.sh`](../installation/docker.md#optional-step-2-provide-custom-tls-certificates). The files are copied to `nginx/certs/` and, when `ca.pem` is provided, the `ssl_trusted_certificate` directive is enabled automatically in the [nginx configuration](../configuration/nginx-configuration.md).
 
 Internal service-to-service communication, from the `orchestrator` service to PostgreSQL, Temporal, and the object storage, uses plain TCP on the isolated Docker network. The S3 endpoint is plain HTTP. No mTLS is used between internal services in this release.
 
@@ -163,10 +163,10 @@ Rotating a database password requires stopping the stack and altering the databa
 
 3. Update `ORCHESTRATOR_DB_PASSWORD` in `.env`.
 
-4. Start the services again:
+4. Recreate the services rather than starting them, because `docker compose start` doesn't re-read `.env`:
 
     ```bash
-    docker compose start orchestrator temporal
+    docker compose up -d orchestrator temporal
     ```
 
 ### TLS certificate renewal

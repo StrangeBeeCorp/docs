@@ -6,7 +6,7 @@ Integration nodes perform operations in TheHive or third-party products in [TheH
 
 ## Configure a *TheHive* integration node
 
-A *TheHive* integration node performs operations in TheHive through [TheHive API](https://docs.strangebee.com/thehive/api-docs/): it can create, retrieve, update, and delete cases, alerts, tasks, observables, comments, and task logs, merge an alert into a case, or run a custom query. Each operation is a dedicated action selected within the node. The node can target the local TheHive instance or any other reachable TheHive instance.
+A *TheHive* integration node performs operations in TheHive through [TheHive API](https://docs.strangebee.com/thehive/api-docs/): it can create, retrieve, update, and delete cases, alerts, tasks, and observables, add, update, and delete comments, create and update task logs, merge an alert into a case, or run a custom query. Each operation is a dedicated action selected within the node. The node can target the local TheHive instance or any other reachable TheHive instance.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -1001,6 +1001,7 @@ A *CrowdStrike Falcon* integration node runs operations against the [CrowdStrike
     | Client ID \* | `$global.crowdstrike_client_id` |
     | Client secret \* | `$secret.crowdstrike_client_secret` |
     | Token URL \* | `https://api.crowdstrike.com/oauth2/token` |
+    | Token scopes | Leave empty: CrowdStrike grants permissions on the API client, not per token request |
 
     The token URL is the `/oauth2/token` endpoint on the same host as the **Base URL**.
 
@@ -1201,7 +1202,7 @@ An *Elastic Security* integration node runs operations against the [Elasticsearc
 
 ## Configure a *HarfangLab EDR* integration node
 
-A *HarfangLab EDR* integration node runs operations against the [HarfangLab API](https://harfanglab.io/connectors/){target=_blank}: it can search and isolate endpoints, list and update alerts, create and follow jobs on agents, search process, network, DNS, event log, and binary telemetry, and manage IOC and Sigma rules. Each operation is a dedicated action selected within the node.
+A *HarfangLab EDR* integration node runs operations against the [HarfangLab API](https://harfanglab.io/connectors/){target=_blank}: it can search and isolate endpoints, list and update alerts, create and follow jobs on agents, search process, network, DNS, event log, and binary telemetry, manage IOC rules, and list Sigma rules. Each operation is a dedicated action selected within the node.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -1436,10 +1437,10 @@ A *Jira Cloud v3* integration node runs operations against the [Jira Cloud platf
 
 ## Configure a *Slack* integration node
 
-A *Slack* integration node runs operations against the [Slack Web API](https://docs.slack.dev/apis/){target=_blank}: it can post, update, and delete messages, manage reactions, read thread replies and channel history, and look up channels and users. Each operation is a dedicated action selected within the node.
+A *Slack* integration node runs operations against the [Slack Web API](https://docs.slack.dev/apis/){target=_blank}: it can post, update, and delete messages, manage reactions, read thread replies and channel history, create and manage channels, open direct messages, and look up channels and users. Each operation is a dedicated action selected within the node.
 
 !!! tip "Choosing between the two Slack nodes"
-    The [*Slack - Send message* action node](configure-action-node.md#configure-a-slack-send-message-action-node) only posts a message. Use this node to update or delete messages, manage reactions, read threads and history, or look up channels and users.
+    The [*Slack - Send message* action node](configure-action-node.md#configure-a-slack-send-message-action-node) only posts a message. Use this node to update or delete messages, manage reactions, read threads and history, manage channels, open direct messages, or look up channels and users.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -1480,8 +1481,9 @@ A *Slack* integration node runs operations against the [Slack Web API](https://d
     | Messages | *Post Message*, *Update Message*, *Delete Message* |
     | Reactions | *Get Reactions*, *Add Reaction*, *Remove Reaction* |
     | Threads | *Get Thread Replies*, *Get Channel History* |
-    | Channels | *Get Channel Info*, *List Channels* |
-    | Users | *Get User Info*, *Lookup User by Email* |
+    | Channels | *Create Channel*, *Get Channel Info*, *List Channels*, *Invite Users to Channel*, *Archive Channel*, *Set Channel Topic*, *Set Channel Purpose* |
+    | Direct Messages | *Open Direct Message* |
+    | Users | *Get User Info*, *Lookup User by Email*, *List Users* |
 
     After you select an action, the drawer displays the fields specific to that action. For the meaning and format of each field, see the [Slack Web API documentation](https://docs.slack.dev/apis/){target=_blank}.
 

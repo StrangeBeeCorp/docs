@@ -96,7 +96,7 @@ docker compose down
 KEY="cold-$(date -u +%Y%m%dT%H%M%SZ)"
 
 docker compose up -d postgresql
-docker compose exec postgresql \
+docker compose exec -T postgresql \
   pg_dump -U postgres -Fc -d orchestrator \
   > "./backups/backup-orchestrator-${KEY}.pgdump"
 docker compose down

@@ -76,7 +76,7 @@ ___
 
 ### Rendering
 
-![Admonitions rendering Markdown](/thehive/images/user-guides/admonitions-rendering-markdown.png)
+![Admonitions rendering Markdown](../images/user-guides/admonitions-rendering-markdown.png)
 
 ## Blockquotes
 

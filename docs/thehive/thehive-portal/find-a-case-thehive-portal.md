@@ -6,7 +6,7 @@ Search for [cases](glossary-thehive-portal.md#cases) in TheHive Portal to find s
 
 1. In the search bar at the top of the page, enter the case number or any relevant text.
 
-    ![Search bar TheHive Portal](/thehive/images/user-guides/thehive-portal/search-bar-thehive-portal.png)
+    ![Search bar TheHive Portal](../images/user-guides/thehive-portal/search-bar-thehive-portal.png)
 
     {% include-markdown "includes/wildcard-character.md" %}
 

@@ -502,7 +502,6 @@ An *AI* action node sends a message to a large language model (LLM) and returns 
     | `response`      | string | The raw text response from the LLM.                                         |
     | `result`        | object | The parsed structured output. Present only when an output schema is set. |
     | `message`       | object | The raw assistant message returned by the LLM, including reasoning content when the model provides it. |
-    | `tool_calls`    | array  | The tool calls requested by the model, when the LLM answers with tool calls instead of text. |
     | `finish_reason` | string | The reason the LLM stopped generating, for example `stop`, `length`, `tool_calls`, or `content_filter`. |
     | `usage`         | object | Token usage for the call: `prompt_tokens`, `completion_tokens`, and `total_tokens`. |
 

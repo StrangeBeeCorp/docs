@@ -12,7 +12,7 @@ If you want to apply a template to a new case, refer to the [Create a Case](crea
 
 2. In the case, select the **Apply a case template** button.
 
-    ![Apply a case template](/thehive/images/user-guides/analyst-corner/cases/apply-a-case-template.png)
+    ![Apply a case template](../../../images/user-guides/analyst-corner/cases/apply-a-case-template.png)
 
 3. In the **Apply case template** drawer, select a template from the dropdown list.
 

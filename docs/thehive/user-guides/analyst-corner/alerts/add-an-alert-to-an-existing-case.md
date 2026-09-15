@@ -23,7 +23,7 @@ If the alert requires a separate investigation, [create a case from the alert](c
 
 2. In the alert, select **Merge alert into case**.
 
-    ![Merge alert into case](/thehive/images/user-guides/analyst-corner/alerts/merge-alert-into-case.png)
+    ![Merge alert into case](../../../images/user-guides/analyst-corner/alerts/merge-alert-into-case.png)
 
 3. In the **Merge alerts into case** drawer, search for the case by title or case number.
 

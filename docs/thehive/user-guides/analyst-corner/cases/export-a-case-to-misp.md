@@ -16,7 +16,7 @@ Only observables marked as indicators of compromise (IOCs) are exported in the c
 
 2. In the case, select the **Export** button.
 
-    ![Export a case](/thehive/images/user-guides/analyst-corner/cases/export-a-case.png)
+    ![Export a case](../../../images/user-guides/analyst-corner/cases/export-a-case.png)
 
 3. Select the relevant servers in the **Export to MISP** section.
 

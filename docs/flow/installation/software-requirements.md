@@ -30,7 +30,7 @@ Deploying [TheHive Flow](../user-guides/about-flow.md) requires specific softwar
 
 === "Docker Compose deployment"
 
-    All images are pinned by tag and immutable digest in `docker-compose.yml`. The host must be able to reach the listed registries at first start, directly or through a private registry mirror; subsequent starts use the local cache.
+    All images are pinned by tag and immutable digest in `docker-compose.yml`, except TheHive Flow image, which `FLOW_VERSION` pins by tag only. The host must be able to reach the listed registries at first start, directly or through a private registry mirror. Subsequent starts use the local cache.
 
     | Image | Approximate size |
     | ----- | ---------------- |
@@ -40,7 +40,7 @@ Deploying [TheHive Flow](../user-guides/about-flow.md) requires specific softwar
     | `docker.io/library/nginx:1.31.x` | ~60 MB |
     | `docker.io/chrislusf/seaweedfs:4.x` | ~90 MB |
 
-    The total pull is approximately 1 GB. TheHive Flow's own image, `ghcr.io/strangebee/orchestrator`, isn't pulled: it ships as a Docker archive in the `images/` directory of the deployment bundle.
+    The total pull is approximately 1 GB. TheHive Flow's own image, `ghcr.io/strangebee/thehive-flow`, isn't pulled at first start: it ships as a Docker archive in the `images/` directory of the deployment bundle and is loaded with `docker load`.
 
     The optional [observability profile](../operations/monitoring.md#bundled-observability-stack) pulls three more images at its first start: `docker.io/otel/opentelemetry-collector-contrib:0.160.x`, `docker.io/prom/prometheus:v3.14.x`, and `docker.io/grafana/grafana:13.2.x`.
 

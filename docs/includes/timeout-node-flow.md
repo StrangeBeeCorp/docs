@@ -7,7 +7,7 @@ If no timeout is configured, the node runs until it completes or the workflow-le
 |------------|-------------|
 | Timeout   | Maximum allowed execution time for the node, in seconds, minutes, or hours. The minimum value is 30 seconds. |
 | Retry attempts   | Number of times the node is retried on failure. |
-| Retry delay      | Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled. |
+| Retry delay      | Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default. |
 | Backoff      | Coefficient applied to the retry delay to increase the wait time after each failed attempt. |
 
 !!! info "Retries and timeouts"

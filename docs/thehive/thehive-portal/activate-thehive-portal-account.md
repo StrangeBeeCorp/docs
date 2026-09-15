@@ -11,13 +11,13 @@ The Security team has invited you to access specific security cases through TheH
 
 2. On the **Reset your password** page, enter your email address and select **Send**.
 
-    ![Reset password](/thehive/images/user-guides/reset-password.png)
+    ![Reset password](../images/user-guides/reset-password.png)
 
     You will receive another email with a link to replace the system-generated default password with your own secure password. The link is valid for a limited time.
 
 3. Open the email and click the link. On the **Set a new password** page, enter your new password, then select **Set password**.
 
-    ![Set new password](/thehive/images/user-guides/set-new-password.png)
+    ![Set new password](../images/user-guides/set-new-password.png)
 
     You will receive a confirmation email.
 
@@ -25,7 +25,7 @@ The Security team has invited you to access specific security cases through TheH
 
 5. Review the **Cases** view to see any cases already shared with you.
 
-    ![Case list TheHive Portal](/thehive/images/user-guides/thehive-portal/case-list-thehive-portal.png)
+    ![Case list TheHive Portal](../images/user-guides/thehive-portal/case-list-thehive-portal.png)
 
 6. Navigate through cases using the available tools:
 

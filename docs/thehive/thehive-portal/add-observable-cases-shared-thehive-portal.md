@@ -17,7 +17,7 @@ If you need to share whole document or files, see [Upload an Attachment to a Cas
 
 2. In the case, select the **Observables** tab.
 
-    ![Add observables TheHive Portal](/thehive/images/user-guides/thehive-portal/add-observables-thehive-portal.png)
+    ![Add observables TheHive Portal](../images/user-guides/thehive-portal/add-observables-thehive-portal.png)
 
 3. Select :fontawesome-solid-plus:.
 

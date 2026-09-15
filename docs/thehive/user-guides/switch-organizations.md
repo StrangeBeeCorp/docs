@@ -6,7 +6,7 @@ Switch between [organizations](../administration/organizations/about-organizatio
 
 1. From any view, select the organization symbol.
 
-    ![Organization symbol](/thehive/images/user-guides/organization-symbol.png)
+    ![Organization symbol](../images/user-guides/organization-symbol.png)
 
 2. Select the organization you want to switch to.
 

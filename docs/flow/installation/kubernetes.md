@@ -55,7 +55,7 @@ Every name and value the script uses comes from an optional environment variable
 | `ORCHESTRATOR_TIMEOUT` | `5m` | How long the script waits for the PostgreSQL cluster and its databases |
 | `KUBECONTEXT` | The current context | Value passed to `kubectl --context` |
 
-The operator and the object storage are installed by two installers shipped in the `k8s/database-operator/` and `k8s/s3/` directories, beside the chart directory, each with its own version variable: `DB_OPERATOR_VERSION` pins the CloudNativePG operator chart, `S3_VERSION` the SeaweedFS chart. Both are set to the versions listed in the [software requirements](software-requirements.md#images-pulled-at-first-start), and both are read from the `init.sh` command line as well.
+The operator and the object storage are installed by two installers shipped in the `k8s/database-operator/` and `k8s/s3/` directories, beside the chart directory, each with its own version variable: `DB_OPERATOR_VERSION` pins the CloudNativePG operator chart, `S3_VERSION` the SeaweedFS chart. Both are set to the versions listed in the [software requirements](software-requirements.md#images-pulled-at-first-start), and both are read from the `init.sh` command line as well. Both installers fetch their chart over the network at run time, so the machine running `init.sh` must be able to reach the CloudNativePG and SeaweedFS Helm chart repositories.
 
 To provision into a different namespace, set the variable on the same command line:
 
