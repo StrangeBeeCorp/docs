@@ -15895,7 +15895,7 @@
   <span class="md-ellipsis">
     
   
-    Knowledge Base
+    Automation
   
 
     
@@ -15908,6 +15908,120 @@
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../automate-tracking-pending-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial: Automate Tracking of Pending Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../automate-monitoring-tasks-approaching-due-date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial: Automate Monitoring of Tasks Approaching Their Due Date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_6" id="__nav_2_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16111,10 +16225,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_7">
         
           
-          <label class="md-nav__link" for="__nav_2_6_6" id="__nav_2_6_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6_7" id="__nav_2_6_7_label" tabindex="0">
             
   
   
@@ -16132,8 +16246,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16281,10 +16395,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_8">
         
           
-          <label class="md-nav__link" for="__nav_2_6_7" id="__nav_2_6_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6_8" id="__nav_2_6_8_label" tabindex="0">
             
   
   
@@ -16302,8 +16416,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -20076,10 +20190,10 @@
 <p>Format your text block using <a href="../../../../../thehive-flavored-markdown/">TheHive-flavored Markdown syntax</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Available variables</p>
-<p>You can insert variables into certain fields and widgets such as the header, footer, and text widget by selecting <strong>Add variable</strong>.</p>
+<p>You can insert variables into certain fields and widgets such as the header, footer, and text widget by selecting <strong>Add variable</strong>. TheHive variables use <a href="https://mustache.github.io/" target="_blank">Mustache syntax</a>, extended with Handlebars helpers.</p>
 </div>
 <div class="admonition tip">
-<p class="admonition-title">Helpers using <a href="https://mustache.github.io/" target="_blank">Mustache syntax</a></p>
+<p class="admonition-title">Helpers using Handlebars</p>
 <h3 id="data-transformation-helpers"><strong>Data transformation helpers</strong><a class="headerlink" href="#data-transformation-helpers" title="Permanent link">#</a></h3>
 <table>
 <thead>
@@ -20094,25 +20208,25 @@
 <tr>
 <td><code>tlpLabel</code></td>
 <td>Format the <code>tlp</code> field of the object</td>
-<td><code>{{ tlpLabel object.tlp }}</code></td>
+<td><code>{{tlpLabel object.tlp}}</code></td>
 <td><code>Amber</code></td>
 </tr>
 <tr>
 <td><code>papLabel</code></td>
 <td>Format the <code>pap</code> field of the object</td>
-<td><code>{{ papLabel object.pap }}</code></td>
+<td><code>{{papLabel object.pap}}</code></td>
 <td><code>Amber</code></td>
 </tr>
 <tr>
 <td><code>severityLabel</code></td>
 <td>Format the <code>severity</code> field of the object</td>
-<td><code>{{ severityLabel object.severity }}</code></td>
+<td><code>{{severityLabel object.severity}}</code></td>
 <td><code>Critical</code></td>
 </tr>
 <tr>
 <td><code>dateFormat</code></td>
 <td>Format a date field of the object using <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html" target="_blank">Java date time patterns</a></td>
-<td><code>{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr" }}</code></td>
+<td><code>{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr"}}</code></td>
 <td><code>jeudi 01 septembre 2022</code></td>
 </tr>
 </tbody>
@@ -20123,7 +20237,7 @@
 <ul>
 <li>Displays <em>Medium</em> if <code>case.severity</code> equals 2, otherwise displays <em>Other</em>:</li>
 </ul>
-<div class="highlight"><pre><span></span><code>{{#if (eq case.severity 2) }}
+<div class="highlight"><pre><span></span><code>{{#if (eq case.severity 2)}}
     Medium
 {{else}}
     Other 

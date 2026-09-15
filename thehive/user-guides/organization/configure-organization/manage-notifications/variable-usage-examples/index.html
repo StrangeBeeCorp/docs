@@ -7970,6 +7970,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#helpers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helpers
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -15827,7 +15838,7 @@
   <span class="md-ellipsis">
     
   
-    Knowledge Base
+    Automation
   
 
     
@@ -15840,6 +15851,120 @@
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../automate-tracking-pending-alerts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial: Automate Tracking of Pending Alerts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../automate-monitoring-tasks-approaching-due-date/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial: Automate Monitoring of Tasks Approaching Their Due Date
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_6" id="__nav_2_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Knowledge Base
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16043,10 +16168,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_7">
         
           
-          <label class="md-nav__link" for="__nav_2_6_6" id="__nav_2_6_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6_7" id="__nav_2_6_7_label" tabindex="0">
             
   
   
@@ -16064,8 +16189,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -16213,10 +16338,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_8">
         
           
-          <label class="md-nav__link" for="__nav_2_6_7" id="__nav_2_6_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6_8" id="__nav_2_6_8_label" tabindex="0">
             
   
   
@@ -16234,8 +16359,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_6_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -19971,7 +20096,8 @@
 
 
 <h1 id="variable-usage-examples">Variable Usage Examples<a class="headerlink" href="#variable-usage-examples" title="Permanent link">#</a></h1>
-<p>Examples of variable usage help you configure <a href="../about-notifications/">notifications</a> in TheHive with dynamic content.</p>
+<p>TheHive variables use <a href="https://mustache.github.io/" target="_blank">Mustache syntax</a>, extended with <a href="#helpers">Handlebars helpers</a>.</p>
+<p>Below are examples of variable usage when configuring <a href="../about-notifications/">notifications</a> in TheHive.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
 <h3 id="emailertoaddr-notifier">EmailertoAddr notifier<a class="headerlink" href="#emailertoaddr-notifier" title="Permanent link">#</a></h3>
 <p><strong>Subject</strong></p>
@@ -19998,6 +20124,67 @@ Regards,
 
 TheHive Notification System
 </code></pre></div>
+<h2 id="helpers">Helpers<a class="headerlink" href="#helpers" title="Permanent link">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Helpers using Handlebars</p>
+<h3 id="data-transformation-helpers"><strong>Data transformation helpers</strong><a class="headerlink" href="#data-transformation-helpers" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>Description</th>
+<th>Usage</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tlpLabel</code></td>
+<td>Format the <code>tlp</code> field of the object</td>
+<td><code>{{tlpLabel object.tlp}}</code></td>
+<td><code>Amber</code></td>
+</tr>
+<tr>
+<td><code>papLabel</code></td>
+<td>Format the <code>pap</code> field of the object</td>
+<td><code>{{papLabel object.pap}}</code></td>
+<td><code>Amber</code></td>
+</tr>
+<tr>
+<td><code>severityLabel</code></td>
+<td>Format the <code>severity</code> field of the object</td>
+<td><code>{{severityLabel object.severity}}</code></td>
+<td><code>Critical</code></td>
+</tr>
+<tr>
+<td><code>dateFormat</code></td>
+<td>Format a date field of the object using <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/text/SimpleDateFormat.html" target="_blank">Java date time patterns</a></td>
+<td><code>{{dateFormat audit._createdAt "EEEEE dd MMMMM yyyy" "fr"}}</code></td>
+<td><code>jeudi 01 septembre 2022</code></td>
+</tr>
+</tbody>
+</table>
+<p>Standard string helpers can be found in <a href="https://www.javadoc.io/doc/com.github.jknack/handlebars/4.1.0/com/github/jknack/handlebars/helper/StringHelpers.html" target="_blank">the official Handlebars documentation</a>.</p>
+<h3 id="conditional-helpers"><strong>Conditional helpers</strong><a class="headerlink" href="#conditional-helpers" title="Permanent link">#</a></h3>
+<p>Examples:</p>
+<ul>
+<li>Displays <em>Medium</em> if <code>case.severity</code> equals 2, otherwise displays <em>Other</em>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{{#if (eq case.severity 2)}}
+    Medium
+{{else}}
+    Other 
+{{/if}}
+</code></pre></div>
+<ul>
+<li>Displays the threat actor value only if <code>case.customFieldValues.threat-actor</code> is defined:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>{{#if case.customFieldValues.threat-actor}}
+    Threat Actor: {{case.customFieldValues.threat-actor}}
+{{/if}}
+</code></pre></div>
+<p>Find additional supported operators in <a href="https://www.javadoc.io/doc/com.github.jknack/handlebars/4.1.0/com/github/jknack/handlebars/helper/ConditionalHelpers.html" target="_blank">the official Handlebars documentation</a>.</p>
+</div>
 <h2>Next steps</h2>
 
 <ul>
