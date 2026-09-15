@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-Update a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive to get the latest versions. The default and additional MITRE catalogs aren't updated automatically.
+Update a [tactics, techniques and procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive to get the latest versions. The default and additional MITRE catalogs aren't updated automatically.
 
 <h2>Procedure</h2>
 

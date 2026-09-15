@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-Add [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalogs in TheHive to expand beyond the [default MITRE catalog included in TheHive](../../user-guides/analyst-corner/cases/ttps/about-ttps.md#mitre-attck-framework). TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
+Add [tactics, techniques and procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalogs in TheHive to expand beyond the [default MITRE catalog included in TheHive](../../user-guides/analyst-corner/cases/ttps/about-ttps.md#mitre-attck-framework). TTPs describe the behaviors and methods commonly used by specific threat actors or groups.
 
 <h2>Procedure</h2>
 

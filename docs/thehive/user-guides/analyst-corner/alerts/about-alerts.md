@@ -19,6 +19,10 @@ The following sources can create alerts:
 
 * [Email servers](../../../administration/email-intake-connector/about-email-intake-connectors.md) from which TheHive retrieves data.
 
+## Uniqueness
+
+Each alert carries a type, a source, and a source reference that identify the originating event in the external system. TheHive enforces uniqueness on the combination of these three values within an organization: creating an alert is rejected with an error when another alert with the same type, source, and source reference already exists. This prevents connected tools from importing the same event twice.
+
 ## Key components
 
 In TheHive, an alert includes the following elements:

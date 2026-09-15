@@ -1,2 +1,2 @@
 !!! note "Available variables"
-    You can insert variables into certain fields and widgets such as the header, footer, and text widget by selecting **Add variable**.
+    You can insert variables into certain fields and widgets such as the header, footer, and text widget by selecting **Add variable**. TheHive variables use [Mustache syntax](https://mustache.github.io/){target=_blank}, extended with Handlebars helpers.

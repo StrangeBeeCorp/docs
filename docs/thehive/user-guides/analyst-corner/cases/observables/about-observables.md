@@ -6,7 +6,7 @@ Observables include stateful properties like IP addresses, domain names, file MD
 
 ## Type
 
-An observable type defines the category or classification of an observable in TheHive. While TheHive includes a predefined set of types, this list can be [expanded with custom types](../../../../administration/observable-types/create-an-observable-type.md) to meet specific needs.
+An observable type defines the category of an observable in TheHive. While TheHive includes a predefined set of types, this list can be [expanded with custom types](../../../../administration/observable-types/create-an-observable-type.md) to meet specific needs.
 
 Available [analyzers](../../../../../cortex/api/how-to-create-an-analyzer.md) depend on the observable’s type.
 

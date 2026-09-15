@@ -1,6 +1,6 @@
 # About Dashboards
 
-A dashboard compiles and visualizes data to provide key insights at a glance.
+A dashboard compiles and visualizes TheHive data to provide key insights at a glance.
 
 !!! tip "Specific case reporting"
     To access reporting data for a specific case, use the [case report](../../analyst-corner/cases/case-reports/about-case-reports.md) and [case timeline](../cases/case-timelines/about-case-timelines.md) features.
@@ -9,7 +9,7 @@ A dashboard compiles and visualizes data to provide key insights at a glance.
 
 Dashboards consist of [widgets](widgets-dashboards.md) that can be dragged into place.
 
-TheHive includes four default dashboards: 
+TheHive includes four default dashboards:
 
 * Alerts statistics
 * Cases statistics

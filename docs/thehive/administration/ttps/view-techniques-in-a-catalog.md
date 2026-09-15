@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-View techniques in a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive to explore the behaviors and methods associated with specific threat actors or groups.
+View techniques in a [tactics, techniques and procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive to explore the behaviors and methods associated with specific threat actors or groups.
 
 <h2>Procedure</h2>
 

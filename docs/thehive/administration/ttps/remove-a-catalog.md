@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePattern` -->
 
-Remove a [Tactics, Techniques and Procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive when it's no longer needed.
+Remove a [tactics, techniques and procedures (TTPs)](../../user-guides/analyst-corner/cases/ttps/about-ttps.md) catalog in TheHive when it's no longer needed.
 
 <h2>Procedure</h2>
 

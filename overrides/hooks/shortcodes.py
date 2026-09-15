@@ -87,6 +87,16 @@ def _badge(icon: str, text: str = "", type: str = ""):
 
 # Create badge for version
 def _badge_for_version(text: str, page: Page, files: Files):
+    icon = "material-new-box"
+
+    # If the version is not a semver number (e.g. "beta"), render a plain badge with no link
+    if not re.match(r"^\d+(\.\d+)*$", text):
+        return _badge(
+            icon = f"[:{icon}:]('#' 'Minimum version')",
+            text = text,
+            type = "version"
+        )
+
     # Extract major.minor from full version (e.g. "5.3.1" → "5.3")
     version_parts = text.split(".")
     major_minor = ".".join(version_parts[:2]) if len(version_parts) >= 2 else text
@@ -95,7 +105,6 @@ def _badge_for_version(text: str, page: Page, files: Files):
     path = f"thehive/release-notes/release-notes-{major_minor}.md#{text}"
 
     # Create link
-    icon = "material-new-box"
     href = _resolve_path(path, page, files)
 
     # Return badge

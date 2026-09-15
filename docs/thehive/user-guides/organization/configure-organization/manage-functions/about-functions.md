@@ -68,7 +68,7 @@ Ingesting Splunk alerts and converting them into TheHive alerts: [Code](https://
 
 ### External systems (pull method)
 
-<!-- md:version 5.5 --> 
+<!-- md:version 5.5 -->
 
 * Creating alerts from an Airtable database via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/airtable-alertfromairtable.md){target=_blank}
 * Creating alerts from Jira via an [alert feeder](../manage-feeders/about-feeders.md) while applying data transformations: [Code](https://github.com/StrangeBeeCorp/integrations/blob/main/.generated/docs/functions/jira-alertfromjira.md){target=_blank}

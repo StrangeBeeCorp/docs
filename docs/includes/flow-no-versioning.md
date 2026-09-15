@@ -1,0 +1,2 @@
+!!! warning "No versioning"
+    There's no workflow versioning. Any modification is applied immediately to the active workflow. Duplicate a workflow before making significant changes. To keep a history, [export your workflows](/flow/user-guides/import-export-workflows/) and version them in a Git repository.

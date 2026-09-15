@@ -58,6 +58,10 @@ plugins:
         - includes/*
         - thehive/operations/configure-audit-logs-storage-elasticsearch.md
         - thehive/third-party-software-licenses.md
+        - flow/*
+        - thehive/administration/manage-llm-providers.md
+        - thehive/release-notes/release-notes-6.0.md
+        - thehive/glossary-thehive.md
   - awesome-pages
   - glightbox
   - mkdocs-video:
@@ -902,6 +906,9 @@ nav:
         - 'Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
         - 'Statistics': thehive/user-guides/analyst-corner/about-statistics.md
         - 'Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
+      - 'Automation':
+        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
+        - 'Tutorial: Automate Monitoring of Tasks Approaching Their Due Date': thehive/user-guides/automate-monitoring-tasks-approaching-due-date.md
       - 'Knowledge Base':
         - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
         - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md

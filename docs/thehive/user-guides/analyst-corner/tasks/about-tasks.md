@@ -1,6 +1,6 @@
 # About Tasks
 
-A task represents one or more actions, called [task logs](../tasks/about-task-logs.md)—also referred to as activities—that must be completed within a [case](../cases/about-cases.md).
+A task represents work that must be completed within a [case](../cases/about-cases.md). Analysts document their progress by creating [task logs](../tasks/about-task-logs.md)—also referred to as activities—which record the actions taken, observations made, and decisions reached while completing the task.
 
 * Tasks can be mandatory or optional.
 * Tasks organize into groups to improve structure and management.

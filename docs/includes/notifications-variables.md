@@ -1,2 +1,2 @@
 !!! note "Available variables"
-    You can use variables in certain fields by selecting **Add variable**. Refer to the [Variable Usage Examples](/thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/) topic for detailed examples.
+    You can use variables in certain fields by selecting **Add variable**. TheHive variables use [Mustache syntax](https://mustache.github.io/){target=_blank}, extended with Handlebars helpers. Refer to [Variable Usage Examples](/thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples/) for detailed examples.

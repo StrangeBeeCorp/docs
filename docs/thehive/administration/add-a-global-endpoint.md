@@ -33,6 +33,3 @@ Global [endpoints](../user-guides/organization/configure-organization/manage-end
 * [Configure the Slack notifier](../user-guides/organization/configure-organization/manage-notifications/notifiers/slack.md)
 * [Configure the Teams notifier](../user-guides/organization/configure-organization/manage-notifications/notifiers/teams.md)
 * [Configure the Webhook notifier](../user-guides/organization/configure-organization/manage-notifications/notifiers/webhook.md)
-
-
-

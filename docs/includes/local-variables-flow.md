@@ -1,0 +1,2 @@
+!!! note "Local variables"
+    If you need variables whose values are set during execution, use local variables. They are scoped to a single workflow and created using a [*Set local variable* transformation node](/flow/user-guides/configure-transformation-node/).

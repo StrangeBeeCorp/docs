@@ -1,0 +1,2 @@
+!!! tip "Testing workflows with entry variables"
+    [Entry variables](/flow/user-guides/about-flow/) can't be passed when [running a workflow manually from the workflow editor](/flow/user-guides/manually-run-workflow/). If your workflow relies on input data to run, add a *Set local variable* node at the beginning with hardcoded test values. A manual run from a case or alert page passes a single input, the entity identifier, assigned to the `case_id` or `alert_id` entry variable when the workflow declares it.

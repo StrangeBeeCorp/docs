@@ -1,6 +1,8 @@
 # Variable Usage Examples
 
-Examples of variable usage help you configure [notifications](about-notifications.md) in TheHive with dynamic content.
+TheHive variables use [Mustache syntax](https://mustache.github.io/){target=_blank}, extended with [Handlebars helpers](#helpers).
+
+Below are examples of variable usage when configuring [notifications](about-notifications.md) in TheHive.
 
 ## Examples
 
@@ -38,6 +40,10 @@ Regards,
 
 TheHive Notification System
 ```
+
+## Helpers
+
+{% include-markdown "includes/templates-helpers.md" %}
 
 <h2>Next steps</h2>
 

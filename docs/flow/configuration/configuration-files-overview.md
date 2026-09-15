@@ -1,0 +1,15 @@
+# TheHive Flow Configuration Files
+
+<!-- md:version 6.0 --> <!-- md:license One -->
+
+[TheHive Flow](../user-guides/about-flow.md) Docker Compose deployment is configured through a handful of files at the root of the Docker Compose directory. The following table lists each file, what it holds, and the page that documents it.
+
+| File | Purpose | Editable after init |
+| ---- | ------- | ------------------- |
+| [`.env`](environment-variables.md) | Secrets, versions, and runtime parameters | Yes. Operator-managed. Recreate the affected service to apply |
+| [`orchestrator/orchestrator.yml`](flow-configuration.md) | Application configuration | Yes. Restart the `orchestrator` service to apply |
+| `temporal/temporal-server.yaml` | Temporal cluster configuration template | Yes, but rarely needed. Passwords are resolved by `init.sh` |
+| [`temporal/dynamicconfig/production.yaml`](temporal-configuration.md) | Temporal runtime knobs | Yes. Live reload, no restart needed |
+| `postgres/init-multi-db.sh` | PostgreSQL initialization | No. Runs once at first container start |
+| [`nginx/templates/default.conf.template`](nginx-configuration.md) | Nginx reverse proxy configuration | Yes. Restart nginx to apply |
+| [`observability/`](../operations/monitoring.md#bundled-observability-stack) | Bundled Grafana, Prometheus, and OpenTelemetry Collector configuration for the optional observability profile | Yes. See [Monitor TheHive Flow](../operations/monitoring.md) |

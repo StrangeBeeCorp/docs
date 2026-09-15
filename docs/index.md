@@ -136,7 +136,7 @@ sections:
             - text: 'Set up an alert feeder to pull alerts from external systems'
               url: '/thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder/'
         - title: 'Automate repetitive actions'
-          links: 
+          links:
             - text: 'Configure SMTP to enable email sending from TheHive'
               url: '/thehive/administration/smtp/'
             - text: 'Set up notifications to push data to external tools'
