@@ -19917,7 +19917,7 @@
 <tbody>
 <tr>
 <td>TheHive Flow</td>
-<td>Edit <code>ORCHESTRATOR_VERSION</code> in <code>.env</code>, then run <a href="../maintenance/#update-thehive-flow"><code>./scripts/update.sh</code></a></td>
+<td>Edit <code>FLOW_VERSION</code> in <code>.env</code>, then run <a href="../maintenance/#update-thehive-flow"><code>./scripts/update.sh</code></a></td>
 <td>Forward-compatible migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back across a migration boundary</td>
 </tr>
 <tr>
@@ -19937,8 +19937,8 @@
 </tr>
 <tr>
 <td>Temporal, minor patch</td>
-<td>Edit the image tag in <code>docker-compose.yml</code>, then run <code>docker compose up -d temporal</code></td>
-<td>Verify schema compatibility before upgrading</td>
+<td>Edit the <code>temporalio/server</code> and <code>temporalio/admin-tools</code> image tags in <code>docker-compose.yml</code>, always to the same version, then run <code>docker compose up -d temporal</code></td>
+<td>Verify schema compatibility before upgrading. <code>upgrade-temporal.sh</code> refuses a mismatched image pair</td>
 </tr>
 <tr>
 <td>Temporal, minor version with schema change</td>
@@ -19948,7 +19948,7 @@
 <tr>
 <td>SeaweedFS object storage</td>
 <td>Edit the image tag and digest on both <code>s3-store</code> and <code>init-s3-store</code> in <code>docker-compose.yml</code>, then run <code>docker compose up -d init-s3-store</code></td>
-<td>Both services must be bumped together: they deliberately share one image, so no second pin can drift. Data is preserved in the <code>orchestrator-s3-data</code> volume. Stop the <code>orchestrator</code> service first, because recreating the store under a running instance surfaces as workflow steps failing on blob reads</td>
+<td>Both services must be bumped together: they run the same image, and a drifted pair fails the bundle's own tests. Data is preserved in the <code>orchestrator-s3-data</code> volume. Stop the <code>orchestrator</code> service first, because recreating the store under a running instance surfaces as workflow steps failing on blob reads</td>
 </tr>
 </tbody>
 </table>
@@ -19956,7 +19956,7 @@
 <p>The Temporal Server version must be compatible with the Temporal SDK version embedded in TheHive Flow binary. Check TheHive Flow release notes before bumping Temporal Server. Upgrading Temporal independently is safe as long as the server stays within the SDK supported range, typically within two minor versions.</p>
 <h2 id="respond-to-a-cve">Respond to a CVE<a class="headerlink" href="#respond-to-a-cve" title="Permanent link">#</a></h2>
 <h3 id="cve-in-thehive-flow-binary">CVE in TheHive Flow binary<a class="headerlink" href="#cve-in-thehive-flow-binary" title="Permanent link">#</a></h3>
-<p>Edit <code>.env</code> and set <code>ORCHESTRATOR_VERSION</code> to the patched tag, then pull and redeploy:</p>
+<p>Edit <code>.env</code> and set <code>FLOW_VERSION</code> to the patched tag, then pull and redeploy:</p>
 <div class="highlight"><pre><span></span><code>./scripts/update.sh
 </code></pre></div>
 <p>Downtime is under 30 seconds, with no database changes required.</p>
@@ -19966,7 +19966,7 @@
 </code></pre></div>
 <p>The other services see no downtime. The nginx reload is graceful: in-flight requests complete before the old worker exits.</p>
 <h3 id="cve-in-the-object-storage">CVE in the object storage<a class="headerlink" href="#cve-in-the-object-storage" title="Permanent link">#</a></h3>
-<p>Edit <code>docker-compose.yml</code> to bump the tag and digest on both <code>s3-store</code> and <code>init-s3-store</code>, which deliberately share one image reference. Then stop the <code>orchestrator</code> service, recreate the store, and provision it again:</p>
+<p>Edit <code>docker-compose.yml</code> to bump the tag and digest on both <code>s3-store</code> and <code>init-s3-store</code>, keeping the two image references identical. Then stop the <code>orchestrator</code> service, recreate the store, and provision it again:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>stop<span class="w"> </span>orchestrator
 docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>init-s3-store
 docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>orchestrator
@@ -19980,22 +19980,22 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 </code></pre></div>
 <p>The <code>orchestrator-postgres-data</code> volume is preserved. Expect 10 to 30 seconds of downtime while TheHive Flow and Temporal reconnect.</p>
 <h3 id="cve-in-temporal">CVE in Temporal<a class="headerlink" href="#cve-in-temporal" title="Permanent link">#</a></h3>
-<p>For a minor patch without a schema change, edit <code>docker-compose.yml</code> to bump the Temporal image tag and digest, then restart:</p>
+<p>For a minor patch without a schema change, edit <code>docker-compose.yml</code> to bump the <code>temporalio/server</code> and <code>temporalio/admin-tools</code> image tags and digests to the same version, then restart:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>temporal
 </code></pre></div>
 <p>In-flight workflow tasks are retried automatically after the restart.</p>
 <h3 id="cve-in-a-base-os-image">CVE in a base OS image<a class="headerlink" href="#cve-in-a-base-os-image" title="Permanent link">#</a></h3>
 <p>The PostgreSQL, Temporal, and nginx images are rebuilt by their maintainers with OS patches. When a new digest is published for the same tag, update <code>docker-compose.yml</code> with the new digest and redeploy the service.</p>
 <h2 id="version-pinning-policy">Version pinning policy<a class="headerlink" href="#version-pinning-policy" title="Permanent link">#</a></h2>
-<p>Every image in <code>docker-compose.yml</code> is pinned by both tag and immutable digest, in the form <code>image: name:tag@sha256:…</code>. The <code>latest</code> tag is never used.</p>
+<p>Every image in <code>docker-compose.yml</code> is pinned by both tag and immutable digest, in the form <code>image: name:tag@sha256:…</code>, except TheHive Flow image, which <code>FLOW_VERSION</code> pins by tag only. The <code>latest</code> tag is never used.</p>
 <ul>
-<li><code>ORCHESTRATOR_VERSION</code> in <code>.env</code> is the only operator-tunable pin. It must always be a released tag, never <code>latest</code> or a branch name.</li>
+<li><code>FLOW_VERSION</code> in <code>.env</code> is the only operator-tunable pin. It must always be a released tag, never <code>latest</code> or a branch name.</li>
 <li>The other image versions are maintained in the deployment bundle by StrangeBee. Operators update them by deploying a refreshed bundle, not by editing image references directly.</li>
 </ul>
 <p>Verify that no image is missing its digest:</p>
 <div class="highlight"><pre><span></span><code>grep<span class="w"> </span><span class="s1">'image:'</span><span class="w"> </span>docker-compose.yml<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">'@sha256:'</span>
 </code></pre></div>
-<p>The only expected output is the <code>orchestrator</code> image, which is pinned by tag through <code>ORCHESTRATOR_VERSION</code>.</p>
+<p>The only expected output is the <code>orchestrator</code> image, which is pinned by tag through <code>FLOW_VERSION</code>.</p>
 <h2 id="tls-certificate-expiry">TLS certificate expiry<a class="headerlink" href="#tls-certificate-expiry" title="Permanent link">#</a></h2>
 <p>Self-signed certificates generated by <code>init.sh</code> are valid for 365 days. Monitor the expiry:</p>
 <div class="highlight"><pre><span></span><code>openssl<span class="w"> </span>x509<span class="w"> </span>-in<span class="w"> </span>./nginx/certs/server.crt<span class="w"> </span>-noout<span class="w"> </span>-dates
@@ -20006,7 +20006,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> 
 <p>Run the following checks periodically. Monthly is recommended.</p>
 <ul>
 <li>All image digests in <code>docker-compose.yml</code> match the current published digests</li>
-<li><code>ORCHESTRATOR_VERSION</code> is set to the latest stable release</li>
+<li><code>FLOW_VERSION</code> is set to the latest stable release</li>
 <li>The <code>nginx/certs/server.crt</code> expiry is more than 60 days away</li>
 <li>The <code>.env</code> permissions are 600: <code>ls -la .env</code></li>
 <li>The <code>orchestrator/secret/thehive-api-key</code> permissions are 644</li>

@@ -20157,7 +20157,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20320,7 +20320,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20462,7 +20462,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20600,7 +20600,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20705,7 +20705,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20818,7 +20818,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20933,7 +20933,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20993,11 +20993,6 @@
 <td><code>message</code></td>
 <td>object</td>
 <td>The raw assistant message returned by the LLM, including reasoning content when the model provides it.</td>
-</tr>
-<tr>
-<td><code>tool_calls</code></td>
-<td>array</td>
-<td>The tool calls requested by the model, when the LLM answers with tool calls instead of text.</td>
 </tr>
 <tr>
 <td><code>finish_reason</code></td>

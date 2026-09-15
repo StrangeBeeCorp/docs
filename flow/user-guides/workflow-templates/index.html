@@ -19965,7 +19965,7 @@
 <li>Trigger wiring: Create the TheHive notification with a <em>Webhook</em> notifier pointing to the trigger URL, as described in <a href="../add-trigger/#add-a-webhook-trigger">Add a Trigger</a>.</li>
 <li>Email notification: The <em>Send Email - Critical Alert</em> node ships with <code>N/A</code> placeholders. Set the sender and recipient addresses, or remove the node.</li>
 <li>Alert status: The <code>:x:</code> reaction sets the <em>FalsePositive</em> status. Change it if your organization uses other <a href="../../../thehive/administration/status/about-statuses/">alert statuses</a>.</li>
-<li>Watch duration: The <em>For Each</em> loop runs nine iterations with a 20-second pause. Increase these values to watch reactions for longer.</li>
+<li>Watch duration: The <em>For each</em> loop runs nine iterations with a 20-second pause. Increase these values to watch reactions for longer.</li>
 </ul>
 <h2 id="suspicious-email-campaign">Suspicious email campaign<a class="headerlink" href="#suspicious-email-campaign" title="Permanent link">#</a></h2>
 <p>The <em>Suspicious email campaign</em> template processes the emails your users report and detects phishing campaigns: it enriches each reported email alert and groups the alerts belonging to the same campaign into a single case. A <a href="../add-trigger/#add-a-scheduler-trigger"><em>Scheduler</em> trigger</a> runs the workflow at a regular interval, for example every 15 minutes. Each run retrieves the new alerts created by the <a href="../../../thehive/administration/email-intake-connector/about-email-intake-connectors/">email intake connector</a>, parses each email with the <em>EmlParser</em> Cortex analyzer, updates the alert with the sender, subject, and a preview of the email, and adds the suspicious sender and domain as observables. The workflow then searches for an existing case with the same email subject and sender: it merges the alert into that case when one exists, and otherwise escalates the alert to a new case carrying a campaign identifier and a case page with the email headers.</p>
@@ -19986,7 +19986,7 @@
 <li>Jira project and issue type: The <em>Set Jira Project Key and Issue Type</em> node ships with empty values. Set the <code>jira_project_key</code> and <code>jira_issue_type</code> variables to match the Jira project receiving the issues.</li>
 <li>Trigger wiring: Create the TheHive notification with a <em>Webhook</em> notifier pointing to the trigger URL, as described in <a href="../add-trigger/#add-a-webhook-trigger">Add a Trigger</a>.</li>
 <li>Closing transition: The <em>Jira close issue</em> node applies the transition named <em>Done</em>. Change this name if your Jira project uses another workflow.</li>
-<li>Sync duration: The <em>For Each (While)</em> loop runs nine synchronization cycles with a 10-second pause. Increase these values to keep the alert and the issue in sync for longer.</li>
+<li>Sync duration: The <em>For each (While)</em> loop runs nine synchronization cycles with a 10-second pause. Increase these values to keep the alert and the issue in sync for longer.</li>
 </ul>
 <h2>Next steps</h2>
 

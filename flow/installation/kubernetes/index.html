@@ -19985,7 +19985,7 @@
 </tr>
 </tbody>
 </table>
-<p>The operator and the object storage are installed by two installers shipped in the <code>k8s/database-operator/</code> and <code>k8s/s3/</code> directories, beside the chart directory, each with its own version variable: <code>DB_OPERATOR_VERSION</code> pins the CloudNativePG operator chart, <code>S3_VERSION</code> the SeaweedFS chart. Both are set to the versions listed in the <a href="../software-requirements/#images-pulled-at-first-start">software requirements</a>, and both are read from the <code>init.sh</code> command line as well.</p>
+<p>The operator and the object storage are installed by two installers shipped in the <code>k8s/database-operator/</code> and <code>k8s/s3/</code> directories, beside the chart directory, each with its own version variable: <code>DB_OPERATOR_VERSION</code> pins the CloudNativePG operator chart, <code>S3_VERSION</code> the SeaweedFS chart. Both are set to the versions listed in the <a href="../software-requirements/#images-pulled-at-first-start">software requirements</a>, and both are read from the <code>init.sh</code> command line as well. Both installers fetch their chart over the network at run time, so the machine running <code>init.sh</code> must be able to reach the CloudNativePG and SeaweedFS Helm chart repositories.</p>
 <p>To provision into a different namespace, set the variable on the same command line:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">ORCHESTRATOR_NAMESPACE</span><span class="o">=</span>&lt;namespace&gt;<span class="w"> </span>./scripts/init.sh
 </code></pre></div>

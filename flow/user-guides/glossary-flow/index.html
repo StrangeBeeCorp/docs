@@ -19925,7 +19925,7 @@
 <h2 id="global-variable">Global variable<a class="headerlink" href="#global-variable" title="Permanent link">#</a></h2>
 <p>A value shared across all workflows within an organization. Global variables can't be modified within workflows. They can be defined as visible or secret, with secret global variables intended for sensitive information such as API keys, passwords, or SSL/TLS certificate files. The value of a secret variable is never displayed in the interface and never appears in execution logs.</p>
 <h2 id="harfanglab-edr-integration"><em>HarfangLab EDR</em> integration<a class="headerlink" href="#harfanglab-edr-integration" title="Permanent link">#</a></h2>
-<p>An <a href="#integration-node">integration node</a> that performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, and managing IOC and Sigma rules.</p>
+<p>An <a href="#integration-node">integration node</a> that performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, managing IOC rules, and listing Sigma rules.</p>
 <h2 id="http-request-action"><em>HTTP request</em> action<a class="headerlink" href="#http-request-action" title="Permanent link">#</a></h2>
 <p>An <a href="#action-node">action node</a> that sends HTTP requests to external APIs and <a href="https://docs.strangebee.com/thehive/api-docs/" target="_blank">TheHive API</a>.</p>
 <h2 id="if-flow"><em>If</em> flow<a class="headerlink" href="#if-flow" title="Permanent link">#</a></h2>
@@ -19940,6 +19940,8 @@
 <p>A <a href="https://jqlang.org/" target="_blank">query language</a> used to evaluate conditions and manipulate JSON data. Used in <a href="#flow-node">flow nodes</a> to define conditions and collections, and in any node field where an inserted <a href="../about-flow/#variables">variable reference</a> is wrapped in a jq expression, displayed as a blue reference.</p>
 <h2 id="local-variable">Local variable<a class="headerlink" href="#local-variable" title="Permanent link">#</a></h2>
 <p>A variable scoped to a single workflow, created during workflow execution using a <a href="#set-local-variable-transformation"><em>Set local variable</em></a> transformation node.</p>
+<h2 id="loop-output-variable">Loop output variable<a class="headerlink" href="#loop-output-variable" title="Permanent link">#</a></h2>
+<p>A variable declared on a <a href="#for-each-flow"><em>For each</em> flow node</a> to collect results across iterations. Each loop output variable is a named <a href="#jq-expression">jq expression</a> evaluated after every iteration. The values are aggregated across all iterations and available in the nodes that follow the loop, referenced as <code>$&lt;node_name&gt;.&lt;variable_name&gt;</code>.</p>
 <h2 id="microsoft-defender-for-endpoint-integration"><em>Microsoft Defender for Endpoint</em> integration<a class="headerlink" href="#microsoft-defender-for-endpoint-integration" title="Permanent link">#</a></h2>
 <p>An <a href="#integration-node">integration node</a> that performs operations through the Microsoft Defender for Endpoint API, such as listing, retrieving, and updating alerts, running response actions on devices, and creating indicators.</p>
 <h2 id="microsoft-defender-graph-security-api-integration"><em>Microsoft Defender (Graph Security API)</em> integration<a class="headerlink" href="#microsoft-defender-graph-security-api-integration" title="Permanent link">#</a></h2>
@@ -19975,7 +19977,7 @@
 <h2 id="teams-send-message-action"><em>Teams Send message</em> action<a class="headerlink" href="#teams-send-message-action" title="Permanent link">#</a></h2>
 <p>An <a href="#action-node">action node</a> that sends messages to Microsoft Teams.</p>
 <h2 id="thehive-integration"><em>TheHive</em> integration<a class="headerlink" href="#thehive-integration" title="Permanent link">#</a></h2>
-<p>An <a href="#integration-node">integration node</a> that performs operations in TheHive through <a href="https://docs.strangebee.com/thehive/api-docs/" target="_blank">TheHive API</a>, such as creating, updating, querying, or deleting cases, alerts, tasks, observables, comments, and task logs, or starting a Cortex job.</p>
+<p>An <a href="#integration-node">integration node</a> that performs operations in TheHive through <a href="https://docs.strangebee.com/thehive/api-docs/" target="_blank">TheHive API</a>, such as creating, updating, querying, or deleting cases, alerts, tasks, and observables, managing comments and task logs, or starting a Cortex job.</p>
 <h2 id="transformation-node">Transformation node<a class="headerlink" href="#transformation-node" title="Permanent link">#</a></h2>
 <p>A workflow component that processes or manipulates data. Allows users to perform custom operations that modify, extract, or format information as it moves through the workflow. Includes <a href="#set-local-variable-transformation"><em>Set local variable</em></a>, <a href="#javascript-code-transformation"><em>JavaScript code</em></a>, and <a href="#python-code-transformation"><em>Python code</em></a> nodes.</p>
 <h2 id="trigger-node">Trigger node<a class="headerlink" href="#trigger-node" title="Permanent link">#</a></h2>

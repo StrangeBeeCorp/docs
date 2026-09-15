@@ -19906,6 +19906,7 @@
 <li><code>trigger_id</code>: The identifier of the trigger that started the run, or of the user for a manual run</li>
 <li><code>triggered_at</code>: The UTC timestamp of when the run was triggered</li>
 </ul>
+<p>A <em>Scheduler</em> trigger adds no fields beyond these.</p>
 <h2 id="additional-fields-from-a-webhook-trigger">Additional fields from a <em>Webhook</em> trigger<a class="headerlink" href="#additional-fields-from-a-webhook-trigger" title="Permanent link">#</a></h2>
 <ul>
 <li><code>body</code>: The JSON body of the incoming request</li>
@@ -19924,9 +19925,9 @@
 </ul>
 <p>When the body isn't in the payload, assign it to an entry variable with <code>$request.body</code> in the <a href="../add-trigger/#add-a-webhook-trigger">input mapping</a> of the <em>Webhook</em> trigger instead.</p>
 <h2 id="additional-fields-from-a-manual-run">Additional fields from a manual run<a class="headerlink" href="#additional-fields-from-a-manual-run" title="Permanent link">#</a></h2>
-<p>A manual run adds the variables supplied with the run, by name: a <a href="../manually-run-workflow/#run-a-workflow-from-a-case-or-alert">run from a case or alert page</a> adds the entity identifier, while a <a href="../manually-run-workflow/">run from the workflow editor</a> adds nothing, as no input can be passed there. A <em>Scheduler</em> trigger adds no fields.</p>
+<p>A manual run adds the variables supplied with the run, by name: a <a href="../manually-run-workflow/#run-a-workflow-from-a-case-or-alert">run from a case or alert page</a> adds the entity identifier, while a <a href="../manually-run-workflow/">run from the workflow editor</a> adds nothing, as no input can be passed there.</p>
 <ul>
-<li><code>payload_trimmed</code>: Set to <code>true</code> when the payload exceeded its size limit and fields were dropped to fit. It reports that a drop happened, not which fields went, and it's absent when nothing was dropped.</li>
+<li><code>payload_trimmed</code>: Set to <code>true</code> when the supplied variables exceeded the payload size limit and some were dropped to fit. It reports that a drop happened, not which fields went, and it's absent when nothing was dropped.</li>
 </ul>
 <h2>Next steps</h2>
 

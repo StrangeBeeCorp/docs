@@ -19937,7 +19937,7 @@
 <p>You'll arrive directly in the workflow editor. You can see that TheHive has created your workflow in a <em>Disabled</em> state with a default trigger node. The trigger node is the entry point that initiates workflow execution. Two triggers are available: <em>Webhook</em>, which starts the workflow when its URL receives an HTTP request, and <em>Scheduler</em>, which starts it on a recurring schedule. You can also run a workflow manually, from the workflow editor or from a case or alert page in TheHive, regardless of its trigger configuration.</p>
 <p>For this exercise, skip the trigger configuration. You'll run the workflow manually later.</p>
 <h2 id="step-2-set-the-vendor-and-product">Step 2: Set the vendor and product<a class="headerlink" href="#step-2-set-the-vendor-and-product" title="Permanent link">#</a></h2>
-<p>You'll fetch CVEs for Apple macOS. Rather than hardcoding these values directly into the API request, store them as local variables. They're scoped to a single workflow and available to all subsequent nodes.</p>
+<p>You'll fetch CVEs for Apple macOS. Rather than hardcoding these values directly into the API request, store them as local variables. They're scoped to a single workflow run and available to all subsequent nodes.</p>
 <ol>
 <li>
 <p>In the workflow editor, drag the trigger node connector to an empty area of the canvas.</p>
@@ -20092,14 +20092,14 @@
 <p>The <strong>Loop output variables</strong> section aggregates values produced inside the loop across all iterations, so nodes placed after the loop can use them. This exercise creates the alerts inside the loop itself and doesn't need them.</p>
 </li>
 <li>
-<p>Add a <em>Set local variable</em> node from the <code>For Each</code> node.</p>
+<p>Add a <em>Set local variable</em> node from the <code>For each</code> node.</p>
 <p>The <em>For each</em> node has two branches: the <code>Loop</code> branch and the <code>Done</code> branch. Use the <code>Loop</code> branch: <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M65.9 228.5C79.2 135.5 159.3 64 256 64c53 0 101 21.5 135.8 56.2l.6.6 7.6 7.2h-47.9c-17.7 0-32 14.3-32 32s14.3 32 32 32h128c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32s-32 14.3-32 32v53.4l-11.3-10.7C390.5 28.6 326.5 0 256 0 127 0 20.3 95.4 2.6 219.5c-2.5 17.5 9.6 33.7 27.1 36.2s33.7-9.7 36.2-27.1zm443.5 64c2.5-17.5-9.7-33.7-27.1-36.2s-33.7 9.7-36.2 27.1c-13.3 93-93.4 164.5-190.1 164.5-53 0-101-21.5-135.8-56.2l-.6-.6-7.6-7.2h47.9c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320c-8.5 0-16.7 3.4-22.7 9.5S-.1 343.7 0 352.3l1 127c.1 17.7 14.6 31.9 32.3 31.7s31.9-14.6 31.7-32.3l-.4-51.5 10.7 10.1C121.6 483.4 185.5 512 256 512c129 0 235.7-95.4 253.4-219.5"></path></svg></span>.</p>
 </li>
 <li>
 <p>In the <strong>Set local variable</strong> drawer, select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32v160H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h160v160c0 17.7 14.3 32 32 32s32-14.3 32-32V288h160c17.7 0 32-14.3 32-32s-14.3-32-32-32H256z"></path></svg></span> in the <strong>Variables</strong> section, then enter the following information:</p>
 <p><strong>- Name</strong>: <code>CVE</code></p>
 <p><strong>- Type</strong>: <code>json</code></p>
-<p><strong>- Value</strong>: Select the <strong>+</strong> button, type <code>$</code>, select the <strong>For Each &gt; item</strong> variable, and add <code>[1]</code> while still inside the jq expression.</p>
+<p><strong>- Value</strong>: Select the <strong>+</strong> button, type <code>$</code>, select the <strong>For each &gt; item</strong> variable, and add <code>[1]</code> while still inside the jq expression.</p>
 <p>The final value should look like this: <code>$for_each.item[1]</code>.</p>
 <p>In a <em>For each</em> node, <code>item</code> is the current iteration value and <code>idx</code> is its key. Here, CIRCL returns each entry as a two-element <code>[id, CVE]</code> pair, so <code>item[0]</code> is the CVE ID and <code>item[1]</code> is the CVE object you need.</p>
 </li>
@@ -20210,23 +20210,23 @@
 <p>If alerts appear in TheHive, your workflow is working end to end. You've built your first workflow in TheHive Flow!</p>
 <div class="admonition info">
 <p class="admonition-title">Running the workflow more than once</p>
-<p>TheHive <a href="../../../thehive/user-guides/analyst-corner/alerts/about-alerts/#uniqueness">rejects an alert when one with the same type, source, and source reference already exists</a> in the organization. If you run the workflow again, the <code>Create alert</code> node fails with a <code>400</code> error for each CVE already imported. To run the exercise again, <a href="#step-9-clean-up">delete the previously created alerts in TheHive first</a>.</p>
+<p>TheHive <a href="../../../thehive/user-guides/analyst-corner/alerts/about-alerts/#uniqueness">rejects an alert when one with the same type, source, and source reference already exists</a> in the organization. If you run the workflow again, the <code>Create alert</code> node fails with a <code>400</code> error for each CVE already imported. To run the exercise again, <a href="#optional-step-9-clean-up">delete the previously created alerts in TheHive first</a>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Run a workflow on a case or an alert</p>
 <p>Workflows can also be <a href="../manually-run-workflow/#run-a-workflow-from-a-case-or-alert">run from a case or alert page in TheHive</a>. The run passes the case or alert identifier to the workflow as the <code>case_id</code> or <code>alert_id</code> entry variable, so a workflow can act on the entity it was launched from, for example to enrich a case or triage an alert.</p>
 </div>
-<h2 id="step-9-clean-up">Step 9: Clean up<a class="headerlink" href="#step-9-clean-up" title="Permanent link">#</a></h2>
-<p>This exercise creates real alerts in TheHive. If you ran it on a shared or production instance, close the alerts you no longer need and deactivate the workflow.</p>
+<h2 id="optional-step-9-clean-up">(Optional) Step 9: Clean up<a class="headerlink" href="#optional-step-9-clean-up" title="Permanent link">#</a></h2>
+<p>This exercise creates real alerts in TheHive. Delete the alerts you no longer need and turn off the workflow. Deleting the alerts also lets you run the exercise again: TheHive rejects a new alert matching an existing one, whatever its status.</p>
 <ol>
 <li>
 <p>In the <strong>Alerts</strong> view, filter on the source <code>flow</code> to isolate the alerts created by the workflow.</p>
 </li>
 <li>
-<p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"></path></svg></span> in the column header to select all the alerts on the page, then select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M55.1 73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L147.2 256 9.9 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l137.3-137.4 137.4 137.3c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.8 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192.5 210.7z"></path></svg></span> above the list.</p>
+<p>Select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M384 80c8.8 0 16 7.2 16 16v320c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16zM64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64z"></path></svg></span> in the column header to select all the alerts on the page, then select <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M136.7 5.9 128 32H32C14.3 32 0 46.3 0 64s14.3 32 32 32h384c17.7 0 32-14.3 32-32s-14.3-32-32-32h-96l-8.7-26.1C306.9-7.2 294.7-16 280.9-16H167.1c-13.8 0-26 8.8-30.4 21.9M416 144H32l21.1 323.1C54.7 492.4 75.7 512 101 512h246c25.3 0 46.3-19.6 47.9-44.9z"></path></svg></span> above the list.</p>
 </li>
 <li>
-<p>In the <strong>Change the alert status</strong> drawer, select a status such as <code>Ignored</code>, then select <strong>Confirm</strong>.</p>
+<p>In the confirmation dialog, select <strong>OK</strong>.</p>
 </li>
 <li>
 <p>Go back to the <strong>Flow</strong> view, select the workflow, then select <strong>Disable workflow</strong>.</p>

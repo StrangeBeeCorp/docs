@@ -19901,7 +19901,7 @@
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../thehive/release-notes/release-notes-6.0/#6.0" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../thehive/release-notes/release-notes-6.0/#6.0">6.0</a></span></span> <span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>manageOrchestrator/writeWorkflows</code></span></span> <span class="mdx-badge"><span class="mdx-badge__icon"><a href="" title="#' 'License type"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 10a3.04 3.04 0 0 1 3-3 3.04 3.04 0 0 1 3 3 3.04 3.04 0 0 1-3 3 3.04 3.04 0 0 1-3-3m3 9 4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"></path></svg></span></a></span><span class="mdx-badge__text">One</span></span></p>
 <p>Integration nodes perform operations in TheHive or third-party products in <a href="../about-flow/">TheHive Flow</a>. Each integration node targets one product API and exposes its operations as dedicated actions selected within the node.</p>
 <h2 id="configure-a-thehive-integration-node">Configure a <em>TheHive</em> integration node<a class="headerlink" href="#configure-a-thehive-integration-node" title="Permanent link">#</a></h2>
-<p>A <em>TheHive</em> integration node performs operations in TheHive through <a href="https://docs.strangebee.com/thehive/api-docs/">TheHive API</a>: it can create, retrieve, update, and delete cases, alerts, tasks, observables, comments, and task logs, merge an alert into a case, or run a custom query. Each operation is a dedicated action selected within the node. The node can target the local TheHive instance or any other reachable TheHive instance.</p>
+<p>A <em>TheHive</em> integration node performs operations in TheHive through <a href="https://docs.strangebee.com/thehive/api-docs/">TheHive API</a>: it can create, retrieve, update, and delete cases, alerts, tasks, and observables, add, update, and delete comments, create and update task logs, merge an alert into a case, or run a custom query. Each operation is a dedicated action selected within the node. The node can target the local TheHive instance or any other reachable TheHive instance.</p>
 <ol>
 <li>
 <p>Go to the <strong>Flow</strong> view from the sidebar menu.</p>
@@ -20135,7 +20135,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20426,7 +20426,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -20723,7 +20723,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -21012,7 +21012,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -21313,7 +21313,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -21598,7 +21598,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -21869,7 +21869,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -22140,7 +22140,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -22296,6 +22296,10 @@
 <tr>
 <td>Token URL *</td>
 <td><code>https://api.crowdstrike.com/oauth2/token</code></td>
+</tr>
+<tr>
+<td>Token scopes</td>
+<td>Leave empty: CrowdStrike grants permissions on the API client, not per token request</td>
 </tr>
 </tbody>
 </table>
@@ -22476,7 +22480,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -22750,7 +22754,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -22823,7 +22827,7 @@
 </ul>
 </div>
 <h2 id="configure-a-harfanglab-edr-integration-node">Configure a <em>HarfangLab EDR</em> integration node<a class="headerlink" href="#configure-a-harfanglab-edr-integration-node" title="Permanent link">#</a></h2>
-<p>A <em>HarfangLab EDR</em> integration node runs operations against the <a href="https://harfanglab.io/connectors/" target="_blank">HarfangLab API</a>: it can search and isolate endpoints, list and update alerts, create and follow jobs on agents, search process, network, DNS, event log, and binary telemetry, and manage IOC and Sigma rules. Each operation is a dedicated action selected within the node.</p>
+<p>A <em>HarfangLab EDR</em> integration node runs operations against the <a href="https://harfanglab.io/connectors/" target="_blank">HarfangLab API</a>: it can search and isolate endpoints, list and update alerts, create and follow jobs on agents, search process, network, DNS, event log, and binary telemetry, manage IOC rules, and list Sigma rules. Each operation is a dedicated action selected within the node.</p>
 <ol>
 <li>
 <p>Go to the <strong>Flow</strong> view from the sidebar menu.</p>
@@ -23022,7 +23026,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -23352,7 +23356,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>
@@ -23425,10 +23429,10 @@
 </ul>
 </div>
 <h2 id="configure-a-slack-integration-node">Configure a <em>Slack</em> integration node<a class="headerlink" href="#configure-a-slack-integration-node" title="Permanent link">#</a></h2>
-<p>A <em>Slack</em> integration node runs operations against the <a href="https://docs.slack.dev/apis/" target="_blank">Slack Web API</a>: it can post, update, and delete messages, manage reactions, read thread replies and channel history, and look up channels and users. Each operation is a dedicated action selected within the node.</p>
+<p>A <em>Slack</em> integration node runs operations against the <a href="https://docs.slack.dev/apis/" target="_blank">Slack Web API</a>: it can post, update, and delete messages, manage reactions, read thread replies and channel history, create and manage channels, open direct messages, and look up channels and users. Each operation is a dedicated action selected within the node.</p>
 <div class="admonition tip">
 <p class="admonition-title">Choosing between the two Slack nodes</p>
-<p>The <a href="../configure-action-node/#configure-a-slack-send-message-action-node"><em>Slack - Send message</em> action node</a> only posts a message. Use this node to update or delete messages, manage reactions, read threads and history, or look up channels and users.</p>
+<p>The <a href="../configure-action-node/#configure-a-slack-send-message-action-node"><em>Slack - Send message</em> action node</a> only posts a message. Use this node to update or delete messages, manage reactions, read threads and history, manage channels, open direct messages, or look up channels and users.</p>
 </div>
 <ol>
 <li>
@@ -23489,11 +23493,15 @@
 </tr>
 <tr>
 <td>Channels</td>
-<td><em>Get Channel Info</em>, <em>List Channels</em></td>
+<td><em>Create Channel</em>, <em>Get Channel Info</em>, <em>List Channels</em>, <em>Invite Users to Channel</em>, <em>Archive Channel</em>, <em>Set Channel Topic</em>, <em>Set Channel Purpose</em></td>
+</tr>
+<tr>
+<td>Direct Messages</td>
+<td><em>Open Direct Message</em></td>
 </tr>
 <tr>
 <td>Users</td>
-<td><em>Get User Info</em>, <em>Lookup User by Email</em></td>
+<td><em>Get User Info</em>, <em>Lookup User by Email</em>, <em>List Users</em></td>
 </tr>
 </tbody>
 </table>
@@ -23623,7 +23631,7 @@
 </tr>
 <tr>
 <td>Retry delay</td>
-<td>Time to wait between retry attempts, in seconds, minutes, or hours. Always set it when retry attempts are configured: without a delay, retries are effectively never scheduled.</td>
+<td>Time to wait between retry attempts, in seconds, minutes, or hours. Without a delay, retries run 1 second apart by default.</td>
 </tr>
 <tr>
 <td>Backoff</td>

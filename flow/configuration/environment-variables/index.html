@@ -19912,7 +19912,7 @@
 </thead>
 <tbody>
 <tr>
-<td><code>ORCHESTRATOR_VERSION</code></td>
+<td><code>FLOW_VERSION</code></td>
 <td>Operator</td>
 <td>Image tag of the <code>orchestrator</code> service. Bump it to update the binary.</td>
 </tr>
@@ -19943,7 +19943,7 @@
 </tr>
 <tr>
 <td><code>S3_ACCESS_KEY_ID</code></td>
-<td>Operator</td>
+<td>Preset</td>
 <td>Access key ID of the bundled object storage. Not a secret, and optional: defaults to <code>orchestrator</code> when unset.</td>
 </tr>
 <tr>
@@ -19994,7 +19994,7 @@
 <tr>
 <td><code>GRAFANA_ADMIN_PASSWORD</code></td>
 <td><code>init.sh</code></td>
-<td>Grafana admin login, only used by the optional <code>--profile observability</code>. See <a href="../../operations/monitoring/#bundled-observability-stack">Monitor TheHive Flow</a>.</td>
+<td>Grafana admin password, only used by the optional <code>--profile observability</code>. See <a href="../../operations/monitoring/#bundled-observability-stack">Monitor TheHive Flow</a>.</td>
 </tr>
 <tr>
 <td><code>OTEL_EXPORTER_OTLP_ENDPOINT</code></td>
@@ -20033,7 +20033,7 @@
 <p><code>docker-compose.yml</code> reads <code>nginx_server_name</code> and <code>nginx_ssl_trusted_certificate</code> to fill the upper-case <code>SERVER_NAME</code> and <code>NGINX_SSL_TRUSTED_CERTIFICATE</code> template variables of the <a href="../nginx-configuration/">nginx service</a>. Don't rename them to upper case: the interpolation silently falls back to <code>localhost</code> as the server name.</p>
 </div>
 <h2 id="s3-credentials">S3 credentials<a class="headerlink" href="#s3-credentials" title="Permanent link">#</a></h2>
-<p>The two object storage credentials travel together: the application rejects a configuration where exactly one of them is set. Only <code>BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY</code> is strictly required in <code>.env</code>. Docker Compose refuses to start without it, while <code>S3_ACCESS_KEY_ID</code> falls back to <code>orchestrator</code> when unset or absent.</p>
+<p>The two object storage credentials travel together: the application rejects a configuration where exactly one of them is set. Of the pair, only <code>BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY</code> is strictly required in <code>.env</code>. Docker Compose refuses to start without it, while <code>S3_ACCESS_KEY_ID</code> falls back to <code>orchestrator</code> when unset or absent.</p>
 <p>What matters is that the pair the <code>orchestrator</code> service uses matches what the <code>init-s3-store</code> container provisioned. Since both read the same two variables, they can't disagree unless <code>.env</code> is edited between the two starts. For the full behavior, including what changing a credential after first start involves, see the <a href="../flow-configuration/#blob-store">blob store section</a> of the application configuration.</p>
 <h2 id="docker-engine-access">Docker engine access<a class="headerlink" href="#docker-engine-access" title="Permanent link">#</a></h2>
 <p>TheHive Flow launches containers on the host Docker daemon to run <a href="../../user-guides/configure-transformation-node/">Python and JavaScript code transformations</a>. The <a href="../../installation/docker/#step-3-run-the-bootstrap-script"><code>init.sh</code> script</a> autodetects the endpoint, fills the <code>DOCKER_*</code> variables, and generates <code>docker-compose.override.yml</code> accordingly.</p>

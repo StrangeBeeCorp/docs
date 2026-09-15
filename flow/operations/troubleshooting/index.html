@@ -20013,7 +20013,7 @@
 <tr>
 <td>A code transformation fails with <code>permission denied</code> on the Docker socket</td>
 <td>Group ID mismatch between the container process and the Docker socket</td>
-<td>Compare <code>stat -c '%g' /var/run/docker.sock</code> with <code>DOCKER_GID</code> in <code>.env</code>. If they differ, delete <code>docker-compose.override.yml</code> and run <code>./scripts/init.sh</code> again</td>
+<td>Compare <code>stat -c '%g' /var/run/docker.sock</code> with <code>DOCKER_GID</code> in <code>.env</code>. If they differ, set <code>DOCKER_GID</code> in <code>.env</code> to the <code>stat</code> output, then run <code>docker compose up -d orchestrator</code></td>
 </tr>
 <tr>
 <td>A code transformation fails with <code>cannot connect to Docker daemon at unix:///var/run/docker.sock</code></td>
@@ -20023,7 +20023,7 @@
 <tr>
 <td>A code transformation fails with <code>cannot connect to Docker daemon</code> in TCP mode</td>
 <td><code>DOCKER_HOST</code> isn't reachable from inside the container</td>
-<td>Don't use <code>localhost</code>: use the host IP. Verify with <code>docker compose exec orchestrator curl http://&lt;host_ip&gt;:&lt;port&gt;/v1.41/info</code></td>
+<td>Don't use <code>localhost</code>: use the host IP. Verify from the host that the endpoint answers: <code>curl http://&lt;host_ip&gt;:&lt;port&gt;/v1.41/info</code></td>
 </tr>
 </tbody>
 </table>
@@ -20089,7 +20089,7 @@
 <tr>
 <td><code>/readyz</code> returns 503</td>
 <td>PostgreSQL or Temporal isn't reachable</td>
-<td>Check <code>docker compose logs orchestrator</code> for <code>failed to connect to database</code> or <code>failed to create temporal client</code>, and <code>docker compose ps</code> for unhealthy services</td>
+<td>Check <code>docker compose logs orchestrator</code> for <code>failed to ping database</code> or <code>failed to create temporal client</code>, and <code>docker compose ps</code> for unhealthy services</td>
 </tr>
 <tr>
 <td><code>/livez</code> returns connection refused</td>
@@ -20153,7 +20153,7 @@
 <tr>
 <td>The <code>temporal</code> service exits with <code>schema version mismatch</code></td>
 <td>The Temporal Server image was bumped without running schema migrations</td>
-<td>Run the schema tool first: <code>docker compose --profile admin run --rm temporal-admin temporal-sql-tool --plugin postgres12 --ep postgresql -p 5432 -u temporal --pw &lt;temporal_db_password&gt; --db temporal update-schema -d /etc/temporal/schema/postgresql/v12/temporal/versioned</code></td>
+<td>Run <code>./scripts/upgrade-temporal.sh --apply</code>: the script migrates both Temporal databases before recreating the server. See <a href="../maintenance/#update-the-other-services">Update the other services</a></td>
 </tr>
 <tr>
 <td>A workflow run is stuck indefinitely</td>
@@ -20200,7 +20200,7 @@
 </tbody>
 </table>
 <h2 id="get-support">Get support<a class="headerlink" href="#get-support" title="Permanent link">#</a></h2>
-<p>If the steps above don't resolve the issue, collect the support bundle and open a ticket:</p>
+<p>If the steps above don't resolve the issue, collect the support bundle and open a ticket. Run interactively without variables, the script prompts for these values instead:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">DIAGNOSE_TICKET</span><span class="o">=</span>SUP-XXXX<span class="w"> </span><span class="se">\</span>
 <span class="nv">DIAGNOSE_DESC</span><span class="o">=</span><span class="s2">"&lt;one_line_description&gt;"</span><span class="w"> </span><span class="se">\</span>
 ./scripts/diagnose.sh

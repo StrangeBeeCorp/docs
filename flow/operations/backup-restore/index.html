@@ -20029,7 +20029,7 @@
 <span class="nv">KEY</span><span class="o">=</span><span class="s2">"cold-</span><span class="k">$(</span>date<span class="w"> </span>-u<span class="w"> </span>+%Y%m%dT%H%M%SZ<span class="k">)</span><span class="s2">"</span>
 
 docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>postgresql
-docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>postgresql<span class="w"> </span><span class="se">\</span>
+docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-T<span class="w"> </span>postgresql<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>pg_dump<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-Fc<span class="w"> </span>-d<span class="w"> </span>orchestrator<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>&gt;<span class="w"> </span><span class="s2">"./backups/backup-orchestrator-</span><span class="si">${</span><span class="nv">KEY</span><span class="si">}</span><span class="s2">.pgdump"</span>
 docker<span class="w"> </span>compose<span class="w"> </span>down

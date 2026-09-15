@@ -19930,6 +19930,7 @@ ssh<span class="w"> </span>&lt;user&gt;@&lt;flow_host&gt;
 <p>Load TheHive Flow image:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>thehive-flow-&lt;version&gt;.tar
 </code></pre></div>
+<p>The archive loads the image as <code>ghcr.io/strangebee/thehive-flow:&lt;version&gt;</code>. The <code>FLOW_VERSION</code> variable in <code>.env</code>, created at <a href="#step-3-run-the-bootstrap-script">step 3</a>, must match this tag.</p>
 </li>
 </ol>
 <h2 id="optional-step-2-provide-custom-tls-certificates">(Optional) Step 2: Provide custom TLS certificates<a class="headerlink" href="#optional-step-2-provide-custom-tls-certificates" title="Permanent link">#</a></h2>
@@ -19945,22 +19946,22 @@ cp<span class="w"> </span>/path/to/&lt;ca_certificate&gt;<span class="w"> </span
 </ul>
 <h2 id="step-3-run-the-bootstrap-script">Step 3: Run the bootstrap script<a class="headerlink" href="#step-3-run-the-bootstrap-script" title="Permanent link">#</a></h2>
 <p>The <code>init.sh</code> script automates the following setup tasks:</p>
-<p>1/ Checks that the <a href="../software-requirements/">required software</a> is installed: Docker Engine, the Docker Compose v2 plugin, and openssl.
-2/ Detects the Docker endpoint, Unix socket or TCP, used to run code transformations. See <a href="../../configuration/environment-variables/#docker-engine-access">Docker engine access</a>.
-3/ Creates <code>.env</code> from <code>.env.example</code>, filling random 256-bit secrets with <code>openssl rand</code>.
-4/ Prompts for the server name, used as the nginx host name and in the TLS certificate. The default is the system host name. In non-interactive runs, set the <code>SERVICE_HOSTNAME</code> environment variable instead.
-5/ Generates <code>docker-compose.override.yml</code> for Docker engine access, with a socket mount or a TCP endpoint.
-6/ Creates the named Docker volumes <code>orchestrator-postgres-data</code> and <code>orchestrator-s3-data</code>.
-7/ Creates the <code>orchestrator/secret/</code> directory with mode 755.
-8/ Generates <code>temporal/.resolved.yaml</code>, the Temporal configuration with passwords resolved.
-9/ Starts PostgreSQL temporarily, runs <code>temporal-sql-tool</code> to initialize the schema, and creates the <code>default</code> namespace.
-10/ Prints next steps.</p>
+<p>1/ Checks that the <a href="../software-requirements/">required software</a> is installed: Docker Engine, the Docker Compose v2 plugin, and openssl.  </p>
+<p>2/ Detects the Docker endpoint, Unix socket or TCP, used to run code transformations. See <a href="../../configuration/environment-variables/#docker-engine-access">Docker engine access</a>.  </p>
+<p>3/ Creates <code>.env</code> from <code>.env.example</code>, filling random 256-bit secrets with <code>openssl rand</code>.  </p>
+<p>4/ Prompts for the server name, used as the nginx host name and in the TLS certificate. The default is the system host name. In non-interactive runs, set the <code>SERVICE_HOSTNAME</code> environment variable instead.  </p>
+<p>5/ Generates <code>docker-compose.override.yml</code> for Docker engine access, with a socket mount or a TCP endpoint.  </p>
+<p>6/ Creates the named Docker volumes <code>orchestrator-postgres-data</code> and <code>orchestrator-s3-data</code>.  </p>
+<p>7/ Creates the <code>orchestrator/secret/</code> directory with mode 755.  </p>
+<p>8/ Generates <code>temporal/.resolved.yaml</code>, the Temporal configuration with passwords resolved.  </p>
+<p>9/ Starts PostgreSQL temporarily, runs <code>temporal-sql-tool</code> to initialize the schema, and creates the <code>default</code> namespace.  </p>
+<p>10/ Prints next steps.  </p>
 <ol>
 <li>
 <p>Run the script a first time:</p>
 <div class="highlight"><pre><span></span><code>bash<span class="w"> </span>./scripts/init.sh
 </code></pre></div>
-<p>The run performs tasks 1 to 8, then stops with the following error. That's expected: <code>.env</code> now exists and holds every generated value, except TheHive URL.</p>
+<p>The run performs tasks 1 to 8, then stops with an error similar to the following. That's expected: <code>.env</code> now exists and holds every generated value, except TheHive URL.</p>
 <div class="highlight"><pre><span></span><code>error while interpolating services.orchestrator.environment.ORCHESTRATOR_THEHIVE_URL: required variable ORCHESTRATOR_THEHIVE_URL is missing a value: ORCHESTRATOR_THEHIVE_URL must be set in .env
 </code></pre></div>
 </li>
@@ -19994,12 +19995,12 @@ Detecting Docker engine endpoint
 
 Bootstrapping .env
 [*] Copied .env.example -&gt; .env
-Server Name (default: flow-host ): flow.example.com
-[✔] Generating self-signed certificate...
-[✔] Self-signed certificate generated for flow.example.com.
 [*] Generated random secrets for JWT_SIGNING_KEY, POSTGRES_PASSWORD,
 [*]   ORCHESTRATOR_DB_PASSWORD, TEMPORAL_DB_PASSWORD, GRAFANA_ADMIN_PASSWORD,
 [*]   BEEFLOW_SECRET_S3_SECRET_ACCESS_KEY.
+Server Name (default: flow-host ): flow.example.com
+[✔] Generating self-signed certificate...
+[✔] Self-signed certificate generated for flow.example.com.
 [*] Set .env permissions to 600 (owner-only).
 
 Generating docker-compose.override.yml
@@ -20044,7 +20045,7 @@ Next steps
 </code></pre></div>
 <ul>
 <li>The <code>[!]</code> warning about <code>orchestrator/secret/thehive-api-key</code> is expected at this point: the key is provisioned at <a href="#step-5-provision-thehive-api-key">step 5</a>.</li>
-<li>With custom certificates provided at <a href="#optional-step-2-provide-custom-tls-certificates">step 2</a>, the two certificate lines read <code>Using custom certificates found in ./certificates.</code> instead.</li>
+<li>With custom certificates provided at <a href="#optional-step-2-provide-custom-tls-certificates">step 2</a>, the two certificate lines are replaced by a single <code>Using custom certificates found in ./certificates.</code> line.</li>
 <li>A line starting with <code>/!\</code> is an error: the script stops, and running it again after fixing the cause is safe.</li>
 </ul>
 </div>

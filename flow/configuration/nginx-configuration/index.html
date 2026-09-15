@@ -19944,6 +19944,7 @@
 </tbody>
 </table>
 <p>A request that exceeds the proxy timeout returns <code>504 Gateway Timeout</code>: see <a href="../../operations/troubleshooting/#nginx-and-connectivity">Troubleshoot TheHive Flow</a> before raising the limit.</p>
+<p>The listener also turns response buffering off with <code>proxy_buffering off</code>: nginx streams each response to the client as the application produces it, instead of buffering it first. Request bodies remain buffered, a behavior described in <a href="../../operations/troubleshooting/#nginx-and-connectivity">Troubleshoot TheHive Flow</a>.</p>
 <p>To restrict which sources can reach the webhook paths, see <a href="../../operations/security/#webhook-exposure">Webhook exposure</a>.</p>
 <h2>Next steps</h2>
 

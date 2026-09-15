@@ -19908,7 +19908,7 @@
 <p>Updating the <code>orchestrator</code> binary is the most common maintenance operation. Only the <code>orchestrator</code> container is affected: PostgreSQL and Temporal remain running.</p>
 <ol>
 <li>
-<p>Edit <code>.env</code> and set <a href="../../configuration/environment-variables/"><code>ORCHESTRATOR_VERSION</code></a> to the new released tag. Never use <code>latest</code>.</p>
+<p>Edit <code>.env</code> and set <a href="../../configuration/environment-variables/"><code>FLOW_VERSION</code></a> to the new released tag. Never use <code>latest</code>.</p>
 </li>
 <li>
 <p>Run the update script:</p>
@@ -19918,7 +19918,7 @@
 </ol>
 <p>The script pulls the new image, stops the <code>orchestrator</code> container, verifies that the object storage is up and provisioned, recreates the container, and waits up to 120 seconds for <code>/readyz</code> to return 200. Expected downtime is under 30 seconds.</p>
 <p>The script never touches <a href="../../configuration/flow-configuration/"><code>orchestrator/orchestrator.yml</code></a>: that file is yours, so configuration blocks introduced by a newer version aren't added to an existing installation by updating. After an update, compare your file with the shipped <code>orchestrator/orchestrator.yml</code> from the new deployment bundle and add what's missing. <code>modules.runs.sync_temporal_retention</code> is one such block, and without it the run list and the Temporal history expire on different clocks. See <a href="#temporal-workflow-history-retention">Temporal workflow history retention</a>.</p>
-<p>To roll back, revert <code>ORCHESTRATOR_VERSION</code> in <code>.env</code> and run <code>./scripts/update.sh</code> again. Forward-compatible database migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back the binary across a migration boundary.</p>
+<p>To roll back, revert <code>FLOW_VERSION</code> in <code>.env</code> and run <code>./scripts/update.sh</code> again. Forward-compatible database migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back the binary across a migration boundary.</p>
 <h2 id="update-the-other-services">Update the other services<a class="headerlink" href="#update-the-other-services" title="Permanent link">#</a></h2>
 <p>These updates restart the affected service. Nginx reloads gracefully, but a PostgreSQL restart interrupts the whole stack for 10 to 30 seconds, and a Temporal upgrade with schema migrations takes longer: schedule those two in a maintenance window.</p>
 <p>Edit the image tag and digest in <code>docker-compose.yml</code>, then recreate the affected service.</p>
@@ -19928,10 +19928,10 @@
 <p>For a PostgreSQL minor patch, with the data preserved in the named volume:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>postgresql
 </code></pre></div>
-<p>For a Temporal minor patch, with the state preserved in PostgreSQL:</p>
+<p>For a Temporal minor patch, with the state preserved in PostgreSQL, bump <code>temporalio/server</code> and <code>temporalio/admin-tools</code> to the same version, because <code>upgrade-temporal.sh</code> refuses a mismatched pair:</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>temporal
 </code></pre></div>
-<p>Temporal Server upgrades, image and schema migrations together, are handled by <code>./scripts/upgrade-temporal.sh</code>. Without flags it's a dry run: it prints the current and target versions, the step plan, and the pending schema migrations, and changes nothing. Pass <code>--apply</code> to execute. When the running server is more than one minor version behind, the script steps through the intermediate minor versions one at a time, landing on the latest recorded patch of each, using the version manifest shipped in the bundle, <code>temporal-version-history.json</code>. It refuses to upgrade to, or through, any version missing from the manifest: only versions vetted and pinned by StrangeBee appear in it.</p>
+<p>Temporal Server upgrades, image and schema migrations together, are handled by <code>./scripts/upgrade-temporal.sh</code>. Without flags it's a dry run: it prints the current and target versions, the step plan, and the pending schema migrations, and changes nothing. Pass <code>--apply</code> to execute: the script then stops the <code>orchestrator</code> service for the whole upgrade window, asks for confirmation unless <code>--yes</code> is passed, and first dumps the <code>temporal</code>, <code>temporal_visibility</code>, and <code>orchestrator</code> databases under <code>./backups/temporal-preupgrade-&lt;timestamp&gt;/</code>. An exit code of <code>2</code> means the upgrade applied but the final shard verification was skipped. When the running server is more than one minor version behind, the script steps through the intermediate minor versions one at a time, landing on the latest recorded patch of each, using the version manifest shipped in the bundle, <code>temporal-version-history.json</code>. It refuses to step through any intermediate version missing from the manifest, and refuses a target absent from it whenever the running version is recorded there: only versions vetted and pinned by StrangeBee appear in it.</p>
 <p>The stepping path supports Temporal images 1.30 or later. Earlier server releases don't honor the configuration file path the stack relies on and crash-loop, and earlier <code>admin-tools</code> images hang on the schema tool. This isn't a practical limitation, because the stack has never shipped anything older than 1.30.4.</p>
 <p>PostgreSQL major-version upgrades aren't covered by the stack. Refer to <a href="https://www.postgresql.org/docs/current/upgrading.html" target="_blank">Upgrading a PostgreSQL Cluster</a> in the PostgreSQL documentation.</p>
 <h2 id="log-rotation">Log rotation<a class="headerlink" href="#log-rotation" title="Permanent link">#</a></h2>

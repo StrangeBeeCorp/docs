@@ -19985,7 +19985,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Docker Compose deployment</label><label for="__tabbed_2_2">Kubernetes deployment with Helm</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>All images are pinned by tag and immutable digest in <code>docker-compose.yml</code>. The host must be able to reach the listed registries at first start, directly or through a private registry mirror; subsequent starts use the local cache.</p>
+<p>All images are pinned by tag and immutable digest in <code>docker-compose.yml</code>, except TheHive Flow image, which <code>FLOW_VERSION</code> pins by tag only. The host must be able to reach the listed registries at first start, directly or through a private registry mirror. Subsequent starts use the local cache.</p>
 <table>
 <thead>
 <tr>
@@ -20016,7 +20016,7 @@
 </tr>
 </tbody>
 </table>
-<p>The total pull is approximately 1 GB. TheHive Flow's own image, <code>ghcr.io/strangebee/orchestrator</code>, isn't pulled: it ships as a Docker archive in the <code>images/</code> directory of the deployment bundle.</p>
+<p>The total pull is approximately 1 GB. TheHive Flow's own image, <code>ghcr.io/strangebee/thehive-flow</code>, isn't pulled at first start: it ships as a Docker archive in the <code>images/</code> directory of the deployment bundle and is loaded with <code>docker load</code>.</p>
 <p>The optional <a href="../../operations/monitoring/#bundled-observability-stack">observability profile</a> pulls three more images at its first start: <code>docker.io/otel/opentelemetry-collector-contrib:0.160.x</code>, <code>docker.io/prom/prometheus:v3.14.x</code>, and <code>docker.io/grafana/grafana:13.2.x</code>.</p>
 <p>The two <a href="../../user-guides/configure-transformation-node/">code transformation</a> language images are also pulled at the first start of the <code>orchestrator</code> service, which refuses to start if a pull fails:</p>
 <table>

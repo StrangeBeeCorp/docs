@@ -19974,7 +19974,7 @@
 <p>Integration nodes perform operations in TheHive or third-party products. Each integration node targets one product API and exposes its operations as dedicated actions selected within the node.</p>
 <p>Available integrations are:</p>
 <ul>
-<li><a href="../configure-integration-node/#configure-a-thehive-integration-node"><em>TheHive</em></a>: Performs operations in TheHive through TheHive API, such as creating, updating, querying, or deleting cases, alerts, tasks, observables, comments, and task logs, or starting a Cortex job. Returns the response body, status code, and headers as outputs. To perform an operation this node doesn't manage, use the <a href="../configure-action-node/#configure-an-http-request-action-node"><em>HTTP request</em></a> action node instead.</li>
+<li><a href="../configure-integration-node/#configure-a-thehive-integration-node"><em>TheHive</em></a>: Performs operations in TheHive through TheHive API, such as creating, updating, querying, or deleting cases, alerts, tasks, and observables, managing comments and task logs, or starting a Cortex job. Returns the response body, status code, and headers as outputs. To perform an operation this node doesn't manage, use the <a href="../configure-action-node/#configure-an-http-request-action-node"><em>HTTP request</em></a> action node instead.</li>
 <li><a href="../configure-integration-node/#configure-a-splunk-integration-node"><em>Splunk</em></a>: Performs operations through the Splunk REST API, such as creating and following search jobs, running searches, listing indexes and fired alerts, submitting events, and updating Splunk Enterprise Security findings and investigations. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-a-microsoft-defender-for-endpoint-integration-node"><em>Microsoft Defender for Endpoint</em></a>: Performs operations through the Microsoft Defender for Endpoint API, such as listing, retrieving, and updating alerts, running response actions on devices, and creating indicators. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-a-microsoft-defender-graph-security-api-integration-node"><em>Microsoft Defender (Graph Security API)</em></a>: Performs operations through the Microsoft Graph security API, such as listing, retrieving, and updating Microsoft Defender XDR alerts and incidents. Returns the response body, status code, and headers as outputs.</li>
@@ -19984,7 +19984,7 @@
 <li><a href="../configure-integration-node/#configure-a-virustotal-integration-node"><em>VirusTotal</em></a>: Performs operations through the VirusTotal API, such as scanning URLs and files, and retrieving domain, IP address, file, and analysis reports. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-a-crowdstrike-falcon-integration-node"><em>CrowdStrike Falcon</em></a>: Performs operations through the CrowdStrike Falcon APIs, such as querying devices and vulnerabilities, running response actions on hosts, querying and updating alerts, looking up threat intelligence indicators, managing custom indicators of compromise, and detonating file samples in the Falcon sandbox. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-an-elastic-security-integration-node"><em>Elastic Security</em></a>: Performs operations through the Elasticsearch API, such as searching and indexing documents, running ES|QL queries, and listing Elastic Security detection alerts. Returns the response body, status code, and headers as outputs.</li>
-<li><a href="../configure-integration-node/#configure-a-harfanglab-edr-integration-node"><em>HarfangLab EDR</em></a>: Performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, and managing IOC and Sigma rules. Returns the response body, status code, and headers as outputs.</li>
+<li><a href="../configure-integration-node/#configure-a-harfanglab-edr-integration-node"><em>HarfangLab EDR</em></a>: Performs operations through the HarfangLab API, such as searching and isolating endpoints, managing alerts, running jobs on agents, searching telemetry, managing IOC rules, and listing Sigma rules. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-a-jira-cloud-v3-integration-node"><em>Jira Cloud v3</em></a>: Performs operations through the Jira Cloud platform REST API, such as creating, editing, transitioning, and searching issues, managing comments, attachments, worklogs, watchers, and votes, and browsing projects and issue metadata. Returns the response body, status code, and headers as outputs.</li>
 <li><a href="../configure-integration-node/#configure-a-slack-integration-node"><em>Slack</em></a>: Performs operations through the Slack Web API, such as posting, updating, and deleting messages, managing reactions, reading threads and channel history, and looking up channels and users. Returns the response body, status code, and headers as outputs.</li>
 </ul>
@@ -20047,7 +20047,7 @@
 <p>Insert variables with the <strong>$var</strong> button, or type <code>$</code> in a field and start typing the variable name to filter the suggestions. In both cases, select one of the suggestions to insert the reference: it can't be typed in full manually.</p>
 <p>An inserted variable is highlighted in the field. How you read a nested field from it depends on its type:</p>
 <ul>
-<li>A direct variable (green): appears in the condition of an <em>If</em> node and the collection of a <em>For Each</em> node. Read a nested field by typing <code>.&lt;field_name&gt;</code> right after the reference, directly in the field.</li>
+<li>A direct variable (green): appears in the condition of an <em>If</em> node and the collection of a <em>For each</em> node. Read a nested field by typing <code>.&lt;field_name&gt;</code> right after the reference, directly in the field.</li>
 <li>A jq expression (blue): the variable wrapped in a <a href="https://jqlang.org/" target="_blank">jq expression</a>. To read a nested field or transform the value, select the expression and edit the jq inside it. Always add fields inside the expression itself: text typed after it in the field is treated as literal text, not as part of the expression, and the node fails at execution with a type mismatch. You can also use the <strong>+</strong> button to write the variable and the field together in one step.</li>
 </ul>
 <h2 id="files">Files<a class="headerlink" href="#files" title="Permanent link">#</a></h2>
@@ -20056,7 +20056,7 @@
 <ul>
 <li><strong>Large node outputs</strong>: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.</li>
 <li><strong>Binary or multipart HTTP responses</strong>: An <a href="../configure-action-node/#configure-an-http-request-action-node"><em>HTTP request</em> node</a> response body that isn't valid text is stored as a file regardless of its size. Parts of a <code>multipart/*</code> response body that are large or not JSON are stored as files too.</li>
-<li><strong>Files uploaded to a webhook</strong>: A file sent with the HTTP request that triggers a <a href="../add-trigger/#add-a-webhook-trigger"><em>Webhook</em> trigger</a> is stored as a file and available in the payload as <code>$request.files.&lt;field&gt;</code>.</li>
+<li><strong>Files uploaded to a webhook</strong>: A file sent with the HTTP request that triggers a <a href="../add-trigger/#add-a-webhook-trigger"><em>Webhook</em> trigger</a> is stored as a file and available for input mapping as <code>$request.files.&lt;field&gt;</code> in the trigger configuration.</li>
 <li><strong>Files written by code nodes</strong>: A file registered with <code>flow.set_file()</code> in a <a href="../configure-transformation-node/#configure-a-python-code-node"><em>Python code</em></a> or <a href="../configure-transformation-node/#configure-a-javascript-code-node"><em>JavaScript code</em></a> node.</li>
 </ul>
 <p>Stored files are capped at 25 MiB by default. A value above that limit is rejected.</p>
@@ -20125,7 +20125,7 @@
 <p>A timeout defines the maximum duration an operation is allowed to run before it's automatically stopped and marked as timed out. Timeouts can be configured at both the <a href="../manage-workflows/#create-a-workflow">workflow level</a> and the node level. When both levels define a timeout, the shortest duration is applied.</p>
 </li>
 <li>
-<p>A retry defines the number of times a failed node execution is attempted again. Always configure a retry delay along with it, to specify the wait time between retry attempts: without a delay, retries are effectively never scheduled. Retry can be configured only at the node level.</p>
+<p>A retry defines the number of times a failed node execution is attempted again. A retry delay specifies the wait time between retry attempts: without a delay, retries run 1 second apart by default. Retry can be configured only at the node level.</p>
 </li>
 <li>
 <p>A backoff defines the coefficient applied to the retry delay to increase the wait time after each failed attempt. Backoff can be configured only at the node level.</p>
@@ -20140,10 +20140,11 @@
 <p>Execution mode is configured in the node's <strong>Add options</strong>, under <strong>Execution configuration</strong>. It's available on most action, integration, and transformation nodes.</p>
 <h2 id="execution-tracking">Execution tracking<a class="headerlink" href="#execution-tracking" title="Permanent link">#</a></h2>
 <p>Executions are asynchronous: triggering a workflow doesn't block TheHive interface.</p>
-<p>Each workflow execution generates an execution record that captures the status of the workflow and each of its nodes. <a href="../display-execution-logs/">Execution logs</a> are available in two places:</p>
+<p>Each workflow execution generates an execution record that captures the status of the workflow and each of its nodes. <a href="../display-execution-logs/">Execution logs</a> are available in three places:</p>
 <ul>
 <li>The <strong>Execution logs</strong> tab in the <strong>Flow</strong> view lists the executions of every workflow in the organization from the past 30 days, giving an overview to spot failures and open a specific run.</li>
 <li>The <strong>Executions</strong> tab inside a workflow shows that workflow's runs in detail. Selecting a node displays its start and end dates, duration, status, and input and output data.</li>
+<li>The <strong>Automation</strong> tab of a case or alert in TheHive lists the runs launched on that case or alert.</li>
 </ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <ul>

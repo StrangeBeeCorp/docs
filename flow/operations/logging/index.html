@@ -19959,7 +19959,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"
 <p>Raising the level above INFO silences the rejection reasons in the container output. Server faults keep their ERROR line, and a configured OTLP logs export still receives everything, because the level applies per destination.</p>
 </div>
 <h3 id="the-temporal-service">The <code>temporal</code> service<a class="headerlink" href="#the-temporal-service" title="Permanent link">#</a></h3>
-<p>Semi-structured text. Key events to watch for:</p>
+<p>Structured JSON, in Temporal's own schema. Key events to watch for:</p>
 <ul>
 <li><code>workflow task timeout</code>: A workflow is stuck, with no worker polling</li>
 <li><code>history size limit exceeded</code>: A workflow accumulated too many events. See <a href="../troubleshooting/#temporal-and-workflows">Troubleshoot TheHive Flow</a></li>
@@ -19979,7 +19979,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>postgresql
 </code></pre></div>
 <h3 id="the-nginx-service">The <code>nginx</code> service<a class="headerlink" href="#the-nginx-service" title="Permanent link">#</a></h3>
-<p>The access log format is <code>IP - - [timestamp] "METHOD path HTTP/version" status bytes "referer" "user-agent"</code>. The error log includes TLS handshake failures and upstream connection errors.</p>
+<p>The access log format is <code>IP - - [timestamp] "METHOD path HTTP/version" status bytes "referer" "user-agent" "x-forwarded-for"</code>. The error log includes TLS handshake failures and upstream connection errors.</p>
 <h2 id="collect-logs-during-an-incident">Collect logs during an incident<a class="headerlink" href="#collect-logs-during-an-incident" title="Permanent link">#</a></h2>
 <p>Failing to collect these logs is the primary reason post-mortems can't determine a root cause. Collect all four services as soon as an incident is detected.</p>
 <table>
@@ -20012,7 +20012,7 @@ docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"
 <div class="highlight"><pre><span></span><code>./scripts/diagnose.sh
 </code></pre></div>
 <p>Collect a wider window than you think you need, at least 2 hours before the incident, because Temporal workflows can have long delays between task scheduling and execution. The log window is configurable through <code>DIAGNOSE_LOG_HOURS</code>.</p>
-<p>To add a support ticket for context, and attach the support bundle to every support ticket:</p>
+<p>Run interactively without variables, the script prompts for a ticket id, a description, and reproduction steps. Set the variables on the command line to skip the prompts, and attach the support bundle to every support ticket:</p>
 <div class="highlight"><pre><span></span><code><span class="nv">DIAGNOSE_TICKET</span><span class="o">=</span>SUP-XXXX<span class="w"> </span><span class="se">\</span>
 <span class="nv">DIAGNOSE_DESC</span><span class="o">=</span><span class="s2">"&lt;one_line_description&gt;"</span><span class="w"> </span><span class="se">\</span>
 ./scripts/diagnose.sh

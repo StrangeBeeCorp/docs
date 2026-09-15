@@ -20007,7 +20007,7 @@
 <ul>
 <li>Host firewall: When every caller is known, restrict inbound port 443 to their source addresses. TheHive reaches TheHive Flow on the same port, so keep TheHive host among the allowed sources.</li>
 <li>
-<p>Nginx: To restrict the webhook paths only, keeping the rest of the listener open to TheHive, add a dedicated location block to the <a href="../../configuration/nginx-configuration/">nginx configuration template</a> and restart nginx. Location blocks don't inherit the proxy directives, so the block repeats them, including the headers that carry the client IP the rate limiter reads:</p>
+<p>Nginx: To restrict the webhook paths only, keeping the rest of the listener open to TheHive, add a dedicated location block to the <a href="../../configuration/nginx-configuration/">nginx configuration template</a> and restart nginx. Location blocks don't inherit the proxy directives, so the block repeats them, including the headers that carry the client IP into the application logs:</p>
 <div class="highlight"><pre><span></span><code><span class="k">location</span><span class="w"> </span><span class="s">/webhook/</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kn">allow</span><span class="w"> </span><span class="s">&lt;caller_cidr&gt;</span><span class="p">;</span>
 <span class="w">    </span><span class="kn">deny</span><span class="w">  </span><span class="s">all</span><span class="p">;</span>
@@ -20025,7 +20025,7 @@
 <p>Nginx terminates TLS on port 443. Two modes are available, selected by <code>init.sh</code>:</p>
 <ul>
 <li>Self-signed certificate, the default: <code>init.sh</code> generates a 365-day, 2048-bit RSA certificate for the configured <code>nginx_server_name</code>. Clients must either <a href="../../installation/docker/#tls-with-a-self-signed-certificate">trust the certificate or turn off certificate verification</a>.</li>
-<li>Custom certificate: place <code>server.crt</code>, <code>server.key</code>, and optionally <code>ca.pem</code> in <code>./certificates/</code> <a href="../../installation/docker/#optional-step-2-provide-custom-tls-certificates">before running <code>init.sh</code></a>. The files are copied to <code>nginx/certs/</code> and the <code>ssl_trusted_certificate</code> directive is enabled automatically in the <a href="../../configuration/nginx-configuration/">nginx configuration</a>.</li>
+<li>Custom certificate: place <code>server.crt</code>, <code>server.key</code>, and optionally <code>ca.pem</code> in <code>./certificates/</code> <a href="../../installation/docker/#optional-step-2-provide-custom-tls-certificates">before running <code>init.sh</code></a>. The files are copied to <code>nginx/certs/</code> and, when <code>ca.pem</code> is provided, the <code>ssl_trusted_certificate</code> directive is enabled automatically in the <a href="../../configuration/nginx-configuration/">nginx configuration</a>.</li>
 </ul>
 <p>Internal service-to-service communication, from the <code>orchestrator</code> service to PostgreSQL, Temporal, and the object storage, uses plain TCP on the isolated Docker network. The S3 endpoint is plain HTTP. No mTLS is used between internal services in this release.</p>
 <h3 id="tls-toward-thehive">TLS toward TheHive<a class="headerlink" href="#tls-toward-thehive" title="Permanent link">#</a></h3>
@@ -20088,8 +20088,8 @@ chmod<span class="w"> </span><span class="m">644</span><span class="w"> </span>.
 <p>Update <code>ORCHESTRATOR_DB_PASSWORD</code> in <code>.env</code>.</p>
 </li>
 <li>
-<p>Start the services again:</p>
-<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>start<span class="w"> </span>orchestrator<span class="w"> </span>temporal
+<p>Recreate the services rather than starting them, because <code>docker compose start</code> doesn't re-read <code>.env</code>:</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w"> </span>orchestrator<span class="w"> </span>temporal
 </code></pre></div>
 </li>
 </ol>
