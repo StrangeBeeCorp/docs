@@ -17,6 +17,23 @@ The nginx Docker image injects the following variables at container start, from 
 | `${SERVER_NAME}` | The value of [`nginx_server_name`](environment-variables.md) from `.env` |
 | `${NGINX_SSL_TRUSTED_CERTIFICATE}` | `ssl_trusted_certificate /etc/nginx/certs/ca.pem;` when a [custom certificate authority is provided](../installation/docker.md#optional-step-2-provide-custom-tls-certificates), an empty string otherwise |
 
+## Service name and published port
+
+The `nginx` service in `docker-compose.yml` runs as a container named `nginx` and publishes port 443 on the host. TheHive Docker Compose profiles use the same container name and the same host port, so running both stacks on a single host means changing them on TheHive Flow side. Use any unused container name and any free host port:
+
+```yaml
+nginx:
+  container_name: <container_name>
+  ports:
+    - '<host_port>:443'
+```
+
+Keep the container port set to 443: it's the port the template listens on.
+
+Make the change in `docker-compose.yml` rather than in `docker-compose.override.yml`: Compose adds the ports of an override file to those of the base file instead of replacing them, so port 443 would stay published.
+
+Publishing another host port changes the address TheHive Flow answers on, `https://<flow_host>:<host_port>/`. Use that address in [TheHive configuration](../installation/docker.md#step-6-configure-thehive-to-reach-thehive-flow).
+
 ## Listener
 
 The template configures a single listener on port 443, with HTTP/2 enabled. It terminates TLS, then proxies requests to `orchestrator:8081` on the internal Docker network.

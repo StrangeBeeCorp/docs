@@ -2,7 +2,7 @@
 
 <!-- md:version 6.0 --> <!-- md:license One -->
 
-[TheHive Flow](../user-guides/about-flow.md) requires sufficient hardware resources and data storage to ensure stable and efficient operation, depending on the deployment method: a [Docker Compose stack](docker.md) on a single Linux host, separate from the host running TheHive, or a [Helm chart on a Kubernetes cluster](kubernetes.md).
+[TheHive Flow](../user-guides/about-flow.md) requires sufficient hardware resources and data storage to ensure stable and efficient operation, depending on the deployment method: a [Docker Compose stack](docker.md) on a single Linux host, separate in production from the host running TheHive, or a [Helm chart on a Kubernetes cluster](kubernetes.md).
 
 ## Hardware requirements
 

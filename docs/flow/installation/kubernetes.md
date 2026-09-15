@@ -70,6 +70,22 @@ The following steps require TheHive 6.x running and reachable from the cluster. 
 * For TheHive in the cluster, see [Deploy TheHive on Kubernetes](../../thehive/installation/kubernetes.md).
 * For TheHive outside the cluster, see [Deploy TheHive with Docker Compose](../../thehive/installation/docker.md) for a new deployment, or [Upgrade from TheHive 5.x](../../thehive/installation/upgrade-from-5.x.md) for an existing one.
 
+!!! warning "Point a Docker Compose profile at the loaded image"
+    The archive loads the image as `ghcr.io/strangebee/thehive:<version>`. With TheHive outside the cluster on a StrangeBee Docker Compose profile, `testing`, `prod1-thehive`, or `prod2-thehive`, the profile references TheHive image on Docker Hub instead. In the profile directory, edit the `image` line of the `thehive` service in `docker-compose.yml`:
+
+    ```yaml
+    thehive:
+      image: "ghcr.io/strangebee/thehive:${thehive_image_version}"
+    ```
+
+    Then set the tag printed by `docker load` in the `.env` file located next to `docker-compose.yml`:
+
+    ```ini
+    thehive_image_version=<version>
+    ```
+
+    Left unchanged, the profile pulls a TheHive 5.x image from Docker Hub instead of using the image loaded from the archive.
+
 ## Step 4: Provision the secrets
 
 The chart creates no Secrets itself: it reads every secret from existing Kubernetes Secrets in the release namespace, named as follows by default. The bootstrap script applies them with placeholder values. Without it, create them before the installation. The names and keys are configurable through the `secrets.*` values.
