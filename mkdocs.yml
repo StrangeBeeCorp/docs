@@ -369,6 +369,18 @@ plugins:
 
 extra:
   generator: false
+
+  # Pages kept out of search engine indexes and out of sitemap.xml.
+  # Each entry is a path under docs/: a trailing slash covers a whole directory,
+  # otherwise it names a single file. Keep in sync with the exclude-search plugin.
+  noindex:
+    - includes/
+    - flow/
+    - thehive/operations/configure-audit-logs-storage-elasticsearch.md
+    - thehive/third-party-software-licenses.md
+    - thehive/administration/manage-llm-providers.md
+    - thehive/release-notes/release-notes-6.0.md
+    - thehive/glossary-thehive.md
   social:
     - icon: fontawesome/brands/linkedin
       link: "https://www.linkedin.com/company/strangebee"

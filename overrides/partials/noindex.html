@@ -1,0 +1,6 @@
+{#- Returns a non-empty string when the given file is listed in extra.noindex. -#}
+{% macro is_noindex(file) -%}
+  {%- for prefix in config.extra.noindex or [] -%}
+    {%- if file.src_uri.startswith(prefix) %}1{% endif -%}
+  {%- endfor -%}
+{%- endmacro %}

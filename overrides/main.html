@@ -2,7 +2,8 @@
 
 {{ super() }}
 
-{% if page and page.url.startswith("flow/") %}
+{% import "partials/noindex.html" as noindex with context %}
+{% if page and page.file and noindex.is_noindex(page.file) | trim %}
 <meta name="robots" content="noindex, nofollow" />
 {% else %}
 <meta name="robots" content="index" />
