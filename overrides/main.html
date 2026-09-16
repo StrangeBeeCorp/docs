@@ -2,7 +2,11 @@
 
 {{ super() }}
 
+{% if page and page.url.startswith("flow/") %}
+<meta name="robots" content="noindex, nofollow" />
+{% else %}
 <meta name="robots" content="index" />
+{% endif %}
 
 <!-- Open graph  -->
 <meta property="og:type" content="website" />
