@@ -1,3 +1,41 @@
 User-agent: *
 Allow:
+
+# AI crawlers and dataset collectors are kept away from the pages listed under
+# extra.noindex in mkdocs.yml. Search engine crawlers are deliberately NOT
+# blocked here: they must be able to fetch these pages to read the
+# "noindex" meta tag that keeps them out of search results.
+# Keep the paths below in sync with extra.noindex in mkdocs.yml.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-User
+User-agent: Claude-SearchBot
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: Meta-ExternalFetcher
+User-agent: FacebookBot
+User-agent: Amazonbot
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: cohere-ai
+User-agent: Diffbot
+User-agent: DuckAssistBot
+User-agent: ImagesiftBot
+User-agent: omgili
+User-agent: omgilibot
+User-agent: Timpibot
+User-agent: YouBot
+Disallow: /flow/
+Disallow: /thehive/administration/manage-llm-providers/
+Disallow: /thehive/glossary-thehive/
+Disallow: /thehive/operations/configure-audit-logs-storage-elasticsearch/
+Disallow: /thehive/release-notes/release-notes-6.0/
+Disallow: /thehive/third-party-software-licenses/
+
 Sitemap: https://docs.strangebee.com/sitemap.xml
