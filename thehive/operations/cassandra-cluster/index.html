@@ -20119,17 +20119,19 @@ UN  172.24.0.3  1.91 GiB  256      51.2%             f192ef8f-a4fd-4e24-99a7-0f9
 <h2 id="removing-an-alive-node-from-a-cassandra-cluster">Removing an Alive Node from a Cassandra Cluster<a class="headerlink" href="#removing-an-alive-node-from-a-cassandra-cluster" title="Permanent link">#</a></h2>
 <p>To safely remove an alive node from your Cassandra cluster, follow these steps:</p>
 <ol>
-<li>Ensure Compatibility with Replication Factor</li>
-</ol>
+<li>
+<p>Ensure Compatibility with Replication Factor</p>
 <p>Before proceeding with node removal, ensure that the replication factor is suitable for the desired number of nodes in the cluster. If necessary, update the replication factor to maintain adequate data redundancy.</p>
-<ol>
-<li>Decommission the Node</li>
-</ol>
+</li>
+<li>
+<p>Decommission the Node</p>
 <p>To remove an alive node gracefully, connect to the node you intend to remove and execute the following nodetool command:</p>
 <div class="highlight"><pre><span></span><code>nodetool<span class="w"> </span>decommission
 </code></pre></div>
 <p>This command initiates the decommissioning process for the node, allowing it to transfer its data to other nodes in the cluster before removal.</p>
 <p>Monitor the decommissioning progress using <code>nodetool status</code> on other nodes in the cluster. Verify that the decommissioned node transitions to a <code>Leaving state</code> and completes data transfer successfully.</p>
+</li>
+</ol>
 <hr>
 <h2 id="removing-a-dead-node-from-a-cassandra-cluster">Removing a Dead Node from a Cassandra Cluster<a class="headerlink" href="#removing-a-dead-node-from-a-cassandra-cluster" title="Permanent link">#</a></h2>
 <p>If a node has crashed and cannot be repaired, you can remove it from the cluster using the <code>nodetool removenode</code> command followed by the node <code>id</code>.</p>
@@ -20170,19 +20172,21 @@ UN  172.24.0.3  1.91 GiB  256      51.2%             f192ef8f-a4fd-4e24-99a7-0f9
 <p>When you have multiple nodes, increasing the replication factor enhances fault tolerance by creating additional copies in the cluster. More copies mean greater resilience to hardware failures. However, this also means more disk space is used due to the increased data redundancy, potentially resulting in slower write access.</p>
 <p>To enhance fault tolerance in your Cassandra cluster by increasing the replication factor, follow these steps:</p>
 <ol>
-<li>Connect to cqlsh</li>
-</ol>
+<li>
+<p>Connect to cqlsh</p>
 <p>Use cqlsh to connect to your Cassandra cluster:</p>
-<ol>
-<li>Modify Keyspace Replication</li>
-</ol>
+</li>
+<li>
+<p>Modify Keyspace Replication</p>
 <p>Execute the following ALTER KEYSPACE command to increase the replication factor for a specific keyspace (replace thehive with your keyspace name):</p>
 <div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">thehive</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">replication</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="s1">'class'</span><span class="p">:</span><span class="w"> </span><span class="s1">'SimpleStrategy'</span><span class="p">,</span><span class="w"> </span><span class="s1">'replication_factor'</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="err">}</span><span class="p">;</span>
 </code></pre></div>
-<ol>
-<li>Run nodetool repair -full on Each Node</li>
-</ol>
+</li>
+<li>
+<p>Run nodetool repair -full on Each Node</p>
 <p>After modifying the keyspace replication, execute <code>nodetool repair -full</code> on each node in your Cassandra cluster to ensure data is fully replicated and consistent across the cluster.</p>
+</li>
+</ol>
 <p>Increase the replication factor for system keyspaces to ensure high availability and reliability of critical Cassandra system data.</p>
 <p>To view the current replication settings for all keyspaces in your cluster, use the following cqlsh query:</p>
 <div class="highlight"><span class="filename">Checking Current Keyspace Information</span><pre><span></span><code><span class="o">&gt;</span><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">system_schema</span><span class="p">.</span><span class="n">keyspaces</span><span class="p">;</span>

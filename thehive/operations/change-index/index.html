@@ -20069,11 +20069,9 @@
 <h2 id="setup-your-elasticsearch-server">Setup Your Elasticsearch Server<a class="headerlink" href="#setup-your-elasticsearch-server" title="Permanent link">#</a></h2>
 <p>Please refer to our <a href="../../installation/installation-guide-linux-standalone-server/">installation manual</a> or use your own server. Ensure that Elasticsearch is started.</p>
 <h2 id="update-thehive-configuration">Update TheHive Configuration<a class="headerlink" href="#update-thehive-configuration" title="Permanent link">#</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">DEB / RPM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">DEB / RPM</label><label for="__tabbed_1_2">Docker</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p>Update your <code>/etc/thehive/application.conf</code> file:</p>
 <div class="highlight"><pre><span></span><code># Update this configuration section
 db.janusgraph {
@@ -20093,11 +20091,8 @@ db.janusgraph {
     }
 }
 </code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Docker</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block"></div>
 </div>
-</div>
+<div class="tabbed-block">
 <p>Update your Docker arguments:</p>
 <div class="highlight"><pre><span></span><code># Docker compose file
 command:
@@ -20107,6 +20102,9 @@ command:
     - "--es-hostnames"
     - "elasticsearch"
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="restart-thehive-application">Restart TheHive Application<a class="headerlink" href="#restart-thehive-application" title="Permanent link">#</a></h2>
 <p>TheHive will detect the index change, create the new index in Elasticsearch, and start reindexing the documents into the new index. This process may take some time depending on the size of your database.</p>
 <p>In your logs, you should see the following lines:</p>
@@ -20120,11 +20118,9 @@ command:
 <p>Finally, the application will start listening on the HTTP port, and you will be able to access the interface.</p>
 <h2 id="remove-the-lucene-configuration">Remove the Lucene Configuration<a class="headerlink" href="#remove-the-lucene-configuration" title="Permanent link">#</a></h2>
 <p>Once the reindexing is complete, you can remove the Lucene configuration from your configuration file.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">DEB / RPM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">DEB / RPM</label></div>
 <div class="tabbed-content">
-<div class="tabbed-block"></div>
-</div>
-</div>
+<div class="tabbed-block">
 <p>Update your <code>/etc/thehive/application.conf</code> file:</p>
 <div class="highlight"><pre><span></span><code># Update this configuration section
 db.janusgraph {
@@ -20144,6 +20140,9 @@ db.janusgraph {
     }
 }
 </code></pre></div>
+</div>
+</div>
+</div>
 
 
 

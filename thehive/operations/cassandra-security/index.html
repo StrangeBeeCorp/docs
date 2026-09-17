@@ -20065,12 +20065,12 @@
 </div>
 <p>To authenticate with Cassandra and manage permissions, follow these steps:</p>
 <ol>
-<li><strong>Create a Role and Grant Permissions:</strong></li>
-</ol>
+<li>
+<p><strong>Create a Role and Grant Permissions:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">thehive</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'thehive1234'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
 <span class="k">GRANT</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="n">PERMISSIONS</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">KEYSPACE</span><span class="w"> </span><span class="n">thehive</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="n">thehive</span><span class="p">;</span>
 </code></pre></div>
-<ol>
+</li>
 <li>
 <p><strong>Configure TheHive with the Account:</strong></p>
 <p>Update <code>/etc/thehive/application.conf</code> with the Cassandra authentication details:</p>

@@ -20341,16 +20341,16 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <li>
 <p>Access CQL shell.</p>
 <p>On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:</p>
-<div class="codehilite"><pre><span></span><code><span class="o">!!!</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="s2">""</span>
-<span class="w">    </span><span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">bash</span>
-<span class="n n-Quoted">    cqlsh &lt;ip_node_X&gt; -u cassandra</span>
-<span class="n n-Quoted">    </span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
-
-<span class="o">!!!</span><span class="w"> </span><span class="n">Info</span><span class="w"> </span><span class="s2">"Note that the default password for the Cassandra account is `cassandra`"</span>
-
-<span class="o">!!!</span><span class="w"> </span><span class="n">Info</span><span class="w"> </span><span class="s2">"To prevent security issue, the Cassandra default user should be removed from the base."</span>
+<div class="admonition example">
+<div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>&lt;ip_node_X&gt;<span class="w"> </span>-u<span class="w"> </span>cassandra
 </code></pre></div>
-
+</div>
+<div class="admonition info">
+<p class="admonition-title">Note that the default password for the Cassandra account is <code>cassandra</code></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">To prevent security issue, the Cassandra default user should be removed from the base.</p>
+</div>
 </li>
 <li>
 <p>Configure the system authentication replication.</p>
