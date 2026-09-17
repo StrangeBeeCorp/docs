@@ -3,6 +3,8 @@
 !!! warning "Unmaintained version"
     Version 5.5 is no longer maintained and won't receive further fixes, including security fixes. Upgrade to a maintained version as soon as possible. See the [release and maintenance policy](../installation/release-and-maintenance-policy.md) for details. Contact StrangeBee Support for upgrade assistance.
 
+    Within a maintained version, always upgrade to the latest patch release to benefit from all bug corrections and security fixes.
+
 !!! warning "Cortex support"
     Version 5.5 no longer supports Cortex versions earlier than 3.1.5 (released on June 22, 2022).
 
