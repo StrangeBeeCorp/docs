@@ -433,27 +433,27 @@ Ensure that the required services are started for TheHive to function properly. 
 
 1. **Reload Systemd Daemon** - Execute the following command to reload the systemd daemon:
 
-  ```bash
-  sudo systemctl daemon-reload
-  ```
+    ```bash
+    sudo systemctl daemon-reload
+    ```
 
 2. **Start Cassandra (if not already started)** - If Cassandra is not already running, start it with:
 
-  ```bash
-  sudo systemctl start cassandra
-  ```
+    ```bash
+    sudo systemctl start cassandra
+    ```
 
 3. **Start Elasticsearch (if not already started)** - If Elasticsearch is not running, start it using:
 
-  ```bash
-  sudo systemctl start elasticsearch
-  ```
+    ```bash
+    sudo systemctl start elasticsearch
+    ```
 
 4. **Start TheHive** -  Once both database services are running, start TheHive by executing:
 
-  ```bash
-  sudo systemctl start thehive
-  ```
+    ```bash
+    sudo systemctl start thehive
+    ```
 
 !!! Note
     The first start of TheHive 5.x may take some time as it updates the database schema and proceeds with reindexing. Progress can be monitored in the log file ``/var/log/thehive/application.log``. Refer to the troubleshooting section for further assistance.
@@ -466,15 +466,15 @@ After successfully starting the service, follow these steps to update the config
 
 1. **Update Configuration File** - Remove the following lines from the configuration file ``/etc/thehive/application.conf``:
 
-  ```bash
-  db.janusgraph.forceDropAndRebuildIndex = true
-  ```
+    ```bash
+    db.janusgraph.forceDropAndRebuildIndex = true
+    ```
 
 2. **Restart TheHive** - Restart TheHive using the following command:
 
-  ```bash
-  sudo systemctl restart thehive
-  ```
+    ```bash
+    sudo systemctl restart thehive
+    ```
 
 ??? Abstract "Using a cluster?"
     If you're deploying TheHive in a cluster, you can proceed to install and start TheHive on all other nodes following similar steps.

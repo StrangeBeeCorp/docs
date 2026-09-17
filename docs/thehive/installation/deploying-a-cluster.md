@@ -191,14 +191,14 @@ To initialize the database, perform the following steps:
 
     On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:
 
-        !!! Example ""
-            ```bash
-            cqlsh <ip_node_X> -u cassandra
-            ```
+    !!! Example ""
+        ```bash
+        cqlsh <ip_node_X> -u cassandra
+        ```
 
-        !!! Info "Note that the default password for the Cassandra account is `cassandra`"
+    !!! Info "Note that the default password for the Cassandra account is `cassandra`"
 
-        !!! Info "To prevent security issue, the Cassandra default user should be removed from the base."
+    !!! Info "To prevent security issue, the Cassandra default user should be removed from the base."
 
 2. Configure the system authentication replication.
 

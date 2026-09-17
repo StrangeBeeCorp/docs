@@ -58,19 +58,19 @@ To safely remove an alive node from your Cassandra cluster, follow these steps:
 
 1. Ensure Compatibility with Replication Factor
 
-Before proceeding with node removal, ensure that the replication factor is suitable for the desired number of nodes in the cluster. If necessary, update the replication factor to maintain adequate data redundancy.
+    Before proceeding with node removal, ensure that the replication factor is suitable for the desired number of nodes in the cluster. If necessary, update the replication factor to maintain adequate data redundancy.
 
 2. Decommission the Node
 
-To remove an alive node gracefully, connect to the node you intend to remove and execute the following nodetool command:
+    To remove an alive node gracefully, connect to the node you intend to remove and execute the following nodetool command:
 
-```bash
-nodetool decommission
-```
+    ```bash
+    nodetool decommission
+    ```
 
-This command initiates the decommissioning process for the node, allowing it to transfer its data to other nodes in the cluster before removal.
+    This command initiates the decommissioning process for the node, allowing it to transfer its data to other nodes in the cluster before removal.
 
-Monitor the decommissioning progress using `nodetool status` on other nodes in the cluster. Verify that the decommissioned node transitions to a `Leaving state` and completes data transfer successfully.
+    Monitor the decommissioning progress using `nodetool status` on other nodes in the cluster. Verify that the decommissioned node transitions to a `Leaving state` and completes data transfer successfully.
 
 ---
 
@@ -111,19 +111,19 @@ To enhance fault tolerance in your Cassandra cluster by increasing the replicati
 
 1. Connect to cqlsh
 
-Use cqlsh to connect to your Cassandra cluster:
+    Use cqlsh to connect to your Cassandra cluster:
 
 2. Modify Keyspace Replication
 
-Execute the following ALTER KEYSPACE command to increase the replication factor for a specific keyspace (replace thehive with your keyspace name):
+    Execute the following ALTER KEYSPACE command to increase the replication factor for a specific keyspace (replace thehive with your keyspace name):
 
-```sql
-ALTER KEYSPACE thehive WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
-```
+    ```sql
+    ALTER KEYSPACE thehive WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3 };
+    ```
 
 3. Run nodetool repair -full on Each Node
 
-After modifying the keyspace replication, execute `nodetool repair -full` on each node in your Cassandra cluster to ensure data is fully replicated and consistent across the cluster.
+    After modifying the keyspace replication, execute `nodetool repair -full` on each node in your Cassandra cluster to ensure data is fully replicated and consistent across the cluster.
 
 
 

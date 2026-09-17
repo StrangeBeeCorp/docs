@@ -10,41 +10,41 @@ Please refer to our [installation manual](../installation/installation-guide-lin
 
 === "DEB / RPM"
 
-Update your `/etc/thehive/application.conf` file:
+    Update your `/etc/thehive/application.conf` file:
 
-```plaintext
-# Update this configuration section
-db.janusgraph {
-    # Retain this section for now, as TheHive will need it to migrate the index correctly
-    index.search {
-        backend: lucene
-        directory: ...
-    }
+    ```plaintext
+    # Update this configuration section
+    db.janusgraph {
+        # Retain this section for now, as TheHive will need it to migrate the index correctly
+        index.search {
+            backend: lucene
+            directory: ...
+        }
 
-    # Add this section below the Lucene configuration
-    index.search {
-        backend: elasticsearch
-        # Host name(s) of your Elasticsearch server(s)
-        hostname: ["localhost"]
-        # Default is "thehive"
-        index-name: thehive
+        # Add this section below the Lucene configuration
+        index.search {
+            backend: elasticsearch
+            # Host name(s) of your Elasticsearch server(s)
+            hostname: ["localhost"]
+            # Default is "thehive"
+            index-name: thehive
+        }
     }
-}
-```
+    ```
 
 === "Docker"
 
-Update your Docker arguments:
+    Update your Docker arguments:
 
-```plaintext
-# Docker compose file
-command:
-    # ... other args
-    - "--index-backend"
-    - "elasticsearch"
-    - "--es-hostnames"
-    - "elasticsearch"
-```
+    ```plaintext
+    # Docker compose file
+    command:
+        # ... other args
+        - "--index-backend"
+        - "elasticsearch"
+        - "--es-hostnames"
+        - "elasticsearch"
+    ```
 
 ## Restart TheHive Application
 
@@ -73,24 +73,24 @@ Once the reindexing is complete, you can remove the Lucene configuration from yo
 
 === "DEB / RPM"
 
-Update your `/etc/thehive/application.conf` file:
+    Update your `/etc/thehive/application.conf` file:
 
-```plaintext
-# Update this configuration section
-db.janusgraph {
-    # Delete this section now
-    index.search {
-        backend: lucene
-        directory: ...
-    }
+    ```plaintext
+    # Update this configuration section
+    db.janusgraph {
+        # Delete this section now
+        index.search {
+            backend: lucene
+            directory: ...
+        }
 
-    # Retain this section
-    index.search {
-        backend: elasticsearch
-        # Host name(s) of your Elasticsearch server(s)
-        hostname: ["localhost"]
-        # Default is "thehive"
-        index-name: thehive
+        # Retain this section
+        index.search {
+            backend: elasticsearch
+            # Host name(s) of your Elasticsearch server(s)
+            hostname: ["localhost"]
+            # Default is "thehive"
+            index-name: thehive
+        }
     }
-}
-```
+    ```

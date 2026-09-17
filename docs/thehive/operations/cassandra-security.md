@@ -13,12 +13,12 @@ To authenticate with Cassandra and manage permissions, follow these steps:
 
 1. **Create a Role and Grant Permissions:**
 
-   ```sql
-   CREATE ROLE thehive WITH PASSWORD = 'thehive1234' AND LOGIN = true;
-   GRANT ALL PERMISSIONS ON KEYSPACE thehive TO thehive;
-   ```
+    ```sql
+    CREATE ROLE thehive WITH PASSWORD = 'thehive1234' AND LOGIN = true;
+    GRANT ALL PERMISSIONS ON KEYSPACE thehive TO thehive;
+    ```
 
-1. **Configure TheHive with the Account:**
+2. **Configure TheHive with the Account:**
     
     Update `/etc/thehive/application.conf` with the Cassandra authentication details:
 
