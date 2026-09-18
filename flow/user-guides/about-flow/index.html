@@ -20057,10 +20057,10 @@
 <p>Workflows pass JSON values between nodes. Some values don't fit that model well: a large API response, a binary download, or a document uploaded to a webhook. TheHive Flow stores these values as files and passes a file reference between nodes instead of the content itself. In most workflows, this is invisible: reading a variable returns its value whether it's stored inline or as a file.</p>
 <p>A value is stored as a file in the following cases:</p>
 <ul>
-<li><strong>Large node outputs</strong>: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.</li>
-<li><strong>Binary or multipart HTTP responses</strong>: An <a href="../configure-action-node/#configure-an-http-request-action-node"><em>HTTP request</em> node</a> response body that isn't valid text is stored as a file regardless of its size. Parts of a <code>multipart/*</code> response body that are large or not JSON are stored as files too.</li>
-<li><strong>Files uploaded to a webhook</strong>: A file sent with the HTTP request that triggers a <a href="../add-trigger/#add-a-webhook-trigger"><em>Webhook</em> trigger</a> is stored as a file and available for input mapping as <code>$request.files.&lt;field&gt;</code> in the trigger configuration.</li>
-<li><strong>Files written by code nodes</strong>: A file registered with <code>flow.set_file()</code> in a <a href="../configure-transformation-node/#configure-a-python-code-node"><em>Python code</em></a> or <a href="../configure-transformation-node/#configure-a-javascript-code-node"><em>JavaScript code</em></a> node.</li>
+<li>Large node outputs: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.</li>
+<li>Binary or multipart HTTP responses: An <a href="../configure-action-node/#configure-an-http-request-action-node"><em>HTTP request</em> node</a> response body that isn't valid text is stored as a file regardless of its size. Parts of a <code>multipart/*</code> response body that are large or not JSON are stored as files too.</li>
+<li>Files uploaded to a webhook: A file sent with the HTTP request that triggers a <a href="../add-trigger/#add-a-webhook-trigger"><em>Webhook</em> trigger</a> is stored as a file and available for input mapping as <code>$request.files.&lt;field&gt;</code> in the trigger configuration.</li>
+<li>Files written by code nodes: A file registered with <code>flow.set_file()</code> in a <a href="../configure-transformation-node/#configure-a-python-code-node"><em>Python code</em></a> or <a href="../configure-transformation-node/#configure-a-javascript-code-node"><em>JavaScript code</em></a> node.</li>
 </ul>
 <p>Stored files are capped at 25 MiB by default. A value above that limit is rejected.</p>
 <p>Reading a variable whose value is stored as a file works the same way as reading any other variable, within a size limit:</p>
