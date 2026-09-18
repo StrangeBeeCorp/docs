@@ -2,7 +2,7 @@
 
 <!-- md:version 6.0 --> <!-- md:license One -->
 
-Workflows in [TheHive Flow](about-flow.md) exist at the organization level. You can transfer workflows between different TheHive instances or organizations by exporting and importing them.
+Workflows in [TheHive Flow](about-flow.md) exist at the organization level. You can transfer workflows between different TheHive instances or organizations by exporting and importing them. Importing is also how you bring a ready-made [workflow template](workflow-templates.md) into your organization.
 
 Since TheHive Flow has no native versioning, exporting workflows and committing them to a Git repository is also the recommended strategy for maintaining a change history.
 
@@ -24,7 +24,7 @@ Your workflow downloads as a YAML file.
 
 <!-- md:permission `manageOrchestrator/writeWorkflows` -->
 
-Use a workflow from another organization or TheHive instance.
+Use a workflow from another organization or TheHive instance, or a ready-made [workflow template](workflow-templates.md).
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -32,7 +32,7 @@ Use a workflow from another organization or TheHive instance.
 
     ![Import workflow](../images/import-workflow.png)
 
-3. In the **Import workflow** drawer, drop a YAML file or select it from your computer. Use the file you obtained from [exporting a workflow](#export-a-workflow).
+3. In the **Import workflow** drawer, drop a YAML file or select it from your computer. Use the file you obtained from [exporting a workflow](#export-a-workflow), or a [workflow template](workflow-templates.md) file.
 
 4. Optional: In the **Name** field, enter a new name for the imported workflow.
 

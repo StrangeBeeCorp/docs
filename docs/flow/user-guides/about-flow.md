@@ -130,10 +130,10 @@ Workflows pass JSON values between nodes. Some values don't fit that model well:
 
 A value is stored as a file in the following cases:
 
-* **Large node outputs**: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.
-* **Binary or multipart HTTP responses**: An [*HTTP request* node](configure-action-node.md#configure-an-http-request-action-node) response body that isn't valid text is stored as a file regardless of its size. Parts of a `multipart/*` response body that are large or not JSON are stored as files too.
-* **Files uploaded to a webhook**: A file sent with the HTTP request that triggers a [*Webhook* trigger](add-trigger.md#add-a-webhook-trigger) is stored as a file and available for input mapping as `$request.files.<field>` in the trigger configuration.
-* **Files written by code nodes**: A file registered with `flow.set_file()` in a [*Python code*](configure-transformation-node.md#configure-a-python-code-node) or [*JavaScript code*](configure-transformation-node.md#configure-a-javascript-code-node) node.
+* Large node outputs: By default, any node output whose content reaches 1 MiB is automatically stored as a file. Below that size, the value is stored inline.
+* Binary or multipart HTTP responses: An [*HTTP request* node](configure-action-node.md#configure-an-http-request-action-node) response body that isn't valid text is stored as a file regardless of its size. Parts of a `multipart/*` response body that are large or not JSON are stored as files too.
+* Files uploaded to a webhook: A file sent with the HTTP request that triggers a [*Webhook* trigger](add-trigger.md#add-a-webhook-trigger) is stored as a file and available for input mapping as `$request.files.<field>` in the trigger configuration.
+* Files written by code nodes: A file registered with `flow.set_file()` in a [*Python code*](configure-transformation-node.md#configure-a-python-code-node) or [*JavaScript code*](configure-transformation-node.md#configure-a-javascript-code-node) node.
 
 Stored files are capped at 25 MiB by default. A value above that limit is rejected.
 
