@@ -416,12 +416,8 @@ extra:
         links:
           - text: "Request a demo"
             url: 'https://strangebee.com/thehive-demo/'
-          - text: "Try TheHive"
-            tag: 'On-prem'
-            url: 'https://strangebee.com/try-thehive/'
-          - text: "Try TheHive Cloud Platform"
-            tag: 'SaaS'
-            url: 'https://strangebee.com/try-thehive-cloud-platform/'
+          - text: "Discuss custom pricing"
+            url: 'https://strangebee.com/thehive-pricing/'
       - name: "Resources"
         links:
           - text: "Blog"
