@@ -20144,7 +20144,7 @@
 <li>Cortex defaults to uid:gid <code>1001:1001</code>.</li>
 <li>Analyzers may use different uid:gid, such as <code>1000:1000</code> or <code>0:0</code> if running as root.</li>
 </ul>
-<p>To prevent permission errors when reading or writing files on the shared filesystem, <a href="https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html" target="_blank">configure the NFS server</a> with the <code>all_squash</code> parameter. This ensures all filesystem operations use uid:gid <code>65534:65534</code>, regardless of the user's actual UID and GID.</p>
+<p>To prevent permission errors when reading or writing files on the shared filesystem, <a href="https://man7.org/linux/man-pages/man5/exports.5.html" target="_blank">configure the NFS server</a> with the <code>all_squash</code> parameter. This ensures all filesystem operations use uid:gid <code>65534:65534</code>, regardless of the user's actual UID and GID.</p>
 <h2 id="step-2-deploy-cortex">Step 2: Deploy Cortex<a class="headerlink" href="#step-2-deploy-cortex" title="Permanent link">#</a></h2>
 <h3 id="deploy-with-default-configuration">Deploy with default configuration<a class="headerlink" href="#deploy-with-default-configuration" title="Permanent link">#</a></h3>
 <div class="admonition info">
@@ -20240,7 +20240,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <h4 id="1-create-a-storageclass-for-efs">1. Create a StorageClass for EFS<a class="headerlink" href="#1-create-a-storageclass-for-efs" title="Permanent link">#</a></h4>
 <div class="admonition note">
 <p class="admonition-title">Reference example</p>
-<p>The following manifests are based on the <a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods" target="_blank">EFS CSI driver multiple pods example</a>.</p>
+<p>The following manifests are based on the <a href="https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/efs/multiple_pods" target="_blank">EFS CSI driver multiple pods example</a>.</p>
 </div>
 <p>Create a StorageClass that references your EFS filesystem:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
