@@ -1554,6 +1554,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#saml-and-openid-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SAML and OpenID authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -20132,6 +20143,46 @@
 </tr>
 </tbody>
 </table>
+<h2 id="saml-and-openid-authentication">SAML and OpenID authentication<a class="headerlink" href="#saml-and-openid-authentication" title="Permanent link">#</a></h2>
+<p><a href="../../administration/authentication/saml/">SAML</a> and <a href="../../administration/authentication/openid/">OpenID</a> authentication providers use their own HTTP client, which ignores the <code>wsConfig.proxy.*</code> parameters. No dedicated proxy parameter exists for them in the <code>application.conf</code> file. To route their requests through a proxy, for example to fetch identity provider metadata, set the proxy as JVM system properties.</p>
+<div class="admonition warning">
+<p class="admonition-title">Proxy authentication not supported</p>
+<p>JVM proxy settings don't support proxies that require authentication.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>JVM property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>https.proxyHost</code></td>
+<td>Host name or IP address of the proxy server for HTTPS requests.</td>
+</tr>
+<tr>
+<td><code>https.proxyPort</code></td>
+<td>Port number of the proxy server for HTTPS requests.</td>
+</tr>
+<tr>
+<td><code>http.proxyHost</code></td>
+<td>Host name or IP address of the proxy server for HTTP requests.</td>
+</tr>
+<tr>
+<td><code>http.proxyPort</code></td>
+<td>Port number of the proxy server for HTTP requests.</td>
+</tr>
+<tr>
+<td><code>http.nonProxyHosts</code></td>
+<td>Host names or patterns that bypass the proxy, separated by a vertical bar. Applies to both HTTP and HTTPS requests.</td>
+</tr>
+</tbody>
+</table>
+<p>Set these properties in the <code>JAVA_OPTS</code> environment variable, alongside any other JVM options such as truststore settings. See <a href="../../operations/tune-jvm-memory/#configure-jvm-options-for-thehive">Configure JVM options for TheHive</a> for how to edit this variable.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">"-Dhttps.proxyHost=&lt;proxy_host&gt; -Dhttps.proxyPort=&lt;proxy_port&gt; -Dhttp.proxyHost=&lt;proxy_host&gt; -Dhttp.proxyPort=&lt;proxy_port&gt; -Dhttp.nonProxyHosts=localhost|127.0.0.1|&lt;internal_domain_pattern&gt;"</span>
+</code></pre></div>
 <h2>Next steps</h2>
 
 <ul>
