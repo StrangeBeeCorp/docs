@@ -32,6 +32,29 @@ Configure these parameters in the `application.conf` file to define the proxy se
 | `msGraph.client.proxy.principal`       | string  | Username for proxy authentication.    |
 | `msGraph.client.proxy.password`        | string  | Password for proxy authentication.    |
 
+## SAML and OpenID authentication
+
+[SAML](../administration/authentication/saml.md) and [OpenID](../administration/authentication/openid.md) authentication providers use their own HTTP client, which ignores the `wsConfig.proxy.*` parameters. No dedicated proxy parameter exists for them in the `application.conf` file. To route their requests through a proxy, for example to fetch identity provider metadata, set the proxy as JVM system properties.
+
+!!! warning "Proxy authentication not supported"
+    JVM proxy settings don't support proxies that require authentication.
+
+| JVM property         | Description                                                                                                         |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `https.proxyHost`    | Host name or IP address of the proxy server for HTTPS requests.                                                     |
+| `https.proxyPort`    | Port number of the proxy server for HTTPS requests.                                                                 |
+| `http.proxyHost`     | Host name or IP address of the proxy server for HTTP requests.                                                      |
+| `http.proxyPort`     | Port number of the proxy server for HTTP requests.                                                                  |
+| `http.nonProxyHosts` | Host names or patterns that bypass the proxy, separated by a vertical bar. Applies to both HTTP and HTTPS requests. |
+
+Set these properties in the `JAVA_OPTS` environment variable, alongside any other JVM options such as truststore settings. See [Configure JVM options for TheHive](../operations/tune-jvm-memory.md#configure-jvm-options-for-thehive) for how to edit this variable.
+
+For example:
+
+```bash
+JAVA_OPTS="-Dhttps.proxyHost=<proxy_host> -Dhttps.proxyPort=<proxy_port> -Dhttp.proxyHost=<proxy_host> -Dhttp.proxyPort=<proxy_port> -Dhttp.nonProxyHosts=localhost|127.0.0.1|<internal_domain_pattern>"
+```
+
 <h2>Next steps</h2>
 
 * [Update TheHive Service Configuration](update-service-configuration.md)
