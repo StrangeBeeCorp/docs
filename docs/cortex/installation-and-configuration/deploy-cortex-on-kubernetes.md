@@ -51,7 +51,7 @@ At runtime, Cortex and its jobs run on different pods and may use different user
 * Cortex defaults to uid:gid `1001:1001`.
 * Analyzers may use different uid:gid, such as `1000:1000` or `0:0` if running as root.
 
-To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://manpages.ubuntu.com/manpages/noble/man5/exports.5.html){target=_blank} with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
+To prevent permission errors when reading or writing files on the shared filesystem, [configure the NFS server](https://man7.org/linux/man-pages/man5/exports.5.html){target=_blank} with the `all_squash` parameter. This ensures all filesystem operations use uid:gid `65534:65534`, regardless of the user's actual UID and GID.
 
 ## Step 2: Deploy Cortex
 
@@ -165,7 +165,7 @@ Before setting up the PV for AWS EFS, complete the following steps:
 #### 1. Create a StorageClass for EFS
 
 !!! note "Reference example"
-    The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/multiple_pods){target=_blank}.
+    The following manifests are based on the [EFS CSI driver multiple pods example](https://github.com/kubernetes-sigs/aws-efs-csi-driver/tree/master/examples/kubernetes/efs/multiple_pods){target=_blank}.
 
 Create a StorageClass that references your EFS filesystem:
 

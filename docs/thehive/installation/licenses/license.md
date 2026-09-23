@@ -10,7 +10,7 @@ Activate or update a [TheHive license](about-licenses.md), whether it's a Commun
 !!! warning "Requirements"
 
     * For Community license: This procedure assumes that you have already obtained a Community license by following the [Request a Community License](request-a-community-license.md) topic.
-    * For Gold and Platinum licenses: This procedure assumes that you have already [purchased a valid Gold or Platinum license](https://strangebee.com/try-thehive/){target=_blank} and no longer wish or are able to use your trial license.
+    * For Gold and Platinum licenses: This procedure assumes that you have already [purchased a valid Gold or Platinum license](https://strangebee.com/thehive-on-prem-plans/){target=_blank} and no longer wish or are able to use your trial license.
 
 ## Step 1: Retrieve the challenge from your TheHive instance
 

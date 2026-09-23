@@ -15,7 +15,7 @@ For a setup running Docker Compose directly on a Linux host, see [Deploy a Demo 
 
 ## Step 1: Download the VM
 
-Download the ready-to-use VM from the [StrangeBee website](https://www.strangebee.com/tryit).
+Download the [ready-to-use VM](https://demo-vm.download.strangebee.com/latest/ova/thehive-demo-latest.ova).
 
 This VM is prepared and updated by StrangeBee and includes:
 
