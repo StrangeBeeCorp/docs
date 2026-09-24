@@ -24,7 +24,21 @@ Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active
 
     **- Name of the configuration \***
 
-    A descriptive name to identify this LDAP configuration within TheHive.
+    The domain TheHive uses to build the login of every synchronized user account. TheHive keeps the part of the LDAP login value before the `@` and replaces anything after it with this name.
+
+    Example: *domain.local*
+
+    With this name, TheHive builds the following logins:
+
+    * LDAP value *lucas* becomes TheHive login *lucas@domain.local*
+    * LDAP value *lucas@otherdomain.local* also becomes *lucas@domain.local*, because TheHive replaces the original domain
+
+    Set this name to the domain your users sign in with. This is usually the part after the `@` in the attribute you map to **Login** in the next step. In AD, if you map *userPrincipalName*, this is the [UPN suffix](https://learn.microsoft.com/en-us/windows/win32/ad/naming-properties#userprincipalname){target=_blank}. Users sign in to TheHive with this login. To let them sign in with only their username, such as *lucas*, set the [default domain for user login](../authentication/configure-authentication.md) to the same value.
+
+    The name can contain only letters, digits, hyphens, and dots. Don't use spaces. If the resulting login isn't a valid email address, synchronization fails.
+
+    !!! warning "Choose the name carefully"
+        You can't change the name after you create the configuration. TheHive identifies the user accounts it synchronizes through the `@<configuration_name>` suffix of their login. If you replace the configuration with a new one under a different name, TheHive stops updating and locking the accounts created with the previous name and creates new accounts with the new suffix.
 
     **- Servers host name or IP address \***
 
@@ -74,9 +88,9 @@ Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active
 
     **- Login \***
 
-    The LDAP attribute that contains the user’s login name or username.
+    The LDAP attribute that contains the user’s login name or username. TheHive uses only the part before the `@` and appends the name of the configuration.
 
-    Example: *uid*
+    Example: *uid* or *userPrincipalName*
 
     **- Name \***
 
