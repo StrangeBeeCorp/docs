@@ -20045,7 +20045,19 @@
 <p>In the <strong>LDAP configuration</strong> drawer, enter the following information under the <strong>General settings</strong> section:</p>
 <p><em>Fields marked with * are mandatory.</em></p>
 <p><strong>- Name of the configuration *</strong></p>
-<p>A descriptive name to identify this LDAP configuration within TheHive.</p>
+<p>The domain TheHive uses to build the login of every synchronized user account. TheHive keeps the part of the LDAP login value before the <code>@</code> and replaces anything after it with this name.</p>
+<p>Example: <em>domain.local</em></p>
+<p>With this name, TheHive builds the following logins:</p>
+<ul>
+<li>LDAP value <em>lucas</em> becomes TheHive login <em>lucas@domain.local</em></li>
+<li>LDAP value <em>lucas@otherdomain.local</em> also becomes <em>lucas@domain.local</em>, because TheHive replaces the original domain</li>
+</ul>
+<p>Set this name to the domain your users sign in with. This is usually the part after the <code>@</code> in the attribute you map to <strong>Login</strong> in the next step. In AD, if you map <em>userPrincipalName</em>, this is the <a href="https://learn.microsoft.com/en-us/windows/win32/ad/naming-properties#userprincipalname" target="_blank">UPN suffix</a>. Users sign in to TheHive with this login. To let them sign in with only their username, such as <em>lucas</em>, set the <a href="../../authentication/configure-authentication/">default domain for user login</a> to the same value.</p>
+<p>The name can contain only letters, digits, hyphens, and dots. Don't use spaces. If the resulting login isn't a valid email address, synchronization fails.</p>
+<div class="admonition warning">
+<p class="admonition-title">Choose the name carefully</p>
+<p>You can't change the name after you create the configuration. TheHive identifies the user accounts it synchronizes through the <code>@&lt;configuration_name&gt;</code> suffix of their login. If you replace the configuration with a new one under a different name, TheHive stops updating and locking the accounts created with the previous name and creates new accounts with the new suffix.</p>
+</div>
 <p><strong>- Servers host name or IP address *</strong></p>
 <p>The address of the LDAP server you want to connect to, either a host name or an IP address.</p>
 <p>Example: <em>ldap.domain.local</em></p>
@@ -20072,8 +20084,8 @@
 <li>
 <p>Enter the following information under the <strong>Map of LDAP attributes</strong> section:</p>
 <p><strong>- Login *</strong></p>
-<p>The LDAP attribute that contains the user’s login name or username.</p>
-<p>Example: <em>uid</em></p>
+<p>The LDAP attribute that contains the user’s login name or username. TheHive uses only the part before the <code>@</code> and appends the name of the configuration.</p>
+<p>Example: <em>uid</em> or <em>userPrincipalName</em></p>
 <p><strong>- Name *</strong></p>
 <p>The LDAP attribute that contains the user’s full name.</p>
 <p>Example: <em>cn</em></p>
