@@ -20111,6 +20111,7 @@
 <p>Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.5 instead.</p>
 </div>
 <h2 id="576-september-1-2026">5.7.6 - September 1, 2026<a class="headerlink" href="#576-september-1-2026" title="Permanent link">#</a></h2>
+<p>Last update: September 24, 2026</p>
 <h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
 <ul>
 <li>Alerts: Alert feeder authentication keys and bearer tokens now accept up to 8192 characters, so long OAuth and JWT tokens can be saved.</li>
@@ -20122,7 +20123,7 @@
 <li>Cases: Ensured the time to resolve is calculated when a case is closed directly from the "New" status.</li>
 <li>Custom fields: Resolved erratic deduplication of custom field values, and corrected the handling of fields inherited from a case template, which can no longer be removed but can now be filled in when the template leaves them empty.</li>
 <li>Observables: Restored tag removal on observables, so clearing all tags is now saved.</li>
-<li>External users: Removed the "License required" message displayed for users with an external profile, cleared a dialog that remained open and blocked the interface after deleting a user, and revoked a deleted user's access to private cases, blocking the deletion when that user is the only one with access to a case.</li>
+<li>Users: Removed the "License required" message displayed for users with an external profile, cleared a dialog that remained open and blocked the interface after deleting a user, and revoked a deleted user's access to private cases, blocking the deletion when that user is the only one with access to a case.</li>
 <li>Integrations: Repaired case creation from a MISP JSON file, which failed to load the custom fields tab and left the close button disabled.</li>
 <li>Search: Corrected index handling so the search index is no longer dropped when indexing is turned off, which lets a new index be created correctly.</li>
 <li>Other: Preserved user and organization details in log entries during asynchronous request processing.</li>
