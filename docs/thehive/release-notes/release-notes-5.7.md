@@ -10,6 +10,8 @@
 
 ## 5.7.6 - September 1, 2026
 
+Last update: September 24, 2026
+
 ### Improvements
 
 * Alerts: Alert feeder authentication keys and bearer tokens now accept up to 8192 characters, so long OAuth and JWT tokens can be saved.
@@ -21,7 +23,7 @@
 * Cases: Ensured the time to resolve is calculated when a case is closed directly from the "New" status.
 * Custom fields: Resolved erratic deduplication of custom field values, and corrected the handling of fields inherited from a case template, which can no longer be removed but can now be filled in when the template leaves them empty.
 * Observables: Restored tag removal on observables, so clearing all tags is now saved.
-* External users: Removed the "License required" message displayed for users with an external profile, cleared a dialog that remained open and blocked the interface after deleting a user, and revoked a deleted user's access to private cases, blocking the deletion when that user is the only one with access to a case.
+* Users: Removed the "License required" message displayed for users with an external profile, cleared a dialog that remained open and blocked the interface after deleting a user, and revoked a deleted user's access to private cases, blocking the deletion when that user is the only one with access to a case.
 * Integrations: Repaired case creation from a MISP JSON file, which failed to load the custom fields tab and left the close button disabled.
 * Search: Corrected index handling so the search index is no longer dropped when indexing is turned off, which lets a new index be created correctly.
 * Other: Preserved user and organization details in log entries during asynchronous request processing.

@@ -5,6 +5,17 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
+## 5.6.7 - September 24, 2026
+
+### Fixes
+
+* Alerts: Corrected case creation from an alert, which duplicated the alert description and hid the case template description when a template was selected.
+* Users: Cleared a dialog that remained open and blocked the interface after deleting a user, and revoked a deleted user's access to private cases, blocking the deletion when that user is the only one with access to a case.
+
+### Security
+
+* Dependencies: Patched several CVEs reported in third-party libraries.
+
 ## 5.6.6 - August 6, 2026
 
 ### Fixes
