@@ -28,6 +28,8 @@ Examples include:
 
 For a complete list of available objects and their methods, see [Functions Objects](functions-objects.md).
 
+Objects that search entities, such as `query.execute` and the `find` helpers, take query arrays that follow the syntax described in [Query Syntax](../../../query-syntax.md).
+
 ## Trigger sources
 
 Various sources can trigger functions in TheHive:
@@ -112,3 +114,4 @@ A function in TheHive can operate in one of three modes:
 * [Invoke a Function](invoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
 * [Delete a Function](delete-a-function.md)
+* [Query Syntax](../../../query-syntax.md)

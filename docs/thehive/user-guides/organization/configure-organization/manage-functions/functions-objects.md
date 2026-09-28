@@ -23,7 +23,7 @@ Functions in TheHive have access to predefined objects that enable interaction w
 
 ## Query
 
-* `query.execute(query: any[])`: Executes a database query.
+* `query.execute(query: any[])`: Executes a database query. The `query` array follows the syntax described in [Query Syntax](../../../query-syntax.md), as does the `query` argument of every `find` helper on this page.
 
 ## Alert
 
@@ -1230,3 +1230,4 @@ Functions in TheHive have access to predefined objects that enable interaction w
 * [Create a Function](create-a-function.md)
 * [Invoke a Function](invoke-a-function.md)
 * [Manually Run a Function on a Case or an Alert](run-a-function-case-alert.md)
+* [Query Syntax](../../../query-syntax.md)

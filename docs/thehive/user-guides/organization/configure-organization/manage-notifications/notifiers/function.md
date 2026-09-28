@@ -4,7 +4,7 @@
 
 Configure the *Function* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute functions when specific triggers occur.
 
-To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic.
+To learn more about functions, see the [About Functions](../../manage-functions/about-functions.md) topic. Functions run by this notifier can search TheHive data using query arrays that follow the syntax described in [Query Syntax](../../../../query-syntax.md).
 
 !!! note "Notifier availability"
     The *Function* notifier is available only when you turn off the **Send notification to every user in the organization** toggle and use one of the following triggers:
@@ -40,3 +40,4 @@ To learn more about functions, see the [About Functions](../../manage-functions/
 
 * [Turn Off a Notification](../turn-off-a-notification.md)
 * [Delete a Notification](../delete-a-notification.md)
+* [Query Syntax](../../../../query-syntax.md)

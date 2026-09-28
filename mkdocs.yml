@@ -676,6 +676,7 @@ nav:
           - 'Turn Off a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/turn-off-a-notification.md
           - 'Delete a Notification': thehive/user-guides/organization/configure-organization/manage-notifications/delete-a-notification.md
           - 'Variable Usage Examples': thehive/user-guides/organization/configure-organization/manage-notifications/variable-usage-examples.md
+          - 'Query Syntax': thehive/user-guides/query-syntax.md
           - 'Notifier Configuration':
             - 'EmailToUser': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md
             - 'EmailToAddr': thehive/user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md
@@ -707,7 +708,8 @@ nav:
           - 'Delete a Function': thehive/user-guides/organization/configure-organization/manage-functions/delete-a-function.md
           - 'Invoke a Function': thehive/user-guides/organization/configure-organization/manage-functions/invoke-a-function.md
           - 'Functions Objects': thehive/user-guides/organization/configure-organization/manage-functions/functions-objects.md
-        - 'Alert Feeders': 
+          - 'Query Syntax': thehive/user-guides/query-syntax.md
+        - 'Alert Feeders':
           - 'About Alert Feeders': thehive/user-guides/organization/configure-organization/manage-feeders/about-feeders.md
           - 'Create an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/create-a-feeder.md
           - 'Turn Off an Alert Feeder': thehive/user-guides/organization/configure-organization/manage-feeders/turn-off-a-feeder.md

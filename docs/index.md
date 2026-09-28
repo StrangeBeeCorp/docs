@@ -143,6 +143,8 @@ sections:
               url: '/thehive/user-guides/organization/configure-organization/manage-notifications/create-a-notification/'
             - text: 'Write functions to automate workflows based on events'
               url: '/thehive/user-guides/organization/configure-organization/manage-functions/create-a-function/'
+            - text: 'Build queries to search and filter TheHive data'
+              url: '/thehive/user-guides/query-syntax/'
             - text: 'Configure analyzers to automatically enrich observables'
               url: '/cortex/api/how-to-create-an-analyzer/'
             - text: 'Configure responders to trigger automated response actions'
