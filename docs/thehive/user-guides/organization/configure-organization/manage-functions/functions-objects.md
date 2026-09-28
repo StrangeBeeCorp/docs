@@ -3,9 +3,9 @@
 Functions in TheHive have access to predefined objects that enable interaction with cases, alerts, tasks, observables, and other entities.
 
 !!! info "API documentation for further details"
-    The objects in functions are the same as those used in TheHive HTTP API.
+    The objects in functions are the same as those used in TheHive API.
 
-    For details on the expected fields for each object, see the [TheHive HTTP API documentation](https://docs.strangebee.com/thehive/api-docs/){target=_blank}.
+    For details on the expected fields for each object, see the [TheHive API documentation](https://docs.strangebee.com/thehive/api-docs/){target=_blank}.
 
 ## User
 

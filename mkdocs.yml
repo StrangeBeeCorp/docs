@@ -916,9 +916,6 @@ nav:
         - 'Autorefresh': thehive/user-guides/analyst-corner/about-autorefresh.md
         - 'Statistics': thehive/user-guides/analyst-corner/about-statistics.md
         - 'Live Feed': thehive/user-guides/analyst-corner/about-live-feed.md
-      - 'Automation':
-        - 'Tutorial: Automate Tracking of Pending Alerts': thehive/user-guides/automate-tracking-pending-alerts.md
-        - 'Tutorial: Automate Monitoring of Tasks Approaching Their Due Date': thehive/user-guides/automate-monitoring-tasks-approaching-due-date.md
       - 'Knowledge Base':
         - 'About the Knowledge Base': thehive/user-guides/knowledge-base/about-knowledge-base.md
         - 'Create a Page': thehive/user-guides/knowledge-base/create-a-knowledge-base-page.md
