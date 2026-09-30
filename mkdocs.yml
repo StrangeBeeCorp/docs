@@ -363,8 +363,9 @@ plugins:
             'thehive/configuration/logs.md': 'thehive/configuration/update-log-configuration.md'
             'thehive/configuration/secret.md': 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/operations/minio-cluster.md': 'thehive/installation/deploying-a-cluster.md'
-            'resources/demo.md': 'resources/vm-demo.md'
-            'resources/howto-vm-demo.md': 'resources/vm-demo.md'
+            'resources/demo.md': 'resources/docker-demo.md'
+            'resources/howto-vm-demo.md': 'resources/docker-demo.md'
+            'resources/vm-demo.md': 'resources/docker-demo.md'
             'thehive/user-guides/analyst-corner/cases/comment-on-case.md': 'thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md'
 
 extra:
@@ -1013,9 +1014,7 @@ nav:
   - 'Resources': 
     - resources/index.md
     - resources/templates.md
-    - 'Demo Environments':
-      - 'VM Demo Environment': resources/vm-demo.md
-      - 'Docker Demo Environment': resources/docker-demo.md
+    - 'Docker Demo Environment': resources/docker-demo.md
     - 'IaaS deployment': 
       - 'Amazon AWS': 
         - 'Main Features': resources/iaas/aws/index.md

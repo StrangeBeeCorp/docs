@@ -2,12 +2,9 @@
 
 In this section, you can find a collection of valuable resources regarding the applications.
 
-## Demo environments
+## Demo environment
 
-Deploy a demo environment to trial TheHive and Cortex with sample data:
-
-* [Set Up a Demo Virtual Machine Environment](./vm-demo.md): Download a ready-to-use VM image and open it in VMware or VirtualBox.
-* [Deploy a Demo Docker Environment](./docker-demo.md): Run TheHive and Cortex on a Linux host using Docker Compose.
+[Deploy a demo Docker environment](./docker-demo.md) to trial TheHive and Cortex with sample data on a Linux host using Docker Compose.
 
 ## IaaS environment
 Your have your own cloud infrastructure and wish to manage and include TheHive and Cortex ; learn how to deploy our dedicated images by reading our usage instructions:

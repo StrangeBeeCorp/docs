@@ -2,8 +2,6 @@
 
 Deploy a demo environment to trial TheHive and Cortex with sample data using Docker Compose.
 
-For a simpler setup using a pre-packaged VM image, see [Set Up a Demo Virtual Machine Environment](vm-demo.md).
-
 !!! danger "Testing only"
     This environment is for testing purposes only and must never be used in production.
 

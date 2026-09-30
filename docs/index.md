@@ -159,8 +159,6 @@ sections:
       groups:
         - title: 'Try TheHive with Cortex'
           links:
-            - text: Set up a VM demo environment
-              url: '/resources/vm-demo/'
             - text: Deploy a Docker demo environment
               url: '/resources/docker-demo/'
         - title: 'Install and configure TheHive'
