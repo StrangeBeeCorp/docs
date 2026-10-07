@@ -8,6 +8,18 @@
 !!! danger "Skip directly to version 5.7.5"
     Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.5 instead.
 
+## 5.7.7 - October 7, 2026
+
+### Fixes
+
+* Alerts: Restored the alert description in the description field when creating a case from an alert. When a case template is selected, its description now appears above the alert description.
+* Observables: Corrected file observables in cases created from alerts, which were counted but not listed as related observables in other cases and alerts containing the same file.
+* Audit: Ensured the audit log keeps the full details of a deleted case or alert, instead of only its identifiers.
+
+### Security
+
+* Dependencies: Patched several CVEs reported in third-party libraries.
+
 ## 5.7.6 - September 1, 2026
 
 Last update: September 24, 2026
