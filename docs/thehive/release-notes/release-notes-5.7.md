@@ -5,8 +5,8 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
-!!! danger "Skip directly to version 5.7.5"
-    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Upgrade straight to 5.7.5 instead.
+!!! danger "Skip directly to version 5.7.7"
+    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that leaves the case description empty when creating a case from an alert. Upgrade straight to 5.7.7 instead.
 
 ## 5.7.7 - October 7, 2026
 
