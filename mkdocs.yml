@@ -81,7 +81,7 @@ plugins:
             'cortex/installation-and-configuration/index.md': 'cortex/download/index.md'
             'thehive/index.md': 'thehive/overview/index.md'
             'thehive/installation/upgrade-from-5.0.x.md': 'thehive/installation/upgrade-from-5.x.md'
-            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.4.md'
+            'thehive/release-notes/latest.md' : 'thehive/release-notes/release-notes-5.8.md'
             'thehive/setup/index.md': 'thehive/overview/index.md'
             'thehive/setup/installation/step-by-step-guide.md' : 'thehive/installation/installation-guide-linux-standalone-server.md'
             'thehive/setup/configuration/ssl.md' : 'thehive/configuration/ssl/configure-ssl-jvm.md'
