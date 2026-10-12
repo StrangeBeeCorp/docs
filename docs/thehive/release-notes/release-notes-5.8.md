@@ -5,6 +5,29 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.8 triggers a database evolution on first launch—schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.
 
+!!! danger "Skip directly to version 5.8.1"
+    Version 5.8.0 contains a regression that leaves the case description empty when creating a case from an alert. Upgrade straight to 5.8.1 instead.
+
+## 5.8.1 - October 12, 2026
+
+### Improvements
+
+* Lists: The case number in the alert list and the links in the Details column of the case and alert lists can now be opened in a new browser tab.
+
+### Fixes
+
+* Alerts: Restored the alert description in the description field when creating a case from an alert. When a case template is selected, its description now appears above the alert description.
+* Cases: Ensured that removing a case share through the API revokes the organization's access to the case.
+* Custom fields: Prevented the values "true" and "false" entered in a text custom field from being converted to booleans, which caused case creation or update to fail.
+* Observables: Corrected file observables in cases created from alerts, which were counted but not listed as related observables in other cases and alerts containing the same file.
+* Attachments: Adjusted image previews to fit the screen, instead of being limited to a small fixed size on large displays.
+* Filters: Resolved a blank page that appeared when switching an existing text filter to the "is empty" operator.
+* Audit: Ensured the audit log keeps the full details of a deleted case or alert, instead of only its identifiers.
+
+### Security
+
+* Dependencies: Patched several CVEs reported in third-party libraries.
+
 ## 5.8.0 - September 14, 2026
 
 ### New features
