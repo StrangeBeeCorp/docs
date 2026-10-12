@@ -17221,6 +17221,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#581-october-12-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8.1 - October 12, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#580-september-14-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -19896,6 +19907,29 @@
 <p class="admonition-title">Database evolution on upgrade</p>
 <p>Upgrading to TheHive 5.8 triggers a database evolution on first launch—schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.</p>
 </div>
+<div class="admonition danger">
+<p class="admonition-title">Skip directly to version 5.8.1</p>
+<p>Version 5.8.0 contains a regression that leaves the case description empty when creating a case from an alert. Upgrade straight to 5.8.1 instead.</p>
+</div>
+<h2 id="581-october-12-2026">5.8.1 - October 12, 2026<a class="headerlink" href="#581-october-12-2026" title="Permanent link">#</a></h2>
+<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<ul>
+<li>Lists: The case number in the alert list and the links in the Details column of the case and alert lists can now be opened in a new browser tab.</li>
+</ul>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>Alerts: Restored the alert description in the description field when creating a case from an alert. When a case template is selected, its description now appears above the alert description.</li>
+<li>Cases: Ensured that removing a case share through the API revokes the organization's access to the case.</li>
+<li>Custom fields: Prevented the values "true" and "false" entered in a text custom field from being converted to booleans, which caused case creation or update to fail.</li>
+<li>Observables: Corrected file observables in cases created from alerts, which were counted but not listed as related observables in other cases and alerts containing the same file.</li>
+<li>Attachments: Adjusted image previews to fit the screen, instead of being limited to a small fixed size on large displays.</li>
+<li>Filters: Resolved a blank page that appeared when switching an existing text filter to the "is empty" operator.</li>
+<li>Audit: Ensured the audit log keeps the full details of a deleted case or alert, instead of only its identifiers.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<ul>
+<li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
+</ul>
 <h2 id="580-september-14-2026">5.8.0 - September 14, 2026<a class="headerlink" href="#580-september-14-2026" title="Permanent link">#</a></h2>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>
 <h4 id="sla-management-platinum">SLA management <span class="mdx-badge"><span class="mdx-badge__icon"><a href="" title="#' 'License type"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 10a3.04 3.04 0 0 1 3-3 3.04 3.04 0 0 1 3 3 3.04 3.04 0 0 1-3 3 3.04 3.04 0 0 1-3-3m3 9 4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"></path></svg></span></a></span><span class="mdx-badge__text">Platinum</span></span><a class="headerlink" href="#sla-management-platinum" title="Permanent link">#</a></h4>
@@ -19909,7 +19943,7 @@
 <p><a href="../../user-guides/knowledge-base/about-knowledge-base/">Knowledge Base pages</a>, <a href="../../user-guides/knowledge-base/about-case-pages/">case pages</a>, and <a href="../../user-guides/analyst-corner/cases/case-comments/comment-on-case/">comments</a> are now searchable from Global Search and from the top bar.</p>
 <h4 id="taxonomy-tag-deactivation">Taxonomy tag deactivation<a class="headerlink" href="#taxonomy-tag-deactivation" title="Permanent link">#</a></h4>
 <p><a href="../../administration/taxonomies/about-taxonomies/">Individual tags in a taxonomy</a> can now be deactivated. A deactivated tag is no longer suggested when tagging an alert, a case, or an observable, and TheHive rejects any attempt to add it. Tags already applied keep their value and stay visible.</p>
-<h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
+<h3 id="improvements_1">Improvements<a class="headerlink" href="#improvements_1" title="Permanent link">#</a></h3>
 <h4 id="api-documentation">API documentation<a class="headerlink" href="#api-documentation" title="Permanent link">#</a></h4>
 <p>The <a href="https://docs.strangebee.com/thehive/api-docs/">API documentation</a> has been reworked:</p>
 <ul>
@@ -19939,13 +19973,13 @@
 <p>The separate Cortex and MISP status icons at the bottom of the left navigation bar are replaced by a single health indicator that covers every configured connector, including Cortex, MISP, and Email Intake.</p>
 <h4 id="iam-authentication-for-s3-storage-on-aws-eks">IAM authentication for S3 storage on AWS EKS<a class="headerlink" href="#iam-authentication-for-s3-storage-on-aws-eks" title="Permanent link">#</a></h4>
 <p>TheHive running on Amazon EKS can now authenticate to Amazon S3 with IAM Roles for Service Accounts (IRSA) or EKS Pod Identity, instead of a static access key and secret key stored in the configuration file.</p>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <h4 id="api">API<a class="headerlink" href="#api" title="Permanent link">#</a></h4>
 <ul>
 <li>Rejected invalid request bodies on the authentication configuration endpoints, which previously accepted malformed payloads.</li>
 <li>Clarified the validation message returned when an enum value is invalid.</li>
 </ul>
-<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
 </ul>
