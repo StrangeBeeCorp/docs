@@ -20102,7 +20102,7 @@ thread_pool.write.queue_size: 10000
 <p>Docker images are also provided on Docker Hub.</p>
 <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>pull<span class="w"> </span>thehiveproject/cortex:3.1.0-1
 </code></pre></div>
-<p>⚠️  Starting from this version, Docker images don't contain analyzers anymore. <em>Analyzers__/__Responders</em> and Cortex have different life-cycles, their update including their dependencies should not be correlated to Cortex update. </p>
+<p>⚠️  Starting from this version, Docker images don't contain analyzers anymore. <em>Analyzers</em>_/_<em>Responders</em> and Cortex have different life-cycles, their update including their dependencies should not be correlated to Cortex update. </p>
 <p>It is recommended to use Docker version of analyzers : this can be done by binding Docker service docket inside Cortex container (run with <code>-v /var/run/docker.sock:/var/run/docker.sock</code>).</p>
 </div>
 </div>
