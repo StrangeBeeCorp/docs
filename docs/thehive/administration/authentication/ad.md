@@ -4,6 +4,9 @@
 
 Configure an [AD](../ldap/about-ldap.md) authentication provider in TheHive.
 
+!!! info "Login format"
+    Users log in with their short Windows login, the `sAMAccountName`. To log in with the `userPrincipalName` or to set a custom search filter, use the [LDAP provider](ldap.md) instead.
+
 <h2>Procedure</h2>
 
 {% include-markdown "includes/local-account-ldap-ad.md" %}

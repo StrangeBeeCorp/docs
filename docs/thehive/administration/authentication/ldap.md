@@ -4,6 +4,9 @@
 
 Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
+!!! info "Active Directory"
+    The LDAP provider also works with Active Directory. With a Platinum license, the [AD provider](ad.md) needs less configuration but only accepts the short Windows login, the `sAMAccountName`. Use the LDAP provider to log in with the `userPrincipalName` or to set a custom search filter.
+
 <h2>Procedure</h2>
 
 {% include-markdown "includes/local-account-ldap-ad.md" %}
@@ -64,9 +67,12 @@ Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
     **- Filter used to search users \***
 
-    The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users.
+    The LDAP filter to locate user accounts. This filter helps narrow down search results to relevant users. TheHive replaces `{0}` with the login the user enters.
 
-    Example: *(&(uid={0})(objectClass=inetOrgPerson))*
+    The filter depends on the directory server:
+
+    * OpenLDAP: *(&(uid={0})(objectClass=inetOrgPerson))*
+    * AD: *(&(objectCategory=person)(objectClass=user)(userPrincipalName={0}))*
 
     ---
 
