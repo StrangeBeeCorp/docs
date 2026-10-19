@@ -38,7 +38,11 @@ Last update: May 26, 2025
 
 ### Security fixes
 
-* This update includes four patches addressing vulnerabilities identified as [CVE-2025-48738](https://nvd.nist.gov/vuln/detail/CVE-2025-48738), [CVE-2025-48739](https://nvd.nist.gov/vuln/detail/CVE-2025-48739), [CVE-2025-48740](https://nvd.nist.gov/vuln/detail/CVE-2025-48740), and [CVE-2025-48741](https://nvd.nist.gov/vuln/detail/CVE-2025-48741). None have been exploited in the wild. Further details are provided in our [security bulletin](https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025), in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md).
+* This update includes four patches addressing the following vulnerabilities. None have been exploited in the wild. Further details are provided in the linked security bulletins, in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md).
+    * [SB-SEC-ADV-2025-003: Email Bombing Through Password Reset API Feature](https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-003.md)
+    * [SB-SEC-ADV-2025-002: Server-Side Request Forgery](https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-002.md)
+    * [SB-SEC-ADV-2025-001: Cross-Site Request Forgery](https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-001.md)
+    * [SB-SEC-ADV-2025-004: Broken Access Control](https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-004.md)
 * JSON endpoints now strictly validate the `Content-Type` header. Requests must explicitly include `Content-Type: application/json`. If not, the server returns a `400 Bad Request` response.
     * A temporary compatibility mode is available to support legacy clients or scripts that don't set the `Content-Type` header properly. To enable it, add the following line to your `application.conf` file: `ignoreCSRFProtection = true`.
     * After enabling compatibility mode, update all clients to send `Content-Type: application/json`. Once all clients are updated, remove this override to re-enable full validation.
@@ -100,8 +104,10 @@ A regression related to the JSON audit object of merged alerts was introduced. T
 
 ## 5.4.6 - 12th of December 2024
 
+Last update: October 19, 2026
+
 ### Security fix
-- This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.
+- This update contains a patch for a vulnerability (CVSS 6.9) not exploited in the wild, disclosed in line with our [Responsible Vulnerability Disclosure Policy](https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md).
 
 ### Fixes
 #### Unlicensed users
