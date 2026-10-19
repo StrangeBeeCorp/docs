@@ -98,7 +98,7 @@ Separate access logs from application logs by configuring dedicated log appender
         </triggeringPolicy>
 
         <encoder>
-            <pattern>%date [%level] from %logger %replace(\(%X{userId}@%X{organisation}\) ){'\(@\) ',''}[%kamonTraceId] %message%n%xException</pattern>
+            <pattern>%date [%level] from %logger %replace(\(%X{userId}@%X{organisation}\) ){'\(@\) ',''}[%X{kamonTraceId}] %message%n%xException</pattern>
         </encoder>
     </appender>
 
@@ -114,7 +114,7 @@ Separate access logs from application logs by configuring dedicated log appender
 
     * `%X{userId}`: Login identifier of the user who made the request.
     * `%X{organisation}`: Organization the user belongs to.
-    * `%kamonTraceId`: Distributed trace ID assigned to the request by Kamon.
+    * `%X{kamonTraceId}`: Distributed trace ID assigned to the request by Kamon.
 
 4. Configure the loggers to use the access appender.
 
