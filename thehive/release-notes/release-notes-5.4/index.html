@@ -20047,7 +20047,13 @@
 <p>Last update: May 26, 2025</p>
 <h3 id="security-fixes_1">Security fixes<a class="headerlink" href="#security-fixes_1" title="Permanent link">#</a></h3>
 <ul>
-<li>This update includes four patches addressing vulnerabilities identified as <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48738">CVE-2025-48738</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48739">CVE-2025-48739</a>, <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48740">CVE-2025-48740</a>, and <a href="https://nvd.nist.gov/vuln/detail/CVE-2025-48741">CVE-2025-48741</a>. None have been exploited in the wild. Further details are provided in our <a href="https://github.com/StrangeBeeCorp/Security?tab=readme-ov-file#2025">security bulletin</a>, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md">Responsible Vulnerability Disclosure Policy</a>.</li>
+<li>This update includes four patches addressing the following vulnerabilities. None have been exploited in the wild. Further details are provided in the linked security bulletins, in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md">Responsible Vulnerability Disclosure Policy</a>.<ul>
+<li><a href="https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-003.md">SB-SEC-ADV-2025-003: Email Bombing Through Password Reset API Feature</a></li>
+<li><a href="https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-002.md">SB-SEC-ADV-2025-002: Server-Side Request Forgery</a></li>
+<li><a href="https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-001.md">SB-SEC-ADV-2025-001: Cross-Site Request Forgery</a></li>
+<li><a href="https://github.com/StrangeBeeCorp/Security/blob/main/Security%20advisories/SB-SEC-ADV-2025-004.md">SB-SEC-ADV-2025-004: Broken Access Control</a></li>
+</ul>
+</li>
 <li>JSON endpoints now strictly validate the <code>Content-Type</code> header. Requests must explicitly include <code>Content-Type: application/json</code>. If not, the server returns a <code>400 Bad Request</code> response.<ul>
 <li>A temporary compatibility mode is available to support legacy clients or scripts that don't set the <code>Content-Type</code> header properly. To enable it, add the following line to your <code>application.conf</code> file: <code>ignoreCSRFProtection = true</code>.</li>
 <li>After enabling compatibility mode, update all clients to send <code>Content-Type: application/json</code>. Once all clients are updated, remove this override to re-enable full validation.</li>
@@ -20107,9 +20113,10 @@
 <li>The entry point docker parameter --cql-cluster is replaced by --cql-datacenter. This parameter, used in cluster configuration, allows to define the name of the Cassandra datacenter used by the TheHive node.</li>
 </ul>
 <h2 id="546-12th-of-december-2024">5.4.6 - 12th of December 2024<a class="headerlink" href="#546-12th-of-december-2024" title="Permanent link">#</a></h2>
+<p>Last update: October 19, 2026</p>
 <h3 id="security-fix">Security fix<a class="headerlink" href="#security-fix" title="Permanent link">#</a></h3>
 <ul>
-<li>This update contains a patch for a vulnerability (CVSS 6.9) non-exploited in the wild. More details will come in a further security bulletin, as per our responsible disclosure policy.</li>
+<li>This update contains a patch for a vulnerability (CVSS 6.9) not exploited in the wild, disclosed in line with our <a href="https://github.com/StrangeBeeCorp/Security/blob/main/Policies/Vulnerability%20Disclosure%20policy.md">Responsible Vulnerability Disclosure Policy</a>.</li>
 </ul>
 <h3 id="fixes_3">Fixes<a class="headerlink" href="#fixes_3" title="Permanent link">#</a></h3>
 <h4 id="unlicensed-users">Unlicensed users<a class="headerlink" href="#unlicensed-users" title="Permanent link">#</a></h4>
