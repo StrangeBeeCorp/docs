@@ -20053,7 +20053,7 @@
 <span class="w">    </span><span class="nt">&lt;/triggeringPolicy&gt;</span>
 
 <span class="w">    </span><span class="nt">&lt;encoder&gt;</span>
-<span class="w">        </span><span class="nt">&lt;pattern&gt;</span>%date<span class="w"> </span>[%level]<span class="w"> </span>from<span class="w"> </span>%logger<span class="w"> </span>%replace(\(%X{userId}@%X{organisation}\)<span class="w"> </span>){'\(@\)<span class="w"> </span>',''}[%kamonTraceId]<span class="w"> </span>%message%n%xException<span class="nt">&lt;/pattern&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pattern&gt;</span>%date<span class="w"> </span>[%level]<span class="w"> </span>from<span class="w"> </span>%logger<span class="w"> </span>%replace(\(%X{userId}@%X{organisation}\)<span class="w"> </span>){'\(@\)<span class="w"> </span>',''}[%X{kamonTraceId}]<span class="w"> </span>%message%n%xException<span class="nt">&lt;/pattern&gt;</span>
 <span class="w">    </span><span class="nt">&lt;/encoder&gt;</span>
 <span class="nt">&lt;/appender&gt;</span>
 
@@ -20068,7 +20068,7 @@
 <ul>
 <li><code>%X{userId}</code>: Login identifier of the user who made the request.</li>
 <li><code>%X{organisation}</code>: Organization the user belongs to.</li>
-<li><code>%kamonTraceId</code>: Distributed trace ID assigned to the request by Kamon.</li>
+<li><code>%X{kamonTraceId}</code>: Distributed trace ID assigned to the request by Kamon.</li>
 </ul>
 </li>
 <li>
