@@ -6,13 +6,15 @@
     Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
 !!! danger "Skip directly to version 5.7.7"
-    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that leaves the case description empty when creating a case from an alert. Upgrade straight to 5.7.7 instead.
+    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.7.7 instead.
 
 ## 5.7.7 - October 7, 2026
 
+Last update: October 20, 2026
+
 ### Fixes
 
-* Alerts: Restored the alert description in the description field when creating a case from an alert. When a case template is selected, its description now appears above the alert description.
+* Alerts: Restored the alert description in the description field when [creating a case from a single alert](../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md). When the selected case template also has a description, the field now shows the template description followed by the alert description. Up to version 5.7.5, the alert description replaced the template description.
 * Observables: Corrected file observables in cases created from alerts, which were counted but not listed as related observables in other cases and alerts containing the same file.
 * Audit: Ensured the audit log keeps the full details of a deleted case or alert, instead of only its identifiers.
 

@@ -17,6 +17,8 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 !!! tip "Bulk create"
     To create a case from multiple alerts, go to the **Alerts** view and select :fontawesome-regular-square: next to each alert you want to include. Then select :fontawesome-regular-square-plus: above the list. This action merges all the selected alerts into a single case.
 
+    If you select a case template, the **Description** field contains only the template description. Otherwise, the field is empty and you must enter a description. Once the case is created, the description of each alert is added below it, under a `Merged with alert` heading.
+
     By default, you can merge up to 50 alerts at once. You can change this limit using the `alert.maxMergeInCase` setting in the `application.conf` file. Proceed with caution: modifying this limit may affect platform stability.
 
 1. [Locate the alert you want to merge into a new case](./search-for-alerts/find-an-alert.md).
@@ -31,6 +33,14 @@ If an investigation is already ongoing, [add the alert to an existing case](add-
 
     * [Create an empty case](../cases/create-a-new-case.md#create-an-empty-case)
     * [Create a case from a template](../cases/create-a-new-case.md#create-a-case-from-a-template)
+
+    !!! info "Case description"
+        When you create a case from a single alert, the **Description** field is filled in from the alert and, if you select one, the case template:
+
+        * If both the case template and the alert have a description, the template description comes first, followed by the alert description.
+        * If only one of them has a description, the field contains that description.
+
+        You can edit the description before creating the case.
 
 <h2>Next steps</h2>
 

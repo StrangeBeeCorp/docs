@@ -9,6 +9,8 @@ If the alert requires a separate investigation, [create a case from the alert](c
 !!! info "Data transfer"
     When adding an alert to an existing case, data from the alert, including observables, TTPs, attachments, comments, and custom fields, is automatically transferred to the case.
 
+    The alert description is added at the end of the case description, under a `Merged with alert` heading.
+
 !!! note "Link to case"
     Adding an alert to an existing case automatically [links the alert to the case](../cases/view-alerts-linked-to-a-case.md).
 
