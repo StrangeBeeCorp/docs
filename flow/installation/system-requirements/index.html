@@ -21727,7 +21727,7 @@
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The stack deploys the following services on the host:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/flow-docker-overview.png" data-desc-position="bottom"><img alt="TheHive Flow Docker Compose stack" class="center" src="../../images/flow-docker-overview.png" width="70%"></a></p>
 <h3 id="deployment-profiles">Deployment profiles<a class="headerlink" href="#deployment-profiles" title="Permanent link">#</a></h3>
 <p>Two deployment profiles are available in the <a href="https://github.com/StrangeBeeCorp/docker/tree/main" target="_blank">StrangeBee Docker Compose repository</a>. Both deploy the same services and differ in the resources allocated to each one.</p>
 <table>
@@ -21836,7 +21836,7 @@
 </div>
 <div class="tabbed-block">
 <p>The chart and its deployment scenarios deploy the following on the cluster:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/flow-kubernetes-overview.png" data-desc-position="bottom"><img alt="TheHive Flow Kubernetes deployment" class="center" src="../../images/flow-kubernetes-overview.png" width="70%"></a></p>
 <h3 id="chart-sizing-defaults">Chart sizing defaults<a class="headerlink" href="#chart-sizing-defaults" title="Permanent link">#</a></h3>
 <p>The chart and the deployment scenarios ship the following defaults. Every pod of the chart gets a CPU request but no CPU limit, so pods can burst into spare CPU. The <a href="#data-storage">data storage</a> growth drivers apply unchanged. Plan for approximately 1 MB per workflow run in the <code>thehive_flow</code> database, and two to five times that for the Temporal history, depending on retention. The blob store size follows the run retention, as described in <a href="#blob-store-volume-sizing">Blob store volume sizing</a>.</p>
 <table>

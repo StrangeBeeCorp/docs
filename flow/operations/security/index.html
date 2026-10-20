@@ -21807,7 +21807,7 @@
 </div>
 <h2 id="network-isolation">Network isolation<a class="headerlink" href="#network-isolation" title="Permanent link">#</a></h2>
 <p>Users never reach TheHive Flow directly. The browser talks to TheHive, which forwards the calls of the <strong>Flow</strong> view to TheHive Flow with a JWT and streams the live execution updates back to the browser. TheHive Flow calls TheHive back with an API key to run Cortex analyzers and responders. Webhook callers are the only other traffic that reaches the host, and all of it enters through nginx on port 443.</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/flow-request-paths.png" data-desc-position="bottom"><img alt="TheHive Flow request paths" class="center" src="../../images/flow-request-paths.png" width="70%"></a></p>
 <ul>
 <li><code>thehive-flow-network</code> is an isolated Docker bridge. No port is reachable from the host unless explicitly declared with <code>ports:</code>.</li>
 <li>The <code>thehive-flow</code> service on port 8081 isn't published on the host: all traffic enters through nginx on port 443.</li>

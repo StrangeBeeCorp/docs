@@ -21862,7 +21862,7 @@
 </div>
 <h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
 <p>The stack deploys the following services on the host:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/flow-docker-overview.png" data-desc-position="bottom"><img alt="TheHive Flow Docker Compose stack" class="center" src="../../images/flow-docker-overview.png" width="70%"></a></p>
 <p>Nginx is the only service published on the network. The health endpoints of <code>thehive-flow</code> are published on the loopback interface only. Blue arrows mark the services TheHive Flow needs to start: Temporal, PostgreSQL, and the blob store. The yellow arrows are used at run time only, when users work in the <strong>Flow</strong> view or when workflows run.</p>
 <h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
 <p>Start by installing the necessary dependencies for deploying TheHive Flow with Docker Compose.</p>

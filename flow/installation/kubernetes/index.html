@@ -21821,7 +21821,7 @@
 <p>The examples below use the <code>thehive-flow</code> namespace and the <code>thehive-flow</code> release name, which are the names the deployment scenarios use. Adapt them to your cluster conventions.</p>
 <h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
 <p>The chart and its deployment scenarios deploy the following on the cluster:</p>
-<p></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../images/flow-kubernetes-overview.png" data-desc-position="bottom"><img alt="TheHive Flow Kubernetes deployment" class="center" src="../../images/flow-kubernetes-overview.png" width="70%"></a></p>
 <p>Inside the cluster, TheHive calls the <code>thehive-flow-api</code> Service. PostgreSQL and the S3-compatible object storage are provisioned before the chart, by the deployment scenarios for testing or by your own tooling for production. The code transformation Jobs use the assistant image to move files between the object storage and each Job. Blue arrows mark the services TheHive Flow needs to start: Temporal, PostgreSQL, and the object storage. The yellow arrows are used at run time only, when users work in the <strong>Flow</strong> view or when workflows run.</p>
 <h2 id="step-1-install-required-dependencies">Step 1: Install required dependencies<a class="headerlink" href="#step-1-install-required-dependencies" title="Permanent link">#</a></h2>
 <p>Start by installing the necessary tools on the machine that will run the following commands.</p>
