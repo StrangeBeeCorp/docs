@@ -41,6 +41,10 @@ Create a [status](about-statuses.md) for cases and alerts in TheHive to add cust
         * When an alert is [merged into an existing case](../../user-guides/analyst-corner/alerts/add-an-alert-to-an-existing-case.md) or [into a new case](../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert.md) for investigation
         * When an alert is created from [MISP](../misp-integration/about-misp-integration.md) after [indicators of compromise (IOCs) are manually shared from a case to the community](../../user-guides/analyst-corner/cases/export-a-case-to-misp.md)
 
+    **- Impact** <!-- md:version 6.0 -->
+
+    Available only for case statuses linked to the *Closed* stage. Select **Yes** to require analysts to record the impact when they [close a case](../../user-guides/analyst-corner/cases/close-a-case.md) with this status. The impact indicates whether the threat affected the organization or was stopped before causing harm.
+
     **- Value \***
 
     The name of the status.
@@ -64,4 +68,5 @@ Create a [status](about-statuses.md) for cases and alerts in TheHive to add cust
 
 * [Change a Status Visibility](change-visibility-of-a-status.md)
 * [Change a Status Color](change-color-of-a-status.md)
+* [Require an Impact for a Status](require-an-impact-for-a-status.md)
 * [Delete a Status](delete-a-status.md)

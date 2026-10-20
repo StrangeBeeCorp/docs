@@ -17,19 +17,26 @@ Close a [case](about-cases.md) in TheHive when the investigation is complete.
 
 3. In the **Close case** drawer, select the [status](../../../administration/status/about-statuses.md) that reflects the outcome of the investigation.
 
-4. Enter a summary describing the outcome of the investigation.
+4. Optional: If the **Impact** field appears, select **Yes** if the threat affected the organization, for example by compromising a system, exposing data, or disrupting a service. Select **No** if the threat was stopped before causing harm.
+
+    <!-- md:version 6.0 --> The **Impact** field appears for the *True Positive* status and for any other closure status that [requires an impact](../../../administration/status/require-an-impact-for-a-status.md), as configured by an administrator. In earlier versions, it appears only for the *True Positive* status.
+
+    !!! info "Impact field completion"
+        When the **Impact** field appears, you must select a value to close the case.
+
+5. Enter a summary describing the outcome of the investigation.
 
     <!-- md:version 5.5 --> You can add a full-size image by dropping it into the **Summary** field or selecting the :fontawesome-solid-image: symbol.
 
     !!! warning "Wait for the upload to complete"
         Wait until the image path appears in parentheses. If it doesn’t, the upload is still in progress, and the image won’t display as expected.
 
-5. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 
+6. Add or remove values in [custom fields](../../../administration/custom-fields/about-custom-fields.md) as needed. 
 
     !!! info "Custom fields completion"
         You must complete all mandatory custom fields to close a case.
 
-6. Select **Close tasks and case**.
+7. Select **Close tasks and case**.
 
 <h2>Next steps</h2>
 

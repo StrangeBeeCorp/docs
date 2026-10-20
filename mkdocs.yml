@@ -594,6 +594,7 @@ nav:
           - 'Create a Status': thehive/administration/status/create-a-status.md
           - 'Change a Status Visibility': thehive/administration/status/change-visibility-of-a-status.md
           - 'Change a Color Visibility': thehive/administration/status/change-color-of-a-status.md
+          - 'Require an Impact for a Status': thehive/administration/status/require-an-impact-for-a-status.md
           - 'Delete a Status': thehive/administration/status/delete-a-status.md
         - 'Analyzer Templates':
           - 'About Analyzer Templates': thehive/administration/analyzer-templates/about-analyzer-templates.md

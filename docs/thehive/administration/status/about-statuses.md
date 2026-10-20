@@ -22,6 +22,11 @@ Each status is associated with:
 
 * <!-- md:version 5.5 --> A visibility: The status is either displayed or hidden in TheHive interface.
 
+* <!-- md:version 6.0 --> An impact requirement: For case statuses linked to the *Closed* stage, the **Impact** setting specifies whether analysts must record the impact when they close a case with this status. The impact indicates whether the threat affected the organization, for example by compromising a system or exposing data, or was stopped before causing harm. This setting doesn't exist for alert statuses.
+
+    !!! info "True Positive status"
+        The predefined *True Positive* status always requires an impact. This setting can't be turned off.
+
 * A color: The color helps users easily recognize the status.
 
 !!! note "Stage and name can't be changed"
@@ -36,6 +41,8 @@ Each status is associated with:
 
 * Statuses linked to the *Closed* stage are available only when [closing a case](../../user-guides/analyst-corner/cases/close-a-case.md) or [closing an alert](../../user-guides/analyst-corner/alerts/close-an-alert.md).
 
+* <!-- md:version 6.0 --> When an analyst closes a case with a status that [requires an impact](require-an-impact-for-a-status.md), they must state whether the case had an actual impact.
+
 ## Permissions
 
 Only users with an admin-type profile that has the `managePlatform` permission can manage case and alert statuses in TheHive.
@@ -47,4 +54,5 @@ After creation, statuses are available to users in cases and alerts.
 * [Create a Status](create-a-status.md)
 * [Change a Status Visibility](change-visibility-of-a-status.md)
 * [Change a Status Color](change-color-of-a-status.md)
+* [Require an Impact for a Status](require-an-impact-for-a-status.md)
 * [Delete a Status](delete-a-status.md)
