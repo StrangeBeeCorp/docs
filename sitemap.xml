@@ -116,6 +116,154 @@
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/flow/configuration/configuration-files-overview/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/configuration/environment-variables/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/configuration/flow-configuration/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/configuration/nginx-configuration/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/configuration/temporal-configuration/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/docker/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/kubernetes/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/perform-initial-setup-as-admin/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/software-requirements/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/system-requirements/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/upgrade-docker/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/installation/upgrade-kubernetes/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/backup-restore/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/component-authentication/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/logging/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/maintenance/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/monitoring/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/security-maintenance/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/security/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/operations/troubleshooting/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/about-flow/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/access-trigger-payload/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/add-trigger/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/build-your-first-workflow/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/configure-action-node/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/configure-flow-node/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/configure-integration-node/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/configure-transformation-node/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/display-execution-logs/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/glossary-flow/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/import-export-workflows/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/jq-functions/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/manage-global-variables/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/manage-input-exit-variables/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/manage-workflows/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/manually-run-workflow/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/flow/user-guides/workflow-templates/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/resources/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
@@ -204,11 +352,19 @@
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/glossary-thehive/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/administration/add-a-global-endpoint/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/administration/customize-thehive-branding/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/administration/manage-llm-providers/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
@@ -576,6 +732,10 @@
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
+         <loc>https://docs.strangebee.com/thehive/installation/upgrade-from-6.x/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
          <loc>https://docs.strangebee.com/thehive/installation/licenses/about-licenses/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
@@ -609,6 +769,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/operations/shorten-elasticsearch-refresh-interval/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/operations/thehive-6-cassandra-same-host/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>
@@ -709,6 +873,10 @@
     </url>
     <url>
          <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-5.8/</loc>
+         <lastmod>2026-10-20</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.strangebee.com/thehive/release-notes/release-notes-6.0/</loc>
          <lastmod>2026-10-20</lastmod>
     </url>
     <url>

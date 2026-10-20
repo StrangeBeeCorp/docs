@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: TheHive
-  version: v5.8.1
+  version: v6.0.0
   description: |2+
 
     ## Get started
@@ -168,7 +168,7 @@ info:
 
     Each user account has permissions defined by their profile. TheHive checks them on every API call.
 
-    Some endpoints are only available with a Gold or Platinum license. When that's the case, the required license tier is listed on the endpoint.
+    Some endpoints are only available with a Gold, Platinum, or One license. When that's the case, the required license tier is listed on the endpoint.
 
     To check which license is active on your instance and what capabilities it includes, call `GET /api/v1/status`.
 
@@ -736,7 +736,7 @@ tags:
     | <nobr>`caseReports` </nobr>| Case reports of the case |
     | <nobr>`timeline` </nobr>| Activity timeline of the case |
     | <nobr>`actions` </nobr>| Cortex responder executions run on the case |
-    | <nobr>`external` </nobr>| Restricts the result set to external-access cases ([TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/)). Requires a Platinum license. |
+    | <nobr>`external` </nobr>| Restricts the result set to external-access cases ([TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/)). Requires a Platinum or One license. |
 
     ### Extra data
 
@@ -765,7 +765,9 @@ tags:
 - name: CaseStatus
   description: |
     A case status represents the current state of a case and belongs to
-    one of three stages: *New*, *In progress*, or *Closed*.
+    one of three stages: *New*, *In progress*, or *Closed*. A status in
+    the *Closed* stage can also require an impact, so you can't close a
+    case with it unless you provide an `impactStatus`.
 
     Creating, updating, and deleting case statuses requires the
     `managePlatform` permission. Call these endpoints with the
@@ -2454,7 +2456,7 @@ tags:
     Feeders support five authentication methods: none, HTTP Basic, API key, bearer
     token, and OAuth 2.0.
 
-    Required license: Platinum
+    Required license: Platinum or One
 - name: Function
   description: |
     A function is a user-defined JavaScript script that processes data and calls TheHive API.
@@ -2667,8 +2669,8 @@ tags:
     organization in TheHive. Profiles are assigned per user-organization
     pair. TheHive provides six predefined profiles: Admin, Org-Admin, Analyst,
     and Read-Only on all plans, and External-Reader and External-Actor on
-    Platinum licenses. You can create custom profiles on Gold and Platinum
-    licenses.
+    Platinum and One licenses. You can create custom profiles on Gold,
+    Platinum, and One licenses.
 
     You can identify a profile by its `_id` or name.
 
@@ -2747,13 +2749,14 @@ tags:
   description: |
     A license controls the features and quotas available on a TheHive instance.
 
-    TheHive offers three license plans:
+    TheHive offers four license plans:
 
     | Plan | Description |
     |---|---|
     | `Community` | Essential features to get started with TheHive or for users with basic needs. |
     | `Gold` | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. |
     | `Platinum` | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. |
+    | `One` | Includes all Platinum features plus workflow automation with TheHive Flow. |
 
     ### Quotas
 
@@ -2885,7 +2888,7 @@ tags:
     - Microsoft Graph API: Microsoft 365 mailboxes using OAuth 2.0 and the Microsoft Graph REST API
     - Google Workspace: Gmail mailboxes via OAuth 2.0
 
-    License requirements: Gold or Platinum — Platinum required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
+    License requirements: Gold, Platinum, or One — Platinum or One required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
 
 - name: MISP
   description: |+
@@ -3009,8 +3012,8 @@ paths:
         | <nobr>[Analyzer template (Cortex)](https://docs.strangebee.com/thehive/administration/analyzer-templates/about-analyzer-templates/) </nobr>| <nobr>`getReportTemplate` </nobr>| Gets a single analyzer report template by ID |
         | <nobr>Job (Cortex) </nobr>| <nobr>`listJob` </nobr>| Lists all Cortex analysis jobs accessible to the current user |
         | <nobr>Job (Cortex) </nobr>| <nobr>`getJob` </nobr>| Gets a single Cortex analysis job by ID |
-        | <nobr>[Function](https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/about-functions/) </nobr>| <nobr>`listFunction` </nobr>| Lists all functions accessible to the current user. Requires a Platinum license |
-        | <nobr>[Function](https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/about-functions/) </nobr>| <nobr>`getFunction` </nobr>| Gets a single function by ID or name. Requires a Platinum license |
+        | <nobr>[Function](https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/about-functions/) </nobr>| <nobr>`listFunction` </nobr>| Lists all functions accessible to the current user. Requires a Platinum or One license |
+        | <nobr>[Function](https://docs.strangebee.com/thehive/user-guides/organization/configure-organization/manage-functions/about-functions/) </nobr>| <nobr>`getFunction` </nobr>| Gets a single function by ID or name. Requires a Platinum or One license |
 
         </details>
 
@@ -3046,7 +3049,7 @@ paths:
         | <nobr>[Case](https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/) </nobr>| <nobr>`caseReports` </nobr>| Case reports of the case |
         | <nobr>[Case](https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/) </nobr>| <nobr>`timeline` </nobr>| Activity timeline of the case |
         | <nobr>[Case](https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/) </nobr>| <nobr>`actions` </nobr>| Cortex responder executions run on the case |
-        | <nobr>[Case](https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/) </nobr>| <nobr>`external` </nobr>| Restricts the result set to external-access cases ([TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/)). Requires a Platinum license. |
+        | <nobr>[Case](https://docs.strangebee.com/thehive/user-guides/analyst-corner/cases/about-cases/) </nobr>| <nobr>`external` </nobr>| Restricts the result set to external-access cases ([TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/)). Requires a Platinum or One license. |
         | <nobr>[Alert](https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/about-alerts/) </nobr>| <nobr>`case` </nobr>| Case the alert was merged into |
         | <nobr>[Alert](https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/about-alerts/) </nobr>| <nobr>`observables` </nobr>| Observables of the alert |
         | <nobr>[Alert](https://docs.strangebee.com/thehive/user-guides/analyst-corner/alerts/about-alerts/) </nobr>| <nobr>`procedures` </nobr>| Procedures (TTPs) attached to the alert |
@@ -4253,7 +4256,7 @@ paths:
         required: true
       responses:
         '204':
-          description: ''
+          description: Success
         '400':
           description: BadRequest
           content:
@@ -5170,7 +5173,7 @@ paths:
         archive are restored into the new case.
 
         Required permission: `manageCase/create`
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
 
         Prerequisites: A THAR archive file and its password, obtained by exporting a case
           with `GET /api/v1/case/{caseId}/export`.
@@ -5294,7 +5297,7 @@ paths:
 
         Use `POST /api/v1/query` with `listCase` to retrieve available cases, their IDs, and numbers.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Export Case as archive
       parameters:
       - name: caseId
@@ -5745,7 +5748,7 @@ paths:
 
         Use `POST /api/v1/query` with `listCase` to retrieve available cases, their IDs, and numbers.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Manage Case access
       parameters:
       - name: caseId
@@ -5901,7 +5904,7 @@ paths:
 
         Use `POST /api/v1/query` with `listCase` to retrieve available cases, their IDs, and numbers.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Bulk Manage Case access
       requestBody:
         content:
@@ -12243,7 +12246,7 @@ paths:
         Comments are visible to all organizations sharing the case. For cases shared through
         [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/),
         you can share the comment with external portal users by setting `external` to `true`
-        (requires a Platinum license).
+        (requires a Platinum or One license).
 
         Use `POST /api/v1/query` with `listCase` to retrieve available cases, their IDs, and numbers.
 
@@ -12774,7 +12777,7 @@ paths:
 
         Use `POST /api/v1/query` with `listCase` to retrieve available cases, their IDs, and numbers.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
 
       operationId: Get Case Timeline
       parameters:
@@ -17200,7 +17203,7 @@ paths:
 
         Required permission: `manageCase/update`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Update Attachment
       parameters:
       - name: caseId
@@ -22473,7 +22476,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Create AlertStatus
       requestBody:
         content:
@@ -22620,7 +22623,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Delete AlertStatus
       parameters:
       - name: id
@@ -22730,7 +22733,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Update AlertStatus
       parameters:
       - name: id
@@ -22878,7 +22881,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Create CaseStatus
       requestBody:
         content:
@@ -22985,7 +22988,8 @@ paths:
             "order": 2,
             "description": "Case has been contained but investigation continues.",
             "colour": "#ffa940",
-            "hidden": false
+            "hidden": false,
+            "requiresImpact": false
           }'
       - lang: Python
         label: python
@@ -23004,7 +23008,8 @@ paths:
                   "order": 2,
                   "description": "Case has been contained but investigation continues.",
                   "colour": "#ffa940",
-                  "hidden": False
+                  "hidden": False,
+                  "requiresImpact": False
               },
           )
           response.raise_for_status()
@@ -23025,7 +23030,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Delete CaseStatus
       parameters:
       - name: id
@@ -23124,9 +23129,9 @@ paths:
       - CaseStatus
       summary: Update a case status
       description: |
-        Update the order, description, color, or visibility of an existing
-        case status. The `value` and `stage` fields are immutable and
-        can't be changed after creation.
+        Update the order, description, color, visibility, or impact
+        requirement of an existing case status. The `value` and `stage`
+        fields are immutable and can't be changed after creation.
 
         Use `POST /api/v1/query` with `listCaseStatus` to retrieve
         available case statuses, their IDs, and values.
@@ -23135,7 +23140,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Update CaseStatus
       parameters:
       - name: id
@@ -23246,7 +23251,8 @@ paths:
             "order": 2,
             "description": "Case has been contained but investigation continues.",
             "colour": "#ffa940",
-            "hidden": false
+            "hidden": false,
+            "requiresImpact": true
           }'
       - lang: Python
         label: python
@@ -23263,7 +23269,8 @@ paths:
                   "order": 2,
                   "description": "Case has been contained but investigation continues.",
                   "colour": "#ffa940",
-                  "hidden": False
+                  "hidden": False,
+                  "requiresImpact": True
               },
           )
           response.raise_for_status()
@@ -24665,7 +24672,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Create Profile
       requestBody:
         content:
@@ -24916,7 +24923,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Delete Profile
       parameters:
       - name: profileId
@@ -25025,7 +25032,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Update Profile
       parameters:
       - name: profileId
@@ -32332,7 +32339,7 @@ paths:
 
         Required permission: `manageFunction/create`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Create Function
       requestBody:
         content:
@@ -32487,7 +32494,7 @@ paths:
 
         Required permission: `manageFunction/invoke`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Invoke Function
       parameters:
       - name: function
@@ -32626,7 +32633,7 @@ paths:
 
         Required permission: `manageFunction/invoke`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Invoke Function on an object
       parameters:
       - name: function
@@ -32775,7 +32782,7 @@ paths:
 
         Use `POST /api/v1/query` with `listFunction` to retrieve available functions, their IDs, and names.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Get Function
       parameters:
       - name: functionId
@@ -32882,7 +32889,7 @@ paths:
 
         Required permission: `manageFunction/create`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Delete Function
       parameters:
       - name: functionId
@@ -32990,7 +32997,7 @@ paths:
 
         Required permission: `manageFunction/create`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Update Function
       parameters:
       - name: functionId
@@ -33397,7 +33404,7 @@ paths:
 
         Required permission: `manageCaseReportTemplate`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Create case report template
       requestBody:
         content:
@@ -33600,7 +33607,7 @@ paths:
         Use `POST /api/v1/query` with `listCaseReportTemplate` to retrieve
         available templates and their IDs.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Get case report template
       parameters:
       - name: templateId
@@ -33709,7 +33716,7 @@ paths:
 
         Required permission: `manageCaseReportTemplate`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Delete case report template
       parameters:
       - name: idOrName
@@ -33816,7 +33823,7 @@ paths:
 
         Required permission: `manageCaseReportTemplate`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Update case report template
       parameters:
       - name: idOrName
@@ -34025,7 +34032,7 @@ paths:
         Use this endpoint to discover valid values before building or updating a
         case report template definition.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Get case report template options
       responses:
         '200':
@@ -34109,6 +34116,262 @@ paths:
       - Basic: []
       x-TheHive-scopes:
       - name: TheHive
+  /api/v1/caseReportTemplate/{caseReportTemplateId}/export:
+    get:
+      tags:
+      - Case Report Template
+      summary: Export a case report template as a file
+      description: |
+        Download a case report template as a TheHive template file with the
+        `.thtp` extension. The file is a zip archive containing the template
+        title, description, and definition as JSON. Use
+        `POST /api/v1/caseReportTemplate/import` to import the file into
+        another TheHive instance.
+
+        Use `POST /api/v1/query` with `listCaseReportTemplate` to retrieve
+        available templates and their IDs.
+
+        Required permission: `manageCaseReportTemplate`
+
+        Required license: Platinum or One
+      operationId: Export Case Report Template as archive
+      parameters:
+      - name: caseReportTemplateId
+        in: path
+        description: The case report template ID preceded by `~`.
+        required: true
+        schema:
+          description: The _id of the entity or its 'name' (depends of the entity)
+          examples:
+          - ~354
+          type: string
+      responses:
+        '200':
+          description: Success
+          headers:
+            Content-Type:
+              description: MIME content type of the file.
+              required: true
+              schema:
+                type: string
+            Content-Length:
+              description: File size in bytes.
+              required: true
+              schema:
+                type: integer
+                format: int64
+            Content-Disposition:
+              description: Formatted as `attachment; filename=<filename>`.
+              required: true
+              schema:
+                type: string
+            Content-Transfer-Encoding:
+              description: Always `binary` for file downloads.
+              required: true
+              schema:
+                type: string
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - ApiKey: []
+      - Basic: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
+      x-TheHive-capabilities:
+      - case.reporting
+  /api/v1/caseReportTemplate/import:
+    post:
+      tags:
+      - Case Report Template
+      summary: Import a case report template from a file
+      description: |
+        Create a new case report template from a TheHive template file with the
+        `.thtp` extension, uploaded as a multipart form. The file is a zip
+        archive containing the template as JSON. Use
+        `GET /api/v1/caseReportTemplate/{caseReportTemplateId}/export` to produce
+        the file from an existing template. Files with an unsupported template
+        format version are rejected.
+
+        Required permission: `manageCaseReportTemplate`
+
+        Required license: Platinum or One
+      operationId: Import Case Report Template from file
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - _json
+              - file
+              properties:
+                _json:
+                  $ref: '#/components/schemas/ImportCaseReportTemplate'
+                file:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OutputCaseReportTemplate'
+        '400':
+          description: BadRequest
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '401':
+          description: AuthenticationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '403':
+          description: AuthorizationError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '404':
+          description: NotFoundError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+        '500':
+          description: GenericError
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - type
+                - message
+                properties:
+                  type:
+                    type: string
+                  message:
+                    type: string
+      security:
+      - ApiKey: []
+      - Basic: []
+      x-TheHive-scopes:
+      - name: TheHive
+      x-TheHive-permissions:
+      - manageCaseReportTemplate
+      x-TheHive-capabilities:
+      - case.reporting
   /api/v1/caseReportTemplate/{templateId}/attachment:
     post:
       tags:
@@ -34648,7 +34911,7 @@ paths:
         which blocks JavaScript execution in compliant browsers, and a `Referrer-Policy: no-referrer`
         header to prevent the browser from sending the `Referer` header.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Render Case Report Template (GET)
       parameters:
       - name: format
@@ -34813,7 +35076,7 @@ paths:
         which blocks JavaScript execution in compliant browsers, and a `Referrer-Policy: no-referrer`
         header to prevent the browser from sending the `Referer` header.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Render Case Report Template
       requestBody:
         content:
@@ -35047,7 +35310,7 @@ paths:
         cases and their IDs.
 
         Required permission: `manageCaseReport`
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Generate Case Report
       parameters:
       - name: caseId
@@ -35194,7 +35457,7 @@ paths:
         cases and their IDs.
 
         Required permission: `manageCaseReport`
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Upload Case Report
       parameters:
       - name: caseId
@@ -35311,7 +35574,7 @@ paths:
         Use `POST /api/v1/query` with `listCaseReport` to retrieve
         available case reports and their IDs.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Download Case Report
       parameters:
       - name: reportId
@@ -35442,7 +35705,7 @@ paths:
         available case reports and their IDs.
 
         Required permission: `manageCaseReport`
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Delete Case Report
       parameters:
       - name: reportId
@@ -35545,7 +35808,7 @@ paths:
         available case reports and their IDs.
 
         Required permission: `manageCaseReport`
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Update Case Report
       parameters:
       - name: reportId
@@ -35657,7 +35920,7 @@ paths:
         Use `POST /api/v1/query` with `listCaseReport` to retrieve
         available case reports and their IDs.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: View Case Report
       parameters:
       - name: reportId
@@ -35795,7 +36058,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Available providers
       responses:
         '200':
@@ -35904,7 +36167,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum — Platinum required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
+        Required license: Gold, Platinum, or One — Platinum or One required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
       operationId: Add new config
       requestBody:
         content:
@@ -36121,7 +36384,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Get config
       parameters:
       - name: configId
@@ -36230,7 +36493,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum — Platinum required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
+        Required license: Gold, Platinum, or One — Platinum or One required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
       operationId: Update config
       parameters:
       - name: configId
@@ -36449,7 +36712,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Delete config
       parameters:
       - name: configId
@@ -36553,7 +36816,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Get configs
       responses:
         '200':
@@ -36656,7 +36919,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Update configs
       requestBody:
         content:
@@ -36788,7 +37051,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum — Platinum required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
+        Required license: Gold, Platinum, or One — Platinum or One required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
       operationId: Get mailbox folders
       requestBody:
         content:
@@ -37019,7 +37282,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: 'GW: Set authorization code'
       requestBody:
         content:
@@ -37126,7 +37389,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum — Platinum required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
+        Required license: Gold, Platinum, or One — Platinum or One required for OAuth 2.0 providers: Microsoft 365, Microsoft Graph API, and Google Workspace
       operationId: Test config
       requestBody:
         content:
@@ -37341,7 +37604,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Gold or Platinum
+        Required license: Gold, Platinum, or One
       operationId: Sync
       responses:
         '204':
@@ -37526,7 +37789,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Set branding
       requestBody:
         content:
@@ -37767,7 +38030,7 @@ paths:
         with the `X-Organisation: admin` header to target the `admin`
         organization.
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Delete branding attachment
       parameters:
       - name: kind
@@ -38220,7 +38483,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Get alert feeders
       responses:
         '200':
@@ -38321,7 +38584,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
 
         Prerequisites: The feeder function must exist before you call this endpoint and
         must have the type `feeder:alert`. Use `POST /api/v1/function` to create a function.
@@ -38689,7 +38952,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Run an alert feeder
       parameters:
       - name: alertFeederName
@@ -38808,7 +39071,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Update an alert feeder
       parameters:
       - name: alertFeederName
@@ -39176,7 +39439,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Delete an alert feeder
       parameters:
       - name: alertFeederName
@@ -39279,7 +39542,7 @@ paths:
 
         Required permission: `manageConfig`
 
-        Required license: Platinum
+        Required license: Platinum or One
       operationId: Test an alert feeder
       requestBody:
         content:
@@ -39691,6 +39954,8 @@ components:
           examples:
           - Linked Alerts
           type: string
+          maxLength: 512
+          minLength: 1
         fields:
           description: Alert fields to display for each item in the list.
           type: array
@@ -39734,6 +39999,8 @@ components:
           examples:
           - Linked Alerts
           type: string
+          maxLength: 512
+          minLength: 1
         columns:
           description: Alert fields to include as columns in the table.
           type: array
@@ -39776,7 +40043,7 @@ components:
           description: All external users of the organization can access the case
             through [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
             Internal users can still access the case through the main TheHive interface.
-            Platinum license required.
+            Platinum or One license required.
           type: string
           const: AllExternalAccessKind
     AnalyzerOutput:
@@ -40199,6 +40466,8 @@ components:
           examples:
           - Comments
           type: string
+          maxLength: 512
+          minLength: 1
         filter:
           $ref: '#/components/schemas/Filter'
           description: Filter to apply to the comment list. See the [Query and Export](https://docs.strangebee.com/thehive/api-docs/#tag/Query-and-Export)
@@ -40267,6 +40536,8 @@ components:
           examples:
           - Custom Fields
           type: string
+          maxLength: 512
+          minLength: 1
         _kind:
           $ref: '#/components/schemas/Kind'
     CustomFieldsList:
@@ -40280,6 +40551,8 @@ components:
           examples:
           - Custom Fields
           type: string
+          maxLength: 512
+          minLength: 1
         _kind:
           $ref: '#/components/schemas/Kind'
     DashboardStatus:
@@ -40514,7 +40787,7 @@ components:
           description: Only a specific set of external users can access the case through
             [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
             Internal users can still access the case through the main TheHive interface.
-            Platinum license required.
+            Platinum or One license required.
           type: string
           const: ExternalAccessKind
     FieldDirection:
@@ -40715,6 +40988,8 @@ components:
           examples:
           - Company Logo
           type: string
+          maxLength: 512
+          minLength: 1
         attachmentId:
           description: ID of an attachment to use as the image. Must match an existing
             attachment.
@@ -40723,6 +40998,33 @@ components:
           type: string
         _kind:
           $ref: '#/components/schemas/Kind'
+    ImportCaseReportTemplate:
+      title: ImportCaseReportTemplate
+      type: object
+      properties:
+        title:
+          description: Title of the created template. If absent, the title stored
+            in the file is used.
+          examples:
+          - Ransomware Investigation Report
+          type: string
+          maxLength: 512
+          minLength: 1
+        description:
+          description: Description of the created template. If absent, the description
+            stored in the file is used.
+          examples:
+          - Standard report layout for ransomware investigations.
+          type: string
+          maxLength: 1048576
+        group:
+          description: Group label used to categorize the template.
+          default: default
+          examples:
+          - DFIR
+          type: string
+          maxLength: 64
+          minLength: 1
     Imported:
       title: Imported
       type: object
@@ -41131,7 +41433,7 @@ components:
         external:
           description: Whether the attachment is accessible to external users with
             [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Platinum license required.
+            Platinum or One license required.
           examples:
           - false
           type: boolean
@@ -41339,8 +41641,8 @@ components:
           description: Whether the comment is visible to external users through [TheHive
             Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
             Set to `true` to share the comment with external portal users. Requires
-            a Platinum license and the case to be shared through TheHive Portal. Has
-            no effect on alert comments, which are always internal.
+            a Platinum or One license and the case to be shared through TheHive Portal.
+            Has no effect on alert comments, which are always internal.
           default: false
           examples:
           - false
@@ -41971,11 +42273,15 @@ components:
           examples:
           - Ransomware Investigation Report
           type: string
+          maxLength: 512
+          minLength: 1
         group:
           description: Group label used to categorize the template.
           examples:
           - Incident Response
           type: string
+          maxLength: 64
+          minLength: 1
         description:
           description: Brief summary of the template's purpose and contents.
           examples:
@@ -42030,6 +42336,13 @@ components:
         hidden:
           description: When `true`, hides the status from the UI dropdown. Hidden
             statuses remain accessible through the API.
+          examples:
+          - false
+          type: boolean
+        requiresImpact:
+          description: When `true`, closing a case with this status requires an `impactStatus`.
+            Only a status in the *Closed* stage can require an impact.
+          default: false
           examples:
           - false
           type: boolean
@@ -42441,7 +42754,7 @@ components:
                 external:
                   description: Whether the attachment is accessible to external users
                     with [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-                    Platinum license required.
+                    Platinum or One license required.
                   examples:
                   - false
                   type: boolean
@@ -42635,7 +42948,7 @@ components:
             Profile type:
             - `Organisation`: for users in non-admin organizations.
             - `Admin`: for users in the Admin organization.
-            - `External`: for [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/) users. Requires a Platinum license.
+            - `External`: for [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/) users. Requires a Platinum or One license.
 
             If omitted, TheHive infers the type from the provided permissions.
         name:
@@ -42820,7 +43133,7 @@ components:
           description: Type of user account. Normal accounts can use the web interface
             and the API. Service accounts authenticate exclusively with an API key
             and can't sign in to the web interface. External accounts access TheHive
-            through the Portal (requires Platinum license).
+            through the Portal (requires a Platinum or One license).
     InputCustomEvent:
       title: InputCustomEvent
       type: object
@@ -43182,7 +43495,7 @@ components:
     InputEmailIntakeOAuth2:
       title: InputEmailIntakeOAuth2
       description: OAuth 2.0 credentials. Required for Google Workspace, Microsoft
-        365, and Microsoft Graph API providers. Requires a Platinum license.
+        365, and Microsoft Graph API providers. Requires a Platinum or One license.
       type: object
       required:
       - clientId
@@ -44806,7 +45119,7 @@ components:
         external:
           description: Whether the attachment is accessible to external users with
             [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Requires a Platinum license. If absent, the current value is unchanged.
+            Requires a Platinum or One license. If absent, the current value is unchanged.
           examples:
           - true
           type: boolean
@@ -44927,8 +45240,11 @@ components:
           minLength: 1
         impactStatus:
           description: 'Enum: `NoImpact` `WithImpact` `NotApplicable`<br>Verdict on
-            whether the incident had real consequences for the organization. Only
-            relevant when closing a case with the `TruePositive` status. `WithImpact`
+            whether the incident had real consequences for the organization. Required
+            when you close a case with a status whose `requiresImpact` field is `true`.
+            TheHive rejects the update if you send it while closing a case with a
+            status that doesn''t require an impact. Use `POST /api/v1/query` with
+            `listCaseStatus` to check which statuses require an impact. `WithImpact`
             means the incident caused damage or data loss. `NoImpact` means it was
             resolved without consequences. `NotApplicable` means the concept doesn''t
             apply to this case. Send `null` to unset.'
@@ -45032,11 +45348,15 @@ components:
           examples:
           - Ransomware Investigation Report
           type: string
+          maxLength: 512
+          minLength: 1
         group:
           description: New group label used to categorize the template.
           examples:
           - Incident Response
           type: string
+          maxLength: 64
+          minLength: 1
         description:
           description: New summary of the template's purpose and contents.
           examples:
@@ -45080,6 +45400,13 @@ components:
             statuses remain accessible through the API.
           examples:
           - false
+          type: boolean
+        requiresImpact:
+          description: When `true`, closing a case with this status requires an `impactStatus`.
+            Only a status in the *Closed* stage can require an impact, and you can't
+            turn it off for the predefined `TruePositive` status.
+          examples:
+          - true
           type: boolean
     InputUpdateCaseTemplate:
       title: InputUpdateCaseTemplate
@@ -45355,8 +45682,11 @@ components:
           minLength: 1
         impactStatus:
           description: 'Enum: `NoImpact` `WithImpact` `NotApplicable`<br>Verdict on
-            whether the incident had real consequences for the organization. Only
-            relevant when closing a case with the `TruePositive` status. `WithImpact`
+            whether the incident had real consequences for the organization. Required
+            when you close a case with a status whose `requiresImpact` field is `true`.
+            TheHive rejects the update if you send it while closing a case with a
+            status that doesn''t require an impact. Use `POST /api/v1/query` with
+            `listCaseStatus` to check which statuses require an impact. `WithImpact`
             means the incident caused damage or data loss. `NoImpact` means it was
             resolved without consequences. `NotApplicable` means the concept doesn''t
             apply to this case. Send `null` to unset.'
@@ -45837,7 +46167,7 @@ components:
         external:
           description: When `true`, makes the observable accessible to external users
             with [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Platinum license required.
+            Platinum or One license required.
           examples:
           - false
           type: boolean
@@ -45980,7 +46310,7 @@ components:
         external:
           description: When `true`, makes the observable accessible to external users
             with [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Platinum license required.
+            Platinum or One license required.
           examples:
           - false
           type: boolean
@@ -46402,8 +46732,8 @@ components:
           description: Type of user account. Normal accounts can use the web interface
             and the API. Service accounts authenticate exclusively with an API key
             and can't sign in to the web interface. External accounts access TheHive
-            through the Portal (requires Platinum license). A user's type can't be
-            changed to or from `External` after creation.
+            through the Portal (requires a Platinum or One license). A user's type
+            can't be changed to or from `External` after creation.
     InputUploadCaseReport:
       title: InputUploadCaseReport
       type: object
@@ -47067,6 +47397,8 @@ components:
           examples:
           - Observables
           type: string
+          maxLength: 512
+          minLength: 1
         fields:
           description: Observable fields to display for each item in the list.
           type: array
@@ -47117,6 +47449,8 @@ components:
           examples:
           - Observables
           type: string
+          maxLength: 512
+          minLength: 1
         columns:
           description: Observable fields to include as columns in the table.
           type: array
@@ -47881,7 +48215,7 @@ components:
         external:
           description: Whether the attachment is accessible to external users with
             [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Platinum license required.
+            Platinum or One license required.
           examples:
           - false
           type: boolean
@@ -48208,8 +48542,8 @@ components:
           type: string
         impactStatus:
           description: Verdict on whether the incident had real consequences for the
-            organization. Only set when the case status is `TruePositive`. One of
-            `WithImpact`, `NoImpact`, or `NotApplicable`.
+            organization. Only set when the case is closed with a status that requires
+            an impact. One of `WithImpact`, `NoImpact`, or `NotApplicable`.
           examples:
           - NotApplicable
           type: string
@@ -48549,6 +48883,7 @@ components:
       - value
       - stage
       - hidden
+      - requiresImpact
       - extraData
       properties:
         _id:
@@ -48614,6 +48949,11 @@ components:
         hidden:
           description: Whether the status is hidden from the UI dropdown. Hidden statuses
             remain accessible through the API.
+          examples:
+          - false
+          type: boolean
+        requiresImpact:
+          description: Whether closing a case with this status requires an `impactStatus`.
           examples:
           - false
           type: boolean
@@ -48917,8 +49257,8 @@ components:
           type: string
         impactStatus:
           description: Verdict on whether the incident had real consequences for the
-            organization. Only set when the case status is `TruePositive`. One of
-            `WithImpact`, `NoImpact`, or `NotApplicable`.
+            organization. Only set when the case is closed with a status that requires
+            an impact. One of `WithImpact`, `NoImpact`, or `NotApplicable`.
           examples:
           - NotApplicable
           type: string
@@ -50259,7 +50599,8 @@ components:
           - TheOrganization
           type: string
         plan:
-          description: License plan. One of `No`, `Community`, `Gold`, or `Platinum`.
+          description: License plan. One of `No`, `Community`, `Gold`, `Platinum`,
+            or `One`.
           examples:
           - Gold
           type: string
@@ -50407,7 +50748,7 @@ components:
           - thehive-prod-01
           type: string
         plan:
-          description: 'License plan: `No`, `Community`, `Gold`, or `Platinum`.'
+          description: 'License plan: `No`, `Community`, `Gold`, `Platinum`, or `One`.'
           examples:
           - Platinum
           type: string
@@ -50828,7 +51169,7 @@ components:
         external:
           description: Whether the observable is accessible to external users with
             [TheHive Portal](https://docs.strangebee.com/thehive/administration/thehive-portal/about-thehive-portal/).
-            Platinum license required.
+            Platinum or One license required.
           examples:
           - false
           type: boolean
@@ -52370,6 +52711,8 @@ components:
           examples:
           - Case Pages
           type: string
+          maxLength: 512
+          minLength: 1
         filter:
           $ref: '#/components/schemas/Filter'
           description: Filter to apply to the page list. See the [Query and Export](https://docs.strangebee.com/thehive/api-docs/#tag/Query-and-Export)
@@ -52831,6 +53174,8 @@ components:
           examples:
           - MITRE ATT&CK TTPs
           type: string
+          maxLength: 512
+          minLength: 1
         fields:
           description: TTP fields to display for each item in the list.
           type: array
@@ -52874,6 +53219,8 @@ components:
           examples:
           - MITRE ATT&CK TTPs
           type: string
+          maxLength: 512
+          minLength: 1
         columns:
           description: TTP fields to include as columns in the table.
           type: array
@@ -52935,6 +53282,8 @@ components:
           examples:
           - Tasks
           type: string
+          maxLength: 512
+          minLength: 1
         fields:
           description: Task fields to display for each item in the list.
           type: array
@@ -52990,6 +53339,8 @@ components:
           examples:
           - Tasks
           type: string
+          maxLength: 512
+          minLength: 1
         columns:
           description: Task fields to include as columns in the table.
           type: array
@@ -53034,6 +53385,8 @@ components:
           examples:
           - Executive Summary
           type: string
+          maxLength: 512
+          minLength: 1
         template:
           description: Mustache template string rendered as the widget body.
           examples:
@@ -53053,6 +53406,8 @@ components:
           examples:
           - Case Timeline
           type: string
+          maxLength: 512
+          minLength: 1
         events:
           description: Types of events to include in the timeline.
           type: array
@@ -53191,7 +53546,7 @@ components:
             pattern: ^(([^()\[\]\\.,;:\s@"]+(\.[^()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9 -퟿豈-﷏ﷰ-￯]+\.)+[a-zA-Z -퟿豈-﷏ﷰ-￯]{2,}))$
         _kind:
           description: Only a specific set of internal users can see the case. Platinum
-            license required.
+            or One license required.
           type: string
           const: UserAccessKind
     UserPropertyDescription:
