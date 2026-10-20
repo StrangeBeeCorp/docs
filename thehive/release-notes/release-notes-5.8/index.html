@@ -21688,16 +21688,17 @@
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Skip directly to version 5.8.1</p>
-<p>Version 5.8.0 contains a regression that leaves the case description empty when creating a case from an alert. Upgrade straight to 5.8.1 instead.</p>
+<p>Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.8.1 instead.</p>
 </div>
 <h2 id="581-october-12-2026">5.8.1 - October 12, 2026<a class="headerlink" href="#581-october-12-2026" title="Permanent link">#</a></h2>
+<p>Last update: October 20, 2026</p>
 <h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
 <ul>
 <li>Lists: The case number in the alert list and the links in the Details column of the case and alert lists can now be opened in a new browser tab.</li>
 </ul>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
 <ul>
-<li>Alerts: Restored the alert description in the description field when creating a case from an alert. When a case template is selected, its description now appears above the alert description.</li>
+<li>Alerts: Restored the alert description in the description field when <a href="../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">creating a case from a single alert</a>. When the selected case template also has a description, the field now shows the template description followed by the alert description. Before versions 5.6.7 and 5.7.6, the alert description replaced the template description.</li>
 <li>Cases: Ensured that removing a case share through the API revokes the organization's access to the case.</li>
 <li>Custom fields: Prevented the values "true" and "false" entered in a text custom field from being converted to booleans, which caused case creation or update to fail.</li>
 <li>Observables: Corrected file observables in cases created from alerts, which were counted but not listed as related observables in other cases and alerts containing the same file.</li>
