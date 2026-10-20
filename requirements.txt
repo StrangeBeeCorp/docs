@@ -9,6 +9,7 @@ pygments>=2.10
 pymdown-extensions>=9.0
 mkdocs-redirects
 mkdocs-glightbox
+selectolax==1.0.0
 mkdocs-video
 mkdocs-include-markdown-plugin
 mkdocs-exclude-search
