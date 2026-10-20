@@ -1,0 +1,44 @@
+/* Announcement bar, rendered from the announce block in overrides/main.html */
+.md-banner {
+  background: #1969FF;
+  color: #fff;
+}
+
+.md-banner .md-banner__inner {
+  margin: .5rem auto;
+  font-size: .7rem;
+}
+
+.sb-announce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem 1rem;
+}
+
+.md-banner a.sb-announce__button {
+  flex: none;
+  padding: .15rem .7rem;
+  border-radius: 5.2rem;
+  background: #FFC72C;
+  color: #011635;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.md-banner a.sb-announce__button:hover,
+.md-banner a.sb-announce__button:focus {
+  background: #fff;
+  color: #011635;
+}
+
+.md-banner .md-banner__button {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .sb-announce {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+}
