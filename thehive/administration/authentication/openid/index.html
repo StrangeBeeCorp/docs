@@ -19907,6 +19907,7 @@
 <ul>
 <li>Users must have an existing account in TheHive local database to authenticate successfully.</li>
 <li>These steps assume that you have already followed the instructions to <a href="/thehive/administration/authentication/configure-authentication/">configure the authentication settings</a>.</li>
+<li>The <a href="/thehive/configuration/update-service-configuration/#update-the-base-url">base URL</a> is set to the public URL of TheHive. TheHive uses it to build the URL the identity provider (IdP) redirects users to after they sign in. With the default value <code>http://localhost:9000</code>, users are sent back to localhost.</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -19971,6 +19972,16 @@
 </ul>
 <p><strong>- User login attribute</strong></p>
 <p>The name of the attribute from the IdP that contains the user's login information (such as email or username).</p>
+<hr>
+</li>
+<li>
+<p>Copy the URL from the <strong>Callback URL / IDP-Initiated SSO URL</strong> field, then add it as a redirect URI in the application registered with the IdP.</p>
+<p>Format: <code>https://&lt;thehive_url&gt;/api/sso/&lt;provider_name&gt;</code></p>
+<p>TheHive builds <code>&lt;provider_name&gt;</code> from the <strong>Name</strong> field. If you rename the provider, update the redirect URI in the IdP.</p>
+<div class="admonition warning">
+<p class="admonition-title">Callback URL and base URL</p>
+<p>The <strong>Callback URL / IDP-Initiated SSO URL</strong> field shows the address in your browser. TheHive sends the IdP a URL built from the <a href="../../../configuration/update-service-configuration/#update-the-base-url">base URL</a>. If they don't match, the IdP rejects the sign-in or redirects users to the wrong address.</p>
+</div>
 </li>
 </ol>
 <h2>Next steps</h2>

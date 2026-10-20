@@ -19907,6 +19907,7 @@
 <ul>
 <li>Users must have an existing account in TheHive local database to authenticate successfully.</li>
 <li>These steps assume that you have already followed the instructions to <a href="/thehive/administration/authentication/configure-authentication/">configure the authentication settings</a>.</li>
+<li>The <a href="/thehive/configuration/update-service-configuration/#update-the-base-url">base URL</a> is set to the public URL of TheHive. TheHive uses it to build the URL the identity provider (IdP) redirects users to after they sign in. With the default value <code>http://localhost:9000</code>, users are sent back to localhost.</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -19987,6 +19988,37 @@
 <p><strong>- Maximum authentication life time</strong></p>
 <p>The maximum session duration for user authentication. This value must align with the session timeout configured on the IdP to ensure consistent session behavior.</p>
 <p>If you're unsure of the value set in your IdP, set it to <em>90 days</em>, as this is the default for most IdPs.</p>
+<hr>
+</li>
+<li>
+<p>Copy the URL from the <strong>Callback URL / IDP-Initiated SSO URL</strong> field, then enter the following values in the SAML application registered with the IdP.</p>
+<table>
+<thead>
+<tr>
+<th>IdP setting</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier or Entity ID</td>
+<td><code>https://&lt;thehive_url&gt;/api/sso/&lt;provider_name&gt;</code></td>
+</tr>
+<tr>
+<td>Reply URL or Assertion Consumer Service URL</td>
+<td><code>https://&lt;thehive_url&gt;/api/sso/&lt;provider_name&gt;</code></td>
+</tr>
+<tr>
+<td>Sign-on URL, if the IdP requires one</td>
+<td><code>https://&lt;thehive_url&gt;/login</code></td>
+</tr>
+</tbody>
+</table>
+<p>TheHive builds <code>&lt;provider_name&gt;</code> from the <strong>Name</strong> field. If you rename the provider, update these values in the IdP.</p>
+<div class="admonition warning">
+<p class="admonition-title">Callback URL and base URL</p>
+<p>The <strong>Callback URL / IDP-Initiated SSO URL</strong> field shows the address in your browser. TheHive sends the IdP a URL built from the <a href="../../../configuration/update-service-configuration/#update-the-base-url">base URL</a>. If they don't match, the IdP rejects the sign-in or redirects users to the wrong address.</p>
+</div>
 </li>
 </ol>
 <h2>Next steps</h2>
