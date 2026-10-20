@@ -43,6 +43,7 @@ extra_css:
   - assets/stylesheets/extra.css
   - assets/stylesheets/badge.css
   - assets/stylesheets/front.css
+  - assets/stylesheets/announce.css
 
 extra_javascript:
   - assets/js/main.js
