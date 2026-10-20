@@ -6,7 +6,7 @@ Configure an OpenID authentication provider in TheHive.
 
 <h2>Procedure</h2>
 
-{% include-markdown "includes/prerequisites-authentication-providers.md" %}
+{% include-markdown "includes/prerequisites-sso-providers.md" %}
 
 !!! info "Login flow with multiple OpenID providers"
     You can configure multiple OpenID providers in TheHive. When a user attempts to log in, TheHive queries each provider sequentially, following the defined order. The process stops as soon as a provider grants authorization.
@@ -77,6 +77,17 @@ Configure an OpenID authentication provider in TheHive.
     **- User login attribute**
 
     The name of the attribute from the IdP that contains the user's login information (such as email or username).
+
+    ---
+
+8. Copy the URL from the **Callback URL / IDP-Initiated SSO URL** field, then add it as a redirect URI in the application registered with the IdP.
+
+    Format: `https://<thehive_url>/api/sso/<provider_name>`
+
+    TheHive builds `<provider_name>` from the **Name** field. If you rename the provider, update the redirect URI in the IdP.
+
+    !!! warning "Callback URL and base URL"
+        The **Callback URL / IDP-Initiated SSO URL** field shows the address in your browser. TheHive sends the IdP a URL built from the [base URL](../../configuration/update-service-configuration.md#update-the-base-url). If they don't match, the IdP rejects the sign-in or redirects users to the wrong address.
 
 <h2>Next steps</h2>
 
