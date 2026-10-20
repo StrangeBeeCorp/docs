@@ -27,7 +27,7 @@ if the second job occurs within `cache.job` (the default is 10 minutes).
     2. it is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the [API Guide](../api/api-guide.md#run) or by setting the cache to *Custom* in the Cortex UI for each analyzer and specifying `0` as the number of minutes.
 
 ## Streaming (a.k.a The Flow)
-The user interface is automatically updated when data is changed in the back-end. To do this, the back-end sends events to all the connected front-ends.
+The user interface is automatically updated when data is changed in the back end. To do this, the back end sends events to all the connected front-ends.
 The mechanism used to notify the front-end is called long polling and its settings are:
 
  * `refresh` : when there is no notification, close the connection after this
@@ -36,7 +36,7 @@ The mechanism used to notify the front-end is called long polling and its settin
  event is lost between two polls. If there is no poll during the cache setting,
  the session is destroyed (the default is 15 minutes).
  * `nextItemMaxWait`, `globalMaxWait` : when an event occurs, it is not
- immediately sent to the front-ends. The back-end waits nextItemMaxWait and up
+ immediately sent to the front-ends. The back end waits nextItemMaxWait and up
  to globalMaxWait in case another event can be included in the notification.
  This mechanism saves many HTTP requests.
 

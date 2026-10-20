@@ -1,8 +1,11 @@
 # About Alert Feeders
 
-<!-- md:version 5.5 --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Alert feeders enable TheHive to retrieve data from external systems on a schedule, eliminating the need for external tools to push data.
+
+!!! tip "TheHive Flow"
+    <!-- md:version 6.0 --> <!-- md:license One --> [TheHive Flow](../../../../../flow/user-guides/about-flow.md) also retrieves data from external systems into TheHive. Where an alert feeder makes one call and converts the response with one function, a workflow combines several sources and steps before creating or updating entities in TheHive. Alert feeders remain the simplest option when one call and one function are enough.
 
 ## How alert feeders work
 

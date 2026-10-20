@@ -1,6 +1,6 @@
 # Remove External User Access to a Case Attachment
 
-<!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Remove external visibility from case attachments to prevent external users from accessing files through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). Attachments marked as internal are only visible to users who have access to the case through the main TheHive interface.
 

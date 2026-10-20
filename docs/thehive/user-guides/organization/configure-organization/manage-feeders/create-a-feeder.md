@@ -1,6 +1,6 @@
 # Create an Alert Feeder
 
-<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Create an [alert feeder](about-feeders.md) in TheHive to automatically retrieve data at a defined frequency from an external service via an HTTP API call and convert it into alerts.
 

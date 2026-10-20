@@ -1,6 +1,6 @@
 # About Case Report Templates
 
-<!-- md:license Platinum -->
+<!-- md:license Platinum --> <!-- md:license One -->
 
 Case report templates generate [reports](../../../../analyst-corner/cases/case-reports/about-case-reports.md) in a predefined format, available from case descriptions.
 

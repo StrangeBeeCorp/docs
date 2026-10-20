@@ -50,7 +50,7 @@ This guide applies only to Cortex 2 and newer. It is not applicable to Cortex 1.
 
 
 ## Introduction
-Cortex 2 offers a REST API that can be leveraged by various applications and programs to interact with it. The following guide describe the Cortex 2 API to allow developers to interface the powerful observable analysis engine with other SIRPs (Security Incident Response Platforms) besides TheHive, TIPs (Threat Intelligence Platforms), SIEMs or scripts. Please note that the Web UI of Cortex 2 exclusively leverage the REST API to interact with the back-end.
+Cortex 2 offers a REST API that can be leveraged by various applications and programs to interact with it. The following guide describe the Cortex 2 API to allow developers to interface the powerful observable analysis engine with other SIRPs (Security Incident Response Platforms) besides TheHive, TIPs (Threat Intelligence Platforms), SIEMs or scripts. Please note that the Web UI of Cortex 2 exclusively leverage the REST API to interact with the back end.
 
 **Note**: You can use [Cortex4py](https://github.com/TheHive-Project/Cortex4py), the Python library we provide, to facilitate interaction with the REST API of Cortex. You need Cortex4py 2.0.0 or later as earlier versions are not compatible with Cortex 2.
 

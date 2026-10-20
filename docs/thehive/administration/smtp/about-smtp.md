@@ -16,7 +16,7 @@ Using an SMTP server:
 * [Email notifications to specific users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-addr.md)
 * [Email notifications to all users in your organization](../../user-guides/organization/configure-organization/manage-notifications/notifiers/email-to-users.md)
 * [Emails for password resets and edits](../../user-guides/manage-password.md)
-* <!-- md:version 5.6 --> <!-- md:license Platinum --> Email invitations to [TheHive Portal](../thehive-portal/about-thehive-portal.md)
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> Email invitations to [TheHive Portal](../thehive-portal/about-thehive-portal.md)
 
 ## Permissions
 

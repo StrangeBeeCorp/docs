@@ -1,11 +1,11 @@
 # Upgrade from TheHive 5.x
 
-Upgrade your existing TheHive On-prem instance from one 5.x version to another.
+Upgrade your existing TheHive On-prem instance from one 5.x version to another, or from 5.x to 6.x.
 
 The upgrade preserves all your data. Even so, performing a [full database backup](../operations/backup-restore/cold-hot-backup-restore.md) before you start is strongly recommended.
 
 !!! note "Guide scope"
-    Applies to standalone and cluster deployments installed using packages or Docker Compose. For [upgrades from TheHive 4.x](upgrade-from-4.x.md) or [Kubernetes deployments](kubernetes.md), refer to the dedicated guides.
+    Applies to standalone and cluster deployments installed using packages or Docker Compose. For [upgrades from TheHive 4.x](upgrade-from-4.x.md), [upgrades between 6.x versions](upgrade-from-6.x.md), or [Kubernetes deployments](kubernetes.md), refer to the dedicated guides.
 
 !!! warning "Before you begin"
     To ensure a smooth upgrade, make sure you have:
@@ -13,12 +13,12 @@ The upgrade preserves all your data. Even so, performing a [full database backup
     * A full database backup. See [Backup and Restore](../operations/backup-restore/cold-hot-backup-restore.md) for instructions.
     * Deactivated any external health checks on TheHive HTTP interface. Otherwise, the supervising system may kill TheHive during the upgrade.
     * A scheduled maintenance window. The upgrade requires stopping TheHive. Depending on the target version, the first launch may also trigger a database evolution—schema and data updates whose duration scales with your database size.
-    * Migrated off the Lucene index backend, if applicable. Lucene isn't supported since version 5.1. See [Change Index from Lucene to Elasticsearch](../operations/change-index.md).
-    * Confirmed that your Java, Cassandra, Elasticsearch, and Cortex versions are compatible with your target version of TheHive. See [TheHive Installation Software Requirements](software-requirements.md).
+    * Migrated off the Lucene index back end, if applicable. Lucene isn't supported since version 5.1. See [Change Index from Lucene to Elasticsearch](../operations/change-index.md).
+    * Confirmed that your Cassandra, Elasticsearch, and Cortex versions are compatible with your target version of TheHive. See [TheHive Installation Software Requirements](software-requirements.md).
     * Reviewed the release notes for the target version to identify changes that may affect your deployment.
 
 !!! danger "Downgrade limitation"
-    Once upgraded, your instance can't be downgraded. Reverting to a previous version of TheHive 5 requires restoring your data from the backup.
+    Once upgraded, your instance can't be downgraded. Reverting to a previous version requires restoring your data from the backup.
 
 ---
 
@@ -58,18 +58,39 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
 === "Docker Compose deployment"
 
-    If you deployed using the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, pull the latest version of the repository before redeploying. The `docker-compose.yml`, configuration templates, and helper scripts may have changed between 5.x versions.
+    If you deployed using the [StrangeBee Docker Compose profiles](https://github.com/StrangeBeeCorp/docker){target=_blank}, pull the latest version of the repository before redeploying. The `docker-compose.yml`, configuration templates, and helper scripts may have changed between versions.
 
     Then update the `thehive_image_version` variable in the `.env` file, located in the same folder as your `docker-compose.yml`. Check [TheHive Docker Hub](https://hub.docker.com/r/strangebee/thehive){target=_blank} for the available version tags.
 
-    If you used the public image directly, update the image tag to `strangebee/thehive:5.8`, or to a specific version if you don't want the latest.
+    If you used the public image directly, update the image tag to the `strangebee/thehive:<major.minor>` tag of the target version, such as `strangebee/thehive:6.0`, or to a specific version if you don't want the latest patch of that minor version.
 
     !!! warning "Don't use the `latest` tag"
         The `strangebee/thehive:latest` tag is deprecated and remains pinned to TheHive 5.0.x.
 
 ---
 
-## (Optional) Step 3: Update the web framework
+## (Optional) Step 3: Set up Java 17
+
+This step applies to package installations upgrading to TheHive 6.x only. Docker Compose deployments skip it, because the image ships its own runtime. Upgrades to another 5.x version skip it too: TheHive 5.x runs on the system default Java 11.
+
+TheHive 6.x runs on Java 17, where 5.x ran on Java 11. Cassandra 4.0.x to 4.1.x still requires Java 11 and doesn't support Java 17, so where both share the host, install Java 17 alongside Java 11 and pin only TheHive to it.
+
+!!! note "Cluster deployments"
+    For cluster deployments, repeat this step on each TheHive node. On a node that doesn't run Cassandra, installing Java 17 alone is enough.
+
+1. Install Corretto 17 alongside the existing Corretto 11, keeping Java 11 as the system default. Follow [Run TheHive 6 and Cassandra on the Same Host](../operations/thehive-6-cassandra-same-host.md).
+
+2. Pin TheHive service to Java 17:
+
+    ```bash
+    echo 'JAVA_HOME="/usr/lib/jvm/java-17-amazon-corretto"' | sudo tee -a /etc/default/thehive
+    ```
+
+    This setting applies to TheHive service only: Cassandra keeps using the system default Java 11. Never point the system default or `/etc/environment` at Java 17 on a host running Cassandra.
+
+---
+
+## (Optional) Step 4: Update the web framework
 
 Skip this step if you're upgrading from version 5.4 or later.
 
@@ -80,7 +101,7 @@ Starting with version 5.4, TheHive uses Play3/Pekko as the web framework. Depend
 
 ---
 
-## Step 4: Start TheHive
+## Step 5: Start TheHive
 
 !!! note "Cluster deployments"
     For cluster deployments, start one node first and wait for TheHive to be fully up and running. Then start the remaining nodes one by one.
@@ -125,7 +146,7 @@ Starting with version 5.4, TheHive uses Play3/Pekko as the web framework. Depend
 
 ---
 
-## Step 5: Verify the upgrade
+## Step 6: Verify the upgrade
 
 Open TheHive in your web browser. Confirm that the version in the bottom-left corner matches the version you installed.
 

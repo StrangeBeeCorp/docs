@@ -1,6 +1,6 @@
 # Configure the RunAnalyzer Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure the *RunAnalyzer* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute [Cortex analyzers](../../../../../administration/cortex/about-cortex.md) when specific triggers occur.
 

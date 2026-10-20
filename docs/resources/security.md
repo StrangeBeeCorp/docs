@@ -24,7 +24,7 @@ This approach ensures that passwords remain protected against brute-force attack
 
 ## Software supply chain transparency
 
-TheHive provides [SBOM](https://github.com/resources/articles/what-is-an-sbom-software-bill-of-materials){target=_blank} files for its published packages. These files describe the third-party components and dependencies included in the backend and frontend of each TheHive build and are provided for transparency and audit purposes. They don't affect the runtime behavior of TheHive.
+TheHive provides [SBOM](https://github.com/resources/articles/what-is-an-sbom-software-bill-of-materials){target=_blank} files for its published packages. These files describe the third-party components and dependencies included in the back end and front end of each TheHive build and are provided for transparency and audit purposes. They don't affect the runtime behavior of TheHive.
 
 SBOM files are intended to support:
 

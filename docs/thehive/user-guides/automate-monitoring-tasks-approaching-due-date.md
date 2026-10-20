@@ -1,6 +1,6 @@
 # Tutorial: Automate Monitoring of Tasks Approaching Their Due Date
 
-<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 In this tutorial, you'll set up an automation in TheHive to monitor [tasks](./analyst-corner/tasks/about-tasks.md) that are approaching their due date.
 

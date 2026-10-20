@@ -1,6 +1,6 @@
 # Add or Remove Permissions from a Profile
 
-<!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Add or remove permissions from a [profile](about-profiles.md) in TheHive to customize access control for users assigned to that profile.
 

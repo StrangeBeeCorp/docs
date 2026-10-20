@@ -1,6 +1,6 @@
 # Create a Function
 
-<!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum -->
+<!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Create a [function](about-functions.md) to automate workflows, process data, and enhance case management in TheHive.
 

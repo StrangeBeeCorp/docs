@@ -74,12 +74,12 @@ After collecting the logs, revert your log configuration:
 
 If the logs reveal an issue you want to report:
 
-* Gold or Platinum license: open a ticket with the StrangeBee Support team
+* Gold, Platinum, or One license: open a ticket with the StrangeBee Support team
 * Community license: open an issue on the [`TheHive-feedback` GitHub repository](https://github.com/StrangeBeeCorp/TheHive-feedback/issues){target=_blank}
 
 In both cases, include the following information:
 
-* Context: your instance type (single node/cluster, backend type, index engine), operating system, RAM, and CPU count per server and node
+* Context: your instance type (single node/cluster, back end type, index engine), operating system, RAM, and CPU count per server and node
 * Symptoms: the actions you took, how the issue occurred, and what happened
 * Log file: attach your log file with trace information
 

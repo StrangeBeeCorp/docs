@@ -59,7 +59,7 @@ We have made two improvements to the management of Cortex job queues from TheHiv
 ### Fixes
 
 #### Case Closure with Mandatory Tasks
-- It is no longer possible to close a case if there are mandatory tasks that remain incomplete. This prevents backend errors by ensuring that all required tasks are finished before allowing case closure.
+- It is no longer possible to close a case if there are mandatory tasks that remain incomplete. This prevents back-end errors by ensuring that all required tasks are finished before allowing case closure.
 
 #### Alert Status Display
 - Fixed a display issue that incorrectly allowed closed alerts to be re-closed and already-started alerts to be started again.

@@ -1,0 +1,1 @@
+Each request the node sends stops after 30 seconds, even when the node timeout is longer or not set. A response body larger than 10 MiB, the default limit an administrator can change, fails the node without a retry.

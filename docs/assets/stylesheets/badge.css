@@ -102,3 +102,13 @@
 .md-typeset .mdx-badge--permission .mdx-badge__text {
     box-shadow: 0 0 0 2px inset #F8BFBF;
 }
+
+
+/* Beta badge specific styles */
+.md-typeset .mdx-badge--beta .mdx-badge__icon {
+    background-color: #D9CCF5;
+}
+
+.md-typeset .mdx-badge--beta .mdx-badge__text {
+    box-shadow: 0 0 0 2px inset #D9CCF5;
+}

@@ -1,12 +1,15 @@
 # About Functions
 
-<!-- md:version 5.1 --> <!-- md:license Platinum -->
+<!-- md:version 5.1 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 A function in TheHive is a controlled JavaScript code block that must be written within TheHive interface and runs securely within the platform. This code operates on a restricted set of predefined features, ensuring that it can't access the full JavaScript language or execute arbitrary code outside the platform's security boundaries.
 
 It accepts inputs from external sources, processes data, and interacts with TheHive API to integrate external applications into its workflow.
 
 For example, use a function to create alerts within TheHive without requiring an additional Python service for data conversion.
+
+!!! tip "TheHive Flow"
+    <!-- md:version 6.0 --> <!-- md:license One --> [TheHive Flow](../../../../../flow/user-guides/about-flow.md) also runs custom code inside TheHive. Where a function is a single JavaScript block, a workflow runs code as one step among others and handles branching, loops, and scheduling without code. Functions remain available and usable on their own.
 
 !!! tip "Contribute!"
     Examples of function use cases are available in [a dedicated GitHub repository](https://github.com/StrangeBeeCorp/integrations/tree/main/.generated/docs/functions){target=_blank}. Contributions are welcome!

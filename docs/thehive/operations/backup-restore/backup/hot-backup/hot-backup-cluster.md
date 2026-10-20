@@ -212,7 +212,7 @@ For more details about snapshot management, refer to the official [Cassandra doc
 
 Finally, back up TheHive file storage, which contains all the attachments and files.
 
-The backup procedure depends on your storage backend—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
+The backup procedure depends on your storage back end—either NFS or an S3-compatible object storage service. The script below uses SeaweedFS as an example, but you can adapt the same approach to any S3-compatible implementation.
 
 === "NFS"
 

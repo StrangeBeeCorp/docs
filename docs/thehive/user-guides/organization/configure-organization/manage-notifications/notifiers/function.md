@@ -1,6 +1,6 @@
 # Configure the Function Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure the *Function* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute functions when specific triggers occur.
 

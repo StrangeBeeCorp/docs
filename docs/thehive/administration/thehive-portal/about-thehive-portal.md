@@ -1,6 +1,6 @@
 # About TheHive Portal
 
-<!-- md:version 5.6 --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 TheHive Portal enables controlled information sharing between Security Operations Center (SOC) teams and external stakeholders, such as HR, Legal, or clients. This feature provides a secure gateway for non-security users to access specific case information and interact with it while maintaining strict data confidentiality controls.
 

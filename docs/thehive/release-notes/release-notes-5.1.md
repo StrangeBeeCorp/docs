@@ -39,7 +39,7 @@
 - Fix display of task attachments in attachment listing
 - Improve error message when merging cases
 
-**Backend:**
+**Back end:**
 
 - Fix error "Tag not Found" which could occur when creating alerts and cases
 - Fix link duplication when importing several times a TTP catalog
@@ -50,7 +50,7 @@
 
 - Improve form for SAML authentication
 
-**Backend:**
+**Back end:**
 
 - Add MISP event UUID to alert description in imported alerts
 - Add validation for SAML configuration
@@ -68,7 +68,7 @@
 - Fix icon in timeline
 - Fix format of some old generated dashboard widgets
 
-**Backend:**
+**Back end:**
 
 - Change format of the date custom field values Ids
 - Fix between filter on custom fields
@@ -87,7 +87,7 @@
 
 - Fixes on long names
 
-**Backend:**
+**Back end:**
 
 - Link correctly task and assignee when updating a task
 - Limit the size of cortex response
@@ -100,7 +100,7 @@
 
 - Allow search for task assignee input
 
-**Backend:**
+**Back end:**
 
 - Optimize resource usage when reading cortex jobs 
 - Replace default "Job" dashboard with a better TTP dashboard
@@ -152,7 +152,7 @@
 - Sharing: Fix display of share options on small display
 - Responder reports should now appear in the observable preview when triggered
 
-**Backend:**
+**Back end:**
 
 - Fix Case dates when creating a case with status "Closed"
 - Fix issue that created phamtom tags on alerts or case
@@ -178,7 +178,7 @@
 - Allow attachment download using its `id` or `_id`
 - Fix some errors in the documentation
 
-**Backend:**
+**Back end:**
 
 - Improve tag creation performances
 
@@ -195,7 +195,7 @@
 - You can now press `Enter` to save a comment
 - Fix report template download link
 
-**Backend:**
+**Back end:**
 
 - Fix potential memory leak that could lead to a crash (from 5.1, issue not present in 5.0)
 - Return error 413 when http input payload is too large
@@ -221,7 +221,7 @@
 - Fix url of popup livefeed when the application uses an http context
 - Avoid tags deletion when editing a case template
 
-**Backend:**
+**Back end:**
 
 - Improve error message when merging case
 - Fix sharing not applied after merging cases
@@ -236,7 +236,7 @@
 
 ### Fixes
 
-**Backend:**
+**Back end:**
 
 - Fix SSO user autocreate
 - Improve the application behavior when Janusgraph configuration gets updated while another connection exists
@@ -292,7 +292,7 @@
     Java 8 version is no longer supported by TheHive. Please update to java 11 at least
     Our [setup guide](../installation/installation-guide-linux-standalone-server.md) can help you on how to install a jvm
 
-- Drop support for Lucene as index backend
+- Drop support for Lucene as index back end
 
     Former versions of TheHive supported lucene and elasticsearch as indexing engines for the data. We then encountered limitations while using the Lucene index (especially when making queries based on Custom Fields). With TheHive 5.0, we pushed users to install and migrate to Elasticsearch. Finally with TheHive 5.1, the support of Lucene index is removed: the application will start but queries involving Custom Fields will return wrong results.
     To migrate your index to Elasticsearch, follow [this guide](../operations/change-index.md).

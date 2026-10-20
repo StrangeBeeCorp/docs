@@ -32,7 +32,7 @@ Replace `<thehive_version>` with TheHive version.
 | `--cql-hostnames <host>,<host>,...` | string | Resolves host names to locate Cassandra instances. |
 | `--cql-username <username>` | string | Specifies the Cassandra database username. |
 | `--cql-password <password>` | string | Specifies the Cassandra database password. |
-| `--cql-datacenter <datacenter>` | string | <!-- md:version 5.4.7 --> Specifies the Cassandra datacenter name. It supports different values per node in cluster mode. |
+| `--cql-datacenter <datacenter>` | string | <!-- md:version 5.4.7 --> Specifies the Cassandra datacenter name. In cluster mode, use the same value on every node. |
 | `--cql-keyspace <keyspace>` | string | <!-- md:version 5.4.7 --> Specifies the name of the Cassandra keyspace. Default: `thehive`. |
 | `--no-cql-wait` | flag | Skips waiting for Cassandra availability. |
 

@@ -1,6 +1,6 @@
 # Delete a Custom Event from a Case Timeline
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Delete a custom event from a [case timeline](about-case-timelines.md) in TheHive when it's no longer relevant or was added incorrectly.
 

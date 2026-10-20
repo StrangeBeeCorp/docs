@@ -1,6 +1,6 @@
 # Tutorial: Automate Tracking of Pending Alerts
 
-<!-- md:version 5.5 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 In this tutorial, you'll set up an automation in TheHive to monitor [alerts](./analyst-corner/alerts/about-alerts.md) that stay in the *New* status and remain unassigned for too long.
 

@@ -1,6 +1,6 @@
 # Add or Remove Widgets in a Case Report Template
 
-<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
+<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Add and remove widgets in a [case report template](about-case-report-templates.md) to customize what information appears in your case reports in TheHive. Widgets are configurable components that display specific case data in different formats.
 

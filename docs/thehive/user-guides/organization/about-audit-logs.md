@@ -9,7 +9,7 @@ TheHive displays audit logs in the **History** tab within case and alert descrip
 {% include-markdown "includes/tag-customfield-changes.md" %}
 
 !!! info "TheHive Portal activities"
-    <!-- md:version 5.6 --> <!-- md:license Platinum --> All actions performed through [TheHive Portal](../../administration/thehive-portal/about-thehive-portal.md) are recorded as audit logs in the main TheHive interface. This includes both external user activities in the portal and internal user actions to share cases, comments, and attachments with external users.
+    <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> All actions performed through [TheHive Portal](../../administration/thehive-portal/about-thehive-portal.md) are recorded as audit logs in the main TheHive interface. This includes both external user activities in the portal and internal user actions to share cases, comments, and attachments with external users.
 
 ## Key use cases
 

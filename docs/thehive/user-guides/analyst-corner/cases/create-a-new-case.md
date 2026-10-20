@@ -92,7 +92,7 @@ TheHive offers the following options for creating cases:
 
 ## Create a case from an archived case
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 1. {% include-markdown "includes/create-a-case.md" %}
 

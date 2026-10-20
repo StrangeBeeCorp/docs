@@ -148,10 +148,10 @@ A new [global search in the top bar](../user-guides/analyst-corner/cases/search-
 #### Shared views
 
 * Users can save custom views for any filterable list and [share them across their organization](../user-guides/analyst-corner/views/change-visibility-custom-view.md#share-a-custom-view-with-the-entire-organization).
-* Views are now stored on the backend, ensuring persistence across devices and browser sessions.
+* Views are now stored on the back end, ensuring persistence across devices and browser sessions.
 
 !!! info "Legacy views migration"
-    Legacy saved views are automatically migrated to private backend views on login, when no equivalent backend view exists.
+    Legacy saved views are automatically migrated to private back-end views on login, when no equivalent back-end view exists.
 
 ### Improvements
 

@@ -46,12 +46,12 @@ The essential components of TheHive setup include:
 
 - :fontawesome-solid-database: [Apache Cassandra](https://cassandra.apache.org/_/index.html){target=_blank} for robust data storage
 - :fontawesome-solid-list: [Elasticsearch](https://www.elastic.co){target=_blank}, serving as a powerful indexing engine
-- :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups, or a shared storage backend such as NFS or an S3-compatible object storage service for clustered environments.
+- :fontawesome-solid-folder-tree: A file storage solution, which can be the local filesystem of the server hosting the application for standalone setups, or a shared storage back end such as NFS or an S3-compatible object storage service for clustered environments.
 
 ![TheHive application stack](../images/overview/thehive-application-stack.png){ width=40% .center }
 
 !!! Danger "Using Lucene"
-    Starting from version 5.1, TheHive no longer supports the Lucene backend for indexing. Users who were previously utilizing Lucene with TheHive 4.1.x are advised to migrate their index to Elasticsearch using [this comprehensive guide](../operations/change-index.md).
+    Starting from version 5.1, TheHive no longer supports the Lucene back end for indexing. Users who were previously utilizing Lucene with TheHive 4.1.x are advised to migrate their index to Elasticsearch using [this comprehensive guide](../operations/change-index.md).
 
 === "Standalone server"
 

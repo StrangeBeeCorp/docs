@@ -20,7 +20,7 @@ Cases support two methods for sharing attachments: copying a direct URL or share
 
 ### Share an attachment with external users
 
-<!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:permission `manageCase/update` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Share attachments with external users who have access to the case through TheHive Portal.
 

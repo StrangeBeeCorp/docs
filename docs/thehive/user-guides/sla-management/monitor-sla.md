@@ -1,6 +1,6 @@
 # Monitor SLA
 
-<!-- md:version 5.8 --> <!-- md:license Platinum -->
+<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Once [service level agreement (SLA) management is turned on](../organization/configure-organization/manage-sla/configure-sla-rules.md#turn-on-sla-management) and [SLA rules](../organization/configure-organization/manage-sla/configure-sla-rules.md#create-an-sla-rule) exist, TheHive shows SLA compliance directly in alert, case, and task list views and detail views.
 

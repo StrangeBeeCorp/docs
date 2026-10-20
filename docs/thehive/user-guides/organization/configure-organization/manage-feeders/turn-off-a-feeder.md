@@ -1,6 +1,6 @@
 # Turn Off an Alert Feeder
 
-<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Turn off an [alert feeder](about-feeders.md) in TheHive to temporarily stop it from retrieving data from an external service.
 

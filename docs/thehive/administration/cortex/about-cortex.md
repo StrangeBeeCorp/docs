@@ -5,6 +5,9 @@
 !!! note "Not connected by default"
     By default, TheHive isn't connected to any Cortex server.
 
+!!! tip "TheHive Flow"
+    <!-- md:version 6.0 --> <!-- md:license One --> [TheHive Flow](../../../flow/user-guides/about-flow.md) runs analyzers and responders as steps of a workflow. Where TheHive alone runs them as single jobs, a workflow reuses their reports in later steps and branches on the results. Cortex remains usable on its own, from cases and alerts or through notifications.
+
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
 

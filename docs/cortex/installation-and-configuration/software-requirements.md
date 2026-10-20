@@ -1,6 +1,6 @@
 # Cortex Installation Software Requirements
 
-Cortex installation requires specific software components at specific versions, depending on the installation method. Elasticsearch is the only backend service Cortex relies on to store its data.
+Cortex installation requires specific software components at specific versions, depending on the installation method. Elasticsearch is the only back-end service Cortex relies on to store its data.
 
 === "Package installation"
 

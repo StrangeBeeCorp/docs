@@ -1,6 +1,6 @@
 # About Case Timelines
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Case timelines provide a chronological view of all events that occurred during the lifecycle of a specific case.
 

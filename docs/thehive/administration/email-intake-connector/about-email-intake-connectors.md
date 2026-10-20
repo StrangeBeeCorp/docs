@@ -1,6 +1,6 @@
 # About Email Intake Connectors
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Organizations that receive alert data by email can use email intake connectors to automate alert creation in TheHive.
 

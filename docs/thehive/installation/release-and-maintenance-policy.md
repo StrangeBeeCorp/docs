@@ -45,12 +45,13 @@ Each release shifts this set forward, which is what extends some versions' maint
 | [5.3](../release-notes/release-notes-5.3.md) | April 24, 2024 | No longer maintained or supported |
 | [5.4](../release-notes/release-notes-5.4.md) | September 26, 2024 | No longer maintained or supported |
 | [5.5](../release-notes/release-notes-5.5.md) | April 22, 2025 | No longer maintained or supported |
-| [5.6](../release-notes/release-notes-5.6.md) | February 2, 2026 | 6.0 ships |
-| [5.7](../release-notes/release-notes-5.7.md) | April 9, 2026 | 6.1 ships |
-| [Latest] [5.8](../release-notes/release-notes-5.8.md) | September 14, 2026 | 7.0 ships |
-| 6.0 | — | 6.2 ships |
-| 6.1 | — | 6.3 ships |
-| 6.2 | — | 6.4 ships |
+| [5.6](../release-notes/release-notes-5.6.md) | February 2, 2026 | February 2, 2027 |
+| [5.7](../release-notes/release-notes-5.7.md) | April 9, 2026 | Later of April 9, 2027, or 6.1 release |
+| [5.8](../release-notes/release-notes-5.8.md) | September 14, 2026 | Later of September 14, 2027, or 7.0 release |
+| [Latest] [6.0](../release-notes/release-notes-6.0.md) | October 20, 2026 | Later of April 20, 2027, or 6.2 release |
+| 6.1 | — | Later of 6 months or 6.3 release |
+| 6.2 | — | Later of 6 months or 6.4 release |
+| 6.3 | — | Later of 6 months or 6.5 release |
 
 The same pattern repeats at every later major and minor release.
 

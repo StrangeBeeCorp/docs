@@ -49,6 +49,8 @@ def on_page_markdown(
             return _badge_for_license(args, page, files)
         elif type == "permission":
             return _badge_for_permission(args, page, files)
+        elif type == "beta":
+            return _badge_for_beta(args, page, files)
         else:
             # Otherwise, raise an error
             raise RuntimeError(f"Unknown shortcode: {type}")
@@ -129,4 +131,13 @@ def _badge_for_permission(text: str, page: Page, files: Files):
         icon=f"[:{icon}:]('#' 'Required permission')",
         text=text,
         type="permission"
+    )
+
+# Create badge for beta integrations
+def _badge_for_beta(text: str, page: Page, files: Files):
+    icon = "material-flask-outline"
+    return _badge(
+        icon=f"[:{icon}:]('#' 'Beta integration')",
+        text=text or "Beta",
+        type="beta"
     )

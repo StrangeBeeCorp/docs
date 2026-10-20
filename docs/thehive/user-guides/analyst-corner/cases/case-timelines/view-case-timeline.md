@@ -1,6 +1,6 @@
 # View a Case Timeline
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 View a [case timeline](about-case-timelines.md) in TheHive to see a chronological overview of all events during your investigation.
 

@@ -21,7 +21,7 @@ Deploy TheHive on a Kubernetes cluster using [the StrangeBee Helm chart reposito
 
 The default deployment includes:
 
-* A single TheHive application pod
+* A single TheHive application Pod
 * A one-node Cassandra cluster for data storage
 * A one-node Elasticsearch cluster for search indexing, using Elasticsearch 9
 * A MinIO instance for S3-compatible object storage
@@ -32,7 +32,7 @@ The default deployment includes:
 * Helm v3.8.0 or later
 * Minimum resources per node: see [TheHive Installation System Requirements](system-requirements.md#hardware-requirements)
 * StorageClass with dynamic provisioning
-* Network policies allowing inter-pod communication
+* Network policies allowing inter-Pod communication
 
 ## Deploy with default configuration
 
@@ -87,13 +87,13 @@ helm show values strangebee/thehive
 If you want to run TheHive as a multi-node cluster, increase the `thehive.replicas` value in `values.yaml`. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust `cassandra.replicaCount` and `elasticsearch.master.replicaCount` to scale Cassandra and Elasticsearch accordingly.
 
 !!! info "License"
-    The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold or Platinum license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
+    The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold, Platinum, or One license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for each dependency.
 
 #### Resource allocation
 
-Default pod resources are optimized for production workloads. If you need to adjust these values, especially memory limits, make sure you update the `JVM_OPTS` environment variable accordingly to avoid OOM crashes.
+Default Pod resources are optimized for production workloads. If you need to adjust these values, especially memory limits, make sure you update the `JVM_OPTS` environment variable accordingly to avoid OOM crashes.
 
 ```yaml
 # JVM_OPTS variable for TheHive
@@ -132,7 +132,7 @@ To configure StorageClasses based on your needs, refer to the relevant CSI drive
 
 #### Cassandra
 
-This chart deploys one Cassandra pod to store TheHive data.
+This chart deploys one Cassandra Pod to store TheHive data.
 
 You can review the [Bitnami Cassandra Helm chart](https://github.com/bitnami/charts/tree/main/bitnami/cassandra){target=_blank} for available configuration options.
 
@@ -178,12 +178,12 @@ cortex:
     - "cortex.default.svc" # Assuming Cortex is deployed in the "default" namespace
   port: 9001
   api_keys:
-    - "<cortex_api_key>" # Or even better, use an existing secret using the parameters below
+    - "<cortex_api_key>" # Or even better, use an existing Secret using the parameters below
   #k8sSecretName: ""
   #k8sSecretKey: "api-keys"
 ```
 
-When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex service DNS as the server URL:
+When TheHive and Cortex are deployed in the same Kubernetes cluster, use the Cortex Service DNS name as the server URL:
 
 ```bash
 http://cortex.<namespace>.svc:9001

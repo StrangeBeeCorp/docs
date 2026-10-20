@@ -14,11 +14,13 @@ Only responders authorized for cases and matching their TLP (traffic light proto
 
 ## Run responders on a case
 
-1. [Locate the alert](./search-for-cases/find-a-case.md) on which you want to run responders.
+1. [Locate the case](./search-for-cases/find-a-case.md) on which you want to run responders.
 
 2. In the case, select **Responders**.
 
     ![Responders button](../../../images/user-guides/organization/configure-organization/manage-functions/responders-button.png)
+
+    <!-- md:version 6.0 --> You can also run responders from the Automation Center: go to the **Automations** tab, select the **Responders** tab, then select **Run Responders**.
 
 3. In the drawer, select the responders you want to run.
 
@@ -33,6 +35,15 @@ Only responders authorized for cases and matching their TLP (traffic light proto
 2. In the case, select the **Responders** tab to check the status of the executed responders.
 
     ![Responders tab](../../../images/user-guides/analyst-corner/cases/responders-tab-case.png)
+
+    <!-- md:version 6.0 --> You can also check them in the Automation Center: go to the **Automations** tab and select the **Responders** tab. This list also includes the responders run on the observables, tasks, and task logs of the case, with the following columns:
+
+    * Status: Whether the responder is waiting, in progress, succeeded, failed, or was deleted from Cortex
+    * Name: The responder that ran. The name is blank while the responder is waiting.
+    * Title: The observable, task, or task log the responder ran on. Select it to open the observable or task. A dash means the responder ran on the case itself.
+    * Entity: The type of object the responder ran on
+    * Triggered by: Who ran the responder
+    * Start date: When the responder started
 
 <h2>Next steps</h2>
 

@@ -2,11 +2,11 @@
 
 <!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
 
-Transformation nodes process or manipulate data within workflows in [TheHive Flow](about-flow.md). They allow you to perform custom operations that modify, extract, or format information as it moves through the workflow.
+Transformation nodes process or manipulate data within workflows in [TheHive Flow](about-flow.md). Use them to modify, extract, or format information as it moves through the workflow.
 
 ## Configure a *Set local variable* node
 
-A *Set local variable* node creates one or more [local variables](about-flow.md#variables) during workflow execution—it does not modify existing ones. If two nodes declare a variable with the same name, both coexist and are each referenced by their node name. Variables accumulate in the workflow context as execution progresses.
+A *Set local variable* node creates one or more [local variables](about-flow.md#variables) during workflow execution. It doesn't modify existing ones. If two nodes declare a variable with the same name, both coexist and are each referenced by their node name. Variables accumulate in the workflow context as execution progresses.
 
 To update a value, add a new *Set local variable* node downstream with the desired variable name, and reference the earlier value.
 
@@ -47,7 +47,7 @@ To update a value, add a new *Set local variable* node downstream with the desir
 
     * Static values
     * References to other variables, using the **$var** button
-    * [jq expressions](https://jqlang.org/manual/){target=_blank}
+    * [jq expressions](jq-functions.md#write-a-jq-expression), using the functions listed in [Jq Functions](jq-functions.md)
 
     {% include-markdown "includes/variables-mustache-syntax-flow.md" %}
 
@@ -58,9 +58,15 @@ To update a value, add a new *Set local variable* node downstream with the desir
 
     !!! example "Examples"
     
-        * `"Case $caseNumber – severity $caseSeverity"`
-        * `if $caseSeverity >= 3 then "High" else "Low" end`
-        * `{number: $caseNumber, assignee: $caseAssignee, title: $caseTitle}`
+        * `"Case $caseNumber – severity $caseSeverity"`: Builds a text from two variables.
+        * `if $caseSeverity >= 3 then "High" else "Low" end`: Maps a numeric severity to a label.
+        * `{number: $caseNumber, assignee: $caseAssignee, title: $caseTitle}`: Builds a JSON object from several variables.
+        * `$caseTitle | ascii_downcase | gsub("[^a-z0-9]+"; "-")`: Turns a title into a lowercase identifier such as `suspicious-login-from-new-country`, for a ticket or file name.
+        * `$caseObservables | map(select(.dataType == "domain") | .data) | unique | join(", ")`: Lists the distinct domain observables as a comma-separated text.
+        * `$caseTags | map(select(startswith("mitre:")) | ltrimstr("mitre:"))`: Extracts the MITRE ATT&CK technique identifiers from tags such as `mitre:T1566`.
+        * `$caseCreatedAt / 1000 | strftime("%Y-%m-%d %H:%M")`: Formats a TheHive date, a Unix timestamp in milliseconds, as a readable date.
+        * `$httpResponse.body | fromjson | .results[0].score // 0`: Parses a JSON text returned by an API and reads a score, defaulting to `0` when missing.
+        * `{id: $caseNumber, iocs: ($caseObservables | map(.data)), created: ($caseCreatedAt / 1000 | todate)}`: Builds the payload of an outgoing webhook from several variables.
 
     You can select :fontawesome-solid-plus: to add multiple variables in the same node.
 
@@ -81,14 +87,12 @@ To update a value, add a new *Set local variable* node downstream with the desir
     When executed, the node returns the value assigned to the variable as the output.
 
     To access the output, select your *Set local variable* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over the output name to view its details.
-
-    ![Outputs of the Set local variable node](../images/outputs-set-local-variable-node.png)
     
-    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by typing `$` and selecting the variable from the suggestions. The inserted reference is displayed as `$<node_name>.<field_name>`.
+    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by entering `$` and selecting the variable from the suggestions. The inserted reference is displayed as `$<node_name>.<field_name>`.
 
 ## Configure a *Python code* node
 
-A *Python code* node executes custom Python scripts within a workflow. Use it for advanced data transformations, integration with external tools, or any logic that can't be handled by standard nodes.
+A *Python code* node executes custom Python scripts within a workflow. Use it for advanced data transformations, integration with external tools, or any logic that standard nodes can't handle.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -116,20 +120,24 @@ A *Python code* node executes custom Python scripts within a workflow. Use it fo
         <var_name> = $<var>
         ```
 
+        The `$<var>` reference is stored as a `flow.get("<variable>")` call. To get a value when the variable is missing, pass it as a second argument: `flow.get("<variable>", <fallback_value>)`.
+
         Variables are scoped to the script by default. To make a value available to the workflow and reuse it as an output variable in later nodes, you must explicitly return it as a workflow output using `flow.set()`:
 
         ```python
         flow.set("<var_name>", <var_name>)
         ```
 
-        For values [stored as files](about-flow.md#files), such as large or binary content, use `flow.get_file()` and `flow.set_file()` instead: they hand you a file path to read from or write to, instead of loading the whole value into the script.
+        For values [stored as files](about-flow.md#files), such as large or binary content, use `flow.get_file_path()` and `flow.set_file_from_path()`. These functions hand you a file path to read from or write to, instead of loading the whole value into the script.
 
-        * `flow.get_file("<variable>")` returns the path of a file made available to the script for a variable holding a file reference. Read it with normal file operations.
-        * `flow.set_file("<name>", "<path>")` registers a file written by the script as an output variable. The file is stored after the run, and the output carries its file reference.
+        * `flow.get_file_path("<variable>")` returns the path of a file made available to the script for a variable holding a file reference. Read it with normal file operations.
+        * `flow.set_file_from_path("<name>", "<path>")` registers a file written by the script as an output variable. The file is stored after the run, and the output carries its file reference.
 
         See [Examples](#examples) for real-world use cases.
 
     {% include-markdown "includes/variable-access-direct-flow.md" %}
+
+    {% include-markdown "includes/code-node-security-flow.md" %}
 
 7. Optional: Select **Add options** to configure the following settings.
 
@@ -155,10 +163,8 @@ A *Python code* node executes custom Python scripts within a workflow. Use it fo
     | custom output    | any | Any additional outputs defined using `flow.set()`.   |
 
     To access outputs, select your *Python code* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over each output name to view its details.
-
-    ![Outputs of the Python code node](../images/outputs-python-code-node.png)
     
-    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
+    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
     
     * `$<node_name>.script_out`: to get the raw script output
     * `$<node_name>.script_code`: to get the exit code
@@ -167,7 +173,7 @@ A *Python code* node executes custom Python scripts within a workflow. Use it fo
 
 ## Configure a *JavaScript code* node
 
-A *JavaScript code* node executes custom JavaScript scripts within a workflow. Use it for advanced data transformations, integration with external tools, or any logic that can't be handled by standard nodes.
+A *JavaScript code* node executes custom JavaScript scripts within a workflow. Use it for advanced data transformations, integration with external tools, or any logic that standard nodes can't handle.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -195,20 +201,24 @@ A *JavaScript code* node executes custom JavaScript scripts within a workflow. U
         let <var_name> = $<var>;
         ```
 
+        The `$<var>` reference is stored as a `flow.get("<variable>")` call. To get a value when the variable is missing, pass it as a second argument: `flow.get("<variable>", <fallback_value>)`.
+
         Variables are scoped to the script by default. To make a value available to the workflow and reuse it as an output variable in later nodes, you must explicitly return it as a workflow output using `flow.set()`:
 
         ```javascript
         flow.set("<var_name>", <var_name>);
         ```
 
-        For values [stored as files](about-flow.md#files), such as large or binary content, use `flow.get_file()` and `flow.set_file()` instead: they hand you a file path to read from or write to, instead of loading the whole value into the script.
+        For values [stored as files](about-flow.md#files), such as large or binary content, use `flow.get_file_path()` and `flow.set_file_from_path()`. These functions hand you a file path to read from or write to, instead of loading the whole value into the script.
 
-        * `flow.get_file("<variable>")` returns the path of a file made available to the script for a variable holding a file reference. Read it with normal file operations.
-        * `flow.set_file("<name>", "<path>")` registers a file written by the script as an output variable. The file is stored after the run, and the output carries its file reference.
+        * `flow.get_file_path("<variable>")` returns the path of a file made available to the script for a variable holding a file reference. Read it with normal file operations.
+        * `flow.set_file_from_path("<name>", "<path>")` registers a file written by the script as an output variable. The file is stored after the run, and the output carries its file reference.
 
         See [Examples](#examples) for real-world use cases.
 
     {% include-markdown "includes/variable-access-direct-flow.md" %}
+
+    {% include-markdown "includes/code-node-security-flow.md" %}
 
 7. Optional: Select **Add options** to configure the following settings.
 
@@ -234,10 +244,8 @@ A *JavaScript code* node executes custom JavaScript scripts within a workflow. U
     | custom output    | any | Any additional outputs defined using `flow.set()`.   |
 
     To access outputs, select your *JavaScript code* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over each output name to view its details.
-
-    ![Outputs of the JavaScript code node](../images/outputs-javascript-code-node.png)
     
-    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
+    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
     
     * `$<node_name>.script_out`: to get the raw script output
     * `$<node_name>.script_code`: to get the exit code
@@ -246,11 +254,11 @@ A *JavaScript code* node executes custom JavaScript scripts within a workflow. U
 
 ## Examples
 
-The following examples demonstrate common use cases for the *Python code* node.
+The following examples show common use cases for the *Python code* node.
 
 ### Multi-criteria alert scoring
 
-Calculates a priority score (0–100) and a priority level (P1–P4) based on severity, asset criticality, and enrichment results.
+Calculates a priority score from 0 to 100 and a priority level from P1 to P4, based on severity, asset criticality, and enrichment results.
 
 ```python
 severity = $severity

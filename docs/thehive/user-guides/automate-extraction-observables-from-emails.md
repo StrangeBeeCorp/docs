@@ -1,6 +1,6 @@
 # Tutorial: Automate Extraction of Observables from Emails
 
-<!-- md:permission `manageConfig` --> <!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 When an [email intake connector](../administration/email-intake-connector/about-email-intake-connectors.md) processes an incoming email, it creates an alert in TheHive with several observables, including the email file itself. However, the email body isn't parsed for observables by default—you need to run the *EmlParser* analyzer to extract them.
 

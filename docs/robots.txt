@@ -31,11 +31,7 @@ User-agent: omgili
 User-agent: omgilibot
 User-agent: Timpibot
 User-agent: YouBot
-Disallow: /flow/
-Disallow: /thehive/administration/manage-llm-providers/
-Disallow: /thehive/glossary-thehive/
 Disallow: /thehive/operations/configure-audit-logs-storage-elasticsearch/
-Disallow: /thehive/release-notes/release-notes-6.0/
 Disallow: /thehive/third-party-software-licenses/
 
 Sitemap: https://docs.strangebee.com/sitemap.xml

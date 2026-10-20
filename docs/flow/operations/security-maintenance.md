@@ -2,61 +2,63 @@
 
 <!-- md:version 6.0 --> <!-- md:license One -->
 
-Keeping a [TheHive Flow](../user-guides/about-flow.md) deployment patched relies on updating each component independently.
+Keeping a [TheHive Flow](../user-guides/about-flow.md) deployment patched relies on the image versions StrangeBee pins in `versions.env`, at the root of the [StrangeBee Docker Compose repository](https://github.com/StrangeBeeCorp/docker/tree/main){target=_blank}, and on the upgrade route of each component.
 
 {% include-markdown "includes/scope-docker-compose-flow.md" %}
 
-## Component update independence
+## Component upgrade route
 
-Each component can be updated independently, with the constraints noted below. The detailed procedures live in [Maintain TheHive Flow](maintenance.md).
+Every image of the stack is pinned by tag in `versions.env`. StrangeBee moves the pins, and the [upgrade procedure](../installation/upgrade-docker.md) applies them: `git pull`, then `bash ./scripts/init.sh` to copy the new versions into `.env`, then `docker compose up -d`. The constraints below decide what else the upgrade of a component involves.
 
-| Component | Update path | Constraint |
-| --------- | ----------- | ---------- |
-| TheHive Flow | Edit `FLOW_VERSION` in `.env`, then run [`./scripts/update.sh`](maintenance.md#update-thehive-flow) | Forward-compatible migrations are the intended contract but aren't yet enforced: verify schema compatibility before rolling back across a migration boundary |
-| Nginx | Edit the image tag in `docker-compose.yml`, then run `docker compose up -d nginx` | No schema and no state, so fully independent |
-| PostgreSQL, minor patch | Edit the image tag in `docker-compose.yml`, then run `docker compose up -d postgresql` | Data is preserved in the named volume. Minor patches are safe |
-| PostgreSQL, major version | `pg_upgrade` or a dump and restore procedure | Breaking change requiring a coordinated procedure outside the stack |
-| Temporal, minor patch | Edit the `temporalio/server` and `temporalio/admin-tools` image tags in `docker-compose.yml`, always to the same version, then run `docker compose up -d temporal` | Verify schema compatibility before upgrading. `upgrade-temporal.sh` refuses a mismatched image pair |
-| Temporal, minor version with schema change | [`./scripts/upgrade-temporal.sh`](maintenance.md#update-the-other-services), a dry run by default, with `--apply` to execute | Runs schema migrations before recreating the server, and steps automatically through every intermediate minor version recorded in the bundled version manifest |
-| SeaweedFS object storage | Edit the image tag and digest on both `s3-store` and `init-s3-store` in `docker-compose.yml`, then run `docker compose up -d init-s3-store` | Both services must be bumped together: they run the same image, and a drifted pair fails the bundle's own tests. Data is preserved in the `orchestrator-s3-data` volume. Stop the `orchestrator` service first, because recreating the store under a running instance surfaces as workflow steps failing on blob reads |
+| Component | Variable in `versions.env` | Constraint |
+| --------- | -------------------------- | ---------- |
+| TheHive Flow | `thehive_flow_image_version` | Database migrations run at startup and are forward-only. Rolling back doesn't revert the schema: undoing a schema change requires restoring the backup taken before the upgrade |
+| Nginx | `nginx_image_version` | No schema and no state, so fully independent |
+| PostgreSQL, minor or patch version | `postgresql_image_version` | Data is preserved in `./postgresql/data`. Minor and patch versions are safe |
+| PostgreSQL, major version | `postgresql_image_version` | Breaking change requiring `pg_upgrade` or a dump and restore procedure outside the stack, before the pin moves |
+| Temporal, patch version | `temporal_image_version` | The `temporalio/server` and `temporalio/admin-tools` images share the pin and always move together |
+| Temporal, minor version | `temporal_image_version` | Requires the [Temporal schema upgrade](../installation/upgrade-docker.md#optional-step-4-upgrade-the-temporal-schema) before the new server starts, one minor version at a time |
+| SeaweedFS object storage | `seaweedfs_image_version` | The `s3-store` and `init-s3-store` services share the pin. Data is preserved in `./s3-store/data`. Stop the `thehive-flow` service before recreating the store, because recreating it under a running instance makes workflow steps fail on blob reads |
 
 ### Version coupling between Temporal and TheHive Flow
 
-The Temporal Server version must be compatible with the Temporal SDK version embedded in TheHive Flow binary. Check TheHive Flow release notes before bumping Temporal Server. Upgrading Temporal independently is safe as long as the server stays within the SDK supported range, typically within two minor versions.
+The Temporal Server version must be compatible with the Temporal SDK version embedded in TheHive Flow binary. Check TheHive Flow release notes before moving the Temporal pin yourself. Upgrading Temporal independently is safe as long as the server stays within the SDK supported range, typically within two minor versions.
 
 ## Respond to a CVE
 
+The patched version of an image usually reaches `versions.env` with the next release: run the [upgrade procedure](../installation/upgrade-docker.md) to apply it. To apply a patch before StrangeBee publishes the pin, move the pin yourself in `versions.env`, run `bash ./scripts/init.sh` to copy it into `.env`, then recreate the affected service as described below. Without a custom certificate, each run of `init.sh` also generates a new self-signed certificate: see [TLS certificate renewal](security.md#tls-certificate-renewal). The next `git pull` then reports a conflict on `versions.env`: discard your local change with `git checkout -- ../versions.env` before pulling, since the upstream pin is at least as recent.
+
 ### CVE in TheHive Flow binary
 
-Edit `.env` and set `FLOW_VERSION` to the patched tag, then pull and redeploy:
+Move `thehive_flow_image_version`, run `init.sh`, then recreate the service:
 
 ```bash
-./scripts/update.sh
+docker compose up -d thehive-flow
 ```
 
-Downtime is under 30 seconds, with no database changes required.
+Downtime is brief. Database migrations, if the new version carries any, run at startup.
 
 ### CVE in nginx
 
-Edit `docker-compose.yml` to bump the nginx image tag and digest, then redeploy nginx only:
+Move `nginx_image_version`, run `init.sh`, then recreate nginx only:
 
 ```bash
 docker compose up -d nginx
 ```
 
-The other services see no downtime. The nginx reload is graceful: in-flight requests complete before the old worker exits.
+Docker recreates the nginx container, which is the only entry point of the stack. TheHive requests and webhook calls are refused for a few seconds, and long-running requests still in progress are cut. The other services keep running.
 
 ### CVE in the object storage
 
-Edit `docker-compose.yml` to bump the tag and digest on both `s3-store` and `init-s3-store`, keeping the two image references identical. Then stop the `orchestrator` service, recreate the store, and provision it again:
+Move `seaweedfs_image_version`, run `init.sh`, then stop the `thehive-flow` service, recreate the store, and provision it again:
 
 ```bash
-docker compose stop orchestrator
+docker compose stop thehive-flow
 docker compose up -d init-s3-store
-docker compose up -d orchestrator
+docker compose up -d thehive-flow
 ```
 
-Blobs survive: they live in the `orchestrator-s3-data` volume, not in the image. Downtime lasts as long as the store restart plus provisioning. The `init-s3-store` container asserts that the identity and the bucket exist before exiting 0, so a failed provisioning shows up as a non-zero exit rather than as an `orchestrator` service that crash-loops later:
+Blobs survive: they live in `./s3-store/data`, not in the image. Downtime lasts as long as the store restart plus provisioning. The `init-s3-store` container asserts that the identity and the bucket exist before exiting 0. A failed provisioning therefore shows up as a non-zero exit rather than as a `thehive-flow` service that crash-loops later. To check the result, read the container logs:
 
 ```bash
 docker compose logs --tail=50 init-s3-store
@@ -64,42 +66,48 @@ docker compose logs --tail=50 init-s3-store
 
 ### CVE in PostgreSQL
 
-For a minor patch, edit `docker-compose.yml` to bump the PostgreSQL image tag and digest, then restart:
+For a minor or patch version, move `postgresql_image_version`, run `init.sh`, then recreate the service:
 
 ```bash
 docker compose up -d postgresql
 ```
 
-The `orchestrator-postgres-data` volume is preserved. Expect 10 to 30 seconds of downtime while TheHive Flow and Temporal reconnect.
+The `./postgresql/data` directory is preserved. Expect a brief downtime while TheHive Flow and Temporal reconnect.
 
 ### CVE in Temporal
 
-For a minor patch without a schema change, edit `docker-compose.yml` to bump the `temporalio/server` and `temporalio/admin-tools` image tags and digests to the same version, then restart:
+For a patch version, move `temporal_image_version`, run `init.sh`, then recreate the server:
 
 ```bash
 docker compose up -d temporal
 ```
 
-In-flight workflow tasks are retried automatically after the restart.
+Temporal retries in-flight workflow tasks automatically after the restart. For a new minor version, follow the [Temporal schema upgrade](../installation/upgrade-docker.md#optional-step-4-upgrade-the-temporal-schema) first.
 
 ### CVE in a base OS image
 
-The PostgreSQL, Temporal, and nginx images are rebuilt by their maintainers with OS patches. When a new digest is published for the same tag, update `docker-compose.yml` with the new digest and redeploy the service.
+The maintainers of the PostgreSQL, Temporal, nginx, and SeaweedFS images rebuild them with OS patches under the same tag. Because the pins are tags, pulling the image again fetches the rebuilt one:
+
+```bash
+docker compose pull <service>
+docker compose up -d <service>
+```
 
 ## Version pinning policy
 
-Every image in `docker-compose.yml` is pinned by both tag and immutable digest, in the form `image: name:tag@sha256:…`, except TheHive Flow image, which `FLOW_VERSION` pins by tag only. The `latest` tag is never used.
+Every image of the stack is pinned by tag in `versions.env`, and `init.sh` copies the pins into `.env`, which `docker-compose.yml` reads. The `latest` tag is never used.
 
-* `FLOW_VERSION` in `.env` is the only operator-tunable pin. It must always be a released tag, never `latest` or a branch name.
-* The other image versions are maintained in the deployment bundle by StrangeBee. Operators update them by deploying a refreshed bundle, not by editing image references directly.
+* StrangeBee maintains the pins. Operators move them by pulling the repository, not by editing image references in `docker-compose.yml`.
+* The image of TheHive Flow follows TheHive releases: TheHive and TheHive Flow are released together and carry the same version number.
+* A pin moved by hand, as described in [Respond to a CVE](#respond-to-a-cve), is a temporary measure until the next release.
 
-Verify that no image is missing its digest:
+Check that the running stack matches the pins:
 
 ```bash
-grep 'image:' docker-compose.yml | grep -v '@sha256:'
+grep _image_version ../versions.env
+grep _image_version .env
+docker compose images
 ```
-
-The only expected output is the `orchestrator` image, which is pinned by tag through `FLOW_VERSION`.
 
 ## TLS certificate expiry
 
@@ -109,7 +117,7 @@ Self-signed certificates generated by `init.sh` are valid for 365 days. Monitor 
 openssl x509 -in ./nginx/certs/server.crt -noout -dates
 ```
 
-Renew before expiry: see [TLS certificate renewal](security.md#tls-certificate-renewal).
+Renew the certificate before it expires, as described in [TLS certificate renewal](security.md#tls-certificate-renewal).
 
 For production deployments, use certificates signed by a trusted certificate authority (CA) and integrate with your certificate lifecycle management tooling, such as certbot or Vault PKI.
 
@@ -117,15 +125,15 @@ For production deployments, use certificates signed by a trusted certificate aut
 
 Run the following checks periodically. Monthly is recommended.
 
-* All image digests in `docker-compose.yml` match the current published digests
-* `FLOW_VERSION` is set to the latest stable release
+* The pins in `.env` match the ones in `versions.env`, and the repository clone is up to date with the latest release
 * The `nginx/certs/server.crt` expiry is more than 60 days away
 * The `.env` permissions are 600: `ls -la .env`
-* The `orchestrator/secret/thehive-api-key` permissions are 644
+* The `thehive-flow/secret/thehive-api-key` and `nginx/certs/server.key` permissions are 600, and `bash ./scripts/check_permissions.sh` reports no deviation
+* [`nginx_thehive_addresses`](../configuration/environment-variables.md) in `.env` lists only the addresses TheHive currently calls from, and the `40-thehive-allow.sh` lines of `docker compose logs --no-log-prefix nginx` show what nginx allows and skips
 * No secrets appear in the `docker compose logs` output
-* The Temporal namespace retention matches [`modules.runs.retention`](maintenance.md#temporal-workflow-history-retention): `temporal operator namespace describe -n default`
-* [Docker log rotation](logging.md#configure-docker-log-rotation) is configured: `docker inspect orchestrator | jq '.[0].HostConfig.LogConfig'`
-* [Backup files](backup-restore.md) exist and are recent: `ls -lht ./backups/ | head -5`
+* The Temporal namespace retention matches [`modules.runs.retention`](maintenance.md#temporal-workflow-history-retention): `docker compose --profile admin run --rm temporal-admin temporal operator namespace describe -n default --address temporal:7233`
+* [Docker log rotation](logging.md#configure-docker-log-rotation) is configured: `docker inspect thehive-flow | jq '.[0].HostConfig.LogConfig'`
+* [Backup folders](backup-restore.md) exist and are recent: `ls -lt /opt/backups/thehive-flow | head -5`
 
 <h2>Next steps</h2>
 

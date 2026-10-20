@@ -7,7 +7,7 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
 !!! tip "Can't find a case?"
 
     * Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new cases in lists.
-    * <!-- md:version 5.5 --> <!-- md:license Platinum --> [Case visibility](../about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
+    * <!-- md:version 5.5 --> <!-- md:license Platinum --> <!-- md:license One --> [Case visibility](../about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, it won't appear in the case list, search results, or dashboards.
 
 ## Method 1: Search bar
 

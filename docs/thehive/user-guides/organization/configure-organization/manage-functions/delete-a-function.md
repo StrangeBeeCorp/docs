@@ -1,6 +1,6 @@
 # Delete a Function
 
-<!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum -->
+<!-- md:version 5.1 --> <!-- md:permission `manageFunction/create` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Delete a [function](about-functions.md) in TheHive.
 

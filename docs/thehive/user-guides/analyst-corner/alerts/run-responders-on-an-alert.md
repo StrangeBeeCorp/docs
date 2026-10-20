@@ -20,6 +20,8 @@ Only responders authorized for alerts and matching their TLP (traffic light prot
 
     ![Responders button](../../../images/user-guides/analyst-corner/alerts/responders-button-alert.png)
 
+    <!-- md:version 6.0 --> You can also go to the **Automations** tab, select the **Responders** tab, then select **Run Responders**.
+
 3. In the **Run actions on current alert** drawer, select the responders you want to run.
 
 4. Select **Launch actions**.
@@ -33,6 +35,15 @@ Only responders authorized for alerts and matching their TLP (traffic light prot
 2. In the alert, select the **Responders** tab to check the status of the executed responders.
 
     ![Responders tab](../../../images/user-guides/analyst-corner/alerts/responders-tab-alert.png)
+
+    <!-- md:version 6.0 --> You can also go to the **Automations** tab and select the **Responders** tab. This list also includes the responders run on the observables of the alert, with the following columns:
+
+    * Status: Whether the responder is waiting, in progress, succeeded, failed, or was deleted from Cortex
+    * Name: The responder that ran. The name is blank while the responder is waiting.
+    * Title: The observable the responder ran on. Select it to open the observable. A dash means the responder ran on the alert itself.
+    * Entity: The type of object the responder ran on
+    * Triggered by: Who ran the responder
+    * Start date: When the responder started
 
 <h2>Next steps</h2>
 

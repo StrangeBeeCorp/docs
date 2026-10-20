@@ -1,6 +1,6 @@
 # Delete a Status
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Delete a [status](about-statuses.md) for cases and alerts in TheHive when it's no longer needed.
 

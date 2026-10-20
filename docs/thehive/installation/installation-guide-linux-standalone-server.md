@@ -51,12 +51,16 @@ Start by installing the necessary dependencies for TheHive.
 
 ## Step 2: Set up the Java virtual machine (JVM)
 
-TheHive requires Java to run its application server and to manage various processes.
+TheHive requires Java to run its application server and to manage various processes. TheHive 6.x runs on Java 17, while Apache Cassandra 4.0.x to 4.1.x requires Java 11 and doesn't support Java 17. On this standalone server, where both share the host, the two versions are installed side by side:
+
+* Java 11 stays the system default, used by Cassandra.
+* TheHive is pinned to Java 17 in its service file at [Step 5.2](#configure-jvm-options-for-thehive).
 
 !!! note "Java support"
 
     * For security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
-    * Only Java 11 is supported. Java 8 is no longer supported.
+    * TheHive 6.x requires Java 17. Earlier Java versions are no longer supported for TheHive itself, but Java 11 remains required on the host for Cassandra 4.0.x to 4.1.x.
+    * This dual-version setup applies to TheHive 6.x only: to install TheHive 5.x, Java 11 alone is required. Skip the Java 17 package here and the pin at [Step 5.2](#configure-jvm-options-for-thehive).
 
 === "DEB"
 
@@ -66,7 +70,7 @@ TheHive requires Java to run its application server and to manage various proces
         wget -qO- https://apt.corretto.aws/corretto.key | sudo gpg --dearmor -o /usr/share/keyrings/corretto.gpg
         echo "deb [signed-by=/usr/share/keyrings/corretto.gpg] https://apt.corretto.aws stable main" | sudo tee -a /etc/apt/sources.list.d/corretto.sources.list
         sudo apt update
-        sudo apt install java-common java-11-amazon-corretto-jdk
+        sudo apt install java-common java-11-amazon-corretto-jdk java-17-amazon-corretto-jdk
         echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
         export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
         ```
@@ -77,7 +81,7 @@ TheHive requires Java to run its application server and to manage various proces
         java -version
         ```
         
-        You should see output similar to the following:
+        The system default must report version 11, the version Cassandra uses:
 
         ```bash
         openjdk version "11.0.28" 2025-07-15
@@ -85,7 +89,13 @@ TheHive requires Java to run its application server and to manage various proces
         OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
         ```
         
-        If a different Java version appears, set Java 11 as the default using [`sudo update-alternatives --config java`](https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS){target=_blank}.
+        If a different Java version appears, set Java 11 as the default using [`sudo update-alternatives --config java`](https://www.man7.org/linux/man-pages/man1/update-alternatives.1.html#COMMANDS){target=_blank}. Never set the system default to Java 17 on a host running Cassandra.
+
+    3. Verify that Java 17 is installed as well, at the path used to pin TheHive at [Step 5.2](#configure-jvm-options-for-thehive):
+
+        ```bash
+        /usr/lib/jvm/java-17-amazon-corretto/bin/java -version
+        ```
 
 === "RPM"
 
@@ -94,7 +104,7 @@ TheHive requires Java to run its application server and to manage various proces
         ```bash
         sudo rpm --import https://yum.corretto.aws/corretto.key &> /dev/null
         wget -qO- https://yum.corretto.aws/corretto.repo | sudo tee -a /etc/yum.repos.d/corretto.repo
-        sudo yum install -y java-11-amazon-corretto-devel > /dev/null
+        sudo yum install -y java-11-amazon-corretto-devel java-17-amazon-corretto-devel > /dev/null
         echo JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto" | sudo tee -a /etc/environment
         export JAVA_HOME="/usr/lib/jvm/java-11-amazon-corretto"
         ```
@@ -108,7 +118,7 @@ TheHive requires Java to run its application server and to manage various proces
         java -version
         ```
 
-        You should see output similar to the following:
+        The system default must report version 11, the version Cassandra uses:
 
         ```bash
         openjdk version "11.0.28" 2025-07-15
@@ -116,10 +126,16 @@ TheHive requires Java to run its application server and to manage various proces
         OpenJDK 64-Bit Server VM Corretto-11.0.28.6.1 (build 11.0.28+6-LTS, mixed mode)
         ```
 
-        If a different Java version appears, set Java 11 as the default using [`sudo alternatives --config java`](https://linux.die.net/man/8/alternatives){target=_blank}.
+        If a different Java version appears, set Java 11 as the default using [`sudo alternatives --config java`](https://linux.die.net/man/8/alternatives){target=_blank}. Never set the system default to Java 17 on a host running Cassandra.
+
+    3. Verify that Java 17 is installed as well, at the path used to pin TheHive at [Step 5.2](#configure-jvm-options-for-thehive):
+
+        ```bash
+        /usr/lib/jvm/java-17-amazon-corretto/bin/java -version
+        ```
 
 === "Other installation methods"
-    If you're using a system other than DEB or RPM, refer to your system documentation for instructions on installing Java 11.
+    If you're using a system other than DEB or RPM, refer to your system documentation for instructions on installing Java 11 and Java 17 side by side. Cassandra must run on Java 11 and TheHive on Java 17.
 
 ---
 
@@ -128,7 +144,7 @@ TheHive requires Java to run its application server and to manage various proces
 [Apache Cassandra](https://cassandra.apache.org){target=_blank} is a database system that's used in TheHive as the back-end database for storing and managing incident response data.
 
 !!! info "Single node configuration"
-    In this guide, you will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-1-install-and-configure-apache-cassandra) for detailed instructions.
+    In this guide, you will configure Cassandra as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-2-install-and-configure-apache-cassandra) for detailed instructions.
 
 !!! note "Cassandra supported versions"
     TheHive is fully compatible with Cassandra version 4.1.x.
@@ -494,7 +510,6 @@ If you are installing a standalone server, tombstones can be disabled.
                         txlog    |           0
     ```
 
-
 For additional configuration options, refer to:
 
 - Cassandra documentation page
@@ -507,7 +522,7 @@ For additional configuration options, refer to:
 [Elasticsearch](https://www.elastic.co/elasticsearch){target=_blank} is a data indexing and search engine that's used in TheHive to manage data indices. Starting with version 5.5, it can also replace Apache Cassandra (JanusGraph) for storing [audit logs](../user-guides/organization/about-audit-logs.md).
 
 !!! info "Single node configuration"
-    In this guide, you will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-2-install-and-configure-elasticsearch) for detailed instructions.
+    In this guide, you will configure Elasticsearch as a single node on your server, which is fine for running TheHive. If you ever need multiple nodes later for higher performance, redundancy, or failover, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-3-install-and-configure-elasticsearch) for detailed instructions.
 
 !!! note "Elasticsearch supported versions"
 
@@ -898,7 +913,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 ### Step 5.2: Configure TheHive
 
 !!! info "Standalone server configuration"
-    In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-4-install-and-configure-thehive).
+    In this guide, you will configure TheHive for a standalone server, with all components hosted on a single server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-5-install-and-configure-thehive).
 
 #### Configure service
 
@@ -1028,13 +1043,19 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
 #### Configure JVM options for TheHive
 
-The Java virtual machine (JVM) is what runs TheHive. The JVM options control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
+The Java virtual machine (JVM) is what runs TheHive. TheHive 6.x requires Java 17, so the service file first pins TheHive to the Java 17 runtime installed at [Step 2](#step-2-set-up-the-java-virtual-machine-jvm). The JVM options then control how much memory TheHive can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
 
 1. Open the `/etc/default/thehive` file using a text editor.
 
-2. Uncomment the `JAVA_OPTS` variable.
+2. Pin TheHive to Java 17 by adding the following line. This setting applies to TheHive service only: Cassandra keeps using the system default Java 11. Skip this line when installing TheHive 5.x, which runs on the system default Java 11.
 
-3. In the `thehive` file, set the JVM options.
+    ```yaml
+    JAVA_HOME="/usr/lib/jvm/java-17-amazon-corretto"
+    ```
+
+3. Uncomment the `JAVA_OPTS` variable.
+
+4. In the `thehive` file, set the JVM options.
 
     !!! tip "Heap size guidelines for TheHive"
         Heap allocation must not exceed 60% of the available RAM. Available RAM refers to the memory remaining after accounting for the operating system and other services running on the same host.
@@ -1056,7 +1077,7 @@ The Java virtual machine (JVM) is what runs TheHive. The JVM options control how
 
     {% include-markdown "includes/recommended-jvm-values-same-host-thehive.md" %}
 
-4. Save your modifications in the `thehive` file.
+5. Save your modifications in the `thehive` file.
 
 ### (Optional) Step 5.3: <!-- md:version 5.5 --> Configure audit log storage {#step-53-audit-log-storage}
 
@@ -1083,7 +1104,7 @@ Elasticsearch offers better performance, reduced latency, and advanced search ca
 ### Step 5.4: Create the file storage directory
 
 !!! info "Standalone server configuration"
-    In this guide, you will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-3-set-up-a-shared-file-storage).
+    In this guide, you will configure local file storage for TheHive running on a standalone server, with all components hosted on the same server. This setup is suitable for testing and production environments. For cluster deployments, refer to [Set Up a Cluster with Packages](deploying-a-cluster.md#step-4-set-up-a-shared-file-storage).
 
 File storage contains [attachments](../user-guides/analyst-corner/cases/attachments/about-attachments.md) from cases, alerts, and organizations, as well as [observables](../user-guides/analyst-corner/cases/observables/about-observables.md) of type *file*. [All files are stored in their original form as plaintext](../../resources/security.md#database-and-storage).
 

@@ -1,6 +1,6 @@
 # Configure SLA Rules
 
-<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:permission `manageSla` -->
+<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:license One --> <!-- md:permission `manageSla` -->
 
 Configure [service level agreement (SLA) rules](../../../sla-management/about-sla-management.md) to define response-time objectives for alerts, cases, and tasks, and turn on SLA management for the organization.
 

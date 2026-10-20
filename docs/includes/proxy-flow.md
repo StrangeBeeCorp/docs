@@ -2,11 +2,11 @@ Configure how the node connects to external services when a proxy is required.
 
 Nodes support three modes:
 
-* Disabled: No proxy is applied. All requests are sent directly.
+* *Disabled*: No proxy is applied. All requests are sent directly.
 
-* Default: Uses the global proxy settings defined in TheHive `application.conf`. See [proxy configuration in TheHive](/thehive/configuration/proxy-settings/).
+* *Default*: Uses the global proxy settings defined in TheHive `application.conf`. See [proxy configuration in TheHive](/thehive/configuration/proxy-settings/).
 
-* Enabled: Defines a custom proxy for this node, overriding the global configuration.
+* *Enabled*: Defines a custom proxy for this node, overriding the global configuration.
 
 | Field    | Example |
 | -------- | ------- |

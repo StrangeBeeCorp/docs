@@ -1,6 +1,6 @@
 # Configure the HttpRequest Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure the *HttpRequest* [notifier](../about-notifications.md#notifiers) in TheHive.
 

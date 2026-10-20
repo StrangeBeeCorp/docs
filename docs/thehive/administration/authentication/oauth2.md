@@ -1,6 +1,6 @@
 # Configure an OAuth 2.0 Authentication Provider
 
-<!-- md:permission `managePlatform` --> <!-- md:license Platinum -->
+<!-- md:permission `managePlatform` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub, Microsoft 365, and Google—in TheHive.
 

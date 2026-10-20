@@ -20,7 +20,7 @@
 - Fix style for custom field input
 - Typo fixes
 
-**Backend:**
+**Back end:**
 
 - Fix v1 api for page which used the former v0 style: new fields were added and some fields are now marked as deprecated and will be removed in the future
 - Add caseId in analyer input: field `message` should now contain the observable's parent id (alert or case)
@@ -30,7 +30,7 @@
 
 ### Fixes
 
-**Backend:**
+**Back end:**
 
  - Fix TLP and PAP of MISP events
  - Fix download of attachment when content type is malformed
@@ -55,7 +55,7 @@
 - Fix issue in slack notifier form
 - Fix colored tags in several parts of the UI: tags should now be more colorful
 
-**Backend:**
+**Back end:**
 
 - When changing a tag name, the name is also changed in the cases and alerts
 - When an alert or case changes of stage, the stage is added to the audit details
@@ -86,7 +86,7 @@
 - Bad cache when listing similar alerts
 - Wrong drawer title when editing a case template
 
-**Backend:**
+**Back end:**
 
 - Update dependencies
 - API Query filter _startsWith don't work on customFields
@@ -133,7 +133,7 @@
 - Fix duplicated refetch when updating an entity
 - Fix live feed when updating a case
 
-**Backend:**
+**Back end:**
 
 - Oauth2 connector will read the value for its proxy from `application.conf` > `wsConfig.proxy`
 - Create audit logs when tasks are cancelled when closing a case
@@ -157,7 +157,7 @@
     - Improve conversion of TheHive 4 dashboards
 - Display sightedAt date when an observable is set as sighted
 
-**Backend:**
+**Back end:**
 
 - Fix permission issue for user edition
 - Fix issue when trying to repair the index with a vertex containing non indexed fields
@@ -205,7 +205,7 @@
 - Dashboard:
     - color can now be customized for the field status
 
-**Backend:**
+**Back end:**
 
 - Make alert merging faster
 - Fix chart time interval when empty series
@@ -227,7 +227,7 @@
 
 ### Improvements
 
-**Backend:**
+**Back end:**
 
 - Use index to count the number of waiting tasks
 
@@ -709,7 +709,7 @@ We recommend all 5.0.0 users to update to this version.
 - rename field user to assignee in case creation
 - rename field customFieldValues to customFields in alert creation
 
-**Backend:**
+**Back end:**
 
 - fix tag edition
 - fix permissions check for observables in case of sharing

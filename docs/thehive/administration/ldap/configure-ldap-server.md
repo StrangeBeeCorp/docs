@@ -1,6 +1,6 @@
 # Configure an LDAP Server
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure an [LDAP server](about-ldap.md) in TheHive, including Microsoft Active Directory (AD), to periodically synchronize your local TheHive database with LDAP. This enables automatic user account creation, updates, deletion, and assignment to [organizations](../organizations/about-organizations.md) and [permission profiles](../profiles/about-profiles.md) within TheHive.
 

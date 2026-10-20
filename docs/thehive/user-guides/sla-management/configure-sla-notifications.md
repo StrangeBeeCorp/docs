@@ -1,6 +1,6 @@
 # Configure SLA Notifications
 
-<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:permission `manageConfig` -->
+<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:license One --> <!-- md:permission `manageConfig` -->
 
 Notify users when a [service level agreement (SLA) rule's](about-sla-management.md) warning threshold is reached or its deadline is exceeded. SLA notifications use TheHive standard [notification system](../organization/configure-organization/manage-notifications/about-notifications.md).
 

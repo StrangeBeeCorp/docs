@@ -16,7 +16,7 @@ Add an [attachment](../../../analyst-corner/cases/attachments/about-attachments.
 
 5. Select **Confirm**.
 
-6. <!-- md:version 5.6 --> <!-- md:license Platinum --> Optional: To share this attachment with external users who have access to the case through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md):
+6. <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> Optional: To share this attachment with external users who have access to the case through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md):
     
     a. Select :fontawesome-solid-ellipsis: next to the attachment.
 

@@ -60,7 +60,7 @@ Configure an [SMTP server](about-smtp.md) to enable email notifications to [spec
 
     **- Invitation expiration**
 
-    <!-- md:version 5.6 --> <!-- md:license Platinum -->
+    <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One -->
 
     Set the validity period for [TheHive Portal](../thehive-portal/about-thehive-portal.md) invitation links.
 

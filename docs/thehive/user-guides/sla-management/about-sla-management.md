@@ -1,6 +1,6 @@
 # About SLA Management
 
-<!-- md:version 5.8 --> <!-- md:license Platinum -->
+<!-- md:version 5.8 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Security operations center (SOC) teams and managed security service providers (MSSPs) often operate under contractual response-time commitments. Service level agreement (SLA) management lets organization administrators define time-based response objectives for [alerts](../analyst-corner/alerts/about-alerts.md), [cases](../analyst-corner/cases/about-cases.md), and [tasks](../analyst-corner/tasks/about-tasks.md), then track and prove compliance against those objectives natively in TheHive.
 

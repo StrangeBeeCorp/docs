@@ -1,6 +1,6 @@
 # Configure the Microsoft Teams Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Configure the *Microsoft Teams* [notifier](../about-notifications.md#notifiers) in TheHive to send automated notifications to Microsoft Teams channels based on specific triggers.
 

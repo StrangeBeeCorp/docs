@@ -2,7 +2,7 @@
 
 <!-- md:version 6.0 --> <!-- md:license One -->
 
-Global variables allow you to share fixed values across all workflows within an organization in [TheHive Flow](about-flow.md). These values are centrally managed and can't be modified within workflows.
+Use global variables to share fixed values across all workflows within an organization in [TheHive Flow](about-flow.md). These values are centrally managed and can't be modified within workflows.
 
 {% include-markdown "includes/local-variables-flow.md" %}
 
@@ -28,7 +28,7 @@ Global variables allow you to share fixed values across all workflows within an 
 
     **- Secret**
 
-    Turn this on to hide confidential information like API keys, passwords, or SSL/TLS certificate files. The value of a secret variable is never displayed in the interface and never appears in execution logs or API responses. Leave it off for visible values such as API URLs or team identifiers.
+    Turn on this toggle to hide confidential information such as API keys, passwords, or SSL/TLS certificate files. The value of a secret variable is never displayed in the interface and never appears in execution logs or API responses. Leave it off for visible values such as API URLs or team identifiers.
 
     **- Value \***
 
@@ -40,10 +40,10 @@ Global variables allow you to share fixed values across all workflows within an 
 
 5. Select **Save**.
 
-Once created, a global variable can be referenced in any node field that supports variables. Insert the reference with the **$var** button, or type `$` in the field and start typing the variable name to filter the suggestions. In both cases, select one of the suggestions to insert the reference: it can't be typed in full manually. Inserted references are displayed in the following form:
+Once created, a global variable can be referenced in any node field that supports variables. Insert the reference with the **$var** button, or enter `$` in the field and start entering the variable name to filter the suggestions. In both cases, select one of the suggestions to insert the reference. You can't enter it in full manually. Inserted references are displayed in the following form:
 
-* `$global.<variable_name>`: for a visible variable
-* `$secret.<variable_name>`: for a secret variable
+* `$global.<variable_name>`: For a visible variable
+* `$secret.<variable_name>`: For a secret variable
 
 ## Modify a global variable
 
@@ -76,3 +76,4 @@ Once created, a global variable can be referenced in any node field that support
 <h2>Next steps</h2>
 
 * [Manage Workflows](manage-workflows.md)
+* [Manage Input and Exit Variables](manage-input-exit-variables.md)

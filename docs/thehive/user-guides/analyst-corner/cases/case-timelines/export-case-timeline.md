@@ -1,6 +1,6 @@
 # Export a Case Timeline
 
-<!-- md:license Gold --> <!-- md:license Platinum -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Export a [case timeline](about-case-timelines.md) in TheHive to save a record of case events or share timeline data outside the platform.
 

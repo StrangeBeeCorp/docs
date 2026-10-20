@@ -2,12 +2,12 @@
 
 <!-- md:version 6.0 --> <!-- md:permission `[admin] manageProfile` --> <!-- md:license One -->
 
-After [deploying TheHive Flow](docker.md), complete the setup in TheHive as an administrator by granting users access to the **Flow** view. Users with the predefined Org-Admin or Analyst profile have access automatically: for all other users, grant the permissions through a custom profile.
+After [deploying TheHive Flow](docker.md), complete the setup in TheHive as an administrator by granting users access to the **Flow** view. Users with the predefined Org-Admin or Analyst profile have access automatically. For all other users, grant the permissions through a custom profile.
 
 !!! warning "Requirement"
-    This procedure assumes that TheHive Flow is [deployed](docker.md) and running.
+    This procedure assumes that TheHive Flow is deployed and running.
 
-Access to TheHive Flow is controlled by six permissions, grouped under **Manage Flow** in the [profile](../../thehive/administration/profiles/about-profiles.md) editor.
+Six permissions, grouped under **Manage Flow** in the [profile](../../thehive/administration/profiles/about-profiles.md) editor, control access to TheHive Flow.
 
 | Permission | Grants |
 | ---------- | ------ |
@@ -41,3 +41,4 @@ The permissions are independent: a write or delete permission doesn't include th
 * [Manage Workflows](../user-guides/manage-workflows.md)
 * [Manage LLM Providers](../../thehive/administration/manage-llm-providers.md)
 * [Deploy TheHive Flow with Docker Compose](docker.md)
+* [Deploy TheHive Flow on Kubernetes](kubernetes.md)

@@ -14,7 +14,7 @@ TheHive supports three types of user accounts:
 
 * Service accounts: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
 
-* <!-- md:version 5.6 --> <!-- md:license Platinum --> External accounts: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> External accounts: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
 ## Organizations
 

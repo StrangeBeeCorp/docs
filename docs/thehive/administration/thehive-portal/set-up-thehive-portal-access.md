@@ -1,6 +1,6 @@
 # Tutorial: Set Up TheHive Portal Access
 
-<!-- md:version 5.6 --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 You'll set up access to [TheHive Portal](about-thehive-portal.md) in TheHive, enabling controlled collaboration with stakeholders outside your Security Operations Center (SOC) team. By the end, you'll have configured the necessary permissions and created external user accounts.
 

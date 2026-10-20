@@ -1,7 +1,7 @@
-If no timeout is configured, the node runs until it completes or the workflow-level timeout is reached. If the timeout is reached, the node fails.
+If the timeout is reached, the node fails.
 
 !!! tip "Global timeout vs. local timeout"
-    A timeout for the entire workflow is defined when [creating the workflow](/flow/user-guides/manage-workflows/). When both a node timeout and a workflow-level timeout are defined, the shortest timeout value is applied.
+    A timeout for the entire workflow is defined when [creating the workflow](/flow/user-guides/manage-workflows/). When both a node timeout and a workflow-level timeout are defined, the shortest timeout value applies.
 
 | Field      | Description |
 |------------|-------------|

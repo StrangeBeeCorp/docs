@@ -2,13 +2,13 @@ Configure how the node connects to the external service when a proxy is required
 
 Select a **Proxy mode**:
 
-* *disabled*: No proxy is applied. All requests are sent directly. This is the default.
+* *Do not use a proxy*: No proxy is applied. All requests are sent directly. This is the default.
 
-* *default*: Uses the global proxy settings defined in TheHive `application.conf`. See [proxy configuration in TheHive](/thehive/configuration/proxy-settings/).
+* *Use the platform default proxy configuration*: Uses the global proxy settings defined in TheHive `application.conf`. See [proxy configuration in TheHive](/thehive/configuration/proxy-settings/).
 
-* *enabled*: Defines a custom proxy for this node, overriding the global configuration.
+* *Configure a custom proxy*: Defines a custom proxy for this node, overriding the global configuration.
 
-When **Proxy mode** is *enabled*, provide the following information:
+When **Proxy mode** is *Configure a custom proxy*, provide the following information:
 
 | Field | Example |
 | -------- | ------- |

@@ -1,6 +1,6 @@
 # Share a Case with External Users
 
-<!-- md:version 5.6 --> <!-- md:permission `manageCaseAccess/external` --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:permission `manageCaseAccess/external` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Share cases with external users to enable controlled collaboration with stakeholders outside the Security Operations Center (SOC) team. Through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md), external users can view case information and contribute based on their profile permissions—creating cases, adding comments, uploading attachments, and submitting observables.
 

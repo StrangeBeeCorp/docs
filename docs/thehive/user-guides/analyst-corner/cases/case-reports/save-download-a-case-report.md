@@ -1,6 +1,6 @@
 # Save and Download a Case Report
 
-<!-- md:version 5.4 --> <!-- md:permission `manageCaseReport` --> <!-- md:license Platinum -->
+<!-- md:version 5.4 --> <!-- md:permission `manageCaseReport` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Save and download a [case report](about-case-reports.md) in TheHive to provide follow-up documentation and report to your management on case investigations.
 

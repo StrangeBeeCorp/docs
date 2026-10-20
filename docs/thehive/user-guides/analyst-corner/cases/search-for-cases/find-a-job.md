@@ -3,7 +3,7 @@
 Search for a job in TheHive to locate tasks initiated by Cortex to run [analyzers](../../../../../cortex/installation-and-configuration/analyzers-responders.md) on observables.
 
 !!! tip "Can't find a job?"
-    <!-- md:version 5.5 --> <!-- md:license Platinum --> [Case visibility](../about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables and any jobs launched on those observables won't appear in the list, search results, or dashboards.
+    <!-- md:version 5.5 --> <!-- md:license Platinum --> <!-- md:license One --> [Case visibility](../about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, its linked observables and any jobs launched on those observables won't appear in the list, search results, or dashboards.
 
 ## Method 1: Search bar
 

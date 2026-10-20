@@ -34,7 +34,7 @@ The reference architecture vnet consists of the following resources
 The vnet will include:
 
 - Two **public subnets** (one for the Application Gateway, the other for the bastion and network virtual appliance hosts)
-- One backend **private subnet** to host our TheHive and Cortex instances
+- One back-end **private subnet** to host our TheHive and Cortex instances
 - An **Application Gateway** to securely handle the public-facing traffic to our TheHive and Cortex instances
 - All required **Network Security Groups**
 - **Public DNS records** for TheHive and Cortex to point to the Application Gateway 

@@ -178,8 +178,8 @@ Primary operations are the first step in a query pipeline. Two types are availab
 | Cortex analyzer template | `getReportTemplate` | Gets a single analyzer report template by ID |
 | Cortex job | `listJob` | Lists all Cortex analysis jobs accessible to the current user |
 | Cortex job | `getJob` | Gets a single Cortex analysis job by ID |
-| [Function](organization/configure-organization/manage-functions/about-functions.md) | `listFunction` | Lists all functions accessible to the current user. Requires a Platinum license |
-| Function | `getFunction` | Gets a single function by ID or name. Requires a Platinum license |
+| [Function](organization/configure-organization/manage-functions/about-functions.md) | `listFunction` | Lists all functions accessible to the current user. Requires a Platinum or One license |
+| Function | `getFunction` | Gets a single function by ID or name. Requires a Platinum or One license |
 
 ## Related object operations
 
@@ -242,7 +242,7 @@ After a primary operation, chain a related object operation to navigate to assoc
 | Case | `caseReports` | Case reports of the case |
 | Case | `timeline` | Activity timeline of the case |
 | Case | `actions` | Cortex responder executions run on the case |
-| Case | `external` | Restricts the result set to external-access cases shared through [TheHive Portal](../administration/thehive-portal/about-thehive-portal.md). Requires a Platinum license |
+| Case | `external` | Restricts the result set to external-access cases shared through [TheHive Portal](../administration/thehive-portal/about-thehive-portal.md). Requires a Platinum or One license |
 | [Alert](analyst-corner/alerts/about-alerts.md) | `case` | Case the alert was merged into |
 | Alert | `observables` | Observables of the alert |
 | Alert | `procedures` | Procedures attached to the alert |

@@ -1,6 +1,6 @@
 # Invoke a Function
 
-<!-- md:version 5.1 --> <!-- md:permission `manageFunction/invoke` --> <!-- md:license Platinum -->
+<!-- md:version 5.1 --> <!-- md:permission `manageFunction/invoke` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Invoke a [function](about-functions.md) in TheHive.
 

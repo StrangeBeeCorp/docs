@@ -70,7 +70,7 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
     !!! warning "Paid license required"
         A [paid license](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
-        A Platinum license is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
+        A Platinum or One license is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
 
     **- Local authentication**
 

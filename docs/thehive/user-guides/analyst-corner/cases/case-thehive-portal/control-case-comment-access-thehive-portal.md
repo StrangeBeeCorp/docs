@@ -1,6 +1,6 @@
 # Control Case Comment Access for External Users
 
-<!-- md:version 5.6 --> <!-- md:permission `manageComment` --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:permission `manageComment` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Control which case comments external users can access through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md). Comments can be switched between internal-only and external visibility to manage what information external stakeholders can see. Comments marked as internal are only visible to users who have access to the case through the main TheHive interface.
 

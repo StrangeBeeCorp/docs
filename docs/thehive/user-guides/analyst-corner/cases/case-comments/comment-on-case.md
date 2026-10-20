@@ -12,7 +12,7 @@ Add comments to [cases](../about-cases.md) to document investigation progress, s
 
     ![Comment on a case](../../../../images/user-guides/analyst-corner/cases/comment-case.png)
 
-3. <!-- md:version 5.6 --> <!-- md:license Platinum --> Optional: For cases shared through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md), select the visibility setting from the dropdown list:
+3. <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> Optional: For cases shared through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md), select the visibility setting from the dropdown list:
 
     * **Internal** (default): Comment visible only to internal users
     

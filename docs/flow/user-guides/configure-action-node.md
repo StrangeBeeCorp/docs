@@ -2,11 +2,11 @@
 
 <!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
 
-Action nodes perform operations that interact with TheHive or external systems in [TheHive Flow](about-flow.md). They represent the workflow's output, creating changes in the environment or triggering downstream processes.
+Action nodes perform operations that interact with TheHive or external systems in [TheHive Flow](about-flow.md). They produce the workflow output by making changes in the environment or triggering downstream processes.
 
 ## Configure an *HTTP request* action node
 
-An *HTTP request* action node sends HTTP requests to any API accessible from TheHive instance:
+An *HTTP request* action node sends HTTP requests to any API accessible from your TheHive instance:
 
 * ITSM tools
 * Threat intelligence platforms
@@ -16,6 +16,9 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
 !!! tip "Working with TheHive"
     To create, update, or query objects in TheHive, use the [*TheHive* integration node](configure-integration-node.md#configure-a-thehive-integration-node), which exposes TheHive operations directly. Use an *HTTP request* node for TheHive API endpoints that the *TheHive* node doesn't cover, or for any other external API.
+
+!!! note "Targets on a private network"
+    An *HTTP request* node can't reach non-public addresses, such as private, loopback, or link-local ranges: the step fails with an `egress guard` error. An administrator must first add the target range to the [egress allowlist](../configuration/flow-configuration.md#egress-allowlist).
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -56,30 +59,69 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
     {% include-markdown "includes/variables-mustache-syntax-flow.md" %}
 
-    The request body. Available for POST, PUT, PATCH, and DELETE methods.
+    The request body. Available for the `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
     **- Multipart parts**
 
-    Key-value pairs sent as a `multipart/form-data` request, one part per pair. Leave **Body** empty when using this field. A value that is a [file reference](about-flow.md#files) is streamed as a file part, and any other value is sent as a plain form field. Available for POST, PUT, PATCH, and DELETE methods.
+    Key-value pairs sent as a `multipart/form-data` request, one part per pair. Leave **Body** empty when using this field. The node streams a value that's a [file reference](about-flow.md#files) as a file part, and sends any other value as a plain form field. Available for the `POST`, `PUT`, `PATCH`, and `DELETE` methods.
 
 7. Optional: Select **Add options** to configure the following settings.
 
     **- Authentication**
 
-    Configure how the node authenticates when calling the API.
+    Configure how the node authenticates when calling the target API.
 
     !!! tip "Calling TheHive API"
-        If the HTTP request targets TheHive itself, ensure that your [TheHive authentication settings](../../thehive/administration/authentication/configure-authentication.md) are compatible with the method you select in this node.
+        If the HTTP request targets TheHive itself, make sure your [TheHive authentication settings](../../thehive/administration/authentication/configure-authentication.md) are compatible with the method you select in this node.
 
-    {% include-markdown "includes/authentication-flow.md" %}
+    Supported methods:
+
+    * None: No authentication is added to the request.
+
+    * Basic auth: Sends a username and password encoded in the `Authorization` header using the HTTP Basic scheme.
+
+    | Field    | Example |
+    | -------- | ------- |
+    | Username * | `emma@example.com` |
+    | Password * | `$secret.api_password` |
+
+    * Bearer token: Sends an access token in the `Authorization` header using the Bearer scheme.
+
+    | Field    | Example |
+    | -------- | ------- |
+    | Token * | `$secret.api_token` |
+
+    * OAuth 2.0: Authenticates with an access token, provided directly or obtained by exchanging a refresh token.
+
+    | Field    | With an access token | With a refresh token | Example |
+    | -------- | -------------------- | -------------------- | ------- |
+    | Client ID | Not used | Required | `$global.oauth_client_id` |
+    | Client secret | Not used | Optional, for a confidential client | `$secret.oauth_client_secret` |
+    | Access token | Required | Not used | `$secret.oauth_access_token` |
+    | Refresh token | Not used | Required | `$secret.oauth_refresh_token` |
+    | Token URL | Not used | Required | `https://auth.example.com/oauth/token` |
+
+    !!! tip "Access token or refresh token"
+        An access token is the short-lived key sent with each call to the service. A refresh token only serves to get new access tokens, and not every provider issues one.
+
+        * Access token: Never renewed. Once it expires, calls fail until it's replaced. Suits a quick test.
+        * Refresh token: Each node execution gets a fresh access token. Suits a workflow that runs over time. A new refresh token sent back by the provider isn't saved, so a provider that accepts each refresh token only once rejects the next execution.
+
+    The form also shows **Authorization URL** and **Token scopes**, which have no effect: leave them empty.
 
     **- Proxy**
 
     {% include-markdown "includes/proxy-flow.md" %}
 
+    A custom proxy on a non-public address must first be added to the [egress allowlist](../configuration/flow-configuration.md#egress-allowlist).
+
     **- SSL**
 
     {% include-markdown "includes/ssl-flow.md" %}
+
+    **- Request timeout**
+
+    Maximum time for the HTTP call itself. When a node timeout is also set in **Timeout & retry**, the shorter of the two applies. The value can't exceed the node timeout or the workflow timeout. The node retries when it reaches the node timeout and retries are configured, but not when it reaches the request timeout.
 
     **- Timeout & retry**
 
@@ -87,13 +129,22 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
     {% include-markdown "includes/timeout-node-flow.md" %}
 
+    Even without a node timeout, the HTTP call itself stops after the **Request timeout**, 30 seconds by default.
+
     **- Execution configuration**
 
     {% include-markdown "includes/execution-mode-flow.md" %}
 
 8. Optional: Turn on **Ignore HTTP errors** to make the node succeed regardless of the response status code.
 
-    By default, the node fails when the response returns a `4xx` or `5xx` error status code. With the option on, handle errors in the workflow, for example with an [*If* flow node](configure-flow-node.md#configure-an-if-flow-node) evaluating the `code` output. Transport failures, such as DNS, connection, TLS, or timeout errors, still fail the node.
+    By default, the node fails when the response returns a `4xx` or `5xx` error status code. With the option on, handle errors in the workflow, for example with an [*If* flow node](configure-flow-node.md#configure-an-if-flow-node) evaluating the `code` output.
+
+    Two cases still fail the node:
+
+    * A transport failure, such as a DNS, connection, TLS, or timeout error. The node sets no output.
+    * A response announced as JSON that can't be parsed. The node sets the `code` and `headers` outputs but no `body`, and doesn't retry.
+
+    When **Ignore HTTP errors** is off, the node retries a `408`, `429`, or `5xx` response up to the number of times set in **Retry attempts**, under **Timeout & retry**. Any other `4xx` response fails the node immediately, without retrying. When the called service includes a `Retry-After` header in its response, the node waits that long before the next attempt, up to a maximum of 5 minutes. This wait replaces the delay set by **Retry delay** and **Backoff**.
 
 !!! info "Execution outputs"
 
@@ -101,7 +152,7 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
     | Output    | Type   | Description                                      |
     |-----------|--------|--------------------------------------------------|
-    | `body`    | object | The response body returned by the API. Not set for a multipart response: use `parts` instead. |
+    | `body`    | any    | The response body returned by the target API. The node parses a response with a JSON content type to its value, and returns any other response as text. Not set for a multipart response: use `parts` instead. |
     | `code`    | number | The HTTP status code returned by the server.     |
     | `headers` | object | The response headers returned by the server.     |
     | `parts`   | object | The parts of a multipart response body, keyed by part name. Each part carries its `filename`, `content_type`, `size`, and `content`. Empty when the response isn't multipart. |
@@ -110,9 +161,7 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
     To access outputs, select your *HTTP request* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over each output name to view its details.
 
-    ![Outputs of the HTTP request node](../images/outputs-http-request-node.png)
-
-    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
+    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
     
     * `$<node_name>.body.<field_name>`: to get a nested value from the response body
     * `$<node_name>.code`: to get the HTTP status code, for example to check whether the request succeeded
@@ -121,10 +170,10 @@ An *HTTP request* action node sends HTTP requests to any API accessible from The
 
 ## Configure a *Send email* action node
 
-A *Send email* action node sends an email using [the SMTP configuration defined in TheHive](../../thehive/administration/smtp/about-smtp.md).
+A *Send email* action node sends an email using [the SMTP configuration defined in TheHive](../../thehive/administration/smtp/about-smtp.md), unless TheHive Flow has an [email server override](../configuration/flow-configuration.md#email-server-override).
 
 !!! warning "Prerequisite"
-    Before using a *Send email* action node, you must [configure an SMTP server in TheHive](../../thehive/administration/smtp/configure-smtp-server.md). The node can't send emails without a working SMTP configuration.
+    Before using a *Send email* action node, you must [configure an SMTP server in TheHive](../../thehive/administration/smtp/configure-smtp-server.md) or set an [email server override](../configuration/flow-configuration.md#email-server-override). The node can't send emails without a working SMTP configuration.
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -166,7 +215,7 @@ A *Send email* action node sends an email using [the SMTP configuration defined 
 
     **- Body format**
 
-    Choose how the message body is sent:  
+    Select how the message body is sent:  
 
     * *Text*  
     * *HTML*  
@@ -181,106 +230,6 @@ A *Send email* action node sends an email using [the SMTP configuration defined 
     The HTML content of the email.
 
 7. Optional: Select **Add options** to configure the following settings.
-
-    **- Timeout & retry**
-
-    Configure how the node handles execution time limits and failure recovery.
-
-    {% include-markdown "includes/timeout-node-flow.md" %}
-
-    **- Execution configuration**
-
-    {% include-markdown "includes/execution-mode-flow.md" %}
-
-## Configure a *Slack Send message* action node
-
-A *Slack - Send message* action node sends a message to a Slack channel using a Slack authentication token.
-
-1. {% include-markdown "includes/flow-view-go-to.md" %}
-
-2. Select a workflow from the list.
-
-3. Drag the previous node connector to an empty area of the canvas.
-
-    ![Drag a node connector to an empty area](../images/drag-node-empty-area.gif)
-
-4. In the **What is the next step?** drawer, select **Actions**.
-
-5. Select *Slack - Send message*.
-
-6. In the **Slack - Send message** drawer, enter the following information:
-
-    {% include-markdown "includes/variables-mustache-syntax-flow.md" %}
-
-    *Fields marked with \* are mandatory.*
-
-    **- Token \***
-
-    The Slack authentication token used to send the message. You may provide either a bot token or a user token, as long as it includes the `chat:write` permission. See the [Slack token documentation](https://docs.slack.dev/authentication/tokens/){target=_blank} for details on token types and required scopes.
-
-    **- Channel \***
-
-    The Slack channel where the message is posted. Enter the channel ID or name.
-
-    **- Markdown**
-
-    Enable this option to format your message using Markdown. When turned off, the message is sent as plain text.
-
-    **- Text \***
-
-    The content of the message.
-
-7. Optional: Select **Add options** to configure the following settings.
-
-    **- Proxy**
-
-    {% include-markdown "includes/proxy-flow.md" %}
-
-    **- Timeout & retry**
-
-    Configure how the node handles execution time limits and failure recovery.
-
-    {% include-markdown "includes/timeout-node-flow.md" %}
-
-    **- Execution configuration**
-
-    {% include-markdown "includes/execution-mode-flow.md" %}
-
-## Configure a *Teams Send message* action node
-
-A *Teams - Send message* action node sends a message to a Microsoft Teams channel using an incoming webhook URL.
-
-1. {% include-markdown "includes/flow-view-go-to.md" %}
-
-2. Select a workflow from the list.
-
-3. Drag the previous node connector to an empty area of the canvas.
-
-    ![Drag a node connector to an empty area](../images/drag-node-empty-area.gif)
-
-4. In the **What is the next step?** drawer, select **Actions**.
-
-5. Select *Teams - Send message*.
-
-6. In the **Teams - Send message** drawer, enter the following information:
-
-    {% include-markdown "includes/variables-mustache-syntax-flow.md" %}
-
-    *Fields marked with \* are mandatory.*
-
-    **- Webhook URL \***
-
-    The Microsoft Teams incoming Webhook URL associated with the target channel. To create one, see [Microsoft official documentation on configuring incoming webhooks](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet){target=_blank}.
-
-    **- Message \***
-
-    The text content of the message to send. Supports a Markdown subset: `**bold**`, `*italics*`, and line breaks.
-
-7. Optional: Select **Add options** to configure the following settings.
-
-    **- Proxy**
-
-    {% include-markdown "includes/proxy-flow.md" %}
 
     **- Timeout & retry**
 
@@ -330,9 +279,9 @@ An *Analyzer* action node triggers a [Cortex analyzer](../../thehive/administrat
 
     **- Analyzer \***
 
-    Choose the Cortex analyzer to run.
+    Select the Cortex analyzer to run.
 
-    Only analyzers compatible with the selected [observable type](../../thehive/user-guides/analyst-corner/cases/observables/about-observables.md#type) are shown. The observable's [TLP](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} and [PAP](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} levels are checked at execution time: if they aren't compatible with the analyzer, Cortex returns an error and the node fails.
+    The list shows only analyzers compatible with the selected [observable type](../../thehive/user-guides/analyst-corner/cases/observables/about-observables.md#type). Cortex checks the [Traffic Light Protocol (TLP)](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} and [Permissible Actions Protocol (PAP)](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} levels of the observable at execution time: if they aren't compatible with the analyzer, it returns an error and the node fails.
 
     The list covers the analyzers of every Cortex instance connected to the organization. You don't select the instance: the node derives it from the analyzer you choose. When several instances host the same analyzer, the node uses the first one and gives no way to choose another. To target a specific instance, use the [*TheHive*](configure-integration-node.md#configure-a-thehive-integration-node) integration node with the *Run Analyzer on Observable* action, which takes the Cortex instance identifier as a value.
 
@@ -350,13 +299,11 @@ An *Analyzer* action node triggers a [Cortex analyzer](../../thehive/administrat
 
 !!! info "Execution output"
 
-    When executed, the node runs the selected analyzer on the observable. The analyzer’s report is available as an output object.
+    When executed, the node runs the selected analyzer on the observable. The analyzer's report is available as an output object.
 
     To access the output, select your *Analyzer* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over the output name to view its details.
 
-    ![Outputs of the Analyzer node](../images/outputs-analyzer-node.png)
-
-    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. The inserted reference is displayed as `$<node_name>.analyzer_report`.
+    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. The inserted reference is displayed as `$<node_name>.analyzer_report`.
     
     It contains the full report returned by Cortex, in the format specific to the analyzer that was run. Use a [*Set local variable*](configure-transformation-node.md#configure-a-set-local-variable-node) node, a [*JavaScript code*](configure-transformation-node.md#configure-a-javascript-code-node) node, or a [*Python code*](configure-transformation-node.md#configure-a-python-code-node) node to extract specific fields from it.
 
@@ -387,7 +334,7 @@ A *Responder* action node triggers a [Cortex responder](../../thehive/administra
 
     **- Entity type \***
 
-    The type of entity on which the responder should run: an [alert](../../thehive/user-guides/analyst-corner/alerts/about-alerts.md) (`alert`), a [case](../../thehive/user-guides/analyst-corner/cases/about-cases.md) (`case`), an [observable](../../thehive/user-guides/analyst-corner/cases/observables/about-observables.md) (`case_artifact`), a [task](../../thehive/user-guides/analyst-corner/tasks/about-tasks.md) (`case_task`), or a [task log](../../thehive/user-guides/analyst-corner/tasks/about-task-logs.md) (`case_task_log`).
+    The type of entity on which the responder runs. Each entity type has its own value: `alert` for an [alert](../../thehive/user-guides/analyst-corner/alerts/about-alerts.md), `case` for a [case](../../thehive/user-guides/analyst-corner/cases/about-cases.md), `case_artifact` for an [observable](../../thehive/user-guides/analyst-corner/cases/observables/about-observables.md), `case_task` for a [task](../../thehive/user-guides/analyst-corner/tasks/about-tasks.md), and `case_task_log` for a [task log](../../thehive/user-guides/analyst-corner/tasks/about-task-logs.md).
 
     Two input modes are available:
 
@@ -400,9 +347,9 @@ A *Responder* action node triggers a [Cortex responder](../../thehive/administra
 
     **- Responder \***
 
-    Choose the Cortex responder to execute.
+    Select the Cortex responder to execute.
 
-    Only responders compatible with the selected entity type are shown. The entity's [TLP](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} and [PAP](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} levels are checked at execution time: if they aren't compatible with the responder, Cortex returns an error and the node fails.
+    The list shows only responders compatible with the selected entity type. Cortex checks the [TLP](https://www.misp-project.org/taxonomies.html#_tlp){target=_blank} and [PAP](https://www.misp-project.org/taxonomies.html#_pap){target=_blank} levels of the entity at execution time: if they aren't compatible with the responder, it returns an error and the node fails.
 
 7. Optional: Select **Add options** to configure the following settings.
 
@@ -418,13 +365,11 @@ A *Responder* action node triggers a [Cortex responder](../../thehive/administra
 
 !!! info "Execution output"
 
-    When executed, the node runs the selected responder on the selected alert, case, observable, or task. The responder’s report is available as an output object.
+    When executed, the node runs the selected responder on the selected alert, case, observable, or task. The responder's report is available as an output object.
 
     To access the output, select your *Responder* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over the output name to view its details.
 
-    ![Outputs of the Responder node](../images/outputs-responder-node.png)
-
-    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. The inserted reference is displayed as `$<node_name>.responder_report`.
+    This output can then be reused as an output variable in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. The inserted reference is displayed as `$<node_name>.responder_report`.
     
     It contains the full report returned by Cortex, in the format specific to the responder that was run. Use a [*Set local variable*](configure-transformation-node.md#configure-a-set-local-variable-node) node, a [*JavaScript code*](configure-transformation-node.md#configure-a-javascript-code-node) node, or a [*Python code*](configure-transformation-node.md#configure-a-python-code-node) node to extract specific fields from it.
 
@@ -434,6 +379,9 @@ An *AI* action node sends a message to a large language model (LLM) and returns 
 
 !!! warning "Prerequisite"
     An administrator must [configure at least one LLM provider](../../thehive/administration/manage-llm-providers.md) before using an *AI* action node.
+
+!!! note "Locally hosted LLM providers"
+    An *AI* node can't reach a provider on a non-public address: the step fails with an `egress guard` error. For a provider hosted on your internal network, an administrator must first add its address range to the [egress allowlist](../configuration/flow-configuration.md#egress-allowlist).
 
 1. {% include-markdown "includes/flow-view-go-to.md" %}
 
@@ -471,7 +419,7 @@ An *AI* action node sends a message to a large language model (LLM) and returns 
 
     **- Output schema**
 
-    A JSON schema describing the expected output structure. When set, the AI constrains its response to match the schema, so downstream nodes can consume the fields individually. The field opens pre-filled with a schema declaring a single `message` string field. You can clear it: when the field is empty, no `result` output is produced and only the raw `response` text is available.
+    A JSON schema describing the expected output structure. When set, the AI constrains its response to match the schema, so downstream nodes can consume the fields individually. The field opens pre-filled with a schema declaring a single `message` string field. You can clear it: when the field is empty, the node produces no `result` output and only the raw `response` text is available.
 
 7. Optional: Select **Add options** to configure the following sections.
 
@@ -507,9 +455,7 @@ An *AI* action node sends a message to a large language model (LLM) and returns 
 
     To access outputs, select your *AI* node and then select :fontawesome-solid-diagram-next: in the top-right corner of the screen. Hover over each output name to view its details.
 
-    ![Outputs of the AI node](../images/outputs-ai-node.png)
-
-    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by typing `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
+    These outputs can then be reused as output variables in subsequent nodes, using the **$var** button or by entering `$` and selecting the output from the suggestions. Inserted references are displayed in the following form:
 
     * `$<node_name>.response`: to get the text response
     * `$<node_name>.result.<field_name>`: to get a field from the structured output when an output schema is set

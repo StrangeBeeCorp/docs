@@ -57,7 +57,7 @@ Last update: May 26, 2025
 
 **Notification fixes and enhancements:**
 
-- **Slack notifier**: Slack notifications are now sending the accurate case titles. Also, we fixed an issue with the "Advanced settings" that was sent to the backend, even if the box wasn't checked.
+- **Slack notifier**: Slack notifications are now sending the accurate case titles. Also, we fixed an issue with the "Advanced settings" that was sent to the back end, even if the box wasn't checked.
 - **HTTP notifications**: Fixed interpretation of backslashes, ensuring correct rendering and transmission of notifications without unexpected behavior.
 
 **Performances improvements:**

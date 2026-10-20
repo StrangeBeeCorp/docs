@@ -8,7 +8,7 @@ TheHive includes three profile types, each serving distinct organizational needs
 
 * Administration: Reserved for users who belong to the [Admin organization](../organizations/about-organizations.md#default-setup). These profiles grant platform-wide administrative capabilities.
 * Organization: Applied to users in Non-Admin organizations. These profiles control access to operational features like case management, alert handling, and observable analysis.
-* <!-- md:version 5.6 --> <!-- md:license Platinum --> External: Applied to users accessing [TheHive Portal](../thehive-portal/about-thehive-portal.md). These profiles provide limited access for stakeholders outside the Security team.
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> External: Applied to users accessing [TheHive Portal](../thehive-portal/about-thehive-portal.md). These profiles provide limited access for stakeholders outside the Security team.
 
 Each profile belongs to only one type and contains permissions specific to that type. The available permissions depend on whether the profile is an administration, organization, or external type, ensuring clear separation of access levels.
 
@@ -28,12 +28,12 @@ TheHive provides six predefined profiles that cover common organizational roles:
 * Org-Admin: Organization-level administration
 * Analyst: Standard security analyst operations
 * Read-Only: View-only access across the platform
-* <!-- md:version 5.6 --> <!-- md:license Platinum --> External-Reader: Read-only access through [TheHive Portal](../thehive-portal/about-thehive-portal.md)
-* <!-- md:version 5.6 --> <!-- md:license Platinum --> External-Actor: Interactive access through [TheHive Portal](../thehive-portal/about-thehive-portal.md)
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> External-Reader: Read-only access through [TheHive Portal](../thehive-portal/about-thehive-portal.md)
+* <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> External-Actor: Interactive access through [TheHive Portal](../thehive-portal/about-thehive-portal.md)
 
 These profiles can't be modified or deleted—except for the Analyst profile.
 
-<!-- md:license Gold --> <!-- md:license Platinum --> This set can be extended by [creating custom profiles](create-a-profile.md) tailored to specific needs.
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One --> This set can be extended by [creating custom profiles](create-a-profile.md) tailored to specific needs.
 
 ## Licensed vs. unlicensed profiles
 

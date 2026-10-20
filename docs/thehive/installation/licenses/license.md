@@ -2,7 +2,7 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-Activate or update a [TheHive license](about-licenses.md), whether it's a Community, Gold, or Platinum license.
+Activate or update a [TheHive license](about-licenses.md), whether it's a Community, Gold, Platinum, or One license.
 
 !!! tip "Platinum trial"
     <!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
@@ -10,7 +10,7 @@ Activate or update a [TheHive license](about-licenses.md), whether it's a Commun
 !!! warning "Requirements"
 
     * For Community license: This procedure assumes that you have already obtained a Community license by following the [Request a Community License](request-a-community-license.md) topic.
-    * For Gold and Platinum licenses: This procedure assumes that you have already [purchased a valid Gold or Platinum license](https://strangebee.com/thehive-on-prem-plans/){target=_blank} and no longer wish or are able to use your trial license.
+    * For Gold, Platinum, and One licenses: This procedure assumes that you have already [purchased a valid Gold, Platinum, or One license](https://strangebee.com/thehive-on-prem-plans/){target=_blank} and no longer wish or are able to use your trial license.
 
 ## Step 1: Retrieve the challenge from your TheHive instance
 

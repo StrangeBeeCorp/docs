@@ -1,6 +1,6 @@
 # Delete a Case Report Template
 
-<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum -->
+<!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Delete a [case report template](about-case-report-templates.md) in TheHive.
 

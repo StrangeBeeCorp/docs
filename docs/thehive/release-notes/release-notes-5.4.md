@@ -1,9 +1,9 @@
 # Release Notes of 5.4 Series
 
 !!! warning
-    Backend framework upgraded to Pekko/Play3
+    Back-end framework upgraded to Pekko/Play3
 
-    We upgraded our backend framework from Play 2 (also known as Akka) to Play 3 (also known as Pekko). **While there are no functional changes**, if you use TheHive in cluster mode, your configuration file will need to be modified when upgrading to TheHive 5.4. [Please refer to this guide for the necessary changes](https://docs.strangebee.com/thehive/configuration/pekko/).
+    We upgraded our back-end framework from Play 2 (also known as Akka) to Play 3 (also known as Pekko). **While there are no functional changes**, if you use TheHive in cluster mode, your configuration file will need to be modified when upgrading to TheHive 5.4. [Please refer to this guide for the necessary changes](https://docs.strangebee.com/thehive/configuration/pekko/).
 
     Please also note that the `play.http.secret.key` parameter requires now at least a 32 character value. [See more details](https://docs.strangebee.com/thehive/configuration/secret/) about secret configuration.
 
@@ -169,7 +169,7 @@ Optimized the rendering speed for the observables tab to improve performance.
 Fixed default language selection to use the browser’s language on first connection.
 
 #### Improved Case Closure Error Handling
-Modified case closure behavior: if a backend error occurs, the case closure window now remains open to prevent data loss.
+Modified case closure behavior: if a back-end error occurs, the case closure window now remains open to prevent data loss.
 
 #### Tasklog Display in Timeline
 When adding a tasklog with the option "display in the timeline", the tasklog now appears in the timeline view from the task preview after the preview drawer is closed.
@@ -181,7 +181,7 @@ When adding a tasklog with the option "display in the timeline", the tasklog now
 ## 5.4.1 - 11th of October 2024
 
 ### Fix
-- We fixed an issue related to our backend framework configuration (pekko). This problem impacted the generated configuration file for a new installation of TheHive on Kubernetes.
+- We fixed an issue related to our back-end framework configuration (pekko). This problem impacted the generated configuration file for a new installation of TheHive on Kubernetes.
 
 ### Improvements
 #### Cortex Job Queue
@@ -231,9 +231,9 @@ A new permission system has been introduced to restrict read-only users from edi
 
 We changed the display format of time metrics in Alert & Case pages, and made it more accurate for the users.
 
-#### Backend framework upgraded to Pekko/Play3
+#### Back-end framework upgraded to Pekko/Play3
 
-We upgraded our backend framework to Play 2 (also named Akka) to Play 3 (also named Pekko). While there is no functional changes,  if you use TheHive in a cluster mode, your configuration will need to be changed when upgrading to TheHive 5.4. Please refer to [this guide](https://docs.strangebee.com/thehive/configuration/pekko/) for further details.
+We upgraded our back-end framework to Play 2 (also named Akka) to Play 3 (also named Pekko). While there is no functional changes,  if you use TheHive in a cluster mode, your configuration will need to be changed when upgrading to TheHive 5.4. Please refer to [this guide](https://docs.strangebee.com/thehive/configuration/pekko/) for further details.
 
 #### Elasticsearch query optimisations: DirectQuery & ESChart
 

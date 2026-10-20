@@ -100,7 +100,7 @@ TheHive provides three distinct mechanisms for controlling who can access cases:
 
 ### Case visibility restriction
 
-<!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum -->
+<!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 #### Usage
 
@@ -153,7 +153,7 @@ Sharing is controlled through [organization sharing rules](../../../administrati
 
 ### TheHive Portal sharing
 
-<!-- md:version 5.6 --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One -->
 
 TheHive Portal provides controlled access for external stakeholders, such as HR, Legal, clients, or partners, who need visibility into specific cases without accessing the main TheHive interface.
 

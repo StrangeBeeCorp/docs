@@ -1,2 +1,2 @@
 !!! tip "Manual trigger from the workflow editor"
-    You can [manually run a workflow from the workflow editor](/flow/user-guides/manually-run-workflow/) even without configuring any triggers.
+    The trigger node always lists a **Manual** entry, alongside any triggers you configure. It requires no configuration and can't be removed: you can [manually run a workflow from the workflow editor](/flow/user-guides/manually-run-workflow/) even without configuring any triggers.

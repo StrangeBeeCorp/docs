@@ -1,6 +1,6 @@
 # Customize TheHive Branding
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Personalize TheHive branding with your brand name and logo across the login page, navigation bar, and browser tab.
 

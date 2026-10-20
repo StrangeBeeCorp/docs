@@ -149,6 +149,14 @@ sections:
               url: '/cortex/api/how-to-create-an-analyzer/'
             - text: 'Configure responders to trigger automated response actions'
               url: '/cortex/api/how-to-create-a-responder/'
+        - title: 'Orchestrate workflows with TheHive Flow'
+          links:
+            - text: 'Discover TheHive Flow'
+              url: '/flow/user-guides/about-flow/'
+            - text: 'Build your first workflow'
+              url: '/flow/user-guides/build-your-first-workflow/'
+            - text: 'Start from ready-made workflow templates'
+              url: '/flow/user-guides/workflow-templates/'
 
     - title: 'Infra Engineer corner'
       text: 'I want to deploy, configure and maintain TheHive—and understand its API.'
@@ -185,6 +193,18 @@ sections:
               url: '/thehive/installation/upgrade-from-5.x/'
             - text: 'Check the release versioning and maintenance policy'
               url: '/thehive/installation/release-and-maintenance-policy/'
+        - title: 'Deploy TheHive Flow'
+          links:
+            - text: 'Review system requirements'
+              url: '/flow/installation/system-requirements/'
+            - text: 'Review software requirements'
+              url: '/flow/installation/software-requirements/'
+            - text: 'Deploy with Docker Compose'
+              url: '/flow/installation/docker/'
+            - text: 'Deploy on Kubernetes'
+              url: '/flow/installation/kubernetes/'
+            - text: 'Perform the initial setup'
+              url: '/flow/installation/perform-initial-setup-as-admin/'
         - title: 'Configure organizations'
           links: 
             - text: 'Complete the initial login'

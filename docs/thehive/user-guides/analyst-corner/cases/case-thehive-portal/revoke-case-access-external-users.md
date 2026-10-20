@@ -1,6 +1,6 @@
 # Revoke Case Access for External Users
 
-<!-- md:version 5.6 --> <!-- md:permission `manageCaseAccess/external` --> <!-- md:license Platinum -->
+<!-- md:version 5.6 --> <!-- md:permission `manageCaseAccess/external` --> <!-- md:license Platinum --> <!-- md:license One -->
 
 Remove external user access to cases when collaboration is complete or no longer required. Revoking access immediately prevents external users from viewing the case and interacting with it through [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
