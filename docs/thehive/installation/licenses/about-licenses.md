@@ -18,7 +18,7 @@ TheHive offers different license types to meet various organizational needs, fro
 | Community   |  On-prem                    | Essential features to get started with TheHive or for users with basic needs. | Free—requires [requesting a Community license](request-a-community-license.md) |
 | Gold       |  On-prem                    | Designed for internal response teams requiring enhanced case management lifecycles and organizational integrations. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank}|
 | Platinum    |  On-prem and Cloud Platform | Ideal for large teams needing extensive server connections, clustering, and dedicated continuous support for mission-critical, large-scale incident response. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank} |
-| One <!-- md:version 6.0 -->  |  On-prem and Cloud Platform | The most complete offering, including all Platinum capabilities plus [TheHive Flow](../../../flow/user-guides/about-flow.md) automation. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank} |
+| One <!-- md:version 6.0 -->  |  On-prem | The most complete offering, including all Platinum capabilities plus [TheHive Flow](../../../flow/user-guides/about-flow.md) automation. | Paid—requires [contacting the StrangeBee team](https://strangebee.com/contact-strangebee/){target=_blank} |
 
 All license types require [activation](license.md) after acquisition.
 

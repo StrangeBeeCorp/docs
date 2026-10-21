@@ -14,7 +14,7 @@
 
 #### One license
 
-The new [One license](../installation/licenses/about-licenses.md#types-and-pricing) includes every Platinum capability, plus [TheHive Flow](#thehive-flow). It's available for TheHive On-prem and TheHive Cloud Platform.
+The new [One license](../installation/licenses/about-licenses.md#types-and-pricing) includes every Platinum capability, plus [TheHive Flow](#thehive-flow). It's available for TheHive On-prem only.
 
 #### TheHive Flow <!-- md:license One --> {#thehive-flow}
 
