@@ -21,8 +21,8 @@
             wget -O /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_4.1.0-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
@@ -43,8 +43,8 @@
             curl -o /tmp/<file_name>.deb.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.deb.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_3.2.1-2_all`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex_4.1.0-1_all`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
@@ -148,8 +148,8 @@
             wget -O /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-4.1.0-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
@@ -170,8 +170,8 @@
             curl -o /tmp/<file_name>.noarch.rpm.asc https://cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.noarch.rpm.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-1`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-4.1.0-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).

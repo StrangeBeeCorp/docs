@@ -23,8 +23,8 @@
             wget -O /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-2`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-4.1.0-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).
@@ -45,8 +45,8 @@
             curl -o /opt/<file_name>.zip.asc cortex.download.strangebee.com/<major.minor_version>/asc/<file_name>.zip.asc
             ```
 
-            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-3.2.1-2`.
-            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `3.2`.
+            * Replace `<file_name>` with the full name of the versioned file you want to install. For example, use `cortex-4.1.0-1`.
+            * Replace `<major.minor_version>` with the corresponding version directory. For example, use `4.1`.
 
             !!! tip "Package repository"
                 For details on package organization and naming conventions, see [Cortex Package Repository](/cortex/installation-and-configuration/cortex-packages/).

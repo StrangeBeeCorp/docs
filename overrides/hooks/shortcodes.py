@@ -91,8 +91,9 @@ def _badge(icon: str, text: str = "", type: str = ""):
 def _badge_for_version(text: str, page: Page, files: Files):
     icon = "material-new-box"
 
-    # If the version is not a semver number (e.g. "beta"), render a plain badge with no link
-    if not re.match(r"^\d+(\.\d+)*$", text):
+    # If the version is not a semver number (e.g. "beta"), or the page is a Cortex page
+    # (Cortex release notes aren't on the docs site), render a plain badge with no link
+    if not re.match(r"^\d+(\.\d+)*$", text) or page.file.src_uri.startswith("cortex/"):
         return _badge(
             icon = f"[:{icon}:]('#' 'Minimum version')",
             text = text,

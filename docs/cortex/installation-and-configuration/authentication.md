@@ -65,10 +65,13 @@ The default values within the configuration file are:
       oauth2 {
         # URL of the authorization server
         #clientId = "client-id"
+        # Client secret of a confidential client. Set it to "" for a public client, which should enable PKCE.
         #clientSecret = "client-secret"
         #redirectUri = "https://my-cortex-instance.example/api/ssoLogin"
         #responseType = "code"
         #grantType = "authorization_code"
+        # Use PKCE (RFC 7636) to protect the authorization code exchange. Recommended, required by some authorization servers.
+        #pkce = false
 
         # URL from where to get the access token
         #authorizationUrl = "https://auth-site.com/OAuth/Authorize"
@@ -140,21 +143,49 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
 - `auth.sso.attributes.groups`: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)
 - `auth.sso.attributes.roles`: name of the attribute containing the OAuth2 user's roles in retrieved user info (mandatory using simple mapping)
 
+Cortex authenticates users through an external OAuth2 authorization server. The `auth.oauth2` section accepts the following parameters:
 
+| Parameter | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clientId` | String | Yes | Client ID in the OAuth2 server. |
+| `clientSecret` | String | Yes | Client secret in the OAuth2 server. Set it to `""` for a public client. |
+| `redirectUri` | String | Yes | URL of the Cortex OAuth2 page, ending with `/api/ssoLogin`. |
+| `responseType` | String | Yes | Type of the response. Only `code` is accepted. |
+| `grantType` | String | No | Type of the grant. Only `authorization_code` is accepted, which is the default value. |
+| `authorizationUrl` | String | Yes | Authorization URL of the OAuth2 server. |
+| `authorizationHeader` | String | No | Prefix of the authorization header used to get user information. Default value: `Bearer`. |
+| `tokenUrl` | String | Yes | Token URL of the OAuth2 server. |
+| `userUrl` | String | Yes | URL to get user information from the OAuth2 server. |
+| `scope` | List of strings | Yes | List of scopes. |
+| `pkce` | Boolean | No | Use [PKCE](#pkce) to protect the authorization code exchange. Default value: `false`. Available starting with Cortex 4.2. |
 
-!!! Note "Important note"
-    Authenticate the user using an external OAuth2 authenticator server. The configuration is:
+If a required parameter is missing, OAuth2 authentication fails.
 
-    - clientId (string) client ID in the OAuth2 server.
-    - clientSecret (string) client secret in the OAuth2 server.
-    - redirectUri (string) the url of TheHive OAuth2 page (.../api/ssoLogin).
-    - responseType (string) type of the response. Currently only "code" is accepted.
-    - grantType (string) type of the grant. Currently only "authorization_code" is accepted.
-    - authorizationUrl (string) the url of the OAuth2 server.
-    - authorizationHeader (string) prefix of the authorization header to get user info: 'Bearer' by default
-    - tokenUrl (string) the token url of the OAuth2 server.
-    - userUrl (string) the url to get user information in OAuth2 server.
-    - scope (list of string) list of scope.
+##### PKCE
+
+<!-- md:version 4.2 -->
+
+Cortex can use Proof Key for Code Exchange (PKCE) to protect the exchange of the authorization code for an access token. Some authorization servers require it. PKCE is turned off by default.
+
+To turn on PKCE, set `auth.oauth2.pkce` to `true`. Cortex then sends an S256 code challenge with the authorization request, and the matching code verifier with the token request. PKCE is recommended even when Cortex uses a client secret.
+
+If the authorization server registers Cortex as a public client, without a client secret, set `auth.oauth2.clientSecret` to `""` and turn on PKCE. Cortex then sends no client secret to the token endpoint. Keep the `clientSecret` key in the configuration, because OAuth2 authentication fails without it.
+
+!!! Example "Example configuration for a public client"
+
+    ```
+    oauth2 {
+      [..]
+      clientSecret: ""
+      pkce: true
+    }
+    ```
+
+!!! warning "Public client without PKCE"
+    A public client without PKCE leaves the authorization code exchange unprotected. Cortex logs a warning at startup for this configuration, which is deprecated and will be rejected in a future version.
+
+!!! warning "Upgrading from Cortex 4.1 or earlier"
+    Before Cortex 4.2, `auth.sso.autocreate` and `auth.sso.autoupdate` were swapped for OAuth2 authentication. Setting `autocreate` to `true` updated existing users, and setting `autoupdate` to `true` created unknown users. Starting with Cortex 4.2, each setting does what its name says. If you swapped the two values to work around this behavior, swap them back. Only set `autocreate` to `true` if every user of the authorization server should get a Cortex account.
 
 
 !!! Example "Example configuration for SSO w/ Oauth2 & Github" 
@@ -181,7 +212,7 @@ To enable authentication using OAuth2/OpenID Connect, edit the `application.conf
       oauth2 {
         name: oauth2
         clientId: "Client_ID"
-        clientSecret: "Client_ID"
+        clientSecret: "Client_Secret"
         redirectUri: "http://localhost:9001/api/ssoLogin"
         responseType: code
         grantType: "authorization_code"

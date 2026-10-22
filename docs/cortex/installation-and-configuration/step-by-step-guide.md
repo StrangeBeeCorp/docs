@@ -13,7 +13,7 @@ By the end, you'll have a fully functional instance of Cortex up and running.
 
     * Docker deployments: For Docker-based setups, follow [Run Cortex with Docker](run-cortex-with-docker.md).
     * Cluster deployments: Refer to [Deploy Cortex on Kubernetes](deploy-cortex-on-kubernetes.md) for Kubernetes deployments.
-    * Version upgrades: For upgrading an existing instance, see [Upgrade to Cortex 4.1](../operations/upgrade-cortex-4.md).
+    * Version upgrades: For upgrading an existing instance, see [Upgrade to Cortex 4.2](../operations/upgrade-cortex-4.md).
 
 !!! warning "Before you begin"
     To ensure a smooth installation process, make sure you have:
