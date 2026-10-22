@@ -22,13 +22,13 @@ TheHive offers different license types to meet various organizational needs, fro
 
 All license types require [activation](license.md) after acquisition.
 
-Check the pricing details and the full list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing-on-prem/){target=_blank}.
+Check the pricing details and the list of features available for each license type on the [StrangeBee pricing page](https://strangebee.com/thehive-pricing/){target=_blank}.
 
 ## Terms and quotas
 
 Each license includes validation and expiration dates.
 
-Each license type has specific [quotas](https://strangebee.com/thehive-pricing-on-prem/){target=_blank} for:
+Each license type has specific quotas for:
 
 * Number of users: Only unlocked user accounts of type Normal with at least one licensed permission count toward the license limit. Service accounts and Normal accounts with no licensed permissions, such as [Read-Only or Admin](../../administration/profiles/about-profiles.md#predefined-profiles), don't. External accounts consume license seats but are unlimited.
 * Number of organizations: Only unlocked organizations count toward the license limit.
