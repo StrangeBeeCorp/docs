@@ -5,8 +5,19 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
 
-!!! danger "Skip directly to version 5.7.7"
-    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.7.7 instead.
+!!! danger "Skip directly to version 5.7.8"
+    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.7.8 instead.
+
+## 5.7.8 - October 22, 2026
+
+### Fixes
+
+* Dashboards: Ensured the field picker in dashboard widget and report template filters stays open, instead of closing on its own when the filter panel refreshes.
+* Integrations: Prevented TheHive from freezing while importing a Cortex analyzer report that contains a large number of artifacts (+1000).
+
+### Security
+
+* Dependencies: Patched several CVEs reported in third-party libraries.
 
 ## 5.7.7 - October 7, 2026
 
