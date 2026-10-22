@@ -20288,7 +20288,7 @@
   <span class="md-ellipsis">
     
   
-    Upgrade to Cortex 4.1
+    Upgrade to Cortex 4.2
   
 
     
@@ -21705,10 +21705,13 @@ the user cannot log in.</p>
   oauth2 {
     # URL of the authorization server
     #clientId = "client-id"
+    # Client secret of a confidential client. Set it to "" for a public client, which should enable PKCE.
     #clientSecret = "client-secret"
     #redirectUri = "https://my-cortex-instance.example/api/ssoLogin"
     #responseType = "code"
     #grantType = "authorization_code"
+    # Use PKCE (RFC 7636) to protect the authorization code exchange. Recommended, required by some authorization servers.
+    #pkce = false
 
     # URL from where to get the access token
     #authorizationUrl = "https://auth-site.com/OAuth/Authorize"
@@ -21779,21 +21782,107 @@ session {
 <li><code>auth.sso.attributes.groups</code>: name of the attribute containing the OAuth2 user's groups (mandatory using groups mappings)</li>
 <li><code>auth.sso.attributes.roles</code>: name of the attribute containing the OAuth2 user's roles in retrieved user info (mandatory using simple mapping)</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Important note</p>
-<p>Authenticate the user using an external OAuth2 authenticator server. The configuration is:</p>
-<ul>
-<li>clientId (string) client ID in the OAuth2 server.</li>
-<li>clientSecret (string) client secret in the OAuth2 server.</li>
-<li>redirectUri (string) the url of TheHive OAuth2 page (.../api/ssoLogin).</li>
-<li>responseType (string) type of the response. Currently only "code" is accepted.</li>
-<li>grantType (string) type of the grant. Currently only "authorization_code" is accepted.</li>
-<li>authorizationUrl (string) the url of the OAuth2 server.</li>
-<li>authorizationHeader (string) prefix of the authorization header to get user info: 'Bearer' by default</li>
-<li>tokenUrl (string) the token url of the OAuth2 server.</li>
-<li>userUrl (string) the url to get user information in OAuth2 server.</li>
-<li>scope (list of string) list of scope.</li>
-</ul>
+<p>Cortex authenticates users through an external OAuth2 authorization server. The <code>auth.oauth2</code> section accepts the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clientId</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Client ID in the OAuth2 server.</td>
+</tr>
+<tr>
+<td><code>clientSecret</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Client secret in the OAuth2 server. Set it to <code>""</code> for a public client.</td>
+</tr>
+<tr>
+<td><code>redirectUri</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>URL of the Cortex OAuth2 page, ending with <code>/api/ssoLogin</code>.</td>
+</tr>
+<tr>
+<td><code>responseType</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Type of the response. Only <code>code</code> is accepted.</td>
+</tr>
+<tr>
+<td><code>grantType</code></td>
+<td>String</td>
+<td>No</td>
+<td>Type of the grant. Only <code>authorization_code</code> is accepted, which is the default value.</td>
+</tr>
+<tr>
+<td><code>authorizationUrl</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Authorization URL of the OAuth2 server.</td>
+</tr>
+<tr>
+<td><code>authorizationHeader</code></td>
+<td>String</td>
+<td>No</td>
+<td>Prefix of the authorization header used to get user information. Default value: <code>Bearer</code>.</td>
+</tr>
+<tr>
+<td><code>tokenUrl</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>Token URL of the OAuth2 server.</td>
+</tr>
+<tr>
+<td><code>userUrl</code></td>
+<td>String</td>
+<td>Yes</td>
+<td>URL to get user information from the OAuth2 server.</td>
+</tr>
+<tr>
+<td><code>scope</code></td>
+<td>List of strings</td>
+<td>Yes</td>
+<td>List of scopes.</td>
+</tr>
+<tr>
+<td><code>pkce</code></td>
+<td>Boolean</td>
+<td>No</td>
+<td>Use <a href="#pkce">PKCE</a> to protect the authorization code exchange. Default value: <code>false</code>. Available starting with Cortex 4.2.</td>
+</tr>
+</tbody>
+</table>
+<p>If a required parameter is missing, OAuth2 authentication fails.</p>
+<h5 id="pkce">PKCE<a class="headerlink" href="#pkce" title="Permanent link">#</a></h5>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="" title="#' 'Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text">4.2</span></span></p>
+<p>Cortex can use Proof Key for Code Exchange (PKCE) to protect the exchange of the authorization code for an access token. Some authorization servers require it. PKCE is turned off by default.</p>
+<p>To turn on PKCE, set <code>auth.oauth2.pkce</code> to <code>true</code>. Cortex then sends an S256 code challenge with the authorization request, and the matching code verifier with the token request. PKCE is recommended even when Cortex uses a client secret.</p>
+<p>If the authorization server registers Cortex as a public client, without a client secret, set <code>auth.oauth2.clientSecret</code> to <code>""</code> and turn on PKCE. Cortex then sends no client secret to the token endpoint. Keep the <code>clientSecret</code> key in the configuration, because OAuth2 authentication fails without it.</p>
+<div class="admonition example">
+<p class="admonition-title">Example configuration for a public client</p>
+<div class="highlight"><pre><span></span><code>oauth2 {
+  [..]
+  clientSecret: ""
+  pkce: true
+}
+</code></pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Public client without PKCE</p>
+<p>A public client without PKCE leaves the authorization code exchange unprotected. Cortex logs a warning at startup for this configuration, which is deprecated and will be rejected in a future version.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Upgrading from Cortex 4.1 or earlier</p>
+<p>Before Cortex 4.2, <code>auth.sso.autocreate</code> and <code>auth.sso.autoupdate</code> were swapped for OAuth2 authentication. Setting <code>autocreate</code> to <code>true</code> updated existing users, and setting <code>autoupdate</code> to <code>true</code> created unknown users. Starting with Cortex 4.2, each setting does what its name says. If you swapped the two values to work around this behavior, swap them back. Only set <code>autocreate</code> to <code>true</code> if every user of the authorization server should get a Cortex account.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example configuration for SSO w/ Oauth2 &amp; Github</p>
@@ -21818,7 +21907,7 @@ session {
   oauth2 {
     name: oauth2
     clientId: "Client_ID"
-    clientSecret: "Client_ID"
+    clientSecret: "Client_Secret"
     redirectUri: "http://localhost:9001/api/ssoLogin"
     responseType: code
     grantType: "authorization_code"

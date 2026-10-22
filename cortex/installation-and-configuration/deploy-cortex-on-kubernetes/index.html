@@ -20371,7 +20371,7 @@
   <span class="md-ellipsis">
     
   
-    Upgrade to Cortex 4.1
+    Upgrade to Cortex 4.2
   
 
     
@@ -21747,7 +21747,7 @@
 <h2 id="architecture-overview">Architecture overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
 <p>The default deployment includes:</p>
 <ul>
-<li>A single Cortex application pod</li>
+<li>A single Cortex application Pod</li>
 <li>A one-node Elasticsearch cluster for search indexing, using Elasticsearch 8</li>
 <li>Shared storage for analyzer job data</li>
 </ul>
@@ -21757,7 +21757,7 @@
 <li>Helm v3.8.0 or later</li>
 <li>Minimum resources per node: see <a href="../system-requirements/#hardware-requirements">Cortex Installation System Requirements</a></li>
 <li>StorageClass supporting <code>ReadWriteMany</code> access mode</li>
-<li>Network policies allowing inter-pod communication</li>
+<li>Network policies allowing inter-Pod communication</li>
 </ul>
 <h2 id="step-1-ensure-all-users-can-access-files-on-the-shared-filesystem">Step 1: Ensure all users can access files on the shared filesystem<a class="headerlink" href="#step-1-ensure-all-users-can-access-files-on-the-shared-filesystem" title="Permanent link">#</a></h2>
 <div class="admonition warning">
@@ -21766,15 +21766,15 @@
 </div>
 <div class="admonition info">
 <p class="admonition-title">Why a shared filesystem</p>
-<p>When running on Kubernetes, Cortex launches a new pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the pod is terminated. Without a shared filesystem accessible by both the Cortex pod and these analyzer and responder pods, they can't access the data they need to operate, causing the jobs to fail.</p>
-<p>Kubernetes supports several methods for sharing filesystems between pods, including:</p>
+<p>When running on Kubernetes, Cortex launches a new Pod for each analyzer or responder execution. After the job completes and Cortex retrieves the result, the Pod is terminated. Without a shared filesystem accessible by both the Cortex Pod and these analyzer and responder Pods, they can't access the data they need to operate, causing the jobs to fail.</p>
+<p>Kubernetes supports several methods for sharing filesystems between Pods, including:</p>
 <ul>
 <li><a href="https://kubernetes.io/docs/concepts/storage/volumes/#nfs" target="_blank">PV using an NFS server</a></li>
 <li>Dedicated storage solutions like <a href="https://longhorn.io/" target="_blank">Longhorn</a> or <a href="https://rook.io/" target="_blank">Rook</a></li>
 </ul>
 <p>This guide focuses on configuring a PV using an NFS server, with an example for <a href="#example-deploy-cortex-using-aws-efs">AWS Elastic File System (EFS)</a>.</p>
 </div>
-<p>At runtime, Cortex and its jobs run on different pods and may use different user IDs (UIDs) and group IDs (GIDs):</p>
+<p>At runtime, Cortex and its jobs run on different Pods and may use different user IDs (UIDs) and group IDs (GIDs):</p>
 <ul>
 <li>Cortex defaults to uid:gid <code>1001:1001</code>.</li>
 <li>Analyzers may use different uid:gid, such as <code>1000:1000</code> or <code>0:0</code> if running as root.</li>
@@ -21783,14 +21783,14 @@
 <h2 id="step-2-deploy-cortex">Step 2: Deploy Cortex<a class="headerlink" href="#step-2-deploy-cortex" title="Permanent link">#</a></h2>
 <h3 id="deploy-with-default-configuration">Deploy with default configuration<a class="headerlink" href="#deploy-with-default-configuration" title="Permanent link">#</a></h3>
 <div class="admonition info">
-<p class="admonition-title">Service account</p>
-<p>A service account (SA) allows a pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated SA is essential for creating and managing Kubernetes jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.</p>
+<p class="admonition-title">ServiceAccount</p>
+<p>A ServiceAccount allows a Pod to authenticate and interact with the Kubernetes API, enabling it to perform specific actions within the cluster. When deploying Cortex, a dedicated ServiceAccount is essential for creating and managing Kubernetes Jobs that run analyzers and responders. Without proper configuration, Cortex can't execute these jobs.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Using an existing PV</p>
-<p>The <code>cortex</code> Helm Chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm Chart.</p>
+<p>The <code>cortex</code> Helm chart can operate without creating a new PV, provided that an existing PV—created by the cluster administrator—matches the PVC configuration specified in the Helm chart.</p>
 </div>
-<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and SA during deployment.</p>
+<p>Use the <code>cortex</code> Helm chart to automate the creation of the PV, PVC, and ServiceAccount during deployment.</p>
 <p>The default configuration is designed for development environments and requires modifications for production use. See <a href="#production-configuration">Production configuration</a> for required adjustments.</p>
 <ol>
 <li>
@@ -21838,7 +21838,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 <h4 id="storage-configuration">Storage configuration<a class="headerlink" href="#storage-configuration" title="Permanent link">#</a></h4>
 <div class="admonition warning">
 <p class="admonition-title">Shared storage requirement</p>
-<p>Cortex requires a shared PVC with <code>ReadWriteMany</code> access mode to allow multiple pods to read and write data simultaneously—essential for job inputs and outputs.</p>
+<p>Cortex requires a shared PVC with <code>ReadWriteMany</code> access mode to allow multiple Pods to read and write data simultaneously—essential for job inputs and outputs.</p>
 </div>
 <p>By default, this chart attempts to create such a PVC using your cluster’s default StorageClass. Ensure this StorageClass supports <code>ReadWriteMany</code> to avoid deployment issues or target a StorageClass in your cluster compatible with this access mode.</p>
 <p>Common solutions include:</p>
@@ -21857,9 +21857,74 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 </div>
 <h4 id="cortex-server-in-thehive">Cortex server in TheHive<a class="headerlink" href="#cortex-server-in-thehive" title="Permanent link">#</a></h4>
 <p>See <a href="../../../thehive/administration/cortex/add-a-cortex-server/">Add a Cortex Server</a> for detailed instructions.</p>
-<p>When TheHive and Cortex deploy in the same Kubernetes cluster, use the Cortex service DNS as the server URL.</p>
+<p>When TheHive and Cortex deploy in the same Kubernetes cluster, use the DNS name of the Cortex Service as the server URL.</p>
 <div class="highlight"><pre><span></span><code>http://cortex.&lt;namespace&gt;.svc:9001
 </code></pre></div>
+<h4 id="private-registry-for-analyzers-and-responders">Private registry for analyzers and responders<a class="headerlink" href="#private-registry-for-analyzers-and-responders" title="Permanent link">#</a></h4>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="" title="#' 'Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text">4.2</span></span></p>
+<p>On Kubernetes, Cortex runs each analyzer or responder job as a Kubernetes Job, and Kubernetes pulls the analyzer or responder image for this Job. If your images are in a private registry, Kubernetes needs credentials to pull them. Without credentials, the Pod of the Job stays in the <code>ImagePullBackOff</code> state and the job fails when the job timeout is reached.</p>
+<p>The <code>job.kubernetes.imagePullSecrets</code> setting lists Kubernetes Secrets that hold your registry credentials. Cortex adds these Secrets to every analyzer and responder Job it creates, and Kubernetes uses them to log in to the registry.</p>
+<p>This setting applies only when Cortex runs analyzers and responders on Kubernetes. With Docker, use the <code>docker.registry.*</code> settings described in <a href="../parameters-docker/">Parameters for Docker</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Pull secrets on the default ServiceAccount</p>
+<p>Kubernetes adds the image pull secrets of the default ServiceAccount only to Pods that declare none. Once you set <code>job.kubernetes.imagePullSecrets</code>, analyzer and responder Pods use only the Secrets in this list.</p>
+<p>If you added registry credentials to the default ServiceAccount of the namespace, also add these Secrets to <code>job.kubernetes.imagePullSecrets</code>. Otherwise, Kubernetes can no longer pull images from the registries that only the ServiceAccount knew about.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Chart <code>imagePullSecrets</code> value</p>
+<p>The top-level <code>imagePullSecrets</code> value of the <code>cortex</code> Helm chart applies only to the Cortex Pod, to pull the Cortex image. It has no effect on analyzer and responder Jobs.</p>
+</div>
+<ol>
+<li>
+<p>Create a Secret holding your registry credentials in the namespace where Cortex runs. Cortex creates its Jobs in this namespace.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>&lt;secret_name&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>&lt;cortex_namespace&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-server<span class="o">=</span>&lt;registry_host&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-username<span class="o">=</span>&lt;username&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-password<span class="o">=</span>&lt;password&gt;
+</code></pre></div>
+<p>Kubernetes accepts Secrets of type <code>kubernetes.io/dockerconfigjson</code>, which is the type this command creates, and of the older type <code>kubernetes.io/dockercfg</code>. It ignores Secrets of type <code>Opaque</code> and Secrets in another namespace.</p>
+<p>Cortex never reads the content of these Secrets and needs no Kubernetes permission on Secrets. Kubernetes reads them when it pulls the image.</p>
+</li>
+<li>
+<p>Make sure each analyzer and responder image name includes the registry host, for example <code>registry.example.com/team/analyzer:1.0</code>. If the image names in your catalog don't include it, set the <code>cortex.dockerImageRegistryPrefix</code> value in your <code>values.yaml</code> file. Cortex adds this prefix as is in front of every analyzer and responder image name, so include the trailing <code>/</code>.</p>
+</li>
+<li>
+<p>In your <code>values.yaml</code> file, add the <code>job.kubernetes.imagePullSecrets</code> setting at the end of <code>cortex.configFile</code>. Keep the existing content of <code>cortex.configFile</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Setting format</p>
+</div>
+<ul>
+<li>Always write a list, even for a single Secret. A plain string stops Cortex at startup, even if Cortex doesn't run jobs on Kubernetes.</li>
+<li>With environment variables, use one variable per Secret: <code>[${?PULL_SECRET}]</code>, not <code>${?PULL_SECRETS}</code>.</li>
+<li>Cortex uses Secret names exactly as written, without trimming or checking them.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="nt">cortex</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">configFile</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no"># Keep the existing configuration above this line</span>
+<span class="w">    </span><span class="no">job.kubernetes.imagePullSecrets = ["&lt;secret_name&gt;"]</span>
+</code></pre></div>
+<p>To use several Secrets, for example one for each registry, list them all: <code>["&lt;secret_name_1&gt;", "&lt;secret_name_2&gt;"]</code>.</p>
+</li>
+<li>
+<p>Apply the new configuration.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>upgrade<span class="w"> </span>&lt;release_name&gt;<span class="w"> </span>strangebee/cortex<span class="w"> </span>-f<span class="w"> </span>values.yaml
+</code></pre></div>
+</li>
+<li>
+<p>Restart Cortex. Cortex reads <code>job.kubernetes.imagePullSecrets</code> only at startup, and a change to <code>cortex.configFile</code> doesn't restart the Cortex Pod.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>&lt;cortex_deployment_name&gt;<span class="w"> </span>--namespace<span class="w"> </span>&lt;cortex_namespace&gt;
+</code></pre></div>
+</li>
+</ol>
+<p>You can create or rotate the Secrets at any time without restarting Cortex. The next job uses the current content of the Secrets.</p>
+<p>If Kubernetes can't pull an image because of a wrong Secret name, wrong credentials, or an unreachable registry, Cortex reports no specific error. The job fails when the job timeout is reached, with a generic timeout message.</p>
+<p>To find the cause, list the analyzer and responder Pods and check their events:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--namespace<span class="w"> </span>&lt;cortex_namespace&gt;<span class="w"> </span>-l<span class="w"> </span>cortex-neuron-job<span class="o">=</span><span class="nb">true</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>pod<span class="w"> </span>&lt;pod_name&gt;<span class="w"> </span>--namespace<span class="w"> </span>&lt;cortex_namespace&gt;
+</code></pre></div>
+<p>A wrong Secret name shows as the event <code>Unable to retrieve some image pull secrets</code>.</p>
+<p>Kubernetes doesn't pull an image again when it's already on the node and its tag is pinned, so no registry login happens for this image. Kubernetes pulls images tagged <code>latest</code> for every job.</p>
 <h3 id="example-deploy-cortex-using-aws-efs">Example: Deploy Cortex using AWS EFS<a class="headerlink" href="#example-deploy-cortex-using-aws-efs" title="Permanent link">#</a></h3>
 <h4 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h4>
 <p>Before setting up the PV for AWS EFS, complete the following steps:</p>
@@ -21895,7 +21960,7 @@ For additional options and best practices, see <a href="https://helm.sh/docs/hel
 </code></pre></div>
 <h4 id="2-create-a-pvc-using-the-efs-storageclass">2. Create a PVC using the EFS StorageClass<a class="headerlink" href="#2-create-a-pvc-using-the-efs-storageclass" title="Permanent link">#</a></h4>
 <p>Kubernetes automatically creates a PV when defining a PVC with the EFS StorageClass.</p>
-<p>Use the <code>cortex</code> Helm chart to configure the storageClass value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the <a href="https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml" target="_blank"><code>values.yaml</code></a> file and look for the <code>persistentVolumeClaim</code> section.</p>
+<p>Use the <code>cortex</code> Helm chart to configure the <code>storageClass</code> value in the chart settings. This ensures the PVC is created automatically during deployment. To do so, open the <a href="https://github.com/StrangeBeeCorp/helm-charts/blob/main/cortex-charts/cortex/values.yaml" target="_blank"><code>values.yaml</code></a> file and look for the <code>persistentVolumeClaim</code> section.</p>
 <h2>Next steps</h2>
 
 <ul>
