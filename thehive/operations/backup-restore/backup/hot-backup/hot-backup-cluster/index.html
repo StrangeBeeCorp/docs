@@ -21827,13 +21827,13 @@
 <ul>
 <li><a href="https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html" target="_blank">Cassandra nodetool</a>: Command-line tool for managing Cassandra clusters, used for creating database snapshots</li>
 <li><a href="https://www.gnu.org/software/tar/manual/html_node/index.html" target="_blank">tar</a>: Utility for archiving backup files</li>
-<li><a href="https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html" target="_blank">cqlsh</a>: Command-line interface for executing CQL queries against the Cassandra database</li>
+<li><a href="https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html" target="_blank">cqlsh</a>: Command-line interface for executing CQL queries against the Cassandra database. Install it from PyPI in a Python virtual environment, as described in <a href="/thehive/installation/installation-guide-linux-standalone-server/#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33">Install TheHive with Packages</a></li>
 <li><a href="https://curl.se/" target="_blank">curl</a>: Tool for transferring data with URLs, useful for interacting with the Elasticsearch API</li>
 <li><a href="https://jqlang.org/" target="_blank">jq</a>: Lightweight command-line JSON processor for parsing and manipulating JSON data in scripts</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>If any tools are missing, install them using your package manager. For example:</p>
 <ul>
@@ -22001,6 +22001,7 @@ sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w">
 <ul>
 <li>Update <code>CASSANDRA_KEYSPACE</code> to match your configuration. You can find this in <code>/etc/thehive/application.conf</code> file under the <code>db.janusgraph.storage.cql.keyspace</code> attribute. The script uses <code>thehive</code> by default.</li>
 <li>Update <code>CASSANDRA_CONNECTION</code> with any Cassandra node IP address in the cluster.</li>
+<li>Update <code>CASSANDRA_CQLSH</code> with the path to <code>cqlsh</code> in its virtual environment, for example <code>/home/&lt;user&gt;/.venv/bin/cqlsh</code>.</li>
 <li>If you configured authentication in <code>/etc/thehive/application.conf</code>, replace the value of the <code>CASSANDRA_CONNECTION</code> variable with: <code>"&lt;ip_node_cassandra&gt; admin -p &lt;authentication_admin_password&gt;"</code>.</li>
 </ul>
 <h4 id="for-elasticsearch">For Elasticsearch<a class="headerlink" href="#for-elasticsearch" title="Permanent link">#</a></h4>
@@ -22021,6 +22022,7 @@ sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w">
 <span class="c1"># Cassandra variables</span>
 <span class="nv">CASSANDRA_KEYSPACE</span><span class="o">=</span>thehive
 <span class="nv">CASSANDRA_CONNECTION</span><span class="o">=</span><span class="s2">"&lt;ip_node_cassandra&gt;"</span>
+<span class="nv">CASSANDRA_CQLSH</span><span class="o">=</span><span class="s2">"&lt;cqlsh_path&gt;"</span>
 <span class="nv">CASSANDRA_GENERAL_ARCHIVE_PATH</span><span class="o">=</span>/mnt/backup/cassandra
 <span class="nv">CASSANDRA_DATA_FOLDER</span><span class="o">=</span>/var/lib/cassandra
 <span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="o">=</span><span class="s2">"cassandra_</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d_%Hh%Mm%Ss<span class="k">)</span><span class="s2">"</span>
@@ -22089,7 +22091,7 @@ chown<span class="w"> </span>-R<span class="w"> </span>cassandra:cassandra<span 
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"[CASS] ✓ Snapshot Cassandra created successfully"</span>
 
 <span class="w">        </span><span class="c1"># Save the cql schema of the keyspace</span>
-<span class="w">        </span>cqlsh<span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_CONNECTION</span><span class="si">}</span><span class="w">  </span>-e<span class="w"> </span><span class="s2">"DESCRIBE KEYSPACE </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"^WARNING"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
+<span class="w">        </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_CQLSH</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="si">${</span><span class="nv">CASSANDRA_CONNECTION</span><span class="si">}</span><span class="w">  </span>-e<span class="w"> </span><span class="s2">"DESCRIBE KEYSPACE </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s2">"^WARNING"</span><span class="w"> </span>&gt;<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">CASSANDRA_GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
 <span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">"The keyspace cql definition for </span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2"> is stored in this file: </span><span class="si">${</span><span class="nv">CASSANDRA_GENERAL_ARCHIVE_PATH</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">CASSANDRA_SNAPSHOT_NAME</span><span class="si">}</span><span class="s2">/create_keyspace_</span><span class="si">${</span><span class="nv">CASSANDRA_KEYSPACE</span><span class="si">}</span><span class="s2">.cql"</span>
 
 <span class="w">        </span><span class="c1"># For each table folder in the keyspace folder of the snapshot</span>

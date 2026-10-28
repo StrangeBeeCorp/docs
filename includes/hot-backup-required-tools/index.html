@@ -21537,13 +21537,13 @@
 <ul>
 <li><a href="https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html" target="_blank">Cassandra nodetool</a>: Command-line tool for managing Cassandra clusters, used for creating database snapshots</li>
 <li><a href="https://www.gnu.org/software/tar/manual/html_node/index.html" target="_blank">tar</a>: Utility for archiving backup files</li>
-<li><a href="https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html" target="_blank">cqlsh</a>: Command-line interface for executing CQL queries against the Cassandra database</li>
+<li><a href="https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html" target="_blank">cqlsh</a>: Command-line interface for executing CQL queries against the Cassandra database. Install it from PyPI in a Python virtual environment, as described in <a href="/thehive/installation/installation-guide-linux-standalone-server/#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33">Install TheHive with Packages</a></li>
 <li><a href="https://curl.se/" target="_blank">curl</a>: Tool for transferring data with URLs, useful for interacting with the Elasticsearch API</li>
 <li><a href="https://jqlang.org/" target="_blank">jq</a>: Lightweight command-line JSON processor for parsing and manipulating JSON data in scripts</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>If any tools are missing, install them using your package manager. For example:</p>
 <ul>

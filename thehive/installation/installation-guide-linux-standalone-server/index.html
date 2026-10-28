@@ -21764,6 +21764,7 @@
 <ul>
 <li>A basic understanding of <a href="../../overview/#architecture">TheHive architecture</a></li>
 <li><a href="../system-requirements/">System requirements fully met and verified</a> for package installation</li>
+<li>Python 3.10 to 3.14 for the Cassandra shell <code>cqlsh</code> if you plan to enable Cassandra authentication</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -21963,6 +21964,10 @@ sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> <
 </div>
 </div>
 <h3 id="step-32-configure-jvm-options-for-cassandra">Step 3.2: Configure JVM options for Cassandra<a class="headerlink" href="#step-32-configure-jvm-options-for-cassandra" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Configuration folder on RPM-based distributions</p>
+<p>On RPM-based distributions, Cassandra configuration files are in <code>/etc/cassandra/conf/</code> instead of <code>/etc/cassandra/</code>. Adjust the paths in the following steps accordingly.</p>
+</div>
 <p>The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
 <ol>
 <li>
@@ -22184,22 +22189,33 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 <h3 id="step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33">Step 3.5: Set a secure password for authentication (if you enabled authentication in <a href="#step-33-configure-cassandra">Step 3.3</a>)<a class="headerlink" href="#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>By default, Cassandra uses the <code>cassandra</code> username and the password <code>cassandra</code>. For security reasons, especially in production environments, you must change this password immediately after setup.</p>
 <p>To do this, you'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
 <ol>
 <li>
+<p>Install <code>cqlsh</code>.</p>
+<p>Install <code>cqlsh</code> from PyPI in a Python virtual environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">VENV_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.venv
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-venv
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">"</span>
+<span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/pip"</span><span class="w"> </span>install<span class="w"> </span>cqlsh
+</code></pre></div>
+<p>On RPM-based distributions, skip the two <code>apt</code> commands. The <code>venv</code> module is included with Python.</p>
+<p>Activate the virtual environment so that the <code>cqlsh</code> command runs from it, then verify the installation:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/activate"</span>
+cqlsh<span class="w"> </span>--version
+</code></pre></div>
+</li>
+<li>
 <p>Connect to Cassandra using default credentials.</p>
 <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-p<span class="w"> </span>cassandra
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Cqlsh may not be available on RPM-based systems</p>
-<p>On some RPM-based distributions, the <code>cqlsh</code> client isn't included with the <code>cassandra</code> package. If running cqlsh gives an error, download the <a href="https://downloads.apache.org/cassandra/" target="_blank">official Apache Cassandra tarball</a> that matches your server version and extract it. Then run the bundled client: <code>./bin/cqlsh -u cassandra -p cassandra</code>.</p>
-</div>
 <p>If the connection is successful, you'll see output similar to:</p>
 <div class="highlight"><pre><span></span><code>Connected to xxx at xx.xx.xx.xx:xxxx
-[cqlsh 6.1.0 | Cassandra 4.1.9 | CQL spec 3.4.6 | Native protocol v5]
+[cqlsh 6.2.0 | Cassandra 4.1.9 | CQL spec 3.4.6 | Native protocol v5]
 </code></pre></div>
 </li>
 <li>
@@ -22219,7 +22235,7 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </li>
 </ol>
 <h3 id="step-36-create-a-new-administrator-role-if-you-enabled-authentication-in-step-33">Step 3.6: Create a new administrator role (if you enabled authentication in <a href="#step-33-configure-cassandra">Step 3.3</a>)<a class="headerlink" href="#step-36-create-a-new-administrator-role-if-you-enabled-authentication-in-step-33" title="Permanent link">#</a></h3>
-<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then delete the default user.</p>
+<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then deactivate or delete the default user.</p>
 <ol>
 <li>
 <p>Create the <code>admin</code> role.</p>
@@ -22237,7 +22253,10 @@ sudo<span class="w"> </span>service<span class="w"> </span>cassandra<span class=
 </code></pre></div>
 </li>
 <li>
-<p>Remove the default <code>cassandra</code> user.</p>
+<p>Deactivate the default <code>cassandra</code> user.</p>
+<div class="highlight"><pre><span></span><code>ALTER<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="w"> </span>WITH<span class="w"> </span><span class="nv">SUPERUSER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span>AND<span class="w"> </span><span class="nv">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</code></pre></div>
+<p>If your security policy requires deleting default accounts, delete the role instead:</p>
 <div class="highlight"><pre><span></span><code>DROP<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="p">;</span>
 </code></pre></div>
 </li>
@@ -22266,7 +22285,7 @@ WITH<span class="w"> </span><span class="nv">replication</span><span class="w"> 
 <p>Replace <code>&lt;thehive_role_password&gt;</code> with the password you intend to use for the <code>thehive</code> role.</p>
 <div class="admonition tip">
 <p class="admonition-title">Note this password</p>
-<p>Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to the Cassandra database.</p>
+<p>Keep this password secure. You'll need to enter it in TheHive configuration file at <a href="#step-52-configure-thehive">Step 5.2</a> so the application can connect to the Cassandra database.</p>
 </div>
 </li>
 <li>
@@ -22413,15 +22432,21 @@ For additional configuration options, refer to:
 <div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://artifacts.elastic.co/GPG-KEY-elasticsearch<span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/elasticsearch-keyring.gpg
 sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apt-transport-https
 </code></pre></div>
-<p>b. Check if the <code>/etc/apt/sources.list.d/elastic-8.x.list</code> file exists. If it doesn't, create it.</p>
-<p>c. Add the repository to your system by appending the following line to the <code>/etc/apt/sources.list.d/elastic-8.x.list</code> file.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main"</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/elastic-8.x.list<span class="w"> </span>
+<p>b. Check if the <code>/etc/apt/sources.list.d/elastic-9.x.list</code> file exists. If it doesn't, create it.</p>
+<p>c. Add the repository to your system by appending the following line to the <code>/etc/apt/sources.list.d/elastic-9.x.list</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main"</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/elastic-9.x.list<span class="w"> </span>
 </code></pre></div>
 </li>
 <li>
 <p>Update your package index and install Elasticsearch using the following commands:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
-sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>elasticsearch
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="nv">elasticsearch</span><span class="o">=</span>&lt;version&gt;
+</code></pre></div>
+<p>Replace <code>&lt;version&gt;</code> with an Elasticsearch version that TheHive supports, for example <code>9.5.5</code>. See the <a href="/thehive/installation/software-requirements/">supported versions</a>.</p>
+</li>
+<li>
+<p>Hold the package so that system upgrades don't move Elasticsearch to an unsupported version.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>elasticsearch
 </code></pre></div>
 </li>
 </ol>
@@ -22437,8 +22462,8 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <p>b. Check if the <code>/etc/yum.repos.d/elasticsearch.repo</code> file exists. If it doesn't, create it.</p>
 <p>c. Add the repository to your system by appending the following line to the <code>/etc/yum.repos.d/elasticsearch.repo</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"[elasticsearch]</span>
-<span class="s2">name=Elasticsearch repository for 8.x packages</span>
-<span class="s2">baseurl=https://artifacts.elastic.co/packages/8.x/yum</span>
+<span class="s2">name=Elasticsearch repository for 9.x packages</span>
+<span class="s2">baseurl=https://artifacts.elastic.co/packages/9.x/yum</span>
 <span class="s2">gpgcheck=1</span>
 <span class="s2">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span>
 <span class="s2">enabled=0"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/yum.repos.d/elasticsearch.repo
@@ -22447,14 +22472,16 @@ sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> <
 <li>
 <p>Update your package index and install Elasticsearch using the following commands:</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>-y<span class="w"> </span>update
-sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>--enablerepo<span class="o">=</span>elasticsearch<span class="w"> </span>elasticsearch
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>--enablerepo<span class="o">=</span>elasticsearch<span class="w"> </span>elasticsearch-&lt;version&gt;
 </code></pre></div>
+<p>Replace <code>&lt;version&gt;</code> with an Elasticsearch version that TheHive supports, for example <code>9.5.5</code>. See the <a href="/thehive/installation/software-requirements/">supported versions</a>.</p>
+<p>The repository is set with <code>enabled=0</code>, so system upgrades don't move Elasticsearch to another version.</p>
 </li>
 </ol>
 <p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm" target="_blank">the most up-to-date instructions</a>.</p>
 </div>
 <div class="tabbed-block">
-<p>Download the tar.gz archive from <a href="http://elastic.co/downloads/elasticsearch" target="_blank">Elasticsearch downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/" target="_blank"><code>wget</code></a> to download the archive.</p>
+<p>Download the tar.gz archive of a supported Elasticsearch version from <a href="http://elastic.co/downloads/elasticsearch" target="_blank">Elasticsearch downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/" target="_blank"><code>wget</code></a> to download the archive.</p>
 </div>
 </div>
 </div>
@@ -22688,6 +22715,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 </ul>
 </div>
 <h3 id="step-44-permissions">Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in <a href="#step-42-configure-elasticsearch">Step 4.2</a>)<a class="headerlink" href="#step-44-permissions" title="Permanent link">#</a></h3>
+<p>The Elasticsearch DEB and RPM packages turn on TLS for the HTTP layer at installation, so the Elasticsearch API answers over HTTPS only. The <code>curl</code> commands below pass the certificate authority (CA) certificate generated at installation with <code>--cacert</code>.</p>
 <ol>
 <li>
 <p>Create a <code>thehive</code> user.</p>
@@ -22696,22 +22724,14 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <p>Replace <code>&lt;thehive_user_password&gt;</code> with a secure password you choose for your TheHive user.</p>
 <div class="admonition tip">
 <p class="admonition-title">Note this password</p>
-<p>Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.</p>
+<p>Keep this password secure. You'll need to enter it in TheHive configuration file at <a href="#step-52-configure-thehive">Step 5.2</a> so the application can connect to Elasticsearch.</p>
 </div>
 </li>
 <li>
-<p>Optional: Set a password for the <code>elastic</code> user.</p>
-<ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords" target="_blank">For Elasticsearch 7.x</a>:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-setup-passwords<span class="w"> </span>interactive
+<p>Optional: Set a password for the <code>elastic</code> user. Skip this step if the password is already set.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password<span class="w"> </span>-u<span class="w"> </span>elastic
 </code></pre></div>
-<ul>
-<li><a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">For Elasticsearch 8.0</a>:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password
-</code></pre></div>
-<p>Skip this step if the password is already set.</p>
+<p>For more details, refer to <a href="https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password" target="_blank">the official Elasticsearch documentation for the reset password tool</a>.</p>
 </li>
 <li>
 <p>Create or update a role with the privileges needed for TheHive.</p>
@@ -22726,9 +22746,9 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <p>If you're using an existing Elasticsearch instance, confirm it can grant these privileges before connecting it to TheHive.</p>
 </div>
 <ul>
-<li>Create a role:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+<li>
+<p>Create a role:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://localhost:9200/_security/role/thehive_role"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -22742,10 +22762,10 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>If successful, the command should return: <code>{"role":{"created":true}}</code>.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for role creation</a>.</p>
-<ul>
-<li>Update a role:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
+</li>
+<li>
+<p>Update a role:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"https://localhost:9200/_security/role/&lt;role&gt;"</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
 <span class="s1">  "cluster": ["manage"],</span>
 <span class="s1">  "indices": [</span>
@@ -22760,9 +22780,11 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w
 <p>Replace <code>&lt;elastic_user_password&gt;</code> with the password you set for the <code>elastic</code> user.</p>
 <p>For more details, refer to <a href="https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role" target="_blank">the official Elasticsearch API documentation for updating roles</a>.</p>
 </li>
+</ul>
+</li>
 <li>
 <p>Assign the role to the user you'll use for TheHive.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"http://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span>-X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"https://localhost:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
 -d<span class="w"> </span><span class="s1">'{</span>
 <span class="s1">    "password" : "&lt;thehive_user_password&gt;",</span>
@@ -23277,6 +23299,10 @@ sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span cl
 <p>Replace <code>&lt;thehive_user_password&gt;</code> with the password set in <a href="#step-44-permissions">Step 4.4</a>.</p>
 <p>You can remove the lines under <code># Cassandra authentication (recommended)</code> and <code># Elasticsearch authentication (recommended)</code> if you didn’t enable authentication for Cassandra or Elasticsearch.</p>
 <p>To set up SSL for Cassandra and Elasticsearch connections, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">HTTPS connection to Elasticsearch</p>
+<p>Elasticsearch accepts HTTPS connections only, with certificates signed by the CA generated at installation. Configure TheHive to trust the <code>/etc/elasticsearch/certs/http_ca.crt</code> file by following <a href="../../configuration/configure-ssl-cassandra-elasticsearch/#configure-ssl-for-elasticsearch">Configure SSL for Elasticsearch</a>. Without this configuration, TheHive can't connect to Elasticsearch.</p>
+</div>
 </li>
 <li>
 <p>Save your modifications in the <code>application.conf</code> file.</p>
@@ -23540,15 +23566,17 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 <p>When you connect TheHive to MISP, you can bring in threat intelligence by importing MISP events as alerts or cases to support your investigations. You can also share your findings back to MISP by exporting observables marked as indicators of compromise (IOCs) so other teams and communities can benefit.</p>
 <p>If you don't plan to use either of these services, you can deactivate the corresponding module by uncommenting the related configuration line in the <code>application.conf</code> file.</p>
 <ul>
-<li>To deactivate the Cortex module:</li>
-</ul>
+<li>
+<p>To deactivate the Cortex module:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">scalligraph.disabledModules += org.thp.thehive.connector.cortex.CortexModule</span>
 </code></pre></div>
-<ul>
-<li>To deactivate the MISP module:</li>
-</ul>
+</li>
+<li>
+<p>To deactivate the MISP module:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule</span>
 </code></pre></div>
+</li>
+</ul>
 <h3 id="step-56-start-thehive-service">Step 5.6: Start TheHive service<a class="headerlink" href="#step-56-start-thehive-service" title="Permanent link">#</a></h3>
 <ol>
 <li>
@@ -23566,6 +23594,21 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <p class="admonition-title">Service startup delay</p>
 <p>Be aware that the service may take some time to start initially.</p>
 </div>
+<p>To check that TheHive has finished starting, use one of the following methods:</p>
+<ul>
+<li>
+<p>Look for the <code>Listening for HTTP</code> line in TheHive log file:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">"Listening for HTTP"</span><span class="w"> </span>/var/log/thehive/application.log
+</code></pre></div>
+<p>TheHive is ready when the command returns a line such as <code>[INFO] from play.core.server.PekkoHttpServer in main [] Listening for HTTP on /0.0.0.0:9000</code>.</p>
+</li>
+<li>
+<p>Request the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Status/operation/Get%20platform%20public%20status" target="_blank">public status endpoint</a>, which doesn't require authentication:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://localhost:9000/api/v1/status/public
+</code></pre></div>
+<p>TheHive is ready when the response contains its version.</p>
+</li>
+</ul>
 <div class="admonition bug">
 <p class="admonition-title">Troubleshooting TheHive</p>
 <p>If you run into issues, see <a href="../../operations/troubleshooting/">Enable Trace Logging for Troubleshooting</a> for guidance.</p>

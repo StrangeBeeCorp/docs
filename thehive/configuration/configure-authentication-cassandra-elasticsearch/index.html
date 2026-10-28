@@ -21729,22 +21729,33 @@
 <h3 id="step-3-set-a-secure-password-for-authentication">Step 3: Set a secure password for authentication<a class="headerlink" href="#step-3-set-a-secure-password-for-authentication" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>By default, Cassandra uses the <code>cassandra</code> username and the password <code>cassandra</code>. For security reasons, especially in production environments, you must change this password immediately after setup.</p>
 <p>To do this, you'll use CQL, the Cassandra Query Language, which is similar in purpose to SQL.</p>
 <ol>
 <li>
+<p>Install <code>cqlsh</code>.</p>
+<p>Install <code>cqlsh</code> from PyPI in a Python virtual environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">VENV_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.venv
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-venv
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">"</span>
+<span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/pip"</span><span class="w"> </span>install<span class="w"> </span>cqlsh
+</code></pre></div>
+<p>On RPM-based distributions, skip the two <code>apt</code> commands. The <code>venv</code> module is included with Python.</p>
+<p>Activate the virtual environment so that the <code>cqlsh</code> command runs from it, then verify the installation:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/activate"</span>
+cqlsh<span class="w"> </span>--version
+</code></pre></div>
+</li>
+<li>
 <p>Connect to Cassandra using default credentials.</p>
 <div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-p<span class="w"> </span>cassandra
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Cqlsh may not be available on RPM-based systems</p>
-<p>On some RPM-based distributions, the <code>cqlsh</code> client isn't included with the <code>cassandra</code> package. If running cqlsh gives an error, download the <a href="https://downloads.apache.org/cassandra/" target="_blank">official Apache Cassandra tarball</a> that matches your server version and extract it. Then run the bundled client: <code>./bin/cqlsh -u cassandra -p cassandra</code>.</p>
-</div>
 <p>If the connection is successful, you'll see output similar to:</p>
 <div class="highlight"><pre><span></span><code>Connected to xxx at xx.xx.xx.xx:xxxx
-[cqlsh 6.1.0 | Cassandra 4.1.9 | CQL spec 3.4.6 | Native protocol v5]
+[cqlsh 6.2.0 | Cassandra 4.1.9 | CQL spec 3.4.6 | Native protocol v5]
 </code></pre></div>
 </li>
 <li>
@@ -21764,7 +21775,7 @@
 </li>
 </ol>
 <h3 id="step-4-create-a-new-administrator-role-for-authentication">Step 4: Create a new administrator role for authentication<a class="headerlink" href="#step-4-create-a-new-administrator-role-for-authentication" title="Permanent link">#</a></h3>
-<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then delete the default user.</p>
+<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then deactivate or delete the default user.</p>
 <ol>
 <li>
 <p>Create the <code>admin</code> role.</p>
@@ -21782,7 +21793,10 @@
 </code></pre></div>
 </li>
 <li>
-<p>Remove the default <code>cassandra</code> user.</p>
+<p>Deactivate the default <code>cassandra</code> user.</p>
+<div class="highlight"><pre><span></span><code>ALTER<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="w"> </span>WITH<span class="w"> </span><span class="nv">SUPERUSER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span>AND<span class="w"> </span><span class="nv">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</code></pre></div>
+<p>If your security policy requires deleting default accounts, delete the role instead:</p>
 <div class="highlight"><pre><span></span><code>DROP<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="p">;</span>
 </code></pre></div>
 </li>

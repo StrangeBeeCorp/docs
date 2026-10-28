@@ -21532,7 +21532,7 @@
 
   <h1>Create administrator role cassandra</h1>
 
-<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then delete the default user.</p>
+<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then deactivate or delete the default user.</p>
 <ol>
 <li>
 <p>Create the <code>admin</code> role.</p>
@@ -21550,7 +21550,10 @@
 </code></pre></div>
 </li>
 <li>
-<p>Remove the default <code>cassandra</code> user.</p>
+<p>Deactivate the default <code>cassandra</code> user.</p>
+<div class="highlight"><pre><span></span><code>ALTER<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="w"> </span>WITH<span class="w"> </span><span class="nv">SUPERUSER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="w"> </span>AND<span class="w"> </span><span class="nv">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>false<span class="p">;</span>
+</code></pre></div>
+<p>If your security policy requires deleting default accounts, delete the role instead:</p>
 <div class="highlight"><pre><span></span><code>DROP<span class="w"> </span>ROLE<span class="w"> </span>cassandra<span class="p">;</span>
 </code></pre></div>
 </li>

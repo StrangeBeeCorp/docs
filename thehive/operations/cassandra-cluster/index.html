@@ -21802,14 +21802,18 @@ UN  172.24.0.3  1.91 GiB  256      51.2%             f192ef8f-a4fd-4e24-99a7-0f9
 <h2 id="increasing-replication-factor-in-cassandra">Increasing Replication Factor in Cassandra<a class="headerlink" href="#increasing-replication-factor-in-cassandra" title="Permanent link">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>When you have multiple nodes, increasing the replication factor enhances fault tolerance by creating additional copies in the cluster. More copies mean greater resilience to hardware failures. However, this also means more disk space is used due to the increased data redundancy, potentially resulting in slower write access.</p>
 <p>To enhance fault tolerance in your Cassandra cluster by increasing the replication factor, follow these steps:</p>
 <ol>
 <li>
 <p>Connect to cqlsh</p>
-<p>Use cqlsh to connect to your Cassandra cluster:</p>
+<p>Activate the virtual environment where <code>cqlsh</code> is installed, then use <code>cqlsh</code> to connect to your Cassandra cluster:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/activate"</span>
+cqlsh<span class="w"> </span>&lt;ip_node&gt;<span class="w"> </span>-u<span class="w"> </span>&lt;user&gt;
+</code></pre></div>
+<p>Replace <code>${VENV_PATH}</code> with the path to the virtual environment. The default path is <code>$HOME/.venv</code>. Replace <code>&lt;ip_node&gt;</code> with the IP address of a Cassandra node and <code>&lt;user&gt;</code> with the name of a Cassandra superuser.</p>
 </li>
 <li>
 <p>Modify Keyspace Replication</p>

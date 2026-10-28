@@ -21795,7 +21795,7 @@
 <p class="admonition-title">Before you begin</p>
 <ul>
 <li>Verify that all <a href="../system-requirements/">system requirements for package installation</a> are met on every node.</li>
-<li>Ensure that Python 3.9 is available for using the Cassandra Query Language (CQL) shell <code>cqlsh</code>. Later Python versions aren't compatible.</li>
+<li>Ensure that Python 3.10 to 3.14 is available on the node where you run the Cassandra Query Language (CQL) shell <code>cqlsh</code>.</li>
 </ul>
 </div>
 <div class="admonition info">
@@ -21837,11 +21837,15 @@
 <p>A node in this context refers to each server or machine designated to participate in the Cassandra cluster.</p>
 </div>
 <h3 id="step-22-configure-cassandra">Step 2.2: Configure Cassandra<a class="headerlink" href="#step-22-configure-cassandra" title="Permanent link">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Configuration folder on RPM-based distributions</p>
+<p>On RPM-based distributions, Cassandra configuration files are in <code>/etc/cassandra/conf/</code> instead of <code>/etc/cassandra/</code>. Adjust the paths in the following steps accordingly.</p>
+</div>
 <p>On each node in the Cassandra cluster, update the configuration files as follows:</p>
 <ol>
 <li>
 <p>Update the Cassandra configuration file.</p>
-<p>Open the <code>/etc/cassandra/cassandra.yaml</code> file on each node using a text editor:</p>
+<p>Open the <code>/etc/cassandra/cassandra.yaml</code> file on each node using a text editor, and set the following parameters. Edit them in place and keep the rest of the file, because Cassandra doesn't start without some of the other default settings.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">cluster_name</span><span class="p">:</span><span class="w"> </span><span class="s">'thp'</span>
 <span class="nt">num_tokens</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
 <span class="nt">authenticator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PasswordAuthenticator</span>
@@ -21853,9 +21857,9 @@
 <span class="nt">saved_caches_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/cassandra/saved_caches</span>
 <span class="nt">seed_provider</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">class_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">org.apache.cassandra.locator.SimpleSeedProvider</span>
-<span class="w">    </span><span class="nt">parameters</span><span class="p">:</span>
-<span class="hll"><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">seeds</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;ip_node_1&gt;,</span><span class="nv"> </span><span class="s">&lt;ip_node_2&gt;,</span><span class="nv"> </span><span class="s">&lt;ip_node_3&gt;"</span>
-</span><span class="nt">listen_interface </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span>
+<span class="w">      </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">seeds</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;ip_cassandra_node_1&gt;,</span><span class="nv"> </span><span class="s">&lt;ip_cassandra_node_2&gt;,</span><span class="nv"> </span><span class="s">&lt;ip_cassandra_node_3&gt;"</span>
+<span class="nt">listen_interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span>
 <span class="nt">rpc_interface</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eth0</span>
 <span class="nt">endpoint_snitch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GossipingPropertyFileSnitch</span>
 </code></pre></div>
@@ -21868,7 +21872,8 @@
 <li>Network interfaces: Set up the appropriate network interfaces.</li>
 <li>Endpoint snitch: Specify the snitch for determining network topology.</li>
 </ul>
-<p>Replace <code>&lt;ip_node_1&gt;</code>, <code>&lt;ip_node_2&gt;</code>, and <code>&lt;ip_node_3&gt;</code> with the IP addresses of all the nodes included in the cluster, and set <code>listen_interface</code> and <code>rpc_interface</code> to the network interface name of the node, <code>eth0</code> in this example.</p>
+<p>Replace <code>&lt;ip_cassandra_node_1&gt;</code>, <code>&lt;ip_cassandra_node_2&gt;</code>, and <code>&lt;ip_cassandra_node_3&gt;</code> with the IP addresses of all the nodes included in the cluster, and set <code>listen_interface</code> and <code>rpc_interface</code> to the network interface name of the node, <code>eth0</code> in this example.</p>
+<p>Comment out the <code>listen_address</code> and <code>rpc_address</code> parameters. Both are set to <code>localhost</code> by default. Cassandra doesn't start if both <code>listen_address</code> and <code>listen_interface</code>, or both <code>rpc_address</code> and <code>rpc_interface</code>, are set.</p>
 <div class="admonition info">
 <p class="admonition-title">Parameter details</p>
 <p>For detailed explanations of each parameter in the YAML file, refer to the <a href="../installation-guide-linux-standalone-server/#step-33-configure-cassandra">Cassandra configuration section</a>.</p>
@@ -21876,8 +21881,8 @@
 </li>
 <li>
 <p>Delete the Cassandra topology properties file.</p>
-<p>Remove the <code>cassandra-topology.properties</code> file to prevent any conflicts:</p>
-<div class="highlight"><pre><span></span><code>rm /etc/cassandra/cassandra-topology.properties
+<p>Remove the <code>cassandra-topology.properties</code> file if it exists, to prevent any conflicts:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/etc/cassandra/cassandra-topology.properties
 </code></pre></div>
 </li>
 <li>
@@ -21976,29 +21981,40 @@ Datacenter:<span class="w"> </span><span class="nv">datacenter1</span>
 <span class="o">===============</span>
 <span class="nv">Status</span><span class="o">=</span>Up/Down
 <span class="p">|</span>/<span class="w"> </span><span class="nv">State</span><span class="o">=</span>Normal/Leaving/Joining/Moving
---<span class="w">  </span>Address<span class="w">      </span>Load<span class="w">       </span>Tokens<span class="w">       </span>Owns<span class="w"> </span><span class="o">(</span>effective<span class="o">)</span><span class="w">  </span>Host<span class="w"> </span>ID<span class="w">                               </span>Rack
-UN<span class="w">  </span>&lt;ip_node_1&gt;<span class="w">  </span><span class="m">776</span>.53<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>a79c9a8c-c99b-4d74-8e78-6b0c252abd86<span class="w">  </span>rack1
-UN<span class="w">  </span>&lt;ip_node_2&gt;<span class="w">  </span><span class="m">671</span>.72<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>8fda2906-2097-4d62-91f8-005e33d3e839<span class="w">  </span>rack1
-UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class="m">611</span>.54<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>201ab99c-8e16-49b1-9b66-5444044fb1cd<span class="w">  </span>rack1
+--<span class="w">  </span>Address<span class="w">                </span>Load<span class="w">       </span>Tokens<span class="w">       </span>Owns<span class="w"> </span><span class="o">(</span>effective<span class="o">)</span><span class="w">  </span>Host<span class="w"> </span>ID<span class="w">                               </span>Rack
+UN<span class="w">  </span>&lt;ip_cassandra_node_1&gt;<span class="w">  </span><span class="m">776</span>.53<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>a79c9a8c-c99b-4d74-8e78-6b0c252abd86<span class="w">  </span>rack1
+UN<span class="w">  </span>&lt;ip_cassandra_node_2&gt;<span class="w">  </span><span class="m">671</span>.72<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>8fda2906-2097-4d62-91f8-005e33d3e839<span class="w">  </span>rack1
+UN<span class="w">  </span>&lt;ip_cassandra_node_3&gt;<span class="w">  </span><span class="m">611</span>.54<span class="w"> </span>KiB<span class="w">  </span><span class="m">256</span><span class="w">          </span><span class="m">100</span>.0%<span class="w">            </span>201ab99c-8e16-49b1-9b66-5444044fb1cd<span class="w">  </span>rack1
 </code></pre></div>
 </li>
 </ol>
 <h3 id="step-25-initialize-the-database">Step 2.5: Initialize the database<a class="headerlink" href="#step-25-initialize-the-database" title="Permanent link">#</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Python compatibility for cqlsh</p>
-<p><code>cqlsh</code> requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell <code>cqlsh</code> which interpreter to use. You can do this by setting the <code>CQLSH_PYTHON</code> environment variable when running <code>cqlsh</code>: <code>sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh</code>.</p>
+<p><code>cqlsh</code> requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the <code>cqlsh</code> virtual environment: <code>/path/to/python3.12 -m venv "${VENV_PATH}"</code>.</p>
 </div>
 <p>To initialize the database:</p>
 <ol>
 <li>
-<p>Connect to Cassandra using default credentials.</p>
-<p>On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:</p>
-<div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>&lt;ip_node_X&gt;<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-p<span class="w"> </span>cassandra
+<p>Install <code>cqlsh</code>.</p>
+<p>On one of the nodes, install <code>cqlsh</code> from PyPI in a Python virtual environment:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">VENV_PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.venv
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>python3-venv
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">"</span>
+<span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/pip"</span><span class="w"> </span>install<span class="w"> </span>cqlsh
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Cqlsh may not be available on RPM-based systems</p>
-<p>On some RPM-based distributions, the <code>cqlsh</code> client isn't included with the <code>cassandra</code> package. If running cqlsh gives an error, download the <a href="https://downloads.apache.org/cassandra/" target="_blank">official Apache Cassandra tarball</a> that matches your server version and extract it. Then run the bundled client: <code>./bin/cqlsh &lt;ip_node_X&gt; -u cassandra -p cassandra</code>.</p>
-</div>
+<p>On RPM-based distributions, skip the two <code>apt</code> commands. The <code>venv</code> module is included with Python.</p>
+<p>Activate the virtual environment so that the <code>cqlsh</code> command runs from it, then verify the installation:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="si">${</span><span class="nv">VENV_PATH</span><span class="si">}</span><span class="s2">/bin/activate"</span>
+cqlsh<span class="w"> </span>--version
+</code></pre></div>
+</li>
+<li>
+<p>Connect to Cassandra using default credentials.</p>
+<p>On the same node, access the CQL shell by running the following command, providing the IP address of the node:</p>
+<div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>&lt;ip_cassandra_node&gt;<span class="w"> </span>-u<span class="w"> </span>cassandra<span class="w"> </span>-p<span class="w"> </span>cassandra
+</code></pre></div>
 </li>
 <li>
 <p>Configure the system authentication replication.</p>
@@ -22008,15 +22024,18 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 </li>
 <li>
 <p>Create a new administrator role.</p>
-<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then delete the default user.</p>
+<p>To avoid relying on the default <code>cassandra</code> superuser account, create a new administrator role and then deactivate or delete the default user.</p>
 <p>a. Create the <code>admin</code> role.</p>
 <div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'&lt;authentication_admin_password&gt;'</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">SUPERUSER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
 </code></pre></div>
 <p>Replace <code>&lt;authentication_admin_password&gt;</code> with the password you intend to use for the <code>admin</code> superuser account.</p>
 <p>b. Disconnect from the session by pressing <strong>Ctrl+D</strong>, then reconnect as the new admin.</p>
-<div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>&lt;ip_node_X&gt;<span class="w"> </span>-u<span class="w"> </span>admin
+<div class="highlight"><pre><span></span><code>cqlsh<span class="w"> </span>&lt;ip_cassandra_node&gt;<span class="w"> </span>-u<span class="w"> </span>admin
 </code></pre></div>
-<p>c. Remove the default <code>cassandra</code> user.</p>
+<p>c. Deactivate the default <code>cassandra</code> user.</p>
+<div class="highlight"><pre><span></span><code><span class="k">ALTER</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">cassandra</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">SUPERUSER</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+</code></pre></div>
+<p>If your security policy requires deleting default accounts, delete the role instead:</p>
 <div class="highlight"><pre><span></span><code><span class="k">DROP</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">cassandra</span><span class="p">;</span>
 </code></pre></div>
 </li>
@@ -22035,7 +22054,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>Replace <code>&lt;thehive_role_password&gt;</code> with the password you intend to use for the <code>thehive</code> role.</p>
 <div class="admonition tip">
 <p class="admonition-title">Note this password</p>
-<p>Keep this password secure. You'll need to enter it later in TheHive configuration file so the application can connect to the Cassandra database.</p>
+<p>Keep this password secure. You'll need to enter it in TheHive configuration file at <a href="#configure-the-database-and-index-engine">Step 5.2</a> so the application can connect to the Cassandra database.</p>
 </div>
 </li>
 </ol>
@@ -22054,17 +22073,17 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <li>
 <p>Open the <code>cassandra.yaml</code> configuration file and edit the <code>client_encryption_options</code> section.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">client_encryption_options</span><span class="p">:</span>
-<span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
-<span class="hll"><span class="nt">keystore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;keystore_file&gt;</span>
-</span><span class="nt">keystore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;keystore_password&gt;</span>
-<span class="nt">require_client_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="hll"><span class="nt">truststore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;truststore_file&gt;</span>
-</span><span class="nt">truststore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;truststore_password&gt;</span>
-<span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TLS</span>
-<span class="nt">algorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SunX509</span>
-<span class="nt">store_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JKS</span>
-<span class="nt">cipher_suites</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TLS_RSA_WITH_AES_128_CBC_SHA</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">TLS_RSA_WITH_AES_256_CBC_SHA</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">optional</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">keystore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;keystore_file&gt;</span>
+<span class="w">  </span><span class="nt">keystore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;keystore_password&gt;</span>
+<span class="w">  </span><span class="nt">require_client_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">truststore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;truststore_file&gt;</span>
+<span class="w">  </span><span class="nt">truststore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;truststore_password&gt;</span>
+<span class="w">  </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TLS</span>
+<span class="w">  </span><span class="nt">algorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SunX509</span>
+<span class="w">  </span><span class="nt">store_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JKS</span>
+<span class="w">  </span><span class="nt">cipher_suites</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TLS_RSA_WITH_AES_128_CBC_SHA</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">TLS_RSA_WITH_AES_256_CBC_SHA</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 </li>
 <li>
@@ -22088,17 +22107,17 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <li>
 <p>Open the <code>cassandra.yaml</code> configuration file and edit the <code>server_encryption_options</code> section.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">server_encryption_options</span><span class="p">:</span>
-<span class="nt">internode_encryption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span>
-<span class="hll"><span class="nt">keystore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;keystore_file&gt;</span>
-</span><span class="nt">keystore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;keystore_password&gt;</span>
-<span class="hll"><span class="nt">truststore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;truststore_file&gt;</span>
-</span><span class="nt">truststore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;truststore_password&gt;</span>
-<span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TLS</span>
-<span class="nt">algorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SunX509</span>
-<span class="nt">store_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JKS</span>
-<span class="nt">cipher_suites</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TLS_RSA_WITH_AES_128_CBC_SHA</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">TLS_RSA_WITH_AES_256_CBC_SHA</span><span class="p p-Indicator">]</span>
-<span class="nt">require_client_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">internode_encryption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span>
+<span class="w">  </span><span class="nt">keystore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;keystore_file&gt;</span>
+<span class="w">  </span><span class="nt">keystore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;keystore_password&gt;</span>
+<span class="w">  </span><span class="nt">truststore</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/path/to/&lt;truststore_file&gt;</span>
+<span class="w">  </span><span class="nt">truststore_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;truststore_password&gt;</span>
+<span class="w">  </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TLS</span>
+<span class="w">  </span><span class="nt">algorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SunX509</span>
+<span class="w">  </span><span class="nt">store_type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">JKS</span>
+<span class="w">  </span><span class="nt">cipher_suites</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TLS_RSA_WITH_AES_128_CBC_SHA</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">TLS_RSA_WITH_AES_256_CBC_SHA</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">require_client_auth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 </li>
 <li>
@@ -22167,41 +22186,103 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>Sharing a single Elasticsearch instance between TheHive and Cortex isn't recommended. If you must do it, ensure the Elasticsearch version is compatible with both applications.</p>
 </div>
 <h3 id="step-31-install-elasticsearch">Step 3.1: Install Elasticsearch<a class="headerlink" href="#step-31-install-elasticsearch" title="Permanent link">#</a></h3>
-<p>To establish a cluster of three active Elasticsearch nodes, follow the <a href="../installation-guide-linux-standalone-server/#step-41-install-elasticsearch">installation instructions</a> for each node.</p>
+<p>To establish a cluster of three active Elasticsearch nodes, install Elasticsearch on each node:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">DEB</label><label for="__tabbed_4_2">RPM</label><label for="__tabbed_4_3">Other installation methods</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Add Elasticsearch repository references.</p>
+<p>a. Download Elasticsearch repository keys.</p>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>-qO<span class="w"> </span>-<span class="w"> </span>https://artifacts.elastic.co/GPG-KEY-elasticsearch<span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>gpg<span class="w"> </span>--dearmor<span class="w"> </span>-o<span class="w"> </span>/usr/share/keyrings/elasticsearch-keyring.gpg
+sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>apt-transport-https
+</code></pre></div>
+<p>b. Check if the <code>/etc/apt/sources.list.d/elastic-9.x.list</code> file exists. If it doesn't, create it.</p>
+<p>c. Add the repository to your system by appending the following line to the <code>/etc/apt/sources.list.d/elastic-9.x.list</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main"</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/elastic-9.x.list<span class="w"> </span>
+</code></pre></div>
+</li>
+<li>
+<p>Update your package index and install Elasticsearch using the following commands:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span><span class="nv">elasticsearch</span><span class="o">=</span>&lt;version&gt;
+</code></pre></div>
+<p>Replace <code>&lt;version&gt;</code> with an Elasticsearch version that TheHive supports, for example <code>9.5.5</code>. See the <a href="/thehive/installation/software-requirements/">supported versions</a>.</p>
+</li>
+<li>
+<p>Hold the package so that system upgrades don't move Elasticsearch to an unsupported version.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt-mark<span class="w"> </span>hold<span class="w"> </span>elasticsearch
+</code></pre></div>
+</li>
+</ol>
+<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package" target="_blank">the most up-to-date instructions</a>.</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>Add Elasticsearch repository references.</p>
+<p>a. Download Elasticsearch repository keys.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>rpm<span class="w"> </span>--import<span class="w"> </span>https://artifacts.elastic.co/GPG-KEY-elasticsearch
+</code></pre></div>
+<p>b. Check if the <code>/etc/yum.repos.d/elasticsearch.repo</code> file exists. If it doesn't, create it.</p>
+<p>c. Add the repository to your system by appending the following line to the <code>/etc/yum.repos.d/elasticsearch.repo</code> file.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"[elasticsearch]</span>
+<span class="s2">name=Elasticsearch repository for 9.x packages</span>
+<span class="s2">baseurl=https://artifacts.elastic.co/packages/9.x/yum</span>
+<span class="s2">gpgcheck=1</span>
+<span class="s2">gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch</span>
+<span class="s2">enabled=0"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/yum.repos.d/elasticsearch.repo
+</code></pre></div>
+</li>
+<li>
+<p>Update your package index and install Elasticsearch using the following commands:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>yum<span class="w"> </span>-y<span class="w"> </span>update
+sudo<span class="w"> </span>yum<span class="w"> </span>install<span class="w"> </span>--enablerepo<span class="o">=</span>elasticsearch<span class="w"> </span>elasticsearch-&lt;version&gt;
+</code></pre></div>
+<p>Replace <code>&lt;version&gt;</code> with an Elasticsearch version that TheHive supports, for example <code>9.5.5</code>. See the <a href="/thehive/installation/software-requirements/">supported versions</a>.</p>
+<p>The repository is set with <code>enabled=0</code>, so system upgrades don't move Elasticsearch to another version.</p>
+</li>
+</ol>
+<p>Refer to the official Elasticsearch documentation website for <a href="https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm" target="_blank">the most up-to-date instructions</a>.</p>
+</div>
+<div class="tabbed-block">
+<p>Download the tar.gz archive of a supported Elasticsearch version from <a href="http://elastic.co/downloads/elasticsearch" target="_blank">Elasticsearch downloads</a> and extract it into the folder of your choice. You can use utilities like <a href="https://www.gnu.org/software/wget/" target="_blank"><code>wget</code></a> to download the archive.</p>
+</div>
+</div>
+</div>
 <h3 id="step-32-configure-elasticsearch">Step 3.2: Configure Elasticsearch<a class="headerlink" href="#step-32-configure-elasticsearch" title="Permanent link">#</a></h3>
-<p>On each node, update the <code>/etc/elasticsearch/elasticsearch.yml</code> configuration file with the following parameters:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">http.host</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
-<span class="nt">network.bind_host</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
-<span class="nt">script.allowed_types</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
-<span class="nt">cluster.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
-<span class="nt">node.name</span><span class="p">:</span><span class="w"> </span><span class="s">'es1'</span>
-<span class="nt">path.data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/data</span>
-<span class="nt">path.logs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/logs</span>
-<span class="hll"><span class="nt">network.host</span><span class="p">:</span><span class="w"> </span><span class="s">'es1'</span>
-</span><span class="nt">http.port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9200</span>
-<span class="nt">cluster.initial_master_nodes</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">es1</span>
-<span class="nt">node.master</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">discovery.seed_hosts</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'es1'</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'es2'</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'es3'</span>
+<p>The Elasticsearch DEB and RPM packages configure security automatically at installation: each node gets TLS certificates in <code>/etc/elasticsearch/certs/</code>, and authentication and encryption are turned on. To build the cluster, configure the first node, then enroll the two other nodes with a token at <a href="#step-34-start-the-nodes">Step 3.4</a>, so that they join the cluster and reuse the certificates of the first node.</p>
+<p>On node 1 only, replace the content of the <code>/etc/elasticsearch/elasticsearch.yml</code> file with the following configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cluster.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
+<span class="nt">node.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">es1</span>
+<span class="nt">path.data</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/lib/elasticsearch</span>
+<span class="nt">path.logs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/log/elasticsearch</span>
+<span class="nt">network.host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;ip_es_node_1&gt;</span>
+<span class="nt">http.port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9200</span>
+<span class="nt">discovery.seed_hosts</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"&lt;ip_es_node_1&gt;"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"&lt;ip_es_node_2&gt;"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"&lt;ip_es_node_3&gt;"</span><span class="p p-Indicator">]</span>
+<span class="nt">cluster.initial_master_nodes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"es1"</span><span class="p p-Indicator">]</span>
+<span class="nt">xpack.security.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">xpack.security.enrollment.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="nt">xpack.security.http.ssl</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">keystore.path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">certs/http.p12</span>
+<span class="nt">xpack.security.transport.ssl</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">verification_mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">certificate</span>
+<span class="w">  </span><span class="nt">keystore.path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">certs/transport.p12</span>
+<span class="w">  </span><span class="nt">truststore.path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">certs/transport.p12</span>
+<span class="nt">http.host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
+<span class="nt">transport.host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
+<span class="nt">network.bind_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0.0.0</span>
+<span class="nt">script.allowed_types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
 <span class="nt">thread_pool.search.queue_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
 <span class="nt">thread_pool.write.queue_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
-<span class="nt">xpack.security.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">xpack.security.http.ssl.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">xpack.security.transport.ssl.enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="nt">xpack.security.http.ssl.key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/es1/es1.key</span>
-<span class="nt">xpack.security.http.ssl.certificate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/es1/es1.crt</span>
-<span class="nt">xpack.security.http.ssl.certificate_authorities</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/ca/ca.crt</span>
-<span class="nt">xpack.security.transport.ssl.key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/es1/es1.key</span>
-<span class="nt">xpack.security.transport.ssl.certificate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/es1/es1.crt</span>
-<span class="nt">xpack.security.transport.ssl.certificate_authorities</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/share/elasticsearch/config/certs/ca/ca.crt</span>
 </code></pre></div>
-<p>Replace <code>es1</code> with the IP address or host name of the respective node, in <code>node.name</code>, <code>network.host</code>, the certificate paths, and <code>cluster.initial_master_nodes</code>. Keep <code>discovery.seed_hosts</code> identical on all nodes to ensure proper cluster discovery.</p>
+<p>Replace <code>&lt;ip_es_node_1&gt;</code>, <code>&lt;ip_es_node_2&gt;</code>, and <code>&lt;ip_es_node_3&gt;</code> with the IP addresses of the three Elasticsearch nodes.</p>
+<p>The <code>xpack.security</code> settings use the certificates generated at installation in <code>/etc/elasticsearch/certs/</code>. Their passwords are stored in the Elasticsearch keystore. Keep both the certificates and the keystore in place.</p>
 <div class="admonition warning">
-<p class="admonition-title">X-Pack and SSL configuration</p>
-<p>When configuring X-Pack and SSL with Elasticsearch, review the documentation specific to your Elasticsearch version for accurate setup instructions.</p>
+<p class="admonition-title">Don't start nodes 2 and 3 yet</p>
+<p>Don't edit the configuration of nodes 2 and 3, and don't start Elasticsearch on them. Enroll them at <a href="#step-34-start-the-nodes">Step 3.4</a> before their first start.</p>
 </div>
 <h3 id="step-33-configure-jvm-options-for-elasticsearch">Step 3.3: Configure JVM options for Elasticsearch<a class="headerlink" href="#step-33-configure-jvm-options-for-elasticsearch" title="Permanent link">#</a></h3>
 <p>The JVM options control how much memory Elasticsearch can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.</p>
@@ -22226,10 +22307,10 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>Repeat this step on each node.</p>
 <div class="admonition tip">
 <p class="admonition-title">Recommended Elasticsearch values when all services share the same host</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Without Cortex</label><label for="__tabbed_4_2">With Cortex</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Without Cortex</label><label for="__tabbed_5_2">With Cortex</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">16 GB RAM</label><label for="__tabbed_5_2">32 GB RAM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">16 GB RAM</label><label for="__tabbed_6_2">32 GB RAM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
@@ -22245,7 +22326,7 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 </div>
 </div>
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">16 GB RAM</label><label for="__tabbed_6_2">32 GB RAM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">16 GB RAM</label><label for="__tabbed_7_2">32 GB RAM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
@@ -22265,24 +22346,84 @@ UN<span class="w">  </span>&lt;ip_node_3&gt;<span class="w">  </span><span class
 <p>For recommended values across all services, see <a href="/thehive/operations/tune-jvm-memory/">Tune JVM Memory</a>.</p>
 </div>
 <h3 id="step-34-start-the-nodes">Step 3.4: Start the nodes<a class="headerlink" href="#step-34-start-the-nodes" title="Permanent link">#</a></h3>
-<p>To start the Elasticsearch service on each node, run the following commands:</p>
+<p>Start the first node, then enroll the two other nodes so that they join its cluster.</p>
+<ol>
+<li>
+<p>On node 1, start the Elasticsearch service and enable it to restart automatically after a system reboot.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
 sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elasticsearch
 </code></pre></div>
-<p>The first command starts the Elasticsearch service, allowing the node to join the cluster and begin handling data requests. The second enables the service to restart automatically after a system reboot.</p>
-<h3 id="step-35-set-a-user-with-the-right-permissions-for-thehive">Step 3.5: Set a user with the right permissions for TheHive<a class="headerlink" href="#step-35-set-a-user-with-the-right-permissions-for-thehive" title="Permanent link">#</a></h3>
-<p>The example configuration at <a href="#step-32-configure-elasticsearch">Step 3.2</a> enables X-Pack security, so TheHive needs a dedicated Elasticsearch user to authenticate with. Create the user and its role through the Elasticsearch API: unlike the <code>elasticsearch-users</code> command used on a standalone server, which manages users in a file local to one node, the API stores them in the cluster itself, shared by every node.</p>
-<p>The commands below run from one of the Elasticsearch nodes. With the TLS configuration of <a href="#step-32-configure-elasticsearch">Step 3.2</a>, the API answers over HTTPS: pass the certificate authority (CA) certificate with <code>--cacert</code>, using the path set in <code>xpack.security.http.ssl.certificate_authorities</code>.</p>
-<ol>
+</li>
 <li>
-<p>Set a password for the built-in <code>elastic</code> superuser. Skip this step if the password is already set.</p>
+<p>On node 1, set a password for the built-in <code>elastic</code> superuser.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reset-password<span class="w"> </span>-u<span class="w"> </span>elastic
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Note this password</p>
+<p>Keep this password secure. You'll need it later to create the <code>thehive</code> user at <a href="#step-35-set-a-user-with-the-right-permissions-for-thehive">Step 3.5</a>.</p>
+</div>
+</li>
+<li>
+<p>On node 1, create an enrollment token for node 2.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token<span class="w"> </span>-s<span class="w"> </span>node
+</code></pre></div>
+<p>The token is valid for 30 minutes. Create a new token for each node you enroll.</p>
+</li>
+<li>
+<p>On node 2, enroll the node with the token before you start Elasticsearch on it for the first time.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>/usr/share/elasticsearch/bin/elasticsearch-reconfigure-node<span class="w"> </span>--enrollment-token<span class="w"> </span>&lt;enrollment_token&gt;
+</code></pre></div>
+<p>Replace <code>&lt;enrollment_token&gt;</code> with the token created in the previous step, and answer <code>y</code> when prompted.</p>
+</li>
+<li>
+<p>On node 2, set the following parameters in the <code>/etc/elasticsearch/elasticsearch.yml</code> file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">cluster.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">thehive</span>
+<span class="nt">node.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">es2</span>
+<span class="nt">network.host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;ip_es_node_2&gt;</span>
+<span class="nt">script.allowed_types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
+<span class="nt">thread_pool.search.queue_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class="nt">thread_pool.write.queue_size</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+</code></pre></div>
+<p>Replace <code>&lt;ip_es_node_2&gt;</code> with the IP address of node 2. The <code>cluster.name</code> value must match the value on node 1 exactly.</p>
+<p>Keep the settings added by the <code>elasticsearch-reconfigure-node</code> tool, and don't add any <code>xpack.security</code> settings yourself.</p>
+</li>
+<li>
+<p>On node 2, start the Elasticsearch service and enable it to restart automatically after a system reboot.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>elasticsearch
+sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>elasticsearch
 </code></pre></div>
 </li>
 <li>
+<p>Repeat steps 3 to 6 for node 3, with a new enrollment token, <code>es3</code> as the node name, and the IP address of node 3.</p>
+</li>
+<li>
+<p>On node 1, remove the <code>cluster.initial_master_nodes</code> line from the <code>/etc/elasticsearch/elasticsearch.yml</code> file. This setting is needed only to form the cluster for the first time.</p>
+</li>
+<li>
+<p>Check the cluster health from any node.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span>-u<span class="w"> </span>elastic<span class="w"> </span><span class="s2">"https://&lt;ip_es_node_1&gt;:9200/_cluster/health?pretty"</span>
+</code></pre></div>
+<p>The <code>--cacert</code> option passes the certificate authority (CA) certificate generated on node 1, which enrollment copies to the other nodes. Enter the <code>elastic</code> password when prompted.</p>
+<p>The cluster is ready when the response shows a <code>green</code> status and three nodes:</p>
+<div class="highlight"><pre><span></span><code>{
+  "cluster_name" : "thehive",
+  "status" : "green",
+  "timed_out" : false,
+  "number_of_nodes" : 3,
+  "number_of_data_nodes" : 3,
+  [..]
+}
+</code></pre></div>
+</li>
+</ol>
+<h3 id="step-35-set-a-user-with-the-right-permissions-for-thehive">Step 3.5: Set a user with the right permissions for TheHive<a class="headerlink" href="#step-35-set-a-user-with-the-right-permissions-for-thehive" title="Permanent link">#</a></h3>
+<p>The example configuration at <a href="#step-32-configure-elasticsearch">Step 3.2</a> enables X-Pack security, so TheHive needs a dedicated Elasticsearch user to authenticate with. Create the user and its role through the Elasticsearch API: unlike the <code>elasticsearch-users</code> command used on a standalone server, which manages users in a file local to one node, the API stores them in the cluster itself, shared by every node.</p>
+<p>The commands below run from one of the Elasticsearch nodes. The API answers over HTTPS only, so the commands pass the CA certificate with <code>--cacert</code>, as in <a href="#step-34-start-the-nodes">Step 3.4</a>.</p>
+<ol>
+<li>
 <p>Create a role with the privileges needed for TheHive: the <code>manage</code> cluster privilege and the <code>all</code> indices privilege on <code>thehive*</code> indices. For the details of why each privilege is needed, see <a href="../installation-guide-linux-standalone-server/#step-44-permissions">Step 4.4 of the installation guide</a>.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span><span class="se">\</span>
---cacert<span class="w"> </span>/usr/share/elasticsearch/config/certs/ca/ca.crt<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span><span class="se">\</span>
+--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span><span class="se">\</span>
 -X<span class="w"> </span>POST<span class="w"> </span><span class="s2">"https://&lt;ip_es_node&gt;:9200/_security/role/thehive_role"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
@@ -22295,13 +22436,13 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <span class="s1">  ]</span>
 <span class="s1">}'</span>
 </code></pre></div>
-<p>Replace <code>&lt;elastic_user_password&gt;</code> with the password set in the previous step, and <code>&lt;ip_es_node&gt;</code> with the IP address or host name of the node.</p>
+<p>Replace <code>&lt;elastic_user_password&gt;</code> with the <code>elastic</code> password set at <a href="#step-34-start-the-nodes">Step 3.4</a>, and <code>&lt;ip_es_node&gt;</code> with the IP address or host name of the node.</p>
 <p>If successful, the command returns <code>{"role":{"created":true}}</code>.</p>
 </li>
 <li>
 <p>Create the <code>thehive</code> user and assign the role.</p>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span><span class="se">\</span>
---cacert<span class="w"> </span>/usr/share/elasticsearch/config/certs/ca/ca.crt<span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>curl<span class="w"> </span>-u<span class="w"> </span>elastic:&lt;elastic_user_password&gt;<span class="w"> </span><span class="se">\</span>
+--cacert<span class="w"> </span>/etc/elasticsearch/certs/http_ca.crt<span class="w"> </span><span class="se">\</span>
 -X<span class="w"> </span>PUT<span class="w"> </span><span class="s2">"https://&lt;ip_es_node&gt;:9200/_security/user/thehive"</span><span class="w"> </span><span class="se">\</span>
 -H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span>-d<span class="w"> </span><span class="s1">'</span>
 <span class="s1">{</span>
@@ -22315,12 +22456,12 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Note this password</p>
-<p>Keep the <code>&lt;thehive_user_password&gt;</code> password secure. You'll need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.</p>
+<p>Keep the <code>&lt;thehive_user_password&gt;</code> password secure. You'll need to enter it in TheHive configuration file at <a href="#configure-the-database-and-index-engine">Step 5.2</a> so the application can connect to Elasticsearch.</p>
 </div>
 <hr>
 <h2 id="step-4-set-up-a-shared-file-storage">Step 4: Set up a shared file storage<a class="headerlink" href="#step-4-set-up-a-shared-file-storage" title="Permanent link">#</a></h2>
 <p>Shared file storage provides a common storage space used by all nodes. Several options are available.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">NFS</label><label for="__tabbed_7_2">S3-compatible object storage</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">NFS</label><label for="__tabbed_8_2">S3-compatible object storage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>NFS is one of the simplest methods to implement shared file storage. With a single NFS endpoint, all nodes in the cluster access and share the same files.</p>
@@ -22346,7 +22487,7 @@ sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">en
 <p>To deploy TheHive in a clustered environment, you must install TheHive on each TheHive node.</p>
 <p>TheHive packages are distributed as RPM and DEB files, as well as ZIP binary packages, all available for direct download via tools like <code>wget</code> or <code>curl</code>, with installation performed manually.</p>
 <p>All packages are hosted on an <a href="https://thehive.download.strangebee.com/" target="_blank">HTTPS-secured website</a> and come with a <a href="https://linux.die.net/man/1/sha256sum" target="_blank">SHA256 checksum</a> and a <a href="https://www.gnupg.org/" target="_blank">GPG</a> signature for verification.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="" id="__tabbed_8_1" name="__tabbed_8" type="radio"><input id="__tabbed_8_2" name="__tabbed_8" type="radio"><input id="__tabbed_8_3" name="__tabbed_8" type="radio"><div class="tabbed-labels"><label for="__tabbed_8_1">DEB</label><label for="__tabbed_8_2">RPM</label><label for="__tabbed_8_3">ZIP binary packages</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><input id="__tabbed_9_3" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">DEB</label><label for="__tabbed_9_2">RPM</label><label for="__tabbed_9_3">ZIP binary packages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="admonition tip">
@@ -22711,22 +22852,22 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">actor {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">provider = cluster</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">remote.artery {</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">canonical {</span>
-<span class="hll"><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">hostname = "&lt;ip_address&gt;"</span>
-</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">port = 2551</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">remote.artery {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">canonical {</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">hostname = "&lt;ip_thehive_node&gt;"</span>
+<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">port = 2551</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="l l-Scalar l-Scalar-Plain">cluster.seed-nodes = [</span>
-<span class="hll"><span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;node_1_ip_address&gt;:2551",</span>
-</span><span class="hll"><span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;node_2_ip_address&gt;:2551",</span>
-</span><span class="hll"><span class="w">                      </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;node_3_ip_address&gt;:2551"</span>
-</span><span class="w">                    </span><span class="l l-Scalar l-Scalar-Plain">]</span>
-<span class="l l-Scalar l-Scalar-Plain">cluster.min-nr-of-members = 2</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.seed-nodes = [</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;ip_thehive_node_1&gt;:2551",</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;ip_thehive_node_2&gt;:2551",</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">"pekko://application@&lt;ip_thehive_node_3&gt;:2551"</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">]</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cluster.min-nr-of-members = 2</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
-<p>Replace <code>&lt;ip_address&gt;</code> with the IP address of the current node.</p>
-<p>Replace <code>&lt;node_1_ip_address&gt;</code>, <code>&lt;node_2_ip_address&gt;</code>, and <code>&lt;node_3_ip_address&gt;</code> with the IP addresses of the nodes. Keep the <code>cluster.seed-nodes</code> list identical on all nodes: it must contain at least one active node.</p>
+<p>Replace <code>&lt;ip_thehive_node&gt;</code> with the IP address of the current node.</p>
+<p>Replace <code>&lt;ip_thehive_node_1&gt;</code>, <code>&lt;ip_thehive_node_2&gt;</code>, and <code>&lt;ip_thehive_node_3&gt;</code> with the IP addresses of the nodes. Keep the <code>cluster.seed-nodes</code> list identical on all nodes: it must contain at least one active node.</p>
 <p>Set <code>cluster.min-nr-of-members</code> to half the number of nodes plus one: <code>2</code> for three nodes.</p>
 <h4 id="configure-the-service">Configure the service<a class="headerlink" href="#configure-the-service" title="Permanent link">#</a></h4>
 <p>Configure the <code>application.baseUrl</code> and <code>play.http.context</code> parameters in the <code>/etc/thehive/application.conf</code> file of each node, as described in the <a href="../installation-guide-linux-standalone-server/#configure-service">service configuration section of the installation guide</a>.</p>
@@ -22736,11 +22877,11 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <div class="highlight"><pre><span></span><code><span class="c1">## Database configuration</span>
 <span class="l l-Scalar l-Scalar-Plain">db.janusgraph {</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">storage {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">## Cassandra configuration</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">## Cassandra configuration</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">backend = cql</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip_node_1&gt;", "&lt;ip_node_2&gt;", "&lt;ip_node_3&gt;"]</span>
-<span class="hll"><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># Cassandra authentication (recommended)</span>
-</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip_cassandra_node_1&gt;", "&lt;ip_cassandra_node_2&gt;", "&lt;ip_cassandra_node_3&gt;"]</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain"># Cassandra authentication (recommended)</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">username = "thehive"</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">password = "&lt;thehive_role_password&gt;"</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">cql {</span>
 <span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">cluster-name = thp</span>
@@ -22748,7 +22889,7 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">index.search {</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">## Elasticsearch configuration</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">## Elasticsearch configuration</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">backend = elasticsearch</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">hostname = ["&lt;ip_es_node_1&gt;", "&lt;ip_es_node_2&gt;", "&lt;ip_es_node_3&gt;"]</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">index-name = thehive</span>
@@ -22774,15 +22915,19 @@ sudo<span class="w"> </span>cp<span class="w"> </span>thehive.service<span class
 <div class="highlight"><pre><span></span><code><span class="nt">script.allowed_types</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline,stored</span>
 </code></pre></div>
 </div>
-<p>Replace <code>&lt;ip_node_1&gt;</code>, <code>&lt;ip_node_2&gt;</code>, and <code>&lt;ip_node_3&gt;</code> with the respective IP addresses of your Cassandra nodes.</p>
+<p>Replace <code>&lt;ip_cassandra_node_1&gt;</code>, <code>&lt;ip_cassandra_node_2&gt;</code>, and <code>&lt;ip_cassandra_node_3&gt;</code> with the respective IP addresses of your Cassandra nodes.</p>
 <p>Replace <code>&lt;ip_es_node_1&gt;</code>, <code>&lt;ip_es_node_2&gt;</code>, and <code>&lt;ip_es_node_3&gt;</code> with the respective IP addresses of your Elasticsearch nodes.</p>
 <p>Replace <code>&lt;thehive_role_password&gt;</code> with the password set in <a href="#step-25-initialize-the-database">Step 2.5</a>.</p>
 <p>Replace <code>&lt;thehive_user_password&gt;</code> with the password set in <a href="#step-35-set-a-user-with-the-right-permissions-for-thehive">Step 3.5</a>.</p>
 <p>You can remove the lines under <code># Cassandra authentication (recommended)</code> and <code># Elasticsearch authentication (recommended)</code> if you didn't enable authentication for Cassandra or Elasticsearch.</p>
 <p>To set up SSL for Cassandra and Elasticsearch connections, see <a href="../../configuration/configure-ssl-cassandra-elasticsearch/">Configure Database and Index SSL</a>. For more information about the storage parameters, see the <a href="https://docs.janusgraph.org/basics/configuration-reference/#storagecql" target="_blank">JanusGraph configuration reference</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">HTTPS connection to Elasticsearch</p>
+<p>The Elasticsearch cluster accepts HTTPS connections only, with certificates signed by the CA generated on node 1 at <a href="#step-34-start-the-nodes">Step 3.4</a>. Copy the <code>/etc/elasticsearch/certs/http_ca.crt</code> file from an Elasticsearch node to each TheHive node, then configure TheHive to trust it by following <a href="../../configuration/configure-ssl-cassandra-elasticsearch/#configure-ssl-for-elasticsearch">Configure SSL for Elasticsearch</a>. Without this configuration, TheHive can't connect to Elasticsearch.</p>
+</div>
 <h4 id="configure-file-storage">Configure file storage<a class="headerlink" href="#configure-file-storage" title="Permanent link">#</a></h4>
 <p>File storage contains <a href="../../user-guides/analyst-corner/cases/attachments/about-attachments/">attachments</a> from cases, alerts, and organizations, as well as <a href="../../user-guides/analyst-corner/cases/observables/about-observables/">observables</a> of type <em>file</em>. <a href="../../../resources/security/#database-and-storage">All files are stored in their original form as plaintext</a>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="" id="__tabbed_9_1" name="__tabbed_9" type="radio"><input id="__tabbed_9_2" name="__tabbed_9" type="radio"><div class="tabbed-labels"><label for="__tabbed_9_1">NFS</label><label for="__tabbed_9_2">S3-compatible object storage</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">NFS</label><label for="__tabbed_10_2">S3-compatible object storage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>All TheHive nodes must access the same file storage, ideally through an identical NFS mount point. Then, on each node:</p>
@@ -22796,8 +22941,8 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 <li>
 <p>Update the <code>/etc/thehive/application.conf</code> TheHive configuration file.</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">storage {</span>
-<span class="l l-Scalar l-Scalar-Plain">provider = localfs</span>
-<span class="l l-Scalar l-Scalar-Plain">localfs.location = /opt/thp/thehive/files</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">provider = localfs</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">localfs.location = /opt/thp/thehive/files</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
 <p>The path can be changed: it must belong to the user and group running TheHive service, <code>thehive:thehive</code> by default.</p>
@@ -22876,10 +23021,10 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 <p>Replace <code>&lt;code_cache_size&gt;</code> with the desired code cache limit.</p>
 <div class="admonition tip">
 <p class="admonition-title">Recommended TheHive values when all services share the same host</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="" id="__tabbed_10_1" name="__tabbed_10" type="radio"><input id="__tabbed_10_2" name="__tabbed_10" type="radio"><div class="tabbed-labels"><label for="__tabbed_10_1">Without Cortex</label><label for="__tabbed_10_2">With Cortex</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">Without Cortex</label><label for="__tabbed_11_2">With Cortex</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="" id="__tabbed_11_1" name="__tabbed_11" type="radio"><input id="__tabbed_11_2" name="__tabbed_11" type="radio"><div class="tabbed-labels"><label for="__tabbed_11_1">16 GB RAM</label><label for="__tabbed_11_2">32 GB RAM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="" id="__tabbed_12_1" name="__tabbed_12" type="radio"><input id="__tabbed_12_2" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="__tabbed_12_1">16 GB RAM</label><label for="__tabbed_12_2">32 GB RAM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms3000m</span>
@@ -22899,7 +23044,7 @@ sudo<span class="w"> </span>chmod<span class="w"> </span><span class="m">700</sp
 </div>
 </div>
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="" id="__tabbed_12_1" name="__tabbed_12" type="radio"><input id="__tabbed_12_2" name="__tabbed_12" type="radio"><div class="tabbed-labels"><label for="__tabbed_12_1">16 GB RAM</label><label for="__tabbed_12_2">32 GB RAM</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="" id="__tabbed_13_1" name="__tabbed_13" type="radio"><input id="__tabbed_13_2" name="__tabbed_13" type="radio"><div class="tabbed-labels"><label for="__tabbed_13_1">16 GB RAM</label><label for="__tabbed_13_2">32 GB RAM</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">-Xms2000m</span>
@@ -22962,53 +23107,106 @@ sudo<span class="w"> </span>chown<span class="w"> </span>thehive:thehive<span cl
 </li>
 </ol>
 <h3 id="step-53-start-the-service">Step 5.3: Start the service<a class="headerlink" href="#step-53-start-the-service" title="Permanent link">#</a></h3>
-<p>Once you have updated the configuration, start TheHive service and enable it to restart automatically after a system reboot, using the following commands:</p>
+<p>For the first start, initialize the database from node 1 alone, then start the whole cluster. With the cluster configuration, a node started alone waits until at least <code>cluster.min-nr-of-members</code> nodes are running, so node 1 must run outside the cluster for this first start.</p>
+<ol>
+<li>
+<p>On node 1, comment out the whole <code>pekko</code> section that you added to the <code>/etc/thehive/application.conf</code> file at <a href="#step-52-configure-thehive">Step 5.2</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#pekko {</span>
+<span class="c1">#  cluster.enable = on</span>
+<span class="c1">#  actor {</span>
+<span class="c1">#    provider = cluster</span>
+<span class="c1">#  }</span>
+<span class="c1">#  remote.artery {</span>
+<span class="c1">#    canonical {</span>
+<span class="c1">#      hostname = "&lt;ip_thehive_node&gt;"</span>
+<span class="c1">#      port = 2551</span>
+<span class="c1">#    }</span>
+<span class="c1">#  }</span>
+<span class="c1">#  cluster.seed-nodes = [</span>
+<span class="c1">#    "pekko://application@&lt;ip_thehive_node_1&gt;:2551",</span>
+<span class="c1">#    "pekko://application@&lt;ip_thehive_node_2&gt;:2551",</span>
+<span class="c1">#    "pekko://application@&lt;ip_thehive_node_3&gt;:2551"</span>
+<span class="c1">#  ]</span>
+<span class="c1">#  cluster.min-nr-of-members = 2</span>
+<span class="c1">#}</span>
+</code></pre></div>
+</li>
+<li>
+<p>On node 1, start TheHive service.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>thehive
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Database initialization failure at first start</p>
+<p>The first start can fail with an error such as <code>table ... does not exist</code> in <code>/var/log/thehive/application.log</code>, after which TheHive stops. Restart TheHive until the error no longer appears. Several restarts might be needed.</p>
+</div>
+</li>
+<li>
+<p>On node 1, check that TheHive has finished initializing the database, using one of the following methods:</p>
+<ul>
+<li>
+<p>Look for the <code>Listening for HTTP</code> line in TheHive log file:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>grep<span class="w"> </span><span class="s2">"Listening for HTTP"</span><span class="w"> </span>/var/log/thehive/application.log
+</code></pre></div>
+<p>TheHive is ready when the command returns a line such as <code>[INFO] from play.core.server.PekkoHttpServer in main [] Listening for HTTP on /0.0.0.0:9000</code>.</p>
+</li>
+<li>
+<p>Request the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Status/operation/Get%20platform%20public%20status" target="_blank">public status endpoint</a>, which doesn't require authentication:</p>
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>http://&lt;ip_thehive_node_1&gt;:9000/api/v1/status/public
+</code></pre></div>
+<p>TheHive is ready when the response contains its version.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On node 1, stop TheHive service, then uncomment the <code>pekko</code> section in the <code>/etc/thehive/application.conf</code> file.</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>stop<span class="w"> </span>thehive
+</code></pre></div>
+</li>
+<li>
+<p>On each node, start TheHive service and enable it to restart automatically after a system reboot.</p>
 <div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>thehive
 sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>thehive
 </code></pre></div>
-<p>Run these commands on each node of TheHive cluster.</p>
-<div class="admonition warning">
-<p class="admonition-title">Initial startup delay</p>
-<p>The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.</p>
-</div>
+</li>
+</ol>
 <hr>
 <h2 id="step-6-set-up-load-balancing-with-haproxy">Step 6: Set up load balancing with HAProxy<a class="headerlink" href="#step-6-set-up-load-balancing-with-haproxy" title="Permanent link">#</a></h2>
 <p>A load balancer distributes incoming HTTP requests among the cluster nodes. Client affinity isn't required: a client doesn't need to consistently connect to the same node.</p>
 <p>Add the following basic example to the HAProxy configuration file, typically located at <code>/etc/haproxy/haproxy.cfg</code>. Keep this configuration consistent across all HAProxy instances:</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">frontend thehive-in</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">bind &lt;virtual_ip&gt;:80</span>
-<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">default_backend thehive</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">bind &lt;virtual_ip&gt;:80</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">default_backend thehive</span>
 <span class="l l-Scalar l-Scalar-Plain">backend thehive</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">balance roundrobin</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">server node1 &lt;thehive_node_1_ip&gt;:9000 check</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">server node2 &lt;thehive_node_2_ip&gt;:9000 check</span>
-<span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">server node3 &lt;thehive_node_3_ip&gt;:9000 check</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">balance roundrobin</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">server node1 &lt;ip_thehive_node_1&gt;:9000 check</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">server node2 &lt;ip_thehive_node_2&gt;:9000 check</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">server node3 &lt;ip_thehive_node_3&gt;:9000 check</span>
 </code></pre></div>
 <p>Replace <code>&lt;virtual_ip&gt;</code> with the virtual IP address dedicated to the cluster.</p>
-<p>Replace <code>&lt;thehive_node_1_ip&gt;</code>, <code>&lt;thehive_node_2_ip&gt;</code>, and <code>&lt;thehive_node_3_ip&gt;</code> with the IP addresses of TheHive nodes, so that traffic is distributed evenly across the cluster.</p>
+<p>Replace <code>&lt;ip_thehive_node_1&gt;</code>, <code>&lt;ip_thehive_node_2&gt;</code>, and <code>&lt;ip_thehive_node_3&gt;</code> with the IP addresses of TheHive nodes, so that traffic is distributed evenly across the cluster.</p>
 <hr>
 <h2 id="step-7-configure-a-virtual-ip-with-keepalived">Step 7: Configure a virtual IP with Keepalived<a class="headerlink" href="#step-7-configure-a-virtual-ip-with-keepalived" title="Permanent link">#</a></h2>
 <p>Keepalived is a service that monitors the status of load balancers, such as <a href="#step-6-set-up-load-balancing-with-haproxy">HAProxy</a>, installed on the same system, and can set up a virtual IP address for them. In the following basic example, the load balancer 1 (LB1) acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.</p>
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">vrrp_script chk_haproxy {</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">script "/usr/bin/killall -0 haproxy"</span><span class="w">  </span><span class="c1"># cheaper than pidof</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">interval 2</span><span class="w"> </span><span class="c1"># check every 2 seconds</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">weight 2</span><span class="w"> </span><span class="c1"># add 2 points of priority if OK</span>
-<span class="w">    </span><span class="err">}</span>
-<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">vrrp_instance VI_1 {</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">interface eth0</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">state MASTER</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">virtual_router_id 51</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">priority 101</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">virtual_ipaddress {</span>
-<span class="hll"><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">10.10.1.50/24 brd 10.10.1.255 dev eth0 scope global</span>
-</span><span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="w">      </span><span class="l l-Scalar l-Scalar-Plain">track_script {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">script "/usr/bin/killall -0 haproxy"</span><span class="w">  </span><span class="c1"># cheaper than pidof</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">interval 2</span><span class="w"> </span><span class="c1"># check every 2 seconds</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">weight 2</span><span class="w"> </span><span class="c1"># add 2 points of priority if OK</span>
+<span class="err">}</span>
+<span class="l l-Scalar l-Scalar-Plain">vrrp_instance VI_1 {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">interface eth0</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">state MASTER</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">virtual_router_id 51</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">priority 101</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">virtual_ipaddress {</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">10.10.1.50/24 brd 10.10.1.255 dev eth0 scope global</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">track_script {</span>
 <span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">chk_haproxy</span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
 <span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
 <p>The <code>vrrp_script</code> block requires a Keepalived version later than 1.1.13.</p>
-<p>Set <code>priority</code> to <code>101</code> on the primary node and <code>100</code> on the secondary.</p>
+<p>On the primary node, set <code>state</code> to <code>MASTER</code> and <code>priority</code> to <code>101</code>. On the secondary node, set <code>state</code> to <code>BACKUP</code> and <code>priority</code> to <code>100</code>.</p>
 <p>The <code>virtual_ipaddress</code> value is an example: replace it with your actual IP address and broadcast address.</p>
 <hr>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">#</a></h2>
