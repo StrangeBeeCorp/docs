@@ -8,6 +8,7 @@ set -e
 CASSANDRA_KEYSPACE=thehive
 CASSANDRA_GENERAL_ARCHIVE_PATH=/mnt/backup/cassandra
 CASSANDRA_CONNECTION="<ip_node_cassandra>"
+CASSANDRA_CQLSH="<cqlsh_path>"
 CASSANDRA_THEHIVE_USER="thehive"
 CASSANDRA_BACKUP_LIST=(${CASSANDRA_GENERAL_ARCHIVE_PATH}/cassandra_????????_??h??m??s.tar)
 CASSANDRA_LATEST_BACKUP_NAME=$(basename ${CASSANDRA_BACKUP_LIST[-1]})
@@ -58,17 +59,17 @@ PID_ES=$!
     echo "Latest Cassandra backup archive extracted in ${CASSANDRA_SNAPSHOT_FOLDER}"
 
     # Check if Cassandra already has an existing keyspace
-    cqlsh ${CASSANDRA_CONNECTION}  -e "DESCRIBE KEYSPACE ${CASSANDRA_KEYSPACE}" || true > "${CASSANDRA_SNAPSHOT_FOLDER}/target_keyspace_${CASSANDRA_KEYSPACE}.cql"
+    "${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION}  -e "DESCRIBE KEYSPACE ${CASSANDRA_KEYSPACE}" || true > "${CASSANDRA_SNAPSHOT_FOLDER}/target_keyspace_${CASSANDRA_KEYSPACE}.cql"
 
     if cmp --silent -- "${CASSANDRA_SNAPSHOT_FOLDER}/create_keyspace_${CASSANDRA_KEYSPACE}.cql" "${CASSANDRA_SNAPSHOT_FOLDER}/target_keyspace_${CASSANDRA_KEYSPACE}.cql"; then
         echo "Existing ${CASSANDRA_KEYSPACE} keyspace definition is identical to the one in the backup, no need to drop and recreate it"
     else
         echo "Existing ${CASSANDRA_KEYSPACE} keyspace definition does not match the one in the backup, dropping it"
-        cqlsh ${CASSANDRA_CONNECTION} --request-timeout=120 -e "DROP KEYSPACE IF EXISTS ${CASSANDRA_KEYSPACE};"
+        "${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION} --request-timeout=120 -e "DROP KEYSPACE IF EXISTS ${CASSANDRA_KEYSPACE};"
         sleep 5s
         echo "Creating ${CASSANDRA_KEYSPACE} keyspace using the definition from the backup"
-        cqlsh ${CASSANDRA_CONNECTION} --request-timeout=120 -f ${CASSANDRA_SNAPSHOT_FOLDER}/create_keyspace_${CASSANDRA_KEYSPACE}.cql
-        #cqlsh ${CASSANDRA_CONNECTION} --request-timeout=120 -e "GRANT ALL PERMISSIONS ON KEYSPACE ${CASSANDRA_THEHIVE_USER} TO thehive;"
+        "${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION} --request-timeout=120 -f ${CASSANDRA_SNAPSHOT_FOLDER}/create_keyspace_${CASSANDRA_KEYSPACE}.cql
+        #"${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION} --request-timeout=120 -e "GRANT ALL PERMISSIONS ON KEYSPACE ${CASSANDRA_THEHIVE_USER} TO thehive;"
     fi
 
     # Create the tables and load related data

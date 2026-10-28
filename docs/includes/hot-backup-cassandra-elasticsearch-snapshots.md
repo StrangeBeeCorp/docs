@@ -7,6 +7,7 @@ set -e
 # Cassandra variables
 CASSANDRA_KEYSPACE=thehive
 CASSANDRA_CONNECTION="<ip_node_cassandra>"
+CASSANDRA_CQLSH="<cqlsh_path>"
 CASSANDRA_GENERAL_ARCHIVE_PATH=/mnt/backup/cassandra
 CASSANDRA_DATA_FOLDER=/var/lib/cassandra
 CASSANDRA_SNAPSHOT_NAME="cassandra_$(date +%Y%m%d_%Hh%Mm%Ss)"
@@ -75,7 +76,7 @@ PID_ES=$!
         echo "[CASS] ✓ Snapshot Cassandra created successfully"
 
         # Save the cql schema of the keyspace
-        cqlsh ${CASSANDRA_CONNECTION}  -e "DESCRIBE KEYSPACE ${CASSANDRA_KEYSPACE}" | grep -v "^WARNING" > "${CASSANDRA_GENERAL_ARCHIVE_PATH}/${CASSANDRA_SNAPSHOT_NAME}/create_keyspace_${CASSANDRA_KEYSPACE}.cql"
+        "${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION}  -e "DESCRIBE KEYSPACE ${CASSANDRA_KEYSPACE}" | grep -v "^WARNING" > "${CASSANDRA_GENERAL_ARCHIVE_PATH}/${CASSANDRA_SNAPSHOT_NAME}/create_keyspace_${CASSANDRA_KEYSPACE}.cql"
         echo "The keyspace cql definition for ${CASSANDRA_KEYSPACE} is stored in this file: ${CASSANDRA_GENERAL_ARCHIVE_PATH}/${CASSANDRA_SNAPSHOT_NAME}/create_keyspace_${CASSANDRA_KEYSPACE}.cql"
 
         # For each table folder in the keyspace folder of the snapshot

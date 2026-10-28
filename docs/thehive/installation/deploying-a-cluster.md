@@ -25,7 +25,7 @@ Set up a fault-tolerant cluster for TheHive. Each cluster comprises three active
 !!! warning "Before you begin"
 
     * Verify that all [system requirements for package installation](system-requirements.md) are met on every node.
-    * Ensure that Python 3.9 is available for using the Cassandra Query Language (CQL) shell `cqlsh`. Later Python versions aren't compatible.
+    * Ensure that Python 3.10 to 3.14 is available on the node where you run the Cassandra Query Language (CQL) shell `cqlsh`.
 
 {% include-markdown "includes/data-protection-link.md" %}
 
@@ -74,13 +74,16 @@ Install Cassandra on each node, following the steps in the [installation guide](
 
 ### Step 2.2: Configure Cassandra
 
+!!! note "Configuration folder on RPM-based distributions"
+    On RPM-based distributions, Cassandra configuration files are in `/etc/cassandra/conf/` instead of `/etc/cassandra/`. Adjust the paths in the following steps accordingly.
+
 On each node in the Cassandra cluster, update the configuration files as follows:
 
 1. Update the Cassandra configuration file.
 
-    Open the `/etc/cassandra/cassandra.yaml` file on each node using a text editor:
+    Open the `/etc/cassandra/cassandra.yaml` file on each node using a text editor, and set the following parameters. Edit them in place and keep the rest of the file, because Cassandra doesn't start without some of the other default settings.
 
-    ```yaml hl_lines="13"
+    ```yaml
     cluster_name: 'thp'
     num_tokens: 4
     authenticator: PasswordAuthenticator
@@ -92,9 +95,9 @@ On each node in the Cassandra cluster, update the configuration files as follows
     saved_caches_directory: /var/lib/cassandra/saved_caches
     seed_provider:
         - class_name: org.apache.cassandra.locator.SimpleSeedProvider
-        parameters:
-            - seeds: "<ip_node_1>, <ip_node_2>, <ip_node_3>"
-    listen_interface : eth0
+          parameters:
+              - seeds: "<ip_cassandra_node_1>, <ip_cassandra_node_2>, <ip_cassandra_node_3>"
+    listen_interface: eth0
     rpc_interface: eth0
     endpoint_snitch: GossipingPropertyFileSnitch
     ```
@@ -107,17 +110,19 @@ On each node in the Cassandra cluster, update the configuration files as follows
     * Network interfaces: Set up the appropriate network interfaces.
     * Endpoint snitch: Specify the snitch for determining network topology.
 
-    Replace `<ip_node_1>`, `<ip_node_2>`, and `<ip_node_3>` with the IP addresses of all the nodes included in the cluster, and set `listen_interface` and `rpc_interface` to the network interface name of the node, `eth0` in this example.
+    Replace `<ip_cassandra_node_1>`, `<ip_cassandra_node_2>`, and `<ip_cassandra_node_3>` with the IP addresses of all the nodes included in the cluster, and set `listen_interface` and `rpc_interface` to the network interface name of the node, `eth0` in this example.
+
+    Comment out the `listen_address` and `rpc_address` parameters. Both are set to `localhost` by default. Cassandra doesn't start if both `listen_address` and `listen_interface`, or both `rpc_address` and `rpc_interface`, are set.
 
     !!! info "Parameter details"
         For detailed explanations of each parameter in the YAML file, refer to the [Cassandra configuration section](installation-guide-linux-standalone-server.md#step-33-configure-cassandra).
 
 2. Delete the Cassandra topology properties file.
 
-    Remove the `cassandra-topology.properties` file to prevent any conflicts:
+    Remove the `cassandra-topology.properties` file if it exists, to prevent any conflicts:
 
-    ```
-    rm /etc/cassandra/cassandra-topology.properties
+    ```bash
+    sudo rm -f /etc/cassandra/cassandra-topology.properties
     ```
 
 3. Configure the Cassandra GossipingPropertyFileSnitch.
@@ -187,10 +192,10 @@ To start the Cassandra service on each node, follow these steps:
     ===============
     Status=Up/Down
     |/ State=Normal/Leaving/Joining/Moving
-    --  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
-    UN  <ip_node_1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
-    UN  <ip_node_2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
-    UN  <ip_node_3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
+    --  Address                Load       Tokens       Owns (effective)  Host ID                               Rack
+    UN  <ip_cassandra_node_1>  776.53 KiB  256          100.0%            a79c9a8c-c99b-4d74-8e78-6b0c252abd86  rack1
+    UN  <ip_cassandra_node_2>  671.72 KiB  256          100.0%            8fda2906-2097-4d62-91f8-005e33d3e839  rack1
+    UN  <ip_cassandra_node_3>  611.54 KiB  256          100.0%            201ab99c-8e16-49b1-9b66-5444044fb1cd  rack1
     ```
 
 ### Step 2.5: Initialize the database
@@ -199,18 +204,36 @@ To start the Cassandra service on each node, follow these steps:
 
 To initialize the database:
 
-1. Connect to Cassandra using default credentials.
+1. Install `cqlsh`.
 
-    On one of the nodes, access the Cassandra Query Language (CQL) shell by running the following command, providing the IP address of the respective node:
+    On one of the nodes, install `cqlsh` from PyPI in a Python virtual environment:
 
     ```bash
-    cqlsh <ip_node_X> -u cassandra -p cassandra
+    VENV_PATH=$HOME/.venv
+    sudo apt update
+    sudo apt install python3-venv
+    python3 -m venv "${VENV_PATH}"
+    "${VENV_PATH}/bin/pip" install cqlsh
     ```
 
-    !!! info "Cqlsh may not be available on RPM-based systems"
-        On some RPM-based distributions, the `cqlsh` client isn't included with the `cassandra` package. If running cqlsh gives an error, download the [official Apache Cassandra tarball](https://downloads.apache.org/cassandra/){target=_blank} that matches your server version and extract it. Then run the bundled client: `./bin/cqlsh <ip_node_X> -u cassandra -p cassandra`.
+    On RPM-based distributions, skip the two `apt` commands. The `venv` module is included with Python.
 
-2. Configure the system authentication replication.
+    Activate the virtual environment so that the `cqlsh` command runs from it, then verify the installation:
+
+    ```bash
+    source "${VENV_PATH}/bin/activate"
+    cqlsh --version
+    ```
+
+2. Connect to Cassandra using default credentials.
+
+    On the same node, access the CQL shell by running the following command, providing the IP address of the node:
+
+    ```bash
+    cqlsh <ip_cassandra_node> -u cassandra -p cassandra
+    ```
+
+3. Configure the system authentication replication.
 
     Before creating new roles, modify the default replication factor for the `system_auth` keyspace using the following CQL command:
 
@@ -218,9 +241,9 @@ To initialize the database:
     ALTER KEYSPACE system_auth WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': 3 };
     ```
 
-3. Create a new administrator role.
+4. Create a new administrator role.
 
-    To avoid relying on the default `cassandra` superuser account, create a new administrator role and then delete the default user.
+    To avoid relying on the default `cassandra` superuser account, create a new administrator role and then deactivate or delete the default user.
 
     a. Create the `admin` role.
 
@@ -233,16 +256,22 @@ To initialize the database:
     b. Disconnect from the session by pressing **Ctrl+D**, then reconnect as the new admin.
 
     ```bash
-    cqlsh <ip_node_X> -u admin
+    cqlsh <ip_cassandra_node> -u admin
     ```
 
-    c. Remove the default `cassandra` user.
+    c. Deactivate the default `cassandra` user.
+
+    ```sql
+    ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
+    ```
+
+    If your security policy requires deleting default accounts, delete the role instead:
 
     ```sql
     DROP ROLE cassandra;
     ```
 
-4. Create the `thehive` keyspace.
+5. Create the `thehive` keyspace.
 
     A keyspace is the Cassandra equivalent of a database. Create a keyspace named `thehive` with a replication factor of `3` and durable writes enabled:
 
@@ -250,7 +279,7 @@ To initialize the database:
     CREATE KEYSPACE thehive WITH replication = {'class': 'NetworkTopologyStrategy', 'replication_factor': '3' } AND durable_writes = 'true';
     ```
 
-5. Create a dedicated role for TheHive and grant permissions.
+6. Create a dedicated role for TheHive and grant permissions.
 
     Finally, create a role named `thehive` and grant permissions on the `thehive` keyspace.
 
@@ -262,7 +291,7 @@ To initialize the database:
     Replace `<thehive_role_password>` with the password you intend to use for the `thehive` role.
 
     !!! tip "Note this password"
-        Keep this password secure. You'll need to enter it later in TheHive configuration file so the application can connect to the Cassandra database.
+        Keep this password secure. You'll need to enter it in TheHive configuration file at [Step 5.2](#configure-the-database-and-index-engine) so the application can connect to the Cassandra database.
 
 !!! tip "Cassandra cluster maintenance"
     In a Cassandra cluster, regular repairs are required to maintain data consistency between nodes. Automate a full repair with `nodetool repair -full`, for example by running it weekly using `cron`. Failing to run regular repairs can lead to inconsistent data, read errors, and authorization issues over time.
@@ -278,19 +307,19 @@ Enable encrypted communication between client machines and the database cluster,
 
 1. Open the `cassandra.yaml` configuration file and edit the `client_encryption_options` section.
 
-    ```yaml hl_lines="4 7"
+    ```yaml
     client_encryption_options:
-    enabled: true
-    optional: false
-    keystore: /path/to/<keystore_file>
-    keystore_password: <keystore_password>
-    require_client_auth: true
-    truststore: /path/to/<truststore_file>
-    truststore_password: <truststore_password>
-    protocol: TLS
-    algorithm: SunX509
-    store_type: JKS
-    cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+      enabled: true
+      optional: false
+      keystore: /path/to/<keystore_file>
+      keystore_password: <keystore_password>
+      require_client_auth: true
+      truststore: /path/to/<truststore_file>
+      truststore_password: <truststore_password>
+      protocol: TLS
+      algorithm: SunX509
+      store_type: JKS
+      cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
     ```
 
 2. Restart the Cassandra service on all nodes.
@@ -314,19 +343,19 @@ Enable encrypted communication between client machines and the database cluster,
 
 1. Open the `cassandra.yaml` configuration file and edit the `server_encryption_options` section.
 
-    ```yaml hl_lines="3 5"
+    ```yaml
     server_encryption_options:
-    internode_encryption: all
-    keystore: /path/to/<keystore_file>
-    keystore_password: <keystore_password>
-    truststore: /path/to/<truststore_file>
-    truststore_password: <truststore_password>
-    protocol: TLS
-    algorithm: SunX509
-    store_type: JKS
-    cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
-    require_client_auth: true
-    enabled: true
+      internode_encryption: all
+      keystore: /path/to/<keystore_file>
+      keystore_password: <keystore_password>
+      truststore: /path/to/<truststore_file>
+      truststore_password: <truststore_password>
+      protocol: TLS
+      algorithm: SunX509
+      store_type: JKS
+      cipher_suites: [TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+      require_client_auth: true
+      enabled: true
     ```
 
 2. Restart the Cassandra service on all nodes.
@@ -363,46 +392,49 @@ Enable encrypted communication between client machines and the database cluster,
 
 ### Step 3.1: Install Elasticsearch
 
-To establish a cluster of three active Elasticsearch nodes, follow the [installation instructions](./installation-guide-linux-standalone-server.md#step-41-install-elasticsearch) for each node.
+To establish a cluster of three active Elasticsearch nodes, install Elasticsearch on each node:
+
+{% include-markdown "includes/install-elasticsearch-thehive.md" %}
 
 ### Step 3.2: Configure Elasticsearch
 
-On each node, update the `/etc/elasticsearch/elasticsearch.yml` configuration file with the following parameters:
+The Elasticsearch DEB and RPM packages configure security automatically at installation: each node gets TLS certificates in `/etc/elasticsearch/certs/`, and authentication and encryption are turned on. To build the cluster, configure the first node, then enroll the two other nodes with a token at [Step 3.4](#step-34-start-the-nodes), so that they join the cluster and reuse the certificates of the first node.
 
-```yaml hl_lines="8"
-http.host:  0.0.0.0
-network.bind_host:  0.0.0.0
-script.allowed_types:  inline,stored
+On node 1 only, replace the content of the `/etc/elasticsearch/elasticsearch.yml` file with the following configuration:
+
+```yaml
 cluster.name: thehive
-node.name: 'es1'
-path.data: /usr/share/elasticsearch/data
-path.logs: /usr/share/elasticsearch/logs
-network.host: 'es1'
+node.name: es1
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+network.host: <ip_es_node_1>
 http.port: 9200
-cluster.initial_master_nodes:
-  - es1
-node.master: true
-discovery.seed_hosts:
-  - 'es1'
-  - 'es2'
-  - 'es3'
+discovery.seed_hosts: ["<ip_es_node_1>", "<ip_es_node_2>", "<ip_es_node_3>"]
+cluster.initial_master_nodes: ["es1"]
+xpack.security.enabled: true
+xpack.security.enrollment.enabled: true
+xpack.security.http.ssl:
+  enabled: true
+  keystore.path: certs/http.p12
+xpack.security.transport.ssl:
+  enabled: true
+  verification_mode: certificate
+  keystore.path: certs/transport.p12
+  truststore.path: certs/transport.p12
+http.host: 0.0.0.0
+transport.host: 0.0.0.0
+network.bind_host: 0.0.0.0
+script.allowed_types: inline,stored
 thread_pool.search.queue_size: 100000
 thread_pool.write.queue_size: 100000
-xpack.security.enabled: true
-xpack.security.http.ssl.enabled: true
-xpack.security.transport.ssl.enabled: true
-xpack.security.http.ssl.key: /usr/share/elasticsearch/config/certs/es1/es1.key
-xpack.security.http.ssl.certificate: /usr/share/elasticsearch/config/certs/es1/es1.crt
-xpack.security.http.ssl.certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
-xpack.security.transport.ssl.key: /usr/share/elasticsearch/config/certs/es1/es1.key
-xpack.security.transport.ssl.certificate: /usr/share/elasticsearch/config/certs/es1/es1.crt
-xpack.security.transport.ssl.certificate_authorities: /usr/share/elasticsearch/config/certs/ca/ca.crt
 ```
 
-Replace `es1` with the IP address or host name of the respective node, in `node.name`, `network.host`, the certificate paths, and `cluster.initial_master_nodes`. Keep `discovery.seed_hosts` identical on all nodes to ensure proper cluster discovery.
+Replace `<ip_es_node_1>`, `<ip_es_node_2>`, and `<ip_es_node_3>` with the IP addresses of the three Elasticsearch nodes.
 
-!!! warning "X-Pack and SSL configuration"
-    When configuring X-Pack and SSL with Elasticsearch, review the documentation specific to your Elasticsearch version for accurate setup instructions.
+The `xpack.security` settings use the certificates generated at installation in `/etc/elasticsearch/certs/`. Their passwords are stored in the Elasticsearch keystore. Keep both the certificates and the keystore in place.
+
+!!! warning "Don't start nodes 2 and 3 yet"
+    Don't edit the configuration of nodes 2 and 3, and don't start Elasticsearch on them. Enroll them at [Step 3.4](#step-34-start-the-nodes) before their first start.
 
 ### Step 3.3: Configure JVM options for Elasticsearch
 
@@ -431,32 +463,98 @@ Repeat this step on each node.
 
 ### Step 3.4: Start the nodes
 
-To start the Elasticsearch service on each node, run the following commands:
+Start the first node, then enroll the two other nodes so that they join its cluster.
 
-```bash
-sudo systemctl start elasticsearch
-sudo systemctl enable elasticsearch
-```
+1. On node 1, start the Elasticsearch service and enable it to restart automatically after a system reboot.
 
-The first command starts the Elasticsearch service, allowing the node to join the cluster and begin handling data requests. The second enables the service to restart automatically after a system reboot.
+    ```bash
+    sudo systemctl start elasticsearch
+    sudo systemctl enable elasticsearch
+    ```
 
-### Step 3.5: Set a user with the right permissions for TheHive
-
-The example configuration at [Step 3.2](#step-32-configure-elasticsearch) enables X-Pack security, so TheHive needs a dedicated Elasticsearch user to authenticate with. Create the user and its role through the Elasticsearch API: unlike the `elasticsearch-users` command used on a standalone server, which manages users in a file local to one node, the API stores them in the cluster itself, shared by every node.
-
-The commands below run from one of the Elasticsearch nodes. With the TLS configuration of [Step 3.2](#step-32-configure-elasticsearch), the API answers over HTTPS: pass the certificate authority (CA) certificate with `--cacert`, using the path set in `xpack.security.http.ssl.certificate_authorities`.
-
-1. Set a password for the built-in `elastic` superuser. Skip this step if the password is already set.
+2. On node 1, set a password for the built-in `elastic` superuser.
 
     ```bash
     sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
     ```
 
-2. Create a role with the privileges needed for TheHive: the `manage` cluster privilege and the `all` indices privilege on `thehive*` indices. For the details of why each privilege is needed, see [Step 4.4 of the installation guide](installation-guide-linux-standalone-server.md#step-44-permissions).
+    !!! tip "Note this password"
+        Keep this password secure. You'll need it later to create the `thehive` user at [Step 3.5](#step-35-set-a-user-with-the-right-permissions-for-thehive).
+
+3. On node 1, create an enrollment token for node 2.
 
     ```bash
-    curl -u elastic:<elastic_user_password> \
-    --cacert /usr/share/elasticsearch/config/certs/ca/ca.crt \
+    sudo /usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s node
+    ```
+
+    The token is valid for 30 minutes. Create a new token for each node you enroll.
+
+4. On node 2, enroll the node with the token before you start Elasticsearch on it for the first time.
+
+    ```bash
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reconfigure-node --enrollment-token <enrollment_token>
+    ```
+
+    Replace `<enrollment_token>` with the token created in the previous step, and answer `y` when prompted.
+
+5. On node 2, set the following parameters in the `/etc/elasticsearch/elasticsearch.yml` file:
+
+    ```yaml
+    cluster.name: thehive
+    node.name: es2
+    network.host: <ip_es_node_2>
+    script.allowed_types: inline,stored
+    thread_pool.search.queue_size: 100000
+    thread_pool.write.queue_size: 100000
+    ```
+
+    Replace `<ip_es_node_2>` with the IP address of node 2. The `cluster.name` value must match the value on node 1 exactly.
+
+    Keep the settings added by the `elasticsearch-reconfigure-node` tool, and don't add any `xpack.security` settings yourself.
+
+6. On node 2, start the Elasticsearch service and enable it to restart automatically after a system reboot.
+
+    ```bash
+    sudo systemctl start elasticsearch
+    sudo systemctl enable elasticsearch
+    ```
+
+7. Repeat steps 3 to 6 for node 3, with a new enrollment token, `es3` as the node name, and the IP address of node 3.
+
+8. On node 1, remove the `cluster.initial_master_nodes` line from the `/etc/elasticsearch/elasticsearch.yml` file. This setting is needed only to form the cluster for the first time.
+
+9. Check the cluster health from any node.
+
+    ```bash
+    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic "https://<ip_es_node_1>:9200/_cluster/health?pretty"
+    ```
+
+    The `--cacert` option passes the certificate authority (CA) certificate generated on node 1, which enrollment copies to the other nodes. Enter the `elastic` password when prompted.
+
+    The cluster is ready when the response shows a `green` status and three nodes:
+
+    ```
+    {
+      "cluster_name" : "thehive",
+      "status" : "green",
+      "timed_out" : false,
+      "number_of_nodes" : 3,
+      "number_of_data_nodes" : 3,
+      [..]
+    }
+    ```
+
+### Step 3.5: Set a user with the right permissions for TheHive
+
+The example configuration at [Step 3.2](#step-32-configure-elasticsearch) enables X-Pack security, so TheHive needs a dedicated Elasticsearch user to authenticate with. Create the user and its role through the Elasticsearch API: unlike the `elasticsearch-users` command used on a standalone server, which manages users in a file local to one node, the API stores them in the cluster itself, shared by every node.
+
+The commands below run from one of the Elasticsearch nodes. The API answers over HTTPS only, so the commands pass the CA certificate with `--cacert`, as in [Step 3.4](#step-34-start-the-nodes).
+
+1. Create a role with the privileges needed for TheHive: the `manage` cluster privilege and the `all` indices privilege on `thehive*` indices. For the details of why each privilege is needed, see [Step 4.4 of the installation guide](installation-guide-linux-standalone-server.md#step-44-permissions).
+
+    ```bash
+    sudo curl -u elastic:<elastic_user_password> \
+    --cacert /etc/elasticsearch/certs/http_ca.crt \
     -X POST "https://<ip_es_node>:9200/_security/role/thehive_role" \
     -H "Content-Type: application/json" -d '
     {
@@ -470,15 +568,15 @@ The commands below run from one of the Elasticsearch nodes. With the TLS configu
     }'
     ```
 
-    Replace `<elastic_user_password>` with the password set in the previous step, and `<ip_es_node>` with the IP address or host name of the node.
+    Replace `<elastic_user_password>` with the `elastic` password set at [Step 3.4](#step-34-start-the-nodes), and `<ip_es_node>` with the IP address or host name of the node.
 
     If successful, the command returns `{"role":{"created":true}}`.
 
-3. Create the `thehive` user and assign the role.
+2. Create the `thehive` user and assign the role.
 
     ```bash
-    curl -u elastic:<elastic_user_password> \
-    --cacert /usr/share/elasticsearch/config/certs/ca/ca.crt \
+    sudo curl -u elastic:<elastic_user_password> \
+    --cacert /etc/elasticsearch/certs/http_ca.crt \
     -X PUT "https://<ip_es_node>:9200/_security/user/thehive" \
     -H "Content-Type: application/json" -d '
     {
@@ -492,7 +590,7 @@ The commands below run from one of the Elasticsearch nodes. With the TLS configu
     If successful, the command returns `{"created":true}`.
 
 !!! tip "Note this password"
-    Keep the `<thehive_user_password>` password secure. You'll need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.
+    Keep the `<thehive_user_password>` password secure. You'll need to enter it in TheHive configuration file at [Step 5.2](#configure-the-database-and-index-engine) so the application can connect to Elasticsearch.
 
 ---
 
@@ -540,30 +638,30 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
 In this guide, node 1 is assumed to serve as the master node. Configure the `pekko` component in the `/etc/thehive/application.conf` file of each node as follows:
 
-```yaml hl_lines="8 13 14 15"
+```yaml
 pekko {
   cluster.enable = on
   actor {
     provider = cluster
   }
-remote.artery {
-  canonical {
-    hostname = "<ip_address>"
-    port = 2551
+  remote.artery {
+    canonical {
+      hostname = "<ip_thehive_node>"
+      port = 2551
+    }
   }
-}
-cluster.seed-nodes = [
-                      "pekko://application@<node_1_ip_address>:2551",
-                      "pekko://application@<node_2_ip_address>:2551",
-                      "pekko://application@<node_3_ip_address>:2551"
-                    ]
-cluster.min-nr-of-members = 2
+  cluster.seed-nodes = [
+    "pekko://application@<ip_thehive_node_1>:2551",
+    "pekko://application@<ip_thehive_node_2>:2551",
+    "pekko://application@<ip_thehive_node_3>:2551"
+  ]
+  cluster.min-nr-of-members = 2
 }
 ```
 
-Replace `<ip_address>` with the IP address of the current node.
+Replace `<ip_thehive_node>` with the IP address of the current node.
 
-Replace `<node_1_ip_address>`, `<node_2_ip_address>`, and `<node_3_ip_address>` with the IP addresses of the nodes. Keep the `cluster.seed-nodes` list identical on all nodes: it must contain at least one active node.
+Replace `<ip_thehive_node_1>`, `<ip_thehive_node_2>`, and `<ip_thehive_node_3>` with the IP addresses of the nodes. Keep the `cluster.seed-nodes` list identical on all nodes: it must contain at least one active node.
 
 Set `cluster.min-nr-of-members` to half the number of nodes plus one: `2` for three nodes.
 
@@ -577,13 +675,13 @@ In a cluster, `application.baseUrl` must be the public URL users enter in their 
 
 To configure the database and index engine for TheHive, update the `/etc/thehive/application.conf` file as follows:
 
-```yaml hl_lines="7"
+```yaml
 ## Database configuration
 db.janusgraph {
     storage {
-    ## Cassandra configuration
+        ## Cassandra configuration
         backend = cql
-        hostname = ["<ip_node_1>", "<ip_node_2>", "<ip_node_3>"]
+        hostname = ["<ip_cassandra_node_1>", "<ip_cassandra_node_2>", "<ip_cassandra_node_3>"]
         # Cassandra authentication (recommended)
         username = "thehive"
         password = "<thehive_role_password>"
@@ -593,7 +691,7 @@ db.janusgraph {
         }
     }
     index.search {
-    ## Elasticsearch configuration
+        ## Elasticsearch configuration
         backend = elasticsearch
         hostname = ["<ip_es_node_1>", "<ip_es_node_2>", "<ip_es_node_3>"]
         index-name = thehive
@@ -622,7 +720,7 @@ db.janusgraph {
     script.allowed_types: inline,stored
     ```
 
-Replace `<ip_node_1>`, `<ip_node_2>`, and `<ip_node_3>` with the respective IP addresses of your Cassandra nodes.
+Replace `<ip_cassandra_node_1>`, `<ip_cassandra_node_2>`, and `<ip_cassandra_node_3>` with the respective IP addresses of your Cassandra nodes.
 
 Replace `<ip_es_node_1>`, `<ip_es_node_2>`, and `<ip_es_node_3>` with the respective IP addresses of your Elasticsearch nodes.
 
@@ -633,6 +731,9 @@ Replace `<thehive_user_password>` with the password set in [Step 3.5](#step-35-s
 You can remove the lines under `# Cassandra authentication (recommended)` and `# Elasticsearch authentication (recommended)` if you didn't enable authentication for Cassandra or Elasticsearch.
 
 To set up SSL for Cassandra and Elasticsearch connections, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md). For more information about the storage parameters, see the [JanusGraph configuration reference](https://docs.janusgraph.org/basics/configuration-reference/#storagecql){target=_blank}.
+
+!!! warning "HTTPS connection to Elasticsearch"
+    The Elasticsearch cluster accepts HTTPS connections only, with certificates signed by the CA generated on node 1 at [Step 3.4](#step-34-start-the-nodes). Copy the `/etc/elasticsearch/certs/http_ca.crt` file from an Elasticsearch node to each TheHive node, then configure TheHive to trust it by following [Configure SSL for Elasticsearch](../configuration/configure-ssl-cassandra-elasticsearch.md#configure-ssl-for-elasticsearch). Without this configuration, TheHive can't connect to Elasticsearch.
 
 #### Configure file storage
 
@@ -653,8 +754,8 @@ File storage contains [attachments](../user-guides/analyst-corner/cases/attachme
 
         ```yaml
         storage {
-        provider = localfs
-        localfs.location = /opt/thp/thehive/files
+          provider = localfs
+          localfs.location = /opt/thp/thehive/files
         }
         ```
 
@@ -772,17 +873,70 @@ For other installation methods:
 
 ### Step 5.3: Start the service
 
-Once you have updated the configuration, start TheHive service and enable it to restart automatically after a system reboot, using the following commands:
+For the first start, initialize the database from node 1 alone, then start the whole cluster. With the cluster configuration, a node started alone waits until at least `cluster.min-nr-of-members` nodes are running, so node 1 must run outside the cluster for this first start.
 
-```bash
-sudo systemctl start thehive
-sudo systemctl enable thehive
-```
+1. On node 1, comment out the whole `pekko` section that you added to the `/etc/thehive/application.conf` file at [Step 5.2](#step-52-configure-thehive).
 
-Run these commands on each node of TheHive cluster.
+    ```yaml
+    #pekko {
+    #  cluster.enable = on
+    #  actor {
+    #    provider = cluster
+    #  }
+    #  remote.artery {
+    #    canonical {
+    #      hostname = "<ip_thehive_node>"
+    #      port = 2551
+    #    }
+    #  }
+    #  cluster.seed-nodes = [
+    #    "pekko://application@<ip_thehive_node_1>:2551",
+    #    "pekko://application@<ip_thehive_node_2>:2551",
+    #    "pekko://application@<ip_thehive_node_3>:2551"
+    #  ]
+    #  cluster.min-nr-of-members = 2
+    #}
+    ```
 
-!!! warning "Initial startup delay"
-    The initial start, or first start after configuring indexes, might take some time if the database contains a large amount of data. This time is due to the index creation process.
+2. On node 1, start TheHive service.
+
+    ```bash
+    sudo systemctl start thehive
+    ```
+
+    !!! note "Database initialization failure at first start"
+        The first start can fail with an error such as `table ... does not exist` in `/var/log/thehive/application.log`, after which TheHive stops. Restart TheHive until the error no longer appears. Several restarts might be needed.
+
+3. On node 1, check that TheHive has finished initializing the database, using one of the following methods:
+
+    * Look for the `Listening for HTTP` line in TheHive log file:
+
+        ```bash
+        sudo grep "Listening for HTTP" /var/log/thehive/application.log
+        ```
+
+        TheHive is ready when the command returns a line such as `[INFO] from play.core.server.PekkoHttpServer in main [] Listening for HTTP on /0.0.0.0:9000`.
+
+    * Request the [public status endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Status/operation/Get%20platform%20public%20status){target=_blank}, which doesn't require authentication:
+
+        ```bash
+        curl http://<ip_thehive_node_1>:9000/api/v1/status/public
+        ```
+
+        TheHive is ready when the response contains its version.
+
+4. On node 1, stop TheHive service, then uncomment the `pekko` section in the `/etc/thehive/application.conf` file.
+
+    ```bash
+    sudo systemctl stop thehive
+    ```
+
+5. On each node, start TheHive service and enable it to restart automatically after a system reboot.
+
+    ```bash
+    sudo systemctl start thehive
+    sudo systemctl enable thehive
+    ```
 
 ---
 
@@ -794,18 +948,18 @@ Add the following basic example to the HAProxy configuration file, typically loc
 
 ```yaml
 frontend thehive-in
-        bind <virtual_ip>:80
-        default_backend thehive
+    bind <virtual_ip>:80
+    default_backend thehive
 backend thehive
-            balance roundrobin
-            server node1 <thehive_node_1_ip>:9000 check
-            server node2 <thehive_node_2_ip>:9000 check
-            server node3 <thehive_node_3_ip>:9000 check
+    balance roundrobin
+    server node1 <ip_thehive_node_1>:9000 check
+    server node2 <ip_thehive_node_2>:9000 check
+    server node3 <ip_thehive_node_3>:9000 check
 ```
 
 Replace `<virtual_ip>` with the virtual IP address dedicated to the cluster.
 
-Replace `<thehive_node_1_ip>`, `<thehive_node_2_ip>`, and `<thehive_node_3_ip>` with the IP addresses of TheHive nodes, so that traffic is distributed evenly across the cluster.
+Replace `<ip_thehive_node_1>`, `<ip_thehive_node_2>`, and `<ip_thehive_node_3>` with the IP addresses of TheHive nodes, so that traffic is distributed evenly across the cluster.
 
 ---
 
@@ -813,21 +967,21 @@ Replace `<thehive_node_1_ip>`, `<thehive_node_2_ip>`, and `<thehive_node_3_ip>` 
 
 Keepalived is a service that monitors the status of load balancers, such as [HAProxy](#step-6-set-up-load-balancing-with-haproxy), installed on the same system, and can set up a virtual IP address for them. In the following basic example, the load balancer 1 (LB1) acts as the master, and the virtual IP address is assigned to LB1. If the HAProxy service stops running on LB1, Keepalived on LB2 takes over and assigns the virtual IP address until the HAProxy service on LB1 resumes operation.
 
-```yaml hl_lines="12"
+```yaml
 vrrp_script chk_haproxy {
-      script "/usr/bin/killall -0 haproxy"  # cheaper than pidof
-      interval 2 # check every 2 seconds
-      weight 2 # add 2 points of priority if OK
-    }
-    vrrp_instance VI_1 {
-      interface eth0
-      state MASTER
-      virtual_router_id 51
-      priority 101
-      virtual_ipaddress {
+    script "/usr/bin/killall -0 haproxy"  # cheaper than pidof
+    interval 2 # check every 2 seconds
+    weight 2 # add 2 points of priority if OK
+}
+vrrp_instance VI_1 {
+    interface eth0
+    state MASTER
+    virtual_router_id 51
+    priority 101
+    virtual_ipaddress {
         10.10.1.50/24 brd 10.10.1.255 dev eth0 scope global
-      }
-      track_script {
+    }
+    track_script {
         chk_haproxy
     }
 }
@@ -835,7 +989,7 @@ vrrp_script chk_haproxy {
 
 The `vrrp_script` block requires a Keepalived version later than 1.1.13.
 
-Set `priority` to `101` on the primary node and `100` on the secondary.
+On the primary node, set `state` to `MASTER` and `priority` to `101`. On the secondary node, set `state` to `BACKUP` and `priority` to `100`.
 
 The `virtual_ipaddress` value is an example: replace it with your actual IP address and broadcast address.
 

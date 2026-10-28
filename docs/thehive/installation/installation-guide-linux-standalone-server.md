@@ -22,6 +22,7 @@ If you prefer a faster setup, you can run an [automated installation script](aut
 
     * A basic understanding of [TheHive architecture](../overview/index.md#architecture)
     * [System requirements fully met and verified](system-requirements.md) for package installation
+    * Python 3.10 to 3.14 for the Cassandra shell `cqlsh` if you plan to enable Cassandra authentication
 
 {% include-markdown "includes/data-protection-link.md" %}
 
@@ -245,6 +246,9 @@ TheHive requires Java to run its application server and to manage various proces
 
 ### Step 3.2: Configure JVM options for Cassandra
 
+!!! note "Configuration folder on RPM-based distributions"
+    On RPM-based distributions, Cassandra configuration files are in `/etc/cassandra/conf/` instead of `/etc/cassandra/`. Adjust the paths in the following steps accordingly.
+
 The Java virtual machine (JVM) is what runs Cassandra. The JVM options control how much memory Cassandra can use, how it manages that memory, and other performance-related settings. By default, Java determines heap size automatically, which isn't recommended for production environments and may cause memory contention or out-of-memory errors.
 
 1. Check if the `/etc/cassandra/jvm-server.options` exists. If it doesn't, create it.
@@ -437,7 +441,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     Replace `<thehive_role_password>` with the password you intend to use for the `thehive` role.
 
     !!! tip "Note this password"
-        Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to the Cassandra database.
+        Keep this password secure. You'll need to enter it in TheHive configuration file at [Step 5.2](#step-52-configure-thehive) so the application can connect to the Cassandra database.
 
 4. Grant access to the keyspace.
 
@@ -543,69 +547,7 @@ For additional configuration options, refer to:
 
 ### Step 4.1: Install Elasticsearch
 
-=== "DEB"
-    
-    1. Add Elasticsearch repository references.
-
-        a. Download Elasticsearch repository keys.
-
-        ```bash
-        wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch |  sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
-        sudo apt-get install apt-transport-https
-        ```
-
-        b. Check if the `/etc/apt/sources.list.d/elastic-8.x.list` file exists. If it doesn't, create it.
-
-        c. Add the repository to your system by appending the following line to the `/etc/apt/sources.list.d/elastic-8.x.list` file.
-
-        ```bash
-        echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" |  sudo tee /etc/apt/sources.list.d/elastic-8.x.list 
-        ```
-
-    2. Update your package index and install Elasticsearch using the following commands:
-
-        ```bash
-        sudo apt update
-        sudo apt install elasticsearch
-        ```
-    
-    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-debian-package){target=_blank}.
-
-=== "RPM"
-
-    1. Add Elasticsearch repository references.
-
-        a. Download Elasticsearch repository keys.
-
-        ```bash
-        sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-        ```
-        
-        b. Check if the `/etc/yum.repos.d/elasticsearch.repo` file exists. If it doesn't, create it.
-
-        c. Add the repository to your system by appending the following line to the `/etc/yum.repos.d/elasticsearch.repo` file.
-
-        ```bash
-        echo "[elasticsearch]
-        name=Elasticsearch repository for 8.x packages
-        baseurl=https://artifacts.elastic.co/packages/8.x/yum
-        gpgcheck=1
-        gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-        enabled=0" | sudo tee /etc/yum.repos.d/elasticsearch.repo
-        ```
-
-    2. Update your package index and install Elasticsearch using the following commands:
-
-        ```bash
-        sudo yum -y update
-        sudo yum install --enablerepo=elasticsearch elasticsearch
-        ```
-    
-    Refer to the official Elasticsearch documentation website for [the most up-to-date instructions](https://www.elastic.co/docs/deploy-manage/deploy/self-managed/install-elasticsearch-with-rpm){target=_blank}.
-
-=== "Other installation methods"
-
-    Download the tar.gz archive from [Elasticsearch downloads](http://elastic.co/downloads/elasticsearch){target=_blank} and extract it into the folder of your choice. You can use utilities like [`wget`](https://www.gnu.org/software/wget/){target=_blank} to download the archive.
+{% include-markdown "includes/install-elasticsearch-thehive.md" %}
 
 ### Step 4.2: Configure Elasticsearch
 
@@ -792,6 +734,8 @@ The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options contr
 
 ### Step 4.4: Set a user with the right permissions for TheHive (if you enabled X-Pack security in [Step 4.2](#step-42-configure-elasticsearch)) {#step-44-permissions}
 
+The Elasticsearch DEB and RPM packages turn on TLS for the HTTP layer at installation, so the Elasticsearch API answers over HTTPS only. The `curl` commands below pass the certificate authority (CA) certificate generated at installation with `--cacert`.
+
 1. Create a `thehive` user.
 
     ```bash
@@ -801,23 +745,15 @@ The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options contr
     Replace `<thehive_user_password>` with a secure password you choose for your TheHive user.
 
     !!! tip "Note this password"
-        Keep this password secure. You will need to enter it later in TheHive configuration file so the application can connect to Elasticsearch.
+        Keep this password secure. You'll need to enter it in TheHive configuration file at [Step 5.2](#step-52-configure-thehive) so the application can connect to Elasticsearch.
 
-2. Optional: Set a password for the `elastic` user.
-
-    * [For Elasticsearch 7.x](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/setup-passwords){target=_blank}:
+2. Optional: Set a password for the `elastic` user. Skip this step if the password is already set.
 
     ```bash
-    sudo /usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive
+    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
     ```
 
-    * [For Elasticsearch 8.0](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password){target=_blank}:
-
-    ```bash
-    sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password
-    ```
-
-    Skip this step if the password is already set.
+    For more details, refer to [the official Elasticsearch documentation for the reset password tool](https://www.elastic.co/docs/reference/elasticsearch/command-line-tools/reset-password){target=_blank}.
 
 3. Create or update a role with the privileges needed for TheHive.
 
@@ -833,52 +769,50 @@ The Java virtual machine (JVM) is what runs Elasticsearch. The JVM options contr
 
     * Create a role:
 
-    ```bash
-    curl -u elastic:<elastic_user_password> -X POST "http://localhost:9200/_security/role/thehive_role" -H "Content-Type: application/json" -d '
-    {
-      "cluster": ["manage"],
-      "indices": [
+        ```bash
+        sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic:<elastic_user_password> -X POST "https://localhost:9200/_security/role/thehive_role" -H "Content-Type: application/json" -d '
         {
-          "names": ["thehive*"],
-          "privileges": ["all"]
-        }
-      ]
-    }'
-    ```
+          "cluster": ["manage"],
+          "indices": [
+            {
+              "names": ["thehive*"],
+              "privileges": ["all"]
+            }
+          ]
+        }'
+        ```
 
-    
+        Replace `<elastic_user_password>` with the password you set for the `elastic` user.
 
-    Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+        If successful, the command should return: `{"role":{"created":true}}`.
 
-    If successful, the command should return: `{"role":{"created":true}}`.
-
-    For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
+        For more details, refer to [the official Elasticsearch API documentation for role creation](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
 
     * Update a role:
 
-    ```bash
-    curl -u elastic:<elastic_user_password> -X PUT "http://localhost:9200/_security/role/<role>" -H "Content-Type: application/json" -d '
-    {
-      "cluster": ["manage"],
-      "indices": [
+        ```bash
+        sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic:<elastic_user_password> -X PUT "https://localhost:9200/_security/role/<role>" -H "Content-Type: application/json" -d '
         {
-          "names": ["thehive*"],
-          "privileges": ["all"]
-        }
-      ]
-    }'
-    ```
+          "cluster": ["manage"],
+          "indices": [
+            {
+              "names": ["thehive*"],
+              "privileges": ["all"]
+            }
+          ]
+        }'
+        ```
 
-    Replace `<role>` with the actual role name you want to update.
-    
-    Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+        Replace `<role>` with the actual role name you want to update.
 
-    For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
+        Replace `<elastic_user_password>` with the password you set for the `elastic` user.
+
+        For more details, refer to [the official Elasticsearch API documentation for updating roles](https://www.elastic.co/docs/api/doc/elasticsearch/operation/operation-security-put-role){target=_blank}.
 
 4. Assign the role to the user you'll use for TheHive.
 
     ```bash
-    curl -u elastic:<elastic_user_password> -X PUT "http://localhost:9200/_security/user/thehive" \
+    sudo curl --cacert /etc/elasticsearch/certs/http_ca.crt -u elastic:<elastic_user_password> -X PUT "https://localhost:9200/_security/user/thehive" \
     -H "Content-Type: application/json" \
     -d '{
         "password" : "<thehive_user_password>",
@@ -1039,6 +973,9 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
     To set up SSL for Cassandra and Elasticsearch connections, see [Configure Database and Index SSL](../configuration/configure-ssl-cassandra-elasticsearch.md).
 
+    !!! warning "HTTPS connection to Elasticsearch"
+        Elasticsearch accepts HTTPS connections only, with certificates signed by the CA generated at installation. Configure TheHive to trust the `/etc/elasticsearch/certs/http_ca.crt` file by following [Configure SSL for Elasticsearch](../configuration/configure-ssl-cassandra-elasticsearch.md#configure-ssl-for-elasticsearch). Without this configuration, TheHive can't connect to Elasticsearch.
+
 5. Save your modifications in the `application.conf` file.
 
 #### Configure JVM options for TheHive
@@ -1141,15 +1078,15 @@ If you don't plan to use either of these services, you can deactivate the corres
 
 * To deactivate the Cortex module:
 
-```yaml
-scalligraph.disabledModules += org.thp.thehive.connector.cortex.CortexModule
-```
+    ```yaml
+    scalligraph.disabledModules += org.thp.thehive.connector.cortex.CortexModule
+    ```
 
 * To deactivate the MISP module:
 
-```yaml
-scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
-```
+    ```yaml
+    scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
+    ```
 
 ### Step 5.6: Start TheHive service
 
@@ -1170,6 +1107,24 @@ scalligraph.disabledModules += org.thp.thehive.connector.misp.MispModule
 
     !!! info "Service startup delay"
         Be aware that the service may take some time to start initially.
+
+    To check that TheHive has finished starting, use one of the following methods:
+
+    * Look for the `Listening for HTTP` line in TheHive log file:
+
+        ```bash
+        sudo grep "Listening for HTTP" /var/log/thehive/application.log
+        ```
+
+        TheHive is ready when the command returns a line such as `[INFO] from play.core.server.PekkoHttpServer in main [] Listening for HTTP on /0.0.0.0:9000`.
+
+    * Request the [public status endpoint](https://docs.strangebee.com/thehive/api-docs/#tag/Status/operation/Get%20platform%20public%20status){target=_blank}, which doesn't require authentication:
+
+        ```bash
+        curl http://localhost:9000/api/v1/status/public
+        ```
+
+        TheHive is ready when the response contains its version.
 
     !!! bug "Troubleshooting TheHive"
         If you run into issues, see [Enable Trace Logging for Troubleshooting](../operations/troubleshooting.md) for guidance.

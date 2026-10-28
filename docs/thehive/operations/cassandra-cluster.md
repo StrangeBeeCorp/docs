@@ -111,7 +111,14 @@ To enhance fault tolerance in your Cassandra cluster by increasing the replicati
 
 1. Connect to cqlsh
 
-    Use cqlsh to connect to your Cassandra cluster:
+    Activate the virtual environment where `cqlsh` is installed, then use `cqlsh` to connect to your Cassandra cluster:
+
+    ```bash
+    source "${VENV_PATH}/bin/activate"
+    cqlsh <ip_node> -u <user>
+    ```
+
+    Replace `${VENV_PATH}` with the path to the virtual environment. The default path is `$HOME/.venv`. Replace `<ip_node>` with the IP address of a Cassandra node and `<user>` with the name of a Cassandra superuser.
 
 2. Modify Keyspace Replication
 

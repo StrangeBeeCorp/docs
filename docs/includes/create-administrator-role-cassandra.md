@@ -1,4 +1,4 @@
-To avoid relying on the default `cassandra` superuser account, create a new administrator role and then delete the default user.
+To avoid relying on the default `cassandra` superuser account, create a new administrator role and then deactivate or delete the default user.
 
 1. Create the `admin` role.
 
@@ -18,7 +18,13 @@ To avoid relying on the default `cassandra` superuser account, create a new admi
     cqlsh -u admin
     ```
 
-4. Remove the default `cassandra` user.
+4. Deactivate the default `cassandra` user.
+
+    ```bash
+    ALTER ROLE cassandra WITH SUPERUSER = false AND LOGIN = false;
+    ```
+
+    If your security policy requires deleting default accounts, delete the role instead:
 
     ```bash
     DROP ROLE cassandra;

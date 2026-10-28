@@ -86,6 +86,7 @@ Before running the script, you'll need to update several values to match your en
 
 * Update `CASSANDRA_KEYSPACE` to match your configuration. You can find this in `/etc/thehive/application.conf` file under the `db.janusgraph.storage.cql.keyspace` attribute. The script uses `thehive` by default.
 * Update `CASSANDRA_CONNECTION` with `127.0.0.1`.
+* Update `CASSANDRA_CQLSH` with the path to `cqlsh` in its virtual environment, for example `/home/<user>/.venv/bin/cqlsh`.
 * If you configured authentication in `/etc/thehive/application.conf`, replace the value of the `CASSANDRA_CONNECTION` variable with: `"127.0.0.1 admin -p <authentication_admin_password>"`.
 
 #### For Elasticsearch

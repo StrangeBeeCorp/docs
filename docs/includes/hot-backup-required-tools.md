@@ -4,7 +4,7 @@ You'll need the following:
 
 * [Cassandra nodetool](https://cassandra.apache.org/doc/latest/cassandra/troubleshooting/use_nodetool.html){target=_blank}: Command-line tool for managing Cassandra clusters, used for creating database snapshots
 * [tar](https://www.gnu.org/software/tar/manual/html_node/index.html){target=_blank}: Utility for archiving backup files
-* [cqlsh](https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html){target=_blank}: Command-line interface for executing CQL queries against the Cassandra database
+* [cqlsh](https://cassandra.apache.org/doc/latest/cassandra/managing/tools/cqlsh.html){target=_blank}: Command-line interface for executing CQL queries against the Cassandra database. Install it from PyPI in a Python virtual environment, as described in [Install TheHive with Packages](/thehive/installation/installation-guide-linux-standalone-server/#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33)
 * [curl](https://curl.se/){target=_blank}: Tool for transferring data with URLs, useful for interacting with the Elasticsearch API
 * [jq](https://jqlang.org/){target=_blank}: Lightweight command-line JSON processor for parsing and manipulating JSON data in scripts
 

@@ -42,9 +42,10 @@ Before running the script, you'll need to update several values to match your en
 
 * Update `CASSANDRA_KEYSPACE` to match your configuration. You can find this in `/etc/thehive/application.conf` file under the `db.janusgraph.storage.cql.keyspace` attribute. The script uses `thehive` by default.
 * Update `CASSANDRA_CONNECTION` with any Cassandra node IP address in the cluster.
+* Update `CASSANDRA_CQLSH` with the path to `cqlsh` in its virtual environment, for example `/home/<user>/.venv/bin/cqlsh`.
 * If you configured authentication in `/etc/thehive/application.conf`:
     * Replace the value of the `CASSANDRA_CONNECTION` variable with: `"<ip_node_cassandra> admin -p <authentication_admin_password>"`
-    * Uncomment the following line: `cqlsh ${CASSANDRA_CONNECTION} --request-timeout=120 -e "GRANT ALL PERMISSIONS ON KEYSPACE ${CASSANDRA_THEHIVE_USER} TO thehive;"`
+    * Uncomment the following line: `"${CASSANDRA_CQLSH}" ${CASSANDRA_CONNECTION} --request-timeout=120 -e "GRANT ALL PERMISSIONS ON KEYSPACE ${CASSANDRA_THEHIVE_USER} TO thehive;"`
 * Update `CASSANDRA_THEHIVE_USER` to match the role that accesses the keyspace. The script uses `thehive` by default.
 
 #### For Elasticsearch

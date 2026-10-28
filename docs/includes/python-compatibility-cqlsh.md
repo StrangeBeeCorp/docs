@@ -1,2 +1,2 @@
 !!! warning "Python compatibility for cqlsh"
-    `cqlsh` requires Python 3.9. If your Linux distribution provides a newer Python version by default, you must install Python 3.9 alongside it and explicitly tell `cqlsh` which interpreter to use. You can do this by setting the `CQLSH_PYTHON` environment variable when running `cqlsh`: `sudo -u cassandra CQLSH_PYTHON=/path/to/python3.9 cqlsh`.
+    `cqlsh` requires Python 3.10 to 3.14. If your Linux distribution provides an older Python version by default, you must install a compatible version alongside it and explicitly use it to create the `cqlsh` virtual environment: `/path/to/python3.12 -m venv "${VENV_PATH}"`.
