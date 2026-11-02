@@ -22,7 +22,7 @@
     
     
       
-        <title>Main Features - TheHive 5 Documentation</title>
+        <title>Main Features - TheHive 6 Documentation</title>
       
     
     
@@ -168,7 +168,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#thehive-azure-images" class="md-skip">
+        <a href="#thehive-and-cortex-azure-image" class="md-skip">
           Skip to content
         </a>
       
@@ -385,12 +385,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="TheHive 5 Documentation" class="md-nav__button md-logo" aria-label="TheHive 5 Documentation" data-md-component="logo">
+    <a href="../../.." title="TheHive 6 Documentation" class="md-nav__button md-logo" aria-label="TheHive 6 Documentation" data-md-component="logo">
       
   <img src="../../../assets/images/strangebee.svg" alt="logo">
 
     </a>
-    TheHive 5 Documentation
+    TheHive 6 Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix="">
@@ -21115,21 +21115,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#thehive-azure-images" class="md-nav__link">
+  <a href="#thehive-and-cortex-azure-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        TheHive Azure images
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cortex-azure-images" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cortex Azure images
+        TheHive and Cortex Azure image
       
     </span>
   </a>
@@ -21159,35 +21148,7 @@
   <span class="md-ellipsis">
     
   
-    Deploy TheHive Azure image
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="cortex/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Deploy Cortex Azure image
+    Deploy TheHive and Cortex Azure image
   
 
     
@@ -21703,29 +21664,18 @@
 
   <h1>Main Features</h1>
 
-<h2 id="thehive-azure-images">TheHive Azure images<a class="headerlink" href="#thehive-azure-images" title="Permanent link">#</a></h2>
+<h2 id="thehive-and-cortex-azure-image">TheHive and Cortex Azure image<a class="headerlink" href="#thehive-and-cortex-azure-image" title="Permanent link">#</a></h2>
+<p>A single Azure image can run TheHive, Cortex, or both, either on the same instance or on separate instances.</p>
 <h3 id="easy-to-use-and-deploy">Easy to use and deploy<a class="headerlink" href="#easy-to-use-and-deploy" title="Permanent link">#</a></h3>
-<p>The Azure images were built with operations and automation in mind. We wanted DevSecOps-friendly products that would fit in most organizations, no matter how simple or complex their infrastructure.</p>
-<h3 id="always-up-to-date">Always up-to-date<a class="headerlink" href="#always-up-to-date" title="Permanent link">#</a></h3>
-<p>The images are updated whenever a new TheHive version is released. No need to bother updating TheHive anymore, just launch a new instance as if it were a container!</p>
+<p>The Azure image is built for operations and automation. It's designed for DevSecOps teams and fits most organizations, whatever the complexity of their infrastructure.</p>
+<h3 id="always-up-to-date">Always up to date<a class="headerlink" href="#always-up-to-date" title="Permanent link">#</a></h3>
+<p>The image is updated with each new TheHive release. To upgrade, launch a new instance from the latest image, as you would with a container.</p>
 <h3 id="production-ready">Production-ready<a class="headerlink" href="#production-ready" title="Permanent link">#</a></h3>
 <ul>
-<li><strong>Dedicated data disks</strong>: TheHive data is stored on dedicated disks, not in the root filesystem.</li>
-<li><strong>Ubuntu-based</strong>: The images are based on the official Ubuntu 20.04 LTS distribution from Canonical.</li>
-<li><strong>Hardened OS</strong>: The underlying Ubuntu OS is hardened to comply with CSL1 (that's Common Sense Level 1!) minus the network filtering. There are no iptables surprises inside the image to avoid conflicting behavior with security groups.</li>
-<li><strong>Application only</strong>: The images include the applications only. They are not meant to be public-facing on their own and should be deployed within your virtual network and exposed with the public facing system of your choice (load balancer, reverse proxy).</li>
-</ul>
-<h2 id="cortex-azure-images">Cortex Azure images<a class="headerlink" href="#cortex-azure-images" title="Permanent link">#</a></h2>
-<h3 id="easy-to-use-and-deploy_1">Easy to use and deploy<a class="headerlink" href="#easy-to-use-and-deploy_1" title="Permanent link">#</a></h3>
-<p>The image was built with operations and automation in mind. We wanted a DevSecOps-friendly product that would fit in most organizations, no matter how simple or complex their infrastructure.</p>
-<h3 id="always-up-to-date_1">Always up-to-date<a class="headerlink" href="#always-up-to-date_1" title="Permanent link">#</a></h3>
-<p>The image is updated whenever a new Cortex version is released. No need to bother updating Cortex anymore, just launch a new instance as if it were a container!</p>
-<h3 id="production-ready_1">Production-ready<a class="headerlink" href="#production-ready_1" title="Permanent link">#</a></h3>
-<ul>
-<li><strong>Dedicated data disks</strong>: Cortex data is stored on dedicated disks, not in the root filesystem. With that in mind, you must attach two persistent data disks on LUN 0 and LUN 1 at launch (30 GB each recommended).</li>
-<li><strong>Ubuntu-based</strong>: The image is based on the official Ubuntu 20.04 LTS distribution from Canonical.</li>
-<li><strong>Hardened OS</strong>: The underlying Ubuntu OS is hardened to comply with CSL1 (that's Common Sense Level 1!) minus the network filtering. There are no iptables surprises inside the image to avoid conflicting behavior with security groups.</li>
-<li><strong>Application only</strong>: The image includes Cortex application only. It is not meant to be public-facing on its own and should be deployed within your virtual network and exposed with the public facing system of your choice (load balancer, reverse proxy).</li>
+<li>TheHive and Cortex data is stored on dedicated disks, not in the root filesystem.</li>
+<li>The image is based on the official Ubuntu 24.04 LTS distribution from Canonical.</li>
+<li>The underlying Ubuntu OS is hardened, except for network filtering. The image contains no iptables rules, so it doesn't conflict with security groups.</li>
+<li>The image includes TheHive and Cortex only. It isn't meant to be public-facing on its own. Deploy it within your virtual network, and expose it through a public-facing system such as a load balancer or reverse proxy.</li>
 </ul>
 
 
@@ -21821,7 +21771,7 @@
                 </div>
             </div>
             <div class="foot">
-                <div class="copy">Copyright 2025 StrangeBee. All rights reserved.</div>
+                <div class="copy">Copyright 2026 StrangeBee. All rights reserved.</div>
                 <div class="links">
                              
                 </div>
