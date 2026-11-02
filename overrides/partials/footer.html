@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="foot">
-                <div class="copy">{{ config.copyright }}</div>
+                <div class="copy">{{ config.copyright | replace("{year}", build_date_utc.year | string) }}</div>
                 <div class="links">
                   {% for lnk in config.extra.footer.links %}
                   {% if not loop.first %}<i></i>{% endif %}

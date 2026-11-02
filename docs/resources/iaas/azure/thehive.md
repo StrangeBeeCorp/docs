@@ -1,27 +1,29 @@
-# Usage instructions for the official Azure distribution of TheHive v5
+# Usage Instructions for the Official Azure Distribution of TheHive 5 and Cortex 3
 
 [:fontawesome-brands-microsoft: Official Azure image](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/strangebee1595948424730.thehive-5?tab=Overview){ .md-button target=_blank }
 
-The image can be used to set up a shiny-new TheHive v5 install or to launch an instance with existing data and configuration (for update / migration / restore purposes). The same image can also be used to launch Cortex on the same instance or on a separate, dedicated instance.
+Use the image to set up a new TheHive 5 installation, or to launch an instance with existing data and configuration to upgrade, migrate, or restore TheHive. The same image can also launch Cortex 3, either on the same instance as TheHive or on a separate, dedicated instance.
 
 ## Introduction
 
-* Based on the official Ubuntu 20.04 LTS image from Canonical
-* The image is updated whenever a new TheHive version is released - no need to bother updating TheHive anymore, just launch a new instance as if it were a container!
-* TheHive / Cortex data is stored on two dedicated disks, not in the root filesystem. **For that purpose, you must attach two persistent data disks at launch on LUN 0 (for the data) and LUN 1 (for Docker). The recommended minimal volume size are 32 GB per volume**. If you install Cortex on a separate instance, simply apply the same configuration on the second instance.
-* The underlying Ubuntu OS is hardened to comply with CSL1 (that's Common Sense Level 1!) minus the network filtering. There are no iptables surprises inside the image to avoid conflicting behaviour with security groups.
-* Migration from TheHive v4 is possible using our migration script baked in the image (*to be documented soon*).
+* The image is based on the official Ubuntu 24.04 LTS image from Canonical.
+* The image is updated with each new TheHive release. To upgrade, launch a new instance from the latest image, as you would with a container.
+* TheHive and Cortex data is stored on two dedicated disks, not in the root filesystem. At launch, attach two persistent data disks: one on LUN 0 for the data and one on LUN 1 for Docker. The recommended minimum size is 32 GB per disk. If you install Cortex on a separate instance, apply the same configuration to that instance.
+* The underlying Ubuntu OS is hardened, except for network filtering. The image contains no iptables rules, so it doesn't conflict with security groups.
+* You can migrate from TheHive 4 using the migration script included in the image. This script isn't documented yet.
 
 ## Run context
 
-* TheHive is available on port http 9000 and Cortex, when deployed alongside, is available on port http 9001 (that's *http* and NOT *https*). Needless to say we encourage you never to open these ports outside your virtual network and use a public-facing load balancer and / or reverse proxy to handle the TLS sessions with end-users. 
-* As an incentive to use https, both TheHive and Cortex are configured to use secure cookies by default. Connecting to their respective UIs in http will fail. An override to this remains possible in the configuration (for TheHive, set `play.http.session.secure = false` in `/opt/thp_data/nomad/tasks/thehive/application.conf` - for Cortex, set `play.http.session.secure = false` and `play.filters.csrf.cookie.secure = false` in `/opt/thp_data/nomad/tasks/cortex/application.conf`). You must restart the `thehive` and/or `cortex` service(s) for the change to be effective.
+* TheHive listens on HTTP port 9000. When deployed alongside it, Cortex listens on HTTP port 9001. These ports use HTTP, not HTTPS. Never open them outside your virtual network. Use a public-facing load balancer or reverse proxy to handle TLS sessions with end users.
+* TheHive and Cortex use secure cookies by default, so connecting to their UIs over HTTP fails. To allow HTTP connections, change the configuration, then restart the `thehive` or `cortex` service:
+    * For TheHive, set `play.http.session.secure = false` in `/opt/thp_data/nomad/tasks/thehive/application.conf`.
+    * For Cortex, set `play.http.session.secure = false` and `play.filters.csrf.cookie.secure = false` in `/opt/thp_data/nomad/tasks/cortex/application.conf`.
 
 ## Launching an instance
 
-1. Launch an instance from the image and attach two persistent disks: the data disk on LUN 0 and the docker disk LUN 1
-2. Set the admin username to be *azureuser*
-3. Provide the following cloud-init bootstrap script to configure the instance (you must update at least the `application.baseUrl` value for TheHive in this example):
+1. Launch an instance from the image and attach two persistent disks: the data disk on LUN 0 and the Docker disk on LUN 1.
+2. Set the admin username to *azureuser*.
+3. Provide the following cloud-init bootstrap script to configure the instance. In this example, you must at least update the `application.baseUrl` value for TheHive.
 
 !!! Example ""
 
@@ -55,23 +57,21 @@ The image can be used to set up a shiny-new TheHive v5 install or to launch an i
         - [ /opt/strangebee/ops/scripts/ops-launch.sh, "-t 1", "-c 0", "-p /dev/sdh", "-d /dev/sdi" ]
     ```
 
-You can further customize this script as needed. In the example above we:
+You can customize this script further. The example above:
 
-* partition and format the data disks attached on LUN 0 and LUN 1 
-* launch the initialisation script with the target data disk mapping names as argument (/dev/sdh and /dev/sdi) - the script will automatically mount the LUN 0 disk at /dev/sdh and the LUN 1 disk at /dev/sdi
-* install TheHive only (because of parameters `"-t 1", "-c 0"` when calling the `ops-launch.sh` script)
+* Partitions and formats the data disks attached on LUN 0 and LUN 1
+* Launches the initialization script with `/dev/sdh` and `/dev/sdi` as arguments, which mounts the LUN 0 disk at `/dev/sdh` and the LUN 1 disk at `/dev/sdi`
+* Installs TheHive only, because it calls the `ops-launch.sh` script with `"-t 1", "-c 0"`
 
 !!! Tip
-    
-    1. To install both TheHive and Cortex on the same instance, use `"-t 1", "-c 1"`
-    2. To install Cortex only on another instance, use `"-t 0", "-c 1"`
 
-That's it! TheHive is now available (for your load balancer or reverse proxy) on port 9000 and Cortex on port 9001, if also installed. The default admin account on both applications is `admin` with password `secret` (change them!). 
+    1. To install both TheHive and Cortex on the same instance, use `"-t 1", "-c 1"`.
+    2. To install Cortex only on another instance, use `"-t 0", "-c 1"`.
 
-Remember to access the apps through an internet-facing https system such as a reverse proxy or load balancer. In our example, TheHive is available at `https://thehive.mydomain.com/thehive` and Cortex at `https://thehive.mydomain.com/cortex`.
+Depending on the `-t` and `-c` parameters, the instance now runs TheHive on port 9000, Cortex on port 9001, or both, ready for your load balancer or reverse proxy. The default admin account on both applications is `admin` with password `secret`. Change both passwords after the first login.
 
-## Even easier using Terraform
+Access TheHive and Cortex through an internet-facing HTTPS system such as a reverse proxy or load balancer. In the example above, TheHive is available at `https://thehive.mydomain.com/thehive` and Cortex at `https://thehive.mydomain.com/cortex`.
 
-You can also provision the whole thing using Terraform.
+## Deploying with Terraform
 
-Check our [GitHub repository](https://github.com/StrangeBeeCorp/cloud-distrib-resources/tree/master/azure) for turnkey deployment code, **including a full SecOps vnet with an https Application Gateway**.
+You can also provision TheHive and Cortex using Terraform. The StrangeBee [cloud-distrib-resources repository](https://github.com/StrangeBeeCorp/cloud-distrib-resources/tree/master/azure) on GitHub provides ready-to-use deployment code that launches a TheHive instance and a separate Cortex instance from this image. The code also creates a full SecOps virtual network with an HTTPS Application Gateway.

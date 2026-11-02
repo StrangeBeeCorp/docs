@@ -404,7 +404,7 @@ Configure Cassandra by modifying settings within the `cassandra.yaml` file.
     * Service won’t start → Check logs in `/var/log/cassandra/`. Look for binding or configuration errors in `cassandra.yaml`.
     * Port 9042 not reachable → Verify firewall rules and confirm Cassandra is listening with `ss -tlnp | grep 9042`.
 
-### Step 3.5: Set a secure password for authentication (if you enabled authentication in [Step 3.3](#step-33-configure-cassandra))
+### Step 3.5: Set a secure password for authentication (if you enabled authentication in [Step 3.3](#step-33-configure-cassandra)) {#step-35-set-a-secure-password-for-authentication-if-you-enabled-authentication-in-step-33}
 
 {% include-markdown "includes/set-password-authentication-cassandra.md" %}
 

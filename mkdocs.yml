@@ -1,6 +1,6 @@
 ---
-copyright: Copyright 2025 StrangeBee. All rights reserved.
-site_name: TheHive 5 Documentation
+copyright: Copyright {year} StrangeBee. All rights reserved.
+site_name: TheHive 6 Documentation
 site_url: https://docs.strangebee.com
 theme:
   name: material
@@ -363,6 +363,7 @@ plugins:
             'resources/demo.md': 'resources/docker-demo.md'
             'resources/howto-vm-demo.md': 'resources/docker-demo.md'
             'resources/vm-demo.md': 'resources/docker-demo.md'
+            'resources/iaas/azure/cortex.md': 'resources/iaas/azure/thehive.md'
             'thehive/user-guides/analyst-corner/cases/comment-on-case.md': 'thehive/user-guides/analyst-corner/cases/case-comments/comment-on-case.md'
             'flow/user-guides/manage-entry-exit-variables.md': 'flow/user-guides/manage-input-exit-variables.md'
 
@@ -1073,8 +1074,7 @@ nav:
         - 'TheHive v5 and Cortex within a SecOps VPC': resources/iaas/aws/infra-as-code/ug-secops-instances/README.md
       - 'Microsoft Azure': 
         - 'Main Features': resources/iaas/azure/index.md
-        - 'Deploy TheHive Azure image': resources/iaas/azure/thehive.md
-        - 'Deploy Cortex Azure image': resources/iaas/azure/cortex.md
+        - 'Deploy TheHive and Cortex Azure image': resources/iaas/azure/thehive.md
         - 'Azure sample code': resources/iaas/azure/infra-as-code/README.md
         - 'Creating a new SecOps Virtual Network': resources/iaas/azure/infra-as-code/ug-secops-vnet/README.md
         - 'Deploying TheHive v5 and Cortex with Terraform': resources/iaas/azure/infra-as-code/ug-secops-instances/README.md

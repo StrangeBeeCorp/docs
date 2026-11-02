@@ -10,7 +10,6 @@ Our sample code can handle two use-cases:
 !!! Tip
     To switch between both use-cases, simply update the `secops_thehive_init` and/or `secops_cortex_init` variable values between `true` and `false` (`true` being the empty database, initialisation use-case).
 
-
 !!! Example "Files"
 
     * [main.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/main.tf)
@@ -18,10 +17,8 @@ Our sample code can handle two use-cases:
     * [outputs.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/outputs.tf)
     * [variables.cf](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/variables.tf)
     * [samples.tfvars](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/sample.tfvars)
-    * [files/bastion-cloud-config-new.tpl](https://github.com/StrangeBeeCorp/cloud-distrib-resources/blob/master/aws/ug-secops-instances/files/bastion-cloud-config-new.tpl)
 
-
-## TL;DR;
+## TL;DR
 
 + Download all files
 + Set the required variables

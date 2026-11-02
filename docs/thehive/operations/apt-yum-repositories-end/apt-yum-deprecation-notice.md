@@ -7,11 +7,11 @@ All packages are hosted on an HTTPS-secured website and come with a [SHA256 chec
 !!! info "Deprecated package sources"
     Packages are no longer distributed from `https://archives.strangebee.com/` or `https://download.thehive-project.org/`.
 
-## Why APT and YUM repositories are being deprecated
+## Why APT and YUM repositories were deprecated
 
 Over time, several incidents have affected the availability of packages in the APT and YUM repositories, leading to unexpected downtime for users relying on these installation methods.
 
-To address these issues and enhance reliability, StrangeBee is transitioning to a unified, highly available distribution system. This new system supports all package formats (DEB and RPM) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions.
+To address these issues and enhance reliability, StrangeBee moved to a unified, highly available distribution system. This new system supports all package formats (DEB and RPM) and architectures (AMD64 and ARM64), providing a consistent experience across Linux distributions.
 
 Key benefits include:
 

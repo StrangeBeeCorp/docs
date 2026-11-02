@@ -47,10 +47,7 @@ Add a local *Microsoft Teams* [endpoint](../manage-endpoints/about-endpoints.md)
     !!! warning "Migrating to the Workflows application for Microsoft Teams integration"
         With the 5.4.3 release, TheHive has updated the Microsoft Teams notifier in response to Microsoft deprecation of the Incoming Webhooks. Users must now migrate from the legacy webhook setup to a new configuration using the Workflows application.
 
-    !!! info "Migration expected by January 31, 2025"
-        As announced by Microsoft on [their official blog](https://devblogs.microsoft.com/microsoft365dev/retirement-of-office-365-connectors-within-microsoft-teams/){target=_blank}, Connector owners must update their webhook URLs by January 31, 2025, to comply with the new structure. This update is crucial for maintaining seamless integration and ensuring the continued functionality of Connectors in Microsoft Teams.
-
-    For detailed instructions, refer to Microsoft official documentation on [creating an Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?utm_source=chatgpt.com&tabs=newteams%2Cdotnet#create-an-incoming-webhook){target=_blank}.
+    For detailed instructions, refer to Microsoft official documentation on [creating an Incoming Webhook](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=newteams%2Cdotnet#create-an-incoming-webhook){target=_blank}.
 
 ### Step 2: Create a Microsoft Teams endpoint
 
