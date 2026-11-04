@@ -147,10 +147,10 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
         | Client secret                                       | `<client_secret>`                  |
         | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`  |
         | Grant type                                          | `authorization_code`                                  |
-        | Authorization URL                                   | `https://<okta_domain>/oauth2/<auth_server_id>/v1/authorize` |
+        | Authorization URL                                   | `https://<okta_domain>/oauth2/<authorization_server_id>/v1/authorize` |
         | Prefix of the authorization header                  | `Bearer`                                |
-        | Token URL                                           | `https://<okta_domain>/oauth2/<auth_server_id>/v1/token`      |
-        | User information URL                                | `https://<okta_domain>/oauth2/<auth_server_id>/v1/userinfo`   |
+        | Token URL                                           | `https://<okta_domain>/oauth2/<authorization_server_id>/v1/token`      |
+        | User information URL                                | `https://<okta_domain>/oauth2/<authorization_server_id>/v1/userinfo`   |
         | List of scopes                                       | `["openid", "email"]`            |
         | Field that contains the id of the user in user info | `"email"`                          |
 
@@ -182,15 +182,15 @@ Configure an OAuth 2.0 authentication provider—such as Keycloak, Okta, GitHub,
         | Client secret                                       | `<client_secret>`                                                |
         | TheHive redirect URL                                | `https://<thehive_url>/api/ssoLogin`                               |
         | Grant type                                          | `authorization_code`                                  |
-        | Authorization URL                                   | `https://login.microsoftonline.com/<tenant>/oauth2/v2.0/authorize` |
+        | Authorization URL                                   | `https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize` |
         | Prefix of the authorization header                  | `Bearer`                                |
-        | Token URL                                           | `https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token`     |
+        | Token URL                                           | `https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token`     |
         | User information URL                                | `https://graph.microsoft.com/v1.0/me`                            |
         | List of scopes                                       | `["User.Read"]`                                                |
         | Field that contains the id of the user in user info | `"mail"`                                                         |
 
         !!! Note "Microsoft configuration"
-            To generate the `<client_id>`, `<client_secret>` and `<tenant>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps){target=_blank}.
+            To generate the `<client_id>`, `<client_secret>` and `<tenant_id>`, register a new application in the [Azure Active Directory App Registrations portal](https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps){target=_blank}.
 
     === "Google" 
 

@@ -54,8 +54,11 @@ Configure a SAML authentication provider in TheHive.
     Select how TheHive retrieves configuration information for the IdP—either from an XML file or a URL.
 
     * If you choose *url*, provide the full link to the metadata document.
-    
-        Example: `https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml`
+
+        Examples:
+
+        * Microsoft Entra ID: `https://login.microsoftonline.com/<tenant_id>/federationmetadata/2007-06/federationmetadata.xml`
+        * [Okta](https://support.okta.com/help/s/article/How-do-we-download-the-IDP-XML-metadata-file-from-a-SAML-Template-App){target=_blank}: `https://<okta_domain>/app/<application_id>/sso/saml/metadata`
 
     * If you choose *xml*, paste the XML metadata content directly into the field.
     
@@ -63,7 +66,7 @@ Configure a SAML authentication provider in TheHive.
 
         ``` xml
         <?xml version="1.0" encoding="UTF-8"?>
-        <md: EntityDescriptor entityID="http://www.okta.com/<entity-id>"               xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
+        <md: EntityDescriptor entityID="http://www.okta.com/<entity_id>"               xmlns="urn:oasis:names:tc:SAML:2.0:metadata">
             <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
                 <md:KeyDescriptor use="signing">
                     <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">

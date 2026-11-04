@@ -58,8 +58,13 @@ Configure an OpenID authentication provider in TheHive.
     Select how TheHive retrieves configuration information for the IdP—either from an JSON file or a URL.
 
     * If you choose *url*, provide the full link to the metadata document.
-    
-        Example: `https://login.microsoftonline.com/{tenant-id}/.well-known/openid-configuration`
+
+        Examples:
+
+        * Microsoft Entra ID: `https://login.microsoftonline.com/<tenant_id>/.well-known/openid-configuration`
+        * Okta:
+            * With the [org authorization server](https://developer.okta.com/docs/api/openapi/okta-oauth/oauth/orgas/getwellknownopenidconfiguration){target=_blank}: `https://<okta_domain>/.well-known/openid-configuration?client_id=<client_id>`
+            * With a [custom authorization server](https://developer.okta.com/docs/api/openapi/okta-oauth/oauth/customas/getwellknownopenidconfigurationcustomas){target=_blank}: `https://<okta_domain>/oauth2/<authorization_server_id>/.well-known/openid-configuration`
 
     * If you choose *json*, paste the JSON content directly into the field.
     
@@ -67,9 +72,9 @@ Configure an OpenID authentication provider in TheHive.
 
         ``` json
         {
-            "issuer": "https://login.microsoftonline.com/<tenant-id>/v2.0",
-            "authorization_endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/authorize",
-            "token_endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token",
+            "issuer": "https://login.microsoftonline.com/<tenant_id>/v2.0",
+            "authorization_endpoint": "https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/authorize",
+            "token_endpoint": "https://login.microsoftonline.com/<tenant_id>/oauth2/v2.0/token",
             "userinfo_endpoint": "https://graph.microsoft.com/oidc/userinfo"
         }
         ```
