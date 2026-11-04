@@ -5,8 +5,8 @@
 !!! warning "Database evolution on upgrade"
     Upgrading to TheHive 5.8 triggers a database evolution on first launch—schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.
 
-!!! danger "Skip directly to version 5.8.1"
-    Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.8.1 instead.
+!!! warning "Avoid version 5.8.0"
+    Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.8.1. If you run this version, upgrade to the latest 5.8 patch release.
 
 ## 5.8.1 - October 12, 2026
 
