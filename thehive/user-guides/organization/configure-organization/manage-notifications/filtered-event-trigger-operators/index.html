@@ -21759,10 +21759,10 @@
 
 
 <h1 id="filteredevent-trigger-operators">FilteredEvent Trigger Operators<a class="headerlink" href="#filteredevent-trigger-operators" title="Permanent link">#</a></h1>
-<p>Several operators are available for use with the <a href="../write-filtered-event-trigger/">FilteredEvent trigger</a>.</p>
+<p>Several operators are available for the <a href="../write-filtered-event-trigger/">FilteredEvent trigger</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Deprecated shorthand</p>
-<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.4/#5.4" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.4/#5.4">5.4</a></span></span> The shorthand <code>{ "_operator": { "field": value } }</code> is deprecated and logs a warning when used. For all comparison and string operators, use the explicit <code>_field</code>/<code>_value</code> form instead:</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.4/#5.4" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.4/#5.4">5.4</a></span></span> The shorthand <code>{ "_operator": { "field": value } }</code> is deprecated and logs a warning when used. For all comparison and string operators, the explicit <code>_field</code>/<code>_value</code> form replaces it:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"action"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"create"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 </div>
@@ -21788,47 +21788,57 @@
 <ul>
 <li><code>_not</code>: Excludes results that match the given filter</li>
 </ul>
-<p>This operator inverts the condition, returning events that don't match the specified filter.</p>
+<p>This operator inverts the condition. It returns events that don't match the specified filter.</p>
 <div class="highlight"><pre><span></span><code>{"_not": {... filterA} }
 </code></pre></div>
 <h2 id="comparison-operators">Comparison operators<a class="headerlink" href="#comparison-operators" title="Permanent link">#</a></h2>
 <ul>
 <li><code>_lt</code>, <code>_gt</code>, <code>_lte</code>, and <code>_gte</code>: Compare numerical values</li>
 </ul>
-<p>These operators filter events based on less than (<code>_lt</code>), greater than (<code>_gt</code>), less than or equal (<code>_lte</code>), or greater than or equal (<code>_gte</code>) conditions.</p>
+<p>These operators filter events based on a numeric condition: <code>_lt</code> for less than, <code>_gt</code> for greater than, <code>_lte</code> for less than or equal, and <code>_gte</code> for greater than or equal.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_lt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>_eq</code> and <code>_is</code>: Matches an exact value</li>
+<li><code>_eq</code> and <code>_is</code>: Match an exact value</li>
 </ul>
 <p><code>_eq</code> is an alias for <code>_is</code>. Both check for exact matches.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>Also works with arrays:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<p>On an array field, both match when one of the elements equals the value:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li><code>_ne</code>: Matches a different value</li>
+</ul>
+<p>This operator filters events where a field doesn't equal a given value. It doesn't match events where the field is missing.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_ne"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>On an array field, <code>_ne</code> matches when at least one element differs from the value. For example, <code>{ "_ne": { "_field": "tags", "_value": "foo" } }</code> matches an event whose tags are <code>["foo", "bar"]</code>.</p>
+<p>The following filter matches events whose tags don't include <code>foo</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <h2 id="string-operators">String operators<a class="headerlink" href="#string-operators" title="Permanent link">#</a></h2>
 <ul>
-<li><code>_startsWith</code> and <code>_endsWith</code>: Matches strings that begin or end with a specific sequence of characters</li>
+<li><code>_startsWith</code> and <code>_endsWith</code>: Match strings that begin or end with a specific sequence of characters</li>
 </ul>
-<p>These operators filter events based on whether a string starts with or ends with a given value.</p>
+<p>These operators filter events based on whether a string starts with or ends with a given value. The comparison is case-sensitive.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_startsWith"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>_like</code>: Matches a string using wildcards (*)</li>
+<li><code>_like</code>: Matches a substring</li>
 </ul>
-<p>This operator performs pattern matching using wildcards (*).</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*ice"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<p>This operator filters events where a string contains a given value. The comparison is case-sensitive.</p>
+<p>For a field whose value is <code>Alice</code>, the following filters match:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ali"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ali*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*lice*"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_like"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ice"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>_match</code>: Matches a string</li>
+<li><code>_match</code>: Matches a word</li>
 </ul>
+<p>This operator filters events where a string contains a given word. The value must be a single word, and it must match a whole word in the string. The comparison isn't case-sensitive.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"_match"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice"</span><span class="w"> </span><span class="p">}</span>
 <span class="p">}</span>
@@ -21837,56 +21847,59 @@
 <ul>
 <li><code>_between</code>: Matches values within a range</li>
 </ul>
-<p>This operator returns events where a numeric field falls within a specified range.</p>
+<p>This operator returns events where a numeric field falls within a specified range. The range includes the <code>_from</code> value and excludes the <code>_to</code> value.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_between"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_from"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="nt">"_to"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>Only works when <code>foo</code> is a number.</p>
+<p>This operator only works when <code>foo</code> is a number.</p>
 <ul>
-<li><code>_in</code>: Matches when a value exists in an array</li>
+<li><code>_in</code>: Matches one of several values</li>
 </ul>
-<p>This operator checks if a field’s value is one of the values in a predefined list.</p>
-<p>Works with numbers:</p>
+<p>This operator checks whether a field's value is one of the values in a predefined list. On an array field, it matches when at least one element is in the list.</p>
+<p>It works with numbers:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_in"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>Works with strings:</p>
+<p>It works with strings:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_in"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tags"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">]</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <h2 id="existence-and-content-operators">Existence and content operators<a class="headerlink" href="#existence-and-content-operators" title="Permanent link">#</a></h2>
 <ul>
-<li><code>_contains</code>: Checks if a field contains a specific value</li>
+<li><code>_contains</code>: Checks whether a field contains a specific value</li>
 </ul>
-<p>This operator searches within arrays of strings.</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_contains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"foo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<p>This operator filters events where a string contains a given value. On an array field, it matches when one of the elements contains the value. The comparison is case-sensitive.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_contains"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LOW"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Deprecation</p>
-<p>The <code>_contains</code> operator is deprecated. Use <a href="#comparison-operators"><code>_eq</code></a> to search for exact values in arrays or <a href="#string-operators"><code>_like</code></a> to search for substrings.</p>
+<p>The <code>_contains</code> operator is deprecated. It's replaced by <a href="#comparison-operators"><code>_eq</code></a> for exact values in arrays and by <a href="#string-operators"><code>_like</code></a> for substrings.</p>
 </div>
 <ul>
-<li><code>_has</code>: Checks if a field is present</li>
+<li><code>_has</code>: Checks whether a field is present</li>
 </ul>
 <p>This operator filters events that contain a specific field.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>_empty</code>: Checks if a field is empty</li>
+<li><code>_empty</code>: Checks whether a field is empty</li>
 </ul>
-<p>This operator filters events where a field is empty (contains <code>""</code>, an empty array <code>[]</code>, or <code>null</code>).</p>
+<p>This operator filters events where a field is empty. A field is empty when it contains <code>""</code>, an empty array <code>[]</code>, or <code>null</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_empty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
-<p>To check if a field doesn't exist, use:</p>
+<p>The following filter matches events where a field doesn't exist:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_not"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"_has"</span><span class="p">:</span><span class="w"> </span><span class="s2">"foo"</span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <ul>
-<li><code>_id</code>: Matches an entity by its unique identifier</li>
+<li><code>_id</code>: Matches an event by its unique identifier</li>
 </ul>
-<p>This operator filters events based on the <code>_id</code> field of an object.</p>
+<p>This operator filters events based on the top-level <code>_id</code> field. This field identifies the event itself, not the object affected by the event.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span>
 <span class="p">}</span>
 </code></pre></div>
+<p>The following filter matches events on a specific object:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="nt">"_eq"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"_field"</span><span class="p">:</span><span class="w"> </span><span class="s2">"object._id"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
 <ul>
-<li><code>_arrayMatch</code>: Checks if any element within an array field satisfies a specified condition</li>
+<li><code>_arrayMatch</code>: Checks whether any element within an array field satisfies a specified condition</li>
 </ul>
 <p>This operator only works when the target field is an array of objects.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
