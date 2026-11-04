@@ -21720,13 +21720,17 @@
 <ul>
 <li>
 <p>If you choose <em>url</em>, provide the full link to the metadata document.</p>
-<p>Example: <code>https://login.microsoftonline.com/{tenant-id}/federationmetadata/2007-06/federationmetadata.xml</code></p>
+<p>Examples:</p>
+<ul>
+<li>Microsoft Entra ID: <code>https://login.microsoftonline.com/&lt;tenant_id&gt;/federationmetadata/2007-06/federationmetadata.xml</code></li>
+<li><a href="https://support.okta.com/help/s/article/How-do-we-download-the-IDP-XML-metadata-file-from-a-SAML-Template-App" target="_blank">Okta</a>: <code>https://&lt;okta_domain&gt;/app/&lt;application_id&gt;/sso/saml/metadata</code></li>
+</ul>
 </li>
 <li>
 <p>If you choose <em>xml</em>, paste the XML metadata content directly into the field.</p>
 <p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
-<span class="nt">&lt;md:</span><span class="w"> </span><span class="err">EntityDescriptor</span><span class="w"> </span><span class="na">entityID=</span><span class="s">"http://www.okta.com/&lt;entity-id&gt;"</span><span class="w">               </span><span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:metadata"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;md:</span><span class="w"> </span><span class="err">EntityDescriptor</span><span class="w"> </span><span class="na">entityID=</span><span class="s">"http://www.okta.com/&lt;entity_id&gt;"</span><span class="w">               </span><span class="na">xmlns=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:metadata"</span><span class="nt">&gt;</span>
 <span class="w">    </span><span class="nt">&lt;md:IDPSSODescriptor</span><span class="w"> </span><span class="na">WantAuthnRequestsSigned=</span><span class="s">"false"</span><span class="w"> </span><span class="na">protocolSupportEnumeration=</span><span class="s">"urn:oasis:names:tc:SAML:2.0:protocol"</span><span class="nt">&gt;</span>
 <span class="w">        </span><span class="nt">&lt;md:KeyDescriptor</span><span class="w"> </span><span class="na">use=</span><span class="s">"signing"</span><span class="nt">&gt;</span>
 <span class="w">            </span><span class="nt">&lt;ds:KeyInfo</span><span class="w"> </span><span class="na">xmlns:ds=</span><span class="s">"http://www.w3.org/2000/09/xmldsig#"</span><span class="nt">&gt;</span>

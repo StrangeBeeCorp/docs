@@ -21707,15 +21707,23 @@
 <ul>
 <li>
 <p>If you choose <em>url</em>, provide the full link to the metadata document.</p>
-<p>Example: <code>https://login.microsoftonline.com/{tenant-id}/.well-known/openid-configuration</code></p>
+<p>Examples:</p>
+<ul>
+<li>Microsoft Entra ID: <code>https://login.microsoftonline.com/&lt;tenant_id&gt;/.well-known/openid-configuration</code></li>
+<li>Okta:<ul>
+<li>With the <a href="https://developer.okta.com/docs/api/openapi/okta-oauth/oauth/orgas/getwellknownopenidconfiguration" target="_blank">org authorization server</a>: <code>https://&lt;okta_domain&gt;/.well-known/openid-configuration?client_id=&lt;client_id&gt;</code></li>
+<li>With a <a href="https://developer.okta.com/docs/api/openapi/okta-oauth/oauth/customas/getwellknownopenidconfigurationcustomas" target="_blank">custom authorization server</a>: <code>https://&lt;okta_domain&gt;/oauth2/&lt;authorization_server_id&gt;/.well-known/openid-configuration</code></li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>If you choose <em>json</em>, paste the JSON content directly into the field.</p>
 <p>Example: </p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">"issuer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant-id&gt;/v2.0"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"authorization_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant-id&gt;/oauth2/v2.0/authorize"</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"token_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant-id&gt;/oauth2/v2.0/token"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"issuer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant_id&gt;/v2.0"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"authorization_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant_id&gt;/oauth2/v2.0/authorize"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"token_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://login.microsoftonline.com/&lt;tenant_id&gt;/oauth2/v2.0/token"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"userinfo_endpoint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://graph.microsoft.com/oidc/userinfo"</span>
 <span class="p">}</span>
 </code></pre></div>
