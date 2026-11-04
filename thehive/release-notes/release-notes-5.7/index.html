@@ -21735,9 +21735,9 @@
 <p class="admonition-title">Database evolution on upgrade</p>
 <p>Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Avoid versions 5.7.1 and 5.7.6</p>
-<p>Version 5.7.1 contains a bug that prevents TheHive from retrieving Cortex job results, fixed in version 5.7.2. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.7.7. If you run one of these versions, upgrade to the latest 5.7 patch release.</p>
+<div class="admonition danger">
+<p class="admonition-title">Skip directly to version 5.7.8</p>
+<p>Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.7.8 instead.</p>
 </div>
 <h2 id="578-october-22-2026">5.7.8 - October 22, 2026<a class="headerlink" href="#578-october-22-2026" title="Permanent link">#</a></h2>
 <h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
