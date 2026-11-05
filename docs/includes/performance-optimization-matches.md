@@ -1,2 +1,2 @@
 !!! info "Performance optimization"
-    To optimize performance, a maximum of 100 observables are displayed in the **Matches** drawer. Users with an admin-type profile can adjust this limit in the `application.conf` file. However, increasing it beyond 100 may impact application performance. Proceed with caution when modifying this setting, as performance can't be guaranteed if the limit is raised.
+    To optimize performance, a maximum of 100 common observables are displayed when you select **See all** in the **Matches** column. Your administrator can [change this limit](/thehive/configuration/update-service-configuration/#adjust-the-observables-display-limit).

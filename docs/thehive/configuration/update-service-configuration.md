@@ -166,6 +166,33 @@ To update these settings, follow the steps below.
 
 5. Restart TheHive service.
 
+## Adjust the observables display limit
+
+When users [look for similar alerts or cases](../user-guides/analyst-corner/cases/find-similar-alerts-cases.md), they select the **Similar alerts** or **Similar cases** tab, then the **Matches** column. This lists the observables shared by two alerts or cases. To optimize performance, this list displays a maximum of `100` observables by default.
+
+!!! warning "Performance impact"
+    Increasing the limit beyond 100 may impact application performance. Performance can't be guaranteed if the limit is raised.
+
+To update this setting, follow the steps below.
+
+1. Stop TheHive service.
+
+    {% include-markdown "includes/service-commands.md" %}
+
+2. Open the `application.conf` file using a text editor.
+
+3. Add the following configuration:
+
+    ```yaml
+    query.observableLimitByEntityToDisplay = <observable_limit>
+    ```
+
+    Replace `<observable_limit>` with the maximum number of observables to display.
+
+4. Save your modifications in the `application.conf` file.
+
+5. Restart TheHive service.
+
 <h2>Next steps</h2>
 
 * [Perform Initial Login and Setup as an Admin](../administration/perform-initial-setup-as-admin.md)
