@@ -1416,6 +1416,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#adjust-the-observables-display-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjust the observables display limit
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -21955,6 +21966,42 @@
 <div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxDiskBuffer = 1GB</span>
 <span class="l l-Scalar l-Scalar-Plain">play.http.parser.maxMemoryBuffer = 10M</span>
 </code></pre></div>
+</li>
+<li>
+<p>Save your modifications in the <code>application.conf</code> file.</p>
+</li>
+<li>
+<p>Restart TheHive service.</p>
+</li>
+</ol>
+<h2 id="adjust-the-observables-display-limit">Adjust the observables display limit<a class="headerlink" href="#adjust-the-observables-display-limit" title="Permanent link">#</a></h2>
+<p>When users <a href="../../user-guides/analyst-corner/cases/find-similar-alerts-cases/">look for similar alerts or cases</a>, they select the <strong>Similar alerts</strong> or <strong>Similar cases</strong> tab, then the <strong>Matches</strong> column. This lists the observables shared by two alerts or cases. To optimize performance, this list displays a maximum of <code>100</code> observables by default.</p>
+<div class="admonition warning">
+<p class="admonition-title">Performance impact</p>
+<p>Increasing the limit beyond 100 may impact application performance. Performance can't be guaranteed if the limit is raised.</p>
+</div>
+<p>To update this setting, follow the steps below.</p>
+<ol>
+<li>
+<p>Stop TheHive service.</p>
+<div class="admonition info">
+<p class="admonition-title">Service commands</p>
+<p>Stop and restart commands depend on your installation method and the specific service. Refer to the official documentation for the appropriate commands.</p>
+<ul>
+<li>Package installation: Depending on your distribution and the service, use <code>systemctl</code> or <code>service</code>. See the <a href="https://www.man7.org/linux/man-pages/man1/systemctl.1.html" target="_blank">systemctl documentation</a> and the service documentation for details.</li>
+<li>Docker Compose deployment: Refer to the <a href="https://docs.docker.com/reference/cli/docker/compose/" target="_blank">official Docker Compose documentation</a>.</li>
+<li>Kubernetes deployment: Refer to the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/" target="_blank">kubectl scale documentation</a> or the <a href="https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/" target="_blank">kubectl rollout restart documentation</a>.</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Open the <code>application.conf</code> file using a text editor.</p>
+</li>
+<li>
+<p>Add the following configuration:</p>
+<div class="highlight"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">query.observableLimitByEntityToDisplay = &lt;observable_limit&gt;</span>
+</code></pre></div>
+<p>Replace <code>&lt;observable_limit&gt;</code> with the maximum number of observables to display.</p>
 </li>
 <li>
 <p>Save your modifications in the <code>application.conf</code> file.</p>
