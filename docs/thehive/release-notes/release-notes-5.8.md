@@ -3,10 +3,17 @@
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
 !!! warning "Database evolution on upgrade"
-    Upgrading to TheHive 5.8 triggers a database evolution on first launch—schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.
+    Upgrading to TheHive 5.8 triggers a database evolution on first launch. This version includes the following schema changes:
 
-!!! danger "Skip directly to version 5.8.1"
-    Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.8.1 instead.
+    * Adds organization and related entity fields to existing comments, to make them searchable from Global Search
+    * Adds visibility and related entity fields to existing pages, to make them searchable from Global Search
+    * Adds the `manageSla` permission to existing Org-Admin profiles
+    * Adds a `hidden` field to existing tags
+
+    The changes on comments, pages, and tags may take some time to complete, depending on the number of these items in your database. Upgrading from version 5.5 or earlier also applies the [schema changes of version 5.6](release-notes-5.6.md). Plan a maintenance window accordingly.
+
+!!! warning "Avoid version 5.8.0"
+    Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.8.1. If you run this version, upgrade to the latest 5.8 patch release.
 
 ## 5.8.1 - October 12, 2026
 

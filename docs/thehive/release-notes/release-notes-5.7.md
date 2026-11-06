@@ -3,10 +3,10 @@
 {% include-markdown "includes/api-public-v0-deprecation.md" %}
 
 !!! warning "Database evolution on upgrade"
-    Upgrading to TheHive 5.7 from version 5.5 or earlier triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.
+    TheHive 5.7 includes no schema changes. Upgrading from version 5.5 or earlier applies the [schema changes of version 5.6](release-notes-5.6.md) on first launch. Plan a maintenance window for the upgrade.
 
-!!! danger "Skip directly to version 5.7.8"
-    Version 5.7.1 contains a critical bug that prevents Cortex job results from being retrieved by TheHive. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.7.8 instead.
+!!! warning "Avoid versions 5.7.1 and 5.7.6"
+    Version 5.7.1 contains a bug that prevents TheHive from retrieving Cortex job results, fixed in version 5.7.2. Version 5.7.6 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.7.7. If you run one of these versions, upgrade to the latest 5.7 patch release.
 
 ## 5.7.8 - October 22, 2026
 

@@ -6,7 +6,11 @@
     TheHive 6.0 runs on Java 17 instead of Java 11. Package installations must [set up Java 17](../installation/upgrade-from-5.x.md#optional-step-3-set-up-java-17) before upgrading. Docker Compose and Kubernetes deployments with Helm charts aren't affected, because the image ships its own runtime. Cassandra 4.0.x to 4.1.x still requires Java 11, so where it shares the host with TheHive, [run both Java versions side by side](../operations/thehive-6-cassandra-same-host.md).
 
 !!! warning "Database evolution on upgrade"
-    Upgrading to TheHive 6.0 triggers a database evolution on first launch: schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.
+    Upgrading to TheHive 6.0 triggers a database evolution on first launch. This version includes the following schema change:
+
+    * Adds a `requiresImpact` field to existing case statuses, set to `true` for the *True Positive* status only
+
+    Upgrading from a version earlier than 5.8 also applies the schema changes of the intermediate versions. This includes the [5.8 changes on comments, pages, and tags](release-notes-5.8.md), which may take some time to complete, depending on the number of these items in your database. Plan a maintenance window accordingly.
 
 ## 6.0.0 - October 20, 2026
 
