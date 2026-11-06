@@ -1,5 +1,4 @@
 ---
-
 name: Deploy PR previews
 
 on:
@@ -18,10 +17,12 @@ permissions:
 
 jobs:
   deploy-preview:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, type=ephemeral, size=medium, domain=sb]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout ${{ github.repository }}
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       # The pr-preview umbrella stores a full site copy per PR and its auto-cleanup has not kept up,
       # bloating gh-pages until the GitHub Pages build runs out of disk ("No space left on device").
@@ -63,7 +64,7 @@ jobs:
           echo "Pruned ${removed} stale preview(s)."
 
       - name: Setup python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: 3.x
 
@@ -82,7 +83,7 @@ jobs:
 
       # https://github.com/rossjrw/pr-preview-action
       - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1
+        uses: rossjrw/pr-preview-action@873417d2df72380da1f3978378fb58560bcde976 # v1.8.2
         with:
           source-dir: ./site
           preview-branch: gh-pages

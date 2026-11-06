@@ -1,3 +1,4 @@
+---
 name: misc.sync
 on:
   # Run manually a sync between current repo / develop and public repo develop
@@ -12,8 +13,7 @@ jobs:
     permissions:
       actions: read
       contents: write
-    runs-on:
-      - ubuntu-latest
+    runs-on: [self-hosted, type=ephemeral, size=xsmall, domain=sb]
     steps:
       - name: Push to public Docs repo
         env:
