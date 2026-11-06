@@ -21649,7 +21649,11 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Database evolution on upgrade</p>
-<p>Upgrading to TheHive 6.0 triggers a database evolution on first launch: schema and data updates whose duration depends on your database size and on the version you upgrade from. Plan a maintenance window accordingly.</p>
+<p>Upgrading to TheHive 6.0 triggers a database evolution on first launch. This version includes the following schema change:</p>
+<ul>
+<li>Adds a <code>requiresImpact</code> field to existing case statuses, set to <code>true</code> for the <em>True Positive</em> status only</li>
+</ul>
+<p>Upgrading from a version earlier than 5.8 also applies the schema changes of the intermediate versions. This includes the <a href="../release-notes-5.8/">5.8 changes on comments, pages, and tags</a>, which may take some time to complete, depending on the number of these items in your database. Plan a maintenance window accordingly.</p>
 </div>
 <h2 id="600-october-20-2026">6.0.0 - October 20, 2026<a class="headerlink" href="#600-october-20-2026" title="Permanent link">#</a></h2>
 <h3 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">#</a></h3>

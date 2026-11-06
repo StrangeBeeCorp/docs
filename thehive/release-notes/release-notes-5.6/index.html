@@ -21733,11 +21733,16 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Database evolution on upgrade</p>
-<p>Upgrading to TheHive 5.6 triggers a database evolution on first launch—schema and data updates whose duration scales with your database size. Plan a maintenance window accordingly.</p>
+<p>Upgrading to TheHive 5.6 triggers a database evolution on first launch. This version includes the following schema changes:</p>
+<ul>
+<li>Adds a <a href="../../administration/profiles/about-profiles/#profile-types">type</a> to existing profiles, inferred from their permissions</li>
+<li>Adds the <code>manageCaseAccess/external</code> permission to existing Org-Admin profiles</li>
+</ul>
+<p>These changes only apply to profiles. Plan a maintenance window for the upgrade.</p>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Skip directly to version 5.6.8</p>
-<p>Version 5.6.7 contains a regression that drops the alert description from the description field when creating a case from an alert. Upgrade straight to 5.6.8 instead.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avoid version 5.6.7</p>
+<p>Version 5.6.7 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.6.8. If you run this version, upgrade to the latest 5.6 patch release.</p>
 </div>
 <h2 id="568-october-15-2026">5.6.8 - October 15, 2026<a class="headerlink" href="#568-october-15-2026" title="Permanent link">#</a></h2>
 <p>Last update: October 20, 2026</p>
