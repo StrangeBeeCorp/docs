@@ -18,5 +18,5 @@ Reopen a closed [case](about-cases.md) in TheHive and change its [status](../../
 
 <h2>Next steps</h2>
 
-* [Change an Case Status](change-status-case.md)
+* [Change a Case Status](change-status-case.md)
 * [Merge Cases](merge-cases.md)

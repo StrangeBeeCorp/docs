@@ -55,7 +55,7 @@ Configure an OpenID authentication provider in TheHive.
 
     **- Identity provider metadata type \***
 
-    Select how TheHive retrieves configuration information for the IdP—either from an JSON file or a URL.
+    Select how TheHive retrieves configuration information for the IdP—either from a JSON file or a URL.
 
     * If you choose *url*, provide the full link to the metadata document.
 

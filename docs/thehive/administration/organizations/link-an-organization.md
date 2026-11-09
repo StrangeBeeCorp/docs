@@ -24,7 +24,7 @@ To learn more about how sharing rules function and interact, refer to [Organizat
 
 5. Choose the case-sharing rules between the organizations in both directions using the **Choose a link type** dropdown lists.
 
-    Options are the followings:  
+    Options are the following:  
 
     * **default**: Cases aren't automatically shared with the other organization. Users must [share them manually](../../user-guides/analyst-corner/cases/share-a-case.md).
     * **supervised**: Cases are automatically shared with the other organization with an analyst-type permission profile, which grants both read and write access to cases.

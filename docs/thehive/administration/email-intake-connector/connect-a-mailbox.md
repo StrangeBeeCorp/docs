@@ -316,7 +316,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
         54. Follow [the Microsoft instructions to add the relevant permissions](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-access-web-apis#add-permissions-to-access-microsoft-graph){target=_blank}.
 
-            !!! tip "Recommanded permissions"
+            !!! tip "Recommended permissions"
                 For Microsoft Graph to work correctly with TheHive, ensure that the following permissions are added:
 
                 * [Mail.Read](https://learn.microsoft.com/en-us/graph/permissions-reference#mailread){target=_blank}

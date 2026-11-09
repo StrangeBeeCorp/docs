@@ -1,6 +1,6 @@
 # Proxy settings
 
-## Make Cortex use a HTTP proxy server
+## Make Cortex use an HTTP proxy server
 
 Basically, Cortex required to connect to Internet, especially to gather  catalogs of docker images of public Analyzers & Responders.
 

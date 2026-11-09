@@ -49,7 +49,7 @@ If setting up a custom certificate authority (to connect web proxies, remote ser
 
     === "Debian"
 
-        Ensure the package `ca-certificates-java` is installed , and copy the CA certificate in the right folder. Then run `dpkg-reconfigure ca-certificates` and restart Cortex service. 
+        Ensure the package `ca-certificates-java` is installed, and copy the CA certificate in the right folder. Then run `dpkg-reconfigure ca-certificates` and restart Cortex service. 
 
         ```bash
         apt-get install -y ca-certificates-java

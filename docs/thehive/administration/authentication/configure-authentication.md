@@ -48,7 +48,7 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
     **- Enable HTTP header authentication**
 
-    Authenticates HTTP requests using a HTTP header that contains a user login. When enabled, you must provide the header name that the server will use to extract the login information from incoming requests.
+    Authenticates HTTP requests using an HTTP header that contains a user login. When enabled, you must provide the header name that the server will use to extract the login information from incoming requests.
 
     **- Enable multifactor authentication**
 

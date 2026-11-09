@@ -49,7 +49,7 @@ UN  172.24.0.3  1.91 GiB  256      51.2%             f192ef8f-a4fd-4e24-99a7-0f9
 The updated status will indicate the UN (Up/Normal) state for the new node, showing its load, tokens, ownership percentage, host ID, and rack assignment.
 
 !!! Tip "Creating a Cluster from a Standalone Server"
-    If you are transitioning from a standalone server to a multi-node cluster by adding a new node, ensure that you update  the confiuration of the existing standalone server by modifying the `cassandra.yaml` file to replace the `localhost` in `listen_address` and `rpc_address` with the server's actual IP address. 
+    If you are transitioning from a standalone server to a multi-node cluster by adding a new node, ensure that you update the configuration of the existing standalone server by modifying the `cassandra.yaml` file to replace the `localhost` in `listen_address` and `rpc_address` with the server's actual IP address. 
 
 ---
 

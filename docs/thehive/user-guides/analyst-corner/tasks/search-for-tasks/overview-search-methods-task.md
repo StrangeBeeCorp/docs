@@ -13,4 +13,4 @@ TheHive offers multiple methods for searching [tasks](../about-tasks.md), each t
 
 <h2>Next steps</h2>
 
-* [Find an Task](find-a-task.md)
+* [Find a Task](find-a-task.md)

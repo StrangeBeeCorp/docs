@@ -56,7 +56,7 @@ Add an [observable](about-observables.md) to a [case](../about-cases.md) or [ale
 
     **- Ignore similarity**
 
-    Turn on the toggle of you don't want to include the observable in the algorithm used to identify [similar alerts and cases](../find-similar-alerts-cases.md) based on observables. This can be useful for contextual observables, such as the company domain name, or for observables that aren't related to any potential threat.
+    Turn on the toggle if you don't want to include the observable in the algorithm used to identify [similar alerts and cases](../find-similar-alerts-cases.md) based on observables. This can be useful for contextual observables, such as the company domain name, or for observables that aren't related to any potential threat.
 
     **- [Tags](../tags/add-remove-tags.md)**  
     
