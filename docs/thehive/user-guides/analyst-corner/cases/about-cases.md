@@ -110,7 +110,7 @@ Restricted case visibility controls access by limiting case viewing to specific 
 
 #### Configuration
 
-By default, cases created through the user interface are visible to all users in the organization.
+By default, cases created through TheHive interface are visible to all users in the organization.
 
 [Visibility can be restricted](./case-visibility/restrict-visibility-case.md) to a specific group of users to secure sensitive cases and later [restored](./case-visibility/restore-visibility-case.md) if necessary.
 

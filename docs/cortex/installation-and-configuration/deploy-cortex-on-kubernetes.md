@@ -88,7 +88,7 @@ The default configuration is designed for development environments and requires 
     ```
 
 !!! warning "First start"
-    At first start, you must access the Cortex web page to update the Elasticsearch database.
+    At first start, you must open the Cortex interface to update the Elasticsearch database.
 
 For more options, see [the Helm documentation for installation](https://helm.sh/docs/helm/helm_install/){target=_blank}.
 

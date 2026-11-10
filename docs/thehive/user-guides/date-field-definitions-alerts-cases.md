@@ -9,7 +9,7 @@ TheHive records several timestamps for alerts and cases to track their lifecycle
 
 | API field |  Definition        |
 |-----------|-------------------|
-| `date`       | The time the event occurred. Corresponds to the **Occurred date** field in the UI.     |
+| `date`       | The time the event occurred. Corresponds to the **Occurred date** field in TheHive interface.     |
 | `_createdAt`       | The time the alert was created in TheHive. |
 | `_updatedAt`       |  The last time the alert was modified.  |
 | `newDate`       |  The first time the alert entered a status linked to the *New* stage.               |
@@ -21,7 +21,7 @@ TheHive records several timestamps for alerts and cases to track their lifecycle
 
 | API field        | Definition        |
 |------------------|-------------------|
-| `startDate`       | The time the event occurred. Corresponds to the **Start date** field in the UI.   |
+| `startDate`       | The time the event occurred. Corresponds to the **Start date** field in TheHive interface.   |
 | `_createdAt`       | The time the case was created in TheHive. |
 | `_updatedAt`       | The last time the case was modified.      |
 | `newDate`       | The first time the case entered a status linked to the *New* stage. |

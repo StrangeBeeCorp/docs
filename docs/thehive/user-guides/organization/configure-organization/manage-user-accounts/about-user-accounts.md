@@ -10,9 +10,9 @@ User accounts in TheHive enable individuals and services to access the platform 
 
 TheHive supports three types of user accounts:
 
-* Normal accounts: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+* Normal accounts: Intended for users who sign in to TheHive interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
 
-* Service accounts: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+* Service accounts: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to TheHive interface.
 
 * <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> External accounts: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 

@@ -182,7 +182,7 @@ nodetool repair --full
         **Update and Start Other Nodes**: Once the initial node is successfully upgraded and operational, proceed to update and start the remaining nodes.
 
 !!! Tip "TheHive configuration file: /etc/thehive/application.conf"
-    Starting from TheHive 5.0.0, the configuration process has been simplified, with most administration parameters configurable directly within the user interface (UI). The configuration file (/etc/thehive/application.conf) should only contain essential information required for the successful startup of the application, including:
+    Starting from TheHive 5.0.0, the configuration process has been simplified, with most administration parameters configurable directly within TheHive interface. The configuration file (/etc/thehive/application.conf) should only contain essential information required for the successful startup of the application, including:
 
     - Secret
     - Database
@@ -191,7 +191,7 @@ nodetool repair --full
     - Enabled Connectors 
     - Akka Configuration (for clusters)
 
-    Authentication, Webhooks, Cortex, and MISP configurations can now be conveniently set within the UI. 
+    Authentication, Webhooks, Cortex, and MISP configurations can now be conveniently set within TheHive interface. 
 
 !!! "Note on Configuration Changes"
     Please note the following changes in configuration keys:
@@ -385,7 +385,7 @@ nodetool repair --full
 !!! Note
     By default, both Cortex and MISP modules are enabled in TheHive. If you do not intend to use one or both of these modules, you can comment out the corresponding lines in the configuration file.
 
-    **Recommendation**: It's advisable to utilize the default configuration sample provided, customize it with your specific parameter values, and retain the original file for configuring services through the web UI.
+    **Recommendation**: It's advisable to utilize the default configuration sample provided, customize it with your specific parameter values, and retain the original file for configuring services through TheHive interface.
 
 &nbsp;
 

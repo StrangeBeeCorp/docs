@@ -28,7 +28,7 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
     **- Inactivity autologout \***
 
-    The amount of time before users are automatically signed out due to inactivity. If users interact with the interface, the timer is reset.
+    The amount of time before users are automatically signed out due to inactivity. If users interact with TheHive interface, the timer is reset.
 
     **- Inactivity warning time \***
 

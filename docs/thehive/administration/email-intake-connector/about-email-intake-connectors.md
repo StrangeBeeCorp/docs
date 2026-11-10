@@ -20,7 +20,7 @@ The email body isn't parsed for observables by default. To extract them, run the
 
 ### Alerts
 
-| Alert field API | Alert field UI | Alert value |
+| Alert field in the API | Alert field in TheHive interface | Alert value |
 |---|---|---|
 | `title` | Title | The subject of the email. If empty, displays *no subject*. |
 | `type` | Type | *email-intake* |
@@ -40,7 +40,7 @@ The email body isn't parsed for observables by default. To extract them, run the
 
 ### Observables
 
-| Observable field API | Observable field UI | Observable value |
+| Observable field in the API | Observable field in TheHive interface | Observable value |
 |---|---|---|
 | `message` | Description | *Automatically created from email* followed by `{alert.id}` and either `{sender}` or `{file}`. |
 | `tlp` | TLP | `{alert.tlp}` |

@@ -148,7 +148,7 @@ Time to make those metrics visible! Set up Grafana dashboards to display TheHive
         These Kamon 2.x dashboards work well with TheHive:
 
         * [Kamon 2.x - API Dashboard](https://grafana.com/grafana/dashboards/12317-api-dashboard/){target=_blank} `ID: 12317`: Shows API metrics like request throughput, response latency, and error rates.  
-        Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive frontend uses long polling for real-time updates, so these legitimate requests will appear as outliers.
+        Note: Some API requests may display latencies of up to 60 seconds. This is expected as TheHive interface uses long polling for real-time updates, so these legitimate requests will appear as outliers.
         * [Kamon 2.x - System Metrics Dashboard](https://grafana.com/grafana/dashboards/12315-system-metrics-dashboard/){target=_blank} `ID: 12315`: Displays CPU usage, memory consumption, Java virtual machine (JVM) heap usage, and garbage collection stats.
         * [Kamon 2.x - Akka Dashboard](https://grafana.com/grafana/dashboards/10776-kamon-akka-marcelo/){target=_blank} `ID: 10776`: Shows Akka system information, actor metrics, and message processing times.
 

@@ -65,7 +65,7 @@ During the reindexing process, you will see lines similar to these (the name `gl
 [info] o.j.g.d.m.ManagementSystem [] Index update job successful for [global1]
 ```
 
-Finally, the application will start listening on the HTTP port, and you will be able to access the interface.
+Finally, the application will start listening on the HTTP port, and you will be able to access TheHive interface.
 
 ## Remove the Lucene Configuration
 

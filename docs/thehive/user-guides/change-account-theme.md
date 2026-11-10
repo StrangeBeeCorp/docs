@@ -2,7 +2,7 @@
 
 <!-- md:version 5.4 -->
 
-Change the user interface theme of your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md) in TheHive. By default, TheHive uses the light theme for all users.
+Change the theme of TheHive interface for your [user account](../user-guides/organization/configure-organization/manage-user-accounts/about-user-accounts.md). By default, TheHive uses the light theme for all users.
 
 !!! info "Persistent preferences"
     Theme preferences are stored locally. If you access TheHive from another device or browser, you'll need to set your preferred theme again.

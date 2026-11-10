@@ -30,9 +30,9 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     Pick an option from the dropdown list:
 
-    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Normal**: Intended for users who sign in to TheHive interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
     * <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
-    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to TheHive interface.
 
     **- Login \***
 
@@ -76,8 +76,8 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     Pick an option from the dropdown list:
 
-    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
-    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    * **Normal**: Intended for users who sign in to TheHive interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to TheHive interface.
     * <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
     **- Login \***
@@ -118,8 +118,8 @@ To add an existing user account to an organization, see [Add or Remove an Existi
 
     Pick an option from the dropdown list:
 
-    * **Normal**: Intended for users who access TheHive through the web interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
-    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to the web interface.
+    * **Normal**: Intended for users who sign in to TheHive interface. Normal accounts support all authentication methods. These accounts can also generate API keys if enabled.
+    * **Service**: Designed for programmatic access to TheHive via the API. Service accounts authenticate exclusively using an API key and can't sign in to TheHive interface.
     * <!-- md:version 5.6 --> <!-- md:license Platinum --> <!-- md:license One --> **External**: Intended for users who access [TheHive Portal](../../../../administration/thehive-portal/about-thehive-portal.md).
 
     **- Login \***

@@ -2,7 +2,7 @@
 
 Lock a [user account](about-user-accounts.md) in TheHive to temporarily prevent access without permanently deleting it.
 
-Cases, alerts, and tasks assigned to a locked user remain assigned to that user, but the interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the locked user's login, then reassign them manually.
+Cases, alerts, and tasks assigned to a locked user remain assigned to that user, but TheHive interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the locked user's login, then reassign them manually.
 
 To permanently delete a user account, see [Delete a User Account](delete-a-user-account.md).
 
