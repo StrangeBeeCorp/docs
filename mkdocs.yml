@@ -847,6 +847,7 @@ nav:
           - 'Delete a Case': thehive/user-guides/analyst-corner/cases/delete-a-case.md
           - 'Case Access Control':
             - 'Share a Case with Internal Organizations' : thehive/user-guides/analyst-corner/cases/share-a-case.md
+            - 'Change the Owner Organization of a Case': thehive/user-guides/analyst-corner/cases/change-case-owner-organization.md
             - 'Share a Case with External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users.md
             - 'Revoke Case Access for External Users': thehive/user-guides/analyst-corner/cases/case-thehive-portal/revoke-case-access-external-users.md
             - 'Restrict Case Visibility': thehive/user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md

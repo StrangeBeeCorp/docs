@@ -32,7 +32,7 @@ An SLA rule belongs to the organization that created it. TheHive evaluates it on
 
 Sharing a case with another organization doesn't change which rules apply to it: the owning organization's rules keep governing it, and the other organization's own rules are never applied. The other organization sees the resulting SLA badges and rule names in both list views and detail views, but not the rule's configuration.
 
-Transferring ownership of a case moves it, and its tasks, onto the new owner's rules. TheHive re-evaluates the case and every one of its tasks as soon as the transfer completes: SLA states from the previous owner are removed, whether they were still running or already resolved, and the new owner's matching rules apply straight away. The SLA still counts from each entity's own metric start date, not from the transfer.
+[Transferring ownership of a case](../analyst-corner/cases/change-case-owner-organization.md) moves it, and its tasks, onto the new owner's rules. TheHive re-evaluates the case and every one of its tasks as soon as the transfer completes: SLA states from the previous owner are removed, whether they were still running or already resolved, and the new owner's matching rules apply straight away. The SLA still counts from each entity's own metric start date, not from the transfer.
 
 When SLA management is turned off in your own organization, no SLA badge appears at all, including on cases shared by an organization that still has it turned on.
 

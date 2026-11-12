@@ -46,3 +46,4 @@ To learn more about how sharing rules function and interact, refer to [Organizat
 
 * [Share a Task with Other Internal Organizations](../tasks/share-a-task.md)
 * [Share an Observable with Other Internal Organizations](share-an-observable.md)
+* [Change the Owner Organization of a Case](change-case-owner-organization.md)
