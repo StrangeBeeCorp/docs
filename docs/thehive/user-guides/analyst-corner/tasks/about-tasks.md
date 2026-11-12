@@ -26,7 +26,7 @@ Marking mandatory tasks as *Completed* requires [creating at least one task log]
 
 ### Requiring actions on a task
 
-Require users in any organization to take action on a task. After completion, the task's status remains unchanged. This approach facilitates input or assistance from other teams or business units without impacting the task’s workflow.
+[Require action on a task](manage-required-actions-on-a-task.md) from your own organization or from a linked organization the task is shared with. Requiring action doesn't change the task status. This approach facilitates input or assistance from other teams or business units without impacting the task’s workflow.
 
 ### Highlighting important tasks
 
@@ -50,6 +50,7 @@ Only users with the `manageTask` permission can manage tasks in TheHive.
 * [Find a Task](../tasks/search-for-tasks/find-a-task.md)
 * [Create a Task](create-a-task.md)
 * [Share a Task](share-a-task.md)
+* [Manage Required Actions on a Task](manage-required-actions-on-a-task.md)
 * [Change a Task Status](change-task-status.md)
 * [Manage Tasks](manage-a-task.md)
 * [Delete a Task](delete-a-task.md)

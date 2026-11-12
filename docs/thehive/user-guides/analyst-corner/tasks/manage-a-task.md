@@ -49,6 +49,7 @@ Flagging a task highlights it for all users in your organization, making it more
 <h2>Next steps</h2>
 
 * [Share a Task](share-a-task.md)
+* [Manage Required Actions on a Task](manage-required-actions-on-a-task.md)
 * [Change a Task Status](change-task-status.md)
 * [Create a Task](create-a-task.md)
 * [Delete a Task](delete-a-task.md)

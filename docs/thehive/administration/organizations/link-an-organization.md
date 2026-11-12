@@ -36,4 +36,5 @@ To learn more about how sharing rules function and interact, refer to [Organizat
 
 * [Share a Case with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-a-case.md)
 * [Share a Task with Other Internal Organizations](../../user-guides/analyst-corner/tasks/share-a-task.md)
+* [Manage Required Actions on a Task](../../user-guides/analyst-corner/tasks/manage-required-actions-on-a-task.md)
 * [Share an Observable with Other Internal Organizations](../../user-guides/analyst-corner/cases/share-an-observable.md)

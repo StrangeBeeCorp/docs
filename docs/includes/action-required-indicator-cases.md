@@ -1,0 +1,1 @@
+In the **Cases** view, a red :fontawesome-solid-triangle-exclamation: appears next to **Tasks** for cases with at least one task that requires action from your organization. Tasks with the *Cancelled* status aren't counted. Select :fontawesome-solid-triangle-exclamation: to show only the cases that require action.

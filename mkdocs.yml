@@ -887,6 +887,7 @@ nav:
               - 'Overview of Search Methods for Tasks': thehive/user-guides/analyst-corner/tasks/search-for-tasks/overview-search-methods-task.md
             - 'Run Responders and Review Reports for a Task': thehive/user-guides/analyst-corner/tasks/run-responders-on-a-task.md
             - 'Share a Task with Internal Organizations' : thehive/user-guides/analyst-corner/tasks/share-a-task.md
+            - 'Manage Required Actions on a Task': thehive/user-guides/analyst-corner/tasks/manage-required-actions-on-a-task.md
             - 'Close a Task': thehive/user-guides/analyst-corner/tasks/close-a-task.md
           - 'Task Logs':
             - 'About Task Logs': thehive/user-guides/analyst-corner/tasks/about-task-logs.md

@@ -9,6 +9,12 @@ If you’re unsure which method to use, refer to the [Overview of Search Methods
     * Ensure [autorefresh](../../about-autorefresh.md) is turned on to automatically display new tasks in lists.
     * <!-- md:version 5.5 --> [Case visibility](../../cases/about-cases.md#case-visibility-restriction) can be restricted to protect sensitive data. If you aren't an authorized user, its linked tasks won't appear in the list, search results, or dashboards.
 
+!!! tip "Tasks that require action from your organization"
+    TheHive highlights tasks and cases where [action is required](../manage-required-actions-on-a-task.md) from your organization:
+
+    * {% include-markdown "includes/action-required-indicator-tasks.md" %}
+    * {% include-markdown "includes/action-required-indicator-cases.md" %}
+
 ## Method 1: Search bar
 
 <!-- md:version 5.6 -->

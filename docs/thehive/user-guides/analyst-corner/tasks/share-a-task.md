@@ -27,6 +27,7 @@ To learn more about how sharing rules function and interact, see [Organizations 
 
 <h2>Next steps</h2>
 
+* [Manage Required Actions on a Task](manage-required-actions-on-a-task.md)
 * [Share an Observable](../cases/share-an-observable.md)
 * [Share a Case](../cases/share-a-case.md)
 * [Change a Task Status](change-task-status.md)
