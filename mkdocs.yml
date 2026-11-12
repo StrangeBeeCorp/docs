@@ -59,7 +59,6 @@ plugins:
         - includes/*
         - thehive/operations/configure-audit-logs-storage-elasticsearch.md
         - thehive/third-party-software-licenses.md
-  - awesome-pages
   - glightbox
   - mkdocs-video:
       is_video: True
