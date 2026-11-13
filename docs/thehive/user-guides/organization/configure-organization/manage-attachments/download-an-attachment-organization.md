@@ -18,6 +18,8 @@ To download an attachment from a case or an alert, see [Download an Attachment f
 
 4. Select **Download**.
 
+    {% include-markdown "includes/attachment-download-warning.md" %}
+
 <h2>Next steps</h2>
 
 * [Add an Attachment to an Organization](add-an-attachment-organization.md)

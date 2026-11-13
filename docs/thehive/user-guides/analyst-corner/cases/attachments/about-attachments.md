@@ -24,6 +24,14 @@ Removing an image from a description or summary doesn't automatically remove it 
 
 Any file format is supported for attachments.
 
+## Sanitization
+
+To protect against cross-site scripting (XSS) attacks, TheHive sanitizes HTML, XHTML, and SVG attachments by removing JavaScript and other unsafe content when it displays them. As a result, a displayed attachment can look different from the downloaded file.
+
+Downloaded files contain the original attachment and aren't sanitized.
+
+{% include-markdown "includes/attachment-download-warning.md" %}
+
 ## Permissions
 
 * Only users with the `manageKnowledgeBase` permission can manage attachments at the organization level in TheHive.

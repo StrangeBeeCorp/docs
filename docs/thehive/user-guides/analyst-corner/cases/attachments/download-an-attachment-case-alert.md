@@ -4,7 +4,7 @@ Download an [attachment](../../../analyst-corner/cases/attachments/about-attachm
 
 ## Download an attachment from a case
 
-1. [Locate the case](../search-for-cases/find-a-case.md) where you want to remove an attachment.
+1. [Locate the case](../search-for-cases/find-a-case.md) where you want to download an attachment.
 
 2. {% include-markdown "includes/attachments-tab-case-go-to.md" %}
 
@@ -14,9 +14,11 @@ Download an [attachment](../../../analyst-corner/cases/attachments/about-attachm
 
 4. Select **Download**.
 
+    {% include-markdown "includes/attachment-download-warning.md" %}
+
 ## Download an attachment from an alert
 
-1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to remove an attachment.
+1. [Locate the alert](../../alerts/search-for-alerts/find-an-alert.md) where you want to download an attachment.
 
 2. {% include-markdown "includes/attachments-tab-alert-go-to.md" %}
 
@@ -25,6 +27,8 @@ Download an [attachment](../../../analyst-corner/cases/attachments/about-attachm
     {% include-markdown "includes/filters.md" %}
 
 4. Select **Download**.
+
+    {% include-markdown "includes/attachment-download-warning.md" %}
 
 <h2>Next steps</h2>
 

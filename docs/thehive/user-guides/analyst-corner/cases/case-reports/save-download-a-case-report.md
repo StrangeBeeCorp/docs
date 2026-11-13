@@ -21,6 +21,10 @@ Save and download a [case report](about-case-reports.md) in TheHive to provide f
 
 4. Check the preview to ensure everything is correct.
 
+    For HTML reports, a banner above the preview indicates that you're in secure preview mode.
+
+    {% include-markdown "includes/case-report-sanitization.md" %}
+
 5. Select **Save and download**. 
 
     !!! info "Saved files access"

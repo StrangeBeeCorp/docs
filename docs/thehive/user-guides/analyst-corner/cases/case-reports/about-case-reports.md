@@ -20,6 +20,10 @@ Three formats are available for downloading case reports:
 * Markdown
 * Word
 
+## Sanitization
+
+{% include-markdown "includes/case-report-sanitization.md" %}
+
 ## Permissions
 
 Case reports are available to all users in an organization within case descriptions for preview. However, only users with the `manageCaseReport` permission can save and download them. Once saved, the reports are available for download to all users in the **Attachments** tab.
