@@ -2,7 +2,7 @@
 
 <!-- md:version 5.4 --> <!-- md:permission `manageConfig` -->
 
-By default, all key performance indicators (KPIs) appear in [case](../../../analyst-corner/cases/about-cases.md) and [alert](../../../analyst-corner/alerts/about-alerts.md) descriptions in TheHive.
+By default, key performance indicators (KPIs) appear in [case](../../../analyst-corner/cases/about-cases.md) and [alert](../../../analyst-corner/alerts/about-alerts.md) descriptions in TheHive. The time to qualify (TTQ) and time to resolve (TTR) indicators appear only in case descriptions.
 
 You can hide some or all indicators if they're not useful or could be misleading for your organization.
 

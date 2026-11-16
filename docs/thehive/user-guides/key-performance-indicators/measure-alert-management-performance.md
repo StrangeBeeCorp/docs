@@ -27,7 +27,7 @@ If you want to know more about the key performance indicators (KPIs) available i
 
 ## Measure the performance of a specific alert
 
-1. [Locate the case you want to check](../analyst-corner/cases/search-for-cases/find-a-case.md).
+1. [Locate the alert you want to check](../analyst-corner/alerts/search-for-alerts/find-an-alert.md).
 
 2. In the alert, move through the **Time metrics** section in the left pane.
 
