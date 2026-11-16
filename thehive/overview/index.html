@@ -3,6 +3,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT &amp; MSSP teams.">
+      
       
       
         <link rel="canonical" href="https://docs.strangebee.com/thehive/overview/">
@@ -80,7 +82,7 @@
 <!-- Open graph  -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="TheHive 6 Documentation">
-<meta property="og:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
+<meta property="og:description" content="Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT &amp; MSSP teams.">
 <meta property="og:site_name" content="StrangeBee Docs">
 <meta property="og:image" content="https://docs.strangebee.com/images/share/meta-open-graph.png">
 <meta property="og:url" content="https://docs.strangebee.com">
@@ -89,7 +91,7 @@
 
 <!-- Twitter card  -->
 <meta name="twitter:title" content="TheHive 6 Documentation">
-<meta name="twitter:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
+<meta name="twitter:description" content="Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT &amp; MSSP teams.">
 <meta name="twitter:image" content="https://docs.strangebee.com/images/share/meta-twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@StrangeBee">
@@ -1013,7 +1015,7 @@
   <span class="md-ellipsis">
     
   
-    About Licenses
+    About Plans and Licenses
   
 
     
@@ -1041,7 +1043,7 @@
   <span class="md-ellipsis">
     
   
-    Request a Community License
+    Request a License for TheHive Community Edition
   
 
     
@@ -3587,7 +3589,7 @@
   <span class="md-ellipsis">
     
   
-    About Licenses
+    About Plans and Licenses
   
 
     
@@ -3615,7 +3617,7 @@
   <span class="md-ellipsis">
     
   
-    Request a Community License
+    Request a License for TheHive Community Edition
   
 
     
@@ -21705,23 +21707,22 @@
 <h1 id="thehive-documentation">TheHive Documentation<a class="headerlink" href="#thehive-documentation" title="Permanent link">#</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/overview/thehive.svg" data-desc-position="bottom"><img align="right" alt="TheHive logo" src="../images/overview/thehive.svg" width="300"></a></p>
-<p>TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, serving as a vital tool for Security Operations Centers (SOCs), Computer Security Incident Response Teams (CSIRTs), Computer Emergency Response Teams (CERTs), and all information security professionals involved in swift and effective handling of security incidents. It composes of a robust suite of features designed to streamline incident response workflows, enhance collaboration, and empower information security practitioners to effectively investigate and mitigate security threats. With its seamless integration with the Malware Information Sharing Platform (MISP) and advanced capabilities for task management, evidence handling, and threat intelligence integration, TheHive is an indispensable tool for modern SOC, CSIRT, and CERT teams.</p>
+<p>TheHive is a Cybersecurity Incident Response Management (CIRM) platform for Security Operations Center (SOC), Computer Emergency Response Team (CERT), Computer Security Incident Response Team (CSIRT), and Managed Security Service Provider (MSSP) teams. It brings the complete incident lifecycle into a collaborative, case-centric workspace, from the first alert to final resolution.</p>
+<p>TheHive works with <a href="../../cortex/">Cortex</a>, the automated analysis and response engine, and with <a href="../../flow/user-guides/about-flow/">TheHive Flow</a>, its native orchestration and automation layer.</p>
 <hr>
 <h2 id="key-features">Key features<a class="headerlink" href="#key-features" title="Permanent link">#</a></h2>
-<p><strong>Integration with MISP:</strong> 
-Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.</p>
-<p><strong>Real-time collaboration:</strong> 
-Multiple analysts can collaborate simultaneously with live stream updates on cases, tasks, observables, and indicators of compromise (IOCs).</p>
-<p><strong>Efficient task management:</strong> 
-Special notifications enable efficient task handling and assignment, with previews and imports from various sources such as email reports, CTI providers, and SIEMs.</p>
-<p><strong>Customizable templates:</strong> 
-Create cases and tasks using a flexible template engine, allowing customization with metrics and custom fields to drive team activity and identify areas for automation.</p>
-<p><strong>Evidence management:</strong> 
-Analysts can record progress, attach evidence or files, add tags, and import password-protected ZIP archives containing suspicious data securely.</p>
-<p><strong>Observables management:</strong> 
-Easily add and manage observables, either individually or in bulk, with options to import directly from MISP events or alerts. Triaging and filtering capabilities streamline the process.</p>
-<p><strong>Threat intelligence integration:</strong> 
-Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.</p>
+<p><strong>Centralized alert management</strong><br>
+<a href="../user-guides/analyst-corner/alerts/about-alerts/">Alerts</a> from every source arrive in one structured queue, deduplicated and ready to triage. <a href="../user-guides/analyst-corner/cases/find-similar-alerts-cases/">Similar alerts</a> are correlated, custom views and filters turn alert volume into clear priorities, and a single action escalates an alert to a case.</p>
+<p><strong>Structured case management</strong><br>
+A <a href="../user-guides/analyst-corner/cases/about-cases/">case</a> holds every piece of an investigation: <a href="../user-guides/analyst-corner/cases/observables/about-observables/">observables</a>, evidence files, <a href="../user-guides/analyst-corner/tasks/about-tasks/">tasks</a>, decisions, and enrichment results. <a href="../user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates/">Case templates</a> speed up case creation and make sure no investigation step is missed, <a href="../administration/custom-fields/about-custom-fields/">custom fields</a> adapt cases to each team's needs, and similar cases can be merged. <a href="../user-guides/analyst-corner/cases/case-reports/about-case-reports/">Case reports</a> present key case data in a customizable format, ready to download and share.</p>
+<p><strong>Analysis and response</strong><br>
+<a href="../administration/cortex/about-cortex/">Cortex analyzers</a> enrich observables, and their reports help decide on the right response. Cortex responders, out-of-the-box or custom, trigger response actions directly from a case or an alert.</p>
+<p><strong>Collaboration and visibility</strong><br>
+Analysts assign tasks, leave comments, and share knowledge. Separate <a href="../administration/organizations/about-organizations/">organizations</a> keep teams or clients apart, and <a href="../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case/">restricted visibility</a> limits access to sensitive cases. <a href="../user-guides/analyst-corner/dashboard/about-dashboards/">Dashboards</a> follow progress and key metrics, and <a href="../user-guides/sla-management/about-sla-management/">SLA rules</a> raise automatic warnings. <a href="../administration/thehive-portal/about-thehive-portal/">TheHive Portal</a> shares selected case information securely with external stakeholders.</p>
+<p><strong>Automation with TheHive Flow</strong><br>
+<a href="../../flow/user-guides/about-flow/">TheHive Flow</a> runs workflows straight from a case or an alert, and handles repetitive tasks such as alert triage, enrichment, and escalation. Workflows are built in a visual editor and extended with custom Python or JavaScript code. Every run is recorded step by step, so automation stays transparent and auditable.</p>
+<p><strong>Integrations</strong><br>
+TheHive connects to <a href="https://strangebee.com/thehive-integrations/" target="_blank">detection, enrichment, and response systems</a> such as SIEM, EDR, threat intelligence, and ticketing tools, so analysts work from one place. <a href="../administration/misp-integration/about-misp-integration/">MISP integration</a> supports threat intelligence sharing, while <a href="../user-guides/organization/configure-organization/manage-notifications/about-notifications/">notifications</a> and <a href="../user-guides/organization/configure-organization/manage-functions/about-functions/">functions</a> connect external applications directly to TheHive.</p>
 <hr>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">#</a></h2>
 <p>TheHive can be set up on a standalone server or as a group of servers, known as a cluster, to accommodate different growth requirements. TheHive architecture is highly modular, allowing each layer (TheHive application, database and indexing engine, and file storage) to be deployed independently as standalone nodes or as part of a clustered setup. This flexibility enables complex clustered architectures with virtual IP addresses and load balancers for optimal performance and scalability.</p>
