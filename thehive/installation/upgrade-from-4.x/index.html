@@ -79,7 +79,7 @@
 
 <!-- Open graph  -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="TheHive 5 Documentation">
+<meta property="og:title" content="TheHive 6 Documentation">
 <meta property="og:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta property="og:site_name" content="StrangeBee Docs">
 <meta property="og:image" content="https://docs.strangebee.com/images/share/meta-open-graph.png">
@@ -88,7 +88,7 @@
 <meta property="og:video" content="https://www.youtube.com/watch?v=fBzaVhABGMY">
 
 <!-- Twitter card  -->
-<meta name="twitter:title" content="TheHive 5 Documentation">
+<meta name="twitter:title" content="TheHive 6 Documentation">
 <meta name="twitter:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta name="twitter:image" content="https://docs.strangebee.com/images/share/meta-twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -13838,6 +13838,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../user-guides/analyst-corner/cases/change-case-owner-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change the Owner Organization of a Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users/" class="md-nav__link">
         
   
@@ -15120,6 +15148,34 @@
     
   
     Share a Task with Internal Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/analyst-corner/tasks/manage-required-actions-on-a-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Required Actions on a Task
   
 
     
@@ -21859,7 +21915,7 @@ UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c25
 </details>
 <div class="admonition tip">
 <p class="admonition-title">TheHive configuration file: /etc/thehive/application.conf</p>
-<p>Starting from TheHive 5.0.0, the configuration process has been simplified, with most administration parameters configurable directly within the user interface (UI). The configuration file (/etc/thehive/application.conf) should only contain essential information required for the successful startup of the application, including:</p>
+<p>Starting from TheHive 5.0.0, the configuration process has been simplified, with most administration parameters configurable directly within TheHive interface. The configuration file (/etc/thehive/application.conf) should only contain essential information required for the successful startup of the application, including:</p>
 <ul>
 <li>Secret</li>
 <li>Database</li>
@@ -21868,7 +21924,7 @@ UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c25
 <li>Enabled Connectors </li>
 <li>Akka Configuration (for clusters)</li>
 </ul>
-<p>Authentication, Webhooks, Cortex, and MISP configurations can now be conveniently set within the UI. </p>
+<p>Authentication, Webhooks, Cortex, and MISP configurations can now be conveniently set within TheHive interface. </p>
 </div>
 <p>!!! "Note on Configuration Changes"
     Please note the following changes in configuration keys:</p>
@@ -22062,7 +22118,7 @@ UN  10.1.1.4  1.36 GiB  256     100.0%            a79c9a8c-c99b-4d74-8e78-6b0c25
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default, both Cortex and MISP modules are enabled in TheHive. If you do not intend to use one or both of these modules, you can comment out the corresponding lines in the configuration file.</p>
-<p><strong>Recommendation</strong>: It's advisable to utilize the default configuration sample provided, customize it with your specific parameter values, and retain the original file for configuring services through the web UI.</p>
+<p><strong>Recommendation</strong>: It's advisable to utilize the default configuration sample provided, customize it with your specific parameter values, and retain the original file for configuring services through TheHive interface.</p>
 </div>
 <p>&nbsp;</p>
 <h3 id="specific-configuration-for-upgrade-only">Specific Configuration for Upgrade Only<a class="headerlink" href="#specific-configuration-for-upgrade-only" title="Permanent link">#</a></h3>

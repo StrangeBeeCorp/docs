@@ -79,7 +79,7 @@
 
 <!-- Open graph  -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="TheHive 5 Documentation">
+<meta property="og:title" content="TheHive 6 Documentation">
 <meta property="og:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta property="og:site_name" content="StrangeBee Docs">
 <meta property="og:image" content="https://docs.strangebee.com/images/share/meta-open-graph.png">
@@ -88,7 +88,7 @@
 <meta property="og:video" content="https://www.youtube.com/watch?v=fBzaVhABGMY">
 
 <!-- Twitter card  -->
-<meta name="twitter:title" content="TheHive 5 Documentation">
+<meta name="twitter:title" content="TheHive 6 Documentation">
 <meta name="twitter:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta name="twitter:image" content="https://docs.strangebee.com/images/share/meta-twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -9476,6 +9476,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sanitization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#permissions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -11071,6 +11082,17 @@
     <span class="md-ellipsis">
       
         Format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sanitization
       
     </span>
   </a>
@@ -13004,6 +13026,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sanitization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sanitization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#permissions" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -13942,6 +13975,34 @@
     
   
     Share a Case with Internal Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../change-case-owner-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change the Owner Organization of a Case
   
 
     
@@ -15244,6 +15305,34 @@
     
   
     Share a Task with Internal Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tasks/manage-required-actions-on-a-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Required Actions on a Task
   
 
     
@@ -21913,6 +22002,13 @@
 <p>Removing an image from a description or summary doesn't automatically remove it from the list of attachments.</p>
 <h2 id="format">Format<a class="headerlink" href="#format" title="Permanent link">#</a></h2>
 <p>Any file format is supported for attachments.</p>
+<h2 id="sanitization">Sanitization<a class="headerlink" href="#sanitization" title="Permanent link">#</a></h2>
+<p>To protect against cross-site scripting (XSS) attacks, TheHive sanitizes HTML, XHTML, and SVG attachments by removing JavaScript and other unsafe content when it displays them. As a result, a displayed attachment can look different from the downloaded file.</p>
+<p>Downloaded files contain the original attachment and aren't sanitized.</p>
+<div class="admonition danger">
+<p class="admonition-title">Downloaded HTML, XHTML, and SVG attachments</p>
+<p>Any JavaScript in a downloaded HTML, XHTML, or SVG file runs when the file is opened in a browser. Open these files in a hardened environment.</p>
+</div>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Permanent link">#</a></h2>
 <ul>
 <li>Only users with the <code>manageKnowledgeBase</code> permission can manage attachments at the organization level in TheHive.</li>

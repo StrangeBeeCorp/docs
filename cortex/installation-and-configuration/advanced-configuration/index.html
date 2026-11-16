@@ -79,7 +79,7 @@
 
 <!-- Open graph  -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="TheHive 5 Documentation">
+<meta property="og:title" content="TheHive 6 Documentation">
 <meta property="og:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta property="og:site_name" content="StrangeBee Docs">
 <meta property="og:image" content="https://docs.strangebee.com/images/share/meta-open-graph.png">
@@ -88,7 +88,7 @@
 <meta property="og:video" content="https://www.youtube.com/watch?v=fBzaVhABGMY">
 
 <!-- Twitter card  -->
-<meta name="twitter:title" content="TheHive 5 Documentation">
+<meta name="twitter:title" content="TheHive 6 Documentation">
 <meta name="twitter:description" content="StrangeBee provides cutting edge incident response automation to hundreds of SOC, CERT &amp; CSIRT teams.">
 <meta name="twitter:image" content="https://docs.strangebee.com/images/share/meta-twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -13703,6 +13703,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../thehive/user-guides/analyst-corner/cases/change-case-owner-organization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Change the Owner Organization of a Case
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../thehive/user-guides/analyst-corner/cases/case-thehive-portal/share-case-external-users/" class="md-nav__link">
         
   
@@ -14985,6 +15013,34 @@
     
   
     Share a Task with Internal Organizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../thehive/user-guides/analyst-corner/tasks/manage-required-actions-on-a-task/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manage Required Actions on a Task
   
 
     
@@ -21699,13 +21755,13 @@ if the second job occurs within <code>cache.job</code> (the default is 10 minute
 <div class="admonition notes">
 <p class="admonition-title">Notes</p>
 <ol>
-<li>The global <code>cache.job</code> value can be overridden for each analyzer in the analyzer configuration Web dialog</li>
-<li>it is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the <a href="../../api/api-guide/#run">API Guide</a> or by setting the cache to <em>Custom</em> in the Cortex UI for each analyzer and specifying <code>0</code> as the number of minutes.</li>
+<li>The global <code>cache.job</code> value can be overridden for each analyzer in the analyzer configuration dialog of the Cortex interface</li>
+<li>it is possible to bypass the cache altogether (for example to get extra fresh results) through the API as explained in the <a href="../../api/api-guide/#run">API Guide</a> or by setting the cache to <em>Custom</em> in the Cortex interface for each analyzer and specifying <code>0</code> as the number of minutes.</li>
 </ol>
 </div>
 <h2 id="streaming-aka-the-flow">Streaming (a.k.a The Flow)<a class="headerlink" href="#streaming-aka-the-flow" title="Permanent link">#</a></h2>
-<p>The user interface is automatically updated when data is changed in the back end. To do this, the back end sends events to all the connected front-ends.
-The mechanism used to notify the front-end is called long polling and its settings are:</p>
+<p>The Cortex interface is automatically updated when data is changed in the back end. To do this, the back end sends events to every connected Cortex interface.
+The mechanism used to notify the Cortex interface is called long polling and its settings are:</p>
 <ul>
 <li><code>refresh</code> : when there is no notification, close the connection after this
  duration (the default is 1 minute).</li>
@@ -21713,7 +21769,7 @@ The mechanism used to notify the front-end is called long polling and its settin
  event is lost between two polls. If there is no poll during the cache setting,
  the session is destroyed (the default is 15 minutes).</li>
 <li><code>nextItemMaxWait</code>, <code>globalMaxWait</code> : when an event occurs, it is not
- immediately sent to the front-ends. The back end waits nextItemMaxWait and up
+ immediately sent to the Cortex interface. The back end waits nextItemMaxWait and up
  to globalMaxWait in case another event can be included in the notification.
  This mechanism saves many HTTP requests.</li>
 </ul>
