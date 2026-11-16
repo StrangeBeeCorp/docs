@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Merge cases in TheHive to consolidate related investigations into a single case.">
+        <meta name="description" content="Merge cases in TheHive to consolidate related investigations into a single case, for example when two cases turn out to cover the same incident.">
       
       
       
@@ -81,7 +81,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Merge Cases">
 
-<meta property="og:description" content="Merge cases in TheHive to consolidate related investigations into a single case.">
+<meta property="og:description" content="Merge cases in TheHive to consolidate related investigations into a single case, for example when two cases turn out to cover the same incident.">
 
 <meta property="og:site_name" content="TheHive 6 Documentation">
 <meta property="og:image" content="https://docs.strangebee.com/images/share/meta-open-graph.png">
@@ -92,7 +92,7 @@
 <!-- Twitter card  -->
 <meta name="twitter:title" content="Merge Cases">
 
-<meta name="twitter:description" content="Merge cases in TheHive to consolidate related investigations into a single case.">
+<meta name="twitter:description" content="Merge cases in TheHive to consolidate related investigations into a single case, for example when two cases turn out to cover the same incident.">
 
 <meta name="twitter:image" content="https://docs.strangebee.com/images/share/meta-twitter-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -21706,36 +21706,47 @@
 
 <h1 id="merge-cases">Merge Cases<a class="headerlink" href="#merge-cases" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>manageCase/merge</code></span></span></p>
-<p>Merge cases in TheHive to consolidate related investigations into a single case.</p>
+<p>Merge cases in TheHive to consolidate related investigations into a single case, for example when two cases turn out to cover the same incident.</p>
+<p>Merging creates a new case that combines the contents of both cases. TheHive then deletes the two original cases.</p>
+<p>You can merge two cases only if:</p>
+<ul>
+<li>Your organization owns both cases, or both cases are shared with it with the Org-Admin <a href="../../../../administration/profiles/about-profiles/">profile</a></li>
+<li>Both cases are <a href="../share-a-case/">shared</a> with the same organizations, with the same profile for each organization</li>
+<li>One case doesn't have <a href="../case-visibility/restrict-visibility-case/">restricted visibility</a> while the other is <a href="../case-thehive-portal/share-case-external-users/">shared with external users</a></li>
+</ul>
+<p>After the merge, the new case:</p>
+<ul>
+<li>Gets a new case number</li>
+<li>Combines the title, description, and summary of both cases</li>
+<li>Takes the highest severity, Traffic Light Protocol (TLP), and Permissible Actions Protocol (PAP) of both cases</li>
+<li>Has the <em>New</em> status, whatever the status of the original cases</li>
+<li>Is assigned to you</li>
+<li>Keeps the earliest creation date and start date of both cases</li>
+<li>Is flagged if one of the original cases was flagged</li>
+<li>Has the tags, custom field values, tasks, observables, pages, and <a href="../case-links/view-links-in-a-case/">links</a> of both cases, without duplicates</li>
+<li>Has the alerts, Tactics, Techniques, and Procedures (TTPs), comments, attachments, and <a href="../case-timelines/about-case-timelines/">timeline custom events</a> of both cases</li>
+<li>Has no case template</li>
+</ul>
+<p>The visibility of the new case depends on the access settings of the original cases. See <a href="../about-cases/#merging-rules">Merging rules</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Permanent action</p>
+<p>You can't undo a merge or restore the original cases.</p>
+</div>
 <h2>Procedure</h2>
 
 <ol>
 <li>
-<p><a href="../search-for-cases/find-a-case/">Find the two cases</a> that you want to merge.</p>
+<p><a href="../search-for-cases/find-a-case/">Find one of the two cases</a> you want to merge.</p>
 </li>
 <li>
-<p>In one of the cases, select the <strong>Merge</strong> button.</p>
+<p>In the case, select the <strong>Merge</strong> button.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../../images/user-guides/analyst-corner/cases/merge-button.png" data-desc-position="bottom"><img alt="Merge button" src="../../../../images/user-guides/analyst-corner/cases/merge-button.png"></a></p>
 </li>
 <li>
-<p>In the <strong>Merge case</strong> drawer, select one of the following options:</p>
-<ul>
-<li>
-<p><em>By title</em>: Search for a case by title.</p>
-<p>Enter keywords in the search box.</p>
-<div class="admonition tip">
-<p class="admonition-title">Wildcard character</p>
-<p>Use the wildcard character <em>*</em> to broaden your search. The wildcard acts as a placeholder that matches zero or more characters.</p>
-</div>
+<p>In the <strong>Merge case into case</strong> drawer, search for the case to merge with by its case number or title, then select it.</p>
 </li>
 <li>
-<p><em>By case number</em>: Search for a case using its case number.</p>
-<p>Enter the case number, wait a few seconds, and select the suggested result.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Select <strong>Merge</strong>.</p>
+<p>Confirm the merge.</p>
 </li>
 </ol>
 <h2>Next steps</h2>

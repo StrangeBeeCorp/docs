@@ -21968,7 +21968,12 @@
 <p>When <a href="../merge-cases/">merging cases</a> with different access levels, the resulting case inherits the most restrictive access configuration to prevent unintended information exposure.</p>
 <div class="admonition warning">
 <p class="admonition-title">Incompatible merge</p>
-<p>Merging a case with restricted visibility with a case shared with an external user isn't permitted.</p>
+<p>Merging cases isn't permitted if:</p>
+<ul>
+<li>The cases aren't owned by the organization performing the merge or shared with it as Org-Admin</li>
+<li>The cases aren't shared with the same organizations, with the same profile for each organization</li>
+<li>One case has restricted visibility and the other is shared with external users</li>
+</ul>
 </div>
 <table>
 <thead>
@@ -21990,19 +21995,13 @@
 <td>Internal</td>
 <td>External</td>
 <td>Internal</td>
-<td>Organization users only—external access removed</td>
+<td>Organization users only—external access removed. Comments, attachments, and observables marked as external become internal.</td>
 </tr>
 <tr>
 <td>Internal</td>
 <td>Restricted</td>
 <td>Restricted</td>
 <td>Authorized users from the restricted case</td>
-</tr>
-<tr>
-<td>Internal</td>
-<td>Organization-shared</td>
-<td>Organization-shared</td>
-<td>Users from sharing organizations</td>
 </tr>
 <tr>
 <td>Restricted</td>
@@ -22017,31 +22016,30 @@
 <td>N/A</td>
 </tr>
 <tr>
-<td>Restricted</td>
-<td>Organization-shared</td>
-<td>Organization-shared and Restricted</td>
-<td>Authorized restricted users from sharing organizations</td>
-</tr>
-<tr>
 <td>External</td>
 <td>External</td>
 <td>External</td>
-<td>Union of external users from both cases</td>
-</tr>
-<tr>
-<td>External</td>
-<td>Organization-shared</td>
-<td>Organization-shared and External</td>
-<td>Authorized external users from sharing organizations</td>
+<td>Union of external users from both cases, or all external users if one case is shared with all external users</td>
 </tr>
 <tr>
 <td>Organization-shared</td>
 <td>Organization-shared</td>
 <td>Organization-shared</td>
-<td>Users from all sharing organizations</td>
+<td>Users from all sharing organizations. The organization performing the merge owns the resulting case. Other organizations keep their profiles and get the task and observable sharing rules of the merge target case.</td>
+</tr>
+<tr>
+<td>Organization-shared</td>
+<td>Not shared, or shared differently</td>
+<td>Not permitted</td>
+<td>N/A</td>
 </tr>
 </tbody>
 </table>
+<p>The rules for restricted visibility and external users in the table also apply when the cases are shared with other organizations. For example, when merging two cases shared with the same organizations:</p>
+<ul>
+<li>If one of the cases has restricted visibility, the resulting case has restricted visibility and is shared with these organizations.</li>
+<li>If only one of the cases is shared with external users, the resulting case is shared with these organizations but not with external users.</li>
+</ul>
 <h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">#</a></h2>
 <p><a href="../../about-statistics/">Predefined statistics in dashboards</a> are available from the cases list. For custom statistics and dashboards, refer to <a href="../../dashboard/about-dashboards/">About Dashboards</a>.</p>
 <h2>Next steps</h2>
