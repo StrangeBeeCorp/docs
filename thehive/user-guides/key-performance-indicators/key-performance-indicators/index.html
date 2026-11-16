@@ -16366,6 +16366,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#kpi-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPI lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#time-to-detect-ttd" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -16424,7 +16435,7 @@
   <a href="#time-to-handle-tasks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Time to handle tasks
+        Time to handle tasks (TTH)
       
     </span>
   </a>
@@ -21784,11 +21795,29 @@
 <h1 id="key-performance-indicators">Key Performance Indicators<a class="headerlink" href="#key-performance-indicators" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.1/#5.1" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.1/#5.1">5.1</a></span></span></p>
 <p>TheHive provides valuable insights into event and incident time metrics, enabling you to track key performance indicators (KPIs) for <a href="../../analyst-corner/cases/about-cases/">cases</a>, <a href="../../analyst-corner/alerts/about-alerts/">alerts</a>, and <span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.7/#5.7" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.7/#5.7">5.7</a></span></span> <a href="../../analyst-corner/tasks/about-tasks/">tasks</a>.</p>
-<p>These KPIs are displayed by default in TheHive. However, you can <a href="../../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators/">hide some or all indicators for cases and alerts</a> if they're not useful or may be misleading for your organization.</p>
-<p>You can also include these KPIs in dashboards and case reports.</p>
+<p>By default, case and alert KPIs appear in the <strong>Time metrics</strong> section of the left pane in case and alert descriptions, and the task KPI appears as the <strong>Handling time</strong> indicator in the task details. However, you can <a href="../../organization/configure-organization/manage-ui-configuration/hide-key-performance-indicators/">hide some or all indicators for cases and alerts</a> if they're not useful or may be misleading for your organization.</p>
+<p>In case and alert descriptions, a KPI appears only when its value is greater than 0.</p>
+<p>You can also include these KPIs in dashboards. Case reports can include case and alert KPIs, but not task KPIs.</p>
 <div class="admonition info">
 <p class="admonition-title">Units</p>
 <p>If the unit of an indicator is not explicitly mentioned, values are in milliseconds.</p>
+</div>
+<h2 id="kpi-lifecycle">KPI lifecycle<a class="headerlink" href="#kpi-lifecycle" title="Permanent link">#</a></h2>
+<p>The following diagram shows the dates each KPI measures for alerts, cases, and tasks.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../images/user-guides/kpis/kpi-lifecycle.png" data-desc-position="bottom"><img alt="KPI lifecycle for alerts, cases, and tasks" src="../../../images/user-guides/kpis/kpi-lifecycle.png"></a></p>
+<div class="admonition note">
+<p class="admonition-title">Cases linked to alerts</p>
+<p>When you <a href="../../analyst-corner/alerts/create-a-case-from-an-alert/">create a case from an alert</a> or <a href="../../analyst-corner/alerts/add-an-alert-to-an-existing-case/">add an alert to an existing case</a>, the time to detect (TTD), time to triage (TTT), time to acknowledge (TTA), and time to qualify (TTQ) of the case are computed from the alert dates rather than the case dates. The dates come from the first alerts linked to the case. If several alerts are linked at the same time, the earliest dates are used.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Calculation rules</p>
+<p>For the definition of each date field, see <a href="../../date-field-definitions-alerts-cases/">Date Field Definitions for Alerts and Cases</a>.</p>
+<ul>
+<li><code>alert.date</code> corresponds to the <strong>Occurred date</strong> field of the alert. It's the date of the original event, as sent by the source that created the alert.</li>
+<li><code>newDate</code>, <code>inProgressDate</code>, <code>closedDate</code>, and <code>importedDate</code> record the first time the case or alert entered a status linked to the corresponding <a href="../../../administration/status/about-statuses/#attributes">stage</a>. Later status changes don't update them. For the <em>New</em>, <em>In Progress</em>, and <em>Closed</em> stages, custom statuses count too.</li>
+<li>If a case or alert is closed without reaching the <em>In Progress</em> stage, its closure date is also used as its <em>In Progress</em> date.</li>
+<li>A KPI with a negative result isn't recorded. Time to detect (TTD) is set to 0 instead.</li>
+</ul>
 </div>
 <h2 id="time-to-detect-ttd">Time to detect (TTD)<a class="headerlink" href="#time-to-detect-ttd" title="Permanent link">#</a></h2>
 <p>The time it takes to set the status of a case or alert to one linked to the <em>New</em> stage in TheHive after the event occurs. This metric helps assess the effectiveness of your monitoring tools and detection capabilities.</p>
@@ -21830,6 +21859,8 @@
 </tr>
 </tbody>
 </table>
+<p>If the alert linked to a case never reached the <em>In Progress</em> stage, the date the alert was linked to the case is used as <code>alert.inProgressDate</code>.</p>
+<p>The alert description displays TTT only when the alert isn't at the <em>New</em> stage.</p>
 <h2 id="time-to-acknowledge-tta">Time to acknowledge (TTA)<a class="headerlink" href="#time-to-acknowledge-tta" title="Permanent link">#</a></h2>
 <p>The time it takes for your Security team to acknowledge a case or alert by changing its status to one linked to the <em>In Progress</em> stage after the event occurs. This measures the responsiveness of your team after detecting a potential security incident.</p>
 <table>
@@ -21850,8 +21881,11 @@
 </tr>
 </tbody>
 </table>
+<p>TTA includes TTD. A high TTA can come from an alert that reached TheHive late rather than from a slow response. To measure the time between the creation of a case or alert in TheHive and its acknowledgement, use the <a href="#time-to-triage-ttt">TTT</a>.</p>
+<p>If the alert linked to a case never reached the <em>In Progress</em> stage, the date the alert was linked to the case is used as <code>alert.inProgressDate</code>.</p>
+<p>The alert description displays TTA only when the alert isn't at the <em>New</em> stage.</p>
 <h2 id="time-to-qualify-ttq">Time to qualify (TTQ)<a class="headerlink" href="#time-to-qualify-ttq" title="Permanent link">#</a></h2>
-<p>The time it takes for your Security team to analyze an alert and determine whether it is a true positive or false positive, resulting in case closure or merging into a case. This metric helps measure the accuracy and speed of the qualification process.</p>
+<p>The time it takes for your Security team to analyze an alert and determine whether it is a true positive or false positive, resulting in the alert being closed or linked to a case. This metric helps measure the accuracy and speed of the qualification process.</p>
 <table>
 <thead>
 <tr>
@@ -21865,11 +21899,12 @@
 <tr>
 <td>Time to qualify (TTQ)</td>
 <td>= date of alert closure or merge into case - date of status <em>New</em></td>
+<td>= <code>alert.importedDate</code> - <code>alert.newDate</code>, only if the case is linked to an alert</td>
 <td>= <code>max(alert.importedDate, alert.closedDate)</code> - <code>alert.newDate</code></td>
-<td>not applicable</td>
 </tr>
 </tbody>
 </table>
+<p>The case description displays TTQ only when the case isn't at the <em>New</em> stage. The alert description doesn't display TTQ. It's available for alerts in the <a href="https://docs.strangebee.com/thehive/api-docs/#tag/Alert/operation/Get%20Alert">API</a>, dashboards, and case reports.</p>
 <h2 id="time-to-resolve-ttr">Time to resolve (TTR)<a class="headerlink" href="#time-to-resolve-ttr" title="Permanent link">#</a></h2>
 <p>The time it takes for your Security team to fully resolve an incident after its status is set to one linked to the <em>In Progress</em> stage. This includes investigation, remediation, and closure, indicating the efficiency of your incident response process.</p>
 <table>
@@ -21890,12 +21925,17 @@
 </tr>
 </tbody>
 </table>
+<p>The case description displays TTR only when the case is at the <em>Closed</em> stage.</p>
 <div class="admonition note">
-<p class="admonition-title">handlingDuration</p>
-<p>The <code>handlingDuration</code> field is available for cases and alerts in the API. The calculation is based on the difference between the end of the case date or the alert merge into case date, and the incident creation date in TheHive.  </p>
-<p>This field is a relic from older TheHive versions and can be slow to calculate. Use the Time to resolve metric instead.</p>
+<p class="admonition-title">Handling duration fields</p>
+<p>TheHive provides two handling duration fields. They predate the KPIs and use different formulas:</p>
+<ul>
+<li><code>handlingDuration</code> is available for cases only. It's stored with the case and equals <code>case.closedDate</code> - <code>min(alert.inProgressDate, case.inProgressDate)</code>, where <code>alert.inProgressDate</code> is the earliest in-progress date among the alerts of the first import into the case, or the import time if none of them has one. It's calculated when the case is closed. If the case had no alerts at that point, importing its first alert can change the value. Later imports don't.</li>
+<li><code>computed.handlingDuration</code> is calculated each time it's requested. For cases, it equals <code>case.endDate</code> - <code>case._createdAt</code>. For alerts, it equals <code>alert.importedDate</code> - <code>alert._createdAt</code>. It's 0 when the case has no end date or the alert isn't linked to a case.</li>
+</ul>
+<p>Use the <a href="#time-to-resolve-ttr">Time to resolve metric</a> instead.</p>
 </div>
-<h2 id="time-to-handle-tasks">Time to handle tasks<a class="headerlink" href="#time-to-handle-tasks" title="Permanent link">#</a></h2>
+<h2 id="time-to-handle-tasks">Time to handle tasks (TTH)<a class="headerlink" href="#time-to-handle-tasks" title="Permanent link">#</a></h2>
 <p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.7/#5.7" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.7/#5.7">5.7</a></span></span></p>
 <p>The time it takes for your Security team to complete a task, from the moment work begins to when the task is marked as completed. This metric helps identify bottlenecks and measure team efficiency at the task level.</p>
 <p>It's only available when a task has the status <em>Completed</em>.</p>
@@ -21908,11 +21948,12 @@
 </thead>
 <tbody>
 <tr>
-<td>Time to handle</td>
+<td>Time to handle (TTH)</td>
 <td>= <code>task.endDate</code> - <code>task.startDate</code></td>
 </tr>
 </tbody>
 </table>
+<p>When a task is set to <em>Completed</em>, a missing or future start date and a missing end date are replaced by the completion date. A task completed without being started has a time to handle of 0.</p>
 <h2>Next steps</h2>
 
 <ul>
