@@ -13,7 +13,7 @@ jobs:
     permissions:
       actions: read
       contents: write
-    runs-on: [self-hosted, type=ephemeral, size=xsmall, domain=sb]
+    runs-on: ubuntu-latest
     steps:
       - name: Push to public Docs repo
         env:
