@@ -1,6 +1,6 @@
 # Access the Trigger Payload
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Every workflow run in [TheHive Flow](about-flow.md), whatever started it, exposes a built-in `$input.payload` variable carrying the data received by the trigger that started the run. Unlike [input variables](manage-input-exit-variables.md), it requires no declaration and no assignment. Insert it in a node with the **$var** button, or by entering `$` and selecting it from the suggestions. An inserted reference is displayed as `$input.payload`.
 

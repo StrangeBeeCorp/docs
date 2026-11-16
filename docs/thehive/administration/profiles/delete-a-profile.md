@@ -1,6 +1,6 @@
 # Delete a Profile
 
-<!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `[admin] manageProfile` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Delete a [permission profile](about-profiles.md) in TheHive when it's no longer needed.
 

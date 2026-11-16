@@ -1,6 +1,6 @@
 # Manage TheHive Flow Logs
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Every service in a [TheHive Flow](../user-guides/about-flow.md) deployment logs to its container output, collected by the Docker daemon.
 

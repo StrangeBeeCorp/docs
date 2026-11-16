@@ -86,8 +86,8 @@ helm show values strangebee/thehive
 
 If you want to run TheHive as a multi-node cluster, increase the `thehive.replicas` value in `values.yaml`. For a reliable cluster setup, you should run a minimum of three nodes. If you're using the bundled dependencies, also adjust `cassandra.replicaCount` and `elasticsearch.master.replicaCount` to scale Cassandra and Elasticsearch accordingly.
 
-!!! info "License"
-    The Community license supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold, Platinum, or One license](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day Platinum trial, allowing you to test multi-node setups.
+!!! info "Plan"
+    TheHive Community Edition supports only a single node. To deploy multiple TheHive nodes, you must [upgrade to a Gold, Platinum, or ONE plan](../installation/licenses/license.md). A fresh deployment of TheHive on an empty database includes a 14-day trial of the Platinum plan, allowing you to test multi-node setups.
 
 For more information on customization, see [the dedicated Helm documentation](https://helm.sh/docs/intro/using_helm/#customizing-the-chart-before-installing){target=_blank}. You can also review the available options for each dependency.
 

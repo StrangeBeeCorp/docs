@@ -2,6 +2,7 @@
 copyright: Copyright {year} StrangeBee. All rights reserved.
 site_name: TheHive 6 Documentation
 site_url: https://docs.strangebee.com
+site_description: "Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT & MSSP teams."
 theme:
   name: material
   custom_dir: ./overrides/
@@ -468,8 +469,8 @@ nav:
       - 'Deploy on Kubernetes': thehive/installation/kubernetes.md
       - 'Set Up a Cluster with Packages': thehive/installation/deploying-a-cluster.md
       - 'Licenses':
-        - 'About Licenses': thehive/installation/licenses/about-licenses.md
-        - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md
+        - 'About Plans and Licenses': thehive/installation/licenses/about-licenses.md
+        - 'Request a License for TheHive Community Edition': thehive/installation/licenses/request-a-community-license.md
         - 'Activate or Update a License': thehive/installation/licenses/license.md
       - 'Version Upgrades':
         - 'Upgrade from Version 6.x': thehive/installation/upgrade-from-6.x.md
@@ -542,8 +543,8 @@ nav:
       - 'Platform Management':
         - 'Customize Branding': thehive/administration/customize-thehive-branding.md
         - 'Licenses':
-          - 'About Licenses': thehive/installation/licenses/about-licenses.md
-          - 'Request a Community License': thehive/installation/licenses/request-a-community-license.md
+          - 'About Plans and Licenses': thehive/installation/licenses/about-licenses.md
+          - 'Request a License for TheHive Community Edition': thehive/installation/licenses/request-a-community-license.md
           - 'Activate or Update a License': thehive/installation/licenses/license.md
         - 'Cortex Integration': 
           - 'About Cortex': thehive/administration/cortex/about-cortex.md

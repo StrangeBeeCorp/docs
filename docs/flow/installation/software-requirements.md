@@ -1,6 +1,6 @@
 # TheHive Flow Software Requirements
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Deploying [TheHive Flow](../user-guides/about-flow.md) requires specific software components at specific versions, depending on the deployment method: [Docker Compose](docker.md) or [Kubernetes](kubernetes.md).
 

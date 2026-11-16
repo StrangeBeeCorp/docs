@@ -1,6 +1,6 @@
 # Monitor TheHive Flow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](../user-guides/about-flow.md) exposes health endpoints and Prometheus metrics. The Docker Compose stack ships built-in Docker health checks for its services. Dashboards and alerts come from your own monitoring platform, fed by these metrics.
 

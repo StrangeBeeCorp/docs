@@ -1,6 +1,6 @@
 # Deploy TheHive Flow with Docker Compose
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Deploy and configure [TheHive Flow](../user-guides/about-flow.md) using Docker Compose, on a single host connected to TheHive. TheHive and TheHive Flow should run on separate hosts.
 
@@ -599,8 +599,8 @@ Users who don't have one of the predefined Org-Admin and Analyst profiles need T
 !!! danger "Testing only"
     This profile must never be used in production.
 
-!!! warning "One license required"
-    TheHive Flow requires a [One license](../../thehive/installation/licenses/license.md). The 14-day Platinum trial that comes with the environment doesn't cover it: activate your One license in TheHive before connecting TheHive to TheHive Flow.
+!!! warning "ONE plan required"
+    TheHive Flow requires a [ONE plan](../../thehive/installation/licenses/license.md). The 14-day Platinum trial that comes with the environment doesn't cover it: activate your license for the ONE plan in TheHive before connecting TheHive to TheHive Flow.
 
 The `testing` profile of the repository deploys TheHive, Cortex, and TheHive Flow on one host, for functional testing only. The [Docker demo environment](../../resources/docker-demo.md) describes its TheHive and Cortex side, including the sample data script and the default accounts. TheHive Flow services are the same as in the production profiles, with three differences:
 

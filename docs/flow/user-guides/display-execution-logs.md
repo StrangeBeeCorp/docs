@@ -1,6 +1,6 @@
 # Display Workflow Execution Logs
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/readWorkflows` --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/readWorkflows` --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Use execution logs to inspect how a workflow ran for each node. They help debug a workflow that isn't behaving as expected.
 

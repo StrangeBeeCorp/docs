@@ -1,6 +1,6 @@
 # Workflow Templates
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](about-flow.md) provides ready-made workflow templates that cover common security automation scenarios. Each template is available as YAML code in its own section. Save the code as a `.yaml` file, [import it](import-export-workflows.md#import-a-workflow) into your organization, then adapt some of its elements to your environment.
 

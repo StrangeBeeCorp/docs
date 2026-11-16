@@ -1,6 +1,6 @@
 # Configure a SAML Authentication Provider
 
-<!-- md:permission `managePlatform` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `managePlatform` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Configure a SAML authentication provider in TheHive.
 

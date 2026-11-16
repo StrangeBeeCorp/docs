@@ -1,6 +1,6 @@
 # Manage Input and Exit Variables
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 [Workflow input and exit variables](about-flow.md#variables) define the interface of a workflow, so it can exchange data with external systems, or with another workflow that calls it through a [*Subworkflow* node](configure-flow-node.md#configure-a-subworkflow-flow-node).
 

@@ -1,6 +1,6 @@
 # Configure a Transformation Node
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Transformation nodes process or manipulate data within workflows in [TheHive Flow](about-flow.md). Use them to modify, extract, or format information as it moves through the workflow.
 

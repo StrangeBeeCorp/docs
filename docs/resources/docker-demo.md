@@ -6,7 +6,7 @@ Deploy a demo environment to trial TheHive and Cortex with sample data using Doc
     This environment is for testing purposes only and must never be used in production.
 
 !!! tip "Platinum trial"
-    The Docker installation of TheHive with Cortex includes a 14-day Platinum trial license. After the trial ends, TheHive switches to read-only mode.
+    The Docker installation of TheHive with Cortex includes a 14-day trial of the Platinum plan. After the trial ends, TheHive switches to read-only mode.
 
 !!! warning "Before you begin"
     To ensure a smooth deployment process, make sure you have:

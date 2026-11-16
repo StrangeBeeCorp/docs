@@ -1,6 +1,6 @@
 # Manage LLM Providers
 
-<!-- md:version 6.0 --> <!-- md:permission `[admin] manageConfig` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `[admin] manageConfig` --> <!-- md:license ONE -->
 
 LLM providers connect TheHive to large language models (LLMs), for use in [TheHive Flow](../../flow/user-guides/about-flow.md). Each provider is an OpenAI-compatible API, such as OpenAI, Anthropic, or a local LLM. Once a provider is added, users building workflows can select it, along with one of its models, in an [*AI* action node](../../flow/user-guides/configure-action-node.md#configure-an-ai-action-node).
 

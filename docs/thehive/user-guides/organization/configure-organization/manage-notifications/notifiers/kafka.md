@@ -1,6 +1,6 @@
 # Configure the Kafka Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Configure the *Kafka* [notifier](../about-notifications.md#notifiers) in TheHive to publish automated notifications to Kafka topics based on specific triggers.
 

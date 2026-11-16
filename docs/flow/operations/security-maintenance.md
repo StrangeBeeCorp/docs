@@ -1,6 +1,6 @@
 # TheHive Flow Security Maintenance
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Keeping a [TheHive Flow](../user-guides/about-flow.md) deployment patched relies on the image versions StrangeBee pins in `versions.env`, at the root of the [StrangeBee Docker Compose repository](https://github.com/StrangeBeeCorp/docker/tree/main){target=_blank}, and on the upgrade route of each component.
 

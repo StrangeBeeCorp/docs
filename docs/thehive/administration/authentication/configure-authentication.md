@@ -68,9 +68,9 @@ Authentication in TheHive controls how users and services sign in. You can use t
 
 5. Select the authentication providers you want to configure.
 
-    !!! warning "Paid license required"
-        A [paid license](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
-        A Platinum or One license is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
+    !!! warning "Paid plan required"
+        A [paid plan](../../installation/licenses/about-licenses.md) is required to configure authentication providers other than the local database managed by TheHive.  
+        A Platinum or ONE plan is required to configure Active Directory, OAuth 2.0, OpenID, and SAML authentication.
 
     **- Local authentication**
 

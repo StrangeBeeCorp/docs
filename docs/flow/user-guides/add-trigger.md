@@ -1,6 +1,6 @@
 # Add a Trigger
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Define how your workflow automatically starts in [TheHive Flow](about-flow.md). A workflow can have multiple triggers configured simultaneously, working as `OR` conditions: any one of them independently starts the workflow.
 

@@ -1,6 +1,6 @@
 # Deploy TheHive Flow on Kubernetes
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Deploy and configure [TheHive Flow](../user-guides/about-flow.md) on a Kubernetes cluster using the Helm chart published in the [StrangeBee Helm chart repository](https://github.com/StrangeBeeCorp/helm-charts){target=_blank}, and connect it to TheHive. TheHive Flow isn't distributed as Linux packages: Kubernetes and [Docker Compose](docker.md) are its only deployment methods, whatever the method used to install TheHive itself.
 

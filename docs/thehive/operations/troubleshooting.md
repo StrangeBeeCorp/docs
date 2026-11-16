@@ -74,8 +74,8 @@ After collecting the logs, revert your log configuration:
 
 If the logs reveal an issue you want to report:
 
-* Gold, Platinum, or One license: open a ticket with the StrangeBee Support team
-* Community license: open an issue on the [`TheHive-feedback` GitHub repository](https://github.com/StrangeBeeCorp/TheHive-feedback/issues){target=_blank}
+* Gold, Platinum, or ONE plan: open a ticket with the StrangeBee Support team
+* TheHive Community Edition: open an issue on the [`TheHive-feedback` GitHub repository](https://github.com/StrangeBeeCorp/TheHive-feedback/issues){target=_blank}
 
 In both cases, include the following information:
 

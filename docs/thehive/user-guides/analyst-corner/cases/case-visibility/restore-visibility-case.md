@@ -1,6 +1,6 @@
 # Restore Case Visibility
 
-<!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:version 5.5 --> <!-- md:permission `manageCaseAccess/restrict` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Restore the [visibility of a case](../about-cases.md#case-visibility-restriction) in TheHive to make it visible to all users again after [it was previously restricted](restrict-visibility-case.md).
 

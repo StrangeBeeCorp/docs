@@ -1,6 +1,6 @@
 # TheHive Flow Glossary
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 TheHive Flow is the automation engine in TheHive. It runs workflows that respond to events, process data, and execute actions across integrated systems.
 

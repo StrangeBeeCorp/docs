@@ -1,6 +1,6 @@
 # Connect a Mailbox
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Connect a [mailbox](about-email-intake-connectors.md) if your organization receives alerts via email and you want to automatically convert them into alerts within TheHive.
 
@@ -33,7 +33,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
     === "Google Workspace"
     
-        <!-- md:license Platinum --> <!-- md:license One -->
+        <!-- md:license Platinum --> <!-- md:license ONE -->
 
         !!! warning "Prerequisites"
             You must have administrator access to the Google Cloud Console, with the necessary permissions to create projects and configure OAuth 2.0 credentials.
@@ -147,7 +147,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
         Then, select **Connect** to authorize TheHive to access your Google Workspace account for use with the application.
 
     === "Microsoft 365"
-        <!-- md:license Platinum --> <!-- md:license One -->
+        <!-- md:license Platinum --> <!-- md:license ONE -->
         !!! warning "Prerequisites"
             You must have:
 
@@ -274,7 +274,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
     === "Microsoft Graph API"
 
-        <!-- md:version 5.5 --> <!-- md:license Platinum --> <!-- md:license One -->
+        <!-- md:version 5.5 --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
         Microsoft Graph API is the recommended standard API for all interactions with Microsoft services.
 
@@ -418,7 +418,7 @@ Connect a [mailbox](about-email-intake-connectors.md) if your organization recei
 
     === "IMAP server"
     
-        <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+        <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
         61. In the **Provider** section, enter the following information:
 

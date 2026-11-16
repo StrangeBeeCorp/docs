@@ -1,12 +1,15 @@
-# Request a Community License
+# Request a License for TheHive Community Edition
 
-Request a free [TheHive Community license](about-licenses.md) that includes essential features to help you get started with TheHive and support basic user needs.
+Request a free license for [TheHive Community Edition](about-licenses.md) to use TheHive for non-commercial purposes, such as learning, academic research, or a personal home lab. TheHive Community Edition includes core incident response features.
+
+!!! info "Non-commercial use only"
+    Using TheHive in a professional or commercial environment requires a [Gold, Platinum, or ONE plan](about-licenses.md#plans-and-pricing).
 
 !!! note "TheHive On-prem only"
-    The Community license is available exclusively for TheHive On-prem deployments and isn't offered for TheHive Cloud Platform.
+    TheHive Community Edition is available exclusively for TheHive On-prem deployments and isn't offered for TheHive Cloud Platform.
 
-!!! warning "Upgrading with Community license"
-    If you’re upgrading to TheHive version 5.3 or later from a TheHive 5.x Community edition, you must complete this procedure to avoid having your interface limited to read-only mode.
+!!! warning "Upgrading TheHive Community Edition"
+    If you’re upgrading to TheHive version 5.3 or later from TheHive 5.x Community Edition, you must complete this procedure to avoid having your interface limited to read-only mode.
 
 <h2>Procedure</h2>
 
@@ -14,7 +17,7 @@ Request a free [TheHive Community license](about-licenses.md) that includes esse
 
     ![StrangeBee license portal registration page](../../images/installation/strangebee-license-portal.png)
 
-2. Create an account using your professional email address.
+2. Create an account using a work or academic email address. Free email providers such as Gmail aren't accepted, nor are temporary or forwarding addresses. Keep the project description under 1,000 characters to avoid submission errors.
 
 3. Check your inbox for a confirmation message and verify your email address.
 

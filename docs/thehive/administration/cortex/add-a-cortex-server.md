@@ -10,7 +10,7 @@ Connect [Cortex](about-cortex.md) servers to TheHive to enable automated analysi
     Before adding a Cortex server, you must install and configure Cortex. For instructions, refer to [Cortex Installation Methods](../../../cortex/download/index.md).
 
 !!! note "Multiple Cortex servers"
-    TheHive supports connecting multiple Cortex servers only with a paid license.
+    TheHive supports connecting multiple Cortex servers only with a paid plan.
 
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.

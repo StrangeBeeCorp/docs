@@ -1,6 +1,6 @@
 # Require an Impact for a Status
 
-<!-- md:version 6.0 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Require an impact for a case [status](about-statuses.md) linked to the *Closed* stage in TheHive, so analysts must record whether the threat investigated in the case affected the organization when they [close a case](../../user-guides/analyst-corner/cases/close-a-case.md) with this status.
 

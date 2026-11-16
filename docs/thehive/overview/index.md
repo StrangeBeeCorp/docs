@@ -9,32 +9,31 @@ hide:
 
 ![TheHive logo](../images/overview/thehive.svg){ width="300" align=right }
 
-TheHive offers a comprehensive 4-in-1 Security Incident Response Platform, serving as a vital tool for Security Operations Centers (SOCs), Computer Security Incident Response Teams (CSIRTs), Computer Emergency Response Teams (CERTs), and all information security professionals involved in swift and effective handling of security incidents. It composes of a robust suite of features designed to streamline incident response workflows, enhance collaboration, and empower information security practitioners to effectively investigate and mitigate security threats. With its seamless integration with the Malware Information Sharing Platform (MISP) and advanced capabilities for task management, evidence handling, and threat intelligence integration, TheHive is an indispensable tool for modern SOC, CSIRT, and CERT teams.
+TheHive is a Cybersecurity Incident Response Management (CIRM) platform for Security Operations Center (SOC), Computer Emergency Response Team (CERT), Computer Security Incident Response Team (CSIRT), and Managed Security Service Provider (MSSP) teams. It brings the complete incident lifecycle into a collaborative, case-centric workspace, from the first alert to final resolution.
+
+TheHive works with [Cortex](../../cortex/index.md), the automated analysis and response engine, and with [TheHive Flow](../../flow/user-guides/about-flow.md), its native orchestration and automation layer.
 
 ---
 
 ## Key features
 
-**Integration with MISP:** 
-Tightly integrated with MISP (Malware Information Sharing Platform) for seamless collaboration and information sharing.
+**Centralized alert management**  
+[Alerts](../user-guides/analyst-corner/alerts/about-alerts.md) from every source arrive in one structured queue, deduplicated and ready to triage. [Similar alerts](../user-guides/analyst-corner/cases/find-similar-alerts-cases.md) are correlated, custom views and filters turn alert volume into clear priorities, and a single action escalates an alert to a case.
 
-**Real-time collaboration:** 
-Multiple analysts can collaborate simultaneously with live stream updates on cases, tasks, observables, and indicators of compromise (IOCs).
+**Structured case management**  
+A [case](../user-guides/analyst-corner/cases/about-cases.md) holds every piece of an investigation: [observables](../user-guides/analyst-corner/cases/observables/about-observables.md), evidence files, [tasks](../user-guides/analyst-corner/tasks/about-tasks.md), decisions, and enrichment results. [Case templates](../user-guides/organization/configure-organization/manage-templates/case-templates/about-case-templates.md) speed up case creation and make sure no investigation step is missed, [custom fields](../administration/custom-fields/about-custom-fields.md) adapt cases to each team's needs, and similar cases can be merged. [Case reports](../user-guides/analyst-corner/cases/case-reports/about-case-reports.md) present key case data in a customizable format, ready to download and share.
 
-**Efficient task management:** 
-Special notifications enable efficient task handling and assignment, with previews and imports from various sources such as email reports, CTI providers, and SIEMs.
+**Analysis and response**  
+[Cortex analyzers](../administration/cortex/about-cortex.md) enrich observables, and their reports help decide on the right response. Cortex responders, out-of-the-box or custom, trigger response actions directly from a case or an alert.
 
-**Customizable templates:** 
-Create cases and tasks using a flexible template engine, allowing customization with metrics and custom fields to drive team activity and identify areas for automation.
+**Collaboration and visibility**  
+Analysts assign tasks, leave comments, and share knowledge. Separate [organizations](../administration/organizations/about-organizations.md) keep teams or clients apart, and [restricted visibility](../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md) limits access to sensitive cases. [Dashboards](../user-guides/analyst-corner/dashboard/about-dashboards.md) follow progress and key metrics, and [SLA rules](../user-guides/sla-management/about-sla-management.md) raise automatic warnings. [TheHive Portal](../administration/thehive-portal/about-thehive-portal.md) shares selected case information securely with external stakeholders.
 
-**Evidence management:** 
-Analysts can record progress, attach evidence or files, add tags, and import password-protected ZIP archives containing suspicious data securely.
+**Automation with TheHive Flow**  
+[TheHive Flow](../../flow/user-guides/about-flow.md) runs workflows straight from a case or an alert, and handles repetitive tasks such as alert triage, enrichment, and escalation. Workflows are built in a visual editor and extended with custom Python or JavaScript code. Every run is recorded step by step, so automation stays transparent and auditable.
 
-**Observables management:** 
-Easily add and manage observables, either individually or in bulk, with options to import directly from MISP events or alerts. Triaging and filtering capabilities streamline the process.
-
-**Threat intelligence integration:** 
-Utilize Cortex and its analyzers and responders to gain insights, accelerate investigations, and contain threats. Leverage tags, flag IOCs, and identify previously seen observables to enrich threat intelligence.
+**Integrations**  
+TheHive connects to [detection, enrichment, and response systems](https://strangebee.com/thehive-integrations/){target=_blank} such as SIEM, EDR, threat intelligence, and ticketing tools, so analysts work from one place. [MISP integration](../administration/misp-integration/about-misp-integration.md) supports threat intelligence sharing, while [notifications](../user-guides/organization/configure-organization/manage-notifications/about-notifications.md) and [functions](../user-guides/organization/configure-organization/manage-functions/about-functions.md) connect external applications directly to TheHive.
 
 ---
 

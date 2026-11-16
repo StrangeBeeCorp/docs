@@ -1,6 +1,6 @@
 # TheHive Flow Environment Variables
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 The `.env` file at the root of the profile directory of [TheHive Flow](../user-guides/about-flow.md) holds the secrets, image versions, and runtime parameters of the stack. The [`init.sh` script](../installation/docker.md#step-7-initialize-the-stack) generates it from `dot.env.template`, from `versions.env` at the root of the repository, and from the values it detects or prompts for.
 

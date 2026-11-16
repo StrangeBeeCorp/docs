@@ -1,6 +1,6 @@
 # Manually Run a Function on a Case or an Alert and Review Results
 
-<!-- md:version 5.4 --> <!-- md:permission `manageFunction/invoke` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:version 5.4 --> <!-- md:permission `manageFunction/invoke` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Manually run a [function](about-functions.md) on a [case](../../../analyst-corner/cases/about-cases.md) or an [alert](../../../analyst-corner/alerts/about-alerts.md) in TheHive.
 

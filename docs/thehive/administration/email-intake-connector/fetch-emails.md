@@ -1,6 +1,6 @@
 # Manually Trigger Email Fetch in a Mailbox
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Manually trigger email fetch in a [mailbox](about-email-intake-connectors.md) in TheHive to retrieve emails before the next scheduled refresh.
 

@@ -1,6 +1,6 @@
 # Configure the RunResponder Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Configure the *RunResponder* [notifier](../about-notifications.md#notifiers) in TheHive to automatically execute [Cortex responders](../../../../../administration/cortex/about-cortex.md) when specific triggers occur.
 

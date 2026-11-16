@@ -1,6 +1,6 @@
 # Nginx Reverse Proxy Configuration
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 In a [TheHive Flow](../user-guides/about-flow.md) Docker Compose deployment, nginx is the HTTPS entry point. Its configuration comes from the `nginx/templates/default.conf.template` file. After changing the template, restart the service:
 

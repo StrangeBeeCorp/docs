@@ -1,6 +1,6 @@
 # Configure an Integration Node
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Integration nodes perform operations in TheHive or third-party products in [TheHive Flow](about-flow.md). Each integration node targets one product API and exposes its operations as dedicated actions selected within the node. Integrations tagged *Beta* were built from the provider's API documentation, not tested against a live environment: check them before using them in production. If you have access to a live environment, help validate the integration and share your feedback with the StrangeBee Support team.
 

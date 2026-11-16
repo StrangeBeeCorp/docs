@@ -1,6 +1,6 @@
 # Manage Workflows
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Workflows in [TheHive Flow](about-flow.md) consist of interconnected nodes that define automated processes. They begin with a trigger and can include flow, transformation, action, and integration nodes. Workflows are scoped to the organization and shared among all members with sufficient permissions. There's no personal or user-isolated workspace.
 

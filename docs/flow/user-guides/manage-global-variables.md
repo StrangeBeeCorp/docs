@@ -1,6 +1,6 @@
 # Manage Global Variables
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Use global variables to share fixed values across all workflows within an organization in [TheHive Flow](about-flow.md). These values are centrally managed and can't be modified within workflows.
 

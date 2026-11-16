@@ -1,6 +1,6 @@
 # Maintain TheHive Flow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Routine maintenance of a [TheHive Flow](../user-guides/about-flow.md) deployment covers tuning the run retention, keeping the disk under control, and upgrading the services.
 

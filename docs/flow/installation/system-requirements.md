@@ -1,6 +1,6 @@
 # TheHive Flow System Requirements
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](../user-guides/about-flow.md) hardware and storage requirements depend on the deployment method: a [Docker Compose stack](docker.md) on a single Linux host, separate from the host running TheHive, or a [Helm chart on a Kubernetes cluster](kubernetes.md).
 

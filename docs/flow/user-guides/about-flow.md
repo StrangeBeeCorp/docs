@@ -1,6 +1,6 @@
 # About TheHive Flow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Security operations involve repetitive and time-sensitive tasks: creating alerts from external events, triaging alerts, enriching observables, and notifying teams. TheHive Flow is the workflow orchestrator integrated with TheHive. It automates these tasks so your team can focus on investigation instead of manual coordination. Using a visual editor, you connect trigger, flow, transformation, action, and integration nodes into automated pipelines that run when events occur.
 

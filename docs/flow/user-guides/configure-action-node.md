@@ -1,6 +1,6 @@
 # Configure an Action Node
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Action nodes perform operations that interact with TheHive or external systems in [TheHive Flow](about-flow.md). They produce the workflow output by making changes in the environment or triggering downstream processes.
 

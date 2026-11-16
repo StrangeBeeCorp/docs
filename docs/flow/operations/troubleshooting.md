@@ -1,6 +1,6 @@
 # Troubleshoot TheHive Flow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 When a [TheHive Flow](../user-guides/about-flow.md) deployment misbehaves, run the first steps below to locate the failing component, then look up your symptom in the tables.
 

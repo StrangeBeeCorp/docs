@@ -1,6 +1,6 @@
 # Upgrade TheHive Flow with Docker Compose
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Upgrade an existing [TheHive Flow](../user-guides/about-flow.md) Docker Compose deployment to a new version. TheHive Flow is released with TheHive and carries the same version number: upgrade both to that version in the same maintenance window. Upgrade TheHive Flow first, while TheHive is stopped. The upgrade preserves all your data.
 

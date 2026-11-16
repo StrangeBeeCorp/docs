@@ -1,6 +1,6 @@
 # Temporal Runtime Configuration
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Temporal is the workflow engine of [TheHive Flow](../user-guides/about-flow.md). Its runtime knobs live in `temporal/config/dynamicconfig/production.yaml`. Temporal rereads most of this file automatically, so most changes apply without a restart.
 

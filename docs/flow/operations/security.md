@@ -1,6 +1,6 @@
 # TheHive Flow Security
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](../user-guides/about-flow.md) generates and stores several secrets on its host, isolates its services on an internal Docker network, and terminates TLS at the nginx entry point.
 

@@ -6,7 +6,7 @@
     By default, TheHive isn't connected to any Cortex server.
 
 !!! tip "TheHive Flow"
-    <!-- md:version 6.0 --> <!-- md:license One --> [TheHive Flow](../../../flow/user-guides/about-flow.md) runs analyzers and responders as steps of a workflow. Where TheHive alone runs them as single jobs, a workflow reuses their reports in later steps and branches on the results. Cortex remains usable on its own, from cases and alerts or through notifications.
+    <!-- md:version 6.0 --> <!-- md:license ONE --> [TheHive Flow](../../../flow/user-guides/about-flow.md) runs analyzers and responders as steps of a workflow. Where TheHive alone runs them as single jobs, a workflow reuses their reports in later steps and branches on the results. Cortex remains usable on its own, from cases and alerts or through notifications.
 
 !!! info "Cortex support"
     <!-- md:version 5.5 --> Cortex 3.1.5 and earlier are no longer supported since version 5.5.
@@ -33,7 +33,7 @@ Cortex offers the following features:
     Establishing a connection with Cortex requires an existing account and a valid API key on a Cortex server.
 
 !!! info "Support for multiple Cortex instances"
-    TheHive supports connecting to one or more Cortex instances simultaneously. Connecting to multiple instances requires a paid license.
+    TheHive supports connecting to one or more Cortex instances simultaneously. Connecting to multiple instances requires a paid plan.
 
 [Connect TheHive to Cortex](add-a-cortex-server.md) to gather intelligence on observables with analyzers and automate actions using responders:
 

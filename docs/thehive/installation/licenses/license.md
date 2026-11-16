@@ -2,16 +2,16 @@
 
 <!-- md:permission `[admin] managePlatform` -->
 
-Activate or update a [TheHive license](about-licenses.md), whether it's a Community, Gold, Platinum, or One license.
+Activate or update a [TheHive license](about-licenses.md), whether it's for TheHive Community Edition or a Gold, Platinum, or ONE plan.
 
 !!! tip "Platinum trial"
-    <!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day Platinum trial license. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
+    <!-- md:version 5.3 --> Installing TheHive On-prem or using TheHive Cloud Platform for the first time includes a 14-day trial of the Platinum plan. After this trial period, TheHive transitions to read-only mode, requiring a valid license for all users for continued full functionality.
 
 !!! warning "Requirements"
 
     * For TheHive On-prem: This procedure assumes that you have already [installed TheHive](../installation-methods.md).
-    * For Community license: This procedure assumes that you have already obtained a Community license by following the [Request a Community License](request-a-community-license.md) topic.
-    * For Gold, Platinum, and One licenses: This procedure assumes that you have already [purchased a valid Gold, Platinum, or One license](https://strangebee.com/thehive-pricing/){target=_blank} and no longer wish or are able to use your trial license. Once StrangeBee activates your license, you receive an email with a link to the StrangeBee license portal.
+    * For TheHive Community Edition: This procedure assumes that you have already obtained a license by following the [Request a License for TheHive Community Edition](request-a-community-license.md) topic.
+    * For Gold, Platinum, and ONE plans: This procedure assumes that you have already [purchased a Gold, Platinum, or ONE plan](https://strangebee.com/thehive-pricing/){target=_blank} and no longer wish or are able to use your trial license. Once StrangeBee activates your license, you receive an email with a link to the StrangeBee license portal.
 
 ## Step 1: Retrieve the challenge from your TheHive instance
 

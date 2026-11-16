@@ -3,7 +3,7 @@
 A notification triggers automated actions when specific events occur within an organization.
 
 !!! tip "TheHive Flow"
-    <!-- md:version 6.0 --> <!-- md:license One --> [TheHive Flow](../../../../../flow/user-guides/about-flow.md) automates a sequence of actions in one workflow. Where a notification reacts to one event with independent notifiers, a workflow chains steps, branches on their results, and keeps a log of every run. To start a workflow from a TheHive event, use a notification with a [*Webhook*](./notifiers/webhook.md) notifier.
+    <!-- md:version 6.0 --> <!-- md:license ONE --> [TheHive Flow](../../../../../flow/user-guides/about-flow.md) automates a sequence of actions in one workflow. Where a notification reacts to one event with independent notifiers, a workflow chains steps, branches on their results, and keeps a log of every run. To start a workflow from a TheHive event, use a notification with a [*Webhook*](./notifiers/webhook.md) notifier.
 
 ## Key components
 

@@ -1,6 +1,6 @@
 # Configure a Flow Node
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Flow nodes control how workflows branch, loop, process multiple items, pause, or call another workflow in [TheHive Flow](about-flow.md). An execution path ends when it reaches a node with no next step.
 

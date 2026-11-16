@@ -1,6 +1,6 @@
 # Back Up and Restore TheHive Flow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](../user-guides/about-flow.md) keeps its state in two directories of the profile directory, mounted into the containers: `postgresql/data`, holding the databases, and `s3-store/data`, holding the blobs. The configuration, the TLS certificates, and the `.env` file sit beside them, so the whole profile directory is the unit to back up.
 

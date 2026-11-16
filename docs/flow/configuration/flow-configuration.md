@@ -1,6 +1,6 @@
 # TheHive Flow Application Configuration
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 The `thehive-flow/config/thehive-flow.yml` file holds the application configuration of [TheHive Flow](../user-guides/about-flow.md). It's mounted read-only at `/thehive-flow.yml` inside the `thehive-flow` container.
 

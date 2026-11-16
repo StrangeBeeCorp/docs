@@ -1,6 +1,6 @@
 # Create a Status
 
-<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `[admin] managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Create a [status](about-statuses.md) for cases and alerts in TheHive to add custom statuses in addition to [the predefined ones managed by TheHive](about-statuses.md#predefined-statuses).
 

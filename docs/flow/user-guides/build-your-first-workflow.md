@@ -1,6 +1,6 @@
 # Build Your First Workflow
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:permission `manageOrchestrator/writeVariables` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:permission `manageOrchestrator/writeVariables` --> <!-- md:license ONE -->
 
 Ready to see [TheHive Flow](about-flow.md) in action? In this exercise, you'll build a complete workflow from scratch and learn why each piece works the way it does.
 

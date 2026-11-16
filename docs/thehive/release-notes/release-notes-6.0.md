@@ -16,11 +16,11 @@
 
 ### New features
 
-#### One license
+#### ONE plan
 
-The new [One license](../installation/licenses/about-licenses.md#types-and-pricing) includes every Platinum capability, plus [TheHive Flow](#thehive-flow). It's available for TheHive On-prem only.
+The new [ONE plan](../installation/licenses/about-licenses.md#plans-and-pricing) includes every Platinum capability, plus [TheHive Flow](#thehive-flow). It's available for TheHive On-prem only.
 
-#### TheHive Flow <!-- md:license One --> {#thehive-flow}
+#### TheHive Flow <!-- md:license ONE --> {#thehive-flow}
 
 [TheHive Flow](../../flow/user-guides/about-flow.md) is the workflow orchestrator integrated with TheHive. In a visual editor, users chain triggers, conditions, scripts, and actions into workflows that operate on TheHive, Cortex, large language models (LLMs), and third-party products such as Splunk, Microsoft Sentinel, or VirusTotal. Where notifications, alert feeders, functions, and responders each handle a single event or action, a workflow chains several steps and branches on their results. TheHive Flow runs as a separate component, deployed with Docker Compose or on Kubernetes.
 
@@ -30,7 +30,7 @@ The new [One license](../installation/licenses/about-licenses.md#types-and-prici
 
 #### Automation Center
 
-Cases and alerts have a new **Automations** tab listing the responders, functions, and <!-- md:license One --> TheHive Flow workflows run on them. Each list can be filtered and sorted, and responders, functions, and workflows can be run directly from the tab.
+Cases and alerts have a new **Automations** tab listing the responders, functions, and <!-- md:license ONE --> TheHive Flow workflows run on them. Each list can be filtered and sorted, and responders, functions, and workflows can be run directly from the tab.
 
 * [Review responder reports](../user-guides/analyst-corner/cases/run-responders-on-a-case.md#review-responder-reports-for-a-case)
 * [Review function execution results](../user-guides/organization/configure-organization/manage-functions/run-a-function-case-alert.md#review-function-execution-results)
@@ -39,11 +39,11 @@ Cases and alerts have a new **Automations** tab listing the responders, function
 
 ### Improvements
 
-#### Impact requirement on closing statuses <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+#### Impact requirement on closing statuses <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Administrators can now [require an impact](../administration/status/require-an-impact-for-a-status.md) for any case status linked to the *Closed* stage. Previously, only the *True Positive* status required an impact, and it still always does.
 
-#### Case report template export and import <!-- md:license Platinum --> <!-- md:license One -->
+#### Case report template export and import <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Case report templates can now be [exported to a file and imported](../user-guides/organization/configure-organization/manage-templates/case-report-templates/export-import-a-case-report-template.md) into another organization or TheHive instance. Images uploaded to Image widgets aren't included in the exported file.
 

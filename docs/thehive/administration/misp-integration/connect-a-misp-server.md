@@ -6,7 +6,7 @@ Connect a [MISP server](about-misp-integration.md) to TheHive to automatically r
 
 By default, updates are automatically synchronized between TheHive and MISP.
 
-TheHive supports connecting multiple MISP servers with a paid license.
+TheHive supports connecting multiple MISP servers with a paid plan.
 
 To manually import a MISP event as a case in TheHive, refer to [Create a New Case](../../user-guides/analyst-corner/cases/create-a-new-case.md#create-a-case-from-a-misp-event).
 
@@ -14,7 +14,7 @@ To manually import a MISP event as a case in TheHive, refer to [Create a New Cas
     Before proceeding with these instructions, ensure you have [a MISP API key](https://www.circl.lu/doc/misp/automation/#automation-api){target=_blank}. You can find the API key under the **My Profile** page (/users/view/me) on your MISP instance.
 
 !!! note "Multiple MISP servers"
-    TheHive supports connecting multiple MISP servers only with a paid license.
+    TheHive supports connecting multiple MISP servers only with a paid plan.
 
 {% include-markdown "includes/upgrade-misp.md" %}
 

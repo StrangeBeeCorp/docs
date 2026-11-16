@@ -1,6 +1,6 @@
 # Export or Import a Case Report Template
 
-<!-- md:version 6.0 --> <!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageCaseReportTemplate` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Export a [case report template](about-case-report-templates.md) from TheHive to share it with another organization or TheHive instance, or import a case report template to reuse configurations created elsewhere.
 

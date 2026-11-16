@@ -1,6 +1,6 @@
 # Jq Functions
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 [TheHive Flow](about-flow.md) evaluates [jq expressions](https://jqlang.org/manual/){target=_blank} with [gojq](https://github.com/itchyny/gojq){target=_blank}, a Go implementation of jq.
 

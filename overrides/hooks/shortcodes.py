@@ -121,7 +121,7 @@ def _badge_for_version(text: str, page: Page, files: Files):
 def _badge_for_license(text: str, page: Page, files: Files):
     icon = "material-license"
     return _badge(
-        icon=f"[:{icon}:]('#' 'License type')",
+        icon=f"[:{icon}:]('#' 'Plan')",
         text=text
     )
 

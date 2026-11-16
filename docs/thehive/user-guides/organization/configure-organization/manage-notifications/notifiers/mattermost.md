@@ -1,6 +1,6 @@
 # Configure the Mattermost Notifier
 
-<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Configure the *Mattermost* [notifier](../about-notifications.md#notifiers) in TheHive.
 

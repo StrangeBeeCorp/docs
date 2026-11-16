@@ -1,6 +1,6 @@
 # Manually Run a Workflow
 
-<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `manageOrchestrator/writeWorkflows` --> <!-- md:license ONE -->
 
 Execute your workflow on demand, regardless of its trigger configuration: from the workflow editor while building it, or from a case or alert page in TheHive.
 

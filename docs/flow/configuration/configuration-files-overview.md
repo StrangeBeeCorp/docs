@@ -1,6 +1,6 @@
 # TheHive Flow Configuration Files
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 A [TheHive Flow](../user-guides/about-flow.md) Docker Compose deployment is configured through a handful of files in the profile directory, `prod1-thehive-flow` or `prod2-thehive-flow`, of the [StrangeBee Docker Compose repository](https://github.com/StrangeBeeCorp/docker/tree/main){target=_blank}. These files don't exist on a Kubernetes deployment, where the configuration is set through the Helm chart values, as described in [Configuration and operations on Kubernetes](../installation/kubernetes.md#configuration-and-operations-on-kubernetes).
 

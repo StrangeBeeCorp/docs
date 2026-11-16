@@ -1,11 +1,11 @@
 # Configure an LDAP Authentication Provider
 
-<!-- md:permission `managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:permission `managePlatform` --> <!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Configure an [LDAP](../ldap/about-ldap.md) authentication provider in TheHive.
 
 !!! info "Active Directory"
-    The LDAP provider also works with Active Directory. With a Platinum license, the [AD provider](ad.md) needs less configuration but only accepts the short Windows login, the `sAMAccountName`. Use the LDAP provider to log in with the `userPrincipalName` or to set a custom search filter.
+    The LDAP provider also works with Active Directory. With a Platinum or ONE plan, the [AD provider](ad.md) needs less configuration but only accepts the short Windows login, the `sAMAccountName`. Use the LDAP provider to log in with the `userPrincipalName` or to set a custom search filter.
 
 <h2>Procedure</h2>
 

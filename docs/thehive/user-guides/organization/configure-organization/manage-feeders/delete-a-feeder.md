@@ -1,6 +1,6 @@
 # Delete an Alert Feeder
 
-<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:version 5.5 --> <!-- md:permission `manageConfig` --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Delete an [alert feeder](about-feeders.md) in TheHive when it's no longer needed.
 

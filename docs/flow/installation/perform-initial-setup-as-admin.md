@@ -1,6 +1,6 @@
 # Perform TheHive Flow Initial Setup as an Admin
 
-<!-- md:version 6.0 --> <!-- md:permission `[admin] manageProfile` --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:permission `[admin] manageProfile` --> <!-- md:license ONE -->
 
 After [deploying TheHive Flow](docker.md), complete the setup in TheHive as an administrator by granting users access to the **Flow** view. Users with the predefined Org-Admin or Analyst profile have access automatically. For all other users, grant the permissions through a custom profile.
 

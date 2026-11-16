@@ -1,6 +1,6 @@
 # Export or Import a Workflow
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Workflows in [TheHive Flow](about-flow.md) exist at the organization level. You can transfer workflows between different TheHive instances or organizations by exporting and importing them. Importing is also how you bring a ready-made [workflow template](workflow-templates.md) into your organization.
 

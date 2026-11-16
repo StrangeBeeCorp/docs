@@ -1,6 +1,6 @@
 # Authentication Between TheHive Flow Components
 
-<!-- md:version 6.0 --> <!-- md:license One -->
+<!-- md:version 6.0 --> <!-- md:license ONE -->
 
 Every channel between [TheHive Flow](../user-guides/about-flow.md), TheHive, and the services of the stack carries its own authentication mechanism.
 

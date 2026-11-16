@@ -1,6 +1,6 @@
 # Export an Archived Case
 
-<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license One -->
+<!-- md:license Gold --> <!-- md:license Platinum --> <!-- md:license ONE -->
 
 Export an archived [case](../cases/about-cases.md) in TheHive to preserve investigation data for later reuse within the platform.
 
