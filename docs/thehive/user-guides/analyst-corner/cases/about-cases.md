@@ -168,20 +168,27 @@ See [About TheHive Portal](../../../administration/thehive-portal/about-thehive-
 When [merging cases](merge-cases.md) with different access levels, the resulting case inherits the most restrictive access configuration to prevent unintended information exposure.
 
 !!! warning "Incompatible merge"
-    Merging a case with restricted visibility with a case shared with an external user isn't permitted.
+    Merging cases isn't permitted if:
+
+    * The cases aren't owned by the organization performing the merge or shared with it as Org-Admin
+    * The cases aren't shared with the same organizations, with the same profile for each organization
+    * One case has restricted visibility and the other is shared with external users
 
 | Case Type 1 | Case Type 2 | Resulting Case | User Access |
 |------------|------------|----------------|-------------|
 | Internal | Internal | Internal | All organization users |
-| Internal | External | Internal | Organization users only—external access removed |
+| Internal | External | Internal | Organization users only—external access removed. Comments, attachments, and observables marked as external become internal. |
 | Internal | Restricted | Restricted | Authorized users from the restricted case |
-| Internal | Organization-shared | Organization-shared | Users from sharing organizations |
 | Restricted | Restricted | Restricted | Union of authorized users from both cases |
 | Restricted | External | Not permitted | N/A |
-| Restricted | Organization-shared | Organization-shared and Restricted | Authorized restricted users from sharing organizations |
-| External | External | External | Union of external users from both cases |
-| External | Organization-shared | Organization-shared and External| Authorized external users from sharing organizations |
-| Organization-shared | Organization-shared | Organization-shared | Users from all sharing organizations |
+| External | External | External | Union of external users from both cases, or all external users if one case is shared with all external users |
+| Organization-shared | Organization-shared | Organization-shared | Users from all sharing organizations. The organization performing the merge owns the resulting case. Other organizations keep their profiles and get the task and observable sharing rules of the merge target case. |
+| Organization-shared | Not shared, or shared differently | Not permitted | N/A |
+
+The rules for restricted visibility and external users in the table also apply when the cases are shared with other organizations. For example, when merging two cases shared with the same organizations:
+
+* If one of the cases has restricted visibility, the resulting case has restricted visibility and is shared with these organizations.
+* If only one of the cases is shared with external users, the resulting case is shared with these organizations but not with external users.
 
 ## Statistics
 
