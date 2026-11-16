@@ -9,19 +9,41 @@
 <meta name="robots" content="index" />
 {% endif %}
 
+{#- Per-page link preview values. Front matter title/description win, then the
+    first heading and intro paragraph found by hooks/social_meta.py. Pages
+    without a usable intro get no description tags, so previews show the
+    title only. -#}
+{%- set meta = page.meta if page and page.meta else {} -%}
+{%- if meta.title -%}
+  {%- set share_title = meta.title -%}
+{%- elif meta.social_title -%}
+  {%- set share_title = meta.social_title -%}
+{%- elif page and page.title and not page.is_homepage -%}
+  {%- set share_title = page.title | striptags -%}
+{%- else -%}
+  {%- set share_title = config.site_name -%}
+{%- endif -%}
+{%- if meta.description -%}
+  {%- set share_description = meta.description -%}
+{%- elif not page or page.is_homepage -%}
+  {%- set share_description = config.site_description -%}
+{%- else -%}
+  {%- set share_description = "" -%}
+{%- endif -%}
+{%- set share_url = page.canonical_url if page and page.canonical_url else config.site_url -%}
+
 <!-- Open graph  -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="TheHive 6 Documentation" />
-<meta
-  property="og:description"
-  content="Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT & MSSP teams."
-/>
-<meta property="og:site_name" content="StrangeBee Docs" />
+<meta property="og:title" content="{{ share_title | e }}" />
+{% if share_description %}
+<meta property="og:description" content="{{ share_description | e }}" />
+{% endif %}
+<meta property="og:site_name" content="{{ config.site_name | e }}" />
 <meta
   property="og:image"
   content="https://docs.strangebee.com/images/share/meta-open-graph.png"
 />
-<meta property="og:url" content="https://docs.strangebee.com" />
+<meta property="og:url" content="{{ share_url | e }}" />
 <meta property="og:locale" content="en_US" />
 <meta
   property="og:video"
@@ -29,11 +51,10 @@
 />
 
 <!-- Twitter card  -->
-<meta name="twitter:title" content="TheHive 6 Documentation" />
-<meta
-  name="twitter:description"
-  content="Official documentation for TheHive and Cortex, StrangeBee's Cybersecurity Incident Response Management (CIRM) platform for SOC, CERT, CSIRT & MSSP teams."
-/>
+<meta name="twitter:title" content="{{ share_title | e }}" />
+{% if share_description %}
+<meta name="twitter:description" content="{{ share_description | e }}" />
+{% endif %}
 <meta
   name="twitter:image"
   content="https://docs.strangebee.com/images/share/meta-twitter-card.png"

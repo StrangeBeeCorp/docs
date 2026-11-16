@@ -52,6 +52,7 @@ extra_javascript:
 
 hooks:
   - ./overrides/hooks/shortcodes.py
+  - ./overrides/hooks/social_meta.py
 
 plugins:
   - search
