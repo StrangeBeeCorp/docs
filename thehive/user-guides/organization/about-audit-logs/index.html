@@ -21864,7 +21864,7 @@
 <p>TheHive displays audit logs in the <strong>History</strong> tab within case and alert descriptions. The most recent key events from these audit logs are also displayed in the <a href="../../analyst-corner/about-live-feed/">Live Feed</a> for real-time activity monitoring.</p>
 <div class="admonition info">
 <p class="admonition-title">Tag and custom field changes</p>
-<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> Starting with TheHive 5.5.9, audit logs now record updates to tags and custom fields.</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> Starting with TheHive 5.5.9, audit logs list the tag and custom field changes made to cases and alerts.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">TheHive Portal activities</p>
@@ -21892,7 +21892,11 @@
 <li><code>action</code>: Type of action performed, which can be <code>create</code>, <code>update</code>, <code>delete</code>, <code>merge</code> or <code>invoke</code> for functions.</li>
 <li><code>mainAction</code>: Boolean—<code>true</code> for the primary action; <code>false</code> for a derived event, for example when the action occurs in another organization that shares elements with this one.</li>
 <li><code>requestId</code>: Unique identifier of the HTTP request that triggered the audit entry.</li>
-<li><code>details</code>: JSON object containing only the modified fields and their new values.</li>
+<li><code>details</code>: JSON object containing only the modified fields and their new values. <span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span> For tag and custom field updates, it also contains:<ul>
+<li><code>tagChanges</code>: List of tags <code>added</code> or <code>removed</code>.</li>
+<li><code>customFieldChanges</code>: List of custom field changes. <code>operation</code> is <code>added</code> or <code>removed</code> when the custom field itself is added to or removed from the object, and <code>valuesAdded</code> or <code>valuesRemoved</code> when its value changes.</li>
+</ul>
+</li>
 </ul>
 <h3 id="object-information">Object information<a class="headerlink" href="#object-information" title="Permanent link">#</a></h3>
 <ul>
@@ -21937,7 +21941,7 @@
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="s2">"tagA"</span>
+<span class="w">      </span><span class="s2">"suspicious-traffic"</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
@@ -21971,7 +21975,7 @@
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="s2">"tagA"</span>
+<span class="w">      </span><span class="s2">"suspicious-traffic"</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
@@ -22050,7 +22054,7 @@
 <span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"tagA"</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"suspicious-traffic"</span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
@@ -22093,7 +22097,7 @@
 <span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">      </span><span class="s2">"tagA"</span>
+<span class="w">      </span><span class="s2">"suspicious-traffic"</span>
 <span class="w">    </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
@@ -22122,6 +22126,116 @@
 <span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">"business-unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineering"</span>
 <span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4169864"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TheOrganization"</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="tags-update-replacing-suspicious-traffic-with-c2-and-beaconing">Tags update replacing <em>suspicious-traffic</em> with <em>c2</em> and <em>beaconing</em><a class="headerlink" href="#tags-update-replacing-suspicious-traffic-with-c2-and-beaconing" title="Permanent link">#</a></h3>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../release-notes/release-notes-5.5/#5.5.9" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../release-notes/release-notes-5.5/#5.5.9">5.5.9</a></span></span></p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327684360"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Audit"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694442080510</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"mainAction"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"requestId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"74dc37479904ebe7:3957d351:18a847d4266:-8000:112"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"rootId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"c2"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"beaconing"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"tagChanges"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"added"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"c2"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"beaconing"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"operation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"removed"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">"suspicious-traffic"</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"objectId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"objectType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"object"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694442080320</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"c2"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"beaconing"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441998841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">261233673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1029163168</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290396841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"context"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~327925760"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Case"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alice@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_createdAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835689</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"_updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694442080320</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Suspicious network activity detected"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"***Description***"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severity"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"severityLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HIGH"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"startDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693151602000</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">"c2"</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">"beaconing"</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"flag"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"tlpLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMBER"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"pap"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"papLabel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GREEN"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"stage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InProgress"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"assignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sami@example.com"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"userPermissions"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">"extraData"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">"newDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1693412835673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"inProgressDate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1694441998841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToDetect"</span><span class="p">:</span><span class="w"> </span><span class="mi">261233673</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToTriage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1029163168</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"timeToAcknowledge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1290396841</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"customFieldValues"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span>
 <span class="w">  </span><span class="p">},</span>
 <span class="w">  </span><span class="nt">"organisation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">"organisationId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"~4169864"</span><span class="p">,</span>
