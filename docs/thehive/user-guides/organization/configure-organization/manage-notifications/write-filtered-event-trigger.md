@@ -409,12 +409,35 @@ For a list of available operators, see [FilteredEvent Trigger Operators](filtere
     "_field": "details.customFieldChanges",
     "_filter": {
       "_and": [
-        { "_eq": { "_field": "operation", "_value": "valuesAdded" } },
+        { "_in": { "_field": "operation", "_values": ["added", "valuesAdded"] } },
         { "_eq": { "_field": "name", "_value": "business-unit" } },
         { "_eq": { "_field": "values", "_value": "Engineering" } }
       ]
     }
   }
+}
+```
+
+### Tag `phishing` added to a case
+
+<!-- md:version 5.5.9 -->
+
+```json
+{
+  "_and": [
+    { "_is": { "_field": "objectType", "_value": "Case" } },
+    {
+      "_arrayMatch": {
+        "_field": "details.tagChanges",
+        "_filter": {
+          "_and": [
+            { "_eq": { "_field": "operation", "_value": "added" } },
+            { "_eq": { "_field": "values", "_value": "phishing" } }
+          ]
+        }
+      }
+    }
+  ]
 }
 ```
 

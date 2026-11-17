@@ -43,7 +43,9 @@ Each audit log entry contains fields that capture the complete context of an act
 * `action`: Type of action performed, which can be `create`, `update`, `delete`, `merge` or `invoke` for functions.
 * `mainAction`: Boolean—`true` for the primary action; `false` for a derived event, for example when the action occurs in another organization that shares elements with this one.
 * `requestId`: Unique identifier of the HTTP request that triggered the audit entry.
-* `details`: JSON object containing only the modified fields and their new values.
+* `details`: JSON object containing only the modified fields and their new values. <!-- md:version 5.5.9 --> For tag and custom field updates, it also contains:
+    * `tagChanges`: List of tags `added` or `removed`.
+    * `customFieldChanges`: List of custom field changes. `operation` is `added` or `removed` when the custom field itself is added to or removed from the object, and `valuesAdded` or `valuesRemoved` when its value changes.
 
 ### Object information
 
@@ -91,7 +93,7 @@ Each audit log entry contains fields that capture the complete context of an act
     "severityLabel": "HIGH",
     "startDate": 1693151602000,
     "tags": [
-      "tagA"
+      "suspicious-traffic"
     ],
     "flag": false,
     "tlp": 2,
@@ -125,7 +127,7 @@ Each audit log entry contains fields that capture the complete context of an act
     "severityLabel": "HIGH",
     "startDate": 1693151602000,
     "tags": [
-      "tagA"
+      "suspicious-traffic"
     ],
     "flag": false,
     "tlp": 2,
@@ -208,7 +210,7 @@ Each audit log entry contains fields that capture the complete context of an act
     "severity": 3,
     "severityLabel": "HIGH",
     "startDate": 1693151602000,
-    "tags": ["tagA"],
+    "tags": ["suspicious-traffic"],
     "flag": false,
     "tlp": 2,
     "tlpLabel": "AMBER",
@@ -251,7 +253,7 @@ Each audit log entry contains fields that capture the complete context of an act
     "severityLabel": "HIGH",
     "startDate": 1693151602000,
     "tags": [
-      "tagA"
+      "suspicious-traffic"
     ],
     "flag": false,
     "tlp": 2,
@@ -280,6 +282,120 @@ Each audit log entry contains fields that capture the complete context of an act
     "customFieldValues": {
       "business-unit": "Engineering"
     }
+  },
+  "organisation": {
+    "organisationId": "~4169864",
+    "organisation": "TheOrganization"
+  }
+}
+```
+
+### Tags update replacing *suspicious-traffic* with *c2* and *beaconing*
+
+<!-- md:version 5.5.9 -->
+
+```json
+{
+  "_id": "~327684360",
+  "_type": "Audit",
+  "_createdBy": "alice@example.com",
+  "_createdAt": 1694442080510,
+  "action": "update",
+  "mainAction": true,
+  "requestId": "74dc37479904ebe7:3957d351:18a847d4266:-8000:112",
+  "rootId": "~327925760",
+  "details": {
+    "tags": [
+      "c2",
+      "beaconing"
+    ],
+    "tagChanges": [
+      {
+        "operation": "added",
+        "values": [
+          "c2",
+          "beaconing"
+        ]
+      },
+      {
+        "operation": "removed",
+        "values": [
+          "suspicious-traffic"
+        ]
+      }
+    ]
+  },
+  "objectId": "~327925760",
+  "objectType": "Case",
+  "object": {
+    "_id": "~327925760",
+    "_type": "Case",
+    "_createdBy": "sami@example.com",
+    "_updatedBy": "alice@example.com",
+    "_createdAt": 1693412835689,
+    "_updatedAt": 1694442080320,
+    "number": 34,
+    "title": "Suspicious network activity detected",
+    "description": "***Description***",
+    "severity": 3,
+    "severityLabel": "HIGH",
+    "startDate": 1693151602000,
+    "tags": [
+      "c2",
+      "beaconing"
+    ],
+    "flag": false,
+    "tlp": 2,
+    "tlpLabel": "AMBER",
+    "pap": 1,
+    "papLabel": "GREEN",
+    "status": "InProgress",
+    "stage": "InProgress",
+    "assignee": "sami@example.com",
+    "customFields": [],
+    "userPermissions": [],
+    "extraData": {},
+    "newDate": 1693412835673,
+    "inProgressDate": 1694441998841,
+    "timeToDetect": 261233673,
+    "timeToTriage": 1029163168,
+    "timeToAcknowledge": 1290396841,
+    "customFieldValues": {}
+  },
+  "context": {
+    "_id": "~327925760",
+    "_type": "Case",
+    "_createdBy": "sami@example.com",
+    "_updatedBy": "alice@example.com",
+    "_createdAt": 1693412835689,
+    "_updatedAt": 1694442080320,
+    "number": 34,
+    "title": "Suspicious network activity detected",
+    "description": "***Description***",
+    "severity": 3,
+    "severityLabel": "HIGH",
+    "startDate": 1693151602000,
+    "tags": [
+      "c2",
+      "beaconing"
+    ],
+    "flag": false,
+    "tlp": 2,
+    "tlpLabel": "AMBER",
+    "pap": 1,
+    "papLabel": "GREEN",
+    "status": "InProgress",
+    "stage": "InProgress",
+    "assignee": "sami@example.com",
+    "customFields": [],
+    "userPermissions": [],
+    "extraData": {},
+    "newDate": 1693412835673,
+    "inProgressDate": 1694441998841,
+    "timeToDetect": 261233673,
+    "timeToTriage": 1029163168,
+    "timeToAcknowledge": 1290396841,
+    "customFieldValues": {}
   },
   "organisation": {
     "organisationId": "~4169864",
