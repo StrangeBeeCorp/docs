@@ -14,6 +14,17 @@
 
 ## 6.0.0 - October 20, 2026
 
+Last update: November 19, 2026
+
+### 6.0.0-2 packaging revision - November 19, 2026
+
+This [packaging revision](../installation/thehive-packages.md#understanding-packaging-revisions) of TheHive 6.0.0 ships as a Docker image and as packages. TheHive application code is unchanged.
+
+* Docker image: Updated the bundled Java 17 runtime to fix [CVE-2026-114938](https://nvd.nist.gov/vuln/detail/CVE-2026-114938){target=_blank}, known as Java4Shell, and the other vulnerabilities fixed by the November 2026 Java update. To apply the fixes to Docker Compose deployments, [upgrade TheHive](../installation/upgrade-from-6.x.md#step-3-install-the-new-version): pull the latest version of the StrangeBee Docker Compose profiles, set the `thehive_image_version` variable to `6.0.0-2` in the `.env` file, and redeploy. For containers run from the public image directly, update the image tag to `strangebee/thehive:6.0.0-2` and recreate TheHive containers. For Kubernetes deployments, upgrade the release to version 2.1.2 of the `thehive` Helm chart, which uses this image.
+
+!!! warning "Package installations: update Java 17"
+    TheHive packages don't include a Java runtime, so upgrading to the `6.0.0-2` packages doesn't fix these vulnerabilities. On each TheHive node, update Java 17 to a version that includes the November 2026 Java update, as listed in the security advisory of your Java vendor, then restart TheHive. With Amazon Corretto set up as described in the [installation guide](../installation/installation-guide-linux-standalone-server.md#step-2-set-up-the-java-virtual-machine-jvm), upgrade the `java-17-amazon-corretto-jdk` package on DEB systems or the `java-17-amazon-corretto-devel` package on RPM systems.
+
 ### New features
 
 #### ONE plan

@@ -63,6 +63,8 @@ TheHive requires Java to run its application server and to manage various proces
     * TheHive 6.x requires Java 17. Earlier Java versions are no longer supported for TheHive itself, but Java 11 remains required on the host for Cassandra 4.0.x to 4.1.x.
     * This dual-version setup applies to TheHive 6.x only: to install TheHive 5.x, Java 11 alone is required. Skip the Java 17 package here and the pin at [Step 5.2](#configure-jvm-options-for-thehive).
 
+{% include-markdown "includes/thehive-java-security-updates.md" %}
+
 === "DEB"
 
     1. Run the following commands:

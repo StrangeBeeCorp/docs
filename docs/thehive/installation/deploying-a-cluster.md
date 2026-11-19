@@ -54,6 +54,8 @@ TheHive and Cassandra both run on the JVM but require different versions: TheHiv
 * On nodes running TheHive, install Java 17. TheHive service is pinned to it at [Step 5.2](#configure-jvm-options-for-thehive).
 * On nodes running both, install the two versions side by side: Java 11 stays the system default for Cassandra, and TheHive service alone is pinned to Java 17.
 
+{% include-markdown "includes/thehive-java-security-updates.md" %}
+
 Follow [Run TheHive 6 and Cassandra on the Same Host](../operations/thehive-6-cassandra-same-host.md) to install both versions with Amazon Corretto, running the commands on every node and keeping only the version each node needs when the components run on separate servers.
 
 ---
