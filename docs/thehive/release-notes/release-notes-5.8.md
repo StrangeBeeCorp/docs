@@ -15,6 +15,22 @@
 !!! warning "Avoid version 5.8.0"
     Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.8.1. If you run this version, upgrade to the latest 5.8 patch release.
 
+## 5.8.2 - November 19, 2026
+
+### Fixes
+
+* SLA: Ensured that the Time to acknowledge and Time to qualify SLAs of an alert are resolved as soon as the alert is merged into a case or used to create one. The SLAs of the case are evaluated at the same time.
+* Alert feeders: Resolved OAuth 2.0 authentication failures when the token endpoint answers with a success status other than 200, such as 201. This unblocks alert ingestion from CrowdStrike and from any other source whose token endpoint answers this way. When the response contains no access token, TheHive no longer writes the response body to its logs.
+* Cortex integration: Prevented TheHive from freezing while importing a Cortex analyzer report that contains a large number of artifacts (+1000).
+* Organizations: Restored the content of the **Templates**, **Notifications**, **Functions**, and **Endpoints** tabs in the **Organizations** view when Cortex, MISP, or email intake isn't enabled in the configuration file.
+* Pages: Kept the copy link and delete actions reachable in the page lists of cases and the Knowledge Base when a page title is long. Long titles are now shortened, and the full title appears on hover.
+* Dashboards: Ensured the field picker in dashboard widget and report template filters stays open, instead of closing on its own when the filter panel refreshes.
+
+### Security
+
+* Docker image: Updated the bundled Java 11 runtime and removed the eMudhra emSign root certificate authorities from the trusted certificates.
+* Dependencies: Patched several CVEs reported in third-party libraries.
+
 ## 5.8.1 - October 12, 2026
 
 Last update: October 20, 2026

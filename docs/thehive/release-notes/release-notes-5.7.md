@@ -13,7 +13,7 @@
 ### Fixes
 
 * Dashboards: Ensured the field picker in dashboard widget and report template filters stays open, instead of closing on its own when the filter panel refreshes.
-* Integrations: Prevented TheHive from freezing while importing a Cortex analyzer report that contains a large number of artifacts (+1000).
+* Cortex integration: Prevented TheHive from freezing while importing a Cortex analyzer report that contains a large number of artifacts (+1000).
 
 ### Security
 
