@@ -62,7 +62,7 @@ All packages are hosted on an [HTTPS-secured website](https://thehive.download.s
 
     Then update the `thehive_image_version` variable in the `.env` file, located in the same folder as your `docker-compose.yml`. Check [TheHive Docker Hub](https://hub.docker.com/r/strangebee/thehive){target=_blank} for the available version tags.
 
-    If you used the public image directly, update the image tag to the `strangebee/thehive:<major.minor>` tag of the target version, such as `strangebee/thehive:6.0`, or to a specific version, such as `strangebee/thehive:6.0.0-2`, if you don't want the latest patch of that minor version.
+    If you used the public image directly, update the image tag to the `strangebee/thehive:<major.minor>` tag of the target version, such as `strangebee/thehive:6.0`, or to a specific version, such as `strangebee/thehive:6.0.0-3`, if you don't want the latest patch of that minor version.
 
     !!! warning "Don't use the `latest` tag"
         The `strangebee/thehive:latest` tag is deprecated and remains pinned to TheHive 5.0.x.
