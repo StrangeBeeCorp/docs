@@ -19056,6 +19056,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#582-november-19-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.8.2 - November 19, 2026
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#581-october-12-2026" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -21725,13 +21736,28 @@
 <p class="admonition-title">Avoid version 5.8.0</p>
 <p>Version 5.8.0 contains a regression that drops the alert description from the description field when creating a case from an alert, fixed in version 5.8.1. If you run this version, upgrade to the latest 5.8 patch release.</p>
 </div>
+<h2 id="582-november-19-2026">5.8.2 - November 19, 2026<a class="headerlink" href="#582-november-19-2026" title="Permanent link">#</a></h2>
+<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<ul>
+<li>SLA: Ensured that the Time to acknowledge and Time to qualify SLAs of an alert are resolved as soon as the alert is merged into a case or used to create one. The SLAs of the case are evaluated at the same time.</li>
+<li>Alert feeders: Resolved OAuth 2.0 authentication failures when the token endpoint answers with a success status other than 200, such as 201. This unblocks alert ingestion from CrowdStrike and from any other source whose token endpoint answers this way. When the response contains no access token, TheHive no longer writes the response body to its logs.</li>
+<li>Cortex integration: Prevented TheHive from freezing while importing a Cortex analyzer report that contains a large number of artifacts (+1000).</li>
+<li>Organizations: Restored the content of the <strong>Templates</strong>, <strong>Notifications</strong>, <strong>Functions</strong>, and <strong>Endpoints</strong> tabs in the <strong>Organizations</strong> view when Cortex, MISP, or email intake isn't enabled in the configuration file.</li>
+<li>Pages: Kept the copy link and delete actions reachable in the page lists of cases and the Knowledge Base when a page title is long. Long titles are now shortened, and the full title appears on hover.</li>
+<li>Dashboards: Ensured the field picker in dashboard widget and report template filters stays open, instead of closing on its own when the filter panel refreshes.</li>
+</ul>
+<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<ul>
+<li>Docker image: Updated the bundled Java 11 runtime and removed the eMudhra emSign root certificate authorities from the trusted certificates.</li>
+<li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
+</ul>
 <h2 id="581-october-12-2026">5.8.1 - October 12, 2026<a class="headerlink" href="#581-october-12-2026" title="Permanent link">#</a></h2>
 <p>Last update: October 20, 2026</p>
 <h3 id="improvements">Improvements<a class="headerlink" href="#improvements" title="Permanent link">#</a></h3>
 <ul>
 <li>Lists: The case number in the alert list and the links in the Details column of the case and alert lists can now be opened in a new browser tab.</li>
 </ul>
-<h3 id="fixes">Fixes<a class="headerlink" href="#fixes" title="Permanent link">#</a></h3>
+<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Alerts: Restored the alert description in the description field when <a href="../../user-guides/analyst-corner/alerts/create-a-case-from-an-alert/">creating a case from a single alert</a>. When the selected case template also has a description, the field now shows the template description followed by the alert description. Before versions 5.6.7 and 5.7.6, the alert description replaced the template description.</li>
 <li>Cases: Ensured that removing a case share through the API revokes the organization's access to the case.</li>
@@ -21741,7 +21767,7 @@
 <li>Filters: Resolved a blank page that appeared when switching an existing text filter to the "is empty" operator.</li>
 <li>Audit: Ensured the audit log keeps the full details of a deleted case or alert, instead of only its identifiers.</li>
 </ul>
-<h3 id="security">Security<a class="headerlink" href="#security" title="Permanent link">#</a></h3>
+<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
 <ul>
 <li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
 </ul>
@@ -21788,13 +21814,13 @@
 <p>The separate Cortex and MISP status icons at the bottom of the left navigation bar are replaced by a single health indicator that covers every configured connector, including Cortex, MISP, and Email Intake.</p>
 <h4 id="iam-authentication-for-s3-storage-on-aws-eks">IAM authentication for S3 storage on AWS EKS<a class="headerlink" href="#iam-authentication-for-s3-storage-on-aws-eks" title="Permanent link">#</a></h4>
 <p>TheHive running on Amazon EKS can now authenticate to Amazon S3 with IAM Roles for Service Accounts (IRSA) or EKS Pod Identity, instead of a static access key and secret key stored in the configuration file.</p>
-<h3 id="fixes_1">Fixes<a class="headerlink" href="#fixes_1" title="Permanent link">#</a></h3>
+<h3 id="fixes_2">Fixes<a class="headerlink" href="#fixes_2" title="Permanent link">#</a></h3>
 <h4 id="api">API<a class="headerlink" href="#api" title="Permanent link">#</a></h4>
 <ul>
 <li>Rejected invalid request bodies on the authentication configuration endpoints, which previously accepted malformed payloads.</li>
 <li>Clarified the validation message returned when an enum value is invalid.</li>
 </ul>
-<h3 id="security_1">Security<a class="headerlink" href="#security_1" title="Permanent link">#</a></h3>
+<h3 id="security_2">Security<a class="headerlink" href="#security_2" title="Permanent link">#</a></h3>
 <ul>
 <li>Dependencies: Patched several CVEs reported in third-party libraries.</li>
 </ul>
