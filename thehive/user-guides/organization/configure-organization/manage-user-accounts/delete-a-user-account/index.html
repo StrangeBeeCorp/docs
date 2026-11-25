@@ -3350,6 +3350,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../offboard-a-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Offboard a User
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../export-list-user-accounts/" class="md-nav__link">
         
   
@@ -6728,6 +6756,34 @@
     
   
     Lock a User Account
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../offboard-a-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Offboard a User
   
 
     
@@ -21671,10 +21727,16 @@
 <h1 id="delete-a-user-account">Delete a User Account<a class="headerlink" href="#delete-a-user-account" title="Permanent link">#</a></h1>
 <p><span class="mdx-badge mdx-badge--permission"><span class="mdx-badge__icon"><a href="" title="#' 'Required permission"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17a2 2 0 0 0 2-2 2 2 0 0 0-2-2 2 2 0 0 0-2 2 2 2 0 0 0 2 2m6-9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h1V6a5 5 0 0 1 5-5 5 5 0 0 1 5 5v2zm-6-5a3 3 0 0 0-3 3v2h6V6a3 3 0 0 0-3-3"></path></svg></span></a></span><span class="mdx-badge__text"><code>[admin] manageUser</code></span></span></p>
 <p>Delete a <a href="../about-user-accounts/">user account</a> from TheHive to permanently remove it at the client level.</p>
-<p>Cases, alerts, and tasks assigned to a deleted user remain assigned to that user, but TheHive interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the deleted user's login, then reassign them manually.</p>
+<p>TheHive automatically unassigns cases, alerts, and tasks assigned to a deleted user.</p>
+<p>When someone leaves your company, follow the steps in <a href="../offboard-a-user/">Offboard a User</a> before deleting their user account, so their entities are reassigned first.</p>
+<p><span class="mdx-badge mdx-badge--version"><span class="mdx-badge__icon"><a href="../../../../../release-notes/release-notes-5.8/#5.8" title="Minimum version"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4c1.11 0 2 .89 2 2v12c0 1.11-.89 2-2 2H4c-1.11 0-2-.89-2-2V6c0-1.11.89-2 2-2zM8.5 15V9H7.25v3.5L4.75 9H3.5v6h1.25v-3.5L7.3 15zm5-4.74V9h-4v6h4v-1.25H11v-1.11h2.5v-1.26H11v-1.12zm7 3.74V9h-1.25v4.5h-1.12V10h-1.25v3.5h-1.13V9H14.5v5a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1"></path></svg></span></a></span><span class="mdx-badge__text"><a href="../../../../../release-notes/release-notes-5.8/#5.8">5.8</a></span></span> If the user is the only one with access to a case with <a href="../../../../analyst-corner/cases/case-visibility/restrict-visibility-case/">restricted visibility</a>, the deletion fails. Give another user access to these cases first.</p>
 <div class="admonition danger">
 <p class="admonition-title">Permanent action</p>
 <p>This action permanently deletes the user account at the client level, removing it from all organizations.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Don't reuse the login</p>
+<p>Don't create a user account for someone else with the login of a deleted user. Cases, alerts, and tasks keep the deleted user's login as their creator or contributor, even after TheHive unassigns them, and audit logs keep it too. This history would appear to belong to the new user.</p>
 </div>
 <p>To lock a user account without deleting it, see <a href="../lock-a-user-account/">Lock a User Account</a>.</p>
 <p>To remove a user account from a specific organization without deleting it, see <a href="../../../../../administration/organizations/add-remove-an-existing-user-account-from-an-organization/">Add or Remove an Existing User Account to an Organization</a>.</p>
