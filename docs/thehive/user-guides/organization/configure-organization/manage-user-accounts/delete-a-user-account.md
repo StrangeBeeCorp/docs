@@ -4,10 +4,16 @@
 
 Delete a [user account](about-user-accounts.md) from TheHive to permanently remove it at the client level.
 
-Cases, alerts, and tasks assigned to a deleted user remain assigned to that user, but TheHive interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the deleted user's login, then reassign them manually.
+TheHive automatically unassigns cases, alerts, and tasks assigned to a deleted user.
+
+When someone leaves your company, follow the steps in [Offboard a User](offboard-a-user.md) before deleting their user account, so their entities are reassigned first.
+
+<!-- md:version 5.8 --> If the user is the only one with access to a case with [restricted visibility](../../../analyst-corner/cases/case-visibility/restrict-visibility-case.md), the deletion fails. Give another user access to these cases first.
 
 !!! danger "Permanent action"
     This action permanently deletes the user account at the client level, removing it from all organizations.
+
+{% include-markdown "includes/reuse-deleted-user-login.md" %}
 
 To lock a user account without deleting it, see [Lock a User Account](lock-a-user-account.md).
 

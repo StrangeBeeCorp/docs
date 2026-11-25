@@ -540,6 +540,7 @@ nav:
         - 'Modify the Default Organization for a User Account': thehive/administration/organizations/modify-default-organization-user-account.md
         - 'Delete a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/delete-a-user-account.md
         - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
+        - 'Offboard a User': thehive/user-guides/organization/configure-organization/manage-user-accounts/offboard-a-user.md
         - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
       - 'Platform Management':
         - 'Customize Branding': thehive/administration/customize-thehive-branding.md
@@ -637,6 +638,7 @@ nav:
           - 'Manage User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/manage-user-accounts.md
           - 'Add or Remove An Existing User Account from an Organization': thehive/administration/organizations/add-remove-an-existing-user-account-from-an-organization.md
           - 'Lock a User Account': thehive/user-guides/organization/configure-organization/manage-user-accounts/lock-a-user-account.md
+          - 'Offboard a User': thehive/user-guides/organization/configure-organization/manage-user-accounts/offboard-a-user.md
           - 'Export a List of User Accounts': thehive/user-guides/organization/configure-organization/manage-user-accounts/export-list-user-accounts.md
         - 'Templates':
           - 'Case Templates':

@@ -2,7 +2,13 @@
 
 Add or remove an existing user account from an [organization](about-organizations.md) in TheHive.
 
-Cases, alerts, and tasks assigned to a user removed from an organization remain assigned to that user, but TheHive interface displays their login instead of their name. To find these entities, use the Global Search on all elements with the user's login, then reassign them manually.
+If the user account still belongs to at least one other organization, cases, alerts, and tasks assigned to that user in this organization remain assigned to them. TheHive interface then displays their login instead of their name. To find these entities, use the [Global Search](../../user-guides/analyst-corner/cases/search-for-cases/find-a-case.md#method-4-global-search-feature) on all elements with the user's login, then reassign them manually.
+
+If the user account doesn't belong to any other organization, removing it deletes the account. TheHive then automatically unassigns the cases, alerts, and tasks assigned to that user.
+
+When someone leaves your company, follow the steps in [Offboard a User](../../user-guides/organization/configure-organization/manage-user-accounts/offboard-a-user.md) before removing their user account from all its organizations, so their entities are reassigned first.
+
+<!-- md:version 5.8 --> If the user is the only one with access to a case with [restricted visibility](../../user-guides/analyst-corner/cases/case-visibility/restrict-visibility-case.md) in this organization, the removal fails. Give another user access to these cases first.
 
 To create a new user account and assign it to an organization, see [Create a User Account](../../user-guides/organization/configure-organization/manage-user-accounts/create-a-user-account.md).
 

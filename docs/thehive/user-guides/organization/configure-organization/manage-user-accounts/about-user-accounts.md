@@ -35,5 +35,6 @@ Only users with the `manageUser` permission can manage user accounts at the orga
 * [Create a User Account](create-a-user-account.md)
 * [Delete a User Account](delete-a-user-account.md)
 * [Lock a User Account](lock-a-user-account.md)
+* [Offboard a User](offboard-a-user.md)
 * [Export a List of User Accounts](export-list-user-accounts.md)
 * [Manage User Accounts](manage-user-accounts.md)
