@@ -4,7 +4,7 @@ Cortex installation requires specific software components at specific versions, 
 
 === "Package installation"
 
-    * Java 11+
+    * Java 11
     * Elasticsearch:
 
         {% include-markdown "includes/elasticsearch-supported-versions-cortex.md" %}

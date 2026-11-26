@@ -55,7 +55,7 @@ Cortex requires Java to run its application server and to manage various process
 !!! note "Java support"
 
     * For security and long-term support, use [Amazon Corretto](https://aws.amazon.com/corretto/){target=_blank}, which provides OpenJDK builds maintained by Amazon.
-    * Corretto 11 or higher is required to install Cortex.
+    * Corretto 11 is required to install Cortex.
 
 === "DEB"
 
